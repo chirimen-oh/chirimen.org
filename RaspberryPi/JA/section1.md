@@ -36,50 +36,62 @@ CHIRIMEN Open Hardware コミュニティにより開発が進められていま
 
 # 2. マウスクリックでLEDのON/OFFを制御してみる
 それでは、実際にプログラミングをやってみましょう。
+
 [CHIRIMEN for Raspberry Pi 3 Hello World](section0.md) では、[JS Bin](http://jsbin.com/) を使ってLチカのexample コードを少し触ってみるだけでしたが、今度は最初から書いてみることにします。
 
 せっかくですので、このチュートリアルでは他のオンラインエディタ [JSFiddle](https://jsfiddle.net/) を使ってみることにします。
 
 > Web上のオンラインサービスは便利ですが、メンテナンスや障害、サービス停止などで利用できなくなることがあります。
 > ローカルでの編集も含め、いくつかのサービスを使いこなせるようにしておくと安心です。
+>
 > 各サービスにはそれぞれ一長一短がありますので、利用シーンに応じて使い分けると良いかもしれません。
 
-a. 部品と配線について
-このパートではCHIRIMEN Hello World で実施したLチカの配線をそのまま利用します。必要な部品も同じです。
+## a. 部品と配線について
+このパートでは[CHIRIMEN for Raspberry Pi 3 Hello World](section0.md) で実施したLチカの配線をそのまま利用します。必要な部品も同じです。
 
-部品一覧
+![部品一覧]
 
 LEDは、26番ポートに接続しておいてください。
 
-回路図
+![回路図]
 
-b. HTML/CSSを記載する
+## b. HTML/CSSを記載する
 さて、今回は、ボタンとLEDの状態インジケータを画面上に作ってみましょう。
-HTMLに <button>と<div> 要素を1つづつ作ります。
+HTMLに ```<button>```と```<div>``` 要素を1つづつ作ります。
 
-JSFiddle にアクセスすると、初期状態でコード編集を始めることができます。
+[JSFiddle](https://jsfiddle.net/) にアクセスすると、初期状態でコード編集を始めることができます。
 この画面のHTMLペインに下記コードを挿入します。
 
+```html
 <button id="onoff">LED ON/OFF</button>
 <div id="ledview"></div>
-※JSFiddleのHTMLペインにはHTMLタグの全てを書く必要はなく、<body>タグ内のみを書けばあとは補完してくれます。
+```
+※JSFiddleのHTMLペインにはHTMLタグの全てを書く必要はなく、```<body>```タグ内のみを書けばあとは補完してくれます。
 
-ledviewには下記のようなスタイルを付けておきましょう。こちらはCSSペインに記載します。
+```ledview```には下記のようなスタイルを付けておきましょう。こちらはCSSペインに記載します。
 
+```CSS
 #ledview{
   width:60px;
   height:60px;
   border-radius:30px;
   background-color:black;
 }
-最後に、HTMLに戻って、Web GPIO APIを利用可能にするためのPolyfillをロードする記述を行なっておきましょう。
-先ほど追加したledviewのすぐ下に下記<script>タグを記載します。
+```
 
+最後に、HTMLに戻って、[Web GPIO API](https://rawgit.com/browserobo/WebGPIO/master/index.html)を利用可能にするためのPolyfillをロードする記述を行なっておきましょう。
+先ほど追加した```ledview```のすぐ下に下記```<script>```タグを記載します。
+
+```javascript
 <script src="https://mz4u.net/libs/gc2/polyfill.js"></script>
-c. ボタンに反応する画面を作る
+```
+
+## c. ボタンに反応する画面を作る
 GPIOを実際に使う前に、まずは「ボタンを押したらLEDのON/OFF状態を表示する画面を切り替える」部分を作ってみます。
+
 早速JavaScriptを書いて行きましょう。
 
+```javascript
 (()=>{
   var onoff = document.getElementById("onoff");
   var ledview = document.getElementById("ledview");
@@ -89,11 +101,15 @@ GPIOを実際に使う前に、まずは「ボタンを押したらLEDのON/OFF�
     ledview.style.backgroundColor = (v == 1)? "red" : "black";
   };
 })();
-書けたら JSFiddleの▷ Runをクリックします。
-これで、LED ON/OFF ボタンが表示されるはずですので、ボタンをクリックしてみてください。
+```
+
+書けたら JSFiddleの```▷ Run```をクリックします。
+
+これで、```LED ON/OFF``` ボタンが表示されるはずですので、ボタンをクリックしてみてください。
+
 赤→黒→赤→黒→赤→黒→とクリックする都度切り替えできるようになったら成功です。
 
-LED On/Offをブラウザ画面上のボタンクリックで実施
+![LED On/Offをブラウザ画面上のボタンクリックで実施]
 
 d. ボタンにLEDを反応させる
 画面ができましたので、いよいよ Web GPIO を使ったLED制御コードを入れていきます。
