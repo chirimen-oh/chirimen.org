@@ -153,7 +153,7 @@ Lチカに成功しましたか？！
 
 ブラウザを起動後、ブックマークバーから```examples > GPIO > GPIO-Blink - JS Bin``` を選んでアクセスしてください。
 
-bookmark
+![bookmark](imgs/section0/bookmark.png)
 
 そのまま起動すると下記のような画面になります。(下記スクリーンショットはアクセス直後の画面からJS Binのタイトルバー部の「Output」タブを1回押して非表示にしています)
 
