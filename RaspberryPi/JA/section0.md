@@ -12,7 +12,7 @@ CHIRIMEN for Raspberry Pi 3 は、Raspberry Pi 3（以下「Raspi3」）上に�
 
 [Web GPIO API (Draft)](https://rawgit.com/browserobo/WebGPIO/master/index.html)や、[Web I2C API (Draft)](https://rawgit.com/browserobo/WebI2C/master/index.html)といったAPIを活用したプログラミングにより、WebアプリからRaspi3に接続した電子パーツを直接制御することができます。
 
-CHIRIMEN for Raspberry Pi 3 の活用イメージ
+![CHIRIMEN for Raspberry Pi 3 の活用イメージ](imgs/section0/CHIRIMEN for Raspberry Pi 3 の活用イメージ.png)
 
 # 2. 準備（準備が終わってる場合は読み飛ばしてください）
 
@@ -21,7 +21,7 @@ CHIRIMEN for Raspberry Pi 3 の活用イメージ
 ### 基本ハードウエア
 下記がCHIRIMEN for Raspberry Pi 3 の起動に最低限必要となる基本ハードウエアです。
 
-Raspi3 の起動に必要なハードウエア一覧
+![Raspi3 の起動に必要なハードウエア一覧](imgs/section0/Raspi3 の起動に必要なハードウエア一覧.png)
 
 * Raspberry Pi 3 Model B × 1
 * ACアダプタ + micro B USB電源ケーブル(例えばコレなど) × 1
