@@ -60,7 +60,7 @@ Lチカに必要なパーツ一覧
 ## 起動確認
 Raspi3の起動後、下記のようなデスクトップ画面が表示されたら CHIRIMEN for Raspberry Pi 3 の起動に成功しています。おめでとうございます。
 
-CHIRIMEN for Raspberry Pi 3 desktop画面
+![CHIRIMEN for Raspberry Pi 3 desktop画面](imgs/section0/CHIRIMEN for Raspberry Pi 3 desktop画面.png)
 
 ## 残念ながら上記画面が表示されなかった！？
 もし、違う画面が表示される場合には、CHIRIMEN for Raspberry Pi 3とは異なるSDカードで起動された可能性があります。
