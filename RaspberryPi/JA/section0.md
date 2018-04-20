@@ -174,9 +174,11 @@ JS BinでのLチカexample画面
 <script src="https://mz4u.net/libs/gc2/polyfill.js"></script>
 </body>
 </html>
+```
+
 HTMLではpolyfill.jsというJavaScriptライブラリを読み込んでいます。
 polyfill.jsはWeb GPIO APIと、Web I2C APIというW3Cでドラフト提案中の2つのAPIへのPolyfillとなっています。
-```
+
 
 ## JavaScript
 ```javascript
@@ -193,7 +195,7 @@ navigator.requestGPIOAccess().then(gpioAccess=>{
 ```
 
 JavaScriptファイルで、最初に出てくるコードが```navigator.requestGPIOAccess()```です。
-ここで先ほど出て来たWeb GPIO API を使い、gpioAccessというGPIOにアクセスするためのインタフェースを取得しています。
+ここで先ほど出て来た[Web GPIO API](https://rawgit.com/browserobo/WebGPIO/master/index.html) を使い、```gpioAccess```というGPIOにアクセスするためのインタフェースを取得しています。
 
 コードを読み進める前に、ここで少しGPIOについて記載しておきたいと思います。
 
