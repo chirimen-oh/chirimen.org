@@ -21,7 +21,7 @@ CHIRIMEN for Raspberry Pi 3 は、Raspberry Pi 3（以下「Raspi3」）上に�
 ### 基本ハードウエア
 下記がCHIRIMEN for Raspberry Pi 3 の起動に最低限必要となる基本ハードウエアです。
 
-![Raspi3 の起動に必要なハードウエア一覧](imgs/section0/Raspi3 の起動に必要なハードウエア一覧.png)
+![Raspi3 の起動に必要なハードウエア一覧](imgs/section0/Raspi3.png)
 
 * Raspberry Pi 3 Model B × 1
 * ACアダプタ + micro B USB電源ケーブル(例えばコレなど) × 1
@@ -34,7 +34,7 @@ CHIRIMEN for Raspberry Pi 3 は、Raspberry Pi 3（以下「Raspi3」）上に�
 ### Lチカに必要となるパーツ
 基本ハードウエアに加え「Lチカ」を実施するには下記パーツも追加で必要です。
 
-Lチカに必要なパーツ一覧
+![Lチカに必要なパーツ一覧](imgs/section0/L.png)
 
 * ブレッドボード × 1
 * リード付きLED × 1
@@ -51,7 +51,7 @@ Lチカに必要なパーツ一覧
 材料が集まったら、いよいよRaspi3を接続して起動してみましょう。
 基本ハードウエアを下図のように接続してください。(Raspi3への電源ケーブルの接続は最後にしましょう)
 
-接続方法
+![接続方法](imgs/section0/h.png)
 
 もしよくわからない場合には、Raspberry Pi Hardware Guide なども参照してみると良いでしょう。
 
@@ -60,7 +60,7 @@ Lチカに必要なパーツ一覧
 ## 起動確認
 Raspi3の起動後、下記のようなデスクトップ画面が表示されたら CHIRIMEN for Raspberry Pi 3 の起動に成功しています。おめでとうございます。
 
-![CHIRIMEN for Raspberry Pi 3 desktop画面](imgs/section0/CHIRIMEN for Raspberry Pi 3 desktop画面.png)
+![CHIRIMEN for Raspberry Pi 3 desktop画面](imgs/section0/CHIRIMENforRaspberryPi3desktop.png)
 
 ## 残念ながら上記画面が表示されなかった！？
 もし、違う画面が表示される場合には、CHIRIMEN for Raspberry Pi 3とは異なるSDカードで起動された可能性があります。
@@ -78,7 +78,7 @@ CHIRIMEN for Raspberry Pi 3 では、ネットワークに繋がなくてもロ�
 
 WIFIの設定は、タスクバーの右上のWIFIアイコンから行えます。
 
-wifi設定
+![wifi設定](imgs/section0/wifi.png)
 
 # 4. Lチカをやってみよう
 無事、Raspi3の起動とWIFIの設定が行えたら、いよいよLチカに挑戦してみましょう。
@@ -96,11 +96,11 @@ Lチカのための配線図は、基本的な作例（examples）と一緒に�
 
 ```/home/pi/Desktop/gc/gpio/LEDblink/schematic.png```
 
-example-files
+![example-files](imgs/section0/example-files.png)
 
 それでは、まず先に ```schematic.png``` をダブルクリックして見てみましょう。
 
-example: LEDblink の配線図
+![example: LEDblink の配線図](imgs/section0/example_LEDblink.png)
 
 LEDのリード線の方向に注意しながら、この図の通りにジャンパー線やブレッドボードを使って配線してみましょう。
 
@@ -108,7 +108,7 @@ LEDのリード線の方向に注意しながら、この図の通りにジャ�
 
 実際に配線してみると、こんな感じになりました。
 
-配線してみました
+![配線してみました](imgs/section0/h.jpg)
 
 ## exampleを実行してみる
 配線がうまくできたら、さっそく動かしてみましょう。
@@ -119,10 +119,10 @@ Lチカのためのサンプルコードは先ほどの配線図と同じフォ�
 ```index.html```をダブルクリックすると、ブラウザが起動し、先ほど配線したLEDが点滅しているはずです！
 
 ## ブラウザ画面
-browser
+![browser](imgs/section0/browser.png)
 
 ## Lチカの様子
-Lチカ成功
+![Lチカ成功](imgs/section0/L.gif)
 
 Lチカに成功しましたか？！
 
@@ -145,7 +145,7 @@ Lチカに成功しましたか？！
 
 上記に記載したWindowを確実に閉じるには、一度ブラウザを閉じてから、再度ブラウザを起動すると確実です。(タブだけ消してももちろんOKです)
 
-ブラウザの再起動
+![ブラウザの再起動](imgs/section0/b.png)
 
 ## ブラウザのブックマークから、JS Binのexampleを起動
 それでは、さっそくオンラインのexampleを実行してみます。
@@ -157,7 +157,7 @@ Lチカに成功しましたか？！
 
 そのまま起動すると下記のような画面になります。(下記スクリーンショットはアクセス直後の画面からJS Binのタイトルバー部の「Output」タブを1回押して非表示にしています)
 
-JS BinでのLチカexample画面
+![JS BinでのLチカexample画面](imgs/section0/JSBinLexample.png)
 
 それでは、コードを眺めてみましょう。
 
@@ -206,7 +206,7 @@ Raspi3に実装されている40本のピンヘッダからGPIOを利用する�
 
 CHIRIMEN for Raspberry Pi 3ではRaspi3が提供する40本のピンヘッダのうち、下記緑色のピンをWebアプリから利用可能なGPIOとして設定しています。
 
-Raspi3 PIN配置図
+![Raspi3 PIN配置図](imgs/section0/Raspi3PIN.png)
 
 ## GPIOPortの処理
 さて、コードに戻りましょう。
@@ -221,7 +221,7 @@ LEDは一定以上の電圧 (赤LEDだと概ね1.8V程度、青LEDだと3.1V程�
 
 まとめると下図のような流れになります。
 
-シーケンス
+![シーケンス](imgs/section0/s.png)
 
 ## exampleを修正してみよう
 JS BinのJavaScriptのペインにカーソルを当てればコード修正が可能です。
