@@ -16,7 +16,7 @@ CHIRIMEN Open Hardware コミュニティにより開発が進められていま
 ## 用意するもの
 このチュートリアル全体で必要になるハードウエア・部品は下記の通りです。
 
-* CHIRIMEN for Raspberry Pi 3 Hello World に記載の「基本ハードウエア」と「Lチカに必要となるパーツ」
+* [CHIRIMEN for Raspberry Pi 3 Hello World](section0.md) に記載の「基本ハードウエア」と「Lチカに必要となるパーツ」
 タクトスイッチ x 1
 * [ジャンパーワイヤー (オス-メス)] x 5
 * [Nch MOSFET (2SK4017)](http://akizukidenshi.com/catalog/g/gI-07597/)
@@ -34,15 +34,15 @@ CHIRIMEN Open Hardware コミュニティにより開発が進められていま
 * LEDには方向がある。アノードが足が長い方。こちらをGPIOポートに繋ぐ。反対の足が短い方をGND側に繋ぐ。抵抗はどちらかに繋ぐ
 * CHIRIMEN for Raspberry Pi 3 ではWebアプリからのGPIOの制御に[Web GPIO API](https://rawgit.com/browserobo/WebGPIO/master/index.html) を利用する。
 
-2. マウスクリックでLEDのON/OFFを制御してみる
+# 2. マウスクリックでLEDのON/OFFを制御してみる
 それでは、実際にプログラミングをやってみましょう。
-CHIRIMEN for Raspberry Pi 3 Hello World では、JS Bin を使ってLチカのexample コードを少し触ってみるだけでしたが、今度は最初から書いてみることにします。
+[CHIRIMEN for Raspberry Pi 3 Hello World](section0.md) では、[JS Bin](http://jsbin.com/) を使ってLチカのexample コードを少し触ってみるだけでしたが、今度は最初から書いてみることにします。
 
-せっかくですので、このチュートリアルでは他のオンラインエディタ JSFiddle を使ってみることにします。
+せっかくですので、このチュートリアルでは他のオンラインエディタ [JSFiddle](https://jsfiddle.net/) を使ってみることにします。
 
-Web上のオンラインサービスは便利ですが、メンテナンスや障害、サービス停止などで利用できなくなることがあります。
-ローカルでの編集も含め、いくつかのサービスを使いこなせるようにしておくと安心です。
-各サービスにはそれぞれ一長一短がありますので、利用シーンに応じて使い分けると良いかもしれません。
+> Web上のオンラインサービスは便利ですが、メンテナンスや障害、サービス停止などで利用できなくなることがあります。
+> ローカルでの編集も含め、いくつかのサービスを使いこなせるようにしておくと安心です。
+> 各サービスにはそれぞれ一長一短がありますので、利用シーンに応じて使い分けると良いかもしれません。
 
 a. 部品と配線について
 このパートではCHIRIMEN Hello World で実施したLチカの配線をそのまま利用します。必要な部品も同じです。
