@@ -82,7 +82,7 @@ HTMLに ```<button>```と```<div>``` 要素を1つづつ作ります。
 最後に、HTMLに戻って、[Web GPIO API](https://rawgit.com/browserobo/WebGPIO/master/index.html)を利用可能にするためのPolyfillをロードする記述を行なっておきましょう。
 先ほど追加した```ledview```のすぐ下に下記```<script>```タグを記載します。
 
-```javascript
+```html
 <script src="https://mz4u.net/libs/gc2/polyfill.js"></script>
 ```
 
@@ -111,10 +111,12 @@ GPIOを実際に使う前に、まずは「ボタンを押したらLEDのON/OFF�
 
 ![LED On/Offをブラウザ画面上のボタンクリックで実施]
 
-d. ボタンにLEDを反応させる
+## d. ボタンにLEDを反応させる
 画面ができましたので、いよいよ Web GPIO を使ったLED制御コードを入れていきます。
+
 一度Lチカの時に学んだことを思い出せばできるはずですが、まずは書き換えてみましょう。
 
+```javascript
 (()=>{
   var onoff = document.getElementById("onoff");
   var ledview = document.getElementById("ledview");
@@ -130,6 +132,8 @@ d. ボタンにLEDを反応させる
     });
   });
 })();
+```
+
 これで、画面のボタンクリックに反応してLEDのON/OFFができたら成功です。
 
 CHIRIMEN for Raspberry Pi 3 Hello World のLチカのパートでも簡単に説明しましたが、ここでもういちどWeb GPIO API の流れをおさらいしておきましょう。
