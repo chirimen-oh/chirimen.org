@@ -86,7 +86,7 @@ wifi設定
 ## そもそも「Lチカ」って何？
 「Lチカ」とは、LEDを点けたり消したりすることで、チカチカさせることです。今回は「LEDを点ける」「LEDを消す」をプログラムで繰り返し実行することで実現します。
 
-* 参考：[LED（発行ダイオード）](https://ja.wikipedia.org/wiki/%E7%99%BA%E5%85%89%E3%83%80%E3%82%A4%E3%82%AA%E3%83%BC%E3%83%89)
+* 参考：[LED（発光ダイオード）](https://ja.wikipedia.org/wiki/%E7%99%BA%E5%85%89%E3%83%80%E3%82%A4%E3%82%AA%E3%83%BC%E3%83%89)
 
 ## 配線してみよう
 LEDを点けたり消したりするためには、Raspi3と正しく配線する必要があります。
@@ -131,7 +131,7 @@ Lチカに成功しましたか？！
 
 まずは、[CHIRIMEN for Raspberry Pi 3 におけるセキュリティーエラーへの対処方法](https://qiita.com/tadfmac/items/2d7929fe3560c77fe867) をご確認のうえ、セキュリティーエラーが発生している場合には対処をお願いします。
 
-'''ToDo: https://localhost:33330 のブックマーク箇所のスクリーンショットを貼る'''
+> ToDo: https://localhost:33330 のブックマーク箇所のスクリーンショットを貼る
 
 # 5. コードを眺めてみよう
 さきほどは、Lチカをデスクトップにあるexampleから実行してみました。
@@ -141,7 +141,7 @@ Lチカに成功しましたか？！
 
 今度はオンラインのexampleからさきほどと同じLチカを実行してコードを眺めてみましょう。
 
-その前に。**オンラインのexampleを起動する前に、必ず先ほど実行した **'''file:///home/pi/Desktop/gc/gpio/LEDblink/index.html'''**のブラウザWindowは閉じるようお願いします。Windowを閉じておかないと、これから実行するサンプルが正常に動作しなくなります。**
+その前に。**オンラインのexampleを起動する前に、必ず先ほど実行した ```file:///home/pi/Desktop/gc/gpio/LEDblink/index.html```のブラウザWindowは閉じるようお願いします。Windowを閉じておかないと、これから実行するサンプルが正常に動作しなくなります。**
 
 上記に記載したWindowを確実に閉じるには、一度ブラウザを閉じてから、再度ブラウザを起動すると確実です。(タブだけ消してももちろんOKです)
 
@@ -151,7 +151,7 @@ Lチカに成功しましたか？！
 それでは、さっそくオンラインのexampleを実行してみます。
 配線は、さきほどのままでOKです。
 
-ブラウザを起動後、ブックマークバーから'''examples > GPIO > GPIO-Blink - JS Bin''' を選んでアクセスしてください。
+ブラウザを起動後、ブックマークバーから```examples > GPIO > GPIO-Blink - JS Bin``` を選んでアクセスしてください。
 
 bookmark
 
@@ -162,7 +162,7 @@ JS BinでのLチカexample画面
 それでは、コードを眺めてみましょう。
 
 ## HTML
-'''
+```html
 <!DOCTYPE html>
 <html>
 <head>
@@ -176,10 +176,10 @@ JS BinでのLチカexample画面
 </html>
 HTMLではpolyfill.jsというJavaScriptライブラリを読み込んでいます。
 polyfill.jsはWeb GPIO APIと、Web I2C APIというW3Cでドラフト提案中の2つのAPIへのPolyfillとなっています。
-'''
+```
 
 ## JavaScript
-'''
+```javascript
 navigator.requestGPIOAccess().then(gpioAccess=>{
   var port = gpioAccess.ports.get(26);
   var v = 0;
@@ -190,9 +190,9 @@ navigator.requestGPIOAccess().then(gpioAccess=>{
     },1000);
   });
 });
-'''
+```
 
-JavaScriptファイルで、最初に出てくるコードが'''navigator.requestGPIOAccess()'''です。
+JavaScriptファイルで、最初に出てくるコードが```navigator.requestGPIOAccess()```です。
 ここで先ほど出て来たWeb GPIO API を使い、gpioAccessというGPIOにアクセスするためのインタフェースを取得しています。
 
 コードを読み進める前に、ここで少しGPIOについて記載しておきたいと思います。
@@ -209,11 +209,11 @@ Raspi3 PIN配置図
 ## GPIOPortの処理
 さて、コードに戻りましょう。
 
-'''var port = gpioAccess.ports.get(26);'''という部分で、**GPIOの26番ポートにアクセスするためのオブジェクト** を取得しています。
+```var port = gpioAccess.ports.get(26);```という部分で、**GPIOの26番ポートにアクセスするためのオブジェクト** を取得しています。
 
-続いて、'''port.export("out")''' で、**GPIOの26番を「出力設定」**にしています。これによりLEDへの電圧の切り替えが可能になっています。
+続いて、```port.export("out")``` で、**GPIOの26番を「出力設定」**にしています。これによりLEDへの電圧の切り替えが可能になっています。
 
-最後に 1000msごとに '''port.write(1)''' と '''port.write(0)''' を交互に呼び出すことで、GPIO 26番に対する電圧を 3.3V→0V→3.3V→0Vと繰り返し設定しています。
+最後に 1000msごとに ```port.write(1)``` と ```port.write(0)``` を交互に呼び出すことで、GPIO 26番に対する電圧を 3.3V→0V→3.3V→0Vと繰り返し設定しています。
 
 LEDは一定以上の電圧 (赤LEDだと概ね1.8V程度、青LEDだと3.1V程度) 以上になると点灯する性質を持っていますので、3.3Vになったときに点灯、0Vになったときに消灯を繰り返すことになります。
 
