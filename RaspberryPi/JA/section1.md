@@ -136,30 +136,31 @@ GPIOを実際に使う前に、まずは「ボタンを押したらLEDのON/OFF�
 
 これで、画面のボタンクリックに反応してLEDのON/OFFができたら成功です。
 
-CHIRIMEN for Raspberry Pi 3 Hello World のLチカのパートでも簡単に説明しましたが、ここでもういちどWeb GPIO API の流れをおさらいしておきましょう。
+[CHIRIMEN for Raspberry Pi 3 Hello World](section0.md) のLチカのパートでも簡単に説明しましたが、ここでもういちど[Web GPIO API](https://qiita.com/tadfmac/items/ebd01cfe46e30de70f3d) の流れをおさらいしておきましょう。
 
-navigator.requestGPIOAccess()
+### navigator.requestGPIOAccess()
 
-Web GPIOを利用するためのGPIOAccess インタフェースを取得するための最初のAPI呼び出しです。
-正しくインタフェースが取得されたらPromiseのthenに指定したコールバック関数がGPIOAccessパラメータ付きでコールされます。
+Web GPIOを利用するための```GPIOAccess``` インタフェースを取得するための最初のAPI呼び出しです。
+正しくインタフェースが取得されたら```Promise```の`then`に指定したコールバック関数が`GPIOAccess`パラメータ付きでコールされます。
 
-gpioAccess.ports.get()
+### gpioAccess.ports.get()
 
-GPIOAccess.ports は利用可能なportオブジェクトのリスト(Map)です。
+`GPIOAccess.ports` は利用可能なportオブジェクトのリスト(Map)です。
 
-var port = gpioAccess.ports.get(26);
-上記コードで利用可能なportオブジェクトの一覧から、GPIOポート番号 26を指定してportオブジェクトを取得しています。
+`var port = gpioAccess.ports.get(26);`
 
-port.export()
+上記コードで利用可能な`port`オブジェクトの一覧から、**GPIOポート番号 26**を指定して`port`オブジェクトを取得しています。
 
-port.export("out")により取得したGPIOポートを「出力モード」で初期化しています。
+## port.export()
+
+`port.export("out")`により取得したGPIOポートを**「出力モード」**で初期化しています。
 GPIOポートかける電圧をWebアプリ側から切り替えたい時には「出力モード」を指定する必要があります。
 GPIOポートはもうひとつ「入力モード」があります。これはGPIOポートの状態を読み込みたい時に利用します。入力モードについてはスイッチのパートで説明します。
 
-port.write()
+## port.write()
 
-port.write()は、出力モードに指定したGPIOポートの電圧を切り替える指定を行うAPIです。
-port.write(1)で、指定したポートからHIGH(Raspberry Pi 3では3.3V)の電圧がかかり、port.write(0)で、LOW(0V)になります。
+`port.write()`は、出力モードに指定したGPIOポートの電圧を切り替える指定を行うAPIです。
+`port.write(1)`で、指定したポートから**HIGH**(Raspberry Pi 3では3.3V)の電圧がかかり、`port.write(0)`で、**LOW(0V)**になります。
 
 e. ボタンにLEDを反応させる (ES2017 async function版)
 さきほどのコードを見ていただいたらお気づきかもしれませんが、GPIOのアクセス、そしてこれから出てくるI2C対応パーツのDriverの処理などでは、非同期処理が頻繁に出てきます。
