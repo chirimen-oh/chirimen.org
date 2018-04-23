@@ -11,10 +11,10 @@ CHIRIMEN Open Hardware コミュニティにより開発が進められていま
 
 ## 前回までのおさらい
 
-本チュートリアルを進める前に「[CHIRIMEN for Raspberry Pi 3 Hello World](section1)」と、「[CHIRIMEN for Raspberry Pi 3 チュートリアル 1. GPIO編](section1)」でCHIRIMEN for Raspberry Pi 3 の基本的な操作方法とプログラミング方法を確認しておいてください。
+本チュートリアルを進める前に「[CHIRIMEN for Raspberry Pi 3 Hello World](section1.md)」と、「[CHIRIMEN for Raspberry Pi 3 チュートリアル 1. GPIO編](section1.md)」でCHIRIMEN for Raspberry Pi 3 の基本的な操作方法とプログラミング方法を確認しておいてください。
 
-* [CHIRIMEN for Raspberry Pi 3 Hello World](section0)
-* [CHIRIMEN for Raspberry Pi 3 チュートリアル 1. GPIO編](section1)
+* [CHIRIMEN for Raspberry Pi 3 Hello World](section0.md)
+* [CHIRIMEN for Raspberry Pi 3 チュートリアル 1. GPIO編](section1.md)
 
 前回までのチュートリアルで学んだことは下記のとおりです。
 
@@ -29,7 +29,7 @@ CHIRIMEN Open Hardware コミュニティにより開発が進められていま
 
 このチュートリアル全体で必要になるハードウエア・部品は下記の通りです。
 
-* [CHIRIMEN for Raspberry Pi 3 Hello World](section0) に記載の「基本ハードウエア」
+* [CHIRIMEN for Raspberry Pi 3 Hello World](section0.md) に記載の「基本ハードウエア」
 * [ジャンパーワイヤー (メス-メス)] x 4
 * [ADT7410](http://akizukidenshi.com/catalog/g/gM-06675/) x 1 ※付属のピンヘッダでなく、通常サイズのピンヘッダをハンダ付けしておいてください
 
@@ -289,7 +289,7 @@ JSFiddleのHTMLのペインにPolyfillの読み込みと、温度表示のため
 ## JavaScriptを書いてみる
 次にJavaScriptです。async functionを使って書いてみます。
 
-今回は定期的なポーリング処理が必要になるので、[CHIRIMEN for Raspberry Pi 3 チュートリアル 1. GPIO編 c. スイッチに反応するようにする (port.read()を使ってみる)](section1) の時に書いたコードが参考になります。
+今回は定期的なポーリング処理が必要になるので、[CHIRIMEN for Raspberry Pi 3 チュートリアル 1. GPIO編 c. スイッチに反応するようにする (port.read()を使ってみる)](section1.md#c. スイッチに反応するようにする (port.read()を使ってみる)) の時に書いたコードが参考になります。
 
 ```javascript
 (async ()=>{
@@ -324,5 +324,5 @@ ADT7410を指で触って温度が変わることを確認してみてくださ�
 * Web I2C APIを使った処理の流れ
 * ADT7410温度センサーの制御方法
 
-次回『[CHIRIMEN for Raspberry Pi 3 チュートリアル 3. I2C　応用編（その他のセンサー）](section3)』では加速度センサーなど他のセンサーも触ってみる予定です。
+次回『[CHIRIMEN for Raspberry Pi 3 チュートリアル 3. I2C　応用編（その他のセンサー）](section3.md)』では加速度センサーなど他のセンサーも触ってみる予定です。
 
