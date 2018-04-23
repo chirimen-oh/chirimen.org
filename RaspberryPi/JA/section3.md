@@ -48,7 +48,7 @@ Raspberry Pi 3 や前回のADT7410などピンヘッダを備えた（あるい�
 
 * [CHIRIMEN for Raspberry Pi 3 Hello World](section0.md) に記載の「基本ハードウエア
 
-![ハブとケーブル](imgs/section3/)
+![ハブとケーブル](imgs/section3/h.png)
 
 * [Grove I2C Hub](http://wiki.seeed.cc/Grove-I2C_Hub/) x 1
 * [Grove 4ピン ジャンパー メス　ケーブル](https://www.seeedstudio.com/grove-to-4-pin-254-female-jumper-wire5-pcs-pack-p-1020.html) x 2
@@ -78,7 +78,7 @@ Raspberry Pi 3との接続方法については、下記回路図を参照くだ
 
 `/home/pi/Desktop/gc/i2c/i2c-grove-light/schematic.png`
 
-![回路図](imgs/section3/)
+![回路図](imgs/section3/k.png)
 
 このセンサーモジュールはGroveコネクタを備えていますので、接続方法に応じてコネクタを選んでください。
 
@@ -181,7 +181,7 @@ Raspberry Pi 3との接続方法については、下記回路図を参照くだ
 
 `/home/pi/Desktop/gc/i2c/i2c-GP2Y0E03/schematic.png`
 
-![回路図](imgs/section3/)
+![回路図2](imgs/section3/k2.png)
 
 このセンサーモジュールには、細い7本のケーブルが付属していますが、このままではRaspberry Piと接続することができません。
 
@@ -189,7 +189,7 @@ Raspberry Pi 3との接続方法については、下記回路図を参照くだ
 
 ピンの加工例
 
-![加工例](imgs/section3/)
+![加工例](imgs/section3/k.jpg)
 
 ## b. 接続確認とexampleの実行
 
@@ -287,7 +287,7 @@ Raspberry Pi 3との接続方法については、下記回路図を参照くだ
 
 `/home/pi/Desktop/gc/i2c/i2c-grove-accelerometer/schematic.png`
 
-![回路図](imgs/section3/)
+![回路図](imgs/section3/k3.png)
 
 このセンサーモジュールはGroveコネクタを備えていますので、接続方法に応じてコネクタを選んでください。
 
@@ -310,7 +310,7 @@ SlaveAddress `0x53` が見つかれば接続OKです。
 
 画面左から、X、Y、Zの値となっています。
 
-![加速度センサーの値](imgs/section3/)
+![加速度センサーの値](imgs/section3/k4.png)
 
 センサーを傾けると数値が変化するはずです。
 
