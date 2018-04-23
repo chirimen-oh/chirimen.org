@@ -34,8 +34,8 @@ CHIRIMEN Open Hardware コミュニティにより開発が進められていま
 
 シンプルに下記のような基本仕様にしてみます。
 
-*定期的に測定した温度を画面に表示する。
-*一定温度以上になったらDCファンを回す。一定温度以下になったらDCファンを止める。
+* 定期的に測定した温度を画面に表示する。
+* 一定温度以上になったらDCファンを回す。一定温度以下になったらDCファンを止める。
 
 [1. GPIO編](section1.md) でMOSFET＋DCファンと[2. I2C　基本編（ADT7410温度センサー）](section2.md) で使った温度センサーがあればできそうですね。
 
@@ -57,7 +57,7 @@ CHIRIMEN Open Hardware コミュニティにより開発が進められていま
 
 今回用意するものが多いですが、これまでのチュートリアルで使ったことがあるものばかりですので、ご安心ください。
 
-![parts-1](imgs/section4/)
+![parts-1](imgs/section4/parts-1.png)
 
 # 2.まずは仕様通りにつくる
 
@@ -65,7 +65,7 @@ CHIRIMEN Open Hardware コミュニティにより開発が進められていま
 
 Raspberry Pi 3との接続方法については、下記回路図を参照ください。
 
-![schematic](imgs/section4/)
+![schematic](imgs/section4/schematic.png)
 
 ## b. 接続確認
 
