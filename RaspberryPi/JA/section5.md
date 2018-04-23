@@ -113,20 +113,21 @@ PLAYBULB の色の基本的な設定ができるようになれば、後はマ�
 拾って周波数領域への変換を行います。
 Web Audioノードの接続としては、
 
-MediaStreamSourceNode(getUserMedia) => AnalyserNode => GainNode => DestinationNode
+> **`MediaStreamSourceNode(getUserMedia) => AnalyserNode => GainNode => DestinationNode`**
 
 となっています。
 
-GainNode の gain が 0 ですので、結局、マイクで拾った音そのものは外に出さずにミュートしてしまっているのですが、Web Audio API の仕様上、最終的に Destination まで繋がっていないノードはノードそのものが動作を止めてしまうという事になっていますので、こういう形を取っています。もちろん gain を 0 よりも大きい値にすれば、拾った音をスピーカーから出してモニターするようにする事もできますが、ハウリングを起こしやすいのでご注意ください。
+`GainNode` の gain が `0` ですので、結局、マイクで拾った音そのものは外に出さずにミュートしてしまっているのですが、Web Audio API の仕様上、最終的に `Destination` まで繋がっていないノードはノードそのものが動作を止めてしまうという事になっていますので、こういう形を取っています。もちろん gain を `0 `よりも大きい値にすれば、拾った音をスピーカーから出してモニターするようにする事もできますが、ハウリングを起こしやすいのでご注意ください。
 
-new AnalyserNode(this.audioctx,{smoothingTimeConstant:0.5}) や new GainNode(this.audioctx,{gain:0}) という書き方は Web Audio API の audioctx.createXXX() に代わる新しい書き方になりますが、ノードの生成と同時にプロパティの初期値を指定できるというメリットがあります。
+`new AnalyserNode(this.audioctx,{smoothingTimeConstant:0.5})` や `new GainNode(this.audioctx,{gain:0})` という書き方は Web Audio API の `audioctx.createXXX()` に代わる新しい書き方になりますが、ノードの生成と同時にプロパティの初期値を指定できるというメリットがあります。
 
-また、getUserMedia() が mediaDevices.getUserMedia() になっているのも割合新しい書き方ですね。以前は navigator.getUserMedia() だったのですが、このあたりの最新仕様も詳細は W3C の Editor's Draft で確認してください。
+また、`getUserMedia()` が `mediaDevices.getUserMedia()` になっているのも割合新しい書き方ですね。以前は `navigator.getUserMedia()` だったのですが、このあたりの最新仕様も詳細は W3C の Editor's Draft で確認してください。
 
-さて、マイクの音を実際に周波数帯域に分割する動作をしているのは AnalyserNode です。AnalyserNode はパラメータが多いのですが、最初からいわゆるスペクトラムアナライザー(スペアナ)的な表示に使えるようにデフォルト値がほぼチューニングされた状態になっています。ここではノードの生成時に smoothingTimeConstant だけ少しいじっていますが、これは(スペアナの)メーターの戻りのスピードを調整するものです。今回は BLE 経由のライトを光らせますのでやや遅めの設定になっています。
+さて、マイクの音を実際に周波数帯域に分割する動作をしているのは `AnalyserNode` です。`AnalyserNode` はパラメータが多いのですが、最初からいわゆるスペクトラムアナライザー(スペアナ)的な表示に使えるようにデフォルト値がほぼチューニングされた状態になっています。ここではノードの生成時に `smoothingTimeConstant` だけ少しいじっていますが、これは(スペアナの)メーターの戻りのスピードを調整するものです。今回は BLE 経由のライトを光らせますのでやや遅めの設定になっています。
 
-AnalyserNode からは getByteFrequencyData(array) で現時点の周波数帯域ごとの強度(マグニチュード)のデータが取れます(getLevel()関数内)。結果は引数の array に格納されますが、array のサイズが小さい場合は周波数が低い方からarray のサイズ分だけを取得する事になります。
+`AnalyserNode` からは `getByteFrequencyData(array)` で現時点の周波数帯域ごとの強度(マグニチュード)のデータが取れます(`getLevel()`関数内)。結果は引数の `array` に格納されますが、`array` のサイズが小さい場合は周波数が低い方から`array` のサイズ分だけを取得する事になります。
 
+```javascript
 class Microphone {
   constructor(){
     this.audioctx=null;
@@ -161,12 +162,15 @@ class Microphone {
       this.analyser.getByteFrequencyData(array);
   }
 }
-AnalyserNode から取った周波数データは FFT のポイント数がデフォルトで 2048 ですので、44.1kHz の音声信号に対して
+```
 
-44.1kHz / 2048 ≒ 21.5Hz
+`AnalyserNode` から取った周波数データは FFT のポイント数がデフォルトで `2048` ですので、`44.1kHz` の音声信号に対して
 
-毎の強度データになります。単位はdB(デシベル)ですが通常の音声データに対して Uint8Array で各点 0-255 の範囲に程よく収まるようにデフォルトのパラメータで調整されています。今回のサンプルではこれを33点毎にまとめて平均したものを3組作っています。
+> **44.1kHz / 2048 ≒ 21.5Hz**
 
+毎の強度データになります。単位は`dB(デシベル)`ですが通常の音声データに対して `Uint8Array` で各点 `0-255` の範囲に程よく収まるようにデフォルトのパラメータで調整されています。今回のサンプルではこれを33点毎にまとめて平均したものを3組作っています。
+
+```javascript
 if(mic.run>0){
   mic.getLevel(arr);
   let lev=[0,0,0];
@@ -179,12 +183,16 @@ if(mic.run>0){
     meter[i].value=lev[i]/256;
   playbulb.setColor(lev[0],lev[1],lev[2]);
 }
+```
+
 つまり
 
-帯域	FFTポイント	周波数帯域	ライト色
-Bass	1-33	21.5 - 709.5 Hz	赤
-Middle	34-66	731 - 1419 Hz	緑
-Treble	67-99	1440.5 - 2128.5 Hz	青
+|帯域|FFTポイント|周波数帯域|ライト色|
+|--|--|--|--|
+|Bass|1-33|21.5 - 709.5 Hz|赤|
+|Middle|34-66|731 - 1419 Hz|緑|
+|Treble|67-99|1440.5 - 2128.5 Hz|青|
+
 という対応になります。この辺の取り決めは適当に決めたものではありますが、大体人間の声の母音が含む倍音のあたりに相当しますので「あ」「い」「う」「え」「お」の各母音の違いに割合良く反応するようになっています。
 
 測距センサー
