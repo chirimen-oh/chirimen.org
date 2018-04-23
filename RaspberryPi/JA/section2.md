@@ -125,7 +125,7 @@ Raspberry Pi 3とADT7410との接続方法(回路図)とexampleコードは下�
 
 ADT7410は`0x48`がデフォルトのSlaveAddressで、A0,A1ピンのHIGH/LOWによりSlaveAddeessの下位2bitを変更できることがわかります。
 
-![I2C Bus Address Options](imgs/section2/I2CBus AddressOptions.png)
+![I2C Bus Address Options](imgs/section2/I2CBusAddressOptions.png)
 (ADT7410 Data Sheetより抜粋)
 
 試しに、一度 Raspberry Pi の3.3Vに接続している線を抜いて、もう一度`i2cdetect -y -r 1`を実行してみてください。
