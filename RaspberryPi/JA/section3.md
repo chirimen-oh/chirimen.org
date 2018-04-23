@@ -189,7 +189,7 @@ Raspberry Pi 3との接続方法については、下記回路図を参照くだ
 
 ピンの加工例
 
-![加工例](imgs/section3/k.jpg)
+![加工例](imgs/section3/k3.jpg)
 
 ## b. 接続確認とexampleの実行
 
