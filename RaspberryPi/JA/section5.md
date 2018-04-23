@@ -1,88 +1,115 @@
 これは Raspberry Pi 3 上で動作する IoT プラットフォーム「CHIRIMEN for Raspberry Pi 3」で WebBluetooth を使用してライトを制御するサンプルです。USBマイクから音が入るとライトが点灯する、または測距センサで何かが近づいたらライトが点灯する、という動作をさせています。
 
-ソースコード
+# ソースコード
+
 ソフトウェア本体は GitHub 上のリポジトリにあります。
 
 https://github.com/g200kg/chirimen-webbluetooth
 
-ライブデモ
+# ライブデモ
+
 オンラインで実際に動作するサンプルは下のリンクで公開されています。CHIRIMEN for RasPi 3 上で全ての機能を動かすには下の部品を揃える必要がありますが、もし PLAYBULB (sphere または candle)をお持ちなら(BLE対応の)ノートPCからでもマイク周りの動作を試す事ができます。
 
-ライブデモ
+[ライブデモ](https://g200kg.github.io/chirimen-webbluetooth/)
 
-必要なもの
-CHIRIMEN for Raspberry Pi が動作する Raspberry Pi 3 Model B
-BLE制御できる ライト、PLAYBULB sphere (または PLAYBULB candle)
-USB マイク
-測距センサ (GP2Y0E03)
-必要なもの
+# 必要なもの
 
-準備
-CHIRIMEN for Raspberry Pi の基本的な動かし方については、「CHIRIMEN for Raspberry Pi 3 Hello World」の通りにできているものとします。
-また、測距センサ(GP2Y0E03)は「CHIRIMEN for Raspberry Pi 3 チュートリアル 3. I2C　応用編（その他のセンサー）」の通りに動作しているものとします。
+* CHIRIMEN for Raspberry Pi が動作する Raspberry Pi 3 Model B
+* BLE制御できる ライト、PLAYBULB sphere (または PLAYBULB candle)
+* USB マイク
+* 測距センサ (GP2Y0E03)
 
-現在の所、Chromium のデフォルト状態では WebBluetooth は有効になっていないため、まず WebBluetoothを使えるようにブラウザの設定を変えます。
+![必要なもの](imgs/section5/)
 
-ブラウザで chrome://flags にアクセスして試験運用機能の画面を開きます
-"Experimental Web Platform features" という項目を探し、 [有効] に切り替えてブラウザを再起動します ("Experimental" で始まる項目は複数あるので間違えない事)
-WebBluetoothが使えるようになっているかの確認は、F12 キーでコンソールを出し、 "> navigator.bluetooth" と入力して "▶ Bluetooth {}" が返ってくればOKです。"undefined" になる場合は WebBluetooth が有効になっていません。
-マイクの設定
+# 準備
 
-chrome://settings にアクセスして Chromium の設定画面を開きます
-[詳細設定] - [コンテンツの設定] - [マイク]　に進みます
-USBマイクを接続します
-最初の項目(何も設定していなければ、[既定]になっています) で使用するマイクを選択します。この画面を出した状態でUSBマイクを接続した時に新たに現れる項目が対象のマイクです。名前は使用するマイクによって異なりますが、ここで使用している超小型マイクでは、[USB PnP Sound Device, USB Audio-Default Audio Device]となっています。
-サンプルプログラムの起動
-実際に Web Bluetooth を使うサンプルプログラムは、https://www.g200kg.com/demo/chirimen/webbluetooth/ に置いてあります。ブラウザでアクセスすると次の画面になります。この時、マイクの使用許可のダイアログがでたら[許可]を選択してください。
+## 前提
 
-images/bledemo2.png
+* CHIRIMEN for Raspberry Pi の基本的な動かし方については、「[CHIRIMEN for Raspberry Pi 3 Hello World](section0.md)」の通りにできているものとします。
+また、測距センサ(GP2Y0E03)は「[CHIRIMEN for Raspberry Pi 3 チュートリアル 3. I2C　応用編（その他のセンサー）](seection3.md)」の通りに動作しているものとします。
 
-Bluetooth ライトの基本的な制御
-bluetooth デモを起動して [BLE Connect]を押すと BLE デバイスを選択するダイアログが出てきます。ここで PLAYBULB (sphere または candle)を選択して [ペア設定] を押す事で BLE デバイスと接続されます。
-接続ができた状態で [Off]、[Red]、[Green]、[Blue]、[White]の各ボタンを押すと PLAYBULB の色が指定の色に変わります。
+## WebBluetoothの有効化
 
-images/bledemo3.png
+* 現在の所、Chromium のデフォルト状態では WebBluetooth は有効になっていないため、まず WebBluetoothを使えるようにブラウザの設定を変えます。
+  * ブラウザで chrome://flags にアクセスして試験運用機能の画面を開きます
+  * "`Experimental Web Platform features`" という項目を探し、 [`有効`] に切り替えてブラウザを再起動します ("Experimental" で始まる項目は複数あるので間違えない事)
+  * WebBluetoothが使えるようになっているかの確認は、F12 キーでコンソールを出し、 "`> navigator.bluetooth`" と入力して "`▶ Bluetooth {}`" が返ってくればOKです。"`undefined`" になる場合は WebBluetooth が有効になっていません。
 
-マイクからの制御
-マイクのボタンを押して[On]状態にすると音に反応するようになります。音の周波数帯域を3つに分けてそれぞれ色の RGB に割り当てていますのでマイクで拾う音によって PLAYBULB の色が変わります。
+## マイクの設定
 
-images/bledemo4.png
+* `chrome://settings` にアクセスして Chromium の設定画面を開きます
+* [`詳細設定`] - [`コンテンツの設定`] - [`マイク`]　に進みます
+* USBマイクを接続します
+* 最初の項目(何も設定していなければ、[`既定`]になっています) で使用するマイクを選択します。この画面を出した状態でUSBマイクを接続した時に新たに現れる項目が対象のマイクです。名前は使用するマイクによって異なりますが、ここで使用している超小型マイクでは、[`USB PnP Sound Device, USB Audio-Default Audio Device`]となっています。
+
+# サンプルプログラムの起動
+
+実際に Web Bluetooth を使うサンプルプログラムは、https://www.g200kg.com/demo/chirimen/webbluetooth/ に置いてあります。ブラウザでアクセスすると次の画面になります。この時、マイクの使用許可のダイアログがでたら[`許可`]を選択してください。
+
+![images/bledemo2.png](imgs/section5/)
+
+## Bluetooth ライトの基本的な制御
+
+bluetooth デモを起動して [`BLE Connect`]を押すと BLE デバイスを選択するダイアログが出てきます。ここで PLAYBULB (sphere または candle)を選択して [`ペア設定`] を押す事で BLE デバイスと接続されます。
+接続ができた状態で [`Off`]、[`Red`]、[`Green`]、[`Blue`]、[`White`]の各ボタンを押すと PLAYBULB の色が指定の色に変わります。
+
+![images/bledemo3.png](imgs/section5/)
+
+## マイクからの制御
+
+マイクのボタンを押して[`On`]状態にすると音に反応するようになります。音の周波数帯域を3つに分けてそれぞれ色の RGB に割り当てていますのでマイクで拾う音によって PLAYBULB の色が変わります。
+
+![images/bledemo4.png](imgs/section5/)
 
 実際の動作状況の動画がありますので見てみてください。
 
-blemov
+![blemov](imgs/section5/)
 
-測距センサからの制御
-測距センサーのボタンを[On]状態にすると、測距センサーで検出した障害物までの距離によって PLAYBULB の色が変わります。この測距センサーの検出範囲は4～50cm程度ですので、距離が近くなるにつれて色が青⇒緑⇒赤と変化するようになっています。
+## 測距センサからの制御
 
-images/bledemo5.jpeg
+測距センサーのボタンを[`On`]状態にすると、測距センサーで検出した障害物までの距離によって PLAYBULB の色が変わります。この測距センサーの検出範囲は4～50cm程度ですので、距離が近くなるにつれて色が青⇒緑⇒赤と変化するようになっています。
 
-コードの説明
-Web BlueTooth API
-BLEデバイス、PLAYBULB を制御する部分は class Playbulb にまとめてあります。
-ブラウザが WebBluetooth をサポートしていれば navigator.bluetooth が存在しますので、まず
+![images/bledemo5.jpeg](imgs/section5/)
 
+# コードの説明
+
+## Web BlueTooth API
+
+BLEデバイス、PLAYBULB を制御する部分は class `Playbulb` にまとめてあります。
+ブラウザが WebBluetooth をサポートしていれば `navigator.bluetooth` が存在しますので、まず
+
+```javascript
 navigator.bluetooth.requestDevice(options)
-で周囲のBLEデバイスのスキャンを行います。この時、options には使いたいサービスのIDを指定する事で、そのサービスを持っているデバイスだけがスキャンされます。この時点で Bluetooth のペア設定ダイアログが表示され、ユーザーがデバイスを選択する事で requestDevice の promise が解決され、BLE デバイスを指すオブジェクトが得られます。
+```
+
+で周囲のBLEデバイスのスキャンを行います。この時、`options` には使いたいサービスのIDを指定する事で、そのサービスを持っているデバイスだけがスキャンされます。この時点で Bluetooth のペア設定ダイアログが表示され、ユーザーがデバイスを選択する事で `requestDevice` の `promise` が解決され、BLE デバイスを指すオブジェクトが得られます。
 
 次にBLEデバイスオブジェクトに対して
 
+```javascript
 device.gatt.connect()
-を使用して、デバイスの機能との通信の枠組みである GATT（Generic Attribute Profile）サーバーに接続します。
-GATTサーバーとの接続ができれば、実際に PLAYBULB の色を設定する部分は setColor() という関数内にあります。
+```
 
+を使用して、デバイスの機能との通信の枠組みである **GATT（Generic Attribute Profile）**サーバーに接続します。
+
+GATTサーバーとの接続ができれば、実際に PLAYBULB の色を設定する部分は `setColor()` という関数内にあります。
+
+```javascript
 let data = new Uint8Array([0x00, r, g, b]);
 return this.device.gatt.getPrimaryService(bledevices[this.device.name].serviceId)
   .then(service => service.getCharacteristic(COLOR_UUID))
   .then(characteristic => characteristic.writeValue(data))
   .then(() => [r,g,b]);
-RGBの値(各0-255)を PLAYBULB に設定するには、getPrimaryService(serviceId) でサービスを取得し、getCharacteristic(COLUR_UUID) で個別の属性(色設定)を取得し、characteristic.writeValue(data) でそこに値を書き込む、という手順になります。
+```
 
-getUserMedia / Web Audio API
-PLAYBULB の色の基本的な設定ができるようになれば、後はマイクで拾う音で制御するなり、測距センサーから制御するなり自由ですが、ここでは getUserMedia でマイクから拾った音を Web Audio API の analyser で周波数分割し、RGB値に変換しています。
+RGBの値(各0-255)を PLAYBULB に設定するには、`getPrimaryService(serviceId)` でサービスを取得し、`getCharacteristic(COLUR_UUID)` で個別の属性(色設定)を取得し、`characteristic.writeValue(data)` でそこに値を書き込む、という手順になります。
+
+## getUserMedia / Web Audio API
+PLAYBULB の色の基本的な設定ができるようになれば、後はマイクで拾う音で制御するなり、測距センサーから制御するなり自由ですが、ここでは `getUserMedia` でマイクから拾った音を Web Audio API の `analyser` で周波数分割し、RGB値に変換しています。
+
 ここで使用する Media Capture 関係の API や Web Audio API 等はブラウザの API としては新しいものですので、仕様の変更もまだ頻繁に行われています。内容が古くなって動作しないサンプルなども Web 上では散見されますので、最新の仕様は W3C のEditor's Draft で確認したい所です。
 
-さて、まず class Microphone で getUserMedia と Web Audio API を使ってマイクからの音を
+さて、まず class `Microphone` で `getUserMedia` と Web Audio API を使ってマイクからの音を
 拾って周波数領域への変換を行います。
 Web Audioノードの接続としては、
 
