@@ -1,32 +1,42 @@
-概要
-CHIRIMEN for Raspberry Pi 3 を使ったプログラミングを通じて、Web I2C API の使い方を学びます。
+# 概要
 
-(※1) CHIRIMEN for Raspberry Pi 3とは
+CHIRIMEN for Raspberry Pi 3 を使ったプログラミングを通じて、(Web I2C API)[https://rawgit.com/browserobo/WebI2C/master/index.html] の使い方を学びます。
+
+## (※1) CHIRIMEN for Raspberry Pi 3とは
+
 Raspberry Pi 3（以下「Raspi3」）上に構築したIoTプログラミング環境です。
 
-Web GPIO API (Draft)や、Web I2C API (Draft)といったAPIを活用したプログラミングにより、WebアプリからRaspi3に接続した電子パーツを直接制御することができます。 
+(Web GPIO API)[https://rawgit.com/browserobo/WebGPIO/master/index.html] (Draft)や、(Web I2C API)[https://rawgit.com/browserobo/WebI2C/master/index.html] (Draft)といったAPIを活用したプログラミングにより、WebアプリからRaspi3に接続した電子パーツを直接制御することができます。 
 CHIRIMEN Open Hardware コミュニティにより開発が進められています。
 
-前回までのおさらい
-本チュートリアルを進める前に「CHIRIMEN for Raspberry Pi 3 Hello World」と、「CHIRIMEN for Raspberry Pi 3 チュートリアル 1. GPIO編」でCHIRIMEN for Raspberry Pi 3 の基本的な操作方法とプログラミング方法を確認しておいてください。
+## 前回までのおさらい
 
-CHIRIMEN for Raspberry Pi 3 Hello World
-CHIRIMEN for Raspberry Pi 3 チュートリアル 1. GPIO編
+本チュートリアルを進める前に「(CHIRIMEN for Raspberry Pi 3 Hello World)[section1]」と、「(CHIRIMEN for Raspberry Pi 3 チュートリアル 1. GPIO編)[section1]」でCHIRIMEN for Raspberry Pi 3 の基本的な操作方法とプログラミング方法を確認しておいてください。
+
+* (CHIRIMEN for Raspberry Pi 3 Hello World)[section0]
+* (CHIRIMEN for Raspberry Pi 3 チュートリアル 1. GPIO編)[section1]
+
 前回までのチュートリアルで学んだことは下記のとおりです。
 
-CHIRIMEN for Raspberry Pi 3 では、各種exampleが ~/Desktop/gc/配下においてある。配線図も一緒に置いてある
-CHIRIMEN for Raspberry Pi 3 で利用可能なGPIO Port番号と位置は壁紙を見よう
-CHIRIMEN for Raspberry Pi 3 ではWebアプリからのGPIOの制御にはWeb GPIO API を利用する。GPIOポートは「出力モード」に設定することでLEDのON/OFFなどが行える。また「入力モード」にすることで、GPIOポートの状態を読み取ることができる
-async function を利用すると複数ポートの非同期コードがすっきり書ける
-1.準備
-用意するもの
+* CHIRIMEN for Raspberry Pi 3 では、各種exampleが `~/Desktop/gc/`配下においてある。配線図も一緒に置いてある
+* CHIRIMEN for Raspberry Pi 3 で利用可能なGPIO Port番号と位置は壁紙を見よう
+* CHIRIMEN for Raspberry Pi 3 ではWebアプリからのGPIOの制御には(Web GPIO API)[https://rawgit.com/browserobo/WebGPIO/master/index.html] を利用する。GPIOポートは「出力モード」に設定することでLEDのON/OFFなどが行える。また「入力モード」にすることで、GPIOポートの状態を読み取ることができる
+* (async function)[https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Statements/async_function] を利用すると複数ポートの非同期コードがすっきり書ける
+
+# 1.準備
+
+## 用意するもの
+
 このチュートリアル全体で必要になるハードウエア・部品は下記の通りです。
 
-CHIRIMEN for Raspberry Pi 3 Hello World に記載の「基本ハードウエア」
-[ジャンパーワイヤー (メス-メス)] x 4
-ADT7410 x 1 ※付属のピンヘッダでなく、通常サイズのピンヘッダをハンダ付けしておいてください
-2.I2Cとは
-I2Cとは2線式の同期式シリアル通信インタフェースです。「アイ・スクエア・シー」とか「アイ・ ツー・シー」などと読みます。 
+* (CHIRIMEN for Raspberry Pi 3 Hello World)[section0] に記載の「基本ハードウエア」
+* [ジャンパーワイヤー (メス-メス)] x 4
+* (ADT7410)[http://akizukidenshi.com/catalog/g/gM-06675/] x 1 ※付属のピンヘッダでなく、通常サイズのピンヘッダをハンダ付けしておいてください
+
+# 2.I2Cとは
+
+(I2C)[https://ja.wikipedia.org/wiki/I2C]とは2線式の同期式シリアル通信インタフェースです。「アイ・スクエア・シー」とか「アイ・ ツー・シー」などと読みます。 
+
 SDA（シリアルデータ）と SCL（シリアルクロック）の2本の線で通信を行います。
 
 i2c-bus
@@ -38,7 +48,7 @@ I2Cではマスターとスレーブの間で通信が行われます。常に�
 マスターは、スレーブが持つ「SlaveAddress」を用いて、特定のスレーブとの通信を行います。
 このため、同じI2Cバス上に同じSlaveAddressのスレーブを繋ぐことはできません。
 
-i2c-bus
+*[i2c-bus]
 
 通信するモジュール同士が同一基板上にない場合には、SDA、SCLの2本の通信線に加え電源やGNDの線を加えて4本のケーブルを用いて接続するのが一般的です。
 
