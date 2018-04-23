@@ -195,9 +195,11 @@ if(mic.run>0){
 
 という対応になります。この辺の取り決めは適当に決めたものではありますが、大体人間の声の母音が含む倍音のあたりに相当しますので「あ」「い」「う」「え」「お」の各母音の違いに割合良く反応するようになっています。
 
-測距センサー
-同様に測距センサーの検出値から色を制御する部分は次の通りです。距離 dist は cm 単位で 50-4 程度ですので、それを三分割して、B => G => R の順にピークが来るように変換しています。
+## 測距センサー
 
+同様に測距センサーの検出値から色を制御する部分は次の通りです。距離 `dist` は cm 単位で 50-4 程度ですので、それを三分割して、B => G => R の順にピークが来るように変換しています。
+
+```javascript
 let dist=distance.get();
 let light=((dist==null)?0:Math.max(0,60-dist))/60;
 if(dist==null)
@@ -209,28 +211,34 @@ let r=(light>2/3)?(light-2/3)*3:0;
 let g=(light>2/3)?(1-(light-2/3)*3):(light>1/3)?(light-1/3)*3:0;
 let b=(light>2/3)?0:(light>1/3)?(1-(light-1/3)*3):light*3;
 playbulb.setColor(r*255,g*255,b*255);
-UUID について
+```
+
+## UUID について
 PLAYBULB を WebBluetooth で制御するサンプルの元ネタは google codelabs の次の記事にあります。
 
 https://codelabs.developers.google.com/codelabs/candle-bluetooth/#0
 
 ただしこの記事で扱っているのは PLAYBULB candle というモデルになりますが、PLAYBULB には幾つかの種類があってそれぞれサービスIDが異なるようです。ネット上を探すと各モデルのサービスIDらしきものが提示されていたりするのですが、どれも公式の仕様ではなくユーザーが解析した結果のようです。今の所以下の定義通りの各デバイスのサービスIDおよび色設定のキャラクタリスティックIDを使用しています。
 
+```javascript
 const bledevices={
   "PLAYBULB sphere":{serviceId:0xFF0F},
   "PLAYBULB candle":{serviceId:0xFF02},
 };
 
 const COLOR_UUID = 0xFFFC;
+```
+
 このサンプルでは、PLAYBULB sphere と PLAYBULB candle に対応しているはずですが、やや情報が錯綜しており、同じモデルでもリビジョンによってIDが異なるのでは、等の意見もあるようですので、もし手持ちの PLAYBULB で思うように動作しないケースがあれば、その点も留意ください。
 
-また、UUID は通常128ビット長ですが、ここで扱っているサービス ID は UUID と言いつつ 0xFF02 等、16ビット長しかありません。これは BLE の仕様で短縮 UUID というもので、
-0000xxxx-0000-1000-8000-00805F9B34FB　の xxxx の部分だけを表す形式です。ただし短縮 UUID を使えるのは Bluetooth SIG で承認されたものだけですという事なのですが、Bluetooth SIG の 16ビットUUID の一覧を見ても PLAYBULB の ID は見つかりませんので、PLAYBULB のBLE実装はまだ実験的なレベルのものなのかも知れません。
+また、UUID は通常`128ビット`長ですが、ここで扱っているサービス ID は UUID と言いつつ `0xFF02` 等、`16ビット長`しかありません。これは BLE の仕様で短縮 UUID というもので、
+`0000xxxx-0000-1000-8000-00805F9B34FB`　の `xxxx` の部分だけを表す形式です。ただし短縮 UUID を使えるのは Bluetooth SIG で承認されたものだけですという事なのですが、Bluetooth SIG の 16ビットUUID の一覧を見ても PLAYBULB の ID は見つかりませんので、PLAYBULB のBLE実装はまだ実験的なレベルのものなのかも知れません。
 
-参考
-CHIRIMEN for Raspberry Pi 3 Hello World
-CHIRIMEN for Raspberry Pi 3 チュートリアル 3. I2C　応用編（その他のセンサー）
-codelabs : Control a PLAYBULB candle with Web Bluetooth
-W3C : Media Capture and Streams
-W3C : Web Audio API
-Bluetooth SIG : メンバー向け 16 ビット UUID
+# 参考
+
+* [CHIRIMEN for Raspberry Pi 3 Hello World](section0.md)
+* [CHIRIMEN for Raspberry Pi 3 チュートリアル 3. I2C　応用編（その他のセンサー）](section3.md)
+* [codelabs : Control a PLAYBULB candle with Web Bluetooth](https://codelabs.developers.google.com/codelabs/candle-bluetooth/#0)
+* [W3C : Media Capture and Streams](https://www.g200kg.com/demo/chirimen/webbluetooth/README.md)
+* [W3C : Web Audio API](https://webaudio.github.io/web-audio-api/)
+* [Bluetooth SIG : メンバー向け 16 ビット UUID](https://www.bluetooth.com/ja-jp/specifications/assigned-numbers/16-bit-uuids-for-members)
