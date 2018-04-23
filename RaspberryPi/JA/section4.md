@@ -98,9 +98,9 @@ Raspberry Pi 3との接続方法については、下記回路図を参照くだ
 1. `GPIOAccess`で 26番ポートの`port`オブジェクトを取得
 1. 26番ポートを「出力モード」に設定
 
-1.Web I2C API の初期化 (`navigator.requestI2CAccess()`で`I2CAccess`インタフェースの取得)
+1. Web I2C API の初期化 (`navigator.requestI2CAccess()`で`I2CAccess`インタフェースの取得)
 
-1.`I2CAccess`で、1番のI2Cポートの`I2CPort`オブジェクトを取得
+1. `I2CAccess`で、1番のI2Cポートの`I2CPort`オブジェクトを取得
 
 1. `ADT7410`のインスタンスを生成し、`init()`による初期化を行なっておく
 
