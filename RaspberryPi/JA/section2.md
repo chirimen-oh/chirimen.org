@@ -246,10 +246,10 @@ ADT7410の仕様に基づくデータ読み出し処理をここで実施して�
 
 ### Web I2C APIに着目して流れをまとめると
 
-1.1.1. navigator.requestI2CAccess() で I2CAccessインタフェースを取得
-1.1.1. i2cAccess.ports.get(1) で、1番ポートのportオブジェクトを取得
-1.1.1. port.open(0x48) で、SlaveAddress 0x48番のI2CSlaveDeviceインタフェースを取得
-1.1.1. i2cSlave.read8() で 温度データ を読み込み (ADT7410の場合、常に2回セット)
+1. navigator.requestI2CAccess() で I2CAccessインタフェースを取得
+1. i2cAccess.ports.get(1) で、1番ポートのportオブジェクトを取得
+1. port.open(0x48) で、SlaveAddress 0x48番のI2CSlaveDeviceインタフェースを取得
+1. i2cSlave.read8() で 温度データ を読み込み (ADT7410の場合、常に2回セット)
 
 となります。
 
