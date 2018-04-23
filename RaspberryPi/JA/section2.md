@@ -39,7 +39,7 @@ CHIRIMEN Open Hardware コミュニティにより開発が進められていま
 
 SDA（シリアルデータ）と SCL（シリアルクロック）の2本の線で通信を行います。
 
-*[i2c-bus]
+![i2c-bus](imgs/section2/i2c-bus.png)
 
 上図のように、i2cのSDA、SCLは複数のモジュール間で共有します。（「I2Cバス」と言います。）
 
@@ -49,7 +49,7 @@ I2Cではマスターとスレーブの間で通信が行われます。常に�
 
 このため、同じI2Cバス上に同じSlaveAddressのスレーブを繋ぐことはできません。
 
-*[i2c-bus2]
+![i2c-bus2](imgs/section2/i2c-bus2.png)
 
 通信するモジュール同士が同一基板上にない場合には、SDA、SCLの2本の通信線に加え電源やGNDの線を加えて4本のケーブルを用いて接続するのが一般的です。
 
@@ -91,17 +91,17 @@ Raspberry Pi 3とADT7410との接続方法(回路図)とexampleコードは下�
 
 この回路を作成するのに必要な部品は下記の通りです。(Raspi3基本セットを除く)
 
-*[parts]
+![parts](imgs/section2/parts.png)
 
 これらのパーツを下記回路図の通りに接続してみてください。
 
-*[schematic]
+![schematic](imgs/section2/schematic.png)
 
 下記がRaspberry Pi 3 側の接続ピンの位置を拡大した図になります。
 
 間違えないよう接続をお願いします。
 
-*[I2Cで利用するピンの位置]
+![I2Cで利用するピンの位置](imgs/section2/I2C.png)
 
 ## b. 接続がうまくいったか確認する
 
@@ -111,7 +111,7 @@ Raspberry Pi 3とADT7410との接続方法(回路図)とexampleコードは下�
 
 すると、下記のような画面が表示されるはずです。
 
-*[ADT7410接続中]
+![ADT7410接続中](imgs/section2/ADT7410.png)
 
 `48`という表示が見えます。これは16進数表示ですので`0x48`という意味です。
 
@@ -125,12 +125,12 @@ Raspberry Pi 3とADT7410との接続方法(回路図)とexampleコードは下�
 
 ADT7410は`0x48`がデフォルトのSlaveAddressで、A0,A1ピンのHIGH/LOWによりSlaveAddeessの下位2bitを変更できることがわかります。
 
-*[I2C Bus Address Options]
+![I2C Bus Address Options](imgs/section2/I2CBus AddressOptions.png)
 (ADT7410 Data Sheetより抜粋)
 
 試しに、一度 Raspberry Pi の3.3Vに接続している線を抜いて、もう一度`i2cdetect -y -r 1`を実行してみてください。
 
-*[ADT7410の電源OFF]
+![ADT7410の電源OFF](imgs/section2/ADT7410OFF.png)
 
 `0x48` が見つからなくなりました。
 
@@ -148,7 +148,7 @@ ADT7410のためのサンプルコードは先ほどの配線図と同じフォ�
 
 index.htmlをダブルクリックすると、ブラウザが起動し下記のような画面になります。
 
-*[browser]
+![browser](imgs/section2/browser.png)
 
 画面の回路図の下の数値が温度（摂氏）になります。
 
