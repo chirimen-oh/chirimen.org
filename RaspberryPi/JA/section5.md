@@ -19,7 +19,7 @@ https://github.com/g200kg/chirimen-webbluetooth
 * USB マイク
 * 測距センサ ([GP2Y0E03](http://akizukidenshi.com/catalog/g/gI-07547/))
 
-![必要なもの](imgs/section5/)
+![必要なもの](imgs/section5/bledemo1.jpg)
 
 # 準備
 
@@ -46,30 +46,30 @@ https://github.com/g200kg/chirimen-webbluetooth
 
 実際に Web Bluetooth を使うサンプルプログラムは、https://www.g200kg.com/demo/chirimen/webbluetooth/ に置いてあります。ブラウザでアクセスすると次の画面になります。この時、マイクの使用許可のダイアログがでたら[`許可`]を選択してください。
 
-![images/bledemo2.png](imgs/section5/)
+![サンプルプログラム起動の様子](imgs/section5/bledemo2.png)
 
 ## Bluetooth ライトの基本的な制御
 
 bluetooth デモを起動して [`BLE Connect`]を押すと BLE デバイスを選択するダイアログが出てきます。ここで PLAYBULB (sphere または candle)を選択して [`ペア設定`] を押す事で BLE デバイスと接続されます。
 接続ができた状態で [`Off`]、[`Red`]、[`Green`]、[`Blue`]、[`White`]の各ボタンを押すと PLAYBULB の色が指定の色に変わります。
 
-![images/bledemo3.png](imgs/section5/)
+![Bluetoothライトの基本的な制御の様子](imgs/section5/bledemo3.png)
 
 ## マイクからの制御
 
 マイクのボタンを押して[`On`]状態にすると音に反応するようになります。音の周波数帯域を3つに分けてそれぞれ色の RGB に割り当てていますのでマイクで拾う音によって PLAYBULB の色が変わります。
 
-![images/bledemo4.png](imgs/section5/)
+![マイクからの制御の様子](imgs/section5/bledemo4.png)
 
 実際の動作状況の動画がありますので見てみてください。
 
-![blemov](imgs/section5/)
+![実際の動作状況の動画](imgs/section5/blemov.png)
 
 ## 測距センサからの制御
 
 測距センサーのボタンを[`On`]状態にすると、測距センサーで検出した障害物までの距離によって PLAYBULB の色が変わります。この測距センサーの検出範囲は4～50cm程度ですので、距離が近くなるにつれて色が青⇒緑⇒赤と変化するようになっています。
 
-![images/bledemo5.jpeg](imgs/section5/)
+![測距センサからの制御の様子](imgs/section5/bledemo5.jpeg)
 
 # コードの説明
 
