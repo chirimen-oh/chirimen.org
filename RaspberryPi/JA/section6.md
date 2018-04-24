@@ -1,4 +1,4 @@
-## CHIRIMEN for Raspberry Pi 3 チュートリアル 6. ステッピングモーター編
+# CHIRIMEN for Raspberry Pi 3 チュートリアル 6. ステッピングモーター編
 
 このチュートリアルで使用しているステッピングモータードライバは [CHIRIMEN の公式リリース](https://github.com/chirimen-oh/chirimen-raspi3)にまだ含まれていないかも知れません。Example 等がリンクエラーになる場合は、公式リリースまでしばらくお待ちください。
 
