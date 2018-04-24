@@ -63,7 +63,7 @@ bluetooth デモを起動して [`BLE Connect`]を押すと BLE デバイスを�
 
 実際の動作状況の動画がありますので見てみてください。
 
-![実際の動作状況の動画](imgs/section5/blemov.png)
+[![実際の動作状況の動画](imgs/section5/blemov.png)](imgs/section5/blemov.mp4)
 
 ## 測距センサからの制御
 
