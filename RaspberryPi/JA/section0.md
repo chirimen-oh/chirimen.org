@@ -184,17 +184,32 @@ polyfill.jsはWeb GPIO APIと、Web I2C APIというW3Cでドラフト提案中�
 
 ## JavaScript
 ```javascript
-navigator.requestGPIOAccess().then(gpioAccess=>{
+mainFunction(); // 下記のasync関数を実行します（このプログラムのエントリーポイント）
+
+async function mainFunction(){ // プログラムの本体となる関数、非同期処理のためプログラム全体をasync関数で包みます。
+  var gpioAccess = await navigator.requestGPIOAccess(); // thenの前の関数をawait接頭辞をつけて呼び出します。
   var port = gpioAccess.ports.get(26);
-  var v = 0;
-  return port.export("out").then(()=>{
-    setInterval(function(){
-      v ^= 1;
-      port.write(v);
-    },1000);
+  await port.export("out");
+  while ( true ){ // 無限ループ
+    await sleep(1000); // 1000ms待機する
+    v ^= 1; // v = v ^ 1 (XOR 演算)の意。(vが1の場合はvが0に、0の場合は1に変化する。1でLED点灯、0で消灯するので、1秒間隔でLEDがON OFFする。)
+    port.write(v);
+  }
+}
+
+function sleep(ms){
+  return new Promise( function(resolve) {
+    setTimeout(resolve, ms);
   });
-});
+}
 ```
+
+## 非同期処理
+
+物理デバイスを使用するためには非同期処理をする必要があります。本チュートリアルではこれをasync awaitによって記述することにします。理由は初心者にとってわかりやすいことです。ただしこの機能は比較的新しいjavascript処理系からサポートされたもののため非対応のブラウザもありますが、Raspberry PI3のChromeはサポートしています。([様々なウェブブラウザでのサポート状況](https://caniuse.com/#feat=async-functions))
+初心者向けの、非同期処理及び、async awaitによるその記述方法の解説は、[こちら](appendix0.md)を参照ください。
+
+## 処理の解説
 
 JavaScriptファイルで、最初に出てくるコードが```navigator.requestGPIOAccess()```です。
 ここで先ほど出て来た[Web GPIO API](https://rawgit.com/browserobo/WebGPIO/master/index.html) を使い、```gpioAccess```というGPIOにアクセスするためのインタフェースを取得しています。
