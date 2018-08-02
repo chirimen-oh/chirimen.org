@@ -166,6 +166,7 @@ GPIOポートはもうひとつ「入力モード」があります。これはG
 `port.write()`は、出力モードに指定したGPIOポートの電圧を切り替える指定を行うAPIです。
 `port.write(1)`で、指定したポートからHIGH(Raspberry Pi 3では3.3V)の電圧がかかり、`port.write(0)`で、LOW(0V)になります。
 
+<!--
 ## e. ボタンにLEDを反応させる (ES2017 async function版)
 さきほどのコードを見ていただいたらお気づきかもしれませんが、GPIOのアクセス、そしてこれから出てくるI2C対応パーツのDriverの処理などでは、非同期処理が頻繁に出てきます。
 
@@ -199,7 +200,7 @@ CHIRIMEN for Raspberry Pi 3 で利用するRaspi3にプリインストールさ�
 **(JSFiddleではサポートされているようです。)**
 
 ![ここまでのJSFiddleの画面](imgs/section1/JSFiddle.png)
-
+-->
 # 3. マウスクリックのかわりにタクトスイッチを使ってみる
 それでは、さきほどまで書いたコードをベースに、マウスの替わりにスイッチを利用してみます。
 
@@ -476,35 +477,46 @@ LEDが押してる間だけ点灯したら成功です。
 `port.onchange()`の説明は後回しにして、さきほどのサンプルを`port.onchange()`を使ったコードに書き換えてみましょう。
 
 ```javascript
-(async ()=>{
-  var onoff = document.getElementById("onoff");
-  var ledview = document.getElementById("ledview");
-  var gpioAccess = await navigator.requestGPIOAccess();
-  var ledPort = gpioAccess.ports.get(26); // LEDのPort
-  await ledPort.export("out");
-  onoff.onmousedown = ()=>{
-    ledOnOff(1);
-  };
-  onoff.onmouseup = ()=>{
-    ledOnOff(0);
-  };
-  function ledOnOff(v){
-    if(v === 0){
-      ledPort.write(0);
-      ledview.style.backgroundColor = "black";
-    }else{
-      ledPort.write(1);
-      ledview.style.backgroundColor = "red";
-    }
-  }
-  var switchPort = gpioAccess.ports.get(5); // タクトスイッチのPort
-  await switchPort.export("in");
-  switchPort.onchange = (val)=>{
-   // Port 5の状態を読み込む  
-    val ^= 1; // switchはPullupなのでOFFで1。LEDはOFFで0なので反転させる
-    ledOnOff(val);
-  }
-})();
+var onoff, ledview; // GUIの要素
+
+var ledPort,switchPort; // LEDとスイッチの付いているポート
+
+onload = function(){
+	onoff = document.getElementById("onoff");
+	ledview = document.getElementById("ledview");
+	
+	onoff.onmousedown = function(){
+		ledOnOff(1);
+	};
+	onoff.onmouseup = function(){
+		ledOnOff(0);
+	};
+	
+	initGPIO();
+}
+
+function ledOnOff(v){
+	if(v === 0){
+		ledPort.write(0);
+		ledview.style.backgroundColor = "black";
+	} else {
+		ledPort.write(1);
+		ledview.style.backgroundColor = "red";
+	}
+}
+
+async function initGPIO(){
+	var gpioAccess = await navigator.requestGPIOAccess();
+	ledPort = gpioAccess.ports.get(26); // LEDのPort
+	await ledPort.export("out");
+	switchPort = gpioAccess.ports.get(5); // タクトスイッチのPort
+	await switchPort.export("in");
+	switchPort.onchange = function(val){
+		// Port 5の状態を読み込む  
+		val ^= 1; // switchはPullupなのでOFFで1。LEDはOFFで0なので反転させる
+		ledOnOff(val);
+	}
+}
 ```
 
 コードを見ていただけたらお気づきかもしれません。 `port.onchange()`は入力モードのGPIOポートの「状態変化時に呼び出される関数を設定する」ための機能です。
