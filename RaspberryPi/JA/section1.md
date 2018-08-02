@@ -359,9 +359,9 @@ function ledOnOff(v){
 ```
 こんな流れになります。
 
-### port.export()
+### await port.export()
 
-`port.export("in")`により取得したGPIOポートを「入力モード」で初期化しています。
+`port.export("in")`により取得したGPIOポートを「入力モード」で初期化しています。非同期処理の待機が必要です。
 
 GPIOポートにかかる電圧をWebアプリ側から読み取りたい時に使います。
 
@@ -390,58 +390,76 @@ GPIOポートにかかる電圧をWebアプリ側から読み取りたい時に�
 順序の乱れを発生させたくない場合は、下記のような一定時間待つ関数 を1つ定義し、`port.read()`と次の`port.read()`の間に挟んだループを形成することで順序通りのポーリングができるようになります。
 
 ```javascript
-  // 一定時間待つ関数
-  var sleep = (ms)=>{
-    return new Promise((resolve)=>setTimeout(resolve,ms));
-  };
+// 一定時間待つ関数
+function sleep(ms){
+	return new Promise( function(resolve) {
+		setTimeout(resolve, ms);
+	});
+}
 
-  var gpioAccess = await navigator.requestGPIOAccess(); // writeと一緒。
-  var port = gpioAccess.ports.get(5); // Port 5 を取得
-  await port.export("in"); // Port 5 を「入力モード」に。
-  while(1){
-    var val = await port.read(); // Port 5の状態を読み込む  
-    // switchの状態による処理
-    await sleep(100);
-  }
+var gpioAccess = await navigator.requestGPIOAccess(); // writeと一緒。
+var port = gpioAccess.ports.get(5); // Port 5 を取得
+await port.export("in"); // Port 5 を「入力モード」に。
+while(1){
+	var val = await port.read(); // Port 5の状態を読み込む  
+	// switchの状態による処理
+	await sleep(100);
+}
 ```
 
 LEDの処理と組み合わせた全体のコードは下記のようになりました。
 
 ```javascript
-(async ()=>{
-  var sleep = (ms)=>{
-    return new Promise((resolve)=>setTimeout(resolve,ms));
-  };
+onload = function(){
+	mainFunction();
+}
 
-  var onoff = document.getElementById("onoff");
-  var ledview = document.getElementById("ledview");
-  var gpioAccess = await navigator.requestGPIOAccess();
-  var ledPort = gpioAccess.ports.get(26); // LEDのPort
-  await ledPort.export("out");
-  onoff.onmousedown = ()=>{
-    ledOnOff(1);
-  };
-  onoff.onmouseup = ()=>{
-    ledOnOff(0);
-  };
-  function ledOnOff(v){
-    if(v === 0){
-      ledPort.write(0);
-      ledview.style.backgroundColor = "black";
-    }else{
-      ledPort.write(1);
-      ledview.style.backgroundColor = "red";
-    }
-  }
-  var switchPort = gpioAccess.ports.get(5); // タクトスイッチのPort
-  await switchPort.export("in");
-  while(1){
-    var val = await switchPort.read(); // Port 5の状態を読み込む  
-    val ^= 1; // switchはPullupなのでOFFで1。LEDはOFFで0なので反転させる
-    ledOnOff(val);
-    await sleep(100);
-  }
-})();
+
+var ledPort, switchPort ;
+
+async function mainFunction(){
+	var onoff = document.getElementById("onoff");
+	var ledview = document.getElementById("ledview");
+	var gpioAccess = await navigator.requestGPIOAccess();
+	
+	ledPort = gpioAccess.ports.get(26); // LEDのPort
+	await ledPort.export("out");
+	
+	switchPort = gpioAccess.ports.get(5); // タクトスイッチのPort
+	await switchPort.export("in");
+	
+	onoff.onmousedown = function(){
+		ledOnOff(1);
+	};
+	onoff.onmouseup = function(){
+		ledOnOff(0);
+	};
+
+	while(1){
+		var val = await switchPort.read(); // Port 5の状態を読み込む  
+		val ^= 1; // switchはPullupなのでOFFで1。LEDはOFFで0なので反転させる
+		ledOnOff(val);
+		await sleep(100);
+	}
+
+}
+
+function ledOnOff(v){
+	if(v === 0){
+		ledPort.write(0);
+		ledview.style.backgroundColor = "black";
+	}else{
+		ledPort.write(1);
+		ledview.style.backgroundColor = "red";
+	}
+}
+
+
+function sleep(ms){
+	return new Promise( function(resolve) {
+		setTimeout(resolve, ms);
+	});
+}
 ```
 
 さて、出来たらスイッチを押してみてください。
