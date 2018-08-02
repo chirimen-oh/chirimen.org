@@ -118,6 +118,12 @@ function  sleep(ms){
 
 CHIRIMENのライブラリの関数を利用している限り、この内容を完全に理解する必要はありません。
 
+更に詳しいことは
+* https://www.d-wood.com/blog/2017/01/04_8716.html
+* https://base.terrasky.co.jp/articles/3BHoO
+あたりを参考にしてみましょう
+
+
 ### async3.js
 
 ```async3.js
@@ -125,10 +131,6 @@ CHIRIMENのライブラリの関数を利用している限り、この内容を
 // # コールバック関数、アロー関数式なし、Primiseの詳細な理解(.then()など)もなし
 // # さらにPromiseを返却する関数(非同期処理の関数)を自分で作らないならば、無名関数もなしでわかる書き方
 
-// 更に詳しいことは
-// https://www.d-wood.com/blog/2017/01/04_8716.html
-// https://base.terrasky.co.jp/articles/3BHoO
-// あたりを参考にしてみましょう
 
 
 // 非同期処理を行う関数の例　：　非同期処理の関数は、Promiseというオブジェクトを返却してくれると覚えておきましょう
