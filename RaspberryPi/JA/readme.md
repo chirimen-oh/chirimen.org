@@ -21,4 +21,4 @@ CHIRIMEN for Raspberry Pi3の日本語のチュートリアルのインデック
 
 ## Appendix
 
-* [非同期処理 (async await版)](appendix0.md)
+* [Appendix0: 非同期処理 (async await版)](appendix0.md)
