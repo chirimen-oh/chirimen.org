@@ -1,6 +1,6 @@
 CHIRIMEN for Raspberry Pi3の日本語のチュートリアルのインデックスページ
 
-以下QiitaのCHIRIMEN for Raspberry Pi3　チュートリアルコンテンツを、gitHubに持ってきて共同編集可能にすることになりました。
+以下QiitaのCHIRIMEN for Raspberry Pi3　チュートリアルコンテンツ(Originのリンク参照)を、gitHubに持ってきて共同編集可能にすることになりました。
 
 ## チュートリアル本編
 
