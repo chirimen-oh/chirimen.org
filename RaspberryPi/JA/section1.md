@@ -239,13 +239,13 @@ CHIRIMEN for Raspberry Pi 3 で利用するRaspi3にプリインストールさ�
 `click`イベントは、「マウスのボタンを押して離す」ことで発生します。
 
 ```javascript
- :
-  onoff.onclick = ()=>{
-    v ^= 1;
-    port.write(v);
-    ledview.style.backgroundColor = (v)? "red" : "black";
-  };
- :
+:
+onoff.onclick = function(){
+	v ^= 1;
+	port.write(v);
+	ledview.style.backgroundColor = (v)? "red" : "black";
+};
+:
 ```
 
 これを、下記のように変更します。
@@ -255,15 +255,15 @@ CHIRIMEN for Raspberry Pi 3 で利用するRaspi3にプリインストールさ�
 
 ```javascript
 :
-  onoff.onmousedown = ()=>{
-    port.write(1);
-    ledview.style.backgroundColor = "red";
-  };
-  onoff.onmouseup = ()=>{
-    port.write(0);
-    ledview.style.backgroundColor = "black";
-  };
- :
+onoff.onmousedown = function(){
+	port.write(1);
+	ledview.style.backgroundColor = "red";
+};
+onoff.onmouseup = function(){
+	port.write(0);
+	ledview.style.backgroundColor = "black";
+};
+:
 ```
 
 これで、思った通りの動作になったはずです。
@@ -273,28 +273,36 @@ CHIRIMEN for Raspberry Pi 3 で利用するRaspi3にプリインストールさ�
 下記のようになりました。
 
 ```javascript
-(async ()=>{
-  var onoff = document.getElementById("onoff");
-  var ledview = document.getElementById("ledview");
-  var gpioAccess = await navigator.requestGPIOAccess();
-  var port = gpioAccess.ports.get(26);
-  await port.export("out");
-  onoff.onmousedown = ()=>{
-    ledOnOff(1);
-  };
-  onoff.onmouseup = ()=>{
-    ledOnOff(0);
-  };
-  function ledOnOff(v){
-    if(v === 0){
-      port.write(0);
-      ledview.style.backgroundColor = "black";
-    }else{
-      port.write(1);
-      ledview.style.backgroundColor = "red";
-    }
-  }
-})();
+onload = function(){
+	mainFunction();
+}
+
+
+var port;
+
+async function mainFunction(){
+	var onoff = document.getElementById("onoff");
+	var ledview = document.getElementById("ledview");
+	var gpioAccess = await navigator.requestGPIOAccess();
+	port = gpioAccess.ports.get(26);
+	await port.export("out");
+	onoff.onmousedown = function(){
+		ledOnOff(1);
+	};
+	onoff.onmouseup = function(){
+		ledOnOff(0);
+	};
+}
+
+function ledOnOff(v){
+	if(v === 0){
+		port.write(0);
+		ledview.style.backgroundColor = "black";
+	}else{
+		port.write(1);
+		ledview.style.backgroundColor = "red";
+	}
+}
 ```
 
 ## b. 部品と配線について
