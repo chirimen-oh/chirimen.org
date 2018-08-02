@@ -94,15 +94,15 @@ GPIOを実際に使う前に、まずは「ボタンを押したらLEDのON/OFF�
 早速JavaScriptを書いて行きましょう。
 
 ```javascript
-(()=>{
-  var onoff = document.getElementById("onoff");
-  var ledview = document.getElementById("ledview");
-  var v = 0;
-  onoff.onclick = ()=>{
-    v ^= 1;
-    ledview.style.backgroundColor = (v == 1)? "red" : "black";
-  };
-})();
+onload = function(){
+	var onoff = document.getElementById("onoff");
+	var ledview = document.getElementById("ledview");
+	var v = 0;
+	onoff.onclick = function(){
+		 v ^= 1;
+		ledview.style.backgroundColor = (v == 1)? "red" : "black";
+	};
+}
 ```
 
 書けたら JSFiddleの```▷ Run```をクリックします。
