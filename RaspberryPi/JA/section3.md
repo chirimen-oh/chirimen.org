@@ -140,17 +140,16 @@ HTMLはADT7410の時とほとんど同じです。
 
 main.js
 ```javascript
-navigator.requestI2CAccess().then((i2cAccess)=>{
-  var port = i2cAccess.ports.get(1);
-  var grovelight = new GROVELIGHT(port,0x29);
-  grovelight.init().then(()=>{
-    setInterval(()=>{
-      grovelight.read().then((value)=>{
-        head.innerHTML = value ? value : head.innerHTML;
-      });
-    },200);
-  })
-})
+	var i2cAccess = await navigator.requestI2CAccess();
+	var port = i2cAccess.ports.get(1);
+	var grovelight = new GROVELIGHT(port,0x29);
+	await grovelight.init();
+	while(1){
+		var value = await grovelight.read();
+		head.innerHTML = value ? value : head.innerHTML;
+		await sleep(200);
+	}
+
 ```
 
 `main.js`も温度センサーとほとんど同じです。
