@@ -119,21 +119,23 @@ onload = function(){
 一度Lチカの時に学んだことを思い出せばできるはずですが、まずは書き換えてみましょう。
 
 ```javascript
-(()=>{
-  var onoff = document.getElementById("onoff");
-  var ledview = document.getElementById("ledview");
-  var v = 0;
-  navigator.requestGPIOAccess().then((gpioAccess)=>{
-    var port = gpioAccess.ports.get(26);
-    port.export("out").then(()=>{
-      onoff.onclick = ()=>{
-        v ^= 1;
-        port.write(v);
-        ledview.style.backgroundColor = (v)? "red" : "black";
-      };
-    });
-  });
-})();
+onload = function(){
+	mainFunction();
+}
+
+async function mainFunction(){
+	var onoff = document.getElementById("onoff");
+	var ledview = document.getElementById("ledview");
+	var v = 0;
+	var gpioAccess = await navigator.requestGPIOAccess();
+	var port = gpioAccess.ports.get(26);
+	await port.export("out");
+	onoff.onclick = function(){
+		v ^= 1;
+		port.write(v);
+		ledview.style.backgroundColor = (v)? "red" : "black";
+	};
+}
 ```
 
 これで、画面のボタンクリックに反応してLEDのON/OFFができたら成功です。
