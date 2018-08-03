@@ -12,4 +12,4 @@ We expect the contribution of translation work.
 * [Section6](https://translate.google.com/translate?sl=ja&tl=en&js=y&prev=_t&ie=UTF-8&u=http%3A%2F%2Fsvgmap.org%2Fmdpx%2Fmarkdown2.php%3Ffile%3Dchirimen-oh%2Ftutorials%2Fmaster%2FRaspberryPi%2FJA%2Fsection6.md&act=url)
 
 ### appendix
-* [Appendix0:](https://translate.google.com/translate?sl=ja&tl=en&js=y&prev=_t&ie=UTF-8&u=http%3A%2F%2Fsvgmap.org%2Fmdpx%2Fmarkdown2.php%3Ffile%3Dchirimen-oh%2Ftutorials%2Fmaster%2FRaspberryPi%2FJA%2Fappendix0.md&act=url)
+* [Appendix0](https://translate.google.com/translate?sl=ja&tl=en&js=y&prev=_t&ie=UTF-8&u=http%3A%2F%2Fsvgmap.org%2Fmdpx%2Fmarkdown2.php%3Ffile%3Dchirimen-oh%2Ftutorials%2Fmaster%2FRaspberryPi%2FJA%2Fappendix0.md&act=url)
