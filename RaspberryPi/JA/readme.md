@@ -1,9 +1,13 @@
 CHIRIMEN for Raspberry Pi3の日本語のチュートリアルのインデックスページ
 
-以下QiitaのCHIRIMEN for Raspberry Pi3　チュートリアルコンテンツ(Originのリンク参照)を、gitHubに持ってきて共同編集可能にすることになりました。
+## はじめに
+CHIRIMEN for raspberry pi 3を用いたIoTシステムプロトタイピングスキル習得のためのチュートリアル資料です。
+
+javascriptプログラミング未経験者は、Appendixの「[JavaScript 1 Day 講習](https://webiotmakers.github.io/static/docs/maebashi-js.pdf)」を履修しましょう。
+
+Note: CHIRIMENコミュニティメンバーがQiita上で作成したチュートリアルコンテンツ(Originのリンク参照)を、gitHubに移行して共同編集することになりました。
 
 ## チュートリアル本編
-
 * Section 0: [CHIRIMEN for Raspberry Pi 3 Hello World](section0.md)
   * [Origin](https://qiita.com/tadfmac/items/82817476615fdc7394b3)
 * Section 1: [CHIRIMEN for Raspberry Pi 3 チュートリアル 1. GPIO編](section1.md)
