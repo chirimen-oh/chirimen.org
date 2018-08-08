@@ -113,7 +113,7 @@ LEDのリード線の方向に注意しながら、この図の通りにジャ�
 ![配線してみました](imgs/section0/h.jpg)
 
 ### 参考
-* [ブレッドボードの使い方](https://www.sunhayato.co.jp/blog/2015/03/04/7)]
+* [ブレッドボードの使い方](https://www.sunhayato.co.jp/blog/2015/03/04/7)
 * [LEDの使い方](https://www.marutsu.co.jp/pc/static/large_order/led)
 * [抵抗値の読み方](http://www.jarl.org/Japanese/7_Technical/lib1/teikou.htm)
 * [Raspberry Pi3のGPIO](https://tool-lab.com/make/raspberrypi-startup-22/)
