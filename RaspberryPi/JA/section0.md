@@ -233,6 +233,10 @@ Raspi3に実装されている40本のピンヘッダからGPIOを利用する�
 
 CHIRIMEN for Raspberry Pi 3ではRaspi3が提供する40本のピンヘッダのうち、下記緑色のピンをWebアプリから利用可能なGPIOとして設定しています。
 
+Raspberry Pi3では、GND端子との間に、0Vもしくは3.3Vの電圧を印加(出力)したり、逆に0Vもしくは3.3Vの電圧を検知(入力)したりすることができます。LEDは数mAの電流を流すことによって点灯することができる電子部品のため、印加する電圧を3.3V(点灯)、0V(消灯)と変化させることでLチカが実現できるのです。
+
+詳しくは[こちらのサイトの解説](https://tool-lab.com/make/raspberrypi-startup-22/)などを参考にしてみましょう。
+
 ![Raspi3 PIN配置図](imgs/section0/Raspi3PIN.png)
 
 ## GPIOPortの処理
