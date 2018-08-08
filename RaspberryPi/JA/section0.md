@@ -38,7 +38,7 @@ CHIRIMEN for Raspberry Pi 3 は、Raspberry Pi 3（以下「Raspi3」）上に�
 
 ![Lチカに必要なパーツ一覧](imgs/section0/L.png)
 
-* ブレッドボード × 1　　（参考:[ブレッドボードの使い方(https://www.sunhayato.co.jp/blog/2015/03/04/7)])
+* ブレッドボード × 1
 * リード付きLED × 1
 * リード付き抵抗器 (150-470Ω ※お使いのLEDにより) × 1
 * ジャンパーワイヤー (オス-メス) x 2
@@ -111,6 +111,12 @@ LEDのリード線の方向に注意しながら、この図の通りにジャ�
 実際に配線してみると、こんな感じになりました。
 
 ![配線してみました](imgs/section0/h.jpg)
+
+### 参考
+* [ブレッドボードの使い方](https://www.sunhayato.co.jp/blog/2015/03/04/7)]
+* [LEDの使い方](https://www.marutsu.co.jp/pc/static/large_order/led)
+* [抵抗値の読み方](http://www.jarl.org/Japanese/7_Technical/lib1/teikou.htm)
+* [Raspberry Pi3のGPIO](https://tool-lab.com/make/raspberrypi-startup-22/)
 
 ## exampleを実行してみる
 配線がうまくできたら、さっそく動かしてみましょう。
