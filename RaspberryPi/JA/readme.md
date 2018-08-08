@@ -20,5 +20,5 @@ CHIRIMEN for Raspberry Pi3の日本語のチュートリアルのインデック
   * [Origin](https://qiita.com/g200kg/items/cfb737c07b9b6edced3e)
 
 ## Appendix
-
-* Appendix 0: [非同期処理 (async await版)](appendix0.md)
+* [JavaScript 1 Day 講習](https://webiotmakers.github.io/static/docs/maebashi-js.pdf)
+* [非同期処理 (async await版)](appendix0.md)
