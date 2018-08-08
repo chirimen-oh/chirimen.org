@@ -210,6 +210,10 @@ function sleep(ms){
 }
 ```
 
+##  javascript
+
+CHIRIMEN for Raspberry Pi3はウェブブラウザをプログラムの実行環境として用い、プログラミング言語としてjavascriptを用いてシステムを構築します。javascriptを学んだことのない人は、まず[こちらの資料「JavaScript 1 Day 講習」](https://webiotmakers.github.io/static/docs/maebashi-js.pdf)を履修しましょう。
+
 ## 非同期処理
 
 物理デバイスを使用するためには非同期処理をする必要があります。本チュートリアルではこれをasync awaitによって記述することにします。
