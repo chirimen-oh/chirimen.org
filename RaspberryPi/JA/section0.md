@@ -38,7 +38,7 @@ CHIRIMEN for Raspberry Pi 3 は、Raspberry Pi 3（以下「Raspi3」）上に�
 
 ![Lチカに必要なパーツ一覧](imgs/section0/L.png)
 
-* ブレッドボード × 1
+* ブレッドボード × 1　　（参考:[ブレッドボードの使い方(https://www.sunhayato.co.jp/blog/2015/03/04/7)])
 * リード付きLED × 1
 * リード付き抵抗器 (150-470Ω ※お使いのLEDにより) × 1
 * ジャンパーワイヤー (オス-メス) x 2
