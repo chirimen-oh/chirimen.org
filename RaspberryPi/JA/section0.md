@@ -185,7 +185,7 @@ Lチカに成功しましたか？！
 ```
 
 HTMLではpolyfill.jsというJavaScriptライブラリを読み込んでいます。
-polyfill.jsはWeb GPIO APIと、Web I2C APIというW3Cでドラフト提案中の2つのAPIへのPolyfillとなっています。
+polyfill.jsはWeb GPIO APIと、Web I2C APIというW3Cでドラフト提案中の2つのAPIへの[Polyfill](https://developer.mozilla.org/ja/docs/Glossary/Polyfill)となっています。
 
 
 ## JavaScript
@@ -247,7 +247,7 @@ Raspberry Pi3のGPIO端子は、GND端子との間に、0Vもしくは3.3Vの電
 
 ```var port = gpioAccess.ports.get(26);```という部分で、**GPIOの26番ポートにアクセスするためのオブジェクト** を取得しています。
 
-続いて、```port.export("out")``` で、**GPIOの26番を「出力設定」**にしています。これによりLEDへの電圧の切り替えが可能になっています。
+続いて、```await port.export("out")``` で、**GPIOの26番を「出力設定」**にしています。これによりLEDへの電圧の切り替えが可能になっています。この関数の呼び出しに```await```接頭詞がついていることに注意してください。この関数は非同期処理の関数でその処理の完了を待って次の処理に進みます。そしてawait接頭詞を使いますので、それを使っている関数(```mainFunction()```)はasync接頭詞が付く、非同期処理の関数となっています。
 
 最後に 1000msごとに ```port.write(1)``` と ```port.write(0)``` を交互に呼び出すことで、GPIO 26番に対する電圧を 3.3V→0V→3.3V→0Vと繰り返し設定しています。
 
