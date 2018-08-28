@@ -11,7 +11,7 @@ window.addEventListener('load', function (){
 }, false);
 
 
-async mainFunction(){
+async function mainFunction(){
 	var i2cAccess = await navigator.requestI2CAccess();
 	var port = i2cAccess.ports.get(1);
 	var groveaccelerometer = new GROVEACCELEROMETER(port,0x53);
@@ -19,7 +19,7 @@ async mainFunction(){
 	
 	while(1){
 		try {
-			var values = await roveaccelerometer.read();
+			var values = await groveaccelerometer.read();
 			ax.innerHTML = values.x ? values.x : ax.innerHTML;
 			ay.innerHTML = values.y ? values.y : ay.innerHTML;
 			az.innerHTML = values.z ? values.z : az.innerHTML;

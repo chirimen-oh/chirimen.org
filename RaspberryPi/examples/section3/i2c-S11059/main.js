@@ -20,7 +20,7 @@ async function mainFunction(){
 		//		console.log("red:" + red + " green:" + green + " blue:" + blue);
 				document.getElementById("sensor").textContent = "R:"+red+" G:"+green+" B:"+blue+" GAIN:"+gain_level;
 				document.getElementById("color").style.backgroundColor = "rgb("+red+", "+green+","+blue+")";
-			} catche ( error ){
+			} catch ( error ){
 				console.log("READ ERROR:" + error);
 			}
 			await sleep(1000);

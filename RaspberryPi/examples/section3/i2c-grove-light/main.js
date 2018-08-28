@@ -8,7 +8,7 @@ window.addEventListener('load', function (){
 	
 }, false);
 
-async mainFunction(){
+async function mainFunction(){
 	var i2cAccess = await navigator.requestI2CAccess();
 	var port = i2cAccess.ports.get(1);
 	var grovelight = new GROVELIGHT(port,0x29);
@@ -21,7 +21,7 @@ async mainFunction(){
 //			console.log('value:', value);
 			head.innerHTML = value ? value : head.innerHTML;
 			await sleep(200);
-		} catche ( error ) {
+		} catch ( error ) {
 			console.log( " Error : ",error);
 		}
 	}

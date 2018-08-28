@@ -18,7 +18,7 @@ async function mainFunction(){
 			document.getElementById("debug").innerHTML = JSON.stringify(ch);
 			await sleep(100);
 		}
-	} catche ( error ){
+	} catch ( error ){
 		console.error('error', error);
 	}
 }

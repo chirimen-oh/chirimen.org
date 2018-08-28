@@ -21,7 +21,7 @@ async function mainFunction(){
 				var lightValue = await grovelight.read();
 //				console.log('lightValue:', lightValue);
 				head1.innerHTML = lightValue;
-			} catche ( error ){
+			} catch ( error ){
 				console.log('grovelight error:'+error);
 			}
 			
@@ -29,7 +29,7 @@ async function mainFunction(){
 				var tempValue = await adt7410.read();
 //				console.log('tempValue:', tempValue);
 				head2.innerHTML = tempValue;
-			} catche ( error ){
+			} catch ( error ){
 				console.log('adt7410 error:'+error);
 			}
 			sleep(500);
@@ -37,4 +37,10 @@ async function mainFunction(){
 	} catch ( error ){
 		console.error('error', error);
 	}
+}
+
+function sleep(ms){
+	return new Promise( function(resolve) {
+		setTimeout(resolve, ms);
+	});
 }

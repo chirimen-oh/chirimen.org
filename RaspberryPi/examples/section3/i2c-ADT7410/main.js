@@ -6,7 +6,7 @@ window.addEventListener('load', function (){
 	mainFunction();
 }, false);
 
-function mainFunction(){
+async function mainFunction(){
 	try{
 		var i2cAccess = await navigator.requestI2CAccess();
 		var port = i2cAccess.ports.get(1);
