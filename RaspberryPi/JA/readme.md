@@ -1,9 +1,10 @@
-CHIRIMEN for Raspberry Pi3の日本語のチュートリアルのインデックスページ
+CHIRIMEN for Raspberry Pi3 の日本語チュートリアルの目次ページ
 
 ## はじめに
-CHIRIMEN for raspberry pi 3を用いたIoTシステムプロトタイピングスキル習得のためのチュートリアル資料です。
 
-javascriptプログラミング未経験者は、Appendixの「[JavaScript 1 Day 講習](https://webiotmakers.github.io/static/docs/maebashi-js.pdf)」を履修しましょう。
+CHIRIMEN for raspberry pi 3を用いた IoT システムプロトタイピングスキル習得のためのチュートリアル資料です。
+
+JavaScript プログラミング未経験者は、Appendix の「[JavaScript 1 Day 講習](https://webiotmakers.github.io/static/docs/maebashi-js.pdf)」を履修しましょう。
 
 Note: CHIRIMENコミュニティメンバーがQiita上で作成したチュートリアルコンテンツ(Originのリンク参照)を、gitHubに移行して共同編集することになりました。
 
