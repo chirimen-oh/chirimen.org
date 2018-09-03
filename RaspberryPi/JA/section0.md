@@ -117,6 +117,7 @@ LEDのリード線の方向に注意しながら、この図の通りにジャ�
 * [LEDの使い方](https://www.marutsu.co.jp/pc/static/large_order/led)
 * [抵抗値の読み方](http://www.jarl.org/Japanese/7_Technical/lib1/teikou.htm)
 * [Raspberry Pi3のGPIO](https://tool-lab.com/make/raspberrypi-startup-22/)
+* [テスターを使って抵抗値を確かめる](http://startelc.com/elcLink/tester/elc_nArtcTester2.html#chapter-2)
 
 ## exampleを実行してみる
 配線がうまくできたら、さっそく動かしてみましょう。
