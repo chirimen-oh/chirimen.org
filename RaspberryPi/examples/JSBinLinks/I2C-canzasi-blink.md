@@ -1,1 +1,1 @@
-https://jsbin.com/xxxxx
+https://jsbin.com/null
