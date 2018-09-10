@@ -1,1 +1,2 @@
-Chirimen for Raspberry Pi3のExamplesのJSBinへのリンクを逃がすための場所（テンポラリーです。短縮URLシステム完成次第そちらに移行）
+Chirimen for Raspberry Pi3のOSイメージからExamplesのJSBinへの生リンクを逃がすための場所（テンポラリー）
+なお、短縮URLシステム完成次第そちらに移行させてください。
