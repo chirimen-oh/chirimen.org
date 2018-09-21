@@ -34,7 +34,7 @@ async function initGPIO() {
   await switchPort.export("in");
   switchPort.onchange = function(val) {
     // Port 5の状態を読み込む
-    val ^= 1; // スイッチは Pull-up なので OFF で 1、LED は OFF で 0 なので反転させる
+    val = val === 0 ? 1 : 0; // スイッチは Pull-up なので OFF で 1、LED は OFF で 0 なので反転させる
     ledOnOff(val);
   };
 }

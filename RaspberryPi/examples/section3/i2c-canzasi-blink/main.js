@@ -18,7 +18,7 @@ async function mainFunction() {
     var v = 0;
     await cz.init();
     while (1) {
-      v ^= 1;
+      v = v === 0 ? 1 : 0;
       cz.set(v);
       await sleep(500);
     }
@@ -28,7 +28,7 @@ async function mainFunction() {
 }
 
 function sleep(ms) {
-  return new Promise(function(resolve) {
+  return new Promise(resolve => {
     setTimeout(resolve, ms);
   });
 }

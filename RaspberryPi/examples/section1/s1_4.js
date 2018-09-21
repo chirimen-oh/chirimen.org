@@ -1,4 +1,4 @@
-onload = function() {
+window.onload = function() {
   mainFunction();
 };
 
@@ -23,7 +23,7 @@ async function mainFunction() {
 
   while (1) {
     var val = await switchPort.read(); // Port 5の状態を読み込む
-    val ^= 1; // スイッチは Pull-up なので OFF で 1、LED は OFF で 0 なので反転させる
+    val = val === 0 ? 1 : 0; // スイッチは Pull-up なので OFF で 1、LED は OFF で 0 なので反転させる
     ledOnOff(val);
     await sleep(100);
   }
@@ -41,7 +41,7 @@ function ledOnOff(v) {
 }
 
 function sleep(ms) {
-  return new Promise(function(resolve) {
+  return new Promise(resolve => {
     setTimeout(resolve, ms);
   });
 }

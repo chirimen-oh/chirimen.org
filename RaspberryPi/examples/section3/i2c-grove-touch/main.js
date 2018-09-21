@@ -26,7 +26,7 @@ async function mainFunction() {
 }
 
 function sleep(ms) {
-  return new Promise(function(resolve) {
+  return new Promise(resolve => {
     setTimeout(resolve, ms);
   });
 }

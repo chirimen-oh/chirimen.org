@@ -3,7 +3,7 @@ onload = function() {
   var ledView = document.getElementById("ledView");
   var v = 0;
   onoff.onclick = function() {
-    v ^= 1;
+    v = v === 0 ? 1 : 0;
     ledView.style.backgroundColor = v == 1 ? "red" : "black";
   };
 };
