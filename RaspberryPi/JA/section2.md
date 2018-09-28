@@ -184,7 +184,7 @@ index.html
   </body>
 ```
 
-まず最初に読み込んでいるのが`polyfill.js`。Web GPIO APIの時に出てきた`https://mz4u.net/libs/gc2/polyfill.js`と同じWeb GPIO APIとWeb I2C APIのPolyfillです。
+まず最初に読み込んでいるのが`polyfill.js`。Web GPIO APIの時に出てきた`https://rawgit.com/chirimen-oh/chirimen-raspi3/master/gc/polyfill/polyfill.js`と同じWeb GPIO APIとWeb I2C APIのPolyfillです。
 
 次に読み込んでいるのが、`i2c-ADT7410.js`。このファイルは、Web I2C APIを使ってADT7410との通信を行うためのドライバーとなるライブラリです。
 
@@ -281,7 +281,7 @@ JSFiddleのHTMLのペインにPolyfillの読み込みと、温度表示のため
 
 ```html
 <div id="value">---</div>
-<script src="https://mz4u.net/libs/gc2/polyfill.js"></script>
+<script src="https://rawgit.com/chirimen-oh/chirimen-raspi3/master/gc/polyfill/polyfill.js"></script>
 ```
 
 こんな感じで良いでしょう。
