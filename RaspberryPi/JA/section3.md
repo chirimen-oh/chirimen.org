@@ -388,10 +388,10 @@ main.jsも温度センサーとほとんど同じです。
 
 オンライン版のドライバーライブラリは下記にあります。
 
-* 温度センサー(ADT7410): https://mz4u.net/libs/gc2/i2c-ADT7410.js
+* 温度センサー(ADT7410): https://rawgit.com/chirimen-oh/chirimen-raspi3/master/gc/drivers/i2c-ADT7410.js
 * 超音波センサー(SRF02): https://mz4u.net/libs/gc2/i2c-SRF02.js
-* 光センサー(Grove Digital Light Sensor): https://mz4u.net/libs/gc2/i2c-grove-light.js
-* 三軸加速度センサー : https://mz4u.net/libs/gc2/i2c-grove-accelerometer.js
+* 光センサー(Grove Digital Light Sensor): https://rawgit.com/chirimen-oh/chirimen-raspi3/master/gc/drivers/i2c-grove-light.js
+* 三軸加速度センサー : https://rawgit.com/chirimen-oh/chirimen-raspi3/master/gc/drivers/i2c-grove-accelerometer.js
 
 まずはセンサーを繋いでから、[jsbin](https://jsbin.com/)か[jsfiddle](https://jsfiddle.net/) を使ってコードを書いてみましょう。
 
