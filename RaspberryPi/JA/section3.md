@@ -381,7 +381,7 @@ main.jsも温度センサーとほとんど同じです。
 
 せっかくGrove I2C Hubを用意しましたので、これまでの復習と応用を兼ねて下記のような組み合わせで2つのセンサーを繋いで動かしてみましょう。
 
-* 温度センサー(ADT7410)か、「超音波センサー(SRF02)」のどちらか 1つ
+* 温度センサー(ADT7410)か、「距離センサー(GP2Y0E03)」のどちらか 1つ
 * 「光センサー(Grove Digital Light Sensor)」か「三軸加速度センサー」のどちらか１つ
 
 ※この組み合わせなら、冒頭で用意したケーブルで足りるはずです。
@@ -389,7 +389,7 @@ main.jsも温度センサーとほとんど同じです。
 オンライン版のドライバーライブラリは下記にあります。
 
 * 温度センサー(ADT7410): https://rawgit.com/chirimen-oh/chirimen-raspi3/master/gc/drivers/i2c-ADT7410.js
-* 超音波センサー(SRF02): https://mz4u.net/libs/gc2/i2c-SRF02.js
+* 距離センサー(GP2Y0E03): https://rawgit.com/chirimen-oh/chirimen-raspi3/master/gc/drivers/i2c-GP2Y0E03.js
 * 光センサー(Grove Digital Light Sensor): https://rawgit.com/chirimen-oh/chirimen-raspi3/master/gc/drivers/i2c-grove-light.js
 * 三軸加速度センサー : https://rawgit.com/chirimen-oh/chirimen-raspi3/master/gc/drivers/i2c-grove-accelerometer.js
 
@@ -407,7 +407,7 @@ main.jsも温度センサーとほとんど同じです。
 * i2c-PCA9685 : 「[PCA9685 16-CHANNEL 12-BIT PWM/SERVO DRIVER](https://www.adafruit.com/product/815)」(I2C経由でLEDやサーボモータを16個まで制御可能なモジュール)の接続例です。
 * i2c-S11059 : 「[S11059 カラーセンサー](http://akizukidenshi.com/catalog/g/gK-08316/)」(カラーセンサー)の接続例です。
 * i2c-VEML6070 : 「[VEML6070 紫外線センサー](https://learn.adafruit.com/adafruit-veml6070-uv-light-sensor-breakout/overview)」(紫外線センサー)の接続例です。
-* i2c-multi-sensors : 2つのセンサー（ADT7410とSRF02）を利用する例です。
+* i2c-multi-sensors : 2つのセンサー（ADT7410とgrove-light）を利用する例です。
 * i2c-canzasi-blink : 「[Canzasi](https://github.com/tadfmac/Canzasi)」(筆者が開発を進めるI2C Slave Device開発環境) の接続例です。
 
 ご興味がありましたら、ぜひ触ってみてください。
