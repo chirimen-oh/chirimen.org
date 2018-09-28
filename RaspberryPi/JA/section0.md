@@ -180,7 +180,7 @@ Lチカに成功しましたか？！
   <title>GPIO-Blink</title>
 </head>
 <body>
-<script src="https://mz4u.net/libs/gc2/polyfill.js"></script>
+<script src="https://rawgit.com/chirimen-oh/chirimen-raspi3/master/gc/polyfill/polyfill.js"></script>
 </body>
 </html>
 ```
