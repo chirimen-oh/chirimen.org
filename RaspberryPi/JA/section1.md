@@ -85,7 +85,7 @@ HTMLに ```<button>```と```<div>``` 要素を1つづつ作ります。
 先ほど追加した```ledview```のすぐ下に下記```<script>```タグを記載します。
 
 ```html
-<script src="https://rawgit.com/chirimen-oh/chirimen-raspi3/master/gc/polyfill/polyfill.js"></script>
+<script src="https://chirimen.org/chirimen-raspi3/gc/polyfill/polyfill.js"></script>
 ```
 
 ## c. ボタンに反応する画面を作る
