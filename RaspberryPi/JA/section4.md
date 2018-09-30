@@ -59,7 +59,7 @@ CHIRIMEN Open Hardware コミュニティにより開発が進められていま
 
 今回用意するものが多いですが、これまでのチュートリアルで使ったことがあるものばかりですので、ご安心ください。
 
-![parts-1](imgs/section4/parts-1.png)
+![parts-1](imgs/section4/parts-1.jpg)
 
 # 2.まずは仕様通りにつくる
 

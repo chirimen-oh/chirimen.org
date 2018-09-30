@@ -51,7 +51,7 @@ CHIRIMEN Open Hardware コミュニティにより開発が進められていま
 ## a. 部品と配線について
 このパートでは[CHIRIMEN for Raspberry Pi 3 Hello World](section0.md) で実施したLチカの配線をそのまま利用します。必要な部品も同じです。
 
-![部品一覧](imgs/section1/b.png)
+![部品一覧](imgs/section1/b.jpg)
 
 LEDは、26番ポートに接続しておいてください。
 
@@ -312,7 +312,7 @@ function ledOnOff(v){
 * 前述のタクトスイッチ × 1
 * ジャンパーワイヤー（オスーメス）× 2
 
-![追加する部品](imgs/section1/t.png)
+![追加する部品](imgs/section1/t.jpg)
 
 下図のように、さきほどのLEDの配線にタクトスイッチを追加しましょう。
 
@@ -579,7 +579,7 @@ DCファンは、CPUの冷却等に利用される部品です。
 
 DCファンは前述の通りジャンパーケーブルをハンダ付けしたものをご用意ください。
 
-![部品一覧](imgs/section1/b2.png)
+![部品一覧](imgs/section1/b2.jpg)
 
 つぎに、先ほどの「タクトスイッチを押したらLEDをつけたり消したり」する回路を下記のように変更します。
 

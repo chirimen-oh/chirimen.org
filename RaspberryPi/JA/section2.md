@@ -93,7 +93,7 @@ Raspberry Pi 3とADT7410との接続方法(回路図)とexampleコードは下�
 
 この回路を作成するのに必要な部品は下記の通りです。(Raspi3基本セットを除く)
 
-![parts](imgs/section2/parts.png)
+![parts](imgs/section2/parts.jpg)
 
 これらのパーツを下記回路図の通りに接続してみてください。
 

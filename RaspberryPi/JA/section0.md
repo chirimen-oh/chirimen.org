@@ -14,7 +14,7 @@ CHIRIMEN for Raspberry Pi 3 は、Raspberry Pi 3（以下「Raspi3」）上に�
 
 [Web GPIO API (Draft)](https://rawgit.com/browserobo/WebGPIO/master/index.html)や、[Web I2C API (Draft)](https://rawgit.com/browserobo/WebI2C/master/index.html)といったAPIを活用したプログラミングにより、WebアプリからRaspi3に接続した電子パーツを直接制御することができます。
 
-![CHIRIMEN for Raspberry Pi 3 の活用イメージ](imgs/section0/CHIRIMEN for Raspberry Pi 3 の活用イメージ.png)
+![CHIRIMEN for Raspberry Pi 3 の活用イメージ](imgs/section0/CHIRIMENforRaspberryPi3.png)
 
 # 2. 準備（準備が終わってる場合は読み飛ばしてください）
 
@@ -23,7 +23,7 @@ CHIRIMEN for Raspberry Pi 3 は、Raspberry Pi 3（以下「Raspi3」）上に�
 ### 基本ハードウエア
 下記がCHIRIMEN for Raspberry Pi 3 の起動に最低限必要となる基本ハードウエアです。
 
-![Raspi3 の起動に必要なハードウエア一覧](imgs/section0/Raspi3.png)
+![Raspi3 の起動に必要なハードウエア一覧](imgs/section0/Raspi3.jpg)
 
 * Raspberry Pi 3 Model B × 1
 * ACアダプタ + micro B USB電源ケーブル(例えばコレなど) × 1
@@ -36,7 +36,7 @@ CHIRIMEN for Raspberry Pi 3 は、Raspberry Pi 3（以下「Raspi3」）上に�
 ### Lチカに必要となるパーツ
 基本ハードウエアに加え「Lチカ」を実施するには下記パーツも追加で必要です。
 
-![Lチカに必要なパーツ一覧](imgs/section0/L.png)
+![Lチカに必要なパーツ一覧](imgs/section0/L.jpg)
 
 * ブレッドボード × 1
 * リード付きLED × 1
@@ -53,7 +53,7 @@ CHIRIMEN for Raspberry Pi 3 は、Raspberry Pi 3（以下「Raspi3」）上に�
 材料が集まったら、いよいよRaspi3を接続して起動してみましょう。
 基本ハードウエアを下図のように接続してください。(Raspi3への電源ケーブルの接続は最後にしましょう)
 
-![接続方法](imgs/section0/h.png)
+![接続方法](imgs/section0/h2.jpg)
 
 もしよくわからない場合には、Raspberry Pi Hardware Guide なども参照してみると良いでしょう。
 

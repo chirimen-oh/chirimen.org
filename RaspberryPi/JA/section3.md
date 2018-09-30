@@ -50,7 +50,7 @@ Raspberry Pi 3 や前回のADT7410などピンヘッダを備えた（あるい�
 
 * [CHIRIMEN for Raspberry Pi 3 Hello World](section0.md) に記載の「基本ハードウエア
 
-![ハブとケーブル](imgs/section3/h.png)
+![ハブとケーブル](imgs/section3/h.jpg)
 
 * [Grove I2C Hub](http://wiki.seeed.cc/Grove-I2C_Hub/) x 1
 * [Grove 4ピン ジャンパー メス　ケーブル](https://www.seeedstudio.com/grove-to-4-pin-254-female-jumper-wire5-pcs-pack-p-1020.html) x 2
