@@ -96,7 +96,9 @@ LEDは2本のリード線が出ていますが、長い方がアノード（+側
 
 Lチカのための配線図は、基本的な作例（examples）と一緒に、下記にプリインストールされています。
 
-``` /home/pi/Desktop/gc/gpio/LEDblink/schematic.png ```
+```
+/home/pi/Desktop/gc/gpio/LEDblink/schematic.png
+```
 
 ![example-files](imgs/section0/example-files.png)
 
