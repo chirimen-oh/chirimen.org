@@ -125,7 +125,9 @@ LEDのリード線の方向に注意しながら、この図の通りにジャ�
 配線がうまくできたら、さっそく動かしてみましょう。
 Lチカのためのサンプルコードは先ほどの配線図と同じフォルダに格納されています。
 
-```/home/pi/Desktop/gc/gpio/LEDblink/index.html```
+```
+/home/pi/Desktop/gc/gpio/LEDblink/index.html
+```
 
 ```index.html```をダブルクリックすると、ブラウザが起動し、先ほど配線したLEDが点滅しているはずです！
 
