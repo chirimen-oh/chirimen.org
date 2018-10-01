@@ -220,7 +220,7 @@ CHIRIMEN for Raspberry Pi 3 で利用するRaspi3にプリインストールさ�
 * プッシュボタン1つ
 * プッシュボタンの押し込みでスイッチON、プッシュボタンを離すとスイッチOFF (モーメンタリ動作)
 
-Note: 1回路1接点のスイッチなのに端子が4つついているタクトスイッチが多いです。[こちらのページ](https://fabble.cc/takumanishikawa/chirimenpushbutton)を参考にしましょう。
+Note: 1回路1接点なのに端子が4つあるスイッチが多いです。そのスイッチの構造は[こちらのページ](https://fabble.cc/takumanishikawa/chirimenpushbutton)が参考になります。
 
 ## a. 準備：画面のボタンをモーメンタリ動作に変えておく
 これまでに作成したプログラムは「ブラウザ画面のボタンをクリックしたらLEDのHIGH/LOWを切り替える」というものでした。
