@@ -47,7 +47,7 @@ CHIRIMEN Open Hardware コミュニティにより開発が進められていま
 
 このチュートリアル全体で必要になるハードウエア・部品は下記の通りです。
 
-* [CHIRIMEN for Raspberry Pi 3 Hello World](https://qiita.com/tadfmac/items/82817476615fdc7394b3) に記載の「基本ハードウエア」
+* [CHIRIMEN for Raspberry Pi 3 Hello World](section0.md) に記載の「基本ハードウエア」
 * ブレッドボード x 1
 * ジャンパーワイヤー (オス-メス) x 3
 * [Nch MOSFET (2SK4017)](http://akizukidenshi.com/catalog/g/gI-07597/) x 1

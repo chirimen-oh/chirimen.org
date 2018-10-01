@@ -140,7 +140,7 @@ async function mainFunction(){
 
 これで、画面のボタンクリックに反応してLEDのON/OFFができたら成功です。
 
-[CHIRIMEN for Raspberry Pi 3 Hello World](section0.md) のLチカのパートでも簡単に説明しましたが、ここでもういちど[Web GPIO API](https://qiita.com/tadfmac/items/ebd01cfe46e30de70f3d) の流れをおさらいしておきましょう。
+[CHIRIMEN for Raspberry Pi 3 Hello World](section0.md) のLチカのパートでも簡単に説明しましたが、ここでもういちど[Section1 GPIO編 (Web GPIO API)](section1.md) の流れをおさらいしておきましょう。
 
 ### navigator.requestGPIOAccess()
 
