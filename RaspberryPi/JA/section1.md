@@ -207,7 +207,7 @@ CHIRIMEN for Raspberry Pi 3 で利用するRaspi3にプリインストールさ�
 今回は、一般的に「タクトスイッチ」 と呼ばれるものを利用します。
 
 ### タクトスイッチについて
-「タクトスイッチ」は(アルプス電気の商標)[http://www.alps.com/j/trademark/]のようです。
+「タクトスイッチ」は[アルプス電気の商標](http://www.alps.com/j/trademark/)のようです。
 
 電子部品屋さん等では、アルプス電気製ではないスイッチも、同様の形状のものは「タクトスイッチ」として売られています。
 * [秋月電気の「タクトスイッチ」一覧](http://akizukidenshi.com/catalog/c/ctactsw/)
