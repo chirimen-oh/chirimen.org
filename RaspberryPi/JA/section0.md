@@ -164,7 +164,7 @@ Lチカに成功しましたか？！
 それでは、さっそくオンラインのexampleを実行してみます。
 配線は、さきほどのままでOKです。
 
-ブラウザを起動後、ブックマークバーから```examples > GPIO > GPIO-Blink - JS Bin``` を選んでアクセスしてください。
+ブラウザを起動後、ブックマークバーから```examples > GPIO-JSBIN > GPIO-Blink - JS Bin``` を選んでアクセスしてください。
 
 ![bookmark](imgs/section0/bookmark.png)
 
