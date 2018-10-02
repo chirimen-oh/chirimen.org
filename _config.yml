@@ -1,1 +1,6 @@
+# see: https://github.com/pages-themes/cayman
 theme: jekyll-theme-cayman
+title: CHIRIMEN for Raspberry Pi 3 チュートリアル
+description: CHIRIMNE for Raspberry Pi 3 を始めて使う方向けのチュートリアルサイトです
+show_downloads: false
+# google_analytics:
