@@ -1,7 +1,7 @@
 # see: https://github.com/pages-themes/cayman
 theme: jekyll-theme-cayman
 repository: chirimen-oh/tutorials
-title: CHIRIMEN for Raspberry Pi 3 チュートリアル
+title: [CHIRIMEN チュートリアル](https://tutorial.chirimen.org/)
 description: CHIRIMEN for Raspberry Pi 3 を始めて使う方向けのチュートリアルサイトです
 show_downloads: false
 # google_analytics:
