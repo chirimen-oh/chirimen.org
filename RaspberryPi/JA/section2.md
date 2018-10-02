@@ -1,4 +1,4 @@
-# CHIRIMEN for Raspberry Pi 3 チュートリアル 2. I2C　基本編（ADT7410温度センサー）
+# 2. I2C　基本編 (ADT7410温度センサー)
 
 # 概要
 
@@ -247,9 +247,9 @@ ADT7410の仕様に基づくデータ読み出し処理をここで実施して�
 
 ADT7410ドライバーライブラリの内部の処理をまとめると以下のようなことが行われています。
 1. await navigator.requestI2CAccess() で I2CAccessインタフェースを取得
-1. i2cAccess.ports.get(1) で、1番ポートのportオブジェクトを取得
-1. await port.open(0x48) で、SlaveAddress 0x48番のI2CSlaveDeviceインタフェースを取得
-1. i2cSlave.read8() で 温度データ を読み込み (ADT7410の場合、常に2回セット)
+2. i2cAccess.ports.get(1) で、1番ポートのportオブジェクトを取得
+3. await port.open(0x48) で、SlaveAddress 0x48番のI2CSlaveDeviceインタフェースを取得
+4. i2cSlave.read8() で 温度データ を読み込み (ADT7410の場合、常に2回セット)
 
 となります。
 

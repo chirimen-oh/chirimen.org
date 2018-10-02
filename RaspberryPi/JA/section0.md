@@ -1,13 +1,13 @@
-# CHIRIMEN for Raspberry Pi 3 Hello World
+# Hello World
 
 # 1. 今回のゴール
 CHIRIMEN for Raspberry Pi 3 の使い方をおぼえて、Webアプリから「Lチカ」（LEDをつけたりけしたり）するプログラミングをやってみよう。
 
 1. 今回のゴール
-1. 準備
-1. CHIRIMEN for Raspberry Pi 3 を起動してみよう
-1. Lチカをやってみよう
-1. コードを眺めてみよう
+2. 準備
+3. CHIRIMEN for Raspberry Pi 3 を起動してみよう
+4. Lチカをやってみよう
+5. コードを眺めてみよう
 
 ## CHIRIMEN for Raspberry Pi 3 とは
 CHIRIMEN for Raspberry Pi 3 は、Raspberry Pi 3（以下「Raspi3」）上に構築したIoTプログラミング環境です。
