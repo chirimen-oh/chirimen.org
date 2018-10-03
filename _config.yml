@@ -1,11 +1,11 @@
 # see: https://github.com/pages-themes/cayman
 theme: jekyll-theme-cayman
 repository: chirimen-oh/tutorials
-title: '<a href="https://tutorial.chirimen.org/" style="color: white">CHIRIMEN チュートリアル</a>'
+title: '<a href="/" style="color: white">CHIRIMEN チュートリアル</a>'
 description: >-
   <a href="https://chirimen.org/" style="color: white">CHIRIMEN</a> for Raspberry Pi 3
-  を初めて使う方向けの <a href="https://tutorial.chirimen.org/raspberrypi/ja/" style="color: white">チュートリアル集</a> です<br>
-  <a href="https://tutorial.chirimen.org/raspberrypi/ja/" style="color: white">目次のページ</a> からチュートリアルの各ページをご覧ください<br>
-  Enjoy <a href="https://tutorial.chirimen.org/raspberrypi/en/" style="color: white">Tutorials for CHIRIMEN for Raspberry Pi 3</a>
+  を初めて使う方向けの <a href="/raspberrypi/ja/" style="color: white">チュートリアル集</a> です<br>
+  <a href="/raspberrypi/ja/" style="color: white">目次のページ</a> からチュートリアルの各ページをご覧ください<br>
+  Enjoy <a href="/raspberrypi/en/" style="color: white">Tutorials for CHIRIMEN for Raspberry Pi 3</a>
 show_downloads: false
 # google_analytics:
