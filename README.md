@@ -14,17 +14,17 @@ CHIRIMEN Raspi3 を試すには、[ビルドイメージ](https://r.chirimen.org
 CHIRIMEN Raspi3 チュートリアルの各ページはこちらでご覧頂けます:
 
 * 基礎編
-  * [0. Hello World](/raspberrypi/ja/section0)
-  * [1. GPIO編](/raspberrypi/ja/section1)
-  * [2. I2C 基本編 (ADT7410温度センサー)](/raspberrypi/ja/section2)
+  * [0. Hello World](/raspi3/ja/section0)
+  * [1. GPIO編](/raspi3/ja/section1)
+  * [2. I2C 基本編 (ADT7410温度センサー)](/raspi3/ja/section2)
 * 応用編
-  * [3. I2C 応用編 (その他のセンサー)](/raspberrypi/ja/section3)
-  * [4. GPIO/I2C編 まとめ](/raspberrypi/ja/section4)
-  * [5. WebBluetooth 編](/raspberrypi/ja/section5)
-  * [6. ステッピングモーター編](/raspberrypi/ja/section6)
+  * [3. I2C 応用編 (その他のセンサー)](/raspi3/ja/section3)
+  * [4. GPIO/I2C編 まとめ](/raspi3/ja/section4)
+  * [5. WebBluetooth 編](/raspi3/ja/section5)
+  * [6. ステッピングモーター編](/raspi3/ja/section6)
 * Appendix
   * [JavaScript 1 Day 講習 (外部 PDF)](https://webiotmakers.github.io/static/docs/2017/maebashi-js.pdf)
-  * [非同期処理 (async await版)](/raspberrypi/ja/appendix0)
+  * [非同期処理 (async await版)](/raspi3/ja/appendix0)
 
 
 ## Online Version / オンライン版
