@@ -7,26 +7,26 @@ JavaScript プログラミング未経験者は、Appendix の「[JavaScript 1 D
 Note: CHIRIMENコミュニティメンバーがQiita上で作成したチュートリアルコンテンツ(Originのリンク参照)を、gitHubに移行して共同編集することになりました。
 
 ## 基礎編
-* [0. Hello World](/raspi3/JA/section0)
+* [0. Hello World](section0)
   * [WebGPIO API](https://rawgit.com/browserobo/WebGPIO/master/) を使って `setInterval()` で定期的に LED を点滅するサンプルを動かしてみます。
-* [1. GPIO編](/raspi3/JA/section1)
+* [1. GPIO編](section1)
   * マウスクリックで操作するブラウザ画面のボタンと物理スイッチ (タクトスイッチ) の両方で LED やモーターを制御するサンプルで GPIO の基本を学びます。
 * [2. I2C 基本編 (ADT7410温度センサー)](/raspi3/JA/section2)
   * 光センサーの値をドライバーを使う場合と WebI2C API を直接操作する場合の 2 パターンで読み取ることで、I2C デバイス操作の基本を学びます。
 
 ## 応用編
-* [3. I2C 応用編 (その他のセンサー)](/raspi3/JA/section3)
+* [3. I2C 応用編 (その他のセンサー)](section3)
   * いろいろな I2C デバイスを接続したり、複数の I2C デバイスの同時操作について学びます。
-* [4. GPIO/I2C編 まとめ](/raspi3/JA/section4)
+* [4. GPIO/I2C編 まとめ](section4)
   * これまでの総括として GPIO と I2C の両方を組み合わせてエアコンのプロトタイプ (？) を作成します。
-* [5. WebBluetooth 編](/raspi3/JA/section5)
+* [5. WebBluetooth 編](section5)
   * CHIRIMEN for Raspberry Pi 3 環境で Web Bluetooth API を制御するチュートリアルです。Web I2C API や Web Audio API と組み合わせて PLAYBULB (Bluetooth経由で制御可能なLEDライト) の制御を行います。
-* [6. ステッピングモーター編](/raspi3/JA/section6)
+* [6. ステッピングモーター編](section6)
   * CHIRIMEN for Raspberry Pi 3 と Arduino を組み合わせてステップピングモーターを制御するチュートリアルです。I2C 接続した Arduino を利用することで μ 秒単位でモータードライバの制御を行います。
 
 ## Appendix
 * [JavaScript 1 Day 講習 (外部 PDF)](https://webiotmakers.github.io/static/docs/2017/maebashi-js.pdf)
-* [非同期処理 (async await版)](/raspi3/JA/appendix0)
+* [非同期処理 (async await版)](appendix0)
 
 
 ## 旧チュートリアル (Qiita 版)
