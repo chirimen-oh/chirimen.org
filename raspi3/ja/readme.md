@@ -11,7 +11,7 @@ Note: CHIRIMENコミュニティメンバーがQiita上で作成したチュー�
   * [WebGPIO API](https://rawgit.com/browserobo/WebGPIO/master/) を使って `setInterval()` で定期的に LED を点滅するサンプルを動かしてみます。
 * [1. GPIO編](section1)
   * マウスクリックで操作するブラウザ画面のボタンと物理スイッチ (タクトスイッチ) の両方で LED やモーターを制御するサンプルで GPIO の基本を学びます。
-* [2. I2C 基本編 (ADT7410温度センサー)](/raspi3/JA/section2)
+* [2. I2C 基本編 (ADT7410温度センサー)](section2)
   * 光センサーの値をドライバーを使う場合と WebI2C API を直接操作する場合の 2 パターンで読み取ることで、I2C デバイス操作の基本を学びます。
 
 ## 応用編
