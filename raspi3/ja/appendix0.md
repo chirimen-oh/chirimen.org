@@ -2,7 +2,7 @@
 # 非同期処理 (async await版)
 
 ## はじめに
-[Javascriptの初歩](https://webiotmakers.github.io/static/docs/maebashi-js.pdf)を勉強した後、CHIRIMEN for Raspberry Piでデバイスを接続してコントロールできるようになるには、一つ重要な概念とそのコーディングの作法を学ぶ必要があります。それが**非同期処理**という特別な処理方法です。
+[Javascriptの初歩](https://webiotmakers.github.io/static/docs/2017/maebashi-js.pdf)を勉強した後、CHIRIMEN for Raspberry Piでデバイスを接続してコントロールできるようになるには、一つ重要な概念とそのコーディングの作法を学ぶ必要があります。それが**非同期処理**という特別な処理方法です。
 
 ## 非同期処理
 CHIRIMEN for Raspberry Piでのプログラミングでは、センサーやアクチュエータを使いますが、これらは動作するのに無視できない時間がかかります。例えば、体温計の測定やロボットハンドの腕の動きを想像してみてください。非同期処理はこのような動作に時間がかかる処理において、**処理の完了を待って次の処理を行う**ときによく使われます。*(非同期処理無しに待とうとすれば、その間ブラウザ画面がフリーズしてしまいます。）*
