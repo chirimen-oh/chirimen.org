@@ -279,4 +279,4 @@ JS BinのJavaScriptのペインにカーソルを当てればコード修正が�
 * Lチカのサンプルを動かしてみた
 * JS BinでLチカのコードを変更してみた
 
-次回『CHIRIMEN for Raspberry Pi 3 チュートリアル 1. GPIO編』ではGPIOの入力方法についてチュートリアルを進める予定です。
+次回『[CHIRIMEN for Raspberry Pi 3 チュートリアル 1. GPIO編](https://tutorial.chirimen.org/raspi3/ja/section1)』ではGPIOの入力方法についてチュートリアルを進める予定です。
