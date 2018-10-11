@@ -613,4 +613,4 @@ LEDが点灯する替わりにファンが回るようになりました。
 * Web GPIO APIを使ったGPIO入力ポートの設定と読み出し処理の流れ（`navigator.requestGPIOAccess()`〜`port.read()`）
 * Web GPIO APIを使ったGPIO入力ポートの設定と変化検知受信の流れ (`navigator.requestGPIOAccess()`〜`port.onchange()`)
 
-次回『CHIRIMEN for Raspberry Pi 3 チュートリアル 2. I2C　基本編（ADT7410温度センサー）』ではWeb I2C APIの学習を進める予定です。
+次回『[CHIRIMEN for Raspberry Pi 3 チュートリアル 2. I2C　基本編（ADT7410温度センサー）](https://tutorial.chirimen.org/raspi3/ja/section2)』ではWeb I2C APIの学習を進める予定です。
