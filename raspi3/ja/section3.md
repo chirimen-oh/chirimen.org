@@ -444,5 +444,5 @@ I2Cデバイスを同時に接続して使用するとき、重要な注意事�
 
 次回のCHIRIMEN for Raspberry Pi 3 チュートリアルはいよいよ最終回！
 
-Web GPIO APIとWeb I2C APIを組み合わせたプログラミングに挑戦してみたいと思います。
+『[Web GPIO APIとWeb I2C APIを組み合わせたプログラミング](https://tutorial.chirimen.org/raspi3/ja/section4)』に挑戦してみたいと思います。
 お楽しみに！
