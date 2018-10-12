@@ -2,27 +2,24 @@
 
 # 概要
 
-CHIRIMEN for Raspberry Pi 3 を使ったプログラミングを通じて、[Web I2C API](https://rawgit.com/browserobo/WebI2C/master/index.html) の使い方を学びます。
+CHIRIMEN for Raspberry Pi 3 （以下「CHIRIMEN Raspi3」）を使ったプログラミングを通じて、[Web I2C API](https://rawgit.com/browserobo/WebI2C/master/index.html) の使い方を学びます。
 
 ## (※1) CHIRIMEN for Raspberry Pi 3とは
 
 Raspberry Pi 3（以下「Raspi3」）上に構築したIoTプログラミング環境です。
 
-[Web GPIO API](https://rawgit.com/browserobo/WebGPIO/master/index.html) (Draft)や、[Web I2C API](https://rawgit.com/browserobo/WebI2C/master/index.html) (Draft)といったAPIを活用したプログラミングにより、WebアプリからRaspi3に接続した電子パーツを直接制御することができます。 
+[Web GPIO API](http://browserobo.github.io/WebGPIO/) (Draft)や、[Web I2C API](http://browserobo.github.io/WebI2C/) (Draft)といったAPIを活用したプログラミングにより、WebアプリからRaspi3に接続した電子パーツを直接制御することができます。 
 CHIRIMEN Open Hardware コミュニティにより開発が進められています。
 
 ## 前回までのおさらい
 
-本チュートリアルを進める前に「[CHIRIMEN for Raspberry Pi 3 Hello World](section1.md)」と、「[CHIRIMEN for Raspberry Pi 3 チュートリアル 1. GPIO編](section1.md)」でCHIRIMEN for Raspberry Pi 3 の基本的な操作方法とプログラミング方法を確認しておいてください。
-
-* [CHIRIMEN for Raspberry Pi 3 Hello World](section0.md)
-* [CHIRIMEN for Raspberry Pi 3 チュートリアル 1. GPIO編](section1.md)
+本チュートリアルを進める前に「[Hello World編](section1.md)」と、「[GPIO編](section1.md)」でCHIRIMEN Raspi3 の基本的な操作方法とプログラミング方法を確認しておいてください。
 
 前回までのチュートリアルで学んだことは下記のとおりです。
 
-* CHIRIMEN for Raspberry Pi 3 では、各種exampleが `~/Desktop/gc/`配下においてある。配線図も一緒に置いてある
-* CHIRIMEN for Raspberry Pi 3 で利用可能なGPIO Port番号と位置は壁紙を見よう
-* CHIRIMEN for Raspberry Pi 3 ではWebアプリからのGPIOの制御には[Web GPIO API](https://rawgit.com/browserobo/WebGPIO/master/index.html) を利用する。GPIOポートは「出力モード」に設定することでLEDのON/OFFなどが行える。また「入力モード」にすることで、GPIOポートの状態を読み取ることができる
+* CHIRIMEN Raspi3 では、各種 example が `~/Desktop/gc/`配下においてある。配線図も一緒に置いてある。
+* CHIRIMEN Raspi3 で利用可能なGPIO Port番号と位置は壁紙を見よう。
+* CHIRIMEN Raspi3 では Web アプリからのGPIOの制御には[Web GPIO API](http://browserobo.github.io/WebGPIO/) を利用する。GPIOポートは「出力モード」に設定することで LED の ON/OFF などが行える。また「入力モード」にすることで、GPIOポートの状態を読み取ることができる
 * [async function](https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Statements/async_function) を利用すると複数ポートの非同期コードがすっきり書ける
 
 # 1.準備
@@ -31,19 +28,19 @@ CHIRIMEN Open Hardware コミュニティにより開発が進められていま
 
 このチュートリアル全体で必要になるハードウエア・部品は下記の通りです。
 
-* [CHIRIMEN for Raspberry Pi 3 Hello World](section0.md) に記載の「基本ハードウエア」
+* [Hello World編](section0.md) に記載の「基本ハードウエア」
 * [ジャンパーワイヤー (メス-メス)] x 4
-* [ADT7410](http://akizukidenshi.com/catalog/g/gM-06675/) x 1 ※付属のピンヘッダでなく、通常サイズのピンヘッダをハンダ付けしておいてください
+* 温度センサ[ADT7410](http://akizukidenshi.com/catalog/g/gM-06675/) x 1 ※付属のピンヘッダでなく、通常サイズのピンヘッダをハンダ付けしておいてください
 
 # 2.I2Cとは
 
-[I2C](https://ja.wikipedia.org/wiki/I2C)とは2線式の同期式シリアル通信インタフェースです。「アイ・スクエア・シー」とか「アイ・ ツー・シー」などと読みます。 
+[I2C](https://ja.wikipedia.org/wiki/I2C) とは2線式の同期式シリアル通信インタフェースです。「アイ・スクエア・シー」とか「アイ・ ツー・シー」などと読みます。 
 
 SDA（シリアルデータ）と SCL（シリアルクロック）の2本の線で通信を行います。
 
 ![i2c-bus](imgs/section2/i2c-bus.png)
 
-上図のように、i2cのSDA、SCLは複数のモジュール間で共有します。（「I2Cバス」と言います。）
+上図のように、i2cの SDA、SCL は複数のモジュール間で共有します。（「I2Cバス」と言います。）
 
 I2Cではマスターとスレーブの間で通信が行われます。常にマスター側からスレーブ側に要求が行われます。スレーブ側からマスター側へ要求を行うことはできません。
 
@@ -53,37 +50,37 @@ I2Cではマスターとスレーブの間で通信が行われます。常に�
 
 ![i2c-bus2](imgs/section2/i2c-bus2.png)
 
-通信するモジュール同士が同一基板上にない場合には、SDA、SCLの2本の通信線に加え電源やGNDの線を加えて4本のケーブルを用いて接続するのが一般的です。
+通信するモジュール同士が同一基板上にない場合には、SDA、SCL の2本の通信線に加え電源やGNDの線を加えて4本のケーブルを用いて接続するのが一般的です。
 
 詳細は下記をご参照ください。
 
 * [I2C](https://ja.wikipedia.org/wiki/I2C) - Wikipedia
-* I2Cバス仕様書　最新版（[日本語](http://www.nxp.com/documents/user_manual/UM10204_JA.pdf)、[English](http://www.nxp.com/documents/user_manual/UM10204.pdf)）
+* I2Cバス仕様書　最新版（[日本語](https://www.nxp.com/docs/ja/user-guide/UM10204.pdf)、[English](http://www.nxp.com/documents/user_manual/UM10204.pdf)）
 * [I2Cの使い方](http://www.picfun.com/i2cframe.html)（後閑哲也氏サイト)
 
-ここではI2Cの概要として下記を押さえておきましょう。
+ここでは I2C の概要として下記を押さえておきましょう。
 
 * I2Cには複数のモジュールが繋がる（I2Cバス）
 * I2Cに繋がるモジュールにはマスターとスレーブがある
 * I2Cでは必ずマスターからスレーブに対して通信要求が行われる
-* I2CスレーブはSlaveAddressを持っている
-* 同じI2Cバスに同じSlaveAddressのスレーブは繋げない
+* I2Cスレーブは SlaveAddress を持っている
+* 同じ I2C バスに同じ SlaveAddress のスレーブは繋げない
 
 # 3.温度センサー(ADT7410)を使ってみる
 
-それでは実際にI2Cに対応したモジュールを使ってみましょう。
+それでは実際に I2C に対応したモジュールを使ってみましょう。
 
-CHIRIMEN for Raspberry Pi 3 では、センサーなど、いくつかのI2Cモジュールのサンプルがプリインストールされています。
+CHIRIMEN Raspi3 では、センサーなど、いくつかのI2Cモジュールのサンプルがプリインストールされています。
 
 `/home/pi/Desktop/gc/i2c/`
 
 この中から、ADT7410という温度センサーモジュールを使ってみたいと思います。
 
-Raspberry Pi 3とADT7410との接続方法(回路図)とexampleコードは下記フォルダに格納されています。
+Raspberry Pi 3とADT7410との接続方法(回路図)と example コードは下記フォルダに格納されています。
 
 `/home/pi/Desktop/gc/i2c/i2c-ADT7410/`
 
-> I2Cバス上、Raspberry Pi 3 がマスター、ADT7410がスレーブになります。
+> I2Cバス上、Raspi3 がマスター、ADT7410がスレーブになります。
 
 ## a. 部品と配線について
 
@@ -99,7 +96,7 @@ Raspberry Pi 3とADT7410との接続方法(回路図)とexampleコードは下�
 
 ![schematic](imgs/section2/schematic.png)
 
-下記がRaspberry Pi 3 側の接続ピンの位置を拡大した図になります。
+下記がRaspi3 側の接続ピンの位置を拡大した図になります。
 
 間違えないよう接続をお願いします。
 
@@ -117,20 +114,20 @@ Raspberry Pi 3とADT7410との接続方法(回路図)とexampleコードは下�
 
 `48`という表示が見えます。これは16進数表示ですので`0x48`という意味です。
 
-`i2cdetect`コマンドではI2Cバスに接続されているSlaveAddressを確認することができます。
+`i2cdetect`コマンドでは I2C バスに接続されている SlaveAddress を確認することができます。
 
-`0x48`は、ADT7410のSlaveAddressと思われるものですが、念のためデータシートも確認してみましょう。
+`0x48`は、ADT7410 の SlaveAddress と思われるものですが、念のためデータシートも確認してみましょう。
 
 > [ADT7410のデータシート](http://www.analog.com/media/en/technical-documentation/data-sheets/ADT7410.pdf)
 
-データシートのP.17に「SERIAL BUS ADDRESS」の項があり、ここにSlaveAddressの記載があります。
+データシートのP.17に「SERIAL BUS ADDRESS」の項があり、ここに SlaveAddress の記載があります。
 
-ADT7410は`0x48`がデフォルトのSlaveAddressで、A0,A1ピンのHIGH/LOWによりSlaveAddeessの下位2bitを変更できることがわかります。
+ADT7410は`0x48`がデフォルトの SlaveAddress で、A0,A1ピンの HIGH/LOW により SlaveAddeess の下位2bitを変更できることがわかります。
 
 ![I2C Bus Address Options](imgs/section2/I2CBusAddressOptions.png)
 (ADT7410 Data Sheetより抜粋)
 
-試しに、一度 Raspberry Pi の3.3Vに接続している線を抜いて、もう一度`i2cdetect -y -r 1`を実行してみてください。
+試しに、一度 Raspi3 の3.3Vに接続している線を抜いて、もう一度 `i2cdetect -y -r 1` を実行してみてください。
 
 ![ADT7410の電源OFF](imgs/section2/ADT7410OFF.png)
 
@@ -142,23 +139,23 @@ ADT7410は`0x48`がデフォルトのSlaveAddressで、A0,A1ピンのHIGH/LOWに
 
 ## c. exampleを実行してみる
 
-配線とSlaveAddressが確認できましたので、さっそく動かしてみましょう。
+配線と SlaveAddress が確認できましたので、さっそく動かしてみましょう。
 
-ADT7410のためのサンプルコードは先ほどの配線図と同じフォルダに格納されています。
+ADT7410 のためのサンプルコードは先ほどの配線図と同じフォルダに格納されています。
 
 `/home/pi/Desktop/gc/i2c/i2c-ADT7410/index.html`
 
-index.htmlをダブルクリックすると、ブラウザが起動し下記のような画面になります。
+ダブルクリックすると、ブラウザが起動し下記のような画面になります。
 
 ![browser](imgs/section2/browser.png)
 
 画面の回路図の下の数値が温度（摂氏）になります。
 
-ADT7410センサーに触ると、ゆっくりと温度が上がるはずです。
+ADT7410センサに触ると、ゆっくりと温度が上がるはずです。
 
-ADT7410はI2Cという通信方式でセンサーデータを送出するモジュールです。
+ADT7410 は I2C という通信方式でセンサーデータを送出するモジュールです。
 
-この情報をWeb I2C API 経由でWebアプリが読み取り、画面に情報を表示しているわけです。
+この情報を Web I2C API 経由でWebアプリが読み取り、画面に情報を表示しているわけです。
 
 # 4.温度センサー(ADT7410)exampleのコードを読んでみる
 
@@ -168,7 +165,7 @@ ADT7410はI2Cという通信方式でセンサーデータを送出するモジ�
 
 ## d-1. index.html
 
-下記がindex.htmlの中から主要な部分を抜き出したコードです。
+下記が index.html の中から主要な部分を抜き出したコードです。
 
 index.html
 ```html
@@ -184,15 +181,15 @@ index.html
   </body>
 ```
 
-まず最初に読み込んでいるのが`polyfill.js`。Web GPIO APIの時に出てきた`https://chirimen.org/chirimen-raspi3/gc/polyfill/polyfill.js`と同じWeb GPIO APIとWeb I2C APIのPolyfillです。
+まず最初に読み込んでいるのが `polyfill.js`。Web GPIO API の時に出てきた `https://chirimen.org/chirimen-raspi3/gc/polyfill/polyfill.js` と同じ Web GPIO API と Web I2C API の Polyfill です。
 
-次に読み込んでいるのが、`i2c-ADT7410.js`。このファイルは、Web I2C APIを使ってADT7410との通信を行うためのドライバーとなるライブラリです。
+次に読み込んでいるのが、`i2c-ADT7410.js`。このファイルは、Web I2C API を使って ADT7410 との通信を行うためのドライバーとなるライブラリです。
 
-最後に読み込んでいる`main.js` が、ドライバーライブラリを使ってこのアプリケーションの動作を記述している部分です。
+最後に読み込んでいる `main.js` が、ドライバーライブラリを使ってこのアプリケーションの動作を記述している部分です。
 
 ## d-2. main.js
 
-次に、`main.js`を見てみましょう。(重要な部分以外は削っています)
+次に、`main.js` を見てみましょう。(重要な部分以外は削っています)
 
 main.js
 ```javascript
@@ -212,36 +209,36 @@ main.js
 
 ### await navigator.requestI2CAccess()
 
-Web I2C APIを利用するための`I2CAccess` インタフェースを取得するための最初のAPI呼び出しです。この関数も非同期処理の関数で、
-処理完了を待機し、その結果正しくインタフェースが取得されたら`i2cAccess`オブジェクトに保持されます。
+Web I2C APIを利用するための `I2CAccess` インタフェースを取得するための最初の API 呼び出しです。この関数も非同期処理の関数で、
+処理完了を待機し、その結果正しくインタフェースが取得されたら `i2cAccess` オブジェクトに保持されます。
 
 ### i2cAccess.ports.get()
 
-`I2CAccess.ports` は、利用可能なI2Cポートの一覧です。
+`I2CAccess.ports` は、利用可能な I2C ポートの一覧です。
 
 ```javascript
   var port = i2cAccess.ports.get(1);
 ```
 
-CHIRIMEN for Raspberry Pi 3 で利用可能なI2Cポート番号は`1`番だけです。
-ここでは、ポート番号に`1` を指定して、`port`オブジェクトを取得しています。
+CHIRIMEN Raspi3 で利用可能なI2Cポート番号は`1`番だけです。
+ここでは、ポート番号に`1` を指定して、`port` オブジェクトを取得しています。
 
 ### var adt7410 = new ADT7410(port,0x48)
 
-ここでADT7410用のドライバーライブラリのインスタンス生成を行なっています。
+ここで ADT7410 用のドライバーライブラリのインスタンス生成を行なっています。
 
 ### await adt7410.init()
 
-ADT7410用のドライバーライブラリのインスタンス(adt7410)が持つ非同期処理の関数`init()`は、その内部でインスタンス生成時に指定したportオブジェクトと`slaveAddress(0x48)`を用いて`I2CPort.open()`を行なっています。
+ADT7410 用のドライバーライブラリのインスタンス (adt7410) が持つ非同期処理の関数 `init()` は、その内部でインスタンス生成時に指定した `port` オブジェクトと `slaveAddress(0x48)` を用いて `I2CPort.open()` を行なっています。
 
-`I2CPort.open()`が成功すると、`I2CSlaveDevice`というI2Cポートへデータ書き込みや読み込みなどを行うインタフェースが返されます。
-`I2CSlaveDevice`インタフェースは、ライブラリ内に保存され、その後の処理でこのインターフェースを使ってI2Cデバイスであるadt7410との通信が可能になります。
+`I2CPort.open()` が成功すると、`I2CSlaveDevice` という I2C ポートへデータ書き込みや読み込みなどを行うインタフェースが返されます。
+`I2CSlaveDevice` インタフェースは、ライブラリ内に保存され、その後の処理でこのインターフェースを使って I2C デバイスである adt7410 との通信が可能になります。
 
 ### await adt7410.read()
 
-ADT7410の仕様に基づくデータ読み出し処理をここで実施しています。
+ADT7410 の仕様に基づくデータ読み出し処理をここで実施しています。
 
-内部では、`I2CSlaveDevice.read8()` というAPIを2回呼び出すことで、温度データの(MSB)[https://ja.wikipedia.org/wiki/最上位ビット],(LSB)[https://ja.wikipedia.org/wiki/最下位ビット]を8bitずつ読み出し、両方の読み出しが終わった時点でMSBとLSBを合成、16ビットデータとしたのちに、温度データに変換して返却しています。
+内部では、`I2CSlaveDevice.read8()` というAPIを2回呼び出すことで、温度データの [MSB](https://ja.wikipedia.org/wiki/最上位ビット), [LSB](https://ja.wikipedia.org/wiki/最下位ビット) を 8bit ずつ読み出し、両方の読み出しが終わった時点で MSB と LSB を合成、16bitデータとしたのちに、温度データに変換して返却しています。
 
 ### Web I2C APIに着目して流れをまとめると
 
