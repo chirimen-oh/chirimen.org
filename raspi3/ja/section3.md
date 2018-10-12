@@ -9,7 +9,7 @@ CHIRIMEN for Raspberry Pi 3（以下 「CHIRIMEN Raspi3」） を使ったプロ
 ## (※1) CHIRIMEN for Raspberry Pi 3とは
 Raspberry Pi 3（以下「Raspi3」）上に構築したIoTプログラミング環境です。
 
-[Web GPIO API (Draft)](https://rawgit.com/browserobo/WebGPIO/master/index.html)や、[Web I2C API (Draft)](https://rawgit.com/browserobo/WebI2C/master/index.html)といったAPIを活用したプログラミングにより、WebアプリからRaspi3に接続した電子パーツを直接制御することができます。 
+[Web GPIO API (Draft)](http://browserobo.github.io/WebGPIO/)や、[Web I2C API (Draft)](http://browserobo.github.io/WebI2C/)といったAPIを活用したプログラミングにより、WebアプリからRaspi3に接続した電子パーツを直接制御することができます。 
 
 CHIRIMEN Open Hardware コミュニティにより開発が進められています。
 
@@ -28,7 +28,7 @@ CHIRIMEN Open Hardware コミュニティにより開発が進められていま
 * CHIRIMEN Raspi3 で利用可能なGPIO Port番号と位置は壁紙を見よう
 * CHIRIMEN Raspi3 ではWebアプリからのGPIOの制御には Web GPIO API を利用する。GPIOポートは「出力モード」に設定することで LED の ON/OFF などが行える。また「入力モード」にすることで、GPIO ポートの状態を読み取ることができる
 * [async function](https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Statements/async_function) を利用すると複数ポートの非同期コードがすっきり書ける
-* CHIRIMEN Raspi3 ではWebアプリからI2C通信に対応したモジュールの制御に [Web I2C API](https://rawgit.com/browserobo/WebI2C/master/index.html) を利用することができる
+* CHIRIMEN Raspi3 ではWebアプリからI2C通信に対応したモジュールの制御に [Web I2C API](http://browserobo.github.io/WebI2C/) を利用することができる
 
 # 1.準備
 
