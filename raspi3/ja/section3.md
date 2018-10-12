@@ -2,9 +2,9 @@
 
 # 概要
 
-CHIRIMEN for Raspberry Pi 3 を使ったプログラミングを通じて、Web I2C API の使い方を学びます。 
+CHIRIMEN for Raspberry Pi 3（以下 「CHIRIMEN Raspi3」） を使ったプログラミングを通じて、Web I2C API の使い方を学びます。 
 
-前回は温度センサーを使いながらWeb I2C APIの基本的な利用方法を学びました。今回は温度センサー以外のI2Cセンサーの使い方を見ていきましょう。
+前回は温度センサーを使いながら Web I2C API の基本的な利用方法を学びました。今回は温度センサー以外のI2Cセンサーの使い方を見ていきましょう。
 
 ## (※1) CHIRIMEN for Raspberry Pi 3とは
 Raspberry Pi 3（以下「Raspi3」）上に構築したIoTプログラミング環境です。
@@ -17,38 +17,38 @@ CHIRIMEN Open Hardware コミュニティにより開発が進められていま
 
 本チュートリアルを進める前に前回までのチュートリアルを進めておいてください。
 
-* [CHIRIMEN for Raspberry Pi 3 Hello World](section0.md)
-* [CHIRIMEN for Raspberry Pi 3 チュートリアル 1. GPIO編](section1.md)
-* [CHIRIMEN for Raspberry Pi 3 チュートリアル 2. I2C　基本編（ADT7410温度センサー）](section2.md)
+* [Hello World編](section0.md)
+* [GPIO編](section1.md)
+* [I2C　基本編（ADT7410 温度センサ）](section2.md)
 
 前回までのチュートリアルで学んだことは下記のとおりです。
 
 
-* CHIRIMEN for Raspberry Pi 3 では、各種exampleが `~/Desktop/gc/`配下においてある。配線図も一緒に置いてある
-* CHIRIMEN for Raspberry Pi 3 で利用可能なGPIO Port番号と位置は壁紙を見よう
-* CHIRIMEN for Raspberry Pi 3 ではWebアプリからのGPIOの制御にはWeb GPIO API を利用する。GPIOポートは「出力モード」に設定することでLEDのON/OFFなどが行える。また「入力モード」にすることで、GPIOポートの状態を読み取ることができる
+* CHIRIMEN Raspi3 では、各種exampleが `~/Desktop/gc/`配下においてある。配線図も一緒に置いてある
+* CHIRIMEN Raspi3 で利用可能なGPIO Port番号と位置は壁紙を見よう
+* CHIRIMEN Raspi3 ではWebアプリからのGPIOの制御には Web GPIO API を利用する。GPIOポートは「出力モード」に設定することで LED の ON/OFF などが行える。また「入力モード」にすることで、GPIO ポートの状態を読み取ることができる
 * [async function](https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Statements/async_function) を利用すると複数ポートの非同期コードがすっきり書ける
-* CHIRIMEN for Raspberry Pi 3 ではWebアプリからI2C通信に対応したモジュールの制御に[Web I2C API](https://rawgit.com/browserobo/WebI2C/master/index.html) を利用することができる
+* CHIRIMEN Raspi3 ではWebアプリからI2C通信に対応したモジュールの制御に [Web I2C API](https://rawgit.com/browserobo/WebI2C/master/index.html) を利用することができる
 
 # 1.準備
 
 ## 複数のI2Cモジュールを接続するために
 
-前回はRaspberry Piと温度センサーを4本のジャンパケーブルで直接接続しました。
+前回は Raspberry Pi と温度センサーを4本のジャンパケーブルで直接接続しました。
 
-I2Cバスには複数のモジュールが接続できますので、今回は複数のI2Cモジュールを容易に追加・削除できるように[Grove I2C Hub](http://wiki.seeed.cc/Grove-I2C_Hub/)を利用することにします。
+I2Cバスには複数のモジュールが接続できますので、今回は複数の I2C モジュールを容易に追加・削除できるように [Grove I2C Hub](http://wiki.seeed.cc/Grove-I2C_Hub/) を利用することにします。
 
-Grove I2C Hubは、4つのGroveコネクタを備えたI2Cモジュールを接続するためのハブです。
+Grove I2C Hub は、4つの Grove コネクタを備えた I2C モジュールを接続するためのハブです。
 
 4ピンの [Grove 4ピン ケーブル](https://www.seeedstudio.com/Grove-Universal-4-Pin-Buckled-20cm-Cable-5-PCs-pack-p-936.html)を経由すれば、後述する[Grove Digital Light Sensor](http://wiki.seeed.cc/Grove-Digital_Light_Sensor/)などGroveコネクタを備えたI2Cモジュールを直接接続することができます。
 
-Raspberry Pi 3 や前回のADT7410などピンヘッダを備えた（あるいは事前にスルーホールにピンヘッダをはんだ付けしてある）モジュールとの接続には、[Grove 4ピン ジャンパ　メスケーブル](https://www.seeedstudio.com/grove-to-4-pin-254-female-jumper-wire5-pcs-pack-p-1020.html) 経由で接続することができます。
+Raspi 3 や前回のADT7410などピンヘッダを備えた（あるいは事前にスルーホールにピンヘッダをはんだ付けしてある）モジュールとの接続には、[Grove 4ピン ジャンパ　メスケーブル](https://www.seeedstudio.com/grove-to-4-pin-254-female-jumper-wire5-pcs-pack-p-1020.html) 経由で接続することができます。
 
 ## 用意するもの
 
 ここでは、1つのGroveコネクタつきI2Cモジュールと1つのピンヘッダつきI2Cモジュールを接続することを想定し、下記を用意しておきましょう。
 
-* [CHIRIMEN for Raspberry Pi 3 Hello World](section0.md) に記載の「基本ハードウエア
+* [Hello World編](section0.md) に記載の「基本ハードウエア」
 
 ![ハブとケーブル](imgs/section3/h.jpg)
 
@@ -60,7 +60,7 @@ Raspberry Pi 3 や前回のADT7410などピンヘッダを備えた（あるい�
 
 ### 1/10 追加
 
-測距センサーをSRF02からGP2Y0E03しました。
+測距センサーをSRF02からGP2Y0E03にしました。
 
 この変更に伴い、下記が追加で必要になります。
 
@@ -84,18 +84,18 @@ Raspberry Pi 3との接続方法については、下記回路図を参照くだ
 
 このセンサーモジュールはGroveコネクタを備えていますので、接続方法に応じてコネクタを選んでください。
 
-* Grove I2C Hub経由で接続する場合 ：Grove 4ピン ケーブル経由で接続してください。
-* Raspberry Pi 3へ直接接続する場合：Grove 4ピン ジャンパー メス　ケーブル経由で接続してください。
+* Grove I2C Hub 経由で接続する場合 ：Grove 4ピン ケーブル経由で接続してください。
+* Raspberry Pi 3 へ直接接続する場合：Grove 4ピン ジャンパー メス　ケーブル経由で接続してください。
 
 ## b. 接続確認とexampleの実行
 
-i2cdetectで接続を確認しておきましょう。
+i2cdetect で接続を確認しておきましょう。
 
 `$ i2cdetect -y -r 1`
 
 SlaveAddress `0x29` が見つかれば接続OKです。
 
-次にexampleを動かします。
+次に example を動かします。
 
 `/home/pi/Desktop/gc/i2c/i2c-grove-light/index.html`
 
@@ -103,15 +103,15 @@ SlaveAddress `0x29` が見つかれば接続OKです。
 
 センサーに当たる光を遮断してみてください。数値が小さくなるはずです。
 
-逆にセンサーにLEDの光を直接当てると数値が大きくなることが確認できるでしょう。
+逆にセンサーに LED の光を直接当てると数値が大きくなることが確認できるでしょう。
 
 ## c.コード解説
 
-exampleのコードから、光センサーに関係する部分を見ていきます。
+example のコードから、光センサーに関係する部分を見ていきます。
 
 今回はドライバーライブラリの中までは深入りせずに、アプリケーションの流れを追ってみましょう。
 
-ADT7410の時とほとんど同じであることがわかるはずです。
+ADT7410 の時とほとんど同じであることがわかるはずです。
 
 ### c-1. index.html
 
@@ -131,8 +131,8 @@ index.html
   </body>
 ```
 
-HTMLはADT7410の時とほとんど同じです。
-ドライバーライブラリが、`i2c-grove-light.js`に変わりました。
+HTML は ADT7410 の時とほとんど同じです。
+ドライバーライブラリが、`i2c-grove-light.js` に変わりました。
 
 ### c-2. main.js
 
@@ -152,21 +152,21 @@ main.js
 
 ```
 
-`main.js`も温度センサーとほとんど同じです。
+`main.js` も温度センサーとほとんど同じです。
 
 ### var grovelight = new GROVELIGHT(port,0x29)
 
 ここで光センサー用のドライバーライブラリのインスタンス生成を行なっています。
 
-ライブラリ名が変わっただけでADT7410と同様に、`port`オブジェクトと、SlaveAddressをパラメータで渡しています。
+ライブラリ名が変わっただけで ADT7410 と同様に、`port` オブジェクトと、SlaveAddress をパラメータで渡しています。
 
 ### grovelight.init()
 
-`init()`では、インスタンス生成時に指定したportオブジェクトと`slaveAddress(0x29)`を用いて`I2CPort.open()`を行ない、返却される `I2CSlaveDevice` を保存後に`resolve()`で呼び出し元に処理を返しています。
+`init()` では、インスタンス生成時に指定したportオブジェクトと `slaveAddress(0x29)` を用いて `I2CPort.open()` を行ない、返却される `I2CSlaveDevice` を保存後に `resolve()` で呼び出し元に処理を返しています。
 
 ### grovelight.read()
 
-Grove Digital Light Sensorの仕様に基づくデータ読み出し処理をここで実施しています。
+Grove Digital Light Sensor の仕様に基づくデータ読み出し処理をここで実施しています。
 
 # 3.測距センサーを使ってみる (11/10変更)
 
@@ -178,13 +178,13 @@ Grove Digital Light Sensorの仕様に基づくデータ読み出し処理をこ
 
 * [測距センサー(GP2Y0E03)](http://akizukidenshi.com/catalog/g/gI-07547/) x 1
 
-Raspberry Pi 3との接続方法については、下記回路図を参照ください。
+Raspi 3 との接続方法については、下記回路図を参照ください。
 
 `/home/pi/Desktop/gc/i2c/i2c-GP2Y0E03/schematic.png`
 
 ![回路図2](imgs/section3/k2.png)
 
-このセンサーモジュールには、細い7本のケーブルが付属していますが、このままではRaspberry Piと接続することができません。
+このセンサーモジュールには、細い7本のケーブルが付属していますが、このままではRaspi 3 と接続することができません。
 
 この細いケーブルを2.54mm のジャンパーピンにハンダづけするなどしてブレッドボード経由でRaspberry Piと接続できるよう、加工しておいてください。
 
@@ -194,7 +194,7 @@ Raspberry Pi 3との接続方法については、下記回路図を参照くだ
 
 ## b. 接続確認とexampleの実行
 
-i2cdetectで接続を確認しておきましょう。
+i2cdetect で接続を確認しておきましょう。
 
 `$ i2cdetect -y -r 1`
 
@@ -213,7 +213,7 @@ SlaveAddress `0x40` が見つかれば接続OKです。
 
 ## c.コード解説
 
-exampleのコードから、測距センサーに関係する部分を見ていきます。
+example のコードから、測距センサーに関係する部分を見ていきます。
 
 ### c-1. index.html
 下記が`index.html`の中から主要な部分を抜き出したコードです。
@@ -232,11 +232,11 @@ index.html
   </body>
 ```
 
-HTMLはADT7410の時とほとんど同じです。
-ドライバーライブラリが、`i2c-GP2Y0E03.js`に変わりました。
+HTML は ADT7410 の時とほとんど同じです。
+ドライバーライブラリが、`i2c-GP2Y0E03.js` に変わりました。
 
 ### c-2. main.js
-次に、`main.js`を見てみましょう。(重要な部分以外は削っています)
+次に、`main.js` を見てみましょう。(重要な部分以外は削っています)
 
 main.js
 ```javascript
@@ -260,7 +260,7 @@ main.js
 	}
 ```
 
-`main.js`も温度センサーとほとんど同じです。
+`main.js` も温度センサーとほとんど同じです。
 
 ### var sensor_unit = new GP2Y0E03(port,0x40)
 
@@ -268,11 +268,11 @@ main.js
 
 ### sensor_unit.init()
 
-こちらも、内部で`I2CSlaveDevice`インタフェースを取得する処理で、他のセンサーと同様です。
+こちらも、内部で `I2CSlaveDevice` インタフェースを取得する処理で、他のセンサーと同様です。
 
 ### sensor_unit.read()
 
-測距センサーGP2Y0E03の仕様に基づくデータ読み出し処理をここで実施しています。
+測距センサー GP2Y0E03 の仕様に基づくデータ読み出し処理をここで実施しています。
 
 # 4.三軸加速度センサーを使ってみる
 
@@ -284,7 +284,7 @@ main.js
 
 * 三軸加速度センサー([GROVE - I2C 三軸加速度センサ ADXL345搭載](http://www.seeedstudio.com/depot/grove-3-axis-digital-accelerometer-adxl345-p-1156.html)) x 1
 
-Raspberry Pi 3との接続方法については、下記回路図を参照ください。
+Raspi 3 との接続方法については、下記回路図を参照ください。
 
 `/home/pi/Desktop/gc/i2c/i2c-grove-accelerometer/schematic.png`
 
@@ -292,18 +292,18 @@ Raspberry Pi 3との接続方法については、下記回路図を参照くだ
 
 このセンサーモジュールはGroveコネクタを備えていますので、接続方法に応じてコネクタを選んでください。
 
-* Grove I2C Hub経由で接続する場合 ：Grove 4ピン ケーブル経由で接続してください。
-* Raspberry Pi 3へ直接接続する場合：Grove 4ピン ジャンパー メス　ケーブル経由で接続してください。
+* Grove I2C Hub 経由で接続する場合 ：Grove 4ピン ケーブル経由で接続してください。
+* Raspi 3 へ直接接続する場合：Grove 4ピン ジャンパー メス　ケーブル経由で接続してください。
 
 ## b. 接続確認とexampleの実行
 
-i2cdetectで接続を確認しておきましょう。
+i2cdetect で接続を確認しておきましょう。
 
 `$ i2cdetect -y -r 1`
 
 SlaveAddress `0x53` が見つかれば接続OKです。
 
-次にexampleを動かします。
+次に example を動かします。
 
 `/home/pi/Desktop/gc/i2c/i2c-grove-accelerometer/index.html`
 
@@ -339,11 +339,11 @@ index.html
   </body>
 ```
 
-ドライバーライブラリが、`i2c-grove-accelerometer.js`に、そしてX、Y、Z、3つの値を表示するため要素が3つに変わりましたが、それ以外は今回もこれまでとほとんど同じです。
+ドライバーライブラリが、`i2c-grove-accelerometer.js` に、そしてX、Y、Z、3つの値を表示するため要素が3つに変わりましたが、それ以外は今回もこれまでとほとんど同じです。
 
 ### c-2. main.js
 
-次に、`main.js`を見てみましょう。(重要な部分以外は削っています)
+次に、`main.js` を見てみましょう。(重要な部分以外は削っています)
 
 main.js
 ```javascript
@@ -363,7 +363,7 @@ main.js
 		await sleep(1000);
 	}
 ```
-main.jsも温度センサーとほとんど同じです。
+main.js も温度センサーとほとんど同じです。
 
 ### var groveaccelerometer = new GROVEACCELEROMETER(port,0x53)
 
@@ -371,7 +371,7 @@ main.jsも温度センサーとほとんど同じです。
 
 ### grovelight.init()
 
-これまでのドライバーライブラリ同様に`init()`では、インスタンス生成時に指定した`port`オブジェクトと`slaveAddress(0x29)`を用いて`I2CPort.open()`を行ない、返却される `I2CSlaveDevice` を保存後に`resolve()`で呼び出し元に処理を返しています。
+これまでのドライバーライブラリ同様に `init()` では、インスタンス生成時に指定した `port` オブジェクトと `slaveAddress(0x29)` を用いて `I2CPort.open()` を行ない、返却される `I2CSlaveDevice` を保存後に`resolve()`で呼び出し元に処理を返しています。
 
 ### groveaccelerometer.read()
 
@@ -379,9 +379,9 @@ main.jsも温度センサーとほとんど同じです。
 
 # 5.演習：複数のセンサーを組み合わせて使ってみよう
 
-せっかくGrove I2C Hubを用意しましたので、これまでの復習と応用を兼ねて下記のような組み合わせで2つのセンサーを繋いで動かしてみましょう。
+せっかく Grove I2C Hub を用意しましたので、これまでの復習と応用を兼ねて下記のような組み合わせで2つのセンサーを繋いで動かしてみましょう。
 
-* 温度センサー(ADT7410)か、「距離センサー(GP2Y0E03)」のどちらか 1つ
+* 「温度センサー(ADT7410)」か、「距離センサー(GP2Y0E03)」のどちらか 1つ
 * 「光センサー(Grove Digital Light Sensor)」か「三軸加速度センサー」のどちらか１つ
 
 ※この組み合わせなら、冒頭で用意したケーブルで足りるはずです。
@@ -393,13 +393,13 @@ main.jsも温度センサーとほとんど同じです。
 * 光センサー(Grove Digital Light Sensor): https://chirimen.org/chirimen-raspi3/gc/drivers/i2c-grove-light.js
 * 三軸加速度センサー : https://chirimen.org/chirimen-raspi3/gc/drivers/i2c-grove-accelerometer.js
 
-まずはセンサーを繋いでから、[jsbin](https://jsbin.com/)か[jsfiddle](https://jsfiddle.net/) を使ってコードを書いてみましょう。
+まずはセンサーを繋いでから、[jsbin](https://jsbin.com/) か [jsfiddle](https://jsfiddle.net/) を使ってコードを書いてみましょう。
 
 # 6.他のI2Cモジュールも使ってみる
 
 前回からこれまでに4つのI2Cセンサーを使ってみました。
 
-本稿執筆中の CHIRIMEN for Raspberry Pi 3 には、他にも `/home/pi/Desktop/gc/i2c/` 配下に下記のようなI2Cモジュールの examples が含まれています。
+本稿執筆中の CHIRIMEN Raspi3 には、他にも `/home/pi/Desktop/gc/i2c/` 配下に下記のようなI2Cモジュールの examples が含まれています。
 
 * i2c-grove-gesture : 「[Grove Gesture](http://wiki.seeed.cc/Grove-Gesture_v1.0/)」(簡単なジェスチャーを判定するセンサー)の接続例です。
 * i2c-grove-oledDisplay : 「[Grove OLED Display](https://www.seeedstudio.com/Grove-OLED-Display-0.96%26quot%3B-p-781.html)」(Grove端子で接続できるOLED Display)の接続例です。
@@ -439,10 +439,9 @@ I2Cデバイスを同時に接続して使用するとき、重要な注意事�
 * Grove I2C Hubを使ったI2Cモジュールの接続方法
 * 2.光センサーの使い方
 * 3.超音波センサーの使い方
-* 4.3軸加速度センサーの使い方
-* 複数のセンサーを繋いだ演習
+* 4.三軸加速度センサーの使い方
+* 複数のセンサーの取扱い方
 
-次回のCHIRIMEN for Raspberry Pi 3 チュートリアルはいよいよ最終回！
+次のCHIRIMEN for Raspberry Pi 3 チュートリアルはいよいよ最終回！
 
-『[Web GPIO APIとWeb I2C APIを組み合わせたプログラミング](https://tutorial.chirimen.org/raspi3/ja/section4)』に挑戦してみたいと思います。
-お楽しみに！
+『[Web GPIO APIとWeb I2C APIを組み合わせたプログラミング](https://tutorial.chirimen.org/raspi3/ja/section4)』に挑戦します！
