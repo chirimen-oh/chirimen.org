@@ -609,8 +609,8 @@ LEDが点灯する替わりにファンが回るようになりました。
 
 このチュートリアルでは、実際にコードを書きながら Web GPIO API の基本的な利用方法を学びました。
 
-* Web GPIO APIを使ったGPIO出力ポートの設定と出力処理までの流れ（`navigator.requestGPIOAccess()`〜`port.write()`）
-* Web GPIO APIを使ったGPIO入力ポートの設定と読み出し処理の流れ（`navigator.requestGPIOAccess()`〜`port.read()`）
-* Web GPIO APIを使ったGPIO入力ポートの設定と変化検知受信の流れ (`navigator.requestGPIOAccess()`〜`port.onchange()`)
+* Web GPIO APIを使ったGPIO出力ポートの設定と出力処理までの流れ  (`navigator.requestGPIOAccess()`〜`port.write()`）
+* Web GPIO APIを使ったGPIO入力ポートの設定と読み出し処理の流れ  (`navigator.requestGPIOAccess()`〜`port.read()`）
+* Web GPIO APIを使ったGPIO入力ポートの設定と変化検知受信の流れ  (`navigator.requestGPIOAccess()`〜`port.onchange()`)
 
 次の『[チュートリアル 2. I2C　基本編（ADT7410温度センサー）](https://tutorial.chirimen.org/raspi3/ja/section2)』ではWeb I2C APIの学習をします。
