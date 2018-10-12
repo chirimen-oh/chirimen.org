@@ -3,14 +3,14 @@
 # 概要
 CHIRIMEN for Raspberry Pi 3 を使ったプログラミングを通じて、Web GPIO APIの使い方を学びます。
 
-本チュートリアルを進める前に「CHIRIMEN for Raspberry Pi 3 Hello World」でCHIRIMEN for Raspberry Pi 3 の基本的な操作方法を確認しておいてください。
+本チュートリアルを進める前に「CHIRIMEN for Raspberry Pi 3 Hello World」で CHIRIMEN for Raspberry Pi 3 の基本的な操作方法を確認しておいてください。
 
 [CHIRIMEN for Raspberry Pi 3 Hello World](section0.md)
 
 ## (※1) CHIRIMEN for Raspberry Pi 3とは
 Raspberry Pi 3（以下「Raspi3」）上に構築したIoTプログラミング環境です。
 
-[Web GPIO API (Draft)](https://rawgit.com/browserobo/WebGPIO/master/index.html)や、[Web I2C API (Draft)](https://rawgit.com/browserobo/WebI2C/master/index.html)といったAPIを活用したプログラミングにより、WebアプリからRaspi3に接続した電子パーツを直接制御することができます。 
+[Web GPIO API (Draft)](browserobo.github.io/WebGPIO/) や、[Web I2C API (Draft)](http://browserobo.github.io/WebI2C/) といったAPIを活用したプログラミングにより、Web アプリから Raspi3 に接続した電子パーツを直接制御することができます。 
 
 CHIRIMEN Open Hardware コミュニティにより開発が進められています。
 
@@ -27,14 +27,14 @@ CHIRIMEN Open Hardware コミュニティにより開発が進められていま
 * [DCファン](http://akizukidenshi.com/catalog/g/gP-02480/) x 1 ※ブレッドボードに接続できるようにケーブルを加工しておいてください。
 
 ## CHIRIMEN for Raspberry Pi 3の起動とLチカの確認
-* [CHIRIMEN for Raspberry Pi 3 Hello World](section0.md) の 「3. CHIRIMEN for Raspberry Pi 3 を起動してみよう」を参照して、CHIRIMEN for Raspberry Pi 3を起動してください。
-* ついでに[CHIRIMEN for Raspberry Pi 3 Hello World](section0.md) の 「4. Lチカをやってみよう」を実施して、Lチカが正しく行えることを確認しておいてください。
+* [Hello World 編](section0.md) の 「3. CHIRIMEN for Raspberry Pi 3 を起動してみよう」を参照して、CHIRIMEN for Raspberry Pi 3 を起動してください。
+* ついでに[Hello World 編](section0.md) の 「4. Lチカをやってみよう」を実施して、Lチカが正しく行えることを確認しておいてください。
 
 ## Lチカでのおさらい
-* CHIRIMEN for Raspberry Pi 3 では、各種exampleが ```~/Desktop/gc/```配下においてある。配線図も一緒に置いてある
-* CHIRIMEN for Raspberry Pi 3 で利用可能なGPIO Port番号と位置は壁紙を見よう
+* CHIRIMEN Raspi3 では、各種 example が ```~/Desktop/gc/``` 配下においてある。配線図も一緒に置いてある
+* CHIRIMEN Raspi3 で利用可能なGPIO Port番号と位置は壁紙を見よう
 * LEDには方向がある。アノードが足が長い方。こちらをGPIOポートに繋ぐ。反対の足が短い方をGND側に繋ぐ。抵抗はどちらかに繋ぐ
-* CHIRIMEN for Raspberry Pi 3 ではWebアプリからのGPIOの制御に[Web GPIO API](https://rawgit.com/browserobo/WebGPIO/master/index.html) を利用する。
+* CHIRIMEN for Raspberry Pi 3 ではWebアプリからのGPIOの制御に [Web GPIO API](browserobo.github.io/WebGPIO/) を利用する。
 
 # 2. マウスクリックでLEDのON/OFFを制御してみる
 それでは、実際にプログラミングをやってみましょう。
