@@ -242,31 +242,31 @@ ADT7410 の仕様に基づくデータ読み出し処理をここで実施して
 
 ### Web I2C APIに着目して流れをまとめると
 
-ADT7410ドライバーライブラリの内部の処理をまとめると以下のようなことが行われています。
-1. await navigator.requestI2CAccess() で I2CAccessインタフェースを取得
-2. i2cAccess.ports.get(1) で、1番ポートのportオブジェクトを取得
-3. await port.open(0x48) で、SlaveAddress 0x48番のI2CSlaveDeviceインタフェースを取得
-4. i2cSlave.read8() で 温度データ を読み込み (ADT7410の場合、常に2回セット)
+ADT7410 ドライバーライブラリの内部の処理をまとめると以下のようなことが行われています。
+1. await navigator.requestI2CAccess() で I2CAccess インタフェースを取得
+2. i2cAccess.ports.get(1) で、1番ポートの `port` オブジェクトを取得
+3. await port.open(0x48) で、SlaveAddress 0x48 番の I2CSlaveDevice インタフェースを取得
+4. i2cSlave.read8() で 温度データ を読み込み (ADT7410 の場合、常に2回セット)
 
 となります。
 
-この流れは、ADT7410以外の他のI2Cデバイスでも基本的に同様になります。
+この流れは、ADT7410 以外の他のI2Cデバイスでも基本的に同様になります。
 
-I2Cデバイスにより変わるのは、`port.open()`に指定するSlaveAddressと、[4.の実際の処理](#4温度センサーadt7410の値をドライバーを使わずに読むコードを書いてみる) になります。
+I2Cデバイスにより変わるのは、`port.open()`に指定する SlaveAddress と、[4.の実際の処理](#4温度センサーadt7410の値をドライバーを使わずに読むコードを書いてみる) になります。
 
-CHIRIMEN for Raspberry Pi 3のexamplesとして用意されているサンプルコードとドライバーが提供されているI2Cデバイスは下記リストの通りですが、下記リストに無いI2Cデバイスでも、上記流れを押さえておけば対応するコードを書くのはそれほど難しくありません。
+CHIRIMEN Raspi3の example として用意されているサンプルコードとドライバーが提供されている I2C デバイスは下記リストの通りですが、下記リストに無い I2Cデバイスでも、上記流れを押さえておけば対応するコードを書くのはそれほど難しくありません。
 
 新たなI2Cデバイスへの対応方法については、下記記事も参考にしてください。
 
-(CHIRIMEN for Raspberry Pi ではなく、CHIRIMENボード向けの記事ですが、Web I2C APIへの対応観点では同じ方法論で対応が可能です)
+(CHIRIMEN Raspi3 ではなく、CHIRIMEN ボード向けの記事ですが、Web I2C API への対応観点では同じ方法論で対応が可能です)
 
 [CHIRIMENでI2Cデバイスを使ってみる](https://qiita.com/tadfmac/items/04257bfe982ba0f050bb)
 
 # 4.温度センサー(ADT7410)の値をドライバーを使わずに読むコードを書いてみる
 
-それでは、ADT7410ドライバー内部での処理の流れがだいたいわかったところで、ドライバーを使わずに自力で値を読み込むコードを一応書いてみましょう。
+それでは、ADT7410 ドライバー内部での処理の流れがだいたいわかったところで、ドライバーを使わずに自力で値を読み込むコードを一応書いてみましょう。
 
-exampleと同じコードを書いても面白くないので、今回は`i2c-ADT7410.js`は使わずに、[JSFiddle](https://jsfiddle.net/)を使って一通り温度を読み込む処理を書いてみましょう。
+example と同じコードを書いても面白くないので、今回は`i2c-ADT7410.js`は使わずに、[JSFiddle](https://jsfiddle.net/) を使って一通り温度を読み込む処理を書いてみましょう。
 
 もし、ブラウザで `/home/pi/Desktop/gc/i2c/i2c-ADT7410/index.html` 開いている場合、一度閉じておいてください。
 
@@ -274,7 +274,7 @@ exampleと同じコードを書いても面白くないので、今回は`i2c-AD
 
 それでは始めましょう。
 
-JSFiddleのHTMLのペインにPolyfillの読み込みと、温度表示のためのタグだけ書いておきます。
+JSFiddle の HTMLペインに Polyfill の読み込みと、温度表示のためのタグだけ書いておきます。
 
 ```html
 <div id="value">---</div>
@@ -286,7 +286,7 @@ JSFiddleのHTMLのペインにPolyfillの読み込みと、温度表示のため
 ## JavaScriptを書いてみる
 次にJavaScriptです。async functionを使って書いてみます。
 
-今回は定期的なポーリング処理が必要になるので、[CHIRIMEN for Raspberry Pi 3 チュートリアル 1. GPIO編 c. スイッチに反応するようにする (port.read()を使ってみる)](section1.md#c. スイッチに反応するようにする (port.read()を使ってみる)) の時に書いたコードが参考になります。
+今回は定期的なポーリング処理が必要になるので、[GPIO編 c. スイッチに反応するようにする (port.read()を使ってみる)](section1.md#c. スイッチに反応するようにする (port.read()を使ってみる)) の時に書いたコードが参考になります。
 
 ```javascript
 // ADT7410valueドライバを使わず、自力でADT7410の値を読むサンプル
@@ -325,16 +325,16 @@ JavaScriptを書いたら、`▷ Run` を押して実行してみましょう。
 
 温度センサーの値が表示されたはずです。
 
-ADT7410を指で触って温度が変わることを確認してみてください。
+ADT7410 を指で触って温度が変わることを確認してみてください。
 
 # まとめ
 
-このチュートリアルでは 下記について学びました。
+このチュートリアルでは下記について学びました。
 
 * I2Cの基礎知識
-* i2cdetectコマンドを使ったRaspberry Pi 3に接続されたI2CモジュールのSlaveAddress確認方法
-* Web I2C APIを使った処理の流れ
-* ADT7410温度センサーの制御方法
+* i2cdetect コマンドを使った Raspi 3に接続された I2C モジュールの SlaveAddress 確認方法
+* Web I2C API を使った処理の流れ
+* ADT7410 温度センサーの制御方法
 
-次回『[CHIRIMEN for Raspberry Pi 3 チュートリアル 3. I2C　応用編（その他のセンサー）](section3.md)』では加速度センサーなど他のセンサーも触ってみる予定です。
+次の『[チュートリアル 3. I2C　応用編（その他のセンサー）](section3.md)』では加速度センサーなど他のセンサーも触っていきます。
 
