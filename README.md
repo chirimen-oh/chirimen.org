@@ -31,3 +31,8 @@ CHIRIMEN Raspi3 チュートリアルの各ページはこちらでご覧頂け�
 Latest version of this site is hosted on https://tutorial.chirimen.org/
 
 このサイトのオンライン版はこちらでご覧頂けます:  https://tutorial.chirimen.org/
+
+## Feedback / フィードバック
+If you have any feedback to this tutorials, see [Feedback Page](feedback)
+
+本チュートリアルにご指摘やご提案のある方、編集に協力頂ける方は [フィードバックページ](feedback) をご覧ください。
