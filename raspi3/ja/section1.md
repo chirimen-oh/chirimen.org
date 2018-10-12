@@ -10,7 +10,7 @@ CHIRIMEN for Raspberry Pi 3 を使ったプログラミングを通じて、Web 
 ## (※1) CHIRIMEN for Raspberry Pi 3とは
 Raspberry Pi 3（以下「Raspi3」）上に構築したIoTプログラミング環境です。
 
-[Web GPIO API (Draft)](browserobo.github.io/WebGPIO/) や、[Web I2C API (Draft)](http://browserobo.github.io/WebI2C/) といったAPIを活用したプログラミングにより、Web アプリから Raspi3 に接続した電子パーツを直接制御することができます。 
+[Web GPIO API (Draft)](http://browserobo.github.io/WebGPIO/) や、[Web I2C API (Draft)](http://browserobo.github.io/WebI2C/) といったAPIを活用したプログラミングにより、Web アプリから Raspi3 に接続した電子パーツを直接制御することができます。 
 
 CHIRIMEN Open Hardware コミュニティにより開発が進められています。
 
@@ -28,18 +28,18 @@ CHIRIMEN Open Hardware コミュニティにより開発が進められていま
 
 ## CHIRIMEN for Raspberry Pi 3の起動とLチカの確認
 * [Hello World 編](section0.md) の 「3. CHIRIMEN for Raspberry Pi 3 を起動してみよう」を参照して、CHIRIMEN for Raspberry Pi 3 を起動してください。
-* ついでに[Hello World 編](section0.md) の 「4. Lチカをやってみよう」を実施して、Lチカが正しく行えることを確認しておいてください。
+* ついでに [Hello World 編](section0.md) の 「4. Lチカをやってみよう」を実施して、Lチカが正しく行えることを確認しておいてください。
 
 ## Lチカでのおさらい
 * CHIRIMEN Raspi3 では、各種 example が ```~/Desktop/gc/``` 配下においてある。配線図も一緒に置いてある
-* CHIRIMEN Raspi3 で利用可能なGPIO Port番号と位置は壁紙を見よう
+* CHIRIMEN Raspi3 で利用可能な GPIO Port 番号と位置は壁紙を見よう
 * LEDには方向がある。アノードが足が長い方。こちらをGPIOポートに繋ぐ。反対の足が短い方をGND側に繋ぐ。抵抗はどちらかに繋ぐ
-* CHIRIMEN for Raspberry Pi 3 ではWebアプリからのGPIOの制御に [Web GPIO API](browserobo.github.io/WebGPIO/) を利用する。
+* CHIRIMEN for Raspberry Pi 3 ではWebアプリからのGPIOの制御に [Web GPIO API](http://browserobo.github.io/WebGPIO/) を利用する。
 
 # 2. マウスクリックでLEDのON/OFFを制御してみる
 それでは、実際にプログラミングをやってみましょう。
 
-[CHIRIMEN for Raspberry Pi 3 Hello World](section0.md) では、[JS Bin](http://jsbin.com/) を使ってLチカのexample コードを少し触ってみるだけでしたが、今度は最初から書いてみることにします。
+[Hello World編](section0.md) では、[JS Bin](http://jsbin.com/) を使ってLチカの example コードを少し触ってみるだけでしたが、今度は最初から書いてみることにします。
 
 せっかくですので、このチュートリアルでは他のオンラインエディタ [JSFiddle](https://jsfiddle.net/) を使ってみることにします。
 
@@ -49,16 +49,16 @@ CHIRIMEN Open Hardware コミュニティにより開発が進められていま
 > 各サービスにはそれぞれ一長一短がありますので、利用シーンに応じて使い分けると良いかもしれません。
 
 ## a. 部品と配線について
-このパートでは[CHIRIMEN for Raspberry Pi 3 Hello World](section0.md) で実施したLチカの配線をそのまま利用します。必要な部品も同じです。
+このパートでは[Hello World編](section0.md) で実施したLチカの配線をそのまま利用します。必要な部品も同じです。
 
 ![部品一覧](imgs/section1/b.jpg)
 
-LEDは、26番ポートに接続しておいてください。
+LED は、26番ポートに接続しておいてください。
 
 ![回路図](imgs/section1/k.png)
 
 ## b. HTML/CSSを記載する
-さて、今回は、ボタンとLEDの状態インジケータを画面上に作ってみましょう。
+さて、今回はボタンと LED の状態インジケータを画面上に作ってみましょう。
 HTMLに ```<button>```と```<div>``` 要素を1つづつ作ります。
 
 [JSFiddle](https://jsfiddle.net/) にアクセスすると、初期状態でコード編集を始めることができます。
@@ -68,7 +68,7 @@ HTMLに ```<button>```と```<div>``` 要素を1つづつ作ります。
 <button id="onoff">LED ON/OFF</button>
 <div id="ledview"></div>
 ```
-※JSFiddleのHTMLペインにはHTMLタグの全てを書く必要はなく、```<body>```タグ内のみを書けばあとは補完してくれます。
+※JSFiddle のHTMLペインにはHTMLタグの全てを書く必要はなく、```<body>```タグ内のみを書けばあとは補完してくれます。
 
 ```ledview```には下記のようなスタイルを付けておきましょう。こちらはCSSペインに記載します。
 
@@ -81,7 +81,7 @@ HTMLに ```<button>```と```<div>``` 要素を1つづつ作ります。
 }
 ```
 
-最後に、HTMLに戻って、[Web GPIO API](https://rawgit.com/browserobo/WebGPIO/master/index.html)を利用可能にするためのPolyfillをロードする記述を行なっておきましょう。
+最後に、HTMLに戻って、[Web GPIO API](https://rawgit.com/browserobo/WebGPIO/master/index.html) を利用可能にするための Polyfill をロードする記述を行なっておきましょう。
 先ほど追加した```ledview```のすぐ下に下記```<script>```タグを記載します。
 
 ```html
@@ -89,9 +89,9 @@ HTMLに ```<button>```と```<div>``` 要素を1つづつ作ります。
 ```
 
 ## c. ボタンに反応する画面を作る
-GPIOを実際に使う前に、まずは「ボタンを押したらLEDのON/OFF状態を表示する画面を切り替える」部分を作ってみます。
+GPIOを実際に使う前に、まずは「ボタンを押したら LED の ON/OFF 状態を表示する画面を切り替える」部分を作ってみます。
 
-早速JavaScriptを書いて行きましょう。
+早速 JavaScript を書いて行きましょう。
 
 ```javascript
 onload = function(){
@@ -138,39 +138,39 @@ async function mainFunction(){
 }
 ```
 
-これで、画面のボタンクリックに反応してLEDのON/OFFができたら成功です。
+これで、画面のボタンクリックに反応して LED の ON/OFF ができたら成功です。
 
-[CHIRIMEN for Raspberry Pi 3 Hello World](section0.md) のLチカのパートでも簡単に説明しましたが、ここでもういちど[Section1 GPIO編 (Web GPIO API)](section1.md) の流れをおさらいしておきましょう。
+[Hello World編](section0.md) のLチカのパートでも簡単に説明しましたが、ここでもういちど[GPIO編 (Web GPIO API)](section1.md) の流れをおさらいしておきましょう。
 
 ### navigator.requestGPIOAccess()
 
-Web GPIOを利用するための```GPIOAccess``` インタフェースを取得するための最初のAPI呼び出しです。
-正しくインタフェースが取得されたら```Promise```の`then`に指定したコールバック関数が`GPIOAccess`パラメータ付きでコールされます。
+Web GPIO を利用するための ```GPIOAccess``` インタフェースを取得するための最初の API 呼び出しです。
+正しくインタフェースが取得されたら ```Promise``` の `then` に指定したコールバック関数が `GPIOAccess` パラメータ付きでコールされます。
 
 ### gpioAccess.ports.get()
 
-`GPIOAccess.ports` は利用可能なportオブジェクトのリスト(Map)です。
+`GPIOAccess.ports` は利用可能なportオブジェクトのリスト (Map) です。
 
 `var port = gpioAccess.ports.get(26);`
 
-上記コードで利用可能な`port`オブジェクトの一覧から、**GPIOポート番号 26**を指定して`port`オブジェクトを取得しています。
+上記コードで利用可能な `port` オブジェクトの一覧から、 **GPIOポート番号 26** を指定して `port` オブジェクトを取得しています。
 
 ### await port.export()
 
-`port.export("out")`により取得したGPIOポートを**「出力モード」**で初期化しています。なお、この関数は非同期処理となっているため、awaitを付け処理完了を待ち次の処理を進めます。
+`port.export("out")` により取得したGPIOポートを**「出力モード」**で初期化しています。なお、この関数は非同期処理となっているため、`await` を付け処理完了を待ち次の処理を進めます。
 GPIOポートにかける電圧をWebアプリで変化させたい時には「出力モード」を指定する必要があります。
-一方、GPIOポートはもうひとつ「入力モード」があります。これはGPIOポートの状態(電圧のHigh/Low状態)を読み取りたい時に利用します。入力モードについてはスイッチのパートで説明します。
+一方、GPIOポートはもうひとつ「入力モード」があります。これはGPIOポートの状態(電圧の High/Low 状態)を読み取りたい時に利用します。入力モードについてはスイッチのパートで説明します。
 
 ### port.write()
 
-`port.write()`は、出力モードに指定したGPIOポートの電圧を切り替える指定を行うAPIです。
-`port.write(1)`で、指定したポートからHIGH(Raspberry Pi 3では3.3V)の電圧がかかり、`port.write(0)`で、LOW(0V)になります。
+`port.write()` は、出力モードに指定したGPIOポートの電圧を切り替える指定を行うAPIです。
+`port.write(1)` で、指定したポートから HIGH(RasPi 3では3.3V)の電圧がかかり、`port.write(0)` で、LOW(0V) になります。
 
 <!--
 ## e. ボタンにLEDを反応させる (ES2017 async function版)
 さきほどのコードを見ていただいたらお気づきかもしれませんが、GPIOのアクセス、そしてこれから出てくるI2C対応パーツのDriverの処理などでは、非同期処理が頻繁に出てきます。
 
-`Promise〜then()`の連鎖的な書き方でもコードを書き進めることはできますが、上記のような深い入れ子が続くことでどんどん読みにくいコードになってしまいます。
+`Promise〜then()` の連鎖的な書き方でもコードを書き進めることはできますが、上記のような深い入れ子が続くことでどんどん読みにくいコードになってしまいます。
 
 こうした問題への改善アプローチの一つとして、ES2017で提案されているのが [async function](https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Statements/async_function) です。
 
