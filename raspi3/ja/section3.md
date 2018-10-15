@@ -442,6 +442,4 @@ I2Cデバイスを同時に接続して使用するとき、重要な注意事�
 * 4.三軸加速度センサーの使い方
 * 複数のセンサーの取扱い方
 
-次のCHIRIMEN for Raspberry Pi 3 チュートリアルはいよいよ最終回！
-
-『[Web GPIO APIとWeb I2C APIを組み合わせたプログラミング](https://tutorial.chirimen.org/raspi3/ja/section4)』に挑戦します！
+次のCHIRIMEN for Raspberry Pi 3 チュートリアルでは、『[Web GPIO APIとWeb I2C APIを組み合わせたプログラミング](https://tutorial.chirimen.org/raspi3/ja/section4)』に挑戦します！
