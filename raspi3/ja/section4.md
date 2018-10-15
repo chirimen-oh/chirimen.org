@@ -2,15 +2,15 @@
 
 # 概要
 
-CHIRIMEN for Raspberry Pi 3 を使ったプログラミングを通じて、[Web GPIO API](https://rawgit.com/browserobo/WebGPIO/master/index.html) や [Web I2C API](https://rawgit.com/browserobo/WebI2C/master/index.html) の使い方を学ぶチュートリアルです。
+CHIRIMEN for Raspberry Pi 3（以下 「CHIRIMEN Raspi3」） を使ったプログラミングを通じて、[Web GPIO API](https://rawgit.com/browserobo/WebGPIO/master/index.html) や [Web I2C API](https://rawgit.com/browserobo/WebI2C/master/index.html) の使い方を学ぶチュートリアルです。
 
-今回は、Web GPIO API と Web I2C APIを組み合わせたWebアプリを作ってみます。
+今回は、Web GPIO API と Web I2C API を組み合わせたWebアプリを作ってみます。
 
 # (※1) CHIRIMEN for Raspberry Pi 3とは
 
 Raspberry Pi 3（以下「Raspi3」）上に構築したIoTプログラミング環境です。
 
-[Web GPIO API (Draft)](https://rawgit.com/browserobo/WebGPIO/master/index.html)や、[Web I2C API (Draft)](https://rawgit.com/browserobo/WebI2C/master/index.html)といったAPIを活用したプログラミングにより、WebアプリからRaspi3に接続した電子パーツを直接制御することができます。 
+[Web GPIO API (Draft)](https://rawgit.com/browserobo/WebGPIO/master/index.html) や、[Web I2C API (Draft)](https://rawgit.com/browserobo/WebI2C/master/index.html) といったAPIを活用したプログラミングにより、Webアプリから Raspi3 に接続した電子パーツを直接制御することができます。 
 
 CHIRIMEN Open Hardware コミュニティにより開発が進められています。
 
@@ -18,19 +18,19 @@ CHIRIMEN Open Hardware コミュニティにより開発が進められていま
 
 本チュートリアルを進める前に前回までのチュートリアルを進めておいてください。
 
-* [CHIRIMEN for Raspberry Pi 3 Hello World](section0.md)
-* [CHIRIMEN for Raspberry Pi 3 チュートリアル 1. GPIO編](section1.md)
-* [CHIRIMEN for Raspberry Pi 3 チュートリアル 2. I2C　基本編（ADT7410温度センサー）](section2.md)
-* [CHIRIMEN for Raspberry Pi 3 チュートリアル 3. I2C　応用編（その他のセンサー）](section3.md)
+* [Hello World編](section0.md)
+* [1. GPIO編](section1.md)
+* [2. I2C　基本編（ADT7410温度センサー）](section2.md)
+* [3. I2C　応用編（その他のセンサー）](section3.md)
 
 前回までのチュートリアルで学んだことは下記のとおりです。
 
-* CHIRIMEN for Raspberry Pi 3 では、各種exampleが `~/Desktop/gc/`配下においてある。配線図も一緒に置いてある
-* CHIRIMEN for Raspberry Pi 3 で利用可能なGPIO Port番号と位置は壁紙を見よう
-* CHIRIMEN for Raspberry Pi 3 ではWebアプリからのGPIOの制御には[Web GPIO API](https://rawgit.com/browserobo/WebGPIO/master/index.html) を利用する。GPIOポートは「出力モード」に設定することでLEDのON/OFFなどが行える。また「入力モード」にすることで、GPIOポートの状態を読み取ることができる
+* CHIRIMEN Raspi3 では、各種 example が `~/Desktop/gc/` 配下においてある。配線図も一緒に置いてある
+* CHIRIMEN Raspi3 で利用可能な GPIO Port 番号と位置は壁紙を見よう
+* CHIRIMEN Raspi3 では Web アプリからの GPIO の制御には [Web GPIO API](https://rawgit.com/browserobo/WebGPIO/master/index.html) を利用する。GPIOポートは「出力モード」に設定することで LED の ON/OFF などが行える。また「入力モード」にすることで、GPIOポートの状態を読み取ることができる
 * [async function](https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Statements/async_function) を利用すると複数ポートの非同期コードがすっきり書ける
-* CHIRIMEN for Raspberry Pi 3 ではWebアプリからI2C通信に対応したモジュールの制御に[Web I2C API](https://rawgit.com/browserobo/WebI2C/master/index.html) を利用することができる
-* I2Cモジュールは1つのI2Cバス上に複数接続することができる。Grove I2C Hubを利用すると接続が簡単になる
+* CHIRIMEN Raspi3 では Web アプリから I2C 通信に対応したモジュールの制御に [Web I2C API](https://rawgit.com/browserobo/WebI2C/master/index.html) を利用することができる
+* I2Cモジュールは1つのI2Cバス上に複数接続することができる。Grove I2C Hub を利用すると接続が簡単になる
 
 # 今回つくるもの
 
@@ -39,7 +39,7 @@ CHIRIMEN Open Hardware コミュニティにより開発が進められていま
 * 定期的に測定した温度を画面に表示する。
 * 一定温度以上になったらDCファンを回す。一定温度以下になったらDCファンを止める。
 
-[1. GPIO編](section1.md) でMOSFET＋DCファンと[2. I2C　基本編（ADT7410温度センサー）](section2.md) で使った温度センサーがあればできそうですね。
+[1. GPIO編](section1.md) で MOSFET＋DC ファンと[2. I2C　基本編（ADT7410温度センサー）](section2.md) で使った温度センサーがあればできそうですね。
 
 # 1.準備
 
