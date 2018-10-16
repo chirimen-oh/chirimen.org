@@ -39,6 +39,7 @@ Jekyll で書かれた Github Pages の詳細については以下のドキュ�
 * [GitHub Pages のヘルプドキュメント](https://help.github.com/articles/using-jekyll-as-a-static-site-generator-with-github-pages/)
 * [Jekyll のドキュメント](https://jekyllrb.com/docs/) 配下の各ページ
   * [Jekyll のファイル構成](https://jekyllrb.com/docs/structure/)
+  * [Configuration Options](https://jekyllrb.com/docs/configuration/options/)
   * [Front matter](https://jekyllrb.com/docs/front-matter/) markdown 冒頭の `---` 行で囲まれたメタデータ定義セクション (YAML front matter block) の説明
   * [Includes](https://jekyllrb.com/docs/includes/) 使い回したいパーツがある場合に `_includes` ディレクトリ配下に定義をおいて読み込む方法
 
