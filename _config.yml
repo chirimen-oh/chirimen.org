@@ -9,3 +9,4 @@ description: >-
   Enjoy <a href="/raspi3/en/" style="color: white">Tutorials for CHIRIMEN for Raspberry Pi 3</a>
 show_downloads: false
 # google_analytics:
+include: _redirects
