@@ -1,2 +1,5 @@
+# This is netlify's redirect definition file: https://www.netlify.com/docs/redirects/
 # Redirect default Netlify subdomain to primary domain
 https://tutorial-chirimen-org.netlify.com/*   https://tutorial.chirimen.org/:splat 301!
+# redirect from old path to new path
+/raspberrypi  /raspi3
