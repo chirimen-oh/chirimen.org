@@ -1,47 +1,46 @@
 # 1. GPIO編
 
 # 概要
-CHIRIMEN for Raspberry Pi 3 を使ったプログラミングを通じて、Web GPIO APIの使い方を学びます。
+CHIRIMEN for Raspberry Pi 3 (以下 CHIRIMEN Raspi3) を使ったプログラミングを通じて、Web GPIO APIの使い方を学びます。
 
-本チュートリアルを進める前に「CHIRIMEN for Raspberry Pi 3 Hello World」で CHIRIMEN for Raspberry Pi 3 の基本的な操作方法を確認しておいてください。
-
-[CHIRIMEN for Raspberry Pi 3 Hello World](section0.md)
+CHIRIMEN Rapi3 を初めて使う方は本チュートリアルを進める前に「[CHIRIMEN for Raspberry Pi 3 Hello World](section0.md)」で基本的な操作方法を確認しておいてください。
 
 ## (※1) CHIRIMEN for Raspberry Pi 3とは
-Raspberry Pi 3（以下「Raspi3」）上に構築したIoTプログラミング環境です。
+CHIRIMEN Raspi3 は Raspberry Pi 3（以下「Raspi」）上で動作する IoT プログラミング環境です。
 
-[Web GPIO API (Draft)](http://browserobo.github.io/WebGPIO/) や、[Web I2C API (Draft)](http://browserobo.github.io/WebI2C/) といったAPIを活用したプログラミングにより、Web アプリから Raspi3 に接続した電子パーツを直接制御することができます。 
+[Web GPIO API](http://browserobo.github.io/WebGPIO/) や、[Web I2C API](http://browserobo.github.io/WebI2C/) といったAPIを活用したプログラミングにより、Web アプリから Raspi に接続した電子パーツを直接制御できます。 
 
-CHIRIMEN Open Hardware コミュニティにより開発が進められています。
+CHIRIMEN Raspi3 の開発やこのチュートリアルの執筆・更新は [CHIRIMEN Open Hardware コミュニティ](https://chirimen.org/) によって行われています。
 
 # 1. 準備
 ## 用意するもの
 このチュートリアル全体で必要になるハードウエア・部品は下記の通りです。
 
-* [CHIRIMEN for Raspberry Pi 3 Hello World](section0.md) に記載の「基本ハードウエア」と「Lチカに必要となるパーツ」
-タクトスイッチ x 1
-* [ジャンパーワイヤー (オス-メス)] x 5
+* [Hello World 編](section0.md) に記載の「基本ハードウエア」と「Lチカに必要となるパーツ」
+* タクトスイッチ (2pin, 4pin を使う場合は向きに注意) x 1
+* ジャンパーワイヤー (オス-メス) x 5
 * [Nch MOSFET (2SK4017)](http://akizukidenshi.com/catalog/g/gI-07597/)
-* [リード抵抗 (1KΩ)] x 1
-* [リード抵抗 (10KΩ)] x 1
-* [DCファン](http://akizukidenshi.com/catalog/g/gP-02480/) x 1 ※ブレッドボードに接続できるようにケーブルを加工しておいてください。
+* リード抵抗 (1KΩ) x 1
+* リード抵抗 (10KΩ) x 1
+* [DCファン](http://akizukidenshi.com/catalog/g/gP-02480/) x 1
+  * ブレッドボードに接続できるようケーブルを加工したものを利用する
 
 ## CHIRIMEN for Raspberry Pi 3の起動とLチカの確認
 * [Hello World 編](section0.md) の 「3. CHIRIMEN for Raspberry Pi 3 を起動してみよう」を参照して、CHIRIMEN for Raspberry Pi 3 を起動してください。
 * ついでに [Hello World 編](section0.md) の 「4. Lチカをやってみよう」を実施して、Lチカが正しく行えることを確認しておいてください。
 
 ## Lチカでのおさらい
-* CHIRIMEN Raspi3 では、各種 example が ```~/Desktop/gc/``` 配下においてある。配線図も一緒に置いてある
+* CHIRIMEN Raspi3 では、各種 example の配線図とコードが ```~/Desktop/gc/``` 配下においてある
 * CHIRIMEN Raspi3 で利用可能な GPIO Port 番号と位置は壁紙を見よう
-* LEDには方向がある。アノードが足が長い方。こちらをGPIOポートに繋ぐ。反対の足が短い方をGND側に繋ぐ。抵抗はどちらかに繋ぐ
-* CHIRIMEN for Raspberry Pi 3 ではWebアプリからのGPIOの制御に [Web GPIO API](http://browserobo.github.io/WebGPIO/) を利用する。
+* LED には方向がある。アノードが足が長い方でこちらをGPIOポートに繋ぐ。反対の足が短い方を GND 側に繋ぐ。抵抗はどちらかに繋ぐ
+* CHIRIMEN Raspi3 では Web アプリからの GPIO の制御に [Web GPIO API](http://browserobo.github.io/WebGPIO/) を利用する
 
 # 2. マウスクリックでLEDのON/OFFを制御してみる
-それでは、実際にプログラミングをやってみましょう。
+それでは、実際にプログラミングしてみましょう。
 
 [Hello World編](section0.md) では、[JS Bin](http://jsbin.com/) を使ってLチカの example コードを少し触ってみるだけでしたが、今度は最初から書いてみることにします。
 
-せっかくですので、このチュートリアルでは他のオンラインエディタ [JSFiddle](https://jsfiddle.net/) を使ってみることにします。
+サンプル同様 JS bin で書いても良いですが、折角ですので、このチュートリアルでは他のオンラインエディタ [JSFiddle](https://jsfiddle.net/) を使ってみます。
 
 > Web上のオンラインサービスは便利ですが、メンテナンスや障害、サービス停止などで利用できなくなることがあります。
 > ローカルでの編集も含め、いくつかのサービスを使いこなせるようにしておくと安心です。
@@ -49,7 +48,7 @@ CHIRIMEN Open Hardware コミュニティにより開発が進められていま
 > 各サービスにはそれぞれ一長一短がありますので、利用シーンに応じて使い分けると良いかもしれません。
 
 ## a. 部品と配線について
-このパートでは[Hello World編](section0.md) で実施したLチカの配線をそのまま利用します。必要な部品も同じです。
+このパートでは [Hello World編](section0.md) で実施したLチカの配線をそのまま利用します。必要な部品も同じです。
 
 ![部品一覧](imgs/section1/b.jpg)
 
@@ -59,7 +58,7 @@ LED は、26番ポートに接続しておいてください。
 
 ## b. HTML/CSSを記載する
 さて、今回はボタンと LED の状態インジケータを画面上に作ってみましょう。
-HTMLに ```<button>```と```<div>``` 要素を1つづつ作ります。
+HTMLに `<button>` と `<div>` 要素を1つづつ作ります。
 
 [JSFiddle](https://jsfiddle.net/) にアクセスすると、初期状態でコード編集を始めることができます。
 この画面のHTMLペインに下記コードを挿入します。
@@ -68,11 +67,11 @@ HTMLに ```<button>```と```<div>``` 要素を1つづつ作ります。
 <button id="onoff">LED ON/OFF</button>
 <div id="ledview"></div>
 ```
-※JSFiddle のHTMLペインにはHTMLタグの全てを書く必要はなく、```<body>```タグ内のみを書けばあとは補完してくれます。
+※JSFiddle のHTMLペインにはHTMLタグの全てを書く必要はなく、`<body>` タグ内のみを書けばあとは補完してくれます。
 
-```ledview```には下記のようなスタイルを付けておきましょう。こちらはCSSペインに記載します。
+`ledview` には下記のようなスタイルを付けておきましょう。こちらは CSS ペインに記載します。
 
-```CSS
+```css
 #ledview{
   width:60px;
   height:60px;
@@ -81,8 +80,8 @@ HTMLに ```<button>```と```<div>``` 要素を1つづつ作ります。
 }
 ```
 
-最後に、HTMLに戻って、[Web GPIO API](http://browserobo.github.io/WebGPIO/) を利用可能にするための Polyfill をロードする記述を行なっておきましょう。
-先ほど追加した```ledview```のすぐ下に下記```<script>```タグを記載します。
+最後に、HTMLに戻って、[Web GPIO API](http://browserobo.github.io/WebGPIO/) を利用可能にする Polyfill を読み込ませましょう。
+先ほど追加した `ledview` のすぐ下に下記 `<script>` タグを記載します。
 
 ```html
 <script src="https://chirimen.org/chirimen-raspi3/gc/polyfill/polyfill.js"></script>
