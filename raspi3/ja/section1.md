@@ -149,6 +149,8 @@ async function mainFunction() {
 
 これで、画面のボタンクリックに反応して LED の ON/OFF ができたら成功です。
 
+JSFiddle 利用時には `LOAD TYPE` を変更するか、`mainFunction()` 呼び出しを onload で囲まず最上位で直接呼び出すことに注意してください。
+
 [Hello World編](section0.md) のLチカのパートでも簡単に説明しましたが、ここでもういちど[GPIO編 (Web GPIO API)](section1.md) の流れをおさらいしておきましょう。
 
 ### await navigator.requestGPIOAccess()
