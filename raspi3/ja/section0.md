@@ -4,26 +4,26 @@
 CHIRIMEN for Raspberry Pi 3 の使い方をおぼえて、Webアプリから「Lチカ」（LEDをつけたりけしたり）するプログラミングをやってみよう。
 
 1. 今回のゴール
-2. 準備
+2. 事前準備
 3. CHIRIMEN for Raspberry Pi 3 を起動してみよう
 4. Lチカをやってみよう
 5. コードを眺めてみよう
 
 ## CHIRIMEN for Raspberry Pi 3 とは
-CHIRIMEN for Raspberry Pi 3 (以下 CHIRIMEN Raspi3) は、Raspberry Pi 3 (以下 Raspi3)上に構築した IoT プログラミング環境です。
+CHIRIMEN for Raspberry Pi 3 (以下 CHIRIMEN Raspi3) は、Raspberry Pi 3 (以下 Raspi) で動作する IoT プログラミング環境です。
 
-[Web GPIO API (Draft)](http://browserobo.github.io/WebGPIO/)や、[Web I2C API (Draft)](http://browserobo.github.io/WebI2C/)といったAPIを活用したプログラミングにより、Web アプリから Raspi3 に接続した電子パーツを直接制御することができます。
+[Web GPIO API](http://browserobo.github.io/WebGPIO/) や、[Web I2C API](http://browserobo.github.io/WebI2C/) といった JavaScript でハードを制御する API を活用したプログラミングにより、Web アプリ上で Raspi に接続した電子パーツを直接制御できます。
 
 ![CHIRIMEN for Raspberry Pi 3 の活用イメージ](imgs/section0/CHIRIMENforRaspberryPi3.png)
 
-# 2. 事前準備 (機材の確認)
+# 2. 事前準備 (機材確認)
 
 ## 用意するもの
 
 ### 基本ハードウエア
 下記が CHIRIMEN for Raspberry Pi 3 の起動に最低限必要となる基本ハードウエアです。
 
-![Raspi3 の起動に必要なハードウエア一覧](imgs/section0/Raspi3.jpg)
+![Raspi の起動に必要なハードウエア一覧](imgs/section0/Raspi3.jpg)
 
 * [Raspberry Pi 3 Model B](https://www.raspberrypi.org/products/raspberry-pi-3-model-b/) もしくは [Raspberry Pi 3 Model B+](https://www.raspberrypi.org/products/raspberry-pi-3-model-b-plus/) × 1
 * AC アダプタ + micro B USB電源ケーブル  × 1
@@ -37,33 +37,33 @@ CHIRIMEN for Raspberry Pi 3 (以下 CHIRIMEN Raspi3) は、Raspberry Pi 3 (以�
 * micro SDカード (8GB 以上必須、Class 10 以上で高速なものを推奨) × 1
 
 ### L チカに必要となるパーツ
-基本ハードウエアに加え「Lチカ」を実施するには下記パーツも追加で必要です。
+基本ハードウエアに加え「Lチカ (えるちか)」を実施するには下記パーツも追加で必要です。
 
 ![Lチカに必要なパーツ一覧](imgs/section0/L.jpg)
 
 * ブレッドボード × 1
-* リード付きLED × 1
+* リード付き LED × 1
 * リード付き抵抗器 (150-470Ω ※お使いのLEDにより) × 1
 * ジャンパーワイヤー (オス-メス) x 2
 
 ## SD カードへ CHIRIMEN for Raspberry Pi 3 環境を書き込む
-起動する前に、SD カードへ CHIRIMEN Raspi3 環境（imageファイル）を書き込んでおく必要があります。
+起動する前に、SD カードへ CHIRIMEN Raspi3 環境（起動イメージファイル）を書き込んでおく必要があります。
 
-手順は、[SDカードへCHIRIMEN for Raspberry Pi 3 環境を構築する](https://gist.github.com/tadfmac/527b31a463df0c9de8c30a598872344d) を参照してください。
+手順は [CHIRIMEN for Raspberry Pi 3 の SD カードを作成する](sdcard) を参照してください。
 
 # 3. CHIRIMEN for Raspberry Pi 3 を起動してみよう
 ## 接続方法
-材料が集まったら、いよいよ Raspi3 を接続して起動してみましょう。
-基本ハードウエアを下図のように接続してください。(Raspi3 への電源ケーブルの接続は最後にしましょう)
+材料が集まったら、いよいよ Raspi を接続して起動してみましょう。
+基本ハードウエアを下図のように接続してください。(Raspi への電源ケーブルの接続は最後にしましょう)
 
 ![接続方法](imgs/section0/h2.jpg)
 
 もしよくわからない場合には、[Raspberry Pi Hardware Guide](https://www.raspberrypi.org/learning/hardware-guide/) なども参照してみると良いでしょう。
 
-電源ケーブルの接続、あるいは、スイッチ付きケーブルの場合はスイッチの ON により Raspi3 が起動します。
+電源ケーブルの接続、あるいは、スイッチ付きケーブルの場合はスイッチの ON により Raspi が起動します。
 
 ## 起動確認
-Raspi3の起動後、下記のようなデスクトップ画面が表示されたら CHIRIMEN Raspi3 の起動に成功しています。おめでとうございます。
+Raspi の起動後、下記のようなデスクトップ画面が表示されたら CHIRIMEN Raspi3 の起動に成功しています。おめでとうございます。
 
 ![CHIRIMEN for Raspberry Pi 3 desktop 画面](imgs/section0/CHIRIMENforRaspberryPi3desktop.png)
 
@@ -72,11 +72,11 @@ Raspi3の起動後、下記のようなデスクトップ画面が表示され�
 その場合は、もう一度 [SDカードへCHIRIMEN for Raspberry Pi 3 環境を構築する](https://gist.github.com/tadfmac/527b31a463df0c9de8c30a598872344d) をご確認ください。
 
 また、電源を入れても何も画面に映らないような場合には、配線が誤っている可能性があります。
-接続方法を再度確認してみましょう。正しく接続しているはずなのに、Raspi3 の赤い LED が点灯していない場合、AC アダプタまで電気が来ていない可能性もあります。
+接続方法を再度確認してみましょう。正しく接続しているはずなのに、Raspi の microSD コネクタ横の赤い LED が点灯していない場合、AC アダプタまで電気が来ていない可能性もあります。
 
-## WIFIの設定
+## WiFi の設定
 デスクトップ画面が表示されたら、さっそく WiFi を設定して、インターネットに繋げてみましょう。
-CHIRIMEN Raspi3 では、ネットワークに繋がなくてもローカルファイルを使ったプログラミングが一応可能ですが、JS Bin や JSFiddle などの Web 上のエディタを活用することで、より便利にプログラミングが進められるようになります。
+CHIRIMEN Raspi3 では、ネットワークに繋がなくてもローカルファイルを使ったプログラミングが一応可能ですが、[JS Bin](https://jsbin.com/) や [JSFiddle](https://jsfiddle.net/) などの Web 上のエディタを活用することで、より便利にプログラミングが進められるようになります。
 また、CHIRIMEN Raspi3 に関する情報も今後インターネット上で充実していく予定です。
 
 ぜひ、最初にインターネット接続環境を整えておきましょう。
@@ -85,8 +85,8 @@ WiFi の設定は、タスクバーの右上の WiFi アイコンから行えま
 
 ![wifi設定](imgs/section0/wifi.png)
 
-# 4. Lチカをやってみよう
-無事、Raspi3 の起動と WiFi の設定が行えたら、いよいよLチカに挑戦してみましょう。
+# 4. 「Lチカ」をやってみよう
+無事、Raspi の起動と WiFi の設定が行えたら、いよいよLチカに挑戦してみましょう。
 
 ## そもそも「Lチカ」って何？
 「Lチカ」とは、LED を点けたり消したりすることで、チカチカさせることです。今回は「LEDを点ける」「LEDを消す」をプログラムで繰り返し実行することで実現します。
@@ -94,7 +94,7 @@ WiFi の設定は、タスクバーの右上の WiFi アイコンから行えま
 * 参考：[LED（発光ダイオード）](https://ja.wikipedia.org/wiki/%E7%99%BA%E5%85%89%E3%83%80%E3%82%A4%E3%82%AA%E3%83%BC%E3%83%89)
 
 ## 配線してみよう
-LED を点けたり消したりするためには、Raspi3 と正しく配線する必要があります。
+LED を点けたり消したりするためには、Raspi と正しく配線する必要があります。
 LED は2本のリード線が出ていますが、長い方がアノード（+側）、短い側がカソード（-側）です。
 
 Lチカのための配線図は、基本的な作例（examples）と一緒に、下記にプリインストールされています。
@@ -105,13 +105,13 @@ Lチカのための配線図は、基本的な作例（examples）と一緒に�
 
 ![example-files](imgs/section0/example-files.png)
 
-それでは、まず先に ```schematic.png``` をダブルクリックして見てみましょう。
+それでは、まず先に `schematic.png` をダブルクリックして見てみましょう。
 
 ![example: LEDblink の配線図](imgs/section0/example_LEDblink.png)
 
 LED のリード線の方向に注意しながら、この図の通りにジャンパー線やブレッドボードを使って配線してみましょう。
 
-(図の LED の下側の方がアノード(+側))
+(配線図では LED の下側のリード線が折れ曲がり長い方がアノード (+側))
 
 実際に配線してみると、こんな感じになりました。
 
@@ -124,7 +124,7 @@ LED のリード線の方向に注意しながら、この図の通りにジャ�
 * [Raspberry Pi3のGPIO](https://tool-lab.com/make/raspberrypi-startup-22/)
 * [テスターを使って抵抗値を確かめる](http://startelc.com/elcLink/tester/elc_nArtcTester2.html#chapter-2)
 
-## exampleを実行してみる
+## example を実行してみる
 配線がうまくできたら、さっそく動かしてみましょう。
 L チカのためのサンプルコードは先ほどの配線図と同じフォルダに格納されています。
 
@@ -132,7 +132,7 @@ L チカのためのサンプルコードは先ほどの配線図と同じフォ
 /home/pi/Desktop/gc/gpio/LEDblink/index.html
 ```
 
-index.html をダブルクリックすると、ブラウザが起動し、先ほど配線した LED が点滅しているはずです！
+`index.html` をダブルクリックすると、ブラウザが起動し、先ほど配線した LED が点滅しているはずです！
 
 ## ブラウザ画面
 ![browser](imgs/section0/browser.png)
@@ -143,11 +143,11 @@ index.html をダブルクリックすると、ブラウザが起動し、先ほ
 L チカに成功しましたか？！
 
 ## うまくいかなかったら?
-セキュリティーエラーが発生している可能性があります。
-
-まずは、[CHIRIMEN for Raspberry Pi 3 におけるセキュリティーエラーへの対処方法](https://qiita.com/tadfmac/items/2d7929fe3560c77fe867) をご確認のうえ、セキュリティーエラーが発生している場合には対処をお願いします。
-
-> ToDo: https://localhost:33330 のブックマーク箇所のスクリーンショットを貼る
+* CHIRIMEN のバックエンドサーバが停止している場合
+  * CHIRIMEN Raspi3 では JavaScript から GPIO などを操作できるように、JavaScript からの呼び出しに応じてハードを制御するサーバが Raspi 上で 起動しています。何らかの理由でそのサーバに問題が生じている場合はデスクトップにある `reset.sh` を実行して再起動させると正常動作するようになります。
+* セキュリティーエラーが発生している場合
+  * まずは、[CHIRIMEN for Raspberry Pi 3 におけるセキュリティーエラーへの対処方法](https://qiita.com/tadfmac/items/2d7929fe3560c77fe867) をご確認のうえ、セキュリティーエラーが発生している場合には対処をお願いします。
+    > ToDo: https://localhost:33330 のブックマーク箇所のスクリーンショットを貼る
 
 # 5. コードを眺めてみよう
 さきほどは、L チカをデスクトップにある example から実行してみました。
@@ -157,9 +157,11 @@ L チカに成功しましたか？！
 
 今度はオンラインの example からさきほどと同じ L チカを実行してコードを眺めてみましょう。
 
-その前に。**オンラインの example を起動する前に、必ず先ほど実行した ```file:///home/pi/Desktop/gc/gpio/LEDblink/index.html```のブラウザWindow (タブ) は閉じるようお願いします。先に既存の Window を閉じておかないと、これから実行するサンプルが正常に動作しなくなります。** 複数のプログラムから同時に同じ Raspi3 のハードウェア (GPIO ポート) にアクセスしようとしないよう、必ず example は同時に一つだけ開くようにしましょう。
+その前に一つ注意です。CHIRIMEN Raspi3 での GPIO などの操作には排他制御があり、同一の GPIO ピンを複数のプログラムから同時操作はできません。同一ページもしくは同一ピンを使うページを同時に開くと正しく動作しなくなってしまいます。
 
-上記に記載した Window を確実に閉じるには、一度ブラウザを閉じてから、再度ブラウザを起動すると確実です。(タブだけ消してももちろんOKです)
+**オンラインの example を起動する前に、必ず先ほど開いた ```file:///home/pi/Desktop/gc/gpio/LEDblink/index.html``` のブラウザウィンドウ (タブ) は閉じてください。先に既存ウィンドウを閉じておかないと、サンプルが正常に動作しなくなります。**
+
+既に開いているウィンドウを確実に閉じるには、一度ブラウザを閉じてから、再度ブラウザを起動すると確実です (通常はタブだけ消しても十分です)。
 
 ![ブラウザの再起動](imgs/section0/b.png)
 
@@ -171,7 +173,7 @@ L チカに成功しましたか？！
 
 ![bookmark](imgs/section0/bookmark.png)
 
-そのまま起動すると下記のような画面になります。(下記スクリーンショットはアクセス直後の画面からJS Binのタイトルバー部の「Output」タブを 1 回押して非表示にしています)
+そのまま起動すると下記のような画面になります。(下記スクリーンショットはアクセス直後の画面から JS Bin のタイトルバー部の「Output」タブを 1 回押して非表示にしています)
 
 ![JS BinでのLチカexample画面](imgs/section0/JSBinLexample.png)
 
@@ -193,8 +195,7 @@ L チカに成功しましたか？！
 ```
 
 HTML では `polyfill.js` という JavaScript ライブラリを読み込んでいます。
-polyfill.js は [Web GPIO API](http://browserobo.github.io/WebGPIO/) と、[Web I2C API](http://browserobo.github.io/WebI2C/) という W3C でドラフト提案中の 2 つの API への [Polyfill (ブラウザ標準に未実装の機能などを利用可能にするためのライブラリ)](https://developer.mozilla.org/ja/docs/Glossary/Polyfill)となっています。
-
+polyfill.js は [Web GPIO API](http://browserobo.github.io/WebGPIO/) と、[Web I2C API](http://browserobo.github.io/WebI2C/) という W3C でドラフト提案中の 2 つの API への [Polyfill (ブラウザ標準に未実装の機能などを利用可能にするためのライブラリ)](https://developer.mozilla.org/ja/docs/Glossary/Polyfill)となっており、これを最初に読み込むことで GPIO や I2C の API が使えるようになります。
 
 ## JavaScript
 ```javascript
@@ -221,19 +222,29 @@ function sleep(ms){
 ### 注記
 CHIRIMEN Raspi3 はウェブブラウザをプログラムの実行環境として用いてシステムを構築します。ウェブブラウザが実行できるプログラムのプログラミング言語はJavaScript です。JavaScript を学んだことのない人は、まず[こちらの資料「JavaScript 1 Day 講習」](https://r.chirimen.org/1dayjs)を履修しましょう。
 
-## 非同期処理
+## 非同期処理について
 
-物理デバイスを使用するためには非同期処理をする必要があります。本チュートリアルではこれを async await によって記述することにします。
+物理デバイスやネットワーク通信などを行う際には、応答待ちの間にプログラムが全て停止してしまわないよう非同期処理を行う必要があります。
+本チュートリアルではこれを [async 関数](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/async_function) を用いて記述しています。非同期処理を知らない人や async 関数による記述をしたことのない人は、必要に応じて[こちらの資料「非同期処理 (async await版)」](appendix0.md) も参照してください。
 
-非同期処理を学んだことのない人、および async await による記述をしたことのない人は、まず[こちらの資料「非同期処理 (async await版)」](appendix0.md)を参照し、理解したうえで次に進んでください。
+実は非同期処理をすべて理解して使いこなすのはとても難しいのですが、本チュートリアルでは次のルールが分かっていれば大丈夫です:
+
+* GPIO や I2C の初期化、ポートの設定などは非同期関数として定義されているため `await` キーワードを付けて呼び出す
+  * `await` を付けることで、初期化などが完了してから次の処理が行われるようになります
+  * `await` なしで呼び出すと初期化などの完了前に次の行の処理を続け、初期化前のポートを操作しようとして失敗したりします
+* `await` で非同期関数を呼び出す処理を含む関数は `async function 関数名() { ... }` のように `async` を付けて非同期関数として定義する
+* `async` 付きで定義した関数の呼び出し時には必ず前に `await` を付けて呼び出す
+  * GPIO や I2C を使う処理は基本的に入れ子で `await` 呼び出しを連鎖させます
+
+非同期関数を `await` なしで呼び出すと返り値は Promise オブジェクトとなるため Promise についての理解が必要になりますが、常に `await` 付きで呼び出すようにしていれば従来通りの同期間数の呼び出しと同じ感覚でコードが書けます。
 
 ### Note:
-本チュートリアルが async await を用いた非同期処理に統一している理由は初心者にとってわかりやすいことです。ただしこの機能は比較的新しい JavaScript 言語機能であるため非対応のブラウザもありますが、Chrome や Firefox ではサポートしています。([様々なウェブブラウザでのサポート状況](https://caniuse.com/#feat=async-functions))
+本チュートリアルで非同期処理を async 関数に統一している理由は (Promise を扱ったり古典的なコールバック処理を書くより) 初心者にとってわかりやすいシンプルで読みやすいコードになるからです。この機能は比較的新しい JavaScript 言語機能 (ECMASCript 2017) であるため非対応のブラウザもありますが、Chrome や Firefox では既にサポートされており Raspi 上で使う上で問題はありません。([様々なウェブブラウザでのサポート状況](https://caniuse.com/#feat=async-functions))
 
 ## 処理の解説
 
-JavaScript ファイルで、最初に出てくるコードが ```navigator.requestGPIOAccess()``` です。
-ここで先ほど出て来た [Web GPIO API](http://browserobo.github.io/WebGPIO/) を使い、```gpioAccess```というGPIOにアクセスするためのインタフェースを取得しています。
+今回の JavaScript ファイルで、最初に呼び出されるコードは ```navigator.requestGPIOAccess()``` です。
+ここで先ほど出て来た [Web GPIO API](http://browserobo.github.io/WebGPIO/) を使い、```gpioAccess``` という GPIO にアクセスするためのインタフェースを取得しています。
 
 コードを読み進める前に、ここで少し GPIO について記載しておきたいと思います。
 
@@ -259,7 +270,7 @@ Raspi3 の GPIO 端子は、GND 端子との間に、0V もしくは 3.3V の電
 
 ここで、関数の呼び出しに ```await``` 接頭詞がついていることに注意してください。この関数は非同期処理の関数でその処理の完了を待って次の処理に進みます。そしてawait 接頭詞を使いますので、それを使っている関数(```mainFunction()```)はasync接頭詞が付く、非同期処理の関数となっています。
 
-最後に ```await sleep(1000)``` で 1000ms 待機させて無限ループをつくることで、 1000ms ごとに ```port.write(1)``` と ```port.write(0)``` を交互に呼び出し、GPIO 26 番に対する電圧を 3.3V → 0V → 3.3V → 0Vと繰り返し設定しています。
+最後に ```await sleep(1000)``` で 1000ms = 1 秒 待機させて無限ループをつくることで、 1 秒毎に ```port.write(1)``` と ```port.write(0)``` を交互に呼び出し、GPIO 26 番に対する電圧を 3.3V → 0V → 3.3V → 0Vと繰り返し設定しています。
 
 LED は一定以上の電圧 (赤色 LED だと概ね 1.8V 程度、青色 LED だと 3.1V 程度) 以上になると点灯する性質を持っていますので、3.3V になったときに点灯、0V になったときに消灯を繰り返すことになります。
 
