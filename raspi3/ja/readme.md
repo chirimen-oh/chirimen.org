@@ -30,11 +30,15 @@ JavaScript プログラミング未経験者は、まず Appendix の「[JavaScr
 * [6. ステッピングモーター編](section6)
   * CHIRIMEN for Raspberry Pi 3 と Arduino を組み合わせてステップピングモーターを制御するチュートリアルです。I2C 接続した Arduino を利用することで μ 秒単位でモータードライバの制御を行います。
 
-## Appendix
+## Appendix / FAQ
 JavaScript 未経験者や非同期処理の未経験者はチュートリアルと合わせてこちらをご覧ください:
 
 * [JavaScript 1 Day 講習 (外部 PDF)](https://webiotmakers.github.io/static/docs/2017/maebashi-js.pdf)
 * [非同期処理 (async await版)](appendix0)
+
+よくある質問についてはこちらに QA ページを用意しております:
+
+* [良くある質問](faq.md)
 
 ## 旧チュートリアル (Qiita 版)
 
