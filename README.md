@@ -23,9 +23,10 @@ CHIRIMEN Raspi3 チュートリアルの各ページはこちらでご覧頂け�
 * 発展編
   * [5. WebBluetooth 編](/raspi3/ja/section5)
   * [6. ステッピングモーター編](/raspi3/ja/section6)
-* Appendix
+* Appendix / FAQ
   * [JavaScript 1 Day 講習 (外部 PDF)](https://webiotmakers.github.io/static/docs/2017/maebashi-js.pdf)
   * [非同期処理 (async await版)](/raspi3/ja/appendix0)
+  * [よくある質問](/raspi3/ja/faq.md)
 
 
 ## Online Version / オンライン版
