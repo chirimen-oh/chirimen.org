@@ -207,7 +207,7 @@ async function mainFunction(){ // プログラムの本体となる関数、非�
   await port.export("out");
   while ( true ){ // 無限ループ
     await sleep(1000); // 1000ms待機する
-    v ^= 1; // v = v ^ 1 (XOR 演算)の意。(vが1の場合はvが0に、0の場合は1に変化する。1でLED点灯、0で消灯するので、1秒間隔でLEDがON OFFする。)
+    var v ^= 1; // v = v ^ 1 (XOR 演算)の意。(vが1の場合はvが0に、0の場合は1に変化する。1でLED点灯、0で消灯するので、1秒間隔でLEDがON OFFする。)
     port.write(v);
   }
 }
