@@ -19,7 +19,7 @@ CHIRIMEN Open Hardware コミュニティにより開発が進められていま
 
 * [Hello World編](section0.md)
 * [GPIO編](section1.md)
-* [I2C　基本編（ADT7410 温度センサ）](section2.md)
+* [I2C 基本編（ADT7410 温度センサ）](section2.md)
 
 前回までのチュートリアルで学んだことは下記のとおりです。
 
@@ -56,7 +56,7 @@ Raspi 3 や前回のADT7410などピンヘッダを備えた（あるいは事�
 * [Grove 4ピン ジャンパー メス　ケーブル](https://www.seeedstudio.com/grove-to-4-pin-254-female-jumper-wire5-pcs-pack-p-1020.html) x 2
 * [Grove 4ピン ケーブル](https://www.seeedstudio.com/Grove-Universal-4-Pin-20cm-Unbuckled-Cable-%285-PCs-Pack%29-p-749.html) x 1
 * ブレッドボード x 1
-* ジャンパーケーブル(オス-オス) x 2
+* ジャンパーケーブル(オス-メス) x 4
 
 上記に加え今回紹介するセンサーが必要となりますが、センサーについては各センサーの説明のパートに記載します。
 
@@ -78,7 +78,7 @@ Raspberry Pi 3との接続方法については、下記回路図を参照くだ
 このセンサーモジュールはGroveコネクタを備えていますので、接続方法に応じてコネクタを選んでください。
 
 * Grove I2C Hub 経由で接続する場合 ：Grove 4ピン ケーブル経由で接続してください。
-* Raspberry Pi 3 へ直接接続する場合：Grove 4ピン ジャンパー メス　ケーブル経由で接続してください。
+* Raspberry Pi 3 へ直接接続する場合：Grove 4ピン ジャンパー メス ケーブル経由で接続してください。
 
 ## b. 接続確認とexampleの実行
 
