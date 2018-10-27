@@ -55,19 +55,12 @@ Raspi 3 や前回のADT7410などピンヘッダを備えた（あるいは事�
 * [Grove I2C Hub](http://wiki.seeed.cc/Grove-I2C_Hub/) x 1
 * [Grove 4ピン ジャンパー メス　ケーブル](https://www.seeedstudio.com/grove-to-4-pin-254-female-jumper-wire5-pcs-pack-p-1020.html) x 2
 * [Grove 4ピン ケーブル](https://www.seeedstudio.com/Grove-Universal-4-Pin-20cm-Unbuckled-Cable-%285-PCs-Pack%29-p-749.html) x 1
-
-上記に加え今回紹介するセンサーが必要となりますが、センサーについては各センサーの説明のパートに記載します。
-
-### 1/10 追加
-
-測距センサーをSRF02からGP2Y0E03にしました。
-
-この変更に伴い、下記が追加で必要になります。
-
 * ブレッドボード x 1
 * ジャンパーケーブル(オス-オス) x 2
 
-# 2.光センサーを使ってみる
+上記に加え今回紹介するセンサーが必要となりますが、センサーについては各センサーの説明のパートに記載します。
+
+# 2. 光センサーを使ってみる
 
 光の強度に反応するセンサーを使ってみましょう。
 
@@ -105,7 +98,7 @@ SlaveAddress `0x29` が見つかれば接続OKです。
 
 逆にセンサーに LED の光を直接当てると数値が大きくなることが確認できるでしょう。
 
-## c.コード解説
+## c. コード解説
 
 example のコードから、光センサーに関係する部分を見ていきます。
 
@@ -140,15 +133,15 @@ HTML は ADT7410 の時とほとんど同じです。
 
 main.js
 ```javascript
-	var i2cAccess = await navigator.requestI2CAccess();
-	var port = i2cAccess.ports.get(1);
-	var grovelight = new GROVELIGHT(port,0x29);
-	await grovelight.init();
-	while(1){
-		var value = await grovelight.read();
-		head.innerHTML = value ? value : head.innerHTML;
-		await sleep(200);
-	}
+  var i2cAccess = await navigator.requestI2CAccess();
+  var port = i2cAccess.ports.get(1);
+  var grovelight = new GROVELIGHT(port,0x29);
+  await grovelight.init();
+    while(1) {
+    var value = await grovelight.read();
+    head.innerHTML = value ? value : head.innerHTML;
+    await sleep(200);
+  }
 
 ```
 
@@ -168,9 +161,9 @@ main.js
 
 Grove Digital Light Sensor の仕様に基づくデータ読み出し処理をここで実施しています。
 
-# 3.測距センサーを使ってみる (11/10変更)
+# 3. 測距センサーを使ってみる
 
-モノまでの距離を測定する測距センサーを使ってみましょう。
+モノまでの距離を測定する測距センサー (GP2Y0E03) を使ってみましょう。
 
 ## a. 部品と配線について
 
@@ -184,15 +177,15 @@ Raspi 3 との接続方法については、下記回路図を参照ください
 
 ![回路図2](imgs/section3/k2.png)
 
-このセンサーモジュールには、細い7本のケーブルが付属していますが、このままではRaspi 3 と接続することができません。
+このセンサーモジュールには、細い7本のケーブルが付属していますが、このままでは Raspi3 と接続することができません。
 
-この細いケーブルを2.54mm のジャンパーピンにハンダづけするなどしてブレッドボード経由でRaspberry Piと接続できるよう、加工しておいてください。
+この細いケーブルを 2.54mm のジャンパーピンにハンダづけするなどしてブレッドボード経由で Raspi3 と接続できるよう、加工しておいてください。
 
 ピンの加工例
 
 ![加工例](imgs/section3/k3.jpg)
 
-## b. 接続確認とexampleの実行
+## b. 接続確認と example の実行
 
 i2cdetect で接続を確認しておきましょう。
 
@@ -240,24 +233,24 @@ HTML は ADT7410 の時とほとんど同じです。
 
 main.js
 ```javascript
-	var i2cAccess = await navigator.requestI2CAccess();
-	var port = i2cAccess.ports.get(1);
-	sensor_unit = new GP2Y0E03(port,0x40);
-	await sensor_unit.init();
-	
-	while(1){
-		try {
-			var distance = await sensor_unit.read();
-			if(distance != null){
-				valelem.innerHTML = "Distance:"+distance+"cm";
-			}else{
-				valelem.innerHTML = "out of range";
-			}
-		} catch ( err ){
-			console.log("READ ERROR:" + err);
-		}
-		await sleep(500);
-	}
+  var i2cAccess = await navigator.requestI2CAccess();
+  var port = i2cAccess.ports.get(1);
+  sensor_unit = new GP2Y0E03(port,0x40);
+  await sensor_unit.init();
+
+  while(1) {
+    try {
+      var distance = await sensor_unit.read();
+      if(distance != null){
+        valelem.innerHTML = "Distance:"+distance+"cm";
+      } else {
+        valelem.innerHTML = "out of range";
+      }
+    } catch(err) {
+      console.log("READ ERROR:" + err);
+    }
+    await sleep(500);
+  }
 ```
 
 `main.js` も温度センサーとほとんど同じです。
@@ -274,7 +267,7 @@ main.js
 
 測距センサー GP2Y0E03 の仕様に基づくデータ読み出し処理をここで実施しています。
 
-# 4.三軸加速度センサーを使ってみる
+# 4. 三軸加速度センサーを使ってみる
 
 傾きなどに反応するセンサーを使ってみましょう。
 
@@ -315,7 +308,7 @@ SlaveAddress `0x53` が見つかれば接続OKです。
 
 センサーを傾けると数値が変化するはずです。
 
-## c.コード解説
+## c. コード解説
 
 exampleのコードを見てみましょう。
 
@@ -347,21 +340,21 @@ index.html
 
 main.js
 ```javascript
-	var i2cAccess = await navigator.requestI2CAccess();
-	var port = i2cAccess.ports.get(1);
-	var groveaccelerometer = new GROVEACCELEROMETER(port,0x53);
-	await groveaccelerometer.init();
-	while(1){
-		try {
-			var values = await roveaccelerometer.read();
-			ax.innerHTML = values.x ? values.x : ax.innerHTML;
-			ay.innerHTML = values.y ? values.y : ay.innerHTML;
-			az.innerHTML = values.z ? values.z : az.innerHTML;
-		} catch ( err ){
-			console.log("READ ERROR:" + err);
-		}
-		await sleep(1000);
-	}
+  var i2cAccess = await navigator.requestI2CAccess();
+  var port = i2cAccess.ports.get(1);
+  var groveaccelerometer = new GROVEACCELEROMETER(port,0x53);
+  await groveaccelerometer.init();
+  while(1) {
+    try {
+      var values = await roveaccelerometer.read();
+      ax.innerHTML = values.x ? values.x : ax.innerHTML;
+      ay.innerHTML = values.y ? values.y : ay.innerHTML;
+      az.innerHTML = values.z ? values.z : az.innerHTML;
+    } catch ( err ){
+      console.log("READ ERROR:" + err);
+    }
+    await sleep(1000);
+  }
 ```
 main.js も温度センサーとほとんど同じです。
 
@@ -377,27 +370,27 @@ main.js も温度センサーとほとんど同じです。
 
 `read()` では、加速度センサーの X、Y、Zの値が一度に返却されます。
 
-# 5.演習：複数のセンサーを組み合わせて使ってみよう
+# 5. 演習: 複数のセンサーを組み合わせて使ってみよう
 
 せっかく Grove I2C Hub を用意しましたので、これまでの復習と応用を兼ねて下記のような組み合わせで2つのセンサーを繋いで動かしてみましょう。
 
-* 「温度センサー(ADT7410)」か、「距離センサー(GP2Y0E03)」のどちらか 1つ
-* 「光センサー(Grove Digital Light Sensor)」か「三軸加速度センサー」のどちらか１つ
+* 「温度センサー (ADT7410)」か、「距離センサー (GP2Y0E03)」のどちらか 1つ
+* 「光センサー (Grove Digital Light Sensor)」か「三軸加速度センサー」のどちらか１つ
 
 ※この組み合わせなら、冒頭で用意したケーブルで足りるはずです。
 
 オンライン版のドライバーライブラリは下記にあります。
 
-* 温度センサー(ADT7410): https://chirimen.org/chirimen-raspi3/gc/drivers/i2c-ADT7410.js
-* 距離センサー(GP2Y0E03): https://chirimen.org/chirimen-raspi3/gc/drivers/i2c-GP2Y0E03.js
-* 光センサー(Grove Digital Light Sensor): https://chirimen.org/chirimen-raspi3/gc/drivers/i2c-grove-light.js
-* 三軸加速度センサー : https://chirimen.org/chirimen-raspi3/gc/drivers/i2c-grove-accelerometer.js
+* 温度センサー (ADT7410): https://chirimen.org/chirimen-raspi3/gc/drivers/i2c-ADT7410.js
+* 距離センサー (GP2Y0E03): https://chirimen.org/chirimen-raspi3/gc/drivers/i2c-GP2Y0E03.js
+* 光センサー (Grove Digital Light Sensor): https://chirimen.org/chirimen-raspi3/gc/drivers/i2c-grove-light.js
+* 三軸加速度センサー: https://chirimen.org/chirimen-raspi3/gc/drivers/i2c-grove-accelerometer.js
 
 まずはセンサーを繋いでから、[jsbin](https://jsbin.com/) か [jsfiddle](https://jsfiddle.net/) を使ってコードを書いてみましょう。
 
-# 6.他のI2Cモジュールも使ってみる
+# 6. 他の I2C モジュールも使ってみる
 
-前回からこれまでに4つのI2Cセンサーを使ってみました。
+前回からこれまでに 4 つの I2C センサーを使ってみました。
 
 本稿執筆中の CHIRIMEN Raspi3 には、他にも `/home/pi/Desktop/gc/i2c/` 配下に下記のようなI2Cモジュールの examples が含まれています。
 
@@ -412,10 +405,10 @@ main.js も温度センサーとほとんど同じです。
 
 ご興味がありましたら、ぜひ触ってみてください。
 
-## I2Cデバイスを複数使う場合の注意事項
-I2Cデバイスを同時に接続して使用するとき、重要な注意事項があります。それはI2Cアドレスの衝突です。チュートリアル２―２の図に書かれているようにI2Cデバイスはアドレスを持っています。このアドレスはI2Cデバイスの製品ごとに固有のアドレスが設定されています。そのためたまたま同じアドレスを持ったデバイスが販売されていることがあります。そしてアドレスが衝突しているデバイスは接続できません。このチュートリアルで使ったデバイスのアドレスを以下の表に掲載します。NativeAddrがそのデバイスのオリジナルの状態のアドレスです。すでに衝突しているものがいくつかあるのがわかると思います。
+## I2C デバイスを複数使う場合の注意事項
+I2Cデバイスを同時に接続して使用するとき、重要な注意事項があります。それは I2C アドレスの衝突です。チュートリアル２―２の図に書かれているように I2C デバイスはアドレスを持っています。このアドレスは I2C デバイスの製品ごとに固有のアドレスが設定されています。そのためたまたま同じアドレスを持ったデバイスが販売されていることがあります。そしてアドレスが衝突しているデバイスは接続できません。このチュートリアルで使ったデバイスのアドレスを以下の表に掲載します。`NativeAddr` がそのデバイスのオリジナルの状態のアドレスです。すでに衝突しているものがいくつかあるのがわかると思います。
 
-一方、I2Cデバイスのによってはこのアドレスを変更でき、アドレスの衝突を回避できる場合があります。ただしアドレスの変更はデバイスの基板上でハードウェア的（電気的）に設定するジャンパによって設定します。（ジャンパはピンヘッダとして用意され、ジャンパ線などで設定できるものもありますが、多くの場合は半田を盛ってジャンパとするタイプです。詳しくは各デバイスを購入すると付属しているデータシートを参照してください。）下表のChangedAddrはアドレス変更可能なデバイスでジャンパーを設定し、すべてのデバイスのアドレスを衝突しないようにした例です。
+一方、I2C デバイスのによってはこのアドレスを変更でき、アドレスの衝突を回避できる場合があります。ただしアドレスの変更はデバイスの基板上でハードウェア的（電気的）に設定するジャンパによって設定します。（ジャンパはピンヘッダとして用意され、ジャンパ線などで設定できるものもありますが、多くの場合は半田を盛ってジャンパとするタイプです。詳しくは各デバイスを購入すると付属しているデータシートを参照してください。）下表の `ChangedAddr` はアドレス変更可能なデバイスでジャンパーを設定し、すべてのデバイスのアドレスを衝突しないようにした例です。
 
 | Device              | NativeAddr | ChangedAddr     |
 | ------------------- | ---------- | --------------- |
