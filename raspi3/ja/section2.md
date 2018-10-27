@@ -193,15 +193,15 @@ index.html
 
 main.js
 ```javascript
-	var i2cAccess = await navigator.requestI2CAccess(); // i2cAccessを非同期で取得
-	var port = i2cAccess.ports.get(1); // I2C I/Fの1番ポートを取得
-	var adt7410 = new ADT7410(port,0x48); // 取得したポートの0x48アドレスをADT7410ドライバで受信する
-	await adt7410.init();
-	while(1){ // 無限ループ
-		var value = await adt7410.read();
-		head.innerHTML = value ? value+"degree" : "Measurement failure";
-		await sleep(1000);
-	}
+  var i2cAccess = await navigator.requestI2CAccess(); // i2cAccessを非同期で取得
+  var port = i2cAccess.ports.get(1); // I2C I/Fの1番ポートを取得
+  var adt7410 = new ADT7410(port,0x48); // 取得したポートの0x48アドレスをADT7410ドライバで受信する
+  await adt7410.init();
+  while(1) { // 無限ループ
+    var value = await adt7410.read();
+    head.innerHTML = value ? value+"degree" : "Measurement failure";
+    await sleep(1000);
+  }
 ```
 
 ここで温度センサーの情報を定期的に取得し、画面に出力する処理が行われています。
@@ -277,7 +277,7 @@ example と同じコードを書いても面白くないので、今回は`i2c-A
 JSFiddle の HTMLペインに Polyfill の読み込みと、温度表示のためのタグだけ書いておきます。
 
 ```html
-<div id="value">---</div>
+<div id="ADT7410value">---</div>
 <script src="https://chirimen.org/chirimen-raspi3/gc/polyfill/polyfill.js"></script>
 ```
 
@@ -289,35 +289,35 @@ JSFiddle の HTMLペインに Polyfill の読み込みと、温度表示のた�
 今回は定期的なポーリング処理が必要になるので、[GPIO編 c. スイッチに反応するようにする (port.read()を使ってみる)](section1.md#c. スイッチに反応するようにする (port.read()を使ってみる)) の時に書いたコードが参考になります。
 
 ```javascript
-// ADT7410valueドライバを使わず、自力でADT7410の値を読むサンプル
+// ADT7410のドライバを使わず、自力でADT7410の値を読むサンプル
 
 'use strict'; // strictモードで実行。細かいエラーチェックが行われます。
 
 var head;
-window.addEventListener('load', function (){
-	head = document.querySelector('#ADT7410value');
-	mainFunction();
+window.addEventListener('load', function() {
+  head = document.querySelector('#ADT7410value');
+  mainFunction();
 }, false);
 
 
-async function mainFunction(){
-	var i2cAccess = await navigator.requestI2CAccess(); // i2cAccessを非同期で取得
-	var port = i2cAccess.ports.get(1); // I2C I/Fの1番ポートを取得
-	var i2cSlaveDevice = await port.open(0x48); // アドレス0x48のI2Cスレーブデバイスを得る
-	
-	while(1){ // 無限ループ
-		var MSB = await i2cSlaveDevice.read8(0x00); // これ以下の３行が肝です
-		var LSB = await i2cSlaveDevice.read8(0x01);
-		var temperature = ((MSB << 8)|(LSB & 0xff))/128.0;
-		head.innerHTML = temperature + "℃";
-		await sleep(1000);
-	}
+async function mainFunction() {
+  var i2cAccess = await navigator.requestI2CAccess(); // i2cAccessを非同期で取得
+  var port = i2cAccess.ports.get(1); // I2C I/Fの1番ポートを取得
+  var i2cSlaveDevice = await port.open(0x48); // アドレス0x48のI2Cスレーブデバイスを得る
+
+  while(1) { // 無限ループ
+    var MSB = await i2cSlaveDevice.read8(0x00); // これ以下の３行が肝です
+    var LSB = await i2cSlaveDevice.read8(0x01);
+    var temperature = ((MSB << 8)|(LSB & 0xff))/128.0;
+    head.innerHTML = temperature + "℃";
+    await sleep(1000);
+  }
 }
 
-function sleep(ms){
-	return new Promise( function(resolve) {
-		setTimeout(resolve, ms);
-	});
+function sleep(ms) {
+  return new Promise(function(resolve) {
+    setTimeout(resolve, ms);
+  });
 }
 ```
 
