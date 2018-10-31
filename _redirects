@@ -1,5 +1,9 @@
 # This is netlify's redirect definition file: https://www.netlify.com/docs/redirects/
 # Redirect default Netlify subdomain to primary domain
 https://tutorial-chirimen-org.netlify.com/*   https://tutorial.chirimen.org/:splat 301!
-# redirect from old path to new path
+# Proxy polyfill and driver files
+/raspi3/examples/polyfill/*  https://chirimen.org/chirimen-raspi3/gc/polyfill/:splat  200
+/raspi3/examples/drivers/*   https://chirimen.org/chirimen-raspi3/gc/drivers/:splat  200
+
+# redirect from obsolete path to new path
 /raspberrypi/*  /raspi3/:splat
