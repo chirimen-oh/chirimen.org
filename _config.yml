@@ -10,3 +10,9 @@ description: >-
 show_downloads: false
 # google_analytics:
 include: _redirects
+# Include some configs same as GitHub Pages
+# https://help.github.com/articles/configuring-jekyll/
+kramdown:
+  input: GFM
+  hard_wrap: false
+gfm_quirks: paragraph_end
