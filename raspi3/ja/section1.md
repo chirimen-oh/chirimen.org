@@ -599,4 +599,14 @@ LED が点灯する替わりにファンが回るようになりました。
 * Web GPIO APIを使ったGPIO入力ポートの設定と読み出し処理の流れ  (`navigator.requestGPIOAccess()`〜`port.read()`）
 * Web GPIO APIを使ったGPIO入力ポートの設定と変化検知受信の流れ  (`navigator.requestGPIOAccess()`〜`port.onchange()`)
 
+このチュートリアルで書いたコードは以下のページで参照できます:
+
+* [GitHub リポジトリで参照](https://github.com/chirimen-oh/tutorials/tree/master/raspi3/examples/section1)
+* ブラウザで開くページ (各ステップ)
+  * [画面のボタンで画面の要素の色を変える](https://tutorial.chirimen.org/raspi3/examples/section1/s1_1.html)
+  * [他面のボタンで LED が光り画面の要素の色も変わる](https://tutorial.chirimen.org/raspi3/examples/section1/s1_2.html)
+  * [マウスで画面のボタンを押している間だけ LED が光る](https://tutorial.chirimen.org/raspi3/examples/section1/s1_3.html)
+  * [タクトスイッチを押している間だけ LED が光る](https://tutorial.chirimen.org/raspi3/examples/section1/s1_4.html)
+  * [画面のボタンまたはタクトスイッチを押している間だけ LED が光る](https://tutorial.chirimen.org/raspi3/examples/section1/s1_4.html)
+
 次の『[チュートリアル 2. I2C　基本編（ADT7410温度センサー）](https://tutorial.chirimen.org/raspi3/ja/section2)』では Web I2C API の学習をします。
