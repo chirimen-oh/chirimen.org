@@ -12,7 +12,10 @@ show_downloads: false
 include: _redirects
 # Include some configs same as GitHub Pages
 # https://help.github.com/articles/configuring-jekyll/
+markdown: kramdown
 kramdown:
   input: GFM
   hard_wrap: false
+  math_engine: mathjax
+  syntax_highlighter: rouge
 gfm_quirks: paragraph_end
