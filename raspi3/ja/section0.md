@@ -293,4 +293,9 @@ JS Bin の JavaScript のペインにカーソルを当てればコード修正�
 * L チカのサンプルを動かしてみた
 * JS Bin で L チカのコードを変更してみた
 
+このチュートリアルで書いたコードは以下のページで参照できます:
+
+* [GitHub リポジトリで参照](https://github.com/chirimen-oh/tutorials/tree/master/raspi3/examples/section0)
+* [ブラウザで開くページ (見た目は空白ですが L チカコードが動きます)](https://tutorial.chirimen.org/raspi3/examples/section0/s0.html)
+
 次の『[チュートリアル 1. GPIO編](https://tutorial.chirimen.org/raspi3/ja/section1)』では GPIO の入力方法について学びます。
