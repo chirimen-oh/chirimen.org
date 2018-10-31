@@ -8,3 +8,5 @@ plugins:
 rules:
   no-var: 0
   no-await-in-loop: 0
+globals:
+  sleep: true
