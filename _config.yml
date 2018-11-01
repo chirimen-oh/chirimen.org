@@ -18,4 +18,5 @@ kramdown:
   hard_wrap: false
   math_engine: mathjax
   syntax_highlighter: rouge
+  autolink: true
 gfm_quirks: paragraph_end
