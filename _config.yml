@@ -10,12 +10,17 @@ description: >-
 show_downloads: false
 # google_analytics:
 include: _redirects
-# Include some configs same as GitHub Pages
+
+# Use CommonMarkGhPages for Markdown parser
+# https://github.com/github/jekyll-commonmark-ghpages
+markdown: CommonMarkGhPages
+
+# Use Kramdown for Markdown parser (obsolete)
 # https://help.github.com/articles/configuring-jekyll/
-markdown: kramdown
-kramdown:
-  input: GFM
-  hard_wrap: false
-  math_engine: mathjax
-  syntax_highlighter: rouge
-gfm_quirks: paragraph_end
+# markdown: kramdown
+# kramdown:
+#   input: GFM
+#   hard_wrap: false
+#   math_engine: mathjax
+#   syntax_highlighter: rouge
+# gfm_quirks: paragraph_end
