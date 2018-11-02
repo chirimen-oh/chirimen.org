@@ -14,6 +14,9 @@ include: _redirects
 # Use CommonMarkGhPages for Markdown parser
 # https://github.com/github/jekyll-commonmark-ghpages
 markdown: CommonMarkGhPages
+commonmark:
+  options: ["SMART", "FOOTNOTES"]
+  extensions: ["strikethrough", "autolink", "tables"]
 
 # Use Kramdown for Markdown parser (obsolete)
 # https://help.github.com/articles/configuring-jekyll/
