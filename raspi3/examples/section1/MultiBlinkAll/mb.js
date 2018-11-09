@@ -91,11 +91,3 @@ async function setLed(chFlags) {
     }
   }
 }
-
-// 単に指定したms秒スリープするだけの非同期処理関数
-// この関数の定義方法はとりあえず気にしなくて良いです。コピペしてください。
-function sleep(ms) {
-  return new Promise(resolve => {
-    setTimeout(resolve, ms);
-  });
-}

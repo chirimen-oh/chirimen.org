@@ -26,9 +26,3 @@ async function mainFunction() {
     await sleep(1000);
   }
 }
-
-function sleep(ms) {
-  return new Promise(resolve => {
-    setTimeout(resolve, ms);
-  });
-}
