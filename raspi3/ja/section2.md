@@ -336,5 +336,13 @@ ADT7410 を指で触って温度が変わることを確認してみてくださ
 * Web I2C API を使った処理の流れ
 * ADT7410 温度センサーの制御方法
 
+このチュートリアルで書いたコードは以下のページで参照できます:
+
+* [GitHub リポジトリで参照](https://github.com/chirimen-oh/tutorials/tree/master/raspi3/examples/section2)
+* ブラウザで開くページ (各ステップ)
+  * [ADT7410 温度センサー (ドライバを使ったコード例)](https://tutorial.chirimen.org/raspi3/examples/section2/s2_1.html)
+  * [ADT7410 温度センサー (ドライバを使わないコード例)](https://tutorial.chirimen.org/raspi3/examples/section2/s2_2.html)
+
+
 次の『[チュートリアル 3. I2C　応用編（その他のセンサー）](section3.md)』では加速度センサーなど他のセンサーも触っていきます。
 
