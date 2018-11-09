@@ -4,6 +4,8 @@ https://tutorial-chirimen-org.netlify.com/*   https://tutorial.chirimen.org/:spl
 # Proxy polyfill and driver files
 /raspi3/examples/polyfill/*  https://chirimen.org/chirimen-raspi3/gc/polyfill/:splat  200
 /raspi3/examples/drivers/*   https://chirimen.org/chirimen-raspi3/gc/drivers/:splat  200
+# Proxy i2c example codes
+/raspi3/examples/section3/*   https://chirimen.org/chirimen-raspi3/gc/i2c/:splat  200
 
 # redirect from obsolete path to new path
 /raspberrypi/*  /raspi3/:splat
