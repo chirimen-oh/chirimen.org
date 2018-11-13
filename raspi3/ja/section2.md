@@ -193,13 +193,16 @@ index.html
 
 main.js
 ```javascript
+  var head = document.querySelector("#ADT7410value");
   var i2cAccess = await navigator.requestI2CAccess(); // i2cAccessを非同期で取得
   var port = i2cAccess.ports.get(1); // I2C I/Fの1番ポートを取得
-  var adt7410 = new ADT7410(port,0x48); // 取得したポートの0x48アドレスをADT7410ドライバで受信する
+  var adt7410 = new ADT7410(port, 0x48); // 取得したポートの0x48アドレスをADT7410ドライバで受信する
+  var value;
   await adt7410.init();
-  while(1) { // 無限ループ
-    var value = await adt7410.read();
-    head.innerHTML = value ? value+"degree" : "Measurement failure";
+  for (;;) {
+    // 無限ループ
+    value = await adt7410.read();
+    head.innerHTML = value ? `${value} degree` : "Measurement failure";
     await sleep(1000);
   }
 ```
@@ -291,34 +294,24 @@ JSFiddle の HTMLペインに Polyfill の読み込みと、温度表示のた�
 ```javascript
 // ADT7410のドライバを使わず、自力でADT7410の値を読むサンプル
 
-'use strict'; // strictモードで実行。細かいエラーチェックが行われます。
-
-var head;
-window.addEventListener('load', function() {
-  head = document.querySelector('#ADT7410value');
-  mainFunction();
-}, false);
-
-
-async function mainFunction() {
+window.onload = async function mainFunction() {
+  var head = document.querySelector("#ADT7410value");
   var i2cAccess = await navigator.requestI2CAccess(); // i2cAccessを非同期で取得
   var port = i2cAccess.ports.get(1); // I2C I/Fの1番ポートを取得
   var i2cSlaveDevice = await port.open(0x48); // アドレス0x48のI2Cスレーブデバイスを得る
+  var MSB;
+  var LSB;
+  var temperature;
 
-  while(1) { // 無限ループ
-    var MSB = await i2cSlaveDevice.read8(0x00); // これ以下の３行が肝です
-    var LSB = await i2cSlaveDevice.read8(0x01);
-    var temperature = ((MSB << 8)|(LSB & 0xff))/128.0;
-    head.innerHTML = temperature + "℃";
+  for (;;) {
+    // 無限ループ
+    MSB = await i2cSlaveDevice.read8(0x00); // これ以下の３行が肝です
+    LSB = await i2cSlaveDevice.read8(0x01);
+    temperature = ((MSB << 8) | (LSB & 0xff)) / 128.0;
+    head.innerHTML = `${temperature} ℃`;
     await sleep(1000);
   }
-}
-
-function sleep(ms) {
-  return new Promise(function(resolve) {
-    setTimeout(resolve, ms);
-  });
-}
+};
 ```
 
 JavaScriptを書いたら、`▷ Run` を押して実行してみましょう。
