@@ -609,4 +609,4 @@ LED が点灯する替わりにファンが回るようになりました。
   * [タクトスイッチを押している間だけ LED が光る](https://tutorial.chirimen.org/raspi3/examples/section1/s1_4.html)
   * [画面のボタンまたはタクトスイッチを押している間だけ LED が光る](https://tutorial.chirimen.org/raspi3/examples/section1/s1_5.html)
 
-次の『[チュートリアル 2. I2C　基本編（ADT7410温度センサー）](https://tutorial.chirimen.org/raspi3/ja/section2)』では Web I2C API の学習をします。
+次の『[チュートリアル 2. I2C　基本編（ADT7410温度センサー）](section2.md)』では Web I2C API の学習をします。
