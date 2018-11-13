@@ -12,9 +12,11 @@
 
 ## 編集時の注意
 
-本サイトは [GitHub Pages](https://help.github.com/articles/using-jekyll-as-a-static-site-generator-with-github-pages/) で使われている Jekyll テンプレートを使っていますが、実際のホスティングには GitHub Pages ではなく Netlify を利用しています。Netlify 側の機能として、**各ページの URL は元ファイル名に関わらず小文字に統一** (大文字を含む URL にアクセスすると 301 で小文字 URL にリダイレクトされる)、**末尾の .html や .md あるいは / もなし** でアクセスできるようになっています。
+本サイトは [GitHub Pages](https://help.github.com/articles/using-jekyll-as-a-static-site-generator-with-github-pages/) で使われている Jekyll テンプレートを使っていますが、実際のホスティングには GitHub Pages ではなく Netlify を利用しています。Markdown の変換は Github Pages となるべく互換になるようセットアップしていますが、全ての挙動が Github Pages と同様ではありません。
 
-ユーザ視点ではその方が便利なためですが、Github Pages の時のつもりで編集するとリンク URL を間違ってしまうため注意してください。Netlify でのビルドログなどは Github のコミット通知と併せて下記コミュニティ Slack の #github チャンネルに通知されるようになっています。編集結果が反映されない場合などはビルドに失敗していないか確認してください。
+具体的には、Netlify 側の機能として、**各ページの URL は元ファイル名に関わらず小文字に統一** (大文字を含む URL にアクセスすると 301 で小文字 URL にリダイレクトされる)、**末尾の .html や .md あるいは / もなしでアクセス** できるようになります。リポジトリのファイルと Web での URL が異なるのは望ましくないため、**ディレクトリ名や Markdown ファイル名には原則全て小文字を使用してください**。また、Markdown ファイル内での **相対リンクについては GitHub Pages の時と同様 .md 付きの相対リンクで記述してください**。そうすることでサーバ側のビルド時に自動的に .md なしの相対リンクに変換されるので、サイト上でのリンクも GitHub Web 上でのリンクも両方が有効になります。
+
+なお、Netlify でのビルドログなどは Github のコミット通知と併せて下記コミュニティ Slack の #github チャンネルに通知されるようになっています。編集結果が反映されない場合などはビルドに失敗していないか確認してください。
 
 ## ファイル構成とテンプレートの詳細
 
