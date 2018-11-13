@@ -286,7 +286,7 @@ JSFiddle の HTMLペインに Polyfill の読み込みと、温度表示のた�
 ## JavaScriptを書いてみる
 次にJavaScriptです。async functionを使って書いてみます。
 
-今回は定期的なポーリング処理が必要になるので、[GPIO編 c. スイッチに反応するようにする (port.read()を使ってみる)](section1.md#c. スイッチに反応するようにする (port.read()を使ってみる)) の時に書いたコードが参考になります。
+今回は定期的なポーリング処理が必要になるので、[GPIO編 c. スイッチに反応するようにする (port.read()を使ってみる)](section1.md#c--portread) の時に書いたコードが参考になります。
 
 ```javascript
 // ADT7410のドライバを使わず、自力でADT7410の値を読むサンプル
