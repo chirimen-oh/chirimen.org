@@ -93,18 +93,18 @@ GPIOを実際に使う前に、まずは「ボタンを押したら LED の ON/O
 早速 JavaScript を書いていきましょう。
 
 ```javascript
-onload = function() {
+window.onload = function mainFunction() {
   var onoff = document.getElementById("onoff");
-  var ledview = document.getElementById("ledview");
+  var ledView = document.getElementById("ledView");
   var v = 0;
-  onoff.onclick = function() {
-    v ^= 1;
-    ledview.style.backgroundColor = (v == 1)? "red" : "black";
+  onoff.onclick = function controlLed() {
+    v = v === 0 ? 1 : 0;
+    ledView.style.backgroundColor = v === 1 ? "red" : "black";
   };
-}
+};
 ```
 
-このコードでは `onoff` 要素と `ledview` 要素を取得し、`onoff` ボタンのクリックイベント発生時に `letview` の色を書き換えるイベントハンドラを登録しています。また、その処理は HTML 要素の読み込み後に実行するよう `onload` 関数内に処理を書いています (HTML の読み込み前に処理すると `getElementById()` で要素が取得できません)。
+このコードでは `onoff` 要素と `ledview` 要素を取得し、`onoff` ボタンのクリックイベント発生時に `letview` の色を書き換えるイベントハンドラを登録しています。また、その処理は HTML 要素の読み込み後に実行するよう `window.onload` に設定する関数内に処理を書いています (HTML の読み込み前に処理すると `getElementById()` で要素が取得できません)。
 
 実行タイミングを考えてコードを書くことは重要ですが、HTML の読み込み後に処理させたいことは多いので、実は JSFiddle では JavaScript は onload 後に実行する初期設定となっています。しかしこのままでは「読み込み完了時の処理を読み込み完了後に登録する」ことになってしまい、折角書いたコードが実行されません。
 
@@ -128,23 +128,19 @@ JSFiddle 利用時にはいずれかの対応をしてください (ローカル
 一度 Lチカの時に学んだことを思い出せばできるはずですが、まずは書き換えてみましょう。
 
 ```javascript
-onload = function() {
-  mainFunction();
-}
-
-async function mainFunction() {
+window.onload = async function mainFunction() {
   var onoff = document.getElementById("onoff");
-  var ledview = document.getElementById("ledview");
+  var ledView = document.getElementById("ledView");
   var v = 0;
   var gpioAccess = await navigator.requestGPIOAccess();
   var port = gpioAccess.ports.get(26);
   await port.export("out");
-  onoff.onclick = function() {
-    v ^= 1;
+  onoff.onclick = function controlLed() {
+    v = v === 0 ? 1 : 0;
     port.write(v);
-    ledview.style.backgroundColor = (v)? "red" : "black";
+    ledView.style.backgroundColor = v ? "red" : "black";
   };
-}
+};
 ```
 
 これで、画面のボタンクリックに反応して LED の ON/OFF ができたら成功です。
@@ -219,10 +215,10 @@ Note: 1回路1接点なのに端子が4つあるスイッチが多いです。�
 
 ```javascript
   :
-  onoff.onclick = function() {
-    v ^= 1;
+  onoff.onclick = function controlLed() {
+    v = v === 0 ? 1 : 0;
     port.write(v);
-    ledview.style.backgroundColor = (v)? "red" : "black";
+    ledView.style.backgroundColor = v ? "red" : "black";
   };
   :
 ```
@@ -234,11 +230,11 @@ Note: 1回路1接点なのに端子が4つあるスイッチが多いです。�
 
 ```javascript
   :
-  onoff.onmousedown = function() {
+  onoff.onmousedown = function onLed() {
     port.write(1);
     ledview.style.backgroundColor = "red";
   };
-  onoff.onmouseup = function() {
+  onoff.onmouseup = function offLed() {
     port.write(0);
     ledview.style.backgroundColor = "black";
   };
@@ -252,35 +248,31 @@ Note: 1回路1接点なのに端子が4つあるスイッチが多いです。�
 下記のようになりました。
 
 ```javascript
-onload = function() {
-  mainFunction();
-}
-
 var port;
 
-async function mainFunction(){
+function ledOnOff(v) {
+  var ledView = document.getElementById("ledView");
+  if (v === 0) {
+    port.write(0);
+    ledView.style.backgroundColor = "black";
+  } else {
+    port.write(1);
+    ledView.style.backgroundColor = "red";
+  }
+}
+
+window.onload = async function mainFunction() {
   var onoff = document.getElementById("onoff");
-  var ledview = document.getElementById("ledview");
   var gpioAccess = await navigator.requestGPIOAccess();
   port = gpioAccess.ports.get(26);
   await port.export("out");
-  onoff.onmousedown = function(){
+  onoff.onmousedown = function onLed() {
     ledOnOff(1);
   };
-  onoff.onmouseup = function(){
+  onoff.onmouseup = function offLed() {
     ledOnOff(0);
   };
-}
-
-function ledOnOff(v){
-  if (v === 0) {
-    port.write(0);
-    ledview.style.backgroundColor = "black";
-  } else {
-    port.write(1);
-    ledview.style.backgroundColor = "red";
-  }
-}
+};
 ```
 
 ## b. 部品と配線について
@@ -371,13 +363,6 @@ GPIO ポートにかかる電圧を Web アプリ側から読み取りたい時�
 順序の乱れが生じないようにするには `setInterval()` で一定時間毎に実行するのではなく、繰り返し処理の最後に一定時間の待ち時間を入れます。そうすることで順序が維持されるポーリング処理となります:
 
 ```javascript
-// await を付けて呼び出すことで指定時間待つ関数
-function sleep(ms) {
-  return new Promise(function(resolve) {
-    setTimeout(resolve, ms);
-  });
-}
-
 var gpioAccess = await navigator.requestGPIOAccess(); // writeと一緒。
 var port = gpioAccess.ports.get(5); // Port 5 を取得
 await port.export("in"); // Port 5 を「入力モード」に。
@@ -393,54 +378,45 @@ while(1) {
 LED の処理と組み合わせた全体のコードは下記のようになります:
 
 ```javascript
-onload = function(){
-  mainFunction();
+var ledPort;
+var switchPort;
+
+function ledOnOff(v) {
+  var ledView = document.getElementById("ledView");
+  if (v === 0) {
+    ledPort.write(0);
+    ledView.style.backgroundColor = "black";
+  } else {
+    ledPort.write(1);
+    ledView.style.backgroundColor = "red";
+  }
 }
 
-
-var ledPort, switchPort ;
-
-async function mainFunction() {
+window.onload = async function mainFunction() {
   var onoff = document.getElementById("onoff");
-  var ledview = document.getElementById("ledview");
   var gpioAccess = await navigator.requestGPIOAccess();
+  var val;
 
-  ledPort = gpioAccess.ports.get(26); // LEDのPort
+  ledPort = gpioAccess.ports.get(26); // LED のポート番号
   await ledPort.export("out");
 
-  switchPort = gpioAccess.ports.get(5); // タクトスイッチのPort
+  switchPort = gpioAccess.ports.get(5); // タクトスイッチのポート番号
   await switchPort.export("in");
 
-  onoff.onmousedown = function() {
+  onoff.onmousedown = function onLed() {
     ledOnOff(1);
   };
-  onoff.onmouseup = function() {
+  onoff.onmouseup = function offLed() {
     ledOnOff(0);
   };
 
-  while(1) {
-    var val = await switchPort.read(); // Port 5の状態を読み込む  
-    val ^= 1; // switchはPullupなのでOFFで1。LEDはOFFで0なので反転させる
+  for (;;) {
+    val = await switchPort.read(); // Port 5の状態を読み込む
+    val = val === 0 ? 1 : 0; // スイッチは Pull-up なので OFF で 1、LED は OFF で 0 なので反転させる
     ledOnOff(val);
     await sleep(100);
   }
-}
-
-function ledOnOff(v){
-  if (v === 0) {
-    ledPort.write(0);
-    ledview.style.backgroundColor = "black";
-  }else{
-    ledPort.write(1);
-    ledview.style.backgroundColor = "red";
-  }
-}
-
-function sleep(ms) {
-  return new Promise(function(resolve) {
-    setTimeout(resolve, ms);
-  });
-}
+};
 ```
 
 さて、出来たらスイッチを押してみてください。
@@ -457,53 +433,48 @@ LED が押してる間だけ点灯したら成功です。
 `port.onchange()` の説明は後回しにして、さきほどのサンプルを `port.onchange()` を使ったコードに書き換えてみましょう。
 
 ```javascript
-var onoff, ledview; // GUIの要素
-
-var ledPort,switchPort; // LEDとスイッチの付いているポート
-
-onload = function() {
-  onoff = document.getElementById("onoff");
-  ledview = document.getElementById("ledview");
-
-  onoff.onmousedown = function() {
-    ledOnOff(1);
-  };
-  onoff.onmouseup = function() {
-    ledOnOff(0);
-  };
-
-  initGPIO();
-}
+var ledPort;
+var switchPort; // LED とスイッチの付いているポート
 
 function ledOnOff(v) {
-  if(v === 0) {
+  var ledView = document.getElementById("ledView");
+  if (v === 0) {
     ledPort.write(0);
-    ledview.style.backgroundColor = "black";
+    ledView.style.backgroundColor = "black";
   } else {
     ledPort.write(1);
-    ledview.style.backgroundColor = "red";
+    ledView.style.backgroundColor = "red";
   }
 }
 
-async function initGPIO() {
+window.onload = async function initialize() {
+  var onoff = document.getElementById("onoff");
   var gpioAccess = await navigator.requestGPIOAccess();
-  ledPort = gpioAccess.ports.get(26); // LEDのPort
+  ledPort = gpioAccess.ports.get(26); // LED のポート番号
   await ledPort.export("out");
-  switchPort = gpioAccess.ports.get(5); // タクトスイッチのPort
+  switchPort = gpioAccess.ports.get(5); // タクトスイッチのポート番号
   await switchPort.export("in");
-  switchPort.onchange = function(val){
-    // Port 5の状態を読み込む  
-    val ^= 1; // switchはPullupなのでOFFで1。LEDはOFFで0なので反転させる
-    ledOnOff(val);
-  }
-}
+  // Port 5 の状態が変わったタイミングで処理する
+  switchPort.onchange = function toggleLed(val) {
+    // スイッチは Pull-up なので OFF で 1、LED は OFF で 0 と反転させる
+    ledOnOff(val === 0 ? 1 : 0);
+  };
+
+  onoff.onmousedown = function onLed() {
+    ledOnOff(1);
+  };
+  onoff.onmouseup = function offLed() {
+    ledOnOff(0);
+  };
+};
 ```
 
 コードを見ていただけたらお気づきかもしれません。 `port.onchange()` は入力モードの GPIO ポートの「状態変化時に呼び出される関数を設定する」ための機能です。
 
 `port.read()` を使ったコードと異なりポーリングする処理が不要になったので、今回のケースでは簡潔に書けるようになりましたね。
 
-また、ポーリングによる LED 制御処理を行なっていないので、ブラウザ画面のボタンも正しく反応できるようになりました。
+また、ポーリングによる LED 制御処理を行なっていないので、ブラウザ画面のボタンも正しく反応できるようになります。
+
 
 # 4.LEDのかわりにCPUファンを回してみる
 Web GPIO API の機能が一通り確認できましたので、本パートのしめくくりに違う部品も制御してみましょう。
