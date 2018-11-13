@@ -189,10 +189,11 @@ index.html
 
 ## d-2. main.js
 
-次に、`main.js` を見てみましょう。(重要な部分以外は削っています)
+次に、`main.js` を見てみましょう。
 
 main.js
 ```javascript
+window.onload = async function mainFunction() {
   var head = document.querySelector("#ADT7410value");
   var i2cAccess = await navigator.requestI2CAccess(); // i2cAccessを非同期で取得
   var port = i2cAccess.ports.get(1); // I2C I/Fの1番ポートを取得
@@ -205,6 +206,7 @@ main.js
     head.innerHTML = value ? `${value} degree` : "Measurement failure";
     await sleep(1000);
   }
+};
 ```
 
 ここで温度センサーの情報を定期的に取得し、画面に出力する処理が行われています。
