@@ -443,4 +443,4 @@ I2Cデバイスを同時に接続して使用するとき、重要な注意事�
   * [測距センサー (GP2Y0E03)](https://tutorial.chirimen.org/raspi3/examples/section3/i2c-GP2Y0E03/)
   * [GROVE I2C 三軸加速度センサ](https://tutorial.chirimen.org/raspi3/examples/section3/i2c-grove-accelerometer/)
 
-次のCHIRIMEN for Raspberry Pi 3 チュートリアルでは、『[Web GPIO APIとWeb I2C APIを組み合わせたプログラミング](https://tutorial.chirimen.org/raspi3/ja/section4)』に挑戦します！
+次のCHIRIMEN for Raspberry Pi 3 チュートリアルでは、『[Web GPIO APIとWeb I2C APIを組み合わせたプログラミング](section4.md)』に挑戦します！
