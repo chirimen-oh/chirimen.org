@@ -30,7 +30,7 @@ window.onload = async function mainFunction() {
     ledOnOff(0);
   };
 
-  while (1) {
+  for (;;) {
     val = await switchPort.read(); // Port 5の状態を読み込む
     val = val === 0 ? 1 : 0; // スイッチは Pull-up なので OFF で 1、LED は OFF で 0 なので反転させる
     ledOnOff(val);

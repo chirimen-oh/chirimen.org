@@ -1,22 +1,8 @@
-var onoff, ledView; // GUIの要素
-
-var ledPort, switchPort; // LED とスイッチの付いているポート
-
-onload = function() {
-  onoff = document.getElementById("onoff");
-  ledView = document.getElementById("ledView");
-
-  onoff.onmousedown = function() {
-    ledOnOff(1);
-  };
-  onoff.onmouseup = function() {
-    ledOnOff(0);
-  };
-
-  initGPIO();
-};
+var ledPort;
+var switchPort; // LED とスイッチの付いているポート
 
 function ledOnOff(v) {
+  var ledView = document.getElementById("ledView");
   if (v === 0) {
     ledPort.write(0);
     ledView.style.backgroundColor = "black";
@@ -26,15 +12,23 @@ function ledOnOff(v) {
   }
 }
 
-async function initGPIO() {
+window.onload = async function initialize() {
+  var onoff = document.getElementById("onoff");
   var gpioAccess = await navigator.requestGPIOAccess();
   ledPort = gpioAccess.ports.get(26); // LED のポート番号
   await ledPort.export("out");
   switchPort = gpioAccess.ports.get(5); // タクトスイッチのポート番号
   await switchPort.export("in");
-  switchPort.onchange = function(val) {
-    // Port 5の状態を読み込む
-    val = val === 0 ? 1 : 0; // スイッチは Pull-up なので OFF で 1、LED は OFF で 0 なので反転させる
-    ledOnOff(val);
+  // Port 5 の状態が変わったタイミングで処理する
+  switchPort.onchange = function toggleLed(val) {
+    // スイッチは Pull-up なので OFF で 1、LED は OFF で 0 と反転させる
+    ledOnOff(val === 0 ? 1 : 0);
   };
-}
+
+  onoff.onmousedown = function onLed() {
+    ledOnOff(1);
+  };
+  onoff.onmouseup = function offLed() {
+    ledOnOff(0);
+  };
+};
