@@ -35,6 +35,18 @@ CHRIMEN コミュニティで公式にサポートしている環境はありま
 
 もちろん、ポート番号など物理配線が違う場合はそれに合わせてコードを書き換える必要があることには注意が必要です。
 
+## サービス連携
+
+### メールを送信したい
+
+スパム対策などもあり、ローカルのメールサーバなどからの送信は正しく配信されないことがあるため、Gmail などのメールサービスを利用して送信することが望ましいです。Gmail などのメール送信 API を利用するための認証などの実装が面倒な場合は IFTTT のトリガーとして [Webhook](https://ifttt.com/maker_webhooks) を、アクションとして [Gmail](https://ifttt.com/gmail) を利用するなどすれば比較的簡単にメールの送信が可能です。
+
+### LINE, Slack その他のサービスと連携したい
+
+IFTTT のトリガーとして [Webhook](https://ifttt.com/maker_webhooks) を利用すると簡単に様々なサービスとの連携が可能です。Webhook 用の URL や使い方は IFTTT にログインしてから [Webhook](https://ifttt.com/maker_webhooks) ページからリンクされている documents ページや [Webhooks settings ページ](https://ifttt.com/services/maker_webhooks/settings) をご覧ください。
+
+IFTTT では応答性が悪い (トリガーをキックしてからアクションまでの待ち時間が長すぎる) 場合は連携先のサービスの API を使って自分で直接各サービスとの連携を実装してください。
+
 ## トラブルシューティング
 
 ### 同時に複数のタブで開くと動作しない
@@ -72,13 +84,14 @@ element.addEventListener("click", async () => { await sleep(100); }, false);
 CHIRIMEN Raspi3 のバックエンドサーバに接続できていません。デスクトップの reset.sh で再起動してください。
 
 ### JavaScript から特定の URL にアクセスできない
-### コンソールに `Failed to load https://.../: No 'Access-Control-Allow-Origin' header is present on the requested resource. Origin 'https://...' is therefore not allowed access.` などと表示される
+### コンソールに `Failed to load https://...: No 'Access-Control-Allow-Origin' header is present on the requested resource. Origin 'https://...' is therefore not allowed access.` などと表示される
+### コンソールに `Access to fetch at 'https://...' from origin 'https://...' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource.` などと表示される
 
 CHIRIMEN に限らず一般的な Web 開発でよく見かけるエラーです。Web には [同一オリジンポリシー (Same Origin Policy)](https://developer.mozilla.org/ja/docs/Web/Security/Same-origin_policy) というセキュリティ制約があり、JavaScript を読み込んでいるのと異なるドメインの URL には相手側のサーバが [オリジン管理ソース共有 (CORS)](https://developer.mozilla.org/ja/docs/Web/HTTP/HTTP_access_control) で明示的に許可している場合以外は JavaScript のコード中で XMLHttpRequest や fetch からアクセスできません。
 
 単純化して言えば、サーバからの HTTP レスポンスヘッダに `access-control-allow-origin: *` が付与されていれば JavaScript からのアクセスが許可されるため、任意の URL へのアクセスをプロキシ (中継) してレスポンスヘッダを勝手に追加してくれるようなサーバを用意すれば任意のドメインから任意の URL にアクセスが可能になります。
 
-そのようなサービスには例えば https://cors.io/ などがあります。なお、フォーム送信など GET ではなく POST メソッドなどで送信されるリクエストについては一般的にプライバシー問題などもあるため、自前で専用のプロキシーを立てるなどの工夫をする必要があります。
+そのような機能を持った公開の CORS プロキシサービスには例えば https://cors-anywhere.herokuapp.com/ や https://cors.io/ など[いろいろなものがあります](https://gist.github.com/jimmywarting/ac1be6ea0297c16c477e17f8fbe51347)。なお、フォーム送信など GET ではなく POST メソッドなどで送信されるリクエストについては一般的にプライバシー問題などもあるため注意が必要です。
 
 
 ### コードも配線も正しいのにとにかく動作しない！
