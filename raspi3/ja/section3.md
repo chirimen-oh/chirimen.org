@@ -8,13 +8,6 @@ CHIRIMEN for Raspberry Pi 3（以下 「CHIRIMEN Raspi3」） を使ったプロ
 
 ここでは例として光センサー、距離センサー、加速度センサーの 3 つについて詳しく説明していますが、最後に「他の I2C モジュールも使ってみる」として紹介しているように、CHIRIMEN ではそれ以外にも多くの I2C デバイス (あるいは I2C の ADC を使って様々なアナログセンサー類) が簡単に扱えるようになっています。各自興味のあるセンサーを順に試していってください。
 
-## (※1) CHIRIMEN for Raspberry Pi 3とは
-Raspberry Pi 3（以下「Raspi3」）上に構築したIoTプログラミング環境です。
-
-[Web GPIO API (Draft)](http://browserobo.github.io/WebGPIO/)や、[Web I2C API (Draft)](http://browserobo.github.io/WebI2C/)といったAPIを活用したプログラミングにより、WebアプリからRaspi3に接続した電子パーツを直接制御することができます。 
-
-CHIRIMEN Open Hardware コミュニティにより開発が進められています。
-
 ## 前回までのおさらい
 
 本チュートリアルを進める前に前回までのチュートリアルを進めておいてください。
@@ -25,10 +18,9 @@ CHIRIMEN Open Hardware コミュニティにより開発が進められていま
 
 前回までのチュートリアルで学んだことは下記のとおりです。
 
-
-* CHIRIMEN Raspi3 では、各種exampleが `~/Desktop/gc/`配下においてある。配線図も一緒に置いてある
-* CHIRIMEN Raspi3 で利用可能なGPIO Port番号と位置は壁紙を見よう
-* CHIRIMEN Raspi3 ではWebアプリからのGPIOの制御には Web GPIO API を利用する。GPIOポートは「出力モード」に設定することで LED の ON/OFF などが行える。また「入力モード」にすることで、GPIO ポートの状態を読み取ることができる
+* CHIRIMEN Raspi3 では、各種 example が `~/Desktop/gc/` 配下に配線図と一緒においてある
+* CHIRIMEN Raspi3 で利用可能な GPIO Port 番号と位置は壁紙を見よう
+* CHIRIMEN Raspi3 では Web アプリからの GPIO の制御には Web GPIO API を利用する。GPIOポートは「出力モード」に設定することで LED の ON/OFF などが行える。また「入力モード」にすることで、GPIO ポートの状態を読み取ることができる
 * [async function](https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Statements/async_function) を利用すると複数ポートの非同期コードがすっきり書ける
 * CHIRIMEN Raspi3 ではWebアプリからI2C通信に対応したモジュールの制御に [Web I2C API](http://browserobo.github.io/WebI2C/) を利用することができる
 
