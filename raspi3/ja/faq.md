@@ -91,7 +91,7 @@ CHIRIMEN に限らず一般的な Web 開発でよく見かけるエラーです
 
 単純化して言えば、サーバからの HTTP レスポンスヘッダに `access-control-allow-origin: *` が付与されていれば JavaScript からのアクセスが許可されるため、任意の URL へのアクセスをプロキシ (中継) してレスポンスヘッダを勝手に追加してくれるようなサーバを用意すれば任意のドメインから任意の URL にアクセスが可能になります。
 
-そのような機能を持った公開の CORS プロキシサービスには例えば https://cors-anywhere.herokuapp.com/ や https://cors.io/ など[いろいろなものがあります](https://gist.github.com/jimmywarting/ac1be6ea0297c16c477e17f8fbe51347)。なお、フォーム送信など GET ではなく POST メソッドなどで送信されるリクエストについては一般的にプライバシー問題などもあるため注意が必要です。
+そのような機能を持った公開の CORS プロキシサービスには例えば https://cors-anywhere.herokuapp.com/ や https://cors.io/ など[いろいろなものがあります](https://gist.github.com/jimmywarting/ac1be6ea0297c16c477e17f8fbe51347)。なお、これらのサービスの利用は本来のセキュリティ機能を無視するものであり、利用に際しては注意が必要です。あくまでもプライバシー情報などを含まないものについて、テストやプロトタイピング時だけに限って利用すべきです。
 
 
 ### コードも配線も正しいのにとにかく動作しない！
