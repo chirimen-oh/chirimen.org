@@ -54,6 +54,7 @@ CHIRIMEN ではブラウザ上の JavaScript だけでハードウェア制御�
 例えば Node で WebSocket サーバを作る場合はこのように index.js ファイルを作成し
 
 ```javascript
+// Node で実行する JavaScript (index.js)
 var WebSocketServer = require('ws').Server;
 var wss = new WebSocketServer({ port:8080 });
 
@@ -65,7 +66,7 @@ wss.on('connection', function(ws) {
 
     // ブラウザにメッセージを送信する時の処理
     wss.clients.forEach(function(client){
-        client.send(”A message from server");
+        client.send("A message from server");
     });
 });
 ```
@@ -82,6 +83,7 @@ node index.js
 この Node サーバにブラウザ側からは次のようにメッセージの送受信が可能です。
 
 ```javascript
+// ブラウザで実行する JavaScript
 var ws = new WebSocket('ws://localhost:8080');
 ws.addEventListener('open', function(event){
     console.log('WebSocket 接続完了');
@@ -95,6 +97,7 @@ ws.addEventListener('open', function(event){
     ws.send("A message from browser");
 });
 ```
+
 
 ## トラブルシューティング
 
