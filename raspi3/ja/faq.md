@@ -47,6 +47,55 @@ IFTTT のトリガーとして [Webhook](https://ifttt.com/maker_webhooks) を�
 
 IFTTT では応答性が悪い (トリガーをキックしてからアクションまでの待ち時間が長すぎる) 場合は連携先のサービスの API を使って自分で直接各サービスとの連携を実装してください。
 
+## 他のプログラムとの連携
+
+CHIRIMEN ではブラウザ上の JavaScript だけでハードウェア制御を可能にしていますが、様々な理由で C, Python, Node, シェルスクリプトなどで書かれたコードと連携したいことがあります。そのような場合はブラウザの JavaScript とバックエンドのコードとの間を WebSocket で接続して通信させながら動作させてください (非常に高速な通信が必要な場合は除く)。
+
+例えば Node で WebSocket サーバを作る場合はこのように index.js ファイルを作成し
+
+```javascript
+var WebSocketServer = require('ws').Server;
+var wss = new WebSocketServer({ port:8080 });
+
+wss.on('connection', function(ws) {
+    // ブラウザからメッセージを受信した時の処理
+    ws.on('message', function(message) {
+        console.log("Message Received: " + message);
+    });
+
+    // ブラウザにメッセージを送信する時の処理
+    wss.clients.forEach(function(client){
+        client.send(”A message from server");
+    });
+});
+```
+
+次のように ws モジュールのインストールと node サーバの実行をすればサーバが起動します。
+
+```sh
+// ws モジュールを現在のディレクトリにインストール (初回一度だけ必要)
+npm install ws
+// index.js を node で実行する:
+node index.js
+```
+
+この Node サーバにブラウザ側からは次のようにメッセージの送受信が可能です。
+
+```javascript
+var ws = new WebSocket('ws://localhost:8080');
+ws.addEventListener('open', function(event){
+    console.log('WebSocket 接続完了');
+
+    // サーバからメッセージを受け取ったときの処理
+    ws.addEventListener('message',function(e){
+        console.log("Message Recieved: " + e.data);
+    });
+    
+    // サーバにデータを送信するときの処理
+    ws.send("A message from browser");
+});
+```
+
 ## トラブルシューティング
 
 ### 同時に複数のタブで開くと動作しない
