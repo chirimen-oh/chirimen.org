@@ -6,14 +6,6 @@ CHIRIMEN for Raspberry Pi 3（以下 「CHIRIMEN Raspi3」） を使ったプロ
 
 今回は、Web GPIO API と Web I2C API を組み合わせたWebアプリを作ってみます。
 
-# (※1) CHIRIMEN for Raspberry Pi 3とは
-
-Raspberry Pi 3（以下「Raspi3」）上に構築したIoTプログラミング環境です。
-
-[Web GPIO API (Draft)](https://rawgit.com/browserobo/WebGPIO/master/index.html) や、[Web I2C API (Draft)](https://rawgit.com/browserobo/WebI2C/master/index.html) といったAPIを活用したプログラミングにより、Webアプリから Raspi3 に接続した電子パーツを直接制御することができます。 
-
-CHIRIMEN Open Hardware コミュニティにより開発が進められています。
-
 ## 前回までのおさらい
 
 本チュートリアルを進める前に前回までのチュートリアルを進めておいてください。
