@@ -6,7 +6,7 @@ CHIRIMEN Raspi3 を利用していて良くある質問や回答のメモペー�
 
 ### CHIRIMEN Raspi3 では何が出来ますか？
 
-CHIRIMEN Raspi3 は一般的な Web アプリケーションの開発環境に、GPIO と I2C という IoT プロトタイピングなどでよく使われるハードウェアインターフェイスを JavaScript から直接制御可能にしたものです。[WebI2C API](https://rawgit.com/browserobo/WebI2C/master/index.html), [Web GPIO API](https://rawgit.com/browserobo/WebGPIO/master/index.html)
+CHIRIMEN Raspi3 は一般的な Web アプリケーションの開発環境に、GPIO と I2C という IoT プロトタイピングなどでよく使われるハードウェアインターフェイスを ウェブブラウザのJavaScript から直接制御可能にしたものです。[WebI2C API](https://rawgit.com/browserobo/WebI2C/master/index.html), [Web GPIO API](https://rawgit.com/browserobo/WebGPIO/master/index.html)
 
 デスクトップの Web アプリで出来ることは全て同じようにして実装可能ですし、Web アプリで出来ないことはローカルのサーバと通信させたり拡張機能を作って通信させたりして他のコンテキストや言語の環境で実行させることもあります。
 
@@ -19,6 +19,14 @@ GPIO, I2C 以外によく見聞きするハードのインターフェイスに�
   * それ以外はローカルにサーバを立ててサーバ側で処理するか Arduino を組み合わせるなどして制御します。いずれの場合もデバイスの仕様 (データシート) をしっかり確認してから使ってください。対応する周波数以外の信号を送るとデバイスにロックがかかったり発熱して故障したりする原因となります。
 * SPI
   * クロック、入力、出力の 3 本で双方向通信を行う機能です。CHIRIMEN では現在の所 SPI を JavaScript から直接制御する API を実装していません。SPI を利用したい場合はローカルにサーバを立ててサーバ側で処理するか Arduino を組み合わせるなどして制御します。
+  
+また、GPIO, I2Cに対しては以下の制限があります。
+* GPIO
+  * 概ね50ms以下の周期で細かくHigh/Lowを切り替える必要があるもの（例えばステッピングモータを高速に動かしたいなど）や、概ね50ms以上の精度を必要とするも、複数のGPIO端子を同様な高精度で同期させる必要があるものは困難です。
+  * ハードウェア上で用意されている本数以上のGPIOを用いるもの（I2C接続のGPIOマルチプレクサを使うことでI2C経由で対応可能と思われますが未検証です)
+* I2C
+  * 標準モード以外のモードで動作するもの
+  * ハードウェア上で用意されている本数以上のI2Cバスの本数が必要なもの
 
 ## 動作環境
 
