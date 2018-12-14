@@ -36,8 +36,9 @@ JavaScript 未経験者や非同期処理の未経験者はチュートリアル
 * [JavaScript 1 Day 講習 (外部 PDF)](https://webiotmakers.github.io/static/docs/2017/maebashi-js.pdf)
 * [非同期処理 (async await版)](appendix0.md)
 
-よくある質問についてはこちらに QA ページを用意しております:
+知っておくと良い Tips 集やよくある質問はそれぞれまとめたページがあるので参考にしてください:
 
+* [Tips 集](tips.md)
 * [良くある質問](faq.md)
 
 ## 旧チュートリアル (Qiita 版)
