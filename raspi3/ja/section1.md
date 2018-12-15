@@ -95,7 +95,7 @@ GPIOを実際に使う前に、まずは「ボタンを押したら LED の ON/O
 ```javascript
 window.onload = function mainFunction() {
   var onoff = document.getElementById("onoff");
-  var ledView = document.getElementById("ledView");
+  var ledView = document.getElementById("ledview");
   var v = 0;
   onoff.onclick = function controlLed() {
     v = v === 0 ? 1 : 0;
@@ -130,7 +130,7 @@ JSFiddle 利用時にはいずれかの対応をしてください (ローカル
 ```javascript
 window.onload = async function mainFunction() {
   var onoff = document.getElementById("onoff");
-  var ledView = document.getElementById("ledView");
+  var ledView = document.getElementById("ledview");
   var v = 0;
   var gpioAccess = await navigator.requestGPIOAccess();
   var port = gpioAccess.ports.get(26);
@@ -232,11 +232,11 @@ Note: 1回路1接点なのに端子が4つあるスイッチが多いです。�
   :
   onoff.onmousedown = function onLed() {
     port.write(1);
-    ledview.style.backgroundColor = "red";
+    ledView.style.backgroundColor = "red";
   };
   onoff.onmouseup = function offLed() {
     port.write(0);
-    ledview.style.backgroundColor = "black";
+    ledView.style.backgroundColor = "black";
   };
   :
 ```
@@ -382,7 +382,7 @@ var ledPort;
 var switchPort;
 
 function ledOnOff(v) {
-  var ledView = document.getElementById("ledView");
+  var ledView = document.getElementById("ledview");
   if (v === 0) {
     ledPort.write(0);
     ledView.style.backgroundColor = "black";
@@ -437,7 +437,7 @@ var ledPort;
 var switchPort; // LED とスイッチの付いているポート
 
 function ledOnOff(v) {
-  var ledView = document.getElementById("ledView");
+  var ledView = document.getElementById("ledview");
   if (v === 0) {
     ledPort.write(0);
     ledView.style.backgroundColor = "black";
