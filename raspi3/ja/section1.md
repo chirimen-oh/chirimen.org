@@ -251,7 +251,7 @@ Note: 1回路1接点なのに端子が4つあるスイッチが多いです。�
 var port;
 
 function ledOnOff(v) {
-  var ledView = document.getElementById("ledView");
+  var ledView = document.getElementById("ledview");
   if (v === 0) {
     port.write(0);
     ledView.style.backgroundColor = "black";
