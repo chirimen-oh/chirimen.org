@@ -65,14 +65,14 @@ HTMLに `<button>` と `<div>` 要素を1つづつ作ります。
 
 ```html
 <button id="onoff">LED ON/OFF</button>
-<div id="ledview"></div>
+<div id="ledView"></div>
 ```
 ※JSFiddle のHTMLペインにはHTMLタグの全てを書く必要はなく、`<body>` タグ内のみを書けばあとは補完してくれます。
 
-`ledview` 要素には下記のようなスタイルを付けて黒い丸として表示させましょう。こちらは CSS ペインに記載します。
+`ledView` 要素には下記のようなスタイルを付けて黒い丸として表示させましょう。こちらは CSS ペインに記載します。
 
 ```css
-#ledview{
+#ledView {
   width: 60px;
   height: 60px;
   border-radius: 30px;
@@ -81,7 +81,7 @@ HTMLに `<button>` と `<div>` 要素を1つづつ作ります。
 ```
 
 最後に、HTMLに戻って、[Web GPIO API](http://browserobo.github.io/WebGPIO/) を利用可能にする Polyfill を読み込ませましょう。
-先ほど追加した `ledview` のすぐ下に下記 `<script>` タグを記載します。
+先ほど追加した `ledView` のすぐ下に下記 `<script>` タグを記載します。
 
 ```html
 <script src="https://chirimen.org/chirimen-raspi3/gc/polyfill/polyfill.js"></script>
@@ -95,7 +95,7 @@ GPIOを実際に使う前に、まずは「ボタンを押したら LED の ON/O
 ```javascript
 window.onload = function mainFunction() {
   var onoff = document.getElementById("onoff");
-  var ledView = document.getElementById("ledview");
+  var ledView = document.getElementById("ledView");
   var v = 0;
   onoff.onclick = function controlLed() {
     v = v === 0 ? 1 : 0;
@@ -104,7 +104,7 @@ window.onload = function mainFunction() {
 };
 ```
 
-このコードでは `onoff` 要素と `ledview` 要素を取得し、`onoff` ボタンのクリックイベント発生時に `letview` の色を書き換えるイベントハンドラを登録しています。また、その処理は HTML 要素の読み込み後に実行するよう `window.onload` に設定する関数内に処理を書いています (HTML の読み込み前に処理すると `getElementById()` で要素が取得できません)。
+このコードでは `onoff` 要素と `ledView` 要素を取得し、`onoff` ボタンのクリックイベント発生時に `letview` の色を書き換えるイベントハンドラを登録しています。また、その処理は HTML 要素の読み込み後に実行するよう `window.onload` に設定する関数内に処理を書いています (HTML の読み込み前に処理すると `getElementById()` で要素が取得できません)。
 
 実行タイミングを考えてコードを書くことは重要ですが、HTML の読み込み後に処理させたいことは多いので、実は JSFiddle では JavaScript は onload 後に実行する初期設定となっています。しかしこのままでは「読み込み完了時の処理を読み込み完了後に登録する」ことになってしまい、折角書いたコードが実行されません。
 
@@ -130,7 +130,7 @@ JSFiddle 利用時にはいずれかの対応をしてください (ローカル
 ```javascript
 window.onload = async function mainFunction() {
   var onoff = document.getElementById("onoff");
-  var ledView = document.getElementById("ledview");
+  var ledView = document.getElementById("ledView");
   var v = 0;
   var gpioAccess = await navigator.requestGPIOAccess();
   var port = gpioAccess.ports.get(26);
@@ -243,7 +243,7 @@ Note: 1回路1接点なのに端子が4つあるスイッチが多いです。�
 
 これで、思った通りの動作になったはずです。
 
-後でスイッチを追加したときに、同じ処理を呼ぶことになるので、LED の ON/OFF と `ledview` のスタイル切り替えをまとめて関数化しておきましょう。
+後でスイッチを追加したときに、同じ処理を呼ぶことになるので、LED の ON/OFF と `ledView` のスタイル切り替えをまとめて関数化しておきましょう。
 
 下記のようになりました。
 
@@ -251,7 +251,7 @@ Note: 1回路1接点なのに端子が4つあるスイッチが多いです。�
 var port;
 
 function ledOnOff(v) {
-  var ledView = document.getElementById("ledview");
+  var ledView = document.getElementById("ledView");
   if (v === 0) {
     port.write(0);
     ledView.style.backgroundColor = "black";
@@ -382,7 +382,7 @@ var ledPort;
 var switchPort;
 
 function ledOnOff(v) {
-  var ledView = document.getElementById("ledview");
+  var ledView = document.getElementById("ledView");
   if (v === 0) {
     ledPort.write(0);
     ledView.style.backgroundColor = "black";
@@ -437,7 +437,7 @@ var ledPort;
 var switchPort; // LED とスイッチの付いているポート
 
 function ledOnOff(v) {
-  var ledView = document.getElementById("ledview");
+  var ledView = document.getElementById("ledView");
   if (v === 0) {
     ledPort.write(0);
     ledView.style.backgroundColor = "black";
