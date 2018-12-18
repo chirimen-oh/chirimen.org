@@ -1,7 +1,8 @@
 # Hello World
 
 # 1. 今回のゴール
-CHIRIMEN for Raspberry Pi 3 の使い方をおぼえて、Webアプリから「Lチカ」（LEDをつけたりけしたり）するプログラミングをやってみよう。
+
+CHIRIMEN for Raspberry Pi 3 を使って Web アプリから「Lチカ」(LEDを点けたり消したり) するプログラミングをやってみよう。
 
 1. 今回のゴール
 2. 事前準備
@@ -10,9 +11,8 @@ CHIRIMEN for Raspberry Pi 3 の使い方をおぼえて、Webアプリから「L
 5. コードを眺めてみよう
 
 ## CHIRIMEN for Raspberry Pi 3 とは
-CHIRIMEN for Raspberry Pi 3 (以下 CHIRIMEN Raspi3) は、Raspberry Pi 3 (以下 Raspi) で動作する IoT プログラミング環境です。
 
-[Web GPIO API](http://browserobo.github.io/WebGPIO/) や、[Web I2C API](http://browserobo.github.io/WebI2C/) といった JavaScript でハードを制御する API を活用したプログラミングにより、Web アプリ上で Raspi に接続した電子パーツを直接制御できます。
+CHIRIMEN for Raspberry Pi 3 (以下 CHIRIMEN Raspi3) は、Raspberry Pi 3 (以下 Raspi) で動作する IoT プログラミング環境です。[Web GPIO API](http://browserobo.github.io/WebGPIO/) や [Web I2C API](http://browserobo.github.io/WebI2C/) といった JavaScript でハードを制御する API を活用したプログラミングにより、Web アプリ上で Raspi に接続した電子パーツを直接制御できます。
 
 ![CHIRIMEN for Raspberry Pi 3 の活用イメージ](imgs/section0/CHIRIMENforRaspberryPi3.png)
 
@@ -21,22 +21,26 @@ CHIRIMEN for Raspberry Pi 3 (以下 CHIRIMEN Raspi3) は、Raspberry Pi 3 (以�
 ## 用意するもの
 
 ### 基本ハードウエア
+
 下記が CHIRIMEN for Raspberry Pi 3 の起動に最低限必要となる基本ハードウエアです。
 
 ![Raspi の起動に必要なハードウエア一覧](imgs/section0/Raspi3.jpg)
 
 * [Raspberry Pi 3 Model B](https://www.raspberrypi.org/products/raspberry-pi-3-model-b/) もしくは [Raspberry Pi 3 Model B+](https://www.raspberrypi.org/products/raspberry-pi-3-model-b-plus/) × 1
+  * 補足: Raspberry Pi 3 Model A+ も対応見込みですが執筆時点では未検証です
 * AC アダプタ + micro B USB電源ケーブル  × 1
   * 例: [Raspberry Pi用電源セット(5V 3.0A) - Pi3フル負荷検証済](https://www.physical-computing.jp/product/1171)
-  * 注意: 一般的なスマホ向けのもの (1.0〜2.0A 程度の出力) でも起動できることがありますが、公式には 3.0A を必要としており、PC からの給電などでは電力不足で性能が落ちたり電力不足で不安定になることがあります。また、microUSB 端子は強度がそれほど高くないのでスイッチ付きでコネクタの抜き差しの回数を少なく済ませられるケーブルのものがオススメです
-* HDMI ケーブル (モニタ側の端子と合うものを選んでください) × 1
+  * 注意: 一般的なスマホ向けのもの (1.0〜2.0A 程度の出力) でも起動できますが、公式には 3.0A を必要としており、PC からの給電などでは電力不足で性能が落ちたり不安定になることがあります。また、microUSB 端子は強度が高くないのでスイッチ付きでコネクタの抜き差し回数を少なくできるケーブル付のものがオススメです
 * HDMI 入力つきのモニタ (720Pの解像度に対応したもの) × 1
   * モバイルモニタでも文字が見やすいようデフォルト解像度を 720p としています
+* HDMI ケーブル (モニタ側の端子と合うものを選んでください) × 1
 * USB マウス × 1
-* USB キーボード (日本語入力に対応したもの) × 1
+* USB キーボード (日本語配列) × 1
+  * CHIRIMEN Raspi3 で初期設定にしている JIS 配列以外のキーボードを利用する際は [raspi-config コマンド](http://igarashi-systems.com/sample/translation/raspberry-pi/configuration/raspi-config.html) で変更してください
 * micro SDカード (8GB 以上必須、Class 10 以上で高速なものを推奨) × 1
 
 ### L チカに必要となるパーツ
+
 基本ハードウエアに加え「Lチカ (えるちか)」を実施するには下記パーツも追加で必要です。
 
 ![Lチカに必要なパーツ一覧](imgs/section0/L.jpg)
@@ -53,8 +57,8 @@ CHIRIMEN for Raspberry Pi 3 (以下 CHIRIMEN Raspi3) は、Raspberry Pi 3 (以�
 
 # 3. CHIRIMEN for Raspberry Pi 3 を起動してみよう
 ## 接続方法
-材料が集まったら、いよいよ Raspi を接続して起動してみましょう。
-基本ハードウエアを下図のように接続してください。(Raspi への電源ケーブルの接続は最後にしましょう)
+
+機材が揃ったら、いよいよ Raspi を接続して起動してみましょう。基本ハードウエアを下図のように接続してください。(Raspi への電源ケーブルの接続は最後にしましょう)
 
 ![接続方法](imgs/section0/h2.jpg)
 
@@ -63,13 +67,13 @@ CHIRIMEN for Raspberry Pi 3 (以下 CHIRIMEN Raspi3) は、Raspberry Pi 3 (以�
 電源ケーブルの接続、あるいは、スイッチ付きケーブルの場合はスイッチの ON により Raspi が起動します。
 
 ## 起動確認
-Raspi の起動後、下記のようなデスクトップ画面が表示されたら CHIRIMEN Raspi3 の起動に成功しています。おめでとうございます。
+Raspi の起動後、下記のようなデスクトップ画面が表示されたら CHIRIMEN Raspi3 の起動に成功しています。おめでとうございます！
 
 ![CHIRIMEN for Raspberry Pi 3 desktop 画面](imgs/section0/CHIRIMENforRaspberryPi3desktop.png)
 
 ## 残念ながら上記画面が表示されなかった！？
 もし、違う画面が表示される場合には、CHIRIMEN Raspi3 とは異なるSDカードで起動された可能性があります。
-その場合は、もう一度 [SDカードへCHIRIMEN for Raspberry Pi 3 環境を構築する](https://gist.github.com/tadfmac/527b31a463df0c9de8c30a598872344d) をご確認ください。
+その場合は、[SDカードの作成手順](sdcard.md) や [トラブルシューティングページ](debug.md) をご確認ください。
 
 また、電源を入れても何も画面に映らないような場合には、配線が誤っている可能性があります。
 接続方法を再度確認してみましょう。正しく接続しているはずなのに、Raspi の microSD コネクタ横の赤い LED が点灯していない場合、AC アダプタまで電気が来ていない可能性もあります。
@@ -144,9 +148,11 @@ L チカに成功しましたか？！
 
 ## うまくいかなかったら?
 * CHIRIMEN のバックエンドサーバが停止している場合
+
   * CHIRIMEN Raspi3 では JavaScript から GPIO などを操作できるように、JavaScript からの呼び出しに応じてハードを制御するサーバが Raspi 上で 起動しています。何らかの理由でそのサーバに問題が生じている場合はデスクトップにある `reset.sh` を実行して再起動させると正常動作するようになります。
 * セキュリティーエラーが発生している場合
   * まずは、[CHIRIMEN for Raspberry Pi 3 におけるセキュリティーエラーへの対処方法](https://qiita.com/tadfmac/items/2d7929fe3560c77fe867) をご確認のうえ、セキュリティーエラーが発生している場合には対処をお願いします。
+
     > ToDo: https://localhost:33330 のブックマーク箇所のスクリーンショットを貼る
 
 # 5. コードを眺めてみよう
