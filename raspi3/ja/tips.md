@@ -4,37 +4,58 @@ CHIRIMEN を使う上で知っておくと良い Tips 集のページです。�
 
 ## かんたん
 
-CHIRIMEN for Raspberru Piにすでにサンプルのあるセンサー/スイッチ
+### 回路図とサンプルコードまであるもの
 
-- 温度センサー (温度を測定)
-- 加速度センサー (振動や傾きを測定)
-- 色センサー (色を測定)
-- 明るさセンサー (明るさを測定)
-- 紫外線センサー (UVを測定)
-- タッチセンサー (人が触れたことを測定)
-- 測距センサー (距離を測定)
+CHIRIMEN Raspi3 の [examples](https://chirimen.org/chirimen-raspi3/gc/top/examples/) に既に回路図とサンプルコードが用意されているもの
+
+- 温度センサー (ADT7410, 温度を測定)
+- 加速度センサー (Grove Accelerometer, 振動や傾き、加速を測定)
+- ジャイロセンサー (MPU9250, 回転速度を計測)
+- 色センサー (S11059, 色を測定)
+  - RGB センサーだが実際の色とは結構ずれた色が検知されることがあることに注意
+- 明るさセンサー (Grove Light, 明るさを測定)
+- 紫外線センサー (VEML6070, 紫外線 UV を測定)
+  - 太陽光が当たるようなところでなければ数値が非常に小さくなることに注意
+- タッチセンサー (Grove Touch, 人が触れたことを測定)
+- 測距センサー (GP2Y0E03, VL53L0X, 距離を測定)
+  - 計測可能な距離の範囲に注意
+- ジェスチャーセンサー (Grove Gesture, ジェスチャー操作を検知)
+  - センサーの前で手などを上下左右や右左回り、近づける、離れるなどする振る舞いを検知
 - スイッチ全般 (GPIO)
-- 人感センサー (GPIO) ※焦電型赤外線人感センサーで3V出力のものに対応。5V出力を繋がないよう注意
+- 人感センサー (GPIO)
+  - 焦電型赤外線人感センサーで3V出力のものに対応。5V出力を繋がないよう注意
+- 湿度、気圧センサー (BME280, MBP280, BMP180, 気圧や湿度を計測)
+
+### 解説記事があり簡単なもの
 
 CHIRIMENの中には入ってないけど、サンプル記事があり簡単なもの
 
 - 圧力センサー http://makaizou.blogspot.jp/2017/11/chrimen-rpi3-grove.html
 
-getUserMedia()で使える
+### 一般的な Web 技術でサンプルがあるもの
 
-- カメラ : Raspberry Pi 専用カメラ
-- マイク : USBマイク
+ブラウザの一般的な機能として利用可能なデバイス
 
-※jsBinなど、ブラウザFeature Policyの影響を受ける環境では使えない可能性があるので注意。
+- カメラ (Raspberry Pi 専用カメラや USB カメラ) やマイク (USBマイク)
+  - いずれも WebRTC の getUserMedia() という機能を用いて制御可能
+  - 表示、画像の取得、録音などのコードサンプルは WebRTC や getUserMedia で探すと見つかります。例えばこちら: https://webrtc.github.io/samples/
+  - jsBin など iframe 内で実行する環境ではブラウザ Feature Policy の影響を受ける環境 (最新の Chrome) では使えない場合があるので注意
 
-複数のデバイス間で通信したい。
+### そのほか簡単にできること
 
-- WebSocketを使えば簡単。[サンプル](https://jsbin.com/lelajoxipu/1/edit?html,js,output)
-- 大きなデータ（カメラストリームとか）は、WebRTCなどを検討しよう。→ [Skyway](https://webrtc.ecl.ntt.com/)などのサービスを利用するのが手軽でおススメ。WebRTCおもしろいけど闇が深い領域なのでハッカソンで１から、とかは難しい。
+複数のデバイス間 (Raspi はもちろんスマホなどとも) 通信したい。
+
+- WebSocketを使えば簡単にできます
+  - [jsbin ですぐに試せるサンプル](https://jsbin.com/lelajoxipu/1/edit?html,js,output)
+    - 同じ room 名の指定で開いているブラウザ間でメッセージが送受信されます
+- 大きなデータ (カメラの動画や音声ストリームとか) は、WebRTCなどを検討しよう
+  - [Skyway](https://webrtc.ecl.ntt.com/) などのサービスを利用するのが手軽でおススメ。WebRTCおもしろいけど闇が深い領域なのでハッカソンの 1 日だけで１から実装するのは難しい。
 
 ## あまり難しくない
 
-ADCのサンプル（~/Desktop/gc/i2c-ADS1015/）が使える
+### アナログセンサー
+
+ADC (ADS1015, アナログ信号をデジタルに変換するデバイス) のサンプル (~/Desktop/gc/i2c-ADS1015/) で読み取って使えるアナログデバイス
 
 - ボリューム (ポテンショメータ：可変抵抗) ※ ADC経由
 - CdS (明るさをたくさん取りたい時など) ※ ADC経由
@@ -42,34 +63,50 @@ ADCのサンプル（~/Desktop/gc/i2c-ADS1015/）が使える
 - 曲げセンサー ※ ADC経由
 - 振動センサー(ピエゾ)  ※ ADC経由
 
-~~MIDIのサンプル（https://jsbin.com/cexocexoku/edit?html,js,output）が使える~~
+### MIDI 機器
 
-- USB-MIDI機器 (USB経由) 
+MIDI 端子で通信ができるデバイス
 
-※ダウンロードしたら使えます。残念ながら、2018年12月現在は Feature Policyが有効なブラウザ環境ではjsBinサンプルは動作しません。
+- USB-MIDI 機器 (USB経由) 
+  - [こちらのサンプル](https://jsbin.com/cexocexoku/edit?html,js,output) をダウンロードして手元の HTML で読み込めば使えます
+    - 残念ながら、2018年12月現在は Feature Policyが有効なブラウザ環境では jsBin 上では動作しません
 
-GPIOが使える
+### モーターの制御
 
-- GPIO経由でモーターを（正転・反転）動かしたい [TP7291](http://akizukidenshi.com/catalog/g/gI-02001/) などをGPIOと外部電源で使えます。
+回路を組めば GPIO で使える
 
-その他
+- GPIO 経由でモーターを（正転・反転）動かしたい [TP7291](http://akizukidenshi.com/catalog/g/gI-02001/) などをGPIOと外部電源で使えます
+
+I2C でモーター制御
 
 - I2C経由でモーターを（正転・反転）動かしたい [中村さんの記事](http://makaizou.blogspot.jp/2017/11/chirimen-rpi3_14.html)
 
+### そのほかあまり難しくないこと
 
-## 意外にめんどくさいかも
+ローカルのネイティブコードなどと連携する
 
-CHIRIMEN for Raspberry Pi 3にサンプルがない。
-ただし、I2C接続、3.3Vのものを選べば使える可能性がある
+* ローカルコード側を WebSocket 対応させるか、ブラウザとネイティブコードを中継させる簡単な WebSocket サーバを実装することで実現できます
+
+## 意外に大変かも
+
+### ドライバーの用意されていない I2C デバイス
+
+CHIRIMEN for Raspberry Pi 3にサンプルがないものは I2C デバイスドライバーのコードをデータシートや他の言語の実装例から JavaScript に移植する必要があります。I2C接続、3.3Vのものを選べば使える可能性があるが意外に大変なことが多いです。
 
 - ガスセンサー  ※I2C接続
 - タッチセンサー（マトリクス） ※I2C接続
 
 ## そのままでは使えないもの
 
-- SPI/UART接続のセンサー全般 (間にArduinoを経由させるなどして、I2Cへ変換する必要がある)
+センサーやデバイスを買ってきても CHIRIMEN の JavaScript からは普通に使えないもの
+
+- SPI/UART接続のセンサー全般
+  - 間にArduinoを経由させるなどして、I2Cへ変換する必要がある
+  - もしくはローカルで動かしたものとブラウザを WebSocket 通信させて利用する
 
 ## Tips
+
+そのほかの Tips です。
 
 - モーターを単純に回したり止めたりしたい。→ MOSFETのチュートリアルを使えばGPIOでできる
 - ソレノイドを動かしたい → 同上
