@@ -125,8 +125,7 @@ CHIRIMEN for Raspberry Pi 3にサンプルがないものは I2C デバイスド
   - 間にArduinoを経由させるなどして、I2Cへ変換する必要がある
   - もしくはローカルで動かしたものとブラウザを WebSocket 通信させて利用する
 
-## Tips
-
+## Others
 そのほかの Tips です。
 
 - モーターを単純に回したり止めたりしたい。→ MOSFETのチュートリアルを使えばGPIOでできる
@@ -135,3 +134,4 @@ CHIRIMEN for Raspberry Pi 3にサンプルがないものは I2C デバイスド
   - 単純なものはPCA9685を使う(DCモータの制御、LEDの明るさ制御、サーボモータの制御)
   - 複雑なものはRaspberry Piでは動かないので、Arduinoを経由するなどする。
   参考 https://qiita.com/tadfmac/items/a4cdbf915698573ab36d
+- 多数のフルカラーLEDを個々に点灯制御したい→ [examples](https://chirimen.org/chirimen-raspi3/gc/top/examples/)のNeopixel_I2Cを参照
