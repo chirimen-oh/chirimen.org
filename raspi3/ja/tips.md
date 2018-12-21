@@ -16,7 +16,7 @@ CHIRIMEN Raspi3 の [examples](https://chirimen.org/chirimen-raspi3/gc/top/examp
 #### センサー類
 - 温度センサー (ADT7410, 温度を測定)
 - 加速度センサー (Grove Accelerometer, 振動や傾き、加速を測定)
-- ジャイロセンサー (MPU9250, 回転速度を計測)
+- ジャイロセンサー (MPU6050, MPU9250, 回転速度(角速度)を測定)
 - 色センサー (S11059, 色を測定)
   - RGB センサーだが実際の色とは結構ずれた色が検知されることがあることに注意
 - 明るさセンサー (Grove Light, 明るさを測定)
