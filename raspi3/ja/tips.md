@@ -28,6 +28,7 @@ CHIRIMEN Raspi3 の [examples](https://chirimen.org/chirimen-raspi3/gc/top/examp
 - ジェスチャーセンサー (Grove Gesture, ジェスチャー操作を検知)
   - センサーの前で手などを上下左右や右左回り、近づける、離れるなどする振る舞いを検知
 - スイッチ全般 (GPIO)
+  - センサーとしてのスイッチとしては、(マイクロスイッチ:小さな力でOn/Off)[http://akizukidenshi.com/catalog/c/cmicrosw/]や、(リードスイッチ:磁気に反応してOn/Off)[http://akizukidenshi.com/catalog/c/cleadsw/]が便利に使えます。100円ショップで売られている電池を使うグッズにも窓用防犯ブザー(リードスイッチ)や万歩計(小さな振動でOn/Offする振動スイッチ)など便利に使えそうなものがありますので調べてみましょう。
 - 人感センサー (GPIO)
   - 焦電型赤外線人感センサーで3V出力のものに対応。5V出力を繋がないよう注意
 - 湿度、気圧センサー (BME280, MBP280, BMP180, 気圧や湿度を計測)
