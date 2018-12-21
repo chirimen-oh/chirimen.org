@@ -11,7 +11,7 @@ CHIRIMEN Raspi3 を試すには、[ビルドイメージ](https://r.chirimen.org
 
 ## CHIRIMEN for Raspberry Pi 3 チュートリアル
 
-[CHIRIMEN Raspi3 チュートリアルの各ページはこちらでご覧頂けます](/raspi3/ja/index.md)
+[CHIRIMEN Raspi3 チュートリアルの各ページはこちらでご覧頂けます](/raspi3/ja/readme.md)
 
 
 ## Online Version / オンライン版
