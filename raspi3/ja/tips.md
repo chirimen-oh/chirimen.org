@@ -38,6 +38,7 @@ CHIRIMEN Raspi3 の [examples](https://chirimen.org/chirimen-raspi3/gc/top/examp
 #### アクチュエータ類
 - サーボモーター : PCA9685
 - DCモーター
+  - 片方向 On/Offのみ　チュートリアルのFETを用いたDCFanの回路が使えます
   - 正転逆転 (GPIO-HBridge) 
   - 速度もコントロール (GPIO-I2C-PWMHBridge その１, GPIO-I2C-PWMHBridge その２)
   
@@ -96,6 +97,10 @@ MIDI 端子で通信ができるデバイス
 I2C でモーター制御
 
 - I2C経由でモーターを（正転・反転）動かしたい [中村さんの記事](http://makaizou.blogspot.jp/2017/11/chirimen-rpi3_14.html)
+
+ポンプ・スプレー
+
+- DCモーター用いたポンプや電動スプレーを、FETを使ったDCモーターの片方向の制御の回路を使って動かすことができます。水が回路にかからないように注意してください。
 
 ### そのほかあまり難しくないこと
 
