@@ -7,6 +7,9 @@ CHIRIMEN を使う上で知っておくと良い Tips 集のページです。�
 ### 回路図とサンプルコードまであるもの
 
 CHIRIMEN Raspi3 の [examples](https://chirimen.org/chirimen-raspi3/gc/top/examples/) に既に回路図とサンプルコードが用意されているもの
+
+一部は、SDメモリー内のexamplesには掲載されていませんが、Web上の最新イメージの[examples](https://chirimen.org/chirimen-raspi3/gc/top/examples/)で追加されているものがあります。
+
 #### センサー類
 - 温度センサー (ADT7410, 温度を測定)
 - 加速度センサー (Grove Accelerometer, 振動や傾き、加速を測定)
@@ -25,6 +28,8 @@ CHIRIMEN Raspi3 の [examples](https://chirimen.org/chirimen-raspi3/gc/top/examp
 - 人感センサー (GPIO)
   - 焦電型赤外線人感センサーで3V出力のものに対応。5V出力を繋がないよう注意
 - 湿度、気圧センサー (BME280, MBP280, BMP180, 気圧や湿度を計測)
+- 電圧 (ADS1015, PCF8591) 
+  - 電圧や抵抗値で出力されるアナログセンサーへの応用は下の章を参照してください。
 
 #### アクチュエータ類
 - サーボモーター : PCA9685
@@ -61,13 +66,15 @@ CHIRIMENの中には入ってないけど、サンプル記事があり簡単な
 
 ### アナログセンサー
 
-ADC (ADS1015, アナログ信号をデジタルに変換するデバイス) のサンプル (~/Desktop/gc/i2c-ADS1015/) で読み取って使えるアナログデバイス
+ADC (ADS1015, アナログ電圧信号をデジタルに変換するデバイス) のサンプル (~/Desktop/gc/i2c-ADS1015/) で読み取って使えるアナログデバイス
 
 - ボリューム (ポテンショメータ：可変抵抗) ※ ADC経由
 - CdS (明るさをたくさん取りたい時など) ※ ADC経由
 - 湿度センサー ※ ADC経由
 - 曲げセンサー ※ ADC経由
 - 振動センサー(ピエゾ)  ※ ADC経由
+
+_note: 上記センサーの多くは抵抗値が変化するものです。オームの法則を用いて抵抗値を電圧に変換したものをADCに入力します。
 
 ### MIDI 機器
 
@@ -79,9 +86,8 @@ MIDI 端子で通信ができるデバイス
 
 ### モーターの制御
 
-回路を組めば GPIO で使える
-
-- GPIO 経由でモーターを（正転・反転）動かしたい [TP7291](http://akizukidenshi.com/catalog/g/gI-02001/) などをGPIOと外部電源で使えます
+- GPIO 経由でモーターを（正転・反転）動かしたい 　これは"かんたん"の章に掲載されています。
+  - [TP7291](http://akizukidenshi.com/catalog/g/gI-02001/) などをGPIOと外部電源で使えます
 
 I2C でモーター制御
 
