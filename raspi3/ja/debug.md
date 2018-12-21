@@ -6,7 +6,7 @@ CHIRIMEN Raspi3 を利用する上で基礎的なデバッグやトラブルシ�
 
 CHIRIMEN Raspi3 でのプログラミングでも Web アプリケーションのプログラミングでも問題解決の手順は共通です。プログラムは意図したとおりではなく書いた通りに動くので、実際のコードや配線が意図通りか、一つずつ検証し、問題の原因となる範囲を絞っていくことが大事です。
 
-まずは開発ツールを開きましょう(CTRL+I)。また更新した内容が即座に反映するようにCacheをDisableにしておきましょう(開発ツールのPreferenceから指定できます)
+まずは開発ツールを開きましょう(CTRL+I)。また更新した内容が即座に反映するようにCacheをDisableにしておきましょう(開発ツールのSettings/Preferencesから指定できます)
 
 エラーメッセージやデバイスの LED 表示、あるいは焦げた匂いなど問題のヒントがある時はまずそこから確認し、そのエラーメッセージが発生する原因を探ります。JavaScript では `console.log` で変数の状態を書き出しながら実行するだけでなく、[開発ツール (DevTools) を使ってデバッグ](https://developers.google.com/web/tools/chrome-devtools/javascript/) することが解決の早道です。[ブレークポイント](https://developers.google.com/web/tools/chrome-devtools/javascript/breakpoints) でコードの実効を一時停止し、そのコードが意図通りのタイミング、回数、変数の状態で呼ばれているか確認するようにすると素早くデバッグできるようになります。
 
