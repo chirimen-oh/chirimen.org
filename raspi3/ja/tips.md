@@ -7,7 +7,7 @@ CHIRIMEN を使う上で知っておくと良い Tips 集のページです。�
 ### 回路図とサンプルコードまであるもの
 
 CHIRIMEN Raspi3 の [examples](https://chirimen.org/chirimen-raspi3/gc/top/examples/) に既に回路図とサンプルコードが用意されているもの
-
+#### センサー類
 - 温度センサー (ADT7410, 温度を測定)
 - 加速度センサー (Grove Accelerometer, 振動や傾き、加速を測定)
 - ジャイロセンサー (MPU9250, 回転速度を計測)
@@ -26,6 +26,12 @@ CHIRIMEN Raspi3 の [examples](https://chirimen.org/chirimen-raspi3/gc/top/examp
   - 焦電型赤外線人感センサーで3V出力のものに対応。5V出力を繋がないよう注意
 - 湿度、気圧センサー (BME280, MBP280, BMP180, 気圧や湿度を計測)
 
+#### アクチュエータ類
+- サーボモーター : PCA9685
+- DCモーター
+  - 正転逆転 (GPIO-HBridge) 
+  - 速度もコントロール (GPIO-I2C-PWMHBridge その１, GPIO-I2C-PWMHBridge その２)
+  
 ### 解説記事があり簡単なもの
 
 CHIRIMENの中には入ってないけど、サンプル記事があり簡単なもの
