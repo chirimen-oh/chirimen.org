@@ -11,7 +11,7 @@ CHIRIMEN を使う上で知っておくと良い Tips 集のページです。�
 
 CHIRIMEN Raspi3 の [examples](https://chirimen.org/chirimen-raspi3/gc/top/examples/) に既に回路図とサンプルコードが用意されているもの
 
-一部は、SDメモリー内のexamplesには掲載されていませんが、Web上の最新イメージの[examples](https://chirimen.org/chirimen-raspi3/gc/top/examples/)で追加されているものです。
+一部は、SDメモリー内のexamplesには掲載されていませんが、Web上の最新イメージの[examples](https://chirimen.org/chirimen-raspi3/gc/top/examples/)で追加されているものです。SDメモリー内のexamplesからは[Latest version of this page on chirimen.org] リンクで辿れます。アプリケーションやドライバのコードは、サンプルコードのページを表示した後、ソースコードを表示(CTRL-U もしくは右クリックでソースを表示)させ、ソース内のscriptタグのリンクから辿れます。
 
 #### センサー類
 - 温度センサー (ADT7410, 温度を測定)
