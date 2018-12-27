@@ -23,10 +23,13 @@ JavaScript プログラミング未経験者は、まず Appendix の「[JavaScr
   * これまでの総括として GPIO と I2C の両方を組み合わせてエアコンのプロトタイプ (？) を作成します。
 
 ## 発展編
-ここまでの例では飽き足らない人のための発展的な使い方を紹介します (鋭意執筆・改善中)。
+ここまでの例では飽き足らない人のための発展的な使い方を紹介します (チュートリアルというより作例に近いです。鋭意執筆・改善中)。
 
-* [5. WebBluetooth 編](section5.md)
-  * CHIRIMEN for Raspberry Pi 3 環境で Web Bluetooth API を制御するチュートリアルです。Web I2C API や Web Audio API と組み合わせて PLAYBULB (Bluetooth経由で制御可能なLEDライト) の制御を行います。
+* 5. WebBluetooth 編
+  * [PLAYBULB制御](section5.md)
+    * CHIRIMEN for Raspberry Pi 3 環境で Web Bluetooth API を使って制御するチュートリアルです。Web I2C API や Web Audio API と組み合わせて PLAYBULB (Bluetooth経由で制御可能なLEDライト) の制御を行います。
+  * [micro:bitを使う](https://gist.github.com/satakagi/c34aa77bcb58099be37c22999fd51772)(外部リンク)
+    * Web Bluetooth APIで、micro:bitのセンサーやLEDを使います。
 * [6. ステッピングモーター編](section6.md)
   * CHIRIMEN for Raspberry Pi 3 と Arduino を組み合わせてステップピングモーターを制御するチュートリアルです。I2C 接続した Arduino を利用することで μ 秒単位でモータードライバの制御を行います。
 
