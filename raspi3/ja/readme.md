@@ -25,7 +25,7 @@ JavaScript プログラミング未経験者は、まず Appendix の「[JavaScr
 ## 発展編
 ここまでの例では飽き足らない人のための発展的な使い方を紹介します (チュートリアルというより作例に近いです。鋭意執筆・改善中)。
 
-* 5. WebBluetooth 編
+* 5 . WebBluetooth 編
   * [PLAYBULB制御](section5.md)
     * CHIRIMEN for Raspberry Pi 3 環境で Web Bluetooth API を使って制御するチュートリアルです。Web I2C API や Web Audio API と組み合わせて PLAYBULB (Bluetooth経由で制御可能なLEDライト) の制御を行います。
   * [micro:bitを使う](https://gist.github.com/satakagi/c34aa77bcb58099be37c22999fd51772)(外部リンク)
