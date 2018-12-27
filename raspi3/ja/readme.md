@@ -31,7 +31,7 @@ JavaScript プログラミング未経験者は、まず Appendix の「[JavaScr
     * Web I2C API や Web Audio API と組み合わせて PLAYBULB (Bluetooth経由で制御可能なLEDライト) の制御を行います。
   * [micro:bitを使う](https://gist.github.com/satakagi/c34aa77bcb58099be37c22999fd51772)(外部リンク)
     * Web Bluetooth APIで、micro:bitのセンサーやLEDを使います。
-    * micro:bitに搭載された、３軸加速度センサー、３軸磁気センサー、温度センサー、タクトスイッチ２個、５ｘ５のマトリクスLEDが使えます。
+    * micro:bitに搭載された、３軸加速度センサー、３軸磁気センサー、温度センサー、タクトスイッチ２個、５ｘ５のマトリクスLEDを使います。
 * [6. ステッピングモーター編](section6.md)
   * CHIRIMEN for Raspberry Pi 3 と Arduino を組み合わせてステップピングモーターを制御するチュートリアルです。I2C 接続した Arduino を利用することで μ 秒単位でモータードライバの制御を行います。
 
