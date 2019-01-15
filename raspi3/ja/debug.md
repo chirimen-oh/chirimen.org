@@ -103,6 +103,7 @@ element.addEventListener("click", async () => { await sleep(100); }, false);
 
 CHIRIMEN Raspi3 のバックエンドサーバに接続できていません。デスクトップの reset.sh で再起動してください。
 
+
 ### JavaScript から特定の URL にアクセスできない
 ### コンソールに `Failed to load https://...: No 'Access-Control-Allow-Origin' header is present on the requested resource. Origin 'https://...' is therefore not allowed access.` などと表示される
 ### コンソールに `Access to fetch at 'https://...' from origin 'https://...' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource.` などと表示される
@@ -112,6 +113,13 @@ CHIRIMEN に限らず一般的な Web 開発でよく見かけるエラーです
 単純化して言えば、サーバからの HTTP レスポンスヘッダに `access-control-allow-origin: *` が付与されていれば JavaScript からのアクセスが許可されるため、任意の URL へのアクセスをプロキシ (中継) してレスポンスヘッダを勝手に追加してくれるようなサーバを用意すれば任意のドメインから任意の URL にアクセスが可能になります。
 
 そのような機能を持った公開の CORS プロキシサービスには例えば https://cors-anywhere.herokuapp.com/ や https://cors.io/ など[いろいろなものがあります](https://gist.github.com/jimmywarting/ac1be6ea0297c16c477e17f8fbe51347)。なお、これらのサービスの利用は本来のセキュリティ機能を無視するものであり、利用に際しては注意が必要です。あくまでもプライバシー情報などを含まないものについて、テストやプロトタイピング時だけに限って利用すべきです。
+
+
+### JS Bin や JS Fiddle で Web Bluetoooth, Web MIDI, WebRTC などが利用できない
+
+[Chrome 64 で Feature Policy というセキュリティ機構が導入され](https://developers.google.com/web/updates/2018/06/feature-policy)、iframe ページ内ではフレーム読み込み元のページの HTTP ヘッダで明示的な許可がされない限り、高度な機能が利用不可能になりました。JS Bin などのサービスでは読み込み結果を iframe 内に読み込んでいることが多いが、Feature Policy で許可をするヘッダの送信には未対応であるため、一部の Web API が利用できないことがあります。
+
+これに該当する場合は開発ツールのコンソールに Feature Policy に関するエラーメッセージが表示されます。その場合にはコードをすべてローカルの HTML などで書いてそれをブラウザに読み込ませるようにしてください。
 
 
 ### コードも配線も正しいのにとにかく動作しない！
