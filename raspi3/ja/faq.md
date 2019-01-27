@@ -51,7 +51,7 @@ CHRIMEN コミュニティで公式にサポートしている環境はありま
 
 CHIRIMEN Raspi3 と本チュートリアル教材は例えば以下のような場所で学生や若者などを対象として、IoT システム開発やプロトタイピング、アイデアを実現・改良していくプロセスを学ぶ教材として利用されています。
 
-- 総務省主催「[Web×IoT メイカーズチャレンジ](https://webiotmakers.github.io/)」
+- 総務省主催「[Web×IoT メイカーズチャレンジ](https://webiotmakers.github.io/)」(一部の地域)
 - [Mozilla Festival でのワークショップ](https://www.webdino.org/updates/blog/201811281246/)
 - 慶應義塾大学 環境情報学部の「オープンデザイン実践」
 - 中央大学の「オープンプロジェクト演習」
