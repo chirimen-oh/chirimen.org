@@ -30,9 +30,9 @@ JavaScript プログラミング未経験者は、まず Appendix の「[JavaScr
   * [PLAYBULB制御](section5.md)
     * Web I2C API や Web Audio API と組み合わせて PLAYBULB (Bluetooth経由で制御可能なLEDライト) の制御を行います。
   * [micro:bitを使う](http://chirimen.org/webGPIO-etc-on-microbit-via-webBluetooth/)(外部リンク)
-    * Web Bluetooth APIで、micro:bitをスレーブデバイス(子機)として利用します。（専用ライブラリを利用するので比較的簡単に使えます）
-    * micro:bitに搭載された、３軸加速度センサー、３軸磁気センサー、温度センサー、タクトスイッチ２個、５ｘ５のマトリクスLEDを使います。
-    * micro:bitに搭載された、GPIOポートを使います。専用ライブラリにはmicro:bit用のWebGPIO APIが用意されています。
+    * 専用ライブラリ使い、micro:bitに搭載された下記のデバイスやインターフェースを利用します。
+    * 搭載デバイス：　３軸加速度センサー、３軸磁気センサー、温度センサー、タクトスイッチ２個、５ｘ５のマトリクスLED
+    * GPIOポート：　ライブラリにmicro:bit用のWebGPIO APIが用意されているので、Raspberry Pi3のGPIOポートと同様に操作できます。
 * [6. ステッピングモーター編](section6.md)
   * CHIRIMEN for Raspberry Pi 3 と Arduino を組み合わせてステップピングモーターを制御するチュートリアルです。I2C 接続した Arduino を利用することで μ 秒単位でモータードライバの制御を行います。
 
@@ -41,6 +41,7 @@ JavaScript 未経験者や非同期処理の未経験者はチュートリアル
 
 * [JavaScript 1 Day 講習 (外部 PDF)](https://webiotmakers.github.io/static/docs/2017/maebashi-js.pdf)
 * [非同期処理 (async await版)](appendix0.md)
+* [CHIRIMEN for Raspberry Pi3のExamplesページ最新版](https://chirimen.org/chirimen-raspi3/gc/top/examples/)(多くのデバイスの利用例が追加されています)
 
 良くある質問、知っておくと良い Tips やテクニック、デバッグとトラブルシューティングの仕方はそれぞれまとめたページがあるので参考にしてください:
 
