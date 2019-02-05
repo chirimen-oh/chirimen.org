@@ -1,4 +1,4 @@
-## CHIRIMEN for Raspberry Pi3 チュートリアル
+## [CHIRIMEN for Raspberry Pi3 チュートリアル](https://tutorial.chirimen.org/raspi3/ja/)
 
 CHIRIMEN for Raspberry Pi 3を用いた IoT システムプロトタイピングスキル習得のためのチュートリアル資料です。
 
@@ -30,9 +30,11 @@ JavaScript プログラミング未経験者は、まず Appendix の「[JavaScr
   * [PLAYBULB制御](section5.md)
     * Web I2C API や Web Audio API と組み合わせて PLAYBULB (Bluetooth経由で制御可能なLEDライト) の制御を行います。
   * [micro:bitを使う](http://chirimen.org/webGPIO-etc-on-microbit-via-webBluetooth/)(外部リンク)
-    * 専用ライブラリ使い、micro:bitに搭載された下記のデバイスやインターフェースを利用します。
-    * 搭載デバイス：　３軸加速度センサー、３軸磁気センサー、温度センサー、タクトスイッチ２個、５ｘ５のマトリクスLED
-    * GPIOポート：　ライブラリにmicro:bit用のWebGPIO APIが用意されているので、Raspberry Pi3のGPIOポートと同様に操作できます。
+    * 専用ライブラリ使い、micro:bitに搭載されたデバイスやインターフェースを利用します。
+    * 搭載デバイス
+      * ３軸加速度センサー、３軸磁気センサー、温度センサー、タクトスイッチ２個、５ｘ５のマトリクスLED
+    * GPIOポート
+      * ライブラリにmicro:bit用のWebGPIO APIが用意されているので、Raspberry Pi3のGPIOポートと同様に操作できます。
 * [6. ステッピングモーター編](section6.md)
   * CHIRIMEN for Raspberry Pi 3 と Arduino を組み合わせてステップピングモーターを制御するチュートリアルです。I2C 接続した Arduino を利用することで μ 秒単位でモータードライバの制御を行います。
 
