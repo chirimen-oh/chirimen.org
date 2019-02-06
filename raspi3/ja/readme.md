@@ -29,7 +29,7 @@ JavaScript プログラミング未経験者は、まず Appendix の「[JavaScr
   * CHIRIMEN for Raspberry Pi 3 環境で Web Bluetooth API を使って制御するチュートリアルです。
   * [PLAYBULB制御](section5.md)
     * Web I2C API や Web Audio API と組み合わせて PLAYBULB (Bluetooth経由で制御可能なLEDライト) の制御を行います。
-  * [micro:bitを使う](http://chirimen.org/webGPIO-etc-on-microbit-via-webBluetooth/)(外部リンク)
+  * [micro:bitを使う](http://chirimen.org/webGPIO-etc-on-microbit-via-webBluetooth/)
     * 専用ライブラリ使い、micro:bitに搭載されたデバイスやインターフェースを利用します。
     * 搭載デバイス
       * ３軸加速度センサー、３軸磁気センサー、温度センサー、タクトスイッチ２個、５ｘ５のマトリクスLED
