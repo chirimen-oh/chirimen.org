@@ -6,7 +6,7 @@ CHIRIMEN for Raspberry Pi 3（以下 「CHIRIMEN Raspi3」） を使ったプロ
 
 前回は温度センサーを使いながら Web I2C API の基本的な利用方法を学びました。今回は温度センサー以外のI2Cセンサーの使い方を見ていきましょう。
 
-ここでは例として光センサー、距離センサー、加速度センサーの 3 つについて詳しく説明していますが、最後に「他の I2C モジュールも使ってみる」として紹介しているように、CHIRIMEN ではそれ以外にも多くの I2C デバイス (あるいは I2C の ADC を使って様々なアナログセンサー類) が簡単に扱えるようになっています。各自興味のあるセンサーを順に試していってください。
+ここでは例として光センサー、距離センサー、加速度センサーの 3 つについて詳しく説明していますが、最後に「他の I2C モジュールも使ってみる」として紹介しているように、CHIRIMEN ではそれ以外にも多くの I2C デバイス (あるいは I2C の ADC を使って様々なアナログセンサー類) が簡単に扱えるようになっており、 [examples ページ (オンライン版)](http://chirimen.org/chirimen-raspi3/gc/top/examples/) に回路図とサンプルコードが用意されています。各自興味のあるセンサーを順に試していってください。
 
 ## 前回までのおさらい
 
@@ -386,7 +386,7 @@ main.js も温度センサーとほとんど同じです。
 
 前回からこれまでに 4 つの I2C センサーを使ってみました。
 
-CHIRIMEN Raspi3 には、他にも `/home/pi/Desktop/gc/i2c/` 配下に下記のようなI2Cモジュールの examples が含まれています。
+CHIRIMEN Raspi3 には、他にも `/home/pi/Desktop/gc/i2c/` 配下に下記のようなI2Cモジュールの examples が含まれています。それぞれの回路図、デイバスドライバ、サンプルコードもあるので、お手持ちのデバイスを使ってみてください。
 
 * i2c-grove-gesture : 「[Grove Gesture](http://wiki.seeed.cc/Grove-Gesture_v1.0/)」(簡単なジェスチャーを判定するセンサー)の接続例です。
 * i2c-grove-oledDisplay : 「[Grove OLED Display](https://www.seeedstudio.com/Grove-OLED-Display-0.96%26quot%3B-p-781.html)」(Grove端子で接続できるOLED Display)の接続例です。
@@ -397,7 +397,7 @@ CHIRIMEN Raspi3 には、他にも `/home/pi/Desktop/gc/i2c/` 配下に下記の
 * i2c-VEML6070 : 「[VEML6070 紫外線センサー](https://learn.adafruit.com/adafruit-veml6070-uv-light-sensor-breakout/overview)」(紫外線センサー)の接続例です。
 * i2c-multi-sensors : 2つのセンサー（ADT7410とgrove-light）を利用する例です。
 
-これらは全て CHIRIMEN の [examples ページ](http://chirimen.org/chirimen-raspi3/gc/top/examples/) に回路図、デバイスドライバ、サンプルコードなどが用意されています。更に、ここに挙げたもの以外にもコミュニティによって順次いろいろなセンサーの例が追加されていっていますので、いろいろなセンサーを使ってみてください。
+また、CHIRIMEN Raspi3 のイメージ内に同梱されている example 以外にも、[CHIIRMEN examples ページのオンライン版](http://chirimen.org/chirimen-raspi3/gc/top/examples/) にはこれらに加えてコミュニティによって順次いろいろなデバイス利用例が追加されています。作りたいもの、試したいものを考えながら試してみてください。
 
 ## I2C デバイスを複数使う場合の注意事項
 I2Cデバイスを同時に接続して使用するとき、重要な注意事項があります。それは I2C アドレスの衝突です。チュートリアル２―２の図に書かれているように I2C デバイスはアドレスを持っています。このアドレスは I2C デバイスの製品ごとに固有のアドレスが設定されています。そのためたまたま同じアドレスを持ったデバイスが販売されていることがあります。そしてアドレスが衝突しているデバイスは接続できません。このチュートリアルで使ったデバイスのアドレスを以下の表に掲載します。`NativeAddr` がそのデバイスのオリジナルの状態のアドレスです。すでに衝突しているものがいくつかあるのがわかると思います。
