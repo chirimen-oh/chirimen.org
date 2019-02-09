@@ -8,11 +8,11 @@ JavaScript プログラミング未経験者は、まず Appendix の「[JavaScr
 まずはシンプルな GPIO 入出力や I2C センサーの操作方法を学びましょう。
 
 * [0. Hello World](section0.md)
-  * [WebGPIO API](https://rawgit.com/browserobo/WebGPIO/master/) を使って定期的に LED を点滅するサンプルを動かしてみます。
+  * [WebGPIO API](http://browserobo.github.io/WebGPIO/) を使って定期的に LED を点滅するサンプルを動かしてみます。
 * [1. GPIO編](section1.md)
   * マウスクリックで操作するブラウザ画面のボタンと物理スイッチ (タクトスイッチ) の両方で LED やモーターを制御するサンプルを通じて GPIO の基本を学びます。
 * [2. I2C 基本編 (ADT7410温度センサー)](section2.md)
-  * 温度センサーの値をドライバーを使う場合と WebI2C API を直接操作する場合の 2 パターンで読み取ることで、I2C デバイス操作の基本を学びます。
+  * 温度センサーの値をドライバーを使う場合と [WebGPIO API](http://browserobo.github.io/WebI2C/) を直接操作する場合の 2 パターンで読み取ることで、I2C デバイス操作の基本を学びます。
 
 ## 応用編
 いろいろな I2C デバイスを繋いだり組み合わせたりすることで IoT プロトタイピングを体験しましょう。
