@@ -11,8 +11,6 @@ show_downloads: false
 # google_analytics:
 include:
   - _redirects
-plugins:
-  - jekyll-toc
 
 # Use CommonMarkGhPages for Markdown parser (after v172)
 # https://github.com/github/jekyll-commonmark-ghpages
