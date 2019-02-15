@@ -9,29 +9,33 @@ CHIRIMEN コミュニティと W3C の Browsers and Robotics コミュニティ�
 
 CHIRIMEN Raspi3 を試すには、[ビルドイメージ](https://r.chirimen.org/download) をダウンロードして [Etcher](https://etcher.io/) などを使って microSD カードに焼き込み、Raspberry Pi 3 もしくは Raspberry Pi 3B+ を起動してください。CHIRIMEN Raspi3 を使ったプロトタイピングに必要な環境とサンプルコードが全てセットアップされた状態のイメージとなっており、このサイトのチュートリアルをすぐにお試し頂けます。
 
-## CHIRIMEN for Raspberry Pi 3 チュートリアル
+## Hello Real World
 
-[CHIRIMEN Raspi3 チュートリアルの各ページはこちらでご覧頂けます](/raspi3/ja/readme.md)
+CHIRIMEN 環境では普通の Web 開発と同様にハードウェア制御が可能です。例えば L チカコードはこのように書きます:
 
 ```javascript
-window.onload = function mainFunction() {
+window.onload = async function() {
   var gpioAccess = await navigator.requestGPIOAccess();
   var port = gpioAccess.ports.get(26);
   var v = 0;
 
   await port.export("out");
   for (;;) {
-    await sleep(1000); // 繰り返し毎に 1000ms 待機
     v = v === 0 ? 1 : 0; // LEDをON/OFFする
     port.write(v);
+    await sleep(1000); // 繰り返し毎に 1000ms 待機
   }
 };
 ```
 
+## CHIRIMEN for Raspberry Pi 3 チュートリアル
+
+[CHIRIMEN Raspi3 チュートリアルの各ページはこちらでご覧頂けます](/raspi3/ja/readme.md)
+
 ## Online Version / オンライン版
 Latest version of this site is hosted on https://tutorial.chirimen.org/
 
-このサイトのオンライン版は https://tutorial.chirimen.org/ でご覧頂けます
+このサイトの最新オンライン版は https://tutorial.chirimen.org/ でご覧頂けます
 
 ## Feedback / フィードバック
 If you have any feedback to this tutorials, see [Feedback Page](feedback.md)
