@@ -9,14 +9,21 @@ description: >-
   Enjoy <a href="/raspi3/en/" style="color: white">Tutorials for CHIRIMEN for Raspberry Pi 3</a>
 show_downloads: false
 # google_analytics:
-include: _redirects
+include:
+  - _redirects
 
-# Use CommonMarkGhPages for Markdown parser
+# Use CommonMarkGhPages for Markdown parser (after v172)
 # https://github.com/github/jekyll-commonmark-ghpages
+# https://github.com/github/pages-gem/releases/tag/v172
 markdown: CommonMarkGhPages
 commonmark:
-  options: ["SMART", "FOOTNOTES"]
-  extensions: ["strikethrough", "autolink", "table"]
+  options:
+    - FOOTNOTES
+    - TABLE_PREFER_STYLE_ATTRIBUTES
+  extensions:
+    - strikethrough
+    - autolink
+    - table
 
 # Use Kramdown for Markdown parser (obsolete)
 # https://help.github.com/articles/configuring-jekyll/
