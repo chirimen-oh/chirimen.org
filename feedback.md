@@ -8,7 +8,9 @@
 
 また、CHIRIMEN コミュニティメンバーで [チュートリアル用リポジトリ](https://github.com/chirimen-oh/tutorials/) の書き込み権限を持っている方は、Web ブラウザで Github にアクセスして各ページの markdown ファイルを直接編集していただくなどしても勿論構いません。
 
-いずれかの方法でリポジトリの master ブランチのファイルを変更すると、自動的に Netlify でビルドされて数十秒程度で本番サイトに反映されます。ビルドの進捗や結果は [Netlify の Deploys](https://app.netlify.com/sites/tutorial-chirimen-org/deploys) で確認できます。
+いずれかの方法でリポジトリの master ブランチのファイルを変更すると、自動的に Netlify でビルドされて数十秒程度で本番サイトに反映されます。ビルドの進捗や結果は次のバッチや [Netlify の Deploys](https://app.netlify.com/sites/tutorial-chirimen-org/deploys) で確認できます。
+
+[![Netlify Status](https://api.netlify.com/api/v1/badges/c15b982d-99d8-471d-bbce-16b02399e255/deploy-status)](https://app.netlify.com/sites/tutorial-chirimen-org/deploys)
 
 ## 編集時の注意
 
@@ -18,7 +20,7 @@
 
 なお、Netlify でのビルドログなどは Github のコミット通知と併せて下記コミュニティ Slack の #github チャンネルに通知されるようになっています。編集結果が反映されない場合などはビルドに失敗していないか確認してください。
 
-## ファイル構成とテンプレートの詳細
+## ファイル構成とテンプレート
 
 [チュートリアル用リポジトリ](https://github.com/chirimen-oh/tutorials/) 配下にある全ての markdown (.md) ファイルに対してそれに対応する HTML ページが生成されるシンプルな仕組みです。このページは /feedback.md ファイルから生成されているし、その他もリポジトリ内の markdown ファイルは拡張子 .md を外して全て小文字に統一されたパスの URL でアクセス可能になります。
 
@@ -36,7 +38,9 @@
 * package-lock.json, package-json - ESLint や Prettier を使って VS Code で編集したいときに Node のパッケージ群を `npm i` でインストールできるようにするためのパッケージ定義ファイル
 * _site - リポジトリ上には存在しません。ビルド環境を構築して `jekyll build` コマンドでビルドを実行すると公開サイト用のファイルがこのディレクトリに生成され、それを Netlify の CDN でドキュメントルートとしてホストする設定になっています。
 
-Jekyll で書かれた Github Pages の詳細については以下のドキュメントが参考になります:
+## Github Pages について
+
+Github Pages は Jekyll テンプレートが使われており、詳細については以下のドキュメントが参考になります:
 
 * [GitHub Pages のヘルプドキュメント](https://help.github.com/articles/using-jekyll-as-a-static-site-generator-with-github-pages/)
 * [Jekyll のドキュメント](https://jekyllrb.com/docs/) 配下の各ページ
@@ -44,6 +48,19 @@ Jekyll で書かれた Github Pages の詳細については以下のドキュ�
   * [Configuration Options](https://jekyllrb.com/docs/configuration/options/)
   * [Front matter](https://jekyllrb.com/docs/front-matter/) markdown 冒頭の `---` 行で囲まれたメタデータ定義セクション (YAML front matter block) の説明
   * [Includes](https://jekyllrb.com/docs/includes/) 使い回したいパーツがある場合に `_includes` ディレクトリ配下に定義をおいて読み込む方法
+
+## ローカルビルドしたい場合
+
+ローカルでサイトをビルドしたい場合はまず OS に応じた手順で ruby をインストールし `gem install bundler` で bundler もインストールしてください (一般的な Ruby 開発環境構築と同じ)。ruby と bunlder まで用意できていたら次の手順でビルドできます:
+
+```sh
+git clone git@github.com:chirimen-oh/tutorials.git
+cd tutorials
+bundle install --path vendor/bundle
+bundle exec jekyll serve
+```
+
+あとはブラウザで `http://127.0.0.1:4000/` を開いて出力を確認してください。
 
 ## コミュニティ Slack
 

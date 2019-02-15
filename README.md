@@ -1,4 +1,4 @@
-## Tutorials for CHIRIMEN / CHIRIMEN チュートリアル
+## [Tutorials for CHIRIMEN / CHIRIMEN チュートリアル](https://tutorial.chirimen.org/)
 
 This site contains tutorials for "CHIRIMEN for Raspberry Pi 3.
 
@@ -10,30 +10,34 @@ CHIRIMEN コミュニティと W3C の Browsers and Robotics コミュニティ�
 
 CHIRIMEN Raspi3 を試すには、[ビルドイメージ](https://r.chirimen.org/download) をダウンロードして [Etcher](https://etcher.io/) などを使って microSD カードに焼き込み、Raspberry Pi 3 もしくは Raspberry Pi 3B+ を起動してください。CHIRIMEN Raspi3 を使ったプロトタイピングに必要な環境とサンプルコードが全てセットアップされた状態のイメージとなっており、このサイトのチュートリアルをすぐにお試し頂けます。
 
+## Hello Real World
+
+CHIRIMEN 環境では普通の Web 開発と同様にハードウェア制御が可能です。例えば L チカコードはこのように書きます:
+
+```javascript
+window.onload = async function() {
+  var gpioAccess = await navigator.requestGPIOAccess(); // GPIO を操作する
+  var port = gpioAccess.ports.get(26); // 26 番ポートを操作する
+  var v = 0;
+
+  await port.export("out"); // ポートを出力モードに設定
+  for (;;) {
+    v = v === 0 ? 1 : 0; // ポートの出力値を 0/1 交互に変更
+    port.write(v); // LED を ON/OFF する
+    await sleep(1000); // 繰り返し毎に 1000ms 待機
+  }
+};
+```
+
 ## CHIRIMEN for Raspberry Pi 3 チュートリアル
 
-CHIRIMEN Raspi3 チュートリアルの各ページはこちらでご覧頂けます:
-
-- 基礎編
-  - [0. Hello World](/raspi3/ja/section0.md)
-  - [1. GPIO 編](/raspi3/ja/section1.md)
-  - [2. I2C 基本編 (ADT7410 温度センサー)](/raspi3/ja/section2.md)
-- 応用編
-  - [3. I2C 応用編 (その他のセンサー)](/raspi3/ja/section3.md)
-  - [4. GPIO/I2C 編 まとめ](/raspi3/ja/section4.md)
-- 発展編
-  - [5. WebBluetooth 編](/raspi3/ja/section5.md)
-  - [6. ステッピングモーター編](/raspi3/ja/section6.md)
-- Appendix / FAQ
-  - [JavaScript 1 Day 講習 (外部 PDF)](https://webiotmakers.github.io/static/docs/2017/maebashi-js.pdf)
-  - [非同期処理 (async await 版)](/raspi3/ja/appendix0.md)
-  - [よくある質問](/raspi3/ja/faq.md)
+[CHIRIMEN Raspi3 チュートリアルの各ページはこちらでご覧頂けます](/raspi3/ja/readme.md)
 
 ## Online Version / オンライン版
 
 Latest version of this site is hosted on https://tutorial.chirimen.org/
 
-このサイトのオンライン版は https://tutorial.chirimen.org/ でご覧頂けます
+このサイトの最新オンライン版は https://tutorial.chirimen.org/ でご覧頂けます
 
 ## Feedback / フィードバック
 

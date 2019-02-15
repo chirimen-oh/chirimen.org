@@ -51,12 +51,27 @@ CHRIMEN コミュニティで公式にサポートしている環境はありま
 
 CHIRIMEN Raspi3 と本チュートリアル教材は例えば以下のような場所で学生や若者などを対象として、IoT システム開発やプロトタイピング、アイデアを実現・改良していくプロセスを学ぶ教材として利用されています。
 
-- 総務省主催「[Web×IoT メイカーズチャレンジ](https://webiotmakers.github.io/)」
+- 総務省主催「[Web×IoT メイカーズチャレンジ](https://webiotmakers.github.io/)」(一部の地域)
 - [Mozilla Festival でのワークショップ](https://www.webdino.org/updates/blog/201811281246/)
 - 慶應義塾大学 環境情報学部の「オープンデザイン実践」
 - 中央大学の「オープンプロジェクト演習」
 
 もちろん、オープンソースで公開されており自由に使われているため、これらは CHIRIMEN コミュニティに利用報告やフィードバックがあった一例に過ぎず、コミュニティの知らないところでも利用が広がっています (広がっていくことを期待しています)。
+
+CHIRIMEN Raspi3 を採用されている大学その他の教育関係者、イベント主催者、企業などで採用事例として掲載を希望される方は [本ページの Github リポジトリのファイル](https://github.com/chirimen-oh/tutorials/blob/master/raspi3/ja/faq.md) に対して追記するプルリクエストを頂くか、コミュニティの
+
+## サポート
+
+### サポート窓口・お問い合わせ窓口は何処ですか？
+### CHIRIMEN Raspi3 に関して質問がしたい
+
+CHIRIMEN Raspi3 は特定の企業・法人によって開発されているものではなく、その活動を支援する個人・法人が有志で集まるコミュニティによって開発が続けられています。従って、サポートサービスなどは提供されていません。ご利用になる皆さん自身もコミュニティの一員としてご利用頂くこととなり、不明点や質問などについてはコミュニティ内での相互サポートをご利用ください。
+
+具体的には以下の方法でコミュニティ内でのコミュニケーション・問い合わせ・相互サポートが可能です:
+
+* [CHIRIMEN コミュニティ Slack](https://chirimen-oh.slack.com/) - [Slack への参加用リンク](https://docs.google.com/forms/d/1GzkGfCcsRn4A6-uHPsLu2LszkqKcNJ3sFI4XRishHsE/viewform)
+* [CHIRIMEN コミュニティの GitHub](https://github.com/chirimen-oh/) 配下の各リポジトリの Issues
+* コミュニティに参加しているメンバーに個人的に問い合わせる
 
 ## サービス連携
 

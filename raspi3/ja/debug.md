@@ -6,6 +6,10 @@ CHIRIMEN Raspi3 を利用する上で基礎的なデバッグやトラブルシ�
 
 CHIRIMEN Raspi3 でのプログラミングでも Web アプリケーションのプログラミングでも問題解決の手順は共通です。プログラムは意図したとおりではなく書いた通りに動くので、実際のコードや配線が意図通りか、一つずつ検証し、問題の原因となる範囲を絞っていくことが大事です。
 
+まずは開発ツールのconsoleを開きましょう(CTRL+SHIFT+I)　エラーメッセージなどがここに出力されます。また更新した内容が即座に反映するようにCacheをDisableにしておきましょう(開発ツールのSettings/Preferencesから指定できます)
+
+プログラム中にconsole.log関数 `console.log(カンマ区切りで確認したい変数などを記載);`　を書けば、先のconsole上に確認したい値が出力されます。これも基本的なデバッグのテクニックです。詳しくは下記開発ツール (DevTools) のリンクなどを参考にしてください。
+
 エラーメッセージやデバイスの LED 表示、あるいは焦げた匂いなど問題のヒントがある時はまずそこから確認し、そのエラーメッセージが発生する原因を探ります。JavaScript では `console.log` で変数の状態を書き出しながら実行するだけでなく、[開発ツール (DevTools) を使ってデバッグ](https://developers.google.com/web/tools/chrome-devtools/javascript/) することが解決の早道です。[ブレークポイント](https://developers.google.com/web/tools/chrome-devtools/javascript/breakpoints) でコードの実効を一時停止し、そのコードが意図通りのタイミング、回数、変数の状態で呼ばれているか確認するようにすると素早くデバッグできるようになります。
 
 講師やチューターのいる場面ではデバッグの仕方も積極的に教えてもらってください。
@@ -58,6 +62,13 @@ Raspi に AC アダプタと microUSB ケーブルを接続して (ケーブル�
     - SD カードが壊れたり正しく作成できていないか確認してください ([SDカードの作成手順](sdcard.md) ページを参照)
     - HDMI ディスプレイが CHIRIMEN Raspi3 の想定する解像度に対応していない場合、ディスプレイの認識に失敗して画面に何も表示されないことがあります。その場合は SD イメージの中の `/boot/config.txt` で`hdmi_force_hotplug`, `hdmi_group`, `hdmi_mode`, `hdmi_drive` などの設定が書かれている箇所をご利用のディスプレイに合わせてコメントアウトや書き換えてください
 
+### ssh や VNC で接続できない
+### pi ユーザのパスワードが分からない
+
+本ページ執筆時点で CHIRIMEN の配付イメージは Raspbian をベースにしていますが `pi` ユーザのパスワードは Raspbian デフォルトの `raspberry` ではなく `rasp` に変更されています。
+
+なお、パスワード設定変更はイメージ作成スクリプト [setup.sh](https://github.com/chirimen-oh/chirimen-raspi3/blob/master/setup.sh) で行われています。
+
 ### 同時に複数のタブで開くと動作しない
 
 制限事項です。API では特に規定されていませんが排他制御をしており同一のページを複数タブで開くなど、同じポートを同時に扱うコードを書くと正しく動作しなくなることがあります。全てのタブを閉じてから目的のページだけを開き直してください。
@@ -92,6 +103,7 @@ element.addEventListener("click", async () => { await sleep(100); }, false);
 
 CHIRIMEN Raspi3 のバックエンドサーバに接続できていません。デスクトップの reset.sh で再起動してください。
 
+
 ### JavaScript から特定の URL にアクセスできない
 ### コンソールに `Failed to load https://...: No 'Access-Control-Allow-Origin' header is present on the requested resource. Origin 'https://...' is therefore not allowed access.` などと表示される
 ### コンソールに `Access to fetch at 'https://...' from origin 'https://...' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource.` などと表示される
@@ -103,9 +115,19 @@ CHIRIMEN に限らず一般的な Web 開発でよく見かけるエラーです
 そのような機能を持った公開の CORS プロキシサービスには例えば https://cors-anywhere.herokuapp.com/ や https://cors.io/ など[いろいろなものがあります](https://gist.github.com/jimmywarting/ac1be6ea0297c16c477e17f8fbe51347)。なお、これらのサービスの利用は本来のセキュリティ機能を無視するものであり、利用に際しては注意が必要です。あくまでもプライバシー情報などを含まないものについて、テストやプロトタイピング時だけに限って利用すべきです。
 
 
+### JS Bin や JS Fiddle で Web Bluetoooth, Web MIDI, WebRTC などが利用できない
+
+[Chrome 64 で Feature Policy というセキュリティ機構が導入され](https://developers.google.com/web/updates/2018/06/feature-policy)、iframe ページ内ではフレーム読み込み元のページの HTTP ヘッダで明示的な許可がされない限り、高度な機能が利用不可能になりました。JS Bin などのサービスでは読み込み結果を iframe 内に読み込んでいることが多いが、Feature Policy で許可をするヘッダの送信には未対応であるため、一部の Web API が利用できないことがあります。
+
+これに該当する場合は開発ツールのコンソールに Feature Policy に関するエラーメッセージが表示されます。その場合にはコードをすべてローカルの HTML などで書いてそれをブラウザに読み込ませるようにしてください。
+
+
 ### コードも配線も正しいのにとにかく動作しない！
 
 いろいろな原因が考えらるため、ひとつずつ確認していく必要があります。
+
+* 問題を切り分けて考える
+  * 作品が複数のデバイスから構成されている場合でも、個々のデバイス向けにサンプルプログラムが用意されているものならば、先ずはサンプルプログラムを動かして個々のデバイスが正しく組み立てられていることを確認しましょう。これによって多くのケースではハードウェアの確認ができると思います。
 
 * 開発者ツールのコンソールに何かエラーメッセージは出ていないですか？
   * JS Bin などのコンソールだけでなく、ブラウザのエラーコンソールも確認してください
