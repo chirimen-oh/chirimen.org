@@ -1,3 +1,7 @@
+---
+layout: tutorial
+---
+
 # 良くある質問と回答
 
 CHIRIMEN Raspi3 を利用していて良くある質問や回答のメモページです。利用上のテクニックや知っておくと良いことは [TIPS ページ](tips.md) に、デバッグの仕方や良くあるエラーメッセージに対応は [デバッグページ](debug.md) に書いているので、そちらも合わせてご覧ください。
@@ -12,22 +16,23 @@ CHIRIMEN Raspi3 は一般的な Web アプリケーションの開発環境に�
 
 GPIO, I2C 以外によく見聞きするハードのインターフェイスについては次の通りです:
 
-* UART
-  * MIDI であれば WebMIDI からコントロール可能です。それ以外はローカルにサーバを立ててサーバ側で処理するなどしてください。
-* PWM
-  * [CHIRIMEN Examplesに掲載されているI2C PWMコントローラ PCA9685](http://chirimen.org/chirimen-raspi3/gc/top/examples/)を使って、サーボ・DCモーター・さらにLEDのPWM制御ができます。
-  * それ以外はローカルにサーバを立ててサーバ側で処理するか Arduino を組み合わせるなどして制御します。いずれの場合もデバイスの仕様 (データシート) をしっかり確認してから使ってください。対応する周波数以外の信号を送るとデバイスにロックがかかったり発熱して故障したりする原因となります。
-* SPI
-  * クロック、入力、出力の 3 本で双方向通信を行う機能です。CHIRIMEN では現在の所 SPI を JavaScript から直接制御する API を実装していません。SPI を利用したい場合はローカルにサーバを立ててサーバ側で処理するか Arduino を組み合わせるなどして制御します。
-  
+- UART
+  - MIDI であれば WebMIDI からコントロール可能です。それ以外はローカルにサーバを立ててサーバ側で処理するなどしてください。
+- PWM
+  - [CHIRIMEN Examples に掲載されている I2C PWM コントローラ PCA9685](http://chirimen.org/chirimen-raspi3/gc/top/examples/)を使って、サーボ・DC モーター・さらに LED の PWM 制御ができます。
+  - それ以外はローカルにサーバを立ててサーバ側で処理するか Arduino を組み合わせるなどして制御します。いずれの場合もデバイスの仕様 (データシート) をしっかり確認してから使ってください。対応する周波数以外の信号を送るとデバイスにロックがかかったり発熱して故障したりする原因となります。
+- SPI
 
-また、GPIO, I2Cに対しては以下の制限があります。
-* GPIO
-  * 概ね50ms以下の周期で細かくHigh/Lowを切り替える必要があるもの（例えばステッピングモータを高速に動かしたいなど）や、概ね50ms以上の精度を必要とするも、複数のGPIO端子を同様な高精度で同期させる必要があるものは困難です。
-  * ハードウェア上で用意されている本数以上のGPIOを用いるもの（I2C接続のGPIOマルチプレクサを使うことでI2C経由で対応可能と思われますが未検証です)
-* I2C
-  * 標準モード以外のモードで動作するもの
-  * ハードウェア上で用意されている本数以上のI2Cバスの本数が必要なもの
+  - クロック、入力、出力の 3 本で双方向通信を行う機能です。CHIRIMEN では現在の所 SPI を JavaScript から直接制御する API を実装していません。SPI を利用したい場合はローカルにサーバを立ててサーバ側で処理するか Arduino を組み合わせるなどして制御します。
+
+また、GPIO, I2C に対しては以下の制限があります。
+
+- GPIO
+  - 概ね 50ms 以下の周期で細かく High/Low を切り替える必要があるもの（例えばステッピングモータを高速に動かしたいなど）や、概ね 50ms 以上の精度を必要とするも、複数の GPIO 端子を同様な高精度で同期させる必要があるものは困難です。
+  - ハードウェア上で用意されている本数以上の GPIO を用いるもの（I2C 接続の GPIO マルチプレクサを使うことで I2C 経由で対応可能と思われますが未検証です)
+- I2C
+  - 標準モード以外のモードで動作するもの
+  - ハードウェア上で用意されている本数以上の I2C バスの本数が必要なもの
 
 ## 動作環境
 
@@ -63,15 +68,16 @@ CHIRIMEN Raspi3 を採用されている大学その他の教育関係者、イ�
 ## サポート
 
 ### サポート窓口・お問い合わせ窓口は何処ですか？
+
 ### CHIRIMEN Raspi3 に関して質問がしたい
 
 CHIRIMEN Raspi3 は特定の企業・法人によって開発されているものではなく、その活動を支援する個人・法人が有志で集まるコミュニティによって開発が続けられています。従って、サポートサービスなどは提供されていません。ご利用になる皆さん自身もコミュニティの一員としてご利用頂くこととなり、不明点や質問などについてはコミュニティ内での相互サポートをご利用ください。
 
 具体的には以下の方法でコミュニティ内でのコミュニケーション・問い合わせ・相互サポートが可能です:
 
-* [CHIRIMEN コミュニティ Slack](https://chirimen-oh.slack.com/) - [Slack への参加用リンク](https://docs.google.com/forms/d/1GzkGfCcsRn4A6-uHPsLu2LszkqKcNJ3sFI4XRishHsE/viewform)
-* [CHIRIMEN コミュニティの GitHub](https://github.com/chirimen-oh/) 配下の各リポジトリの Issues
-* コミュニティに参加しているメンバーに個人的に問い合わせる
+- [CHIRIMEN コミュニティ Slack](https://chirimen-oh.slack.com/) - [Slack への参加用リンク](https://docs.google.com/forms/d/1GzkGfCcsRn4A6-uHPsLu2LszkqKcNJ3sFI4XRishHsE/viewform)
+- [CHIRIMEN コミュニティの GitHub](https://github.com/chirimen-oh/) 配下の各リポジトリの Issues
+- コミュニティに参加しているメンバーに個人的に問い合わせる
 
 ## サービス連携
 
@@ -93,19 +99,19 @@ CHIRIMEN ではブラウザ上の JavaScript だけでハードウェア制御�
 
 ```javascript
 // Node で実行する JavaScript (index.js)
-var WebSocketServer = require('ws').Server;
-var wss = new WebSocketServer({ port:8080 });
+var WebSocketServer = require("ws").Server;
+var wss = new WebSocketServer({ port: 8080 });
 
-wss.on('connection', function(ws) {
-    // ブラウザからメッセージを受信した時の処理
-    ws.on('message', function(message) {
-        console.log("Message Received: " + message);
-    });
+wss.on("connection", function(ws) {
+  // ブラウザからメッセージを受信した時の処理
+  ws.on("message", function(message) {
+    console.log("Message Received: " + message);
+  });
 
-    // ブラウザにメッセージを送信する時の処理
-    wss.clients.forEach(function(client){
-        client.send("A message from server");
-    });
+  // ブラウザにメッセージを送信する時の処理
+  wss.clients.forEach(function(client) {
+    client.send("A message from server");
+  });
 });
 ```
 
@@ -122,16 +128,16 @@ node index.js
 
 ```javascript
 // ブラウザで実行する JavaScript
-var ws = new WebSocket('ws://localhost:8080');
-ws.addEventListener('open', function(event){
-    console.log('WebSocket 接続完了');
+var ws = new WebSocket("ws://localhost:8080");
+ws.addEventListener("open", function(event) {
+  console.log("WebSocket 接続完了");
 
-    // サーバからメッセージを受け取ったときの処理
-    ws.addEventListener('message',function(e){
-        console.log("Message Recieved: " + e.data);
-    });
-    
-    // サーバにデータを送信するときの処理
-    ws.send("A message from browser");
+  // サーバからメッセージを受け取ったときの処理
+  ws.addEventListener("message", function(e) {
+    console.log("Message Recieved: " + e.data);
+  });
+
+  // サーバにデータを送信するときの処理
+  ws.send("A message from browser");
 });
 ```

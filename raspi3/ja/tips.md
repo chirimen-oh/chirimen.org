@@ -1,8 +1,13 @@
+---
+layout: tutorial
+---
+
 # Tips・テクニック
 
 CHIRIMEN を使う上で知っておくと良い Tips 集のページです。良くある質問については [FAQ ページ](faq.md) に、デバッグの仕方や良くあるエラーメッセージに対応は [デバッグページ](debug.md) に書いているので、そちらも合わせてご覧ください。
 
 ## 新しいデバイスを使うコツ
+
 まずハード（電気回路）が正しく組まれていることを確認してからソフトウェアに取り掛かると良いでしょう。その意味でサンプルコードがある、次の"かんたん"の章に記載されているデバイスは、ハードを組んだ後、そこに掲載されている確実に動くサンプルコードを使って動作を試してから、それを改造して自分の用途に合ったコードを書いてみましょう。
 
 ## かんたん
@@ -11,9 +16,10 @@ CHIRIMEN を使う上で知っておくと良い Tips 集のページです。�
 
 CHIRIMEN Raspi3 の [examples](https://chirimen.org/chirimen-raspi3/gc/top/examples/) に既に回路図とサンプルコードが用意されているもの
 
-一部は、SDメモリー内のexamplesには掲載されていませんが、Web上の最新イメージの[examples](https://chirimen.org/chirimen-raspi3/gc/top/examples/)で追加されているものです。SDメモリー内のexamplesからは[Latest version of this page on chirimen.org] リンクで辿れます。アプリケーションやドライバのコードは、サンプルコードのページを表示した後、ソースコードを表示(CTRL-U もしくは右クリックでソースを表示)させ、ソース内のscriptタグのリンクから辿れます。
+一部は、SD メモリー内の examples には掲載されていませんが、Web 上の最新イメージの[examples](https://chirimen.org/chirimen-raspi3/gc/top/examples/)で追加されているものです。SD メモリー内の examples からは[Latest version of this page on chirimen.org] リンクで辿れます。アプリケーションやドライバのコードは、サンプルコードのページを表示した後、ソースコードを表示(CTRL-U もしくは右クリックでソースを表示)させ、ソース内の script タグのリンクから辿れます。
 
 #### センサー類
+
 - 温度センサー (ADT7410, 温度を測定)
 - 加速度センサー (Grove Accelerometer, 振動や傾き、加速を測定)
 - ジャイロセンサー (MPU6050, MPU9250, 回転速度(角速度)を測定)
@@ -28,23 +34,25 @@ CHIRIMEN Raspi3 の [examples](https://chirimen.org/chirimen-raspi3/gc/top/examp
 - ジェスチャーセンサー (Grove Gesture, ジェスチャー操作を検知)
   - センサーの前で手などを上下左右や右左回り、近づける、離れるなどする振る舞いを検知
 - スイッチ全般 (GPIO)
-  - センサーとしてのスイッチとしては、[マイクロスイッチ](http://akizukidenshi.com/catalog/c/cmicrosw/)(:小さな力でOn/Off)や、[リードスイッチ](http://akizukidenshi.com/catalog/c/cleadsw/)(:磁気に反応してOn/Off)が便利に使えます。100円ショップで売られている電池を使うグッズにも窓用防犯ブザー(リードスイッチ)や万歩計(小さな振動でOn/Offする振動スイッチ)など便利に使えそうなものがありますので調べてみましょう。
+  - センサーとしてのスイッチとしては、[マイクロスイッチ](http://akizukidenshi.com/catalog/c/cmicrosw/)(:小さな力で On/Off)や、[リードスイッチ](http://akizukidenshi.com/catalog/c/cleadsw/)(:磁気に反応して On/Off)が便利に使えます。100 円ショップで売られている電池を使うグッズにも窓用防犯ブザー(リードスイッチ)や万歩計(小さな振動で On/Off する振動スイッチ)など便利に使えそうなものがありますので調べてみましょう。
 - 人感センサー (GPIO)
-  - 焦電型赤外線人感センサーで3V出力のものに対応。5V出力を繋がないよう注意
+  - 焦電型赤外線人感センサーで 3V 出力のものに対応。5V 出力を繋がないよう注意
 - 湿度、気圧センサー (BME280(湿度と気圧), BMP280(気圧), BMP180(気圧)を計測)
-- 電圧 (ADS1015, PCF8591) 
+- 電圧 (ADS1015, PCF8591)
   - 電圧や抵抗値で出力されるアナログセンサーへの応用は下の章を参照してください。
 
 #### アクチュエータ類
+
 - サーボモーター : PCA9685
-- DCモーター
-  - 片方向 On/Offのみ　チュートリアルのFETを用いたDCFanの回路が使えます(下記正転逆転回路でGPIOを１個だけ繋げても同様に制御できます)
-  - 正転逆転 (GPIO-HBridge) 
+- DC モーター
+
+  - 片方向 On/Off のみ　チュートリアルの FET を用いた DCFan の回路が使えます(下記正転逆転回路で GPIO を１個だけ繋げても同様に制御できます)
+  - 正転逆転 (GPIO-HBridge)
   - 速度もコントロール (GPIO-I2C-PWMHBridge その１, GPIO-I2C-PWMHBridge その２)
-  
+
 ### 解説記事があり簡単なもの
 
-CHIRIMENの中には入ってないけど、サンプル記事があり簡単なもの
+CHIRIMEN の中には入ってないけど、サンプル記事があり簡単なもの
 
 - 圧力センサー http://makaizou.blogspot.jp/2017/11/chrimen-rpi3-grove.html
 
@@ -52,7 +60,7 @@ CHIRIMENの中には入ってないけど、サンプル記事があり簡単な
 
 ブラウザの一般的な機能として利用可能なデバイス
 
-- カメラ (Raspberry Pi 専用カメラや USB カメラ) やマイク (USBマイク)
+- カメラ (Raspberry Pi 専用カメラや USB カメラ) やマイク (USB マイク)
   - いずれも WebRTC の getUserMedia() という機能を用いて制御可能
   - 表示、画像の取得、録音などのコードサンプルは WebRTC や getUserMedia で探すと見つかります。例えばこちら: https://webrtc.github.io/samples/
   - jsBin など iframe 内で実行する環境ではブラウザ Feature Policy の影響を受ける環境 (最新の Chrome) では使えない場合があるので注意
@@ -61,11 +69,11 @@ CHIRIMENの中には入ってないけど、サンプル記事があり簡単な
 
 複数のデバイス間 (Raspi はもちろんスマホなどとも) 通信したい。
 
-- WebSocketを使えば簡単にできます
+- WebSocket を使えば簡単にできます
   - [jsbin ですぐに試せるサンプル](https://jsbin.com/lelajoxipu/1/edit?html,js,output)
     - 同じ room 名の指定で開いているブラウザ間でメッセージが送受信されます
-- 大きなデータ (カメラの動画や音声ストリームとか) は、WebRTCなどを検討しよう
-  - [Skyway](https://webrtc.ecl.ntt.com/) などのサービスを利用するのが手軽でおススメ。WebRTCおもしろいけど闇が深い領域なのでハッカソンの 1 日だけで１から実装するのは難しい。
+- 大きなデータ (カメラの動画や音声ストリームとか) は、WebRTC などを検討しよう
+  - [Skyway](https://webrtc.ecl.ntt.com/) などのサービスを利用するのが手軽でおススメ。WebRTC おもしろいけど闇が深い領域なのでハッカソンの 1 日だけで１から実装するのは難しい。
 
 ## あまり難しくない
 
@@ -73,65 +81,66 @@ CHIRIMENの中には入ってないけど、サンプル記事があり簡単な
 
 ADC (ADS1015, アナログ電圧信号をデジタルに変換するデバイス) のサンプル (~/Desktop/gc/i2c-ADS1015/) で読み取って使えるアナログデバイス
 
-- ボリューム (ポテンショメータ：可変抵抗) ※ ADC経由
-- CdS (明るさをたくさん取りたい時など) ※ ADC経由
-- 湿度センサー ※ ADC経由
-- 曲げセンサー ※ ADC経由
-- 振動センサー(ピエゾ)  ※ ADC経由
+- ボリューム (ポテンショメータ：可変抵抗) ※ ADC 経由
+- CdS (明るさをたくさん取りたい時など) ※ ADC 経由
+- 湿度センサー ※ ADC 経由
+- 曲げセンサー ※ ADC 経由
+- 振動センサー(ピエゾ) ※ ADC 経由
 
-_note: 上記センサーの多くは抵抗値が変化するものです。オームの法則を用いて抵抗値を電圧に変換したものをADCに入力します。_
+_note: 上記センサーの多くは抵抗値が変化するものです。オームの法則を用いて抵抗値を電圧に変換したものを ADC に入力します。_
 
 ### MIDI 機器
 
 MIDI 端子で通信ができるデバイス
 
-- USB-MIDI 機器 (USB経由) 
+- USB-MIDI 機器 (USB 経由)
   - [こちらのサンプル](https://jsbin.com/cexocexoku/edit?html,js,output) をダウンロードして手元の HTML で読み込めば使えます
-    - 残念ながら、2018年12月現在は Feature Policyが有効なブラウザ環境では jsBin 上では動作しません
+    - 残念ながら、2018 年 12 月現在は Feature Policy が有効なブラウザ環境では jsBin 上では動作しません
 
 ### モーターの制御
 
 - GPIO 経由でモーターを（正転・反転）動かしたい 　これは"かんたん"の章に掲載されています。
-  - [TP7291](http://akizukidenshi.com/catalog/g/gI-02001/) などをGPIOと外部電源で使えます
+  - [TP7291](http://akizukidenshi.com/catalog/g/gI-02001/) などを GPIO と外部電源で使えます
 
 I2C でモーター制御
 
-- I2C経由でモーターを（正転・反転）動かしたい [中村さんの記事](http://makaizou.blogspot.jp/2017/11/chirimen-rpi3_14.html)
+- I2C 経由でモーターを（正転・反転）動かしたい [中村さんの記事](http://makaizou.blogspot.jp/2017/11/chirimen-rpi3_14.html)
 
 ポンプ・スプレー
 
-- DCモーター用いたポンプや電動スプレーを、FETを使ったDCモーターの片方向の制御の回路を使って動かすことができます。水が回路にかからないように注意してください。
+- DC モーター用いたポンプや電動スプレーを、FET を使った DC モーターの片方向の制御の回路を使って動かすことができます。水が回路にかからないように注意してください。
 
 ### そのほかあまり難しくないこと
 
 ローカルのネイティブコードなどと連携する
 
-* ローカルコード側を WebSocket 対応させるか、ブラウザとネイティブコードを中継させる簡単な WebSocket サーバを実装することで実現できます
+- ローカルコード側を WebSocket 対応させるか、ブラウザとネイティブコードを中継させる簡単な WebSocket サーバを実装することで実現できます
 
 ## 意外に大変かも
 
 ### ドライバーの用意されていない I2C デバイス
 
-CHIRIMEN for Raspberry Pi 3にサンプルがないものは I2C デバイスドライバーのコードをデータシートや他の言語の実装例から JavaScript に移植する必要があります。I2C接続、3.3Vのものを選べば使える可能性があるが意外に大変なことが多いです。
+CHIRIMEN for Raspberry Pi 3 にサンプルがないものは I2C デバイスドライバーのコードをデータシートや他の言語の実装例から JavaScript に移植する必要があります。I2C 接続、3.3V のものを選べば使える可能性があるが意外に大変なことが多いです。
 
-- ガスセンサー  ※I2C接続
-- タッチセンサー（マトリクス） ※I2C接続
+- ガスセンサー ※I2C 接続
+- タッチセンサー（マトリクス） ※I2C 接続
 
 ## そのままでは使えないもの
 
 センサーやデバイスを買ってきても CHIRIMEN の JavaScript からは普通に使えないもの
 
-- SPI/UART接続のセンサー全般
-  - 間にArduinoを経由させるなどして、I2Cへ変換する必要がある
+- SPI/UART 接続のセンサー全般
+  - 間に Arduino を経由させるなどして、I2C へ変換する必要がある
   - もしくはローカルで動かしたものとブラウザを WebSocket 通信させて利用する
 
 ## Others
+
 そのほかの Tips です。
 
-- モーターを単純に回したり止めたりしたい。→ MOSFETのチュートリアルを使えばGPIOでできる
+- モーターを単純に回したり止めたりしたい。→ MOSFET のチュートリアルを使えば GPIO でできる
 - ソレノイドを動かしたい → 同上
-- PWMを流したい
-  - 単純なものはPCA9685を使う(DCモータの制御、LEDの明るさ制御、サーボモータの制御) LED以外は[examples](https://chirimen.org/chirimen-raspi3/gc/top/examples/)で紹介
-  - 複雑なものはRaspberry Piでは動かないので、Arduinoを経由するなどする。
-  参考 https://qiita.com/tadfmac/items/a4cdbf915698573ab36d
-- 多数のフルカラーLEDを個々に点灯制御したい→ [examples](https://chirimen.org/chirimen-raspi3/gc/top/examples/)のNeopixel_I2Cを参照
+- PWM を流したい
+  - 単純なものは PCA9685 を使う(DC モータの制御、LED の明るさ制御、サーボモータの制御) LED 以外は[examples](https://chirimen.org/chirimen-raspi3/gc/top/examples/)で紹介
+  - 複雑なものは Raspberry Pi では動かないので、Arduino を経由するなどする。
+    参考 https://qiita.com/tadfmac/items/a4cdbf915698573ab36d
+- 多数のフルカラー LED を個々に点灯制御したい → [examples](https://chirimen.org/chirimen-raspi3/gc/top/examples/)の Neopixel_I2C を参照

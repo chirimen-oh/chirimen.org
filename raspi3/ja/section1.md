@@ -1,74 +1,87 @@
-# 1. GPIO編
+---
+layout: tutorial
+---
+
+# 1. GPIO 編
 
 # 概要
-CHIRIMEN for Raspberry Pi 3 (以下 CHIRIMEN Raspi3) を使ったプログラミングを通じて、Web GPIO APIの使い方を学びます。
+
+CHIRIMEN for Raspberry Pi 3 (以下 CHIRIMEN Raspi3) を使ったプログラミングを通じて、Web GPIO API の使い方を学びます。
 
 CHIRIMEN Rapi3 を初めて使う方は本チュートリアルを進める前に「[CHIRIMEN for Raspberry Pi 3 Hello World](section0.md)」で基本的な操作方法を確認しておいてください。
 
-## (※1) CHIRIMEN for Raspberry Pi 3とは
+## (※1) CHIRIMEN for Raspberry Pi 3 とは
+
 CHIRIMEN Raspi3 は Raspberry Pi 3（以下「Raspi」）上で動作する IoT プログラミング環境です。
 
-[Web GPIO API](http://browserobo.github.io/WebGPIO/) や、[Web I2C API](http://browserobo.github.io/WebI2C/) といったAPIを活用したプログラミングにより、Web アプリから Raspi に接続した電子パーツを直接制御できます。 
+[Web GPIO API](http://browserobo.github.io/WebGPIO/) や、[Web I2C API](http://browserobo.github.io/WebI2C/) といった API を活用したプログラミングにより、Web アプリから Raspi に接続した電子パーツを直接制御できます。
 
 CHIRIMEN Raspi3 の開発やこのチュートリアルの執筆・更新は [CHIRIMEN Open Hardware コミュニティ](https://chirimen.org/) によって行われています。
 
 # 1. 準備
+
 ## 用意するもの
+
 このチュートリアル全体で必要になるハードウエア・部品は下記の通りです。
 
-* [Hello World 編](section0.md) に記載の「基本ハードウエア」と「Lチカに必要となるパーツ」
-* タクトスイッチ (2pin, 4pin を使う場合は向きに注意) x 1
-* ジャンパーワイヤー (オス-メス) x 5
-* [Nch MOSFET (2SK4017)](http://akizukidenshi.com/catalog/g/gI-07597/)
-* リード抵抗 (1KΩ) x 1
-* リード抵抗 (10KΩ) x 1
-* [DCファン](http://akizukidenshi.com/catalog/g/gP-02480/) x 1
-  * ブレッドボードに接続できるようケーブルを加工したものを利用する
+- [Hello World 編](section0.md) に記載の「基本ハードウエア」と「L チカに必要となるパーツ」
+- タクトスイッチ (2pin, 4pin を使う場合は向きに注意) x 1
+- ジャンパーワイヤー (オス-メス) x 5
+- [Nch MOSFET (2SK4017)](http://akizukidenshi.com/catalog/g/gI-07597/)
+- リード抵抗 (1KΩ) x 1
+- リード抵抗 (10KΩ) x 1
+- [DC ファン](http://akizukidenshi.com/catalog/g/gP-02480/) x 1
+  - ブレッドボードに接続できるようケーブルを加工したものを利用する
 
-## CHIRIMEN for Raspberry Pi 3の起動とLチカの確認
-* [Hello World 編](section0.md) の 「3. CHIRIMEN for Raspberry Pi 3 を起動してみよう」を参照して、CHIRIMEN for Raspberry Pi 3 を起動してください。
-* ついでに [Hello World 編](section0.md) の 「4. Lチカをやってみよう」を実施して、Lチカが正しく行えることを確認しておいてください。
+## CHIRIMEN for Raspberry Pi 3 の起動と L チカの確認
 
-## Lチカでのおさらい
+- [Hello World 編](section0.md) の 「3. CHIRIMEN for Raspberry Pi 3 を起動してみよう」を参照して、CHIRIMEN for Raspberry Pi 3 を起動してください。
+- ついでに [Hello World 編](section0.md) の 「4. L チカをやってみよう」を実施して、L チカが正しく行えることを確認しておいてください。
 
-* CHIRIMEN Raspi3 では、各種 example の配線図とコードが ```~/Desktop/gc/``` 配下においてある
-* CHIRIMEN Raspi3 で利用可能な GPIO Port 番号と位置は壁紙を見よう
-* LED には方向がある。アノードが足が長い方でこちらをGPIOポートに繋ぐ。反対の足が短い方を GND 側に繋ぐ。抵抗はどちらかに繋ぐ
-* CHIRIMEN Raspi3 では Web アプリからの GPIO の制御に [Web GPIO API](http://browserobo.github.io/WebGPIO/) を利用する
+## L チカでのおさらい
 
-# 2. マウスクリックでLEDのON/OFFを制御してみる
+- CHIRIMEN Raspi3 では、各種 example の配線図とコードが `~/Desktop/gc/` 配下においてある
+- CHIRIMEN Raspi3 で利用可能な GPIO Port 番号と位置は壁紙を見よう
+- LED には方向がある。アノードが足が長い方でこちらを GPIO ポートに繋ぐ。反対の足が短い方を GND 側に繋ぐ。抵抗はどちらかに繋ぐ
+- CHIRIMEN Raspi3 では Web アプリからの GPIO の制御に [Web GPIO API](http://browserobo.github.io/WebGPIO/) を利用する
+
+# 2. マウスクリックで LED の ON/OFF を制御してみる
+
 それでは、実際にプログラミングしてみましょう。
 
-[Hello World編](section0.md) では、[JS Bin](http://jsbin.com/) を使ってLチカの example コードを少し触ってみるだけでしたが、今度は最初から書いてみることにします。
+[Hello World 編](section0.md) では、[JS Bin](http://jsbin.com/) を使って L チカの example コードを少し触ってみるだけでしたが、今度は最初から書いてみることにします。
 
 サンプル同様に JS Bin で書いても良いですが、折角ですので、このチュートリアルでは他のオンラインエディタ [JSFiddle](https://jsfiddle.net/) を使ってみましょう。
 
-> Web上のオンラインサービスは便利ですが、メンテナンスや障害、サービス停止などで利用できなくなることがあります。
+> Web 上のオンラインサービスは便利ですが、メンテナンスや障害、サービス停止などで利用できなくなることがあります。
 > ローカルでの編集も含め、いくつかのサービスを使いこなせるようにしておくと安心です。
 >
 > 各サービスにはそれぞれ一長一短がありますので、利用シーンに応じて使い分けると良いかもしれません。
 
 ## a. 部品と配線について
-このパートでは [Hello World編](section0.md) で実施したLチカの配線をそのまま利用します。必要な部品も同じです。
+
+このパートでは [Hello World 編](section0.md) で実施した L チカの配線をそのまま利用します。必要な部品も同じです。
 
 ![部品一覧](imgs/section1/b.jpg)
 
-LED は、26番ポートに接続しておいてください。
+LED は、26 番ポートに接続しておいてください。
 
 ![回路図](imgs/section1/k.png)
 
-## b. HTML/CSSを記載する
+## b. HTML/CSS を記載する
+
 さて、今回はボタンと LED の状態インジケータを画面上に作ってみましょう。
-HTMLに `<button>` と `<div>` 要素を1つづつ作ります。
+HTML に `<button>` と `<div>` 要素を 1 つづつ作ります。
 
 [JSFiddle](https://jsfiddle.net/) にアクセスすると、初期状態でコード編集を始めることができます。
-この画面のHTMLペインに下記コードを挿入します。
+この画面の HTML ペインに下記コードを挿入します。
 
 ```html
 <button id="onoff">LED ON/OFF</button>
 <div id="ledView"></div>
 ```
-※JSFiddle のHTMLペインにはHTMLタグの全てを書く必要はなく、`<body>` タグ内のみを書けばあとは補完してくれます。
+
+※JSFiddle の HTML ペインには HTML タグの全てを書く必要はなく、`<body>` タグ内のみを書けばあとは補完してくれます。
 
 `ledView` 要素には下記のようなスタイルを付けて黒い丸として表示させましょう。こちらは CSS ペインに記載します。
 
@@ -81,7 +94,7 @@ HTMLに `<button>` と `<div>` 要素を1つづつ作ります。
 }
 ```
 
-最後に、HTMLに戻って、[Web GPIO API](http://browserobo.github.io/WebGPIO/) を利用可能にする Polyfill を読み込ませましょう。
+最後に、HTML に戻って、[Web GPIO API](http://browserobo.github.io/WebGPIO/) を利用可能にする Polyfill を読み込ませましょう。
 先ほど追加した `ledView` のすぐ下に下記 `<script>` タグを記載します。
 
 ```html
@@ -89,7 +102,8 @@ HTMLに `<button>` と `<div>` 要素を1つづつ作ります。
 ```
 
 ## c. ボタンに反応する画面を作る
-GPIOを実際に使う前に、まずは「ボタンを押したら LED の ON/OFF 状態を表示する画面を切り替える」部分を作ってみます。
+
+GPIO を実際に使う前に、まずは「ボタンを押したら LED の ON/OFF 状態を表示する画面を切り替える」部分を作ってみます。
 
 早速 JavaScript を書いていきましょう。
 
@@ -111,22 +125,22 @@ window.onload = function mainFunction() {
 
 JSFiddle 利用時にはいずれかの対応をしてください (ローカルファイル編集時や JS Bin では不要):
 
-* `JavaScript + No-Library (pure JS)` と書かれているところをクリックし `LOAD TYPE` の設定を `On Load` 以外 (`No wrap - bottom of <head>` など) に変更する (推奨)
-* onload に関数を登録せず処理を直接 JavaScript ペインに書き込む (最初の `onload = function() {` と 最後の行の `}` を削除)
+- `JavaScript + No-Library (pure JS)` と書かれているところをクリックし `LOAD TYPE` の設定を `On Load` 以外 (`No wrap - bottom of <head>` など) に変更する (推奨)
+- onload に関数を登録せず処理を直接 JavaScript ペインに書き込む (最初の `onload = function() {` と 最後の行の `}` を削除)
 
 ここまでできたら JSFiddle の JavaScript の `▷ Run` をクリックして実行してみましょう。
 
 これで、`LED ON/OFF` ボタンが表示されるはずですので、ボタンをクリックしてみてください。
 
-ディスプレイの丸が、赤→黒→赤→黒→赤→黒→ とクリックする都度切り替えできるようになったら成功です。
+ディスプレイの丸が、赤 → 黒 → 赤 → 黒 → 赤 → 黒 → とクリックする都度切り替えできるようになったら成功です。
 
 ![LED On/Offをブラウザ画面上のボタンクリックで実施](imgs/section1/LEDOnOff.gif)
 
+## d. ボタンに LED を反応させる
 
-## d. ボタンにLEDを反応させる
 画面ができましたので、いよいよ Web GPIO を使った LED 制御コードを入れていきます。
 
-一度 Lチカの時に学んだことを思い出せばできるはずですが、まずは書き換えてみましょう。
+一度 L チカの時に学んだことを思い出せばできるはずですが、まずは書き換えてみましょう。
 
 ```javascript
 window.onload = async function mainFunction() {
@@ -148,7 +162,7 @@ window.onload = async function mainFunction() {
 
 JSFiddle 利用時には `LOAD TYPE` を変更するか、`mainFunction()` 呼び出しを onload で囲まず最上位で直接呼び出すことに注意してください。
 
-[Hello World編](section0.md) のLチカのパートでも簡単に説明しましたが、ここでもういちど[GPIO編 (Web GPIO API)](section1.md) の流れをおさらいしておきましょう。
+[Hello World 編](section0.md) の L チカのパートでも簡単に説明しましたが、ここでもういちど[GPIO 編 (Web GPIO API)](section1.md) の流れをおさらいしておきましょう。
 
 ### await navigator.requestGPIOAccess()
 
@@ -161,11 +175,11 @@ async/await を使わずプロミスでコードを書きたい場合は返さ�
 
 `GPIOAccess.ports` は利用可能なポートオブジェクトの一覧 ([Map](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Map)) です。
 
-`gpioAccess.ports.get(26)` のようにすることで利用可能なポートオブジェクトの一覧から、 **GPIOポート番号 26** を指定して `port` オブジェクトを取得しています。
+`gpioAccess.ports.get(26)` のようにすることで利用可能なポートオブジェクトの一覧から、 **GPIO ポート番号 26** を指定して `port` オブジェクトを取得しています。
 
 ### await port.export()
 
-`port.export("out")` により取得したGPIOポートを**「出力モード」**で初期化しています。この初期化処理も非同期処理となっているため、`await` を付けて処理完了を待ってから次の処理に進めます。
+`port.export("out")` により取得した GPIO ポートを**「出力モード」**で初期化しています。この初期化処理も非同期処理となっているため、`await` を付けて処理完了を待ってから次の処理に進めます。
 
 GPIO ポートにかける電圧を Web アプリで変化させたい時には「出力モード」を指定する必要があります。一方、GPIO ポートはもうひとつ「入力モード」があり、これは GPIO ポートの状態 (電圧の High/Low 状態) を読み取りたい時に利用します。入力モードについてはスイッチを使う例の中で説明します。
 
@@ -183,22 +197,24 @@ GPIO ポートにかける電圧を Web アプリで変化させたい時には�
 今回は一般的に「タクトスイッチ」と呼ばれるものを利用します。
 
 ### タクトスイッチについて
+
 「タクトスイッチ」は[アルプス電気の商標](http://www.alps.com/j/trademark/)ですが、電子部品屋さん等ではアルプス電気製ではないスイッチも、同様の形状・配線のものは「タクトスイッチ」として売られています。
 
-* [秋月電気の「タクトスイッチ」一覧](http://akizukidenshi.com/catalog/c/ctactsw/)
+- [秋月電気の「タクトスイッチ」一覧](http://akizukidenshi.com/catalog/c/ctactsw/)
 
 本チュートリアルでは次のような仕様の「電気部品屋さん等でタクトスイッチとして売られてるスイッチ」を使います。
 
-* SPST (Single-Pole Single-Throw、1 回路 1 接点)
-* プッシュボタンが 1 つで押し込みでスイッチ ON、離すとスイッチ OFF (モーメンタリ動作)
+- SPST (Single-Pole Single-Throw、1 回路 1 接点)
+- プッシュボタンが 1 つで押し込みでスイッチ ON、離すとスイッチ OFF (モーメンタリ動作)
 
 タクトスイッチには 2 端子のものだけでなく、端子が 4 つあるタクトスイッチが多いので注意が必要です。4 ピンのタクトスイッチではどの端子間が常に接続されており、どの端子間がボタンによってオンオフされるか注意してください。
 
-[タクトスイッチの製品ページ](https://www.alps.com/prod/info/J/HTML/Tact/SnapIn/SKHW/SKHWALA010.html) などにも回路図がありますが、端子が出ている向き (次の図では縦方向) は常に接続されており、それと直角方向がボタンによって切り替わります。次の図では左の 4pin スイッチと 2pin スイッチ (とジャンパー線) が同じ回路となります。 
+[タクトスイッチの製品ページ](https://www.alps.com/prod/info/J/HTML/Tact/SnapIn/SKHW/SKHWALA010.html) などにも回路図がありますが、端子が出ている向き (次の図では縦方向) は常に接続されており、それと直角方向がボタンによって切り替わります。次の図では左の 4pin スイッチと 2pin スイッチ (とジャンパー線) が同じ回路となります。
 
 ![tactswitch](imgs/section1/tactswitch.png)
 
 ## a. 準備：画面のボタンをモーメンタリ動作に変えておく
+
 これまでに作成したプログラムは「ブラウザ画面のボタンをクリックしたら LED の HIGH/LOW を切り替える」というものでした。
 
 クリック後は変更後の状態が維持されます。これは「オルタネート」のスイッチと同じ動きです。
@@ -207,10 +223,10 @@ GPIO ポートにかける電圧を Web アプリで変化させたい時には�
 
 ### スイッチの動作：オルタネートとモーメンタリ
 
-* オルタネート : 状態をトグル (切り替え) します。一度ボタンを押すと ON になりボタンから手を離しても OFF に変わりません。次にボタンを押すと OFF になります。ボタンから手を離しても ON に変わることはありません。
-* モーメンタリ : 押している間だけ ON になります。スイッチから手を離すと OFF に戻ります。
+- オルタネート : 状態をトグル (切り替え) します。一度ボタンを押すと ON になりボタンから手を離しても OFF に変わりません。次にボタンを押すと OFF になります。ボタンから手を離しても ON に変わることはありません。
+- モーメンタリ : 押している間だけ ON になります。スイッチから手を離すと OFF に戻ります。
 
-この2つの動作が混在すると画面とスイッチで状態が一致せず、面倒なことになるので、ブラウザ画面のボタンを「モーメンタリ」に合わせておきましょう。
+この 2 つの動作が混在すると画面とスイッチで状態が一致せず、面倒なことになるので、ブラウザ画面のボタンを「モーメンタリ」に合わせておきましょう。
 
 下記のように、現在は `onclick` イベントで切り替えています。クリックイベントは、「マウスのボタンを押して離す」ことで発生します。
 
@@ -226,8 +242,8 @@ GPIO ポートにかける電圧を Web アプリで変化させたい時には�
 
 これを、マウスボタンを押した時と離した時にそれぞれオンオフさせるように変えましょう:
 
-* マウスのボタンを押す → LEDをON
-* マウスのボタンを離す → LEDをOFF
+- マウスのボタンを押す → LED を ON
+- マウスのボタンを離す → LED を OFF
 
 ```javascript
   :
@@ -277,14 +293,15 @@ window.onload = async function mainFunction() {
 ```
 
 ## b. 部品と配線について
+
 今回追加するのは下記部品です。
 
-* 前述のタクトスイッチ × 1
-* ジャンパーワイヤー（オスーメス）× 2
+- 前述のタクトスイッチ × 1
+- ジャンパーワイヤー（オスーメス）× 2
 
 ![追加する部品](imgs/section1/t.jpg)
 
-下図のように、さきほどのLEDの配線にタクトスイッチを追加しましょう。この図の例では 2 ピンのタクトスイッチを使っていますが、4 ピンの場合も黄色と黒のジャンパー線の間にボタンでオンオフが切り替わるよう向きに注意してスイッチを配置してください。
+下図のように、さきほどの LED の配線にタクトスイッチを追加しましょう。この図の例では 2 ピンのタクトスイッチを使っていますが、4 ピンの場合も黄色と黒のジャンパー線の間にボタンでオンオフが切り替わるよう向きに注意してスイッチを配置してください。
 
 ![スイッチを追加した配線](imgs/section1/s.png)
 
@@ -292,19 +309,19 @@ window.onload = async function mainFunction() {
 
 上記回路ではスイッチが下記のように接続されています。
 
-* Port 5 にスイッチを接続
-* GND にスイッチの反対側を接続
+- Port 5 にスイッチを接続
+- GND にスイッチの反対側を接続
 
 これでどのようになるかというと、下記のようになります。
 
-* スイッチを押す前は、Port 5 は HIGH (3.3V)
-* スイッチを押している間、Port 5 は LOW (0V)
+- スイッチを押す前は、Port 5 は HIGH (3.3V)
+- スイッチを押している間、Port 5 は LOW (0V)
 
 どうしてこうなるのでしょうか。
 
 実は、Raspi3 の GPIO ポートのいくつかは、初期状態で「プルアップ」されています。
 
-プルアップとは、回路を初期状態で「HIGHにしておく」ことですが、CHIRIMEN Raspi3 で利用可能な GPIO ポートのうち、下記ポート番号がプルアップ状態となっています。
+プルアップとは、回路を初期状態で「HIGH にしておく」ことですが、CHIRIMEN Raspi3 で利用可能な GPIO ポートのうち、下記ポート番号がプルアップ状態となっています。
 
 ![初期状態でPullupされているPortの一覧](imgs/section1/PullupPort.png)
 
@@ -316,22 +333,23 @@ window.onload = async function mainFunction() {
 この動作を頭に入れておきましょう。
 
 ## c. スイッチに反応するようにする (port.read()を使ってみる)
+
 いよいよ、スイッチに対応させてみましょう。
 
-まずは、単純に「GPIOポートの状態を読み込む」 `port.read()` を使ってみたいと思います。
+まずは、単純に「GPIO ポートの状態を読み込む」 `port.read()` を使ってみたいと思います。
 
 `port.read()` で GPIO を読み込むコードは次のように書けます:
 
 ```javascript
-  var gpioAccess = await navigator.requestGPIOAccess(); // writeと一緒。
-  var port = gpioAccess.ports.get(5); // Port 5 を取得
-  await port.export("in"); // Port 5 を「入力モード」に。
-  var val = await port.read(); // Port 5の状態を読み込む
+var gpioAccess = await navigator.requestGPIOAccess(); // writeと一緒。
+var port = gpioAccess.ports.get(5); // Port 5 を取得
+await port.export("in"); // Port 5 を「入力モード」に。
+var val = await port.read(); // Port 5の状態を読み込む
 ```
 
 ### await port.export()
 
-`port.export("in")` により取得した GPIOポートを「入力モード」で初期化しています。非同期処理の待機が必要です。
+`port.export("in")` により取得した GPIO ポートを「入力モード」で初期化しています。非同期処理の待機が必要です。
 
 GPIO ポートにかかる電圧を Web アプリ側から読み取りたい時に使います。
 
@@ -367,8 +385,8 @@ GPIO ポートにかかる電圧を Web アプリ側から読み取りたい時�
 var gpioAccess = await navigator.requestGPIOAccess(); // writeと一緒。
 var port = gpioAccess.ports.get(5); // Port 5 を取得
 await port.export("in"); // Port 5 を「入力モード」に。
-while(1) {
-  var val = await port.read(); // Port 5の状態を読み込む  
+while (1) {
+  var val = await port.read(); // Port 5の状態を読み込む
   //
   // ここにswitchの状態による処理を書き足す
   //
@@ -476,8 +494,8 @@ window.onload = async function initialize() {
 
 また、ポーリングによる LED 制御処理を行なっていないので、ブラウザ画面のボタンも正しく反応できるようになります。
 
+# 4.LED のかわりに CPU ファンを回してみる
 
-# 4.LEDのかわりにCPUファンを回してみる
 Web GPIO API の機能が一通り確認できましたので、本パートのしめくくりに違う部品も制御してみましょう。
 
 ここでは、**MOSFET** を使って DC ファンの単純な ON/OFF を制御してみましょう。
@@ -493,18 +511,20 @@ MOSFET は[電界効果トランジスタ (FET)](https://ja.wikipedia.org/wiki/%
 ![mosfet](imgs/section1/mosfet.png)
 
 ## DC ファンとは
+
 DC ファンは、CPU の冷却等に利用される部品です。
 
 小型のモーター、モータードライバ、そしてファンがセットになっており、通電するだけでファンを回して送風することができます。
 
-今回は、[5V 50mAで回転させることができる小型のDCファン](http://akizukidenshi.com/catalog/g/gP-02480/) を利用します。
+今回は、[5V 50mA で回転させることができる小型の DC ファン](http://akizukidenshi.com/catalog/g/gP-02480/) を利用します。
 
 ![DCファン](imgs/section1/DC.jpg)
 
-## DCファンには極性があるので注意してください!!
+## DC ファンには極性があるので注意してください!!
+
 [上記の DC ファン](http://akizukidenshi.com/catalog/g/gP-02480/)には極性があります。通常販売している状態では赤黒のケーブルが付属しており、赤い方が 5V、黒い方が GND に接続する仕様です。**接続方法を誤ると (逆に接続すると) DC ファンが発熱し故障や事故 (火傷や火災) の原因になる可能性があります**。必ず極性を確認してから接続するようにしてください。
 
-## DCファンをブレッドボードで利用するために
+## DC ファンをブレッドボードで利用するために
 
 今回利用する DC ファンには細い電線が付属していますが、もともと基板へのハンダ付けを想定した電線であり、このままの状態ではブレッドボードで利用できません。
 
@@ -530,22 +550,21 @@ DC ファンは、CPU の冷却等に利用される部品です。
 
 ![ブレッドボード用に加工したDCファン](imgs/section1/DC4.jpg)
 
-
 ## a. 部品と配線について
+
 これまでに使った部品に下記を加えましょう。
 
 DC ファンは前述の通りジャンパーケーブルをハンダ付けしたりブレッドボード用に加工したものをご用意ください。
 
 ![部品一覧](imgs/section1/b2.jpg)
 
-次に、先ほどの「タクトスイッチを押したらLEDをつけたり消したり」する回路から、LEDとLED用の抵抗を一旦外して、MOSFET と抵抗、DCファンを次のように配置します。
+次に、先ほどの「タクトスイッチを押したら LED をつけたり消したり」する回路から、LED と LED 用の抵抗を一旦外して、MOSFET と抵抗、DC ファンを次のように配置します。
 
 今度の回路図ではタクトスイッチを 4 ピンに変更し配置も多少調整していますが、黄色のジャンパーピンと黒のジャンパーピンの間をスイッチでオンオフできるように配線するのは同じです。手持ちのスイッチやジャンパワイヤに合わせて上手く配線してみてください。
 
 ![DCファンの回路図](imgs/section1/DC3.png)
 
 さて、それでは遊んでみましょう。
-
 
 ## b. コードは... 書き換えなくて良い
 
@@ -554,29 +573,28 @@ LED が点灯する替わりにファンが回るようになりました。
 
 ![DCFan-Movie](imgs/section1/DCFan-Movie.gif)
 
+## c. しかし... (オチ w)
 
-## c. しかし... (オチw)
-スイッチを押してDCファンが回るだけなら、5V→タクトスイッチ→DCファン→GND と繋げば **プログラムを書かなくても出来る！！！！**
+スイッチを押して DC ファンが回るだけなら、5V→ タクトスイッチ →DC ファン →GND と繋げば **プログラムを書かなくても出来る！！！！**
 
 ...... スイッチじゃないのでやりましょう。(次回に続く)
-
 
 # まとめ
 
 このチュートリアルでは、実際にコードを書きながら Web GPIO API の基本的な利用方法を学びました。
 
-* Web GPIO APIを使ったGPIO出力ポートの設定と出力処理までの流れ  (`navigator.requestGPIOAccess()`〜`port.write()`）
-* Web GPIO APIを使ったGPIO入力ポートの設定と読み出し処理の流れ  (`navigator.requestGPIOAccess()`〜`port.read()`）
-* Web GPIO APIを使ったGPIO入力ポートの設定と変化検知受信の流れ  (`navigator.requestGPIOAccess()`〜`port.onchange()`)
+- Web GPIO API を使った GPIO 出力ポートの設定と出力処理までの流れ (`navigator.requestGPIOAccess()`〜`port.write()`）
+- Web GPIO API を使った GPIO 入力ポートの設定と読み出し処理の流れ (`navigator.requestGPIOAccess()`〜`port.read()`）
+- Web GPIO API を使った GPIO 入力ポートの設定と変化検知受信の流れ (`navigator.requestGPIOAccess()`〜`port.onchange()`)
 
 このチュートリアルで書いたコードは以下のページで参照できます:
 
-* [GitHub リポジトリで参照](https://github.com/chirimen-oh/tutorials/tree/master/raspi3/examples/section1)
-* ブラウザで開くページ (各ステップ)
-  * [画面のボタンで画面の要素の色を変える](https://tutorial.chirimen.org/raspi3/examples/section1/s1_1.html)
-  * [他面のボタンで LED が光り画面の要素の色も変わる](https://tutorial.chirimen.org/raspi3/examples/section1/s1_2.html)
-  * [マウスで画面のボタンを押している間だけ LED が光る](https://tutorial.chirimen.org/raspi3/examples/section1/s1_3.html)
-  * [タクトスイッチを押している間だけ LED が光る](https://tutorial.chirimen.org/raspi3/examples/section1/s1_4.html)
-  * [画面のボタンまたはタクトスイッチを押している間だけ LED が光る](https://tutorial.chirimen.org/raspi3/examples/section1/s1_5.html)
+- [GitHub リポジトリで参照](https://github.com/chirimen-oh/tutorials/tree/master/raspi3/examples/section1)
+- ブラウザで開くページ (各ステップ)
+  - [画面のボタンで画面の要素の色を変える](https://tutorial.chirimen.org/raspi3/examples/section1/s1_1.html)
+  - [他面のボタンで LED が光り画面の要素の色も変わる](https://tutorial.chirimen.org/raspi3/examples/section1/s1_2.html)
+  - [マウスで画面のボタンを押している間だけ LED が光る](https://tutorial.chirimen.org/raspi3/examples/section1/s1_3.html)
+  - [タクトスイッチを押している間だけ LED が光る](https://tutorial.chirimen.org/raspi3/examples/section1/s1_4.html)
+  - [画面のボタンまたはタクトスイッチを押している間だけ LED が光る](https://tutorial.chirimen.org/raspi3/examples/section1/s1_5.html)
 
-次の『[チュートリアル 2. I2C　基本編（ADT7410温度センサー）](section2.md)』では Web I2C API の学習をします。
+次の『[チュートリアル 2. I2C 　基本編（ADT7410 温度センサー）](section2.md)』では Web I2C API の学習をします。

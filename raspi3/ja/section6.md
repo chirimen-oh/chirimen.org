@@ -1,8 +1,13 @@
+---
+layout: tutorial
+---
+
 # 6. ステッピングモーター編
 
 このチュートリアルで使用しているステッピングモータードライバは [CHIRIMEN の公式リリース](https://github.com/chirimen-oh/chirimen-raspi3)にまだ含まれていないかも知れません。Example 等がリンクエラーになる場合は、公式リリースまでしばらくお待ちください。
 
 # 概要
+
 これは [CHIRIMEN for Raspberry Pi 3](section0.md) でステッピングモーターを回すサンプルです。モーターの制御のために Arduino を I2C スレーブデバイスとして使用します。
 
 全体の様子は下の写真のようになります。
@@ -10,30 +15,33 @@
 ![全体の様子](imgs/section6/i1.jpg)
 
 # 1.ステッピングモーターとは
+
 ステッピングモーターはモーターの一種ですが通常のモーターとは違い、角度を指定して回すなど非常に精密な動きができるのが特徴で、プリンタや工作機械などでも多用されているモーターです。一般的には上の写真の上段に映っているような金属の四角い形状をしていますが、小さなもの等では違う形の場合もあります。
 
 今回のサンプルで使用するステッピングモーターの場合は、角度 1.8 度を 1 ステップとして 200 ステップで 1 回転となり、ステップ数を指定して回転させる事ができます。
 
-回路図のシンボルでは下の図のようにあらわされ、モーターの軸に対してそれぞれ違う方向にコイルが巻かれています。コイルの中点から線が出ているかどうかで、左のバイポーラ型(4線式)、右のユニポーラ型(6線式)がありますが、今回使用するのはバイポーラ型(4線式)のモーターです。
+回路図のシンボルでは下の図のようにあらわされ、モーターの軸に対してそれぞれ違う方向にコイルが巻かれています。コイルの中点から線が出ているかどうかで、左のバイポーラ型(4 線式)、右のユニポーラ型(6 線式)がありますが、今回使用するのはバイポーラ型(4 線式)のモーターです。
 
 ![ステッピングモーター](imgs/section6/i2.png)
 
 通常のモーターでは電圧をかければ勝手に回りますが、ステッピングモーターは電気回路側でどのコイルに電流を流すかを順次切り替えて行く事で、1 ステップずつ回転するという仕組みになっています。
 
 # 2.使用する部品
+
 使用する部品の一覧は次の通りです。
 
-* [CHIRIMEN for Raspberry Pi](section0.md) が動作する [Raspberry Pi 3 Model B](https://www.raspberrypi.org/products/raspberry-pi-3-model-b/)
-* [Arduino UNO R3](https://www.switch-science.com/catalog/789/)
-* [EasyDriver ステッピングモータードライバ v4.4](https://www.switch-science.com/catalog/2242/)
-* [I2Cバス用双方向電圧レベル変換モジュール(FXMA2102)](http://akizukidenshi.com/catalog/g/gM-05825/)
-* [バイポーラ　ステッピングモーターSM-42BYG011](http://akizukidenshi.com/catalog/g/gP-05372/)
-* [ACアダプター 12V/1.5A](https://www.switch-science.com/catalog/1410/)
-* [DCプラグ変換ケーブル（QIオス）](https://www.switch-science.com/catalog/2321/)
-* ジャンパー（オス・メス）ケーブル x 7、(オス・オス) x 7
-* ピンヘッダ (EasyDriver にはピンヘッダが付属していません)
+- [CHIRIMEN for Raspberry Pi](section0.md) が動作する [Raspberry Pi 3 Model B](https://www.raspberrypi.org/products/raspberry-pi-3-model-b/)
+- [Arduino UNO R3](https://www.switch-science.com/catalog/789/)
+- [EasyDriver ステッピングモータードライバ v4.4](https://www.switch-science.com/catalog/2242/)
+- [I2C バス用双方向電圧レベル変換モジュール(FXMA2102)](http://akizukidenshi.com/catalog/g/gM-05825/)
+- [バイポーラ　ステッピングモーター SM-42BYG011](http://akizukidenshi.com/catalog/g/gP-05372/)
+- [AC アダプター 12V/1.5A](https://www.switch-science.com/catalog/1410/)
+- [DC プラグ変換ケーブル（QI オス）](https://www.switch-science.com/catalog/2321/)
+- ジャンパー（オス・メス）ケーブル x 7、(オス・オス) x 7
+- ピンヘッダ (EasyDriver にはピンヘッダが付属していません)
 
 # 3.回路
+
 今回作る回路は下の図の通りです。かなり部品が多いですが順番に説明して行きます。
 
 ![回路](imgs/section6/i3.png)
@@ -56,7 +64,7 @@ EasyDriver にはピンヘッダは付属していません。ブレッドボー
 
 ## Arduino UNO R3
 
-Arduino はご存知の方も多いと思いますが、小さなマイコンが乗ったボードです。モータードライバに信号を送る事でステッピングモーターが回るのですが、この信号はステップ毎にマイクロ秒単位で制御する必要があります。 CHIRIMEN の Webベースのアプリから直接制御するのは無理がありますので、この仕事を Arduino で行うと共に I2C スレーブデバイスとして動作させ、 CHIRIMEN からは I2C 経由でコマンドを送るだけでモーターが指示通りに回るという構成になっています。
+Arduino はご存知の方も多いと思いますが、小さなマイコンが乗ったボードです。モータードライバに信号を送る事でステッピングモーターが回るのですが、この信号はステップ毎にマイクロ秒単位で制御する必要があります。 CHIRIMEN の Web ベースのアプリから直接制御するのは無理がありますので、この仕事を Arduino で行うと共に I2C スレーブデバイスとして動作させ、 CHIRIMEN からは I2C 経由でコマンドを送るだけでモーターが指示通りに回るという構成になっています。
 
 これを実現するため、Arduino にはモータードライバに信号を送るためのプログラム(スケッチ)を書きこんでおく必要があります。
 Arduino には公式の Stepper というステッピングモーター用のライブラリもあるのですが、今回使用する EasyDriver には適合せず、マイクロステップ駆動にも対応していませんので使用していません。
@@ -67,7 +75,7 @@ Arduino には公式の Stepper というステッピングモーター用のラ
 
 ここから`sketch_steppingmotor.ino` をダウンロードして Arduino に書き込んでください。Arduino への書き込みには Arduino 用の開発環境「[Arduino IDE](https://www.arduino.cc/en/main/software)」の準備等が別途必要です。Arduino 関係の情報はネット上にたくさんありますので、 [html5experts.jp](https://html5experts.jp/) の以下のページなどを参考にしてスケッチを書き込んでください。
 
-[**html5experts.jp : 初心者でもわかる・できる！Arduinoを使った初めての電子工作実践**](https://html5experts.jp/youtoy/12029/)
+[**html5experts.jp : 初心者でもわかる・できる！Arduino を使った初めての電子工作実践**](https://html5experts.jp/youtoy/12029/)
 
 ## I2C 電圧レベル変換モジュール
 
@@ -76,7 +84,8 @@ Arduino には公式の Stepper というステッピングモーター用のラ
 このモジュールにはピンヘッダが付属していますがはんだ付けはされていません。モジュールの側面にピンヘッダをはんだ付けする必要がありますが、かなり小さいモジュールですのでピンをブレッドボードに固定した状態で作業するのが楽そうです。
 
 ## Raspberry Pi 3 Model B
-CHIRIMEN が動作する Raspberry Pi です。CHIRIMEN を動かして操作するために SDカード、HDMIディスプレイ、キーボード、マウス等も必要ですので、CHIRIMEN が動作する所までは以下のチュートリアル等を参考にしてください。
+
+CHIRIMEN が動作する Raspberry Pi です。CHIRIMEN を動かして操作するために SD カード、HDMI ディスプレイ、キーボード、マウス等も必要ですので、CHIRIMEN が動作する所までは以下のチュートリアル等を参考にしてください。
 
 [CHIRIMEN for Raspberry Pi 3 Hello World](section0.md)
 
@@ -118,37 +127,42 @@ Raspberry Pi で ターミナルを起動して次のコマンドを入力する
 
 [**chirimen.org : i2c-arduino-steppingMotor Example**](https://chirimen.org/chirimen-raspi3/gc/i2c/i2c-arduino-steppingMotor)
 
-下のような画面になり、1秒の停止をはさみながらモーターが 1 回転ずつ正方向逆方向交互に動くはずです。
+下のような画面になり、1 秒の停止をはさみながらモーターが 1 回転ずつ正方向逆方向交互に動くはずです。
 
 ![Exampleの様子](imgs/section6/i6.png)
 
 # 5.ソースコードの確認
+
 example のソースコードはどうなっているのか確認してみます。`main.js` にページのロード完了から走り始めるコードが書かれています。
 
 ```javascript
-window.addEventListener('load', async ()=>{
-  function sleep(msec) {
-    return new Promise((resolv)=>{
-        setTimeout(resolv,msec);
-    });
-  }
-  let step = 1600;
-  const head = document.querySelector('#head');
-  const i2cAccess = await navigator.requestI2CAccess();
-  const port = i2cAccess.ports.get(1);
-  const steppingMotor = new SteppingMotor(port,0x12);
-  await steppingMotor.init();
-  for(;;){
-    await sleep(1000);
-    head.innerHTML = "MOVE";
-    await steppingMotor.move(step);
-    head.innerHTML = "STOP";
-    step = -step;
-  }
-}, false);
+window.addEventListener(
+  "load",
+  async () => {
+    function sleep(msec) {
+      return new Promise(resolv => {
+        setTimeout(resolv, msec);
+      });
+    }
+    let step = 1600;
+    const head = document.querySelector("#head");
+    const i2cAccess = await navigator.requestI2CAccess();
+    const port = i2cAccess.ports.get(1);
+    const steppingMotor = new SteppingMotor(port, 0x12);
+    await steppingMotor.init();
+    for (;;) {
+      await sleep(1000);
+      head.innerHTML = "MOVE";
+      await steppingMotor.move(step);
+      head.innerHTML = "STOP";
+      step = -step;
+    }
+  },
+  false
+);
 ```
 
-`function sleep()` は 1 秒の待機で使用している関数の定義で `await sleep(1000)` とする事で1秒待機します。
+`function sleep()` は 1 秒の待機で使用している関数の定義で `await sleep(1000)` とする事で 1 秒待機します。
 初期化部分では、`navigator.requestI2CAccess()`で `I2CAccess` オブジェクト、`i2cAccess.ports.get(1)` で I2C ポートを順次取得します。
 
 そして `steppingMotor = new SteppingMotor(port,0x12);` によって steppingMotor を制御するオブジェクトを得ます。
@@ -158,9 +172,9 @@ window.addEventListener('load', async ()=>{
 
 その後は、
 
-* `await sleep(1000)` で1秒待機
+- `await sleep(1000)` で 1 秒待機
 
-* `await steppingMotor.move(step)` でモーターを動かす
+- `await steppingMotor.move(step)` でモーターを動かす
 
 という処理を繰り返しています。
 
@@ -173,16 +187,16 @@ window.addEventListener('load', async ()=>{
 例えば for ループの部分を次のようにすると、
 
 ```javascript
-for(;;){
+for (;;) {
   await sleep(1000);
-  await steppingMotor.setSpeed(Math.random()*1600*10);
+  await steppingMotor.setSpeed(Math.random() * 1600 * 10);
   head.innerHTML = "MOVE";
-  await steppingMotor.move(Math.random()*1600*5);
+  await steppingMotor.move(Math.random() * 1600 * 5);
   head.innerHTML = "STOP";
 }
 ```
 
-1秒の停止をはさみながら色々な速度と色々なステップ数で回転します。
+1 秒の停止をはさみながら色々な速度と色々なステップ数で回転します。
 
 # [Example 2](https://g200kg.github.io/chirimen-steppingmotor/example2.html)
 
@@ -202,41 +216,51 @@ for(;;){
 ![Example3の画面](imgs/section6/i7.png)
 
 javascript
+
 ```javascript
-window.addEventListener('load', async ()=>{
-  let steps=1600;
-  let speed=1600;
-  let accel=10;
-  let minspeed=800;
-  const head = document.querySelector('#head');
-  const i2cAccess = await navigator.requestI2CAccess();
-  const port = i2cAccess.ports.get(1);
-  const steppingMotor = new SteppingMotor(port,0x12);
-  await steppingMotor.init();
-  document.getElementById("run").addEventListener("click",async ()=>{
-    await steppingMotor.setSpeed(speed);
-    await steppingMotor.setMinSpeed(minspeed);
-    await steppingMotor.setAccelRate(accel);
-    head.innerHTML="MOVE";
-    await steppingMotor.move(steps);
-    head.innerHTML="STOP";
-  });
-  document.getElementById("steps").addEventListener("input",()=>{
-    document.getElementById("stepsval").innerHTML=steps=event.target.value;
-  });
-  document.getElementById("speed").addEventListener("input",()=>{
-    document.getElementById("speedval").innerHTML=speed=event.target.value;
-  });
-  document.getElementById("accel").addEventListener("input",()=>{
-    document.getElementById("accelval").innerHTML=accel=event.target.value;
-  });
-  document.getElementById("minspeed").addEventListener("input",()=>{
-    document.getElementById("minspeedval").innerHTML=minspeed=event.target.value;
-  });
-}, false);
+window.addEventListener(
+  "load",
+  async () => {
+    let steps = 1600;
+    let speed = 1600;
+    let accel = 10;
+    let minspeed = 800;
+    const head = document.querySelector("#head");
+    const i2cAccess = await navigator.requestI2CAccess();
+    const port = i2cAccess.ports.get(1);
+    const steppingMotor = new SteppingMotor(port, 0x12);
+    await steppingMotor.init();
+    document.getElementById("run").addEventListener("click", async () => {
+      await steppingMotor.setSpeed(speed);
+      await steppingMotor.setMinSpeed(minspeed);
+      await steppingMotor.setAccelRate(accel);
+      head.innerHTML = "MOVE";
+      await steppingMotor.move(steps);
+      head.innerHTML = "STOP";
+    });
+    document.getElementById("steps").addEventListener("input", () => {
+      document.getElementById("stepsval").innerHTML = steps =
+        event.target.value;
+    });
+    document.getElementById("speed").addEventListener("input", () => {
+      document.getElementById("speedval").innerHTML = speed =
+        event.target.value;
+    });
+    document.getElementById("accel").addEventListener("input", () => {
+      document.getElementById("accelval").innerHTML = accel =
+        event.target.value;
+    });
+    document.getElementById("minspeed").addEventListener("input", () => {
+      document.getElementById("minspeedval").innerHTML = minspeed =
+        event.target.value;
+    });
+  },
+  false
+);
 ```
 
 HTML
+
 ```html
 <div>モーターの状態 : <span id="head">STOP</span></div>
 <table>
@@ -252,5 +276,5 @@ HTML
 
 このチュートリアルでは 下記について学びました。
 
-* Arduino の I2C デバイスとしての応用
-* ステッピングモーターの制御方法
+- Arduino の I2C デバイスとしての応用
+- ステッピングモーターの制御方法
