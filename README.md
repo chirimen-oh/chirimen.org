@@ -13,6 +13,20 @@ CHIRIMEN Raspi3 を試すには、[ビルドイメージ](https://r.chirimen.org
 
 [CHIRIMEN Raspi3 チュートリアルの各ページはこちらでご覧頂けます](/raspi3/ja/readme.md)
 
+```javascript
+window.onload = function mainFunction() {
+  var gpioAccess = await navigator.requestGPIOAccess();
+  var port = gpioAccess.ports.get(26);
+  var v = 0;
+
+  await port.export("out");
+  for (;;) {
+    await sleep(1000); // 繰り返し毎に 1000ms 待機
+    v = v === 0 ? 1 : 0; // LEDをON/OFFする
+    port.write(v);
+  }
+};
+```
 
 ## Online Version / オンライン版
 Latest version of this site is hosted on https://tutorial.chirimen.org/
