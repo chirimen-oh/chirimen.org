@@ -46,7 +46,7 @@ async 接頭詞を持つ関数も、返り値を返すことができます。�
 
 ### async1.js
 
-```async1.js
+```javascript
 onload = function mainFunction(){
   myAsyncFunction1();
   console.log("mainFunction End");
@@ -68,7 +68,7 @@ function  sleep(ms){
 
 ### index1.html
 
-```index1.html
+```html
 <!doctype html>
 <html>
   <!-- htmlでは単に上のjsを読み込んでいるだけ、画面には何も反映されません。このソースには特別新しい作法はありません。。　ブラウザの開発ツールのコンソールに結果のメッセージが出ます -->
@@ -90,7 +90,7 @@ await は非同期関数内でしか利用できませんので、asyncMainFunct
 
 ### async2.js
 
-```async2.js
+```javascript
 onload = async function asyncMainFunction(){
 	console.log("Start asyncMainFunction", new Date(), "  and await myAsyncFunction2");
 	var date3s = await myAsyncFunction2(); //
@@ -113,7 +113,7 @@ function  sleep(ms){
 
 ### index2.html
 
-```index2.html
+```html
 <!doctype html>
 <html>
   <head>
@@ -137,7 +137,7 @@ CHIRIMEN のライブラリの関数を利用している限り、この内容�
 
 ### async3.js
 
-```async3.js
+```javascript
 // async await を用いた非同期処理の方法を説明
 // # コールバック関数、アロー関数式なし、Primiseの詳細な理解(.then()など)もなし
 // # さらにPromiseを返却する関数(非同期処理の関数)を自分で作らないならば、無名関数もなしでわかる書き方
@@ -204,7 +204,7 @@ asyncTest();
 
 ### index3.html
 
-```index3.html
+```html
 <!doctype html>
 <html>
   <!-- htmlでは単に上のjsを読み込んでいるだけ、画面には何も反映されません。このソースには特別新しい作法はありません。。　結果はブラウザの開発ツールのコンソールにメッセージが出る-->
