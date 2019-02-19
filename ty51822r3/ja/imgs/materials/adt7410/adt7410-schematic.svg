@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Fritzing (http://www.fritzing.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   version="1.2"
+   viewBox="0 0 12.700003 12.7"
+   y="0in"
+   height="0.5in"
+   x="0in"
+   width="0.5in"
+   id="svg200"
+   sodipodi:docname="adt7410-schematic.svg"
+   inkscape:version="0.92.3 (2405546, 2018-03-11)">
+  <metadata
+     id="metadata206">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <defs
+     id="defs204" />
+  <sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="1476"
+     inkscape:window-height="874"
+     id="namedview202"
+     showgrid="true"
+     inkscape:snap-center="true"
+     inkscape:snap-text-baseline="true"
+     inkscape:zoom="7.8353256"
+     inkscape:cx="10.830758"
+     inkscape:cy="15.556663"
+     inkscape:window-x="66"
+     inkscape:window-y="214"
+     inkscape:window-maximized="0"
+     inkscape:current-layer="svg200"
+     inkscape:snap-object-midpoints="true"
+     inkscape:snap-others="true"
+     inkscape:snap-smooth-nodes="true"
+     inkscape:snap-midpoints="true">
+    <inkscape:grid
+       type="xygrid"
+       id="grid338"
+       empspacing="4"
+       units="in"
+       spacingx="0.63500007"
+       spacingy="0.63500007" />
+  </sodipodi:namedview>
+  <desc
+     id="desc2">
+    <referenceFile>sparkfun-digitalic_atmega168_schematic.svg</referenceFile>
+  </desc>
+  <rect
+     style="fill:#ffffff;stroke:none;stroke-width:0"
+     id="rect4"
+     width="11.43"
+     x="0.63500029"
+     height="8.8900013"
+     y="0.63500327"
+     class="interior rect" />
+  <line
+     style="stroke:#000000;stroke-width:0.23812503;stroke-linecap:round;stroke-miterlimit:4;stroke-dasharray:none"
+     id="line7"
+     y2="0.63499993"
+     y1="0.63499993"
+     x1="0.63500088"
+     class="other"
+     x2="12.065001" />
+  <line
+     style="stroke:#000000;stroke-width:0.26864126;stroke-linecap:round;stroke-miterlimit:4;stroke-dasharray:none"
+     id="line13"
+     y2="0.63499993"
+     y1="9.5250034"
+     x1="0.63500029"
+     class="other"
+     x2="0.63500029" />
+  <text
+     style="font-size:0.881944px;font-family:'Droid Sans';text-anchor:middle;fill:#8c8c8c;stroke:none;stroke-width:0"
+     id="text29"
+     x="2.66347"
+     y="-23.357409"
+     font-size="0.881944"
+     class="text" />
+  <text
+     xml:space="preserve"
+     style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:1.49930573px;line-height:1.25;font-family:'Droid Sans';-inkscape-font-specification:'Droid Sans, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458335"
+     x="3.398243"
+     y="3.0762539"
+     id="text1438"><tspan
+       sodipodi:role="line"
+       id="tspan929"
+       x="3.398243"
+       y="3.0762539">ADT7410</tspan></text>
+  <path
+     style="fill:none;stroke:#787878;stroke-width:0.17462502;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+     d="M 2.5400008,9.5250018 V 12.700003"
+     id="connector1pin"
+     inkscape:connector-curvature="0" />
+  <path
+     inkscape:connector-curvature="0"
+     id="connector2pin"
+     d="M 5.0800011,9.5250018 V 12.700003"
+     style="fill:none;stroke:#787878;stroke-width:0.17462502;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+  <path
+     style="fill:none;stroke:#787878;stroke-width:0.17462502;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+     d="M 7.6200013,9.5250018 V 12.700003"
+     id="connector3pin"
+     inkscape:connector-curvature="0" />
+  <path
+     inkscape:connector-curvature="0"
+     id="connector4pin"
+     d="M 10.160001,9.5250018 V 12.700003"
+     style="fill:none;stroke:#787878;stroke-width:0.17462502;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+  <text
+     id="text933"
+     y="5.0072422"
+     x="3.7511067"
+     style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:1.49930573px;line-height:1.25;font-family:'Droid Sans';-inkscape-font-specification:'Droid Sans, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458335"
+     xml:space="preserve"><tspan
+       sodipodi:role="line"
+       id="tspan935"
+       x="3.7511067"
+       y="5.0072422">Module</tspan></text>
+  <line
+     x2="12.065001"
+     class="other"
+     x1="12.065001"
+     y1="9.5250034"
+     y2="0.63499993"
+     id="line937"
+     style="stroke:#000000;stroke-width:0.26864126;stroke-linecap:round;stroke-miterlimit:4;stroke-dasharray:none" />
+  <line
+     style="stroke:#000000;stroke-width:0.23812503;stroke-linecap:round;stroke-miterlimit:4;stroke-dasharray:none"
+     id="line11"
+     y2="9.5250034"
+     y1="9.5250034"
+     x1="12.065001"
+     class="other"
+     x2="0.63500029" />
+  <text
+     xml:space="preserve"
+     style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:1.23472238px;line-height:1.25;font-family:'Droid Sans';-inkscape-font-specification:'Droid Sans, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458335"
+     x="1.242276"
+     y="8.6960163"
+     id="text941"><tspan
+       sodipodi:role="line"
+       id="tspan939"
+       x="1.242276"
+       y="8.6960163"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:1.23472238px;font-family:'Droid Sans';-inkscape-font-specification:'Droid Sans, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;writing-mode:lr-tb;text-anchor:start;stroke-width:0.26458335">GND</tspan></text>
+  <text
+     id="text945"
+     y="8.6960163"
+     x="3.9366164"
+     style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:1.23472238px;line-height:1.25;font-family:'Droid Sans';-inkscape-font-specification:'Droid Sans, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458335"
+     xml:space="preserve"><tspan
+       sodipodi:role="line"
+       id="tspan947"
+       x="3.9366164"
+       y="8.6960163">SDA</tspan></text>
+  <text
+     xml:space="preserve"
+     style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:1.23472238px;line-height:1.25;font-family:'Droid Sans';-inkscape-font-specification:'Droid Sans, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458335"
+     x="6.6065397"
+     y="8.6960163"
+     id="text951"><tspan
+       sodipodi:role="line"
+       id="tspan953"
+       x="6.6065397"
+       y="8.6960163">SCL</tspan></text>
+  <text
+     id="text957"
+     y="8.695715"
+     x="9.002449"
+     style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:1.23472238px;line-height:1.25;font-family:'Droid Sans';-inkscape-font-specification:'Droid Sans, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458335"
+     xml:space="preserve"><tspan
+       sodipodi:role="line"
+       id="tspan959"
+       x="9.002449"
+       y="8.695715">VDD</tspan></text>
+</svg>
