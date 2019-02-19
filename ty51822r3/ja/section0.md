@@ -2,7 +2,7 @@
 layout: tutorial
 ---
 
-# 0. Hello World 編
+# Hello World
 
 # 1. 今回のゴール
 
