@@ -1,4 +1,8 @@
-# 0. Hello World 編
+---
+layout: tutorial
+---
+
+# Hello World
 
 # 1. 今回のゴール
 
