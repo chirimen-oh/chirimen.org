@@ -29,5 +29,5 @@ FAQ やその他関連資料です:
 * [CHIRIMEN for Raspberry Pi 3 との違い](diff.md)
 * [i2cdetect について](i2cdetect.md)
 * [TY51822r3 の ファームウェアをビルドする](bridge.md)
-* [良くある質問](ble/ja/faq.md)
-* [Tips 集](ble/ja/tips.md)
+* [良くある質問](faq.md)
+* [Tips 集](tips.md)
