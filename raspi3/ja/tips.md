@@ -38,7 +38,7 @@ CHIRIMEN Raspi3 の [examples](https://chirimen.org/chirimen-raspi3/gc/top/examp
 - 人感センサー (GPIO)
   - 焦電型赤外線人感センサーで 3V 出力のものに対応。5V 出力を繋がないよう注意
 - 湿度、気圧センサー (BME280(湿度と気圧), BMP280(気圧), BMP180(気圧)を計測)
-- 電圧 (ADS1015, PCF8591)
+- 電圧 (ADS1015, ADS1115, PCF8591)
   - 電圧や抵抗値で出力されるアナログセンサーへの応用は下の章を参照してください。
 
 #### アクチュエータ類
@@ -104,7 +104,7 @@ MIDI 端子で通信ができるデバイス
 
 I2C でモーター制御
 
-- I2C 経由でモーターを（正転・反転）動かしたい [中村さんの記事](http://makaizou.blogspot.jp/2017/11/chirimen-rpi3_14.html)
+- I2C 経由でモーターを（正転・反転）動かしたい : [かんたん](#アクチュエータ類)や、[中村さんの記事](http://makaizou.blogspot.jp/2017/11/chirimen-rpi3_14.html)を参照
 
 ポンプ・スプレー
 
