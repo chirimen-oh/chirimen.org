@@ -33,9 +33,14 @@ window.onload = async function() {
 
 [CHIRIMEN Raspi3 チュートリアルの各ページはこちらでご覧頂けます](/raspi3/ja/readme.md)
 
-<!-- ## CHIRIMEN for TY51822r3 チュートリアル 
+<!-- 
+## CHIRIMEN for TY51822r3 チュートリアル 
 
 [CHIRIMEN TY51822r3 チュートリアルの各ページはこちらでご覧頂けます](/ty51822r3/ja/readme.md)
+
+## CHIRIMEN for microbit チュートリアル
+
+[CHIRIMEN for microbit チュートリアルの各ページはこちらでご覧頂けます](/microbit/ja/readme.md)
 -->
 
 ## Online Version / オンライン版
