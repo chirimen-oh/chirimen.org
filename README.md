@@ -33,6 +33,11 @@ window.onload = async function() {
 
 [CHIRIMEN Raspi3 チュートリアルの各ページはこちらでご覧頂けます](/raspi3/ja/readme.md)
 
+<!-- ## CHIRIMEN for TY51822r3 チュートリアル 
+
+[CHIRIMEN TY51822r3 チュートリアルの各ページはこちらでご覧頂けます](/ty51822r3/ja/readme.md)
+-->
+
 ## Online Version / オンライン版
 
 Latest version of this site is hosted on https://tutorial.chirimen.org/
