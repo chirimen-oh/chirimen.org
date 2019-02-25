@@ -130,4 +130,4 @@ TY51822r3 がちゃんと動作していれば、リストに「btGPIO2」 と�
 
 『[チュートリアル 0. Hello World](section0.md)』をやってみましょう。
 
-次の『[チュートリアル 0. Hello World](section0.md)』では TY51822r3 の使い方について学びます。
+次の『[チュートリアル 0. Hello World](section0.md)』では CHIRIMEN for TY51822r3 の使い方について学びます。
