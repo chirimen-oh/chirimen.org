@@ -87,7 +87,7 @@ Windows の場合は WebBluetooth 機能がまだ実験的機能扱いのため�
 
 ![Experimental Web Platform features](imgs/section0/chromeflagsenable.png)
 
-## CHIRIMEN for TY51822r3 LIVE examples へのアクセス
+### CHIRIMEN for TY51822r3 LIVE examples へのアクセス
 
 CHIRIMEN for TY51822r3 のアプリはブラウザ上で動作する Web アプリですのでブラウザでアクセスするだけで動作します。
 
@@ -107,7 +107,7 @@ CHIRIMEN for TY51822r3 のアプリはブラウザ上で動作する Web アプ�
 
 [![LEDBlink](imgs/section0/ledblink_1.png)](https://chirimen.org/chirimen-TY51822r3/bc/gpio/LEDblink/schematic.png)
 
-## example を実行してみる
+### example を実行してみる
 配線がうまくできたら、さっそく動かしてみましょう。
 Chrome または Chromium ブラウザで LIVE examples の LEDblink のページは開いているでしょうか?
 
