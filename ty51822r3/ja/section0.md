@@ -45,7 +45,7 @@ CHIRIMEN for TY51822r3 の構成
 
 ![基本ハードウエア一覧](imgs/section0/hardware.jpg)
 
-* 書き込み済みのBLE 開発ボード [スイッチサイエンス TY51822r3](https://www.switch-science.com/catalog/2574/?gclid=CjwKCAiA9efgBRAYEiwAUT-jtO3rkZ_sHHdPO15clRze6Sp-oG1NNPB7Kj2A36Hv1ddqWbHO6YHXYxoCOcQQAvD_BwE) × 1
+* `書き込み済みのBLE 開発ボード` [スイッチサイエンス TY51822r3](https://www.switch-science.com/catalog/2574/?gclid=CjwKCAiA9efgBRAYEiwAUT-jtO3rkZ_sHHdPO15clRze6Sp-oG1NNPB7Kj2A36Hv1ddqWbHO6YHXYxoCOcQQAvD_BwE) × 1
 * PC (Windows または Mac、BLE に対応している事) × 1
 * BLE 開発ボードに電源を供給するための USB Micro B ケーブル x 1
 * ピンヘッダー 16 Pin x 2
