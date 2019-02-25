@@ -6,6 +6,12 @@ JavaScript プログラミング未経験者は、まず Appendix の「[JavaScr
 
 また CHIRIMEN for Raspberry Pi 3 について既に知識があり、CHIRIMEN for TY51822r3 での相違点について知りたい場合は「[CHIRIMEN for Raspberry Pi 3 との違い](ble/ja/diff.md)」を参照してください。
 
+## [CHIRIMEN for TY51822r3 を使用する準備](setting.md)
+
+CHIRIMEN for TY51822r3 を使用するには、TY51822r3 にファームウェアの書き込みやブラウザの設定変更などを行う必要があります。
+
+ファームウェアの書き込み方やブラウザの設定変更方法などを紹介します。
+
 ## [0. Hello World 編](section0.md)
  [Web GPIO API](https://rawgit.com/browserobo/WebGPIO/master/) を使って定期的に LED を点滅するサンプルを動かしてみます。
 
