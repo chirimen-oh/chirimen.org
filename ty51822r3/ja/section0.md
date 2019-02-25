@@ -45,7 +45,7 @@ CHIRIMEN for TY51822r3 の構成
 
 ![基本ハードウエア一覧](imgs/section0/hardware.jpg)
 
-* `書き込み済みのBLE 開発ボード` [スイッチサイエンス TY51822r3](https://www.switch-science.com/catalog/2574/?gclid=CjwKCAiA9efgBRAYEiwAUT-jtO3rkZ_sHHdPO15clRze6Sp-oG1NNPB7Kj2A36Hv1ddqWbHO6YHXYxoCOcQQAvD_BwE) × 1
+* 書き込み済みのBLE 開発ボード [スイッチサイエンス TY51822r3](https://www.switch-science.com/catalog/2574/?gclid=CjwKCAiA9efgBRAYEiwAUT-jtO3rkZ_sHHdPO15clRze6Sp-oG1NNPB7Kj2A36Hv1ddqWbHO6YHXYxoCOcQQAvD_BwE) × 1
 * PC (Windows または Mac、BLE に対応している事) × 1
 * BLE 開発ボードに電源を供給するための USB Micro B ケーブル x 1
 * ピンヘッダー 16 Pin x 2
@@ -54,7 +54,7 @@ CHIRIMEN for TY51822r3 の構成
 
 TY51822r3 側のコネクタは USB Micro B ですので、PC 側のコネクタが USB-C 等の場合は適宜アダプタ等を使用してください。また、TY51822r3 と PC のデータ的な接続は BLE で行いますので、TY51822r3 への給電は PC からではなく、別途用意された AC アダプタ等からでも構いません。ただし購入後の一番最初は PC と接続して TY51822r3 にプログラムを書き込む必要があります。
 
-TY51822r3への書き込みについては『[Chirimen for TY51822r3 を使うための準備](seting.md)』をご覧ください
+TY51822r3への書き込みについては**[Chirimen for TY51822r3 を使うための準備](seting.md)**をご覧ください
 
 ピンヘッダーは TY51822r3 をブレッドボード上で使用するために別途用意する必要があります。
 
@@ -402,7 +402,7 @@ GPIO 端子に LED 等の部品を接続する際には端子がどれくらい�
 TY51822r3 の公式の仕様では GPIO 端子が (標準の設定では) ドライブできる電流は 0.5 mA までとなっており、LED を直接繋ぐにはそもそも心もとない数字です。CHIRIMEN for TY51822r3 の環境では GPIO 端子の high drive 設定という特別な機能を利用して、GPIO の端子 1 本あたり 5 mA までの電流をドライブできる設定になっています。
 
 ただしもう一つ、デバイス全体での電流が 15 mA までという制限があり、この範囲内で使用する必要があります。つまり、LED に 5 mA の電流を流すのであれば LED を同時に 3 個光らせるのが限界という事に注意してください。
-
+-->
 ## GPIOPortの処理
 
 さて `gpioAccess` を取得した後のコードですが `var port = gpioAccess.ports.get(7);` という部分で、**GPIO の 7 番ポートにアクセスするためのオブジェクト** を取得しています。
@@ -443,7 +443,6 @@ LEDblink の example はリポジトリ内の `bc/gpio/LEDblink` にあります
 ローカルにコピーしたファイルで CHIRIMEN for TY51822r3 を動かすには単にその `index.html` ファイルをブラウザにドロップする等で開いてください。
 
 注記 : 現在の所、HTML ファイルをローカルファイルとして file:// で開くだけで CHIRIMEN for TY51822r3 を動かす事ができますが、近年セキュリティポリシーの面からこのような動作に対する制限が厳しくなりつつあります。将来的には file:// で開いたファイルで bluetooth を使う事に対して何らかの制限がかかる可能性が無くはありません。ローカルサーバーを立ててそこにファイルを配置し、https:// でアクセスする事が最終的には確実な手段として残る事になると思われます。
--->
 
 # まとめ
 このチュートリアルでは、下記を実践してみました。
