@@ -140,6 +140,8 @@ CHIRIMEN for TY51822r3 のアプリはブラウザ上で動作する Web アプ�
 
 今回は、LIVE examples の中から、「**GPIO examples**」の「[**LEDblink**](https://chirimen.org/chirimen-TY51822r3/bc/gpio/LEDblink/)」のリンクをクリックしてください。
 
+test [**LEDblink**}(./example/section0/readme.md)
+
 次のような画面が開きます。まだ動作を開始していませんが、これが「L チカ」のアプリになっており、また動作に必要なブレッドボード上の配線が図示されています。
 
 [![LEDBlink](imgs/section0/ledblink_1.png)](https://chirimen.org/chirimen-TY51822r3/bc/gpio/LEDblink/schematic.png)
