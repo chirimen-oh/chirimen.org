@@ -23,7 +23,7 @@ CCHIRIMEN for Raspberry Pi 3 のスターターキットを使用して L チカ
 
 ## 配線
 <p>
-<img src="imgs/section0/h.png" alt="Browser"  height="250" style="float:right;padding-left:2em;">
+<img src="imgs/section0/h.jpg" alt="Browser"  height="250" style="float:right;padding-left:2em;">
 
 右図と同じように配線してみよう。
 
@@ -80,16 +80,15 @@ ADT7410使用 I2C 温度センサーモジュール
 
 ` $ i2cdetect -y -r 1 `
 
+ <img src="imgs/section2/ADT7410.png" alt="Browser" height="200" style="float:right;padding-left:2em
+ 
 すると、右図のような画面が表示されるはずです。
-
- <img src="imgs/section2/ADT7410.png" alt="Browser" height="200" style="float:right;padding-left:2em;">
 
 </p>
   
 ## Example を実行しよう
 <p>
-  <img src="imgs/section2/browser.png" alt="Browser" height="180" style="float:right;padding-left:2em;">
-
+  
 実際に動かしてみましょう。
 
 ` /home/pi/Desktop/gc/i2c/i2c-ADT7410/index.html `
@@ -98,8 +97,9 @@ ADT7410使用 I2C 温度センサーモジュール
   
 右下に数字がでていますね。
 
-これが温度センサーから取得した現在の温度 (摂氏) の表示になります。
+<img src="imgs/section2/browser.png" alt="Browser" height="180" style="float:right;padding-left:2em;">
 
+これが温度センサーから取得した現在の温度 (摂氏) の表示になります。
 
 これで I2C 温度計は完了です。
 
@@ -122,3 +122,10 @@ ADT7410使用 I2C 温度センサーモジュール
 * 『[チュートリアル 2. I2C 基礎編](./section2.md)』では Web I2C API の学習をします。
 
 * 『[チュートリアル 3. I2C 応用編（その他のセンサー）](./section3.md)』では測距センサーや光センサーなど他のセンサーも触っていきます。
+
+* 『[チュートリアル 4. GPIO/I2C編 まとめ](./section4.md)』 では、これまでの総括として GPIO と I2C の両方を組み合わせてエアコンのプロトタイプ (？) を作成します。
+
+* 『[チュートリアル 5 . WebBluetooth編](./section3.md)』 ではCHIRIMEN for Raspberry Pi 3 環境で Web Bluetooth API を使って制御します。
+
+* 『[チュートリアル 6. ステッピングモーター編](./section3.md)』 ではCHIRIMEN for Raspberry Pi 3 と Arduino を組み合わせてステップピングモーターを制御します。
+
