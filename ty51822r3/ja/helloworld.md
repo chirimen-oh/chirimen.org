@@ -66,23 +66,19 @@ Y51822r3 がちゃんと動作していれば、リストに「btGPIO2」 とい
 ADT7410使用 I2C 温度センサーモジュール
 
 </p>
-
-<p>
-  <img src="imgs/section2/adt7410_1.png" alt="Browser" height="200" style="float:right;">
   
 ## 配線
-
+<p>
+  <img src="imgs/section2/adt7410_1.png" alt="Browser" height="200" style="float:right;">
 右図と同じように配線してみよう。
 
 配線が終わったら、BLE 接続をクリック。
 
 </p>
-
-<p>
-  <img src="imgs/section2/adt7410_3.png" alt="Browser" height="180" style="float:right;">
   
 ## Example を実行しよう
-
+<p>
+  <img src="imgs/section2/adt7410_3.png" alt="Browser" height="180" style="float:right;">
 BLE 接続をクリックすると、右図のようになります。
 
 ターゲットの gtGPIO2 を選択して「ペア設定」を押してください。<br>
