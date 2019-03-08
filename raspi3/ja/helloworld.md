@@ -80,7 +80,7 @@ ADT7410使用 I2C 温度センサーモジュール
 
 ` $ i2cdetect -y -r 1 `
 
- <img src="imgs/section2/ADT7410.png" alt="Browser" height="200" style="float:right;padding-left:2em;">
+ <img src="imgs/section2/ADT7410.png" alt="Browser" height="200" style="float:right;padding-left:2em;padding-bottom:1em;">
  
 すると、右図のような画面が表示されるはずです。
 
@@ -92,10 +92,10 @@ ADT7410使用 I2C 温度センサーモジュール
 実際に動かしてみましょう。
 
 ` /home/pi/Desktop/gc/i2c/i2c-ADT7410/index.html `
-  
-<img src="imgs/section2/browser.png" alt="Browser" height="180" style="float:right;padding-left:2em;">
 
 ダブルクリックすると、ブラウザが起動し下記のような画面になります。
+ 
+<img src="imgs/section2/browser.png" alt="Browser" height="180" style="float:right;padding-left:2em;">
 
 右下に数字がでていますね。
 
