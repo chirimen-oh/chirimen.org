@@ -95,9 +95,9 @@ ADT7410使用 I2C 温度センサーモジュール
 
 ダブルクリックすると、ブラウザが起動し下記のような画面になります。
   
-右下に数字がでていますね。
-
 <img src="imgs/section2/browser.png" alt="Browser" height="180" style="float:right;padding-left:2em;">
+
+右下に数字がでていますね。
 
 これが温度センサーから取得した現在の温度 (摂氏) の表示になります。
 
