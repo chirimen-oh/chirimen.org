@@ -18,18 +18,13 @@ CHIRIMEN for TY51822r3 のスターターキットを使用して L チカと温
 * スターターキット
 * PC
 
-</p>
-
-## 用意ができたら
-
+注意<br>
 スターターキットの中身を確認しよう。<br>
 足りなかったり、多くあった場合は、近くの大人に知らせよう。
 
+## 配線
 <p>
 <img src="imgs/section0/ledblink_2.png" alt="Browser"  height="250" style="float:right;">
-
-## 配線
-
 右図と同じように配線してみよう。
 
 配線が終わったら、BLE 接続をクリックしよう。
@@ -38,10 +33,9 @@ CHIRIMEN for TY51822r3 のスターターキットを使用して L チカと温
 LED には方向がある。アノードが足が長い方。反対の足が短い方をカソードと言い GND 側に繋ぐ。抵抗はどちらかに繋ぐ。
 </p>
 
+## Example を実行しよう
 <p>
 <img src="imgs/section0/ledblink_3.png" alt="Browser" height="250" style="float:right;">
-
-## Example を実行しよう
 
 BLE 接続をクリックすると、右図のようになります。
 
@@ -61,12 +55,11 @@ Y51822r3 がちゃんと動作していれば、リストに「btGPIO2」 とい
 
 
 # I2C 温度センサー使ってみよう
-
-<p>
-  <img src="imgs/section2/adt7410_parts.jpg" alt="Browser" height="250" style="float:right;">
   
 ## 用意するもの
-
+<p>
+  <img src="imgs/section2/adt7410_parts.jpg" alt="Browser" height="200" style="float:right;">
+  
 * L チカを行った回路
 
 * 右図に書いてあるもの<br>
