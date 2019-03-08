@@ -4,7 +4,7 @@ layout: tutorial
 
 # スターターキットを使った HelloWorld 編
 
-CHIRIMEN for TY51822r3 のスターターキットを使用して L チカと温度を計測してみよう。
+CHIRIMEN for TY51822r3 のスターターキットを使用して L チカと I2C 温度計で気温を計測してみよう。
 
 <div style="page-break-before:always"></div>
 
