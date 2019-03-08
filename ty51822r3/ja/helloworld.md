@@ -34,8 +34,7 @@ CHIRIMEN for TY51822r3 のスターターキットを使用して L チカと温
 
 配線が終わったら、BLE 接続をクリックしよう。
 
-注意
-
+注意<br>
 LED には方向がある。アノードが足が長い方。反対の足が短い方をカソードと言い GND 側に繋ぐ。抵抗はどちらかに繋ぐ。
 </p>
 
@@ -77,7 +76,7 @@ ADT7410使用 I2C 温度センサーモジュール
 </p>
 
 <p>
-  <img src="imgs/section2/adt7410_1.png" alt="Browser" height="250" style="float:right;">
+  <img src="imgs/section2/adt7410_1.png" alt="Browser" height="200" style="float:right;">
   
 ## 配線
 
@@ -90,7 +89,7 @@ ADT7410使用 I2C 温度センサーモジュール
 </p>
 
 <p>
-  <img src="imgs/section2/adt7410_3.png" alt="Browser" height="200" style="float:right;">
+  <img src="imgs/section2/adt7410_3.png" alt="Browser" height="180" style="float:right;">
   
 ## Example を実行しよう
 
@@ -105,7 +104,7 @@ BLE の接続が正常にできれば、青いバーが消え動作を開始し�
 
 <p>
   
-<img src="imgs/section2/adt7410_4.png" alt ="Browser" height="200" style="float:right;">
+<img src="imgs/section2/adt7410_4.png" alt ="Browser" height="180" style="float:right;">
 
 右図の下に数字がでていますね。
 
