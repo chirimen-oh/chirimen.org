@@ -8,9 +8,9 @@ CHIRIMEN for TY51822r3 のスターターキットを使用して L チカと温
 
 <div style="page-break-before:always"></div>
 
-# L チカをやってみよう
+# 1. L チカをやってみよう
 <p>
-  <img src="imgs/section0/hardware.jpg" alt="Hardwear" height="250" style = "float:right;">
+  <img src="imgs/section0/hardware.jpg" alt="Hardwear" height="250" style = "float:right;padding-left:3em">
 
 ## 用意するもの
 
@@ -52,7 +52,7 @@ Y51822r3 がちゃんと動作していれば、リストに「btGPIO2」 とい
 
 
 
-# I2C 温度センサー使ってみよう
+# 2. I2C 温度センサー使ってみよう
 
   <p>
   <img src="imgs/section2/adt7410_parts.jpg" alt="Browser" height="200" style="float:right;">
