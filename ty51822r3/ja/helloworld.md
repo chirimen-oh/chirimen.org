@@ -7,12 +7,13 @@ layout: tutorial
 # スターターキットを使った HelloWorld 編
 
 CHIRIMEN for TY51822r3 のスターターキットを使用して L チカと温度を計測してみよう。
+<p>
+  <img src="imgs/section0/hardware.jpg" alt="Hardwear" height="250" style = "float:right;">
 
 # 初めに
 
 ## 用意するもの
-<p>
-<img src="imgs/section0/hardware.jpg" alt="Hardwear" height="250" style = "float:right;">
+
 
 * スターターキット
 * PC
@@ -29,10 +30,10 @@ CHIRIMEN for TY51822r3 のスターターキットを使用して L チカと温
 
 L チカとは、LED をチカチカと光らせること。
 
-## 配線
-
 <p>
 <img src="imgs/section0/ledblink_2.png" alt="Browser"  height="250" style="float:right;">
+
+## 配線
 
 右図と同じように配線してみよう。
 
@@ -43,10 +44,10 @@ L チカとは、LED をチカチカと光らせること。
 LED には方向がある。アノードが足が長い方。反対の足が短い方をカソードと言い GND 側に繋ぐ。抵抗はどちらかに繋ぐ。
 </p>
 
-## Example を実行しよう
-
 <p>
 <img src="imgs/section0/ledblink_3.png" alt="Browser" height="250" style="float:right;">
+
+## Example を実行しよう
 
 BLE 接続をクリックすると、右図のようになります。
 
@@ -63,12 +64,12 @@ Y51822r3 がちゃんと動作していれば、リストに「btGPIO2」 とい
 
 <div style="page-break-before:always"></div>
 
+<p>
+  <img src="imgs/section2/adt7410_parts.jpg" alt="Browser" height="250" style="float:right;">
+
 # I2C 温度センサー使ってみよう
 
 ## 用意するもの
-
-<p>
-<img src="imgs/section2/adt7410_parts.jpg" alt="Browser" height="250" style="float:right;">
 
 * L チカを行った回路
 
@@ -76,9 +77,12 @@ Y51822r3 がちゃんと動作していれば、リストに「btGPIO2」 とい
 抵抗 10kΩ * 2 個 <br>
 ADT7410使用 I2C 温度センサーモジュール
 
-## 配線
+</p>
 
 <p>
+  
+## 配線
+
 <img src="imgs/section2/adt7410_1.png" alt="Browser" height="250" style="float:right;">
 
 右図と同じように配線してみよう。
@@ -87,11 +91,11 @@ ADT7410使用 I2C 温度センサーモジュール
 
 </p>
 
-## Example を実行しよう
-
 <p>
   
-<img src="imgs/section2/adt7410_3.png" alt="Browser" height="250" style="float:right;">
+## Example を実行しよう
+
+<img src="imgs/section2/adt7410_3.png" alt="Browser" height="200" style="float:right;">
 
 BLE 接続をクリックすると、右図のようになります。
 
@@ -102,7 +106,7 @@ BLE の接続が正常にできれば、青いバーが消え動作を開始し�
 
 <p>
   
-<img src="imgs/section2/adt7410_4.png" alt ="Browser" height="250" style="float:right;">
+<img src="imgs/section2/adt7410_4.png" alt ="Browser" height="200" style="float:right;">
 
 右図の下に数字がでていますね。
 
