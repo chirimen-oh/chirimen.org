@@ -10,7 +10,7 @@ CCHIRIMEN for Raspberry Pi 3 のスターターキットを使用して L チカ
 
 # 1. L チカをやってみよう
 <p>
-  <img src="imgs/section0/raspi3.jpg" alt="Hardware" height="250" style = "float:right;padding-left:2em;">
+  <img src="imgs/section0/Raspi3.jpg" alt="Hardware" height="250" style = "float:right;padding-left:2em;">
 
 ## 用意するもの
 
@@ -82,7 +82,7 @@ ADT7410使用 I2C 温度センサーモジュール
 
 すると、右図のような画面が表示されるはずです。
 
- <img src="imgs/section2/adt7410.png" alt="Browser" height="200" style="float:right;padding-left:2em;">
+ <img src="imgs/section2/ADT7410.png" alt="Browser" height="200" style="float:right;padding-left:2em;">
 
 </p>
   
