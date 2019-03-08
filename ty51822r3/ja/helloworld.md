@@ -1,3 +1,9 @@
+---
+layout: tutorial
+---
+
+***
+
 # スターターキットを使った HelloWorld 編
 
 CHIRIMEN for TY51822r3 のスターターキットを使用して L チカと温度を計測してみよう。
@@ -6,7 +12,7 @@ CHIRIMEN for TY51822r3 のスターターキットを使用して L チカと温
 
 ## 用意するもの
 
-画像
+![基本ハードウエア一覧](imgs/section0/hardware.jpg)
 
 * スターターキット
 * PC
@@ -24,7 +30,7 @@ L チカとは、LED をチカチカと光らせること。
 ## 配線
 
 <p>
-<img src="/imgs/section0/ledblink_2.png" alt="Browser" style="float:right;">
+<img src="imgs/section0/ledblink_2.png" alt="Browser" style="float:right;">
 
 右図と同じように配線してみよう。
 
@@ -60,7 +66,7 @@ Y51822r3 がちゃんと動作していれば、リストに「btGPIO2」 とい
 ## 用意するもの
 
 <p>
-<img src="/imgs/section2/adt7410_parts.jpg" alt="Browser" style="float:right;">
+<img src="imgs/section2/adt7410_parts.jpg" alt="Browser" style="float:right;">
 
 * L チカを行った回路
 
@@ -71,7 +77,7 @@ ADT7410使用 I2C 温度センサーモジュール
 ## 配線
 
 <p>
-<img src="/imgs/section2/adt7410_1.png" alt="Browser" style="float:right;">
+<img src="imgs/section2/adt7410_1.png" alt="Browser" style="float:right;">
 
 右図と同じように配線してみよう。
 
@@ -82,7 +88,7 @@ ADT7410使用 I2C 温度センサーモジュール
 ## Example を実行しよう
 
 <p>
-<img src="/imgs/section0/adt7410_3.png" alt="Browser" style="float:right;">
+<img src="imgs/section0/adt7410_3.png" alt="Browser" style="float:right;">
 
 BLE 接続をクリックすると、右図のようになります。
 
@@ -91,7 +97,7 @@ BLE 接続をクリックすると、右図のようになります。
 BLE の接続が正常にできれば、青いバーが消え動作を開始します。
 </p>
 <p>
-<img src="/img/section2/adt7410_4.png" alt ="Browser" style="float:right;">
+<img src="img/section2/adt7410_4.png" alt ="Browser" style="float:right;">
 
 右図の下に数字がでていますね。
 
