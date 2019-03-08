@@ -61,8 +61,10 @@ Y51822r3 がちゃんと動作していれば、リストに「btGPIO2」 とい
 
 * L チカを行った回路
 
-* 右図に書いてあるもの<br>
-抵抗 10kΩ * 2 個 <br>
+* 右図に書いてあるもの
+
+抵抗 10kΩ * 2 個 
+
 ADT7410使用 I2C 温度センサーモジュール
 
 </p>
@@ -80,17 +82,17 @@ ADT7410使用 I2C 温度センサーモジュール
   
 ## Example を実行しよう
 <p>
-  <ul>
-    <li><img src="imgs/section2/adt7410_3.png" alt="Browser" height="180" style="float:right;padding-left:2em;"><br></li>
-    <li><img src="imgs/section2/adt7410_4.png" alt ="Browser" height="180" style="float:right;padding-left:2em;"></li>
-  </ul>
-
+  <img src="imgs/section2/adt7410_3.png" alt="Browser" height="180" style="float:right;padding-left:2em;">
+  
 BLE 接続をクリックすると、右図のようになります。
 
-ターゲットの gtGPIO2 を選択して「ペア設定」を押してください。<br>
+ターゲットの gtGPIO2 を選択して「ペア設定」を押してください。
+
 BLE の接続が正常にできれば、青いバーが消え動作を開始します。
   
 右図の下に数字がでていますね。
+
+<img src="imgs/section2/adt7410_4.png" alt ="Browser" height="180" style="float:right;padding-left:2em;">
 
 これが温度センサーから取得した現在の温度 (摂氏) の表示になります。
 
