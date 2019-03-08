@@ -80,9 +80,10 @@ ADT7410使用 I2C 温度センサーモジュール
   
 ## Example を実行しよう
 <p>
-  <img src="imgs/section2/adt7410_3.png" alt="Browser" height="180" style="float:right;padding-left:2em;">
-  <br>
-  <img src="imgs/section2/adt7410_4.png" alt ="Browser" height="180" style="float:right;padding-left:2em;">
+  <ul>
+    <li><img src="imgs/section2/adt7410_3.png" alt="Browser" height="180" style="float:right;padding-left:2em;"><br></li>
+    <li><img src="imgs/section2/adt7410_4.png" alt ="Browser" height="180" style="float:right;padding-left:2em;"></li>
+  </ul>
 
 BLE 接続をクリックすると、右図のようになります。
 
