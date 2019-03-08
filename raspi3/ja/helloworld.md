@@ -80,7 +80,7 @@ ADT7410使用 I2C 温度センサーモジュール
 
 ` $ i2cdetect -y -r 1 `
 
- <img src="imgs/section2/ADT7410.png" alt="Browser" height="200" style="float:right;padding-left:2em
+ <img src="imgs/section2/ADT7410.png" alt="Browser" height="200" style="float:right;padding-left:2em>
  
 すると、右図のような画面が表示されるはずです。
 
