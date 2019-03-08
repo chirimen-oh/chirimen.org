@@ -10,7 +10,7 @@ CHIRIMEN for TY51822r3 のスターターキットを使用して L チカと温
 
 # 1. L チカをやってみよう
 <p>
-  <img src="imgs/section0/hardware.jpg" alt="Hardwear" height="250" style = "float:right;padding-left:3em">
+  <img src="imgs/section0/hardware.jpg" alt="Hardware" height="250" style = "float:right;padding-left:2em;">
 
 ## 用意するもの
 
@@ -23,7 +23,7 @@ CHIRIMEN for TY51822r3 のスターターキットを使用して L チカと温
 
 ## 配線
 <p>
-<img src="imgs/section0/ledblink_2.png" alt="Browser"  height="250" style="float:right;">
+<img src="imgs/section0/ledblink_2.png" alt="Browser"  height="250" style="float:right;padding-left:2em;">
 右図と同じように配線してみよう。
 
 配線が終わったら、BLE 接続をクリックしよう。
@@ -34,7 +34,7 @@ LED には方向がある。アノードが足が長い方。反対の足が短�
 
 ## Example を実行しよう
 <p>
-<img src="imgs/section0/ledblink_3.png" alt="Browser" height="250" style="float:right;">
+<img src="imgs/section0/ledblink_3.png" alt="Browser" height="250" style="float:right;padding-left:2em;">
 
 BLE 接続をクリックすると、右図のようになります。
 
@@ -55,7 +55,7 @@ Y51822r3 がちゃんと動作していれば、リストに「btGPIO2」 とい
 # 2. I2C 温度センサー使ってみよう
 
   <p>
-  <img src="imgs/section2/adt7410_parts.jpg" alt="Browser" height="200" style="float:right;">
+  <img src="imgs/section2/adt7410_parts.jpg" alt="Browser" height="200" width="500" style="float:right;padding-left:2em;">
   
 ## 用意するもの
 
@@ -66,10 +66,12 @@ Y51822r3 がちゃんと動作していれば、リストに「btGPIO2」 とい
 ADT7410使用 I2C 温度センサーモジュール
 
 </p>
+
+<p>
+  <img src="imgs/section2/adt7410_1.png" alt="Browser" height="200" style="float:right;padding-left:2em;">
   
 ## 配線
-<p>
-  <img src="imgs/section2/adt7410_1.png" alt="Browser" height="200" style="float:right;">
+
 右図と同じように配線してみよう。
 
 配線が終わったら、BLE 接続をクリック。
@@ -78,7 +80,7 @@ ADT7410使用 I2C 温度センサーモジュール
   
 ## Example を実行しよう
 <p>
-  <img src="imgs/section2/adt7410_3.png" alt="Browser" height="180" style="float:right;">
+  <img src="imgs/section2/adt7410_3.png" alt="Browser" height="180" style="float:right;padding-left:2em;">
 BLE 接続をクリックすると、右図のようになります。
 
 ターゲットの gtGPIO2 を選択して「ペア設定」を押してください。<br>
@@ -87,7 +89,7 @@ BLE の接続が正常にできれば、青いバーが消え動作を開始し�
 
 <p>
   
-<img src="imgs/section2/adt7410_4.png" alt ="Browser" height="180" style="float:right;">
+<img src="imgs/section2/adt7410_4.png" alt ="Browser" height="180" style="float:right;padding-left:2em;">
 
 右図の下に数字がでていますね。
 
