@@ -2,7 +2,7 @@
 layout: tutorial
 ---
 
-***
+<div style="page-break-before:always"></div>
 
 # スターターキットを使った HelloWorld 編
 
@@ -61,7 +61,7 @@ Y51822r3 がちゃんと動作していれば、リストに「btGPIO2」 とい
 
 </p>
 
-***
+<div style="page-break-before:always"></div>
 
 # I2C 温度センサー使ってみよう
 
