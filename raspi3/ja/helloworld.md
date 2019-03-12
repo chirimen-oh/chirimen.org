@@ -7,13 +7,14 @@ CCHIRIMEN for Raspberry Pi 3 のスターターキットを使用して L チカ
 
 # 1. L チカをやってみよう
 <p>
-  <a href="imgs/section0/Raspi3.jpg">
+  <a href="imgs/starterkit/starterset.jpg">
     <img src="imgs/section0/Raspi3.jpg" alt="Hardware" height="250" style = "float:right;padding-left:2em;">
   </a>
 
 ## 用意するもの
 
 * スターターキット<br>
+* Raspberry Pi 3 <br>
 * PC
 
 注意<br>
