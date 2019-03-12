@@ -63,6 +63,7 @@ Y51822r3 がちゃんと動作していれば、リストに「btGPIO2」 とい
 
 * [その他の GPIO の例はこちら](http://chirimen.org/chirimen-raspi3/gc/top/examples/#gpioExamples)
 
+L チカ編はこれで終了です
 
 <div style="page-break-before:always"></div>
 
@@ -130,5 +131,7 @@ BLE の接続が正常にできれば、青いバーが消え動作を開始し�
 * [応用例はこちら](http://chirimen.org/chirimen-raspi3/gc/top/examples/#advanced)
 
 </p>
+
+I2C 温度計編はこれで終了です
 
 <div style="page-break-before:always"></div>
