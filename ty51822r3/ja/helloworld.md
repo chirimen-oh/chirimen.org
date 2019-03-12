@@ -60,70 +60,11 @@ Y51822r3 がちゃんと動作していれば、リストに「btGPIO2」 とい
 
 [今回使用したコードはこちら](https://github.com/chirimen-oh/chirimen-TY51822r3/tree/master/bc/gpio/LEDblink)
 
-今回のコードの一部を以下に示します。
-
-## HTML
-
-```html
-<!doctype html>
-<html>
-  <head>
-    <meta charset="UTF-8" />
-    <title>LED Blink</title>
-    <script src="../../polyfill/blePolyfill.js"></script>
-    <script src="./main.js"></script>
-  </head>
-  <body>
-  <div><input type="button" id="BLECONN" value="BLE接続"></div>
-  </body>
-</html>
-```
-
-## JavaScript
-
-```javascript
-'use strict';
-
-const DEVICE_UUID     = "928a3d40-e8bf-4b2b-b443-66d2569aed50";
-let connectButton;
-window.addEventListener(
-  "load",
-  function() {
-    connectButton = document.querySelector("#BLECONN");
-    connectButton.addEventListener("click", mainFunction);
-  },
-  false
-);
-
-async function mainFunction(){ // プログラムの本体となる関数、非同期処理のためプログラム全体をasync関数で包みます。
-	var bleDevice = await navigator.bluetooth.requestDevice({
-      filters: [{ services: [DEVICE_UUID] }] });
-	var gpioAccess = await navigator.requestGPIOAccess(bleDevice); // thenの前の関数をawait接頭辞をつけて呼び出します。
-	connectButton.hidden = true;
-	var port = gpioAccess.ports.get(7);
-	await port.export("out");
-	var v = 0;
-	while ( true ){ // 無限ループ
-		await sleep(1000); // 1000ms待機する
-		v ^= 1; // v = v ^ 1 (XOR 演算)の意。　vが1の場合はvが0に、0の場合は1に変化する。1でLED点灯、0で消灯するので、1秒間隔でLEDがON OFFする。
-		await port.write(v);
-	}
-}
-
-// この関数の定義方法はとりあえず気にしなくて良いです。コピペしてください。
-// 単に指定したms秒スリープするだけの非同期処理関数
-function sleep(ms){
-	return new Promise( function(resolve) {
-		setTimeout(resolve, ms);
-	});
-}
-```
-
-これで、 L チカ編は終了です。
 
 * [その他の GPIO の例はこちら](http://chirimen.org/chirimen-raspi3/gc/top/examples/#gpioExamples)
 
 
+<div style="page-break-before:always"></div>
 
 # 2. I2C 温度センサー使ってみよう
 
