@@ -4,9 +4,11 @@ repository: chirimen-oh/tutorials
 title: '<a href="/" style="color: white">CHIRIMEN チュートリアル</a>'
 description: >-
   <a href="https://chirimen.org/" style="color: white">CHIRIMEN</a>を初めて使う方向けの <a href="https://tutorial.chirimen.org/" style="color: white">チュートリアル集</a> です<br>
+  <!--
   <a href="https://tutorial.chirimen.org/" style="color: white">目次のページ</a> からチュートリアルの各ページをご覧ください<br>
+  -->
   <a href="/raspi3/ja/" style="color: white">CHIRIMEN for Raspberry Pi 3 用チュートリアル</a><br>
-   <a href="/ty51822r3/ja" style="color: white">CHIRIMEN for  TY51822r3 用チュートリアルページ</a>
+  <a href="/ty51822r3/ja" style="color: white">CHIRIMEN for  TY51822r3 用チュートリアルページ</a><br>
   Enjoy <a href="/raspi3/en/" style="color: white">Tutorials for CHIRIMEN for Raspberry Pi 3</a>
 show_downloads: false
 # google_analytics:
