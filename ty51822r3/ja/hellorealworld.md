@@ -61,7 +61,7 @@ Y51822r3 がちゃんと動作していれば、リストに「btGPIO2」 とい
 [今回使用したコードはこちら](https://github.com/chirimen-oh/chirimen-TY51822r3/tree/master/bc/gpio/LEDblink)
 
 
-* [その他の GPIO の例はこちら](http://chirimen.org/chirimen-raspi3/gc/top/examples/#gpioExamples)
+* [その他の GPIO の例はこちら](https://chirimen.org/chirimen-TY51822r3/bc/)
 
 L チカ編はこれで終了です
 
@@ -127,8 +127,7 @@ BLE の接続が正常にできれば、青いバーが消え動作を開始し�
 [今回使用したコードはこちら](https://github.com/chirimen-oh/chirimen-TY51822r3/tree/master/bc/i2c/i2c-ADT7410)
 
 
-* [その他の I2C の例はこちら](http://chirimen.org/chirimen-raspi3/gc/top/examples/#i2cExamples)
-* [応用例はこちら](http://chirimen.org/chirimen-raspi3/gc/top/examples/#advanced)
+* [その他の I2C の例はこちら](https://chirimen.org/chirimen-TY51822r3/bc/)
 
 </p>
 
