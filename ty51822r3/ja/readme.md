@@ -12,6 +12,9 @@ CHIRIMEN for TY51822r3 を使用するには、TY51822r3 にファームウェ�
 
 ファームウェアの書き込み方やブラウザの設定変更方法などを紹介します。
 
+## [Hello Real World](hellorealworld.md)
+L チカと I2C 温度計の使い方を簡単に説明します。詳細を知りたい場合は、以下のチュートリアルを参照してください。
+
 ## [0. Hello World 編](section0.md)
  [Web GPIO API](https://rawgit.com/browserobo/WebGPIO/master/) を使って定期的に LED を点滅するサンプルを動かしてみます。
 
