@@ -40,6 +40,12 @@ L チカと I2C 温度計の使い方の簡易的なチュートリアルです�
       * ライブラリにmicro:bit用のWebGPIO APIが用意されているので、Raspberry Pi3のGPIOポートと同様に操作できます。
 * [6. ステッピングモーター編](section6.md)
   * CHIRIMEN for Raspberry Pi 3 と Arduino を組み合わせてステップピングモーターを制御するチュートリアルです。I2C 接続した Arduino を利用することで μ 秒単位でモータードライバの制御を行います。
+  
+## Example 編
+CHIRIMEN for Raspberry Pi 3 の Example はこちらです。
+* [Example GPIO 編](http://chirimen.org/chirimen-raspi3/gc/top/examples/#gpioExamples)
+* [Example I2C 編](http://chirimen.org/chirimen-raspi3/gc/top/examples/#i2cExamples)
+* [Example advanced 編](http://chirimen.org/chirimen-raspi3/gc/top/examples/#advanced)
 
 ## Appendix / FAQ
 JavaScript 未経験者や非同期処理の未経験者はチュートリアルと合わせてこちらをご覧ください:
