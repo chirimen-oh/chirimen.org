@@ -100,16 +100,16 @@ ADT7410使用 I2C 温度センサーモジュール
 </p>
   
 ## Example を実行しよう
+  
+BLE 接続をクリックすると、右図のようになります。
+
+ターゲットの gtGPIO2 を選択して「ペア設定」を押してください。
 
 <p>
   <a href="imgs/section2/adt7410_3.png">
     <img src="imgs/section2/adt7410_3.png" alt="Browser" height="180" style="float:right;padding-left:2em;">
   </a>
   
-BLE 接続をクリックすると、右図のようになります。
-
-ターゲットの gtGPIO2 を選択して「ペア設定」を押してください。
-
 BLE の接続が正常にできれば、青いバーが消え動作を開始します。
   
 右下の図に数字がでていますね。
