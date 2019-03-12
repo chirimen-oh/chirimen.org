@@ -64,6 +64,8 @@ LED には方向がある。アノードが足が長い方。反対の足が短�
 
 * [その他の GPIO の例はこちら](http://chirimen.org/chirimen-raspi3/gc/top/examples/#gpioExamples)
 
+L チカ編はこれで終了です
+
 <div style="page-break-before:always"></div>
 
 # 2. I2C 温度センサー使ってみよう
@@ -99,7 +101,7 @@ ADT7410使用 I2C 温度センサーモジュール
 ` $ i2cdetect -y -r 1 `
 
  <a href="imgs/section2/ADT7410.png">
-  <img src="imgs/section2/ADT7410.png" alt="Browser" height="200" style="float:right;padding-left:2em;padding-top:1em;">
+  <img src="imgs/section2/ADT7410.png" alt="Browser" height="200" style="float:right;padding-left:2em;margin-bottom:2em;">
  </a>
  
 すると、右図のような画面が表示されるはずです。
@@ -126,7 +128,7 @@ ADT7410使用 I2C 温度センサーモジュール
 
 これが温度センサーから取得した現在の温度 (摂氏) の表示になります。
 
-これで I2C 温度計は完了です。
+これで I2C 温度計編は完了です。
 
 </p>
 
@@ -137,7 +139,7 @@ ADT7410使用 I2C 温度センサーモジュール
 * [その他の I2C の例はこちら](http://chirimen.org/chirimen-raspi3/gc/top/examples/#i2cExamples)
 * [応用例はこちら](http://chirimen.org/chirimen-raspi3/gc/top/examples/#advanced)
 
-
+I2C 温度計編はこれで終了です。
 
 
 <!--
