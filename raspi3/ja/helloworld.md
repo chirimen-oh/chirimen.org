@@ -60,49 +60,7 @@ LED には方向がある。アノードが足が長い方。反対の足が短�
 
 ## コード
 
-## HTML
-```html
-<!DOCTYPE html>
-<html>
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width">
-  <title>GPIO-Blink</title>
-</head>
-<body>
-<script src="https://chirimen.org/chirimen-raspi3/gc/polyfill/polyfill.js"></script>
-</body>
-</html>
-```
-
-## JavaScript
-```javascript
-
-async function mainFunction() {
-  // プログラムの本体となる関数。非同期処理を await で扱えるよう全体を async 関数で包みます
-  var gpioAccess = await navigator.requestGPIOAccess(); // 非同期関数は await を付けて呼び出す
-  var port = gpioAccess.ports.get(26);
-  var v = 0;
-
-  await port.export("out");
-  for (;;) {
-    // 無限ループ
-    await sleep(1000); // 無限ループの繰り返し毎に 1000ms 待機する
-    v = v === 0 ? 1 : 0; // vの値を0,1入れ替える。1で点灯、0で消灯するので、1秒間隔でLEDがON OFFする
-    port.write(v);
-  }
-}
-
-// await sleep(ms) と呼べば指定 ms 待機する非同期関数
-// 同じものが polyfill.js でも定義されているため省略可能
-function sleep(ms) {
-  return new Promise(resolve => {
-    setTimeout(resolve, ms);
-  });
-}
-
-mainFunction(); // 定義したasync関数を実行します（このプログラムのエントリーポイント）
-```
+[今回使用したコードはこちら](https://r.chirimen.org/gpio-blink)
 
 * [その他の GPIO の例はこちら](http://chirimen.org/chirimen-raspi3/gc/top/examples/#gpioExamples)
 
@@ -172,10 +130,13 @@ ADT7410使用 I2C 温度センサーモジュール
 
 </p>
 
+## コード
+
+[今回使用したコードはこちら](https://r.chirimen.org/i2c-adt7410)
+
 * [その他の I2C の例はこちら](http://chirimen.org/chirimen-raspi3/gc/top/examples/#i2cExamples)
 * [応用例はこちら](http://chirimen.org/chirimen-raspi3/gc/top/examples/#advanced)
 
-## コード
 
 
 
