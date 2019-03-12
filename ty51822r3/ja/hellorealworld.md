@@ -116,11 +116,11 @@ BLE の接続が正常にできれば、青いバーが消え動作を開始し�
 
 これが温度センサーから取得した現在の温度 (摂氏) の表示になります。
 
+これで I2C 温度計は完了です。
+
 <a href="imgs/section2/adt7410_4.png">
   <img src="imgs/section2/adt7410_4.png" alt ="Browser" height="180" style="float:right;padding-left:2em;">
 </a>
-
-これで I2C 温度計は完了です。
 
 ## コード
 
