@@ -1,25 +1,29 @@
 
-# スターターキットを使った HelloWorld 編
+# Hello Real World
 
-CCHIRIMEN for Raspberry Pi 3 のスターターキットを使用して L チカと I2C 温度計で気温を計測してみよう。
+CHIRIMEN for Raspberry Pi 3 のスターターキットを使用して L チカと I2C 温度計で気温を計測してみよう。
 
 <div style="page-break-before:always"></div>
 
 # 1. L チカをやってみよう
 <p>
-  <a href="imgs/starterkit/starterset.jpg">
-    <img src="imgs/starterkit/starterset.jpg" alt="Hardware" height="250" style = "float:right;padding-left:2em;">
+  <a href="imgs/section0/raspi3.png">
+    <img src="imgs/section0/raspi3.jpg" alt="Hardware" height="250" style = "float:right;padding-left:2em;">
   </a>
 
 ## 用意するもの
 
-* スターターキット<br>
-* Raspberry Pi 3 <br>
-* PC
-
-注意<br>
-スターターキットの中身を確認しよう。<br>
-足りなかったり、多くあった場合は、近くの大人に知らせよう。
+* Raspberry Pi 3 Model B もしくは Raspberry Pi 3 Model B+ × 1
+* AC アダプタ + micro B USB 電源ケーブル × 1
+* HDMI 入力つきのモニタ × 1
+* HDMI ケーブル (モニタ側の端子と合うものを選んでください) × 1
+* USB マウス × 1
+* USB キーボード (日本語配列) × 1
+* micro SD カード (8GB 以上必須、Class 10 以上で高速なものを推奨) × 1
+* ブレッドボード × 1
+* リード付き LED × 1
+* リード付き抵抗器 (150-470Ω ※お使いの LED により。スターターキットは 150Ω を使用します。) × 1
+* ジャンパーワイヤー (オス-メス) x 2
 
 ## 配線
 
@@ -30,8 +34,6 @@ CCHIRIMEN for Raspberry Pi 3 のスターターキットを使用して L チカ
 
 右図と同じように配線してみよう。
 
-配線が終わったら、BLE 接続をクリックしよう。
-
 注意<br>
 LED には方向がある。アノードが足が長い方。反対の足が短い方をカソードと言い GND 側に繋ぐ。抵抗はどちらかに繋ぐ。
 </p>
@@ -40,34 +42,19 @@ LED には方向がある。アノードが足が長い方。反対の足が短�
 
 <p>
   <a href="imgs/section0/browser.png">
-    <img src="imgs/section0/browser.png" alt="Browser" height="250" style="float:right;padding-left:2em;">
+    <img src="imgs/section0/browser.png" alt="Browser" height="250" style="float:right;padding-left:1em;">
   </a>
 
 `/home/pi/Desktop/gc/gpio/LEDblink/index.html`
 
 をダブルクリックすると、ブラウザが起動し、先ほど配線した LED が点滅しているはずです！
-
 ブレッドボード上では LED が点滅して L チカが動作しはじめます。
 
 [オンライン Example はこちら](https://r.chirimen.org/gpio-blink)
 
-これで L チカは完了です。
-
-</p>
-
-<!--
-<div style="page-break-before:always"></div>
--->
-
-## コード
-
 [今回使用したコードはこちら](https://r.chirimen.org/gpio-blink)
 
 * [その他の GPIO の例はこちら](http://chirimen.org/chirimen-raspi3/gc/top/examples/#gpioExamples)
-
-L チカ編はこれで終了です
-
-<div style="page-break-before:always"></div>
 
 # 2. I2C 温度センサー使ってみよう
 
