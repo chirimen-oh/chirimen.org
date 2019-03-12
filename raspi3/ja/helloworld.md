@@ -1,6 +1,3 @@
----
-layout: tutorial
----
 
 # スターターキットを使った HelloWorld 編
 
@@ -10,7 +7,9 @@ CCHIRIMEN for Raspberry Pi 3 のスターターキットを使用して L チカ
 
 # 1. L チカをやってみよう
 <p>
-  <img src="imgs/section0/Raspi3.jpg" alt="Hardware" height="250" style = "float:right;padding-left:2em;">
+  <a href="imgs/section0/Raspi3.jpg">
+    <img src="imgs/section0/Raspi3.jpg" alt="Hardware" height="250" style = "float:right;padding-left:2em;">
+  </a>
 
 ## 用意するもの
 
@@ -22,8 +21,11 @@ CCHIRIMEN for Raspberry Pi 3 のスターターキットを使用して L チカ
 足りなかったり、多くあった場合は、近くの大人に知らせよう。
 
 ## 配線
+
 <p>
-<img src="imgs/section0/h.jpg" alt="Browser"  height="250" style="float:right;padding-left:2em;">
+  <a href="imgs/section0/h.jpg">
+    <img src="imgs/section0/h.jpg" alt="Browser"  height="250" style="float:right;padding-left:2em;">
+  </a>
 
 右図と同じように配線してみよう。
 
@@ -34,29 +36,85 @@ LED には方向がある。アノードが足が長い方。反対の足が短�
 </p>
 
 ## Example を実行しよう
-<p>
-<img src="imgs/section0/browser.png" alt="Browser" height="250" style="float:right;padding-left:2em;">
 
-` /home/pi/Desktop/gc/gpio/LEDblink/index.html
-index.html `
+<p>
+  <a href="imgs/section0/browser.png">
+    <img src="imgs/section0/browser.png" alt="Browser" height="250" style="float:right;padding-left:2em;">
+  </a>
+
+`/home/pi/Desktop/gc/gpio/LEDblink/index.html`
 
 をダブルクリックすると、ブラウザが起動し、先ほど配線した LED が点滅しているはずです！
 
 ブレッドボード上では LED が点滅して L チカが動作しはじめます。
 
+[オンライン Example はこちら](https://r.chirimen.org/gpio-blink)
+
 これで L チカは完了です。
 
 </p>
 
+<!--
 <div style="page-break-before:always"></div>
+-->
 
+## コード
 
+## HTML
+```html
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>GPIO-Blink</title>
+</head>
+<body>
+<script src="https://chirimen.org/chirimen-raspi3/gc/polyfill/polyfill.js"></script>
+</body>
+</html>
+```
+
+## JavaScript
+```javascript
+
+async function mainFunction() {
+  // プログラムの本体となる関数。非同期処理を await で扱えるよう全体を async 関数で包みます
+  var gpioAccess = await navigator.requestGPIOAccess(); // 非同期関数は await を付けて呼び出す
+  var port = gpioAccess.ports.get(26);
+  var v = 0;
+
+  await port.export("out");
+  for (;;) {
+    // 無限ループ
+    await sleep(1000); // 無限ループの繰り返し毎に 1000ms 待機する
+    v = v === 0 ? 1 : 0; // vの値を0,1入れ替える。1で点灯、0で消灯するので、1秒間隔でLEDがON OFFする
+    port.write(v);
+  }
+}
+
+// await sleep(ms) と呼べば指定 ms 待機する非同期関数
+// 同じものが polyfill.js でも定義されているため省略可能
+function sleep(ms) {
+  return new Promise(resolve => {
+    setTimeout(resolve, ms);
+  });
+}
+
+mainFunction(); // 定義したasync関数を実行します（このプログラムのエントリーポイント）
+```
+
+* [その他の GPIO の例はこちら](http://chirimen.org/chirimen-raspi3/gc/top/examples/#gpioExamples)
+
+<div style="page-break-before:always"></div>
 
 # 2. I2C 温度センサー使ってみよう
 
-  <p>
-  <img src="imgs/section2/parts.jpg" alt="Browser" height="200" style="float:right;padding-left:2em;">
-
+<p>
+  <a href="imgs/section2/parts.jpg">
+    <img src="imgs/section2/parts.jpg" alt="Browser" height="200" style="float:right;padding-left:2em;">
+  </a>
+  
 ## 用意するもの
 
 * L チカを行った回路
@@ -70,7 +128,9 @@ ADT7410使用 I2C 温度センサーモジュール
 </p>
 
 <p>
-  <img src="imgs/section2/schematic.png" alt="Browser" height="200" style="float:right;padding-left:2em;">
+  <a href="imgs/section2/schematic.png">
+    <img src="imgs/section2/schematic.png" alt="Browser" height="200" style="float:right;padding-left:2em;">
+  </a>
   
 ## 配線
 
@@ -80,7 +140,9 @@ ADT7410使用 I2C 温度センサーモジュール
 
 ` $ i2cdetect -y -r 1 `
 
- <img src="imgs/section2/ADT7410.png" alt="Browser" height="200" style="float:right;padding-left:2em;padding-top:1em;">
+ <a href="imgs/section2/ADT7410.png">
+  <img src="imgs/section2/ADT7410.png" alt="Browser" height="200" style="float:right;padding-left:2em;padding-top:1em;">
+ </a>
  
 すると、右図のような画面が表示されるはずです。
 
@@ -91,11 +153,16 @@ ADT7410使用 I2C 温度センサーモジュール
   
 実際に動かしてみましょう。
 
-` /home/pi/Desktop/gc/i2c/i2c-ADT7410/index.html `
+`/home/pi/Desktop/gc/i2c/i2c-ADT7410/index.html`
 
 ダブルクリックすると、ブラウザが起動し下記のような画面になります。
+
+[オンライン Example はこちら](https://r.chirimen.org/i2c-adt7410)
+
  
-<img src="imgs/section2/browser.png" alt="Browser" height="180" style="float:right;padding-left:2em;">
+<a href="imgs/section2/browser.png">
+  <img src="imgs/section2/browser.png" alt="Browser" height="180" style="float:right;padding-left:2em;">
+</a>
 
 右下に数字がでていますね。
 
@@ -105,27 +172,13 @@ ADT7410使用 I2C 温度センサーモジュール
 
 </p>
 
+* [その他の I2C の例はこちら](http://chirimen.org/chirimen-raspi3/gc/top/examples/#i2cExamples)
+* [応用例はこちら](http://chirimen.org/chirimen-raspi3/gc/top/examples/#advanced)
+
+## コード
+
+
+
+<!--
 <div style="page-break-before:always"></div>
-
-# まとめ
-
-このページでは、L チカと I2C の温度センサー ADT7410 の制御方法を学びました。
-
-このページは本来のチュートリアルの簡易版です。
-
-詳しく知りたい方や学びたい方は、下記をご覧ください。
-
-* 『[チュートリアル 0. HelloWorld編](./section0.md)』では Web GPIO API の学習をします。
-
-* 『[チュートリアル 1. GPIO編](./section1.md)』では GPIO の入力方法について学びます。
-
-* 『[チュートリアル 2. I2C 基礎編](./section2.md)』では Web I2C API の学習をします。
-
-* 『[チュートリアル 3. I2C 応用編（その他のセンサー）](./section3.md)』では測距センサーや光センサーなど他のセンサーも触っていきます。
-
-* 『[チュートリアル 4. GPIO/I2C編 まとめ](./section4.md)』 では、これまでの総括として GPIO と I2C の両方を組み合わせてエアコンのプロトタイプ (？) を作成します。
-
-* 『[チュートリアル 5 . WebBluetooth編](./section3.md)』 ではCHIRIMEN for Raspberry Pi 3 環境で Web Bluetooth API を使って制御します。
-
-* 『[チュートリアル 6. ステッピングモーター編](./section3.md)』 ではCHIRIMEN for Raspberry Pi 3 と Arduino を組み合わせてステップピングモーターを制御します。
-
+-->
