@@ -26,6 +26,9 @@ L チカと I2C 温度計の使い方を簡単に説明します。詳細を知�
 
 ## [3. I2C 応用編](section3.md)
  その他の色々な I2C デバイス操作を学びます。
+ 
+## [Example 編](https://chirimen.org/chirimen-TY51822r3/bc/)
+ CHIRIMEN for TY51822r3 の Example はこちらです。 
 
 ## Appendix / FAQ
 JavaScript 未経験者や非同期処理の未経験者はチュートリアルと合わせてこちらをご覧ください:
