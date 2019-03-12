@@ -24,8 +24,8 @@ CHIRIMEN for TY51822r3 のスターターキットを使用して L チカと I2
 ## 配線
 
 <p>
-  <a href="imgs/section0/ledblink_2.png">
-    <img src="imgs/section0/ledblink_2.png" alt="Browser"  height="250" style="float:right;padding-left:2em;">
+  <a href="https://github.com/chirimen-oh/chirimen-TY51822r3/blob/master/bc/gpio/LEDblink/schematic.png">
+    <img src="https://github.com/chirimen-oh/chirimen-TY51822r3/blob/master/bc/gpio/LEDblink/schematic.png" alt="Browser"  height="250" style="float:right;padding-left:2em;">
   </a>
   
 右図と同じように配線してみよう。
@@ -87,8 +87,8 @@ ADT7410使用 I2C 温度センサーモジュール
 </p>
 
 <p>
-  <a href="imgs/section2/adt7410_1.png">
-    <img src="imgs/section2/adt7410_1.png" alt="Browser" height="200" style="float:right;padding-left:2em;">
+  <a href="https://chirimen.org/chirimen-TY51822r3/bc/i2c/i2c-ADT7410/schematic.png">
+    <img src="https://chirimen.org/chirimen-TY51822r3/bc/i2c/i2c-ADT7410/schematic.png" height="200" style="float:right;padding-left:2em;">
   </a>
   
 ## 配線
