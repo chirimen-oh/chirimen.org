@@ -1,27 +1,15 @@
 
 # Hello Real World
 
-CHIRIMEN for Raspberry Pi 3 のスターターキットを使用して L チカと I2C 温度計で気温を計測してみよう。
+CHIRIMEN for Raspberry Pi 3 を使用して L チカと I2C 温度計で気温を計測してみよう。
 
-<div style="page-break-before:always"></div>
 
 # 1. L チカをやってみよう
-<p>
-  <ul>
-    <li>
-      <a href="imgs/section0/raspi3.png">
-        <img src="imgs/section0/raspi3.jpg" alt="Hardware" height="250" style = "float:right;padding-left:2em;">
-      </a>
-    </li>
-    <li>
-      <a href="imgs/section2/parts.jpg">
-        <img src="imgs/section2/parts.jpg" alt="Browser" height="200" style="float:right;padding-left:2em;">
-      </a>
-    </li>
-  </ul>
- </p>
+
 
 ## 用意するもの
+| Chirimen for Raspi3 基本ハードウェア | I2C 温度計 ADT7410 |
+| ![Hardware](imgs/section0/raspi3.jpg) | ![ADT7410](imgs/section2/parts.jpg) |
 
 - [Raspberry Pi 3 Model B](https://www.raspberrypi.org/products/raspberry-pi-3-model-b/) もしくは [Raspberry Pi 3 Model B+](https://www.raspberrypi.org/products/raspberry-pi-3-model-b-plus/) × 1
 - AC アダプタ + micro B USB 電源ケーブル × 1
