@@ -8,7 +8,7 @@ CHIRIMEN for Raspberry Pi 3 を使用して L チカと I2C 温度計で気温�
 
 
 ## 用意するもの
-| Chirimen for Raspi3 基本ハードウェア | L チカで使用する部品 | I2C 温度計 で使用する部品|
+| CHIRIMEN for Raspi3 基本ハードウェア | L チカで使用する部品 | I2C 温度計で使用する部品|
 |---|---|---|
 | ![Hardware](imgs/section0/raspi3.jpg) |![LED_Bling](imgs/section0/l.jpg) | ![ADT7410](imgs/section2/parts.jpg) |
 
@@ -39,12 +39,14 @@ CHIRIMEN for Raspberry Pi 3 を使用して L チカと I2C 温度計で気温�
 
 注意<br>
 LED には極性 (方向) があり、足が長い方 (アノード) を GPIO 出力ピンに、足が短い方 (カソード) を GND 側に繋いでください。抵抗は LED のどちらの足の側に繋いでも構いません。
+<br>
+[詳しくはこちらをご覧ください: LED の使い方](https://www.marutsu.co.jp/pc/static/large_order/led)
 </p>
 
 ## Example を実行しよう
 `/home/pi/Desktop/gc/gpio/LEDblink/index.html`ファイル (デスクトップの gc ディレクトリを開き、gpio, LEDblink ディレクトリを開くとあります) をダブルクリックで開くと、ブラウザが起動し、先ほど配線した LED が点滅しているはずです！
+[詳しくはこの図をご覧ください。](imgs/section0/example-files.png)
 
-[ブラウザ画面はこちら](imgs/section0/browser.png)<br>
 [Lチカ成功動画はこちら](imgs/section0/L.gif)
 
 [オンライン Example はこちら](https://r.chirimen.org/gpio-blink)
