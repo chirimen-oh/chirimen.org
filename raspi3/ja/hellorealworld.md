@@ -10,6 +10,10 @@ CHIRIMEN for Raspberry Pi 3 のスターターキットを使用して L チカ�
   <a href="imgs/section0/raspi3.png">
     <img src="imgs/section0/raspi3.jpg" alt="Hardware" height="250" style = "float:right;padding-left:2em;">
   </a>
+  <br>
+  <a href="imgs/section2/parts.jpg">
+    <img src="imgs/section2/parts.jpg" alt="Browser" height="200" style="float:right;padding-left:2em;">
+  </a>
 
 ## 用意するもの
 
@@ -52,14 +56,7 @@ LED には極性 (方向) があり、足が長い方 (アノード) を GPIO �
 * [その他の GPIO の例(スイッチのオンオフや人感センサーを使うなど)はこちら](http://chirimen.org/chirimen-raspi3/gc/top/examples/#gpioExamples)
 
 # 2. I2C 温度センサー使ってみよう
-
-<p>
-  <a href="imgs/section2/parts.jpg">
-    <img src="imgs/section2/parts.jpg" alt="Browser" height="200" style="float:right;padding-left:2em;">
-  </a>
   
-</p>
-
 <p>
   <a href="imgs/section2/schematic.png">
     <img src="imgs/section2/schematic.png" alt="Browser" height="200" style="float:right;padding-left:2em;">
