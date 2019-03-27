@@ -8,9 +8,9 @@ CHIRIMEN for Raspberry Pi 3 を使用して L チカと I2C 温度計で気温�
 
 
 ## 用意するもの
-| Chirimen for Raspi3 基本ハードウェア | I2C 温度計 ADT7410 |
-|---|---|
-| ![Hardware](imgs/section0/raspi3.jpg) | ![ADT7410](imgs/section2/parts.jpg) |
+| Chirimen for Raspi3 基本ハードウェア | L チカで使用する部品 | I2C 温度計 で使用する部品|
+|---|---|---|
+| ![Hardware](imgs/section0/raspi3.jpg) |![LED_Bling](imgs/section0/l.jpg) | ![ADT7410](imgs/section2/parts.jpg) |
 
 - [Raspberry Pi 3 Model B](https://www.raspberrypi.org/products/raspberry-pi-3-model-b/) もしくは [Raspberry Pi 3 Model B+](https://www.raspberrypi.org/products/raspberry-pi-3-model-b-plus/) × 1
 - AC アダプタ + micro B USB 電源ケーブル × 1
@@ -23,7 +23,8 @@ CHIRIMEN for Raspberry Pi 3 を使用して L チカと I2C 温度計で気温�
 - ブレッドボード × 1
 - リード付き LED × 1
 - リード付き抵抗器 (150-470Ω) × 1
-- ジャンパーワイヤー (オス-メス) x 4
+- ジャンパーワイヤー (オス-メス) x 2
+- ジャンパーワイヤー (メス-メス) x 4
 - [ADT7410使用 I2C 温度センサーモジュール](http://akizukidenshi.com/catalog/g/gM-06675/)
 
 ## 配線
