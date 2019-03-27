@@ -9,6 +9,7 @@ CHIRIMEN for Raspberry Pi 3 を使用して L チカと I2C 温度計で気温�
 
 ## 用意するもの
 | Chirimen for Raspi3 基本ハードウェア | I2C 温度計 ADT7410 |
+|---|---|
 | ![Hardware](imgs/section0/raspi3.jpg) | ![ADT7410](imgs/section2/parts.jpg) |
 
 - [Raspberry Pi 3 Model B](https://www.raspberrypi.org/products/raspberry-pi-3-model-b/) もしくは [Raspberry Pi 3 Model B+](https://www.raspberrypi.org/products/raspberry-pi-3-model-b-plus/) × 1
