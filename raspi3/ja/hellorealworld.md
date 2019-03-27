@@ -7,13 +7,19 @@ CHIRIMEN for Raspberry Pi 3 のスターターキットを使用して L チカ�
 
 # 1. L チカをやってみよう
 <p>
-  <a href="imgs/section0/raspi3.png">
-    <img src="imgs/section0/raspi3.jpg" alt="Hardware" height="250" style = "float:right;padding-left:2em;">
-  </a>
-  <br>
-  <a href="imgs/section2/parts.jpg">
-    <img src="imgs/section2/parts.jpg" alt="Browser" height="200" style="float:right;padding-left:2em;">
-  </a>
+  <ul>
+    <li>
+      <a href="imgs/section0/raspi3.png">
+        <img src="imgs/section0/raspi3.jpg" alt="Hardware" height="250" style = "float:right;padding-left:2em;">
+      </a>
+    </li>
+    <li>
+      <a href="imgs/section2/parts.jpg">
+        <img src="imgs/section2/parts.jpg" alt="Browser" height="200" style="float:right;padding-left:2em;">
+      </a>
+    </li>
+  </ul>
+ </p>
 
 ## 用意するもの
 
