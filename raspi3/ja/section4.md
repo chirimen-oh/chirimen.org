@@ -144,7 +144,8 @@ Raspberry Pi 3 の Chromium Browser で全画面表示を行うには、コマ�
 - [Web Bluetooth API](https://webbluetoothcg.github.io/web-bluetooth/) : Web アプリから BLE を使った通信を行うための API です。無線で外部機器と通信することができます。入出力が可能です。
 - [Web MIDI API](https://www.w3.org/TR/webmidi/) : Web アプリから MIDI 機器と通信するための API です。外部機器との入出力が可能です。
 - key イベント/Mouse イベントの応用 : USB-HID デバイスを作成できる Arduino Leonardo などを利用することで、そういったボードからの入力をキーイベントやマウスイベントとして受け取ることができます。入力にしか使えませんが、USB 経由で Key イベントに対応するブラウザは非常に多いので、様々な環境への応用が必要な場合には選択肢になりうると思います。
-> Note: これらのAPIは ["Feature Policy"](https://w3c.github.io/webappsec-feature-policy/) の制限（iframe 内からの使用禁止）により、jsbin では動作しません。 ですから、ローカルで実行するか jsfiddle 等の各種 API が利用可能としているサービスを※なお、jsfiddle では実行可ということになっていますが、上手く動作しない例もあるようです。必ず自身で動作することを確認してから利用するようにしてください。
+> Note: これらのAPIは [Feature Policy](https://w3c.github.io/webappsec-feature-policy/) の制限（iframe 内からの使用禁止）により、jsbin では動作しません。ですから、ローカルで実行するか jsfiddle 等の各種 API が利用可能としているサービスを利用して実行してください。
+ > ※なお、jsfiddle では実行可ということになっていますが、上手く動作しない例もあるようです。必ず自身で動作することを確認してから利用するようにしてください。
 
 また、将来的には USB 機器が直接ブラウザから制御可能になる Web USB API なども利用可能になる可能性がありますが、残念ながら現在のバージョンの CHIRIMEN for Raspberry Pi 3 環境で利用している Chromium Browser では利用できません。
 
