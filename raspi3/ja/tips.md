@@ -145,6 +145,8 @@ CHIRIMEN for Raspberry Pi 3 にサンプルがないものは I2C デバイス�
     参考 https://qiita.com/tadfmac/items/a4cdbf915698573ab36d
 - 多数のフルカラー LED を個々に点灯制御したい → [examples](https://chirimen.org/chirimen-raspi3/gc/top/examples/)の Neopixel_I2C を参照
 
+
+
 # Windows PCからRaspi3にリモートデスクトップで接続する
 
 ## xrdpインストール
@@ -162,14 +164,16 @@ CHIRIMEN for Raspberry Pi 3 にサンプルがないものは I2C デバイス�
   $ sudo ln -s km-0411.ini km-e0210411.ini
   ```
 - xrdpを再起動する
-```  $ sudo service xrdp restart
+```
+  $ sudo service xrdp restart
 ```
 
 ## Windows PCから接続
 - win + R でファイル名を指定して実行画面表示する。
 - mstsc を入力する。
-- 表示されたリモートデスクトップ接続画面でraspberrypi3のipアドレスを入力し接続する。 (raspberrypiのipアドレス固定方法はこちら)
+- 表示されたリモートデスクトップ接続画面でraspberrypi3のipアドレスを入力し接続する。 (raspberrypiのipアドレス固定方法は[こちら](https://qiita.com/t114/items/20d8825120b2b910c6d0#ip%E3%82%A2%E3%83%89%E3%83%AC%E3%82%B9%E5%9B%BA%E5%AE%9A))
 - Moduleはそのまま（sesman-Xvnc）
 - username：pi
 - password：raspberry
-raspberrypiのデスクトップが表示されれば成功です。
+
+raspi3のデスクトップが表示されれば成功です。
