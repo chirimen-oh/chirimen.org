@@ -151,13 +151,15 @@ CHIRIMEN for Raspberry Pi 3 にサンプルがないものは I2C デバイス�
 
 ## xrdpインストール
 - Raspi3 の TERMINAL に下記コマンドを入力する。
-```  $ sudo apt-get update
+```
+  $ sudo apt-get update
   $ sudo apt-get install xrdp
 ```
 
 ## 日本語キーボードの配列を追加
 - Raspi3 の TERMINAL に下記コマンドを入力する。
-```  $ cd /etc/xrdp/
+```
+  $ cd /etc/xrdp/
   $ sudo wget http://w.vmeta.jp/temp/km-0411.ini
   $ sudo ln -s km-0411.ini km-e0010411.ini
   $ sudo ln -s km-0411.ini km-e0200411.ini
