@@ -8,11 +8,11 @@ layout: tutorial
 **本チュートリアルではリンク先のサンプルコードがそのままでは動作せず、修正が必要なことがあるページがあることが判明しています。
 修正なく試していけるようにチュートリアルを更新予定ですが、ひとまず今はご自身で対応可能な人がお試しください。**
 
-# これらのAPIは Feature Policy の制限（iframe 内からの使用禁止）により、jsbin では動作しません。ですから、ローカルで実行するか jsfiddle 等の各種 API が利用可能としているサービスを利用して実行してください。
+**これらのAPIは Feature Policy の制限（iframe 内からの使用禁止）により、jsbin では動作しません。ですから、ローカルで実行するか jsfiddle 等の各種 API が利用可能としているサービスを利用して実行してください。**
 > ※なお、jsfiddle では実行可ということになっていますが、上手く動作しない例もあるようです。必ず自身で動作することを確認してから利用するようにしてください。
 
 # 概要
-これは Raspberry Pi 3 上で動作する IoT プラットフォーム「CHIRIMEN for Raspberry Pi 3」で [WebBluetooth](https://www.mitsue.co.jp/knowledge/blog/frontend/201705/15_1702.html) を使用してライトを制御するサンプルです。USBマイクから音が入るとライトが点灯する、または測距センサで何かが近づいたらライトが点灯する、という動作をさせています。
+これは Raspberry Pi 3 上で動作する IoT プラットフォーム「CHIRIMEN for Raspberry Pi 3」で [Web Bluetooth](https://www.mitsue.co.jp/knowledge/blog/frontend/201705/15_1702.html) を使用してライトを制御するサンプルです。USBマイクから音が入るとライトが点灯する、または測距センサで何かが近づいたらライトが点灯する、という動作をさせています。
 
 # ソースコード
 
@@ -22,7 +22,7 @@ https://github.com/g200kg/chirimen-webbluetooth
 
 # ライブデモ
 
-オンラインで実際に動作するサンプルは下のリンクで公開されています。CHIRIMEN for RasPi 3 上で全ての機能を動かすには下の部品を揃える必要がありますが、もし [PLAYBULB](https://www.mipow.co.jp/category_playbulb.html) ([sphere](https://www.croy.co.jp/mipow/btl301w.html) または [candle](https://www.croy.co.jp/mipow/btl300.html))をお持ちなら(BLE対応の)ノートPCからでもマイク周りの動作を試す事ができます。
+オンラインで実際に動作するサンプルは下のリンクで公開されています。CHIRIMEN for RasPi 3 上で全ての機能を動かすには下の部品を揃える必要がありますが、もし [PLAYBULB](https://www.mipow.co.jp/category_playbulb.html) ([sphere](https://www.croy.co.jp/mipow/btl301w.html) または [candle](https://www.croy.co.jp/mipow/btl300.html))をお持ちであれば(BLE対応の)ノートPCからでもマイク周りの動作を試す事ができます。
 
 [ライブデモ](https://g200kg.github.io/chirimen-webbluetooth/)
 
