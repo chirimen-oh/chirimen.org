@@ -148,34 +148,4 @@ CHIRIMEN for Raspberry Pi 3 にサンプルがないものは I2C デバイス�
 
 
 # Windows PCからRaspi3にリモートデスクトップで接続する
-
-## xrdpインストール
-- Raspi3 の TERMINAL に下記コマンドを入力する。
-```
-  $ sudo apt-get update
-  $ sudo apt-get install xrdp
-```
-
-## 日本語キーボードの配列を追加
-- Raspi3 の TERMINAL に下記コマンドを入力する。
-```
-  $ cd /etc/xrdp/
-  $ sudo wget http://w.vmeta.jp/temp/km-0411.ini
-  $ sudo ln -s km-0411.ini km-e0010411.ini
-  $ sudo ln -s km-0411.ini km-e0200411.ini
-  $ sudo ln -s km-0411.ini km-e0210411.ini
-  ```
-- xrdpを再起動する
-```
-  $ sudo service xrdp restart
-```
-
-## Windows PCから接続
-- win + R でファイル名を指定して実行画面表示する。
-- mstsc を入力する。
-- 表示されたリモートデスクトップ接続画面でraspberrypi3のipアドレスを入力し接続する。 (raspberrypiのipアドレス固定方法は[こちら](https://qiita.com/t114/items/20d8825120b2b910c6d0#ip%E3%82%A2%E3%83%89%E3%83%AC%E3%82%B9%E5%9B%BA%E5%AE%9A))
-- Moduleはそのまま（sesman-Xvnc）
-- username：pi
-- password：raspberry
-
-raspi3のデスクトップが表示されれば成功です。
+>執筆中です。
