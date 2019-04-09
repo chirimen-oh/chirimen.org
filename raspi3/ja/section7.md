@@ -1,7 +1,3 @@
----
-layout: tutorial
----
-
 # 旧チュートリアル (Qiita 版)
 
 CHIRIMEN for Raspberry Pi3 チュートリアルは当初 CHIRIMEN コミュニティメンバーが Qiita などで作成していたページを元に作成されています。当時のオリジナル版へのリンクはこちらとなります:
