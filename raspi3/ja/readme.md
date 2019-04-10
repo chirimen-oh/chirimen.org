@@ -5,7 +5,8 @@ CHIRIMEN for Raspberry Pi 3を用いた IoT システムプロトタイピング
 JavaScript プログラミング未経験者は、まず Appendix の「[JavaScript 1 Day 講習](https://webiotmakers.github.io/static/docs/2017/maebashi-js.pdf)」などで JavaScript の基本を学んでおくことをオススメします。
 
 ## [Hello Real World](hellorealworld.md)
-L チカと I2C 温度計の使い方の簡易的なチュートリアルです。詳細を知りたい場合は、以下のチュートリアルを参照してください。
+L チカと温度センサーで GPIO と I2C の基本を試す[簡易版チュートリアル](hellorealworld.md)です。CHIRIMEN を手早く試してみたい方はこちらをご覧ください。
+詳細を知りたい方やプロトタイピングに慣れていないのでステップバイステップで説明が欲しい方は、以下のチュートリアルをご覧ください。
 
 ## 基礎編
 まずはシンプルな GPIO 入出力や I2C センサーの操作方法を学びましょう。
