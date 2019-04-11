@@ -145,7 +145,7 @@ Raspberry Pi 3 の Chromium Browser で全画面表示を行うには、コマ�
 - [Web MIDI API](https://www.w3.org/TR/webmidi/) : Web アプリから MIDI 機器と通信するための API です。外部機器との入出力が可能です。
 - key イベント/Mouse イベントの応用 : USB-HID デバイスを作成できる Arduino Leonardo などを利用することで、そういったボードからの入力をキーイベントやマウスイベントとして受け取ることができます。入力にしか使えませんが、USB 経由で Key イベントに対応するブラウザは非常に多いので、様々な環境への応用が必要な場合には選択肢になりうると思います。
 > Note: これらのAPIは [Feature Policy](https://w3c.github.io/webappsec-feature-policy/) の制限（iframe 内からは埋め込み側で明示許可されていない API は利用不可）により、jsbin では動作しません。ローカルで実行してください。
- > ※ブラウザ上でプログラムが書ける [jsfiddle](https://jsfiddle.net/) では各種 API が利用可能となっていますが、まだ動作確認ができていません。近日中に動作確認を行う予定です。
+>> ※ブラウザ上でプログラムが書ける [jsfiddle](https://jsfiddle.net/) では各種 API が利用可能となっていますが、まだ動作確認ができていません。近日中に動作確認を行う予定です。
 
 また、将来的には USB 機器が直接ブラウザから制御可能になる Web USB API なども利用可能になる可能性がありますが、残念ながら現在のバージョンの CHIRIMEN for Raspberry Pi 3 環境で利用している Chromium Browser では利用できません。
 
