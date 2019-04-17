@@ -49,10 +49,7 @@ LED には極性 (方向) があり、足が長い方 (アノード) を GPIO �
 
 # 2. I2C 温度センサーを使ってみよう
   
-<p>
-  <a href="imgs/section2/schematic.png">
-    <img src="imgs/section2/schematic.png" alt="Browser" height="200" style="float:right;padding-left:2em;">
-  </a>
+[<img src="imgs/section2/schematic.png" alt="Browser" height="200" style="float:right;padding-left:2em;">](imgs/section2/schematic.png)
   
 ## ボードと機材を配線しよう
 
@@ -64,17 +61,12 @@ LED には極性 (方向) があり、足が長い方 (アノード) を GPIO �
 $ i2cdetect -y -r 1
 ```
 
- <a href="imgs/section2/ADT7410.png">
-  <img src="imgs/section2/ADT7410.png" alt="Browser" height="200" style="float:right;padding-left:2em;margin-bottom:2em;">
- </a>
+[<img src="imgs/section2/ADT7410.png" alt="Browser" height="200" style="float:right;padding-left:2em;margin-bottom:2em;">](imgs/section2/ADT7410.png)
  
-すると、[右図](imgs/section2/ADT7410.png)のような画面が表示されるはずです。
+すると、[右図](imgs/section2/ADT7410.png) のような画面が表示されるはずです。
 `i2cdetect` コマンドでは I2C バスに接続されている SlaveAddress を確認することができます。
-
-</p>
   
 ## Example コードを実行しよう
-<p>
   
 実際に動かしてみましょう。
 
@@ -84,19 +76,13 @@ $ i2cdetect -y -r 1
 
 [オンライン Example はこちら](https://r.chirimen.org/i2c-adt7410)
 
- 
-<a href="imgs/section2/browser.png">
-  <img src="imgs/section2/browser.png" alt="Browser" height="180" style="float:right;padding-left:2em;">
-</a>
+[<img src="imgs/section2/browser.png" alt="Browser" height="180" style="float:right;padding-left:2em;">](imgs/section2/browser.png)
 
 右下に数字がでていますね。
 
 これが温度センサーから取得した現在の温度 (摂氏) の表示になります。
 
 これで I2C 温度計編は完了です。
-
-</p>
-
 
 * [その他の I2C の例(光センサー、測距センサー等)はこちら](http://chirimen.org/chirimen-raspi3/gc/top/examples/#i2cExamples)
 
