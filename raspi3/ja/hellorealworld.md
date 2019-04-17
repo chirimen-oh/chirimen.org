@@ -8,24 +8,21 @@ CHIRIMEN for Raspberry Pi 3 を使用して L チカと I2C 温度計で気温�
 
 
 ## 用意するもの
-| CHIRIMEN for Raspi3 基本ハードウェア | L チカで使用する部品 | I2C 温度計で使用する部品|
+| CHIRIMEN for Raspi3 基本セット | L チカで使用する部品 | I2C 温度計で使用する部品|
 |---|---|---|
 | ![Hardware](imgs/section0/raspi3.jpg) |![LED_Bling](imgs/section0/l.jpg) | ![ADT7410](imgs/section2/parts.jpg) |
 
 - [Raspberry Pi 3 Model B](https://www.raspberrypi.org/products/raspberry-pi-3-model-b/) もしくは [Raspberry Pi 3 Model B+](https://www.raspberrypi.org/products/raspberry-pi-3-model-b-plus/) × 1
-- AC アダプタ + micro B USB 電源ケーブル × 1
-  - 例:[Raspberry Pi 用電源セット(5V 3.0A) - Pi3 フル負荷検証済](https://www.physical-computing.jp/product/1171)
-- HDMI 入力つきのモニタ × 1
-- HDMI ケーブル (モニタ側の端子と合うものを選んでください) × 1
-- USB マウス × 1
-- USB キーボード (日本語配列) × 1
+- 5V3A 対応 AC アダプタ + micro B USB 電源ケーブル (例: [Raspberry Pi 用電源セット](https://www.physical-computing.jp/product/1171)) × 1 セット
+- HDMI 入力つきのモニタ + HDMI ケーブル (モニタ側の端子の種類に注意) × 1 セット
+- USB マウス、キーボード (日本語配列) × 1 セット
 - micro SD カード (8GB 以上必須、Class 10 以上で高速なものを推奨) × 1
-- ブレッドボード × 1
+- ブレッドボード (通常サイズまたはミニサイズ) × 1
 - リード付き LED × 1
-- リード付き抵抗器 (150-470Ω) × 1
+- リード付き抵抗器 (150-470Ω) x 1
 - ジャンパーワイヤー (オス-メス) x 2
 - ジャンパーワイヤー (メス-メス) x 4
-- [ADT7410使用 I2C 温度センサーモジュール](http://akizukidenshi.com/catalog/g/gM-06675/)
+- [ADT7410 使用 I2C 温度センサーモジュール](http://akizukidenshi.com/catalog/g/gM-06675/) (ピンヘッダ半田付け済み)
 
 ## 配線
 
