@@ -153,14 +153,14 @@ Windows の PC からリモートデスクトップで接続し、Raspi を PC �
 
 ## Raspi3 にXRDPを導入する
  > XRDP とは Linux 上で RDP を用いたリモートデスクトップを利用可能にするためのパッケージです。詳細は[こちら](http://www.xrdp.org/)。
--Raspi3 のターミナルで以下のコマンドを実行する。
+- Raspi3 のターミナルで以下のコマンドを実行する。
 ```
 $ sudo apt update
 $ sudo apt -y install xrdp
 ```
 
 ## xrdp を（再）起動する
--Raspi3 のターミナルで以下のコマンドを実行する。
+- Raspi3 のターミナルで以下のコマンドを実行する。
 ```
 sudo service restart xrdp
 ```
