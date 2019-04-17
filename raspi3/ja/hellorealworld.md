@@ -1,7 +1,7 @@
 
 # Hello Real World
 
-CHIRIMEN for Raspberry Pi 3 を使用して L チカと I2C 温度計で気温を計測してみよう。
+CHIRIMEN for Raspberry Pi 3 (Raspi3) を使用して L チカと I2C 温度計で気温を計測してみよう。
 
 
 # 1. L チカをやってみよう
@@ -38,14 +38,13 @@ LED には極性 (方向) があり、足が長い方 (アノード) を GPIO �
 </p>
 
 ## Example コードを実行しよう
-`/home/pi/Desktop/gc/gpio/LEDblink/index.html`ファイル (デスクトップの gc ディレクトリを開き、gpio, LEDblink ディレクトリを開くとあります) をダブルクリックで開くと、ブラウザが起動し、先ほど配線した LED が点滅しているはずです！
-[詳しくはこの図をご覧ください。](imgs/section0/example-files.png)
+`/home/pi/Desktop/gc/gpio/LEDblink/index.html` ファイル (デスクトップの gc ディレクトリから順に gpio, LEDblink ディレクトリを開いてください) をダブルクリックで開くとブラウザが起動し ([詳しくはこの図を参照](imgs/section0/example-files.png))、先ほど配線した LED が点滅し始めます！
 
 [Lチカ成功動画はこちら](imgs/section0/L.gif)
 
-[オンライン Example はこちら](https://r.chirimen.org/gpio-blink)
+[オンライン Example 版](https://r.chirimen.org/gpio-blink) でも試せます。同時に複数のタブで同じ GPIO ポートは操作できないので注意してください。
 
-* [その他の GPIO の例(スイッチのオンオフや人感センサーを使うなど)はこちら](http://chirimen.org/chirimen-raspi3/gc/top/examples/#gpioExamples)
+L チカが出来たら、スイッチのオンオフや人感センサーを使う場合など [他の GPIO の例]((http://chirimen.org/chirimen-raspi3/gc/top/examples/#gpioExamples) にもチャレンジしてみてください。
 
 # 2. I2C 温度センサーを使ってみよう
   
@@ -53,8 +52,7 @@ LED には極性 (方向) があり、足が長い方 (アノード) を GPIO �
   
 ## ボードと機材を配線しよう
 
-[右図](imgs/section2/schematic.png)と同じように配線してみよう。
-
+[右図](imgs/section2/schematic.png)と同じように配線してみよう。  
 配線が終わったら、ターミナルを起動して下記コマンドを入力してみてください。
 
 ```sh
@@ -64,29 +62,18 @@ $ i2cdetect -y -r 1
 [<img src="imgs/section2/ADT7410.png" alt="Browser" height="200" style="float:right;padding-left:2em;margin-bottom:2em;">](imgs/section2/ADT7410.png)
  
 すると、[右図](imgs/section2/ADT7410.png) のような画面が表示されるはずです。
-`i2cdetect` コマンドでは I2C バスに接続されている SlaveAddress を確認することができます。
-  
+`i2cdetect` コマンドでは I2C バスに接続されている SlaveAddress (デバイス毎に割り当てられている番号) を確認できます。アドレスが表示されない場合は配線の間違いなどでセンサーを認識できていません。
+
 ## Example コードを実行しよう
-  
-実際に動かしてみましょう。
 
-`/home/pi/Desktop/gc/i2c/i2c-ADT7410/index.html`
-
-ダブルクリックすると、ブラウザが起動し下記のような画面になります。
-
-[オンライン Example はこちら](https://r.chirimen.org/i2c-adt7410)
+`/home/pi/Desktop/gc/i2c/i2c-ADT7410/index.html` ファイルを開いて実際に動かしてみよう。ブラウザが起動し下記のような画面になります。
 
 [<img src="imgs/section2/browser.png" alt="Browser" height="180" style="float:right;padding-left:2em;">](imgs/section2/browser.png)
 
-右下に数字がでていますね。
+右下に数字がでていますね。これが温度センサーから取得した現在の温度 (摂氏) の表示になります。
 
-これが温度センサーから取得した現在の温度 (摂氏) の表示になります。
+[オンライン Example](https://r.chirimen.org/i2c-adt7410) でも試せます。温度センサーが使えたら、光センサー、距離センサーなど [いろいな I2C デバイスの例](http://chirimen.org/chirimen-raspi3/gc/top/examples/#i2cExamples) にもチャレンジしてみてください。
 
-これで I2C 温度計編は完了です。
-
-* [その他の I2C の例(光センサー、測距センサー等)はこちら](http://chirimen.org/chirimen-raspi3/gc/top/examples/#i2cExamples)
-
-I2C 温度計編はこれで終了です。
 
 <!--
 <div style="page-break-before:always"></div>
