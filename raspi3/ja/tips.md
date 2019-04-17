@@ -147,5 +147,24 @@ CHIRIMEN for Raspberry Pi 3 にサンプルがないものは I2C デバイス�
 
 
 
-# Windows PCからRaspi3にリモートデスクトップで接続する
+# Windows PC から Raspi3 にリモートデスクトップで接続する
+Windows の PC からリモートデスクトップで接続し、Raspi を PC 側から操作することができるようにする。
+>chirimen のバージョン20181010で動作確認しています。
+
+## Raspi3 にXRDPを導入する
+ > XRDP とは Linux 上で RDP を用いたリモートデスクトップを利用可能にするためのパッケージです。詳細は[こちら](http://www.xrdp.org/)。
+-Raspi3 のターミナルで以下のコマンドを実行する。
+```
+$ sudo apt update
+$ sudo apt -y install xrdp
+```
+
+## xrdp を（再）起動する
+-Raspi3 のターミナルで以下のコマンドを実行する。
+```
+sudo service restart xrdp
+```
+
+## Windows の PC から接続する
 >執筆中です。
+
