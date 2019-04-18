@@ -3,8 +3,6 @@
 
 @import "{{ site.theme }}";
 
-@document domain(tutorial.chirimen.org) {
-  .hide-on-production {
-    display: none;
-  }
+html.tutorial-chirimen-org .hide-on-production {
+  display: none;
 }
