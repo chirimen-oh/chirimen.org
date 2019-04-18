@@ -1,6 +1,6 @@
 # Feedback
 
-このサイトの内容への提案や誤りの指摘などがある場合は [Gibhub Issues](https://github.com/chirimen-oh/tutorials/issues) からお願いします。
+このサイトの内容への提案や誤りの指摘などがある場合は [Github Issues](https://github.com/chirimen-oh/tutorials/issues) からお願いします。
 
 サイトのテキスト本文は Markdown で書かれたファイルを GitHub Pages デフォルトで用意されているシンプルな [Jekyll テンプレート (Cayman)](https://github.com/pages-themes/cayman) で成形して出力しているものになります。
 
