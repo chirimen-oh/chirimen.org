@@ -3,7 +3,7 @@
 
 @import "{{ site.theme }}";
 
-@document url("https://tutorial.chirimen.org/") {
+@document domain(tutorial.chirimen.org) {
   .hide-on-production {
     display: none;
   }
