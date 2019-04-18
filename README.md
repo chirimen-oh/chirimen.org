@@ -52,9 +52,3 @@ window.onload = async function() {
 
   このサイトの最新オンライン版は https://tutorial.chirimen.org/ でご覧頂けます
 </div>
-
-## Feedback / フィードバック
-
-If you have any feedback to this tutorials, see [Feedback Page](feedback.md)
-
-本チュートリアルにご指摘やご提案のある方、編集に協力頂ける方は [フィードバックページ](feedback.md) をご覧ください。
