@@ -35,26 +35,22 @@ window.onload = async function() {
 };
 ```
 
-## CHIRIMEN for Raspberry Pi 3 チュートリアル
+## チュートリアル
+上記のように WebGPIO, WebI2C を使ったコードが書ける CHIRIMEN 環境は現在 Rasbpebbry Pi 3 や TY51822r3 向けに移植されています。お持ちのボードに合わせて各ボード向けのチュートリアルをご覧ください:
 
-[CHIRIMEN Raspi3 チュートリアルの各ページはこちらでご覧頂けます](/raspi3/ja/readme.md)
+- [CHIRIMEN for Raspberry Pi 3 チュートリアル](/raspi3/ja/readme.md)
+- CHIRIMEN for TY51822r3 チュートリアル](/ty51822r3/ja/readme.md)
+<!-- I2C 対応完了したらコメント外してリストに加える:
+- CHIRIMEN for microbit チュートリアル](/microbit/ja/readme.md)
+  -->
 
-
-## CHIRIMEN for TY51822r3 チュートリアル 
-
-[CHIRIMEN TY51822r3 チュートリアルの各ページはこちらでご覧頂けます](/ty51822r3/ja/readme.md)
-
-<!-- 
-## CHIRIMEN for microbit チュートリアル
-
-[CHIRIMEN for microbit チュートリアルの各ページはこちらでご覧頂けます](/microbit/ja/readme.md)
--->
-
+<div class="hide-on-production">
 ## Online Version / オンライン版
 
 Latest version of this site is hosted on https://tutorial.chirimen.org/
 
 このサイトの最新オンライン版は https://tutorial.chirimen.org/ でご覧頂けます
+</div>
 
 ## Feedback / フィードバック
 
