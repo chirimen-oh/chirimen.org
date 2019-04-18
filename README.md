@@ -45,11 +45,12 @@ window.onload = async function() {
   -->
 
 <div class="hide-on-production">
-## Online Version / オンライン版
 
-Latest version of this site is hosted on https://tutorial.chirimen.org/
+  ## Latest Version / 最新版
 
-このサイトの最新オンライン版は https://tutorial.chirimen.org/ でご覧頂けます
+  Latest version of this document is hosted on https://tutorial.chirimen.org/
+
+  このサイトの最新オンライン版は https://tutorial.chirimen.org/ でご覧頂けます
 </div>
 
 ## Feedback / フィードバック
