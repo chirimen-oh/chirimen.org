@@ -39,7 +39,7 @@ window.onload = async function() {
 上記のように WebGPIO, WebI2C を使ったコードが書ける CHIRIMEN 環境は現在 Rasbpebbry Pi 3 や TY51822r3 向けに移植されています。お持ちのボードに合わせて各ボード向けのチュートリアルをご覧ください:
 
 - [CHIRIMEN for Raspberry Pi 3 チュートリアル](/raspi3/ja/readme.md)
-- CHIRIMEN for TY51822r3 チュートリアル](/ty51822r3/ja/readme.md)
+- [CHIRIMEN for TY51822r3 チュートリアル](/ty51822r3/ja/readme.md)
 <!-- I2C 対応完了したらコメント外してリストに加える:
 - CHIRIMEN for microbit チュートリアル](/microbit/ja/readme.md)
   -->
