@@ -72,12 +72,12 @@ CHIRIMEN コミュニティでは教材として利用する上で扱いやす�
 - [Hello Real World](hellorealworld.md)
   - 1 ページで簡単に GPIO (L チカ) と I2C (温度センサー) を使った基本を体験できるページです
   - 詳細な説明は良いからすぐに試したいとき、他のプラットフォームでプロトタイピング経験のある方などがターゲットです
-- チュートリアル (基礎編・応用編・発展編)
+- [チュートリアル (基礎編・応用編・発展編)](readme.md)
   - 一般的にまず学ぶべきと考えられる内容は基礎編・応用編までで一通り学習していただけるよう書かれています
   - 興味のある方は任意で発展編までご利用ください。但し内容は執筆者の好みによるもので偏りがあります
-- 動作検証済みデバイス用 Examples (デバイスドライバ・回路図・サンプルコード)
-  - デバイスドライバ・回路図・サンプルコードをセットで用意しているものは [gc ディレクトリ](https://github.com/chirimen-oh/chirimen-raspi3/tree/master/gc) の中に入っています。CHIRIMEN の OS イメージ中にはリリース時点でのものを納めたディレクトリがデスクトップにあります。最新の Example は [オンラインでも公開](http://chirimen.org/chirimen-raspi3/gc/top/examples/) されています。
-  - これらの元となるファイルは [GitHub の hirimen-raspi3 リポジトリ](https://github.com/chirimen-oh/chirimen-raspi3/) にあります。CHIRIMEN の OS イメージリリース前に動作検証するデバイスは gpio, i2c と通信方法別のディレクトリに分けて、[GitHub のこのディレクトリ](https://github.com/chirimen-oh/chirimen-raspi3/tree/master/gc) 入っています。contrib ディレクトリ配下には個人で検証している (が OS イメージのリリース毎に検証はされない) デバイスも含まれます。
+- [動作検証済みデバイス Examples (デバイスドライバ・回路図・サンプルコード)](http://chirimen.org/chirimen-raspi3/gc/top/examples/)
+  - 動作検証済みデバイスのデバイスドライバ・回路図・サンプルコードをセットで用意しています。CHIRIMEN の OS イメージ中にはリリース時点でのものを納めたディレクトリ (のショートカット) がデスクトップに用意されています。ブラウザのブックマークからもアクセス可能です。最新の Example は随時 [オンライン版として公開](http://chirimen.org/chirimen-raspi3/gc/top/examples/) されているため、デスクトップのものだけでなくオンライン版にもご注意ください。
+  - 元ファイルは [GitHub の hirimen-raspi3 リポジトリ](https://github.com/chirimen-oh/chirimen-raspi3/) で管理されています。OS イメージリリース前に必ず動作検証するデバイスは gpio, i2c と通信方法別のディレクトリに分けて [gc ディレクトリ](https://github.com/chirimen-oh/chirimen-raspi3/tree/master/gc) に入っています。contrib ディレクトリ配下には個人で検証している (が OS イメージのリリース毎に検証はされない) デバイスも含まれます。
 - JSBin オンラインサンプル
   - 動作検証済みデバイス用 Example はブラウザで読み込んですぐに実行することが出来ますが、動作を変更するには HTML/JavaScript ファイルをエディタで開いて編集してから再度ページを読み直す必要があります。それでは面倒なため、初学者向けにタブを開くだけで編集しながら実行できるページとして JSBin のオンラインサンプルページを用意し、[Examples 一覧ページ](http://chirimen.org/chirimen-raspi3/gc/top/examples/) からリンクしています。
   - 但し、JSBin 上で複雑なコードのデバッグなどはしにくくなる課題があるため、あくまでも最初の学習用としてご理解ください。
