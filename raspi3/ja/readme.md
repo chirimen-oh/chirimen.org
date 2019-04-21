@@ -42,18 +42,21 @@ L チカと温度センサーで GPIO と I2C の基本を試す[簡易版チュ
 * [6. ステッピングモーター編](section6.md)
   * CHIRIMEN for Raspberry Pi 3 と Arduino を組み合わせてステップピングモーターを制御するチュートリアルです。I2C 接続した Arduino を利用することで μ 秒単位でモータードライバの制御を行います。
   
-## Example 編
+## 対応デバイスと Example 集
 CHIRIMEN for Raspberry Pi 3 対応デバイスのドライバ・回路図・サンプルコードをセットにした Example 集を用意しています。
+
 * [Basic GPIO Example](http://chirimen.org/chirimen-raspi3/gc/top/examples/#gpioExamples)
 * [Basic I2C Example](http://chirimen.org/chirimen-raspi3/gc/top/examples/#i2cExamples)
 * [Advanced Example](http://chirimen.org/chirimen-raspi3/gc/top/examples/#advanced)
 
-## Appendix / FAQ
+Basic GPIO/I2C Examle のデバイスは CHIRIMEN Raspi3 の OS イメージ公開前に動作検証をしている CHIRIMEN Certified デバイスです。
+Advanced Example は個人レベルで動作確認して追加されている contrib デバイスです。いずれも元のソースコードは [こちら](https://github.com/chirimen-oh/chirimen-raspi3/tree/master/gc) に収録されています。
+
+## Appendix, Tips, FAQ etc...
 JavaScript 未経験者や非同期処理の未経験者はチュートリアルと合わせてこちらをご覧ください:
 
 * [JavaScript 1 Day 講習 (外部 PDF)](https://webiotmakers.github.io/static/docs/2017/maebashi-js.pdf)
 * [非同期処理 (async await版)](appendix0.md)
-* [CHIRIMEN for Raspberry Pi3のExamplesページ最新版](https://chirimen.org/chirimen-raspi3/gc/top/examples/)(多くのデバイスの利用例が追加されています)
 
 良くある質問、知っておくと良い Tips やテクニック、デバッグとトラブルシューティングの仕方はそれぞれまとめたページがあるので参考にしてください:
 
