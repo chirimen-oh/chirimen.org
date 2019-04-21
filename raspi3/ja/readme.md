@@ -43,10 +43,10 @@ L チカと温度センサーで GPIO と I2C の基本を試す[簡易版チュ
   * CHIRIMEN for Raspberry Pi 3 と Arduino を組み合わせてステップピングモーターを制御するチュートリアルです。I2C 接続した Arduino を利用することで μ 秒単位でモータードライバの制御を行います。
   
 ## Example 編
-CHIRIMEN for Raspberry Pi 3 の Example はこちらです。
-* [Example GPIO 編](http://chirimen.org/chirimen-raspi3/gc/top/examples/#gpioExamples)
-* [Example I2C 編](http://chirimen.org/chirimen-raspi3/gc/top/examples/#i2cExamples)
-* [Example advanced 編](http://chirimen.org/chirimen-raspi3/gc/top/examples/#advanced)
+CHIRIMEN for Raspberry Pi 3 対応デバイスのドライバ・回路図・サンプルコードをセットにした Example 集を用意しています。
+* [Basic GPIO Example](http://chirimen.org/chirimen-raspi3/gc/top/examples/#gpioExamples)
+* [Basic I2C Example](http://chirimen.org/chirimen-raspi3/gc/top/examples/#i2cExamples)
+* [Advanced Example](http://chirimen.org/chirimen-raspi3/gc/top/examples/#advanced)
 
 ## Appendix / FAQ
 JavaScript 未経験者や非同期処理の未経験者はチュートリアルと合わせてこちらをご覧ください:
