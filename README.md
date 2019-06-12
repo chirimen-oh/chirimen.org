@@ -44,6 +44,12 @@ window.onload = async function() {
 - CHIRIMEN for microbit チュートリアル](/microbit/ja/readme.md)
   -->
 
+## Old Versions / 以前のチュートリアル
+本チュートリアルでは使用する機材や手順の変更を行うことがあります。お手持ちの機材が古い場合や、以前学習したときのものを参照したい場合などは、古いバージョンのチュートリアルを以下のアーカイブサイトでご覧ください。
+
+- [2018 年度に作成したスターターキット (DC Fan を含むもの) を利用したチュートリアル](https://webiot-2018--tutorial-chirimen-org.netlify.com/)
+  - Web x IoT Makers Challenge 2018 で CHIRIMEN を採用した地域で利用したチュートリアルです
+
 <div class="hide-on-production">
 
   ## Latest Version / 最新版
