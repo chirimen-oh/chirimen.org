@@ -68,7 +68,7 @@ JavaScript 未経験者や非同期処理の未経験者はチュートリアル
 ## Old Versions / 以前のチュートリアル
 本チュートリアルでは使用機材や手順を大きく変更することがあります。お手持ちの機材が古い場合や、以前学習したときのものを参照したい場合など、必要に応じて古いチュートリアルのアーカイブをご覧ください。
 
-- [2018 年度に作成したスターターキット (DC Fan を含むもの) を利用するチュートリアル](https://webiot-2018--tutorial-chirimen-org.netlify.com/)
+- [2018 年度に作成したスターターキット (DC Fan を含むもの) を利用するチュートリアル](https://webiot-2018--tutorial-chirimen-org.netlify.com/raspi3/ja/)
   - DC Fan を含む、初期のスターターキットを使うチュートリアルです。[Web x IoT Makers Challenge 2018-19](https://webiotmakers.github.io/) でも採用されていたバージョンです。
 - [オリジナルチュートリアル (Qiita 版)](deprecated.md)
   - 本チュートリアルサイトの元となった、CHIRIMEN コミュニティメンバーが当初 Qiita などで作成していたページのリンク集です。
