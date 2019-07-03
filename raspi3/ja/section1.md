@@ -517,19 +517,17 @@ MOSFET は[電界効果トランジスタ (FET)](https://ja.wikipedia.org/wiki/%
 
 今回はとても小型なギヤードモータである、[ちびギアモータ](https://tiisai.dip.jp/?p=2676)を利用します。
 
-<!-- ![ちびギアモータ](imgs/section1/DC.jpg)//画像が完成し次第挿入 -->
+![ちびギアモータ](imgs/section1/chibigear_1.jpg) ![ちびギアモータ](imgs/section1/chibigear_2.jpg)
 
 ## a. 部品と配線について
 
-ちびギアモータ本体に加え、
+ちびギアモータ本体に加え、以下のものを用意します。
 
-![部品一覧](imgs/section1/b2.jpg)
+![部品一覧](imgs/section1/parts.jpg)
 
 次に、先ほどの「タクトスイッチを押したら LED をつけたり消したり」する回路から、LED と LED 用の抵抗を一旦外して、MOSFET と抵抗、ちびギアモータを次のように配置します。
 
-<!-- ![DCモーターの回路図](imgs/section1/DC3motor.png) -->
-<!-- ![DCファンの回路図](imgs/section1/DC3.png)//画像が容易でき次第挿入 -->
-
+!ちびギアモータの回路図](imgs/section1/DC3motor.png)
 
 回路図の配置を多少調整していますが、黄色のジャンパーピンと黒のジャンパーピンの間をスイッチでオンオフできるように配線するのは同じです。手持ちのスイッチやジャンパワイヤに合わせて上手く配線してみてください。
 
