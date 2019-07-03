@@ -91,13 +91,17 @@ Raspberry Pi 3 と ADT7410 との接続方法(回路図)と example コードは
 
 これらのパーツを下記回路図の通りに接続してみてください。**ADT7410 は 4 本のジャンパーピンを左右逆に繋いでしまうと、短時間で非常に高温になり故障するだけでなく火傷してしまいます** ので、配線には注意してください。
 
-![schematic](imgs/section2/schematic.png)
+![schematic](imgs/section2/schematic_warning.png)
 
 下記が Raspi3 側の接続ピンの位置を拡大した図になります。
 
 間違えないよう接続をお願いします。
 
 ![I2Cで利用するピンの位置](imgs/section2/I2C.png)
+
+実際に配線した写真は以下の通りです。
+
+![実際の配線写真](imgs/section2/temperature_real.jpg)
 
 ## b. 接続がうまくいったか確認する
 
