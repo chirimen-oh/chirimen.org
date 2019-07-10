@@ -161,27 +161,23 @@ Grove Digital Light Sensor の仕様に基づくデータ読み出し処理を�
 
 # 3. 測距センサを使ってみる
 
-モノまでの距離を測定する測距センサ (GP2Y0E03) を使ってみましょう。
+モノまでの距離を測定する測距センサ (I2C-VL53L0X) を使ってみましょう。
 
 ## a. 部品と配線について
 
 「1.準備」のパートに記載したものに加え、下記を用意してください。
 
-* [測距センサ(GP2Y0E03)](http://akizukidenshi.com/catalog/g/gI-07547/) x 1
+* [測距センサ(I2C-VL53L0X)](https://www.switch-science.com/catalog/2894/) x 1
 
-Raspi 3 との接続方法については、下記回路図を参照ください。
+Raspi 3 との接続方法については、こちらの回路図を参照ください。
 
-`/home/pi/Desktop/gc/i2c/i2c-GP2Y0E03/schematic.png`
+![回路図](http://chirimen.org/chirimen-raspi3/gc/contrib/examples/i2c-VL53L0X/schematic.png)
 
-![回路図2](imgs/section3/k2.png)
+このセンサモジュールは4本のピンヘッダ経由で接続します。あらかじめピンヘッダをハンダ付けしておいてください。また、製品によってはチップ表面に黄色の保護フィルムがついているものがあります。剥して使用してください。
 
-このセンサモジュールには、細い7本のケーブルが付属していますが、このままでは Raspi3 と接続することができません。
+ピンの加工例（画像が用意でき次第更新します。）
 
-この細いケーブルを 2.54mm のジャンパーピンにハンダづけするなどしてブレッドボード経由で Raspi3 と接続できるよう、加工しておいてください。
-
-ピンの加工例
-
-![加工例](imgs/section3/k3.jpg)
+<!-- ![加工例](imgs/section3/k3.jpg) -->
 
 ## b. 接続確認と example の実行
 
@@ -189,10 +185,11 @@ i2cdetect で接続を確認しておきましょう。
 
 `$ i2cdetect -y -r 1`
 
-SlaveAddress `0x40` が見つかれば接続OKです。
+SlaveAddress `0x52` が見つかれば接続OKです。
 
 次にexampleを動かします。
-
+ -執筆中です。近日中に公開します。
+<!--
 `/home/pi/Desktop/gc/i2c/i2c-GP2Y0E03/index.html`
 
 画面の回路図の下の数値が距離の値(cm)です。
@@ -264,6 +261,7 @@ main.js
 ### sensor_unit.read()
 
 測距センサ GP2Y0E03 の仕様に基づくデータ読み出し処理をここで実施しています。
+-->
 
 # 4. 三軸加速度センサを使ってみる
 
@@ -400,6 +398,8 @@ CHIRIMEN Raspi3 には、他にも `/home/pi/Desktop/gc/i2c/` 配下に下記の
 * i2c-S11059 : 「[S11059 カラーセンサ](http://akizukidenshi.com/catalog/g/gK-08316/)」(カラーセンサ)の接続例です。
 * i2c-VEML6070 : 「[VEML6070 紫外線センサ](https://learn.adafruit.com/adafruit-veml6070-uv-light-sensor-breakout/overview)」(紫外線センサ)の接続例です。
 * i2c-multi-sensors : 2つのセンサ（ADT7410とgrove-light）を利用する例です。
+* GP2Y0E03 : 「[測距センサ(GP2Y0E03)](http://akizukidenshi.com/catalog/g/gI-07547/)」を利用する例です。 
+
 
 また、CHIRIMEN Raspi3 のイメージ内に同梱されている example 以外にも、[CHIIRMEN examples ページのオンライン版](http://chirimen.org/chirimen-raspi3/gc/top/examples/) にはこれらに加えてコミュニティによって順次いろいろなデバイス利用例が追加されています。作りたいもの、試したいものを考えながら試してみてください。
 
