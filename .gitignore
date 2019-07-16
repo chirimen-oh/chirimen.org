@@ -1,4 +1,8 @@
 *~
+.bundle/
+.sass-cache/
 .vs/
 .vscode/
+_site/
 node_modules/
+vendor/
