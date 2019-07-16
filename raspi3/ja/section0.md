@@ -18,7 +18,7 @@ CHIRIMEN for Raspberry Pi 3 を使って Web アプリから「L チカ」(LED �
 
 CHIRIMEN for Raspberry Pi 3 (以下 CHIRIMEN Raspi3) は、Raspberry Pi 3 (以下 Raspi) で動作する IoT プログラミング環境です。[Web GPIO API](http://browserobo.github.io/WebGPIO/) や [Web I2C API](http://browserobo.github.io/WebI2C/) といった JavaScript でハードを制御する API を活用したプログラミングにより、Web アプリ上で Raspi に接続した電子パーツを直接制御できます。
 
-![CHIRIMEN for Raspberry Pi 3 の活用イメージ](imgs/section0/CHIRIMENforRaspberryPi3.png)
+{% cloudinary imgs/section0/CHIRIMENforRaspberryPi3.png alt="CHIRIMEN for Raspberry Pi 3 の活用イメージ" %}
 
 # 2. 事前準備 (機材確認)
 
@@ -28,7 +28,7 @@ CHIRIMEN for Raspberry Pi 3 (以下 CHIRIMEN Raspi3) は、Raspberry Pi 3 (以�
 
 下記が CHIRIMEN for Raspberry Pi 3 の起動に最低限必要となる基本ハードウエアです。
 
-![Raspi の起動に必要なハードウエア一覧](imgs/section0/Raspi3.jpg)
+[{% cloudinary imgs/section0/Raspi3.jpg alt="Raspi の起動に必要なハードウエア一覧" %}](imgs/section0/Raspi3.jpg)
 
 - [Raspberry Pi 3 Model B](https://www.raspberrypi.org/products/raspberry-pi-3-model-b/) もしくは [Raspberry Pi 3 Model B+](https://www.raspberrypi.org/products/raspberry-pi-3-model-b-plus/) × 1
   - 補足: Raspberry Pi 3 Model A+ も対応見込みですが執筆時点では未検証です
@@ -47,7 +47,7 @@ CHIRIMEN for Raspberry Pi 3 (以下 CHIRIMEN Raspi3) は、Raspberry Pi 3 (以�
 
 基本ハードウエアに加え「L チカ (えるちか)」を実施するには下記パーツも追加で必要です。
 
-![Lチカに必要なパーツ一覧](imgs/section0/L.jpg)
+{% cloudinary imgs/section0/L.jpg alt="Lチカに必要なパーツ一覧" %}
 
 - ブレッドボード × 1
 - リード付き LED × 1
@@ -66,7 +66,7 @@ CHIRIMEN for Raspberry Pi 3 (以下 CHIRIMEN Raspi3) は、Raspberry Pi 3 (以�
 
 機材が揃ったら、いよいよ Raspi を接続して起動してみましょう。基本ハードウエアを下図のように接続してください。(Raspi への電源ケーブルの接続は最後にしましょう)
 
-![接続方法](imgs/section0/h2.jpg)
+{% cloudinary imgs/section0/h2.jpg alt="接続方法" %}
 
 もしよくわからない場合には、[Raspberry Pi Hardware Guide](https://www.raspberrypi.org/learning/hardware-guide/) なども参照してみると良いでしょう。
 
@@ -76,7 +76,7 @@ CHIRIMEN for Raspberry Pi 3 (以下 CHIRIMEN Raspi3) は、Raspberry Pi 3 (以�
 
 Raspi の起動後、下記のようなデスクトップ画面が表示されたら CHIRIMEN Raspi3 の起動に成功しています。おめでとうございます！
 
-![CHIRIMEN for Raspberry Pi 3 desktop 画面](imgs/section0/CHIRIMENforRaspberryPi3desktop.png)
+{% cloudinary imgs/section0/CHIRIMENforRaspberryPi3desktop.png alt="CHIRIMEN for Raspberry Pi 3 desktop 画面" %}
 
 ## 残念ながら上記画面が表示されなかった！？
 
@@ -96,7 +96,7 @@ CHIRIMEN Raspi3 では、ネットワークに繋がなくてもローカルフ�
 
 WiFi の設定は、タスクバーの右上の WiFi アイコンから行えます。
 
-![wifi設定](imgs/section0/wifi.png)
+{% cloudinary imgs/section0/wifi.png alt="WiFi設定" %}
 
 # 4. 「L チカ」をやってみよう
 

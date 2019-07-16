@@ -1,17 +1,19 @@
 ---
 ---
 
-@import "{{ site.theme }}";
-
-// hide some elements on production site
+@import "{{ site.theme }}"; // hide some elements on production site
 html.tutorial-chirimen-org .hide-on-production {
   display: none;
-}
-
-// ajust margin/padding of header
+} // ajust margin/padding of header
 .page-header {
   padding: 1.5rem 2rem 1rem;
 }
 .project-tagline {
   margin-bottom: 1rem;
+}
+.main-content img {
+  display: block;
+  margin: auto;
+  max-width: 90%;
+  height: auto;
 }
