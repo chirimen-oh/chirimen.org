@@ -171,7 +171,7 @@ Grove Digital Light Sensor の仕様に基づくデータ読み出し処理を�
 
 Raspi 3 との接続方法については、こちらの回路図を参照ください。
 
-![回路図](http://chirimen.org/chirimen-raspi3/gc/contrib/examples/i2c-VL53L0X/schematic.png)
+![回路図](https://chirimen.org/chirimen-raspi3/gc/contrib/examples/i2c-VL53L0X/schematic.png)
 
 このセンサモジュールは4本のピンヘッダ経由で接続します。あらかじめピンヘッダをハンダ付けしておいてください。また、製品によってはチップ表面に黄色の保護フィルムがついているものがあります。剥して使用してください。
 
