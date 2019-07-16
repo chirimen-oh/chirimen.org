@@ -34,3 +34,20 @@ commonmark:
 #   math_engine: mathjax
 #   syntax_highlighter: rouge
 # gfm_quirks: paragraph_end
+
+# Jekyll Cloudinary Liquid tag plug-in
+# https://nhoizey.github.io/jekyll-cloudinary/
+# https://cloudinary.com/blog/how_i_used_cloudinary_to_solve_responsive_image_needs_in_my_jekyll_website_and_shared_the_magic_in_a_plugin
+cloudinary:
+  cloud_name: chirimen
+  # only_prod: true
+  verbose: true
+  origin_url: https://tutorial.chirimen.org
+  presets:
+    default:
+      min_width: 400
+      max_width: 1600
+      fallback_max_width: 800
+      steps: 7
+      #sizes: "(min-width: 800px) 800px, 100vw"
+      sizes: "90vw"
