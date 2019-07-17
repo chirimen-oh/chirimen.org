@@ -50,4 +50,4 @@ cloudinary:
       fallback_max_width: 800
       steps: 7
       #sizes: "(min-width: 800px) 800px, 100vw"
-      sizes: "90vw"
+      sizes: "80vw"
