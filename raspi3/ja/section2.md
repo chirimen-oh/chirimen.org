@@ -35,7 +35,7 @@ CHIRIMEN for Raspberry Pi 3 （以下「CHIRIMEN Raspi3」）を使ったプロ�
 
 SDA（シリアルデータ）と SCL（シリアルクロック）の 2 本の線で通信を行います。
 
-![i2c-bus](imgs/section2/i2c-bus.png)
+{% cloudinary imgs/section2/i2c-bus.png alt="i2c-bus" %}
 
 上図のように、i2c の SDA、SCL は複数のモジュール間で共有します。（「I2C バス」と言います。）
 
@@ -45,7 +45,7 @@ I2C ではマスターとスレーブの間で通信が行われます。常に�
 
 このため、同じ I2C バス上に同じ SlaveAddress のスレーブを繋ぐことはできません。
 
-![i2c-bus2](imgs/section2/i2c-bus2.png)
+{% cloudinary imgs/section2/i2c-bus2.png alt="i2c-bus2" %}
 
 通信するモジュール同士が同一基板上にない場合には、SDA、SCL の 2 本の通信線に加え電源や GND の線を加えて 4 本のケーブルを用いて接続するのが一般的です。
 
@@ -87,21 +87,21 @@ Raspberry Pi 3 と ADT7410 との接続方法(回路図)と example コードは
 
 この回路を作成するのに必要な部品は下記の通りです。(Raspi3 基本セットを除く)
 
-![parts](imgs/section2/parts.jpg)
+{% cloudinary imgs/section2/parts.jpg alt="parts" %}
 
 これらのパーツを下記回路図の通りに接続してみてください。**ADT7410 は 4 本のジャンパーピンを左右逆に繋いでしまうと、短時間で非常に高温になり故障するだけでなく火傷してしまいます** ので、配線には注意してください。
 
-![schematic](imgs/section2/schematic_warning.png)
+{% cloudinary imgs/section2/schematic_warning.png alt="schematic" %}
 
 下記が Raspi3 側の接続ピンの位置を拡大した図になります。
 
 間違えないよう接続をお願いします。
 
-![I2Cで利用するピンの位置](imgs/section2/I2C.png)
+{% cloudinary imgs/section2/I2C.png alt="I2Cで利用するピンの位置" %}
 
 実際に配線した写真は以下の通りです。
 
-![実際の配線写真](imgs/section2/temperature_real.jpg)
+{% cloudinary imgs/section2/temperature_real.jpg alt="実際の配線写真" %}
 
 ## b. 接続がうまくいったか確認する
 
@@ -111,7 +111,7 @@ Raspberry Pi 3 と ADT7410 との接続方法(回路図)と example コードは
 
 すると、下記のような画面が表示されるはずです。
 
-![ADT7410接続中](imgs/section2/ADT7410.png)
+{% cloudinary imgs/section2/ADT7410.png alt="ADT7410接続中" %}
 
 `48`という表示が見えます。これは 16 進数表示ですので`0x48`という意味です。
 
@@ -125,12 +125,12 @@ Raspberry Pi 3 と ADT7410 との接続方法(回路図)と example コードは
 
 ADT7410 は`0x48`がデフォルトの SlaveAddress で、A0,A1 ピンの HIGH/LOW により SlaveAddeess の下位 2bit を変更できることがわかります。
 
-![I2C Bus Address Options](imgs/section2/I2CBusAddressOptions.png)
+{% cloudinary imgs/section2/I2CBusAddressOptions.png alt="I2C Bus Address Options" %}
 (ADT7410 Data Sheet より抜粋)
 
 試しに、一度 Raspi3 の 3.3V に接続している線を抜いて、もう一度 `i2cdetect -y -r 1` を実行してみてください。
 
-![ADT7410の電源OFF](imgs/section2/ADT7410OFF.png)
+{% cloudinary imgs/section2/ADT7410OFF.png alt="ADT7410の電源OFF" %}
 
 `0x48` が見つからなくなりました。
 
@@ -148,7 +148,7 @@ ADT7410 のためのサンプルコードは先ほどの配線図と同じフォ
 
 ダブルクリックすると、ブラウザが起動し下記のような画面になります。
 
-![browser](imgs/section2/browser.png)
+{% cloudinary imgs/section2/browser.png alt="browser" %}
 
 画面の回路図の下の数値が温度（摂氏）になります。
 

@@ -55,7 +55,7 @@ CHIRIMEN for Raspberry Pi 3（以下 「CHIRIMEN Raspi3」） を使ったプロ
 
 今回用意するものが多いですが、これまでのチュートリアルで使ったことがあるものばかりですので、ご安心ください。
 
-![parts-1](imgs/section4/parts-1.jpg)
+{% cloudinary imgs/section4/parts-1.jpg alt="利用部品の写真" %}
 
 # 2.まずは仕様通りにつくる
 
@@ -63,7 +63,7 @@ CHIRIMEN for Raspberry Pi 3（以下 「CHIRIMEN Raspi3」） を使ったプロ
 
 Raspberry Pi 3 との接続方法については、下記回路図を参照ください。
 
-![schematic](imgs/section4/schematic.png)
+{% cloudinary imgs/section4/schematic.png alt="回路図" %}
 
 ## b. 接続確認
 

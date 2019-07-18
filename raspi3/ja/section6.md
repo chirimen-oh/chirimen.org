@@ -12,7 +12,7 @@ layout: tutorial
 
 全体の様子は下の写真のようになります。
 
-![全体の様子](imgs/section6/i1.jpg)
+{% cloudinary imgs/section6/i1.jpg alt="全体の様子" %}
 
 # 1.ステッピングモーターとは
 
@@ -22,7 +22,7 @@ layout: tutorial
 
 回路図のシンボルでは下の図のようにあらわされ、モーターの軸に対してそれぞれ違う方向にコイルが巻かれています。コイルの中点から線が出ているかどうかで、左のバイポーラ型(4 線式)、右のユニポーラ型(6 線式)がありますが、今回使用するのはバイポーラ型(4 線式)のモーターです。
 
-![ステッピングモーター](imgs/section6/i2.png)
+{% cloudinary imgs/section6/i2.png alt="ステッピングモーター" %}
 
 通常のモーターでは電圧をかければ勝手に回りますが、ステッピングモーターは電気回路側でどのコイルに電流を流すかを順次切り替えて行く事で、1 ステップずつ回転するという仕組みになっています。
 
@@ -44,7 +44,7 @@ layout: tutorial
 
 今回作る回路は下の図の通りです。かなり部品が多いですが順番に説明して行きます。
 
-![回路](imgs/section6/i3.png)
+{% cloudinary imgs/section6/i3.png alt="回路" %}
 
 (クリックで拡大します)
 
@@ -105,7 +105,7 @@ Raspberry Pi で ターミナルを起動して次のコマンドを入力する
 
 今回の Arduino の I2C スレーブデバイスはスケッチ`arduiono-stepping-motor` で `0x12` と定義されていますので、一覧に `12` が表示されれば Raspberry Pi と Arduino の間の接続は正常です。
 
-![i2cdetectの様子](imgs/section6/i4.png)
+{% cloudinary imgs/section6/i4.png alt="i2cdetectの様子" %}
 
 ## モータードライバ、モーターの接続
 
@@ -113,7 +113,7 @@ Raspberry Pi で ターミナルを起動して次のコマンドを入力する
 
 `i2cset -y 1 0x12 0x01 1600 w`
 
-![i2csetの様子](imgs/section6/i5.png)
+{% cloudinary imgs/section6/i5.png alt="i2csetの様子" %}
 
 正常であれば、このコマンドでステッピングモーターが 1 回転だけ回って止まるはずです。
 
@@ -129,7 +129,7 @@ Raspberry Pi で ターミナルを起動して次のコマンドを入力する
 
 下のような画面になり、1 秒の停止をはさみながらモーターが 1 回転ずつ正方向逆方向交互に動くはずです。
 
-![Exampleの様子](imgs/section6/i6.png)
+{% cloudinary imgs/section6/i6.png alt="Exampleの様子" %}
 
 # 5.ソースコードの確認
 
@@ -213,7 +213,7 @@ for (;;) {
 
 # [Example3](https://g200kg.github.io/chirimen-steppingmotor/example3.html)
 
-![Example3の画面](imgs/section6/i7.png)
+{% cloudinary imgs/section6/i7.png alt="Example3の画面" %}
 
 javascript
 

@@ -62,11 +62,11 @@ CHIRIMEN Raspi3 の開発やこのチュートリアルの執筆・更新は [CH
 
 このパートでは [Hello World 編](section0.md) で実施した L チカの配線をそのまま利用します。必要な部品も同じです。
 
-![部品一覧](imgs/section1/b.jpg)
+{% cloudinary imgs/section1/b.jpg alt="部品一覧" %}
 
 LED は、26 番ポートに接続しておいてください。
 
-![回路図](imgs/section1/k.png)
+{% cloudinary imgs/section1/k.png alt="回路図" %}
 
 ## b. HTML/CSS を記載する
 
@@ -134,7 +134,7 @@ JSFiddle 利用時にはいずれかの対応をしてください (ローカル
 
 ディスプレイの丸が、赤 → 黒 → 赤 → 黒 → 赤 → 黒 → とクリックする都度切り替えできるようになったら成功です。
 
-![LED On/Offをブラウザ画面上のボタンクリックで実施](imgs/section1/LEDOnOff.gif)
+{% cloudinary imgs/section1/LEDOnOff.gif alt="LED On/Offをブラウザ画面上のボタンクリックで実施" %}
 
 ## d. ボタンに LED を反応させる
 
@@ -188,7 +188,7 @@ GPIO ポートにかける電圧を Web アプリで変化させたい時には�
 `port.write()` は、出力モードに指定した GPIO ポートの電圧を切り替える指定を行う API です。
 `port.write(1)` で、指定したポートから HIGH (Raspi3 では 3.3V) の電圧がかかり、`port.write(0)` で LOW(0V) になります。
 
-![ここまでのJSFiddleの画面](imgs/section1/JSFiddle.png)
+{% cloudinary imgs/section1/JSFiddle.png alt="ここまでのJSFiddleの画面" %}
 
 # 3. マウスクリックのかわりにタクトスイッチを使ってみる
 
@@ -211,7 +211,7 @@ GPIO ポートにかける電圧を Web アプリで変化させたい時には�
 
 [タクトスイッチの製品ページ](https://www.alps.com/prod/info/J/HTML/Tact/SnapIn/SKHW/SKHWALA010.html) などにも回路図がありますが、端子が出ている向き (次の図では縦方向) は常に接続されており、それと直角方向がボタンによって切り替わります。次の図では左の 4pin スイッチと 2pin スイッチ (とジャンパー線) が同じ回路となります。
 
-![tactswitch](imgs/section1/tactswitch.png)
+{% cloudinary imgs/section1/tactswitch.png alt="tactswitch" %}
 
 ## a. 準備：画面のボタンをモーメンタリ動作に変えておく
 
@@ -299,11 +299,11 @@ window.onload = async function mainFunction() {
 - 前述のタクトスイッチ × 1
 - ジャンパーワイヤー（オスーメス）× 2
 
-![追加する部品](imgs/section1/t.jpg)
+{% cloudinary imgs/section1/t.jpg alt="追加する部品" %}
 
 下図のように、さきほどの LED の配線にタクトスイッチを追加しましょう。この図の例では 2 ピンのタクトスイッチを使っていますが、4 ピンの場合も黄色と黒のジャンパー線の間にボタンでオンオフが切り替わるよう向きに注意してスイッチを配置してください。
 
-![スイッチを追加した配線](imgs/section1/s.png)
+{% cloudinary imgs/section1/s.png alt="スイッチを追加した配線" %}
 
 ### 今回のスイッチは「プルアップ」回路で接続
 
@@ -323,12 +323,12 @@ window.onload = async function mainFunction() {
 
 プルアップとは、回路を初期状態で「HIGH にしておく」ことですが、CHIRIMEN Raspi3 で利用可能な GPIO ポートのうち、下記ポート番号がプルアップ状態となっています。
 
-![初期状態でPullupされているPortの一覧](imgs/section1/PullupPort.png)
+{% cloudinary imgs/section1/PullupPort.png alt="初期状態でPullupされているPortの一覧" %}
 
 今回の回路では、このうち、Port 5 を利用しています。
 さきほどの動作となるメカニズムは下記の通りです。
 
-![スイッチの動作](imgs/section1/s2.png)
+{% cloudinary imgs/section1/s2.png alt="スイッチの動作" %}
 
 この動作を頭に入れておきましょう。
 
@@ -509,7 +509,7 @@ MOSFET は[電界効果トランジスタ (FET)](https://ja.wikipedia.org/wiki/%
 
 今回は、Nch MOSFET「[2SK4017](http://akizukidenshi.com/catalog/g/gI-07597/)」を利用します。
 
-![mosfet](imgs/section1/mosfet.png)
+{% cloudinary imgs/section1/mosfet.png alt="mosfet" %}
 
 ## ギヤードモータとは
 
@@ -517,17 +517,17 @@ MOSFET は[電界効果トランジスタ (FET)](https://ja.wikipedia.org/wiki/%
 
 今回はとても小型なギヤードモータである、[ちびギアモータ](https://tiisai.dip.jp/?p=2676)を利用します。
 
-![ちびギアモータ](imgs/section1/chibigear_1.jpg) ![ちびギアモータ](imgs/section1/chibigear_2.jpg)
+{% cloudinary imgs/section1/chibigear_1.jpg alt="ちびギアモータ" %} {% cloudinary imgs/section1/chibigear_2.jpg alt="ちびギアモータ" %}
 
 ## a. 部品と配線について
 
 ちびギアモータ本体に加え、以下のものを用意します。
 
-![部品一覧](imgs/section1/parts.jpg)
+{% cloudinary imgs/section1/parts.jpg alt="部品一覧" %}
 
 次に、先ほどの「タクトスイッチを押したら LED をつけたり消したり」する回路から、LED と LED 用の抵抗を一旦外して、MOSFET と抵抗、ちびギアモータを次のように配置します。
 
-![ちびギアモータの回路図](imgs/section1/DC3motor.png)
+{% cloudinary imgs/section1/DC3motor.png alt="ちびギアモータの回路図" %}
 
 回路図の配置を多少調整していますが、黄色のジャンパーピンと黒のジャンパーピンの間をスイッチでオンオフできるように配線するのは同じです。手持ちのスイッチやジャンパワイヤに合わせて上手く配線してみてください。
 
@@ -538,7 +538,7 @@ MOSFET は[電界効果トランジスタ (FET)](https://ja.wikipedia.org/wiki/%
 実は、この回路は先ほどまでのコード **「d. スイッチに反応するようにする (port.onchange())」** と同じコードで動きます。
 LED が点灯する替わりにちびギアモータが動くようになりました。
 
-<!-- ![DCFan-Movie](imgs/section1/DCFan-Movie.gif)//画像が用意でき次第挿入 -->
+<!-- {% cloudinary imgs/section1/DCFan-Movie.gif alt="DCFan-Movie" %} //画像が用意でき次第挿入 -->
 
 ## c. しかし... (オチ w)
 

@@ -119,11 +119,11 @@ L チカのための配線図は、基本的な作例（examples）と一緒に�
 /home/pi/Desktop/gc/gpio/LEDblink/schematic.png
 ```
 
-![example-files](imgs/section0/example-files.png)
+{% cloudinary imgs/section0/example-files.png alt="example-files" %}
 
 それでは、まず先に `schematic.png` をダブルクリックして見てみましょう。
 
-![example: LEDblink の配線図](imgs/section0/example_LEDblink.png)
+{% cloudinary imgs/section0/example_LEDblink.png alt="example: LEDblink の配線図" %}
 
 LED のリード線の方向に注意しながら、この図の通りにジャンパー線やブレッドボードを使って配線してみましょう。
 
@@ -135,7 +135,7 @@ LED のリード線の方向に注意しながら、この図の通りにジャ�
 
 実際に配線してみると、こんな感じになりました。
 
-![配線してみました](imgs/section0/h.jpg)
+{% cloudinary imgs/section0/h.jpg alt="配線してみました" %}
 
 ### 参考
 
@@ -158,11 +158,11 @@ L チカのためのサンプルコードは先ほどの配線図と同じフォ
 
 ## ブラウザ画面
 
-![browser](imgs/section0/browser.png)
+{% cloudinary imgs/section0/browser.png alt="browser" %}
 
 ## L チカの様子
 
-![Lチカ成功](imgs/section0/L.gif)
+{% cloudinary imgs/section0/L.gif alt="Lチカ成功" %}
 
 L チカに成功しましたか？！
 
@@ -193,7 +193,7 @@ L チカに成功しましたか？！
 
 既に開いているウィンドウを確実に閉じるには、一度ブラウザを閉じてから、再度ブラウザを起動すると確実です (通常はタブだけ消しても十分です)。
 
-![ブラウザの再起動](imgs/section0/b.png)
+{% cloudinary imgs/section0/b.png alt="ブラウザの再起動" %}
 
 ## ブラウザのブックマークから、JS Bin の example を起動
 
@@ -202,11 +202,11 @@ L チカに成功しましたか？！
 
 ブラウザを起動後、ブックマークバーから `examples > GPIO-JSBIN > GPIO-Blink - JS Bin` を選んでアクセスしてください。
 
-![bookmark](imgs/section0/bookmark.png)
+{% cloudinary imgs/section0/bookmark.png alt="bookmark" %}
 
 そのまま起動すると下記のような画面になります。(下記スクリーンショットはアクセス直後の画面から JS Bin のタイトルバー部の「Output」タブを 1 回押して非表示にしています)
 
-![JS BinでのLチカexample画面](imgs/section0/JSBinLexample.png)
+{% cloudinary imgs/section0/JSBinLexample.png alt="JS BinでのLチカexample画面" %}
 
 それでは、コードを眺めてみましょう。
 
@@ -301,7 +301,7 @@ Raspi3 の GPIO 端子は、GND 端子との間に、0V もしくは 3.3V の電
 
 詳しくは[こちらのサイトの解説](https://tool-lab.com/make/raspberrypi-startup-22/)などを参考にしてみましょう。
 
-![Raspi3 PIN配置図](imgs/section0/Raspi3PIN.png)
+{% cloudinary imgs/section0/Raspi3PIN.png alt="Raspi3 PIN配置図" %}
 
 ## GPIOPort の処理
 
@@ -319,7 +319,7 @@ LED は一定以上の電圧 (赤色 LED だと概ね 1.8V 程度、青色 LED �
 
 まとめると下図のような流れになります。
 
-![シーケンス](imgs/section0/s.png)
+{% cloudinary imgs/section0/s.png alt="シーケンス" %}
 
 ## example を修正してみよう
 

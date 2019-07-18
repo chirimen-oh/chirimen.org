@@ -33,7 +33,7 @@ https://github.com/g200kg/chirimen-webbluetooth
 * USB マイク
 * 測距センサ ([GP2Y0E03](http://akizukidenshi.com/catalog/g/gI-07547/))
 
-![必要なもの](imgs/section5/bledemo1.jpg)
+{% cloudinary imgs/section5/bledemo1.jpg alt="必要なもの" %}
 
 # 準備
 
@@ -62,30 +62,30 @@ https://github.com/g200kg/chirimen-webbluetooth
 
 **現在リンク先のサンプルプログラムが動かないケースがある事が判明しています。サンプルプログラムで定数 `bledevices` を定義していますが、デバイス名が `PLAYBULB candle` と小文字で定義しているが実際のデバイスは名が `PLAYBULB CANDLE` と大文字になっており不整合になっています。同様の問題が発生する場合は `bledevices` 定数の定義で CANDLE を大文字にしてください。**
 
-![サンプルプログラム起動の様子](imgs/section5/bledemo2.png)
+{% cloudinary imgs/section5/bledemo2.png alt="サンプルプログラム起動の様子" %}
 
 ## Bluetooth ライトの基本的な制御
 
 Bluetooth デモを起動して [`BLE Connect`]を押すと BLE デバイスを選択するダイアログが出てきます。ここで PLAYBULB (sphere または candle)を選択して [`ペア設定`] を押す事で BLE デバイスと接続されます。
 接続ができた状態で [`Off`]、[`Red`]、[`Green`]、[`Blue`]、[`White`]の各ボタンを押すと PLAYBULB の色が指定の色に変わります。
 
-![Bluetoothライトの基本的な制御の様子](imgs/section5/bledemo3.png)
+{% cloudinary imgs/section5/bledemo3.png alt="Bluetoothライトの基本的な制御の様子" %}
 
 ## マイクからの制御
 
 マイクのボタンを押して[`On`]状態にすると音に反応するようになります。音の周波数帯域を3つに分けてそれぞれ色の RGB に割り当てていますのでマイクで拾う音によって PLAYBULB の色が変わります。
 
-![マイクからの制御の様子](imgs/section5/bledemo4.png)
+{% cloudinary imgs/section5/bledemo4.png alt="マイクからの制御の様子" %}
 
 実際の動作状況の動画がありますので見てみてください。
 
-[![実際の動作状況の動画](imgs/section5/blemov.png)](imgs/section5/blemov.mp4)
+[{% cloudinary imgs/section5/blemov.png alt="実際の動作状況の動画" %}](imgs/section5/blemov.mp4)
 
 ## 測距センサからの制御
 
 測距センサのボタンを[`On`]状態にすると、測距センサで検出した障害物までの距離によって PLAYBULB の色が変わります。この測距センサの検出範囲は4～50cm程度ですので、距離が近くなるにつれて色が青⇒緑⇒赤と変化するようになっています。
 
-![測距センサからの制御の様子](imgs/section5/bledemo5.jpeg)
+{% cloudinary imgs/section5/bledemo5.jpeg alt="測距センサからの制御の様子" %}
 
 # コードの説明
 
