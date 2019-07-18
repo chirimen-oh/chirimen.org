@@ -1,24 +1,42 @@
 # Feedback
 
-このサイトの内容への提案や誤りの指摘などがある場合は [Github Issues](https://github.com/chirimen-oh/tutorials/issues) からお願いします。
+このサイトの内容への提案や誤りの指摘などがある場合は [Github Issues](https://github.com/chirimen-oh/tutorials/issues) からお願いします。Issues で提案などして頂く以外にも、プルリクを送っていただくなどでも勿論構いません。
 
-サイトのテキスト本文は Markdown で書かれたファイルを GitHub Pages デフォルトで用意されているシンプルな [Jekyll テンプレート (Cayman)](https://github.com/pages-themes/cayman) で成形して出力しているものになります。
+サイトの**テキスト本文は Markdown で書かれており**、ウェブページの生成には GitHub Pages で使われている [Jekyll テンプレート (Cayman)](https://github.com/pages-themes/cayman) をベースにカスタマイズしたものを使っています。
 
-指摘や修正の提案を [Issues](https://github.com/chirimen-oh/tutorials/issues) で行って頂く以外にも、プルリクを送っていただくなどでも勿論構いません。
+また、CHIRIMEN コミュニティメンバーで [チュートリアル用リポジトリ](https://github.com/chirimen-oh/tutorials/) の書き込み権限を持っている方は、ページ末尾の「現在のページを GitHub で編集する」と書かれたリンクで [Github の編集画面](https://help.github.com/ja/articles/about-writing-and-formatting-on-github) を開きそのままブラウザで編集して頂けます。
 
-また、CHIRIMEN コミュニティメンバーで [チュートリアル用リポジトリ](https://github.com/chirimen-oh/tutorials/) の書き込み権限を持っている方は、Web ブラウザで Github にアクセスして各ページの markdown ファイルを直接編集していただくなどしても勿論構いません。
-
-いずれかの方法でリポジトリの master ブランチのファイルを変更すると、自動的に Netlify でビルドされて数十秒程度で本番サイトに反映されます。ビルドの進捗や結果は次のバッチや [Netlify の Deploys](https://app.netlify.com/sites/tutorial-chirimen-org/deploys) で確認できます。
+GitHub の master ブランチでファイルを変更すると、自動的に Netlify でビルドされて数十秒程度で本番サイトに反映されます。ビルドの進捗や結果は次のバッチや [Netlify の Deploys](https://app.netlify.com/sites/tutorial-chirimen-org/deploys) で確認できます。
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/c15b982d-99d8-471d-bbce-16b02399e255/deploy-status)](https://app.netlify.com/sites/tutorial-chirimen-org/deploys)
 
 ## 編集時の注意
 
-本サイトは [GitHub Pages](https://help.github.com/articles/using-jekyll-as-a-static-site-generator-with-github-pages/) で使われている Jekyll テンプレートを使っていますが、実際のホスティングには GitHub Pages ではなく Netlify を利用しています。Markdown の変換は Github Pages となるべく互換になるようセットアップしていますが、全ての挙動が Github Pages と同様ではありません。
+Markdown の書き方は **Github のもの ([Github Flavored Markdown](https://help.github.com/ja/articles/basic-writing-and-formatting-syntax)) と基本的に同じ**です。[GitHub の執筆ヘルプ](https://help.github.com/ja/categories/writing-on-github) を参考に編集してください。但し、以下の点については注意して編集してください。
 
-具体的には、Netlify 側の機能として、**各ページの URL は元ファイル名に関わらず小文字に統一** (大文字を含む URL にアクセスすると 301 で小文字 URL にリダイレクトされる)、**末尾の .html や .md あるいは / もなしでアクセス** できるようになります。リポジトリのファイルと Web での URL が異なるのは望ましくないため、**ディレクトリ名や Markdown ファイル名には原則全て小文字を使用してください**。また、Markdown ファイル内での **相対リンクについては GitHub Pages の時と同様 .md 付きの相対リンクで記述してください**。そうすることでサーバ側のビルド時に自動的に .md なしの相対リンクに変換されるので、サイト上でのリンクも GitHub Web 上でのリンクも両方が有効になります。
+### ファイル名と相対リンク
 
-なお、Netlify でのビルドログなどは Github のコミット通知と併せて下記コミュニティ Slack の #github チャンネルに通知されるようになっています。編集結果が反映されない場合などはビルドに失敗していないか確認してください。
+**各ページの URL は元ファイル名に関わらず小文字に統一** (大文字を含む URL にアクセスすると 301 で小文字 URL にリダイレクトされる)、**末尾の `.html`, `.md` あるいは `/` もなしでアクセス** できるようになります。リポジトリのファイルと Web での URL が異なるのは望ましくないため、**ディレクトリ名や Markdown ファイル名には原則全て小文字を使用してください**。
+
+また、Markdown ファイル内での **相対リンクについては GitHub Pages の時と同様 .md 付きの相対リンクで記述してください**。サイトのビルド時に自動的に .md なしの相対リンクに変換され、サイト上でのリンクが正しくなると同時に、GitHub Web 上でのリンクも維持される形に出来ます。
+
+### 画像の埋め込み
+
+Markdown で画像を埋め込む場合は普通そのファイルへのパスを `![画像の説明](path/to/image.png)` のように指定して埋め込みます。このサイトでもそれは可能ですが、ウィンドウサイズに応じた画像を読み込みできず、元画像が大きいとページが重たくなりすぎるし、元画像を小さくすると大画面や高解像度ディスプレイで見たときに荒く見えてしまいます。
+
+そのため、オリジナル画像は大きなものを用意し [Cloudinary](https://cloudinary.com/) という画像変換・配信サービスを使い、表示に適切なサイズの画像を生成・読み込み出来るようにしています。Cloudinary を使って自動的に適切なサイズに変換した画像を表示させるには次のように [Cloudinary 用の Liquid tag](https://nhoizey.github.io/jekyll-cloudinary/) を使ってください。
+
+**`{% raw %}{% cloudinary path/to/image.png alt="画像の説明" %}{% endraw %}`**
+
+回路図などでクリックしたらオリジナルサイズの画像を拡大表示させたい場合はオリジナル画像へのリンクで囲います。
+
+**`{% raw %}[{% cloudinary path/to/image.png alt="画像の説明" %}{% endraw %}](path/to/image.png)`**
+
+但しこれはあくまでもサイト内の画像だけです。外部サイトの画像は通常通り `![画像の説明](https://example.org/image.png)` のようにして埋め込んでください (必要ない限り外部サイト画像埋め込みはしないでください)。
+
+### 通知と反映の確認
+
+Netlify でのサイトビルドログなどは Github のコミット通知と併せて下記コミュニティ Slack の #github チャンネルに通知されるようになっています。編集結果が反映されない場合などはビルドに失敗していないか確認してください。
 
 ## ファイル構成とテンプレート
 
@@ -32,7 +50,7 @@
   * [tutorial.html](https://github.com/chirimen-oh/tutorials/blob/master/_layouts/tutorial.html) - チュートリアル用テンプレート。目次が自動生成されるのがデフォルトとの違い。
 * [_redirects](https://github.com/chirimen-oh/tutorials/blob/master/_redirects) - リダイレクトの定義ファイル。 [Netlify のドキュメント](https://www.netlify.com/docs/redirects/) を参照
 * _site - リポジトリ上には存在しません。ビルド環境を構築して `jekyll build` コマンドでビルドを実行すると公開サイト用のファイルがこのディレクトリに生成され、それを Netlify の CDN でドキュメントルートとしてホストする設定になっています。
-* .eslintrc.yml, .prettierrc - ESLint や Prettier で使用する JavaScript のコーディングルール定義ファイル
+* .eslintrc.yml, .prettierrc, .stylelintrc - ESLint, StyleLint, Prettier で使用する JavaScript やスタイルシートのコーディングルール定義ファイル
 * .ruby-version, Gemfile - Jekyll テンプレートでビルドするときに使う Ruby バージョンとパッケージ定義ファイル (Netlify でのビルド用)
 * README.md - トップページ (https://tutorial.chirimen.org/) のファイル
 * assets - サイト全体で利用する CSS や JavaScript ファイルを収めるディレクトリ。`_layouts` 配下の html ファイルから読み込む。 
@@ -52,9 +70,9 @@ Github Pages は Jekyll テンプレートが使われており、詳細につ�
   * [Front matter](https://jekyllrb.com/docs/front-matter/) markdown 冒頭の `---` 行で囲まれたメタデータ定義セクション (YAML front matter block) の説明
   * [Includes](https://jekyllrb.com/docs/includes/) 使い回したいパーツがある場合に `_includes` ディレクトリ配下に定義をおいて読み込む方法
 
-## ローカルビルドしたい場合
+## ローカルビルド手順
 
-ローカルでサイトをビルドしたい場合はまず OS に応じた手順で ruby をインストールし `gem install bundler` で bundler もインストールしてください (一般的な Ruby 開発環境構築と同じ)。ruby と bunlder まで用意できていたら次の手順でビルドできます:
+手元の PC でサイトをビルドしながら編集したい場合、OS に応じた手順で ruby をインストールし `gem install bundler` で bundler もインストールしてください (一般的な Ruby 開発環境構築と同じ)。ruby と bundler まで用意できていたら次の手順でサイトをビルドできます:
 
 ```sh
 git clone git@github.com:chirimen-oh/tutorials.git
