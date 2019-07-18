@@ -50,3 +50,11 @@ cloudinary:
       fallback_max_width: 1000
       steps: 9
       sizes: "(min-width: 72rem) 60rem, 90vw"
+    half:
+      min_width: 200
+      max_width: 1000
+      fallback_max_width: 600
+      steps: 5
+      sizes: "(min-width: 36rem) 30rem, 50vw"
+      attributes:
+        class: half
