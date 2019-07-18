@@ -29,9 +29,9 @@ CHIRIMEN for Raspberry Pi 3 (Raspi3) を使って L チカ (LED を点滅) し�
 
 ## ボードと機材を配線しよう
 
-[{% cloudinary half imgs/section0/example_LEDblink.png alt="Lチカ起動画面" style="width: 33%; margin: 0 2% 5px 1em;" %}](imgs/section0/example_LEDblink.png)
+[{% cloudinary half imgs/section1/k.png alt="Lチカ起動画面" style="width: 40%; margin: 0;" %}](imgs/section1/k.png)
 
-[右図](imgs/section0/example_LEDblink.png) と同じように配線してみよう ([配線時の写真はこちら](imgs/section0/h.jpg))。
+[右図](imgs/section0/k.png)と同じように配線してみよう (クリックすると拡大します。[写真はこちら](imgs/section0/h.jpg))。
 
 **注意**: LED には極性 (方向) があり、**足が長い方 (アノード) を GPIO 出力ピンに**、足が短い方 (カソード) を GND 側に繋いでください。抵抗は LED のどちらの足の側に繋いでも構いません。[参考ページ: LED の使い方](https://www.marutsu.co.jp/pc/static/large_order/led)
 
