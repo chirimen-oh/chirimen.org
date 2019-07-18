@@ -46,8 +46,7 @@ cloudinary:
   presets:
     default:
       min_width: 400
-      max_width: 1600
-      fallback_max_width: 800
-      steps: 7
-      #sizes: "(min-width: 800px) 800px, 100vw"
-      sizes: "80vw"
+      max_width: 2000
+      fallback_max_width: 1000
+      steps: 9
+      sizes: "(min-width: 72rem) 60rem, 90vw"
