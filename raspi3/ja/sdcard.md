@@ -26,7 +26,7 @@ SD カードの書き込みに使う PC で最新の起動イメージをダウ�
 
 `Select Image` ボタンで先ほどダウンロード (と展開) したイメージファイルを選択、`Select drive` で指し込んだ SD カードのドライブを選択 (間違ったドライブを選択するとそのデータが消えてしまうため要注意) し、`Flash!` ボタンを押してください。
 
-![Etcher の操作画面](https://etcher.io/static/screenshot.gif)
+![Etcher の操作画面](https://www.balena.io/blog/content/images/2018/11/image11.gif)
 
 ## 4. 起動を確認する
 
