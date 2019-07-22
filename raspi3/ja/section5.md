@@ -2,7 +2,7 @@
 layout: tutorial
 ---
 
-# 5. WebBluetooth 編
+# 5. WebBluetooth の使い方
 
 # 注意: 執筆・更新中
 **本チュートリアルではリンク先のサンプルコードがそのままでは動作せず、修正が必要なことがあるページがあることが判明しています。
@@ -39,8 +39,8 @@ https://github.com/g200kg/chirimen-webbluetooth
 
 ## 前提
 
-* CHIRIMEN for Raspberry Pi の基本的な動かし方については、「[CHIRIMEN for Raspberry Pi 3 Hello World](section0.md)」の通りにできているものとします。
-また、測距センサ(GP2Y0E03)は「[CHIRIMEN for Raspberry Pi 3 チュートリアル 3. I2C　応用編（その他のセンサ）](seection3.md)」の通りに動作しているものとします。
+* CHIRIMEN for Raspberry Pi の基本的な動かし方については、「[L チカしてみよう](section0.md)」の通りにできているものとします。
+また、測距センサ(GP2Y0E03)は「[I2C の使い方](seection3.md)」の通りに動作しているものとします。
 
 ## WebBluetoothの有効化
 
@@ -252,8 +252,8 @@ const COLOR_UUID = 0xFFFC;
 
 # 参考
 
-* [CHIRIMEN for Raspberry Pi 3 Hello World](section0.md)
-* [CHIRIMEN for Raspberry Pi 3 チュートリアル 3. I2C　応用編（その他のセンサ）](section3.md)
+* [チュートリアル - L チカしてみよう](section0.md)
+* [チュートリアル - I2C の使い方](section3.md)
 * [codelabs : Control a PLAYBULB candle with Web Bluetooth](https://codelabs.developers.google.com/codelabs/candle-bluetooth/#0)
 * [W3C : Media Capture and Streams](https://www.g200kg.com/demo/chirimen/webbluetooth/README.md)
 * [W3C : Web Audio API](https://webaudio.github.io/web-audio-api/)

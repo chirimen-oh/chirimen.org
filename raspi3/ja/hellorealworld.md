@@ -44,7 +44,7 @@ CHIRIMEN for Raspberry Pi 3 (Raspi3) を使って L チカ (LED を点滅) し�
 **補足**: [オンライン版](https://r.chirimen.org/gpio-blink) でも同じコードを実行したり書き換えてみたり出来ます。  
 **注意**: ローカル版とオンライン版など、**同時に複数のタブで同じ GPIO ポートは操作できません**。
 
-L チカが出来たら、スイッチのオンオフや人感センサーを使う場合など [他の GPIO 利用例](http://chirimen.org/chirimen-raspi3/gc/top/examples/#gpioExamples) にもチャレンジしてみてください。詳しくはチュートリアルの [GPIO編](section1.md) をご覧ください。
+L チカが出来たら、スイッチのオンオフや人感センサーを使う場合など [他の GPIO 利用例](http://chirimen.org/chirimen-raspi3/gc/top/examples/#gpioExamples) にもチャレンジしてみてください。詳しくはチュートリアルの [L チカしてみよう](section0.md) と [GPIO の使い方](section1.md) をご覧ください。
 
 -----
 
@@ -64,8 +64,7 @@ $ i2cdetect -y -r 1
 
 [{% cloudinary half imgs/section2/ADT7410.png alt="i2cdetect実行例" style="width: 33%; margin: 0 2% 5px 1em;" %}](imgs/section2/ADT7410.png)
 
-[右図](imgs/section2/ADT7410.png) のような画面が表示されるはずです。
-`i2cdetect` コマンドでは I2C バスに接続されている SlaveAddress (デバイス毎に割り当てられている番号) を確認できます。アドレスが表示されない場合は配線の間違いなどでセンサーを認識できていません。
+[右図](imgs/section2/ADT7410.png) のような画面が表示されるはずです。`i2cdetect` コマンドでは I2C バスに接続されている Slave アドレス (デバイス毎の割り当て番号) を確認できます。[i2cdetect WebI2C 版](http://chirimen.org/chirimen-raspi3/gc/contrib/examples/i2c-detect/i2cdetectPI.html) でも確認できます。アドレスが表示されない場合は配線などの間違いがないか確認してください。
 
 ## Example コードを実行しよう
 
@@ -75,12 +74,12 @@ $ i2cdetect -y -r 1
 
 画面下部に数字がでていますね。これが温度センサーから取得した現在の温度 (摂氏) の表示になります。
 
-**補足**: [オンライン版](https://r.chirimen.org/i2c-adt7410) でも同じコードで試せます。  
+**補足**: [オンライン版](https://r.chirimen.org/i2c-adt7410) でも同じコードで試せます。
 
-温度センサーが使えたら、光センサー、距離センサーなど [いろいな I2C デバイスの例](http://chirimen.org/chirimen-raspi3/gc/top/examples/#i2cExamples) にもチャレンジしてみてください。詳しくはチュートリアルの [I2C 基本編](section2.md) と [I2C 応用編](section3.md) をご覧ください。
+温度センサーが使えたら、光センサー、距離センサーなど [いろいな I2C デバイスの例](http://chirimen.org/chirimen-raspi3/gc/top/examples/#i2cExamples) にもチャレンジしてみてください。詳しくはチュートリアルの [センサーを使ってみよう](section2.md) と [I2C の使い方](section3.md) をご覧ください。
 
 -----
 
 # 3. もっといろいろしてみよう
 
-[チュートリアル](readme.md) のコードの説明も読みつつコードを書き換えてみたり、各デバイス用の回路図、サンプルコード、オンライン版を用意している [Example 集ページ](http://chirimen.org/chirimen-raspi3/gc/top/examples/) を参考に、色々なデバイスを繋いで自由なアイデアを形にしてみてください。
+詳しく説明している [チュートリアル](readme.md) を読みつつコードを書き換えてみたり、各デバイス用の回路図、サンプルコード、オンライン版を用意している [Example 集ページ](http://chirimen.org/chirimen-raspi3/gc/top/examples/) を参考に、色々なデバイスを繋いで自由なアイデアを形にしてみてください。

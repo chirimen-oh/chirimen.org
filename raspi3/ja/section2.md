@@ -2,7 +2,7 @@
 layout: tutorial
 ---
 
-# 2. I2C 　基本編 (ADT7410 温度センサー)
+# 2. I2C センサーを使ってみよう (初めての I2C)
 
 # 概要
 
@@ -10,7 +10,7 @@ CHIRIMEN for Raspberry Pi 3 （以下「CHIRIMEN Raspi3」）を使ったプロ�
 
 ## 前回までのおさらい
 
-本チュートリアルを進める前に「[Hello World 編](section1.md)」と、「[GPIO 編](section1.md)」で CHIRIMEN Raspi3 の基本的な操作方法とプログラミング方法を確認しておいてください。
+本チュートリアルを進める前に「[L チカしてみよう](section0.md)」と、「[GPIO の使い方](section1.md)」で CHIRIMEN Raspi3 の基本的な操作方法とプログラミング方法を確認しておいてください。
 
 前回までのチュートリアルで学んだことは下記のとおりです。
 
@@ -25,7 +25,7 @@ CHIRIMEN for Raspberry Pi 3 （以下「CHIRIMEN Raspi3」）を使ったプロ�
 
 このチュートリアル全体で必要になるハードウエア・部品は下記の通りです。
 
-- [Hello World 編](section0.md) に記載の「基本ハードウエア」
+- [L チカしてみよう](section0.md) に記載の「基本ハードウエア」
 - [ジャンパーワイヤー (メス-メス)] x 4
 - 温度センサ[ADT7410](http://akizukidenshi.com/catalog/g/gM-06675/) x 1 ※付属のピンヘッダでなく、通常サイズのピンヘッダをハンダ付けしておいてください
 
@@ -296,7 +296,7 @@ JSFiddle の HTML ペインに Polyfill の読み込みと、温度表示のた�
 
 次に JavaScript です。async function を使って書いてみます。
 
-今回は定期的なポーリング処理が必要になるので、[GPIO 編 c. スイッチに反応するようにする (port.read()を使ってみる)](section1.md#c--portread) の時に書いたコードが参考になります。
+今回は定期的なポーリング処理が必要になるので、[GPIO の使い方 c. スイッチに反応するようにする (port.read()を使ってみる)](section1.md#c--portread) の時に書いたコードが参考になります。
 
 ```javascript
 // ADT7410のドライバを使わず、自力でADT7410の値を読むサンプル
@@ -343,4 +343,4 @@ ADT7410 を指で触って温度が変わることを確認してみてくださ
   - [ADT7410 温度センサー (ドライバを使ったコード例)](https://tutorial.chirimen.org/raspi3/examples/section2/s2_1.html)
   - [ADT7410 温度センサー (ドライバを使わないコード例)](https://tutorial.chirimen.org/raspi3/examples/section2/s2_2.html)
 
-次の『[チュートリアル 3. I2C 　応用編（その他のセンサー）](section3.md)』では加速度センサーなど他のセンサーも触っていきます。
+次の『[チュートリアル 3. I2C の使い方](section3.md)』では加速度センサーなど他のセンサーも触っていきます。

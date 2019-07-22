@@ -2,7 +2,7 @@
 layout: tutorial
 ---
 
-# 3. I2C 応用編 (その他のセンサ)
+# 3. I2C の使い方
 
 # 概要
 
@@ -16,9 +16,9 @@ CHIRIMEN for Raspberry Pi 3（以下 「CHIRIMEN Raspi3」） を使ったプロ
 
 本チュートリアルを進める前に前回までのチュートリアルを進めておいてください。
 
-* [Hello World編](section0.md)
-* [GPIO編](section1.md)
-* [I2C 基本編（ADT7410 温度センサ）](section2.md)
+* [L チカしてみよう](section0.md)
+* [GPIO の使い方](section1.md)
+* [センサーを使ってみよう](section2.md)
 
 前回までのチュートリアルで学んだことは下記のとおりです。
 
@@ -46,7 +46,7 @@ Raspi 3 や前回のADT7410などピンヘッダを備えた（あるいは事�
 
 ここでは、1つのGroveコネクタつきI2Cモジュールと1つのピンヘッダつきI2Cモジュールを接続することを想定し、下記を用意しておきましょう。
 
-* [Hello World編](section0.md) に記載の「基本ハードウエア」
+* [L チカしてみよう](section0.md) に記載の「基本ハードウエア」
 
 {% cloudinary imgs/section3/h.jpg alt="ハブとケーブル" %}
 

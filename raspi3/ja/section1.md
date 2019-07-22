@@ -2,7 +2,7 @@
 layout: tutorial
 ---
 
-# 1. GPIO 編
+# 1. GPIO の使い方
 
 # 概要
 
@@ -24,19 +24,18 @@ CHIRIMEN Raspi3 の開発やこのチュートリアルの執筆・更新は [CH
 
 このチュートリアル全体で必要になるハードウエア・部品は下記の通りです。
 
-- [Hello World 編](section0.md) に記載の「基本ハードウエア」と「L チカに必要となるパーツ」
+- [L チカしてみよう](section0.md) に記載の「基本ハードウエア」と「L チカに必要となるパーツ」
 - タクトスイッチ (2pin, 4pin を使う場合は向きに注意) x 1
 - ジャンパーワイヤー (オス-メス) x 5
 - [Nch MOSFET (2SK4017)](http://akizukidenshi.com/catalog/g/gI-07597/)
 - リード抵抗 (1KΩ) x 1
 - リード抵抗 (10KΩ) x 1
-- [DC ファン](http://akizukidenshi.com/catalog/g/gP-02480/) x 1
-  - ブレッドボードに接続できるようケーブルを加工したものを利用する
+- [ギアモータ](https://tiisai.dip.jp/?p=2676) x 1
 
 ## CHIRIMEN for Raspberry Pi 3 の起動と L チカの確認
 
-- [Hello World 編](section0.md) の 「3. CHIRIMEN for Raspberry Pi 3 を起動してみよう」を参照して、CHIRIMEN for Raspberry Pi 3 を起動してください。
-- ついでに [Hello World 編](section0.md) の 「4. L チカをやってみよう」を実施して、L チカが正しく行えることを確認しておいてください。
+- [L チカしてみよう](section0.md) の 「3. CHIRIMEN for Raspberry Pi 3 を起動してみよう」を参照して、CHIRIMEN for Raspberry Pi 3 を起動してください。
+- ついでに [L チカしてみよう](section0.md) の 「4. L チカをやってみよう」を実施して、L チカが正しく行えることを確認しておいてください。
 
 ## L チカでのおさらい
 
@@ -49,7 +48,7 @@ CHIRIMEN Raspi3 の開発やこのチュートリアルの執筆・更新は [CH
 
 それでは、実際にプログラミングしてみましょう。
 
-[Hello World 編](section0.md) では、[JS Bin](http://jsbin.com/) を使って L チカの example コードを少し触ってみるだけでしたが、今度は最初から書いてみることにします。
+[L チカしてみよう](section0.md) では、[JS Bin](http://jsbin.com/) を使って L チカの example コードを少し触ってみるだけでしたが、今度は最初から書いてみることにします。
 
 サンプル同様に JS Bin で書いても良いですが、折角ですので、このチュートリアルでは他のオンラインエディタ [JSFiddle](https://jsfiddle.net/) を使ってみましょう。
 
@@ -60,7 +59,7 @@ CHIRIMEN Raspi3 の開発やこのチュートリアルの執筆・更新は [CH
 
 ## a. 部品と配線について
 
-このパートでは [Hello World 編](section0.md) で実施した L チカの配線をそのまま利用します。必要な部品も同じです。
+このパートでは [L チカしてみよう](section0.md) で実施した L チカの配線をそのまま利用します。必要な部品も同じです。
 
 {% cloudinary imgs/section1/b.jpg alt="部品一覧" %}
 
@@ -162,7 +161,7 @@ window.onload = async function mainFunction() {
 
 JSFiddle 利用時には `LOAD TYPE` を変更するか、`mainFunction()` 呼び出しを onload で囲まず最上位で直接呼び出すことに注意してください。
 
-[Hello World 編](section0.md) の L チカのパートでも簡単に説明しましたが、ここでもういちど[GPIO 編 (Web GPIO API)](section1.md) の流れをおさらいしておきましょう。
+[L チカしてみよう](section0.md) の L チカのパートでも簡単に説明しましたが、ここでもういちど GPIO を使う流れをおさらいしておきましょう。
 
 ### await navigator.requestGPIOAccess()
 
@@ -494,12 +493,12 @@ window.onload = async function initialize() {
 
 また、ポーリングによる LED 制御処理を行なっていないので、ブラウザ画面のボタンも正しく反応できるようになります。
 
-# 4.LED のかわりに ギヤードモータ（ちびギアモータ）を動かしてみる
+# 4.LED のかわりに ギアモータ（ちびギアモータ）を動かしてみる
 
 Web GPIO API の機能が一通り確認できましたので、本パートのしめくくりに違う部品も制御してみましょう。
 
-ここでは、**MOSFET** を使って ギヤードモータ（ちびギアモータ）の単純な ON/OFF を制御してみましょう。
-  > CHIRIMEN for Raspberrry Pi 3 スターター・キットではギヤードモータの一例として、ちびギアモータをセットに含めています。ここまで「ギヤードモータ」と「ちびギアモータ」を併記してきましたが、以下では「ちびギアモータ」とのみ記載します。ちびギアモータ以外のギヤードモータを利用する場合には製品の仕様をご確認の上お試しください。
+ここでは、**MOSFET** を使って ギアモータ（ちびギアモータ）の単純な ON/OFF を制御してみましょう。
+  > CHIRIMEN for Raspberrry Pi 3 スターター・キットではギアモータの一例として、ちびギアモータをセットに含めています。ここまで「ギアモータ」と「ちびギアモータ」を併記してきましたが、以下では「ちびギアモータ」とのみ記載します。ちびギアモータ以外のギアモータを利用する場合には製品の仕様をご確認の上お試しください。
 
 ## MOSFET とは
 
@@ -511,11 +510,11 @@ MOSFET は[電界効果トランジスタ (FET)](https://ja.wikipedia.org/wiki/%
 
 {% cloudinary imgs/section1/mosfet.png alt="mosfet" %}
 
-## ギヤードモータとは
+## ギアモータとは
 
-ギヤードモータとは、モーターに減速機（ギヤ）を組み合わせることにより、低回転、高トルクを出せる駆動装置です。
+ギアモータとは、モーターに減速機（ギヤ）を組み合わせることにより、低回転、高トルクを出せる駆動装置です。
 
-今回はとても小型なギヤードモータである、[ちびギアモータ](https://tiisai.dip.jp/?p=2676)を利用します。
+今回はとても小型なギアモータである、[ちびギアモータ](https://tiisai.dip.jp/?p=2676)を利用します。
 
 {% cloudinary imgs/section1/chibigear_1.jpg alt="ちびギアモータ" %} {% cloudinary imgs/section1/chibigear_2.jpg alt="ちびギアモータ" %}
 
@@ -542,7 +541,7 @@ LED が点灯する替わりにちびギアモータが動くようになりま�
 
 ## c. しかし... (オチ w)
 
-スイッチを押して DC ファンが回るだけなら、5V→ タクトスイッチ →DC ファン →GND と繋げば **プログラムを書かなくても出来る！！！！**
+スイッチを押してギアモータが回るだけなら、5V → タクトスイッチ → ギアモータ →GND と繋げば **プログラムを書かなくても出来る！！！！**
 
 ...... スイッチじゃないのでやりましょう。(次回に続く)
 
@@ -564,4 +563,4 @@ LED が点灯する替わりにちびギアモータが動くようになりま�
   - [タクトスイッチを押している間だけ LED が光る](https://tutorial.chirimen.org/raspi3/examples/section1/s1_4.html)
   - [画面のボタンまたはタクトスイッチを押している間だけ LED が光る](https://tutorial.chirimen.org/raspi3/examples/section1/s1_5.html)
 
-次の『[チュートリアル 2. I2C 　基本編（ADT7410 温度センサー）](section2.md)』では Web I2C API の学習をします。
+次の『[チュートリアル 2. センサーを使ってみよう](section2.md)』では Web I2C API を使ってセンサーの値を読み出す手順を学習します。

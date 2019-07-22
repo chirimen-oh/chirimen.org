@@ -2,7 +2,7 @@
 layout: tutorial
 ---
 
-# Hello World
+# L チカしてみよう (初めての GPIO)
 
 # 1. 今回のゴール
 
@@ -344,4 +344,4 @@ JS Bin の JavaScript のペインにカーソルを当てればコード修正�
 - ブラウザで開くページ
   - [L チカコード (画面は空白)](https://tutorial.chirimen.org/raspi3/examples/section0/s0.html)
 
-次の『[チュートリアル 1. GPIO 編](https://tutorial.chirimen.org/raspi3/ja/section1)』では GPIO の入力方法について学びます。
+次の『[チュートリアル 1. GPIO の使い方](https://tutorial.chirimen.org/raspi3/ja/section1)』では GPIO の入力方法について学びます。

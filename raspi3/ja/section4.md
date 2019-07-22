@@ -2,7 +2,7 @@
 layout: tutorial
 ---
 
-# 4. GPIO/I2C 編 まとめ
+# 4. GPIO/I2C のまとめ
 
 # 概要
 
@@ -14,10 +14,10 @@ CHIRIMEN for Raspberry Pi 3（以下 「CHIRIMEN Raspi3」） を使ったプロ
 
 本チュートリアルを進める前に前回までのチュートリアルを進めておいてください。
 
-- [Hello World 編](section0.md)
-- [1. GPIO 編](section1.md)
-- [2. I2C 　基本編（ADT7410 温度センサー）](section2.md)
-- [3. I2C 　応用編（その他のセンサー）](section3.md)
+- [L チカしてみよう](section0.md)
+- [1. GPIO の使い方](section1.md)
+- [2. センサーを使ってみよう](section2.md)
+- [3. I2C の使い方](section3.md)
 
 前回までのチュートリアルで学んだことは下記のとおりです。
 
@@ -33,9 +33,9 @@ CHIRIMEN for Raspberry Pi 3（以下 「CHIRIMEN Raspi3」） を使ったプロ
 シンプルに下記のような基本仕様にしてみます。
 
 - 定期的に測定した温度を画面に表示する。
-- 一定温度以上になったら DC ファンを回す。一定温度以下になったら DC ファンを止める。
+- 一定温度以上になったらモーターを回す。一定温度以下になったらモーターを止める。
 
-[1. GPIO 編](section1.md) で MOSFET ＋ DC ファンと[2. I2C 　基本編（ADT7410 温度センサー）](section2.md) で使った温度センサーがあればできそうですね。
+[1. GPIO の使い方](section1.md) で MOSFET ＋ モーターと [2. I2C 　基本編（ADT7410 温度センサー）](section2.md) で使った温度センサーがあればできそうですね。
 
 # 1.準備
 
@@ -43,14 +43,14 @@ CHIRIMEN for Raspberry Pi 3（以下 「CHIRIMEN Raspi3」） を使ったプロ
 
 このチュートリアル全体で必要になるハードウエア・部品は下記の通りです。
 
-- [CHIRIMEN for Raspberry Pi 3 Hello World](section0.md) に記載の「基本ハードウエア」
+- [L チカしてみよう](section0.md) に記載の「基本ハードウエア」
 - ブレッドボード x 1
 - ジャンパーワイヤー (オス-メス) x 3
 - [Nch MOSFET (2SK4017)](http://akizukidenshi.com/catalog/g/gI-07597/) x 1
 - リード抵抗 (1KΩ) x 1
 - リード抵抗 (10KΩ) x 1
-- [DC ファン](http://akizukidenshi.com/catalog/g/gP-02480/) x 1
-- ADT7410 x 1
+- [ちびギアモータ](https://tiisai.dip.jp/?p=2676) x 1
+- [I2C 温度センサー (ADT7410)](http://akizukidenshi.com/catalog/g/gM-06675/) (ピンヘッダ半田付け済み)
 - ジャンパーワイヤー (メス-メス) x 4
 
 今回用意するものが多いですが、これまでのチュートリアルで使ったことがあるものばかりですので、ご安心ください。
@@ -69,7 +69,7 @@ Raspberry Pi 3 との接続方法については、下記回路図を参照く�
 
 今回の回路用のコードはまだ書いていませんので、下記方法で配線の確認をおこなっておきましょう。
 
-- L チカのサンプルを使って、DC ファンが回ったり止まったりすることを確認
+- L チカのサンプルを使って、ギアモータが回ったり止まったりすることを確認
 - `i2cdetect`コマンドを使い、SlaveAddress `0x48` が見つかることを確認
 
 ## c.コードを書いてみる
