@@ -188,16 +188,11 @@ i2cdetect で接続を確認しておきましょう。
 SlaveAddress `0x52` が見つかれば接続OKです。
 
 次にexampleを動かします。
- -執筆中です。近日中に公開します。
-<!--
-`/home/pi/Desktop/gc/i2c/i2c-GP2Y0E03/index.html`
+`/home/pi/Desktop/gc/contrib/examples/i2c-VL53L0X/VL53L0X.html`
 
-画面の回路図の下の数値が距離の値(cm)です。
-センサの前面(小さな目玉のような部品が着いた面)を障害物の方向に向けてみてください。障害物とセンサの距離に応じて数字が変化するはずです。
+センサの前面(VIN、GND、SCL、SDA等の文字が書いてある方)に手を近づけたり離したりしてみてください。距離の値が変化するはずです。
 
-> GP2Y0E03 が計測できる距離は 60cm くらいまでです。
-> 
-> 測定できる範囲を超えている場合、out of range と表示されます。
+> VL53L0X が計測できる距離は およそ 3 - 200 cm (30-2000 mm) までです。
 
 ## c.コード解説
 
@@ -210,22 +205,22 @@ index.html
 ```html
 : 
   <script src="../../polyfill/polyfill.js"></script>
-  <script src="../../drivers/i2c-GP2Y0E03.js"></script>
-  <script src="./main.js"></script>
+  <script src="../../drivers/i2c-VL53L0X.js"></script>
+  <script src="./mainVL53L0X.js"></script>
   :
   <body>
     :
-    <p id="distance">init</p>
+    <tr><td>Distance [mm]</td><td id="dist"></td></tr>
     :
   </body>
 ```
 
 HTML は ADT7410 の時とほとんど同じです。
-ドライバーライブラリが、`i2c-GP2Y0E03.js` に変わりました。
+ドライバーライブラリが、`i2c-VL53L0X.js` に変わりました。
 
+<!--
 ### c-2. main.js
 次に、`main.js` を見てみましょう。(重要な部分以外は削っています)
-
 main.js
 ```javascript
   var i2cAccess = await navigator.requestI2CAccess();
