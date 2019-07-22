@@ -199,9 +199,9 @@ SlaveAddress `0x52` が見つかれば接続OKです。
 example のコードから、測距センサに関係する部分を見ていきます。
 
 ### c-1. index.html
-下記が`index.html`の中から主要な部分を抜き出したコードです。
+下記が`VL53L0X.html`の中から主要な部分を抜き出したコードです。
 
-index.html
+VL53L0X.html
 ```html
 : 
   <script src="../../polyfill/polyfill.js"></script>
