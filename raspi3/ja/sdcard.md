@@ -6,23 +6,23 @@ CHIRIMEN for Raspberry Pi 3 (以下 CHIRIMEN Raspi3) を利用するには Raspb
 
 ## 1. 作業環境の準備
 
-SD カードに起動イメージを焼き込むには Windows, macOS または Linux PC と SD カードリーダーが必要です。
+SD カードに起動イメージを焼き込むには Windows, macOS または Linux の PC と SD カードリーダーが必要です。
 
-また、高速かつ安全に焼き込みをするため [Etcher](https://etcher.io/) をダウンロード・インストールしてください (dd コマンドなどを使うことも出来ますが上級者向けのため割愛します)。
+また、高速かつ安全に焼き込みをするため [Etcher](https://www.balena.io/etcher/) をダウンロード・インストールしてください (dd コマンドなどを使うことも出来ますが上級者向けのため割愛します)。
 
 ## 2. 起動イメージのダウンロード
 
 SD カードの書き込みに使う PC で最新の起動イメージをダウンロードしてください。
 
-* [CHIRIMEN for Raspberry Pi 3 リリース版のダウンロードディレクトリ](http://download.chirimen.org/release/raspberry_pi_3/)
+* [CHIRIMEN for Raspberry Pi 3 リリース版の配布元](http://download.chirimen.org/release/raspberry_pi_3/)
 
 古いバージョンのイメージも公開されていますが、特に理由がない限りはファイル名に含まれる日付が最新のイメージを選択しダウンロードしてください。
 
-拡張子が `.zip` のファイルは zip 形式で圧縮されており、そのままでは焼き込みツール [Etcher](https://etcher.io/) から利用できないため、ダウンロード後に展開してください。
+拡張子が `.zip` のファイルは zip 形式で圧縮されており、そのままでは焼き込みツールから利用できないため、ダウンロード後に展開してください。
 
 ## 3. SD カードにイメージを焼き込む
 
-イメージファイルの準備が出来たら microSD カード (8GB 以上必須、Class 10 以上で高速なものを推奨) をカードリーダーに指し込み、[Etcher](https://etcher.io/) を起動してください。
+イメージファイルの準備が出来たら microSD カード (8GB 以上必須、Class 10 以上で高速なものを推奨) をカードリーダーに指し込み、[Etcher](https://www.balena.io/etcher/) を起動してください。
 
 `Select Image` ボタンで先ほどダウンロード (と展開) したイメージファイルを選択、`Select drive` で指し込んだ SD カードのドライブを選択 (間違ったドライブを選択するとそのデータが消えてしまうため要注意) し、`Flash!` ボタンを押してください。
 

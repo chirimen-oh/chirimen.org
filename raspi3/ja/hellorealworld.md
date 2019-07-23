@@ -13,7 +13,7 @@ CHIRIMEN for Raspberry Pi 3 (Raspi3) を使って L チカ (LED を点滅) し�
   - 5V3A 対応 AC アダプタ + micro B USB 電源ケーブル (例: [Raspberry Pi 用電源セット](https://www.physical-computing.jp/product/1171)) × 1 セット
   - HDMI 入力つきのモニタ + HDMI ケーブル (モニタ側の端子の種類に注意) × 1 セット
   - USB マウス、キーボード (日本語配列) × 1 セット
-  - [CHIRIMEN起動イメージ](sdcard.md)入りのmicro SD カード (8GB 以上、Class 10 以上で高速なもの) × 1
+  - [CHIRIMEN起動イメージ](sdcard.md)入りの micro SD カード (8GB 以上必須、Class 10 以上で高速なものを推奨) × 1
 - L チカセット
   - ブレッドボード (通常サイズまたはミニサイズ) × 1
   - リード付き LED × 1

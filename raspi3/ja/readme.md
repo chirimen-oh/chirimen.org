@@ -1,12 +1,15 @@
-## [CHIRIMEN for Raspberry Pi3 チュートリアル](https://tutorial.chirimen.org/raspi3/ja/)
+## CHIRIMEN for Raspberry Pi3 チュートリアル
 
 CHIRIMEN for Raspberry Pi 3を用いた IoT システムプロトタイピングスキル習得のためのチュートリアル資料です。
 
 JavaScript プログラミング未経験者は、ページ下部で紹介している資料・サイトも参照しつつご覧ください。
 
-## [Hello Real World](hellorealworld.md)
-L チカと温度センサーで GPIO と I2C の基本を試す[お試しページ](hellorealworld.md)です。短時間でさっと CHIRIMEN を体験したいときにはこちらをご覧ください。
-詳細を知りたい方やプロトタイピングに慣れておらず、基礎からしっかりと学びたい方は以下のチュートリアルをご覧ください。
+## Hello Real World
+短時間でさっと CHIRIMEN を体験するときにはこちらをご覧ください。
+
+- [Hello Real World](hellorealworld.md)
+
+LED と温度センサーを使ってみる最小限のお試しページです。より詳しくは以下のチュートリアルをご覧ください。
 
 ## 基礎編
 まずはシンプルな GPIO 入出力や I2C センサーの操作方法を学びましょう。
@@ -84,6 +87,7 @@ JavaScript 未経験者や非同期処理に慣れていない方向けの解説
   - 本チュートリアルサイトの元となる、CHIRIMEN コミュニティメンバーが当初 Qiita などで執筆していた記事のリンク集です。
 
 <div class="hide-on-production">
+  <!-- tutorial.chirimen.org では hide-on-production クラスの中は表示されない -->
 
   ## Latest Version / 最新版
 

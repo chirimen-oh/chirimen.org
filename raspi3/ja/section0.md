@@ -41,7 +41,7 @@ CHIRIMEN for Raspberry Pi 3 (以下 CHIRIMEN Raspi3) は、Raspberry Pi 3 (以�
 - USB マウス × 1
 - USB キーボード (日本語配列) × 1
   - CHIRIMEN Raspi3 で初期設定にしている JIS 配列以外のキーボードを利用する際は [raspi-config コマンド](http://igarashi-systems.com/sample/translation/raspberry-pi/configuration/raspi-config.html) で変更してください
-- micro SD カード (8GB 以上必須、Class 10 以上で高速なものを推奨) × 1
+- [CHIRIMEN起動イメージ](sdcard.md)入りの micro SD カード (8GB 以上必須、Class 10 以上で高速なものを推奨) × 1
 
 ### L チカに必要となるパーツ
 
