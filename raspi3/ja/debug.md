@@ -74,8 +74,9 @@ Raspi に AC アダプタと microUSB ケーブルを接続して (ケーブル�
 なお、パスワード設定変更はイメージ作成スクリプト [setup.sh](https://github.com/chirimen-oh/chirimen-raspi3/blob/master/setup.sh) で行われています。
 
 ## 同時に複数のタブで開くと動作しない
+## コンソールに `Uncaught (in promise) GPIOPort(XX).export() error` などと表示される
 
-制限事項です。API では特に規定されていませんが排他制御をしており同一のページを複数タブで開くなど、同じポートを同時に扱うコードを書くと正しく動作しなくなることがあります。全てのタブを閉じてから目的のページだけを開き直してください。
+複数のプログラムで同じ GPIO ポートを同時に制御することは出来ないため、ポートの export に失敗しています。API では特に規定されていませんが実際には排他制御をしており、同一のページを複数タブで開くなど、同じポートを同時に扱うコードを書くと正しく動作しなくなることがあります。全てのタブを閉じてから目的のページだけを開き直してください。
 
 ## コンソールに `Uncaught ReferenceError: xxx is not defined` などと表示される
 
@@ -106,7 +107,13 @@ element.addEventListener("click", async () => { await sleep(100); }, false);
 
 ## コンソールに `WebSocket connection to 'wss://localhost:33330/' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED` などと表示される
 
-CHIRIMEN Raspi3 のバックエンドサーバに接続できていません。デスクトップの reset.sh で再起動してください。
+CHIRIMEN Raspi3 では JavaScript から GPIO などを操作できるように、JavaScript からの呼び出しに応じてハードを制御するローカル WebSocket サーバが Raspi 上の Node サーバとして起動しています。何らかの理由でそのサーバに問題が生じている場合はデスクトップにある `reset.sh` を実行して再起動させると正常動作するようになります。
+
+## コンソールに `connection to 'wss://localhost:33330' failed: Error in connection establishment: net::ERR_INSECURE_RESPONSE` などと表示される
+
+CHIRIMEN Raspi3 のバックエンドサーバとの接続が許可されていません。ブラウザから一度 `https://localhost:33330` にアクセスして `詳細設定` から `localhostにアクセスする(安全ではありません)` をクリックし、ローカル WebSocket サーバ (サーバ証明書無し) へのアクセスを許可してください。
+
+詳しくは [CHIRIMEN for Raspberry Pi 3 におけるセキュリティーエラーへの対処方法](https://qiita.com/tadfmac/items/2d7929fe3560c77fe867) を参考にしてください。
 
 ## JavaScript から特定の URL にアクセスできない
 

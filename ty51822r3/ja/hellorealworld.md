@@ -6,9 +6,9 @@ CHIRIMEN for TY51822r3 を使用して L チカと I2C 温度計で気温を計�
 # 1. L チカをやってみよう
 
 ## 用意するもの
-| CHIRIMEN for TY51822r3 基本ハードウェア | L チカに使用する部品| I2C 温度計で使用する部品|
-|---|---|---|
-|![hardware](imgs/section0/hardware.jpg)|![LED_Blink](imgs/section0/ledblink_parts.jpg)|![ADT7410](imgs/section2/adt7410_parts.jpg)|
+| CHIRIMEN for TY51822r3 基本ハードウェア | L チカに使用する部品                           | I2C 温度計で使用する部品                    |
+| --------------------------------------- | ---------------------------------------------- | ------------------------------------------- |
+| ![hardware](imgs/section0/hardware.jpg) | ![LED_Blink](imgs/section0/ledblink_parts.jpg) | ![ADT7410](imgs/section2/adt7410_parts.jpg) |
 
 - PC(Win または Mac) BLE に対応していること
 - 書き込み済みのBLE開発ボード[スイッチサイエンス TY51822r3](https://www.switch-science.com/catalog/2574/?gclid=CjwKCAiA9efgBRAYEiwAUT-jtO3rkZ_sHHdPO15clRze6Sp-oG1NNPB7Kj2A36Hv1ddqWbHO6YHXYxoCOcQQAvD_BwE)
@@ -16,7 +16,7 @@ CHIRIMEN for TY51822r3 を使用して L チカと I2C 温度計で気温を計�
 - 青色 LED
 - [ピンヘッダー 16 Pin](http://akizukidenshi.com/catalog/g/gC-00167/) × 2
 - ブレッドボード
-- ジャンパー線 × 適宜
+- ジャンパーワイヤ × 適宜
 - 赤色 LED × 1
 - [ADT7410使用 I2C 温度センサーモジュール](http://akizukidenshi.com/catalog/g/gM-06675/)
 - 抵抗 330Ω

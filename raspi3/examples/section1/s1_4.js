@@ -23,10 +23,10 @@ window.onload = async function mainFunction() {
   switchPort = gpioAccess.ports.get(5); // タクトスイッチのポート番号
   await switchPort.export("in");
 
-  onoff.onmousedown = () => {
+  onoff.onmousedown = function onLed() {
     ledOnOff(1);
   };
-  onoff.onmouseup = () => {
+  onoff.onmouseup = function offLed() {
     ledOnOff(0);
   };
 
