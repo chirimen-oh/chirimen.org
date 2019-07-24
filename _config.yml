@@ -4,9 +4,9 @@ repository: chirimen-oh/tutorials
 title: '<a href="/" style="color: white">CHIRIMEN チュートリアル</a>'
 description: >-
   ブラウザからハードを制御する <a href="https://chirimen.org/" style="color: white">CHIRIMEN</a> のチュートリアル集です<br>
-  <a href="/raspi3/ja/" style="color: white">Raspberry Pi 用チュートリアル</a>
+  <a href="/raspi3/" style="color: white">Raspberry Pi 用チュートリアル</a>
   / 
-  <a href="/ty51822r3/ja/" style="color: white">TY51822r3 用チュートリアル</a>
+  <a href="/ty51822r3/" style="color: white">TY51822r3 用チュートリアル</a>
 show_downloads: false
 # google_analytics:
 include:
@@ -54,7 +54,7 @@ parallel_localization: true
 cloudinary:
   cloud_name: chirimen
   # only_prod: true
-  verbose: true
+  verbose: false
   origin_url: https://tutorial.chirimen.org
   presets:
     default:

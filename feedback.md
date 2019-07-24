@@ -34,6 +34,28 @@ Markdown で画像を埋め込む場合は普通そのファイルへのパス�
 
 但しこれはあくまでもサイト内の画像だけです。外部サイトの画像は通常通り `![画像の説明](https://example.org/image.png)` のようにして埋め込んでください (必要ない限り外部サイト画像埋め込みはしないでください)。
 
+### コードサンプルの埋め込み
+
+Markdown でコードブロックは次のように言語名を指定して記述できます:
+
+`````md
+```js
+console.log("hello code block!")
+```
+`````
+
+サンプルコードファイルを読み込んで埋め込むには次のように [Jekyll の `include_relative` タグ](https://jekyllrb.com/docs/includes/) を使用します。コードブロック末尾に空行が出来ないように `-%}` で閉じていることに注意してください。
+
+`````md
+```js
+{% raw %}{% include_relative path/to/script.js -%}{% endraw %}
+```
+`````
+
+### 多言語対応
+
+本サイトの他言語対応には [Polyglot](https://github.com/untra/polyglot) プラグインを利用しています。英語ページを作成するときは元のファイル名 `sample.md` 末尾に `-en` を付けて `sample-en.md` としたファイルを作成、全言語のファイルの冒頭に Front Matter と呼ばれる `---` で囲われたセクションにて最低限 `lang` と `permalink` を設定してください。詳しくは既存の対応済みページや [プラグインのドキュメント](https://polyglot.untra.io/) をご覧ください。
+
 ### 通知と反映の確認
 
 Netlify でのサイトビルドログなどは Github のコミット通知と併せて下記コミュニティ Slack の #github チャンネルに通知されるようになっています。編集結果が反映されない場合などはビルドに失敗していないか確認してください。
