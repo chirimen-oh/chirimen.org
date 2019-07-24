@@ -6,7 +6,7 @@ layout: tutorial
 
 # 概要
 
-CHIRIMEN for Raspberry Pi 3（以下 「CHIRIMEN Raspi3」） を使ったプログラミングを通じて、Web I2C API の使い方を学びます。 
+CHIRIMEN for Raspberry Pi 3（以下 「CHIRIMEN Raspi3」） を使ったプログラミングを通じて、Web I2C API の使い方を学びます。
 
 前回は温度センサを使いながら Web I2C API の基本的な利用方法を学びました。今回は温度センサ以外のI2Cセンサの使い方を見ていきましょう。
 
@@ -26,7 +26,7 @@ CHIRIMEN for Raspberry Pi 3（以下 「CHIRIMEN Raspi3」） を使ったプロ
 * CHIRIMEN Raspi3 で利用可能な GPIO Port 番号と位置は壁紙を見よう
 * CHIRIMEN Raspi3 では Web アプリからの GPIO の制御には Web GPIO API を利用する。GPIOポートは「出力モード」に設定することで LED の ON/OFF などが行える。また「入力モード」にすることで、GPIO ポートの状態を読み取ることができる
 * [async function](https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Statements/async_function) を利用すると複数ポートの非同期コードがすっきり書ける
-* CHIRIMEN Raspi3 ではWebアプリからI2C通信に対応したモジュールの制御に [Web I2C API](http://browserobo.github.io/WebI2C/) を利用することができる
+* CHIRIMEN Raspi3 ではWebアプリからI2C通信に対応したモジュールの制御に [Web I2C API](http://browserobo.github.io/WebI2C) を利用することができる
 
 # 1.準備
 

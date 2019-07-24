@@ -12,7 +12,7 @@ permalink: /raspi3/section0
 
 ## CHIRIMEN for Raspberry Pi 3 とは
 
-CHIRIMEN for Raspberry Pi 3 は、Raspberry Pi 3 (以下 Raspi) で動作する IoT プログラミング環境です。[Web GPIO API](http://browserobo.github.io/WebGPIO/) や [Web I2C API](http://browserobo.github.io/WebI2C/) といった JavaScript でハードを制御する API を活用したプログラミングにより、Web アプリ上で Raspi に接続した電子パーツを直接制御できます。
+CHIRIMEN for Raspberry Pi 3 は、Raspberry Pi 3 (以下 Raspi) で動作する IoT プログラミング環境です。[Web GPIO API](http://browserobo.github.io/WebGPIO) や [Web I2C API](http://browserobo.github.io/WebI2C) といった JavaScript でハードを制御する API を活用したプログラミングにより、Web アプリ上で Raspi に接続した電子パーツを直接制御できます。
 
 {% cloudinary imgs/section0/CHIRIMENforRaspberryPi3.png alt="CHIRIMEN for Raspberry Pi 3 の活用イメージ" %}
 
@@ -186,12 +186,14 @@ L チカに成功しましたか？！
 
 そのまま起動すると下記のような画面になります。(下記スクリーンショットはアクセス直後の画面から JS Bin のタイトルバー部の「Output」タブを 1 回押して非表示にしています)
 
+<!-- TODO: 古いコードの画像になってる -->
 {% cloudinary imgs/section0/JSBinLexample.png alt="JS BinでのLチカexample画面" %}
 
 それでは、コードを眺めてみましょう。
 
 ## HTML
 
+<!-- TODO: include したいが jsbin では s0.js は script タグで読まないのでコード違う... -->
 ```html
 <!DOCTYPE html>
 <html>
@@ -201,41 +203,18 @@ L チカに成功しましたか？！
   <title>GPIO-Blink</title>
 </head>
 <body>
-<script src="https://chirimen.org/chirimen-raspi3/gc/polyfill/polyfill.js"></script>
+  <script src="https://chirimen.org/chirimen-raspi3/gc/polyfill/polyfill.js"></script>
 </body>
 </html>
 ```
 
 HTML では `polyfill.js` という JavaScript ライブラリを読み込んでいます。
-polyfill.js は [Web GPIO API](http://browserobo.github.io/WebGPIO/) と、[Web I2C API](http://browserobo.github.io/WebI2C/) という W3C でドラフト提案中の 2 つの API への [Polyfill (ブラウザ標準に未実装の機能などを利用可能にするためのライブラリ)](https://developer.mozilla.org/ja/docs/Glossary/Polyfill) となっており、これを最初に読み込むことで GPIO や I2C の JavaScript API が使えるようになります。
+polyfill.js は [Web GPIO API](http://browserobo.github.io/WebGPIO) と、[Web I2C API](http://browserobo.github.io/WebI2C) という W3C でドラフト提案中の 2 つの API への [Polyfill (ブラウザ標準に未実装の機能などを利用可能にするためのライブラリ)](https://developer.mozilla.org/ja/docs/Glossary/Polyfill) となっており、これを最初に読み込むことで GPIO や I2C の JavaScript API が使えるようになります。
 
 ## JavaScript
 
 ```javascript
-async function mainFunction() {
-  // プログラムの本体となる関数。非同期処理を await で扱えるよう全体を async 関数で包みます
-  var gpioAccess = await navigator.requestGPIOAccess(); // 非同期関数は await を付けて呼び出す
-  var port = gpioAccess.ports.get(26);
-  var v = 0;
-
-  await port.export("out");
-  for (;;) {
-    // 無限ループ
-    await sleep(1000); // 無限ループの繰り返し毎に 1000ms 待機する
-    v = v === 0 ? 1 : 0; // vの値を0,1入れ替える。1で点灯、0で消灯するので、1秒間隔でLEDがON OFFする
-    port.write(v);
-  }
-}
-
-// await sleep(ms) と呼べば指定 ms 待機する非同期関数
-// 同じものが polyfill.js でも定義されているため省略可能
-function sleep(ms) {
-  return new Promise(resolve => {
-    setTimeout(resolve, ms);
-  });
-}
-
-mainFunction(); // 定義したasync関数を実行します（このプログラムのエントリーポイント）
+{% include_relative examples/section0/s0.js -%}
 ```
 
 ### 注記
@@ -266,7 +245,7 @@ CHIRIMEN Raspi3 はウェブブラウザをプログラムの実行環境とし�
 ## 処理の解説
 
 今回の JavaScript ファイルで、最初に呼び出されるコードは `await navigator.requestGPIOAccess()` です。
-ここで先ほど出て来た [Web GPIO API](http://browserobo.github.io/WebGPIO/) を使い、`gpioAccess` という GPIO にアクセスするためのインタフェースを取得しています。
+ここで先ほど出て来た [Web GPIO API](http://browserobo.github.io/WebGPIO) を使い、`gpioAccess` という GPIO にアクセスするためのインタフェースを取得しています。
 
 **関数の呼び出しに `await` 接頭詞を付けることに注意してください。** この関数は非同期関数ですが、その処理の完了を待ってから次の処理をする必要があります。そして `await` 接頭詞を使うので、それを含む関数(`mainFunction()`)は async 接頭詞を付けて非同期関数として定義しなければなりません。
 
@@ -321,6 +300,6 @@ JS Bin の JavaScript のペイン (コードが表示されているところ) 
 
 - [GitHub リポジトリで参照](https://github.com/chirimen-oh/tutorials/tree/master/raspi3/examples/section0)
 - ブラウザで開くページ
-  - [L チカコード (画面は空白です)](https://tutorial.chirimen.org/raspi3/examples/section0/s0.html)
+  - [L チカコード (画面は空白です)](examples/section0/s0.html)
 
-次の『[チュートリアル 1. GPIO の使い方](https://tutorial.chirimen.org/raspi3/ja/section1)』では GPIO の入力方法について学びます。
+次の『[チュートリアル 1. GPIO の使い方](section1.md)』では GPIO の入力方法について学びます。

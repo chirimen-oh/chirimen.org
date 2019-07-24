@@ -18,7 +18,7 @@ Get to know your CHIRIMEN for Raspberry Pi 3, and write your first program that 
 ##CHIRIMEN for Raspberry Pi 3
 "CHIRIMEN for Raspberry Pi 3” is an IoT programming environment built for Raspberry Pi 3（Raspi3).
 
-In combination with the [Web GPIO API (Draft)](http://browserobo.github.io/WebGPIO/) or the [Web I2C API (Draft)](http://browserobo.github.io/WebI2C/), you can write programs that controls electric parts connected to your Raspi3 via the Web. 
+In combination with the [Web GPIO API (Draft)](http://browserobo.github.io/WebGPIO) or the [Web I2C API (Draft)](http://browserobo.github.io/WebI2C), you can write programs that controls electric parts connected to your Raspi3 via the Web. 
 
 ![CHIRIMEN for Raspberry Pi 3 image](imgs/section0/CHIRIMENforRaspberryPi3.png)
 
@@ -199,7 +199,7 @@ So let’s look at the code.
 ```
 
 You can see that this HTML is importing a JavaScript library called polyfill.js
-polyfill.js is a Po [Polyfill (ブラウザ標準に未実装の機能などを利用可能にするためのライブラリ)](https://developer.mozilla.org/ja/docs/Glossary/Polyfill)lyfill for the two APIs [Web GPIO API](http://browserobo.github.io/WebGPIO/) and [Web I2C API](http://browserobo.github.io/WebI2C/)  which are both submitted to W3C as drafts.
+polyfill.js is a Po [Polyfill (ブラウザ標準に未実装の機能などを利用可能にするためのライブラリ)](https://developer.mozilla.org/ja/docs/Glossary/Polyfill)lyfill for the two APIs [Web GPIO API](http://browserobo.github.io/WebGPIO) and [Web I2C API](http://browserobo.github.io/WebI2C)  which are both submitted to W3C as drafts.
 
 
 ## JavaScript
@@ -239,7 +239,7 @@ This tutorial uses ```async wait``` since we think it is the easiest among async
 ## Explanation 
 
 The first code in the JavaScript is ```navigator.requestGPIOAccess()```.
-This is to use the [Web GPIO API](http://browserobo.github.io/WebGPIO/) we mentioned above to get the interface needed to access the GPIO called gpioAccess.
+This is to use the [Web GPIO API](http://browserobo.github.io/WebGPIO) we mentioned above to get the interface needed to access the GPIO called gpioAccess.
 
 Before we move on, let’s go on a tangent to talk about GPIOs.
 

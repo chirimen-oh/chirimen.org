@@ -6,7 +6,7 @@ layout: tutorial
 
 # 概要
 
-CHIRIMEN for Raspberry Pi 3（以下 「CHIRIMEN Raspi3」） を使ったプログラミングを通じて、[Web GPIO API](https://rawgit.com/browserobo/WebGPIO/master/index.html) や [Web I2C API](https://rawgit.com/browserobo/WebI2C/master/index.html) の使い方を学ぶチュートリアルです。
+CHIRIMEN for Raspberry Pi 3（以下 「CHIRIMEN Raspi3」） を使ったプログラミングを通じて、[Web GPIO API](https://rawgit.com/browserobo/WebGPIO/master/index.html) や [Web I2C API](http://browserobo.github.io/WebI2C) の使い方を学ぶチュートリアルです。
 
 今回は、Web GPIO API と Web I2C API を組み合わせた Web アプリを作ってみます。
 
@@ -25,7 +25,7 @@ CHIRIMEN for Raspberry Pi 3（以下 「CHIRIMEN Raspi3」） を使ったプロ
 - CHIRIMEN Raspi3 で利用可能な GPIO Port 番号と位置は壁紙を見よう
 - CHIRIMEN Raspi3 では Web アプリからの GPIO の制御には [Web GPIO API](https://rawgit.com/browserobo/WebGPIO/master/index.html) を利用する。GPIO ポートは「出力モード」に設定することで LED の ON/OFF などが行える。また「入力モード」にすることで、GPIO ポートの状態を読み取ることができる
 - [async function](https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Statements/async_function) を利用すると複数ポートの非同期コードがすっきり書ける
-- CHIRIMEN Raspi3 では Web アプリから I2C 通信に対応したモジュールの制御に [Web I2C API](https://rawgit.com/browserobo/WebI2C/master/index.html) を利用することができる
+- CHIRIMEN Raspi3 では Web アプリから I2C 通信に対応したモジュールの制御に [Web I2C API](http://browserobo.github.io/WebI2C) を利用することができる
 - I2C モジュールは 1 つの I2C バス上に複数接続することができる。Grove I2C Hub を利用すると接続が簡単になる
 
 # 今回つくるもの

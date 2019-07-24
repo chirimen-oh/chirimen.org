@@ -6,7 +6,7 @@ layout: tutorial
 
 # 概要
 
-CHIRIMEN for Raspberry Pi 3 （以下「CHIRIMEN Raspi3」）を使ったプログラミングを通じて、[Web I2C API](https://rawgit.com/browserobo/WebI2C/master/index.html) の使い方を学びます。
+CHIRIMEN for Raspberry Pi 3 （以下「CHIRIMEN Raspi3」）を使ったプログラミングを通じて、[Web I2C API](http://browserobo.github.io/WebI2C) の使い方を学びます。
 
 ## 前回までのおさらい
 
@@ -14,10 +14,10 @@ CHIRIMEN for Raspberry Pi 3 （以下「CHIRIMEN Raspi3」）を使ったプロ�
 
 前回までのチュートリアルで学んだことは下記のとおりです。
 
-- CHIRIMEN Raspi3 では、各種 example が `~/Desktop/gc/`配下においてある。配線図も一緒に置いてある。
-- CHIRIMEN Raspi3 で利用可能な GPIO Port 番号と位置は壁紙を見よう。
-- CHIRIMEN Raspi3 では Web アプリからの GPIO の制御には[Web GPIO API](http://browserobo.github.io/WebGPIO/) を利用する。GPIO ポートは「出力モード」に設定することで LED の ON/OFF などが行える。また「入力モード」にすることで、GPIO ポートの状態を読み取ることができる
-- [async function](https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Statements/async_function) を利用すると複数ポートの非同期コードがすっきり書ける
+- 各種 example が `~/Desktop/gc/` 配下に配線図と一緒に置いてある
+- 利用可能な GPIO Port 番号・種類と位置は壁紙を見よう
+- Web アプリからの GPIO の制御には [Web GPIO API](http://browserobo.github.io/WebGPIO) を利用するGPIO ポートは「出力モード」に設定すると LED の ON/OFF などが行え、「入力モード」にすると GPIO ポートの状態を読み取れる
+- デバイスの初期化などは非同期処理であり [async と await を用いて処理する](appendix0.md)
 
 # 1.準備
 
@@ -26,28 +26,24 @@ CHIRIMEN for Raspberry Pi 3 （以下「CHIRIMEN Raspi3」）を使ったプロ�
 このチュートリアル全体で必要になるハードウエア・部品は下記の通りです。
 
 - [L チカしてみよう](section0.md) に記載の「基本ハードウエア」
-- [ジャンパーワイヤー (メス-メス)] x 4
-- 温度センサ[ADT7410](http://akizukidenshi.com/catalog/g/gM-06675/) x 1 ※付属のピンヘッダでなく、通常サイズのピンヘッダをハンダ付けしておいてください
+- ジャンパーワイヤー (メス-メス) x 4
+- [温度センサ (ADT7410)](http://akizukidenshi.com/catalog/g/gM-06675/) x 1
+
+**注意:** 秋月電子の ADT7410 モジュール付属の細いピンヘッダはブレッドボードへの差し込み専用で、ジャンパーワイヤのソケットに刺すと接触不良となります。 **通常の太さのピンヘッダをハンダ付けしてください。**
 
 # 2.I2C とは
 
-[I2C](https://ja.wikipedia.org/wiki/I2C) とは 2 線式の同期式シリアル通信インタフェースです。「アイ・スクエア・シー」とか「アイ・ ツー・シー」などと読みます。
+[I2C](https://ja.wikipedia.org/wiki/I2C) とは 2 線式の同期式シリアル通信インタフェースです。「アイ・スクエア・シー」とか「アイ・ ツー・シー」などと読みます。I2C では SDA（シリアルデータ）と SCL（シリアルクロック）の 2 本の線で通信を行います。
 
-SDA（シリアルデータ）と SCL（シリアルクロック）の 2 本の線で通信を行います。
+{% cloudinary half imgs/section2/i2c-bus.png alt="i2c-bus" %}
 
-{% cloudinary imgs/section2/i2c-bus.png alt="i2c-bus" %}
+上図のように、i2c の SDA、SCLは複数のモジュール間で共有され、これを「I2C バス」と言います。I2C ではマスターとスレーブの間で通信が行われます。常にマスター側からスレーブ側に要求が行われ、スレーブ側からマスター側へ要求を行うことはできません。
 
-上図のように、i2c の SDA、SCL は複数のモジュール間で共有します。（「I2C バス」と言います。）
-
-I2C ではマスターとスレーブの間で通信が行われます。常にマスター側からスレーブ側に要求が行われます。スレーブ側からマスター側へ要求を行うことはできません。
-
-マスターは、スレーブが持つ「SlaveAddress」を用いて、特定のスレーブとの通信を行います。
-
-このため、同じ I2C バス上に同じ SlaveAddress のスレーブを繋ぐことはできません。
+マスターは、スレーブが持つ「SlaveAddress (スレーブアドレス)」を指定して、特定のスレーブとの通信を行います。このため、同じ I2C バス上に同じ SlaveAddress のスレーブを繋ぐことはできません。
 
 {% cloudinary imgs/section2/i2c-bus2.png alt="i2c-bus2" %}
 
-通信するモジュール同士が同一基板上にない場合には、SDA、SCL の 2 本の通信線に加え電源や GND の線を加えて 4 本のケーブルを用いて接続するのが一般的です。
+通信するモジュール同士が同一基板上にない場合には、SDA、SCL の 2 本の通信線に加え電源や GND の線を加えて 4 本のケーブルを用いて接続するのが一般的です。電源電圧はデバイスに応じたものを繋ぐ必要があります。
 
 詳細は下記をご参照ください。
 
@@ -65,100 +61,68 @@ I2C ではマスターとスレーブの間で通信が行われます。常に�
 
 # 3.温度センサー(ADT7410)を使ってみる
 
-それでは実際に I2C に対応したモジュールを使ってみましょう。
+それでは実際に I2C に対応したモジュールを使ってみましょう。CHIRIMEN Raspi3 では `/home/pi/Desktop/gc/i2c/` フォルダにセンサーなど、いくつかの I2C モジュールを使うサンプルがプリインストールされています。
 
-CHIRIMEN Raspi3 では、センサーなど、いくつかの I2C モジュールのサンプルがプリインストールされています。
-
-`/home/pi/Desktop/gc/i2c/`
-
-この中から、ADT7410 という温度センサーモジュールを使ってみたいと思います。
-
-Raspberry Pi 3 と ADT7410 との接続方法(回路図)と example コードは下記フォルダに格納されています。
-
-`/home/pi/Desktop/gc/i2c/i2c-ADT7410/`
+この中から、ADT7410 という温度センサーモジュールを使ってみたいと思います。Raspberry Pi 3 と ADT7410 との接続方法(回路図)と example コードは `/home/pi/Desktop/gc/i2c/i2c-ADT7410/` フォルダに格納されています。
 
 > I2C バス上、Raspi3 がマスター、ADT7410 がスレーブになります。
 
 ## a. 部品と配線について
 
-まずは、下記ファイルをダブルクリックしてください。回路図が表示されます。
-
-`/home/pi/Desktop/gc/i2c/i2c-ADT7410/schematic.png`
-
-この回路を作成するのに必要な部品は下記の通りです。(Raspi3 基本セットを除く)
+まずは、回路図の画像 `/home/pi/Desktop/gc/i2c/i2c-ADT7410/schematic.png` を開いてください。
 
 {% cloudinary imgs/section2/parts.jpg alt="parts" %}
 
-これらのパーツを下記回路図の通りに接続してみてください。**ADT7410 は 4 本のジャンパーピンを左右逆に繋いでしまうと、短時間で非常に高温になり故障するだけでなく火傷してしまいます** ので、配線には注意してください。
+図を見ながらジャンパーワイヤ 4 本で ATD7410 を接続します。 **ADT7410 は 4 本のジャンパーピンを左右逆に繋いでしまうと、短時間で非常に高温になり故障するだけでなく火傷してしまいます** ので、配線には注意してください。
 
-{% cloudinary imgs/section2/schematic_warning.png alt="schematic" %}
+[{% cloudinary imgs/section2/schematic_warning.png alt="schematic" %}](imgs/section2/schematic_warning.png)
 
-下記が Raspi3 側の接続ピンの位置を拡大した図になります。
-
-間違えないよう接続をお願いします。
+下記が Raspi3 側の接続ピンの位置を拡大した図になります。間違えないよう接続してください。
 
 {% cloudinary imgs/section2/I2C.png alt="I2Cで利用するピンの位置" %}
 
-実際に配線した写真は以下の通りです。
+実際に配線した写真は以下の通りです。ADT7410 の表裏にも注意してください。
 
 {% cloudinary imgs/section2/temperature_real.jpg alt="実際の配線写真" %}
 
 ## b. 接続がうまくいったか確認する
 
-ここで、ターミナルを起動して下記コマンドを入力してみてください。
+ここで、`i2cdetect` コマンドを使って ADT7410 が正しく接続・認識できているか、その SlaveAddress は何か確認してみましょう。ターミナルを起動して下記コマンドを入力してみてください。
 
 `$ i2cdetect -y -r 1`
 
-すると、下記のような画面が表示されるはずです。
+正しく接続できていれば (配線を誤ってセンサーを壊してない限り) 下記のような画面が表示されるはずです。
 
-{% cloudinary imgs/section2/ADT7410.png alt="ADT7410接続中" %}
+[{% cloudinary imgs/section2/ADT7410.png alt="ADT7410接続中" %}](imgs/section2/ADT7410.png)
 
-`48`という表示が見えます。これは 16 進数表示ですので`0x48`という意味です。
-
-`i2cdetect`コマンドでは I2C バスに接続されている SlaveAddress を確認することができます。
-
-`0x48`は、ADT7410 の SlaveAddress と思われるものですが、念のためデータシートも確認してみましょう。
+`48`という表示が見えます。これは 16 進数表示であり `0x48` という意味です。`0x48` は、ADT7410 の SlaveAddress と思われますが、念のためデータシートも確認してみましょう。
 
 > [ADT7410 のデータシート](http://www.analog.com/media/en/technical-documentation/data-sheets/ADT7410.pdf)
 
-データシートの P.17 に「SERIAL BUS ADDRESS」の項があり、ここに SlaveAddress の記載があります。
-
-ADT7410 は`0x48`がデフォルトの SlaveAddress で、A0,A1 ピンの HIGH/LOW により SlaveAddeess の下位 2bit を変更できることがわかります。
+データシートの P.17 に「SERIAL BUS ADDRESS」の項があり、ここに SlaveAddress の記載があります。ADT7410 は`0x48`がデフォルトの SlaveAddress で、A0,A1 ピンの HIGH/LOW により SlaveAddeess の下位 2bit を変更できることがわかります。
 
 {% cloudinary imgs/section2/I2CBusAddressOptions.png alt="I2C Bus Address Options" %}
 (ADT7410 Data Sheet より抜粋)
+
+[秋月電子の ADT7410 モジュール](http://akizukidenshi.com/catalog/g/gM-06675/) の場合、3.3V に接続している端子側に A0A1 と書かれた端子に半田を付けてショートさせることで SlaveAddress を変更できます。他のデバイスと SlaveAddress が被ってしまった場合や複数の温度センサーを同時に接続したい場合に変更してください。
 
 試しに、一度 Raspi3 の 3.3V に接続している線を抜いて、もう一度 `i2cdetect -y -r 1` を実行してみてください。
 
 {% cloudinary imgs/section2/ADT7410OFF.png alt="ADT7410の電源OFF" %}
 
-`0x48` が見つからなくなりました。
-
-これで、ADT7410 の SlaveAddress が`0x48`となっていることが確認できました。
-
-再度、先ほど外した 3.3V の線を戻して ADT7410 に電源を供給しておいてください。
+`0x48` が見つからなくなりました。これで、間違いなく ADT7410 の SlaveAddress が`0x48`となっていることが確認できました。再度、先ほど外した 3.3V の線を戻して ADT7410 に電源を供給しておいてください。
 
 ## c. example を実行してみる
 
-配線と SlaveAddress が確認できましたので、さっそく動かしてみましょう。
-
-ADT7410 のためのサンプルコードは先ほどの配線図と同じフォルダに格納されています。
-
-`/home/pi/Desktop/gc/i2c/i2c-ADT7410/index.html`
-
-ダブルクリックすると、ブラウザが起動し下記のような画面になります。
+配線と SlaveAddress が確認できましたので、さっそく動かしてみましょう。ADT7410 のためのサンプルコードは先ほどの配線図と同じフォルダ (`/home/pi/Desktop/gc/i2c/i2c-ADT7410/index.html`) に格納されています。ダブルクリックすると、ブラウザが起動し下記のような画面になります。
 
 {% cloudinary imgs/section2/browser.png alt="browser" %}
 
-画面の回路図の下の数値が温度（摂氏）になります。
+画面の回路図の下の数値が温度（摂氏）になります。ADT7410 センサに触ると、ゆっくりと温度が上がるはずです。
 
-ADT7410 センサに触ると、ゆっくりと温度が上がるはずです。
+ADT7410 は I2C という通信方式でセンサーデータを送出するモジュールです。この情報を Web I2C API 経由で Web アプリが読み取り、画面に情報を表示しているわけです。
 
-ADT7410 は I2C という通信方式でセンサーデータを送出するモジュールです。
-
-この情報を Web I2C API 経由で Web アプリが読み取り、画面に情報を表示しているわけです。
-
-# 4.温度センサー(ADT7410)example のコードを読んでみる
+# 4.温度センサー (ADT7410) example のコードを読んでみる
 
 それでは、コードを見てみましょう。
 
@@ -185,7 +149,7 @@ index.html
 
 まず最初に読み込んでいるのが `polyfill.js`。Web GPIO API の時に出てきた `https://chirimen.org/chirimen-raspi3/gc/polyfill/polyfill.js` と同じ Web GPIO API と Web I2C API の Polyfill です。
 
-次に読み込んでいるのが、`i2c-ADT7410.js`。このファイルは、Web I2C API を使って ADT7410 との通信を行うためのドライバーとなるライブラリです。
+次に読み込んでいるのが、`i2c-ADT7410.js`。このファイルは、Web I2C API を使って ADT7410 との通信を行うためのドライバー (ハードウェアを操作する為のライブラリ) です。
 
 最後に読み込んでいる `main.js` が、ドライバーライブラリを使ってこのアプリケーションの動作を記述している部分です。
 
@@ -195,21 +159,8 @@ index.html
 
 main.js
 
-```javascript
-window.onload = async function mainFunction() {
-  var head = document.querySelector("#ADT7410value");
-  var i2cAccess = await navigator.requestI2CAccess(); // i2cAccessを非同期で取得
-  var port = i2cAccess.ports.get(1); // I2C I/Fの1番ポートを取得
-  var adt7410 = new ADT7410(port, 0x48); // 取得したポートの0x48アドレスをADT7410ドライバで受信する
-  var value;
-  await adt7410.init();
-  for (;;) {
-    // 無限ループ
-    value = await adt7410.read();
-    head.innerHTML = value ? `${value} degree` : "Measurement failure";
-    await sleep(1000);
-  }
-};
+```js
+{% include_relative examples/section2/s2_1.js -%}
 ```
 
 ここで温度センサーの情報を定期的に取得し、画面に出力する処理が行われています。
@@ -217,61 +168,52 @@ window.onload = async function mainFunction() {
 
 ### await navigator.requestI2CAccess()
 
-Web I2C API を利用するための `I2CAccess` インタフェースを取得するための最初の API 呼び出しです。この関数も非同期処理の関数で、
-処理完了を待機し、その結果正しくインタフェースが取得されたら `i2cAccess` オブジェクトに保持されます。
+Web I2C API を利用するための **`I2CAccess` インタフェースを取得** するための最初の API 呼び出しです。この関数も非同期処理ですので `await` で処理完了を待機し、その結果正しくインタフェースが取得されたら `i2cAccess` オブジェクトに保持します。
 
 ### i2cAccess.ports.get()
 
 `I2CAccess.ports` は、利用可能な I2C ポートの一覧です。
 
-```javascript
+```js
 var port = i2cAccess.ports.get(1);
 ```
 
-CHIRIMEN Raspi3 で利用可能な I2C ポート番号は`1`番だけです。
-ここでは、ポート番号に`1` を指定して、`port` オブジェクトを取得しています。
+CHIRIMEN Raspi3 で利用可能な I2C ポート番号は`1`番だけです。ポート番号に`1` を指定して **`port` オブジェクトを取得** しています。
 
 ### var adt7410 = new ADT7410(port,0x48)
 
-ここで ADT7410 用のドライバーライブラリのインスタンス生成を行なっています。
+ドライバーライブラリを使い **ATD7410 を操作する為のインスタンスを生成** しています。
 
 ### await adt7410.init()
 
-ADT7410 用のドライバーライブラリのインスタンス (adt7410) が持つ非同期処理の関数 `init()` は、その内部でインスタンス生成時に指定した `port` オブジェクトと `slaveAddress(0x48)` を用いて `I2CPort.open()` を行なっています。
+ドライバーライブラリのインスタンス (adt7410) の `init()` メソッドを通じて **I2C ポートを開いてセンサーを初期化** しています。
 
-`I2CPort.open()` が成功すると、`I2CSlaveDevice` という I2C ポートへデータ書き込みや読み込みなどを行うインタフェースが返されます。
-`I2CSlaveDevice` インタフェースは、ライブラリ内に保存され、その後の処理でこのインターフェースを使って I2C デバイスである adt7410 との通信が可能になります。
+具体的に内部では、インスタンス生成時に指定した `port` オブジェクトと `slaveAddress(0x48)` を用いて `I2CPort.open()` を行なっています。`I2CPort.open()` が成功すると、`I2CSlaveDevice` という I2C ポートへデータ書き込みや読み込みなどを行うインタフェースが返されます。`I2CSlaveDevice` インタフェースは、ライブラリ内に保存され、その後の処理でこのインターフェースを使って I2C デバイスである adt7410 と通信可能になります。
 
 ### await adt7410.read()
 
-ADT7410 の仕様に基づくデータ読み出し処理をここで実施しています。
+**ADT7410 の仕様に基づくデータ読み出し処理です**。
 
 内部では、`I2CSlaveDevice.read8()` という API を 2 回呼び出すことで、温度データの [MSB](https://ja.wikipedia.org/wiki/最上位ビット), [LSB](https://ja.wikipedia.org/wiki/最下位ビット) を 8bit ずつ読み出し、両方の読み出しが終わった時点で MSB と LSB を合成、16bit データとしたのちに、温度データに変換して返却しています。
 
 ### Web I2C API に着目して流れをまとめると
 
-ADT7410 ドライバーライブラリの内部の処理をまとめると以下のようなことが行われています。
+ADT7410 ドライバーライブラリの内部の処理をまとめると次の通りです。
 
-1. await navigator.requestI2CAccess() で I2CAccess インタフェースを取得
-2. i2cAccess.ports.get(1) で、1 番ポートの `port` オブジェクトを取得
-3. await port.open(0x48) で、SlaveAddress 0x48 番の I2CSlaveDevice インタフェースを取得
-4. i2cSlave.read8() で 温度データ を読み込み (ADT7410 の場合、常に 2 回セット)
-
-となります。
+1. **I2C の準備:** await navigator.requestI2CAccess() で I2CAccess インタフェースを取得
+2. **ポートの準備:** i2cAccess.ports.get(1) で、1 番ポートの `port` オブジェクトを取得
+3. **デバイス初期化:** await port.open(0x48) で、SlaveAddress 0x48 番の I2CSlaveDevice インタフェースを取得
+4. **データ読み込み:** i2cSlave.read8() で 温度データ を読み込み (ADT7410 の場合、常に 2 回セット)
 
 この流れは、ADT7410 以外の他の I2C デバイスでも基本的に同様になります。
 
 I2C デバイスにより変わるのは、`port.open()`に指定する SlaveAddress と、[4.の実際の処理](#4温度センサーadt7410の値をドライバーを使わずに読むコードを書いてみる) になります。
 
-CHIRIMEN Raspi3 の example として用意されているサンプルコードとドライバーが提供されている I2C デバイスは下記リストの通りですが、下記リストに無い I2C デバイスでも、上記流れを押さえておけば対応するコードを書くのはそれほど難しくありません。
+CHIRIMEN Raspi3 ではいろいろなデバイスのサンプルコードとドライバーを回路図と共に [example として用意されています](https://r.chirimen.org/examples)。Examples に無い I2C デバイスでも、上記流れを押さえておけば対応するコードを書くのはそれほど難しくありません。
 
-新たな I2C デバイスへの対応方法については、下記記事も参考にしてください。
+新たな I2C デバイスへの対応方法については、「[CHIRIMEN で I2C デバイスを使ってみる](https://qiita.com/tadfmac/items/04257bfe982ba0f050bb)」も参考にしてください (CHIRIMEN Raspi3 ではなく、CHIRIMEN 専用ボード向けの記事ですが、Web I2C API への対応観点では同じ方法論で対応が可能です)
 
-(CHIRIMEN Raspi3 ではなく、CHIRIMEN ボード向けの記事ですが、Web I2C API への対応観点では同じ方法論で対応が可能です)
-
-[CHIRIMEN で I2C デバイスを使ってみる](https://qiita.com/tadfmac/items/04257bfe982ba0f050bb)
-
-# 4.温度センサー(ADT7410)の値をドライバーを使わずに読むコードを書いてみる
+# 4.温度センサーの値をドライバーを使わずに読んでみる
 
 それでは、ADT7410 ドライバー内部での処理の流れがだいたいわかったところで、ドライバーを使わずに自力で値を読み込むコードを一応書いてみましょう。
 
@@ -281,9 +223,7 @@ example と同じコードを書いても面白くないので、今回は`i2c-A
 
 ## JSFiddle で HTML を書く
 
-それでは始めましょう。
-
-JSFiddle の HTML ペインに Polyfill の読み込みと、温度表示のためのタグだけ書いておきます。
+それでは始めましょう。JSFiddle の HTML ペインに Polyfill の読み込みと、温度表示用のタグだけ書きます。
 
 ```html
 <div id="ADT7410value">---</div>
@@ -294,36 +234,13 @@ JSFiddle の HTML ペインに Polyfill の読み込みと、温度表示のた�
 
 ## JavaScript を書いてみる
 
-次に JavaScript です。async function を使って書いてみます。
+次に JavaScript です。今回は定期的なポーリング処理が必要になるので、[GPIO の使い方 c. スイッチに反応するようにする (port.read()を使ってみる)](section1.md#c--portread) の時に書いたコードが参考になります。JSFiddle では `LOAD TYPE` の設定を `On Load` 以外にするのをお忘れなく。
 
-今回は定期的なポーリング処理が必要になるので、[GPIO の使い方 c. スイッチに反応するようにする (port.read()を使ってみる)](section1.md#c--portread) の時に書いたコードが参考になります。
-
-```javascript
-// ADT7410のドライバを使わず、自力でADT7410の値を読むサンプル
-
-window.onload = async function mainFunction() {
-  var head = document.querySelector("#ADT7410value");
-  var i2cAccess = await navigator.requestI2CAccess(); // i2cAccessを非同期で取得
-  var port = i2cAccess.ports.get(1); // I2C I/Fの1番ポートを取得
-  var i2cSlaveDevice = await port.open(0x48); // アドレス0x48のI2Cスレーブデバイスを得る
-  var MSB;
-  var LSB;
-  var temperature;
-
-  for (;;) {
-    // 無限ループ
-    MSB = await i2cSlaveDevice.read8(0x00); // これ以下の３行が肝です
-    LSB = await i2cSlaveDevice.read8(0x01);
-    temperature = ((MSB << 8) | (LSB & 0xff)) / 128.0;
-    head.innerHTML = `${temperature} ℃`;
-    await sleep(1000);
-  }
-};
+```js
+{% include_relative examples/section2/s2_2.js -%}
 ```
 
-JavaScript を書いたら、`▷ Run` を押して実行してみましょう。
-
-温度センサーの値が表示されたはずです。
+JavaScript を書いたら、`▷ Run` を押して実行してみましょう。温度センサーの値が表示されるはずです。
 
 ADT7410 を指で触って温度が変わることを確認してみてください。
 
@@ -340,7 +257,7 @@ ADT7410 を指で触って温度が変わることを確認してみてくださ
 
 - [GitHub リポジトリで参照](https://github.com/chirimen-oh/tutorials/tree/master/raspi3/examples/section2)
 - ブラウザで開くページ (各ステップ)
-  - [ADT7410 温度センサー (ドライバを使ったコード例)](https://tutorial.chirimen.org/raspi3/examples/section2/s2_1.html)
-  - [ADT7410 温度センサー (ドライバを使わないコード例)](https://tutorial.chirimen.org/raspi3/examples/section2/s2_2.html)
+  - [ADT7410 温度センサー (ドライバを使ったコード例)](examples/section2/s2_1.html)
+  - [ADT7410 温度センサー (ドライバを使わないコード例)](examples/section2/s2_2.html)
 
 次の『[チュートリアル 3. I2C の使い方](section3.md)』では加速度センサーなど他のセンサーも触っていきます。
