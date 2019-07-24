@@ -12,6 +12,12 @@ show_downloads: false
 include:
   - _redirects
 
+# configs for GitHub Pages defult plugins
+# https://help.github.com/en/articles/configuring-jekyll-plugins
+# https://github.com/benbalter/jekyll-readme-index
+readme_index:
+  remove_originals: true
+
 # Use CommonMarkGhPages for Markdown parser (after v172)
 # https://github.com/github/jekyll-commonmark-ghpages
 # https://github.com/github/pages-gem/releases/tag/v172
@@ -34,6 +40,13 @@ commonmark:
 #   math_engine: mathjax
 #   syntax_highlighter: rouge
 # gfm_quirks: paragraph_end
+
+# Polyglot: Multilingual (i18n) support
+# https://github.com/untra/polyglot
+languages: ["ja", "en"]
+default_lang: "ja"
+exclude_from_localization: ["assets", "raspi3/examples"]
+parallel_localization: true
 
 # Jekyll Cloudinary Liquid tag plug-in
 # https://nhoizey.github.io/jekyll-cloudinary/

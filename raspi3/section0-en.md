@@ -1,3 +1,9 @@
+---
+layout: tutorial
+lang: en
+permalink: /raspi3/section0
+---
+
 # Hello World
 
 # 1. Today’s Objective

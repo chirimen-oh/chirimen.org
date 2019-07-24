@@ -1,5 +1,7 @@
 ---
 layout: tutorial
+lang: ja
+permalink: /raspi3/section0
 ---
 
 # L チカしてみよう (初めての GPIO)
