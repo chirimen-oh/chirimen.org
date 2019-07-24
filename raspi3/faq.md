@@ -10,7 +10,7 @@ CHIRIMEN Raspi3 を利用していて良くある質問や回答のメモペー�
 
 ### CHIRIMEN Raspi3 では何が出来ますか？
 
-CHIRIMEN Raspi3 は一般的な Web アプリケーションの開発環境に、GPIO と I2C という IoT プロトタイピングなどでよく使われるハードウェアインターフェイスを [Web GPIO API](http://browserobo.github.io/WebGPIO/) と [WebI2C API](http://browserobo.github.io/WebI2C/) を用いてウェブブラウザの JavaScript から直接制御可能にしたものです。
+CHIRIMEN Raspi3 は一般的な Web アプリケーションの開発環境に、GPIO と I2C という IoT プロトタイピングなどでよく使われるハードウェアインターフェイスを [Web GPIO API](http://browserobo.github.io/WebGPIO) と [WebI2C API](http://browserobo.github.io/WebI2C) を用いてウェブブラウザの JavaScript から直接制御可能にしたものです。
 
 デスクトップの Web アプリで出来ることは全て同じようにして実装可能ですし、Web アプリで出来ないことはローカルのサーバと通信させたり拡張機能を作って通信させたりして他のコンテキストや言語の環境で実行させることもあります。いろいろな応用の仕方は [TIPS ページ](tips.md) も参考にしてください。
 

@@ -10,7 +10,7 @@ CHIRIMEN for TY51822r3 を初めて使う方は本チュートリアルを進め
 
 CHIRIMEN for TY51822r3 は PC 等のブラウザと BLE 開発ボード TY51822r3 の組み合わせで動作する IoT プログラミング環境です。
 
-[Web GPIO API](http://browserobo.github.io/WebGPIO/) や、[Web I2C API](http://browserobo.github.io/WebI2C/) といったAPIを活用したプログラミングにより、Web アプリから TY51822r3 に接続した電子パーツを直接制御できます。 
+[Web GPIO API](http://browserobo.github.io/WebGPIO) や、[Web I2C API](http://browserobo.github.io/WebI2C) といったAPIを活用したプログラミングにより、Web アプリから TY51822r3 に接続した電子パーツを直接制御できます。 
 
 CHIRIMEN for TY51822r3 の開発やこのチュートリアルの執筆・更新は [CHIRIMEN Open Hardware コミュニティ](https://chirimen.org/) によって行われています。
 
@@ -44,7 +44,7 @@ CHIRIMEN for TY51822r3 の開発やこのチュートリアルの執筆・更新
 * CHIRIMEN for TY51822r3 で利用可能な GPIO ポートは 0 番から 7 番の 8 つある。
 ![TY51822r3](imgs/section1/ty51822r3.png)
 * LED には方向がある。アノードが足が長い方でこちらを GPIO ポートに繋ぐ。反対の足が短い方を GND 側に繋ぐ。抵抗はどちらかに繋ぐ。
-* CHIRIMEN for TY51822r3 では Web アプリからの GPIO の制御に [Web GPIO API](http://browserobo.github.io/WebGPIO/) を利用する。
+* CHIRIMEN for TY51822r3 では Web アプリからの GPIO の制御に [Web GPIO API](http://browserobo.github.io/WebGPIO) を利用する。
 
 # 2. マウスクリックで LED の ON/OFF を制御してみる
 

@@ -20,11 +20,11 @@ LED と温度センサーを使ってみる最小限のお試しページです�
 まずはシンプルな GPIO 入出力や I2C センサーの操作方法を学びましょう。
 
 - [0. L チカしてみよう (初めての GPIO)](section0.md)
-  - [WebGPIO API](http://browserobo.github.io/WebGPIO/) を使って定期的に LED を点滅するサンプルを動かしてみます。
+  - [WebGPIO API](http://browserobo.github.io/WebGPIO) を使って定期的に LED を点滅するサンプルを動かしてみます。
 - [1. GPIO の使い方](section1.md)
   - マウスクリックで操作するブラウザ画面のボタンと物理スイッチ (タクトスイッチ) の両方で LED やモーターを制御するサンプルを通じて GPIO の基本を学びます。
 - [2. センサーを使ってみよう (初めての I2C)](section2.md)
-  - 温度センサーの値をドライバーを使う場合と [WebGPIO API](http://browserobo.github.io/WebI2C/) を直接操作する場合の 2 パターンで読み取ることで、I2C デバイス操作の基本を学びます。
+  - 温度センサーの値をドライバーを使う場合と [WebGPIO API](http://browserobo.github.io/WebI2C) を直接操作する場合の 2 パターンで読み取ることで、I2C デバイス操作の基本を学びます。
 
 ## 応用編
 いろいろな I2C デバイスを繋いだり組み合わせたりすることで IoT プロトタイピングを体験しましょう。

@@ -22,7 +22,7 @@ CHIRIMEN for TY51822r3 を使ったプログラミングを通じて、Web I2C A
 * CHIRIMEN for TY51822r3 では GPIO として 0 番 ～ 7 番が利用できる。
 * CHIRIMEN for TY51822r3 では Web アプリからの GPIO の制御には Web GPIO API を利用する。GPIOポートは「出力モード」に設定することで LED の ON/OFF などが行える。また「入力モード」にすることで、GPIO ポートの状態を読み取ることができる
 * [async function](https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Statements/async_function) を利用すると複数ポートの非同期コードがすっきり書ける
-* CHIRIMEN for TY51822r3 では Web アプリから I2C 通信に対応したモジュールの制御に [Web I2C API](http://browserobo.github.io/WebI2C/) を利用することができる
+* CHIRIMEN for TY51822r3 では Web アプリから I2C 通信に対応したモジュールの制御に [Web I2C API](http://browserobo.github.io/WebI2C) を利用することができる
 
 
 # 1. 準備
@@ -325,12 +325,12 @@ document.getElementById("connect").onclick = mainFunction;
 ## I2C デバイスを複数使う場合の注意事項
 複数の I2C デバイスを同時に接続して使用するとき、重要な注意事項があります。それは I2C アドレスの衝突です。チュートリアル２―２の図に書かれているように I2C デバイスはスレーブアドレスを持っています。このチュートリアルで使用した I2C デバイスのスレーブアドレスは下の表の通りです。
 
-|デバイス                         |スレーブアドレス|
-|--------------------------------|---------------|
-|温度センサー   ADT7410           |0x48           |
-|測距センサー   GP2Y0E03          |0x40           |
-|光センサー     GROVELIGHT        |0x29           |
-|加速度センサー GROVEACCELEROMETER|0x53           |
+| デバイス                          | スレーブアドレス |
+| --------------------------------- | ---------------- |
+| 温度センサー   ADT7410            | 0x48             |
+| 測距センサー   GP2Y0E03           | 0x40             |
+| 光センサー     GROVELIGHT         | 0x29             |
+| 加速度センサー GROVEACCELEROMETER | 0x53             |
 
 このアドレスは I2C デバイスの製品ごとに固有のアドレスが設定されています。そのためデバイスによってはたまたま同じアドレスを持っている場合があり、アドレスが衝突しているデバイスを同じ I2C バスに接続する事はできません。
 

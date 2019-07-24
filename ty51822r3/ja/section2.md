@@ -2,7 +2,7 @@
 
 # 概要
 
-CHIRIMEN for TY51822r3 を使ったプログラミングを通じて、[Web I2C API](https://rawgit.com/browserobo/WebI2C/master/index.html) の使い方を学びます。
+CHIRIMEN for TY51822r3 を使ったプログラミングを通じて、[Web I2C API](http://browserobo.github.io/WebI2C) の使い方を学びます。
 
 ## 前回までのおさらい
 
@@ -12,7 +12,7 @@ CHIRIMEN for TY51822r3 を使ったプログラミングを通じて、[Web I2C 
 
 * CHIRIMEN for TY51822r3 の各種 examples は [chirimen-TY51822r3 LIVE examples](https://chirimen.org/chirimen-TY51822r3/bc/) のページにある。
 * CHIRIMEN for TY51822r3 では GPIO として 0 番 ～ 7 番が利用できる。
-* CHIRIMEN for TY51822r3 では Web アプリからの GPIO の制御には [Web GPIO API](http://browserobo.github.io/WebGPIO/) を利用する。GPIO ポートは「出力モード」に設定することで LED の ON/OFF などが行える。また「入力モード」にすることで、GPIO ポートの状態を読み取ることができる。
+* CHIRIMEN for TY51822r3 では Web アプリからの GPIO の制御には [Web GPIO API](http://browserobo.github.io/WebGPIO) を利用する。GPIO ポートは「出力モード」に設定することで LED の ON/OFF などが行える。また「入力モード」にすることで、GPIO ポートの状態を読み取ることができる。
 * [async function](https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Statements/async_function) を利用すると非同期処理のコードがすっきり書ける。
 
 # 1. 準備
@@ -142,7 +142,7 @@ index.html
   </body>
 ```
 
-まず最初に読み込んでいる `blePolyfill.js` は Web GPIO API の example の時にも出てきましたが、[Web GPIO API](http://browserobo.github.io/WebGPIO/) と、[Web I2C API](http://browserobo.github.io/WebI2C/) をサポートするためのポリフィルです。
+まず最初に読み込んでいる `blePolyfill.js` は Web GPIO API の example の時にも出てきましたが、[Web GPIO API](http://browserobo.github.io/WebGPIO) と、[Web I2C API](http://browserobo.github.io/WebI2C) をサポートするためのポリフィルです。
 
 次に読み込んでいる `i2c-ADT7410.js` は Web I2C API を使って温度センサー ADT7410 との通信を行うためのドライバーとなるライブラリです。
 
@@ -278,21 +278,21 @@ example ではドライバーの読み込みに相対 URL を使用していま�
 
 Web I2C API で直接アクセスするにはまず I2C デバイスのデータシート等から内容を把握しておく必要があります。I2C デバイスの内部には読み込みや書き込みが可能なレジスターがあり、それぞれのレジスターにアドレスが割り振られています。ADT7410 の場合は次のようになっています。
 
-|アドレス|説明                 |デフォルト値|
-|-------|---------------------|-----------|
-|0x00   |Temperature value MSB|0x00       |
-|0x01   |Temperature value LSB|0x00       |
-|0x02   |Status               |0x00       |
-|0x03   |Configuration        |0x00       |
-|0x04   |T high setpoint MSB  |0x20(64℃) |
-|0x05   |T high setpoint LSB  |0x20(64℃) |
-|0x06   |T low setpoint MSB   |0x20(10℃) |
-|0x07   |T low setpoint LSB   |0x20(10℃) |
-|0x08   |T crit setpoint MSB  |0x49(147℃)|
-|0x09   |T crit setpoint LSB  |0x80(147℃)|
-|0x0a   |T hyst setpoint      |0x05(5℃)  |
-|0x0b   |ID                   |0xCX       |
-|0x2f   |Software reset       |0xXX       |
+| アドレス | 説明                  | デフォルト値 |
+| -------- | --------------------- | ------------ |
+| 0x00     | Temperature value MSB | 0x00         |
+| 0x01     | Temperature value LSB | 0x00         |
+| 0x02     | Status                | 0x00         |
+| 0x03     | Configuration         | 0x00         |
+| 0x04     | T high setpoint MSB   | 0x20(64℃)    |
+| 0x05     | T high setpoint LSB   | 0x20(64℃)    |
+| 0x06     | T low setpoint MSB    | 0x20(10℃)    |
+| 0x07     | T low setpoint LSB    | 0x20(10℃)    |
+| 0x08     | T crit setpoint MSB   | 0x49(147℃)   |
+| 0x09     | T crit setpoint LSB   | 0x80(147℃)   |
+| 0x0a     | T hyst setpoint       | 0x05(5℃)     |
+| 0x0b     | ID                    | 0xCX         |
+| 0x2f     | Software reset        | 0xXX         |
 
 多数のレジスターがありますが、取り合えず今現在の温度を知りたいだけであれば、
 アドレス `0x00` と `0x01` の Temperature value MSB と LSB の値を読むだけで良さそうです。

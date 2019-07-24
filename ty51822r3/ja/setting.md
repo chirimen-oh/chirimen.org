@@ -8,7 +8,7 @@ TY51822r3 で CHIRIMEN for TY51822r3 を使えるようにしてみよう。
 
 ## CHIRIMEN for TY51822r3 とは
 
-まず CHIRIMEN for TY51822r3 の基礎となっている CHIRIMEN とは [Web GPIO](http://browserobo.github.io/WebGPIO/) や、[Web I2C](http://browserobo.github.io/WebI2C/) といった JavaScript の API を使用してセンサーやアクチュエーターなどの物理デバイスを Web 技術だけで制御する事ができる IoT 環境です。
+まず CHIRIMEN for TY51822r3 の基礎となっている CHIRIMEN とは [Web GPIO](http://browserobo.github.io/WebGPIO) や、[Web I2C](http://browserobo.github.io/WebI2C) といった JavaScript の API を使用してセンサーやアクチュエーターなどの物理デバイスを Web 技術だけで制御する事ができる IoT 環境です。
 
 CHIRIMEN についての詳しい情報は以下のリンクを参照してください。  
 [CHIRIMEN 公式ページ](https://chirimen.org/)  
