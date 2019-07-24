@@ -1,7 +1,5 @@
 // ADT7410valueドライバを使わず、自力でADT7410の値を読むサンプル
 
-"use strict"; // strictモードで実行。細かいエラーチェックが行われます。
-
 window.onload = async function mainFunction() {
   var head = document.querySelector("#ADT7410value");
   var i2cAccess = await navigator.requestI2CAccess(); // i2cAccessを非同期で取得

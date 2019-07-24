@@ -1,5 +1,3 @@
-"use strict"; // strict モードで実行。細かいエラーチェックが行われます。
-
 window.onload = async function mainFunction() {
   var head = document.querySelector("#ADT7410value");
   var i2cAccess = await navigator.requestI2CAccess(); // i2cAccessを非同期で取得
