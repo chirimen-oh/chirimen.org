@@ -92,7 +92,7 @@ Raspi に AC アダプタと microUSB ケーブルを接続して (ケーブル�
 
 ## コンソールに `Uncaught SyntaxError: await is only valid in async function` などと表示される
 
-`await` 文は async (非同期) 関数の中でのみ利用可能です。関数の中で `await` を使って非同期処理を行いたい場合、その関数を async 関数として宣言する必要があります。`addEventListener` など引数に関数を渡している場合に `async` を付け忘れているケースが多いので注意してください。
+`await` 文は async (非同期) 関数の中でのみ利用可能です。関数の中で `await` を使って非同期処理を行いたい場合、その関数を async 関数として宣言する必要があります。特に `addEventListener` などで引数としてコールバック関数を渡している場合などには `async` を付け忘れてしまうことが多いので注意してください。
 
 ```
 // 関数宣言:

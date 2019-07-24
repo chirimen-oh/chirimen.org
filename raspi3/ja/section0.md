@@ -4,19 +4,13 @@ layout: tutorial
 
 # L チカしてみよう (初めての GPIO)
 
-# 1. 今回のゴール
+# 1. はじめに
 
-CHIRIMEN for Raspberry Pi 3 を使って Web アプリから「L チカ」(LED を点けたり消したり) するプログラミングをやってみよう。
-
-1. 今回のゴール
-2. 事前準備
-3. CHIRIMEN for Raspberry Pi 3 を起動してみよう
-4. L チカをやってみよう
-5. コードを眺めてみよう
+まずは CHIRIMEN for Raspberry Pi 3 (以下 CHIRIMEN Raspi3) を使って Web アプリから「L チカ」(LED を点けたり消したり) するプログラミングをしてみましょう。CHIRIMEN Raspi3 の基本的な操作方法を学び、実際に L チカするコードを読み書きします。
 
 ## CHIRIMEN for Raspberry Pi 3 とは
 
-CHIRIMEN for Raspberry Pi 3 (以下 CHIRIMEN Raspi3) は、Raspberry Pi 3 (以下 Raspi) で動作する IoT プログラミング環境です。[Web GPIO API](http://browserobo.github.io/WebGPIO/) や [Web I2C API](http://browserobo.github.io/WebI2C/) といった JavaScript でハードを制御する API を活用したプログラミングにより、Web アプリ上で Raspi に接続した電子パーツを直接制御できます。
+CHIRIMEN for Raspberry Pi 3 は、Raspberry Pi 3 (以下 Raspi) で動作する IoT プログラミング環境です。[Web GPIO API](http://browserobo.github.io/WebGPIO/) や [Web I2C API](http://browserobo.github.io/WebI2C/) といった JavaScript でハードを制御する API を活用したプログラミングにより、Web アプリ上で Raspi に接続した電子パーツを直接制御できます。
 
 {% cloudinary imgs/section0/CHIRIMENforRaspberryPi3.png alt="CHIRIMEN for Raspberry Pi 3 の活用イメージ" %}
 
@@ -272,7 +266,7 @@ CHIRIMEN Raspi3 はウェブブラウザをプログラムの実行環境とし�
 今回の JavaScript ファイルで、最初に呼び出されるコードは `await navigator.requestGPIOAccess()` です。
 ここで先ほど出て来た [Web GPIO API](http://browserobo.github.io/WebGPIO/) を使い、`gpioAccess` という GPIO にアクセスするためのインタフェースを取得しています。
 
-関数の呼び出しに `await` 接頭詞がついていることに注意してください。この関数は非同期処理の関数でその処理の完了を待って次の処理に進みます。そして await 接頭詞を使いますので、それを使っている関数(`mainFunction()`)は async 接頭詞が付く、非同期処理の関数となっています。
+**関数の呼び出しに `await` 接頭詞を付けることに注意してください。** この関数は非同期関数ですが、その処理の完了を待ってから次の処理をする必要があります。そして `await` 接頭詞を使うので、それを含む関数(`mainFunction()`)は async 接頭詞を付けて非同期関数として定義しなければなりません。
 
 コードを読み進める前に、ここで少し GPIO について記載しておきたいと思います。
 

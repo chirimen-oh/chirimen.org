@@ -29,7 +29,7 @@ CHIRIMEN for Raspberry Pi 3 (Raspi3) を使って L チカ (LED を点滅) し�
 
 ## ボードと機材を配線しよう
 
-[{% cloudinary half imgs/section1/k.png alt="Lチカ起動画面" style="width: 40%; margin: 0;" %}](imgs/section1/k.png)
+[{% cloudinary small imgs/section1/k.png alt="Lチカ起動画面" class="right" style="width: 40%; margin: 0;" %}](imgs/section1/k.png)
 
 [右図](imgs/section0/k.png)と同じように配線してみよう (クリックすると拡大します。[写真はこちら](imgs/section0/h.jpg))。
 
@@ -48,7 +48,7 @@ L チカが出来たら、スイッチのオンオフや人感センサーを使
 
 -----
 
-[{% cloudinary half imgs/section2/schematic_warning.png alt="温度センサーの配線図" style="width: 35%; margin: 0 0 0 1em;" %}](imgs/section2/schematic_warning.png)
+[{% cloudinary small imgs/section2/schematic_warning.png alt="温度センサーの配線図" class="right" style="width: 35%; margin: 0 0 0 1em;" %}](imgs/section2/schematic_warning.png)
 
 # 2. I2C: 温度センサーを使おう
 
@@ -62,7 +62,7 @@ L チカが出来たら、スイッチのオンオフや人感センサーを使
 $ i2cdetect -y -r 1
 ```
 
-[{% cloudinary half imgs/section2/ADT7410.png alt="i2cdetect実行例" style="width: 33%; margin: 0 2% 5px 1em;" %}](imgs/section2/ADT7410.png)
+[{% cloudinary small imgs/section2/ADT7410.png alt="i2cdetect実行例" class="right" style="width: 33%; margin: 0 2% 5px 1em;" %}](imgs/section2/ADT7410.png)
 
 [右図](imgs/section2/ADT7410.png) のような画面が表示されるはずです。`i2cdetect` コマンドでは I2C バスに接続されている Slave アドレス (デバイス毎の割り当て番号) を確認できます。[i2cdetect WebI2C 版](http://chirimen.org/chirimen-raspi3/gc/contrib/examples/i2c-detect/i2cdetectPI.html) でも確認できます。アドレスが表示されない場合は配線などの間違いがないか確認してください。
 
@@ -70,7 +70,7 @@ $ i2cdetect -y -r 1
 
 `/home/pi/Desktop/gc/i2c/i2c-ADT7410/index.html` ファイルを開いて実際に動かしてみよう。ブラウザが起動し[右図](imgs/section2/browser.png) のような画面になります。
 
-[{% cloudinary half imgs/section2/browser.png alt="温度センサー利用画面" style="width: 33%; margin: 0 2%;" %}](imgs/section2/browser.png)
+[{% cloudinary small imgs/section2/browser.png alt="温度センサー利用画面" class="right" style="width: 33%; margin: 0 2%;" %}](imgs/section2/browser.png)
 
 画面下部に数字がでていますね。これが温度センサーから取得した現在の温度 (摂氏) の表示になります。
 
