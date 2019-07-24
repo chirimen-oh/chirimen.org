@@ -19,7 +19,7 @@ GPIO, I2C 以外によく見聞きするハードのインターフェイスに�
 - UART
   - MIDI であれば WebMIDI からコントロール可能です。それ以外はローカルにサーバを立ててサーバ側で処理するなどしてください。
 - PWM
-  - [CHIRIMEN Examples に掲載されている I2C PWM コントローラ PCA9685](http://chirimen.org/chirimen-raspi3/gc/top/examples/)を使って、サーボ・DC モーター・さらに LED の PWM 制御ができます。
+  - [CHIRIMEN Examples に掲載されている I2C PWM コントローラ PCA9685](https://r.chirimen.org/examples)を使って、サーボ・DC モーター・さらに LED の PWM 制御ができます。
   - それ以外はローカルにサーバを立ててサーバ側で処理するか Arduino を組み合わせるなどして制御します。いずれの場合もデバイスの仕様 (データシート) をしっかり確認してから使ってください。対応する周波数以外の信号を送るとデバイスにロックがかかったり発熱して故障したりする原因となります。
 - SPI
 

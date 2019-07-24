@@ -14,9 +14,10 @@ CHIRIMEN for Raspberry Pi 3 （以下「CHIRIMEN Raspi3」）を使ったプロ�
 
 前回までのチュートリアルで学んだことは下記のとおりです。
 
-- 各種 example が `~/Desktop/gc/` 配下に配線図と一緒に置いてある
+- 各種 example が `~/Desktop/gc/` 配下に配線図と一緒に置いてある ([オンライン版もある](https://r.chirimen.org/examples))
 - 利用可能な GPIO Port 番号・種類と位置は壁紙を見よう
-- Web アプリからの GPIO の制御には [Web GPIO API](http://browserobo.github.io/WebGPIO) を利用するGPIO ポートは「出力モード」に設定すると LED の ON/OFF などが行え、「入力モード」にすると GPIO ポートの状態を読み取れる
+- Web アプリからの GPIO の制御には [Web GPIO API](http://browserobo.github.io/WebGPIO) を利用する
+- GPIO ポートは「出力モード」で LED の ON/OFF などが行え「入力モード」では GPIO ポートの状態を読み取れる
 - デバイスの初期化などは非同期処理であり [async と await を用いて処理する](appendix0.md)
 
 # 1.準備

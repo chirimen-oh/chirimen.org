@@ -44,7 +44,7 @@ CHIRIMEN for Raspberry Pi 3 (Raspi3) を使って L チカ (LED を点滅) し�
 **補足**: [オンライン版](https://r.chirimen.org/gpio-blink) でも同じコードを実行したり書き換えてみたり出来ます。  
 **注意**: ローカル版とオンライン版など、**同時に複数のタブで同じ GPIO ポートは操作できません**。
 
-L チカが出来たら、スイッチのオンオフや人感センサーを使う場合など [他の GPIO 利用例](http://chirimen.org/chirimen-raspi3/gc/top/examples/#gpioExamples) にもチャレンジしてみてください。詳しくはチュートリアルの [L チカしてみよう](section0.md) と [GPIO の使い方](section1.md) をご覧ください。
+L チカが出来たら、スイッチのオンオフや人感センサーを使う場合など [他の GPIO 利用例](https://r.chirimen.org/examples#gpioExamples) にもチャレンジしてみてください。詳しくはチュートリアルの [L チカしてみよう](section0.md) と [GPIO の使い方](section1.md) をご覧ください。
 
 -----
 
@@ -76,10 +76,10 @@ $ i2cdetect -y -r 1
 
 **補足**: [オンライン版](https://r.chirimen.org/i2c-adt7410) でも同じコードで試せます。
 
-温度センサーが使えたら、光センサー、距離センサーなど [いろいな I2C デバイスの例](http://chirimen.org/chirimen-raspi3/gc/top/examples/#i2cExamples) にもチャレンジしてみてください。詳しくはチュートリアルの [センサーを使ってみよう](section2.md) と [I2C の使い方](section3.md) をご覧ください。
+温度センサーが使えたら、光センサー、距離センサーなど [いろいな I2C デバイスの例](https://r.chirimen.org/examples#i2cExamples) にもチャレンジしてみてください。詳しくはチュートリアルの [センサーを使ってみよう](section2.md) と [I2C の使い方](section3.md) をご覧ください。
 
 -----
 
 # 3. もっといろいろしてみよう
 
-詳しく説明している [チュートリアル](readme.md) を読みつつコードを書き換えてみたり、各デバイス用の回路図、サンプルコード、オンライン版を用意している [Example 集ページ](http://chirimen.org/chirimen-raspi3/gc/top/examples/) を参考に、色々なデバイスを繋いで自由なアイデアを形にしてみてください。
+詳しく説明している [チュートリアル](readme.md) を読みつつコードを書き換えてみたり、各デバイス用の回路図、サンプルコード、オンライン版を用意している [Example 集ページ](https://r.chirimen.org/examples) を参考に、色々なデバイスを繋いで自由なアイデアを形にしてみてください。

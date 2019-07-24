@@ -56,9 +56,9 @@ LED と温度センサーを使ってみる最小限のお試しページです�
 ## 対応デバイスと Example 集
 CHIRIMEN for Raspberry Pi 3 対応デバイスのドライバ・回路図・サンプルコードをセットにした Example 集を用意しています。
 
-- [Basic GPIO Example](http://chirimen.org/chirimen-raspi3/gc/top/examples/#gpioExamples)
-- [Basic I2C Example](http://chirimen.org/chirimen-raspi3/gc/top/examples/#i2cExamples)
-- [Advanced Example](http://chirimen.org/chirimen-raspi3/gc/top/examples/#advanced)
+- [Basic GPIO Example](https://r.chirimen.org/examples#gpioExamples)
+- [Basic I2C Example](https://r.chirimen.org/examples#i2cExamples)
+- [Advanced Example](https://r.chirimen.org/examples#advanced)
 
 Basic GPIO/I2C Examle のデバイスは CHIRIMEN Raspi3 の OS イメージ公開前に動作検証をしている CHIRIMEN Certified デバイスです。
 Advanced Example は個人レベルで動作確認して追加されている contrib デバイスです。いずれも元のソースコードは [こちら](https://github.com/chirimen-oh/chirimen-raspi3/tree/master/gc) に収録されています。
