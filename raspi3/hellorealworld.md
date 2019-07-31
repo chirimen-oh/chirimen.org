@@ -64,7 +64,7 @@ $ i2cdetect -y -r 1
 
 [{% cloudinary small imgs/section2/ADT7410.png alt="i2cdetect実行例" class="right" style="width: 33%; margin: 0 2% 5px 1em;" %}](imgs/section2/ADT7410.png)
 
-[右図](imgs/section2/ADT7410.png) のような画面が表示されるはずです。`i2cdetect` コマンドでは I2C バスに接続されている Slave アドレス (デバイス毎の割り当て番号) を確認できます。[i2cdetect WebI2C 版](http://chirimen.org/chirimen-raspi3/gc/contrib/examples/i2c-detect/i2cdetectPI.html) でも確認できます。アドレスが表示されない場合は配線などの間違いがないか確認してください。
+[右図](imgs/section2/ADT7410.png) のような画面が表示されるはずです。`i2cdetect` コマンドでは I2C バスに接続されている Slave アドレス (デバイス毎の割り当て番号) を確認できます。[i2cdetect WebI2C 版](http://r.chirimen.org/i2cdetect) でも確認できます。アドレスが表示されない場合は配線などの間違いがないか確認してください。
 
 ## Example コードを実行しよう
 
