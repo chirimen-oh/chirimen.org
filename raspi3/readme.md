@@ -13,6 +13,7 @@ JavaScript プログラミング未経験者は、ページ下部で紹介して
 短時間でさっと CHIRIMEN を体験するときにはこちらをご覧ください。
 
 - [Hello Real World](hellorealworld.md)
+- [Hello Real World 印刷用 PDF](hellorealworld.pdf)
 
 LED と温度センサーを使ってみる最小限のお試しページです。より詳しくは以下のチュートリアルをご覧ください。
 
