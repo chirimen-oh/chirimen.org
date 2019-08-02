@@ -69,9 +69,7 @@ Raspi に AC アダプタと microUSB ケーブルを接続して (ケーブル�
 
 ## pi ユーザのパスワードが分からない
 
-本ページ執筆時点で CHIRIMEN の配付イメージは Raspbian をベースにしていますが `pi` ユーザのパスワードは Raspbian デフォルトの `raspberry` ではなく `rasp` に変更されています。
-
-なお、パスワード設定変更はイメージ作成スクリプト [setup.sh](https://github.com/chirimen-oh/chirimen-raspi3/blob/master/setup.sh) で行われています。
+本ページ執筆時点で CHIRIMEN の配付イメージは Raspbian をベースにしておりデフォルトユーザ `pi` のパスワードは Raspbian デフォルト同様に `raspberry` となっています (2018 年以前のイメージでは `rasp` に変更されていました)。
 
 ## 同時に複数のタブで開くと動作しない
 ## コンソールに `Uncaught (in promise) GPIOPort(XX).export() error` などと表示される

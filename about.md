@@ -10,7 +10,7 @@ Web ページ中の JavaScript で直接ハードを制御できる環境を実�
 
 ## CHIRIMEN for Raspberry Pi 3 で試すには
 
-Raspberry Pi 3 向けの CHIRIMEN 環境を試すには、[ビルドイメージ](https://r.chirimen.org/download) をダウンロードして [Etcher](https://www.balena.io/etcher/) などを使って [microSD カードに焼き込み](sdcard.md)、Raspberry Pi 3 もしくは Raspberry Pi 3B+ を起動してください。CHIRIMEN Raspi3 を使ったプロトタイピングに必要な環境とサンプルコードが全てセットアップされた状態のイメージとなっており、このサイトのチュートリアルをすぐにお試し頂けます。
+Raspberry Pi 3 向けの CHIRIMEN 環境を試すには、[ビルドイメージ](https://r.chirimen.org/sdimage) をダウンロードして [Etcher](https://www.balena.io/etcher/) などを使って [microSD カードに焼き込み](sdcard.md)、Raspberry Pi 3 もしくは Raspberry Pi 3B+ を起動してください。CHIRIMEN Raspi3 を使ったプロトタイピングに必要な環境とサンプルコードが全てセットアップされた状態のイメージとなっており、このサイトのチュートリアルをすぐにお試し頂けます。
 
 [CHIRIMEN for Raspberry Pi3 のチュートリアル](https://tutorial.chirimen.org/raspi3/ja/)
 

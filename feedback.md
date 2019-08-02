@@ -44,7 +44,7 @@ console.log("hello code block!")
 ```
 `````
 
-サンプルコードファイルを読み込んで埋め込むには次のように [Jekyll の `include_relative` タグ](https://jekyllrb.com/docs/includes/) を使用します。コードブロック末尾に空行が出来ないように `-%}` で閉じていることに注意してください。
+サンプルコードファイルを読み込んで埋め込むには次のように [Jekyll の `include_relative` タグ](https://jekyllrb.com/docs/includes/) を使用します。コードブロック末尾に空行が出来ないように [ホワイトスペースを削除する](https://shopify.github.io/liquid/basics/whitespace/) `-%}` で閉じていることに注意してください。
 
 `````md
 ```js
