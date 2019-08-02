@@ -37,7 +37,7 @@ CHIRIMEN for Raspberry Pi 3（以下 「CHIRIMEN Raspi3」） を使ったプロ
 - 定期的に測定した温度を画面に表示する。
 - 一定温度以上になったらモーターを回す。一定温度以下になったらモーターを止める。
 
-[1. GPIO の使い方](section1.md) で MOSFET ＋ モーターと [2. I2C 　基本編（ADT7410 温度センサー）](section2.md) で使った温度センサーがあればできそうですね。
+[1. GPIO の使い方](section1.md) で MOSFET ＋ モーターと [2. I2C 基本編（ADT7410 温度センサー）](section2.md) で使った温度センサーがあればできそうですね。
 
 # 1.準備
 

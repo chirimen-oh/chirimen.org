@@ -62,8 +62,8 @@ function  sleep(ms){
 ```index1.html
 <!doctype html>
 <html>
-  <!-- htmlでは単に上のjsを読み込んでいるだけ、画面には何も反映されません。このソースには特別新しい作法はありません。。　ブラウザの開発ツールのコンソールに結果のメッセージが出ます -->
-  <head>
+  <!-- htmlでは単に上のjsを読み込んでいるだけ、画面には何も反映されません。このソースには特別新しい作法はありません。ブラウザの開発ツールのコンソールに結果のメッセージが出ます -->
+  <head>
     <meta charset="UTF-8"/>
     <script src='async1.js'></script>
   </head>
@@ -166,19 +166,19 @@ async function asyncTest(){ // 頭にasyncを付けるのがポイント
     // asyncProcessを遅延時間1000msで起動してans1に値が帰るまで待つ
     var ans1 = await asyncProcess("TEST1",1000); // 非同期処理関数の返答を待機するには頭にawaitをつけて呼び出すのがポイント
     console.log("test1 call end:",ans1);
-    
+
     // asyncProcessを遅延時間200msで起動してans2に値が帰るまで待つ
     var ans2 = await asyncProcess("TEST2",200);
     console.log("test2 call end:",ans2);
-    
+
     // 別の非同期処理の関数(sleep)を使って500ms待機させてみる
     await sleep(500);
     console.log("end sleep 500ms");
-    
+
     // asyncProcessを遅延時間500msで起動してans3に値が帰るまで待つ
     var ans3 = await asyncProcess("TEST3",500);
     console.log("test3 call end:",ans3);
-    
+
     // これで全部の値が順番に取れた
     console.log(ans1,ans2,ans3);
   } catch (err){
