@@ -46,7 +46,7 @@ CHIRIMEN Raspi3 の [examples](https://chirimen.org/chirimen-raspi3/gc/top/examp
 - サーボモーター : PCA9685
 - DC モーター
 
-  - 片方向 On/Off のみ　チュートリアルの FET を用いた DCFan の回路が使えます(下記正転逆転回路で GPIO を１個だけ繋げても同様に制御できます)
+  - 片方向 On/Off のみ チュートリアルの FET を用いた DCFan の回路が使えます(下記正転逆転回路で GPIO を１個だけ繋げても同様に制御できます)
   - 正転逆転 (GPIO-HBridge)
   - 速度もコントロール (GPIO-I2C-PWMHBridge その１, GPIO-I2C-PWMHBridge その２)
 

@@ -49,7 +49,7 @@ CHIRIMEN for Raspberry Pi 3 （以下「CHIRIMEN Raspi3」）を使ったプロ�
 詳細は下記をご参照ください。
 
 - [I2C](https://ja.wikipedia.org/wiki/I2C) - Wikipedia
-- I2C バス仕様書　最新版（[日本語](https://www.nxp.com/docs/ja/user-guide/UM10204.pdf)、[English](http://www.nxp.com/documents/user_manual/UM10204.pdf)）
+- I2C バス仕様書 最新版（[日本語](https://www.nxp.com/docs/ja/user-guide/UM10204.pdf)、[English](http://www.nxp.com/documents/user_manual/UM10204.pdf)）
 - [I2C の使い方](http://www.picfun.com/i2cframe.html)（後閑哲也氏サイト)
 
 ここでは I2C の概要として下記を押さえておきましょう。

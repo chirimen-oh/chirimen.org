@@ -34,7 +34,7 @@ layout: tutorial
 - [Arduino UNO R3](https://www.switch-science.com/catalog/789/)
 - [EasyDriver ステッピングモータードライバ v4.4](https://www.switch-science.com/catalog/2242/)
 - [I2C バス用双方向電圧レベル変換モジュール(FXMA2102)](http://akizukidenshi.com/catalog/g/gM-05825/)
-- [バイポーラ　ステッピングモーター SM-42BYG011](http://akizukidenshi.com/catalog/g/gP-05372/)
+- [バイポーラ ステッピングモーター SM-42BYG011](http://akizukidenshi.com/catalog/g/gP-05372/)
 - [AC アダプター 12V/1.5A](https://www.switch-science.com/catalog/1410/)
 - [DC プラグ変換ケーブル（QI オス）](https://www.switch-science.com/catalog/2321/)
 - ジャンパー（オス・メス）ケーブル x 7、(オス・オス) x 7

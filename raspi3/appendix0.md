@@ -72,7 +72,7 @@ function  sleep(ms){
 <!doctype html>
 <html>
   <!-- htmlでは単に上のjsを読み込んでいるだけ、画面には何も反映されません。このソースには特別新しい作法はありません。。　ブラウザの開発ツールのコンソールに結果のメッセージが出ます -->
-  <head>
+  <head>
     <meta charset="UTF-8"/>
     <script src='async1.js'></script>
   </head>

@@ -22,11 +22,11 @@ CHIRIMEN for TY51822r3 を使ったプログラミングを通じて、[Web I2C 
 このチュートリアル全体で必要になるハードウエア・部品は下記の通りです。
 
 * [Hello World 編](section0.md) に記載の「基本ハードウエア」
-* [ADT7410 使用 温度センサーモジュール](http://akizukidenshi.com/catalog/g/gM-06675/) x 1 
+* [ADT7410 使用 温度センサーモジュール](http://akizukidenshi.com/catalog/g/gM-06675/) x 1
 
 # 2. I2C とは
 
-[I2C](https://ja.wikipedia.org/wiki/I2C) は 2 線式の同期式シリアル通信インタフェースです。「アイ・スクエア・シー」とか「アイ・ ツー・シー」などと読みます。 
+[I2C](https://ja.wikipedia.org/wiki/I2C) は 2 線式の同期式シリアル通信インタフェースです。「アイ・スクエア・シー」とか「アイ・ ツー・シー」などと読みます。
 
 ![i2c-bus](imgs/section2/i2c-bus.png)
 
@@ -47,7 +47,7 @@ CHIRIMEN for TY51822r3 ではマスターとなるのが TY51822r3 で、各種�
 詳細は下記をご参照ください。
 
 * [I2C](https://ja.wikipedia.org/wiki/I2C) - Wikipedia
-* I2Cバス仕様書　最新版（[日本語](https://www.nxp.com/docs/ja/user-guide/UM10204.pdf)、[English](http://www.nxp.com/documents/user_manual/UM10204.pdf)）
+* I2C バス仕様書 最新版（[日本語](https://www.nxp.com/docs/ja/user-guide/UM10204.pdf)、[English](http://www.nxp.com/documents/user_manual/UM10204.pdf)）
 * [I2Cの使い方](http://www.picfun.com/i2cframe.html)（後閑哲也氏サイト)
 
 ここでは I2C の概要として下記を押さえておきましょう。
@@ -62,7 +62,7 @@ CHIRIMEN for TY51822r3 ではマスターとなるのが TY51822r3 で、各種�
 
 それでは実際に I2C に対応したモジュールを使ってみましょう。
 
-CHIRIMEN for TY51822r3 には、センサーなど、いくつかの I2C モジュールのサンプルが含まれています。  
+CHIRIMEN for TY51822r3 には、センサーなど、いくつかの I2C モジュールのサンプルが含まれています。
 [LIVE examples](https://chirimen.org/chirimen-TY51822r3/bc/) のページに I2C 対応デバイスを使った examples のリストがありますので、アクセスしてみてください。
 
 ![exampleList](imgs/section2/i2cexamples_list.png)
@@ -88,7 +88,7 @@ I2Cバス上、TY51822r3 がマスター、ADT7410がスレーブになります
 
 さて、[**i2c-ADT7410 の LIVE example**](https://chirimen.org/chirimen-TY51822r3/bc/i2c/i2c-ADT7410/) のページでは、次のようにブレッドボードの配線図付きで ADT7410 を使用した温度センサーのアプリが開きます。これらのパーツを画面の通りに接続してみてください。
 
-[![breadboard](imgs/section2/adt7410_1.png)](https://chirimen.org/chirimen-TY51822r3/bc/i2c/i2c-ADT7410/schematic.png)  
+[![breadboard](imgs/section2/adt7410_1.png)](https://chirimen.org/chirimen-TY51822r3/bc/i2c/i2c-ADT7410/schematic.png)
 
 I2C の信号、SCL、SDA はこの図で TY51822r3 の 左下、P0_29 と P0_30 に割り当てられています。
 これは CHIRIMEN for TY51822r3 の環境での割り当てであって MBED の TY51822r3 公式ページでのピン割り当てとは異なる事に注意してください。
@@ -97,7 +97,7 @@ I2C の信号、SCL、SDA はこの図で TY51822r3 の 左下、P0_29 と P0_30
 
 ![TY51822r3](imgs/section2/ty51822r3.png)
 
-回路図は次の通りです。  
+回路図は次の通りです。
 
 ![schematic](imgs/section2/adt7410_schematic.png)
 
@@ -106,13 +106,13 @@ I2C の信号、SCL、SDA はこの図で TY51822r3 の 左下、P0_29 と P0_30
 それでは、さっそく動かしてみましょう。
 
 [**i2c-ADT7410 の LIVE example**](https://chirimen.org/chirimen-TY51822r3/bc/i2c/i2c-ADT7410/) のページで、
-画面上部の青いバー「BLE 接続」のボタンを押すと、BLE の接続を開始します。  
+画面上部の青いバー「BLE 接続」のボタンを押すと、BLE の接続を開始します。
 ターゲットの gtGPIO2 を選択して「ペア設定」を押してください。
 
 ![adt7410_1](imgs/section2/adt7410_3.png)
 
-BLE の接続が正常にできれば、青いバーが消え動作を開始します。  
-ブレッドボード図の下に数字がでていますね。これが温度センサーから取得した現在の温度 (摂氏) の表示になります。  
+BLE の接続が正常にできれば、青いバーが消え動作を開始します。
+ブレッドボード図の下に数字がでていますね。これが温度センサーから取得した現在の温度 (摂氏) の表示になります。
 
 ![adt7410_2](imgs/section2/adt7410_4.png)
 
@@ -183,7 +183,7 @@ async function mainFunction() {
 少し詳し解説してみます。
 
 ### await navigator.bluetooth.requestDevice()
-GPIO の example の時と同様ですが、まずこの呼び出しによって周辺デバイスをスキャンして BLE デバイスを選択するダイアログを表示します。  
+GPIO の example の時と同様ですが、まずこの呼び出しによって周辺デバイスをスキャンして BLE デバイスを選択するダイアログを表示します。
 
 `requestDevice({filters: [{ services: [DEVICE_UUID] }] })` と引数に DEVICE_UUID で CHIRIMEN-TY51822r3 用のサービスを指定しています。
 
@@ -191,7 +191,7 @@ GPIO の example の時と同様ですが、まずこの呼び出しによって
 
 ### await navigator.requestI2CAccess()
 
-Web I2C APIを利用するための `I2CAccess` インタフェースを取得するための API 呼び出しです。  
+Web I2C APIを利用するための `I2CAccess` インタフェースを取得するための API 呼び出しです。
 Web GPIO の場合は `requestGPIOAccess()` でしたが Web I2C の場合はこのように `requestI2CAccess()` となります。
 
 この関数も非同期処理の関数で、処理完了を待機し、その結果正しくインタフェースが取得されたら `i2cAccess` オブジェクトに保持されます。
@@ -231,7 +231,7 @@ ADT7410 の仕様に基づくデータ読み出し処理をここで行ってい
 
 この example では ADT7410 から値を読み出すために ADT7410 専用のドライバー `i2c-ADT7410.js` を使用しています。このように CHIRIMEN for TY51822r3 ではある程度の I2C デバイスに関しては簡単に使えるように専用のドライバーが準備されています。次のフォルダーに各デバイスのドライバーが収められています。
 
-[GitHub の I2C ドライバー一覧フォルダー](https://github.com/chirimen-oh/chirimen-TY51822r3/tree/master/bc/drivers)  
+[GitHub の I2C ドライバー一覧フォルダー](https://github.com/chirimen-oh/chirimen-TY51822r3/tree/master/bc/drivers)
 ![ドライバーのリスト](imgs/section2/drivers.png)
 
 example ではドライバーの読み込みに相対 URL を使用していますが、ローカルファイルで HTML を作成する場合は、

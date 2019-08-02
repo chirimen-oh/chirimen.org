@@ -37,7 +37,7 @@ example.htmlのGPIO部は、以下の回路図で動くように組まれてい�
 ## ライブラリの使い方 ##
 * 基本的には実際に動くコード**[example.html](https://github.com/chirimen-oh/webGPIO-etc-on-microbit-via-webBluetooth/blob/master/example.html)**に使い方が網羅されているのでそちらを参照してください。コメントに細かな注意事項なども記載されています。
 * ドライバライブラリ(microBitBLE.js)は[こちら](https://github.com/chirimen-oh/webGPIO-etc-on-microbit-via-webBluetooth/blob/master/microBitBLE.js)）
- 
+
 大まかな流れは以下の通りです。[web bluetooth](https://webbluetoothcg.github.io/web-bluetooth/)を直に使うのと比べてだいぶ簡単だと思います。
 ### 初期化 ###
   * ```https```でアクセスできるサイト上に以下の処理を書いたウェブアプリ(コンテンツ,html,js)を作ります。
@@ -52,7 +52,7 @@ example.htmlのGPIO部は、以下の回路図で動くように組まれてい�
 
 ### センサーデータの取得(ボタンもセンサーの一種とみなします) ###
 指示してデータを取得するタイプと、データが変化したらコールバック関数に帰ってくるタイプの、２タイプが使えます。
-  
+
 #### 指示してデータを取得するタイプ ####
 すべて非同期の関数なので、async接頭辞付きの関数内で使用します。返り値は加速度と磁気が３軸のため、```.x,.y,.z```で各軸にアクセス。他は値がそのまま得られます。
 ```
@@ -63,7 +63,7 @@ async function getKasokudo(){
 ```
 
 ```getAccelerometer()```以外に、```getMagnetometer(), getTemperature(), getButtonA(), getButtonB()```が使えます。
-  
+
 #### コールバック関数を指定するタイプ ####
 指定したコールバック関数の第一引数に同様の形式で値が返ってきます。
 ```
@@ -76,7 +76,7 @@ microBitBLE.onAccelerometerChange = accelerometerCBF;
 
 ### マトリクスLEDの表示 ###
 指定したASCII文字列が流れて表示するタイプ、指定したビットパターンが固定表示されるタイプの二つの関数が使えます。
-  
+
 #### ASCII文字列表示 ####
 
 ```
@@ -96,10 +96,10 @@ microBitBLE.setLEDmatrix(matrixData);
 ```
 var matrixData = new Uint8Array([0b11111,0b10001,0b10101,0b10001,0b11111]);
 microBitBLE.setLEDmatrix(matrixData);
-``` 
+```
 
 ### ピン(GPIO Port)の利用 ###
-  * ピンは入力もしくは出力として利用できます。ただしピン毎に各種制約があり、使えないピン、入力しかできないピン、アナログ入力もできるピン　などあります。具体的な制約は[example.html](https://github.com/chirimen-oh/webGPIO-etc-on-microbit-via-webBluetooth/blob/master/example.html)の、```testWebGPIO()```関数内のコメントに書かれています。
+  * ピンは入力もしくは出力として利用できます。ただしピン毎に各種制約があり、使えないピン、入力しかできないピン、アナログ入力もできるピンなどあります。具体的な制約は[example.html](https://github.com/chirimen-oh/webGPIO-etc-on-microbit-via-webBluetooth/blob/master/example.html)の、```testWebGPIO()```関数内のコメントに書かれています。
   * [webGPIO](https://rawgit.com/browserobo/WebGPIO/master/index.html)に準拠したAPIで利用できます。ただし、本来のwebGPIOは```navigator.requestGPIOAccess()```でGPIOポートアクセスを取得しますが、このライブラリでは代わりに、```microBitBLE.requestGPIOAccess()```で取得します。(理由はCHIRIMEN for RPi3の同関数とのコンフリクトを回避するため)
     * ちなみに、入力機能はセンサーデータの取得と同様に関数タイプ、コールバックタイプの２タイプあり。
   * ポートの入出力モードを設定する```port.export()```関数では、標準の```"in","out"```（デジタル入出力）に加え```"analogin"```（アナログ入力（uint8 0V:0～3V:255 ））が使えます。ただし先述のポートごとの制約の範囲に限ります。
