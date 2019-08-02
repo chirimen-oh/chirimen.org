@@ -409,17 +409,18 @@ I2Cデバイスを同時に接続して使用するとき、重要な注意事�
 このチュートリアルでは 下記について学びました。
 
 * Grove I2C Hubを使ったI2Cモジュールの接続方法
-* 光センサの使い方
-* 超音波センサの使い方
-* 三軸加速度センサの使い方
+* 光センサ (Grove) の使い方
+* 距離センサ (VL53L0X) の使い方
+* 三軸加速度センサ (Grove) の使い方
 * 複数のセンサの取扱い方
 
-このチュートリアルで書いたコードは以下のページで参照できます:
+このチュートリアルで扱ったコードは以下のページで参照できます:
 
 * [GitHub リポジトリで参照](https://github.com/chirimen-oh/tutorials/tree/master/raspi3/examples/section3)
-* ブラウザで開くページ (各デバイス)
-  * [Grove I2C 光センサ](https://r.chirimen.org/i2c-grove-light/)
-  * [測距センサ (VL53L0X)](https://r.chirimen.org/i2c-vl53l0x)
-  * [GROVE I2C 三軸加速度センサ](https://r.chirimen.org/i2c-grove-accelerometer/)
+* ブラウザで開くページ
+  * Grove I2C 光センサ: [JSBin](https://r.chirimen.org/jsbin-i2c-grove-light), [CodeSandbox](https://r.chirimen.org/csb-grove-light)
+  * 測距センサ (VL53L0X): [JSBin](https://r.chirimen.org/jsbin-i2c-vl53l0x), [CodeSandbox](https://r.chirimen.org/csb-vl53l0x)
+  * GROVE I2C 三軸加速度センサ: [JSBin](https://r.chirimen.org/i2c-grove-accelerometer/), [CodeSandbox](https://r.chirimen.org/csb-grove-accelerometer)
+  * 複数センサの利用 (ADT7410 + Grove 光センサ): [JSBin](https://r.chirimen.org/jsbin-i2c-multi-sensors), [CodeSandbox](https://r.chirimen.org/csb-multi-sensors)
 
 次のCHIRIMEN for Raspberry Pi 3 チュートリアルでは、『[Web GPIO APIとWeb I2C APIを組み合わせたプログラミング](section4.md)』に挑戦します！
