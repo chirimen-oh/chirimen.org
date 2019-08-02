@@ -177,9 +177,9 @@ i2cdetect で接続を確認しておきましょう。
 
 `$ i2cdetect -y -r 1`
 
-SlaveAddress `0x52` が見つかれば接続OKです。次にexampleを動かします。VL53L0X は CHIRIMEN リリース時のテスト対象デバイスではなく、**contrib ディレクトリに入っていることに注意** してください。
+SlaveAddress `0x52` が見つかれば接続OKです。次にexampleを動かします。
 
-`/home/pi/Desktop/gc/contrib/examples/i2c-VL53L0X/VL53L0X.html`
+`/home/pi/Desktop/gc/i2c/i2c-VL53L0X/VL53L0X.html`
 
 センサの前面 (VIN、GND、SCL、SDA等の文字が書いてある方) に手を近づけたり離したりしてみてください。距離の値が変化するはずです。
 
@@ -355,7 +355,7 @@ main.js もこれまでの他のセンサーとほとんど同じです。
 オンライン版のドライバーライブラリは下記にあります。
 
 * [温度センサ (ADT7410): gc/drivers/i2c-ADT7410.js](https://chirimen.org/chirimen-raspi3/gc/drivers/i2c-ADT7410.js)
-* [距離センサ (VL53L0X): gc/**contrib**/drivers/i2c-VL53L0X.js](https://chirimen.org/chirimen-raspi3/gc/contrib/drivers/i2c-VL53L0X.js)
+* [距離センサ (VL53L0X): gc/drivers/i2c-VL53L0X.js](https://chirimen.org/chirimen-raspi3/gc/drivers/i2c-VL53L0X.js)
 * [Grove 光センサ: gc/drivers/i2c-grove-light.js](https://chirimen.org/chirimen-raspi3/gc/drivers/i2c-grove-light.js)
 * [Grove 三軸加速度センサ: gc/drivers/i2c-grove-accelerometer.js](https://chirimen.org/chirimen-raspi3/gc/drivers/i2c-grove-accelerometer.js)
 
