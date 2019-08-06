@@ -16,7 +16,7 @@ SD カードの書き込みに使う PC で最新の起動イメージをダウ�
 
 * [CHIRIMEN for Raspberry Pi 3 最新リリース版](https://r.chirimen.org/sdimage)
 
-古いバージョンのイメージやテスト用のイメージをお探しの場合は [イメージ配付ディレクトリ]((http://download.chirimen.org/release/raspberry_pi_3/)) をご確認ください。
+古いバージョンのイメージやテスト用のイメージをお探しの場合は [イメージ配付ディレクトリ](http://download.chirimen.org/release/raspberry_pi_3/) をご確認ください。
 
 拡張子が `.zip` のファイルは zip 形式で圧縮されており、そのままでは焼き込みツールから利用できないため、ダウンロード後に展開してください。
 
