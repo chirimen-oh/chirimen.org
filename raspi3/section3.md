@@ -354,10 +354,10 @@ main.js もこれまでの他のセンサーとほとんど同じです。
 
 オンライン版のドライバーライブラリは下記にあります。
 
-* [温度センサ (ADT7410): gc/drivers/i2c-ADT7410.js](https://chirimen.org/chirimen-raspi3/gc/drivers/i2c-ADT7410.js)
-* [距離センサ (VL53L0X): gc/drivers/i2c-VL53L0X.js](https://chirimen.org/chirimen-raspi3/gc/drivers/i2c-VL53L0X.js)
-* [Grove 光センサ: gc/drivers/i2c-grove-light.js](https://chirimen.org/chirimen-raspi3/gc/drivers/i2c-grove-light.js)
-* [Grove 三軸加速度センサ: gc/drivers/i2c-grove-accelerometer.js](https://chirimen.org/chirimen-raspi3/gc/drivers/i2c-grove-accelerometer.js)
+* [温度センサ (ADT7410): i2c-ADT7410.js](https://r.chirimen.org/adt7410.js)
+* [距離センサ (VL53L0X): i2c-VL53L0X.js](https://r.chirimen.org/vl53l0x.js)
+* [Grove 光センサ: i2c-grove-light.js](https://r.chirimen.org/grove-light.js)
+* [Grove 三軸加速度センサ: i2c-grove-accelerometer.js](https://r.chirimen.org/grove-accelerometer.js)
 
 まずはセンサを繋いでから、[jsbin](https://jsbin.com/) か [jsfiddle](https://jsfiddle.net/) を使ってコードを書いてみましょう。
 

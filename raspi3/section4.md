@@ -87,7 +87,7 @@ Raspberry Pi 3 との接続方法については、下記回路図を参照く�
 [jsfiddle](https://jsfiddle.net/) の`HTML`ペインには下記内容のコードを記載してください。
 
 1. [Web GPIO API / Web I2C API の polyfill](https://r.chirimen.org/polyfill.js) を読み込むコード
-2. [ADT7410 のドライバーライブラリ](https://chirimen.org/chirimen-raspi3/gc/drivers/i2c-ADT7410.js)を読み込むコード ※任意。[以前の記事](srction2.md) を参考に、ドライバーを使わずに書いても良いです。
+2. [ADT7410 のドライバーライブラリ](https://r.chirimen.org/adt7410.js)を読み込むコード ※任意。[以前の記事](srction2.md) を参考に、ドライバーを使わずに書いても良いです。
 3. 温度表示用の要素 (DIV タグなど)
 
 ## JavaScript
