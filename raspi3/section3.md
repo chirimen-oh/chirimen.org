@@ -102,8 +102,8 @@ example のコードから、光センサに関係する部分を見ていきま
 index.html
 ```html
 : 
-  <script src="../../polyfill/polyfill.js"></script>
-  <script src="../../drivers/i2c-grove-light.js"></script>
+  <script src="https://r.chirimen.org/polyfill.js"></script>
+  <script src="https://r.chirimen.org/grove-light.js"></script>
   <script src="./main.js"></script>
   :
   <body>
@@ -195,8 +195,8 @@ example のコードから、測距センサに関係する部分を見ていき
 VL53L0X.html
 ```html
 : 
-  <script src="../../../polyfill/polyfill.js"></script>
-  <script src="../../drivers/i2c-VL53L0X.js"></script>
+  <script src="https://r.chirimen.org/polyfill.js"></script>
+  <script src="https://r.chirimen.org/vl53l0x.js"></script>
   <script src="./mainVL53L0X.js"></script>
   :
   <body>
@@ -290,8 +290,8 @@ exampleのコードを見てみましょう。
 index.html
 ```html
   : 
-  <script src="../../polyfill/polyfill.js"></script>
-  <script src="../../drivers/i2c-grove-accelerometer.js"></script>
+  <script src="https://r.chirimen.org/polyfill.js"></script>
+  <script src="https://r.chirimen.org/grove-accelerometer.js"></script>
   <script src="./main.js"></script>
   :
   <body>

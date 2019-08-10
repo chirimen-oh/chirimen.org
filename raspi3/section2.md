@@ -137,8 +137,8 @@ index.html
 
 ```html
   :
-  <script src="../../polyfill/polyfill.js"></script>
-  <script src="../../drivers/i2c-ADT7410.js"></script>
+  <script src="https://r.chirimen.org/polyfill.js"></script>
+  <script src="https://r.chirimen.org/adt7410.js"></script>
   <script src="./main.js"></script>
   :
   <body>
