@@ -148,7 +148,7 @@ index.html
   </body>
 ```
 
-まず最初に読み込んでいるのが `polyfill.js`。Web GPIO API の時に出てきた `https://chirimen.org/chirimen-raspi3/gc/polyfill/polyfill.js` と同じ Web GPIO API と Web I2C API の Polyfill です。
+まず最初に読み込んでいるのが `polyfill.js`。Web GPIO API の時に出てきた `https://r.chirimen.org/polyfill.js` と同じ Web GPIO API と Web I2C API の Polyfill です。
 
 次に読み込んでいるのが、`i2c-ADT7410.js`。このファイルは、Web I2C API を使って ADT7410 との通信を行うためのドライバー (ハードウェアを操作する為のライブラリ) です。
 
@@ -228,7 +228,7 @@ example と同じコードを書いても面白くないので、今回は`i2c-A
 
 ```html
 <div id="ADT7410value">---</div>
-<script src="https://chirimen.org/chirimen-raspi3/gc/polyfill/polyfill.js"></script>
+<script src="https://r.chirimen.org/polyfill.js"></script>
 ```
 
 こんな感じで良いでしょう。

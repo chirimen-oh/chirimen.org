@@ -203,7 +203,7 @@ L チカに成功しましたか？！
   <title>GPIO-Blink</title>
 </head>
 <body>
-  <script src="https://chirimen.org/chirimen-raspi3/gc/polyfill/polyfill.js"></script>
+  <script src="https://r.chirimen.org/polyfill.js"></script>
 </body>
 </html>
 ```
