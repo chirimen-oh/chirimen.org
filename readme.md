@@ -2,11 +2,7 @@
 
 ## CHIRIMEN とは
 
-CHIRIMEN とは、Web ブラウザからハードウェアを制御するプロトタイピング環境です。CHIRIMEN ではブラウザの JavaScript からハードを制御できるため、画面表示も電子パーツの操作もサーバとの通信も単一のプログラムで扱えます。Web 開発者向けの開発環境、ツール、ドキュメント、サービスすべてそのまま使えるため、素早くプロトタイピングを行ったり、プログラミング初学者がプログラミングと IoT の基礎を学ぶのにも最適です。詳しくは [CHIRIMEN について](about.md) ページをご覧ください。
-
-## Hello Real World
-
-CHIRIMEN 環境では普通の Web 開発と同様にハードウェア制御が可能です。例えば L チカコードはこのように書けます:
+CHIRIMEN とは、Web ブラウザからハードウェア制御も可能にしたプロトタイピング環境です。ブラウザの JavaScript からセンサーや電子パーツを制御できるため、デジタルのソフトとフィジカルなハードを同じプログラムで容易に連携できます。例えば L チカコードはこの通りです:
 
 ```javascript
 window.onload = async function() {
@@ -15,13 +11,16 @@ window.onload = async function() {
   var v = 0;
 
   await port.export("out"); // ポートを出力モードに設定
-  for (;;) {
+  for (;;) { // 無限に繰り返す
     v = v === 0 ? 1 : 0; // ポートの出力値を 0/1 交互に変更
     port.write(v); // LED を ON/OFF する
     await sleep(1000); // 繰り返し毎に 1000ms 待機
   }
 };
 ```
+
+ブラウザだけで簡単に[サンプルコードの確認・編集](https://r.chirimen.org/csb-gpio-blink)から公開までできます。Web 開発の知識と環境が全てそのまま活かせる CHIRIMEN は、素早くハードとソフトを融合させたプロトタイピングを行ったり、[最も人気で実践的なプログラミング言語](https://octoverse.github.com/projects#languages) JavaScript と IoT をプログラミング初心者でも楽しく簡単に学ぶのに最適な環境です。詳しくは [CHIRIMEN について](about.md) ページをご覧ください。
+
 
 ## チュートリアル
 上記のように WebGPIO, WebI2C を使ったコードが書ける CHIRIMEN 環境は現在 Rasbpebbry Pi 3 や TY51822r3 向けに移植されています。お持ちのボードに合わせて各ボード向けのチュートリアルをご覧ください:
