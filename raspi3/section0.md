@@ -193,23 +193,12 @@ L チカに成功しましたか？！
 
 ## HTML
 
-<!-- TODO: include したいが jsbin では s0.js は script タグで読まないのでコード違う... -->
 ```html
-<!DOCTYPE html>
-<html>
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width">
-  <title>GPIO-Blink</title>
-</head>
-<body>
-  <script src="https://r.chirimen.org/polyfill.js"></script>
-</body>
-</html>
+{% include_relative examples/section0/s0.html -%}
 ```
 
 HTML では `polyfill.js` という JavaScript ライブラリを読み込んでいます。
-polyfill.js は [Web GPIO API](http://browserobo.github.io/WebGPIO) と、[Web I2C API](http://browserobo.github.io/WebI2C) という W3C でドラフト提案中の 2 つの API への [Polyfill (ブラウザ標準に未実装の機能などを利用可能にするためのライブラリ)](https://developer.mozilla.org/ja/docs/Glossary/Polyfill) となっており、これを最初に読み込むことで GPIO や I2C の JavaScript API が使えるようになります。
+polyfill.js は [Web GPIO API](http://browserobo.github.io/WebGPIO) と、[Web I2C API](http://browserobo.github.io/WebI2C) という W3C でドラフト提案中の 2 つの API への [Polyfill (新しい API を未実装のブラウザでも同じコードが書けるようにするためのライブラリ)](https://developer.mozilla.org/ja/docs/Glossary/Polyfill) であり、これを最初に読み込むことで GPIO や I2C を操作する JavaScript API が使えます。**インターネットに接続していない環境でも動作させたいときは `file:///home/pi/Desktop/gc/gpio/LEDblink/index.html` のようにローカルから読み込むようにしてください。**
 
 ## JavaScript
 
