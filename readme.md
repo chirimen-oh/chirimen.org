@@ -23,15 +23,18 @@ window.onload = async function() {
 
 
 ## チュートリアル
-上記のように WebGPIO, WebI2C を使ったコードが書ける CHIRIMEN 環境は現在 Rasbpebbry Pi 3 や TY51822r3 向けに移植されています。お持ちのボードに合わせて各ボード向けのチュートリアルをご覧ください:
+上記のように WebGPIO, WebI2C が使える CHIRIMEN 環境は現在 [Rasbpebbry Pi](https://www.raspberrypi.org/), [TY51822r3](https://www.switch-science.com/catalog/2574/), [micro:bit](https://microbit.org/ja/) 向けに実装されています。お持ちのボードに合わせたものをご覧ください:
 
-- [CHIRIMEN for Raspberry Pi 3 チュートリアル](/raspi3/)
-- [CHIRIMEN for TY51822r3 チュートリアル](/ty51822r3/)
-<!-- I2C 対応完了したらコメント外してリストに加える:
-- CHIRIMEN for microbit チュートリアル](/microbit/ja/readme.md)
-  -->
+- [CHIRIMEN for Raspberry Pi 3](/raspi3/)
+- [CHIRIMEN for TY51822r3](/ty51822r3/)
+- [CHIRIMEN with micro:bit](https://chirimen.org/chirimen-micro-bit/)
+
+注: Raspberry Pi 3 ではボード上のブラウザからハードを制御しますが、TY51822r3 や micro:bit では PC やスマホなど他の端末のブラウザから Web Bluetooth を使いリモート制御します。
 
 ## Old Versions / 以前のチュートリアル
+
+<!-- 2020 年になったｒ古いチュートリアルは /raspi3/ からの案内のみとしてここから削除する -->
+
 本チュートリアルでは使用機材や手順を変更することがあります。お手持ちの機材が古い場合や、以前学習したときのものを参照したい場合など、必要に応じて古いチュートリアルのアーカイブをご覧ください。
 
 - [2018 年度に作成したスターターキット (DC Fan を含むもの) を利用するチュートリアル](https://webiot-2018--tutorial-chirimen-org.netlify.com/)
