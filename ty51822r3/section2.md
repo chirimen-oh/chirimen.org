@@ -10,10 +10,10 @@ CHIRIMEN for TY51822r3 を使ったプログラミングを通じて、[Web I2C 
 
 前回までのチュートリアルで学んだことは下記のとおりです。
 
-* CHIRIMEN for TY51822r3 の各種 examples は [chirimen-TY51822r3 LIVE examples](https://chirimen.org/chirimen-TY51822r3/bc/) のページにある。
-* CHIRIMEN for TY51822r3 では GPIO として 0 番 ～ 7 番が利用できる。
-* CHIRIMEN for TY51822r3 では Web アプリからの GPIO の制御には [Web GPIO API](http://browserobo.github.io/WebGPIO) を利用する。GPIO ポートは「出力モード」に設定することで LED の ON/OFF などが行える。また「入力モード」にすることで、GPIO ポートの状態を読み取ることができる。
-* [async function](https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Statements/async_function) を利用すると非同期処理のコードがすっきり書ける。
+- CHIRIMEN for TY51822r3 の各種 examples は [chirimen-TY51822r3 LIVE examples](https://chirimen.org/chirimen-TY51822r3/bc/) のページにある。
+- CHIRIMEN for TY51822r3 では GPIO として 0 番 ～ 7 番が利用できる。
+- CHIRIMEN for TY51822r3 では Web アプリからの GPIO の制御には [Web GPIO API](http://browserobo.github.io/WebGPIO) を利用する。GPIO ポートは「出力モード」に設定することで LED の ON/OFF などが行える。また「入力モード」にすることで、GPIO ポートの状態を読み取ることができる。
+- [async function](https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Statements/async_function) を利用すると非同期処理のコードがすっきり書ける。
 
 # 1. 準備
 
@@ -21,8 +21,8 @@ CHIRIMEN for TY51822r3 を使ったプログラミングを通じて、[Web I2C 
 
 このチュートリアル全体で必要になるハードウエア・部品は下記の通りです。
 
-* [Hello World 編](section0.md) に記載の「基本ハードウエア」
-* [ADT7410 使用 温度センサーモジュール](http://akizukidenshi.com/catalog/g/gM-06675/) x 1
+- [Hello World 編](section0.md) に記載の「基本ハードウエア」
+- [ADT7410 使用 温度センサーモジュール](http://akizukidenshi.com/catalog/g/gM-06675/) x 1
 
 # 2. I2C とは
 
@@ -46,17 +46,17 @@ CHIRIMEN for TY51822r3 ではマスターとなるのが TY51822r3 で、各種�
 
 詳細は下記をご参照ください。
 
-* [I2C](https://ja.wikipedia.org/wiki/I2C) - Wikipedia
-* I2C バス仕様書 最新版（[日本語](https://www.nxp.com/docs/ja/user-guide/UM10204.pdf)、[English](http://www.nxp.com/documents/user_manual/UM10204.pdf)）
-* [I2Cの使い方](http://www.picfun.com/i2cframe.html)（後閑哲也氏サイト)
+- [I2C](https://ja.wikipedia.org/wiki/I2C) - Wikipedia
+- I2C バス仕様書 最新版（[日本語](https://www.nxp.com/docs/ja/user-guide/UM10204.pdf)、[English](http://www.nxp.com/documents/user_manual/UM10204.pdf)）
+- [I2Cの使い方](http://www.picfun.com/i2cframe.html)（後閑哲也氏サイト)
 
 ここでは I2C の概要として下記を押さえておきましょう。
 
-* I2C には複数のデバイスが繋がる（I2C バス）
-* I2C に繋がるデバイスにはマスターとスレーブがある
-* I2C では必ずマスターからスレーブに対して通信要求が行われる
-* I2C スレーブはそれぞれのスレーブアドレスを持っている
-* 同じ I2C バスに同じスレーブアドレスのスレーブは接続できない
+- I2C には複数のデバイスが繋がる（I2C バス）
+- I2C に繋がるデバイスにはマスターとスレーブがある
+- I2C では必ずマスターからスレーブに対して通信要求が行われる
+- I2C スレーブはそれぞれのスレーブアドレスを持っている
+- 同じ I2C バスに同じスレーブアドレスのスレーブは接続できない
 
 # 3. 温度センサー (ADT7410) を使ってみる
 
@@ -242,13 +242,13 @@ example ではドライバーの読み込みに相対 URL を使用していま�
 
 これらの I2C デバイスのドライバーは基本的にはどれも同じ使い方ができるように作られています。つまり
 
-* device = new Device_Name(port, Slave_Address)
-  * I2C ポートとスレーブアドレスを指定してインターフェイスオブジェクトを作成します。
-* device.init()
-  * ドライバーの初期化を行います。デバイスによっては引数で動作のオプションを指定する場合もあります。
+- device = new Device_Name(port, Slave_Address)
+  - I2C ポートとスレーブアドレスを指定してインターフェイスオブジェクトを作成します。
+- device.init()
+  - ドライバーの初期化を行います。デバイスによっては引数で動作のオプションを指定する場合もあります。
   内部では `I2CPort.open()` を呼び出し `I2CSlaveDevice` を取得します。
-* device.read()
-  * 実際にデバイスにアクセスして値を読み出します。内部では `I2CSlaveDevice.read8()` 等のメソッドが使われます。なお、これは何らかの値を読み取る一般的なセンサー系デバイスの場合で、デバイスの機能によっては違う名前のメソッドが準備されています。
+- device.read()
+  - 実際にデバイスにアクセスして値を読み出します。内部では `I2CSlaveDevice.read8()` 等のメソッドが使われます。なお、これは何らかの値を読み取る一般的なセンサー系デバイスの場合で、デバイスの機能によっては違う名前のメソッドが準備されています。
 
 と言うような使い方になります。
 
@@ -379,15 +379,15 @@ BLE デバイスを選択すると動作を開始します。
 
 このチュートリアルでは下記について学びました。
 
-* I2Cの基礎知識
-* Web I2C API を使った処理の流れ
-* ADT7410 温度センサーの制御方法
+- I2Cの基礎知識
+- Web I2C API を使った処理の流れ
+- ADT7410 温度センサーの制御方法
 
 このチュートリアルで書いたコードは以下のページで参照できます:
 
-* [GitHub リポジトリで参照](https://github.com/chirimen-oh/tutorials-TY51822r3/tree/master/ble/ja/examples)
-* ブラウザで開くページ
-  * [ADT7410 温度センサー (ドライバを使わないコード例)](https://github.com/chirimen-oh/tutorials-TY51822r3/tree/master/ble/ja/examples/test_i2c_adt7410.html)
+- [GitHub リポジトリで参照](https://github.com/chirimen-oh/tutorials-TY51822r3/tree/master/ble/ja/examples)
+- ブラウザで開くページ
+  - [ADT7410 温度センサー (ドライバを使わないコード例)](https://github.com/chirimen-oh/tutorials-TY51822r3/tree/master/ble/ja/examples/test_i2c_adt7410.html)
 
 
 次の『[チュートリアル 3. I2C　応用編（その他のセンサー）](section3.md)』では測距センサーや光センサーなど他のセンサーも触っていきます。

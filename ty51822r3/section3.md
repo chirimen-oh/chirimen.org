@@ -12,17 +12,17 @@ CHIRIMEN for TY51822r3 を使ったプログラミングを通じて、Web I2C A
 
 本チュートリアルを進める前に前回までのチュートリアルを進めておいてください。
 
-* [Hello World 編](section0.md)
-* [GPIO 編](section1.md)
-* [I2C 基礎編](section2.md)
+- [Hello World 編](section0.md)
+- [GPIO 編](section1.md)
+- [I2C 基礎編](section2.md)
 
 前回までのチュートリアルで学んだことは下記のとおりです。
 
-* CHIRIMEN for TY51822r3 の各種 examples は [chirimen-TY51822r3 LIVE examples](https://chirimen.org/chirimen-TY51822r3/bc/) のページにある。
-* CHIRIMEN for TY51822r3 では GPIO として 0 番 ～ 7 番が利用できる。
-* CHIRIMEN for TY51822r3 では Web アプリからの GPIO の制御には Web GPIO API を利用する。GPIOポートは「出力モード」に設定することで LED の ON/OFF などが行える。また「入力モード」にすることで、GPIO ポートの状態を読み取ることができる
-* [async function](https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Statements/async_function) を利用すると複数ポートの非同期コードがすっきり書ける
-* CHIRIMEN for TY51822r3 では Web アプリから I2C 通信に対応したモジュールの制御に [Web I2C API](http://browserobo.github.io/WebI2C) を利用することができる
+- CHIRIMEN for TY51822r3 の各種 examples は [chirimen-TY51822r3 LIVE examples](https://chirimen.org/chirimen-TY51822r3/bc/) のページにある。
+- CHIRIMEN for TY51822r3 では GPIO として 0 番 ～ 7 番が利用できる。
+- CHIRIMEN for TY51822r3 では Web アプリからの GPIO の制御には Web GPIO API を利用する。GPIOポートは「出力モード」に設定することで LED の ON/OFF などが行える。また「入力モード」にすることで、GPIO ポートの状態を読み取ることができる
+- [async function](https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Statements/async_function) を利用すると複数ポートの非同期コードがすっきり書ける
+- CHIRIMEN for TY51822r3 では Web アプリから I2C 通信に対応したモジュールの制御に [Web I2C API](http://browserobo.github.io/WebI2C) を利用することができる
 
 
 # 1. 準備
@@ -31,14 +31,14 @@ CHIRIMEN for TY51822r3 を使ったプログラミングを通じて、Web I2C A
 
 このチュートリアル全体で必要になるハードウエア・部品は下記の通りです。
 
-* [Hello World 編](section0.md) に記載の「基本ハードウエア」
-* [ADT7410 使用 温度センサーモジュール](http://akizukidenshi.com/catalog/g/gM-06675/) x 1
-* [シャープ測距モジュール GP2Y0E03](http://akizukidenshi.com/catalog/g/gI-07547/) x 1
-* [GROVE - I2C デジタル光センサー](https://www.switch-science.com/catalog/1174/) x 1
-* [GROVE - I2C 三軸加速度センサー ADXL345搭載](https://www.switch-science.com/catalog/972/) x 1
-* [GROVE - I2C ハブ](https://www.switch-science.com/catalog/796/) x 1
-* [GROVE - 4ピン メスケーブル](https://www.switch-science.com/catalog/1048/)
-* ジャンパーケーブル オス-オス x 適宜
+- [Hello World 編](section0.md) に記載の「基本ハードウエア」
+- [ADT7410 使用 温度センサーモジュール](http://akizukidenshi.com/catalog/g/gM-06675/) x 1
+- [シャープ測距モジュール GP2Y0E03](http://akizukidenshi.com/catalog/g/gI-07547/) x 1
+- [GROVE - I2C デジタル光センサー](https://www.switch-science.com/catalog/1174/) x 1
+- [GROVE - I2C 三軸加速度センサー ADXL345搭載](https://www.switch-science.com/catalog/972/) x 1
+- [GROVE - I2C ハブ](https://www.switch-science.com/catalog/796/) x 1
+- [GROVE - 4ピン メスケーブル](https://www.switch-science.com/catalog/1048/)
+- ジャンパーケーブル オス-オス x 適宜
 
 # 2. 測距センサーを繋いでみる
 
@@ -110,10 +110,10 @@ async function mainFunction() {
 }
 ```
 
-* `DEVICE_UUID` の宣言
-* `navigator.bluetooth.requestDevice()` による `bleDevice` の取得
-* `navigator.requestI2CAccess(bleDevice)` による `i2cAccess` の取得
-* `i2cAccess.ports.get()` による `port` の取得
+- `DEVICE_UUID` の宣言
+- `navigator.bluetooth.requestDevice()` による `bleDevice` の取得
+- `navigator.requestI2CAccess(bleDevice)` による `i2cAccess` の取得
+- `i2cAccess.ports.get()` による `port` の取得
 
 と温度センサーの場合と同じ処理が順次行われています。
 
@@ -351,17 +351,17 @@ CHIRIMEN for Raspberry Pi 3 では I2C デバイスの接続を確認するた�
 
 このチュートリアルでは下記について学びました。
 
-* I2Cの基礎知識
-* Web I2C API を使った処理の流れ
-* ADT7410 温度センサーの制御方法
-* GP2Y0E03 測距センサーの使い方
-* Grove - I2C デジタル光センサーの使い方
-* Grove - I2C 三軸加速度センサーの使い方
+- I2Cの基礎知識
+- Web I2C API を使った処理の流れ
+- ADT7410 温度センサーの制御方法
+- GP2Y0E03 測距センサーの使い方
+- Grove - I2C デジタル光センサーの使い方
+- Grove - I2C 三軸加速度センサーの使い方
 
 このチュートリアルで書いたコードは以下のページで参照できます:
 
-* [GitHub リポジトリで参照](https://github.com/chirimen-oh/tutorials-TY51822r3/tree/master/ble/ja/examples)
-* [色々なセンサーをまとめて繋いでみる](https://chirimen.org/tutorials-TY51822r3/ble/ja/examples/test_i2c_multi.html)
+- [GitHub リポジトリで参照](https://github.com/chirimen-oh/tutorials-TY51822r3/tree/master/ble/ja/examples)
+- [色々なセンサーをまとめて繋いでみる](https://chirimen.org/tutorials-TY51822r3/ble/ja/examples/test_i2c_multi.html)
 
 # さいごに
 

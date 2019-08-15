@@ -19,32 +19,32 @@ CHIRIMEN for TY51822r3 の開発やこのチュートリアルの執筆・更新
 
 このチュートリアル全体で必要になるハードウエア・部品は下記の通りです。
 
-* [Hello World 編](section0.md) に記載の「基本ハードウエア」と「Lチカに必要となるパーツ」
-* タクトスイッチ (2pin, 4pin を使う場合は向きに注意) x 1
-* ジャンパーワイヤー x 適宜
-* [Nch MOSFET (2SK4017)](http://akizukidenshi.com/catalog/g/gI-07597/)
-* リード抵抗 (1KΩ) x 1
-* リード抵抗 (10KΩ) x 1
-* [ダイオード (1N4007)](http://akizukidenshi.com/catalog/g/gI-08332/) x 1
-* [DC モーター (FA-130RA)](http://akizukidenshi.com/catalog/g/gP-09169/) x 1
-  * ブレッドボードで使用しやすいようにケーブルを加工する事が望ましい
-  * 回転している事がわかりやすいように軸に模型店等で販売しているプロペラ等を付けておく事が望ましい
-* [電池ボックス (単三 2 本用)](http://akizukidenshi.com/catalog/g/gP-00327/) x 1
-  * ブレッドボードで使用しやすいようにケーブルを加工する事が望ましい
-* 単三電池 x 2
+- [Hello World 編](section0.md) に記載の「基本ハードウエア」と「Lチカに必要となるパーツ」
+- タクトスイッチ (2pin, 4pin を使う場合は向きに注意) x 1
+- ジャンパーワイヤー x 適宜
+- [Nch MOSFET (2SK4017)](http://akizukidenshi.com/catalog/g/gI-07597/)
+- リード抵抗 (1KΩ) x 1
+- リード抵抗 (10KΩ) x 1
+- [ダイオード (1N4007)](http://akizukidenshi.com/catalog/g/gI-08332/) x 1
+- [DC モーター (FA-130RA)](http://akizukidenshi.com/catalog/g/gP-09169/) x 1
+  - ブレッドボードで使用しやすいようにケーブルを加工する事が望ましい
+  - 回転している事がわかりやすいように軸に模型店等で販売しているプロペラ等を付けておく事が望ましい
+- [電池ボックス (単三 2 本用)](http://akizukidenshi.com/catalog/g/gP-00327/) x 1
+  - ブレッドボードで使用しやすいようにケーブルを加工する事が望ましい
+- 単三電池 x 2
 
 ## CHIRIMEN for TY51822r3 の L チカの確認
 
-* [Hello World 編](section0.md) の「3. Lチカをやってみよう」で、L チカが正しく行える所までの動作を確認しておいてください。
+- [Hello World 編](section0.md) の「3. Lチカをやってみよう」で、L チカが正しく行える所までの動作を確認しておいてください。
 
 ## L チカでのおさらい
 
-* CHIRIMEN for TY51822r3 では、各種 example の配線図とコードが [**https://chirimen.org/chirimen-TY51822r3/bc/**](https://chirimen.org/chirimen-TY51822r3/bc/) においてある。
+- CHIRIMEN for TY51822r3 では、各種 example の配線図とコードが [**https://chirimen.org/chirimen-TY51822r3/bc/**](https://chirimen.org/chirimen-TY51822r3/bc/) においてある。
 
-* CHIRIMEN for TY51822r3 で利用可能な GPIO ポートは 0 番から 7 番の 8 つある。
+- CHIRIMEN for TY51822r3 で利用可能な GPIO ポートは 0 番から 7 番の 8 つある。
 ![TY51822r3](imgs/section1/ty51822r3.png)
-* LED には方向がある。アノードが足が長い方でこちらを GPIO ポートに繋ぐ。反対の足が短い方を GND 側に繋ぐ。抵抗はどちらかに繋ぐ。
-* CHIRIMEN for TY51822r3 では Web アプリからの GPIO の制御に [Web GPIO API](http://browserobo.github.io/WebGPIO) を利用する。
+- LED には方向がある。アノードが足が長い方でこちらを GPIO ポートに繋ぐ。反対の足が短い方を GND 側に繋ぐ。抵抗はどちらかに繋ぐ。
+- CHIRIMEN for TY51822r3 では Web アプリからの GPIO の制御に [Web GPIO API](http://browserobo.github.io/WebGPIO) を利用する。
 
 # 2. マウスクリックで LED の ON/OFF を制御してみる
 
@@ -166,8 +166,8 @@ async/await を使わず Promise でコードを書きたい場合は返され�
 このように GPIO ポートにかける電圧を Web アプリで変化させたい時には「出力モード」を指定する必要があります。一方、GPIO ポートはもうひとつ「入力モード」があり、これは GPIO ポートの状態 (電圧の High/Low 状態) を読み取りたい時に利用します。入力モードについてはスイッチを使う例の中で説明します。
 
 この後、画面上の ON/OFF ボタンに対して次のハンドラーを設定しています。
-  * onoff ボタンが押されたら `port.write()` で LED のポートに `1` を書き込み、LED 状態表示の `div` の色を赤にする。
-  * onoff ボタンが離されたら `port.write()` で LED のポートに `0` を書き込み、LED 状態表示の `div` の色を黒にする。
+  - onoff ボタンが押されたら `port.write()` で LED のポートに `1` を書き込み、LED 状態表示の `div` の色を赤にする。
+  - onoff ボタンが離されたら `port.write()` で LED のポートに `0` を書き込み、LED 状態表示の `div` の色を黒にする。
 
 ### await port.write()
 
@@ -209,15 +209,15 @@ BLE 接続のボタンを押すと BLE デバイス選択のダイアログが�
 ## タクトスイッチについて
 
 「タクトスイッチ」は[アルプス電気の商標](http://www.alps.com/j/trademark/)のようですが、電子部品屋さん等ではアルプス電気製ではないスイッチも、同様の形状のものは「タクトスイッチ」として売られています。
-* [秋月電子の「タクトスイッチ」一覧](http://akizukidenshi.com/catalog/c/ctactsw/)
+- [秋月電子の「タクトスイッチ」一覧](http://akizukidenshi.com/catalog/c/ctactsw/)
 
 今回の作例ではこのように「電気部品屋さん等でタクトスイッチとして売られてるスイッチ」を使います。
 
 ようするに、下記のような仕様の「タクトスイッチっぽい」スイッチです。
 
-* SPST (1回路1接点)
-* プッシュボタン 1 つ
-* プッシュボタンの押し込みでスイッチ ON、プッシュボタンを離すとスイッチ OFF (モーメンタリ動作)
+- SPST (1回路1接点)
+- プッシュボタン 1 つ
+- プッシュボタンの押し込みでスイッチ ON、プッシュボタンを離すとスイッチ OFF (モーメンタリ動作)
 
 注記: 部品の形状としては 1 回路 1 接点ですが端子が 4 つある形のスイッチが一般的です。どの端子間が常に接続されており、どの端子間がボタンによってオンオフされるかを間違えやすいので注意してください。
 
@@ -228,7 +228,7 @@ BLE 接続のボタンを押すと BLE デバイス選択のダイアログが�
 ## a. 部品と配線について
 今回追加するのは下記部品です。
 
-* タクトスイッチ × 1
+- タクトスイッチ × 1
 
 ![追加する部品](imgs/section1/parts_switch.jpg)
 
@@ -246,8 +246,8 @@ BLE 接続のボタンを押すと BLE デバイス選択のダイアログが�
 
 これでどのようになるかというと、下記のようになります。
 
-* スイッチを押す前は、ポート 5 番は HIGH (3.3V)
-* スイッチを押している間、ポート 5 番は LOW (0V)
+- スイッチを押す前は、ポート 5 番は HIGH (3.3V)
+- スイッチを押している間、ポート 5 番は LOW (0V)
 
 スイッチを押した時は ポート 5 番は GND に接続されますから 0V になるのはわかると思います。スイッチを押していない時、ポート 5 番はどこにも接続されていない状態になりますが、CHIRIMEN for TY51822r3 では入力モードに設定したポートは自動的に「プルアップ」された状態になり、何も接続しないと「HIGH (3.3V)」になる、という設定になっています。
 
@@ -481,17 +481,17 @@ LED1 に接続されている青色 LED と 5 番ポートに接続されてい�
 
 このチュートリアルでは、実際にコードを書きながら CHIRIMEN for TY51822r3 での Web GPIO API の基本的な利用方法を学びました。
 
-* Web GPIO API を使った GPIO 出力ポートの設定と出力処理までの流れ  (`navigator.requestGPIOAccess(bleDevice)`〜`port.write()`）
-* Web GPIO API を使った GPIO 入力ポートの設定と読み出し処理の流れ  (`navigator.requestGPIOAccess(bleDevice)`〜`port.read()`）
-* Web GPIO API を使った GPIO 入力ポートの設定と変化検知受信の流れ  (`navigator.requestGPIOAccess(bleDevice)`〜`port.onchange()`)
+- Web GPIO API を使った GPIO 出力ポートの設定と出力処理までの流れ  (`navigator.requestGPIOAccess(bleDevice)`〜`port.write()`）
+- Web GPIO API を使った GPIO 入力ポートの設定と読み出し処理の流れ  (`navigator.requestGPIOAccess(bleDevice)`〜`port.read()`）
+- Web GPIO API を使った GPIO 入力ポートの設定と変化検知受信の流れ  (`navigator.requestGPIOAccess(bleDevice)`〜`port.onchange()`)
 
 このチュートリアルで書いたコードは以下のページで参照できます:
 
-* [GitHub リポジトリで参照](https://github.com/chirimen-oh/tutorials-TY51822r3/tree/master/ble/ja/examples)
+- [GitHub リポジトリで参照](https://github.com/chirimen-oh/tutorials-TY51822r3/tree/master/ble/ja/examples)
 
-* ブラウザで開くページ (各ステップ)
-  * [マウスで画面のボタンを押している間だけ LED が光る](https://chirimen.org/tutorials-TY51822r3/ble/ja/examples/test_click_led.html)
-  * [タクトスイッチを押している間だけ LED が光る (ポーリング)](https://chirimen.org/tutorials-TY51822r3/ble/ja/examples/test_switch_poll.html)
-  * [タクトスイッチを押している間だけ LED が光る (onchange)](https://chirimen.org/tutorials-TY51822r3/ble/ja/examples/test_switch_onchange.html)
+- ブラウザで開くページ (各ステップ)
+  - [マウスで画面のボタンを押している間だけ LED が光る](https://chirimen.org/tutorials-TY51822r3/ble/ja/examples/test_click_led.html)
+  - [タクトスイッチを押している間だけ LED が光る (ポーリング)](https://chirimen.org/tutorials-TY51822r3/ble/ja/examples/test_switch_poll.html)
+  - [タクトスイッチを押している間だけ LED が光る (onchange)](https://chirimen.org/tutorials-TY51822r3/ble/ja/examples/test_switch_onchange.html)
 
 次の『[チュートリアル 2. I2C 編](section2.md)』では Web I2C API の学習をします。

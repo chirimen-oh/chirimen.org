@@ -72,8 +72,8 @@ Y51822r3 がちゃんと動作していれば、リストに<br>
 
 [今回使用したコードはこちら](https://github.com/chirimen-oh/chirimen-TY51822r3/tree/master/bc/gpio/LEDblink)
 
-* [その他の GPIO の例はこちら](https://chirimen.org/chirimen-TY51822r3/bc/)
-* [L チカについてもっと詳しく知りたい方はこちらを参照してください。](section0.md)
+- [その他の GPIO の例はこちら](https://chirimen.org/chirimen-TY51822r3/bc/)
+- [L チカについてもっと詳しく知りたい方はこちらを参照してください。](section0.md)
 
 L チカ編はこれで終了です
 
@@ -101,9 +101,9 @@ BLE 接続をクリックすると、右図のようになります。
     <img src="imgs/section2/adt7410_1.png" alt="Browser" height="180" style="float:right;padding-left:2em;">
   </a>
 ターゲットの gtGPIO2 を選択して「ペア設定」を押してください。
-  
+
 BLE の接続が正常にできれば、青いバーが消え動作を開始します。
-  
+
 右下の図に数字がでていますね。
 
 これが温度センサーから取得した現在の温度 (摂氏) の表示になります。
@@ -116,8 +116,7 @@ BLE の接続が正常にできれば、青いバーが消え動作を開始し�
 
 [今回使用したコードはこちら](https://github.com/chirimen-oh/chirimen-TY51822r3/tree/master/bc/i2c/i2c-ADT7410)
 
-
-* [その他の I2C の例はこちら](https://chirimen.org/chirimen-TY51822r3/bc/)
+- [その他の I2C の例はこちら](https://chirimen.org/chirimen-TY51822r3/bc/)
 
 </p>
 

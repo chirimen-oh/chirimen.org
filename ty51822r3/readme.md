@@ -38,14 +38,14 @@ L チカと I2C 温度計の使い方を簡単に説明します。詳細を知�
 ## Appendix / FAQ
 JavaScript 未経験者や非同期処理の未経験者はチュートリアルと合わせてこちらをご覧ください:
 
-* [JavaScript 1 Day 講習 (外部 PDF)](https://webiotmakers.github.io/static/docs/2017/maebashi-js.pdf)
-* [非同期処理 (async await版)](appendix0.md)
-* [CHIRIMEN for TY51822r3 のピン配置と GPIO について](pins.md)
+- [JavaScript 1 Day 講習 (外部 PDF)](https://webiotmakers.github.io/static/docs/2017/maebashi-js.pdf)
+- [非同期処理 (async await版)](appendix0.md)
+- [CHIRIMEN for TY51822r3 のピン配置と GPIO について](pins.md)
 
 FAQ やその他関連資料です:
 
-* [CHIRIMEN for Raspberry Pi 3 との違い](diff.md)
-* [i2cdetect について](i2cdetect.md)
-* [TY51822r3 の ファームウェアをビルドする](bridge.md)
-* [良くある質問](faq.md)
-* [Tips 集](tips.md)
+- [CHIRIMEN for Raspberry Pi 3 との違い](diff.md)
+- [i2cdetect について](i2cdetect.md)
+- [TY51822r3 の ファームウェアをビルドする](bridge.md)
+- [良くある質問](faq.md)
+- [Tips 集](tips.md)

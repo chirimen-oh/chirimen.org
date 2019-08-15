@@ -31,25 +31,25 @@ Below is the list of items you will minimally need to boot CHIRIMEN for Raspberr
 
 ![Raspi3 Basic Hardware](imgs/section0/Raspi3.jpg)
 
-* 1 [Raspberry Pi 3 Model B](https://www.raspberrypi.org/products/raspberry-pi-3-model-b/) or [Raspberry Pi 3 Model B+](https://www.raspberrypi.org/products/raspberry-pi-3-model-b-plus/) × 1
-* 1 AC adaptor + micro B USB power cable (this would work perfectly) 
- * ex: [Switching Power Supply Set for Raspberry Pi (5V 3.0A)](https://www.physical-computing.jp/product/1171)
-  * Caution: Smartphone chargers are usually 1.0〜2.0A. They officially recommend  3.0A, and therefore power supply from PCs might not be sufficient, leading to power outage. In addition, the microUSB aren't so durable, so connectors that have a built-in switch are recommended to reduce the number of times they are plugged in and out.
-* 1 HDMI cable (this should connect to your display monitor) 
-* 1 A monitor with an HDMI input (should be able to display 720P)
-* 1 USB mouse 
-* 1 USB keyboard 
-* 1 micro SD (Class 10 & up, 8GB or more storage) 
+- 1 [Raspberry Pi 3 Model B](https://www.raspberrypi.org/products/raspberry-pi-3-model-b/) or [Raspberry Pi 3 Model B+](https://www.raspberrypi.org/products/raspberry-pi-3-model-b-plus/) × 1
+- 1 AC adaptor + micro B USB power cable (this would work perfectly) 
+  - ex: [Switching Power Supply Set for Raspberry Pi (5V 3.0A)](https://www.physical-computing.jp/product/1171)
+  - Caution: Smartphone chargers are usually 1.0〜2.0A. They officially recommend  3.0A, and therefore power supply from PCs might not be sufficient, leading to power outage. In addition, the microUSB aren't so durable, so connectors that have a built-in switch are recommended to reduce the number of times they are plugged in and out.
+- 1 HDMI cable (this should connect to your display monitor) 
+- 1 A monitor with an HDMI input (should be able to display 720P)
+- 1 USB mouse 
+- 1 USB keyboard 
+- 1 micro SD (Class 10 & up, 8GB or more storage) 
 
 
 ### Parts you’ll need for the LED-Blink 
 In addition to the basic hardware, you will need the below parts to build your first program:
 
 ![Parts you’ll need for the LED-Blink ](imgs/section0/L.jpg)
-* 1 breadboard
-* 1 LED bulb 
-* 1 resistor (150-470 ohms: depends on the LED bulb you use)
-* 2 male-female jumper wires
+- 1 breadboard
+- 1 LED bulb 
+- 1 resistor (150-470 ohms: depends on the LED bulb you use)
+- 2 male-female jumper wires
 
 
 ## Writing the CHIRIMEN for Raspberry Pi 3 environment to your SD card
@@ -97,7 +97,7 @@ With your device connected to the Internet, you’re finally ready to get coding
 ## “LED-Blink”
 LED-Blink refers to the act of turning an LED on and off. The LED-Blink program aims to make this phenomenon happen via code.
  
-* FYI: [LED (Light Emitting Diode) ](https://en.wikipedia.org/wiki/Light-emitting_diode)
+- FYI: [LED (Light Emitting Diode) ](https://en.wikipedia.org/wiki/Light-emitting_diode)
 
 ## Wiring up
 To make your LED bulb flash, you must correctly connect it to your Raspi3. 
@@ -124,11 +124,11 @@ You should end up with something that looks more or less like this:
 ![all-wired-up](imgs/section0/h.jpg)
 
 ### References
-* [Using a breadboard](https://www.sunhayato.co.jp/blog/2015/03/04/7)
-* [Using an LED](https://www.marutsu.co.jp/pc/static/large_order/led)
-* [Reading resistors](http://www.jarl.org/Japanese/7_Technical/lib1/teikou.htm)
-* [Raspberry Pi3 and GPIOs](https://tool-lab.com/make/raspberrypi-startup-22/)
-* [Using a tester to read resistors](http://startelc.com/elcLink/tester/elc_nArtcTester2.html#chapter-2)
+- [Using a breadboard](https://www.sunhayato.co.jp/blog/2015/03/04/7)
+- [Using an LED](https://www.marutsu.co.jp/pc/static/large_order/led)
+- [Reading resistors](http://www.jarl.org/Japanese/7_Technical/lib1/teikou.htm)
+- [Raspberry Pi3 and GPIOs](https://tool-lab.com/make/raspberrypi-startup-22/)
+- [Using a tester to read resistors](http://startelc.com/elcLink/tester/elc_nArtcTester2.html#chapter-2)
 
 ## Running the example program
 Now you’re ready to make the bulb work.
@@ -275,15 +275,15 @@ As a summary:
 If you find the JavaScript pane on the JS Bin site, you can edit the JS code from there. 
 Here are some challenges for you;
 
-* Making the flash faster/slower
-* Changing the GPIO port to a different port (you will need to do some rewiring of jumpers)
-* make a button, switch, etc. on the index.html page and control the LED using that interface.
+- Making the flash faster/slower
+- Changing the GPIO port to a different port (you will need to do some rewiring of jumpers)
+- make a button, switch, etc. on the index.html page and control the LED using that interface.
 
 
 #Summary
 In this tutorial, we tried the following tasks:
-* Setting up and booting CHIRIMEN for Raspberry Pi 3
-* Running the LED-Blink sample program
-* Editing the LED-Blink code on JS Bin.
+- Setting up and booting CHIRIMEN for Raspberry Pi 3
+- Running the LED-Blink sample program
+- Editing the LED-Blink code on JS Bin.
 
 In the next tutorial[Tutorial 1. GPIO](https://tutorial.chirimen.org/raspi3/en/section1), we will learn about GPIO inputs.

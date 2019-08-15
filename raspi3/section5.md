@@ -28,10 +28,10 @@ https://github.com/g200kg/chirimen-webbluetooth
 
 # 必要なもの
 
-* CHIRIMEN for Raspberry Pi が動作する Raspberry Pi 3 Model B
-* BLE制御できる ライト、PLAYBULB [sphere](https://www.croy.co.jp/mipow/btl301w.html) (または PLAYBULB [candle](https://www.croy.co.jp/mipow/btl300.html))
-* USB マイク
-* 測距センサ ([GP2Y0E03](http://akizukidenshi.com/catalog/g/gI-07547/))
+- CHIRIMEN for Raspberry Pi が動作する Raspberry Pi 3 Model B
+- BLE制御できる ライト、PLAYBULB [sphere](https://www.croy.co.jp/mipow/btl301w.html) (または PLAYBULB [candle](https://www.croy.co.jp/mipow/btl300.html))
+- USB マイク
+- 測距センサ ([GP2Y0E03](http://akizukidenshi.com/catalog/g/gI-07547/))
 
 {% cloudinary imgs/section5/bledemo1.jpg alt="必要なもの" %}
 
@@ -39,22 +39,22 @@ https://github.com/g200kg/chirimen-webbluetooth
 
 ## 前提
 
-* CHIRIMEN for Raspberry Pi の基本的な動かし方については、「[L チカしてみよう](section0.md)」の通りにできているものとします。
+- CHIRIMEN for Raspberry Pi の基本的な動かし方については、「[L チカしてみよう](section0.md)」の通りにできているものとします。
 また、測距センサ(GP2Y0E03)は「[I2C の使い方](seection3.md)」の通りに動作しているものとします。
 
 ## WebBluetoothの有効化
 
-* 現在の所、Chromium のデフォルト状態では WebBluetooth は有効になっていないため、まず WebBluetoothを使えるようにブラウザの設定を変えます。
-  * ブラウザで chrome://flags にアクセスして試験運用機能の画面を開きます
-  * "`Experimental Web Platform features`" という項目を探し、 [`有効`] に切り替えてブラウザを再起動します ("Experimental" で始まる項目は複数あるので間違えない事)
-  * WebBluetoothが使えるようになっているかの確認は、F12 キーでコンソールを出し、 "`> navigator.bluetooth`" と入力して "`▶ Bluetooth {}`" が返ってくればOKです。"`undefined`" になる場合は WebBluetooth が有効になっていません。
+- 現在の所、Chromium のデフォルト状態では WebBluetooth は有効になっていないため、まず WebBluetoothを使えるようにブラウザの設定を変えます。
+  - ブラウザで chrome://flags にアクセスして試験運用機能の画面を開きます
+  - "`Experimental Web Platform features`" という項目を探し、 [`有効`] に切り替えてブラウザを再起動します ("Experimental" で始まる項目は複数あるので間違えない事)
+  - WebBluetoothが使えるようになっているかの確認は、F12 キーでコンソールを出し、 "`> navigator.bluetooth`" と入力して "`▶ Bluetooth {}`" が返ってくればOKです。"`undefined`" になる場合は WebBluetooth が有効になっていません。
 
 ## マイクの設定
 
-* `chrome://settings` にアクセスして Chromium の設定画面を開きます
-* [`詳細設定`] - [`コンテンツの設定`] - [`マイク`]に進みます
-* USBマイクを接続します
-* 最初の項目(何も設定していなければ、[`既定`]になっています) で使用するマイクを選択します。この画面を出した状態でUSBマイクを接続した時に新たに現れる項目が対象のマイクです。名前は使用するマイクによって異なりますが、ここで使用している超小型マイクでは、[`USB PnP Sound Device, USB Audio-Default Audio Device`]となっています。
+- `chrome://settings` にアクセスして Chromium の設定画面を開きます
+- [`詳細設定`] - [`コンテンツの設定`] - [`マイク`]に進みます
+- USBマイクを接続します
+- 最初の項目(何も設定していなければ、[`既定`]になっています) で使用するマイクを選択します。この画面を出した状態でUSBマイクを接続した時に新たに現れる項目が対象のマイクです。名前は使用するマイクによって異なりますが、ここで使用している超小型マイクでは、[`USB PnP Sound Device, USB Audio-Default Audio Device`]となっています。
 
 # サンプルプログラムの起動
 
@@ -252,9 +252,9 @@ const COLOR_UUID = 0xFFFC;
 
 # 参考
 
-* [チュートリアル - L チカしてみよう](section0.md)
-* [チュートリアル - I2C の使い方](section3.md)
-* [codelabs : Control a PLAYBULB candle with Web Bluetooth](https://codelabs.developers.google.com/codelabs/candle-bluetooth/#0)
-* [W3C : Media Capture and Streams](https://www.g200kg.com/demo/chirimen/webbluetooth/README.md)
-* [W3C : Web Audio API](https://webaudio.github.io/web-audio-api/)
-* [Bluetooth SIG : メンバー向け 16 ビット UUID](https://www.bluetooth.com/ja-jp/specifications/assigned-numbers/16-bit-uuids-for-members)
+- [チュートリアル - L チカしてみよう](section0.md)
+- [チュートリアル - I2C の使い方](section3.md)
+- [codelabs : Control a PLAYBULB candle with Web Bluetooth](https://codelabs.developers.google.com/codelabs/candle-bluetooth/#0)
+- [W3C : Media Capture and Streams](https://www.g200kg.com/demo/chirimen/webbluetooth/README.md)
+- [W3C : Web Audio API](https://webaudio.github.io/web-audio-api/)
+- [Bluetooth SIG : メンバー向け 16 ビット UUID](https://www.bluetooth.com/ja-jp/specifications/assigned-numbers/16-bit-uuids-for-members)

@@ -46,14 +46,14 @@ Raspi 3 や前回の ADT7410 などピンヘッダを備えた（あるいは事
 
 ここでは、1 つのGroveコネクタつき I2C モジュールと 1 つのピンヘッダつき I2C モジュールを接続することを想定し、下記を用意しておきましょう。
 
-* [L チカしてみよう](section0.md) に記載の「基本ハードウエア」
+- [L チカしてみよう](section0.md) に記載の「基本ハードウエア」
 
 {% cloudinary imgs/section3/h.jpg alt="ハブとケーブル" %}
 
-* [Grove I2C Hub](http://wiki.seeed.cc/Grove-I2C_Hub/) x 1
-* [Grove 4ピン ジャンパー メス ケーブル](https://www.seeedstudio.com/grove-to-4-pin-254-female-jumper-wire5-pcs-pack-p-1020.html) x 2
-* [Grove 4ピン ケーブル](https://www.seeedstudio.com/Grove-Universal-4-Pin-20cm-Unbuckled-Cable-%285-PCs-Pack%29-p-749.html) x 1
-* ブレッドボード x 1
+- [Grove I2C Hub](http://wiki.seeed.cc/Grove-I2C_Hub/) x 1
+- [Grove 4ピン ジャンパー メス ケーブル](https://www.seeedstudio.com/grove-to-4-pin-254-female-jumper-wire5-pcs-pack-p-1020.html) x 2
+- [Grove 4ピン ケーブル](https://www.seeedstudio.com/Grove-Universal-4-Pin-20cm-Unbuckled-Cable-%285-PCs-Pack%29-p-749.html) x 1
+- ブレッドボード x 1
 
 上記に加え今回紹介するセンサが必要となりますが、センサについては各センサの説明のパートに記載します。
 
@@ -66,7 +66,7 @@ Raspi 3 や前回の ADT7410 などピンヘッダを備えた（あるいは事
 
 「1.準備」のパートに記載したものに加え、下記を用意してください。
 
-* [光センサ(Grove Digital Light Sensor)](http://wiki.seeed.cc/Grove-Digital_Light_Sensor/) x 1
+- [光センサ(Grove Digital Light Sensor)](http://wiki.seeed.cc/Grove-Digital_Light_Sensor/) x 1
 
 Raspberry Pi 3との接続方法については、下記回路図を参照ください。
 
@@ -76,8 +76,8 @@ Raspberry Pi 3との接続方法については、下記回路図を参照くだ
 
 このセンサモジュールはGroveコネクタを備えていますので、接続方法に応じてコネクタを選んでください。
 
-* Grove I2C Hub 経由で接続する場合 ：Grove 4ピン ケーブル経由で接続してください。
-* Raspberry Pi 3 へ直接接続する場合：Grove 4ピン ジャンパー メス ケーブル経由で接続してください。
+- Grove I2C Hub 経由で接続する場合 ：Grove 4ピン ケーブル経由で接続してください。
+- Raspberry Pi 3 へ直接接続する場合：Grove 4ピン ジャンパー メス ケーブル経由で接続してください。
 
 ## b. 接続確認とexampleの実行
 
@@ -248,7 +248,7 @@ main.js
 
 「1.準備」のパートに記載したものに加え、下記を用意してください。
 
-* 三軸加速度センサ([GROVE - I2C 三軸加速度センサ ADXL345搭載](http://www.seeedstudio.com/depot/grove-3-axis-digital-accelerometer-adxl345-p-1156.html)) x 1
+- 三軸加速度センサ([GROVE - I2C 三軸加速度センサ ADXL345搭載](http://www.seeedstudio.com/depot/grove-3-axis-digital-accelerometer-adxl345-p-1156.html)) x 1
 
 Raspi 3 との接続方法については、下記回路図を参照ください。
 
@@ -258,8 +258,8 @@ Raspi 3 との接続方法については、下記回路図を参照ください
 
 このセンサモジュールは Grove コネクタを備えていますので、接続方法に応じてコネクタを選んでください。
 
-* Grove I2C Hub 経由で接続する場合: Grove 4ピン ケーブル経由で接続してください。
-* Raspi 3 へ直接接続する場合: Grove 4ピン ジャンパー メス ケーブル経由で接続してください。
+- Grove I2C Hub 経由で接続する場合: Grove 4ピン ケーブル経由で接続してください。
+- Raspi 3 へ直接接続する場合: Grove 4ピン ジャンパー メス ケーブル経由で接続してください。
 
 ## b. 接続確認とexampleの実行
 
@@ -347,17 +347,17 @@ main.js もこれまでの他のセンサーとほとんど同じです。
 
 せっかく Grove I2C Hub を用意しましたので、これまでの復習と応用を兼ねて下記のような組み合わせで2つのセンサを繋いで動かしてみましょう。
 
-* 「温度センサ (ADT7410)」か、「距離センサ (VL53L0X)」のどちらか 1つ
-* 「光センサ (Grove Digital Light Sensor)」か「三軸加速度センサ」のどちらか１つ
+- 「温度センサ (ADT7410)」か、「距離センサ (VL53L0X)」のどちらか 1つ
+- 「光センサ (Grove Digital Light Sensor)」か「三軸加速度センサ」のどちらか１つ
 
 ※この組み合わせなら、冒頭で用意したケーブルで足りるはずです。
 
 オンライン版のドライバーライブラリは下記にあります。
 
-* [温度センサ (ADT7410): i2c-ADT7410.js](https://r.chirimen.org/adt7410.js)
-* [距離センサ (VL53L0X): i2c-VL53L0X.js](https://r.chirimen.org/vl53l0x.js)
-* [Grove 光センサ: i2c-grove-light.js](https://r.chirimen.org/grove-light.js)
-* [Grove 三軸加速度センサ: i2c-grove-accelerometer.js](https://r.chirimen.org/grove-accelerometer.js)
+- [温度センサ (ADT7410): i2c-ADT7410.js](https://r.chirimen.org/adt7410.js)
+- [距離センサ (VL53L0X): i2c-VL53L0X.js](https://r.chirimen.org/vl53l0x.js)
+- [Grove 光センサ: i2c-grove-light.js](https://r.chirimen.org/grove-light.js)
+- [Grove 三軸加速度センサ: i2c-grove-accelerometer.js](https://r.chirimen.org/grove-accelerometer.js)
 
 まずはセンサを繋いでから、[jsbin](https://jsbin.com/) か [jsfiddle](https://jsfiddle.net/) を使ってコードを書いてみましょう。
 
@@ -367,15 +367,15 @@ main.js もこれまでの他のセンサーとほとんど同じです。
 
 CHIRIMEN Raspi3 には、他にも `/home/pi/Desktop/gc/i2c/` 配下に例えば下記のような I2C モジュールの examples が含まれています。それぞれの回路図、デイバスドライバ、サンプルコードもあるので、お手持ちのデバイスを使ってみてください。
 
-* i2c-grove-gesture : 「[Grove Gesture](http://wiki.seeed.cc/Grove-Gesture_v1.0/)」(簡単なジェスチャーを判定するセンサ)の接続例です。
-* i2c-grove-oledDisplay : 「[Grove OLED Display](https://www.seeedstudio.com/Grove-OLED-Display-0.96%26quot%3B-p-781.html)」(Grove端子で接続できるOLED Display)の接続例です。
-* i2c-grove-touch : 「[Grove Touch Sensor](http://wiki.seeed.cc/Grove-I2C_Touch_Sensor/)」(Grove端子で接続できるタッチセンサ)の接続例です。
-* i2c-PCA9685 : 「[PCA9685 16-CHANNEL 12-BIT PWM/SERVO DRIVER](https://www.adafruit.com/product/815)」(I2C経由でLEDやサーボモータを16個まで制御可能なモジュール)の接続例です。
-* i2c-ads1015 : 「[ADS1015搭載 12BitADC 4CH 可変ゲインアンプ付き](https://www.switch-science.com/catalog/1136/)」の接続例です。サンプルの回路図では可変抵抗器を繋いでいますが、圧力、曲げ、水滴 (濡れ)、土壌水分、などいろいろ安価で売られているアナログセンサを接続して利用できます。
-* i2c-S11059 : 「[S11059 カラーセンサ](http://akizukidenshi.com/catalog/g/gK-08316/)」(カラーセンサ)の接続例です。
-* i2c-VEML6070 : 「[VEML6070 紫外線センサ](https://learn.adafruit.com/adafruit-veml6070-uv-light-sensor-breakout/overview)」(紫外線センサ)の接続例です。
-* i2c-multi-sensors : 2つのセンサ（ADT7410とgrove-light）を利用する例です。
-* i2c-GP2Y0E03 : 「[測距センサ(GP2Y0E03)](http://akizukidenshi.com/catalog/g/gI-07547/)」を利用する例です。 
+- i2c-grove-gesture : 「[Grove Gesture](http://wiki.seeed.cc/Grove-Gesture_v1.0/)」(簡単なジェスチャーを判定するセンサ)の接続例です。
+- i2c-grove-oledDisplay : 「[Grove OLED Display](https://www.seeedstudio.com/Grove-OLED-Display-0.96%26quot%3B-p-781.html)」(Grove端子で接続できるOLED Display)の接続例です。
+- i2c-grove-touch : 「[Grove Touch Sensor](http://wiki.seeed.cc/Grove-I2C_Touch_Sensor/)」(Grove端子で接続できるタッチセンサ)の接続例です。
+- i2c-PCA9685 : 「[PCA9685 16-CHANNEL 12-BIT PWM/SERVO DRIVER](https://www.adafruit.com/product/815)」(I2C経由でLEDやサーボモータを16個まで制御可能なモジュール)の接続例です。
+- i2c-ads1015 : 「[ADS1015搭載 12BitADC 4CH 可変ゲインアンプ付き](https://www.switch-science.com/catalog/1136/)」の接続例です。サンプルの回路図では可変抵抗器を繋いでいますが、圧力、曲げ、水滴 (濡れ)、土壌水分、などいろいろ安価で売られているアナログセンサを接続して利用できます。
+- i2c-S11059 : 「[S11059 カラーセンサ](http://akizukidenshi.com/catalog/g/gK-08316/)」(カラーセンサ)の接続例です。
+- i2c-VEML6070 : 「[VEML6070 紫外線センサ](https://learn.adafruit.com/adafruit-veml6070-uv-light-sensor-breakout/overview)」(紫外線センサ)の接続例です。
+- i2c-multi-sensors : 2つのセンサ（ADT7410とgrove-light）を利用する例です。
+- i2c-GP2Y0E03 : 「[測距センサ(GP2Y0E03)](http://akizukidenshi.com/catalog/g/gI-07547/)」を利用する例です。 
 
 
 また、CHIRIMEN Raspi3 のイメージ内に同梱されている example 以外にも、[CHIIRMEN examples ページのオンライン版](https://r.chirimen.org/examples) にはこれらに加えてコミュニティによって順次いろいろなデバイス利用例が [Advanced Examples](https://r.chirimen.org/examples#advanced) として追加されています (ドライバーなどが cotrib ディレクトリ内にあるので注意)。作りたいもの、試したいものを考えながら試してみてください。
@@ -408,19 +408,19 @@ I2Cデバイスを同時に接続して使用するとき、重要な注意事�
 
 このチュートリアルでは 下記について学びました。
 
-* Grove I2C Hubを使ったI2Cモジュールの接続方法
-* 光センサ (Grove) の使い方
-* 距離センサ (VL53L0X) の使い方
-* 三軸加速度センサ (Grove) の使い方
-* 複数のセンサの取扱い方
+- Grove I2C Hubを使ったI2Cモジュールの接続方法
+- 光センサ (Grove) の使い方
+- 距離センサ (VL53L0X) の使い方
+- 三軸加速度センサ (Grove) の使い方
+- 複数のセンサの取扱い方
 
 このチュートリアルで扱ったコードは以下のページで参照できます:
 
-* [GitHub リポジトリで参照](https://github.com/chirimen-oh/tutorials/tree/master/raspi3/examples/section3)
-* ブラウザで開くページ
-  * Grove I2C 光センサ: [JSBin](https://r.chirimen.org/jsbin-i2c-grove-light), [CodeSandbox](https://r.chirimen.org/csb-grove-light)
-  * 測距センサ (VL53L0X): [JSBin](https://r.chirimen.org/jsbin-i2c-vl53l0x), [CodeSandbox](https://r.chirimen.org/csb-vl53l0x)
-  * GROVE I2C 三軸加速度センサ: [JSBin](https://r.chirimen.org/i2c-grove-accelerometer/), [CodeSandbox](https://r.chirimen.org/csb-grove-accelerometer)
-  * 複数センサの利用 (ADT7410 + Grove 光センサ): [JSBin](https://r.chirimen.org/jsbin-i2c-multi-sensors), [CodeSandbox](https://r.chirimen.org/csb-multi-sensors)
+- [GitHub リポジトリで参照](https://github.com/chirimen-oh/tutorials/tree/master/raspi3/examples/section3)
+- ブラウザで開くページ
+  - Grove I2C 光センサ: [JSBin](https://r.chirimen.org/jsbin-i2c-grove-light), [CodeSandbox](https://r.chirimen.org/csb-grove-light)
+  - 測距センサ (VL53L0X): [JSBin](https://r.chirimen.org/jsbin-i2c-vl53l0x), [CodeSandbox](https://r.chirimen.org/csb-vl53l0x)
+  - GROVE I2C 三軸加速度センサ: [JSBin](https://r.chirimen.org/i2c-grove-accelerometer/), [CodeSandbox](https://r.chirimen.org/csb-grove-accelerometer)
+  - 複数センサの利用 (ADT7410 + Grove 光センサ): [JSBin](https://r.chirimen.org/jsbin-i2c-multi-sensors), [CodeSandbox](https://r.chirimen.org/csb-multi-sensors)
 
 次のCHIRIMEN for Raspberry Pi 3 チュートリアルでは、『[Web GPIO APIとWeb I2C APIを組み合わせたプログラミング](section4.md)』に挑戦します！
