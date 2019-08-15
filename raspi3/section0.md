@@ -197,8 +197,9 @@ L チカに成功しましたか？！
 {% include_relative examples/section0/s0.html -%}
 ```
 
-HTML では `polyfill.js` という JavaScript ライブラリを読み込んでいます。
-polyfill.js は [Web GPIO API](http://browserobo.github.io/WebGPIO) と、[Web I2C API](http://browserobo.github.io/WebI2C) という W3C でドラフト提案中の 2 つの API への [Polyfill (新しい API を未実装のブラウザでも同じコードが書けるようにするためのライブラリ)](https://developer.mozilla.org/ja/docs/Glossary/Polyfill) であり、これを最初に読み込むことで GPIO や I2C を操作する JavaScript API が使えます。**インターネットに接続していない環境でも動作させたいときは `file:///home/pi/Desktop/gc/gpio/LEDblink/index.html` のようにローカルから読み込むようにしてください。**
+`polyfill.js` という JavaScript ライブラリを読み込んでいます。これは [Web GPIO API](http://browserobo.github.io/WebGPIO) と、[Web I2C API](http://browserobo.github.io/WebI2C) という W3C でドラフト提案中の 2 つの API への [Polyfill (新しい API を未実装のブラウザでも同じコードが書けるようにするためのライブラリ)](https://developer.mozilla.org/ja/docs/Glossary/Polyfill) で、最初に読み込むとそれ以降のコードで GPIO や I2C を操作する JavaScript API が使えるようになります。
+
+** `/home/pi/Desktop/gc/gpio/LEDblink/index.html` などの example では、インターネット未接続時にも動作するよう Polyfill を含めたコード一式をローカルにコピーしてあるので `node_modules/@chirimen-raspi/polyfill/polyfill.js` のようなパスで読み込みます。オンラインにホストされている最新版を読み込む場合には `https://r.chirimen.org/polyfill.js` を指定します。**
 
 ## JavaScript
 

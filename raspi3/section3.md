@@ -81,9 +81,11 @@ Raspberry Pi 3との接続方法については、下記回路図を参照くだ
 
 ## b. 接続確認とexampleの実行
 
-i2cdetect で接続を確認しておきましょう。
+i2cdetect で接続を確認しておきましょう。ターミナルで次のコマンドを実行します。
 
 `$ i2cdetect -y -r 1`
+
+WebI2C 版 `/home/pi/Desktop/gc/i2c/i2c-detect/index.html` でも確認できますが、I2C 接続をこちらを使う場合は確認後に必ずタブを閉じて
 
 SlaveAddress `0x29` が見つかれば接続OKです。次に example を動かします。
 
@@ -101,19 +103,18 @@ example のコードから、光センサに関係する部分を見ていきま
 
 index.html
 ```html
-: 
-  <script src="https://r.chirimen.org/polyfill.js"></script>
-  <script src="https://r.chirimen.org/grove-light.js"></script>
-  <script src="./main.js"></script>
-  :
+    : 
+    <script src="node_modules/@chirimen-raspi/polyfill/polyfill.js"></script>
+    <script src="node_modules/@chirimen-raspi/chirimen-driver-i2c-grove-light/GROVELIGHT.js"></script>
+    <script src="./main.js" defer></script>
+    :
   <body>
     :
     <p id="head">TEST</p>
-    :
   </body>
 ```
 
-HTML は ADT7410 の時とほとんど同じです。ドライバーライブラリは、`i2c-grove-light.js` に変わりました。
+HTML は ADT7410 の時とほとんど同じです。ドライバーライブラリは、`GROVELIGHT.js` に変わりました。リモートから最新の Polyfill とドライバを読み込みたい場合は `http://r.chirimen.org/polyfill.js` と `http://r.chirimen.org/grove-light.js` を指定します。
 
 ### c-2. main.js
 
@@ -121,18 +122,19 @@ HTML は ADT7410 の時とほとんど同じです。ドライバーライブラ
 
 main.js
 ```javascript
+  var head = document.getElementById("head");
   var i2cAccess = await navigator.requestI2CAccess();
   var port = i2cAccess.ports.get(1);
-  var grovelight = new GROVELIGHT(port,0x29);
+  var grovelight = new GROVELIGHT(port, 0x29);
   await grovelight.init();
-    while(1) {
+  for (;;) {
     var value = await grovelight.read();
     head.innerHTML = value ? value : head.innerHTML;
     await sleep(200);
   }
 ```
 
-`main.js` も温度センサとほとんど同じです。
+`main.js` も温度センサとほとんど同じです。最初に I2C デバイスを操作するため I2CAccess、Port と順に取得したら SlaveAddress と一緒にドライバに渡して初期化し、あとはセンサーの値を読みたいときに `read()` します。詳しく見てみましょう。
 
 ### var grovelight = new GROVELIGHT(port,0x29)
 
@@ -194,19 +196,20 @@ example のコードから、測距センサに関係する部分を見ていき
 
 VL53L0X.html
 ```html
-: 
-  <script src="https://r.chirimen.org/polyfill.js"></script>
-  <script src="https://r.chirimen.org/vl53l0x.js"></script>
-  <script src="./mainVL53L0X.js"></script>
-  :
+    :
+    <script src="node_modules/@chirimen-raspi/polyfill/polyfill.js"></script>
+    <script src="node_modules/@chirimen-raspi/chirimen-driver-i2c-vl53l0x/VL53L0X.js"></script>
+    <script src="./main.js" defer></script>
+    :
   <body>
     :
-    <tr><td>Distance [mm]</td><td id="dist"></td></tr>
+    <tr><td>Distance [mm]</td>
+    <td id="dist"></td></tr>
     :
   </body>
 ```
 
-HTML は ADT7410 の時とほとんど同じです。ドライバーライブラリは `i2c-VL53L0X.js` に変わりました。
+HTML は ADT7410 の時とほとんど同じです。ドライバーライブラリは `VL53L0X.js` に変わりました。リモート版の URL は `https://r.chirimen.org/vl53l0x.js` です。
 
 ### c-2. main.js
 
@@ -214,11 +217,12 @@ HTML は ADT7410 の時とほとんど同じです。ドライバーライブラ
 
 main.js
 ```javascript
+  var dist = document.getElementById("dist");
   var i2cAccess = await navigator.requestI2CAccess();
   var port = i2cAccess.ports.get(1);
   var vl = new VL53L0X(port, 0x29);
   await vl.init(); // for Long Range Mode (<2m) : await vl.init(true);
-  while (1) {
+  for (;;) {
     var distance = await vl.getRange();
     dist.innerHTML=distance;
     await sleep(200);
@@ -289,11 +293,11 @@ exampleのコードを見てみましょう。
 
 index.html
 ```html
-  : 
-  <script src="https://r.chirimen.org/polyfill.js"></script>
-  <script src="https://r.chirimen.org/grove-accelerometer.js"></script>
-  <script src="./main.js"></script>
-  :
+    :
+    <script src="node_modules/@chirimen-raspi/polyfill/polyfill.js"></script>
+    <script src="node_modules/@chirimen-raspi/chirimen-driver-i2c-grove-accelerometer/GROVEACCELEROMETER.js"></script>
+    <script src="./main.js" defer></script>
+    :
   <body>
     :
       <div id="ax" class="inner">ax</div>
@@ -303,7 +307,7 @@ index.html
   </body>
 ```
 
-ドライバーライブラリが、`i2c-grove-accelerometer.js` に、そしてX、Y、Z、3つの値を表示するため要素が3つに変わりましたが、それ以外は今回もこれまでとほとんど同じです。
+今回のドライバーライブラリは、`GROVEACCELEROMETER.js` です。オンラインから読み込む場合は `https://r.chirimen.org/grove-accelerometer.js` です。そして X、Y、Z、3つの値を表示するため要素が3つに変わりましたが、それ以外は今回もこれまでとほとんど同じです。
 
 ### c-2. main.js
 
@@ -312,6 +316,9 @@ index.html
 main.js
 
 ```javascript
+  var ax = document.getElementById("ax");
+  var ay = document.getElementById("ay");
+  var az = document.getElementById("az");
   var i2cAccess = await navigator.requestI2CAccess();
   var port = i2cAccess.ports.get(1);
   var groveaccelerometer = new GROVEACCELEROMETER(port,0x53);

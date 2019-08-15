@@ -88,7 +88,7 @@ CHIRIMEN for Raspberry Pi 3 （以下「CHIRIMEN Raspi3」）を使ったプロ�
 
 ## b. 接続がうまくいったか確認する
 
-ここで、`i2cdetect` コマンドを使って ADT7410 が正しく接続・認識できているか、その SlaveAddress は何か確認してみましょう。ターミナルを起動して下記コマンドを入力してみてください。
+ここで、`i2cdetect` を使って ADT7410 が正しく接続・認識できているか、その SlaveAddress は何か確認してみましょう。ターミナルを起動して下記コマンドを入力してみてください。
 
 `$ i2cdetect -y -r 1`
 
@@ -112,6 +112,8 @@ CHIRIMEN for Raspberry Pi 3 （以下「CHIRIMEN Raspi3」）を使ったプロ�
 {% cloudinary imgs/section2/ADT7410OFF.png alt="ADT7410の電源OFF" %}
 
 `0x48` が見つからなくなりました。これで、間違いなく ADT7410 の SlaveAddress が`0x48`となっていることが確認できました。再度、先ほど外した 3.3V の線を戻して ADT7410 に電源を供給しておいてください。
+
+SlaveAddress を確認する i2cdetect には WebI2C を使って実装したものもあります。`/home/pi/Desktop/gc/i2c/i2c-detect/index.html` を開くか [オンライン版](http://r.chirimen.org/i2cdetect) をご利用ください。但し、WebI2C 版の i2c-detect を利用中は他のページから I2C デバイスを操作できません。確認が済んだらタブを閉じるようにしましょう。
 
 ## c. example を実行してみる
 
@@ -137,20 +139,19 @@ index.html
 
 ```html
   :
-  <script src="https://r.chirimen.org/polyfill.js"></script>
-  <script src="https://r.chirimen.org/adt7410.js"></script>
-  <script src="./main.js"></script>
+  <script src="node_modules/@chirimen-raspi/polyfill/polyfill.js"></script>
+  <script src="node_modules/@chirimen-raspi/chirimen-driver-i2c-adt7410/ADT7410.js"></script>
+  <script src="./main.js" defer></script>
   :
   <body>
     :
     <p id="head">TEST</p>
-    :
   </body>
 ```
 
 まず最初に読み込んでいるのが `polyfill.js`。Web GPIO API の時に出てきた `https://r.chirimen.org/polyfill.js` と同じ Web GPIO API と Web I2C API の Polyfill です。
 
-次に読み込んでいるのが、`i2c-ADT7410.js`。このファイルは、Web I2C API を使って ADT7410 との通信を行うためのドライバー (ハードウェアを操作する為のライブラリ) です。
+次に読み込んでいるのが、`ADT7410.js`。このファイルは、Web I2C API を使って ADT7410 との通信を行うためのドライバー (ハードウェアを操作する為のライブラリ) です。オンラインの最新版を使う場合は `https://r.chirimen.org/adt7410.js` を指定してください。
 
 最後に読み込んでいる `main.js` が、ドライバーライブラリを使ってこのアプリケーションの動作を記述している部分です。
 
@@ -250,7 +251,7 @@ ADT7410 を指で触って温度が変わることを確認してみてくださ
 このチュートリアルでは下記について学びました。
 
 - I2C の基礎知識
-- i2cdetect コマンドを使った Raspi 3 に接続された I2C モジュールの SlaveAddress 確認方法
+- i2cdetect を使った Raspi 3 に接続された I2C モジュールの SlaveAddress 確認方法
 - Web I2C API を使った処理の流れ
 - ADT7410 温度センサーの制御方法
 
