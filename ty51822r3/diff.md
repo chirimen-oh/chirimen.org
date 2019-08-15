@@ -29,8 +29,8 @@ I2C デバイスの各ドライバーは GitHub で公開されています。
 
 CHIRIMEN for TY51822r3 の各種 example は  
 
- [https://chirimen.org/chirimen-TY51822r3/bc/](https://chirimen.org/chirimen-TY51822r3/bc/)  
- 
+- [https://chirimen.org/chirimen-TY51822r3/bc/](https://chirimen.org/chirimen-TY51822r3/bc/)
+
 で公開されています。
 
 
