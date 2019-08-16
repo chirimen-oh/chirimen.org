@@ -1,6 +1,6 @@
-# CHIRIMEN for TY51822r3 と CHIRIMEN for Raspberry Pi 3 の違い
+# CHIRIMEN with ty51822r3 と CHIRIMEN for Raspberry Pi 3 の違い
 
-これは CHIRIMEN for Raspberry Pi 3 の使い方を既に知っていて CHIRIMEN for TY51822r3 ではどのように違うのかを知りたい人向けの資料です。
+これは CHIRIMEN for Raspberry Pi 3 の使い方を既に知っていて CHIRIMEN with ty51822r3 ではどのように違うのかを知りたい人向けの資料です。
 
 ## コードの書き方について
 
@@ -27,7 +27,7 @@ I2C デバイスの各ドライバーは GitHub で公開されています。
 
 ### example 
 
-CHIRIMEN for TY51822r3 の各種 example は  
+CHIRIMEN with ty51822r3 の各種 example は  
 
 - [https://chirimen.org/chirimen-TY51822r3/bc/](https://chirimen.org/chirimen-TY51822r3/bc/)
 
@@ -41,7 +41,7 @@ Web GPIO API / Web I2C API を使用するための navigator.requestGPIOAcess()
 
 ### BLE デバイスの選択
 
-CHIRIMEN for TY51822r3 ではアプリが動作を開始する際に、必ずユーザーアクションをトリガーとして、ダイアログから接続先の BLE デバイスを選択する必要があります。
+CHIRIMEN with ty51822r3 ではアプリが動作を開始する際に、必ずユーザーアクションをトリガーとして、ダイアログから接続先の BLE デバイスを選択する必要があります。
 
 コードとしては、
 ```javascript
@@ -61,7 +61,7 @@ async function mainFunction() {
 
 のようにユーザーが GUI 上の「BLE 接続」ボタンを押す事で mainFunction() が走り始めるという形式が定番として想定されています。
 
-DEVICE_UUID は CHIRIMEN for TY51822r3 のサービスを表す UUID です。
+DEVICE_UUID は CHIRIMEN with ty51822r3 のサービスを表す UUID です。
 
 ## 制限事項など
 
@@ -77,11 +77,11 @@ Web I2C API で使用する I2C のポートは TY51822r3 の P0_29 が SCL、P0
 
 ### パフォーマンスの制限
 
-CHIRIMEN for TY51822r3 の Web GPIO API、Web I2C API は JavaScript インターフェースから更に BLE 接続を経由して動作するため、CHIRIMEN for Raspberry Pi 3 に比べてもかなり遅いものになります。ポーリングでセンサーを監視をするというケースで 500ms ～ 1s に 1 回程度の動作が適切と思われます。
+CHIRIMEN with ty51822r3 の Web GPIO API、Web I2C API は JavaScript インターフェースから更に BLE 接続を経由して動作するため、CHIRIMEN for Raspberry Pi 3 に比べてもかなり遅いものになります。ポーリングでセンサーを監視をするというケースで 500ms ～ 1s に 1 回程度の動作が適切と思われます。
 
 ### Windows 環境での使用
 
-CHIRIMEN for TY51822r3 は BLE 通信に Web Bluetooth API を使用していますが Windows の場合、まだフラグ付きの実装になっています
+CHIRIMEN with ty51822r3 は BLE 通信に Web Bluetooth API を使用していますが Windows の場合、まだフラグ付きの実装になっています
 (2019/01/05 現在、バージョン: 71.0.3578.98（Official Build） （64 ビット）で確認)。
 
 Chrome のアドレスバーから `chrome:flags` を開いて、`Experimental Web Platform features` の項目を `Enabled` に設定してください。

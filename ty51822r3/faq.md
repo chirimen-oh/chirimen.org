@@ -1,12 +1,12 @@
 # 良くある質問と回答
 
-CHIRIMEN for TY51822r3 を利用していて良くある質問や回答のメモページです。利用上のテクニックや知っておくと良いことは [TIPS ページ](tips.md) に書いているので、そちらも合わせてご覧ください。
+CHIRIMEN with ty51822r3 を利用していて良くある質問や回答のメモページです。利用上のテクニックや知っておくと良いことは [TIPS ページ](tips.md) に書いているので、そちらも合わせてご覧ください。
 
 ## できること・できないこと
 
-### CHIRIMEN for TY51822r3 では何が出来ますか？
+### CHIRIMEN with ty51822r3 では何が出来ますか？
 
-CHIRIMEN for TY51822r3 は一般的な Web アプリケーションの開発環境に、GPIO と I2C という IoT プロトタイピングなどでよく使われるハードウェアインターフェイスを [Web GPIO API](http://browserobo.github.io/WebGPIO) と [WebI2C API](http://browserobo.github.io/WebI2C) を用いてウェブブラウザの JavaScript から直接制御可能にしたものです。
+CHIRIMEN with ty51822r3 は一般的な Web アプリケーションの開発環境に、GPIO と I2C という IoT プロトタイピングなどでよく使われるハードウェアインターフェイスを [Web GPIO API](http://browserobo.github.io/WebGPIO) と [WebI2C API](http://browserobo.github.io/WebI2C) を用いてウェブブラウザの JavaScript から直接制御可能にしたものです。
 
 デスクトップ PC などで走らす事ができる Web アプリとハードウェアとのインターフェースは Bluetooth LE (BLE) で接続する、小さな BLE ボード (TY51822r3) で行います。
 

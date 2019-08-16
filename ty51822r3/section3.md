@@ -2,11 +2,11 @@
 
 # 概要
 
-CHIRIMEN for TY51822r3 を使ったプログラミングを通じて、Web I2C API の使い方を学びます。
+CHIRIMEN with ty51822r3 を使ったプログラミングを通じて、Web I2C API の使い方を学びます。
 
 前回は温度センサーを使いながら Web I2C API の基本的な利用方法を学びました。今回は温度センサー以外の I2C センサーの使い方を見ていきましょう。
 
-ここでは例として測距センサー、光センサー、加速度センサーの 3 つについて詳しく説明していますが、最後に「他の I2C モジュールも使ってみる」として紹介しているように、CHIRIMEN for TY51822r3 ではそれ以外にも多くの I2C デバイス (あるいは I2C の ADC を使って様々なアナログセンサー類) が簡単に扱えるようになっています。各自興味のあるセンサーを順に試していってください。
+ここでは例として測距センサー、光センサー、加速度センサーの 3 つについて詳しく説明していますが、最後に「他の I2C モジュールも使ってみる」として紹介しているように、CHIRIMEN with ty51822r3 ではそれ以外にも多くの I2C デバイス (あるいは I2C の ADC を使って様々なアナログセンサー類) が簡単に扱えるようになっています。各自興味のあるセンサーを順に試していってください。
 
 ## 前回までのおさらい
 
@@ -18,11 +18,11 @@ CHIRIMEN for TY51822r3 を使ったプログラミングを通じて、Web I2C A
 
 前回までのチュートリアルで学んだことは下記のとおりです。
 
-- CHIRIMEN for TY51822r3 の各種 examples は [chirimen-TY51822r3 LIVE examples](https://chirimen.org/chirimen-TY51822r3/bc/) のページにある。
-- CHIRIMEN for TY51822r3 では GPIO として 0 番 ～ 7 番が利用できる。
-- CHIRIMEN for TY51822r3 では Web アプリからの GPIO の制御には Web GPIO API を利用する。GPIOポートは「出力モード」に設定することで LED の ON/OFF などが行える。また「入力モード」にすることで、GPIO ポートの状態を読み取ることができる
+- CHIRIMEN with ty51822r3 の各種 examples は [chirimen-TY51822r3 LIVE examples](https://chirimen.org/chirimen-TY51822r3/bc/) のページにある。
+- CHIRIMEN with ty51822r3 では GPIO として 0 番 ～ 7 番が利用できる。
+- CHIRIMEN with ty51822r3 では Web アプリからの GPIO の制御には Web GPIO API を利用する。GPIOポートは「出力モード」に設定することで LED の ON/OFF などが行える。また「入力モード」にすることで、GPIO ポートの状態を読み取ることができる
 - [async function](https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Statements/async_function) を利用すると複数ポートの非同期コードがすっきり書ける
-- CHIRIMEN for TY51822r3 では Web アプリから I2C 通信に対応したモジュールの制御に [Web I2C API](http://browserobo.github.io/WebI2C) を利用することができる
+- CHIRIMEN with ty51822r3 では Web アプリから I2C 通信に対応したモジュールの制御に [Web I2C API](http://browserobo.github.io/WebI2C) を利用することができる
 
 
 # 1. 準備
@@ -52,7 +52,7 @@ GP2Y0E03 測距センサーは光学式の距離測定モジュールです。�
 
 この測距センサーを使用した例は LIVE example として既に準備されています。
 
-[CHIRIMEN for TY51822r3 LIVE examples](https://chirimen.org/chirimen-TY51822r3/bc/) の一覧に [i2c-GP2Y0E03](https://chirimen.org/chirimen-TY51822r3/bc/i2c/i2c-GP2Y0E03/) という example がありますのでそれを開いてください。 example のアプリが起動し、ブレッドボード図が表示されます。
+[CHIRIMEN with ty51822r3 LIVE examples](https://chirimen.org/chirimen-TY51822r3/bc/) の一覧に [i2c-GP2Y0E03](https://chirimen.org/chirimen-TY51822r3/bc/i2c/i2c-GP2Y0E03/) という example がありますのでそれを開いてください。 example のアプリが起動し、ブレッドボード図が表示されます。
 
 このセンサーは電源がコア部と IO 部に分かれていたり、アナログ出力を持っている等の事情で端子数が 7 本と多くなっていますが、TY51822r3 からの制御のために使用するのは温度センサーの時と同じく SDA、SCL の 2 本の信号線です。
 
@@ -140,7 +140,7 @@ Grove システムのモジュールにはインターフェースの種類と�
 [GROVE - I2C 三軸加速度センサー ADXL345 搭載](https://www.switch-science.com/catalog/972/)
 ![Grove 加速度](imgs/section3/grove_acc.jpg)
 
-CHIRIMEN for TY51822r3 ではこの 2 つのモジュール用にそれぞれドライバーが準備されており、それを使用した [LIVE example](https://chirimen.org/chirimen-TY51822r3/bc/) があります。
+CHIRIMEN with ty51822r3 ではこの 2 つのモジュール用にそれぞれドライバーが準備されており、それを使用した [LIVE example](https://chirimen.org/chirimen-TY51822r3/bc/) があります。
 
 
 ## デジタル光センサー
@@ -338,7 +338,7 @@ document.getElementById("connect").onclick = mainFunction;
 
 ## i2cdetect
 
-CHIRIMEN for Raspberry Pi 3 では I2C デバイスの接続を確認するためにターミナルから `i2cdetect` というコマンドを使用する事ができましたが、CHIRIMEN for TY51822r3 の環境はこれに相当する機能を持っていません。
+CHIRIMEN for Raspberry Pi 3 では I2C デバイスの接続を確認するためにターミナルから `i2cdetect` というコマンドを使用する事ができましたが、CHIRIMEN with ty51822r3 の環境はこれに相当する機能を持っていません。
 
 完全に互換というわけではありませんが、代替として I2C バスをスキャンする Web アプリを準備してありますので、詳しくは次のリンクをご覧ください :
 
@@ -365,5 +365,5 @@ CHIRIMEN for Raspberry Pi 3 では I2C デバイスの接続を確認するた�
 
 # さいごに
 
-ここまでのチュートリアルで CHIRIMEN for TY51822r3 での Web GPIO API と Web I2C API の使い方を学んできました。
+ここまでのチュートリアルで CHIRIMEN with ty51822r3 での Web GPIO API と Web I2C API の使い方を学んできました。
 ここで紹介できたのはごく基本的な部分だけですが、これを応用して行けば様々なアプリケーションを構築する事が可能です。

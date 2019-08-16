@@ -18,4 +18,4 @@ Raspberry Pi 3 向けの CHIRIMEN 環境を試すには、[ビルドイメージ
 
 TY51822r3 向けの CHIRIMEN を試すには、[ファームウェアの書き換え](https://tutorial.chirimen.org/ty51822r3/ja/bridge)を行ってください。Raspberry Pi 3 向けの CHIRIMEN とほぼ同様にお試し頂けます。
 
-[CHIRIMEN for TY51822r3 のチュートリアル](https://tutorial.chirimen.org/ty51822r3/ja/)
+[CHIRIMEN with ty51822r3 のチュートリアル](https://tutorial.chirimen.org/ty51822r3/ja/)

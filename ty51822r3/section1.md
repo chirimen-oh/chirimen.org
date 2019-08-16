@@ -2,17 +2,17 @@
 
 # 概要
 
-CHIRIMEN for TY51822r3 を使ったプログラミングを通じて、Web GPIO APIの使い方を学びます。
+CHIRIMEN with ty51822r3 を使ったプログラミングを通じて、Web GPIO APIの使い方を学びます。
 
-CHIRIMEN for TY51822r3 を初めて使う方は本チュートリアルを進める前に「[CHIRIMEN for TY51822r3 Hello World](section0.md)」で基本的な操作方法を確認しておいてください。
+CHIRIMEN with ty51822r3 を初めて使う方は本チュートリアルを進める前に「[CHIRIMEN with ty51822r3 Hello World](section0.md)」で基本的な操作方法を確認しておいてください。
 
-## CHIRIMEN for TY51822r3 とは
+## CHIRIMEN with ty51822r3 とは
 
-CHIRIMEN for TY51822r3 は PC 等のブラウザと BLE 開発ボード TY51822r3 の組み合わせで動作する IoT プログラミング環境です。
+CHIRIMEN with ty51822r3 は PC 等のブラウザと BLE 開発ボード TY51822r3 の組み合わせで動作する IoT プログラミング環境です。
 
 [Web GPIO API](http://browserobo.github.io/WebGPIO) や、[Web I2C API](http://browserobo.github.io/WebI2C) といったAPIを活用したプログラミングにより、Web アプリから TY51822r3 に接続した電子パーツを直接制御できます。 
 
-CHIRIMEN for TY51822r3 の開発やこのチュートリアルの執筆・更新は [CHIRIMEN Open Hardware コミュニティ](https://chirimen.org/) によって行われています。
+CHIRIMEN with ty51822r3 の開発やこのチュートリアルの執筆・更新は [CHIRIMEN Open Hardware コミュニティ](https://chirimen.org/) によって行われています。
 
 # 1. 準備
 ## 用意するもの
@@ -33,24 +33,24 @@ CHIRIMEN for TY51822r3 の開発やこのチュートリアルの執筆・更新
   - ブレッドボードで使用しやすいようにケーブルを加工する事が望ましい
 - 単三電池 x 2
 
-## CHIRIMEN for TY51822r3 の L チカの確認
+## CHIRIMEN with ty51822r3 の L チカの確認
 
 - [Hello World 編](section0.md) の「3. Lチカをやってみよう」で、L チカが正しく行える所までの動作を確認しておいてください。
 
 ## L チカでのおさらい
 
-- CHIRIMEN for TY51822r3 では、各種 example の配線図とコードが [**https://chirimen.org/chirimen-TY51822r3/bc/**](https://chirimen.org/chirimen-TY51822r3/bc/) においてある。
+- CHIRIMEN with ty51822r3 では、各種 example の配線図とコードが [**https://chirimen.org/chirimen-TY51822r3/bc/**](https://chirimen.org/chirimen-TY51822r3/bc/) においてある。
 
-- CHIRIMEN for TY51822r3 で利用可能な GPIO ポートは 0 番から 7 番の 8 つある。
+- CHIRIMEN with ty51822r3 で利用可能な GPIO ポートは 0 番から 7 番の 8 つある。
 ![TY51822r3](imgs/section1/ty51822r3.png)
 - LED には方向がある。アノードが足が長い方でこちらを GPIO ポートに繋ぐ。反対の足が短い方を GND 側に繋ぐ。抵抗はどちらかに繋ぐ。
-- CHIRIMEN for TY51822r3 では Web アプリからの GPIO の制御に [Web GPIO API](http://browserobo.github.io/WebGPIO) を利用する。
+- CHIRIMEN with ty51822r3 では Web アプリからの GPIO の制御に [Web GPIO API](http://browserobo.github.io/WebGPIO) を利用する。
 
 # 2. マウスクリックで LED の ON/OFF を制御してみる
 
 さて、[Hello World 編](section0.md) ではブラウザで LIVE example に直接アクセスして動作を確認していましたが、このパートでは、最初から自分でプログラミングしてみましょう。
 
-ローカルサーバーの環境を既に構築している人、あるいは自分で自由に使えるサーバーをお持ちの人はサーバー上に作成した HTML ファイルを置いてブラウザからアクセスする事で CHIRIMEN for TY51822r3 の Web アプリとして動かせます。
+ローカルサーバーの環境を既に構築している人、あるいは自分で自由に使えるサーバーをお持ちの人はサーバー上に作成した HTML ファイルを置いてブラウザからアクセスする事で CHIRIMEN with ty51822r3 の Web アプリとして動かせます。
 
 サーバーがない場合は、ローカルの適当なフォルダーに HTML ファイルを作成してブラウザにドラッグアンドドロップする等で、file:// で直接アクセスする事でも動作します (この方法はブラウザのセキュリティ対策強化などの影響により、将来的にも使用できるという保証があるわけではありませんが、現在の所問題なく動作します)。
 
@@ -78,11 +78,11 @@ L チカのターゲットの赤色 LED は、7番、BLE 接続表示用の青�
 
 ## b. コードの作成
 
-CHIRIMEN for Raspberry Pi 3 のチュートリアルでは [JS Bin](http://jsbin.com/) などのオンラインエディタを使ってテストする例をあげていたのですが、残念ながらこれらのサービスでは CHIRIMEN for TY51822r3 を動作させる際に必要な BLE 接続の選択ダイアログが出せないようです。
+CHIRIMEN for Raspberry Pi 3 のチュートリアルでは [JS Bin](http://jsbin.com/) などのオンラインエディタを使ってテストする例をあげていたのですが、残念ながらこれらのサービスでは CHIRIMEN with ty51822r3 を動作させる際に必要な BLE 接続の選択ダイアログが出せないようです。
 
 テキストエディタで適当なローカルのフォルダーに HTML ファイルを作成して動かしてみましょう。最小限の部分だけ書いて動かします。簡単にするため 1 ファイル (HTML) 内にすべて書いていますが、HTML / JavaScript / css など必要に応じて分けて書いても構いません。
 
-まず、CHIRIMEN for TY51822r3 を動作させるためのポリフィルを読み込みます。CHIRIMEN for TY51822r3 のポリフィル `blePolyfill.js` はこの URL で公開されていますので、ローカルに作成した HTML ファイルでもこれを読み込む事で CHIRIMEN for TY51822r3 のアプリとして動作させる事ができます。
+まず、CHIRIMEN with ty51822r3 を動作させるためのポリフィルを読み込みます。CHIRIMEN with ty51822r3 のポリフィル `blePolyfill.js` はこの URL で公開されていますので、ローカルに作成した HTML ファイルでもこれを読み込む事で CHIRIMEN with ty51822r3 のアプリとして動作させる事ができます。
 
 ```html
 <script src="https://chirimen.org/chirimen-TY51822r3/bc/polyfill/blePolyfill.js"></script>
@@ -129,7 +129,7 @@ document.getElementById("connect").onclick = mainFunction;
 const DEVICE_UUID = "928a3d40-e8bf-4b2b-b443-66d2569aed50";
 ```
 
-が定義されています。これは CHIRIMEN for TY51822r3 の BLE のサービスを表す ID で、CHIRIMEN for TY51822r3 のアプリは常にこの ID を使って周辺の使用可能な BLE デバイスをスキャンする事になります。
+が定義されています。これは CHIRIMEN with ty51822r3 の BLE のサービスを表す ID で、CHIRIMEN with ty51822r3 のアプリは常にこの ID を使って周辺の使用可能な BLE デバイスをスキャンする事になります。
 
 そしてその次の `async function mainFunction()` が BLE 接続のボタンを押した時に走る関数になっています。非同期処理のための `async` の指定が付いている事に注意してください。非同期処理については [Hello World編](section0.md) でも出てきましたが、詳しくは [非同期処理 (async await版)](appendix0.md) で解説しています。
 
@@ -137,9 +137,9 @@ const DEVICE_UUID = "928a3d40-e8bf-4b2b-b443-66d2569aed50";
 
 ### await navigator.bluetooth.requestDevice()
 
-CHIRIMEN for TY51822r3 では Web GPIO を使い始める前にまず BLE の接続を行う必要があります。この requestDevice() の呼び出しによって接続可能なデバイスの一覧ダイアログが表示され、ユーザーがデバイスの選択を行います。
+CHIRIMEN with ty51822r3 では Web GPIO を使い始める前にまず BLE の接続を行う必要があります。この requestDevice() の呼び出しによって接続可能なデバイスの一覧ダイアログが表示され、ユーザーがデバイスの選択を行います。
 
-呼び出しの際には CHIRIMEN for TY51822r3 を動かすための固有のサービスを表す、最初に定義した DEVICE_UUID を指定して、そのサービスを持つものだけをフィルターします。
+呼び出しの際には CHIRIMEN with ty51822r3 を動かすための固有のサービスを表す、最初に定義した DEVICE_UUID を指定して、そのサービスを持つものだけをフィルターします。
 
 `requestDevice()` は非同期処理でデバイスのスキャンと選択を行う非同期メソッドですので `await` で完了を待って次の処理を記述します。
 
@@ -147,7 +147,7 @@ async/await を使わず Promise でコードを書きたい場合は返され�
 
 ### await navigator.requestGPIOAccess()
 
-これは Web GPIO API を利用するための `GPIOAccess` インタフェースを取得する API 呼び出しです。CHIRIMEN for Raspberry Pi 3 でも同様の呼び出しを使用しましたが、CHIRIMEN for TY51822r3 の場合は `navigator.bluetooth.requestDevice()` で取得した `bleDevice` を引数として渡して BLE 接続の相手先を指定する事が必要です。
+これは Web GPIO API を利用するための `GPIOAccess` インタフェースを取得する API 呼び出しです。CHIRIMEN for Raspberry Pi 3 でも同様の呼び出しを使用しましたが、CHIRIMEN with ty51822r3 の場合は `navigator.bluetooth.requestDevice()` で取得した `bleDevice` を引数として渡して BLE 接続の相手先を指定する事が必要です。
 
 `requestGPIOAccess()` は非同期処理でインターフェース初期化を行う非同期メソッドですので `await` で完了を待って次の処理を記述します。
 
@@ -249,13 +249,13 @@ BLE 接続のボタンを押すと BLE デバイス選択のダイアログが�
 - スイッチを押す前は、ポート 5 番は HIGH (3.3V)
 - スイッチを押している間、ポート 5 番は LOW (0V)
 
-スイッチを押した時は ポート 5 番は GND に接続されますから 0V になるのはわかると思います。スイッチを押していない時、ポート 5 番はどこにも接続されていない状態になりますが、CHIRIMEN for TY51822r3 では入力モードに設定したポートは自動的に「プルアップ」された状態になり、何も接続しないと「HIGH (3.3V)」になる、という設定になっています。
+スイッチを押した時は ポート 5 番は GND に接続されますから 0V になるのはわかると思います。スイッチを押していない時、ポート 5 番はどこにも接続されていない状態になりますが、CHIRIMEN with ty51822r3 では入力モードに設定したポートは自動的に「プルアップ」された状態になり、何も接続しないと「HIGH (3.3V)」になる、という設定になっています。
 
-プルアップとは、回路を **ほどほどの力で** HIGH 側に引っ張っておく事で、初期状態を「HIGH」にすることですが、CHIRIMEN for TY51822r3 では 0 番から 7番までのすべての GPIO ピンは入力モードにするとプルアップされた状態となるように設定されています。
+プルアップとは、回路を **ほどほどの力で** HIGH 側に引っ張っておく事で、初期状態を「HIGH」にすることですが、CHIRIMEN with ty51822r3 では 0 番から 7番までのすべての GPIO ピンは入力モードにするとプルアップされた状態となるように設定されています。
 
 また、これとは逆に何も接続していない場合は「LOW (0V)」になる、という風になっている場合は「プルダウン」と呼びます。
 
-開発ボードの TY51822r3 自体は各 GPIO ピンをそれぞれ「プルアップ」や「プルダウン」に設定する機能を持っていますが、CHIRIMEN for TY51822r3 の環境では 入力モードの GPIO は全てプルアップとなります。
+開発ボードの TY51822r3 自体は各 GPIO ピンをそれぞれ「プルアップ」や「プルダウン」に設定する機能を持っていますが、CHIRIMEN with ty51822r3 の環境では 入力モードの GPIO は全てプルアップとなります。
 
 ## b. スイッチに反応するようにする (port.read()を使ってみる)
 
@@ -297,7 +297,7 @@ Promise でコードを書きたい場合は `port.read().then((data)=>{ ... });
 
 `port.read()` で値を読み取る処理を繰り返して、1 回毎に一定の待ち時間を入れる事でスイッチの状態を監視し、それに合わせた動作を行うプログラムを書く事ができます。
 
-ただし、CHIRIMEN for TY51822r3 でのポートの状態を読み取る動作は、間に BLE 通信を経由していますので、CHIRIMEN for Raspberry Pi 3 と比較しても低速なものです。下のコードでは 1 秒に 1 回程度の頻度でポートを監視(ポーリング)し、現在の状態に合わせた処理を行っています。
+ただし、CHIRIMEN with ty51822r3 でのポートの状態を読み取る動作は、間に BLE 通信を経由していますので、CHIRIMEN for Raspberry Pi 3 と比較しても低速なものです。下のコードでは 1 秒に 1 回程度の頻度でポートを監視(ポーリング)し、現在の状態に合わせた処理を行っています。
 
 ```javascript
 const DEVICE_UUID = "928a3d40-e8bf-4b2b-b443-66d2569aed50";
@@ -424,7 +424,7 @@ Web GPIO API の機能が一通り確認できましたので、最後に違う�
 
 [秋月電子 DC モーター FA-130RA-2270L](http://akizukidenshi.com/catalog/g/gP-09169/)
 
-ただし、今までの LED をそのままモーターに置き換えれば良いというわけにはいきません。L チカの例の時にも触れましたが、CHIRIMEN for TY51822r3 の GPIO が流せる電流は最大で 5mA です。これに対して今回使用するモーターを回すには正常に回転している状態で数百 mA の電流が必要で、静止状態から回り始める際や回転に負荷がかかっている状態ではさらに大きな電流が必要になります。
+ただし、今までの LED をそのままモーターに置き換えれば良いというわけにはいきません。L チカの例の時にも触れましたが、CHIRIMEN with ty51822r3 の GPIO が流せる電流は最大で 5mA です。これに対して今回使用するモーターを回すには正常に回転している状態で数百 mA の電流が必要で、静止状態から回り始める際や回転に負荷がかかっている状態ではさらに大きな電流が必要になります。
 
 そこで、モーターの電源は別途電池から供給して、それを GPIO から **MOSFET** という部品をスイッチとして使って ON/OFF の切り替えを行います。
 
@@ -479,7 +479,7 @@ LED1 に接続されている青色 LED と 5 番ポートに接続されてい�
 
 # まとめ
 
-このチュートリアルでは、実際にコードを書きながら CHIRIMEN for TY51822r3 での Web GPIO API の基本的な利用方法を学びました。
+このチュートリアルでは、実際にコードを書きながら CHIRIMEN with ty51822r3 での Web GPIO API の基本的な利用方法を学びました。
 
 - Web GPIO API を使った GPIO 出力ポートの設定と出力処理までの流れ  (`navigator.requestGPIOAccess(bleDevice)`〜`port.write()`）
 - Web GPIO API を使った GPIO 入力ポートの設定と読み出し処理の流れ  (`navigator.requestGPIOAccess(bleDevice)`〜`port.read()`）

@@ -4,11 +4,11 @@ layout: tutorial
 
 ## 1. 今回のゴール
 
-TY51822r3 で CHIRIMEN for TY51822r3 を使えるようにしてみよう。
+TY51822r3 で CHIRIMEN with ty51822r3 を使えるようにしてみよう。
 
-## CHIRIMEN for TY51822r3 とは
+## CHIRIMEN with ty51822r3 とは
 
-まず CHIRIMEN for TY51822r3 の基礎となっている CHIRIMEN とは [Web GPIO](http://browserobo.github.io/WebGPIO) や、[Web I2C](http://browserobo.github.io/WebI2C) といった JavaScript の API を使用してセンサーやアクチュエーターなどの物理デバイスを Web 技術だけで制御する事ができる IoT 環境です。
+まず CHIRIMEN with ty51822r3 の基礎となっている CHIRIMEN とは [Web GPIO](http://browserobo.github.io/WebGPIO) や、[Web I2C](http://browserobo.github.io/WebI2C) といった JavaScript の API を使用してセンサーやアクチュエーターなどの物理デバイスを Web 技術だけで制御する事ができる IoT 環境です。
 
 CHIRIMEN についての詳しい情報は以下のリンクを参照してください。  
 [CHIRIMEN 公式ページ](https://chirimen.org/)  
@@ -19,18 +19,18 @@ CHIRIMEN for Raspberry Pi 3 の構成
 ![CHIRIMEN for Raspberry Pi 3 の構成](imgs/section0/chirimenraspi.png)
 -->
 
-CHIRIMEN for TY51822r3 はこれを発展させて、PC 等のブラウザと Bluetooth LE (BLE) でワイヤレス接続された IO BLE インターフェースボードとセンサーやアクチュエーターの組み合わせで動作可能にした IoT 環境になります。BLE のインターフェースボードとしてはスイッチサイエンス社の BLE 開発ボード TY51822r3 を使用します。
+CHIRIMEN with ty51822r3 はこれを発展させて、PC 等のブラウザと Bluetooth LE (BLE) でワイヤレス接続された IO BLE インターフェースボードとセンサーやアクチュエーターの組み合わせで動作可能にした IoT 環境になります。BLE のインターフェースボードとしてはスイッチサイエンス社の BLE 開発ボード TY51822r3 を使用します。
 
 <!--
-CHIRIMEN for Raspberry Pi 3 では ラズベリーパイに接続されたセンサー等をラズベリーパイ自身の上で動作する Web アプリで制御するのに対し、CHIRIMEN for TY51822r3 では、BLE ボードに接続されたセンサー等をワイヤレス接続した PC 等の上で動作する Web アプリで制御します。
+CHIRIMEN for Raspberry Pi 3 では ラズベリーパイに接続されたセンサー等をラズベリーパイ自身の上で動作する Web アプリで制御するのに対し、CHIRIMEN with ty51822r3 では、BLE ボードに接続されたセンサー等をワイヤレス接続した PC 等の上で動作する Web アプリで制御します。
 -->
-CHIRIMEN for TY51822r3 の構成  
-![CHIRIMEN for TY51822r3 の構成](imgs/section0/chirimenble.png)
+CHIRIMEN with ty51822r3 の構成  
+![CHIRIMEN with ty51822r3 の構成](imgs/section0/chirimenble.png)
 
 上の図では、Web アプリを動かす側が PC となっていますが Chrome または Chromium ブラウザであれば動作しますので、Raspberry Pi と BLE ボードの組み合わせでセンサーと本体が分離した組み込み型の機器などを作る事も可能です。
 
-もし CHIRIMEN for Raspberry Pi 3 について既に知識があり、CHIRIMEN for TY51822r3 での相違点を知りたい場合は、
-[CHIRIMEN for TY51822r3 と CHIRIMEN for Raspberry Pi 3 の違い](diff.md) のページをご覧ください。
+もし CHIRIMEN for Raspberry Pi 3 について既に知識があり、CHIRIMEN with ty51822r3 での相違点を知りたい場合は、
+[CHIRIMEN with ty51822r3 と CHIRIMEN for Raspberry Pi 3 の違い](diff.md) のページをご覧ください。
 
 ## 2. TY51822r3 にピンヘッダーを半田付けする
 
@@ -38,9 +38,9 @@ TY51822r3 はピンヘッダーが無い状態で販売されています。ブ�
 
 ![ヘッダーの半田付け](imgs/section0/header.jpeg)
 
-## 3. TY51822r3 に CHIRIMEN for TY51822r3 のファームウェアを書き込む
+## 3. TY51822r3 に CHIRIMEN with ty51822r3 のファームウェアを書き込む
 
-TY51822r3 には MBED で CHIRIMEN for TY51822r3 用のファームウェア (btGPIO_TY51_xxxxxxxx.hex) を書き込んでおく必要があります。
+TY51822r3 には MBED で CHIRIMEN with ty51822r3 用のファームウェア (btGPIO_TY51_xxxxxxxx.hex) を書き込んでおく必要があります。
 
 ### (1) ファームウェアのダウンロード
 ビルド済みのバイナリファイルが準備されていますので下のリンクからダウンロードしてください。
@@ -65,7 +65,7 @@ TY51822r3 用のファームウェアを自分でビルドしてみたい場合�
 
 ## 4. ブラウザの確認
 
-CHIRIMEN for TY51822r3 は WebBluetooth という新しい機能を使用しますので、ブラウザとして Chrome (Chromium) の最新版が必要です。
+CHIRIMEN with ty51822r3 は WebBluetooth という新しい機能を使用しますので、ブラウザとして Chrome (Chromium) の最新版が必要です。
 Chrome のバージョンを確認して必要ならアップデートしておいてください。
 
 アドレスバーに `chrome://settings/help` と入力すれば最新版かどうかの確認とアップデートができます。
@@ -87,9 +87,9 @@ Windows の場合は WebBluetooth 機能がまだ実験的機能扱いのため�
 
 ![Experimental Web Platform features](imgs/section0/chromeflagsenable.png)
 
-### CHIRIMEN for TY51822r3 LIVE examples へのアクセス
+### CHIRIMEN with ty51822r3 LIVE examples へのアクセス
 
-CHIRIMEN for TY51822r3 のアプリはブラウザ上で動作する Web アプリですのでブラウザでアクセスするだけで動作します。
+CHIRIMEN with ty51822r3 のアプリはブラウザ上で動作する Web アプリですのでブラウザでアクセスするだけで動作します。
 
 各種の example が次の URL で公開されていますので Chrome ブラウザでアクセスしてみてください。
 
@@ -97,7 +97,7 @@ CHIRIMEN for TY51822r3 のアプリはブラウザ上で動作する Web アプ�
 
 ![LIVE examples](imgs/section0/liveexamples.png)
 
-なお、CHIRIMEN for TY51822r3 の本体は GitHub で公開されています。  
+なお、CHIRIMEN with ty51822r3 の本体は GitHub で公開されています。  
 [https://github.com/chirimen-oh/chirimen-TY51822r3](https://github.com/chirimen-oh/chirimen-TY51822r3)  
 ここから全体をダウンロードしてローカルに動作環境を構築する事もできます。
 
@@ -123,11 +123,11 @@ Chrome または Chromium ブラウザで LIVE examples の LEDblink のペー�
 
 ![browser](imgs/section0/ledblink_3.png)
 
-TY51822r3 がちゃんと動作していれば、リストに「btGPIO2」 という名前のデバイスが見つかるはずです。これが CHIRIMEN for TY51822r3 用のデバイスになります。  
+TY51822r3 がちゃんと動作していれば、リストに「btGPIO2」 という名前のデバイスが見つかるはずです。これが CHIRIMEN with ty51822r3 用のデバイスになります。  
 それを選択して「ペア設定」のボタンを押すとダイアログと青いバーが消え、接続が確立します。  
 
-ここまで出来たら、CHIRIMEN for TY51822r3 の準備完了です。
+ここまで出来たら、CHIRIMEN with ty51822r3 の準備完了です。
 
 『[チュートリアル 0. Hello World](section0.md)』をやってみましょう。
 
-次の『[チュートリアル 0. Hello World](section0.md)』では CHIRIMEN for TY51822r3 の使い方について学びます。
+次の『[チュートリアル 0. Hello World](section0.md)』では CHIRIMEN with ty51822r3 の使い方について学びます。

@@ -26,7 +26,7 @@ window.onload = async function() {
 上記のように WebGPIO, WebI2C が使える CHIRIMEN 環境は現在 [Rasbpebbry Pi](https://www.raspberrypi.org/), [TY51822r3](https://www.switch-science.com/catalog/2574/), [micro:bit](https://microbit.org/ja/) 向けに実装されています。お持ちのボードに合わせたものをご覧ください:
 
 - [CHIRIMEN for Raspberry Pi 3](/raspi3/)
-- [CHIRIMEN for TY51822r3](/ty51822r3/)
+- [CHIRIMEN with ty51822r3](/ty51822r3/)
 - [CHIRIMEN with micro:bit](https://chirimen.org/chirimen-micro-bit/)
 
 注: Raspberry Pi 3 ではボード上のブラウザからハードを制御しますが、TY51822r3 や micro:bit では PC やスマホなど他の端末のブラウザから Web Bluetooth を使いリモート制御します。

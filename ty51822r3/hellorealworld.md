@@ -1,14 +1,14 @@
 
 # Hello Real World
 
-CHIRIMEN for TY51822r3 を使用して L チカと I2C 温度計で気温を計測を行います。
+CHIRIMEN with ty51822r3 を使用して L チカと I2C 温度計で気温を計測を行います。
 
 # 1. L チカをやってみよう
 
 ## 用意するもの
-| CHIRIMEN for TY51822r3 基本ハードウェア | L チカに使用する部品                           | I2C 温度計で使用する部品                    |
-| --------------------------------------- | ---------------------------------------------- | ------------------------------------------- |
-| ![hardware](imgs/section0/hardware.jpg) | ![LED_Blink](imgs/section0/ledblink_parts.jpg) | ![ADT7410](imgs/section2/adt7410_parts.jpg) |
+| CHIRIMEN with ty51822r3 基本ハードウェア | L チカに使用する部品                           | I2C 温度計で使用する部品                    |
+| ---------------------------------------- | ---------------------------------------------- | ------------------------------------------- |
+| ![hardware](imgs/section0/hardware.jpg)  | ![LED_Blink](imgs/section0/ledblink_parts.jpg) | ![ADT7410](imgs/section2/adt7410_parts.jpg) |
 
 - PC(Win または Mac) BLE に対応していること
 - 書き込み済みのBLE開発ボード[スイッチサイエンス TY51822r3](https://www.switch-science.com/catalog/2574/?gclid=CjwKCAiA9efgBRAYEiwAUT-jtO3rkZ_sHHdPO15clRze6Sp-oG1NNPB7Kj2A36Hv1ddqWbHO6YHXYxoCOcQQAvD_BwE)
@@ -56,7 +56,7 @@ BLE 接続をクリックすると、右図のようになります。
 Y51822r3 がちゃんと動作していれば、リストに<br>
 `btGPIO2`<br>
 という名前のデバイスが見つかるはずです。<br>
-これが CHIRIMEN for TY51822r3 用のデバイスになります。<br>
+これが CHIRIMEN with ty51822r3 用のデバイスになります。<br>
 それを選択して「ペア設定」のボタンを押すとダイアログと青いバーが消え、接続が確立します。
  
  <a href="imgs/section0/ledblink_3.png">

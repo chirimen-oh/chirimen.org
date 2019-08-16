@@ -2,17 +2,17 @@
 
 # 概要
 
-CHIRIMEN for TY51822r3 を使ったプログラミングを通じて、[Web I2C API](http://browserobo.github.io/WebI2C) の使い方を学びます。
+CHIRIMEN with ty51822r3 を使ったプログラミングを通じて、[Web I2C API](http://browserobo.github.io/WebI2C) の使い方を学びます。
 
 ## 前回までのおさらい
 
-本チュートリアルを進める前に「[Hello World 編](section1.md)」と、「[GPIO 編](section1.md)」で CHIRIMEN for TY51822r3 の基本的な操作方法とプログラミング方法を確認しておいてください。
+本チュートリアルを進める前に「[Hello World 編](section1.md)」と、「[GPIO 編](section1.md)」で CHIRIMEN with ty51822r3 の基本的な操作方法とプログラミング方法を確認しておいてください。
 
 前回までのチュートリアルで学んだことは下記のとおりです。
 
-- CHIRIMEN for TY51822r3 の各種 examples は [chirimen-TY51822r3 LIVE examples](https://chirimen.org/chirimen-TY51822r3/bc/) のページにある。
-- CHIRIMEN for TY51822r3 では GPIO として 0 番 ～ 7 番が利用できる。
-- CHIRIMEN for TY51822r3 では Web アプリからの GPIO の制御には [Web GPIO API](http://browserobo.github.io/WebGPIO) を利用する。GPIO ポートは「出力モード」に設定することで LED の ON/OFF などが行える。また「入力モード」にすることで、GPIO ポートの状態を読み取ることができる。
+- CHIRIMEN with ty51822r3 の各種 examples は [chirimen-TY51822r3 LIVE examples](https://chirimen.org/chirimen-TY51822r3/bc/) のページにある。
+- CHIRIMEN with ty51822r3 では GPIO として 0 番 ～ 7 番が利用できる。
+- CHIRIMEN with ty51822r3 では Web アプリからの GPIO の制御には [Web GPIO API](http://browserobo.github.io/WebGPIO) を利用する。GPIO ポートは「出力モード」に設定することで LED の ON/OFF などが行える。また「入力モード」にすることで、GPIO ポートの状態を読み取ることができる。
 - [async function](https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Statements/async_function) を利用すると非同期処理のコードがすっきり書ける。
 
 # 1. 準備
@@ -36,7 +36,7 @@ SDA（シリアルデータ）と SCL（シリアルクロック）の2本の線
 例えば温度や光などを検知する各種のセンサーや出力装置でも I2C に対応したものが多くあり、いわゆる IoT 関係のアプリでも広く使用されています。
 
 I2C ではマスターとスレーブの間で通信が行われ、常にマスター側からスレーブ側に要求が行われます。スレーブ側からマスター側へ要求を行うことはできません。
-CHIRIMEN for TY51822r3 ではマスターとなるのが TY51822r3 で、各種のセンサー等がスレーブとなります。
+CHIRIMEN with ty51822r3 ではマスターとなるのが TY51822r3 で、各種のセンサー等がスレーブとなります。
 
 マスターは、各スレーブがそれぞれ持つ「スレーブアドレス」を用いて、特定のスレーブとの通信を行います。このため、同じ I2C バス上に同じアドレスのスレーブを繋ぐことはできません。
 
@@ -62,7 +62,7 @@ CHIRIMEN for TY51822r3 ではマスターとなるのが TY51822r3 で、各種�
 
 それでは実際に I2C に対応したモジュールを使ってみましょう。
 
-CHIRIMEN for TY51822r3 には、センサーなど、いくつかの I2C モジュールのサンプルが含まれています。
+CHIRIMEN with ty51822r3 には、センサーなど、いくつかの I2C モジュールのサンプルが含まれています。
 [LIVE examples](https://chirimen.org/chirimen-TY51822r3/bc/) のページに I2C 対応デバイスを使った examples のリストがありますので、アクセスしてみてください。
 
 ![exampleList](imgs/section2/i2cexamples_list.png)
@@ -91,7 +91,7 @@ I2Cバス上、TY51822r3 がマスター、ADT7410がスレーブになります
 [![breadboard](imgs/section2/adt7410_1.png)](https://chirimen.org/chirimen-TY51822r3/bc/i2c/i2c-ADT7410/schematic.png)
 
 I2C の信号、SCL、SDA はこの図で TY51822r3 の 左下、P0_29 と P0_30 に割り当てられています。
-これは CHIRIMEN for TY51822r3 の環境での割り当てであって MBED の TY51822r3 公式ページでのピン割り当てとは異なる事に注意してください。
+これは CHIRIMEN with ty51822r3 の環境での割り当てであって MBED の TY51822r3 公式ページでのピン割り当てとは異なる事に注意してください。
 
 また、SCL、SDA の信号は I2C の仕様上プルアップしておく必要があり、2 本の 10kΩ の抵抗はそのために使用されています。
 
@@ -204,7 +204,7 @@ Web GPIO の場合は `requestGPIOAccess()` でしたが Web I2C の場合はこ
   var port = i2cAccess.ports.get(1);
 ```
 
-CHIRIMEN for TY51822r3 で利用可能なI2Cポート番号は `1` 番だけです。
+CHIRIMEN with ty51822r3 で利用可能なI2Cポート番号は `1` 番だけです。
 ここでは、ポート番号に `1` を指定して、`port` オブジェクトを取得しています。
 
 ### var adt7410 = new ADT7410(port, 0x48)
@@ -229,7 +229,7 @@ ADT7410 の仕様に基づくデータ読み出し処理をここで行ってい
 
 ### I2C デバイスのドライバーの役割
 
-この example では ADT7410 から値を読み出すために ADT7410 専用のドライバー `i2c-ADT7410.js` を使用しています。このように CHIRIMEN for TY51822r3 ではある程度の I2C デバイスに関しては簡単に使えるように専用のドライバーが準備されています。次のフォルダーに各デバイスのドライバーが収められています。
+この example では ADT7410 から値を読み出すために ADT7410 専用のドライバー `i2c-ADT7410.js` を使用しています。このように CHIRIMEN with ty51822r3 ではある程度の I2C デバイスに関しては簡単に使えるように専用のドライバーが準備されています。次のフォルダーに各デバイスのドライバーが収められています。
 
 [GitHub の I2C ドライバー一覧フォルダー](https://github.com/chirimen-oh/chirimen-TY51822r3/tree/master/bc/drivers)
 ![ドライバーのリスト](imgs/section2/drivers.png)
@@ -266,7 +266,7 @@ example ではドライバーの読み込みに相対 URL を使用していま�
 
 新たな I2C デバイスへの対応方法については、下記記事も参考にしてください。
 
-(CHIRIMEN for TY51822r3 ではなく、CHIRIMEN ボード向けの記事ですが、Web I2C API への対応に関しては同じ方法で対応が可能です)
+(CHIRIMEN with ty51822r3 ではなく、CHIRIMEN ボード向けの記事ですが、Web I2C API への対応に関しては同じ方法で対応が可能です)
 
 [CHIRIMENでI2Cデバイスを使ってみる](https://qiita.com/tadfmac/items/04257bfe982ba0f050bb)
 
