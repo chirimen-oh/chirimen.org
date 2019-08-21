@@ -382,8 +382,6 @@ CHIRIMEN Raspi3 には、他にも `/home/pi/Desktop/gc/i2c/` 配下に例えば
 - i2c-S11059 : 「[S11059 カラーセンサ](http://akizukidenshi.com/catalog/g/gK-08316/)」(カラーセンサ)の接続例です。
 - i2c-VEML6070 : 「[VEML6070 紫外線センサ](https://learn.adafruit.com/adafruit-veml6070-uv-light-sensor-breakout/overview)」(紫外線センサ)の接続例です。
 - i2c-multi-sensors : 2つのセンサ（ADT7410とgrove-light）を利用する例です。
-- i2c-GP2Y0E03 : 「[測距センサ(GP2Y0E03)](http://akizukidenshi.com/catalog/g/gI-07547/)」を利用する例です。 
-
 
 また、CHIRIMEN Raspi3 のイメージ内に同梱されている example 以外にも、[CHIIRMEN examples ページのオンライン版](https://r.chirimen.org/examples) にはこれらに加えてコミュニティによって順次いろいろなデバイス利用例が [Advanced Examples](https://r.chirimen.org/examples#advanced) として追加されています (ドライバーなどが cotrib ディレクトリ内にあるので注意)。作りたいもの、試したいものを考えながら試してみてください。
 
@@ -403,7 +401,6 @@ I2Cデバイスを同時に接続して使用するとき、重要な注意事�
 | VEML6070            | 0x38, 0x39 |                  |
 | S11059              | 0x2a       |                  |
 | PCA9685             | 0x40       | => test brd:0x41 |
-| GP2Y0E03            | 0x40       |                  |
 | grove-touch         | 0x5a       |                  |
 | grove-oledDisplay   | 0x3c       |                  |
 | grove-gesture       | 0x73       |                  |
