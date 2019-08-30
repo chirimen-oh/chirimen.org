@@ -46,7 +46,15 @@ GPIO, I2C 以外によく見聞きするハードのインターフェイスに�
 
 ### Raspberry Pi Zero はサポートしないの？
 
-論理的には移植可能と考えられますが、未検証・未対応です。
+現在 Raspberry Pi Zero はサポートしていません。
+
+CHIRIMEN コミュニティで配付している OS イメージには Raspberry Pi 3 用の Node が同梱されており、Raspberry Pi Zero では CPU アーキテクチャの違いによるバイナリ非互換があり、そのままでは動作しません。また、Raspberry Pi Zero は非常に動作が重たく Chromium ブラウザの起動は勿論、タブを開いたり開発者ツールを開くだけでもかなり待たされるため、少なくともコードを書く環境には向きません。
+
+どんなに重たくても良いから既に完成しているコードを動作させたいのであれば、例えば [こちらに配付されているスクリプト](https://github.com/sdesalas/node-pi-zero) を使って Node を Raspberry Pi Zero 互換のビルドに差し替えることで動作するようになります。但し、コミュニティではこの状態での動作検証は一切しておらず、サポートは出来ませんのでご了承ください。
+
+```
+wget -O - https://raw.githubusercontent.com/sdesalas/node-pi-zero/master/install-node-v10.15.0.sh | bash
+```
 
 ### Raspberry Pi 以外のボードでは動作しないの？
 
