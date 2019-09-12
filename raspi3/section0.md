@@ -37,7 +37,7 @@ CHIRIMEN for Raspberry Pi 3 は、Raspberry Pi 3 (以下 Raspi) で動作する 
 - USB マウス × 1
 - USB キーボード (日本語配列) × 1
   - 初期設定の日本語 (JIS) 配列以外のキーボードを利用する際は [raspi-config コマンド](http://igarashi-systems.com/sample/translation/raspberry-pi/configuration/raspi-config.html) で変更してください
-- [CHIRIMEN起動イメージ](sdcard.md)入りの micro SD カード (8GB 以上必須、Class 10 以上で高速なものを推奨) × 1
+- [CHIRIMEN 起動イメージ](sdcard.md)入りの micro SD カード (8GB 以上必須、Class 10 以上で高速なものを推奨) × 1
 
 ### L チカに必要となるパーツ
 
@@ -153,6 +153,7 @@ L チカのためのサンプルコードは先ほどの配線図と同じフォ
 ## L チカの様子
 
 {% cloudinary imgs/section0/L.gif alt="Lチカ成功" %}
+
 <!-- TODO: ファイルサイズの小さい WebM 動画などに -->
 
 L チカに成功しましたか？！
@@ -175,18 +176,19 @@ L チカに成功しましたか？！
 
 {% cloudinary imgs/section0/b.png alt="ブラウザの再起動" %}
 
-## ブラウザのブックマークから、JS Bin の example を起動
+## オンラインの example の実行
 
 それでは、さっそくオンラインの example を実行してみます。
 配線は、さきほどのままで OK です。
 
-ブラウザを起動後、ブックマークバーから `examples > GPIO-JSBIN > GPIO-Blink - JS Bin` を選んでアクセスしてください。
+[オンラインの example へのリンク](https://r.chirimen.org/gpio-blink)は、ブラウザを起動後、ブックマークバーにある[Examples](https://r.chirimen.org/examples)のページの中にあります。
 
-{% cloudinary imgs/section0/bookmark.png alt="bookmark" %}
+{% cloudinary imgs/section0/gpio-blink-online-example.png alt="https://r.chirimen.org/gpio-blink へのリンク" %}
 
 そのまま起動すると下記のような画面になります。(下記スクリーンショットはアクセス直後の画面から JS Bin のタイトルバー部の「Output」タブを 1 回押して非表示にしています)
 
 <!-- TODO: 古いコードの画像になってる -->
+
 {% cloudinary imgs/section0/JSBinLexample.png alt="JS BinでのLチカexample画面" %}
 
 それでは、コードを眺めてみましょう。
