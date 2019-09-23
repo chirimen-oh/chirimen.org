@@ -36,7 +36,7 @@
 |-|-|-|
 |[LED](https://chirimen.org/chirimen-raspi3/gc/top/examples/#GPIO-Blink)|LED|![](partsImgs/LED.jpg)|
 |[タクトスイッチ](https://chirimen.org/chirimen-raspi3/gc/top/examples/#GPIO-Button)|Switch|![](partsImgs/tactSwitch.jpg)|
-|[マイクロスイッチ](https://chirimen.org/chirimen-raspi3/gc/top/examples/#GPIO-Button)|Switch|![](partsImgs/microSw.jpg)|
+|[マイクロスイッチ](https://chirimen.org/chirimen-raspi3/gc/top/examples/#GPIO-Button)|Switch|![](partsImgs/microSw.jpeg)|
 |[DCモーター](https://tutorial.chirimen.org/raspi3/section1#led--)|Geared Motor|![](partsImgs/gearedMotor.jpg)|
 |[ちびギヤモーター](https://tutorial.chirimen.org/raspi3/section1#led--)|Geared Motor|![](partsImgs/chibiGear.jpg)|
 |[FET](https://tutorial.chirimen.org/raspi3/---)|2sK????|![](partsImgs/FET.jpg)|
