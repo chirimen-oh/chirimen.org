@@ -10,7 +10,7 @@
 |サーモグラフィ(8x8ピクセル)|[AMG8833](https://chirimen.org/chirimen-raspi3/gc/top/examples/#I2C-AMG8833)|![](partsImgs/AMG8833.jpg)|
 |温度, 圧力, 湿度 複合センサ|[BME280](https://chirimen.org/chirimen-raspi3/gc/top/examples/#I2C-BME280)|![](partsImgs/BME280.jpg)|
 |温度, 圧力 複合センサ|[BMP180](https://chirimen.org/chirimen-raspi3/gc/top/examples/#I2C-BMP180)|![](partsImgs/BMP180.jpg)|
-|温度, 圧力 複合センサ|[BMP280](https://chirimen.org/chirimen-raspi3/gc/top/examples/#I2C-BMP280)|![](partsImgs/BMP280.jpg)|
+|温度, 圧力 複合センサ|[BMP280](https://chirimen.org/chirimen-raspi3/gc/top/examples/#I2C-BMP280)|![](partsImgs/BMP280.jpeg)|
 |距離センサ(50cm程度まで)|[GP2Y0E03](https://chirimen.org/chirimen-raspi3/gc/top/examples/#I2C-GP2Y0E03)|![](partsImgs/GP2Y0E03.jpg)|
 |距離センサ(2m弱まで)|[VL53L0X](https://chirimen.org/chirimen-raspi3/gc/top/examples/#I2C-VL53L0X)|![](partsImgs/VL53L0X.jpg)|
 |ジェスチャーセンサ|[Grove-Gesture](https://chirimen.org/chirimen-raspi3/gc/top/examples/#I2C-Grove-Gesture) (PAJ7620U2)|![](partsImgs/Grove-Gesture.jpg)|
