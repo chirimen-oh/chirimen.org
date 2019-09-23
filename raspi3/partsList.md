@@ -37,7 +37,7 @@
 |[LED](https://chirimen.org/chirimen-raspi3/gc/top/examples/#GPIO-Blink)|LED|![](partsImgs/LED.jpg)|
 |[タクトスイッチ](https://chirimen.org/chirimen-raspi3/gc/top/examples/#GPIO-Button)|Switch|![](partsImgs/tactSwitch.jpg)|
 |[マイクロスイッチ](https://chirimen.org/chirimen-raspi3/gc/top/examples/#GPIO-Button)|Switch|![](partsImgs/microSw.jpeg)|
-|[FET](https://tutorial.chirimen.org/raspi3/section1#led--)|2sK4017|![](partsImgs/FET.jpg)|
+|[FET (DC電力 On/Off制御)](https://tutorial.chirimen.org/raspi3/section1#led--)|2sK4017|![](partsImgs/FET.jpg)|
 |↑|IRF520|![](partsImgs/FET2.jpg)|
 |[DCモーター 正逆転コントローラ１](https://chirimen.org/chirimen-raspi3/gc/top/examples/#GPIO-HBridge)|L298N|![](partsImgs/L298N.jpg)|
 |↑２|L9110S|![](partsImgs/L9110S.jpg)|
