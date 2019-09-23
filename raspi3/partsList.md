@@ -22,11 +22,11 @@
 |3軸加速度センサ|[Grove-Accelerometer](https://chirimen.org/chirimen-raspi3/gc/top/examples/#I2C-Grove-Accelerometer)|![](partsImgs/Grove-Accelerometer.jpg)|
 |3軸加速度+ジャイロ 複合センサ|[MPU6050](https://chirimen.org/chirimen-raspi3/gc/top/examples/#I2C-MPU6050)|![](partsImgs/MPU6050.jpg)|
 |3軸加速度+ジャイロ+磁気 複合センサ|[MPU9250](https://chirimen.org/chirimen-raspi3/gc/top/examples/#I2C-MPU9250)|![](partsImgs/MPU9250_.jpg)|
-|Neopixel LED 8x8|[NEOPIXEL](https://chirimen.org/chirimen-raspi3/gc/top/examples/#I2C-NEOPIXEL_I2C)|![](partsImgs/neopixel64.jpg)|
-|↑ 1x4|[NEOPIXEL](https://chirimen.org/chirimen-raspi3/gc/top/examples/#I2C-NEOPIXEL_I2C)|![](partsImgs/neopixel4.jpg)|
-|↑ 12|[NEOPIXEL](https://chirimen.org/chirimen-raspi3/gc/top/examples/#I2C-NEOPIXEL_I2C)|![](partsImgs/neopixel12.jpg)|
-|↑ 60|[NEOPIXEL](https://chirimen.org/chirimen-raspi3/gc/top/examples/#I2C-NEOPIXEL_I2C)|![](partsImgs/neopixel60.jpg)|
-|↑ Neopixelドライバ|NEOPIXEL_I2C|![](partsImgs/NEOPIXEL_I2C.jpg)|
+|Neopixel LEDコントローラ[NEOPIXEL](https://chirimen.org/chirimen-raspi3/gc/top/examples/#I2C-NEOPIXEL_I2C)|![](partsImgs/neopixelI2c.jpg)|
+|↑ Neopixel LED 8x8|-|![](partsImgs/neopixel64.jpg)|
+|↑ 1x4|-|![](partsImgs/neopixel4.jpg)|
+|↑ 12|-|![](partsImgs/neopixel12.jpg)|
+|↑ 60|-|![](partsImgs/neopixel60.jpg)|
 |サーボモータ・DCモータ コントローラ|PCA9685|![](partsImgs/PCA9685.jpg)|
 |↑|[PCA9685 Servo](https://chirimen.org/chirimen-raspi3/gc/top/examples/#I2C-PCA9685)|![](partsImgs/PCA9685_Servo2.jpg)|
 |↑|[PCA9685 PWM](https://chirimen.org/chirimen-raspi3/gc/top/examples/#GPIO-I2C-PWMHBridge-1)|![](partsImgs/PCA9685.jpg)|
