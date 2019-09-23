@@ -59,7 +59,11 @@
 ## アクチュエータ
 |カテゴリー|型番|画像|
 |-|-|-|
-|サーボモータ|-|-|
+|サーボモータ|[PCA9685 Servo](https://chirimen.org/chirimen-raspi3/gc/top/examples/#I2C-PCA9685)|-|
+|↑|SG90|![](partsImgs/SG90.jpg)|
+|DCモータ|[On/Off](), [正逆転](https://chirimen.org/chirimen-raspi3/gc/top/examples/#I2C-PCA9685), [](可変速正逆転) |-|
+|↑|ちびギヤモーター|![](partsImgs/chibiGear.jpg)|
+|↑|小型ギヤードモータ|![](partsImgs/gearMotor.jpg)|
 
 ## その他
 |カテゴリー|型番|画像|
