@@ -1,4 +1,4 @@
-# CHIRIMEN for Raspberry Pi3 パーツリスト
+# CHIRIMEN for Raspberry Pi3 対応デバイス / パーツ リスト
 
 ## I2C センサー
 |カテゴリ|部品型番|画像|
