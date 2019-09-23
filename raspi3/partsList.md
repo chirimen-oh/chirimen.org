@@ -31,14 +31,12 @@
 |↑|[PCA9685 Servo](https://chirimen.org/chirimen-raspi3/gc/top/examples/#I2C-PCA9685)|![](partsImgs/PCA9685_Servo2.jpg)|
 |↑|[PCA9685 PWM](https://chirimen.org/chirimen-raspi3/gc/top/examples/#GPIO-I2C-PWMHBridge-1)|![](partsImgs/PCA9685.jpg)|
 
-## GPIO センサ・アクチュエータ
+## GPIO センサ・アクチュエータコントローラ
 |カテゴリー|型番|画像|
 |-|-|-|
 |[LED](https://chirimen.org/chirimen-raspi3/gc/top/examples/#GPIO-Blink)|LED|![](partsImgs/LED.jpg)|
 |[タクトスイッチ](https://chirimen.org/chirimen-raspi3/gc/top/examples/#GPIO-Button)|Switch|![](partsImgs/tactSwitch.jpg)|
 |[マイクロスイッチ](https://chirimen.org/chirimen-raspi3/gc/top/examples/#GPIO-Button)|Switch|![](partsImgs/microSw.jpeg)|
-|[DCモーター](https://tutorial.chirimen.org/raspi3/section1#led--)|Geared Motor|![](partsImgs/gearedMotor.jpg)|
-|[ちびギヤモーター](https://tutorial.chirimen.org/raspi3/section1#led--)|Geared Motor|![](partsImgs/chibiGear.jpg)|
 |[FET](https://tutorial.chirimen.org/raspi3/section1#led--)|2sK4017|![](partsImgs/FET.jpg)|
 |↑|IRF520|![](partsImgs/FET2.jpg)|
 |[DCモーター 正逆転コントローラ１](https://chirimen.org/chirimen-raspi3/gc/top/examples/#GPIO-HBridge)|L298N|![](partsImgs/L298N.jpg)|
@@ -61,9 +59,9 @@
 |-|-|-|
 |サーボモータ|[PCA9685 Servo](https://chirimen.org/chirimen-raspi3/gc/top/examples/#I2C-PCA9685)|-|
 |↑|SG90|![](partsImgs/SG90.jpg)|
-|DCモータ|[On/Off](), [正逆転](https://chirimen.org/chirimen-raspi3/gc/top/examples/#I2C-PCA9685), [](可変速正逆転) |-|
+|DCモータ|[On/Off](https://tutorial.chirimen.org/raspi3/section1#led--), [正逆転](https://chirimen.org/chirimen-raspi3/gc/top/examples/#GPIO-HBridge), [可変速正逆転](https://chirimen.org/chirimen-raspi3/gc/top/examples/#GPIO-I2C-PWMHBridge-1) |-|
 |↑|ちびギヤモーター|![](partsImgs/chibiGear.jpg)|
-|↑|小型ギヤードモータ|![](partsImgs/gearMotor.jpg)|
+|↑|小型ギヤードモータ|![](partsImgs/gearedMotor.jpg)|
 
 ## その他
 |カテゴリー|型番|画像|
