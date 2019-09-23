@@ -7,7 +7,7 @@
 |↑16bit精度|[ADS1115](https://chirimen.org/chirimen-raspi3/gc/top/examples/#I2C-ADS1115)|![](partsImgs/ADS1115.jpg)|
 |ADC, DAC(アナログ電圧出力) 複合|[PCF8591](https://chirimen.org/chirimen-raspi3/gc/top/examples/#I2C-PCF8591)|![](partsImgs/PCF8591.jpg)|
 |温度センサ|[ADT7410](https://chirimen.org/chirimen-raspi3/gc/top/examples/#I2C-ADT7410)|![](partsImgs/ADT7410.jpg)|
-|サーモグラフィ(8x8ピクセル)|[AMG8833](https://chirimen.org/chirimen-raspi3/gc/top/examples/#I2C-AMG8833)|![](partsImgs/AMG8833.jpg)|
+|サーモグラフィ(8x8ピクセル)|[AMG8833](https://chirimen.org/chirimen-raspi3/gc/top/examples/#I2C-AMG8833)|![](partsImgs/AMG8833.JPG)|
 |温度, 圧力, 湿度 複合センサ|[BME280](https://chirimen.org/chirimen-raspi3/gc/top/examples/#I2C-BME280)|![](partsImgs/BME280.jpg)|
 |温度, 圧力 複合センサ|[BMP180](https://chirimen.org/chirimen-raspi3/gc/top/examples/#I2C-BMP180)|![](partsImgs/BMP180.jpg)|
 |温度, 圧力 複合センサ|[BMP280](https://chirimen.org/chirimen-raspi3/gc/top/examples/#I2C-BMP280)|![](partsImgs/BMP280.jpeg)|
