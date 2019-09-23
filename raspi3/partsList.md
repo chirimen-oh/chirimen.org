@@ -39,8 +39,8 @@
 |[マイクロスイッチ](https://chirimen.org/chirimen-raspi3/gc/top/examples/#GPIO-Button)|Switch|![](partsImgs/microSw.jpeg)|
 |[DCモーター](https://tutorial.chirimen.org/raspi3/section1#led--)|Geared Motor|![](partsImgs/gearedMotor.jpg)|
 |[ちびギヤモーター](https://tutorial.chirimen.org/raspi3/section1#led--)|Geared Motor|![](partsImgs/chibiGear.jpg)|
-|[FET](https://tutorial.chirimen.org/raspi3/section1#led--)|2sK????|![](partsImgs/FET.jpg)|
-|↑|2sK4017|![](partsImgs/FET2.jpg)|
+|[FET](https://tutorial.chirimen.org/raspi3/section1#led--)|2sK4017|![](partsImgs/FET.jpg)|
+|↑|IRF520|![](partsImgs/FET2.jpg)|
 |[DCモーター 正逆転コントローラ１](https://chirimen.org/chirimen-raspi3/gc/top/examples/#GPIO-HBridge)|L298N|![](partsImgs/L298N.jpg)|
 |↑２|L9110S|![](partsImgs/L9110S.jpg)|
 |↑３|MX1508|![](partsImgs/MX1508.jpg)|
