@@ -57,7 +57,7 @@ CHIRIMEN for Raspberry Pi 3（以下 「CHIRIMEN Raspi3」） を使ったプロ
 
 今回用意するものが多いですが、これまでのチュートリアルで使ったことがあるものばかりですので、ご安心ください。
 
-{% cloudinary imgs/section4/parts-chibi.jpg alt="利用部品の写真" %}
+{% cloudinary imgs/section4/parts-chibi.png alt="利用部品の写真" %}
 
 # 2.まずは仕様通りにつくる
 
