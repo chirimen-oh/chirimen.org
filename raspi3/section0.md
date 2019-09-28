@@ -22,7 +22,7 @@ CHIRIMEN for Raspberry Pi 3 は、Raspberry Pi 3 (以下 Raspi) で動作する 
 
 ### 基本ハードウエア
 
-下記が CHIRIMEN for Raspberry Pi 3 の起動に最低限必要となる基本ハードウエアです。
+CHIRIMEN for Raspberry Pi 3 の起動に最低限必要となる基本ハードウエアは次の通りです。
 
 [{% cloudinary imgs/section0/Raspi3.jpg alt="Raspi の起動に必要なハードウエア一覧" %}](imgs/section0/Raspi3.jpg)
 
@@ -30,7 +30,7 @@ CHIRIMEN for Raspberry Pi 3 は、Raspberry Pi 3 (以下 Raspi) で動作する 
   - 補足: Raspberry Pi 3 Model A+ や Raspberry Pi 4 も対応見込みですが執筆時点では未検証です
 - AC アダプタ + micro B USB 電源ケーブル × 1
   - 例: [Raspberry Pi 用電源セット(5V 3.0A) - Pi3 フル負荷検証済](https://www.physical-computing.jp/product/1171)
-  - 注意: 一般的なスマホ向けのもの (1.0〜2.0A 程度の出力) でも起動できますが、公式には 3.0A を必要としており、PC からの給電などでは電力不足で性能が落ちたり不安定になることがあります。また、microUSB 端子は強度が高くないのでスイッチ付きでコネクタの抜き差し回数を少なくできるケーブル付のものがオススメです
+  - 注意: 一般的なスマホ向けのもの (1.0〜2.0A 程度の出力) でも起動できますが、公式には 3.0A を必要としており、PC からの給電などでは電力不足で性能低下や不安定な原因になります。microUSB 端子は強度が高くないためスイッチ付きで抜き差し回数を少なくできるケーブル付のものがオススメです
 - HDMI 入力つきのモニタ (720P の解像度に対応したもの) × 1
   - モバイルモニタでも文字が見やすいようデフォルト解像度を 720p としています
 - HDMI ケーブル (モニタ側の端子と合うものを選んでください) × 1
@@ -52,7 +52,7 @@ CHIRIMEN for Raspberry Pi 3 は、Raspberry Pi 3 (以下 Raspi) で動作する 
 
 ## SD カードへ CHIRIMEN for Raspberry Pi 3 環境を書き込む
 
-起動する前に、SD カードへ CHIRIMEN Raspi3 環境（起動イメージファイル）を書き込んでおく必要があります。
+起動する前に、SD カードへ CHIRIMEN Raspi3 環境（[起動イメージファイル](https://r.chirimen.org/sdimage)） を書き込んでおく必要があります。
 
 手順は [CHIRIMEN for Raspberry Pi 3 の SD カードを作成する](sdcard) を参照してください。
 
@@ -72,6 +72,7 @@ CHIRIMEN for Raspberry Pi 3 は、Raspberry Pi 3 (以下 Raspi) で動作する 
 
 電源を入れると Raspi の microSD コネクタ横の赤い LED が点灯し、OS の起動後、下記のようなデスクトップ画面が表示されたら CHIRIMEN Raspi3 の起動に成功しています。おめでとうございます！
 
+<!-- TODO: デスクトップ画面のスクリーンショット古い -->
 {% cloudinary imgs/section0/CHIRIMENforRaspberryPi3desktop.png alt="CHIRIMEN for Raspberry Pi 3 desktop 画面" %}
 
 ## 残念ながら上記画面が表示されなかった！？
@@ -83,12 +84,9 @@ CHIRIMEN for Raspberry Pi 3 は、Raspberry Pi 3 (以下 Raspi) で動作する 
 ## WiFi の設定
 
 デスクトップ画面が表示されたら、さっそく WiFi を設定して、インターネットに繋げてみましょう。
-CHIRIMEN Raspi3 では、ネットワークに繋がなくてもローカルファイルを使ったプログラミングが一応可能ですが、[JS Bin](https://jsbin.com/) や [JSFiddle](https://jsfiddle.net/) などの Web 上のエディタを活用することで、より便利にプログラミングが進められるようになります。
-また、CHIRIMEN Raspi3 に関する情報も今後インターネット上で充実していく予定です。
+CHIRIMEN Raspi3 では、ネットワークに繋がずローカルファイルでプログラミングも可能ですが、[JS Bin](https://jsbin.com/) や [JSFiddle](https://jsfiddle.net/) あるいは [CodeSandbox](https://codesandbox.io/) などブラウザ上で動くエディタを活用することで、より簡単にプログラミングできます。
 
-ぜひ、最初にインターネット接続環境を整えておきましょう。
-
-WiFi の設定は、タスクバーの右上の WiFi アイコンから行えます。
+ぜひ、最初にインターネットに接続しておきましょう。WiFi の設定は、タスクバーの右上の WiFi アイコンから行えます。
 
 {% cloudinary imgs/section0/wifi.png alt="WiFi設定" %}
 
