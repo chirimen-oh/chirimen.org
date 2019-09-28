@@ -70,7 +70,7 @@ CHIRIMEN for Raspberry Pi 3 の起動に最低限必要となる基本ハード�
 
 ## 起動確認
 
-電源を入れると Raspi の microSD コネクタ横の赤い LED が点灯し、OS の起動後、下記のようなデスクトップ画面が表示されたら CHIRIMEN Raspi3 の起動に成功しています。おめでとうございます！
+電源を入れると Raspi の microSD コネクタ横の赤い LED が点灯し、OS の起動後、下記のようなデスクトップ画面が表示されたら CHIRIMEN Raspi3 の起動に成功しています (OS イメージや画面サイズにより細部は異なることがあります)。おめでとうございます！
 
 <!-- TODO: デスクトップ画面のスクリーンショット古い -->
 {% cloudinary imgs/section0/CHIRIMENforRaspberryPi3desktop.png alt="CHIRIMEN for Raspberry Pi 3 desktop 画面" %}
