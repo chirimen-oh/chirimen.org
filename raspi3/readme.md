@@ -47,16 +47,14 @@ LED と温度センサーを使ってみる最小限のお試しページです�
 - 5. Web Bluetooth を使って他のデバイスと無線通信する
   - [CHIRIMEN with micro:bit](https://chirimen.org/chirimen-micro-bit/)
     - micro:bit には CHIRIMEN サポートプログラムを書き込み、RasPi の Chromium から Web Bluetooth を使って通信します
-    - micro:bit 内蔵デバイス
-      - 3 軸加速度センサー、3 軸磁気センサー、温度センサー、タクトスイッチ 2個、5x5 マトリクス LED
-    - GPIO, I2C 外部デバイス
-      - CHIRIMEN for Raspberry Pi3 と同様に micro:bit に接続したデバイスを操作できます。
+    - micro:bit 内蔵デバイス: 加速度・磁気・温度センサー、タクトスイッチ、5x5 マトリクス LED
+    - GPIO, I2C 外部デバイス: CHIRIMEN RasPi3 と同様に micro:bit に接続したデバイスを操作できます。
   - [PLAYBULB (LED 電球) を使う](section5.md)
     - CHIRIMEN for Raspberry Pi 3 環境で Web Bluetooth API を使ってデバイス制御するサンプルです。
     - Web I2C API や Web Audio API と組み合わせて PLAYBULB (Bluetooth 接続の LED 電球) を制御します。
-- [6. Arduino と連携する (ステッピングモーターの制御)](section6.md)
-  
-  - CHIRIMEN for Raspberry Pi 3 と Arduino を組み合わせてステップピングモーターを制御します。I2C 接続した Arduino を利用することで μ 秒単位でモータードライバの制御を行います。
+- 6. Arduino と連携する
+  - [ステッピングモーターの制御](section6.md)
+    - CHIRIMEN for Raspberry Pi 3 と Arduino を組み合わせてステップピングモーターを制御します。I2C 接続した Arduino を利用することで μ 秒単位でモータードライバの制御を行います。
 
 ## 対応デバイスと Example 集
 
@@ -75,9 +73,8 @@ Advanced Example は個人レベルで動作確認して追加されている co
 
 JavaScript 未経験者・初心者向けの資料集や、良くある質問、Tips やテクニック、デバッグとトラブルシューティングのページを用意しています。
 
-- [JavaScript 学習資料集](/js/readme.md)
+- [JavaScript 初学者向け資料集](/js/readme.md)
   - JavaScript 1 Day 講習資料、JavaScript 本格入門書、チートシートなどはこちら
-
 - [良くある質問](faq.md)
 - [Tips・テクニック集](tips.md)
 - [デバッグ・トラブルシューティング](debug.md)
