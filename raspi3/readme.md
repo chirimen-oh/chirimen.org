@@ -44,17 +44,17 @@ LED と温度センサーを使ってみる最小限のお試しページです�
 ここまでの例では飽き足らない人のための発展的な使い方を紹介します。興味のあるものがあればお試しください。  
 **注意: 学校や講習会などで参加者全員で学習する場合は応用編までで十分です。**
 
-- 5. WebBluetooth の使い方
-  - CHIRIMEN for Raspberry Pi 3 環境で Web Bluetooth API を使って制御するチュートリアルです。
-  - [PLAYBULB制御](section5.md)
-    - Web I2C API や Web Audio API と組み合わせて PLAYBULB (Bluetooth 接続の LED 電球) を制御します。
-  - [micro:bitを使う](http://chirimen.org/webGPIO-etc-on-microbit-via-webBluetooth/)
-    - 専用ライブラリ使い、micro:bitに搭載されたデバイスやインターフェースを利用します。
+- 5. Web Bluetooth を使って他のデバイスと無線通信する
+  - [CHIRIMEN with micro:bit](https://chirimen.org/chirimen-micro-bit/)
+    - micro:bit には CHIRIMEN サポートプログラムを書き込み、RasPi の Chromium から Web Bluetooth を使って通信します
     - micro:bit 内蔵デバイス
       - 3 軸加速度センサー、3 軸磁気センサー、温度センサー、タクトスイッチ 2個、5x5 マトリクス LED
-    - 外部デバイス (GPIO ポート)
-      - micro:bit 用の WebGPIO API ライブラリを使えば、Raspberry Pi3 と同様に操作できます。
-- [6. ステッピングモーターを制御する](section6.md)
+    - GPIO, I2C 外部デバイス
+      - CHIRIMEN for Raspberry Pi3 と同様に micro:bit に接続したデバイスを操作できます。
+  - [PLAYBULB (LED 電球) を使う](section5.md)
+    - CHIRIMEN for Raspberry Pi 3 環境で Web Bluetooth API を使ってデバイス制御するサンプルです。
+    - Web I2C API や Web Audio API と組み合わせて PLAYBULB (Bluetooth 接続の LED 電球) を制御します。
+- [6. Arduino と連携する (ステッピングモーターの制御)](section6.md)
   - CHIRIMEN for Raspberry Pi 3 と Arduino を組み合わせてステップピングモーターを制御します。I2C 接続した Arduino を利用することで μ 秒単位でモータードライバの制御を行います。
 
 ## 対応デバイスと Example 集
@@ -74,8 +74,9 @@ Advanced Example は個人レベルで動作確認して追加されている co
 
 JavaScript 未経験者や非同期処理に慣れていない方向けの解説はこちらをご覧ください:
 
-- [JavaScript 1 Day 講習 (PDF)](https://webiotmakers.github.io/static/docs/2017/maebashi-js.pdf)
+- [JavaScript 1 Day 講習 (PDF 版)](https://webiotmakers.github.io/static/docs/2017/maebashi-js.pdf)
   - 初めてプログラミングする人に 1 日で JavaScript を教えるときにちょうど良いボリューム・内容の資料です
+  - 編集してご利用される方は [オリジナルの PPTX ファイル](https://drive.google.com/file/d/1OR3FRuIu134ftYM7fp-leK9dwc3rUI5O/view?usp=sharing) をどうぞ
 - [JavaScript Primer - ECMAScript 2019時代のJavaScript入門書](https://jsprimer.net/)
   - 最新言語仕様も考慮した本格的な JavaScript 入門書です
   - 開発ツールなどについても [付録: 参考リンク集](https://jsprimer.net/appendix/links/) が参考になります
