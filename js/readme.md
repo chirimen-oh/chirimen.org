@@ -1,4 +1,4 @@
-## JavaScript 学習資料集
+## JavaScript 初学者向け資料集
 
 ### JavaScript 1 Day 講習
 
