@@ -73,7 +73,7 @@ Advanced Example は個人レベルで動作確認して追加されている co
 
 JavaScript 未経験者・初心者向けの資料集や、良くある質問、Tips やテクニック、デバッグとトラブルシューティングのページを用意しています。
 
-- [JavaScript 初学者向け資料集](/js/readme.md)
+- [JavaScript 初学者向け資料集](/js/)
   - JavaScript 1 Day 講習資料、JavaScript 本格入門書、チートシートなどはこちら
 - [良くある質問](faq.md)
 - [Tips・テクニック集](tips.md)
