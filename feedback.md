@@ -44,7 +44,7 @@ console.log("hello code block!")
 ```
 `````
 
-サンプルコードファイルを読み込んで埋め込むには次のように [Jekyll の `include_relative` タグ](https://jekyllrb.com/docs/includes/) を使用します。コードブロック末尾に空行が出来ないように `-%}` で閉じていることに注意してください。
+サンプルコードファイルを読み込んで埋め込むには次のように [Jekyll の `include_relative` タグ](https://jekyllrb.com/docs/includes/) を使用します。コードブロック末尾に空行が出来ないように [ホワイトスペースを削除する](https://shopify.github.io/liquid/basics/whitespace/) `-%}` で閉じていることに注意してください。
 
 `````md
 ```js
@@ -66,31 +66,31 @@ Netlify でのサイトビルドログなどは Github のコミット通知と�
 
 既存のページの編集は既存の markdown ファイルを編集、新規ページの作成は追加したい URL に対応する markdown ファイルを作るだけで可能です。それ以外の js/css/img ファイル群はそのままサイトに反映されるのでサンプルコードなどはそのまま必要なファイルを置いてください。
 
-* [_config.yml](https://github.com/chirimen-oh/tutorials/blob/master/_config.yml) - サイトの設定ファイル。ベースとするテーマやテーマのテンプレート中で変数として参照されている変数の定義を行う。[詳細は Github のヘルプなどを参照](https://help.github.com/articles/configuring-jekyll/)
-* [_layouts](https://github.com/chirimen-oh/tutorials/tree/master/_layouts) - カスタムテンプレートファイルを保存するディレクトリ
-  * [default.html](https://github.com/chirimen-oh/tutorials/blob/master/_layouts/default.html) - デフォルトテンプレート。参照している変数はリポジトリのメタデータや _config.yml で定義しているもの。
-  * [tutorial.html](https://github.com/chirimen-oh/tutorials/blob/master/_layouts/tutorial.html) - チュートリアル用テンプレート。目次が自動生成されるのがデフォルトとの違い。
-* [_redirects](https://github.com/chirimen-oh/tutorials/blob/master/_redirects) - リダイレクトの定義ファイル。 [Netlify のドキュメント](https://www.netlify.com/docs/redirects/) を参照
-* _site - リポジトリ上には存在しません。ビルド環境を構築して `jekyll build` コマンドでビルドを実行すると公開サイト用のファイルがこのディレクトリに生成され、それを Netlify の CDN でドキュメントルートとしてホストする設定になっています。
-* .eslintrc.yml, .prettierrc, .stylelintrc - ESLint, StyleLint, Prettier で使用する JavaScript やスタイルシートのコーディングルール定義ファイル
-* .ruby-version, Gemfile - Jekyll テンプレートでビルドするときに使う Ruby バージョンとパッケージ定義ファイル (Netlify でのビルド用)
-* README.md - トップページ (https://tutorial.chirimen.org/) のファイル
-* assets - サイト全体で利用する CSS や JavaScript ファイルを収めるディレクトリ。`_layouts` 配下の html ファイルから読み込む。 
-* raspi3 - CHIRIMEN Raspi3 チュートリアル (https://tutorial.chirimen.org/raspi3) 用のファイルを収めたディレクトリ
-* ty51822r3 - CHIRIMEN TY51822R3 チュートリアル (https://tutorial.chirimen.org/ty51822r3) 用のファイルを収めたディレクトリ
-* feedback.md - このページの元となる markdown ファイル
-* package-lock.json, package-json - ESLint や Prettier を使って VS Code で編集したいときに Node のパッケージ群を `npm i` でインストールできるようにするためのパッケージ定義ファイル
+- [_config.yml](https://github.com/chirimen-oh/tutorials/blob/master/_config.yml) - サイトの設定ファイル。ベースとするテーマやテーマのテンプレート中で変数として参照されている変数の定義を行う。[詳細は Github のヘルプなどを参照](https://help.github.com/articles/configuring-jekyll/)
+- [_layouts](https://github.com/chirimen-oh/tutorials/tree/master/_layouts) - カスタムテンプレートファイルを保存するディレクトリ
+  - [default.html](https://github.com/chirimen-oh/tutorials/blob/master/_layouts/default.html) - デフォルトテンプレート。参照している変数はリポジトリのメタデータや _config.yml で定義しているもの。
+  - [tutorial.html](https://github.com/chirimen-oh/tutorials/blob/master/_layouts/tutorial.html) - チュートリアル用テンプレート。目次が自動生成されるのがデフォルトとの違い。
+- [_redirects](https://github.com/chirimen-oh/tutorials/blob/master/_redirects) - リダイレクトの定義ファイル。 [Netlify のドキュメント](https://www.netlify.com/docs/redirects/) を参照
+- _site - リポジトリ上には存在しません。ビルド環境を構築して `jekyll build` コマンドでビルドを実行すると公開サイト用のファイルがこのディレクトリに生成され、それを Netlify の CDN でドキュメントルートとしてホストする設定になっています。
+- .eslintrc.yml, .prettierrc, .stylelintrc - ESLint, StyleLint, Prettier で使用する JavaScript やスタイルシートのコーディングルール定義ファイル
+- .ruby-version, Gemfile - Jekyll テンプレートでビルドするときに使う Ruby バージョンとパッケージ定義ファイル (Netlify でのビルド用)
+- README.md - トップページ (https://tutorial.chirimen.org/) のファイル
+- assets - サイト全体で利用する CSS や JavaScript ファイルを収めるディレクトリ。`_layouts` 配下の html ファイルから読み込む。 
+- raspi3 - CHIRIMEN Raspi3 チュートリアル (https://tutorial.chirimen.org/raspi3) 用のファイルを収めたディレクトリ
+- ty51822r3 - CHIRIMEN TY51822R3 チュートリアル (https://tutorial.chirimen.org/ty51822r3) 用のファイルを収めたディレクトリ
+- feedback.md - このページの元となる markdown ファイル
+- package-lock.json, package-json - ESLint や Prettier を使って VS Code で編集したいときに Node のパッケージ群を `npm i` でインストールできるようにするためのパッケージ定義ファイル
 
 ## Github Pages について
 
 Github Pages は Jekyll テンプレートが使われており、詳細については以下のドキュメントが参考になります:
 
-* [GitHub Pages のヘルプドキュメント](https://help.github.com/articles/using-jekyll-as-a-static-site-generator-with-github-pages/)
-* [Jekyll のドキュメント](https://jekyllrb.com/docs/) 配下の各ページ
-  * [Jekyll のファイル構成](https://jekyllrb.com/docs/structure/)
-  * [Configuration Options](https://jekyllrb.com/docs/configuration/options/)
-  * [Front matter](https://jekyllrb.com/docs/front-matter/) markdown 冒頭の `---` 行で囲まれたメタデータ定義セクション (YAML front matter block) の説明
-  * [Includes](https://jekyllrb.com/docs/includes/) 使い回したいパーツがある場合に `_includes` ディレクトリ配下に定義をおいて読み込む方法
+- [GitHub Pages のヘルプドキュメント](https://help.github.com/articles/using-jekyll-as-a-static-site-generator-with-github-pages/)
+- [Jekyll のドキュメント](https://jekyllrb.com/docs/) 配下の各ページ
+  - [Jekyll のファイル構成](https://jekyllrb.com/docs/structure/)
+  - [Configuration Options](https://jekyllrb.com/docs/configuration/options/)
+  - [Front matter](https://jekyllrb.com/docs/front-matter/) markdown 冒頭の `---` 行で囲まれたメタデータ定義セクション (YAML front matter block) の説明
+  - [Includes](https://jekyllrb.com/docs/includes/) 使い回したいパーツがある場合に `_includes` ディレクトリ配下に定義をおいて読み込む方法
 
 ## ローカルビルド手順
 

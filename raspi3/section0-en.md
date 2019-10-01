@@ -18,7 +18,7 @@ Get to know your CHIRIMEN for Raspberry Pi 3, and write your first program that 
 ##CHIRIMEN for Raspberry Pi 3
 "CHIRIMEN for Raspberry Pi 3” is an IoT programming environment built for Raspberry Pi 3（Raspi3).
 
-In combination with the [Web GPIO API (Draft)](http://browserobo.github.io/WebGPIO) or the [Web I2C API (Draft)](http://browserobo.github.io/WebI2C), you can write programs that controls electric parts connected to your Raspi3 via the Web. 
+In combination with the [Web GPIO API (Draft)](http://browserobo.github.io/WebGPIO) or the [Web I2C API (Draft)](http://browserobo.github.io/WebI2C), you can write programs that controls electric parts connected to your Raspi3 via the Web.
 
 ![CHIRIMEN for Raspberry Pi 3 image](imgs/section0/CHIRIMENforRaspberryPi3.png)
 
@@ -31,25 +31,25 @@ Below is the list of items you will minimally need to boot CHIRIMEN for Raspberr
 
 ![Raspi3 Basic Hardware](imgs/section0/Raspi3.jpg)
 
-* 1 [Raspberry Pi 3 Model B](https://www.raspberrypi.org/products/raspberry-pi-3-model-b/) or [Raspberry Pi 3 Model B+](https://www.raspberrypi.org/products/raspberry-pi-3-model-b-plus/) × 1
-* 1 AC adaptor + micro B USB power cable (this would work perfectly) 
- * ex: [Switching Power Supply Set for Raspberry Pi (5V 3.0A)](https://www.physical-computing.jp/product/1171)
-  * Caution: Smartphone chargers are usually 1.0〜2.0A. They officially recommend  3.0A, and therefore power supply from PCs might not be sufficient, leading to power outage. In addition, the microUSB aren't so durable, so connectors that have a built-in switch are recommended to reduce the number of times they are plugged in and out.
-* 1 HDMI cable (this should connect to your display monitor) 
-* 1 A monitor with an HDMI input (should be able to display 720P)
-* 1 USB mouse 
-* 1 USB keyboard 
-* 1 micro SD (Class 10 & up, 8GB or more storage) 
+- 1 [Raspberry Pi 3 Model B](https://www.raspberrypi.org/products/raspberry-pi-3-model-b/) or [Raspberry Pi 3 Model B+](https://www.raspberrypi.org/products/raspberry-pi-3-model-b-plus/) × 1
+- 1 AC adaptor + micro B USB power cable (this would work perfectly)
+  - ex: [Switching Power Supply Set for Raspberry Pi (5V 3.0A)](https://www.physical-computing.jp/product/1171)
+  - Caution: Smartphone chargers are usually 1.0〜2.0A. They officially recommend  3.0A, and therefore power supply from PCs might not be sufficient, leading to power outage. In addition, the microUSB aren't so durable, so connectors that have a built-in switch are recommended to reduce the number of times they are plugged in and out.
+- 1 HDMI cable (this should connect to your display monitor)
+- 1 A monitor with an HDMI input (should be able to display 720P)
+- 1 USB mouse
+- 1 USB keyboard
+- 1 micro SD (Class 10 & up, 8GB or more storage)
 
 
-### Parts you’ll need for the LED-Blink 
+### Parts you’ll need for the LED-Blink
 In addition to the basic hardware, you will need the below parts to build your first program:
 
 ![Parts you’ll need for the LED-Blink ](imgs/section0/L.jpg)
-* 1 breadboard
-* 1 LED bulb 
-* 1 resistor (150-470 ohms: depends on the LED bulb you use)
-* 2 male-female jumper wires
+- 1 breadboard
+- 1 LED bulb
+- 1 resistor (150-470 ohms: depends on the LED bulb you use)
+- 2 male-female jumper wires
 
 
 ## Writing the CHIRIMEN for Raspberry Pi 3 environment to your SD card
@@ -59,7 +59,7 @@ For instructions, visit [Setting up the CHIRIMEN for Raspberry Pi 3 environment 
 
 # 3. Booting CHIRIMEN for Raspberry Pi 3
 ## Get wired up!
-Once you have all the necessary supplies, you can connect them all together to boot the system. 
+Once you have all the necessary supplies, you can connect them all together to boot the system.
 Reference the below image to connect all of your components together. (connecting the power cable to the Raspi3 should be your last step)
 
 ![Wiring](imgs/section0/h2.jpg)
@@ -69,7 +69,7 @@ The [Raspberry Pi Hardware Guide](https://www.raspberrypi.org/learning/hardware-
 Your Raspi3 should boot once you connect the power cable (if your power cable has a on/off switch, make sure you switch it on).
 
 ##Initial Startup
-The below desktop should show once your Raspi3 boots. If you see the same screen on your display, congratulations, you’re all set! 
+The below desktop should show once your Raspi3 boots. If you see the same screen on your display, congratulations, you’re all set!
 
 ![CHIRIMEN for Raspberry Pi 3 desktop screen](imgs/section0/CHIRIMENforRaspberryPi3desktop.png)
 
@@ -77,7 +77,7 @@ The below desktop should show once your Raspi3 boots. If you see the same screen
 If it displays a different screen than the one in the image above, chances are you have a different SD card from CHIRIMEN for Raspberry Pi 3 inserted.
  Retry [burning the CHIRIMEN for Raspberry Pi 3 environment onto your SD card ](https://gist.github.com/tadfmac/527b31a463df0c9de8c30a598872344d) again.
 
-If nothing displays even though the power cable is connected and turned on, check to see if everything is connected to its correct position. 
+If nothing displays even though the power cable is connected and turned on, check to see if everything is connected to its correct position.
 If the red LED on your Raspi3 isn’t flashing even though everything is connected correctly, your AC cable may not be receiving any power.
 
 ## Configuring Wi-Fi settings
@@ -96,12 +96,12 @@ With your device connected to the Internet, you’re finally ready to get coding
 
 ## “LED-Blink”
 LED-Blink refers to the act of turning an LED on and off. The LED-Blink program aims to make this phenomenon happen via code.
- 
-* FYI: [LED (Light Emitting Diode) ](https://en.wikipedia.org/wiki/Light-emitting_diode)
+
+- FYI: [LED (Light Emitting Diode) ](https://en.wikipedia.org/wiki/Light-emitting_diode)
 
 ## Wiring up
-To make your LED bulb flash, you must correctly connect it to your Raspi3. 
-Your LED bulb should have two leads coming out from it. The longer end is the anode (positive), the shorter the cathode (negative). 
+To make your LED bulb flash, you must correctly connect it to your Raspi3.
+Your LED bulb should have two leads coming out from it. The longer end is the anode (positive), the shorter the cathode (negative).
 
 If you navigate to the below directory on your CHIRIMEN for Raspberry Pi 3, you can find the wiring diagram along with examples preinstalled.
 
@@ -115,7 +115,7 @@ First, double-click on the schematic.png file to open it.
 
 ![example: LEDblink の配線図](imgs/section0/example_LEDblink.png)
 
-Reference the diagram to connect your parts together. 
+Reference the diagram to connect your parts together.
 
 Make sure to be aware of the anode (positive: longer end) and the cathode (negative: shorter end).
 
@@ -124,11 +124,11 @@ You should end up with something that looks more or less like this:
 ![all-wired-up](imgs/section0/h.jpg)
 
 ### References
-* [Using a breadboard](https://www.sunhayato.co.jp/blog/2015/03/04/7)
-* [Using an LED](https://www.marutsu.co.jp/pc/static/large_order/led)
-* [Reading resistors](http://www.jarl.org/Japanese/7_Technical/lib1/teikou.htm)
-* [Raspberry Pi3 and GPIOs](https://tool-lab.com/make/raspberrypi-startup-22/)
-* [Using a tester to read resistors](http://startelc.com/elcLink/tester/elc_nArtcTester2.html#chapter-2)
+- [Using a breadboard](https://www.sunhayato.co.jp/blog/2015/03/04/7)
+- [Using an LED](https://www.marutsu.co.jp/pc/static/large_order/led)
+- [Reading resistors](http://www.jarl.org/Japanese/7_Technical/lib1/teikou.htm)
+- [Raspberry Pi3 and GPIOs](https://tool-lab.com/make/raspberrypi-startup-22/)
+- [Using a tester to read resistors](http://startelc.com/elcLink/tester/elc_nArtcTester2.html#chapter-2)
 
 ## Running the example program
 Now you’re ready to make the bulb work.
@@ -169,13 +169,13 @@ To be certain, you can close your browser and reboot it. (or you can just close 
 
 ![Relaunching the browser](imgs/section0/b.png)
 
-##Open the JS Bin example from the browser’s bookmark
-OK, so the online version. 
+##Open the JS Bin example
+OK, so the online version.
 You can keep everything connected as it is.
 
-On the browser’s bookmarks bar, go to ```examples > GPIO > GPIO-Blink — JS Bin```.
+On the browser’s bookmarks bar, go to ```Examples > GPIO Examples > GPIO-Blink > JSBin```.
 
-![bookmark](imgs/section0/bookmark.png)
+{% cloudinary imgs/section0/gpio-blink-online-example.png alt="link to https://r.chirimen.org/gpio-blink" %}
 
 You should end up with a screen like this. (The screenshot actually has the titlebar hidden by clicking on the “output” tab once)
 
@@ -206,7 +206,7 @@ polyfill.js is a Po [Polyfill (ブラウザ標準に未実装の機能などを�
 ```javascript
 mainFunction(); // run the below async function (entry point for this program)
 
-async function mainFunction(){ //The main part of the program. wrap the entire program with an async function so it runs asyncronosly    
+async function mainFunction(){ //The main part of the program. wrap the entire program with an async function so it runs asyncronosly
 var gpioAccess = await navigator.requestGPIOAccess(); // add await to call the function before the then
   var port = gpioAccess.ports.get(26);
   await port.export("out");
@@ -236,7 +236,7 @@ If you are unfamiliar with asynchronous processes and/or ```async wait```  you c
 ### Note:
 This tutorial uses ```async wait``` since we think it is the easiest among asynchronous processing for beginners to understand. However, this function is rather within Javascript, and it may not work with some browsers. (It works on Chrome and Firefox) (You can see which browser supports the technology [here](https://caniuse.com/#feat=async-functions))
 
-## Explanation 
+## Explanation
 
 The first code in the JavaScript is ```navigator.requestGPIOAccess()```.
 This is to use the [Web GPIO API](http://browserobo.github.io/WebGPIO) we mentioned above to get the interface needed to access the GPIO called gpioAccess.
@@ -260,7 +260,7 @@ You can read more [here](https://tool-lab.com/make/raspberrypi-startup-22/)
 Back to the code.
 
 ```var port = gpioAccess.ports.get(26)```
-The above code is used to get an **object to access GPIO port #26.** 
+The above code is used to get an **object to access GPIO port #26.**
 Next, with ```port.export("out”)```, **port #26 is configured as an output port**. Now we can change the voltage that goes to the LED bulb.
 
 Lastly, port.write(1) and port.write(0) are alternately called in 1000ms intervals to make the voltage for GPIO #26 change  3.3V→0V→3.3V→0V and so on.
@@ -272,18 +272,18 @@ As a summary:
 ![Sequence](imgs/section0/s.png)
 
 ## Editing the example
-If you find the JavaScript pane on the JS Bin site, you can edit the JS code from there. 
+If you find the JavaScript pane on the JS Bin site, you can edit the JS code from there.
 Here are some challenges for you;
 
-* Making the flash faster/slower
-* Changing the GPIO port to a different port (you will need to do some rewiring of jumpers)
-* make a button, switch, etc. on the index.html page and control the LED using that interface.
+- Making the flash faster/slower
+- Changing the GPIO port to a different port (you will need to do some rewiring of jumpers)
+- make a button, switch, etc. on the index.html page and control the LED using that interface.
 
 
 #Summary
 In this tutorial, we tried the following tasks:
-* Setting up and booting CHIRIMEN for Raspberry Pi 3
-* Running the LED-Blink sample program
-* Editing the LED-Blink code on JS Bin.
+- Setting up and booting CHIRIMEN for Raspberry Pi 3
+- Running the LED-Blink sample program
+- Editing the LED-Blink code on JS Bin.
 
 In the next tutorial[Tutorial 1. GPIO](https://tutorial.chirimen.org/raspi3/en/section1), we will learn about GPIO inputs.

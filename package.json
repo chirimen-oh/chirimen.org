@@ -3,7 +3,8 @@
   "version": "1.0.0",
   "description": "Tutorials for CHIRIMEN in markdown.",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "serve": "bundle exec jekyll serve",
+    "build": "bundle exec jekyll build"
   },
   "repository": {
     "type": "git",

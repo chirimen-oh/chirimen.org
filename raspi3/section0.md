@@ -22,7 +22,7 @@ CHIRIMEN for Raspberry Pi 3 は、Raspberry Pi 3 (以下 Raspi) で動作する 
 
 ### 基本ハードウエア
 
-下記が CHIRIMEN for Raspberry Pi 3 の起動に最低限必要となる基本ハードウエアです。
+CHIRIMEN for Raspberry Pi 3 の起動に最低限必要となる基本ハードウエアは次の通りです。
 
 [{% cloudinary imgs/section0/Raspi3.jpg alt="Raspi の起動に必要なハードウエア一覧" %}](imgs/section0/Raspi3.jpg)
 
@@ -30,14 +30,14 @@ CHIRIMEN for Raspberry Pi 3 は、Raspberry Pi 3 (以下 Raspi) で動作する 
   - 補足: Raspberry Pi 3 Model A+ や Raspberry Pi 4 も対応見込みですが執筆時点では未検証です
 - AC アダプタ + micro B USB 電源ケーブル × 1
   - 例: [Raspberry Pi 用電源セット(5V 3.0A) - Pi3 フル負荷検証済](https://www.physical-computing.jp/product/1171)
-  - 注意: 一般的なスマホ向けのもの (1.0〜2.0A 程度の出力) でも起動できますが、公式には 3.0A を必要としており、PC からの給電などでは電力不足で性能が落ちたり不安定になることがあります。また、microUSB 端子は強度が高くないのでスイッチ付きでコネクタの抜き差し回数を少なくできるケーブル付のものがオススメです
+  - 注意: 一般的なスマホ向けのもの (1.0〜2.0A 程度の出力) でも起動できますが、公式には 3.0A を必要としており、PC からの給電などでは電力不足で性能低下や不安定な原因になります。microUSB 端子は強度が高くないためスイッチ付きで抜き差し回数を少なくできるケーブル付のものがオススメです
 - HDMI 入力つきのモニタ (720P の解像度に対応したもの) × 1
   - モバイルモニタでも文字が見やすいようデフォルト解像度を 720p としています
 - HDMI ケーブル (モニタ側の端子と合うものを選んでください) × 1
 - USB マウス × 1
 - USB キーボード (日本語配列) × 1
   - 初期設定の日本語 (JIS) 配列以外のキーボードを利用する際は [raspi-config コマンド](http://igarashi-systems.com/sample/translation/raspberry-pi/configuration/raspi-config.html) で変更してください
-- [CHIRIMEN起動イメージ](sdcard.md)入りの micro SD カード (8GB 以上必須、Class 10 以上で高速なものを推奨) × 1
+- [CHIRIMEN 起動イメージ](sdcard.md)入りの micro SD カード (8GB 以上必須、Class 10 以上で高速なものを推奨) × 1
 
 ### L チカに必要となるパーツ
 
@@ -52,7 +52,7 @@ CHIRIMEN for Raspberry Pi 3 は、Raspberry Pi 3 (以下 Raspi) で動作する 
 
 ## SD カードへ CHIRIMEN for Raspberry Pi 3 環境を書き込む
 
-起動する前に、SD カードへ CHIRIMEN Raspi3 環境（起動イメージファイル）を書き込んでおく必要があります。
+起動する前に、SD カードへ CHIRIMEN Raspi3 環境（[起動イメージファイル](https://r.chirimen.org/sdimage)） を書き込んでおく必要があります。
 
 手順は [CHIRIMEN for Raspberry Pi 3 の SD カードを作成する](sdcard) を参照してください。
 
@@ -70,8 +70,9 @@ CHIRIMEN for Raspberry Pi 3 は、Raspberry Pi 3 (以下 Raspi) で動作する 
 
 ## 起動確認
 
-電源を入れると Raspi の microSD コネクタ横の赤い LED が点灯し、OS の起動後、下記のようなデスクトップ画面が表示されたら CHIRIMEN Raspi3 の起動に成功しています。おめでとうございます！
+電源を入れると Raspi の microSD コネクタ横の赤い LED が点灯し、OS の起動後、下記のようなデスクトップ画面が表示されたら CHIRIMEN Raspi3 の起動に成功しています (OS イメージや画面サイズにより細部は異なることがあります)。おめでとうございます！
 
+<!-- TODO: デスクトップ画面のスクリーンショット古い -->
 {% cloudinary imgs/section0/CHIRIMENforRaspberryPi3desktop.png alt="CHIRIMEN for Raspberry Pi 3 desktop 画面" %}
 
 ## 残念ながら上記画面が表示されなかった！？
@@ -83,12 +84,9 @@ CHIRIMEN for Raspberry Pi 3 は、Raspberry Pi 3 (以下 Raspi) で動作する 
 ## WiFi の設定
 
 デスクトップ画面が表示されたら、さっそく WiFi を設定して、インターネットに繋げてみましょう。
-CHIRIMEN Raspi3 では、ネットワークに繋がなくてもローカルファイルを使ったプログラミングが一応可能ですが、[JS Bin](https://jsbin.com/) や [JSFiddle](https://jsfiddle.net/) などの Web 上のエディタを活用することで、より便利にプログラミングが進められるようになります。
-また、CHIRIMEN Raspi3 に関する情報も今後インターネット上で充実していく予定です。
+CHIRIMEN Raspi3 では、ネットワークに繋がずローカルファイルでプログラミングも可能ですが、[JS Bin](https://jsbin.com/) や [JSFiddle](https://jsfiddle.net/) あるいは [CodeSandbox](https://codesandbox.io/) などブラウザ上で動くエディタを活用することで、より簡単にプログラミングできます。
 
-ぜひ、最初にインターネット接続環境を整えておきましょう。
-
-WiFi の設定は、タスクバーの右上の WiFi アイコンから行えます。
+ぜひ、最初にインターネットに接続しておきましょう。WiFi の設定は、タスクバーの右上の WiFi アイコンから行えます。
 
 {% cloudinary imgs/section0/wifi.png alt="WiFi設定" %}
 
@@ -153,6 +151,7 @@ L チカのためのサンプルコードは先ほどの配線図と同じフォ
 ## L チカの様子
 
 {% cloudinary imgs/section0/L.gif alt="Lチカ成功" %}
+
 <!-- TODO: ファイルサイズの小さい WebM 動画などに -->
 
 L チカに成功しましたか？！
@@ -175,41 +174,32 @@ L チカに成功しましたか？！
 
 {% cloudinary imgs/section0/b.png alt="ブラウザの再起動" %}
 
-## ブラウザのブックマークから、JS Bin の example を起動
+## オンラインの example の実行
 
 それでは、さっそくオンラインの example を実行してみます。
 配線は、さきほどのままで OK です。
 
-ブラウザを起動後、ブックマークバーから `examples > GPIO-JSBIN > GPIO-Blink - JS Bin` を選んでアクセスしてください。
+[オンラインの example へのリンク](https://r.chirimen.org/gpio-blink)は、ブラウザを起動後、ブックマークバーにある[Examples](https://r.chirimen.org/examples)のページの中にあります。
 
-{% cloudinary imgs/section0/bookmark.png alt="bookmark" %}
+{% cloudinary imgs/section0/gpio-blink-online-example.png alt="https://r.chirimen.org/gpio-blink へのリンク" %}
 
 そのまま起動すると下記のような画面になります。(下記スクリーンショットはアクセス直後の画面から JS Bin のタイトルバー部の「Output」タブを 1 回押して非表示にしています)
 
 <!-- TODO: 古いコードの画像になってる -->
+
 {% cloudinary imgs/section0/JSBinLexample.png alt="JS BinでのLチカexample画面" %}
 
 それでは、コードを眺めてみましょう。
 
 ## HTML
 
-<!-- TODO: include したいが jsbin では s0.js は script タグで読まないのでコード違う... -->
 ```html
-<!DOCTYPE html>
-<html>
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width">
-  <title>GPIO-Blink</title>
-</head>
-<body>
-  <script src="https://chirimen.org/chirimen-raspi3/gc/polyfill/polyfill.js"></script>
-</body>
-</html>
+{% include_relative examples/section0/s0.html -%}
 ```
 
-HTML では `polyfill.js` という JavaScript ライブラリを読み込んでいます。
-polyfill.js は [Web GPIO API](http://browserobo.github.io/WebGPIO) と、[Web I2C API](http://browserobo.github.io/WebI2C) という W3C でドラフト提案中の 2 つの API への [Polyfill (ブラウザ標準に未実装の機能などを利用可能にするためのライブラリ)](https://developer.mozilla.org/ja/docs/Glossary/Polyfill) となっており、これを最初に読み込むことで GPIO や I2C の JavaScript API が使えるようになります。
+`polyfill.js` という JavaScript ライブラリを読み込んでいます。これは [Web GPIO API](http://browserobo.github.io/WebGPIO) と、[Web I2C API](http://browserobo.github.io/WebI2C) という W3C でドラフト提案中の 2 つの API への [Polyfill (新しい API を未実装のブラウザでも同じコードが書けるようにするためのライブラリ)](https://developer.mozilla.org/ja/docs/Glossary/Polyfill) で、最初に読み込むとそれ以降のコードで GPIO や I2C を操作する JavaScript API が使えるようになります。
+
+** `/home/pi/Desktop/gc/gpio/LEDblink/index.html` などの example では、インターネット未接続時にも動作するよう Polyfill を含めたコード一式をローカルにコピーしてあるので `node_modules/@chirimen-raspi/polyfill/polyfill.js` のようなパスで読み込みます。オンラインにホストされている最新版を読み込む場合には `https://r.chirimen.org/polyfill.js` を指定します。**
 
 ## JavaScript
 

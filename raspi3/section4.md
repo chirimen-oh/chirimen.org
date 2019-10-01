@@ -35,9 +35,9 @@ CHIRIMEN for Raspberry Pi 3（以下 「CHIRIMEN Raspi3」） を使ったプロ
 シンプルに下記のような基本仕様にしてみます。
 
 - 定期的に測定した温度を画面に表示する。
-- 一定温度以上になったらモーターを回す。一定温度以下になったらモーターを止める。
+- 一定温度以上になったらちびギアモータを動かす。一定温度以下になったら止める。
 
-[1. GPIO の使い方](section1.md) で MOSFET ＋ モーターと [2. I2C 基本編（ADT7410 温度センサー）](section2.md) で使った温度センサーがあればできそうですね。
+[1. GPIO の使い方](section1.md) で使った MOSFET ＋ ちびギアモータと [2. I2C 基本編（ADT7410 温度センサー）](section2.md) で使った温度センサーがあればできそうですね。
 
 # 1.準備
 
@@ -57,14 +57,14 @@ CHIRIMEN for Raspberry Pi 3（以下 「CHIRIMEN Raspi3」） を使ったプロ
 
 今回用意するものが多いですが、これまでのチュートリアルで使ったことがあるものばかりですので、ご安心ください。
 
-{% cloudinary imgs/section4/parts-1.jpg alt="利用部品の写真" %}
+{% cloudinary imgs/section4/parts-chibi.png alt="利用部品の写真" %}
 
 # 2.まずは仕様通りにつくる
 
 ## a. 部品と配線について
 
 Raspberry Pi 3 との接続方法については、下記回路図を参照ください。
-
+<!--要編集-->
 {% cloudinary imgs/section4/schematic.png alt="回路図" %}
 
 ## b. 接続確認
@@ -86,8 +86,8 @@ Raspberry Pi 3 との接続方法については、下記回路図を参照く�
 
 [jsfiddle](https://jsfiddle.net/) の`HTML`ペインには下記内容のコードを記載してください。
 
-1. [Web GPIO API / Web I2C API の polyfill](https://chirimen.org/chirimen-raspi3/gc/polyfill/polyfill.js) を読み込むコード
-2. [ADT7410 のドライバーライブラリ](https://chirimen.org/chirimen-raspi3/gc/drivers/i2c-ADT7410.js)を読み込むコード ※任意。[以前の記事](srction2.md) を参考に、ドライバーを使わずに書いても良いです。
+1. [Web GPIO API / Web I2C API の polyfill](https://r.chirimen.org/polyfill.js) を読み込むコード
+2. [ADT7410 のドライバーライブラリ](https://r.chirimen.org/adt7410.js)を読み込むコード ※任意。[以前の記事](srction2.md) を参考に、ドライバーを使わずに書いても良いです。
 3. 温度表示用の要素 (DIV タグなど)
 
 ## JavaScript
@@ -112,7 +112,7 @@ Raspberry Pi 3 との接続方法については、下記回路図を参照く�
 
 - `adt7410.read()`を使い定期的(1 秒ごと)に温度を読み込む
 - 温度データを HTML の表示用要素に反映させる。温度が 30 度以上なら、表示に変化をつける (文字を大きくする、赤くする、等)
-- 温度が 32 度以上になったら GPIO 26 番ポートに`1 (HIGH)`を書き込むことでファンを回す。温度が 32 度未満なら、GPIO 26 番ポートに`0 (LOW)` を書き込むことでファンを止める
+- 温度が 32 度以上になったら GPIO 26 番ポートに`1 (HIGH)`を書き込むことでちびギアモータを動かす。温度が 32 度未満なら、GPIO 26 番ポートに`0 (LOW)` を書き込むことでギアモータを止める
 
 > Note: ここでも同様に非同期処理の関数の呼び出しに関してはそれぞれ`await` を忘れずに。温度の読み取りが終わってから、その値に応じてファンを制御します。
 
