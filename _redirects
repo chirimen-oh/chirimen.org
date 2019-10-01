@@ -11,3 +11,4 @@ https://tutorial-chirimen-org.netlify.com/*   https://tutorial.chirimen.org/:spl
 /raspberrypi/*  /raspi3/:splat
 /raspi3/ja/*    /raspi3/:splat
 /raspi3/en/*    /en/raspi3/:splat
+/raspi3/appendix0  /js/async
