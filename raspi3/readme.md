@@ -55,6 +55,7 @@ LED と温度センサーを使ってみる最小限のお試しページです�
     - CHIRIMEN for Raspberry Pi 3 環境で Web Bluetooth API を使ってデバイス制御するサンプルです。
     - Web I2C API や Web Audio API と組み合わせて PLAYBULB (Bluetooth 接続の LED 電球) を制御します。
 - [6. Arduino と連携する (ステッピングモーターの制御)](section6.md)
+  
   - CHIRIMEN for Raspberry Pi 3 と Arduino を組み合わせてステップピングモーターを制御します。I2C 接続した Arduino を利用することで μ 秒単位でモータードライバの制御を行います。
 
 ## 対応デバイスと Example 集
@@ -72,21 +73,10 @@ Advanced Example は個人レベルで動作確認して追加されている co
 
 ## Appendix, Tips, FAQ, Links etc...
 
-JavaScript 未経験者や非同期処理に慣れていない方向けの解説はこちらをご覧ください:
+JavaScript 未経験者・初心者向けの資料集や、良くある質問、Tips やテクニック、デバッグとトラブルシューティングのページを用意しています。
 
-- [JavaScript 1 Day 講習 (PDF 版)](https://webiotmakers.github.io/static/docs/2017/maebashi-js.pdf)
-  - 初めてプログラミングする人に 1 日で JavaScript を教えるときにちょうど良いボリューム・内容の資料です
-  - 編集してご利用される方は [オリジナルの PPTX ファイル](https://drive.google.com/file/d/1OR3FRuIu134ftYM7fp-leK9dwc3rUI5O/view?usp=sharing) をどうぞ
-- [JavaScript Primer - ECMAScript 2019時代のJavaScript入門書](https://jsprimer.net/)
-  - 最新言語仕様も考慮した本格的な JavaScript 入門書です
-  - 開発ツールなどについても [付録: 参考リンク集](https://jsprimer.net/appendix/links/) が参考になります
-- [JavaScript チートシート](https://jsprimer.net/cheetsheet/)
-  - JavaScript の基本的な言語機能をまとめたチートシートです。プログラミング初心者に特にオススメ。
-- [非同期処理 (async await版)](appendix0.md)
-  - ハード制御で必ず必要だが引っかかる人が多い非同期処理についての解説です
-  - 非同期処理についてより詳しくは [JS Primer の非同期処理説明ページ](https://jsprimer.net/basic/async/) が参考になります
-
-良くある質問、Tips やテクニック、デバッグとトラブルシューティングについてはこちらをご覧ください:
+- [JavaScript 学習資料集](/js/readme.md)
+  - JavaScript 1 Day 講習資料、JavaScript 本格入門書、チートシートなどはこちら
 
 - [良くある質問](faq.md)
 - [Tips・テクニック集](tips.md)
