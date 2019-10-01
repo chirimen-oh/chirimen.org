@@ -10,6 +10,7 @@ CHIRIMEN for Raspberry Pi 3を用いた IoT システムプロトタイピング
 JavaScript プログラミング未経験者は、ページ下部で紹介している資料・サイトも参照しつつご覧ください。
 
 ## Hello Real World
+
 短時間でさっと CHIRIMEN を体験するときにはこちらをご覧ください。
 
 - [Hello Real World](hellorealworld.md)
@@ -18,6 +19,7 @@ JavaScript プログラミング未経験者は、ページ下部で紹介して
 LED と温度センサーを使ってみる最小限のお試しページです。より詳しくは以下のチュートリアルをご覧ください。
 
 ## 基礎編
+
 まずはシンプルな GPIO 入出力や I2C センサーの操作方法を学びましょう。
 
 - [0. L チカしてみよう (初めての GPIO)](section0.md)
@@ -28,6 +30,7 @@ LED と温度センサーを使ってみる最小限のお試しページです�
   - 温度センサーの値をドライバーを使う場合と [WebGPIO API](http://browserobo.github.io/WebI2C) を直接操作する場合の 2 パターンで読み取ることで、I2C デバイス操作の基本を学びます。
 
 ## 応用編
+
 いろいろな I2C デバイスを繋いだり組み合わせたりすることで IoT プロトタイピングを体験しましょう。
 
 - [3. I2C の使い方](section3.md)
@@ -55,6 +58,7 @@ LED と温度センサーを使ってみる最小限のお試しページです�
   - CHIRIMEN for Raspberry Pi 3 と Arduino を組み合わせてステップピングモーターを制御します。I2C 接続した Arduino を利用することで μ 秒単位でモータードライバの制御を行います。
 
 ## 対応デバイスと Example 集
+
 CHIRIMEN for Raspberry Pi 3 対応デバイスのドライバ・回路図・サンプルコードをセットにした Example 集を用意しています。
 
 [対応デバイスのリスト](partsList.md) : 下記サンプルへのリンク付き
@@ -67,6 +71,7 @@ Basic GPIO/I2C Examle のデバイスは CHIRIMEN Raspi3 の OS イメージ公�
 Advanced Example は個人レベルで動作確認して追加されている contrib デバイスです。いずれも元のソースコードは [こちら](https://github.com/chirimen-oh/chirimen-raspi3/tree/master/gc) に収録されています。
 
 ## Appendix, Tips, FAQ, Links etc...
+
 JavaScript 未経験者や非同期処理に慣れていない方向けの解説はこちらをご覧ください:
 
 - [JavaScript 1 Day 講習 (PDF)](https://webiotmakers.github.io/static/docs/2017/maebashi-js.pdf)
@@ -74,6 +79,8 @@ JavaScript 未経験者や非同期処理に慣れていない方向けの解説
 - [JavaScript Primer - ECMAScript 2019時代のJavaScript入門書](https://jsprimer.net/)
   - 最新言語仕様も考慮した本格的な JavaScript 入門書です
   - 開発ツールなどについても [付録: 参考リンク集](https://jsprimer.net/appendix/links/) が参考になります
+- [JavaScript チートシート](https://jsprimer.net/cheetsheet/)
+  - JavaScript の基本的な言語機能をまとめたチートシートです。プログラミング初心者に特にオススメ。
 - [非同期処理 (async await版)](appendix0.md)
   - ハード制御で必ず必要だが引っかかる人が多い非同期処理についての解説です
   - 非同期処理についてより詳しくは [JS Primer の非同期処理説明ページ](https://jsprimer.net/basic/async/) が参考になります
@@ -86,6 +93,7 @@ JavaScript 未経験者や非同期処理に慣れていない方向けの解説
 - [講師向けページ](teacher.md)
 
 ## 以前のチュートリアル
+
 本チュートリアルは CHIRIMEN コミュニティで日々更新していますが、使用機材や手順を変更することもあります。お手持ちの機材が古い場合や、以前学習したときのものを参照したい場合など、必要に応じてこちらのアーカイブをご覧ください。
 
 - [2018 年度のスターターキットを利用するチュートリアル](https://webiot-2018--tutorial-chirimen-org.netlify.com/raspi3/ja/)
