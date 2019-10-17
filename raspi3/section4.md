@@ -64,8 +64,8 @@ CHIRIMEN for Raspberry Pi 3（以下 「CHIRIMEN Raspi3」） を使ったプロ
 ## a. 部品と配線について
 
 Raspberry Pi 3 との接続方法については、下記回路図を参照ください。
-<!--要編集-->
-{% cloudinary imgs/section4/schematic.png alt="回路図" %}
+
+{% cloudinary imgs/section4/schematic_new.png alt="回路図" %}
 
 ## b. 接続確認
 
