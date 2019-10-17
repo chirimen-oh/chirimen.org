@@ -40,7 +40,7 @@ https://github.com/g200kg/chirimen-webbluetooth
 ## 前提
 
 - CHIRIMEN for Raspberry Pi の基本的な動かし方については、「[L チカしてみよう](section0.md)」の通りにできているものとします。
-また、測距センサ(GP2Y0E03)は「[I2C の使い方](seection3.md)」の通りに動作しているものとします。
+また、測距センサ(GP2Y0E03)は「[I2C の使い方](section3.md)」の通りに動作しているものとします。
 
 ## WebBluetoothの有効化
 
