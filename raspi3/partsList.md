@@ -14,7 +14,7 @@
 |距離センサ(50cm程度まで)|[GP2Y0E03](http://akizukidenshi.com/catalog/g/gI-07547/)|![](partsImgs/GP2Y0E03.jpg)|[Examples](https://chirimen.org/chirimen-raspi3/gc/top/examples/#I2C-GP2Y0E03)|
 |距離センサ(2m弱まで)|[VL53L0X](https://www.switch-science.com/catalog/2869/)|![](partsImgs/VL53L0X.jpg)|[Examples](https://chirimen.org/chirimen-raspi3/gc/top/examples/#I2C-VL53L0X)|
 |ジェスチャーセンサ|[Grove-Gesture](https://www.switch-science.com/catalog/2645/) (PAJ7620U2)|![](partsImgs/Grove-Gesture.jpg)|[Examples](https://chirimen.org/chirimen-raspi3/gc/top/examples/#I2C-Grove-Gesture)|
-|光センサ|[Grove-Light](https://www.switch-science.com/catalog/1174/|![](partsImgs/Grove-Light.jpg)|[Examples](https://chirimen.org/chirimen-raspi3/gc/top/examples/#I2C-Grove-Light)|
+|光センサ|[Grove-Light](https://www.switch-science.com/catalog/1174/)|![](partsImgs/Grove-Light.jpg)|[Examples](https://chirimen.org/chirimen-raspi3/gc/top/examples/#I2C-Grove-Light)|
 |小型ディスプレイ|[Grove-OledDisplay](https://www.switch-science.com/catalog/829/)|![](partsImgs/Grove-OledDisplay.jpg)|[Examples](https://chirimen.org/chirimen-raspi3/gc/top/examples/#I2C-Grove-OledDisplay)|
 |タッチセンサ|[Grove-Touch](https://www.switch-science.com/catalog/825/)|![](partsImgs/Grove-Touch.jpg)|[Examples](https://chirimen.org/chirimen-raspi3/gc/top/examples/#I2C-Grove-Touch)|
 |カラーセンサ|[S11059](http://akizukidenshi.com/catalog/g/gK-08316/)|![](partsImgs/S11059.jpg)|[Examples](https://chirimen.org/chirimen-raspi3/gc/top/examples/#I2C-S11059)|
@@ -22,14 +22,14 @@
 |3軸加速度センサ|[Grove-Accelerometer](https://www.switch-science.com/catalog/972/)|![](partsImgs/Grove-Accelerometer.jpg)|[Examples](https://chirimen.org/chirimen-raspi3/gc/top/examples/#I2C-Grove-Accelerometer)|
 |3軸加速度+ジャイロ 複合センサ|[MPU6050](http://www.aitendo.com/product/9549)|![](partsImgs/MPU6050.jpg)|[Examples](https://chirimen.org/chirimen-raspi3/gc/top/examples/#I2C-MPU6050)|
 |3軸加速度+ジャイロ+磁気 複合センサ|[MPU9250](https://www.amazon.co.jp/HiLetgo®-MPU9250-9自由度1-ジャイロスコープ-磁気センサ/dp/B0154PM102/)|![](partsImgs/MPU9250_.jpg)|[Examples](https://chirimen.org/chirimen-raspi3/gc/top/examples/#I2C-MPU9250)|
-|Neopixel LEDコントローラ|[NEOPIXEL](https://chirimen.org/chirimen-raspi3/gc/top/examples/#I2C-NEOPIXEL_I2C)|![](partsImgs/neopixelI2c.jpg)|[Examples](https://chirimen.org/chirimen-raspi3/gc/top/examples/#I2C-NEOPIXEL_I2C)|
-|↑ Neopixel LED 8x8|-|![](partsImgs/neopixel64.jpg)|-|
+|Neopixel LEDコントローラ|詳細は[Examples](https://chirimen.org/chirimen-raspi3/gc/top/examples/#I2C-NEOPIXEL_I2C)をご覧ください|![](partsImgs/neopixelI2c.jpg)|[Examples](https://chirimen.org/chirimen-raspi3/gc/top/examples/#I2C-NEOPIXEL_I2C)|
+|↑ Neopixel LED 8x8|[64 LED マトリックス](https://www.amazon.co.jp/dp/B07KG3Y2BG/)|![](partsImgs/neopixel64.jpg)|-|
 |↑ 1x4|-|![](partsImgs/neopixel4.jpg)|-|
 |↑ 12|-|![](partsImgs/neopixel12.jpg)|-|
 |↑ 60|-|![](partsImgs/neopixel60.jpg)|-|
-|サーボモータ・DCモータ コントローラ|PCA9685|![](partsImgs/PCA9685.jpg)|-|
-|↑|[PCA9685 Servo](https://chirimen.org/chirimen-raspi3/gc/top/examples/#I2C-PCA9685)|![](partsImgs/PCA9685_Servo2.jpg)|[Examples](https://chirimen.org/chirimen-raspi3/gc/top/examples/#I2C-PCA9685)|
-|↑|[PCA9685 PWM](https://chirimen.org/chirimen-raspi3/gc/top/examples/#GPIO-I2C-PWMHBridge-1)|![](partsImgs/PCA9685.jpg)|[Examples](https://chirimen.org/chirimen-raspi3/gc/top/examples/#GPIO-I2C-PWMHBridge-1)|
+|サーボモータ・DCモータ コントローラ|[PCA9685](https://www.switch-science.com/catalog/961/)|![](partsImgs/PCA9685.jpg)|-|
+|↑|[SG90 Servo](http://akizukidenshi.com/catalog/g/gM-08761/)|![](partsImgs/PCA9685_Servo2.jpg)|[Examples](https://chirimen.org/chirimen-raspi3/gc/top/examples/#I2C-PCA9685)|
+|↑|PCA9685 PWM|![](partsImgs/PCA9685.jpg)|[Examples](https://chirimen.org/chirimen-raspi3/gc/top/examples/#GPIO-I2C-PWMHBridge-1)|
 
 ## GPIO センサ・アクチュエータコントローラ
 |カテゴリー|型番|画像|
