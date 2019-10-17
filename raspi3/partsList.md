@@ -1,7 +1,7 @@
 # CHIRIMEN for Raspberry Pi3 対応デバイス / パーツ リスト
 
 ## I2C センサー
-|カテゴリ|部品型番 <br> （製品の詳細・販売ページへリンクしています）|画像|Examples へのリンク|
+|カテゴリ|部品型番|画像|Examples へのリンク|
 |-|-|-|-|
 |ADC(アナログ電圧測定) 12bit精度|[ADS1015](https://www.switch-science.com/catalog/1136/)|![](partsImgs/ADS1015.jpg)|[Examples](https://chirimen.org/chirimen-raspi3/gc/top/examples/#I2C-ADS1015)|
 |↑16bit精度|[ADS1115](https://www.switch-science.com/catalog/1138/)|![](partsImgs/ADS1115.jpg)|[Examples](https://chirimen.org/chirimen-raspi3/gc/top/examples/#I2C-ADS1115)|
