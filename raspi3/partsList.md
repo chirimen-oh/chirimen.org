@@ -3,16 +3,16 @@
 ## I2C センサー
 |カテゴリ|部品型番</br>※購入先例にリンクしています|画像|各種リンク|
 |-|-|-|-|
-|ADC(アナログ電圧測定) 12bit精度|[ADS1015](https://www.switch-science.com/catalog/1136/)|![](partsImgs/ADS1015.jpg)|[Examples](https://chirimen.org/chirimen-raspi3/gc/top/examples/#I2C-ADS1015)|
+|ADC(アナログ電圧測定) 12bit精度|[ADS1015](https://www.switch-science.com/catalog/1136/)|![](partsImgs/ADS1015.jpg)|[Examples](https://chirimen.org/chirimen-raspi3/gc/top/examples/#I2C-ADS1015)</br>[回路図](https://github.com/adafruit/ADS1X15-Breakout-Board-PCBs)</br>[データシート](https://cdn-shop.adafruit.com/datasheets/ads1015.pdf)|
 |↑16bit精度|[ADS1115](https://www.switch-science.com/catalog/1138/)|![](partsImgs/ADS1115.jpg)|[Examples](https://chirimen.org/chirimen-raspi3/gc/top/examples/#I2C-ADS1115)|
 |ADC, DAC(アナログ電圧出力) 複合|[PCF8591](http://www.aitendo.com/product/10938)|![](partsImgs/PCF8591.jpg)|[Examples](https://chirimen.org/chirimen-raspi3/gc/top/examples/#I2C-PCF8591)|
-|温度センサ|[ADT7410](http://akizukidenshi.com/catalog/g/gM-06675/)|![](partsImgs/ADT7410.jpg)|[Examples](https://chirimen.org/chirimen-raspi3/gc/top/examples/#I2C-ADT7410)|
-|サーモグラフィ(8x8ピクセル)|[AMG8833](https://www.switch-science.com/catalog/3395/)|![](partsImgs/AMG8833.JPG)|[Examples](https://chirimen.org/chirimen-raspi3/gc/top/examples/#I2C-AMG8833)|
-|温度, 圧力, 湿度 複合センサ|[BME280](http://www.aitendo.com/product/15535)|![](partsImgs/BME280.jpg)|[Examples](https://chirimen.org/chirimen-raspi3/gc/top/examples/#I2C-BME280)|
-|温度, 圧力 複合センサ|[BMP180](http://www.aitendo.com/product/10760)|![](partsImgs/BMP180.jpg)|[Examples](https://chirimen.org/chirimen-raspi3/gc/top/examples/#I2C-BMP180)|
-|温度, 圧力 複合センサ|[BMP280](http://www.aitendo.com/product/15806)|![](partsImgs/BMP280.jpeg)|[Examples](https://chirimen.org/chirimen-raspi3/gc/top/examples/#I2C-BMP280)|
-|距離センサ(50cm程度まで)|[GP2Y0E03](http://akizukidenshi.com/catalog/g/gI-07547/)|![](partsImgs/GP2Y0E03.jpg)|[Examples](https://chirimen.org/chirimen-raspi3/gc/top/examples/#I2C-GP2Y0E03)|
-|距離センサ(2m弱まで)|[VL53L0X](https://www.switch-science.com/catalog/2869/)|![](partsImgs/VL53L0X.jpg)|[Examples](https://chirimen.org/chirimen-raspi3/gc/top/examples/#I2C-VL53L0X)|
+|温度センサ|[ADT7410](http://akizukidenshi.com/catalog/g/gM-06675/)|![](partsImgs/ADT7410.jpg)|[Examples](https://chirimen.org/chirimen-raspi3/gc/top/examples/#I2C-ADT7410)</br>[回路図](https://github.com/adafruit/ADS1X15-Breakout-Board-PCBs)</br>[データシート](https://cdn-shop.adafruit.com/datasheets/ads1115.pdf)|
+|サーモグラフィ(8x8ピクセル)|[AMG8833](https://www.switch-science.com/catalog/3395/)|![](partsImgs/AMG8833.JPG)|[Examples](https://chirimen.org/chirimen-raspi3/gc/top/examples/#I2C-AMG8833))</br>[回路図](https://docid81hrs3j1.cloudfront.net/medialibrary/2017/11/AMG8833_breakout.pdf)</br>[搭載チップの参考仕様書](https://docid81hrs3j1.cloudfront.net/medialibrary/2017/11/PANA-S-A0002141979-1.pdf)|
+|温度, 圧力, 湿度 複合センサ|[BME280](http://www.aitendo.com/product/15535)|![](partsImgs/BME280.jpg)|[Examples](https://chirimen.org/chirimen-raspi3/gc/top/examples/#I2C-BME280)</br>[データシート](aitendo3.sakura.ne.jp/aitendo_data/product_img/sensor/BME280/BST-BME280_DS001-10.pdf)|
+|温度, 圧力 複合センサ|[BMP180](http://www.aitendo.com/product/10760)|![](partsImgs/BMP180.jpg)|[Examples](https://chirimen.org/chirimen-raspi3/gc/top/examples/#I2C-BMP180)</br>[データシート](http://aitendo3.sakura.ne.jp/aitendo_data/product_img/sensor/BMP180/BMP180.pdf)|
+|温度, 圧力 複合センサ|[BMP280](http://www.aitendo.com/product/15806)|![](partsImgs/BMP280.jpeg)|[Examples](https://chirimen.org/chirimen-raspi3/gc/top/examples/#I2C-BMP280)</br>[データシート]（aitendo3.sakura.ne.jp/aitendo_data/product_img/sensor/BMP280/BST-BMP280-DS001-11.pdf)|
+|距離センサ(50cm程度まで)|[GP2Y0E03](http://akizukidenshi.com/catalog/g/gI-07547/)|![](partsImgs/GP2Y0E03.jpg)|[Examples](https://chirimen.org/chirimen-raspi3/gc/top/examples/#I2C-GP2Y0E03)</br>[データシート](akizukidenshi.com/download/ds/sharp/gp2y0e03_e.pdf)</br>[アプリケーションノート](akizukidenshi.com/download/ds/sharp/GP2Y0E02_an_20180829.pdf)|
+|距離センサ(2m弱まで)|[VL53L0X](https://www.switch-science.com/catalog/2869/)|![](partsImgs/VL53L0X.jpg)|[Examples](https://chirimen.org/chirimen-raspi3/gc/top/examples/#I2C-VL53L0X)</br>[回路図](https://www.pololu.com/file/0J1188/vl53l0x-time-of-flight-distance-sensor-carrier-schematic.pdf)</br>[データシート](https://www.pololu.com/file/0J1187/VL53L0X.pdf)|
 |ジェスチャーセンサ|[Grove-Gesture](https://www.switch-science.com/catalog/2645/) (PAJ7620U2)|![](partsImgs/Grove-Gesture.jpg)|[Examples](https://chirimen.org/chirimen-raspi3/gc/top/examples/#I2C-Grove-Gesture)|
 |光センサ|[Grove-Light](https://www.switch-science.com/catalog/1174/)|![](partsImgs/Grove-Light.jpg)|[Examples](https://chirimen.org/chirimen-raspi3/gc/top/examples/#I2C-Grove-Light)|
 |小型ディスプレイ|[Grove-OledDisplay](https://www.switch-science.com/catalog/829/)|![](partsImgs/Grove-OledDisplay.jpg)|[Examples](https://chirimen.org/chirimen-raspi3/gc/top/examples/#I2C-Grove-OledDisplay)|
