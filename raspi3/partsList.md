@@ -1,7 +1,7 @@
 # CHIRIMEN for Raspberry Pi3 対応デバイス / パーツ リスト
 
 ## I2C センサー
-|カテゴリ|部品型番|画像|Examples へのリンク|
+|カテゴリ|部品型番</br>※購入先例にリンクしています|画像|各種リンク|
 |-|-|-|-|
 |ADC(アナログ電圧測定) 12bit精度|[ADS1015](https://www.switch-science.com/catalog/1136/)|![](partsImgs/ADS1015.jpg)|[Examples](https://chirimen.org/chirimen-raspi3/gc/top/examples/#I2C-ADS1015)|
 |↑16bit精度|[ADS1115](https://www.switch-science.com/catalog/1138/)|![](partsImgs/ADS1115.jpg)|[Examples](https://chirimen.org/chirimen-raspi3/gc/top/examples/#I2C-ADS1115)|
@@ -45,12 +45,12 @@
 |↑４|TB6612FNG|![](partsImgs/TB6612FNG.jpg)|
 |[赤外線人感センサー](https://chirimen.org/chirimen-raspi3/gc/top/examples/#GPIO-pirSensor)||![](partsImgs/pyro1.jpg)|
 |↑||![](partsImgs/pyro2.jpg)|
-|雨センサ|-|![](partsImgs/rain.jpg)|
-|水センサ|-|![](partsImgs/water.jpg)|
 
 ## アナログセンサ(I2C ADCが必要)
 |カテゴリー|型番|画像|
 |-|-|-|
+|雨センサ|-|![](partsImgs/rain.jpg)|
+|水センサ|-|![](partsImgs/water.jpg)|
 |圧力センサ|小|![](partsImgs/pressureS.jpg)|
 |VR|-|![](partsImgs/VR.jpg)|
 
