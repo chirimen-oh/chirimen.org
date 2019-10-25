@@ -3,9 +3,9 @@ lang: ja
 permalink: /raspi3/
 ---
 
-## CHIRIMEN for Raspberry Pi3 チュートリアル
+## CHIRIMEN for Raspberry Pi チュートリアル
 
-CHIRIMEN for Raspberry Pi 3を用いた IoT システムプロトタイピングスキル習得のためのチュートリアル資料です。
+CHIRIMEN for Raspberry Pi を用いた IoT システムプロトタイピングスキル習得のためのチュートリアル資料です。
 
 JavaScript プログラミング未経験者は、ページ下部で紹介している資料・サイトも参照しつつご覧ください。
 
@@ -48,7 +48,7 @@ LED と温度センサーを使ってみる最小限のお試しページです�
   - [CHIRIMEN with micro:bit](https://chirimen.org/chirimen-micro-bit/)
     - micro:bit には CHIRIMEN サポートプログラムを書き込み、RasPi の Chromium から Web Bluetooth を使って通信します
     - micro:bit 内蔵デバイス: 加速度・磁気・温度センサー、タクトスイッチ、5x5 マトリクス LED
-    - GPIO, I2C 外部デバイス: CHIRIMEN RasPi3 と同様に micro:bit に接続したデバイスを操作できます。
+    - GPIO, I2C 外部デバイス: CHIRIMEN RasPi と同様に micro:bit に接続したデバイスを操作できます。
   - [PLAYBULB (LED 電球) を使う](section5.md)
     - CHIRIMEN for Raspberry Pi 3 環境で Web Bluetooth API を使ってデバイス制御するサンプルです。
     - Web I2C API や Web Audio API と組み合わせて PLAYBULB (Bluetooth 接続の LED 電球) を制御します。
@@ -66,7 +66,7 @@ CHIRIMEN for Raspberry Pi 3 対応デバイスのドライバ・回路図・サ�
 - [Basic I2C Example](https://r.chirimen.org/examples#i2cExamples)
 - [Advanced Example](https://r.chirimen.org/examples#advanced)
 
-Basic GPIO/I2C Examle のデバイスは CHIRIMEN Raspi3 の OS イメージ公開前に動作検証をしている CHIRIMEN Certified デバイスです。
+Basic GPIO/I2C Examle のデバイスは CHIRIMEN Raspi の OS イメージ公開前に動作検証をしている CHIRIMEN Certified デバイスです。
 Advanced Example は個人レベルで動作確認して追加されている contrib デバイスです。いずれも元のソースコードは [こちら](https://github.com/chirimen-oh/chirimen-raspi3/tree/master/gc) に収録されています。
 
 ## Appendix, Tips, FAQ, Links etc...
