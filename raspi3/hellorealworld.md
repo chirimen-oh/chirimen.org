@@ -1,15 +1,15 @@
 
 # Hello Real World
 
-CHIRIMEN for Raspberry Pi 3 (Raspi3) を使って L チカ (LED を点滅) したりセンサー (温度計) を使ってみよう。
+CHIRIMEN for Raspberry Pi (Raspi) を使って L チカ (LED を点滅) したりセンサー (温度計) を使ってみよう。
 
 # 機材の準備
-| CHIRIMEN for Raspi3 基本セット                                                                                                                                                                              | L チカセット                                                                                                                                                                                  | 温度センサーセット                                                                                                                                                                                          |
+| CHIRIMEN for Raspi 基本セット                                                                                                                                                                              | L チカセット                                                                                                                                                                                  | 温度センサーセット                                                                                                                                                                                          |
 | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | [<img src="https://res.cloudinary.com/chirimen/image/fetch/c_limit,f_auto,q_auto,w_400/https://tutorial.chirimen.org/raspi3/ja/imgs/section0/raspi3.jpg" alt="基本セットの画像">](imgs/section0/raspi3.jpg) | [<img src="https://res.cloudinary.com/chirimen/image/fetch/c_limit,f_auto,q_auto,w_400/https://tutorial.chirimen.org/raspi3/ja/imgs/section0/l.jpg" alt="L チカセット">](imgs/section0/l.jpg) | [<img src="https://res.cloudinary.com/chirimen/image/fetch/c_limit,f_auto,q_auto,w_400/https://tutorial.chirimen.org/raspi3/ja/imgs/section2/parts.jpg" alt="温度センサーセット">](imgs/section2/parts.jpg) |
 
-- CHIRIMEN for Raspi3 基本セット
-  - [Raspberry Pi 3 Model B](https://www.raspberrypi.org/products/raspberry-pi-3-model-b/) もしくは [Raspberry Pi 3 Model B+](https://www.raspberrypi.org/products/raspberry-pi-3-model-b-plus/) × 1
+- CHIRIMEN for Raspi 基本セット
+  - Raspberry Pi ([3 Model B](https://www.raspberrypi.org/products/raspberry-pi-3-model-b/), [3 Model B+](https://www.raspberrypi.org/products/raspberry-pi-3-model-b-plus/) もしくは [4 Model B](https://www.raspberrypi.org/products/raspberry-pi-4-model-b/)) × 1
   - 5V3A 対応 AC アダプタ + micro B USB 電源ケーブル (例: [Raspberry Pi 用電源セット](https://www.physical-computing.jp/product/1171)) × 1 セット
   - HDMI 入力つきのモニタ + HDMI ケーブル (モニタ側の端子の種類に注意) × 1 セット
   - USB マウス、キーボード (日本語配列) × 1 セット
