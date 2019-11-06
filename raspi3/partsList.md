@@ -2,7 +2,7 @@
 
 ## I2C センサー
 |部品型番/カテゴリ|説明|画像|各種リンク|
-|-|-|-|-|-|
+|-|-|-|-|
 |[ADS1015](https://www.switch-science.com/catalog/1136/)<br>ADC(アナログ電圧測定) 12bit精度||![](partsImgs/ADS1015.jpg)|[Examples](https://chirimen.org/chirimen-raspi3/gc/top/examples/#I2C-ADS1015)<br>[回路図](https://github.com/adafruit/ADS1X15-Breakout-Board-PCBs)<br>[データシート](https://cdn-shop.adafruit.com/datasheets/ads1015.pdf)|
 |[ADS1115](https://www.switch-science.com/catalog/1138/)<br>ADC(アナログ電圧測定) 16bit精度||![](partsImgs/ADS1115.jpg)|[Examples](https://chirimen.org/chirimen-raspi3/gc/top/examples/#I2C-ADS1115)|
 |[PCF8591](http://www.aitendo.com/product/10938)<br>ADC, DAC(アナログ電圧出力) 複合||![](partsImgs/PCF8591.jpg)|[Examples](https://chirimen.org/chirimen-raspi3/gc/top/examples/#I2C-PCF8591)|
