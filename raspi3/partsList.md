@@ -40,21 +40,20 @@
 |[SS-10GL13](http://akizukidenshi.com/catalog/g/gP-14659/)<br>マイクロスイッチ|超小型のスイッチです|![](partsImgs/microSw.jpeg)|[Examples](https://chirimen.org/chirimen-raspi3/gc/top/examples/#GPIO-Button)<br>[データシート](http://akizukidenshi.com/download/ds/Omron/ss_ds_j_1_13.pdf)|
 |[2sK4017](http://akizukidenshi.com/catalog/g/gI-07597/)<br>Nch パワーMOSFET |直流電流の On/Off 制御を行う部品です|![](partsImgs/FET.jpg)|[CHIRIMEN チュートリアル](https://tutorial.chirimen.org/raspi3/section1#led--)<br>[データシート](akizukidenshi.com/download/ds/toshiba/2SK4017.pdf)|
 |[IRF520 (ドライバモジュール)](https://www.amazon.co.jp/Calloy-IRF520-%E3%83%89%E3%83%A9%E3%82%A4%E3%83%90%E3%83%A2%E3%82%B8%E3%83%A5%E3%83%BC%E3%83%AB-PWM%E3%83%A2%E3%83%BC%E3%82%BF%E3%83%BC-Arduino%E3%83%A9%E3%82%BA%E3%83%99%E3%83%AA%E3%83%BC%E3%83%91%E3%82%A4%E7%94%A8/dp/B07KYKDZ94)<br>PWMコントローラ|IRF520 パワーMOSFET を利用した PWM コントローラです|![](partsImgs/FET2.jpg)|[IRF520データシート](http://www.vishay.com/docs/91017/91017.pdf)|
-|[L298N (ドライバモジュール)](http://akizukidenshi.com/catalog/g/gM-06680/)<br>DCモーター 正逆転コントローラ|STマイクロ社のフルブリッジドライバである L298N を使用したDCモーターコントローラです|![](partsImgs/L298N.jpg)|[Examples](https://chirimen.org/chirimen-raspi3/gc/top/examples/#GPIO-HBridge)<br>[マニュアル](https://wiki.dfrobot.com/MD1.3_2A_Dual_Motor_Controller_SKU_DRI0002)<br>[データシート](http://akizukidenshi.com/download/ds/st/l298n.pdf)<br>[回路図](akizukidenshi.com/download/ds/dfrobot/DF-MDv1.3SCH.pdf
-)|
-|[L9110S](https://www.amazon.co.jp/HiLetgo-L9110S-H%E3%83%96%E3%83%AA%E3%83%83%E3%82%B8-%E3%83%A2%E3%83%BC%E3%82%BF%E3%83%89%E3%83%A9%E3%82%A4%E3%83%96-%E3%82%B3%E3%83%B3%E3%83%88%E3%83%AD%E3%83%BC%E3%83%A9%E3%83%9C%E3%83%BC%E3%83%89/dp/B011DT3OAY)<br>DCモータ 正逆転コントローラ|L9110を使用したDCモータコントローラです|![](partsImgs/L9110S.jpg)|
-|[MX1508](https://www.amazon.co.jp/MX1508-%E3%83%A2%E3%83%BC%E3%82%BF%E3%83%89%E3%83%A9%E3%82%A4%E3%83%90%E3%83%A2%E3%82%B8%E3%83%A5%E3%83%BC%E3%83%AB-%E9%80%9F%E5%BA%A6%E3%83%87%E3%83%A5%E3%82%A2%E3%83%AB-%E3%83%96%E3%83%AA%E3%83%83%E3%82%B8%E3%82%B9%E3%83%86%E3%83%83%E3%83%94%E3%83%B3%E3%82%B0%E3%83%A2%E3%83%BC%E3%82%BF%E3%83%89%E3%83%A9%E3%82%A4%E3%83%90%E3%83%9C%E3%83%BC%E3%83%89%E3%83%A2%E3%82%B8%E3%83%A5%E3%83%BC%E3%83%AB-L298N/dp/B07P2TL2SF)<br>DCモータ 正逆転コントローラ|L298N を使用したDCモータコントローラです|![](partsImgs/MX1508.jpg)|
-|TB6612FNG<br>↑４||![](partsImgs/TB6612FNG.jpg)|
-|赤外線人感センサー||![](partsImgs/pyro1.jpg)|[Examples](https://chirimen.org/chirimen-raspi3/gc/top/examples/#GPIO-pirSensor)|
-|↑||![](partsImgs/pyro2.jpg)|
+|[L298N (ドライバモジュール)](http://akizukidenshi.com/catalog/g/gM-06680/)<br>DCモーター 正逆転コントローラ|STマイクロ社のフルブリッジドライバである L298N を使用したDCモーターコントローラです|![](partsImgs/L298N.jpg)|[Examples](https://chirimen.org/chirimen-raspi3/gc/top/examples/#GPIO-HBridge)<br>[マニュアル](https://wiki.dfrobot.com/MD1.3_2A_Dual_Motor_Controller_SKU_DRI0002)<br>[データシート](http://akizukidenshi.com/download/ds/st/l298n.pdf)<br>[回路図](akizukidenshi.com/download/ds/dfrobot/DF-MDv1.3SCH.pdf)|
+|[L9110S](https://www.amazon.co.jp/HiLetgo-L9110S-H%E3%83%96%E3%83%AA%E3%83%83%E3%82%B8-%E3%83%A2%E3%83%BC%E3%82%BF%E3%83%89%E3%83%A9%E3%82%A4%E3%83%96-%E3%82%B3%E3%83%B3%E3%83%88%E3%83%AD%E3%83%BC%E3%83%A9%E3%83%9C%E3%83%BC%E3%83%89/dp/B011DT3OAY)<br>DCモータ 正逆転コントローラ|L9110を使用したDCモータコントローラです|![](partsImgs/L9110S.jpg)|[L9110データシート](https://www.elecrow.com/download/datasheet-l9110.pdf)|
+|[MX1508](https://www.amazon.co.jp/MX1508-%E3%83%A2%E3%83%BC%E3%82%BF%E3%83%89%E3%83%A9%E3%82%A4%E3%83%90%E3%83%A2%E3%82%B8%E3%83%A5%E3%83%BC%E3%83%AB-%E9%80%9F%E5%BA%A6%E3%83%87%E3%83%A5%E3%82%A2%E3%83%AB-%E3%83%96%E3%83%AA%E3%83%83%E3%82%B8%E3%82%B9%E3%83%86%E3%83%83%E3%83%94%E3%83%B3%E3%82%B0%E3%83%A2%E3%83%BC%E3%82%BF%E3%83%89%E3%83%A9%E3%82%A4%E3%83%90%E3%83%9C%E3%83%BC%E3%83%89%E3%83%A2%E3%82%B8%E3%83%A5%E3%83%BC%E3%83%AB-L298N/dp/B07P2TL2SF)<br>DCモータ 正逆転コントローラ|L298N を使用したDCモータコントローラです|![](partsImgs/MX1508.jpg)|[L298データシート](akizukidenshi.com/download/ds/st/l298n.pdf)|
+|[TB6612FNG](https://www.switch-science.com/catalog/385/)<br>DCモータ 正逆転コントローラ|TOSHIBA製 TB6612FNG を利用したモータドライバです|![](partsImgs/TB6612FNG.jpg)|[データシート](http://doc.switch-science.com/datasheets/TB6612FNG_datasheet_ja_20141001.pdf)|
+|[KP-IR412](https://eleshop.jp/shop/g/gE3336G/)<br>赤外線人感センサ|人体に反応するセンサです|![](partsImgs/pyro1.jpg)|[Examples](https://chirimen.org/chirimen-raspi3/gc/top/examples/#GPIO-pirSensor)<br>[wiki](http://www.kyohritsu.sakura.ne.jp/prowiki/index.php?%BF%CD%C2%CE%C0%D6%B3%B0%C0%FE%B4%B6%C3%CE%C1%C7%BB%D2%2FKP-IR412)|
+|-<br>赤外線人感センサ|人体に反応するセンサです|![](partsImgs/pyro2.jpg)|
 
-## アナログセンサ(I2C ADCが必要)
-|カテゴリー|型番|画像|
-|-|-|-|
-|雨センサ|-|![](partsImgs/rain.jpg)|
-|水センサ|-|![](partsImgs/water.jpg)|
-|圧力センサ|小|![](partsImgs/pressureS.jpg)|
-|VR|-|![](partsImgs/VR.jpg)|
+## アナログセンサ(利用にはI2C ADCが必要です)
+|型番/カテゴリー|説明|画像|各種リンク|
+|-|-|-|-|
+|[RD-4P](http://www.aitendo.com/product/10280)<br>雨センサ|雨(水)を検出するセンサです(GPIO)|![](partsImgs/rain.jpg)|-|
+|[M-WL-J3Y](http://www.aitendo.com/product/7434)<br>水センサ|水を検出するセンサです|![](partsImgs/water.jpg)|-|
+|[FSR 400](https://www.interlinkelectronics.com/fsr-400)<br>圧力センサ(小)|圧力が検知できるセンサです|![](partsImgs/pressureS.jpg)|-|
+|[TSR-3386](http://akizukidenshi.com/catalog/g/gP-08012/)<br>可変抵抗|抵抗値を変化させられる抵抗です|![](partsImgs/VR.jpg)|[技術資料](http://akizukidenshi.com/download/ds/suntan/tsr-3386.pdf)|
 
 ## アクチュエータ
 |カテゴリー|型番|画像|
