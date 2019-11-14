@@ -32,9 +32,10 @@
 |PCA9685 PWM<br>↑|詳細は[Examples](https://chirimen.org/chirimen-raspi3/gc/top/examples/#GPIO-I2C-PWMHBridge-1)をご覧ください|![](partsImgs/PCA9685.jpg)|[Examples](https://chirimen.org/chirimen-raspi3/gc/top/examples/#GPIO-I2C-PWMHBridge-1)|
 
 ## GPIO センサ・アクチュエータコントローラ
-|部品型番/カテゴリー||画像|各種リンク|
+|部品型番/カテゴリー|説明|画像|各種リンク|
 |-|-|-|-|
 |-<br>LED||![](partsImgs/LED.jpg)|[Examples](https://chirimen.org/chirimen-raspi3/gc/top/examples/#GPIO-Blink)|
+|[150Ω](http://akizukidenshi.com/catalog/g/gR-07969/)<br>[10kΩ](http://akizukidenshi.com/catalog/g/gR-07990/)<br>[1kΩ](http://akizukidenshi.com/catalog/g/gR-07980/)<br>カーボン抵抗|必要な場所に電気抵抗を入れる部品です(ここでは通常のものよりサイズが大きく、抵抗値が読みやすい商品を紹介しています)|![](partsImgs/register-2.jpg)|[Examples](https://chirimen.org/chirimen-raspi3/gc/top/examples/#GPIO-Blink)|
 |-<br>タクトスイッチ||![](partsImgs/tactSwitch.jpg)|[Examples](https://chirimen.org/chirimen-raspi3/gc/top/examples/#GPIO-Button)|
 |-<br>マイクロスイッチ||![](partsImgs/microSw.jpeg)|[Examples](https://chirimen.org/chirimen-raspi3/gc/top/examples/#GPIO-Button)|
 |2sK4017<br>FET (DC電力 On/Off制御)||![](partsImgs/FET.jpg)|[CHIRIMEN チュートリアル](https://tutorial.chirimen.org/raspi3/section1#led--)|
