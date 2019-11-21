@@ -47,25 +47,23 @@
 |[KP-IR412](https://eleshop.jp/shop/g/gE3336G/)<br>赤外線人感センサ|人体に反応するセンサです|![](partsImgs/pyro1.jpg)|[Examples](https://chirimen.org/chirimen-raspi3/gc/top/examples/#GPIO-pirSensor)<br>[wiki](http://www.kyohritsu.sakura.ne.jp/prowiki/index.php?%BF%CD%C2%CE%C0%D6%B3%B0%C0%FE%B4%B6%C3%CE%C1%C7%BB%D2%2FKP-IR412)|
 |-<br>赤外線人感センサ|人体に反応するセンサです|![](partsImgs/pyro2.jpg)|
 
-## アナログセンサ(利用にはI2C ADCが必要です)
+## アナログセンサ (利用にはI2C ADCが必要です)
 |型番/カテゴリー|説明|画像|各種リンク|
 |-|-|-|-|
 |[RD-4P](http://www.aitendo.com/product/10280)<br>雨センサ|雨(水)を検出するセンサです(GPIO)|![](partsImgs/rain.jpg)|-|
-|[M-WL-J3Y](http://www.aitendo.com/product/7434)<br>水センサ|水を検出するセンサです|![](partsImgs/water.jpg)|-|
-|[FSR 400](https://www.interlinkelectronics.com/fsr-400)<br>圧力センサ(小)|圧力が検知できるセンサです|![](partsImgs/pressureS.jpg)|-|
+|[M-WL-J3Y](http://www.aitendo.com/product/7434)<br>水センサ|水を検出するセンサです|![](partsImgs/water.jpg)|[回路図](http://www.aitendo.com/product/7434)|
+|[FSR 400](https://www.interlinkelectronics.com/fsr-400)<br>圧力センサ(小)|圧力が検知できるセンサです|![](partsImgs/pressureS.jpg)|[データシート](https://www.interlinkelectronics.com/fsr-400)|
 |[TSR-3386](http://akizukidenshi.com/catalog/g/gP-08012/)<br>可変抵抗|抵抗値を変化させられる抵抗です|![](partsImgs/VR.jpg)|[技術資料](http://akizukidenshi.com/download/ds/suntan/tsr-3386.pdf)|
 
 ## アクチュエータ
-|カテゴリー|型番|画像|
-|-|-|-|
-|サーボモータ|[PCA9685 Servo](https://chirimen.org/chirimen-raspi3/gc/top/examples/#I2C-PCA9685)|-|
-|↑|SG90|![](partsImgs/SG90.jpg)|
-|DCモータ|[On/Off](https://tutorial.chirimen.org/raspi3/section1#led--), [正逆転](https://chirimen.org/chirimen-raspi3/gc/top/examples/#GPIO-HBridge), [可変速正逆転](https://chirimen.org/chirimen-raspi3/gc/top/examples/#GPIO-I2C-PWMHBridge-1) |-|
-|↑|ちびギヤモーター|![](partsImgs/chibiGear.jpg)|
-|↑|小型ギヤードモータ|![](partsImgs/gearedMotor.jpg)|
+|型番/カテゴリー|説明|画像|各種リンク|
+|-|-|-|-|
+|[SG90](http://akizukidenshi.com/catalog/g/gM-08761/)<br>サーボモータ|Tower Pro 製の小型サーボモータです|![](partsImgs/SG90.jpg)|[データシート](http://akizukidenshi.com/download/ds/towerpro/SG90_a.pdf)<br>[Examples](https://chirimen.org/chirimen-raspi3/gc/top/examples/#I2C-PCA9685)|
+|-<br>DCモータ|各 Examples をご参照ください||[Examples: On/Off](https://tutorial.chirimen.org/raspi3/section1#led--)<br>[Examples: 正逆転](https://chirimen.org/chirimen-raspi3/gc/top/examples/#GPIO-HBridge)<br> [Examples: 可変速正逆転](https://chirimen.org/chirimen-raspi3/gc/top/examples/#GPIO-I2C-PWMHBridge-1) |
+|[ちびギヤモータ](https://tiisaishop.dip.jp/product/sg/)<br>ギヤードモータ|小型のギヤードモータです|![](partsImgs/chibiGear.jpg)|[製品情報](https://tiisai.dip.jp/?p=2676)<br>[チュートリアル](https://tutorial.chirimen.org/raspi3/section1#led--)|
 
 ## その他
-|カテゴリー|型番|画像|
+|カテゴリー|備考(型番など)|画像|
 |-|-|-|
 |ブレッドボード|小|![](partsImgsbreadBoardS.jpg)|
 |ジャンパー線|オス-メス|![](partsImgs/jumperFM.jpg)|
@@ -74,7 +72,7 @@
 |抵抗|-|![](partImgs/register.jpg)|
 
 ## ボードコンピュータ
-|カテゴリー|型番|画像|
+|品名(型番など)|画像|各種リンク|
 |-|-|-|
-|マイクロビット|本体|![](partsImgs/microbit.jpg)|
-|↑|ブレークアウト|![](partsImgs/microbitBreakout.jpg)|
+|[マイクロビット](https://www.amazon.co.jp/BBC-micro-スターターキット-リテールBOX-6ヶ月製品保証付/dp/B074N6D55L/ref=sr_1_3?__mk_ja_JP=%E3%82%AB%E3%82%BF%E3%82%AB%E3%83%8A&keywords=microbit&qid=1574330012&s=computers&sr=1-3)|![](partsImgs/microbit.jpg)|[ガイド](https://microbit.org/ja/guide/)|
+|[ブレークアウト](http://www.aitendo.com/product-list/719)|![](partsImgs/microbitBreakout.jpg)||
