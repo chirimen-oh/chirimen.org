@@ -1,4 +1,6 @@
 # This is netlify's redirect definition file: https://www.netlify.com/docs/redirects/
+# Playground: https://play.netlify.com/redirects
+
 # Redirect default Netlify subdomain to primary domain
 https://tutorial-chirimen-org.netlify.com/*   https://tutorial.chirimen.org/:splat 301!
 
