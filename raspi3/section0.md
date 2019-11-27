@@ -8,13 +8,13 @@ permalink: /raspi3/section0
 
 # 1. はじめに
 
-まずは CHIRIMEN for Raspberry Pi 3 (以下 CHIRIMEN Raspi3) を使って Web アプリから「L チカ」(LED を点けたり消したり) するプログラミングをしてみましょう。CHIRIMEN Raspi3 の基本的な操作方法を学び、実際に L チカするコードを読み書きします。
+まずは CHIRIMEN for Raspberry Pi (以下 CHIRIMEN Raspi) を使って Web アプリから「L チカ」(LED を点けたり消したり) するプログラミングをしてみましょう。CHIRIMEN Raspi の基本的な操作方法を学び、実際に L チカするコードを読み書きします。
 
-## CHIRIMEN for Raspberry Pi 3 とは
+## CHIRIMEN for Raspberry Pi とは
 
-CHIRIMEN for Raspberry Pi 3 は、Raspberry Pi 3 (以下 Raspi) で動作する IoT プログラミング環境です。[Web GPIO API](http://browserobo.github.io/WebGPIO) や [Web I2C API](http://browserobo.github.io/WebI2C) といった JavaScript でハードを制御する API を活用したプログラミングにより、Web アプリ上で Raspi に接続した電子パーツを直接制御できます。
+CHIRIMEN for Raspberry Pi は、Raspberry Pi (以下 Raspi) で動作する IoT プログラミング環境です。[Web GPIO API](http://browserobo.github.io/WebGPIO) や [Web I2C API](http://browserobo.github.io/WebI2C) といった JavaScript でハードを制御する API を活用したプログラミングにより、Web アプリ上で Raspi に接続した電子パーツを直接制御できます。
 
-{% cloudinary imgs/section0/CHIRIMENforRaspberryPi3.png alt="CHIRIMEN for Raspberry Pi 3 の活用イメージ" %}
+{% cloudinary imgs/section0/CHIRIMENforRaspberryPi3.png alt="CHIRIMEN for Raspberry Pi の活用イメージ" %}
 
 # 2. 事前準備 (機材確認)
 
@@ -22,18 +22,21 @@ CHIRIMEN for Raspberry Pi 3 は、Raspberry Pi 3 (以下 Raspi) で動作する 
 
 ### 基本ハードウエア
 
-CHIRIMEN for Raspberry Pi 3 の起動に最低限必要となる基本ハードウエアは次の通りです。
+CHIRIMEN for Raspberry Pi の起動に最低限必要となる基本ハードウエアは次の通りです。
 
 [{% cloudinary imgs/section0/Raspi3.jpg alt="Raspi の起動に必要なハードウエア一覧" %}](imgs/section0/Raspi3.jpg)
 
-- [Raspberry Pi 3 Model B](https://www.raspberrypi.org/products/raspberry-pi-3-model-b/) もしくは [Raspberry Pi 3 Model B+](https://www.raspberrypi.org/products/raspberry-pi-3-model-b-plus/) × 1
-  - 補足: Raspberry Pi 3 Model A+ や Raspberry Pi 4 も対応見込みですが執筆時点では未検証です
+- Raspberry Pi本体 × 1
+  - CHIRIMEN for Raspberry Pi は [Raspberry Pi 3 Model B](https://www.raspberrypi.org/products/raspberry-pi-3-model-b/) 、 [Raspberry Pi 3 Model B+](https://www.raspberrypi.org/products/raspberry-pi-3-model-b-plus/) 、 [Raspberry Pi 4 Model B](https://www.raspberrypi.org/products/raspberry-pi-4-model-b/) の3モデルに対応しています。
+  - 補足: Raspberry Pi 3 Model A+ も対応見込みですが執筆時点では未検証です
 - AC アダプタ + micro B USB 電源ケーブル × 1
   - 例: [Raspberry Pi 用電源セット(5V 3.0A) - Pi3 フル負荷検証済](https://www.physical-computing.jp/product/1171)
   - 注意: 一般的なスマホ向けのもの (1.0〜2.0A 程度の出力) でも起動できますが、公式には 3.0A を必要としており、PC からの給電などでは電力不足で性能低下や不安定な原因になります。microUSB 端子は強度が高くないためスイッチ付きで抜き差し回数を少なくできるケーブル付のものがオススメです
+  - 注意2: Raspi 4 の一部初期ロットでは E-marked チップを搭載している USB(Type C) ケーブルでの給電ができないことが判明しています。詳しくは[こちら](https://jp.techcrunch.com/2019/07/10/2019-07-10-the-raspberry-pi-4-doesnt-work-with-all-usb-c-cables/)をご覧ください。
 - HDMI 入力つきのモニタ (720P の解像度に対応したもの) × 1
   - モバイルモニタでも文字が見やすいようデフォルト解像度を 720p としています
 - HDMI ケーブル (モニタ側の端子と合うものを選んでください) × 1
+  - Raspi 4 では 通常の HDMI 端子 (HDMI Type A) ではなく、マイクロ HDMI 端子 (HDMI Type D) が搭載されているため、対応するケーブルにご注意ください。
 - USB マウス × 1
 - USB キーボード (日本語配列) × 1
   - 初期設定の日本語 (JIS) 配列以外のキーボードを利用する際は [raspi-config コマンド](http://igarashi-systems.com/sample/translation/raspberry-pi/configuration/raspi-config.html) で変更してください
@@ -50,17 +53,19 @@ CHIRIMEN for Raspberry Pi 3 の起動に最低限必要となる基本ハード�
 - リード付き抵抗器 (150-470Ω ※お使いの LED により。スターターキットは 150Ω を使用します。) × 1
 - ジャンパーワイヤー (オス-メス) x 2
 
-## SD カードへ CHIRIMEN for Raspberry Pi 3 環境を書き込む
+## SD カードへ CHIRIMEN for Raspberry Pi 環境を書き込む
 
-起動する前に、SD カードへ CHIRIMEN Raspi3 環境（[起動イメージファイル](https://r.chirimen.org/sdimage)） を書き込んでおく必要があります。
+起動する前に、SD カードへ CHIRIMEN Raspi 環境（[起動イメージファイル](https://r.chirimen.org/sdimage)） を書き込んでおく必要があります。
 
-手順は [CHIRIMEN for Raspberry Pi 3 の SD カードを作成する](sdcard) を参照してください。
+手順は [CHIRIMEN for Raspberry Pi 3 の SD カードを作成する](sdcard.md) を参照してください。
+- raspi 4 対応版については現在準備中です
 
-# 3. CHIRIMEN for Raspberry Pi 3 を起動してみよう
+# 3. CHIRIMEN for Raspberry Pi を起動してみよう
 
 ## 接続方法
 
 機材が揃ったら、いよいよ Raspi を接続して起動してみましょう。基本ハードウエアを下図のように接続してください。(Raspi への電源ケーブルの接続は最後にしましょう)
+- Raspi 4 では電源ケーブルが USB Type C ケーブルとなりますが、基本的な接続方法は以下と同様です
 
 [{% cloudinary imgs/section0/h2.jpg alt="接続方法" %}](imgs/section0/h2.jpg)
 
@@ -70,21 +75,21 @@ CHIRIMEN for Raspberry Pi 3 の起動に最低限必要となる基本ハード�
 
 ## 起動確認
 
-電源を入れると Raspi の microSD コネクタ横の赤い LED が点灯し、OS の起動後、下記のようなデスクトップ画面が表示されたら CHIRIMEN Raspi3 の起動に成功しています (OS イメージや画面サイズにより細部は異なることがあります)。おめでとうございます！
+電源を入れると Raspi の microSD コネクタ横の赤い LED が点灯し、OS の起動後、下記のようなデスクトップ画面が表示されたら CHIRIMEN Raspi の起動に成功しています (OS イメージや画面サイズにより細部は異なることがあります)。おめでとうございます！
 
 <!-- TODO: デスクトップ画面のスクリーンショット古い -->
-{% cloudinary imgs/screenshots/20191002_desktop.png alt="CHIRIMEN for Raspberry Pi 3 desktop 画面" %}
+{% cloudinary imgs/screenshots/20191002_desktop.png alt="CHIRIMEN for Raspberry Pi desktop 画面" %}
 
 ## 残念ながら上記画面が表示されなかった！？
 
-違う画面が表示される場合には、CHIRIMEN Raspi3 とは異なる SD カードで起動された可能性があります。その場合は、[SD カードの作成手順](sdcard.md) に従って CHIRIMEN 用のイメージを作成してください。
+違う画面が表示される場合には、CHIRIMEN Raspi とは異なる SD カードで起動された可能性があります。その場合は、[SD カードの作成手順](sdcard.md) に従って CHIRIMEN 用のイメージを作成してください。
 
 電源を入れても何も画面に映らないような場合には、配線が誤っている可能性があります。配線を再度確認してみましょう。LED が点灯していない場合、AC アダプタまで電気が来ていないかも知れません。[トラブルシューティングページ](debug.md) も参考にしてください。
 
 ## WiFi の設定
 
 デスクトップ画面が表示されたら、さっそく WiFi を設定して、インターネットに繋げてみましょう。
-CHIRIMEN Raspi3 では、ネットワークに繋がずローカルファイルでプログラミングも可能ですが、[JS Bin](https://jsbin.com/) や [JSFiddle](https://jsfiddle.net/) あるいは [CodeSandbox](https://codesandbox.io/) などブラウザ上で動くエディタを活用することで、より簡単にプログラミングできます。
+CHIRIMEN Raspi では、ネットワークに繋がずローカルファイルでプログラミングも可能ですが、[JS Bin](https://jsbin.com/) や [JSFiddle](https://jsfiddle.net/) あるいは [CodeSandbox](https://codesandbox.io/) などブラウザ上で動くエディタを活用することで、より簡単にプログラミングできます。
 
 ぜひ、最初にインターネットに接続しておきましょう。WiFi の設定は、タスクバーの右上の WiFi アイコンから行えます。
 
@@ -130,7 +135,7 @@ LED のリード線の方向に注意しながら、この図の通りにジャ�
 - [ブレッドボードの使い方](https://www.sunhayato.co.jp/blog/2015/03/04/7)
 - [LED の使い方](https://www.marutsu.co.jp/pc/static/large_order/led)
 - [抵抗値の読み方](http://www.jarl.org/Japanese/7_Technical/lib1/teikou.htm)
-- [Raspberry Pi3 の GPIO](https://tool-lab.com/make/raspberrypi-startup-22/)
+- [Raspberry Pi の GPIO](https://tool-lab.com/make/raspberrypi-startup-22/)
 - [テスターを使って抵抗値を確かめる](http://startelc.com/elcLink/tester/elc_nArtcTester2.html#chapter-2)
 
 ## example を実行してみる
@@ -162,11 +167,11 @@ L チカに成功しましたか？！
 
 # 5. コードを眺めてみよう
 
-さきほどは、L チカをデスクトップにある example から実行してみました。実は、CHIRIMEN Raspi3 にはもうひとつ、「オンラインの example」が用意されており、オンライン版ではコードを書き換えながら学習を進められます。
+さきほどは、L チカをデスクトップにある example から実行してみました。実は、CHIRIMEN Raspi にはもうひとつ、「オンラインの example」が用意されており、オンライン版ではコードを書き換えながら学習を進められます。
 
 今度はオンラインの example からさきほどと同じ L チカを実行してコードを眺めてみましょう。
 
-その前に一つ注意です。CHIRIMEN Raspi3 での GPIO などの操作には排他制御があり、同一の GPIO ピンを複数のプログラムから同時操作はできません。同一ページもしくは同一ピンを使うページを同時に開くと正しく動作しません。
+その前に一つ注意です。CHIRIMEN Raspi での GPIO などの操作には排他制御があり、同一の GPIO ピンを複数のプログラムから同時操作はできません。同一ページもしくは同一ピンを使うページを同時に開くと正しく動作しません。
 
 **オンラインの example を起動する前に、必ず先ほど開いた `file:///home/pi/Desktop/gc/gpio/LEDblink/index.html` のブラウザウィンドウ (タブ) は閉じてください。先に既存ウィンドウを閉じておかないと、サンプルが正常に動作しなくなります。**
 
@@ -209,7 +214,7 @@ L チカに成功しましたか？！
 
 ### 注記
 
-CHIRIMEN Raspi3 はウェブブラウザをプログラムの実行環境として用いてシステムを構築します。ウェブブラウザが実行できるプログラムのプログラミング言語は JavaScript です。JavaScript を学んだことのない人は、まず[こちらの資料「JavaScript 1 Day 講習」](https://r.chirimen.org/1dayjs)を履修しましょう。
+CHIRIMEN Raspi はウェブブラウザをプログラムの実行環境として用いてシステムを構築します。ウェブブラウザが実行できるプログラムのプログラミング言語は JavaScript です。JavaScript を学んだことのない人は、まず[こちらの資料「JavaScript 1 Day 講習」](https://r.chirimen.org/1dayjs)を履修しましょう。
 
 ## 非同期処理について
 
@@ -245,15 +250,15 @@ CHIRIMEN Raspi3 はウェブブラウザをプログラムの実行環境とし�
 
 [GPIO](https://ja.wikipedia.org/wiki/GPIO)は、「General-purpose input/output」の略で汎用的な入出力インタフェースのことです。
 
-Raspi3 に実装されている 40 本のピンヘッダから GPIO を利用することができます。（40 本全てのピンが GPIO として利用できるわけではありません）
+Raspi に実装されている 40 本のピンヘッダから GPIO を利用することができます。（40 本全てのピンが GPIO として利用できるわけではありません）
 
-CHIRIMEN Raspi3 では Raspi3 が提供する 40 本のピンヘッダのうち、下記緑色のピン(合計 17 本)を Web アプリから利用可能な GPIO として設定しています。
+CHIRIMEN Raspi では Raspi が提供する 40 本のピンヘッダのうち、下記緑色のピン(合計 17 本)を Web アプリから利用可能な GPIO として設定しています。
 
-Raspi3 の GPIO 端子は、GND 端子との間に、0V もしくは 3.3V の電圧を印加(出力)したり、逆に 0V もしくは 3.3V の電圧を検知(入力)したりすることができます。LED は数 mA の電流を流すことによって点灯できる電子部品のため、印加する電圧を 3.3V(点灯)、0V(消灯) と変化させることで L チカが実現できるのです。
+Raspi の GPIO 端子は、GND 端子との間に、0V もしくは 3.3V の電圧を印加(出力)したり、逆に 0V もしくは 3.3V の電圧を検知(入力)したりすることができます。LED は数 mA の電流を流すことによって点灯できる電子部品のため、印加する電圧を 3.3V(点灯)、0V(消灯) と変化させることで L チカが実現できるのです。
 
 詳しくは[こちらのサイトの解説](https://tool-lab.com/make/raspberrypi-startup-22/)などを参考にしてみましょう。
 
-{% cloudinary imgs/section0/Raspi3PIN.png alt="Raspi3 PIN配置図" %}
+{% cloudinary imgs/section0/Raspi3PIN.png alt="Raspi PIN配置図" %}
 
 ## GPIOPort の処理
 
@@ -282,7 +287,7 @@ JS Bin の JavaScript のペイン (コードが表示されているところ) 
 
 このチュートリアルでは、下記を実践してみました。
 
-- CHIRIMEN for Raspberry Pi 3 の起動
+- CHIRIMEN for Raspberry Pi の起動
 - L チカのサンプルを動かしてみた
 - JS Bin で L チカのコードを変更してみた
 
