@@ -6,7 +6,7 @@ layout: tutorial
 
 # 概要
 
-CHIRIMEN for Raspberry Pi 3（以下 「CHIRIMEN Raspi3」） を使ったプログラミングを通じて、Web I2C API の使い方を学びます。
+CHIRIMEN for Raspberry Pi（以下 「CHIRIMEN Raspi」） を使ったプログラミングを通じて、Web I2C API の使い方を学びます。
 
 [前回](section2.md) は温度センサを使いながら Web I2C API の基本的な利用方法を学びました。今回は温度センサ以外のI2Cセンサの使い方を見ていきましょう。
 
@@ -68,7 +68,7 @@ Raspi 3 や前回の ADT7410 などピンヘッダを備えた（あるいは事
 
 - [光センサ(Grove Digital Light Sensor)](http://wiki.seeed.cc/Grove-Digital_Light_Sensor/) x 1
 
-Raspberry Pi 3との接続方法については、下記回路図を参照ください。
+Raspberry Piとの接続方法については、下記回路図を参照ください。
 
 `/home/pi/Desktop/gc/i2c/i2c-grove-light/schematic.png`
 
@@ -77,7 +77,7 @@ Raspberry Pi 3との接続方法については、下記回路図を参照くだ
 このセンサモジュールはGroveコネクタを備えていますので、接続方法に応じてコネクタを選んでください。
 
 - Grove I2C Hub 経由で接続する場合 ：Grove 4ピン ケーブル経由で接続してください。
-- Raspberry Pi 3 へ直接接続する場合：Grove 4ピン ジャンパー メス ケーブル経由で接続してください。
+- Raspberry Pi へ直接接続する場合：Grove 4ピン ジャンパー メス ケーブル経由で接続してください。
 
 ## b. 接続確認とexampleの実行
 
@@ -372,7 +372,7 @@ main.js もこれまでの他のセンサーとほとんど同じです。
 
 前回からこれまでに 4 つの I2C センサを使ってみました。
 
-CHIRIMEN Raspi3 には、他にも `/home/pi/Desktop/gc/i2c/` 配下に例えば下記のような I2C モジュールの examples が含まれています。それぞれの回路図、デイバスドライバ、サンプルコードもあるので、お手持ちのデバイスを使ってみてください。
+CHIRIMEN Raspi には、他にも `/home/pi/Desktop/gc/i2c/` 配下に例えば下記のような I2C モジュールの examples が含まれています。それぞれの回路図、デイバスドライバ、サンプルコードもあるので、お手持ちのデバイスを使ってみてください。
 
 - i2c-grove-gesture : 「[Grove Gesture](http://wiki.seeed.cc/Grove-Gesture_v1.0/)」(簡単なジェスチャーを判定するセンサ)の接続例です。
 - i2c-grove-oledDisplay : 「[Grove OLED Display](https://www.seeedstudio.com/Grove-OLED-Display-0.96%26quot%3B-p-781.html)」(Grove端子で接続できるOLED Display)の接続例です。
@@ -383,7 +383,7 @@ CHIRIMEN Raspi3 には、他にも `/home/pi/Desktop/gc/i2c/` 配下に例えば
 - i2c-VEML6070 : 「[VEML6070 紫外線センサ](https://learn.adafruit.com/adafruit-veml6070-uv-light-sensor-breakout/overview)」(紫外線センサ)の接続例です。
 - i2c-multi-sensors : 2つのセンサ（ADT7410とgrove-light）を利用する例です。
 
-また、CHIRIMEN Raspi3 のイメージ内に同梱されている example 以外にも、[CHIIRMEN examples ページのオンライン版](https://r.chirimen.org/examples) にはこれらに加えてコミュニティによって順次いろいろなデバイス利用例が [Advanced Examples](https://r.chirimen.org/examples#advanced) として追加されています (ドライバーなどが cotrib ディレクトリ内にあるので注意)。作りたいもの、試したいものを考えながら試してみてください。
+また、CHIRIMEN Raspi のイメージ内に同梱されている example 以外にも、[CHIIRMEN examples ページのオンライン版](https://r.chirimen.org/examples) にはこれらに加えてコミュニティによって順次いろいろなデバイス利用例が [Advanced Examples](https://r.chirimen.org/examples#advanced) として追加されています (ドライバーなどが cotrib ディレクトリ内にあるので注意)。作りたいもの、試したいものを考えながら試してみてください。
 
 ## I2C デバイスを複数使う場合の注意事項
 I2Cデバイスを同時に接続して使用するとき、重要な注意事項があります。それは I2C アドレスの衝突です。チュートリアル2-2 の図に書かれているように I2C デバイスは個々のアドレスを持っています。このアドレスは I2C デバイスの製品ごとに固有のアドレスが設定されていますが、偶然同じアドレスを持ったデバイスを手にすることもあります。
@@ -420,11 +420,11 @@ I2Cデバイスを同時に接続して使用するとき、重要な注意事�
 
 このチュートリアルで扱ったコードは以下のページで参照できます:
 
-- [GitHub リポジトリで参照](https://github.com/chirimen-oh/tutorials/tree/master/raspi3/examples/section3)
+- [GitHub リポジトリで参照](https://github.com/chirimen-oh/tutorials/tree/master/raspi/examples/section3)
 - ブラウザで開くページ
   - Grove I2C 光センサ: [JSBin](https://r.chirimen.org/jsbin-i2c-grove-light), [CodeSandbox](https://r.chirimen.org/csb-grove-light)
   - 測距センサ (VL53L0X): [JSBin](https://r.chirimen.org/jsbin-i2c-vl53l0x), [CodeSandbox](https://r.chirimen.org/csb-vl53l0x)
   - GROVE I2C 三軸加速度センサ: [JSBin](https://r.chirimen.org/i2c-grove-accelerometer/), [CodeSandbox](https://r.chirimen.org/csb-grove-accelerometer)
   - 複数センサの利用 (ADT7410 + Grove 光センサ): [JSBin](https://r.chirimen.org/jsbin-i2c-multi-sensors), [CodeSandbox](https://r.chirimen.org/csb-multi-sensors)
 
-次のCHIRIMEN for Raspberry Pi 3 チュートリアルでは、『[Web GPIO APIとWeb I2C APIを組み合わせたプログラミング](section4.md)』に挑戦します！
+次のCHIRIMEN for Raspberry Pi チュートリアルでは、『[Web GPIO APIとWeb I2C APIを組み合わせたプログラミング](section4.md)』に挑戦します！

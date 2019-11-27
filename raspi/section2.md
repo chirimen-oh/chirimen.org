@@ -257,7 +257,7 @@ ADT7410 を指で触って温度が変わることを確認してみてくださ
 
 このチュートリアルで書いたコードは以下のページで参照できます:
 
-- [GitHub リポジトリで参照](https://github.com/chirimen-oh/tutorials/tree/master/raspi3/examples/section2)
+- [GitHub リポジトリで参照](https://github.com/chirimen-oh/tutorials/tree/master/raspi/examples/section2)
 - ブラウザで開くページ (各ステップ)
   - [ADT7410 温度センサー (ドライバを使ったコード例)](examples/section2/s2_1.html)
   - [ADT7410 温度センサー (ドライバを使わないコード例)](examples/section2/s2_2.html)

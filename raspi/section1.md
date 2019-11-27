@@ -412,7 +412,7 @@ LED が点灯する替わりにちびギアモータが動くようになりま�
 
 このチュートリアルで書いたコードは以下のページで参照できます:
 
-- [GitHub リポジトリで参照](https://github.com/chirimen-oh/tutorials/tree/master/raspi3/examples/section1)
+- [GitHub リポジトリで参照](https://github.com/chirimen-oh/tutorials/tree/master/raspi/examples/section1)
 - ブラウザで開くページ (各ステップ)
   - [画面のボタンで画面の要素の色を変える](examples/section1/s1_1.html)
   - [他面のボタンで LED が光り画面の要素の色も変わる](examples/section1/s1_2.html)
