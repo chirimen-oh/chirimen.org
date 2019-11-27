@@ -6,7 +6,7 @@ layout: tutorial
 
 # 概要
 
-CHIRIMEN for Raspberry Pi 3（以下 「CHIRIMEN Raspi3」） を使ったプログラミングを通じて、[Web GPIO API](https://rawgit.com/browserobo/WebGPIO/master/index.html) や [Web I2C API](http://browserobo.github.io/WebI2C) の使い方を学ぶチュートリアルです。
+CHIRIMEN for Raspberry Pi（以下 「CHIRIMEN RasPi」） を使ったプログラミングを通じて、[Web GPIO API](https://rawgit.com/browserobo/WebGPIO/master/index.html) や [Web I2C API](http://browserobo.github.io/WebI2C) の使い方を学ぶチュートリアルです。
 
 今回は、Web GPIO API と Web I2C API を組み合わせた Web アプリを作ってみます。
 
@@ -63,7 +63,7 @@ CHIRIMEN for Raspberry Pi 3（以下 「CHIRIMEN Raspi3」） を使ったプロ
 
 ## a. 部品と配線について
 
-Raspberry Pi 3 との接続方法については、下記回路図を参照ください。
+Raspberry Pi との接続方法については、下記回路図を参照ください。
 
 {% cloudinary imgs/section4/schematic_new.png alt="回路図" %}
 
@@ -122,7 +122,7 @@ Raspberry Pi 3 との接続方法については、下記回路図を参照く�
 
 ここまでのチュートリアルで Web GPIO API や Web I2C API の使い方はもうお腹いっぱい！という状況かと思います。おつかれさまでした！
 
-最後に、CHIRIMEN for Raspberry Pi 3 を使って「楽しい作品」を仕上げるための Tips をいくつか書いてこのチュートリアルを締めくくりたいと思います。
+最後に、CHIRIMEN for Raspberry Pi を使って「楽しい作品」を仕上げるための Tips をいくつか書いてこのチュートリアルを締めくくりたいと思います。
 
 ## a. 全画面表示
 
@@ -133,7 +133,7 @@ Raspberry Pi 3 との接続方法については、下記回路図を参照く�
 
 さらに、サイネージのような作品の場合、ブラウザのメニューやタスクバーすらも表示せずに全画面表示にしたいケースもあるでしょう。
 
-Raspberry Pi 3 の Chromium Browser で全画面表示を行うには、コマンドラインから下記のように入力します。
+Raspberry Pi の Chromium Browser で全画面表示を行うには、コマンドラインから下記のように入力します。
 
 `chromium --kiosk`
 
@@ -141,7 +141,7 @@ Raspberry Pi 3 の Chromium Browser で全画面表示を行うには、コマ�
 
 ## b. Web GPIO API / Web I2C API 以外の IoT 向け機能
 
-今回は、CHIRIMEN for Raspberry Pi 3 で拡張を行った Web GPIO API と Web I2C API の利用方法を学習してきましたが、他の方法でもブラウザと外部デバイスがコミュニケーションする方法がありますので、CHIRIMEN for Raspberry Pi 3 で利用可能な他の手段を簡単にいくつか紹介しておきます。
+今回は、CHIRIMEN for Raspberry Pi で拡張を行った Web GPIO API と Web I2C API の利用方法を学習してきましたが、他の方法でもブラウザと外部デバイスがコミュニケーションする方法がありますので、CHIRIMEN for Raspberry Pi で利用可能な他の手段を簡単にいくつか紹介しておきます。
 
 - [Web Bluetooth API](https://webbluetoothcg.github.io/web-bluetooth/) : Web アプリから BLE を使った通信を行うための API です。無線で外部機器と通信することができます。入出力が可能です。
 - [Web MIDI API](https://www.w3.org/TR/webmidi/) : Web アプリから MIDI 機器と通信するための API です。外部機器との入出力が可能です。
@@ -149,11 +149,11 @@ Raspberry Pi 3 の Chromium Browser で全画面表示を行うには、コマ�
 > Note: これらのAPIは [Feature Policy](https://w3c.github.io/webappsec-feature-policy/) の制限（iframe 内からは埋め込み側で明示許可されていない API は利用不可）により、jsbin では動作しません。ローカルで実行してください。
 >> ※ブラウザ上でプログラムが書ける [jsfiddle](https://jsfiddle.net/) では各種 API が利用可能となっていますが、まだ動作確認ができていません。近日中に動作確認を行う予定です。
 
-また、将来的には USB 機器が直接ブラウザから制御可能になる Web USB API なども利用可能になる可能性がありますが、残念ながら現在のバージョンの CHIRIMEN for Raspberry Pi 3 環境で利用している Chromium Browser では利用できません。
+また、将来的には USB 機器が直接ブラウザから制御可能になる Web USB API なども利用可能になる可能性がありますが、残念ながら現在のバージョンの CHIRIMEN for Raspberry Pi 環境で利用している Chromium Browser では利用できません。
 
 ## c. github の活用
 
-現状の CHIRIMEN for Raspberry Pi 3 には標準では Web サーバが含まれていません。
+現状の CHIRIMEN for Raspberry Pi には標準では Web サーバが含まれていません。
 最近のセキュアドメイン からの実行でないと許可されない Web API も増えています。
 
 index.html などのファイルができたら、[GitHub pages](https://pages.github.com/)などを使って公開すると良いでしょう。
@@ -165,13 +165,15 @@ GitHub Pages の使い方は、下記記事が参考になります。
 
 ## d. Raspberry Pi で使えなかった機能 (WIP)
 
-Raspberry Pi 3 は非常に使いやすい SBC（シングルボードコンピュータ）ですが、一般的な PC と比べるとやはり非力です。
+Raspberry Pi は非常に使いやすい SBC（シングルボードコンピュータ）ですが、一般的な PC と比べるとやはり非力です。(※Raspi4ではだいぶ改善されました！)
+
 
 筆者が試してダメだー！ってなったポイントを書いてみたいと思います。(今後も追記予定)
 
 > 他にもいろいろあると思うのでコメントいただけたら嬉しいです！
 
 - WebGL がまともに動作しない → 諦めて Canvas を使おう
+  - (追記) まだ検証できていませんが、Raspi4では重すぎないものであれば動かせそうです。
 - Speech Synthesis API が動作しない
 
 # さいごに

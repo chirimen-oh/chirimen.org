@@ -14,7 +14,7 @@ CHIRIMEN を使う上で知っておくと良い Tips 集のページです。�
 
 ### 回路図とサンプルコードまであるもの
 
-CHIRIMEN Raspi3 の [examples](https://chirimen.org/chirimen-raspi3/gc/top/examples/) に既に回路図とサンプルコードが用意されているもの
+CHIRIMEN Raspi の [examples](https://chirimen.org/chirimen-raspi3/gc/top/examples/) に既に回路図とサンプルコードが用意されているもの
 
 一部は、SD メモリー内の examples には掲載されていませんが、Web 上の最新イメージの[examples](https://chirimen.org/chirimen-raspi3/gc/top/examples/)で追加されているものです。SD メモリー内の examples からは[Latest version of this page on chirimen.org] リンクで辿れます。アプリケーションやドライバのコードは、サンプルコードのページを表示した後、ソースコードを表示(CTRL-U もしくは右クリックでソースを表示)させ、ソース内の script タグのリンクから辿れます。
 
@@ -120,7 +120,7 @@ I2C でモーター制御
 
 ### ドライバーの用意されていない I2C デバイス
 
-CHIRIMEN for Raspberry Pi 3 にサンプルがないものは I2C デバイスドライバーのコードをデータシートや他の言語の実装例から JavaScript に移植する必要があります。I2C 接続、3.3V のものを選べば使える可能性があるが意外に大変なことが多いです。
+CHIRIMEN for Raspberry Pi にサンプルがないものは I2C デバイスドライバーのコードをデータシートや他の言語の実装例から JavaScript に移植する必要があります。I2C 接続、3.3V のものを選べば使える可能性があるが意外に大変なことが多いです。
 
 - ガスセンサー ※I2C 接続
 - タッチセンサー（マトリクス） ※I2C 接続
@@ -147,20 +147,20 @@ CHIRIMEN for Raspberry Pi 3 にサンプルがないものは I2C デバイス�
 
 
 
-# Windows PC から Raspi3 にリモートデスクトップで接続する
+# Windows PC から Raspi にリモートデスクトップで接続する
 Windows の PC からリモートデスクトップで接続し、Raspi を PC 側から操作することができるようにする。
 >chirimen のバージョン20181010、Windows 10(1809)で動作確認しています。
 
-## Raspi3 にXRDPを導入する
+## Raspi にXRDPを導入する
  > XRDP とは Linux 上で RDP を用いたリモートデスクトップを利用可能にするためのパッケージです。詳細は[こちら](http://www.xrdp.org/)。
-- Raspi3 のターミナルで以下のコマンドを実行する。
+- Raspi のターミナルで以下のコマンドを実行する。
   ```
   $ sudo apt update
   $ sudo apt -y install xrdp
   ```
 
 ## xrdp を（再）起動する
-- Raspi3 のターミナルで以下のコマンドを実行する。
+- Raspi のターミナルで以下のコマンドを実行する。
   ```
   sudo service restart xrdp
   ```
@@ -168,9 +168,9 @@ Windows の PC からリモートデスクトップで接続し、Raspi を PC �
 ## Windows の PC から接続する
 - Windows に標準で付属しているリモートデスクトップ接続（アプリケーション）を起動する。
     >スタートメニューから "mstsc" と検索するとすぐに見つけることができます。
-- 起動した画面の「コンピュータ」のテキストボックスに Raspi3 の ip アドレスを入力し接続をクリックします。
+- 起動した画面の「コンピュータ」のテキストボックスに Raspi の ip アドレスを入力し接続をクリックします。
     > 接続をクリックするとセキュリティの警告が表示されることがありますが、そのまま続行して構いません。
 
-    > Raspi3 の ip アドレスの確認方法の一例：Raspi3 のターミナルで　"ip a"　と入力　（ほかにも多々方法はあります）
+    > Raspi の ip アドレスの確認方法の一例：Raspi のターミナルで　"ip a"　と入力　（ほかにも多々方法はあります）
 - 接続出来たらログイン画面が表示されるため、そこに username と password を入力してログインしてください。
     > 初期のユーザ名とパスワードは Chirimen のドキュメントをご確認ください。また、Session の項目は Xorg のままで構いません。

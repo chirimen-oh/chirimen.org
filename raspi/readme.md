@@ -1,6 +1,6 @@
 ---
 lang: ja
-permalink: /raspi3/
+permalink: /raspi/
 ---
 
 ## CHIRIMEN for Raspberry Pi チュートリアル
@@ -95,8 +95,8 @@ JavaScript 未経験者・初心者向けの資料集や、良くある質問、
 
   ## Latest Version / 最新版
 
-  Latest version of this document is hosted on https://tutorial.chirimen.org/raspi3/ja/
+  Latest version of this document is hosted on https://tutorial.chirimen.org/raspi/
 
-  このサイトの最新オンライン版は https://tutorial.chirimen.org/raspi3/ja/ でご覧頂けます
+  このサイトの最新オンライン版は https://tutorial.chirimen.org/raspi/ でご覧頂けます
 </div>
 

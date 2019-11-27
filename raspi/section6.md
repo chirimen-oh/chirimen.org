@@ -8,7 +8,7 @@ layout: tutorial
 
 # 概要
 
-これは [CHIRIMEN for Raspberry Pi 3](section0.md) でステッピングモーターを回すサンプルです。モーターの制御のために Arduino を I2C スレーブデバイスとして使用します。
+これは [CHIRIMEN for Raspberry Pi](section0.md) でステッピングモーターを回すサンプルです。モーターの制御のために Arduino を I2C スレーブデバイスとして使用します。
 
 全体の様子は下の写真のようになります。
 
@@ -30,7 +30,7 @@ layout: tutorial
 
 使用する部品の一覧は次の通りです。
 
-- [CHIRIMEN for Raspberry Pi](section0.md) が動作する [Raspberry Pi 3 Model B](https://www.raspberrypi.org/products/raspberry-pi-3-model-b/)
+- [CHIRIMEN for Raspberry Pi](section0.md) が動作する Raspberry Pi (ここでは [Raspberry Pi 3 Model B](https://www.raspberrypi.org/products/raspberry-pi-3-model-b/) を利用します) 
 - [Arduino UNO R3](https://www.switch-science.com/catalog/789/)
 - [EasyDriver ステッピングモータードライバ v4.4](https://www.switch-science.com/catalog/2242/)
 - [I2C バス用双方向電圧レベル変換モジュール(FXMA2102)](http://akizukidenshi.com/catalog/g/gM-05825/)
@@ -85,9 +85,11 @@ Arduino には公式の Stepper というステッピングモーター用のラ
 
 ## Raspberry Pi 3 Model B
 
-CHIRIMEN が動作する Raspberry Pi です。CHIRIMEN を動かして操作するために SD カード、HDMI ディスプレイ、キーボード、マウス等も必要ですので、CHIRIMEN が動作する所までは以下のチュートリアル等を参考にしてください。
+CHIRIMEN が動作する Raspberry Pi の一例です。CHIRIMEN を動かして操作するために SD カード、HDMI ディスプレイ、キーボード、マウス等も必要ですので、CHIRIMEN が動作する所までは以下のチュートリアル等を参考にしてください。
 
-[CHIRIMEN for Raspberry Pi 3 Hello World](section0.md)
+[CHIRIMEN for Raspberry Pi Hello World](section0.md)
+
+- なお、CHIRIMEN for Raspberry Pi はこのモデルのほか、[Raspberry Pi 3 Model B+](https://www.raspberrypi.org/products/raspberry-pi-3-model-b-plus/) 、 [Raspberry Pi 4 Model B](https://www.raspberrypi.org/products/raspberry-pi-4-model-b/) の2モデルにも対応しています。
 
 # 4.動作テスト
 

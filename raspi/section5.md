@@ -9,10 +9,10 @@ layout: tutorial
 修正なく試していけるようにチュートリアルを更新予定ですが、ひとまず今はご自身で対応可能な人がお試しください。**
 
 **Note: これらのAPIは Feature Policy の制限（iframe 内からは埋め込み側で明示許可されていない API は利用不可）により、jsbin では動作しません。ローカルで実行してください。**
-> ※ブラウザ上でプログラムが書ける [jsfiddle](https://jsfiddle.net/) では各種 API が利用可能となっていますが、まだ動作確認ができていません。近日中に動作確認を行う予定です。
+> ※ブラウザ上でプログラムが書ける [jsfiddle](https://jsfiddle.net/) では各種 API が利用可能となっていますが、まだ動作確認ができていません。
 
 # 概要
-これは Raspberry Pi 3 上で動作する IoT プラットフォーム「CHIRIMEN for Raspberry Pi 3」で [Web Bluetooth](https://www.mitsue.co.jp/knowledge/blog/frontend/201705/15_1702.html) を使用してライトを制御するサンプルです。USBマイクから音が入るとライトが点灯する、または測距センサで何かが近づいたらライトが点灯する、という動作をさせています。
+これは Raspberry Pi 上で動作する IoT プラットフォーム「CHIRIMEN for Raspberry Pi」で [Web Bluetooth](https://www.mitsue.co.jp/knowledge/blog/frontend/201705/15_1702.html) を使用してライトを制御するサンプルです。USBマイクから音が入るとライトが点灯する、または測距センサで何かが近づいたらライトが点灯する、という動作をさせています。
 
 # ソースコード
 
@@ -22,13 +22,13 @@ https://github.com/g200kg/chirimen-webbluetooth
 
 # ライブデモ
 
-オンラインで実際に動作するサンプルは下のリンクで公開されています。CHIRIMEN for RasPi 3 上で全ての機能を動かすには下の部品を揃える必要がありますが、もし [PLAYBULB](https://www.mipow.co.jp/category_playbulb.html) ([sphere](https://www.croy.co.jp/mipow/btl301w.html) または [candle](https://www.croy.co.jp/mipow/btl300.html))をお持ちであれば(BLE対応の)ノートPCからでもマイク周りの動作を試す事ができます。
+オンラインで実際に動作するサンプルは下のリンクで公開されています。CHIRIMEN for RasPi 上で全ての機能を動かすには下の部品を揃える必要がありますが、もし [PLAYBULB](https://www.mipow.co.jp/category_playbulb.html) ([sphere](https://www.croy.co.jp/mipow/btl301w.html) または [candle](https://www.croy.co.jp/mipow/btl300.html))をお持ちであれば(BLE対応の)ノートPCからでもマイク周りの動作を試す事ができます。
 
 [ライブデモ](https://g200kg.github.io/chirimen-webbluetooth/)
 
 # 必要なもの
 
-- CHIRIMEN for Raspberry Pi が動作する Raspberry Pi 3 Model B
+- CHIRIMEN for Raspberry Pi が動作する Raspberry Pi
 - BLE制御できる ライト、PLAYBULB [sphere](https://www.croy.co.jp/mipow/btl301w.html) (または PLAYBULB [candle](https://www.croy.co.jp/mipow/btl300.html))
 - USB マイク
 - 測距センサ ([GP2Y0E03](http://akizukidenshi.com/catalog/g/gI-07547/))
@@ -89,7 +89,7 @@ Bluetooth デモを起動して [`BLE Connect`]を押すと BLE デバイスを�
 
 # コードの説明
 
-## Web BlueTooth API
+## Web Bluetooth API
 
 BLEデバイス、PLAYBULB を制御する部分は class `Playbulb` にまとめてあります。
 ブラウザが WebBluetooth をサポートしていれば `navigator.bluetooth` が存在しますので、まず
