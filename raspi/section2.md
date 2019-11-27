@@ -6,11 +6,11 @@ layout: tutorial
 
 # 概要
 
-CHIRIMEN for Raspberry Pi 3 （以下「CHIRIMEN Raspi3」）を使ったプログラミングを通じて、[Web I2C API](http://browserobo.github.io/WebI2C) の使い方を学びます。
+CHIRIMEN for Raspberry Pi （以下「CHIRIMEN RasPi」）を使ったプログラミングを通じて、[Web I2C API](http://browserobo.github.io/WebI2C) の使い方を学びます。
 
 ## 前回までのおさらい
 
-本チュートリアルを進める前に「[L チカしてみよう](section0.md)」と、「[GPIO の使い方](section1.md)」で CHIRIMEN Raspi3 の基本的な操作方法とプログラミング方法を確認しておいてください。
+本チュートリアルを進める前に「[L チカしてみよう](section0.md)」と、「[GPIO の使い方](section1.md)」で CHIRIMEN RasPi の基本的な操作方法とプログラミング方法を確認しておいてください。
 
 前回までのチュートリアルで学んだことは下記のとおりです。
 
@@ -62,11 +62,11 @@ CHIRIMEN for Raspberry Pi 3 （以下「CHIRIMEN Raspi3」）を使ったプロ�
 
 # 3. 温度センサー(ADT7410)を使ってみる
 
-それでは実際に I2C に対応したモジュールを使ってみましょう。CHIRIMEN Raspi3 では `/home/pi/Desktop/gc/i2c/` フォルダにセンサーなど、いくつかの I2C モジュールを使うサンプルがプリインストールされています。
+それでは実際に I2C に対応したモジュールを使ってみましょう。CHIRIMEN RasPi では `/home/pi/Desktop/gc/i2c/` フォルダにセンサーなど、いくつかの I2C モジュールを使うサンプルがプリインストールされています。
 
-この中から、ADT7410 という温度センサーモジュールを使ってみたいと思います。Raspberry Pi 3 と ADT7410 との接続方法(回路図)と example コードは `/home/pi/Desktop/gc/i2c/i2c-ADT7410/` フォルダに格納されています。
+この中から、ADT7410 という温度センサーモジュールを使ってみたいと思います。Raspberry Pi と ADT7410 との接続方法(回路図)と example コードは `/home/pi/Desktop/gc/i2c/i2c-ADT7410/` フォルダに格納されています。
 
-> I2C バス上、Raspi3 がマスター、ADT7410 がスレーブになります。
+> I2C バス上、RasPi がマスター、ADT7410 がスレーブになります。
 
 ## a. 部品と配線について
 
@@ -78,7 +78,7 @@ CHIRIMEN for Raspberry Pi 3 （以下「CHIRIMEN Raspi3」）を使ったプロ�
 
 [{% cloudinary imgs/section2/schematic_warning.png alt="schematic" %}](imgs/section2/schematic_warning.png)
 
-下記が Raspi3 側の接続ピンの位置を拡大した図になります。間違えないよう接続してください。
+下記が RasPi 側の接続ピンの位置を拡大した図になります。間違えないよう接続してください。
 
 {% cloudinary imgs/section2/I2C.png alt="I2Cで利用するピンの位置" %}
 
@@ -107,7 +107,7 @@ CHIRIMEN for Raspberry Pi 3 （以下「CHIRIMEN Raspi3」）を使ったプロ�
 
 [秋月電子の ADT7410 モジュール](http://akizukidenshi.com/catalog/g/gM-06675/) の場合、3.3V に接続している端子側に A0A1 と書かれた端子に半田を付けてショートさせることで SlaveAddress を変更できます。他のデバイスと SlaveAddress が被ってしまった場合や複数の温度センサーを同時に接続したい場合に変更してください。
 
-試しに、一度 Raspi3 の 3.3V に接続している線を抜いて、もう一度 `i2cdetect -y -r 1` を実行してみてください。
+試しに、一度 RasPi の 3.3V に接続している線を抜いて、もう一度 `i2cdetect -y -r 1` を実行してみてください。
 
 {% cloudinary imgs/section2/ADT7410OFF.png alt="ADT7410の電源OFF" %}
 
@@ -180,7 +180,7 @@ Web I2C API を利用するための **`I2CAccess` インタフェースを取�
 var port = i2cAccess.ports.get(1);
 ```
 
-CHIRIMEN Raspi3 で利用可能な I2C ポート番号は`1`番だけです。ポート番号に`1` を指定して **`port` オブジェクトを取得** しています。
+CHIRIMEN RasPi で利用可能な I2C ポート番号は`1`番だけです。ポート番号に`1` を指定して **`port` オブジェクトを取得** しています。
 
 ### var adt7410 = new ADT7410(port,0x48)
 
@@ -211,9 +211,9 @@ ADT7410 ドライバーライブラリの内部の処理をまとめると次の
 
 I2C デバイスにより変わるのは、`port.open()`に指定する SlaveAddress と、[4.の実際の処理](#4温度センサーadt7410の値をドライバーを使わずに読むコードを書いてみる) になります。
 
-CHIRIMEN Raspi3 ではいろいろなデバイスのサンプルコードとドライバーを回路図と共に [example として用意されています](https://r.chirimen.org/examples)。Examples に無い I2C デバイスでも、上記流れを押さえておけば対応するコードを書くのはそれほど難しくありません。
+CHIRIMEN RasPi ではいろいろなデバイスのサンプルコードとドライバーを回路図と共に [example として用意されています](https://r.chirimen.org/examples)。Examples に無い I2C デバイスでも、上記流れを押さえておけば対応するコードを書くのはそれほど難しくありません。
 
-新たな I2C デバイスへの対応方法については、「[CHIRIMEN で I2C デバイスを使ってみる](https://qiita.com/tadfmac/items/04257bfe982ba0f050bb)」も参考にしてください (CHIRIMEN Raspi3 ではなく、CHIRIMEN 専用ボード向けの記事ですが、Web I2C API への対応観点では同じ方法論で対応が可能です)
+新たな I2C デバイスへの対応方法については、「[CHIRIMEN で I2C デバイスを使ってみる](https://qiita.com/tadfmac/items/04257bfe982ba0f050bb)」も参考にしてください (CHIRIMEN RasPi ではなく、CHIRIMEN 専用ボード向けの記事ですが、Web I2C API への対応観点では同じ方法論で対応が可能です)
 
 # 5. 温度センサーの値をドライバーを使わずに読んでみる
 
@@ -251,7 +251,7 @@ ADT7410 を指で触って温度が変わることを確認してみてくださ
 このチュートリアルでは下記について学びました。
 
 - I2C の基礎知識
-- i2cdetect を使った Raspi 3 に接続された I2C モジュールの SlaveAddress 確認方法
+- i2cdetect を使った Raspi に接続された I2C モジュールの SlaveAddress 確認方法
 - Web I2C API を使った処理の流れ
 - ADT7410 温度センサーの制御方法
 

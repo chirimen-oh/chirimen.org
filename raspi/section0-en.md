@@ -7,31 +7,31 @@ permalink: /raspi3/section0
 # Hello World
 
 # 1. Today’s Objective
-Get to know your CHIRIMEN for Raspberry Pi 3, and write your first program that turns on/off a LED bulb via a Web app.
+Get to know your CHIRIMEN for Raspberry Pi, and write your first program that turns on/off a LED bulb via a Web app.
 
 1. Today’s Objective
 2. Preparation
-3. Booting the CHIRIMEN for Raspberry Pi 3
+3. Booting the CHIRIMEN for Raspberry Pi
 4. Trying the LED-Blink
 5. Taking a look at the code
 
-##CHIRIMEN for Raspberry Pi 3
-"CHIRIMEN for Raspberry Pi 3” is an IoT programming environment built for Raspberry Pi 3（Raspi3).
+##CHIRIMEN for Raspberry Pi
+"CHIRIMEN for Raspberry Pi” is an IoT programming environment built for Raspberry Pi（Raspi3).
 
 In combination with the [Web GPIO API (Draft)](http://browserobo.github.io/WebGPIO) or the [Web I2C API (Draft)](http://browserobo.github.io/WebI2C), you can write programs that controls electric parts connected to your Raspi3 via the Web.
 
-![CHIRIMEN for Raspberry Pi 3 image](imgs/section0/CHIRIMENforRaspberryPi3.png)
+![CHIRIMEN for Raspberry Pi image](imgs/section0/CHIRIMENforRaspberryPi3.png)
 
 # 2. Preparation（You can skip this section if you’re already set up）
 
 ## What you’ll need
 
 ###The basic hardware
-Below is the list of items you will minimally need to boot CHIRIMEN for Raspberry Pi 3:
+Below is the list of items you will minimally need to boot CHIRIMEN for Raspberry Pi:
 
 ![Raspi3 Basic Hardware](imgs/section0/Raspi3.jpg)
 
-- 1 [Raspberry Pi 3 Model B](https://www.raspberrypi.org/products/raspberry-pi-3-model-b/) or [Raspberry Pi 3 Model B+](https://www.raspberrypi.org/products/raspberry-pi-3-model-b-plus/) × 1
+- 1 [Raspberry Pi 3 Model B](https://www.raspberrypi.org/products/raspberry-pi-3-model-b/) or [Raspberry Pi 3 Model B+](https://www.raspberrypi.org/products/raspberry-pi-3-model-b-plus/) or [Raspberry Pi 4 Model B](https://www.raspberrypi.org/products/raspberry-pi-4-model-b/)
 - 1 AC adaptor + micro B USB power cable (this would work perfectly)
   - ex: [Switching Power Supply Set for Raspberry Pi (5V 3.0A)](https://www.physical-computing.jp/product/1171)
   - Caution: Smartphone chargers are usually 1.0〜2.0A. They officially recommend  3.0A, and therefore power supply from PCs might not be sufficient, leading to power outage. In addition, the microUSB aren't so durable, so connectors that have a built-in switch are recommended to reduce the number of times they are plugged in and out.
@@ -52,38 +52,38 @@ In addition to the basic hardware, you will need the below parts to build your f
 - 2 male-female jumper wires
 
 
-## Writing the CHIRIMEN for Raspberry Pi 3 environment to your SD card
-Before you boot your system, you will have to write the CHIRIMEN for Raspberry Pi 3 image file onto your SD card.
+## Writing the CHIRIMEN for Raspberry Pi environment to your SD card
+Before you boot your system, you will have to write the CHIRIMEN for Raspberry Pi image file onto your SD card.
 
-For instructions, visit [Setting up the CHIRIMEN for Raspberry Pi 3 environment for your SD card](https://gist.github.com/tadfmac/527b31a463df0c9de8c30a598872344d)
+For instructions, visit [Setting up the CHIRIMEN for Raspberry Pi environment for your SD card](https://gist.github.com/tadfmac/527b31a463df0c9de8c30a598872344d)
 
-# 3. Booting CHIRIMEN for Raspberry Pi 3
+# 3. Booting CHIRIMEN for Raspberry Pi
 ## Get wired up!
 Once you have all the necessary supplies, you can connect them all together to boot the system.
-Reference the below image to connect all of your components together. (connecting the power cable to the Raspi3 should be your last step)
+Reference the below image to connect all of your components together. (connecting the power cable to the raspi should be your last step)
 
 ![Wiring](imgs/section0/h2.jpg)
 
 The [Raspberry Pi Hardware Guide](https://www.raspberrypi.org/learning/hardware-guide/) should come in handy if you’re having any trouble.
 
-Your Raspi3 should boot once you connect the power cable (if your power cable has a on/off switch, make sure you switch it on).
+Your raspi should boot once you connect the power cable (if your power cable has a on/off switch, make sure you switch it on).
 
 ##Initial Startup
-The below desktop should show once your Raspi3 boots. If you see the same screen on your display, congratulations, you’re all set!
+The below desktop should show once your raspi boots. If you see the same screen on your display, congratulations, you’re all set!
 
-![CHIRIMEN for Raspberry Pi 3 desktop screen](imgs/section0/CHIRIMENforRaspberryPi3desktop.png)
+![CHIRIMEN for Raspberry Pi desktop screen](imgs/section0/CHIRIMENforRaspberryPi3desktop.png)
 
 ## I can’t get that screen!
-If it displays a different screen than the one in the image above, chances are you have a different SD card from CHIRIMEN for Raspberry Pi 3 inserted.
- Retry [burning the CHIRIMEN for Raspberry Pi 3 environment onto your SD card ](https://gist.github.com/tadfmac/527b31a463df0c9de8c30a598872344d) again.
+If it displays a different screen than the one in the image above, chances are you have a different SD card from CHIRIMEN for Raspberry Pi inserted.
+ Retry [burning the CHIRIMEN for Raspberry Pi environment onto your SD card ](https://gist.github.com/tadfmac/527b31a463df0c9de8c30a598872344d) again.
 
 If nothing displays even though the power cable is connected and turned on, check to see if everything is connected to its correct position.
-If the red LED on your Raspi3 isn’t flashing even though everything is connected correctly, your AC cable may not be receiving any power.
+If the red LED on your raspi isn’t flashing even though everything is connected correctly, your AC cable may not be receiving any power.
 
 ## Configuring Wi-Fi settings
 Once you have the desktop displayed, you are now ready to connect your device to the Internet.
-Though you can CHIRIMEN for Raspberry Pi 3 allows for you to program only with local files without any network connection, there are several online tools such as JS Bin or JSFiddle that will remarkably enhance your programing experience.
-In addition, there will be lots more information about CHIRIMEN for Raspberry Pi 3 to come that will be available online.
+Though you can CHIRIMEN for Raspberry Pi allows for you to program only with local files without any network connection, there are several online tools such as JS Bin or JSFiddle that will remarkably enhance your programing experience.
+In addition, there will be lots more information about CHIRIMEN for Raspberry Pi to come that will be available online.
 
 So let’s start by connecting your device to the Internet.
 
@@ -100,10 +100,10 @@ LED-Blink refers to the act of turning an LED on and off. The LED-Blink program 
 - FYI: [LED (Light Emitting Diode) ](https://en.wikipedia.org/wiki/Light-emitting_diode)
 
 ## Wiring up
-To make your LED bulb flash, you must correctly connect it to your Raspi3.
+To make your LED bulb flash, you must correctly connect it to your raspi.
 Your LED bulb should have two leads coming out from it. The longer end is the anode (positive), the shorter the cathode (negative).
 
-If you navigate to the below directory on your CHIRIMEN for Raspberry Pi 3, you can find the wiring diagram along with examples preinstalled.
+If you navigate to the below directory on your CHIRIMEN for Raspberry Pi, you can find the wiring diagram along with examples preinstalled.
 
 ```
 /home/pi/Desktop/gc/gpio/LEDblink/schematic.png
@@ -151,7 +151,7 @@ Its Flashing!!
 ## If it’s not working:
 The issue is most likely a security error.
 
-Take a look at [Solution to the security error issue for CIRIMEN for Raspberry Pi 3](https://qiita.com/tadfmac/items/2d7929fe3560c77fe867) to fix the issue.
+Take a look at [Solution to the security error issue for CIRIMEN for Raspberry Pi](https://qiita.com/tadfmac/items/2d7929fe3560c77fe867) to fix the issue.
 
 > ToDo: add screenshot of https://localhost:33330 bookmark
 
@@ -225,7 +225,7 @@ function sleep(ms){
 ```
 
 ### Caution!
-CHIRIMEN for Raspi3 creates systems using web browsers as the programming environment. Since Web browsers run in JavaScript, you will need some knowledge about the language. You can learn about JavaScript here: [JavaScript 1 Day lecture](https://r.chirimen.org/1dayjs).
+CHIRIMEN for raspi creates systems using web browsers as the programming environment. Since Web browsers run in JavaScript, you will need some knowledge about the language. You can learn about JavaScript here: [JavaScript 1 Day lecture](https://r.chirimen.org/1dayjs).
 
 ## Asynchronous Processing
 
@@ -246,15 +246,15 @@ Before we move on, let’s go on a tangent to talk about GPIOs.
 ## GPIO
 [GPIO](https://en.wikipedia.org/wiki/GPIO) is an acronym for General-purpose input/output, and points to the general form of an input/output interface.
 
-With Raspi3, you can use the 40 pin headers fro GPIO (not all 40 are used for GPIO, though).
+With raspi, you can use the 40 pin headers fro GPIO (not all 40 are used for GPIO, though).
 
-The diagram below is a simplified diagram of the 40 pins on Raspi3. With CHIRIMEN for Raspberry Pi 3, the pins that correspond the green boxes are configured to be used as GPIO.
+The diagram below is a simplified diagram of the 40 pins on raspi. With CHIRIMEN for Raspberry Pi, the pins that correspond the green boxes are configured to be used as GPIO.
 
-The GPIO pin on the RasPi 3 can place either a 0V or 3.3V between the pin and the GND, or detect 0V/3.3V voltage that is put on between the pin.  Since the LED can light with only a couple of mA current, the LED turn on off when the voltage switches between 3.3V(on) and 0V(off) to get the blinking effect.
+The GPIO pin on the RasPi can place either a 0V or 3.3V between the pin and the GND, or detect 0V/3.3V voltage that is put on between the pin.  Since the LED can light with only a couple of mA current, the LED turn on off when the voltage switches between 3.3V(on) and 0V(off) to get the blinking effect.
 
 You can read more [here](https://tool-lab.com/make/raspberrypi-startup-22/)
 
-![Raspi3 PIN diagram](imgs/section0/Raspi3PIN.png)
+![raspi PIN diagram](imgs/section0/Raspi3PIN.png)
 
 ## Configuring the GPIOPort
 Back to the code.
@@ -282,7 +282,7 @@ Here are some challenges for you;
 
 #Summary
 In this tutorial, we tried the following tasks:
-- Setting up and booting CHIRIMEN for Raspberry Pi 3
+- Setting up and booting CHIRIMEN for Raspberry Pi
 - Running the LED-Blink sample program
 - Editing the LED-Blink code on JS Bin.
 

@@ -6,9 +6,9 @@ layout: tutorial
 
 # 概要
 
-CHIRIMEN for Raspberry Pi 3 (以下 CHIRIMEN Raspi3) を使ったプログラミングを通じて、Web GPIO API の使い方を学びます。
+CHIRIMEN for Raspberry Pi (以下 CHIRIMEN Raspi) を使ったプログラミングを通じて、Web GPIO API の使い方を学びます。
 
-CHIRIMEN Raspi3 の基本的な操作方法は「[L チカしてみよう](section0.md)」で既に確認済みの前提で進めます。
+CHIRIMEN Raspi の基本的な操作方法は「[L チカしてみよう](section0.md)」で既に確認済みの前提で進めます。
 
 # 1. 準備
 
@@ -24,17 +24,17 @@ CHIRIMEN Raspi3 の基本的な操作方法は「[L チカしてみよう](secti
 - リード抵抗 (10KΩ) x 1
 - [ちびギアモータ](https://tiisai.dip.jp/?p=2676) x 1
 
-## CHIRIMEN for Raspberry Pi 3 の起動と L チカの確認
+## CHIRIMEN for Raspberry Pi の起動と L チカの確認
 
-- [L チカしてみよう](section0.md) の 「3. CHIRIMEN for Raspberry Pi 3 を起動してみよう」を参照し CHIRIMEN Raspi3 を起動してください。
+- [L チカしてみよう](section0.md) の 「3. CHIRIMEN for Raspberry Pi を起動してみよう」を参照し CHIRIMEN RasPi を起動してください。
 - ついでに [L チカしてみよう](section0.md) の 「4. L チカをやってみよう」を実施して、L チカが正しく動作することを確認してください。
 
-## CHIRIMEN Raspi3 の基本のおさらい
+## CHIRIMEN RasPi の基本のおさらい
 
-- CHIRIMEN Raspi3 では、各種 example の配線図とコードが `~/Desktop/gc/` 配下においてある
-- CHIRIMEN Raspi3 で利用可能な GPIO Port 番号と位置は壁紙を見よう
+- CHIRIMEN RasPi では、各種 example の配線図とコードが `~/Desktop/gc/` 配下においてある
+- CHIRIMEN RasPi で利用可能な GPIO Port 番号と位置は壁紙を見よう
 - LED には方向がある。足が長い方 (アノード) を GPIO ポートに、反対 (カソード) を GND 側に繋ぐ。抵抗はどちら側でもよい
-- CHIRIMEN Raspi3 では Web アプリからの GPIO の制御に [Web GPIO API](http://browserobo.github.io/WebGPIO) を利用する
+- CHIRIMEN RasPi では Web アプリからの GPIO の制御に [Web GPIO API](http://browserobo.github.io/WebGPIO) を利用する
 
 # 2. マウスクリックで LED の ON/OFF を制御してみる
 
@@ -152,7 +152,7 @@ GPIO ポートにかける電圧を Web アプリで変化させたい時には�
 ### port.write()
 
 `port.write()` は、出力モードに指定した **GPIO ポートの電圧を切り替える** API です。
-`port.write(1)` で、指定したポートから HIGH (Raspi3 では 3.3V) の電圧がかかり、`port.write(0)` で LOW(0V) になります。
+`port.write(1)` で、指定したポートから HIGH (RasPi では 3.3V) の電圧がかかり、`port.write(0)` で LOW(0V) になります。
 
 {% cloudinary imgs/section1/JSFiddle.png alt="ここまでのJSFiddleの画面" %}
 
@@ -255,7 +255,7 @@ GPIO ポートにかける電圧を Web アプリで変化させたい時には�
 - スイッチを押す前は、Port 5 は HIGH (3.3V)
 - スイッチを押している間、Port 5 は LOW (0V)
 
-どうしてこうなるのでしょうか。実は、Raspi3 の GPIO ポートのいくつかは、初期状態で「プルアップ」されています。プルアップとは、回路を初期状態で「HIGH にしておく」ことですが、CHIRIMEN Raspi3 で利用可能な GPIO ポートのうち、下記ポート番号がプルアップ状態となっています。
+どうしてこうなるのでしょうか。実は、RasPi の GPIO ポートのいくつかは、初期状態で「プルアップ」されています。プルアップとは、回路を初期状態で「HIGH にしておく」ことですが、CHIRIMEN RasPi で利用可能な GPIO ポートのうち、下記ポート番号がプルアップ状態となっています。
 
 {% cloudinary imgs/section1/PullupPort.png alt="初期状態でPullupされているPortの一覧" %}
 
@@ -355,7 +355,7 @@ LED の処理と組み合わせた全体のコードは次のようになりま�
 Web GPIO API の機能が一通り確認できましたので、次は違う部品も制御してみましょう。
 
 ここでは、**MOSFET** を使って ギアモータ（ちびギアモータ）の単純な ON/OFF を制御してみましょう。
-  > CHIRIMEN for Raspberrry Pi 3 スターター・キットではギアモータの一例として、ちびギアモータをセットに含めています。ここまで「ギアモータ」と「ちびギアモータ」を併記してきましたが、以下では「ちびギアモータ」とのみ記載します。ちびギアモータ以外のギアモータを利用する場合には製品の仕様をご確認の上お試しください。
+  > CHIRIMEN for Raspberrry Pi スターター・キットではギアモータの一例として、ちびギアモータをセットに含めています。ここまで「ギアモータ」と「ちびギアモータ」を併記してきましたが、以下では「ちびギアモータ」とのみ記載します。ちびギアモータ以外のギアモータを利用する場合には製品の仕様をご確認の上お試しください。
 
 ## MOSFET とは
 
