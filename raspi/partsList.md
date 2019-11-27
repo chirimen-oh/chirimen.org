@@ -1,4 +1,4 @@
-# CHIRIMEN for Raspberry Pi3 対応デバイス / パーツ リスト
+# CHIRIMEN for Raspberry Pi 対応デバイス / パーツ リスト
 
 ## I2C センサー
 |部品型番/カテゴリ|説明|画像|各種リンク|
@@ -38,7 +38,7 @@
 |[150Ω](http://akizukidenshi.com/catalog/g/gR-07969/)<br>[10kΩ](http://akizukidenshi.com/catalog/g/gR-07990/)<br>[1kΩ](http://akizukidenshi.com/catalog/g/gR-07980/)<br>カーボン抵抗|必要な場所に電気抵抗を入れる部品です(ここでは通常のものよりサイズが大きく、抵抗値が読みやすい商品を紹介しています)|![](partsImgs/register-2.jpg)|[Examples](https://chirimen.org/chirimen-raspi3/gc/top/examples/#GPIO-Blink)<br>[データシート](http://akizukidenshi.com/download/ds/faithful/R1_CF.pdf)|
 |[2pin](http://akizukidenshi.com/catalog/g/gP-08078/)<br>[4pin](http://akizukidenshi.com/catalog/g/gP-03647/)<br>タクトスイッチ|ボタンを押している間だけ電気を流す部品です(chirimen チュートリアルでは 2pin のものを採用しています)|![](partsImgs/tactSwitch.jpg)|[Examples](https://chirimen.org/chirimen-raspi3/gc/top/examples/#GPIO-Button)|
 |[SS-10GL13](http://akizukidenshi.com/catalog/g/gP-14659/)<br>マイクロスイッチ|超小型のスイッチです|![](partsImgs/microSw.jpeg)|[Examples](https://chirimen.org/chirimen-raspi3/gc/top/examples/#GPIO-Button)<br>[データシート](http://akizukidenshi.com/download/ds/Omron/ss_ds_j_1_13.pdf)|
-|[2sK4017](http://akizukidenshi.com/catalog/g/gI-07597/)<br>Nch パワーMOSFET |直流電流の On/Off 制御を行う部品です|![](partsImgs/FET.jpg)|[CHIRIMEN チュートリアル](https://tutorial.chirimen.org/raspi3/section1#led--)<br>[データシート](akizukidenshi.com/download/ds/toshiba/2SK4017.pdf)|
+|[2sK4017](http://akizukidenshi.com/catalog/g/gI-07597/)<br>Nch パワーMOSFET |直流電流の On/Off 制御を行う部品です|![](partsImgs/FET.jpg)|[CHIRIMEN チュートリアル](https://tutorial.chirimen.org/raspi/section1#led--)<br>[データシート](akizukidenshi.com/download/ds/toshiba/2SK4017.pdf)|
 |[IRF520 (ドライバモジュール)](https://www.amazon.co.jp/Calloy-IRF520-%E3%83%89%E3%83%A9%E3%82%A4%E3%83%90%E3%83%A2%E3%82%B8%E3%83%A5%E3%83%BC%E3%83%AB-PWM%E3%83%A2%E3%83%BC%E3%82%BF%E3%83%BC-Arduino%E3%83%A9%E3%82%BA%E3%83%99%E3%83%AA%E3%83%BC%E3%83%91%E3%82%A4%E7%94%A8/dp/B07KYKDZ94)<br>PWMコントローラ|IRF520 パワーMOSFET を利用した PWM コントローラです|![](partsImgs/FET2.jpg)|[IRF520データシート](http://www.vishay.com/docs/91017/91017.pdf)|
 |[L298N (ドライバモジュール)](http://akizukidenshi.com/catalog/g/gM-06680/)<br>DCモーター 正逆転コントローラ|STマイクロ社のフルブリッジドライバである L298N を使用したDCモーターコントローラです|![](partsImgs/L298N.jpg)|[Examples](https://chirimen.org/chirimen-raspi3/gc/top/examples/#GPIO-HBridge)<br>[マニュアル](https://wiki.dfrobot.com/MD1.3_2A_Dual_Motor_Controller_SKU_DRI0002)<br>[データシート](http://akizukidenshi.com/download/ds/st/l298n.pdf)<br>[回路図](akizukidenshi.com/download/ds/dfrobot/DF-MDv1.3SCH.pdf)|
 |[L9110S](https://www.amazon.co.jp/HiLetgo-L9110S-H%E3%83%96%E3%83%AA%E3%83%83%E3%82%B8-%E3%83%A2%E3%83%BC%E3%82%BF%E3%83%89%E3%83%A9%E3%82%A4%E3%83%96-%E3%82%B3%E3%83%B3%E3%83%88%E3%83%AD%E3%83%BC%E3%83%A9%E3%83%9C%E3%83%BC%E3%83%89/dp/B011DT3OAY)<br>DCモータ 正逆転コントローラ|L9110を使用したDCモータコントローラです|![](partsImgs/L9110S.jpg)|[L9110データシート](https://www.elecrow.com/download/datasheet-l9110.pdf)|
@@ -59,8 +59,8 @@
 |型番/カテゴリー|説明|画像|各種リンク|
 |-|-|-|-|
 |[SG90](http://akizukidenshi.com/catalog/g/gM-08761/)<br>サーボモータ|Tower Pro 製の小型サーボモータです|![](partsImgs/SG90.jpg)|[データシート](http://akizukidenshi.com/download/ds/towerpro/SG90_a.pdf)<br>[Examples](https://chirimen.org/chirimen-raspi3/gc/top/examples/#I2C-PCA9685)|
-|-<br>DCモータ|各 Examples をご参照ください||[Examples: On/Off](https://tutorial.chirimen.org/raspi3/section1#led--)<br>[Examples: 正逆転](https://chirimen.org/chirimen-raspi3/gc/top/examples/#GPIO-HBridge)<br> [Examples: 可変速正逆転](https://chirimen.org/chirimen-raspi3/gc/top/examples/#GPIO-I2C-PWMHBridge-1) |
-|[ちびギヤモータ](https://tiisaishop.dip.jp/product/sg/)<br>ギヤードモータ|小型のギヤードモータです|![](partsImgs/chibiGear.jpg)|[製品情報](https://tiisai.dip.jp/?p=2676)<br>[チュートリアル](https://tutorial.chirimen.org/raspi3/section1#led--)|
+|-<br>DCモータ|各 Examples をご参照ください||[Examples: On/Off](https://tutorial.chirimen.org/raspi/section1#led--)<br>[Examples: 正逆転](https://chirimen.org/chirimen-raspi3/gc/top/examples/#GPIO-HBridge)<br> [Examples: 可変速正逆転](https://chirimen.org/chirimen-raspi3/gc/top/examples/#GPIO-I2C-PWMHBridge-1) |
+|[ちびギヤモータ](https://tiisaishop.dip.jp/product/sg/)<br>ギヤードモータ|小型のギヤードモータです|![](partsImgs/chibiGear.jpg)|[製品情報](https://tiisai.dip.jp/?p=2676)<br>[チュートリアル](https://tutorial.chirimen.org/raspi/section1#led--)|
 
 ## その他
 |カテゴリー|備考(型番など)|画像|

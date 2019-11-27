@@ -1,6 +1,6 @@
 # 旧チュートリアル (Qiita 版)
 
-CHIRIMEN for Raspberry Pi3 チュートリアルは当初 CHIRIMEN コミュニティメンバーが Qiita などで作成していたページを元に作成されています。当時のオリジナル版へのリンクはこちらとなります:
+CHIRIMEN for Raspberry Pi チュートリアルは当初 CHIRIMEN コミュニティメンバーが Qiita などで作成していたページを元に作成されています。当時のオリジナル版へのリンクはこちらとなります:
 
 - 基礎編
   - [0. Hello World](https://qiita.com/tadfmac/items/82817476615fdc7394b3)

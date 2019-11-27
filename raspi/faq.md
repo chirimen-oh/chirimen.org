@@ -78,7 +78,7 @@ CHIRIMEN Raspi と本チュートリアル教材は例えば以下のような�
 
 もちろん、オープンソースで公開されており自由に使われているため、これらは CHIRIMEN コミュニティに利用報告やフィードバックがあった一例に過ぎず、コミュニティの知らないところでも利用が広がっています (広がっていくことを期待しています)。
 
-CHIRIMEN Raspi を採用されている大学その他の教育関係者、イベント主催者、企業などで採用事例として掲載を希望される方は [本ページの Github リポジトリのファイル](https://github.com/chirimen-oh/tutorials/blob/master/raspi3/ja/faq.md) に対して追記するプルリクエストを頂くか、コミュニティの
+CHIRIMEN Raspi を採用されている大学その他の教育関係者、イベント主催者、企業などで採用事例として掲載を希望される方は [本ページの Github リポジトリのファイル](https://github.com/chirimen-oh/tutorials/blob/master/raspi/faq.md) に対して追記するプルリクエストを頂くか、コミュニティの
 
 ## サポート
 
