@@ -1,6 +1,6 @@
 ---
 lang: en
-permalink: /raspi3/
+permalink: /raspi/
 ---
 
 # Index page of tutorials for CHIRIMEN for Raspberry Pi3
