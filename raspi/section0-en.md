@@ -1,7 +1,7 @@
 ---
 layout: tutorial
 lang: en
-permalink: /raspi3/section0
+permalink: /raspi/section0
 ---
 
 # Hello World
@@ -16,9 +16,9 @@ Get to know your CHIRIMEN for Raspberry Pi, and write your first program that tu
 5. Taking a look at the code
 
 ##CHIRIMEN for Raspberry Pi
-"CHIRIMEN for Raspberry Pi” is an IoT programming environment built for Raspberry Pi（Raspi3).
+"CHIRIMEN for Raspberry Pi” is an IoT programming environment built for Raspberry Pi（Raspi).
 
-In combination with the [Web GPIO API (Draft)](http://browserobo.github.io/WebGPIO) or the [Web I2C API (Draft)](http://browserobo.github.io/WebI2C), you can write programs that controls electric parts connected to your Raspi3 via the Web.
+In combination with the [Web GPIO API (Draft)](http://browserobo.github.io/WebGPIO) or the [Web I2C API (Draft)](http://browserobo.github.io/WebI2C), you can write programs that controls electric parts connected to your Raspi via the Web.
 
 ![CHIRIMEN for Raspberry Pi image](imgs/section0/CHIRIMENforRaspberryPi3.png)
 
@@ -29,7 +29,7 @@ In combination with the [Web GPIO API (Draft)](http://browserobo.github.io/WebGP
 ###The basic hardware
 Below is the list of items you will minimally need to boot CHIRIMEN for Raspberry Pi:
 
-![Raspi3 Basic Hardware](imgs/section0/Raspi3.jpg)
+![Raspi Basic Hardware](imgs/section0/Raspi3.jpg)
 
 - 1 [Raspberry Pi 3 Model B](https://www.raspberrypi.org/products/raspberry-pi-3-model-b/) or [Raspberry Pi 3 Model B+](https://www.raspberrypi.org/products/raspberry-pi-3-model-b-plus/) or [Raspberry Pi 4 Model B](https://www.raspberrypi.org/products/raspberry-pi-4-model-b/)
 - 1 AC adaptor + micro B USB power cable (this would work perfectly)
@@ -127,7 +127,7 @@ You should end up with something that looks more or less like this:
 - [Using a breadboard](https://www.sunhayato.co.jp/blog/2015/03/04/7)
 - [Using an LED](https://www.marutsu.co.jp/pc/static/large_order/led)
 - [Reading resistors](http://www.jarl.org/Japanese/7_Technical/lib1/teikou.htm)
-- [Raspberry Pi3 and GPIOs](https://tool-lab.com/make/raspberrypi-startup-22/)
+- [Raspberry pi and GPIOs](https://tool-lab.com/make/raspberrypi-startup-22/)
 - [Using a tester to read resistors](http://startelc.com/elcLink/tester/elc_nArtcTester2.html#chapter-2)
 
 ## Running the example program
@@ -286,4 +286,4 @@ In this tutorial, we tried the following tasks:
 - Running the LED-Blink sample program
 - Editing the LED-Blink code on JS Bin.
 
-In the next tutorial[Tutorial 1. GPIO](https://tutorial.chirimen.org/raspi3/en/section1), we will learn about GPIO inputs.
+In the next tutorial[Tutorial 1. GPIO](https://tutorial.chirimen.org/raspi/en/section1), we will learn about GPIO inputs.

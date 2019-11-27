@@ -293,7 +293,7 @@ JS Bin の JavaScript のペイン (コードが表示されているところ) 
 
 このチュートリアルで書いたコードは以下のページで参照できます:
 
-- [GitHub リポジトリで参照](https://github.com/chirimen-oh/tutorials/tree/master/raspi3/examples/section0)
+- [GitHub リポジトリで参照](https://github.com/chirimen-oh/tutorials/tree/master/raspi/examples/section0)
 - ブラウザで開くページ
   - [L チカコード (画面は空白です)](examples/section0/s0.html)
 
