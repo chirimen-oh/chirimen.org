@@ -4,7 +4,7 @@ repository: chirimen-oh/tutorials
 title: '<a href="/" style="color: white">CHIRIMEN チュートリアル</a>'
 description: >-
   ブラウザからハードを制御する <a href="https://chirimen.org/" style="color: white">CHIRIMEN</a> のチュートリアル集です<br>
-  対応ボード別チュートリアル: <a href="/raspi3/" style="color: white">Raspberry Pi</a>
+  対応ボード別チュートリアル: <a href="/raspi/" style="color: white">Raspberry Pi</a>
   / 
   <a href="/ty51822r3/" style="color: white">TY51822r3</a>
   / 
@@ -47,7 +47,7 @@ commonmark:
 # https://github.com/untra/polyglot
 languages: ["ja", "en"]
 default_lang: "ja"
-exclude_from_localization: ["assets", "raspi3/examples"]
+exclude_from_localization: ["assets", "raspi/examples"]
 parallel_localization: true
 
 # Jekyll Cloudinary Liquid tag plug-in
