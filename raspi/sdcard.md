@@ -1,8 +1,8 @@
-# CHIRIMEN for Raspberry Pi 3 の SD カードを作成する
+# CHIRIMEN for Raspberry Pi の SD カードを作成する
 
-CHIRIMEN for Raspberry Pi 3 (以下 CHIRIMEN Raspi3) を利用するには Raspberry Pi 財団が配付する [Raspbian](https://www.raspberrypi.org/downloads/) をベースとして CHIRIMEN Raspi3 用に必要なソフトウェアやサンプルコードなどを同梱・設定変更などを行った専用の環境をセットアップ済みの起動イメージを使用すると簡単です。
+CHIRIMEN for Raspberry Pi (以下 CHIRIMEN Raspi) を利用するには Raspberry Pi 財団が配付する [Raspbian](https://www.raspberrypi.org/downloads/) をベースとして CHIRIMEN Raspi 用に必要なソフトウェアやサンプルコードなどを同梱・設定変更などを行った専用の環境をセットアップ済みの起動イメージを使用すると簡単です。
 
-このページではご自身の microSD カードに CHIRIMEN Raspi3 用のイメージを焼き込みセットアップする手順を説明します。
+このページではご自身の microSD カードに CHIRIMEN Raspi 用のイメージを焼き込みセットアップする手順を説明します。
 
 ## 1. 作業環境の準備
 
@@ -14,7 +14,7 @@ SD カードに起動イメージを焼き込むには Windows, macOS または 
 
 SD カードの書き込みに使う PC で最新の起動イメージをダウンロードしてください。
 
-- [CHIRIMEN for Raspberry Pi 3 最新リリース版](https://r.chirimen.org/sdimage)
+- [CHIRIMEN for Raspberry Pi 最新リリース版](https://r.chirimen.org/sdimage)
 
 古いバージョンのイメージやテスト用のイメージをお探しの場合は [イメージ配付ディレクトリ](http://download.chirimen.org/release/raspberry_pi_3/) をご確認ください。
 
@@ -30,7 +30,7 @@ SD カードの書き込みに使う PC で最新の起動イメージをダウ�
 
 ## 4. 起動を確認する
 
-焼き込み終わったら microSD カードを抜き、(HDMI ディスプレイや AD アダプターを繋いだ) Raspberry Pi 3 に指し込んで電源を入れてみてください。
+焼き込み終わったら microSD カードを抜き、(HDMI ディスプレイや AD アダプターを繋いだ) Raspberry Pi に指し込んで電源を入れてみてください。
 
 初回起動時には自動的にご利用の SD カードの容量に合わせたサイズにパーティーションが拡張されてから再起動します。暫く待って CHRIMEN のデスクトップが起動すれば無事焼き込み (と起動確認) 完了です。
 
