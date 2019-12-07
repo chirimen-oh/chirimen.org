@@ -365,6 +365,10 @@ Web GPIO API の機能が一通り確認できましたので、次は違う部�
 
 {% cloudinary imgs/section1/mosfet.png alt="mosfet" %}
 
+プルダウンのGPIO端子を使った典型的な回路は以下のようになります。
+{% cloudinary imgs/section1/DC3motor-schematic.svg alt="mosfet schematic" %}
+
+
 ## ギアモータとは
 
 ギアモータとは、モーターに減速機（ギヤ）を組み合わせることにより、低回転、高トルクを出せる駆動装置です。
