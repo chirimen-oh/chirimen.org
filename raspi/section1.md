@@ -368,7 +368,7 @@ Web GPIO API の機能が一通り確認できましたので、次は違う部�
 {% cloudinary imgs/section1/mosfet.png alt="mosfet" %}
 
 プルダウンのGPIOポートを使った典型的な回路は以下のようになります。
-  >Note: 図のVCCは、基本的にはRaspberry Pi3の3.3Vや5V端子ではありません。DC負荷用に別に用意した電源を使用するべきです。一方GNDはRaspbeery Pi3と、このDC負荷用電源とを共に接続します。
+  >Note: 図のVCCは、基本的にはRaspberry Pi3の3.3Vや5V端子ではありません。DC負荷用に別に用意した電源を使用するべきです。ちびギアモータを使った次章の例では、モータの消費電力が十分小さいため例外的にRaspberry Pi3の5V端子から電力を得ています。一方GNDはRaspbeery Pi3と、このDC負荷用電源とを共に接続します。
   
 ![NCh MOSFET schematic](imgs/section1/DC3motor-schematic.svg)
 <!--
