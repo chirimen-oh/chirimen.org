@@ -30,29 +30,18 @@ CHIRIMEN for Raspberry Pi（以下 「CHIRIMEN Raspi」） を使ったプログ
 - Webアプリからの I2C 制御には [Web I2C API](http://browserobo.github.io/WebI2C) を利用する
 - I2C モジュールはドライバライブラリを使い SlaveAddress を指定して初期化してから操作する
 
+
+  - 現在執筆中です。この項目について[ Grove を用いた解説を行っているページ](grove.md)がありますので、そちらをご覧ください。
+
+<!---
 # 1.準備
 
-## 複数のI2Cモジュールを接続するために
-
-前回は Raspberry Pi と温度センサを 4 本のジャンパケーブルで直接接続しました。I2C バスには複数のモジュールが接続できますので、今回は複数の I2C モジュールを容易に追加・削除できるように [Grove I2C Hub](http://wiki.seeed.cc/Grove-I2C_Hub/) を利用することにします。
-
-Grove I2C Hub は、4つの Grove コネクタを備えた I2C モジュールを接続するためのハブです。4ピンの [Grove 4ピン ケーブル](https://www.seeedstudio.com/Grove-Universal-4-Pin-Buckled-20cm-Cable-5-PCs-pack-p-936.html)を経由すれば、後述する[Grove Digital Light Sensor](http://wiki.seeed.cc/Grove-Digital_Light_Sensor/)など Grove コネクタを備えた I2C モジュールを直接接続することができます。
-
-Raspi 3 や前回の ADT7410 などピンヘッダを備えた（あるいは事前にスルーホールにピンヘッダをはんだ付けしてある）モジュールとの接続には、[Grove 4ピン ジャンパ メスケーブル](https://www.seeedstudio.com/grove-to-4-pin-254-female-jumper-wire5-pcs-pack-p-1020.html) 経由で接続することができます。
-
-なお、ハブと言っても同じピン同士を繋いでいるだけなので、手持ちがない場合はブレッドボードで 4 ピンを並べて刺して繋ぐことで代用可能です。
-
 ## 用意するもの
-
-ここでは、1 つのGroveコネクタつき I2C モジュールと 1 つのピンヘッダつき I2C モジュールを接続することを想定し、下記を用意しておきましょう。
 
 - [L チカしてみよう](section0.md) に記載の「基本ハードウエア」
 
 {% cloudinary imgs/section3/h.jpg alt="ハブとケーブル" %}
 
-- [Grove I2C Hub](http://wiki.seeed.cc/Grove-I2C_Hub/) x 1
-- [Grove 4ピン ジャンパー メス ケーブル](https://www.seeedstudio.com/grove-to-4-pin-254-female-jumper-wire5-pcs-pack-p-1020.html) x 2
-- [Grove 4ピン ケーブル](https://www.seeedstudio.com/Grove-Universal-4-Pin-20cm-Unbuckled-Cable-%285-PCs-Pack%29-p-749.html) x 1
 - ブレッドボード x 1
 
 上記に加え今回紹介するセンサが必要となりますが、センサについては各センサの説明のパートに記載します。
@@ -66,7 +55,7 @@ Raspi 3 や前回の ADT7410 などピンヘッダを備えた（あるいは事
 
 「1.準備」のパートに記載したものに加え、下記を用意してください。
 
-- [光センサ(Grove Digital Light Sensor)](http://wiki.seeed.cc/Grove-Digital_Light_Sensor/) x 1
+- [BH1750 (光センサ)](https://wiki.dfrobot.com/Light_Sensor__SKU_SEN0097_) x 1
 
 Raspberry Piとの接続方法については、下記回路図を参照ください。
 
@@ -428,3 +417,4 @@ I2Cデバイスを同時に接続して使用するとき、重要な注意事�
   - 複数センサの利用 (ADT7410 + Grove 光センサ): [JSBin](https://r.chirimen.org/jsbin-i2c-multi-sensors), [CodeSandbox](https://r.chirimen.org/csb-multi-sensors)
 
 次のCHIRIMEN for Raspberry Pi チュートリアルでは、『[Web GPIO APIとWeb I2C APIを組み合わせたプログラミング](section4.md)』に挑戦します！
+--->

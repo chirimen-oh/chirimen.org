@@ -34,6 +34,8 @@ Grove (グローブ) とは、[Seeed Studio](https://www.seeedstudio.com/) が�
 
 ##複数の I2C モジュールを接続するために (Grove I2C Hub について)
 
+
+
 Grove I2C Hub は、4つの Grove コネクタを備えた I2C モジュールを接続するためのハブです。4ピンの [Grove 4ピン ケーブル](https://www.seeedstudio.com/Grove-Universal-4-Pin-Buckled-20cm-Cable-5-PCs-pack-p-936.html)を経由すれば、後述する[Grove Digital Light Sensor](http://wiki.seeed.cc/Grove-Digital_Light_Sensor/)など Grove コネクタを備えた I2C モジュールを直接接続することができます。
 
 Raspi や [チュートリアル 2](https://tutorial.chirimen.org/raspi/section2
