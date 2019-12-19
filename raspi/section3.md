@@ -30,10 +30,6 @@ CHIRIMEN for Raspberry Pi（以下 「CHIRIMEN Raspi」） を使ったプログ
 - Webアプリからの I2C 制御には [Web I2C API](http://browserobo.github.io/WebI2C) を利用する
 - I2C モジュールはドライバライブラリを使い SlaveAddress を指定して初期化してから操作する
 
-<br>
-#### このページは現在執筆中です。
-- この項目について[ Grove を用いた解説を行っているページ](grove.md)がありますので、そちらをご覧ください。
-
 # 1.準備
 
 ## 用意するもの
@@ -127,7 +123,7 @@ main.js
 
 `main.js` も温度センサとほとんど同じです。最初に I2C デバイスを操作するため I2CAccess、Port と順に取得したら SlaveAddress と一緒にドライバに渡して初期化し、あとはセンサーの値を読みたいときに `read()` の代わりに `measure_high_res()` します。詳しく見てみましょう。
 
-### var grovelight = new BH1750(port)
+### var light = new BH1750(port)
 
 ここで光センサ用の **ドライバーライブラリのインスタンス生成** を行なっています。
 
@@ -235,7 +231,7 @@ main.js
 測距センサ VL53L0X の仕様に基づくデータ読み出し処理をここで実施しています。計測範囲内に遮蔽物がない場合には値が数値で得られないことに注意してください。
 
 
-# 4. 三軸加速度センサを使ってみる
+# 4. 加速度、角加速度センサを使ってみる
 
 傾きなどに反応するセンサを使ってみましょう。
 
@@ -243,7 +239,7 @@ main.js
 
 「1.準備」のパートに記載したものに加え、下記を用意してください。
 
-- 三軸加速度センサ([MPU 6050](https://www.switch-science.com/catalog/5025/)) x 1
+- 加速度、角加速度センサ([MPU 6050](https://www.switch-science.com/catalog/5025/)) x 1
 
 raspi との接続方法については、下記回路図を参照ください。
 
@@ -259,13 +255,7 @@ SlaveAddress `0x68` が見つかれば接続OKです。次に example を動か�
 
 [`https://chirimen.org/chirimen-raspi3/gc/contrib/examples/i2c-MPU6050/index.html`](https://chirimen.org/chirimen-raspi3/gc/contrib/examples/i2c-MPU6050/index.html)
 
-画面の回路図の下に表示されている3つの数値が加速度センサの値 (単位は m/s^2) です。画面左から加速度ベクトルの X、Y、Z 成分の値となっており、ベクトルの長さは静止時に地球の重力加速度 (ここが地球なら約 9.8) となります。
-
-> ADXL345 は各成分 ±16g の範囲で計測が可能です。
-
-{% cloudinary imgs/section3/k4.png alt="加速度センサの値" %}
-
-センサを傾けると数値が変化するはずです。
+画面の左上に表示されている `Gx` `Gy` `Gz` が加速度センサの値、`Rx` `Ry` `Rz` が角加速度を表しています。センサを動かすと数値が変化するはずです。
 
 ## c. コード解説
 
@@ -279,19 +269,28 @@ index.html
 ```html
     :
     <script src="node_modules/@chirimen-raspi/polyfill/polyfill.js"></script>
-    <script src="node_modules/@chirimen-raspi/chirimen-driver-i2c-grove-accelerometer/GROVEACCELEROMETER.js"></script>
+    <script src="node_modules/@chirimen-raspi/chirimen-driver-i2c-mpu6050/MPU6050.js"></script>
     <script src="./main.js" defer></script>
     :
   <body>
     :
-      <div id="ax" class="inner">ax</div>
-      <div id="ay" class="inner">ay</div>
-      <div id="az" class="inner">az</div>
-    :
+    <table>
+      <tr>
+          :
+        <td>Gx</td>
+        <td id="gx"></td>
+          :
+        <td>Gy</td>
+        <td id="gy"></td>
+          :          :
+        <td>Rz</td>
+        <td id="rz"></td>
+      </tr>
+    </table>
   </body>
 ```
 
-今回のドライバーライブラリは、`GROVEACCELEROMETER.js` です。オンラインから読み込む場合は `https://r.chirimen.org/grove-accelerometer.js` です。そして X、Y、Z、3つの値を表示するため要素が3つに変わりましたが、それ以外は今回もこれまでとほとんど同じです。
+今回のドライバーライブラリは、`MPU6050.js` です。オンラインから読み込む場合は `http://chirimen.org/chirimen-raspi3/gc/contrib/examples/i2c-MPU6050/main.js` です。そして出力が `Gx` `Gy` `Gz` `Rx` `Ry` `Rz` と6つの値を表示するため要素が6つに変わりましたが、それ以外はこれまでとほとんど同じです。
 
 ### c-2. main.js
 
@@ -300,57 +299,55 @@ index.html
 main.js
 
 ```javascript
-  var ax = document.getElementById("ax");
-  var ay = document.getElementById("ay");
-  var az = document.getElementById("az");
-  var i2cAccess = await navigator.requestI2CAccess();
-  var port = i2cAccess.ports.get(1);
-  var groveaccelerometer = new GROVEACCELEROMETER(port,0x53);
-  await groveaccelerometer.init();
-  while(1) {
-    try {
-      var values = await roveaccelerometer.read();
-      ax.innerHTML = values.x ? values.x : ax.innerHTML;
-      ay.innerHTML = values.y ? values.y : ay.innerHTML;
-      az.innerHTML = values.z ? values.z : az.innerHTML;
-    } catch ( err ){
-      console.log("READ ERROR:" + err);
+    var gx = document.getElementById("gx");
+    var gy = document.getElementById("gy");
+    var gz = document.getElementById("gz");
+    var rx = document.getElementById("rx");
+    var ry = document.getElementById("ry");
+    var rz = document.getElementById("rz");
+    var i2cAccess = await navigator.requestI2CAccess();
+    var port = i2cAccess.ports.get(1);
+    var mpu6050 = new MPU6050(port, 0x68);
+    await mpu6050.init();
+    while (1) {
+      var val = await mpu6050.readAll();
+      // console.log('value:', value);
+      temp.innerHTML = val.temperature;
+      gx.innerHTML = val.gx;
+      gy.innerHTML = val.gy;
+      gz.innerHTML = val.gz;
+      rx.innerHTML = val.rx;
+      ry.innerHTML = val.ry;
+      rz.innerHTML = val.rz;
+      await sleep(1000);
     }
-    await sleep(1000);
-  }
 ```
 
 main.js もこれまでの他のセンサーとほとんど同じです。
 
-### var groveaccelerometer = new GROVEACCELEROMETER(port,0x53)
+### var mpu6050 = new MPU6050(port, 0x68);
 
 ここで加速度センサ用のドライバーライブラリのインスタンス生成を行なっています。
 
-### grovelight.init()
+### mpu6050.init()
 
-これまでのドライバーライブラリ同様に `init()` では、インスタンス生成時に指定した `port` オブジェクトと `slaveAddress(0x29)` を用いて `I2CPort.open()` を行ない、返却される `I2CSlaveDevice` を保存後に`resolve()`で呼び出し元に処理を返しています。
+これまでのドライバーライブラリ同様に `init()` では、インスタンス生成時に指定した `port` オブジェクトと `slaveAddress(0x68)` を用いて `I2CPort.open()` を行ない、返却される `I2CSlaveDevice` を保存後に`resolve()`で呼び出し元に処理を返しています。
 
-### groveaccelerometer.read()
+### mpu6050.readAll()
 
-`read()` では、加速度センサの X、Y、Z の値が一度に返却されます。
+`readAll()` では、`Gx` `Gy` `Gz` `Rx` `Ry` `Rz` の値が一度に返却されます。
 
 # 5. 演習: 複数のセンサを組み合わせて使ってみよう
 
-せっかく Grove I2C Hub を用意しましたので、これまでの復習と応用を兼ねて下記のような組み合わせで2つのセンサを繋いで動かしてみましょう。
+下記のような組み合わせで2つのセンサを繋いで動かしてみましょう。
 
 - 「温度センサ (ADT7410)」か、「距離センサ (VL53L0X)」のどちらか 1つ
-- 「光センサ (Grove Digital Light Sensor)」か「三軸加速度センサ」のどちらか１つ
-
-※この組み合わせなら、冒頭で用意したケーブルで足りるはずです。
-
-オンライン版のドライバーライブラリは下記にあります。
-
-- [温度センサ (ADT7410): i2c-ADT7410.js](https://r.chirimen.org/adt7410.js)
-- [距離センサ (VL53L0X): i2c-VL53L0X.js](https://r.chirimen.org/vl53l0x.js)
-- [Grove 光センサ: i2c-grove-light.js](https://r.chirimen.org/grove-light.js)
-- [Grove 三軸加速度センサ: i2c-grove-accelerometer.js](https://r.chirimen.org/grove-accelerometer.js)
+- 「光センサ (BH1750)」か「加速度センサ (MPU6050)」のどちらか１つ
 
 まずはセンサを繋いでから、[jsbin](https://jsbin.com/) か [jsfiddle](https://jsfiddle.net/) を使ってコードを書いてみましょう。
+
+#### この項目はは現在執筆中です。
+- この項目について[ Grove を用いた解説を行っているページ](grove.md)もありますので、そちらをご覧ください。
 
 # 6. 他の I2C モジュールも使ってみる
 
