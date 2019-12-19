@@ -74,7 +74,7 @@ WebI2C 版 `/home/pi/Desktop/gc/i2c/i2c-detect/index.html` でも確認できま
 
 SlaveAddress `0x23` が見つかれば接続OKです。次に example を動かします。
 
-`https://chirimen.org/chirimen-raspi3/gc/contrib/examples/i2c-BH1750/index.html`
+[`https://chirimen.org/chirimen-raspi3/gc/contrib/examples/i2c-BH1750/index.html`](http://chirimen.org/chirimen-raspi3/gc/contrib/examples/i2c-BH1750/index.html)
 
 画面左上の `LIGHT[lx] :	`に表示されてる数値が明るさです。センサに当たる光を遮断してみてください。数値が小さくなるはずです。逆にセンサに LED の光を直接当てると数値が大きくなることが確認できるでしょう。
 
@@ -110,19 +110,6 @@ HTML は ADT7410 の時とほとんど同じです。ドライバーライブラ
 
 次に、main.jsを見てみましょう。(重要な部分以外は削っています)
 
-main.js(OLD)
-```javascript
-  var head = document.getElementById("head");
-  var i2cAccess = await navigator.requestI2CAccess();
-  var port = i2cAccess.ports.get(1);
-  var grovelight = new GROVELIGHT(port, 0x29);
-  await grovelight.init();
-  for (;;) {
-    var value = await grovelight.read();
-    head.innerHTML = value ? value : head.innerHTML;
-    await sleep(200);
-  }
-```
 main.js
 ```javascript
   var light = document.getElementById("light");
@@ -156,22 +143,29 @@ main.js
 
 BH1750 の仕様に基づく **データ読み出し処理** をここで実施しています。
 
+
 # 3. 測距センサを使ってみる
 
-モノまでの距離を測定する測距センサ( [I2C-MP6050](https://www.switch-science.com/catalog/5025/) )を使ってみましょう。
+モノまでの距離を測定する測距センサ (I2C-VL53L0X) を使ってみましょう。
 
 ## a. 部品と配線について
 
 「1.準備」のパートに記載したものに加え、下記を用意してください。
 
-- [測距センサ(I2C-MPU6050)](https://www.switch-science.com/catalog/5025/) x 1
+- [測距センサ(I2C-VL53L0X)](https://www.switch-science.com/catalog/2894/) x 1
 
-Raspi との接続方法については、こちらの回路図を参照ください。
+raspi との接続方法については、こちらの回路図を参照ください。
 
-{% cloudinary imgs/section3/MPU6050schematic.png alt="回路図" %}
+[{% cloudinary imgs/section3/VL53L0X-schematic.png alt="回路図" %}](imgs/section3/VL53L0X-schematic.png)
+
+このセンサモジュールは 4 本のピンヘッダ経由で接続します。あらかじめピンヘッダをハンダ付けしておいてください。また、製品によってはチップ表面に黄色の保護フィルムがついているものがあります。剥して使用してください。
+
+ピンの加工例 (保護フィルムが残っている状態)
+
+[{% cloudinary half imgs/section3/VL53L0X_comp.jpg alt="加工例" %}](imgs/section3/VL53L0X_comp.jpg)
 
 ## b. 接続確認と example の実行
-<!---
+
 i2cdetect で接続を確認しておきましょう。
 
 `$ i2cdetect -y -r 1`
@@ -249,18 +243,11 @@ main.js
 
 「1.準備」のパートに記載したものに加え、下記を用意してください。
 
-- 三軸加速度センサ([GROVE - I2C 三軸加速度センサ ADXL345搭載](http://www.seeedstudio.com/depot/grove-3-axis-digital-accelerometer-adxl345-p-1156.html)) x 1
+- 三軸加速度センサ([MPU 6050](https://www.switch-science.com/catalog/5025/)) x 1
 
-Raspi 3 との接続方法については、下記回路図を参照ください。
+raspi との接続方法については、下記回路図を参照ください。
 
-`/home/pi/Desktop/gc/i2c/i2c-grove-accelerometer/schematic.png`
-
-{% cloudinary imgs/section3/k3.png alt="回路図" %}
-
-このセンサモジュールは Grove コネクタを備えていますので、接続方法に応じてコネクタを選んでください。
-
-- Grove I2C Hub 経由で接続する場合: Grove 4ピン ケーブル経由で接続してください。
-- Raspi 3 へ直接接続する場合: Grove 4ピン ジャンパー メス ケーブル経由で接続してください。
+{% cloudinary imgs/section3/MPU6050schematic.png alt="回路図" %}
 
 ## b. 接続確認とexampleの実行
 
@@ -268,9 +255,9 @@ i2cdetect で接続を確認しておきましょう。
 
 `$ i2cdetect -y -r 1`
 
-SlaveAddress `0x53` が見つかれば接続OKです。次に example を動かします。
+SlaveAddress `0x68` が見つかれば接続OKです。次に example を動かします。
 
-`/home/pi/Desktop/gc/i2c/i2c-grove-accelerometer/index.html`
+[`https://chirimen.org/chirimen-raspi3/gc/contrib/examples/i2c-MPU6050/index.html`](https://chirimen.org/chirimen-raspi3/gc/contrib/examples/i2c-MPU6050/index.html)
 
 画面の回路図の下に表示されている3つの数値が加速度センサの値 (単位は m/s^2) です。画面左から加速度ベクトルの X、Y、Z 成分の値となっており、ベクトルの長さは静止時に地球の重力加速度 (ここが地球なら約 9.8) となります。
 
