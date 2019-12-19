@@ -30,10 +30,10 @@ CHIRIMEN for Raspberry Pi（以下 「CHIRIMEN Raspi」） を使ったプログ
 - Webアプリからの I2C 制御には [Web I2C API](http://browserobo.github.io/WebI2C) を利用する
 - I2C モジュールはドライバライブラリを使い SlaveAddress を指定して初期化してから操作する
 
+<br>
+#### このページは現在執筆中です。
+- この項目について[ Grove を用いた解説を行っているページ](grove.md)がありますので、そちらをご覧ください。
 
-  - 現在執筆中です。この項目について[ Grove を用いた解説を行っているページ](grove.md)がありますので、そちらをご覧ください。
-
-<!---
 # 1.準備
 
 ## 用意するもの
@@ -59,9 +59,9 @@ CHIRIMEN for Raspberry Pi（以下 「CHIRIMEN Raspi」） を使ったプログ
 
 Raspberry Piとの接続方法については、下記回路図を参照ください。
 
-`/home/pi/Desktop/gc/i2c/i2c-grove-light/schematic.png`
+`/home/pi/Desktop/gc/contrib/examples/i2c-BH1750/BH1750schematic.png`
 
-[{% cloudinary imgs/section3/k.png alt="回路図" %}](imgs/section3/k.png)
+{% cloudinary imgs/section3/BH1750schematic.png alt="回路図" %}
 
 このセンサモジュールはGroveコネクタを備えていますので、接続方法に応じてコネクタを選んでください。
 
