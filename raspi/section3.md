@@ -63,10 +63,6 @@ Raspberry Piとの接続方法については、下記回路図を参照くだ�
 
 {% cloudinary imgs/section3/BH1750schematic.png alt="回路図" %}
 
-このセンサモジュールはGroveコネクタを備えていますので、接続方法に応じてコネクタを選んでください。
-
-- Grove I2C Hub 経由で接続する場合 ：Grove 4ピン ケーブル経由で接続してください。
-- Raspberry Pi へ直接接続する場合：Grove 4ピン ジャンパー メス ケーブル経由で接続してください。
 
 ## b. 接続確認とexampleの実行
 
@@ -76,11 +72,11 @@ i2cdetect で接続を確認しておきましょう。ターミナルで次の�
 
 WebI2C 版 `/home/pi/Desktop/gc/i2c/i2c-detect/index.html` でも確認できますが、I2C 接続をこちらを使う場合は確認後に必ずタブを閉じて
 
-SlaveAddress `0x29` が見つかれば接続OKです。次に example を動かします。
+SlaveAddress `0x23` が見つかれば接続OKです。次に example を動かします。
 
-`/home/pi/Desktop/gc/i2c/i2c-grove-light/index.html`
+`https://chirimen.org/chirimen-raspi3/gc/contrib/examples/i2c-BH1750/index.html`
 
-画面の回路図の下の数値が明るさの値です。センサに当たる光を遮断してみてください。数値が小さくなるはずです。逆にセンサに LED の光を直接当てると数値が大きくなることが確認できるでしょう。
+画面左上の `LIGHT[lx] :	`に表示されてる数値が明るさです。センサに当たる光を遮断してみてください。数値が小さくなるはずです。逆にセンサに LED の光を直接当てると数値が大きくなることが確認できるでしょう。
 
 ## c. コード解説
 
@@ -94,22 +90,27 @@ index.html
 ```html
     : 
     <script src="node_modules/@chirimen-raspi/polyfill/polyfill.js"></script>
-    <script src="node_modules/@chirimen-raspi/chirimen-driver-i2c-grove-light/GROVELIGHT.js"></script>
+    <script src="node_modules/@chirimen-raspi/chirimen-driver-i2c-bh1750/BH1750.js"></script>
     <script src="./main.js" defer></script>
     :
   <body>
     :
-    <p id="head">TEST</p>
+    <table>
+      <tr>
+        <td>LIGHT[lx] : </td>
+        <td id="light"></td>
+      </tr>
+    </table>
   </body>
 ```
 
-HTML は ADT7410 の時とほとんど同じです。ドライバーライブラリは、`GROVELIGHT.js` に変わりました。リモートから最新の Polyfill とドライバを読み込みたい場合は `http://r.chirimen.org/polyfill.js` と `http://r.chirimen.org/grove-light.js` を指定します。
+HTML は ADT7410 の時とほとんど同じです。ドライバーライブラリは、`BH1750.js` に変わりました。
 
 ### c-2. main.js
 
 次に、main.jsを見てみましょう。(重要な部分以外は削っています)
 
-main.js
+main.js(OLD)
 ```javascript
   var head = document.getElementById("head");
   var i2cAccess = await navigator.requestI2CAccess();
@@ -122,48 +123,55 @@ main.js
     await sleep(200);
   }
 ```
+main.js
+```javascript
+  var light = document.getElementById("light");
+  var i2cAccess = await navigator.requestI2CAccess();
+  var port = i2cAccess.ports.get(1);
+  var bh1750 = new BH1750(port);
+  await bh1750.init();
+  await bh1750.set_sensitivity(128);
+  
+  while (1) {
+    var val = await bh1750.measure_high_res();
+    light.innerHTML = val;
+    await sleep(300);
+```
 
-`main.js` も温度センサとほとんど同じです。最初に I2C デバイスを操作するため I2CAccess、Port と順に取得したら SlaveAddress と一緒にドライバに渡して初期化し、あとはセンサーの値を読みたいときに `read()` します。詳しく見てみましょう。
+`main.js` も温度センサとほとんど同じです。最初に I2C デバイスを操作するため I2CAccess、Port と順に取得したら SlaveAddress と一緒にドライバに渡して初期化し、あとはセンサーの値を読みたいときに `read()` の代わりに `measure_high_res()` します。詳しく見てみましょう。
 
-### var grovelight = new GROVELIGHT(port,0x29)
+### var grovelight = new BH1750(port)
 
 ここで光センサ用の **ドライバーライブラリのインスタンス生成** を行なっています。
 
 ライブラリ名が変わっただけで ADT7410 と同様に、`port` オブジェクトと、SlaveAddress をパラメータで渡しています。
 
-### grovelight.init()
+### bh1750.init()
 
 `init()` で **I2C ポートを開いてセンサーを初期化** します。
 
 内部ではインスタンス生成時に指定したportオブジェクトと `slaveAddress(0x29)` を用いて `I2CPort.open()` を行ない、返却される `I2CSlaveDevice` を保存後に `resolve()` で呼び出し元に処理を返しています。
 
-### grovelight.read()
+### bh1750.measure_high_res()
 
-Grove Digital Light Sensor の仕様に基づく **データ読み出し処理** をここで実施しています。
-
+BH1750 の仕様に基づく **データ読み出し処理** をここで実施しています。
 
 # 3. 測距センサを使ってみる
 
-モノまでの距離を測定する測距センサ (I2C-VL53L0X) を使ってみましょう。
+モノまでの距離を測定する測距センサ( [I2C-MP6050](https://www.switch-science.com/catalog/5025/) )を使ってみましょう。
 
 ## a. 部品と配線について
 
 「1.準備」のパートに記載したものに加え、下記を用意してください。
 
-- [測距センサ(I2C-VL53L0X)](https://www.switch-science.com/catalog/2894/) x 1
+- [測距センサ(I2C-MPU6050)](https://www.switch-science.com/catalog/5025/) x 1
 
-Raspi 3 との接続方法については、こちらの回路図を参照ください。
+Raspi との接続方法については、こちらの回路図を参照ください。
 
-[{% cloudinary imgs/section3/VL53L0X-schematic.png alt="回路図" %}](imgs/section3/VL53L0X-schematic.png)
-
-このセンサモジュールは 4 本のピンヘッダ経由で接続します。あらかじめピンヘッダをハンダ付けしておいてください。また、製品によってはチップ表面に黄色の保護フィルムがついているものがあります。剥して使用してください。
-
-ピンの加工例 (保護フィルムが残っている状態)
-
-[{% cloudinary half imgs/section3/VL53L0X_comp.jpg alt="加工例" %}](imgs/section3/VL53L0X_comp.jpg)
+{% cloudinary imgs/section3/MPU6050schematic.png alt="回路図" %}
 
 ## b. 接続確認と example の実行
-
+<!---
 i2cdetect で接続を確認しておきましょう。
 
 `$ i2cdetect -y -r 1`
