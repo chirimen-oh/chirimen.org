@@ -367,6 +367,8 @@ I2C モジュールを複数利用するのは一見難しそうに見えるか�
 
   > 使用する I2C モジュールによって、ピンアサイン(`VDD` `GND` `SDA` `SCL` の順番)が異なることがあります。各モジュールのデータシートや本体の印字、CHIRIMEN の Exapmles 等を参考にして間違いの無いように接続して下さい。
 
+{% cloudinary imgs/section3/2devices.jpg alt="接続例" %}
+
 #### この項目は現在執筆中です。
  
 # 6. 他の I2C モジュールも使ってみる
@@ -375,14 +377,17 @@ I2C モジュールを複数利用するのは一見難しそうに見えるか�
 
 CHIRIMEN Raspi には、他にも `/home/pi/Desktop/gc/i2c/` 配下に例えば下記のような I2C モジュールの examples が含まれています。それぞれの回路図、デイバスドライバ、サンプルコードもあるので、お手持ちのデバイスを使ってみてください。
 
-- i2c-grove-gesture : 「[Grove Gesture](http://wiki.seeed.cc/Grove-Gesture_v1.0/)」(簡単なジェスチャーを判定するセンサ)の接続例です。
-- i2c-grove-oledDisplay : 「[Grove OLED Display](https://www.seeedstudio.com/Grove-OLED-Display-0.96%26quot%3B-p-781.html)」(Grove端子で接続できるOLED Display)の接続例です。
-- i2c-grove-touch : 「[Grove Touch Sensor](http://wiki.seeed.cc/Grove-I2C_Touch_Sensor/)」(Grove端子で接続できるタッチセンサ)の接続例です。
 - i2c-PCA9685 : 「[PCA9685 16-CHANNEL 12-BIT PWM/SERVO DRIVER](https://www.adafruit.com/product/815)」(I2C経由でLEDやサーボモータを16個まで制御可能なモジュール)の接続例です。
 - i2c-ads1015 : 「[ADS1015搭載 12BitADC 4CH 可変ゲインアンプ付き](https://www.switch-science.com/catalog/1136/)」の接続例です。サンプルの回路図では可変抵抗器を繋いでいますが、圧力、曲げ、水滴 (濡れ)、土壌水分、などいろいろ安価で売られているアナログセンサを接続して利用できます。
 - i2c-S11059 : 「[S11059 カラーセンサ](http://akizukidenshi.com/catalog/g/gK-08316/)」(カラーセンサ)の接続例です。
 - i2c-VEML6070 : 「[VEML6070 紫外線センサ](https://learn.adafruit.com/adafruit-veml6070-uv-light-sensor-breakout/overview)」(紫外線センサ)の接続例です。
 - i2c-multi-sensors : 2つのセンサ（ADT7410とgrove-light）を利用する例です。
+
+- i2c-grove-gesture : 「[Grove Gesture](http://wiki.seeed.cc/Grove-Gesture_v1.0/)」(簡単なジェスチャーを判定するセンサ)の接続例です。
+- i2c-grove-oledDisplay : 「[Grove OLED Display](https://www.seeedstudio.com/Grove-OLED-Display-0.96%26quot%3B-p-781.html)」(Grove端子で接続できるOLED Display)の接続例です。
+- i2c-grove-touch : 「[Grove Touch Sensor](http://wiki.seeed.cc/Grove-I2C_Touch_Sensor/)」(Grove端子で接続できるタッチセンサ)の接続例です。
+  >最後の 3 デバイスは Grove 規格に対応したものです。Grove の利用方法や説明については、[こちらのチュートリアル](grove.md)をご確認ください。
+
 
 また、CHIRIMEN Raspi のイメージ内に同梱されている example 以外にも、[CHIIRMEN examples ページのオンライン版](https://r.chirimen.org/examples) にはこれらに加えてコミュニティによって順次いろいろなデバイス利用例が [Advanced Examples](https://r.chirimen.org/examples#advanced) として追加されています (ドライバーなどが cotrib ディレクトリ内にあるので注意)。作りたいもの、試したいものを考えながら試してみてください。
 
