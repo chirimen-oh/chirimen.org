@@ -26,20 +26,11 @@ window.onload = async function() {
 
 上記のように WebGPIO, WebI2C が使える CHIRIMEN 環境は現在 [Rasbpebbry Pi](https://www.raspberrypi.org/), [TY51822r3](https://www.switch-science.com/catalog/2574/), [micro:bit](https://microbit.org/ja/) 向けに実装されています。お持ちのボードに合わせたものをご覧ください:
 
-- [CHIRIMEN for Raspberry Pi 3](/raspi/)
+- [CHIRIMEN for Raspberry Pi](/raspi/)
 - [CHIRIMEN with ty51822r3](/ty51822r3/)
 - [CHIRIMEN with micro:bit](https://chirimen.org/chirimen-micro-bit/)
 
-注: Raspberry Pi 3 ではボード上のブラウザからハードを制御しますが、TY51822r3 や micro:bit では PC やスマホなど他の端末のブラウザから Web Bluetooth を使いリモート制御します。
-
-## Old Versions / 以前のチュートリアル
-
-<!-- 2020 年になったら古いチュートリアルは /raspi/ からの案内のみとしてここから削除する -->
-
-本チュートリアルでは使用機材や手順を変更することがあります。お手持ちの機材が古い場合や、以前学習したときのものを参照したい場合など、必要に応じて古いチュートリアルのアーカイブをご覧ください。
-
-- [2018 年度に作成したスターターキット (DC Fan を含むもの) を利用するチュートリアル](https://webiot-2018--tutorial-chirimen-org.netlify.com/)
-  - DC Fan を含む、初期のスターターキットを使うチュートリアルです。[Web x IoT Makers Challenge 2018-19](https://webiotmakers.github.io/) でも採用されていたバージョンです。
+注: Raspberry Pi ではボード上のブラウザからハードを制御しますが、TY51822r3 や micro:bit では PC やスマホなど他の端末のブラウザから Web Bluetooth を使いリモート制御します。
 
 <div class="hide-on-production">
   <!-- tutorial.chirimen.org では hide-on-production クラスの中は表示されない -->
