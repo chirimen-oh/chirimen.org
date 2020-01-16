@@ -51,15 +51,15 @@ LED と温度センサーを使ってみる最小限のお試しページです�
     - micro:bit 内蔵デバイス: 加速度・磁気・温度センサー、タクトスイッチ、5x5 マトリクス LED
     - GPIO, I2C 外部デバイス: CHIRIMEN RasPi と同様に micro:bit に接続したデバイスを操作できます。
   - [PLAYBULB (LED 電球) を使う](section5.md)
-    - CHIRIMEN for Raspberry Pi 3 環境で Web Bluetooth API を使ってデバイス制御するサンプルです。
+    - CHIRIMEN for Raspberry Pi 環境で Web Bluetooth API を使ってデバイス制御するサンプルです。
     - Web I2C API や Web Audio API と組み合わせて PLAYBULB (Bluetooth 接続の LED 電球) を制御します。
 - 6. Arduino と連携する
   - [ステッピングモーターの制御](section6.md)
-    - CHIRIMEN for Raspberry Pi 3 と Arduino を組み合わせてステップピングモーターを制御します。I2C 接続した Arduino を利用することで μ 秒単位でモータードライバの制御を行います。
+    - CHIRIMEN for Raspberry Pi と Arduino を組み合わせてステップピングモーターを制御します。I2C 接続した Arduino を利用することで μ 秒単位でモータードライバの制御を行います。
 
 ## 対応デバイスと Example 集
 
-CHIRIMEN for Raspberry Pi 3 対応デバイスのドライバ・回路図・サンプルコードをセットにした Example 集を用意しています。
+CHIRIMEN for Raspberry Pi 対応デバイスのドライバ・回路図・サンプルコードをセットにした Example 集を用意しています。
 
 [対応デバイスのリスト](partsList.md) : 下記サンプルへのリンク付き
 
