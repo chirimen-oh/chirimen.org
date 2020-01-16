@@ -152,13 +152,13 @@ BH1750 の仕様に基づく **データ読み出し処理** をここで実施�
 
 raspi との接続方法については、こちらの回路図を参照ください。
 
-[{% cloudinary imgs/section3/VL53L0X-schematic.png alt="回路図" %}](imgs/section3/VL53L0X-schematic.png)
+{% cloudinary imgs/section3/VL53L0X-schematic.png alt="回路図" %}
 
 このセンサモジュールは 4 本のピンヘッダ経由で接続します。あらかじめピンヘッダをハンダ付けしておいてください。また、製品によってはチップ表面に黄色の保護フィルムがついているものがあります。剥して使用してください。
 
 ピンの加工例 (保護フィルムが残っている状態)
 
-[{% cloudinary half imgs/section3/VL53L0X_comp.jpg alt="加工例" %}](imgs/section3/VL53L0X_comp.jpg)
+{% cloudinary half imgs/section3/VL53L0X_comp.jpg alt="加工例" %}
 
 ## b. 接続確認と example の実行
 
@@ -369,8 +369,6 @@ I2C モジュールを複数利用するのは一見難しそうに見えるか�
 
 {% cloudinary imgs/section3/2devices.jpg alt="接続例" %}
 
-#### この項目は現在執筆中です。
- 
 # 6. 他の I2C モジュールも使ってみる
 
 前回からこれまでに 4 つの I2C センサを使ってみました。
