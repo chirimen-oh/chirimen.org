@@ -68,7 +68,7 @@ CHIRIMEN for Raspberry Pi 対応デバイスのドライバ・回路図・サン
 - [Advanced Example](https://r.chirimen.org/examples#advanced)
 
 Basic GPIO/I2C Examle のデバイスは CHIRIMEN Raspi の OS イメージ公開前に動作検証をしている CHIRIMEN Certified デバイスです。
-Advanced Example は個人レベルで動作確認して追加されている contrib デバイスです。いずれも元のソースコードは [こちら](https://github.com/chirimen-oh/chirimen-raspi3/tree/master/gc) に収録されています。
+Advanced Example は個人レベルで動作確認して追加されている contrib デバイスです。いずれも元のソースコードは [こちら](https://github.com/chirimen-oh/chirimen/tree/master/gc) に収録されています。
 
 ## Appendix, Tips, FAQ, Links etc...
 
