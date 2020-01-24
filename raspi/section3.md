@@ -70,7 +70,7 @@ WebI2C 版 `/home/pi/Desktop/gc/i2c/i2c-detect/index.html` でも確認できま
 
 SlaveAddress `0x23` が見つかれば接続OKです。次に example を動かします。
 
-[`https://chirimen.org/chirimen/gc/contrib/examples/i2c-BH1750/index.html`](http://chirimen.org/chirimen/gc/contrib/examples/i2c-BH1750/index.html)
+[`https://r.chirimen.org/examples/#I2C-BH1750`](http://r.chirimen.org/examples/#I2C-BH1750)
 
 画面左上の `LIGHT[lx] :	`に表示されてる数値が明るさです。センサに当たる光を遮断してみてください。数値が小さくなるはずです。逆にセンサに LED の光を直接当てると数値が大きくなることが確認できるでしょう。
 
@@ -253,7 +253,7 @@ i2cdetect で接続を確認しておきましょう。
 
 SlaveAddress `0x68` が見つかれば接続OKです。次に example を動かします。
 
-[`https://chirimen.org/chirimen/gc/contrib/examples/i2c-MPU6050/index.html`](https://chirimen.org/chirimen/gc/contrib/examples/i2c-MPU6050/index.html)
+[`https://chirimen.org/chirimen/gc/top/examples/#I2C-MPU6050`](https://chirimen.org/chirimen/gc/top/examples/#I2C-MPU6050)
 
 画面の左上に表示されている `Gx` `Gy` `Gz` が加速度センサの値、`Rx` `Ry` `Rz` が角加速度を表しています。センサを動かすと数値が変化するはずです。
 

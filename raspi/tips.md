@@ -14,9 +14,9 @@ CHIRIMEN を使う上で知っておくと良い Tips 集のページです。�
 
 ### 回路図とサンプルコードまであるもの
 
-CHIRIMEN Raspi の [examples](https://chirimen.org/chirimen/gc/top/examples/) に既に回路図とサンプルコードが用意されているもの
+CHIRIMEN Raspi の [examples](https://r.chirimen.org/examples/) に既に回路図とサンプルコードが用意されているもの
 
-一部は、SD メモリー内の examples には掲載されていませんが、Web 上の最新イメージの[examples](https://chirimen.org/chirimen/gc/top/examples/)で追加されているものです。SD メモリー内の examples からは[Latest version of this page on chirimen.org] リンクで辿れます。アプリケーションやドライバのコードは、サンプルコードのページを表示した後、ソースコードを表示(CTRL-U もしくは右クリックでソースを表示)させ、ソース内の script タグのリンクから辿れます。
+一部は、SD メモリー内の examples には掲載されていませんが、Web 上の最新イメージの[examples](https://r.chirimen.org/examples/)で追加されているものです。SD メモリー内の examples からは[Latest version of this page on chirimen.org] リンクで辿れます。アプリケーションやドライバのコードは、サンプルコードのページを表示した後、ソースコードを表示(CTRL-U もしくは右クリックでソースを表示)させ、ソース内の script タグのリンクから辿れます。
 
 #### センサー類
 
@@ -140,10 +140,10 @@ CHIRIMEN for Raspberry Pi にサンプルがないものは I2C デバイスド�
 - モーターを単純に回したり止めたりしたい。→ MOSFET のチュートリアルを使えば GPIO でできる
 - ソレノイドを動かしたい → 同上
 - PWM を流したい
-  - 単純なものは PCA9685 を使う(DC モータの制御、LED の明るさ制御、サーボモータの制御) LED 以外は[examples](https://chirimen.org/chirimen/gc/top/examples/)で紹介
+  - 単純なものは PCA9685 を使う(DC モータの制御、LED の明るさ制御、サーボモータの制御) LED 以外は[examples](https://r.chirimen.org/examples/)で紹介
   - 複雑なものは Raspberry Pi では動かないので、Arduino を経由するなどする。
     参考 https://qiita.com/tadfmac/items/a4cdbf915698573ab36d
-- 多数のフルカラー LED を個々に点灯制御したい → [examples](https://chirimen.org/chirimen/gc/top/examples/)の Neopixel_I2C を参照
+- 多数のフルカラー LED を個々に点灯制御したい → [examples](https://r.chirimen.org/examples/)の Neopixel_I2C を参照
 
 
 
