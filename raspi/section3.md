@@ -253,7 +253,7 @@ i2cdetect で接続を確認しておきましょう。
 
 SlaveAddress `0x68` が見つかれば接続OKです。次に example を動かします。
 
-[`https://chirimen.org/chirimen/gc/top/examples/#I2C-MPU6050`](https://chirimen.org/chirimen/gc/top/examples/#I2C-MPU6050)
+[`https://r.chirimen.org/examples/#I2C-MPU6050`](https://r.chirimen.org/examples/#I2C-MPU6050)
 
 画面の左上に表示されている `Gx` `Gy` `Gz` が加速度センサの値、`Rx` `Ry` `Rz` が角加速度を表しています。センサを動かすと数値が変化するはずです。
 
@@ -290,7 +290,7 @@ index.html
   </body>
 ```
 
-今回のドライバーライブラリは、`MPU6050.js` です。オンラインから読み込む場合は `http://chirimen.org/chirimen/gc/contrib/examples/i2c-MPU6050/main.js` です。そして出力が `Gx` `Gy` `Gz` `Rx` `Ry` `Rz` と6つの値を表示するため要素が6つに変わりましたが、それ以外はこれまでとほとんど同じです。
+今回のドライバーライブラリは、`MPU6050.js` です。オンラインから読み込む場合は `https://r.chirimen.org/examples/i2c-MPU6050/main.js` です。そして出力が `Gx` `Gy` `Gz` `Rx` `Ry` `Rz` と6つの値を表示するため要素が6つに変わりましたが、それ以外はこれまでとほとんど同じです。
 
 ### c-2. main.js
 
