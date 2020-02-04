@@ -111,7 +111,7 @@ main.js
   var light = document.getElementById("light");
   var i2cAccess = await navigator.requestI2CAccess();
   var port = i2cAccess.ports.get(1);
-  var bh1750 = new BH1750(port);
+  var bh1750 = new BH1750(port, 0x29);
   await bh1750.init();
   await bh1750.set_sensitivity(128);
   
@@ -123,7 +123,7 @@ main.js
 
 `main.js` も温度センサとほとんど同じです。最初に I2C デバイスを操作するため I2CAccess、Port と順に取得したら SlaveAddress と一緒にドライバに渡して初期化し、あとはセンサーの値を読みたいときに `read()` の代わりに `measure_high_res()` します。詳しく見てみましょう。
 
-### var light = new BH1750(port)
+### var light = new BH1750(port, 0x29)
 
 ここで光センサ用の **ドライバーライブラリのインスタンス生成** を行なっています。
 
@@ -367,7 +367,7 @@ I2C モジュールを複数利用するのは一見難しそうに見えるか�
 
 - ブレッドボードに I2C モジュールからつながっている4本のジャンパ線を接続していきます。このとき、`VDD` `GND` `SDA` `SCL` をブレッドボードの同じ列につなぐようにしてください。
 
-  > 使用する I2C モジュールによって、ピンアサイン(`VDD` `GND` `SDA` `SCL` の順番)が異なることがあります。各モジュールのデータシートや本体の印字、CHIRIMEN の Exapmles 等を参考にして間違いの無いように接続して下さい。
+  > 使用する I2C モジュールによって、ピンアサイン( `VDD` `GND` `SDA` `SCL` の順番)が異なることがあります。各モジュールのデータシートや本体の印字、CHIRIMEN の Exapmles 等を参考にして間違いの無いように接続して下さい。
 
 {% cloudinary imgs/section3/2devices.jpg alt="接続例" %}
 
@@ -379,16 +379,104 @@ I2C モジュールを複数利用するのは一見難しそうに見えるか�
 
 - モジュール毎にコードを書き、それらを一つにまとめることで2つ以上のモジュールの制御ができます。
 
-'''javascript
-
-'''
-
-### c-1. 利用するモジュール各々のコードを用意する
+### c-0. 利用するモジュール各々のコードを用意する
 
 [Examples](https://r.chirimen.org/examples) 等を参考にして、それぞれのモジュール用のコードを用意します。
 
-<!--2020年1月24日ここまで-->
+  > 自分で一からコーディングする場合には不要です。
 
+### c-1. HTML を書く
+
+- 各モジュールの HTML 参考にしながら HTML を書きましょう
+
+  まずは head 部分です
+
+  ```html
+  <!DOCTYPE html>
+  <html>
+    <head>
+      <meta charset="UTF-8" />
+      <title>ADT7410 & BH1750</title>
+      <script src="node_modules/@chirimen-raspi/polyfill/polyfill.js"></script>
+      <script src="node_modules/@chirimen-raspi/chirimen-driver-i2c-adt7410/ADT7410.js"></script>
+      <script src="node_modules/@chirimen-raspi/chirimen-driver-i2c-bh1750/BH1750.js"></script>
+      <script src="./main.js" defer></script>
+    </head>
+  ```
+
+   head 内ではセンサを利用するのに必要な JavaScript (以下 js ) を全て読み込みます
+
+   -  `polyfill.js` は chirimen を正しく動作させるために必要です。詳しくは[こちら](https://developer.mozilla.org/ja/docs/Glossary/Polyfill)などをご確認ください。
+
+   - `ADT7410.js` は ADT7410 を利用する必要なドライバです。
+
+   - `BH1750.js` は BH1750 を利用するのに必要なドライバです。
+  
+   - `main.js` は2つのモジュールからデータを読み込むためにここで用意(自分でコーディング)する js です。詳しくは後述します。
+
+  続いて、body を書いていきます。
+
+  ```html
+    <body>
+      <p id="head_adt7410">TEST</p>
+      <p id="head_bh1750">TEST</p>
+    </body>
+  </html>
+  ```
+
+  センサから取得した値を表示するための場所を用意しました。
+
+  - `<p id="head_adt7410">TEST</p>` は ADT7410 からのデータを表示するパラグラフです。
+
+  - `<p id="head_bh1750">TEST</p>` は BH1750 からのデータを表示するパラグラフです。
+
+  - どちらも、値の更新は `main.js` から行います(ここでは "TEST" の部分がそれぞれの値で更新されるようにします)。`main.js` の書き方は次の項をご覧ください。
+
+### c-2. JavaScript(main.js)を書く
+
+- c-1. ではHTMLを書いて、取得したデータ(値)を表示する＜場所＞を用意しましたので、次は js で実際にデータを＜取得するための＞コードを書いていきましょう。
+
+  ```javascript
+  main();
+
+  async function main() {
+    var head_adt7410 = document.getElementById("head_adt7410");
+    var head_bh1750 = document.getElementById("head_bh1750");
+    var i2cAccess = await navigator.requestI2CAccess();
+    var port = i2cAccess.ports.get(1);
+    var adt7410 = new ADT7410(port, 0x48);
+    var bh1750 = new BH1750(port, 0x29);
+    await adt7410.init();
+    await bh1750.init();
+
+    for (;;) {
+      try {
+        var lightValue = await adt7410.read();
+        head_adt7410.innerHTML = lightValue;
+      } catch (error) {
+        console.log("adt7410 error:" + error);
+      }
+
+      try {
+        var tempValue = await bh1750.read();
+        head_bh1750.innerHTML = tempValue;
+      } catch (error) {
+        console.log("bh1750 error:" + error);
+      }
+      sleep(500);
+    }
+  }
+  ```
+  
+  基本的にはそれぞれのモジュール用の `main.js` を合わせただけですので、細かい内容については [Section2](section2.md) の解説をご確認ください。
+  
+  では、どこに注意して、或いはどこを修正して2つの `main.js` を1つにまとめれば良いのでしょうか？
+  - `i2cAccess` と `port` の初期化は1回だけ行えば良いため、最初に1度のみ書きます。
+  - 
+
+
+
+<!--2020年2月4日ここまで BH1750のアドレスは0x29になっているが(だいぶ上の単体利用の説明でも同様)、正しくない可能性があるため次回確認のほど。-->
 
 # 6. 他の I2C モジュールも使ってみる
 
