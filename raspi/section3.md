@@ -369,7 +369,7 @@ I2C モジュールを複数利用するのは一見難しそうに見えるか�
 
   > 使用する I2C モジュールによって、ピンアサイン( `VDD` `GND` `SDA` `SCL` の順番)が異なることがあります。各モジュールのデータシートや本体の印字、CHIRIMEN の Exapmles 等を参考にして間違いの無いように接続して下さい。
 
-{% cloudinary imgs/section3/2devices.jpg alt="接続例" %}
+{% cloudinary imgs/section3/bh1750-and-adt7410.jpg alt="接続例" %}
 
 **補足：接続を簡単に行える Grove という規格のデバイスを用いれば、 Grove Hub というパーツで簡単に複数のデバイスを接続することが可能です。長所短所ともにありますので、詳しくは [Grove 編チュートリアル](grove.md)をご覧ください。**
 
