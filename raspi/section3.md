@@ -391,7 +391,7 @@ I2C モジュールを複数利用するのは一見難しそうに見えるか�
 
   まずは head 部分です
 
-  ```html:index.html
+  ```html
   <!DOCTYPE html>
   <html>
     <head>
@@ -416,7 +416,7 @@ I2C モジュールを複数利用するのは一見難しそうに見えるか�
 
   続いて、body を書いていきます。
 
-  ```html:index.html
+  ```html
     <body>
       <p id="head_adt7410">TEST</p>
       <p id="head_bh1750">TEST</p>
@@ -436,7 +436,7 @@ I2C モジュールを複数利用するのは一見難しそうに見えるか�
 
 - c-1. ではHTMLを書いて、取得したデータ(値)を表示する＜場所＞を用意しましたので、次は js で実際にデータを＜取得するための＞コードを書いていきましょう。
 
-  ```javascript:main.js
+  ```javascript
   main();
 
   async function main() {
