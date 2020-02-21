@@ -55,6 +55,7 @@ LED と温度センサーを使ってみる最小限のお試しページです�
 - 6. Arduino と連携する
   - [ステッピングモーターの制御](section6.md)
     - CHIRIMEN for Raspberry Pi 3 と Arduino を組み合わせてステップピングモーターを制御します。I2C 接続した Arduino を利用することで μ 秒単位でモータードライバの制御を行います。
+- [WebGPIO API や WebI2C API を Node.js から使う](nodejs.md)
 
 ## 対応デバイスと Example 集
 
