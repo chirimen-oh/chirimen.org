@@ -30,17 +30,13 @@ CHIRIMEN for Raspberry Pi（以下 「CHIRIMEN Raspi」） を使ったプログ
 - Webアプリからの I2C 制御には [Web I2C API](http://browserobo.github.io/WebI2C) を利用する
 - I2C モジュールはドライバライブラリを使い SlaveAddress を指定して初期化してから操作する
 
-
-  - 現在執筆中です。この項目について[ Grove を用いた解説を行っているページ](grove.md)がありますので、そちらをご覧ください。
-
-<!---
 # 1.準備
 
 ## 用意するもの
 
 - [L チカしてみよう](section0.md) に記載の「基本ハードウエア」
 
-{% cloudinary imgs/section3/h.jpg alt="ハブとケーブル" %}
+![](imgs/section0/Raspi3.jpg)
 
 - ブレッドボード x 1
 
@@ -59,14 +55,10 @@ CHIRIMEN for Raspberry Pi（以下 「CHIRIMEN Raspi」） を使ったプログ
 
 Raspberry Piとの接続方法については、下記回路図を参照ください。
 
-`/home/pi/Desktop/gc/i2c/i2c-grove-light/schematic.png`
+`/home/pi/Desktop/gc/contrib/examples/i2c-BH1750/BH1750schematic.png`
 
-[{% cloudinary imgs/section3/k.png alt="回路図" %}](imgs/section3/k.png)
+{% cloudinary imgs/section3/BH1750schematic.png alt="回路図" %}
 
-このセンサモジュールはGroveコネクタを備えていますので、接続方法に応じてコネクタを選んでください。
-
-- Grove I2C Hub 経由で接続する場合 ：Grove 4ピン ケーブル経由で接続してください。
-- Raspberry Pi へ直接接続する場合：Grove 4ピン ジャンパー メス ケーブル経由で接続してください。
 
 ## b. 接続確認とexampleの実行
 
@@ -76,11 +68,11 @@ i2cdetect で接続を確認しておきましょう。ターミナルで次の�
 
 WebI2C 版 `/home/pi/Desktop/gc/i2c/i2c-detect/index.html` でも確認できますが、I2C 接続をこちらを使う場合は確認後に必ずタブを閉じて
 
-SlaveAddress `0x29` が見つかれば接続OKです。次に example を動かします。
+SlaveAddress `0x23` が見つかれば接続OKです。次に example を動かします。
 
-`/home/pi/Desktop/gc/i2c/i2c-grove-light/index.html`
+[`https://r.chirimen.org/examples/#I2C-BH1750`](http://r.chirimen.org/examples/#I2C-BH1750)
 
-画面の回路図の下の数値が明るさの値です。センサに当たる光を遮断してみてください。数値が小さくなるはずです。逆にセンサに LED の光を直接当てると数値が大きくなることが確認できるでしょう。
+画面左上の `LIGHT[lx] :	`に表示されてる数値が明るさです。センサに当たる光を遮断してみてください。数値が小さくなるはずです。逆にセンサに LED の光を直接当てると数値が大きくなることが確認できるでしょう。
 
 ## c. コード解説
 
@@ -94,16 +86,21 @@ index.html
 ```html
     : 
     <script src="node_modules/@chirimen-raspi/polyfill/polyfill.js"></script>
-    <script src="node_modules/@chirimen-raspi/chirimen-driver-i2c-grove-light/GROVELIGHT.js"></script>
+    <script src="node_modules/@chirimen-raspi/chirimen-driver-i2c-bh1750/BH1750.js"></script>
     <script src="./main.js" defer></script>
     :
   <body>
     :
-    <p id="head">TEST</p>
+    <table>
+      <tr>
+        <td>LIGHT[lx] : </td>
+        <td id="light"></td>
+      </tr>
+    </table>
   </body>
 ```
 
-HTML は ADT7410 の時とほとんど同じです。ドライバーライブラリは、`GROVELIGHT.js` に変わりました。リモートから最新の Polyfill とドライバを読み込みたい場合は `http://r.chirimen.org/polyfill.js` と `http://r.chirimen.org/grove-light.js` を指定します。
+HTML は ADT7410 の時とほとんど同じです。ドライバーライブラリは、`BH1750.js` に変わりました。
 
 ### c-2. main.js
 
@@ -111,35 +108,36 @@ HTML は ADT7410 の時とほとんど同じです。ドライバーライブラ
 
 main.js
 ```javascript
-  var head = document.getElementById("head");
+  var light = document.getElementById("light");
   var i2cAccess = await navigator.requestI2CAccess();
   var port = i2cAccess.ports.get(1);
-  var grovelight = new GROVELIGHT(port, 0x29);
-  await grovelight.init();
-  for (;;) {
-    var value = await grovelight.read();
-    head.innerHTML = value ? value : head.innerHTML;
-    await sleep(200);
-  }
+  var bh1750 = new BH1750(port, 0x23);
+  await bh1750.init();
+  await bh1750.set_sensitivity(128);
+  
+  while (1) {
+    var val = await bh1750.measure_high_res();
+    light.innerHTML = val;
+    await sleep(300);
 ```
 
-`main.js` も温度センサとほとんど同じです。最初に I2C デバイスを操作するため I2CAccess、Port と順に取得したら SlaveAddress と一緒にドライバに渡して初期化し、あとはセンサーの値を読みたいときに `read()` します。詳しく見てみましょう。
+`main.js` も温度センサとほとんど同じです。最初に I2C デバイスを操作するため I2CAccess、Port と順に取得したら SlaveAddress と一緒にドライバに渡して初期化し、あとはセンサーの値を読みたいときに `read()` の代わりに `measure_high_res()` します。詳しく見てみましょう。
 
-### var grovelight = new GROVELIGHT(port,0x29)
+### var light = new BH1750(port, 0x23)
 
 ここで光センサ用の **ドライバーライブラリのインスタンス生成** を行なっています。
 
 ライブラリ名が変わっただけで ADT7410 と同様に、`port` オブジェクトと、SlaveAddress をパラメータで渡しています。
 
-### grovelight.init()
+### bh1750.init()
 
 `init()` で **I2C ポートを開いてセンサーを初期化** します。
 
-内部ではインスタンス生成時に指定したportオブジェクトと `slaveAddress(0x29)` を用いて `I2CPort.open()` を行ない、返却される `I2CSlaveDevice` を保存後に `resolve()` で呼び出し元に処理を返しています。
+内部ではインスタンス生成時に指定したportオブジェクトと `slaveAddress(0x23)` を用いて `I2CPort.open()` を行ない、返却される `I2CSlaveDevice` を保存後に `resolve()` で呼び出し元に処理を返しています。
 
-### grovelight.read()
+### bh1750.measure_high_res()
 
-Grove Digital Light Sensor の仕様に基づく **データ読み出し処理** をここで実施しています。
+BH1750 の仕様に基づく **データ読み出し処理** をここで実施しています。
 
 
 # 3. 測距センサを使ってみる
@@ -152,15 +150,15 @@ Grove Digital Light Sensor の仕様に基づく **データ読み出し処理**
 
 - [測距センサ(I2C-VL53L0X)](https://www.switch-science.com/catalog/2894/) x 1
 
-Raspi 3 との接続方法については、こちらの回路図を参照ください。
+raspi との接続方法については、こちらの回路図を参照ください。
 
-[{% cloudinary imgs/section3/VL53L0X-schematic.png alt="回路図" %}](imgs/section3/VL53L0X-schematic.png)
+{% cloudinary imgs/section3/VL53L0X-schematic.png alt="回路図" %}
 
 このセンサモジュールは 4 本のピンヘッダ経由で接続します。あらかじめピンヘッダをハンダ付けしておいてください。また、製品によってはチップ表面に黄色の保護フィルムがついているものがあります。剥して使用してください。
 
 ピンの加工例 (保護フィルムが残っている状態)
 
-[{% cloudinary half imgs/section3/VL53L0X_comp.jpg alt="加工例" %}](imgs/section3/VL53L0X_comp.jpg)
+{% cloudinary half imgs/section3/VL53L0X_comp.jpg alt="加工例" %}
 
 ## b. 接続確認と example の実行
 
@@ -233,7 +231,7 @@ main.js
 測距センサ VL53L0X の仕様に基づくデータ読み出し処理をここで実施しています。計測範囲内に遮蔽物がない場合には値が数値で得られないことに注意してください。
 
 
-# 4. 三軸加速度センサを使ってみる
+# 4. 加速度、角加速度センサを使ってみる
 
 傾きなどに反応するセンサを使ってみましょう。
 
@@ -241,18 +239,11 @@ main.js
 
 「1.準備」のパートに記載したものに加え、下記を用意してください。
 
-- 三軸加速度センサ([GROVE - I2C 三軸加速度センサ ADXL345搭載](http://www.seeedstudio.com/depot/grove-3-axis-digital-accelerometer-adxl345-p-1156.html)) x 1
+- 加速度、角加速度センサ([MPU 6050](https://www.switch-science.com/catalog/5025/)) x 1
 
-Raspi 3 との接続方法については、下記回路図を参照ください。
+raspi との接続方法については、下記回路図を参照ください。
 
-`/home/pi/Desktop/gc/i2c/i2c-grove-accelerometer/schematic.png`
-
-{% cloudinary imgs/section3/k3.png alt="回路図" %}
-
-このセンサモジュールは Grove コネクタを備えていますので、接続方法に応じてコネクタを選んでください。
-
-- Grove I2C Hub 経由で接続する場合: Grove 4ピン ケーブル経由で接続してください。
-- Raspi 3 へ直接接続する場合: Grove 4ピン ジャンパー メス ケーブル経由で接続してください。
+{% cloudinary imgs/section3/MPU6050schematic.png alt="回路図" %}
 
 ## b. 接続確認とexampleの実行
 
@@ -260,17 +251,11 @@ i2cdetect で接続を確認しておきましょう。
 
 `$ i2cdetect -y -r 1`
 
-SlaveAddress `0x53` が見つかれば接続OKです。次に example を動かします。
+SlaveAddress `0x68` が見つかれば接続OKです。次に example を動かします。
 
-`/home/pi/Desktop/gc/i2c/i2c-grove-accelerometer/index.html`
+[`https://r.chirimen.org/examples/#I2C-MPU6050`](https://r.chirimen.org/examples/#I2C-MPU6050)
 
-画面の回路図の下に表示されている3つの数値が加速度センサの値 (単位は m/s^2) です。画面左から加速度ベクトルの X、Y、Z 成分の値となっており、ベクトルの長さは静止時に地球の重力加速度 (ここが地球なら約 9.8) となります。
-
-> ADXL345 は各成分 ±16g の範囲で計測が可能です。
-
-{% cloudinary imgs/section3/k4.png alt="加速度センサの値" %}
-
-センサを傾けると数値が変化するはずです。
+画面の左上に表示されている `Gx` `Gy` `Gz` が加速度センサの値、`Rx` `Ry` `Rz` が角加速度を表しています。センサを動かすと数値が変化するはずです。
 
 ## c. コード解説
 
@@ -284,19 +269,28 @@ index.html
 ```html
     :
     <script src="node_modules/@chirimen-raspi/polyfill/polyfill.js"></script>
-    <script src="node_modules/@chirimen-raspi/chirimen-driver-i2c-grove-accelerometer/GROVEACCELEROMETER.js"></script>
+    <script src="node_modules/@chirimen-raspi/chirimen-driver-i2c-mpu6050/MPU6050.js"></script>
     <script src="./main.js" defer></script>
     :
   <body>
     :
-      <div id="ax" class="inner">ax</div>
-      <div id="ay" class="inner">ay</div>
-      <div id="az" class="inner">az</div>
-    :
+    <table>
+      <tr>
+          :
+        <td>Gx</td>
+        <td id="gx"></td>
+          :
+        <td>Gy</td>
+        <td id="gy"></td>
+          :          :
+        <td>Rz</td>
+        <td id="rz"></td>
+      </tr>
+    </table>
   </body>
 ```
 
-今回のドライバーライブラリは、`GROVEACCELEROMETER.js` です。オンラインから読み込む場合は `https://r.chirimen.org/grove-accelerometer.js` です。そして X、Y、Z、3つの値を表示するため要素が3つに変わりましたが、それ以外は今回もこれまでとほとんど同じです。
+今回のドライバーライブラリは、`MPU6050.js` です。オンラインから読み込む場合は `https://r.chirimen.org/examples/i2c-MPU6050/main.js` です。そして出力が `Gx` `Gy` `Gz` `Rx` `Ry` `Rz` と6つの値を表示するため要素が6つに変わりましたが、それ以外はこれまでとほとんど同じです。
 
 ### c-2. main.js
 
@@ -305,57 +299,188 @@ index.html
 main.js
 
 ```javascript
-  var ax = document.getElementById("ax");
-  var ay = document.getElementById("ay");
-  var az = document.getElementById("az");
-  var i2cAccess = await navigator.requestI2CAccess();
-  var port = i2cAccess.ports.get(1);
-  var groveaccelerometer = new GROVEACCELEROMETER(port,0x53);
-  await groveaccelerometer.init();
-  while(1) {
-    try {
-      var values = await roveaccelerometer.read();
-      ax.innerHTML = values.x ? values.x : ax.innerHTML;
-      ay.innerHTML = values.y ? values.y : ay.innerHTML;
-      az.innerHTML = values.z ? values.z : az.innerHTML;
-    } catch ( err ){
-      console.log("READ ERROR:" + err);
+    var gx = document.getElementById("gx");
+    var gy = document.getElementById("gy");
+    var gz = document.getElementById("gz");
+    var rx = document.getElementById("rx");
+    var ry = document.getElementById("ry");
+    var rz = document.getElementById("rz");
+    var i2cAccess = await navigator.requestI2CAccess();
+    var port = i2cAccess.ports.get(1);
+    var mpu6050 = new MPU6050(port, 0x68);
+    await mpu6050.init();
+    while (1) {
+      var val = await mpu6050.readAll();
+      // console.log('value:', value);
+      temp.innerHTML = val.temperature;
+      gx.innerHTML = val.gx;
+      gy.innerHTML = val.gy;
+      gz.innerHTML = val.gz;
+      rx.innerHTML = val.rx;
+      ry.innerHTML = val.ry;
+      rz.innerHTML = val.rz;
+      await sleep(1000);
     }
-    await sleep(1000);
-  }
 ```
 
 main.js もこれまでの他のセンサーとほとんど同じです。
 
-### var groveaccelerometer = new GROVEACCELEROMETER(port,0x53)
+### var mpu6050 = new MPU6050(port, 0x68);
 
 ここで加速度センサ用のドライバーライブラリのインスタンス生成を行なっています。
 
-### grovelight.init()
+### mpu6050.init()
 
-これまでのドライバーライブラリ同様に `init()` では、インスタンス生成時に指定した `port` オブジェクトと `slaveAddress(0x29)` を用いて `I2CPort.open()` を行ない、返却される `I2CSlaveDevice` を保存後に`resolve()`で呼び出し元に処理を返しています。
+これまでのドライバーライブラリ同様に `init()` では、インスタンス生成時に指定した `port` オブジェクトと `slaveAddress(0x68)` を用いて `I2CPort.open()` を行ない、返却される `I2CSlaveDevice` を保存後に`resolve()`で呼び出し元に処理を返しています。
 
-### groveaccelerometer.read()
+### mpu6050.readAll()
 
-`read()` では、加速度センサの X、Y、Z の値が一度に返却されます。
+`readAll()` では、`Gx` `Gy` `Gz` `Rx` `Ry` `Rz` の値が一度に返却されます。
 
 # 5. 演習: 複数のセンサを組み合わせて使ってみよう
 
-せっかく Grove I2C Hub を用意しましたので、これまでの復習と応用を兼ねて下記のような組み合わせで2つのセンサを繋いで動かしてみましょう。
+下記のような組み合わせで2つのセンサを繋いで動かしてみましょう。
 
 - 「温度センサ (ADT7410)」か、「距離センサ (VL53L0X)」のどちらか 1つ
-- 「光センサ (Grove Digital Light Sensor)」か「三軸加速度センサ」のどちらか１つ
+- 「光センサ (BH1750)」か「加速度センサ (MPU6050)」のどちらか１つ
 
-※この組み合わせなら、冒頭で用意したケーブルで足りるはずです。
+  > ここでは、ADT7410 と BH1750 を使った例をご紹介します
 
-オンライン版のドライバーライブラリは下記にあります。
+## a. 部品と配線について
 
-- [温度センサ (ADT7410): i2c-ADT7410.js](https://r.chirimen.org/adt7410.js)
-- [距離センサ (VL53L0X): i2c-VL53L0X.js](https://r.chirimen.org/vl53l0x.js)
-- [Grove 光センサ: i2c-grove-light.js](https://r.chirimen.org/grove-light.js)
-- [Grove 三軸加速度センサ: i2c-grove-accelerometer.js](https://r.chirimen.org/grove-accelerometer.js)
+「1.準備」のパートに記載したものに加え、下記を用意してください。
 
-まずはセンサを繋いでから、[jsbin](https://jsbin.com/) か [jsfiddle](https://jsfiddle.net/) を使ってコードを書いてみましょう。
+- ブレッドボード x 1
+- ジャンパー線 (使用する I2C モジュールの数に応じて必要数用意してください)
+  ![](imgs/section0/L.jpg)
+  > 画像にある LED と抵抗はこの項目では特に必要ありません。
+
+## b. モジュールを複数接続する
+
+I2C モジュールを複数利用するのは一見難しそうに見えるかもしれませんが、実際には I2C モジュールの各ピン (`VDD` `GND` `SDA` `SCL`) を並列に接続すれば問題なく動作します。
+
+### b-1. I2C モジュール側の準備をする
+
+ブレッドボードに挿せるよう、 I2C モジュールの各ピンにジャンパ線を接続します。
+
+### b-2. ブレッドボードにジャンパ線を接続する
+
+- ブレッドボードに I2C モジュールからつながっている4本のジャンパ線を接続していきます。このとき、`VDD` `GND` `SDA` `SCL` をブレッドボードの同じ列につなぐようにしてください。
+
+  > 使用する I2C モジュールによって、ピンアサイン( `VDD` `GND` `SDA` `SCL` の順番)が異なることがあります。各モジュールのデータシートや本体の印字、CHIRIMEN の Exapmles 等を参考にして間違いの無いように接続して下さい。
+
+{% cloudinary imgs/section3/bh1750-and-adt7410.jpg alt="接続例" %}
+
+**補足：接続を簡単に行える Grove という規格のデバイスを用いれば、 Grove Hub というパーツで簡単に複数のデバイスを接続することが可能です。長所短所ともにありますので、詳しくは [Grove 編チュートリアル](grove.md)をご覧ください。**
+
+## c. コードを編集する
+
+実際に2つのモジュールからデータを取得するコードを書いてみましょう。
+
+- モジュール毎にコードを書き、それらを一つにまとめることで2つ以上のモジュールの制御ができます。
+
+### c-0. 利用するモジュール各々のコードを用意する
+
+[Examples](https://r.chirimen.org/examples) 等を参考にして、それぞれのモジュール用のコードを用意します。
+
+  > 自分で一からコーディングする場合には不要です。
+
+### c-1. HTML を書く
+
+- 各モジュールの HTML 参考にしながら HTML を書きましょう
+
+  まずは head 部分です
+
+  ```html
+  <!DOCTYPE html>
+  <html>
+    <head>
+      <meta charset="UTF-8" />
+      <title>ADT7410 & BH1750</title>
+      <script src="node_modules/@chirimen-raspi/polyfill/polyfill.js"></script>
+      <script src="node_modules/@chirimen-raspi/chirimen-driver-i2c-adt7410/ADT7410.js"></script>
+      <script src="node_modules/@chirimen-raspi/chirimen-driver-i2c-bh1750/BH1750.js"></script>
+      <script src="./main.js" defer></script>
+    </head>
+  ```
+
+   head 内ではセンサを利用するのに必要な JavaScript (以下 js ) を全て読み込みます
+
+   -  `polyfill.js` は chirimen を正しく動作させるために必要です。詳しくは[こちら](https://developer.mozilla.org/ja/docs/Glossary/Polyfill)などをご確認ください。
+
+   - `ADT7410.js` は ADT7410 のドライバで、ADT7410 を利用するのに必要です。
+
+   - `BH1750.js` は BH1750 のドライバで、BH1750 利用するのに必要です。
+  
+   - `main.js` は2つのモジュールからデータを読み込むためにここで用意(自分でコーディング)する js です。詳しくは後述します。
+
+  続いて、body を書いていきます。
+
+  ```html
+    <body>
+      <p id="head_adt7410">TEST</p>
+      <p id="head_bh1750">TEST</p>
+    </body>
+  </html>
+  ```
+
+  センサから取得した値を表示するための場所を用意しました。
+
+  - `<p id="head_adt7410">TEST</p>` は ADT7410 からのデータを表示するパラグラフです。
+
+  - `<p id="head_bh1750">TEST</p>` は BH1750 からのデータを表示するパラグラフです。
+
+  - どちらも、値の更新は `main.js` から行います(ここでは "TEST" の部分がそれぞれの値で更新されるようにします)。`main.js` の書き方は次の項をご覧ください。
+
+### c-2. JavaScript(main.js) を書く
+
+- c-1. ではHTMLを書いて、取得したデータ(値)を表示する＜場所＞を用意しましたので、次は js で実際にデータを＜取得するための＞コードを書いていきましょう。
+
+  ```javascript
+  main();
+
+  async function main() {
+    var head_adt7410 = document.getElementById("head_adt7410");
+    var head_bh1750 = document.getElementById("head_bh1750");
+    var i2cAccess = await navigator.requestI2CAccess();
+    var port = i2cAccess.ports.get(1);
+    var adt7410 = new ADT7410(port, 0x48);
+    var bh1750 = new BH1750(port, 0x23);
+    await adt7410.init();
+    await bh1750.init();
+    await bh1750.set_sensitivity(128);
+
+    for (;;) {
+      try {
+        var tempValue = await adt7410.read();
+        head_adt7410.innerHTML = tempValue;
+      } catch (error) {
+        console.log("adt7410 error:" + error);
+      }
+
+      try {
+        var val = await bh1750.measure_high_res();
+        head_bh1750.innerHTML = val;
+      } catch (error) {
+        console.log("bh1750 error:" + error);
+      }
+
+      sleep(500);
+    }
+  }
+  ```
+  
+  基本的にはそれぞれのモジュール用の `main.js` を合わせただけですので、各々の細かい内容については [Section2](section2.md) の解説をご確認ください。
+  
+  では、どこに注意して、或いはどこを修正して2つの `main.js` を1つにまとめれば良いのでしょうか？
+
+  → 主に、
+
+  - `i2cAccess` と `port` の初期化は1回だけ行えば良いため、最初に1度のみ書く。
+  
+  - 変数名を重複させないように適宜変更する。（例：`head` など）
+
+  などの点に注意してをつけましょう。
 
 # 6. 他の I2C モジュールも使ってみる
 
@@ -363,14 +488,17 @@ main.js もこれまでの他のセンサーとほとんど同じです。
 
 CHIRIMEN Raspi には、他にも `/home/pi/Desktop/gc/i2c/` 配下に例えば下記のような I2C モジュールの examples が含まれています。それぞれの回路図、デイバスドライバ、サンプルコードもあるので、お手持ちのデバイスを使ってみてください。
 
-- i2c-grove-gesture : 「[Grove Gesture](http://wiki.seeed.cc/Grove-Gesture_v1.0/)」(簡単なジェスチャーを判定するセンサ)の接続例です。
-- i2c-grove-oledDisplay : 「[Grove OLED Display](https://www.seeedstudio.com/Grove-OLED-Display-0.96%26quot%3B-p-781.html)」(Grove端子で接続できるOLED Display)の接続例です。
-- i2c-grove-touch : 「[Grove Touch Sensor](http://wiki.seeed.cc/Grove-I2C_Touch_Sensor/)」(Grove端子で接続できるタッチセンサ)の接続例です。
 - i2c-PCA9685 : 「[PCA9685 16-CHANNEL 12-BIT PWM/SERVO DRIVER](https://www.adafruit.com/product/815)」(I2C経由でLEDやサーボモータを16個まで制御可能なモジュール)の接続例です。
 - i2c-ads1015 : 「[ADS1015搭載 12BitADC 4CH 可変ゲインアンプ付き](https://www.switch-science.com/catalog/1136/)」の接続例です。サンプルの回路図では可変抵抗器を繋いでいますが、圧力、曲げ、水滴 (濡れ)、土壌水分、などいろいろ安価で売られているアナログセンサを接続して利用できます。
 - i2c-S11059 : 「[S11059 カラーセンサ](http://akizukidenshi.com/catalog/g/gK-08316/)」(カラーセンサ)の接続例です。
 - i2c-VEML6070 : 「[VEML6070 紫外線センサ](https://learn.adafruit.com/adafruit-veml6070-uv-light-sensor-breakout/overview)」(紫外線センサ)の接続例です。
 - i2c-multi-sensors : 2つのセンサ（ADT7410とgrove-light）を利用する例です。
+
+- i2c-grove-gesture : 「[Grove Gesture](http://wiki.seeed.cc/Grove-Gesture_v1.0/)」(簡単なジェスチャーを判定するセンサ)の接続例です。
+- i2c-grove-oledDisplay : 「[Grove OLED Display](https://www.seeedstudio.com/Grove-OLED-Display-0.96%26quot%3B-p-781.html)」(Grove端子で接続できるOLED Display)の接続例です。
+- i2c-grove-touch : 「[Grove Touch Sensor](http://wiki.seeed.cc/Grove-I2C_Touch_Sensor/)」(Grove端子で接続できるタッチセンサ)の接続例です。
+  >最後の 3 デバイスは Grove 規格に対応したものです。Grove の利用方法や説明については、[こちらのチュートリアル](grove.md)をご確認ください。
+
 
 また、CHIRIMEN Raspi のイメージ内に同梱されている example 以外にも、[CHIIRMEN examples ページのオンライン版](https://r.chirimen.org/examples) にはこれらに加えてコミュニティによって順次いろいろなデバイス利用例が [Advanced Examples](https://r.chirimen.org/examples#advanced) として追加されています (ドライバーなどが cotrib ディレクトリ内にあるので注意)。作りたいもの、試したいものを考えながら試してみてください。
 
@@ -417,4 +545,3 @@ I2Cデバイスを同時に接続して使用するとき、重要な注意事�
   - 複数センサの利用 (ADT7410 + Grove 光センサ): [JSBin](https://r.chirimen.org/jsbin-i2c-multi-sensors), [CodeSandbox](https://r.chirimen.org/csb-multi-sensors)
 
 次のCHIRIMEN for Raspberry Pi チュートリアルでは、『[Web GPIO APIとWeb I2C APIを組み合わせたプログラミング](section4.md)』に挑戦します！
---->

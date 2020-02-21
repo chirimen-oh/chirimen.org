@@ -4,7 +4,7 @@ layout: tutorial
 
 # 6. ステッピングモーターを制御する
 
-このチュートリアルで使用しているステッピングモータードライバは [CHIRIMEN の公式リリース](https://github.com/chirimen-oh/chirimen-raspi3)にまだ含まれていないかも知れません。Example 等がリンクエラーになる場合は、公式リリースまでしばらくお待ちください。
+このチュートリアルで使用しているステッピングモータードライバは [CHIRIMEN の公式リリース](https://github.com/chirimen-oh/chirimen)にまだ含まれていないかも知れません。Example 等がリンクエラーになる場合は、公式リリースまでしばらくお待ちください。
 
 # 概要
 
@@ -127,7 +127,7 @@ Raspberry Pi で ターミナルを起動して次のコマンドを入力する
 ここまでくれば回路としての動作は大丈夫です。CHIRIMEN の Web アプリから動かしてみましょう。
 ブラウザで次のアドレスにアクセスします。
 
-[**chirimen.org : i2c-arduino-steppingMotor Example**](https://chirimen.org/chirimen-raspi3/gc/i2c/i2c-arduino-steppingMotor)
+[**chirimen.org : i2c-arduino-steppingMotor Example**](https://chirimen.org/chirimen/gc/i2c/i2c-arduino-steppingMotor)
 
 下のような画面になり、1 秒の停止をはさみながらモーターが 1 回転ずつ正方向逆方向交互に動くはずです。
 

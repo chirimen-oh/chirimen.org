@@ -35,6 +35,7 @@ LED と温度センサーを使ってみる最小限のお試しページです�
 
 - [3. I2C の使い方](section3.md)
   - いろいろな I2C デバイスを接続したり、複数の I2C デバイスの同時操作について学びます。
+  - [Grove 編](grove.md)では、Grove を利用したI2C デバイスの同時操作について学べます。
 - [4. GPIO/I2C のまとめ](section4.md)
   - これまでの総括として GPIO と I2C の両方を組み合わせて動かしてみます。
 
@@ -50,25 +51,25 @@ LED と温度センサーを使ってみる最小限のお試しページです�
     - micro:bit 内蔵デバイス: 加速度・磁気・温度センサー、タクトスイッチ、5x5 マトリクス LED
     - GPIO, I2C 外部デバイス: CHIRIMEN RasPi と同様に micro:bit に接続したデバイスを操作できます。
   - [PLAYBULB (LED 電球) を使う](section5.md)
-    - CHIRIMEN for Raspberry Pi 3 環境で Web Bluetooth API を使ってデバイス制御するサンプルです。
+    - CHIRIMEN for Raspberry Pi 環境で Web Bluetooth API を使ってデバイス制御するサンプルです。
     - Web I2C API や Web Audio API と組み合わせて PLAYBULB (Bluetooth 接続の LED 電球) を制御します。
 - 6. Arduino と連携する
   - [ステッピングモーターの制御](section6.md)
-    - CHIRIMEN for Raspberry Pi 3 と Arduino を組み合わせてステップピングモーターを制御します。I2C 接続した Arduino を利用することで μ 秒単位でモータードライバの制御を行います。
+    - CHIRIMEN for Raspberry Pi と Arduino を組み合わせてステップピングモーターを制御します。I2C 接続した Arduino を利用することで μ 秒単位でモータードライバの制御を行います。
 - [WebGPIO API や WebI2C API を Node.js から使う](nodejs.md)
 
 ## 対応デバイスと Example 集
 
-CHIRIMEN for Raspberry Pi 3 対応デバイスのドライバ・回路図・サンプルコードをセットにした Example 集を用意しています。
+CHIRIMEN for Raspberry Pi 対応デバイスのドライバ・回路図・サンプルコードをセットにした Example 集を用意しています。
 
-[対応デバイスのリスト](partsList.md) : 下記サンプルへのリンク付き
+[対応デバイスのリスト](partslist.md) : 下記サンプルへのリンク付き
 
 - [Basic GPIO Example](https://r.chirimen.org/examples#gpioExamples)
 - [Basic I2C Example](https://r.chirimen.org/examples#i2cExamples)
 - [Advanced Example](https://r.chirimen.org/examples#advanced)
 
 Basic GPIO/I2C Examle のデバイスは CHIRIMEN Raspi の OS イメージ公開前に動作検証をしている CHIRIMEN Certified デバイスです。
-Advanced Example は個人レベルで動作確認して追加されている contrib デバイスです。いずれも元のソースコードは [こちら](https://github.com/chirimen-oh/chirimen-raspi3/tree/master/gc) に収録されています。
+Advanced Example は個人レベルで動作確認して追加されている contrib デバイスです。いずれも元のソースコードは [こちら](https://github.com/chirimen-oh/chirimen/tree/master/gc) に収録されています。
 
 ## Appendix, Tips, FAQ, Links etc...
 

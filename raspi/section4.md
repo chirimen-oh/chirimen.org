@@ -126,10 +126,12 @@ Raspberry Pi との接続方法については、下記回路図を参照くだ�
 
 ## a. 全画面表示
 
-[jsbin](http://jsbin.com/)や[jsfiddle](https://jsfiddle.net/)はコードの学習を進める上では便利なサービスですが、各サービスのメニューやコードが常に表示されてしまい「画面だけを表示する」ということが
+[jsbin](http://jsbin.com/)や[jsfiddle](https://jsfiddle.net/)はコードの学習を進める上では便利なサービスですが、各サービスのメニューやコードが常に表示されてしまい「実行結果画面だけを表示する」ということが
 できません。
 
 このため、プログラミングを進める時は jsfiddle などで進め、ある程度コードが固まって来たら index.html ファイルなどに保存して、ブラウザで直接 index.html を表示する方が良いでしょう。
+
+  > Jsbin や Jsfiddle と似たサービスとして、[Code Sandbox (以下 CSB)](https://codesandbox.io/) がありますが、こちらは実行結果画面を別タブとして開くことができるのでおすすめです (但し、上記2サービスと比べて CSB は多くのリソースを必要とするため、Raspberry Pi 3 以前の RasPi での動作は難があるかもしれません)。
 
 さらに、サイネージのような作品の場合、ブラウザのメニューやタスクバーすらも表示せずに全画面表示にしたいケースもあるでしょう。
 
@@ -146,8 +148,7 @@ Raspberry Pi の Chromium Browser で全画面表示を行うには、コマン�
 - [Web Bluetooth API](https://webbluetoothcg.github.io/web-bluetooth/) : Web アプリから BLE を使った通信を行うための API です。無線で外部機器と通信することができます。入出力が可能です。
 - [Web MIDI API](https://www.w3.org/TR/webmidi/) : Web アプリから MIDI 機器と通信するための API です。外部機器との入出力が可能です。
 - key イベント/Mouse イベントの応用 : USB-HID デバイスを作成できる Arduino Leonardo などを利用することで、そういったボードからの入力をキーイベントやマウスイベントとして受け取ることができます。入力にしか使えませんが、USB 経由で Key イベントに対応するブラウザは非常に多いので、様々な環境への応用が必要な場合には選択肢になりうると思います。
-> Note: これらのAPIは [Feature Policy](https://w3c.github.io/webappsec-feature-policy/) の制限（iframe 内からは埋め込み側で明示許可されていない API は利用不可）により、jsbin では動作しません。ローカルで実行してください。
->> ※ブラウザ上でプログラムが書ける [jsfiddle](https://jsfiddle.net/) では各種 API が利用可能となっていますが、まだ動作確認ができていません。近日中に動作確認を行う予定です。
+> Note: これらのAPIは [Feature Policy](https://w3c.github.io/webappsec-feature-policy/) の制限（iframe 内からは埋め込み側で明示許可されていない API は利用不可）により、JSbin や JSfiddleは動作しません。ローカルで実行するか、上述の [CSB](https://codesandbox.io/) を利用してください。
 
 また、将来的には USB 機器が直接ブラウザから制御可能になる Web USB API なども利用可能になる可能性がありますが、残念ながら現在のバージョンの CHIRIMEN for Raspberry Pi 環境で利用している Chromium Browser では利用できません。
 
