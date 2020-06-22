@@ -20,7 +20,7 @@ window.onload = async function() {
 };
 ```
 
-ブラウザだけで簡単に[サンプルコードの確認・編集](https://r.chirimen.org/csb-gpio-blink)から公開までできます。Web 開発の知識と環境が全てそのまま活かせる CHIRIMEN は、素早くハードとソフトを融合させたプロトタイピングを行ったり、[最も人気で実践的なプログラミング言語](https://octoverse.github.com/projects#languages) JavaScript と IoT をプログラミング初心者でも楽しく簡単に学ぶのに最適な環境です。詳しくは [CHIRIMEN について](about.md) ページをご覧ください。
+ブラウザだけで簡単に[サンプルコードの確認・編集](https://r.chirimen.org/csb-gpio-blink)から公開までできます。Web 開発の知識と環境が全てそのまま活かせる CHIRIMEN は、素早くハードとソフトを融合させたプロトタイピングを行ったり、[最も人気で実践的なプログラミング言語](https://octoverse.github.com/#top-languages) JavaScript と IoT をプログラミング初心者でも楽しく簡単に学ぶのに最適な環境です。詳しくは [CHIRIMEN について](about.md) ページをご覧ください。
 
 ## チュートリアル
 

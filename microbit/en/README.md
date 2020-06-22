@@ -12,6 +12,6 @@ We expect the contribution of translation work.
 - [async await processing](https://translate.google.com/translate?hl=&sl=ja&tl=en&u=https://tutorial.chirimen.org/ty51822r3/ja/appendix0)
 - [Difference from CHIRIMEN for Raspberry Pi 3](https://translate.google.com/translate?hl=&sl=ja&tl=en&u=https://tutorial.chirimen.org/ty51822r3/ja/diff)
 - [About i2cdetect](https://translate.google.com/translate?hl=&sl=ja&tl=en&u=https://tutorial.chirimen.org/ty51822r3/ja/i2cdetect)
-- [How to build the TY51822r3 firmware](https://translate.google.com/translate?hl=&sl=ja&tl=en&u=https://tutorial.chirimen.org/ty51822r3/ja/bridge)
+- [How to build the TY51822r3 firmware](https://translate.google.com/translate?hl=&sl=ja&tl=en&u=hhttps://tutorial.chirimen.org/ty51822r3/bridge)
 - [FAQ](https://translate.google.com/translate?hl=&sl=ja&tl=en&u=https://chirimen.org/tutorials-TY51822r3/ble/ja/faq.html)
 - [Tips](https://translate.google.com/translate?hl=&sl=ja&tl=en&u=https://chirimen.org/tutorials-TY51822r3/ble/ja/tips.html)
