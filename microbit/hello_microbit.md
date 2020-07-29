@@ -69,9 +69,9 @@
 ## micro:bitをバッテリーで駆動する
 - PCとmicro:bitの間のUSB接続を切り離します
 - micro:bitの電源端子に電池ボックスを繋ぎます
-![裏面の様子](imgs/mbitBatt1.jpg)
+![裏面の様子](imgs/mbitBatt_1.jpg)
 - ハートマークが表示されているのを確認
-![バッテリー駆動](imgs/mbitBatt2.jpg)
+![バッテリー駆動](imgs/mbitBatt_2.jpg)
 
 ## codesandboxを使って、micro:bitを操作するウェブアプリを動かす
 - [このページ](https://codesandbox.io/s/github/chirimen-oh/chirimen-micro-bit/tree/master/examples/Embed?module=main.js)にアクセスする
