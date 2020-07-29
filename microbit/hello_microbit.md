@@ -81,7 +81,7 @@
 ![codesandbox初期画面](imgs/csb0.jpg) 
 - 新しいタブでサンプルのウェブアプリが開いたら、そのCONNECT ボタンを押す。
 ![example独立ウィンド起動](imgs/csb1.jpg) 
-- Bluetooth接続ダイアログが出るので、接続先のmicro:bitを選択し(ピンクの〇)、接続ボタン(赤い〇)を押す
+- Bluetooth接続ダイアログが出るので、接続先のmicro:bitを選択し(ピンクの〇)、ペア設定ボタン(赤い〇)を押す
 ![exampleBluetooth接続](imgs/csb2.jpg) 
   - これでウェブアプリがBluetoothを使ってmicro:bitに接続しました。*（参考：micro:bitに◇マークが一瞬表示されます）*
   - *接続に失敗した場合は、micro:bit背面リセットボタンを押しハートマークが表示されてから、ウェブアプリのタブをリロードして再度CONNECTを押してみます*
