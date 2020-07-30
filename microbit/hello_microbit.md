@@ -3,6 +3,7 @@
 
 このドキュメントはCHIRIMEN with micro:bitを使う上で最初の一歩となる以下を学習するチュートリアルです。
 
+- 学習に必要な材料を揃える
 - CHIRIMEN with micro:bitをセットアップしよう。
 - 内蔵センサーやLEDをコントロールするwebAppsを動かしてみよう。
 
