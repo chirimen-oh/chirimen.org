@@ -12,7 +12,7 @@
 | ----- | ----- |
 | ![CHIRIMEN with micro:bit 基本セット](imgs/baseSet.jpg) <!--[<img src="https://res.cloudinary.com/chirimen/image/fetch/c_limit,f_auto,q_auto,w_400/https://tutorial.chirimen.org/raspi/imgs/section0/raspi3.jpg" alt="基本セットの画像">](imgs/section0/raspi3.jpg)--> | ![フィジカルコンピューティングセット](imgs/pcSet.jpg) <!--[<img src="https://res.cloudinary.com/chirimen/image/fetch/c_limit,f_auto,q_auto,w_400/https://tutorial.chirimen.org/raspi/imgs/section0/l.jpg" alt="L チカセット">](imgs/section0/l.jpg)--> |
 
-- CHIRIMEN for Raspi 基本セット(内蔵センサーだけ試せます)<br>
+- CHIRIMEN for Raspi 基本セット(内蔵センサーだけ試せます)<br/>
 準備編ではこの基本セットだけを使います。
   - 以下の条件を備えたパーソナルコンピュータ
     - Bluetoothインターフェース搭載
@@ -25,7 +25,7 @@
   - microUSB ケーブル
   - [micro:bit用電池ボックス](https://www.switch-science.com/catalog/5277/)(及び電池)
 
-- フィジカルコンピューティングセット (スターターキット)<br>
+- フィジカルコンピューティングセット (スターターキット)<br/>
 本編では部品が揃っていることだけを確認しましょう。
   - micro:bit用ブレークアウトボード
     - このチュートリアルでは[pimoroni pin:bit](https://www.sengoku.co.jp/mod/sgk_cart/detail.php?code=EEHD-5AWW)を使用しています
