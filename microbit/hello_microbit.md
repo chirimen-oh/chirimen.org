@@ -33,9 +33,12 @@
     - 他に[SparkFun micro:bit Breakout (with Headers)](https://www.sengoku.co.jp/mod/sgk_cart/detail.php?code=EEHD-56JS)、ジェネリック品 mbit などが使用できますが、ピン配列の差異に注意して配線してください。
   - ブレッドボード (通常サイズまたはミニサイズ) × 1
   - リード付き LED × 1
-  - リード付き抵抗器 (150-470Ω) x 1
-  - [ちびギアモータ(ピンヘッダ付き)](https://tiisaishop.dip.jp/product/sgm/)
+  - リード付き抵抗器 (330Ω) x 1 (橙・橙・茶・金)
   - ジャンパーワイヤー (オス-オス) x 4
+  - [Nch MOSFET (2SK4017)](http://akizukidenshi.com/catalog/g/gI-07597/) x 1
+  - リード抵抗 (1KΩ) x 1 (茶・黒・赤・金)
+  - リード抵抗 (10KΩ) x 1 (茶・黒・橙・金)
+  - [ちびギアモータ(ピンヘッダ付き)](https://tiisaishop.dip.jp/product/sgm/)
   - [SHT30 温度・湿度センサーモジュール](https://www.amazon.co.jp/dp/B07HBSLLSY/) (ピンヘッダ半田付け済み)
 
 
