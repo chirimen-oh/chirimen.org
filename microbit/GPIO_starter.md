@@ -12,7 +12,8 @@ permalink: /microbit/GPIO_starter
 
 ## CHIRIMEN with micro:bit とは
 
-CHIRIMEN with micro:bit は、micro:bit (以下 microbit) を各種センサ・アクチュエータデバイスのインターフェースとして用い、PC上のウェブブラウザで動作する IoT プログラミング環境です。[Web GPIO API](http://browserobo.github.io/WebGPIO) や [Web I2C API](http://browserobo.github.io/WebI2C) といった JavaScript でハードを制御する API を活用したプログラミングにより、Web アプリ上で microbit に接続した電子パーツを直接制御できます。　また、microbitが内蔵するLEDや加速度センサー等も利用することができます。
+CHIRIMEN with micro:bit は、PC上のウェブアプリを組むだけで、様々なセンサーやアクチュエータ(モーター等)デバイスをコントロールするIoTシステムをプロトタイピングできるプログラミング環境です。micro:bitを経由することで、(PCに繋げることが難しい) 様々なデバイスを簡単につなげることができます。
+[Web GPIO API](http://browserobo.github.io/WebGPIO) や [Web I2C API](http://browserobo.github.io/WebI2C) といった JavaScript でハードを制御する API を活用したプログラミングにより、Web アプリ上で microbit に接続した電子パーツを直接制御できます。　また、microbitが内蔵するLEDや加速度センサー等も利用することができます。
 
 ![CHIRIMEN with micro:bit構成図](https://chirimen.org/chirimen-micro-bit/imgs/chirimenMicrobitDiagram.png)
 
