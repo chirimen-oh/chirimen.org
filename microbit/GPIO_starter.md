@@ -1,7 +1,7 @@
 ---
 layout: tutorial
 lang: ja
-permalink: /microbit/section0
+permalink: /microbit/GPIO_starter
 ---
 
 # L チカしてみよう (初めての GPIO)
