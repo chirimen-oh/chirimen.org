@@ -1,6 +1,8 @@
+<!--
 ---
 layout: tutorial
 ---
+-->
 
 # 1. GPIO の使い方
 
@@ -601,7 +603,11 @@ Web GPIO API の機能が一通り確認できましたので、次は違う部�
 
 次に、先ほどの「タクトスイッチを押したら LED をつけたり消したり」する回路から、LED と LED 用の抵抗を一旦外して、MOSFET と抵抗、ちびギアモータを次のように配置します。
 
+<<<<<<< HEAD
 ![ちびギアモータの回路図](https://chirimen.org/chirimen-micro-bit/examples/GPIO4/imgs/pinbit_microbit_motor_sw.png)
+=======
+![ちびギアモータの回路図](https://chirimen.org/chirimen-micro-bit/examples/GPIO2/imgs/pinbit_microbit_motor_sw.png)
+>>>>>>> 54dad0129950c61d5c10f5ac012db00dc201b8ab
 
 回路図の配置を多少調整していますが、黄色のジャンパーピンと黒のジャンパーピンの間をスイッチでオンオフできるように配線するのは同じです。手持ちのスイッチやジャンパワイヤに合わせて上手く配線してみてください。
 
