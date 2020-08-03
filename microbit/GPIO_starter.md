@@ -41,7 +41,7 @@ CHIRIMEN with micro:bit は、micro:bit (以下 microbit) を各種センサ・�
 
 # 4. 「L チカ」をやってみよう
 
-microbit の起動と WiFi の設定が行えたら、いよいよ L チカに挑戦してみましょう。
+いよいよ L チカに挑戦してみましょう。
 
 ## そもそも「L チカ」って何？
 
@@ -51,17 +51,16 @@ microbit の起動と WiFi の設定が行えたら、いよいよ L チカに�
 
 ## 配線してみよう
 
-LEDを microbit と正しく配線する必要があります。
-LED は 2 本のリード線が出ていますが、長い方がアノード（+側）、短い側がカソード（-側）です。
+最初に注意事項、電池は最後に繋ぎます。配線が全て済んでからmicrobitを起動するためです。
 
-
+LEDを microbit と正しく配線する必要があります。LED は 2 本のリード線が出ていますが、長い方がアノード（+側）、短い側がカソード（-側）です。
 
 L チカのための配線図は以下の通りです。
 ![Lチカ配線図](https://chirimen.org/chirimen-micro-bit/examples/GPIO1/imgs/pinbit_microbit_Hello_Real_World.png)
 
 LED のリード線の方向に注意しながら、この図の通りにジャンパーワイヤやブレッドボードを使って配線してみましょう。
 
-配線図では LED の上側のリード線が折れ曲がり長い方がアノード (+側) です。microbitの0番ピンに接続しましょう。`schematic.png`で使用されている抵抗は"120Ω"です。使用する抵抗は、LED にあったものを使用してください。
+配線図では LED の上側のリード線が長い方がアノード (+側) です。microbitの0番ピンに接続しましょう。`schematic.png`で使用されている抵抗は"120Ω"です。使用する抵抗は、LED にあったものを使用してください。
 
 実際に配線してみると、こんな感じになりました。
 
@@ -75,15 +74,17 @@ LED のリード線の方向に注意しながら、この図の通りにジャ�
 - [Raspberry Pi の GPIO](https://tool-lab.com/make/raspberrypi-startup-22/)
 - [テスターを使って抵抗値を確かめる](http://startelc.com/elcLink/tester/elc_nArtcTester2.html#chapter-2)
 
+ microbitにハートマークが表示されているはずです。表示されていない場合は電池ボックスを外した後、配線図の通り配線されているか、もう一度しっかり確認してみましょう。
+
 ## example を実行してみる
 
-配線がうまくできたら、さっそく動かしてみましょう。
+配線がうまくできたら、さっそく動かしてみましょう。PCのブラウザを起動し、
 L チカのためのサンプルコードは[こちらにアクセス](https://codesandbox.io/s/github/chirimen-oh/chirimen-micro-bit/tree/master/examples/GPIO1)してください。
 
 ```
 https://codesandbox.io/s/github/chirimen-oh/chirimen-micro-bit/tree/master/examples/GPIO1
 ```
-準備編と同様、画面右上の![](imgs/lbtn.png)ボタンで別ウィンドをウェブアプリを起動し、`connect`ボタンを押します。
+準備編と同様、画面右上の![](imgs/lbtn.png)ボタンを押し別ウィンドでウェブアプリを開きます。開いたら、アプリのなかの`connect`ボタンを押し　出現するダイアログでmicrobitを接続します。
 
 先ほど配線した LED が点滅しているはずです！
 
@@ -242,12 +243,20 @@ JavaScript のペイン (コードが表示されているところ) をクリ�
 
 ## このチュートリアルで書いたコードは以下のページで参照できます:
 
-- GitHub リポジトリで参照
-  - [https://github.com/chirimen-oh/chirimen-micro-bit/blob/master/examples/GPIO1/](https://github.com/chirimen-oh/chirimen-micro-bit/blob/master/examples/GPIO1/)
-- ブラウザで開くページ
-  - [https://chirimen.org/chirimen-micro-bit/examples/GPIO1/index.html](https://chirimen.org/chirimen-micro-bit/examples/GPIO1/index.html)
 - codesandboxで開くページ(チュートリアルではこれを使いました)
   - [https://codesandbox.io/s/github/chirimen-oh/chirimen-micro-bit/tree/master/examples/GPIO1](https://codesandbox.io/s/github/chirimen-oh/chirimen-micro-bit/tree/master/examples/GPIO1)
+- ブラウザで開くページ
+  - [https://chirimen.org/chirimen-micro-bit/examples/GPIO1/index.html](https://chirimen.org/chirimen-micro-bit/examples/GPIO1/index.html)
+- GitHub リポジトリで参照
+  - [https://github.com/chirimen-oh/chirimen-micro-bit/blob/master/examples/GPIO1/](https://github.com/chirimen-oh/chirimen-micro-bit/blob/master/examples/GPIO1/)
+
+### その他の CHIRIMEN microbitの様々なサンプルコード
+　次章で説明するコードやその他のさらに多くのコードが以下で参照できます
+
+- ブラウザで開くページ (codesandboxのリンクもあります)
+  - [https://chirimen.org/chirimen-micro-bit/examples/](https://chirimen.org/chirimen-micro-bit/examples/)
+- GitHub リポジトリで参照
+  - [https://github.com/chirimen-oh/chirimen-micro-bit/blob/master/examples/](https://github.com/chirimen-oh/chirimen-micro-bit/blob/master/examples/)
 
 
 次の『[GPIO の使い方](GPIO_basic.md)』では GPIO の入力方法について学びます。
