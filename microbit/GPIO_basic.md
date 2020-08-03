@@ -1,6 +1,8 @@
+<!--
 ---
 layout: tutorial
 ---
+-->
 
 # 1. GPIO の使い方
 
