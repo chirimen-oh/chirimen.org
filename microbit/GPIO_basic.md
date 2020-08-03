@@ -384,7 +384,7 @@ function ledOnOff(v) {
 `port.read()` で GPIO を読み込むコードは次のように書けます:
 
 ```js
-var gpioAccess = await navigator.requestGPIOAccess(); // writeと一緒。
+var gpioAccess = await microBitBle.requestGPIOAccess(); // writeと一緒。
 var port = gpioAccess.ports.get(2); // Port 2 を取得
 await port.export("in"); // Port 2 を「入力モード」に。
 var val = await port.read(); // Port 2の状態を読み込む
@@ -405,7 +405,7 @@ var val = await port.read(); // Port 2の状態を読み込む
 例えば単純に一定時間毎に決まった処理をする `setInterval()` でポーリング (定期問い合わせ) 処理するとこんなコードになります:
 
 ```js
-  var gpioAccess = await navigator.requestGPIOAccess(); // writeと一緒。
+  var gpioAccess = await microBitBle.requestGPIOAccess(); // writeと一緒。
   var port = gpioAccess.ports.get(2)); // Port 2 を取得
   await port.export("in"); // Port 2 を「入力モード」に。
   setInterval(() => {
@@ -423,7 +423,7 @@ var val = await port.read(); // Port 2の状態を読み込む
 順序の乱れが生じないようにするには `setInterval()` で一定時間毎に実行するのではなく、一定時間の待ち時間を入れて繰り返す処理にします。これで順序が維持されるポーリング処理となります (これならポーリング間隔を短くしても不具合が生じません):
 
 ```js
-var gpioAccess = await navigator.requestGPIOAccess(); // writeと一緒。
+var gpioAccess = await microBitBle.requestGPIOAccess(); // writeと一緒。
 var port = gpioAccess.ports.get(2); // Port 2 を取得
 await port.export("in"); // Port 2 を「入力モード」に。
 for (;;) {
@@ -601,7 +601,7 @@ Web GPIO API の機能が一通り確認できましたので、次は違う部�
 
 次に、先ほどの「タクトスイッチを押したら LED をつけたり消したり」する回路から、LED と LED 用の抵抗を一旦外して、MOSFET と抵抗、ちびギアモータを次のように配置します。
 
-![ちびギアモータの回路図](https://github.com/chirimen-oh/chirimen-micro-bit/tree/master/examples/GPIO2/imgs/pinbit_microbit_motor_sw.png)
+![ちびギアモータの回路図](https://chirimen.org/chirimen-micro-bit/examples/GPIO4/imgs/pinbit_microbit_motor_sw.png)
 
 回路図の配置を多少調整していますが、黄色のジャンパーピンと黒のジャンパーピンの間をスイッチでオンオフできるように配線するのは同じです。手持ちのスイッチやジャンパワイヤに合わせて上手く配線してみてください。
 
@@ -625,19 +625,21 @@ LED が点灯する替わりにちびギアモータが動くようになりま�
 # まとめ
 
 このチュートリアルでは、実際にコードを書きながら Web GPIO API の基本的な利用方法を学びました。
-
-- Web GPIO API を使った GPIO 出力ポートの設定と出力処理までの流れ (`navigator.requestGPIOAccess()`〜`port.write()`）
-- Web GPIO API を使った GPIO 入力ポートの設定と読み出し処理の流れ (`navigator.requestGPIOAccess()`〜`port.read()`）
-- Web GPIO API を使った GPIO 入力ポートの設定と変化検知受信の流れ (`navigator.requestGPIOAccess()`〜`port.onchange()`)
+- CHIRIMEN micro bitを接続し、Web GPIO APIを有効にする 
+(UI要素`onclick`〜`microBitBleFactory.connect()`)
+- Web GPIO API を使った GPIO 出力ポートの設定と出力処理までの流れ (`microBitBle.requestGPIOAccess()`〜`port.write()`）
+- Web GPIO API を使った GPIO 入力ポートの設定と読み出し処理の流れ (`microBitBle.requestGPIOAccess()`〜`port.read()`）
+- Web GPIO API を使った GPIO 入力ポートの設定と変化検知受信の流れ (`microBitBle.requestGPIOAccess()`〜`port.onchange()`)
 
 このチュートリアルで書いたコードは以下のページで参照できます:
 
-- [GitHub リポジトリで参照](https://github.com/chirimen-oh/tutorials/tree/master/raspi/examples/section1)
+- [GitHub リポジトリで参照](https://chirimen.org/chirimen-micro-bit/examples/GPIO4/)
 - ブラウザで開くページ (各ステップ)
+<!--
   - [画面のボタンで画面の要素の色を変える](examples/section1/s1_1.html)
   - [他面のボタンで LED が光り画面の要素の色も変わる](examples/section1/s1_2.html)
   - [マウスで画面のボタンを押している間だけ LED が光る](examples/section1/s1_3.html)
   - [タクトスイッチを押している間だけ LED が光る](examples/section1/s1_4.html)
   - [画面のボタンまたはタクトスイッチを押している間だけ LED が光る](examples/section1/s1_5.html)
-
+-->
 次の『[センサーを使ってみよう](I2C_starter.md)』では Web I2C API を使ってセンサーの値を読み出す手順を学習します。
