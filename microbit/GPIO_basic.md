@@ -640,6 +640,7 @@ LED が点灯する替わりにちびギアモータが動くようになりま�
 このチュートリアルで書いたコードは以下のページで参照できます:
 
 - [GitHub リポジトリで参照](https://chirimen.org/chirimen-micro-bit/examples/GPIO4/)
+- [codesandboxで参照](https://codesandbox.io/s/github/chirimen-oh/chirimen-micro-bit/tree/master/examples/GPIO4)
 - ブラウザで開くページ (各ステップ)
 <!--
   - [画面のボタンで画面の要素の色を変える](examples/section1/s1_1.html)
