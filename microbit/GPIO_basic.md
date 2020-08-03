@@ -217,7 +217,7 @@ CONNECTボタンで呼び出されるconnect()関数を見ましょう。
 
 `GPIOAccess.ports` は利用可能なポートオブジェクトの一覧 ([Map](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Map)) です。
 
-`gpioAccess.ports.get(26)` のようにすることで利用可能なポートオブジェクトの一覧から、 **GPIO ポート番号 26 を指定して `port` オブジェクトを取得** しています。
+`gpioAccess.ports.get(2)` のようにすることで利用可能なポートオブジェクトの一覧から、 **GPIO ポート番号 2 を指定して `port` オブジェクトを取得** しています。
 
 ### await port.export()
 
@@ -575,12 +575,12 @@ Web GPIO API の機能が一通り確認できましたので、次は違う部�
 
 今回は Nch MOSFET「[2SK4017](http://akizukidenshi.com/catalog/g/gI-07597/)」を利用します。
 
-{% cloudinary imgs/section1/mosfet.png alt="mosfet" %}
+![mosfet](../raspi/imgs/section1/mosfet.png)
 
 プルダウンのGPIOポートを使った典型的な回路は以下のようになります。
   >Note: 図のVCCは、基本的にはRaspberry Pi3の3.3Vや5V端子ではありません。DC負荷用に別に用意した電源を使用するべきです。ちびギアモータを使った次章の例では、モータの消費電力が十分小さいため例外的にRaspberry Pi3の5V端子から電力を得ています。一方GNDはRaspbeery Pi3と、このDC負荷用電源とを共に接続します。
   
-![NCh MOSFET schematic](imgs/section1/DC3motor-schematic.svg)
+![NCh MOSFET schematic](../raspi/imgs/section1/DC3motor-schematic.svg)
 <!--
 {% cloudinary imgs/section1/DC3motor-schematic.svg alt="mosfet schematic" %}
 -->
@@ -591,13 +591,13 @@ Web GPIO API の機能が一通り確認できましたので、次は違う部�
 
 今回はとても小型なギアモータである、[ちびギアモータ](https://tiisai.dip.jp/?p=2676)を利用します。
 
-{% cloudinary imgs/section1/chibigear_1.jpg alt="ちびギアモータ" %} {% cloudinary imgs/section1/chibigear_2.jpg alt="ちびギアモータ" %}
+![ちびギアモータ](../raspi/imgs/section1/chibigear_1.jpg ![ちびギアモータ](../raspi/imgs/section1/chibigear_2.jpg)
 
 ## a. 部品と配線について
 
 ちびギアモータ本体に加え、以下のものを用意します。
 
-{% cloudinary imgs/section1/parts.jpg alt="部品一覧" %}
+![部品一覧](../raspi/imgs/section1/parts.jpg)
 
 次に、先ほどの「タクトスイッチを押したら LED をつけたり消したり」する回路から、LED と LED 用の抵抗を一旦外して、MOSFET と抵抗、ちびギアモータを次のように配置します。
 
