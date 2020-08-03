@@ -1,8 +1,10 @@
+<!--
 ---
 layout: tutorial
 lang: ja
 permalink: /microbit/GPIO_starter
 ---
+-->
 
 # L チカしてみよう (初めての GPIO)
 
