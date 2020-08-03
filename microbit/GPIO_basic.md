@@ -601,7 +601,7 @@ Web GPIO API の機能が一通り確認できましたので、次は違う部�
 
 次に、先ほどの「タクトスイッチを押したら LED をつけたり消したり」する回路から、LED と LED 用の抵抗を一旦外して、MOSFET と抵抗、ちびギアモータを次のように配置します。
 
-{% cloudinary imgs/section1/DC3motor-2pin.png alt="ちびギアモータの回路図" %}
+![ちびギアモータの回路図](https://github.com/chirimen-oh/chirimen-micro-bit/tree/master/examples/GPIO3/imgs/pinbit_microbit_motor_sw.png)
 
 回路図の配置を多少調整していますが、黄色のジャンパーピンと黒のジャンパーピンの間をスイッチでオンオフできるように配線するのは同じです。手持ちのスイッチやジャンパワイヤに合わせて上手く配線してみてください。
 
