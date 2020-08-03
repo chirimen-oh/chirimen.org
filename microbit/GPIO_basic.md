@@ -22,7 +22,7 @@ CHIRIMEN microbit の基本的な操作方法は「[L チカしてみよう](GPI
 - microbitブレークアウトボード × 1
 - ブレッドボード x 1
 - タクトスイッチ (2pin, 4pin を使う場合は向きに注意) x 1
-- ジャンパーワイヤー (オス-オス) x 5　？？
+- ジャンパーワイヤー (オス-オス) x 4
 - [Nch MOSFET (2SK4017)](http://akizukidenshi.com/catalog/g/gI-07597/)
 - リード付き抵抗 (1KΩ) x 1
 - リード付き抵抗 (10KΩ) x 1
