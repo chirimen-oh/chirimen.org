@@ -127,9 +127,10 @@ L チカに成功しましたか？！
 
 初めの状態では、最初に読み込まれるhtmlのコードが表示されています。
 
-```html
+<!-- ```html
+FIXME: 参照に失敗している
 {% include_relative examples/section0/s0.html -%}
-```
+``` -->
 
 最初の`<script>`要素で`https://chirimen.org/chirimen-micro-bit/polyfill/microBitBLE.js` という JavaScript ライブラリを読み込んでいます。これは [Web GPIO API](http://browserobo.github.io/WebGPIO) と、[Web I2C API](http://browserobo.github.io/WebI2C) という W3C でドラフト提案中の 2 つの API への [Polyfill (新しい API を未実装のブラウザでも同じコードが書けるようにするためのライブラリ)](https://developer.mozilla.org/ja/docs/Glossary/Polyfill) で、最初に読み込むとそれ以降のコードで GPIO や I2C を操作する JavaScript API が使えるようになります。
 
@@ -149,9 +150,12 @@ CHIRIMEN microbit は[Web Bluetooth](https://developer.mozilla.org/docs/Web/API/
 
 画面左側のFilesパネルからmain.jsを選択すると、JavaScriptコード `main.js` が表示・編集できます。
 
+<!--
+FIXME: 参照に失敗している
 ```javascript
 {% include_relative examples/section0/s0.js -%}
 ```
+-->
 
 ### 注記
 
@@ -239,7 +243,7 @@ JavaScript のペイン (コードが表示されているところ) をクリ�
 試しにいろいろ変えてみましょう。
 
 - 点滅周期を早くしたり遅くしたりしてみる
-- 点灯する時間と消灯する時間を変えてみる 
+- 点灯する時間と消灯する時間を変えてみる
 - GPIO ポートを他のポートに変えてみる (ジャンパーワイヤも指定番号の GPIO ピンに配線する)
   - [使用できるポート](https://chirimen.org/chirimen-micro-bit/guidebooks/diff_rpi3.html#%E4%BD%BF%E7%94%A8%E3%81%A7%E3%81%8D%E3%82%8Bgpio%E3%83%9D%E3%83%BC%E3%83%88)
 - index.html にボタンなどのインターフェースを作ってみて、押すと LED が反応するようにする
