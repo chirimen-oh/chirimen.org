@@ -127,9 +127,12 @@ L チカに成功しましたか？！
 
 初めの状態では、最初に読み込まれるhtmlのコードが表示されています。
 
-<!-- ```html
+<!--
 FIXME: 参照に失敗している
+{% comment %}
+```html
 {% include_relative examples/section0/s0.html -%}
+{% endcomment %}
 ``` -->
 
 最初の`<script>`要素で`https://chirimen.org/chirimen-micro-bit/polyfill/microBitBLE.js` という JavaScript ライブラリを読み込んでいます。これは [Web GPIO API](http://browserobo.github.io/WebGPIO) と、[Web I2C API](http://browserobo.github.io/WebI2C) という W3C でドラフト提案中の 2 つの API への [Polyfill (新しい API を未実装のブラウザでも同じコードが書けるようにするためのライブラリ)](https://developer.mozilla.org/ja/docs/Glossary/Polyfill) で、最初に読み込むとそれ以降のコードで GPIO や I2C を操作する JavaScript API が使えるようになります。
@@ -151,10 +154,12 @@ CHIRIMEN microbit は[Web Bluetooth](https://developer.mozilla.org/docs/Web/API/
 画面左側のFilesパネルからmain.jsを選択すると、JavaScriptコード `main.js` が表示・編集できます。
 
 <!--
+{% comment %}
 FIXME: 参照に失敗している
 ```javascript
 {% include_relative examples/section0/s0.js -%}
 ```
+{% endcomment %}
 -->
 
 ### 注記
