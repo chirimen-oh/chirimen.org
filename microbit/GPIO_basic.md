@@ -233,7 +233,7 @@ GPIO ポートにかける電圧を Web アプリで変化させたい時には�
 ### port.write()
 
 `port.write()` は、出力モードに指定した **GPIO ポートの電圧を切り替える** API です。
-`port.write(1)` で、指定したポートから HIGH (microbit では 3.3V) の電圧がかかり、`port.write(0)` で LOW(0V) になります。
+`port.write(1)` で、指定したポートから HIGH (microbit では 3V) の電圧がかかり、`port.write(0)` で LOW(0V) になります。
 
 {% cloudinary imgs/section1/JSFiddle.png alt="ここまでのJSFiddleの画面" %}
 
@@ -364,7 +364,7 @@ function ledOnOff(v) {
 
 これでどのようになるかというと、下記のようになります。
 
-- スイッチを押す前は、Port 2 は HIGH (3.3V)
+- スイッチを押す前は、Port 2 は HIGH (3V)
 - スイッチを押している間、Port 2 は LOW (0V)
 
 どうしてこうなるのでしょうか。実は、microbit の GPIO ポートは、初期状態で「プルアップ」を設定できます。そしてプルアップとは、回路を初期状態で「HIGH にしておく」ことです。
@@ -569,7 +569,7 @@ Web GPIO API の機能が一通り確認できましたので、次は違う部�
 ここでは、**MOSFET** を使って ギアモータ（ちびギアモータ）の単純な ON/OFF を制御してみましょう。
   >Note1: CHIRIMEN with micro:bit フィジカルコンピューティングセット(スターター・キット)ではギアモータの一例として、ちびギアモータをセットに含めています。ここまで「ギアモータ」と「ちびギアモータ」を併記してきましたが、以下では「ちびギアモータ」とのみ記載します。ちびギアモータ以外のギアモータを利用する場合には製品の仕様をご確認の上お試しください。
 
-  >Note2: microbitのGPIOポートは流せる電流の上限が決められています。[1ピンあたり流せる電流が5mA、より詳しい情報はリンクを参照してください。](https://tech.microbit.org/hardware/edgeconnector/#gpio-capabilities) また電圧も3.3Vに限定されています。小さなLED数個の場合はこの条件内で使えますが、モーターやソレノイド、パワーLEDなどは直結できません。このようなケースに使えます。
+  >Note2: micro:bitのGPIOポートは流せる電流の上限が決められています。[1ピンあたり流せる電流が5mA、より詳しい情報はリンクを参照してください。](https://tech.microbit.org/hardware/edgeconnector/#gpio-capabilities) また電圧も3Vに限定されています。小さなLED数個の場合はこの条件内で使えますが、モーターやソレノイド、パワーLEDなどは直結できません。このようなケースに使えます。
 
 ## MOSFET とは
 
@@ -580,7 +580,7 @@ Web GPIO API の機能が一通り確認できましたので、次は違う部�
 ![mosfet](../raspi/imgs/section1/mosfet.png)
 
 プルダウンのGPIOポートを使った典型的な回路は以下のようになります。
-  >Note: 図のVCCは、基本的にはRaspberry Pi3の3.3Vや5V端子ではありません。DC負荷用に別に用意した電源を使用するべきです。ちびギアモータを使った次章の例では、モータの消費電力が十分小さいため例外的にRaspberry Pi3の5V端子から電力を得ています。一方GNDはRaspbeery Pi3と、このDC負荷用電源とを共に接続します。
+  >Note: 図のVCCは、基本的にはmicrobitの3V端子ではありません。DC負荷用に別に用意した電源を使用するべきです。ちびギアモータを使った次章の例では、モータの消費電力が十分小さいため例外的にRaspberry Pi3の3V端子から電力を得ています。一方GNDはRaspbeery Pi3と、このDC負荷用電源とを共に接続します。
   
 ![NCh MOSFET schematic](../raspi/imgs/section1/DC3motor-schematic.svg)
 <!--
@@ -603,11 +603,7 @@ Web GPIO API の機能が一通り確認できましたので、次は違う部�
 
 次に、先ほどの「タクトスイッチを押したら LED をつけたり消したり」する回路から、LED と LED 用の抵抗を一旦外して、MOSFET と抵抗、ちびギアモータを次のように配置します。
 
-<<<<<<< HEAD
 ![ちびギアモータの回路図](https://chirimen.org/chirimen-micro-bit/examples/GPIO4/imgs/pinbit_microbit_motor_sw.png)
-=======
-![ちびギアモータの回路図](https://chirimen.org/chirimen-micro-bit/examples/GPIO2/imgs/pinbit_microbit_motor_sw.png)
->>>>>>> 54dad0129950c61d5c10f5ac012db00dc201b8ab
 
 回路図の配置を多少調整していますが、黄色のジャンパーピンと黒のジャンパーピンの間をスイッチでオンオフできるように配線するのは同じです。手持ちのスイッチやジャンパワイヤに合わせて上手く配線してみてください。
 

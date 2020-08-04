@@ -204,11 +204,19 @@ microbit の GPIO 端子は、GND 端子との間に、0V もしくは 3.3V の�
 
 {% cloudinary imgs/section0/microbitPIN.png alt="microbit PIN配置図" %}
 
-### Note:
+## micro:bitの端子について
 
-microbit 本体の下部には、プリント基板上に金メッキされた電極がたくさんついています。[信号端子の説明図](https://pxt.azureedge.net/blob/64c6ccff8e3ee82c4224874e5cacc9d0d5c60132/static/mb/device/pins-0.png)
+- micro:bit 本体の下部には、プリント基板上に金メッキされた電極がたくさんついています。このようなタイプの端子をエッジコネクターと呼びます
+  - この信号端子にジャンパーワイヤを結線するのはあまり簡単ではありません(ただし丸い穴が開いた大きな端子はワニ口クリップ付き電線でくわえて使える設計になっている)。そこでmicro:bitブレークアウトボードを使います。ブレークアウトボードは14本しか端子が出ていませんが、下図のように実はもっと沢山の端子があることがわかります。
 
-この信号端子にジャンパーワイヤを結線するのはあまり簡単ではありません(ただし丸い穴が開いた大きな端子はワニ口クリップ付き電線でくわえて使える設計になっている)。そこでこのチュートリアルではmicro:bitブレークアウトボードを使います。ブレークアウトボードは14本しか端子が出ていませんが、実はもっとたくさんの端子がmicro:bitには用意されていることがわかります。
+- [信号端子の説明図](https://tech.microbit.org/hardware/edgeconnector/#edge-connector-pins)
+  - GPIO端子は`P+数字`の端子。ただし他の信号と共用されている端子があります。たとえば`P5`は`BUTTON A`と共用。
+  - そこでCHIRIMEN with micro:bitでGPIOとして使用できるのは[このページに記載された端子](https://chirimen.org/chirimen-micro-bit/guidebooks/diff_rpi3.html#%E4%BD%BF%E7%94%A8%E3%81%A7%E3%81%8D%E3%82%8Bgpio%E3%83%9D%E3%83%BC%E3%83%88)になっています。
+- その他
+  - [micro:bitの端子仕様がまとめられたページ](https://tech.microbit.org/hardware/edgeconnector/)
+  - [I2C](https://tech.microbit.org/hardware/i2c/) - 19,20番ポート (I2Cについては[後のチュートリアル](I2C_starter.md)で学びます)
+  - [その他micro:bitハードウェア全般](https://tech.microbit.org/hardware/)
+
 
 
 ## GPIOPort の処理
@@ -233,6 +241,7 @@ JavaScript のペイン (コードが表示されているところ) をクリ�
 - 点滅周期を早くしたり遅くしたりしてみる
 - 点灯する時間と消灯する時間を変えてみる 
 - GPIO ポートを他のポートに変えてみる (ジャンパーワイヤも指定番号の GPIO ピンに配線する)
+  - [使用できるポート](https://chirimen.org/chirimen-micro-bit/guidebooks/diff_rpi3.html#%E4%BD%BF%E7%94%A8%E3%81%A7%E3%81%8D%E3%82%8Bgpio%E3%83%9D%E3%83%BC%E3%83%88)
 - index.html にボタンなどのインターフェースを作ってみて、押すと LED が反応するようにする
 - などなど...
 
