@@ -15,7 +15,6 @@ CHIRIMEN with micro:bit （以下「CHIRIMEN microbit」）を使ったプログ
 前回までのチュートリアルで学んだことは下記のとおりです。
 
 - 各種 example が [`https://chirimen.org/chirimen-micro-bit/examples/`](https://chirimen.org/chirimen-micro-bit/examples/) 配下に配線図と一緒に置いてある
-- 利用可能な GPIO Port 番号・種類と位置は壁紙を見よう
 - Web アプリからの GPIO の制御には [Web GPIO API](http://browserobo.github.io/WebGPIO) を利用する
 - GPIO ポートは「出力モード」で LED の ON/OFF などが行え「入力モード」では GPIO ポートの状態を読み取れる
 - デバイスの初期化などは非同期処理であり [async と await を用いて処理する](../ty51822r3/appendix0.md)
@@ -24,10 +23,12 @@ CHIRIMEN with micro:bit （以下「CHIRIMEN microbit」）を使ったプログ
 
 ## 用意するもの
 
-このチュートリアル全体で必要になるハードウエア・部品は下記の通りです。
+このチュートリアル全体で必要になるハードウエア・部品は下記の通りです。以下の部品はスターターキットに入っています。
 
-- [L チカしてみよう](section0.md) に記載の「基本ハードウエア」
-- ジャンパーワイヤー (メス-メス) x 4
+- [L チカしてみよう](section0.md) に記載の[「基本ハードウエア」](imgs/pc_mbit_usb_con.jpg)
+- [microbitブレークアウトボード](imgs/pinbit.jpg) x 1
+- [ブレッドボード](imgs/breadboardImg.jpg)
+- ジャンパーワイヤー (オス-オス) x 4
 - [温度センサ (ADT7410)](http://akizukidenshi.com/catalog/g/gM-06675/) x 1
 <!--
 - [湿度・温度センサ (SHT31)](http://akizukidenshi.com/catalog/g/gK-12125/) x 1 ??
