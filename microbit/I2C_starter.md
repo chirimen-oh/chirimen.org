@@ -72,23 +72,23 @@ CHIRIMEN with micro:bit （以下「CHIRIMEN microbit」）を使ったプログ
 
 ## a. 部品と配線について
 
-まずは、以下の回路図の画像を見ててください。
+必要な部品について、以下の回路図の画像を見ててください。
 
-![adt7410Schematic](https://chirimen.org/chirimen-micro-bit/examples/I2C1_ADT7410/imgs/pinbit_adt7410.png)
+![adt7410set](imgs/adt7410set.jpg)
 <!--
 ![sht30Schematic](https://chirimen.org/chirimen-micro-bit/examples/I2C7_SHT30/imgs/pinbit_sht30.png)
 -->
 図を見ながらジャンパーワイヤ 4 本で ATD7410 を接続します。 **ADT7410 は 4 本のジャンパーピンを左右逆に繋いでしまうと、短時間で非常に高温になり故障するだけでなく火傷してしまいます** ので、配線には注意してください。
 
-![schematic_warning](../raspi/imgs/section2/schematic_warning.png)
+![schematic_warning](imgs/schematic_warning.png)
 
-下記が RasPi 側の接続ピンの位置を拡大した図になります。間違えないよう接続してください。
+下記が microbit(のブレークアウトボード) 側の接続ピンの位置を拡大した図になります。間違えないよう接続してください。
 
-![I2Cで利用するピンの位置](../raspi/imgs/section2/I2C.png)
+![I2Cで利用するピンの位置](imgs/pinbit_i2cpin.jpg)
 
 実際に配線した写真は以下の通りです。ADT7410 の表裏にも注意してください。
 
-![実際の配線写真]../raspi/imgs/section2/temperature_real.jpg)
+![実際の配線写真](imgs/adt7410brd.jpg)
 
 ## b. 接続がうまくいったか確認する
 
