@@ -266,16 +266,18 @@ example と同じコードを書いても面白くないので、今回は`i2c-A
 
 ## codesandbox で HTML を書く
 
-それでは始めましょう。JSFiddle の HTML ペインに Polyfill の読み込みと、温度表示用のタグだけ書きます。
+それでは始めましょう。[codesandbox](https://codesandbox.io/)のvanillaからはじめます。index.htmlは、
 
 ```html
-  <script type="text/javascript" src="https://chirimen.org/chirimen-micro-bit/polyfill/microBitBLE.js"></script>
-  <script type="text/javascript" src="main.js"></script>
-  :
-  <body>
-  <input type="button" value="Connect" onclick="connect();"/> 
-  <div id="msg">---</div>
-  </body>
+<!DOCTYPE html>
+<html>
+<script type="text/javascript" src="https://chirimen.org/chirimen-micro-bit/polyfill/microBitBLE.js"></script>
+<script src="src/index.js">	</script>
+<body>
+	<input id="cnct" type="button" value="Connect" ></input>
+	<div id="msg">---</div>
+</body>
+</html>
 ```
 
 こんな感じで良いでしょう。
@@ -285,28 +287,28 @@ example と同じコードを書いても面白くないので、今回は`i2c-A
 次に JavaScript です。今回は定期的なポーリング処理が必要になるので、[GPIO の使い方 c. スイッチに反応するようにする (port.read()を使ってみる)](gpio_basic#c--portread) の時に書いたコードが参考になります。
 
 ```js
-var microBitBle;
 var i2cSlaveDevice;
 
-async function connect(){
-	microBitBle = await microBitBleFactory.connect();
-	msg.innerHTML=("micro:bit BLE接続しました。");
-	var i2cAccess = await microBitBle.requestI2CAccess();
-	var i2cPort = i2cAccess.ports.get(1);
-	i2cSlaveDevice = await i2cPort.open(0x48);
-	readData();
+document.getElementById("cnct").addEventListener("click", connectMbit);
+
+async function connectMbit() {
+  var microBitBle = await microBitBleFactory.connect();
+  msg.innerHTML = "micro:bit BLE接続しました。";
+  var i2cAccess = await microBitBle.requestI2CAccess();
+  var i2cPort = i2cAccess.ports.get(1);
+  i2cSlaveDevice = await i2cPort.open(0x48);
+  readData();
 }
 
-async function readData(){
-	var readVal;
-	while ( true ){
-		var MSB = await i2cSlaveDevice.read8(0x00); // これ以下の３行が肝です
-		var LSB = await i2cSlaveDevice.read8(0x01);
-		var temperature = ((MSB << 8) | (LSB & 0xff)) / 128.0;
-		console.log('temperature:', temperature);
-		msg.innerHTML= "温度: " + temperature + "℃";
-		await sleep(1000);
-	}
+async function readData() {
+  while (true) {
+    var MSB = await i2cSlaveDevice.read8(0x00); // これ以下の３行が肝です
+    var LSB = await i2cSlaveDevice.read8(0x01);
+    var temperature = ((MSB << 8) | (LSB & 0xff)) / 128.0;
+    console.log("temperature:", temperature);
+    msg.innerHTML = "温度: " + temperature + "℃";
+    await sleep(1000);
+  }
 }
 ```
 
