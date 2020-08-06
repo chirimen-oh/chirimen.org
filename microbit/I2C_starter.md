@@ -72,12 +72,15 @@ CHIRIMEN with micro:bit （以下「CHIRIMEN microbit」）を使ったプログ
 
 ## a. 部品と配線について
 
-必要な部品について、以下の回路図の画像を見ててください。
+必要な部品について、以下の画像を見ててください。
 
 ![adt7410set](imgs/adt7410set.jpg)
 <!--
 ![sht30Schematic](https://chirimen.org/chirimen-micro-bit/examples/I2C7_SHT30/imgs/pinbit_sht30.png)
 -->
+
+
+![atd7410Schematic](https://chirimen.org/chirimen-micro-bit/examples/I2C1_ADT7410/imgs/pinbit_adt7410.png)
 図を見ながらジャンパーワイヤ 4 本で ATD7410 を接続します。 **ADT7410 は 4 本のジャンパーピンを左右逆に繋いでしまうと、短時間で非常に高温になり故障するだけでなく火傷してしまいます** ので、配線には注意してください。
 
 ![schematic_warning](imgs/schematic_warning.png)
@@ -116,7 +119,7 @@ CHIRIMEN with micro:bit （以下「CHIRIMEN microbit」）を使ったプログ
 
 `0x48` が見つからなくなりました。これで、間違いなく ADT7410 の SlaveAddress が`0x48`となっていることが確認できました。再度、先ほど外した 3V の線を戻して ADT7410 に電源を供給しておいてください。
 
-ここで使用した SlaveAddress を確認する `[`i2cdetect webApp`](https://chirimen.org/chirimen-micro-bit/examples/i2cdetect/index.html) は WebI2C を使って実装したもです。WebI2C 版の i2c-detect を利用中は他のページから I2C デバイスを操作できません。確認が済んだらタブを閉じるようにしましょう。
+ここで使用した SlaveAddress を確認する [`i2cdetect webApp`](https://chirimen.org/chirimen-micro-bit/examples/i2cdetect/index.html) は WebI2C を使って実装したもです。WebI2C 版の i2c-detect を利用中は他のページから I2C デバイスを操作できません。確認が済んだらタブを閉じるようにしましょう。
 
 ## c. example を実行してみる
 
