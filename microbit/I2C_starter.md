@@ -136,7 +136,7 @@ ADT7410 は I2C という通信方式でセンサーデータを送出するモ�
 
 それでは、コードを見てみましょう。
 
-[codesandboxに登録されています](https://codesandbox.io/s/github/chirimen-oh/chirimen-micro-bit/tree/master/examples/I2C1_ADT7410)のFilesパネルの `index.html`、`main.js` をみてみます。
+codesandboxに登録されている[サンプルコード](https://codesandbox.io/s/github/chirimen-oh/chirimen-micro-bit/tree/master/examples/I2C1_ADT7410)のFilesパネルの `index.html`、`main.js` をみてみます。
 
 ## d-1. index.html
 
@@ -267,17 +267,20 @@ example と同じコードを書いても面白くないので、今回は`i2c-A
 
 ## codesandbox で HTML を書く
 
-それでは始めましょう。[codesandbox](https://codesandbox.io/)のvanillaからはじめます。index.htmlは、
+それでは始めましょう。前回同様[codesandbox](https://codesandbox.io/)のStaticテンプレートからはじめます。index.htmlは、
 
 ```html
 <!DOCTYPE html>
 <html>
-<script type="text/javascript" src="https://chirimen.org/chirimen-micro-bit/polyfill/microBitBLE.js"></script>
-<script src="src/index.js">	</script>
-<body>
-	<input id="cnct" type="button" value="Connect" ></input>
-	<div id="msg">---</div>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+  </head>
+  <script src="https://chirimen.org/chirimen-micro-bit/polyfill/microBitBLE.js"></script>
+  <script src="main.js">	</script>
+  <body>
+	  <input id="cnct" type="button" value="Connect" ></input>
+	  <div id="msg">---</div>
+  </body>
 </html>
 ```
 
@@ -287,11 +290,17 @@ example と同じコードを書いても面白くないので、今回は`i2c-A
 
 次に JavaScript です。今回は定期的なポーリング処理が必要になるので、[GPIO の使い方 c. スイッチに反応するようにする (port.read()を使ってみる)](gpio_basic#c--portread) の時に書いたコードが参考になります。
 
+Filesパネルでmain.jsを作りましょう。下図赤〇を押した後紫部分にmain.js
+
+![](imgs/csbFilesNew.png)
+
+コードはこのようになります。
+
 ```js
 var i2cSlaveDevice;
-
-document.getElementById("cnct").addEventListener("click", connectMbit);
-
+window.onload = function() {
+  document.getElementById("cnct").addEventListener("click", connectMbit);
+};
 async function connectMbit() {
   var microBitBle = await microBitBleFactory.connect();
   msg.innerHTML = "micro:bit BLE接続しました。";

@@ -29,9 +29,9 @@ CHIRIMEN with micro:bit は、PC上のウェブアプリを組むだけで、様
 - micro:bit
 - 電池ボックス
 
-フィジカルコンピューティングセットの中の下記パーツを用意しましょう。
+基本セット及びフィジカルコンピューティングセットの中の下記パーツを用意しましょう。
 
-{% cloudinary imgs/section0/L.jpg alt="Lチカに必要なパーツ一覧" %}
+![Lチカに必要なパーツ一覧](imgs/ledSet.jpg)
 - microbitブレークアウトボード × 1
 - ブレッドボード × 1
 - リード付き LED × 1
@@ -211,12 +211,15 @@ microbit の GPIO 端子は、GND 端子との間に、0V もしくは 3.3V の�
 
 詳しくは[こちらのサイトの解説](https://tool-lab.com/make/raspberrypi-startup-22/)などを参考にしてみましょう。
 
-{% cloudinary imgs/section0/microbitPIN.png alt="microbit PIN配置図" %}
 
 ## micro:bitの端子について
 
-- micro:bit 本体の下部には、プリント基板上に金メッキされた電極がたくさんついています。このようなタイプの端子をエッジコネクターと呼びます
+![microbit PIN配置図](https://tech.microbit.org/docs/hardware/assets/edge_connector.svg)
+
+- micro:bit 本体には、プリント基板上に金メッキされた電極がたくさんついています。このようなタイプの端子をエッジコネクターと呼びます
   - この信号端子にジャンパーワイヤを結線するのはあまり簡単ではありません(ただし丸い穴が開いた大きな端子はワニ口クリップ付き電線でくわえて使える設計になっている)。そこでmicro:bitブレークアウトボードを使います。ブレークアウトボードは14本しか端子が出ていませんが、下図のように実はもっと沢山の端子があることがわかります。
+  - microbit ブレークアウトボード
+  ![](imgs/pinbit.jpg)
 
 - [信号端子の説明図](https://tech.microbit.org/hardware/edgeconnector/#edge-connector-pins)
   - GPIO端子は`P+数字`の端子。ただし他の信号と共用されている端子があります。たとえば`P5`は`BUTTON A`と共用。
@@ -240,7 +243,7 @@ LED は一定以上の電圧 (赤色 LED だと概ね 1.8V 程度、青色 LED �
 
 まとめると下図のような流れになります。
 
-{% cloudinary imgs/section0/s.png alt="シーケンス" %}
+![シーケンス](../raspi/imgs/section0/s.png)
 
 ## example を修正してみよう
 

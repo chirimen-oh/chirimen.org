@@ -49,11 +49,12 @@ CHIRIMEN microbit の基本的な操作方法は「[L チカしてみよう](GPI
 
 このパートでは「[L チカしてみよう](GPIO_starter.md)」で実施した L チカの配線をそのまま利用します。必要な部品も同じです。
 
+![部品一覧](imgs/ledSet.jpg)
 {% cloudinary imgs/section1/b.jpg alt="部品一覧" %}
 
 LED は、0 番ポートに接続しておいてください。
 
-{% cloudinary imgs/section1/k.png alt="回路図" %}
+![回路図](imgs/pinbit_microbit_Hello_Real_World.png)
 
 ## b. HTML/CSS を記載する
 
@@ -69,7 +70,15 @@ HTML に `<button>` と `<div>` 要素を 1 つづつ作ります。
 <div id="ledView"></div>
 ```
 
-`ledView` 要素には下記のようなスタイルを付けて黒い丸として表示させましょう。こちらはFilesパネルの styles.css を選んでから以下を追加します。
+`<body>`要素内には、LEDを点灯・消灯させる`<button>`要素とLEDの点灯状態のインジケーターとなる`ledView`要素を置きます。
+
+`<button>`要素には後述のコードの`controlLed()`関数
+
+次に`ledView` 要素にはスタイルを付けて黒い丸として表示させましょう。こちらはFilesパネルで、下図のように赤で囲んだボタンを押し、紫の部分に`styles.css`と書き込み、
+
+![Files](imgs/csbFilesNew.png)
+
+新しいスタイルシートを作成して以下を記載します。
 
 ```css
 #ledView {
@@ -80,27 +89,28 @@ HTML に `<button>` と `<div>` 要素を 1 つづつ作ります。
 }
 ```
 
-最後に、HTML に戻って、[Web GPIO API](http://browserobo.github.io/WebGPIO) を利用可能にする Polyfill を読み込ませましょう。
-先ほど追加した `ledView` のすぐ下に下記 `<script>` タグを記載します。
+
+最後に、HTML に戻って、今作成したスタイルシートを読み込む`link`要素と、[Web GPIO API](http://browserobo.github.io/WebGPIO) を利用可能にする Polyfill を読み込ませましょう。
+先ほど追加した `ledView` のすぐ下に下記の要素を記載します。
 
 ```html
+<link rel="stylesheet" href="styles.css" />
 <script src="https://chirimen.org/chirimen-micro-bit/polyfill/microBitBLE.js"></script>
 ```
+
 
 ## c. ボタンに反応する画面を作る
 
 GPIO を実際に使う前に、まずは「ボタンを押したら LED の ON/OFF 状態を表示する画面を切り替える」部分を作ってみます。　実際のLEDはまだ登場しません。
 
-早速 JavaScript を書いていきましょう。Filesパネルのindex.jsを選びます。
+早速 JavaScript を書いていきましょう。先ほど同様Filesパネルで、下図のように赤で囲んだボタンを押し、紫の部分に`main.js`と書き込み、
 
-最初の行はcssを読み込んでいます。
+![Files](imgs/csbFilesNew.png)
 
-2行目以降はHello Vanilla!メッセージを書き出しているだけですので消してしまって構いません。（消さなくても大丈夫）
-
-そして、以下のコードを末尾に追加します。
+main.jsを作成して以下を記載します。
 
 ```js
-mainFunction();
+window.onload = mainFunction;
 
 function mainFunction() {
   var onoff = document.getElementById("onoff");
@@ -114,14 +124,18 @@ function controlLed() {
   ledView.style.backgroundColor = v === 1 ? "red" : "black";
 };
 ```
-
-このコードでは、最初の行で次に定義するmainFunction()関数を呼び出しています。
+このコードでは、最初の行でコンテンツが読み込まれたタイミングでmainFunction()関数を呼び出しています。
 
 mainFunction()関数は、
- `onoff` 要素(LEDのON/OFFボタン)と `ledView` 要素(LED動作表示用)を取得し、それをクリックしたときに起動する関数（イベントハンドラ）を指定ています。
+ `onoff` 要素(LEDのON/OFFボタン)を取得し、それをクリックされたときに起動する関数（イベントハンドラ）を指定ています。
 
 controllLed()関数は、上で指定している関数のコードです。
-関数が呼ばれるたびに、`letview` の色を赤⇔黒交互に書き換えるものです。
+関数が呼ばれるたびに、`ledview` の色を赤⇔黒交互に書き換えるものです。
+
+最後に、index.htmlに戻り、作ったコードを読み込ませます。先ほど挿入した`<script>`タグの次の行に追加しましょう。
+```html
+<script src="main.js"></script>
+```
 
 ここまでできたら 準備編と同様、画面右上の![](imgs/lbtn.png)ボタンを押し別ウィンドでウェブアプリを起動しましょう。`LED ON/OFF` ボタンが表示されたら、ボタンをクリックしてみてください。ディスプレイの丸が、赤 → 黒 → 赤 → 黒 → 赤 → 黒 → とクリックする都度切り替えできるようになったら成功です。
 
@@ -141,13 +155,13 @@ index.htmlのパネルに移り、`<body>`要素以下の最初の行に以下�
 <button id="connect">CONNECT</button>
 ```
 
-次に、index.jsのパネルに戻ります。mainFunction内に 上記のボタンに反応してmicrobitを接続・初期化する関数路呼び出すコードを追加します。追加する場所はmainFunction関数の先頭か末尾が良いでしょう。
+次に、main.jsのパネルに戻ります。mainFunction内に 上記のボタンに反応してmicrobitを接続・初期化する関数路呼び出すコードを追加します。追加する場所はmainFunction関数の先頭か末尾が良いでしょう。
 ```js
 var connectButton = document.getElementById("connect");
 connectButton.onclick = connect;
 ```
 
-そして、上記で指定した関数を追加します。追加する場所はindex.jsの末尾で良いでしょう。
+そして、上記で指定した関数を追加します。追加する場所はmain.jsの末尾で良いでしょう。
 
 ```js
 var gpioPort0;
@@ -169,16 +183,12 @@ gpioPort0.write(v);
 
 main.js全体のコードは以下のようになっているはずです。
 ```js
-import "./styles.css";
-
-mainFunction();
-
-function mainFunction() {
+window.onload = function mainFunction() {
   var onoff = document.getElementById("onoff");
   onoff.onclick = controlLed;
   var connectButton = document.getElementById("connect");
   connectButton.onclick = connect;
-}
+};
 
 var v = 0;
 function controlLed() {
@@ -187,7 +197,6 @@ function controlLed() {
   ledView.style.backgroundColor = v === 1 ? "red" : "black";
   gpioPort0.write(v);
 }
-
 var gpioPort0;
 async function connect() {
   var microBitBle = await microBitBleFactory.connect();
@@ -198,8 +207,28 @@ async function connect() {
 }
 ```
 
+index.htmlのほうはこのようになります。
 
-これで、CONNECTボタンクリックでmicrobitを接続した後、LED ON/OFFボタンクリックに反応して LED がON/OFFできたら成功です。
+```html
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  :
+  </head>
+  <body>
+    <button id="connect">CONNECT</button>
+    <button id="onoff">LED ON/OFF</button>
+    <div id="ledView"></div>
+    <link rel="stylesheet" href="styles.css" />
+    <script src="https://chirimen.org/chirimen-micro-bit/polyfill/microBitBLE.js"></script>
+    <script src="main.js"></script>
+  </body>
+</html>
+```
+
+ここまでできたら、画面右上の![](imgs/lbtn.png)ボタンを押し別ウィンドでウェブアプリを起動しましょう。
+
+これで、CONNECTボタンクリックでmicrobitと接続した後、LED ON/OFFボタンクリックに反応して LED がON/OFFできたら成功です。
 
 [L チカしてみよう](GPIO_starter.md) の L チカのパートでも簡単に説明しましたが、ここでもういちど GPIO を使う流れをおさらいします。
 
@@ -345,15 +374,15 @@ function ledOnOff(v) {
 今回追加するのは下記部品です。
 
 - 前述のタクトスイッチ × 1
-- ジャンパーワイヤー（オス-オス）× 2
+- ジャンパーワイヤー（オス-オス）× 2 (写真ではオス・メスですが、オス・オスが必要)
 
-{% cloudinary imgs/section1/t.jpg alt="追加する部品" %}
+![追加する部品](../raspi/imgs/section1/t.jpg)
 
 下図のように、さきほどの LED の配線にタクトスイッチを追加しましょう。この図の例では 2 ピンのタクトスイッチを使っていますが、4 ピンの場合も黄色と黒のジャンパーワイヤの間にボタンでオンオフが切り替わるよう向きに注意してスイッチを配置してください。
 
 <!-- TODO: 4pin タクトスイッチの図も用意してリンクしてあげたい -->
 
-{% cloudinary imgs/section1/s.png alt="スイッチを追加した配線" %}
+![スイッチを追加した配線](imgs/pinbit_microbit_Hello_Real_World_SW.png)
 
 ### 今回のスイッチは「プルアップ」回路で接続
 
