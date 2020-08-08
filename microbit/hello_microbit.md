@@ -11,7 +11,11 @@
 以下の機材が準備できていることを確認しましょう。
 | CHIRIMEN with micro:bit 基本セット (パーソナルコンピュータを除く) | フィジカルコンピューティングセット|
 | ----- | ----- |
+| ![CHIRIMEN with micro:bit 基本セット](imgs/baseSet.jpg)  | ![フィジカルコンピューティングセット](imgs/pcSet.jpg) |
+
+<!--
 | ![CHIRIMEN with micro:bit 基本セット](imgs/baseSet.jpg) <!--[<img src="https://res.cloudinary.com/chirimen/image/fetch/c_limit,f_auto,q_auto,w_400/https://tutorial.chirimen.org/raspi/imgs/section0/raspi3.jpg" alt="基本セットの画像">](imgs/section0/raspi3.jpg)--> | ![フィジカルコンピューティングセット](imgs/pcSet.jpg) <!--[<img src="https://res.cloudinary.com/chirimen/image/fetch/c_limit,f_auto,q_auto,w_400/https://tutorial.chirimen.org/raspi/imgs/section0/l.jpg" alt="L チカセット">](imgs/section0/l.jpg)--> |
+-->
 
 - CHIRIMEN for Raspi 基本セット(内蔵センサーだけ試せます)<br/>
 準備編ではこの基本セットだけを使います。
@@ -60,7 +64,6 @@
   | 4 ピンクの部分を選んだ後、赤のボタンを押す | 5 このボタンを押す | 6 ハートマークが表示されれば完了 |
   | -- | -- | -- |
   | ![USB接続ダイアログ](imgs/ssInst4.jpg) | ![ダウンロードボタン](imgs/ssInst5.jpg) | ![](imgs/mbitInst.jpg) |
-
 
 - CHIRIMEN with micro:bitを使ったIoTプロトタイピングでは、PCのブラウザで動くウェブアプリの開発だけを行います。**micro:bitへのプログラムの書き込みは今回一度だけ行えば以降必要ありません**
   - 他の一般的なmicro:bitを使ったプログラミングを行うときは単に上書きしてください。その後、CHIRIMEN with micro:bitを使ったIoTプロトタイピングに戻るときには再度この手順を行ってCHIRIMENサポートプログラムをmicro:bitに書き込んでください。
