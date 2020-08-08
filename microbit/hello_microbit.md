@@ -14,7 +14,7 @@
 | ![CHIRIMEN with micro:bit 基本セット](imgs/baseSet.jpg)  | ![フィジカルコンピューティングセット](imgs/pcSet.jpg) |
 
 <!--
-| ![CHIRIMEN with micro:bit 基本セット](imgs/baseSet.jpg) <!--[<img src="https://res.cloudinary.com/chirimen/image/fetch/c_limit,f_auto,q_auto,w_400/https://tutorial.chirimen.org/raspi/imgs/section0/raspi3.jpg" alt="基本セットの画像">](imgs/section0/raspi3.jpg)--> | ![フィジカルコンピューティングセット](imgs/pcSet.jpg) <!--[<img src="https://res.cloudinary.com/chirimen/image/fetch/c_limit,f_auto,q_auto,w_400/https://tutorial.chirimen.org/raspi/imgs/section0/l.jpg" alt="L チカセット">](imgs/section0/l.jpg)--> |
+| ![CHIRIMEN with micro:bit 基本セット](imgs/baseSet.jpg) [<img src="https://res.cloudinary.com/chirimen/image/fetch/c_limit,f_auto,q_auto,w_400/https://tutorial.chirimen.org/raspi/imgs/section0/raspi3.jpg" alt="基本セットの画像">](imgs/section0/raspi3.jpg) | ![フィジカルコンピューティングセット](imgs/pcSet.jpg) [<img src="https://res.cloudinary.com/chirimen/image/fetch/c_limit,f_auto,q_auto,w_400/https://tutorial.chirimen.org/raspi/imgs/section0/l.jpg" alt="L チカセット">](imgs/section0/l.jpg) |
 -->
 
 - CHIRIMEN for Raspi 基本セット(内蔵センサーだけ試せます)<br/>
