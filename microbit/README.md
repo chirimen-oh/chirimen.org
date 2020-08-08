@@ -13,7 +13,7 @@ JavaScript プログラミング未経験者は、ページ下部で紹介して
 
 micro:bitをwebアプリでコントロールするための準備と最初の動作確認を行います
 
-- [0. Hello web micro:bit](hello_microbit.md)
+- [0. Hello micro:bit](hello_microbit.md)
 
 動作確認を兼ねて、micro:bitの内蔵センサーやLED等を操作できます。
 
