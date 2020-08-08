@@ -9,6 +9,7 @@
 
 # 機材の準備
 以下の機材が準備できていることを確認しましょう。
+
 | CHIRIMEN with micro:bit 基本セット (パーソナルコンピュータを除く) | フィジカルコンピューティングセット|
 | ----- | ----- |
 | ![CHIRIMEN with micro:bit 基本セット](imgs/baseSet.jpg)  | ![フィジカルコンピューティングセット](imgs/pcSet.jpg) |
@@ -57,7 +58,8 @@
   - Chromeブラウザで<a href="https://chirimen.org/chirimen-micro-bit/guidebooks/link2original.html#https://makecode.microbit.org/_Jh51P7beW6Kb" target="_blank">こちらのページ(https://makecode.microbit.org/_Jh51P7beW6Kb)</a>にアクセス
  
 - 以下の手順でプログラムを書き込む
-  | 1 このボタンを押す | 2 このボタンを押す | 3 このボタンを押す |
+
+| 1 このボタンを押す | 2 このボタンを押す | 3 このボタンを押す |
   | -- | -- | -- |
   | ![makecode遷移ボタン](imgs/ssInst1.jpg) | ![ダウンロード設定](imgs/ssInst2.jpg) | ![USB接続設定](imgs/ssInst3.jpg) |
 
