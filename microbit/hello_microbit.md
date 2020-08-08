@@ -54,7 +54,7 @@
 - USBケーブルを使ってmicrp:bitとPCを繋ぐ
   ![USBでmicro:bitをPCに接続する](imgs/pc_mbit_usb_con.jpg)
 -　micro:bitにCHIRIMEN サポートプログラムを書き込む
-  - ブラウザで<a href="https://chirimen.org/chirimen-micro-bit/guidebooks/link2original.html#https://makecode.microbit.org/_Jh51P7beW6Kb" target="_blank">こちらのページ(https://makecode.microbit.org/_Jh51P7beW6Kb)</a>にアクセス
+  - Chromeブラウザで<a href="https://chirimen.org/chirimen-micro-bit/guidebooks/link2original.html#https://makecode.microbit.org/_Jh51P7beW6Kb" target="_blank">こちらのページ(https://makecode.microbit.org/_Jh51P7beW6Kb)</a>にアクセス
  
 - 以下の手順でプログラムを書き込む
   | 1 このボタンを押す | 2 このボタンを押す | 3 このボタンを押す |
