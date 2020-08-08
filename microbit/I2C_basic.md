@@ -42,7 +42,6 @@ CHIRIMEN with micro:bit（以下 「CHIRIMEN microbit」） を使ったプロ�
 
 上記に加え今回紹介するセンサが必要となりますが、センサについては各センサの説明のパートに記載します。
 
-<!--
 # 2. 光センサを使ってみる (TBD)
 
 光の強度 (明るさ) に反応するセンサを使ってみましょう。
@@ -55,22 +54,17 @@ CHIRIMEN with micro:bit（以下 「CHIRIMEN microbit」） を使ったプロ�
 
 Raspberry Piとの接続方法については、下記回路図を参照ください。
 
-`/home/pi/Desktop/gc/contrib/examples/i2c-BH1750/BH1750schematic.png`
-
-{% cloudinary imgs/section3/BH1750schematic.png alt="回路図" %}
-
+![回路図](https://chirimen.org/chirimen-micro-bit/examples/I2C_BH1750/imgs/pinbit_BH1750.png)
 
 ## b. 接続確認とexampleの実行
 
-i2cdetect で接続を確認しておきましょう。ターミナルで次のコマンドを実行します。
+[i2cdetect webAppで接続を確認](https://chirimen.org/chirimen-micro-bit/examples/i2cdetect/index.html)しておきましょう。
 
-`$ i2cdetect -y -r 1`
+SlaveAddress `0x23` が見つかれば接続OKです。次に [exampleのcodesandbox](https://codesandbox.io/s/github/chirimen-oh/chirimen-micro-bit/tree/master/examples/I2C_BH1750) を動かします。
 
-WebI2C 版 `/home/pi/Desktop/gc/i2c/i2c-detect/index.html` でも確認できますが、I2C 接続をこちらを使う場合は確認後に必ずタブを閉じて
+[https://codesandbox.io/s/github/chirimen-oh/chirimen-micro-bit/tree/master/examples/I2C_BH1750](https://codesandbox.io/s/github/chirimen-oh/chirimen-micro-bit/tree/master/examples/I2C_BH1750)
 
-SlaveAddress `0x23` が見つかれば接続OKです。次に example を動かします。
-
-[`https://r.chirimen.org/examples/#I2C-BH1750`](http://r.chirimen.org/examples/#I2C-BH1750)
+いつもの通り、別ウィンドでwebAppsを起動し、CONNECTボタンを押しmicro:bitを接続すると・・
 
 画面左上の `LIGHT[lx] :	`に表示されてる数値が明るさです。センサに当たる光を遮断してみてください。数値が小さくなるはずです。逆にセンサに LED の光を直接当てると数値が大きくなることが確認できるでしょう。
 
@@ -85,8 +79,8 @@ example のコードから、光センサに関係する部分を見ていきま
 index.html
 ```html
     : 
-    <script src="node_modules/@chirimen-raspi/polyfill/polyfill.js"></script>
-    <script src="node_modules/@chirimen-raspi/chirimen-driver-i2c-bh1750/BH1750.js"></script>
+    <script type="text/javascript" src="https://chirimen.org/chirimen-micro-bit/polyfill/microBitBLE.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@chirimen/bh1750"></script>
     <script src="./main.js" defer></script>
     :
   <body>
@@ -100,7 +94,7 @@ index.html
   </body>
 ```
 
-HTML は ADT7410 の時とほとんど同じです。ドライバーライブラリは、`BH1750.js` に変わりました。
+HTML は ADT7410 の時とほとんど同じです。ドライバーライブラリは、`https://cdn.jsdelivr.net/npm/@chirimen/bh1750` に変わりました。
 
 ### c-2. main.js
 
@@ -108,20 +102,25 @@ HTML は ADT7410 の時とほとんど同じです。ドライバーライブラ
 
 main.js
 ```javascript
-  var light = document.getElementById("light");
-  var i2cAccess = await navigator.requestI2CAccess();
-  var port = i2cAccess.ports.get(1);
-  var bh1750 = new BH1750(port, 0x23);
-  await bh1750.init();
-  await bh1750.set_sensitivity(128);
-  
-  while (1) {
+function connect(){
+    microBitBle = await microBitBleFactory.connect();
+    var i2cAccess = await microBitBle.requestI2CAccess();
+    var i2cPort = i2cAccess.ports.get(1);
+    bh1750 = new BH1750(i2cPort);
+    await bh1750.init();
+    await bh1750.set_sensitivity(128);
+    readData();
+}
+ 
+function readData(){
+  while (readEnable) {
     var val = await bh1750.measure_high_res();
     light.innerHTML = val;
     await sleep(300);
+}
 ```
 
-`main.js` も温度センサとほとんど同じです。最初に I2C デバイスを操作するため I2CAccess、Port と順に取得したら SlaveAddress と一緒にドライバに渡して初期化し、あとはセンサーの値を読みたいときに `read()` の代わりに `measure_high_res()` します。詳しく見てみましょう。
+`main.js` も温度センサとほとんど同じです。最初に UIボタン経由でconnect()を呼び出しmicro:bitを接続した後、I2C デバイスを操作するため I2CAccess、Port と順に取得したら SlaveAddress と一緒にドライバに渡して初期化し、あとはセンサーの値を読みたいときに `read()` の代わりに `measure_high_res()` します。詳しく見てみましょう。
 
 ### var light = new BH1750(port, 0x23)
 
@@ -138,7 +137,7 @@ main.js
 ### bh1750.measure_high_res()
 
 BH1750 の仕様に基づく **データ読み出し処理** をここで実施しています。
--->
+
 
 # 3. 測距センサを使ってみる
 
@@ -162,11 +161,9 @@ raspi との接続方法については、こちらの回路図を参照くだ�
 
 ## b. 接続確認と example の実行
 
-i2cdetect で接続を確認しておきましょう。
+[i2cdetect webAppで接続を確認](https://chirimen.org/chirimen-micro-bit/examples/i2cdetect/index.html)しておきましょう。
 
-`$ i2cdetect -y -r 1`
-
-SlaveAddress `0x52` が見つかれば接続OKです。次にcodesandboxでexampleを動かします。
+SlaveAddress `0x52` が見つかれば接続OKです。次に[codesandboxでexample](https://codesandbox.io/s/github/chirimen-oh/chirimen-micro-bit/tree/master/examples/I2C3_VL53L0X)を動かします。
 
 [codesandbox](https://codesandbox.io/s/github/chirimen-oh/chirimen-micro-bit/tree/master/examples/I2C3_VL53L0X)
 
@@ -237,7 +234,7 @@ async function readData(){
 
 測距センサ VL53L0X の仕様に基づくデータ読み出し処理をここで実施しています。計測範囲内に遮蔽物がない場合には値が数値で得られないことに注意してください。
 
-<!--
+
 # 4. 加速度、角加速度センサを使ってみる (TBD)
 
 傾きなどに反応するセンサを使ってみましょう。
@@ -250,7 +247,7 @@ async function readData(){
 
 raspi との接続方法については、下記回路図を参照ください。
 
-{% cloudinary imgs/section3/MPU6050schematic.png alt="回路図" %}
+![回路図](https://chirimen.org/chirimen-micro-bit/examples/I2C_MPU6050/imgs/pinbit_MPU6050.png)
 
 ## b. 接続確認とexampleの実行
 
@@ -258,9 +255,9 @@ i2cdetect で接続を確認しておきましょう。
 
 `$ i2cdetect -y -r 1`
 
-SlaveAddress `0x68` が見つかれば接続OKです。次に example を動かします。
+SlaveAddress `0x68` が見つかれば接続OKです。次に [codesandboxでexample](https://codesandbox.io/s/github/chirimen-oh/chirimen-micro-bit/tree/master/examples/I2C_MPU6050) を動かします。
 
-[`https://r.chirimen.org/examples/#I2C-MPU6050`](https://r.chirimen.org/examples/#I2C-MPU6050)
+[https://codesandbox.io/s/github/chirimen-oh/chirimen-micro-bit/tree/master/examples/I2C_MPU6050](https://codesandbox.io/s/github/chirimen-oh/chirimen-micro-bit/tree/master/examples/I2C_MPU6050)
 
 画面の左上に表示されている `Gx` `Gy` `Gz` が加速度センサの値、`Rx` `Ry` `Rz` が角加速度を表しています。センサを動かすと数値が変化するはずです。
 
@@ -275,9 +272,9 @@ exampleのコードを見てみましょう。
 index.html
 ```html
     :
-    <script src="node_modules/@chirimen-raspi/polyfill/polyfill.js"></script>
-    <script src="node_modules/@chirimen-raspi/chirimen-driver-i2c-mpu6050/MPU6050.js"></script>
-    <script src="./main.js" defer></script>
+    <script type="text/javascript" src="https://chirimen.org/chirimen-micro-bit/polyfill/microBitBLE.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@chirimen/mpu6050"></script>
+    <script type="text/javascript" src="main.js"></script>
     :
   <body>
     :
@@ -297,7 +294,7 @@ index.html
   </body>
 ```
 
-今回のドライバーライブラリは、`MPU6050.js` です。オンラインから読み込む場合は `https://r.chirimen.org/examples/i2c-MPU6050/main.js` です。そして出力が `Gx` `Gy` `Gz` `Rx` `Ry` `Rz` と6つの値を表示するため要素が6つに変わりましたが、それ以外はこれまでとほとんど同じです。
+今回のドライバーライブラリは、`https://cdn.jsdelivr.net/npm/@chirimen/mpu6050` です。そして出力が `Gx` `Gy` `Gz` `Rx` `Ry` `Rz` と6つの値を表示するため要素が6つに変わりましたが、それ以外はこれまでとほとんど同じです。
 
 ### c-2. main.js
 
@@ -306,28 +303,31 @@ index.html
 main.js
 
 ```javascript
-    var gx = document.getElementById("gx");
-    var gy = document.getElementById("gy");
-    var gz = document.getElementById("gz");
-    var rx = document.getElementById("rx");
-    var ry = document.getElementById("ry");
-    var rz = document.getElementById("rz");
-    var i2cAccess = await navigator.requestI2CAccess();
-    var port = i2cAccess.ports.get(1);
-    var mpu6050 = new MPU6050(port, 0x68);
+:
+async function connect(){
+    microBitBle = await microBitBleFactory.connect();
+    var i2cAccess = await microBitBle.requestI2CAccess();
+    var i2cPort = i2cAccess.ports.get(1);
+    mpu6050 = new MPU6050(i2cPort, 0x68);
     await mpu6050.init();
-    while (1) {
-      var val = await mpu6050.readAll();
-      // console.log('value:', value);
-      temp.innerHTML = val.temperature;
-      gx.innerHTML = val.gx;
-      gy.innerHTML = val.gy;
-      gz.innerHTML = val.gz;
-      rx.innerHTML = val.rx;
-      ry.innerHTML = val.ry;
-      rz.innerHTML = val.rz;
-      await sleep(1000);
+    :
+    readData();
+}
+
+async function readData(){
+    :
+    while ( readEnable ){
+        var val = await mpu6050.readAll();
+        temp.innerHTML = val.temperature;
+        gx.innerHTML = val.gx;
+        gy.innerHTML = val.gy;
+        gz.innerHTML = val.gz;
+        rx.innerHTML = val.rx;
+        ry.innerHTML = val.ry;
+        rz.innerHTML = val.rz;
+        await sleep(1000);
     }
+}
 ```
 
 main.js もこれまでの他のセンサーとほとんど同じです。
@@ -344,7 +344,6 @@ main.js もこれまでの他のセンサーとほとんど同じです。
 
 `readAll()` では、`Gx` `Gy` `Gz` `Rx` `Ry` `Rz` の値が一度に返却されます。
 
--->
 
 # 5. 演習: 複数のセンサを組み合わせて使ってみよう
 
