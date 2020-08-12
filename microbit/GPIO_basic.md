@@ -1,8 +1,6 @@
-<!--
 ---
 layout: tutorial
 ---
--->
 
 # 1. GPIO の使い方
 
@@ -50,7 +48,6 @@ CHIRIMEN microbit の基本的な操作方法は「[L チカしてみよう](GPI
 このパートでは「[L チカしてみよう](GPIO_starter.md)」で実施した L チカの配線をそのまま利用します。必要な部品も同じです。
 
 ![部品一覧](imgs/ledSet.jpg)
-{% cloudinary imgs/section1/b.jpg alt="部品一覧" %}
 
 LED は、0 番ポートに接続しておいてください。
 
@@ -61,7 +58,7 @@ LED は、0 番ポートに接続しておいてください。
 さて、まずはボタンと LED の状態インジケータを画面上に作ってみましょう。
 HTML に `<button>` と `<div>` 要素を 1 つづつ作ります。
 
-[codesandbox](https://codesandbox.io/)にアクセスし、`Create a sandbox`ボタンを押し、Vanilla (通常の，標準的なの意味) でコード編集を始めます。
+[codesandbox](https://codesandbox.io/)にアクセスし、`Create a sandbox`ボタンを押し、Static ("静的な"Webページの意味) でコード編集を始めます。
 
 この画面のFilesパネルの index.html を選んで`<body>`要素以下に下記コードを挿入します。
 
@@ -74,11 +71,11 @@ HTML に `<button>` と `<div>` 要素を 1 つづつ作ります。
 
 `<button>`要素には後述のコードの`controlLed()`関数
 
-次に`ledView` 要素にはスタイルを付けて黒い丸として表示させましょう。こちらはFilesパネルで、下図のように赤で囲んだボタンを押し、紫の部分に`styles.css`と書き込み、
+次に`ledView` 要素にはスタイルを付けて黒い丸として表示させましょう。こちらはFilesパネルで、下図のように赤で囲んだボタンを押し、紫の部分に`styles.css`と書き込み`Enter`キー、
 
 ![Files](imgs/csbFilesNew.png)
 
-新しいスタイルシートを作成して以下を記載します。
+新しいスタイルシートを作成して以下を記載します。記載が完了したら保存(FileメニューでSave or `CTRL+S`)を忘れずに。
 
 ```css
 #ledView {
@@ -103,11 +100,11 @@ HTML に `<button>` と `<div>` 要素を 1 つづつ作ります。
 
 GPIO を実際に使う前に、まずは「ボタンを押したら LED の ON/OFF 状態を表示する画面を切り替える」部分を作ってみます。　実際のLEDはまだ登場しません。
 
-早速 JavaScript を書いていきましょう。先ほど同様Filesパネルで、下図のように赤で囲んだボタンを押し、紫の部分に`main.js`と書き込み、
+早速 JavaScript を書いていきましょう。先ほど同様Filesパネルで、下図のように赤で囲んだボタンを押し、紫の部分に`main.js`と書き込み`Enter`キー、
 
 ![Files](imgs/csbFilesNew.png)
 
-main.jsを作成して以下を記載します。
+main.jsを作成して以下を記載します。記載が完了したら保存(FileメニューでSave or `CTRL+S`)を忘れずに。
 
 ```js
 window.onload = mainFunction;
@@ -132,14 +129,15 @@ mainFunction()関数は、
 controllLed()関数は、上で指定している関数のコードです。
 関数が呼ばれるたびに、`ledview` の色を赤⇔黒交互に書き換えるものです。
 
-最後に、index.htmlに戻り、作ったコードを読み込ませます。先ほど挿入した`<script>`タグの次の行に追加しましょう。
+最後に、index.htmlに戻り、作ったコードを読み込ませます。先ほど挿入した`<script>`タグの次の行に追加しましょう。記載が完了したら保存(FileメニューでSave or `CTRL+S`)を忘れずに。
 ```html
 <script src="main.js"></script>
 ```
 
-ここまでできたら 準備編と同様、画面右上の![](imgs/lbtn.png)ボタンを押し別ウィンドでウェブアプリを起動しましょう。`LED ON/OFF` ボタンが表示されたら、ボタンをクリックしてみてください。ディスプレイの丸が、赤 → 黒 → 赤 → 黒 → 赤 → 黒 → とクリックする都度切り替えできるようになったら成功です。
+ここまでできたら 準備編と同様、画面右上の![](imgs/lbtn.png)ボタンを押し別ウィンドでウェブアプリを起動しましょう。
+`LED ON/OFF` ボタンが表示されたら、ボタンをクリックしてみてください。ディスプレイの丸が、赤 → 黒 → 赤 → 黒 → 赤 → 黒 → とクリックする都度切り替えできるようになったら成功です。
 
-注記：codesandboxでは左側のパネルにウェブアプリが開かれています。これはBluetoothでmicrobitを接続すしない限りはうまく動作するので、まだ接続処理を書いていない上のコードは動きますが、次項以降でmicrobitを接続しようとすると動作しなくなりますので、別ウィンドで開くことを慣れておきましょう。
+注記：codesandboxでは右側のパネルにウェブアプリが開かれています。これはmicrobitをBluetooth接続しない限りはうまく動作するのですが、次項以降でmicrobitを接続しようとすると動作しなくなりますので、別ウィンドで開くことを慣れておきましょう。
 
 {% cloudinary imgs/section1/LEDOnOff.gif alt="LED On/Offをブラウザ画面上のボタンクリックで実施" %}
 
@@ -150,7 +148,7 @@ controllLed()関数は、上で指定している関数のコードです。
 ### microbitを接続する
 microbitの接続はユーザインターフェースで発動する必要がありましたね。そこでCONNECTボタンをhtmlに設置します。
 
-index.htmlのパネルに移り、`<body>`要素以下の最初の行に以下を追加します。
+index.htmlのパネルに移り、`<body>`要素以下の最初の行に以下を追加します。記載が完了したら保存(FileメニューでSave or `CTRL+S`)を忘れずに。
 ```html
 <button id="connect">CONNECT</button>
 ```
@@ -226,6 +224,10 @@ index.htmlのほうはこのようになります。
 </html>
 ```
 
+css, html, jsとも、変更を確定するために、忘れず保存(FileメニューでSave or `CTRL+S`)しましょう。それぞれのファイルごとに保存が必要です。保存できていないものはFilesパネルで青丸が付いています。
+![未保存ファイル](imgs/csbYetSaved.png)
+
+
 ここまでできたら、画面右上の![](imgs/lbtn.png)ボタンを押し別ウィンドでウェブアプリを起動しましょう。
 
 これで、CONNECTボタンクリックでmicrobitと接続した後、LED ON/OFFボタンクリックに反応して LED がON/OFFできたら成功です。
@@ -264,7 +266,9 @@ GPIO ポートにかける電圧を Web アプリで変化させたい時には�
 `port.write()` は、出力モードに指定した **GPIO ポートの電圧を切り替える** API です。
 `port.write(1)` で、指定したポートから HIGH (microbit では 3V) の電圧がかかり、`port.write(0)` で LOW(0V) になります。
 
+<!--
 {% cloudinary imgs/section1/JSFiddle.png alt="ここまでのJSFiddleの画面" %}
+-->
 
 # 3. マウスクリックのかわりにタクトスイッチを使ってみる
 
@@ -285,7 +289,7 @@ GPIO ポートにかける電圧を Web アプリで変化させたい時には�
 
 [タクトスイッチの製品ページ](https://www.alps.com/prod/info/J/HTML/Tact/SnapIn/SKHW/SKHWALA010.html) などにも回路図がありますが、端子が出ている向き (次の図では縦方向) は常に接続されており、それと直行する (横) 方向がボタンによって切り替わります。次の図では左の 4pin スイッチと右の 2pin スイッチ (とジャンパーワイヤ) が同じ回路となります。
 
-{% cloudinary small imgs/section1/tactswitch.png alt="tactswitch" %}
+![tactswitch](../raspi/imgs/section1/tactswitch.png)
 
 ## a. 準備：画面のボタンをモーメンタリ動作に変えておく
 
@@ -303,12 +307,12 @@ GPIO ポートにかける電圧を Web アプリで変化させたい時には�
 下記のように、現在は `onclick` イベントで切り替えています。クリックイベントは、「マウスのボタンを押して離す」ことで発生します。
 
 ```js
-　var v = 0;
-  function controlLed() {
-    v = v === 0 ? 1 : 0;
-    ledView.style.backgroundColor = v ? "red" : "black";
-    gpioPort0.write(v);
-  };
+var v = 0;
+function controlLed() {
+  v = v === 0 ? 1 : 0;
+  ledView.style.backgroundColor = v ? "red" : "black";
+  gpioPort0.write(v);
+};
 ```
 
 これを、マウスボタンを押した時と離した時にそれぞれオンオフさせる～押している間だけオンになる「モーメンタリ」動作にするには、
@@ -404,7 +408,7 @@ function ledOnOff(v) {
 今回の回路では、Port 2 を利用しています。
 さきほどの動作となるメカニズムは下記の通りです。
 
-{% cloudinary imgs/section1/s2.png alt="スイッチの動作" %}
+![スイッチの動作](../raspi/imgs/section1/s2.png)
 
 この動作を頭に入れておきましょう。
 
@@ -523,7 +527,7 @@ async function readSwitchLoop() {
 }
 ```
 
-さて、ここまで出来たらスイッチを押してみてください。LED が押してる間だけ点灯したら成功です。
+さて、ここまで出来たらスイッチを押してみてください。LED が押してる間だけ点灯したら成功です。(変更したファイルの保存を忘れずに)
 
 ただ、このコードでは今度はブラウザ画面上の「LED ON/OFF」ボタンを押したときに正しく点灯しなくなってしまっています。スイッチの状態を読んで LED を切り替える処理がポーリング動作しているため、スイッチが押されていないとすぐに LED が消えてしまいます。
 
@@ -596,7 +600,7 @@ function toggleLed(val) {
 Web GPIO API の機能が一通り確認できましたので、次は違う部品も制御してみましょう。
 
 ここでは、**MOSFET** を使って ギアモータ（ちびギアモータ）の単純な ON/OFF を制御してみましょう。
-  >Note1: CHIRIMEN with micro:bit フィジカルコンピューティングセット(スターター・キット)ではギアモータの一例として、ちびギアモータをセットに含めています。ここまで「ギアモータ」と「ちびギアモータ」を併記してきましたが、以下では「ちびギアモータ」とのみ記載します。ちびギアモータ以外のギアモータを利用する場合には製品の仕様をご確認の上お試しください。
+  >Note1: CHIRIMEN with micro:bit フィジカルコンピューティングセット(スターターキット)ではギアモータの一例として、ちびギアモータをセットに含めています。ここまで「ギアモータ」と「ちびギアモータ」を併記してきましたが、以下では「ちびギアモータ」とのみ記載します。ちびギアモータ以外のギアモータを利用する場合には製品の仕様をご確認の上お試しください。
 
   >Note2: micro:bitのGPIOポートは流せる電流の上限が決められています。[1ピンあたり流せる電流が5mA、より詳しい情報はリンクを参照してください。](https://tech.microbit.org/hardware/edgeconnector/#gpio-capabilities) また電圧も3Vに限定されています。小さなLED数個の場合はこの条件内で使えますが、モーターやソレノイド、パワーLEDなどは直結できません。このようなケースに使えます。
 
@@ -622,7 +626,9 @@ Web GPIO API の機能が一通り確認できましたので、次は違う部�
 
 今回はとても小型なギアモータである、[ちびギアモータ](https://tiisai.dip.jp/?p=2676)を利用します。
 
-![ちびギアモータ](../raspi/imgs/section1/chibigear_1.jpg ![ちびギアモータ](../raspi/imgs/section1/chibigear_2.jpg)
+|  |  |
+| --- | --- |
+| ![ちびギアモータ](../raspi/imgs/section1/chibigear_1.jpg) | ![ちびギアモータ](../raspi/imgs/section1/chibigear_2.jpg) |
 
 ## a. 部品と配線について
 
