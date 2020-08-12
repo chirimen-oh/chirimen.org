@@ -10,9 +10,29 @@
 # 機材の準備
 以下の機材が準備できていることを確認しましょう。
 
-| CHIRIMEN with micro:bit 基本セット (パーソナルコンピュータを除く) | フィジカルコンピューティングセット|
-| ----- | ----- |
-| ![CHIRIMEN with micro:bit 基本セット](imgs/baseSet.jpg)  | ![フィジカルコンピューティングセット](imgs/pcSet.jpg) |
+## CHIRIMEN with micro:bit 基本セット
+|基本セット (パーソナルコンピュータを除く)  -  電池ボックス, micro:bit, microUSBケーブル |
+| ----- |
+| ![CHIRIMEN with micro:bit 基本セット](imgs/baseSet.jpg)  |
+
+
+## フィジカルコンピューティングセット(スターターキット)
+|  |  |  |
+| --- | --- | --- |
+| micro:bitブレークアウトボード | ブレッドボード | ジャンパー(オス-オス4本) |
+| ![](imgs/parts/pinbit.png) | ![](imgs/parts/breadboard.png) | ![](imgs/parts/MtoM.png) |
+| リード付きLED (赤or黄or緑) | リード抵抗 (150Ω)　茶緑茶金 | リード抵抗 (1KΩ)　茶黒赤金 |
+| ![](imgs/parts/LED.png) | ![](imgs/parts/150Ohm.png) | ![](imgs/parts/1kOhm.png) |
+ リード抵抗 (10KΩ) 茶黒橙金 | タクトスイッチ | Nch MOSFET (2SK4017) |
+| ![](imgs/parts/10kOhm.png) | ![](imgs/parts/switch.png) | ![](imgs/parts/MOSFET.png) |
+| ちびギアモータ | ADT7410 | - |
+| ![](imgs/parts/chibigear.png) | ![](imgs/parts/ADT7410.png) | - |
+
+<!--
+| ブレークアウトボード | ブレッドボード | ジャンパーワイヤー | リード付き LED | リード抵抗 (150Ω) | リード抵抗 (1KΩ) | リード抵抗 (10KΩ) | タクトスイッチ | Nch MOSFET | ちびギアモータ | SHT30 | 
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| ![](imgs/pinbit.jpg) | ![](imgs/breadboardImg.jpg) | ![](imgs/parts/MtoM.png) | ![](imgs/parts/LED.png) | ![](imgs/parts/150Ohm.png) | ![](imgs/parts/1kOhm.png) | ![](imgs/parts/10kOhm.png) | ![](imgs/parts/switch.png) | ![](imgs/parts/MOSFET.png) | ![](imgs/parts/chibigear.png) | ![](imgs/parts/ADT7410.png) |
+-->
 
 <!--
 | ![CHIRIMEN with micro:bit 基本セット](imgs/baseSet.jpg) [<img src="https://res.cloudinary.com/chirimen/image/fetch/c_limit,f_auto,q_auto,w_400/https://tutorial.chirimen.org/raspi/imgs/section0/raspi3.jpg" alt="基本セットの画像">](imgs/section0/raspi3.jpg) | ![フィジカルコンピューティングセット](imgs/pcSet.jpg) [<img src="https://res.cloudinary.com/chirimen/image/fetch/c_limit,f_auto,q_auto,w_400/https://tutorial.chirimen.org/raspi/imgs/section0/l.jpg" alt="L チカセット">](imgs/section0/l.jpg) |
@@ -38,13 +58,18 @@
     - 他に[SparkFun micro:bit Breakout (with Headers)](https://www.sengoku.co.jp/mod/sgk_cart/detail.php?code=EEHD-56JS)、ジェネリック品 mbit などが使用できますが、ピン配列の差異に注意して配線してください。
   - ブレッドボード (通常サイズまたはミニサイズ) × 1
   - リード付き LED × 1
-  - リード付き抵抗器 (330Ω) x 1 (橙・橙・茶・金)
+  - タクトスイッチ × 1
   - ジャンパーワイヤー (オス-オス) x 4
   - [Nch MOSFET (2SK4017)](http://akizukidenshi.com/catalog/g/gI-07597/) x 1
+  - リード抵抗 (150Ω) x 1 (茶・緑・茶・金)
   - リード抵抗 (1KΩ) x 1 (茶・黒・赤・金)
   - リード抵抗 (10KΩ) x 1 (茶・黒・橙・金)
   - [ちびギアモータ(ピンヘッダ付き)](https://tiisaishop.dip.jp/product/sgm/)
+  - [ADT7410 温度センサーモジュール](http://akizukidenshi.com/catalog/g/gM-06675/) (ピンヘッダ半田付け済み)
+
+  <!--
   - [SHT30 温度・湿度センサーモジュール](https://www.amazon.co.jp/dp/B07HBSLLSY/) (ピンヘッダ半田付け済み)
+  -->
 
 
 -----
