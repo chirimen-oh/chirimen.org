@@ -29,7 +29,7 @@ CHIRIMEN with micro:bit （以下「CHIRIMEN microbit」）を使ったプログ
 - [microbitブレークアウトボード](imgs/pinbit.jpg) x 1
 - [ブレッドボード](imgs/breadboardImg.jpg)
 - ジャンパーワイヤー (オス-オス) x 4
-- [湿度・温度センサ (SHT31)](http://akizukidenshi.com/catalog/g/gK-12125/) x 1
+- [湿度・温度センサ (SHT31)](http://akizukidenshi.com/catalog/g/gK-12125/) x 1 (SHT30もほぼ同じように使えます([データシート](https://www.sensirion.com/fileadmin/user_upload/customers/sensirion/Dokumente/2_Humidity_Sensors/Datasheets/Sensirion_Humidity_Sensors_SHT3x_Datasheet_digital.pdf)によると測定範囲精度が違う))
 
 | ブレークアウトボード | ブレッドボード | ジャンパーワイヤー | SHT31 |
 | -- | -- | -- | -- |
@@ -90,9 +90,9 @@ I2Cデバイスは一般的に小さなチップ部品です。下の拡大写�
 ![I2Cで利用するピンの位置](imgs/pinbit_i2cpin.jpg)
 
 ### 配線しよう
-図を見ながらジャンパーワイヤ 4 本で SHT30 を接続します。 
+図を見ながらジャンパーワイヤ 4 本で SHT31 を接続します。 
 
-実際に配線した写真は以下の通りです。sht30 の表裏にも注意し、micro:bitとSHT31モジュールのピン名が合うように結線してください。
+実際に配線した写真は以下の通りです。sht31 の表裏にも注意し、micro:bitとSHT31モジュールのピン名が合うように結線してください。
 
 ![実際の配線写真](imgs/sht30brd.jpg)
 
@@ -107,14 +107,15 @@ I2Cデバイスは一般的に小さなチップ部品です。下の拡大写�
 
 `44`という表示が見えます。これは 16 進数表示であり `0x44` という意味です。`0x44` は、SHT31 の SlaveAddress と思われますが、念のためデータシートも確認してみましょう。(19,1eは常に表示されるSlaveAddressで、今はひとまず無視してください。)
 
-> [SHT31 のデータシート](https://www.sensirion.com/fileadmin/user_upload/customers/sensirion/Dokumente/2_Humidity_Sensors/Datasheets/Sensirion_Humidity_Sensors_SHT3x_Datasheet_digital.pdf)
+> [SHT31/SHT30 のデータシート](https://www.sensirion.com/fileadmin/user_upload/customers/sensirion/Dokumente/2_Humidity_Sensors/Datasheets/Sensirion_Humidity_Sensors_SHT3x_Datasheet_digital.pdf) 
 
-データシートの P.9 にI2C Address in Hex. representation、ここに SlaveAddress の記載があります。SHT30 は`0x44`がデフォルトの SlaveAddress で、ADDR ピンの HIGH/LOW により SlaveAddeess を0x44か0x45に変更できることがわかります。
+データシートの P.9 にI2C Address in Hex. representation、ここに SlaveAddress の記載があります。SHT31 は`0x44`がデフォルトの SlaveAddress で、ADDR ピンの HIGH/LOW により SlaveAddeess を0x44か0x45に変更できることがわかります。
 
-### 留意事項 (秋月電子のSHT31モジュール)
-[秋月電子の SHT31 モジュール](http://akizukidenshi.com/catalog/g/gK-12125/) の場合、[モジュール説明書](http://akizukidenshi.com/download/ds/akizuki/AE-SHT3x_manu_v1.0.pdf)によると、ADDR端子は基板上でプルアップされていることがわかります。そのためSlaveAddressは0x45になっています。　ADRと書かれた端子を隣のGND端子と半田を付けてショートさせることで SlaveAddress を0x44に変更できます。他のデバイスと SlaveAddress が被ってしまった場合や複数の温度センサーを同時に接続したい場合に変更してください。
+> **留意事項 (秋月電子のSHT31モジュール)**
+>
+> [秋月電子の SHT31 モジュール](http://akizukidenshi.com/catalog/g/gK-12125/) の場合、[モジュール説明書](http://akizukidenshi.com/download/ds/akizuki/AE-SHT3x_manu_v1.0.pdf)によると、ADDR端子は基板上でプルアップされていることがわかります。そのためSlaveAddressは0x45になっています。　ADRと書かれた端子を隣のGND端子と半田を付けてショートさせることで SlaveAddress を0x44に変更できます。他のデバイスと SlaveAddress が被ってしまった場合や複数の温度センサーを同時に接続したい場合に変更してください。
 
-試しに、一度 microbit の 3V に接続している線を抜いて、もう一度 `[`i2cdetect webApp`](https://chirimen.org/chirimen-micro-bit/examples/i2cdetect/index.html) を実行してみてください。
+試しに、一度 microbit の 3V に接続している線を抜いて、もう一度 [`i2cdetect webApp`](https://chirimen.org/chirimen-micro-bit/examples/i2cdetect/index.html) を実行してみてください。
 
 ![ADT7410の電源OFF](imgs/ADT7410OFF.png)
 
@@ -126,7 +127,7 @@ I2Cデバイスは一般的に小さなチップ部品です。下の拡大写�
 
 配線と SlaveAddress が確認できましたので、さっそく動かしてみましょう。SHT31 のためのサンプルコードは[codesandboxに登録されています](https://codesandbox.io/s/github/chirimen-oh/chirimen-micro-bit/tree/master/examples/I2C7_SHT30) に格納されています。ブラウザでアクセスし、いつものように![](imgs/lbtn.png)ボタンを押し、開いたwebAppsの`Connect`ボタンを押すと下記のような画面になります。
 
-![adt7410browser](imgs/adt7410browser.png)
+![adt7410browser](imgs/SHT30browser.png)
 
 画面の数値が温度（摂氏）と湿度（％）になります。SHT31 センサに触ると、ゆっくりと温度と湿度が上がるはずです。
 
@@ -228,7 +229,7 @@ CHIRIMEN microbit で利用可能な I2C ポート番号は`1`番だけです。
 
 ### await sht.read()
 
-**SHT30 の仕様に基づくデータ読み出し処理です**。
+**SHT31 の仕様に基づくデータ読み出し処理です**。
 
 ドライバーライブラリ[(SHT30.js)](https://chirimen.org/chirimen/gc/contrib/examples/i2c-SHT30/node_modules/@chirimen-raspi/chirimen-driver-i2c-sht30/SHT30.js)内部では、まず`I2CSlaveDevice.write8()`というAPIで、I2Cデバイス内部のレジスタ0x2Cに0x06を書き込んでいます。これはSHT31を High repeatability measurementモードに設定しています。その後`wait()`関数で100ms待機します。次に`I2CSlaveDevice.readBytes()` という API で 8bitデータを6バイト連続で読み配列に投入しています。　温度データは0バイト目、1バイト目、　湿度データは3バイト目と4バイト目をそれぞれデータの [MSB](https://ja.wikipedia.org/wiki/最上位ビット), [LSB](https://ja.wikipedia.org/wiki/最下位ビット) として MSB と LSB を合成、16bit データとしたのちに、温度及び湿度データに変換して返却しています。 ([ドライバライブラリをgithubで見てみる](https://github.com/chirimen-oh/chirimen/blob/master/gc/contrib/examples/i2c-SHT30/node_modules/%40chirimen-raspi/chirimen-driver-i2c-sht30/SHT30.js))
 
@@ -241,9 +242,9 @@ SHT30 ドライバーライブラリの内部の処理をまとめると次の�
 3. **デバイス初期化:** await port.open(0x48) で、SlaveAddress 0x48 番の I2CSlaveDevice インタフェースを取得
 4. **測定モード設定** await i2cSlave.write8(0x2C, 0x06) で、High repeatability モードに
 5. **100ms待機** await sleep(100)
-6. **データ読み込み:** i2cSlave.readBytes(6) で 温度・湿度データ を配列に読み込み (SHT30 の場合、0,1バイトが温度, 3,4バイトが湿度。それぞれMSB,LSBの順)
+6. **データ読み込み:** i2cSlave.readBytes(6) で 温度・湿度データ を配列に読み込み (SHT31 の場合、0,1バイトが温度, 3,4バイトが湿度。それぞれMSB,LSBの順)
 
-この流れは、SHT30 以外の他の I2C デバイスでも基本的に同様になります。
+この流れは、SHT31 以外の他の I2C デバイスでも基本的に同様になります。
 
 I2C デバイスにより変わるのは、`port.open()`に指定する SlaveAddress と、[5.の実際の処理](5度センサーadt7410の値をドライバーを使わずに読むコードを書いてみる) になります。
 
@@ -332,11 +333,11 @@ SHT31 を指で触って温度や湿度が変わることを確認してみて�
 - I2C の基礎知識
 - i2cdetect を使った Raspi に接続された I2C モジュールの SlaveAddress 確認方法
 - Web I2C API を使った処理の流れ
-- SHT30 温度センサーの制御方法
+- SHT31 温度センサーの制御方法
 
 このチュートリアルで書いたコードは以下のページで参照できます:
 
-- SHT30 湿度・温度センサー (ドライバを使ったコード例) [codesandbox](https://codesandbox.io/s/github/chirimen-oh/chirimen-micro-bit/tree/master/examples/I2C7_SHT30), [github](https://github.com/chirimen-oh/chirimen-micro-bit/blob/master/examples/I2C7_SHT30/)
+- SHT31 湿度・温度センサー (ドライバを使ったコード例) [codesandbox](https://codesandbox.io/s/github/chirimen-oh/chirimen-micro-bit/tree/master/examples/I2C7_SHT30), [github](https://github.com/chirimen-oh/chirimen-micro-bit/blob/master/examples/I2C7_SHT30/)
 - SHT30 湿度・温度センサー (ドライバを使わないコード例) [codesandbox](https://codesandbox.io/s/github/chirimen-oh/chirimen-micro-bit/tree/master/examples/I2C7b_SHT30), [github](https://github.com/chirimen-oh/chirimen-micro-bit/blob/master/examples/I2C7b_SHT30/)
 
 次の『[チュートリアル 4. I2C の使い方](I2C_basic.md)』では加速度センサーなど他のセンサーも触っていきます。
