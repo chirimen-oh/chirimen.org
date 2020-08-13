@@ -80,7 +80,6 @@ LED のリード線の方向に注意しながら、この図の通りにジャ�
 - [ブレッドボードの使い方をくわしく知る](https://www.sunhayato.co.jp/problem-solving/howto_SAD-101.html)
 - [LED の使い方](https://www.marutsu.co.jp/pc/static/large_order/led)
 - [抵抗値の読み方](http://www.jarl.org/Japanese/7_Technical/lib1/teikou.htm)
-- [Raspberry Pi の GPIO](https://tool-lab.com/make/raspberrypi-startup-22/)
 - [テスターを使って抵抗値を確かめる](http://startelc.com/elcLink/tester/elc_nArtcTester2.html#chapter-2)
 
  microbitにハートマークが表示されているはずです。表示されていない場合は電池ボックスを外した後、配線図の通り配線されているか、もう一度しっかり確認してみましょう。
@@ -149,7 +148,7 @@ FIXME: 参照に失敗している
 
 ### Note:
 CHIRIMEN microbit は[Web Bluetooth](https://developer.mozilla.org/docs/Web/API/Web_Bluetooth_API)を使ってワイヤレス通信し、microbitをコントロールしています。ワイヤレスで他のデバイスと接続し情報をやり取りするという特性から、webBluetoothで接続を開始する際にいくつかのセキュリティ上の制限が設けられています。
-- 独立したウィンドウでのみ有効(iframeで使えない)
+- 独立したウィンドウでのみ有効(iframeでは使えない)
 - httpsによるページでのみ有効
 - ユーザインターフェースにより、ユーザの指示を受け付けた時のみ有効
 
@@ -214,9 +213,6 @@ microbitブレークアウトボードに実装されている ピンヘッダ�
 CHIRIMEN microbit では microbitブレークアウトボード が提供する 0,1,2,5,8,11,13,14,15,16番ピンが GPIOとしてWeb アプリから利用可能です。
 
 microbit の GPIO 端子は、GND 端子との間に、0V もしくは 3.3V の電圧を印加(出力)したり、逆に 0V もしくは 3.3V の電圧を検知(入力)したりすることができます。LED は数 mA の電流を流すことによって点灯できる電子部品のため、印加する電圧を 3.3V(点灯)、0V(消灯) と変化させることで L チカが実現できるのです。
-
-詳しくは[こちらのサイトの解説](https://tool-lab.com/make/raspberrypi-startup-22/)などを参考にしてみましょう。
-
 
 ## micro:bitの端子について
 
