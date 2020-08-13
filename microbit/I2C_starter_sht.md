@@ -35,7 +35,9 @@ CHIRIMEN with micro:bit （以下「CHIRIMEN microbit」）を使ったプログ
 | -- | -- | -- | -- |
 | ![ブレークアウトボード](imgs/parts/pinbit.png) | ![ブレッドボード](imgs/parts/breadboard.png) | ![ジャンパーワイヤー](imgs/parts/MtoM.png) | ![SHT31](imgs/parts/SHT30.jpg) |
 
+<!--
 **注意:** 秋月電子の ADT7410 モジュール付属の細いピンヘッダはブレッドボードへの差し込み専用で、ジャンパーワイヤのソケットに刺すと接触不良となります。 **通常の太さのピンヘッダをハンダ付けしてください。**
+-->
 
 # 2. I2C とは
 
@@ -98,12 +100,12 @@ I2Cデバイスは一般的に小さなチップ部品です。下の拡大写�
 
 ## b. 接続がうまくいったか確認する
 
-ここで、[`i2cdetect webApp`](https://chirimen.org/chirimen-micro-bit/examples/i2cdetect/index.html) を使って ADT7410 が正しく接続・認識できているか、その SlaveAddress は何か確認してみましょう。
+ここで、[`i2cdetect webApp`](https://chirimen.org/chirimen-micro-bit/examples/i2cdetect/index.html) を使って SHT31 が正しく接続・認識できているか、その SlaveAddress は何か確認してみましょう。
 
 
 正しく接続できていれば (配線を誤ってセンサーを壊してない限り) 下記のような画面が表示されるはずです。
 
-![ADT7410接続中](imgs/SHT30detect.png)
+![SHT31接続中](imgs/SHT30detect.png)
 
 `44`という表示が見えます。これは 16 進数表示であり `0x44` という意味です。`0x44` は、SHT31 の SlaveAddress と思われますが、念のためデータシートも確認してみましょう。(19,1eは常に表示されるSlaveAddressで、今はひとまず無視してください。)
 
@@ -127,7 +129,7 @@ I2Cデバイスは一般的に小さなチップ部品です。下の拡大写�
 
 配線と SlaveAddress が確認できましたので、さっそく動かしてみましょう。SHT31 のためのサンプルコードは[codesandboxに登録されています](https://codesandbox.io/s/github/chirimen-oh/chirimen-micro-bit/tree/master/examples/I2C7_SHT30) に格納されています。ブラウザでアクセスし、いつものように![](imgs/lbtn.png)ボタンを押し、開いたwebAppsの`Connect`ボタンを押すと下記のような画面になります。
 
-![adt7410browser](imgs/SHT30browser.png)
+![SHT30browser](imgs/SHT30browser.png)
 
 画面の数値が温度（摂氏）と湿度（％）になります。SHT31 センサに触ると、ゆっくりと温度と湿度が上がるはずです。
 
@@ -246,7 +248,7 @@ SHT30 ドライバーライブラリの内部の処理をまとめると次の�
 
 この流れは、SHT31 以外の他の I2C デバイスでも基本的に同様になります。
 
-I2C デバイスにより変わるのは、`port.open()`に指定する SlaveAddress と、[5.の実際の処理](5度センサーadt7410の値をドライバーを使わずに読むコードを書いてみる) になります。
+I2C デバイスにより変わるのは、`port.open()`に指定する SlaveAddress と、[5.の実際の処理](#section-5) になります。
 
 CHIRIMEN microbit ではいろいろなデバイスのサンプルコードとドライバーを回路図と共に [example として用意されています](https://chirimen.org/chirimen-micro-bit/examples/#i2c)。Examples に無い I2C デバイスでも、上記流れを押さえておけば対応するコードを書くのはそれほど難しくありません。
 

@@ -42,7 +42,7 @@ CHIRIMEN with micro:bit（以下 「CHIRIMEN microbit」） を使ったプロ�
 
 上記に加え今回紹介するセンサが必要となりますが、センサについては各センサの説明のパートに記載します。
 
-# 2. 光センサを使ってみる (TBD)
+# 2. 光センサを使ってみる
 
 光の強度 (明るさ) に反応するセンサを使ってみましょう。
 
@@ -70,7 +70,7 @@ SlaveAddress `0x23` が見つかれば接続OKです。次に [exampleのcodesan
 
 ## c. コード解説
 
-example のコードから、光センサに関係する部分を見ていきます。今回はドライバーライブラリの中までは深入りせずに、アプリケーションの流れを追ってみましょう。ADT7410 の時とほとんど同じであることがわかるはずです。
+example のコードから、光センサに関係する部分を見ていきます。今回はドライバーライブラリの中までは深入りせずに、アプリケーションの流れを追ってみましょう。ADT7410(又はSHT31) の時とほとんど同じであることがわかるはずです。
 
 ### c-1. index.html
 
@@ -94,7 +94,7 @@ index.html
   </body>
 ```
 
-HTML は ADT7410 の時とほとんど同じです。ドライバーライブラリは、`https://cdn.jsdelivr.net/npm/@chirimen/bh1750` に変わりました。
+HTML は ADT7410(又はSHT31) の時とほとんど同じです。ドライバーライブラリは、`https://cdn.jsdelivr.net/npm/@chirimen/bh1750` に変わりました。
 
 ### c-2. main.js
 
@@ -126,7 +126,7 @@ function readData(){
 
 ここで光センサ用の **ドライバーライブラリのインスタンス生成** を行なっています。
 
-ライブラリ名が変わっただけで ADT7410 と同様に、`port` オブジェクトと、SlaveAddress をパラメータで渡しています。
+ライブラリ名が変わっただけで ADT7410(又はSHT31) と同様に、`port` オブジェクトと、SlaveAddress をパラメータで渡しています。
 
 ### bh1750.init()
 
@@ -157,7 +157,7 @@ raspi との接続方法については、こちらの回路図を参照くだ�
 
 ピンの加工例 (保護フィルムが残っている状態)
 
-![加工例](..raspi/imgs/section3/VL53L0X_comp.jpg)
+![加工例](../raspi/imgs/section3/VL53L0X_comp.jpg)
 
 ## b. 接続確認と example の実行
 
@@ -193,7 +193,7 @@ VL53L0X.html
   </body>
 ```
 
-HTML は ADT7410 の時とほとんど同じです。ドライバーライブラリは `VL53L0X.js` に変わりました。
+HTML は ADT7410(又はSHT31) の時とほとんど同じです。ドライバーライブラリは `VL53L0X.js` に変わりました。
 
 ### c-2. main.js
 
@@ -235,7 +235,7 @@ async function readData(){
 測距センサ VL53L0X の仕様に基づくデータ読み出し処理をここで実施しています。計測範囲内に遮蔽物がない場合には値が数値で得られないことに注意してください。
 
 
-# 4. 加速度、角加速度センサを使ってみる (TBD)
+# 4. 加速度、角加速度センサを使ってみる
 
 傾きなどに反応するセンサを使ってみましょう。
 
@@ -349,10 +349,10 @@ main.js もこれまでの他のセンサーとほとんど同じです。
 
 下記のような組み合わせで2つのセンサを繋いで動かしてみましょう。
 
-- 「温度センサ (ADT7410)」か、「距離センサ (VL53L0X)」のどちらか 1つ
+- 「温度センサ (ADT7410)」か、「湿度・温度センサ(SHT31)」か、「距離センサ (VL53L0X)」のどちらか 1つ
 - 「光センサ (BH1750)」か「加速度センサ (MPU6050)」のどちらか１つ
 
-  > ここでは、ADT7410 と BH1750 を使った例をご紹介します
+  > ここでは、SHT31 と BH1750 を使った例をご紹介します
 
 ## a. 部品と配線について
 
@@ -377,9 +377,13 @@ I2C モジュールを複数利用するのは一見難しそうに見えるか�
 
   > 使用する I2C モジュールによって、ピンアサイン( `VDD` `GND` `SDA` `SCL` の順番)が異なることがあります。各モジュールのデータシートや本体の印字、CHIRIMEN の Exapmles 等を参考にして間違いの無いように接続して下さい。
 
-{% cloudinary imgs/section3/bh1750-and-adt7410.jpg alt="接続例" %}
+![接続例](https://chirimen.org/chirimen-micro-bit/examples/I2C_MULTI/imgs/pinbit_MULTI.png)
 
 **補足：接続を簡単に行える Grove という規格のデバイスを用いれば、 Grove Hub というパーツで簡単に複数のデバイスを接続することが可能です。長所短所ともにありますので、詳しくは [Grove 編チュートリアル](grove.md)をご覧ください。**
+
+[i2cdetect webApp](https://chirimen.org/chirimen-micro-bit/examples/i2cdetect/index.html)を使って、センサーの接続を確認します。下図のように、Slave Address 0x23(BG1750), 0x44(SHT31)が確認できれば、配線はうまくできています。
+![](imgs/dualSensorsDetect.png)
+
 
 ## c. コードを編集する
 
@@ -389,11 +393,13 @@ I2C モジュールを複数利用するのは一見難しそうに見えるか�
 
 ### c-0. 利用するモジュール各々のコードを用意する
 
-[Examples](https://r.chirimen.org/examples) 等を参考にして、それぞれのモジュール用のコードを用意します。
+[Examples](https://chirimen.org/chirimen-micro-bit/examples/) 等を参考にして、それぞれのモジュール用のコードを用意します。
 
   > 自分で一からコーディングする場合には不要です。
 
 ### c-1. HTML を書く
+
+それでは[codesandbox](https://codesandbox.io/)を使ってプログラムを組んでいきます。
 
 - 各モジュールの HTML 参考にしながら HTML を書きましょう
 
@@ -404,10 +410,10 @@ I2C モジュールを複数利用するのは一見難しそうに見えるか�
   <html>
     <head>
       <meta charset="UTF-8" />
-      <title>ADT7410 & BH1750</title>
-      <script src="node_modules/@chirimen-raspi/polyfill/polyfill.js"></script>
-      <script src="node_modules/@chirimen-raspi/chirimen-driver-i2c-adt7410/ADT7410.js"></script>
-      <script src="node_modules/@chirimen-raspi/chirimen-driver-i2c-bh1750/BH1750.js"></script>
+      <title>SHT31 & BH1750</title>
+      <script type="text/javascript" src="https://chirimen.org/chirimen-micro-bit/polyfill/microBitBLE.js"></script>
+      <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@chirimen/sht30"></script>
+      <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@chirimen/bh1750"></script>
       <script src="./main.js" defer></script>
     </head>
   ```
@@ -416,9 +422,9 @@ I2C モジュールを複数利用するのは一見難しそうに見えるか�
 
    -  `polyfill.js` は chirimen を正しく動作させるために必要です。詳しくは[こちら](https://developer.mozilla.org/ja/docs/Glossary/Polyfill)などをご確認ください。
 
-   - `ADT7410.js` は ADT7410 のドライバで、ADT7410 を利用するのに必要です。
+   - `sht30` は SHT31(SHT30兼用) のドライバで、SHT31 を利用するのに必要です。
 
-   - `BH1750.js` は BH1750 のドライバで、BH1750 利用するのに必要です。
+   - `bh1750` は BH1750 のドライバで、BH1750 利用するのに必要です。
   
    - `main.js` は2つのモジュールからデータを読み込むためにここで用意(自分でコーディング)する js です。詳しくは後述します。
 
@@ -426,7 +432,8 @@ I2C モジュールを複数利用するのは一見難しそうに見えるか�
 
   ```html
     <body>
-      <p id="head_adt7410">TEST</p>
+      <input type="button" value="Connect" onclick="connect()"/>
+      <p id="head_sht30">TEST</p>
       <p id="head_bh1750">TEST</p>
     </body>
   </html>
@@ -434,7 +441,7 @@ I2C モジュールを複数利用するのは一見難しそうに見えるか�
 
   センサから取得した値を表示するための場所を用意しました。
 
-  - `<p id="head_adt7410">TEST</p>` は ADT7410 からのデータを表示するパラグラフです。
+  - `<p id="head_sht30">TEST</p>` は SHT30 からのデータを表示するパラグラフです。
 
   - `<p id="head_bh1750">TEST</p>` は BH1750 からのデータを表示するパラグラフです。
 
@@ -445,40 +452,47 @@ I2C モジュールを複数利用するのは一見難しそうに見えるか�
 - c-1. ではHTMLを書いて、取得したデータ(値)を表示する＜場所＞を用意しましたので、次は js で実際にデータを＜取得するための＞コードを書いていきましょう。
 
   ```javascript
-  main();
-
-  async function main() {
-    var head_adt7410 = document.getElementById("head_adt7410");
-    var head_bh1750 = document.getElementById("head_bh1750");
-    var i2cAccess = await navigator.requestI2CAccess();
+  var microBitBle;
+  var readEnable;
+  var sht30, bh1750;
+  async function connect() {
+    microBitBle = await microBitBleFactory.connect();
+    var i2cAccess = await microBitBle.requestI2CAccess();
     var port = i2cAccess.ports.get(1);
-    var adt7410 = new ADT7410(port, 0x48);
-    var bh1750 = new BH1750(port, 0x23);
-    await adt7410.init();
+  
+    sht30 = new SHT30(port, 0x44);
+    bh1750 = new BH1750(port, 0x23);
+    await sht30.init();
     await bh1750.init();
     await bh1750.set_sensitivity(128);
-
-    for (;;) {
+    readEnable = true;
+    readData();
+  }
+  
+  async function readData() {
+    var head_sht30 = document.getElementById("head_sht30");
+    var head_bh1750 = document.getElementById("head_bh1750");
+    while (readEnable) {
       try {
-        var tempValue = await adt7410.read();
-        head_adt7410.innerHTML = tempValue;
+        var shtValue = await sht30.readData();
+        head_sht30.innerHTML = shtValue.humidity + "," + shtValue.temperature;
       } catch (error) {
-        console.log("adt7410 error:" + error);
+        console.log("sht30 error:" + error);
       }
 
       try {
-        var val = await bh1750.measure_high_res();
+        var val = await bh1750.measure_low_res();
         head_bh1750.innerHTML = val;
       } catch (error) {
         console.log("bh1750 error:" + error);
       }
-
+  
       sleep(500);
     }
   }
   ```
   
-  基本的にはそれぞれのモジュール用の `main.js` を合わせただけですので、各々の細かい内容については [Section2](section2.md) の解説をご確認ください。
+  基本的にはそれぞれのモジュール用の `main.js` を合わせただけですので、各々の細かい内容については各センサーの解説をご確認ください。
   
   では、どこに注意して、或いはどこを修正して2つの `main.js` を1つにまとめれば良いのでしょうか？
 
@@ -496,8 +510,8 @@ I2C モジュールを複数利用するのは一見難しそうに見えるか�
 
 CHIRIMEN microbit には、他にも [examples](https://chirimen.org/chirimen-micro-bit/examples/#i2c)に例えば下記のような I2C モジュールの examples が含まれています。それぞれの回路図、デイバスドライバ、サンプルコードもあるので、お手持ちのデバイスを使ってみてください。
 
-- i2c-PCA9685 : 「[PCA9685 16-CHANNEL 12-BIT PWM/SERVO DRIVER](https://www.adafruit.com/product/815)」(I2C経由でLEDやサーボモータを16個まで制御可能なモジュール)の接続例です。
-- i2c-ads1015 : 「[ADS1015搭載 12BitADC 4CH 可変ゲインアンプ付き](https://www.switch-science.com/catalog/1136/)」の接続例です。サンプルの回路図では可変抵抗器を繋いでいますが、圧力、曲げ、水滴 (濡れ)、土壌水分、などいろいろ安価で売られているアナログセンサを接続して利用できます。
+- PCA9685 : 「[PCA9685 16-CHANNEL 12-BIT PWM/SERVO DRIVER](https://www.adafruit.com/product/815)」(I2C経由でLEDやサーボモータを16個まで制御可能なモジュール)の接続例です。
+- ads1115 : 「[ADS1115搭載 16BitADC 4CH 可変ゲインアンプ付き](https://www.switch-science.com/catalog/1138/)」の接続例です。サンプルの回路図では可変抵抗器を繋いでいますが、圧力、曲げ、水滴 (濡れ)、土壌水分、などいろいろ安価で売られているアナログセンサを接続して利用できます。
 - i2c-S11059 : 「[S11059 カラーセンサ](http://akizukidenshi.com/catalog/g/gK-08316/)」(カラーセンサ)の接続例です。
 - i2c-VEML6070 : 「[VEML6070 紫外線センサ](https://learn.adafruit.com/adafruit-veml6070-uv-light-sensor-breakout/overview)」(紫外線センサ)の接続例です。
 - i2c-multi-sensors : 2つのセンサ（ADT7410とgrove-light）を利用する例です。
@@ -520,7 +534,7 @@ I2Cデバイスを同時に接続して使用するとき、重要な注意事�
 | Device              | NativeAddr | ChangedAddr |
 | ------------------- | ---------- | ----------- |
 | ADT7410             | 0x48       | => 0x49     |
-| ADS1015             | 0x48       |             |
+| ADS1115             | 0x48       |             |
 | VEML6070            | 0x38, 0x39 |             |
 | S11059              | 0x2a       |             |
 | PCA9685             | 0x40       | => 0x41     |
@@ -544,9 +558,9 @@ I2Cデバイスを同時に接続して使用するとき、重要な注意事�
 このチュートリアルで扱ったコードは以下のページで参照できます:
 
 - ブラウザで開くページ
-  - Grove I2C 光センサ: [codesandbox](xxx), [github](xxx)
+  - 光センサ(BH1750): [codesandbox](https://codesandbox.io/s/github/chirimen-oh/chirimen-micro-bit/tree/master/examples/I2C_BH1750), [github](https://github.com/chirimen-oh/chirimen-micro-bit/blob/master/examples/I2C_BH1750/)
   - 測距センサ (VL53L0X): [codesandbox](https://codesandbox.io/s/github/chirimen-oh/chirimen-micro-bit/tree/master/examples/I2C3_VL53L0X), [github](https://github.com/chirimen-oh/chirimen-micro-bit/blob/master/examples/I2C3_VL53L0X/)
-  - GROVE I2C 三軸加速度センサ: [codesandbox](xxx), [github](xxx)
-  - 複数センサの利用 (ADT7410 + Grove 光センサ): [codesandbox](xxx), [github](xxx)
+  - ３軸ジャイロ＋３軸加速度センサー(MPU6050): [codesandbox](https://codesandbox.io/s/github/chirimen-oh/chirimen-micro-bit/tree/master/examples/I2C_MPU6050), [github](https://github.com/chirimen-oh/chirimen-micro-bit/blob/master/examples/I2C_MPU6050/)
+  - 複数センサの利用 (SHT31 + BH1750): [codesandbox](https://codesandbox.io/s/github/chirimen-oh/chirimen-micro-bit/tree/master/examples/I2C_MULTI), [github](https://github.com/chirimen-oh/chirimen-micro-bit/blob/master/examples/I2C_MULTI/)
 
 次のCHIRIMEN with micro:bit チュートリアルでは、『[Web GPIO APIとWeb I2C APIを組み合わせたプログラミング](section4.md)』に挑戦します！

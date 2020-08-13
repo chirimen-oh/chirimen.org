@@ -24,7 +24,7 @@ micro:bitをwebアプリでコントロールするための準備と最初の�
   - [WebGPIO API](http://browserobo.github.io/WebGPIO) を使って定期的に LED を点滅するサンプルを動かしてみます。
 - [2. GPIO の使い方](GPIO_basic.md)<!-- section1.md -->
   - マウスクリックで操作するブラウザ画面のボタンと物理スイッチ (タクトスイッチ) の両方で LED やモーターを制御するサンプルを通じて GPIO の基本を学びます。
-- [3. センサーを使ってみよう (初めての I2C)](I2C_starter.md)<!-- section2.md -->
+- 3. センサーを使ってみよう (初めての I2C) [ADT7410編](I2C_starter.md)、　[SHT31編](I2C_starter_sht.md)<!-- section2.md -->
   - 温度センサーの値をドライバーを使う場合と [WebI2C API](http://browserobo.github.io/WebI2C) を直接操作する場合の 2 パターンで読み取ることで、I2C デバイス操作の基本を学びます。
 
 ## デバイス操作～応用編
