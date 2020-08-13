@@ -245,7 +245,7 @@ LED は一定以上の電圧 (赤色 LED だと概ね 1.8V 程度、青色 LED �
 
 まとめると下図のような流れになります。
 
-![シーケンス](../raspi/imgs/section0/s.png)
+![シーケンス](./imgs/GPIO1_LED_Flow.png)
 
 ## example を修正してみよう
 
