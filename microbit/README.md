@@ -37,7 +37,7 @@ micro:bit を Web アプリでコントロールするための準備と最初�
 
 - [4. I2C の使い方](I2C_basic.md)<!-- section3.md -->
   - いろいろな I2C デバイスを接続したり、複数の I2C デバイスの同時操作をするサンプルで I2C の使い方を学びます。
-  - Grove モジュールを使う場合は [I2C の使い方 Grove 編](grove.md) をご覧ください。
+  - Grove モジュールを使う場合は [I2C の使い方 Grove 編](grove.md) をご覧ください。 **Grove 編は準備中です**
 - [5. GPIO/I2C のまとめ](device_summary.md)<!-- section4.md -->
   - これまでの総括として GPIO と I2C の両方を組み合わせて動かしてみます。
 
