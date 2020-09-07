@@ -28,7 +28,7 @@ window.onload = async function() {
 
 - [CHIRIMEN for Raspberry Pi](/raspi/)
 - [CHIRIMEN with ty51822r3](/ty51822r3/)
-- [CHIRIMEN with micro:bit](https://chirimen.org/chirimen-micro-bit/)
+- [CHIRIMEN with micro:bit](/microbit/)
 
 注: Raspberry Pi ではボード上のブラウザからハードを制御しますが、TY51822r3 や micro:bit では PC やスマホなど他の端末のブラウザから Web Bluetooth を使いリモート制御します。
 
