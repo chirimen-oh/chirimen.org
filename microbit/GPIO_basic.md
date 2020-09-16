@@ -141,8 +141,9 @@ controllLed()関数は、上で指定している関数のコードです。
 
 <!--
 {% cloudinary imgs/section1/LEDOnOff.gif alt="LED On/Offをブラウザ画面上のボタンクリックで実施" %}
--->
+
 ![LED On/Offをブラウザ画面上のボタンクリックで実施](../raspi/imgs/section1/LEDOnOff.gif)
+-->
 
 ## d. ボタンに LED を反応させる
 
