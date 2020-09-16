@@ -139,7 +139,10 @@ controllLed()関数は、上で指定している関数のコードです。
 
 注記：codesandboxでは右側のパネルにウェブアプリが開かれています。これはmicrobitをBluetooth接続しない限りはうまく動作するのですが、次項以降でmicrobitを接続しようとすると動作しなくなりますので、別ウィンドで開くことを慣れておきましょう。
 
+<!--
 {% cloudinary imgs/section1/LEDOnOff.gif alt="LED On/Offをブラウザ画面上のボタンクリックで実施" %}
+-->
+![LED On/Offをブラウザ画面上のボタンクリックで実施](../raspi/imgs/section1/LEDOnOff.gif)
 
 ## d. ボタンに LED を反応させる
 
