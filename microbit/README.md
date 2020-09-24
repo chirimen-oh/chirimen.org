@@ -70,7 +70,7 @@ CHIRIMEN with micro:bit 対応デバイスのドライバ・回路図・サン�
 
 チュートリアルで基本が分かったら、どんなことが出来るか色々なデバイスを使ったサンプルを見て、書き換えて、試してみましょう。
 
-- [対応デバイスのリスト](/raspi/partslist.md)
+- [対応デバイスのリスト](../raspi/partslist.md)
   - **このページは Raspberry Pi 用、micro:bit 用は準備中です**
 - [GPIO Example](https://chirimen.org/chirimen-micro-bit/examples/#gpio)
   - GPIO を使ったサンプル集です。L チカやボタンは勿論、人感センサーやモーター制御等にも使います
