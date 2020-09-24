@@ -18,7 +18,7 @@ CHIRIMEN for Raspberry Pi （以下「CHIRIMEN RasPi」）を使ったプログ�
 - 利用可能な GPIO Port 番号・種類と位置は壁紙を見よう
 - Web アプリからの GPIO の制御には [Web GPIO API](http://browserobo.github.io/WebGPIO) を利用する
 - GPIO ポートは「出力モード」で LED の ON/OFF などが行え「入力モード」では GPIO ポートの状態を読み取れる
-- デバイスの初期化などは非同期処理であり [async と await を用いて処理する](appendix0.md)
+- デバイスの初期化などは非同期処理であり [async と await を用いて処理する](/js/async.md)
 
 # 1. 準備
 
@@ -38,7 +38,7 @@ CHIRIMEN for Raspberry Pi （以下「CHIRIMEN RasPi」）を使ったプログ�
 
 {% cloudinary half imgs/section2/i2c-bus.png alt="i2c-bus" %}
 
-上図のように、i2c の SDA、SCLは複数のモジュール間で共有され、これを「I2C バス」と言います。I2C ではマスターとスレーブの間で通信が行われます。常にマスター側からスレーブ側に要求が行われ、スレーブ側からマスター側へ要求を行うことはできません。
+上図のように、i2c の SDA、SCL は複数のモジュール間で共有され、これを「I2C バス」と言います。I2C ではマスターとスレーブの間で通信が行われます。常にマスター側からスレーブ側に要求が行われ、スレーブ側からマスター側へ要求を行うことはできません。
 
 マスターは、スレーブが持つ「SlaveAddress (スレーブアドレス)」を指定して、特定のスレーブとの通信を行います。このため、同じ I2C バス上に同じ SlaveAddress のスレーブを繋ぐことはできません。
 
@@ -209,7 +209,7 @@ ADT7410 ドライバーライブラリの内部の処理をまとめると次の
 
 この流れは、ADT7410 以外の他の I2C デバイスでも基本的に同様になります。
 
-I2C デバイスにより変わるのは、`port.open()`に指定する SlaveAddress と、[4.の実際の処理](#4温度センサーadt7410の値をドライバーを使わずに読むコードを書いてみる) になります。
+I2C デバイスにより変わるのは、`port.open()`に指定する SlaveAddress と、[5.の実際の処理](#section-4) になります。
 
 CHIRIMEN RasPi ではいろいろなデバイスのサンプルコードとドライバーを回路図と共に [example として用意されています](https://r.chirimen.org/examples)。Examples に無い I2C デバイスでも、上記流れを押さえておけば対応するコードを書くのはそれほど難しくありません。
 

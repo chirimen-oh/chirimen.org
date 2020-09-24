@@ -10,7 +10,7 @@ layout: tutorial
 
 # 0. Grove (グローブ) とは
 
-Grove (グローブ) とは、[Seeed Studio](https://www.seeedstudio.com/) が開発した、センサやアクチュエータ等の I2C モジュールをコネクタで接続するだけで利用できるようにした規格です。煩わしいジャンパワイヤ等の接続をすることなく、手軽にこれらのモジュールを利用することができるほか、[Grove I2C Hub](http://wiki.seeed.cc/Grove-I2C_Hub/) を利用することにより、複数の I2C モジュールを比較的容易に扱うことができます。
+Grove (グローブ) とは、[Seeed Studio](https://www.seeedstudio.com/) が開発した、センサやアクチュエータ等の I2C モジュールをコネクタで接続するだけで利用できるようにした規格です。煩わしいジャンパワイヤ等の接続をすることなく、手軽にこれらのモジュールを利用することができるほか、[Grove I2C Hub](https://wiki.seeedstudio.com/Grove-I2C_Hub/) を利用することにより、複数の I2C モジュールを比較的容易に扱うことができます。
 
 > ※ 一方で、通常の I2C デバイスと比べて価格が高い、内部の配線がわかりずらく仕組みを理解しずらいといった欠点もあることから、CHIRIMEN RasPi では Grove のチュートリアルに関して、メインのチュートリアルには掲載していません。
 
@@ -27,7 +27,7 @@ Grove を用いらずに複数の I2C モジュールを取り扱う方法につ
 
 {% cloudinary imgs/section3/h.jpg alt="ハブとケーブル" %}
 
-- [Grove I2C Hub](http://wiki.seeed.cc/Grove-I2C_Hub/) x 1
+- [Grove I2C Hub](https://wiki.seeedstudio.com/Grove-I2C_Hub/) x 1
 - [Grove 4ピン ジャンパー メス ケーブル](https://www.seeedstudio.com/grove-to-4-pin-254-female-jumper-wire5-pcs-pack-p-1020.html) x 2
 - [Grove 4ピン ケーブル](https://www.seeedstudio.com/Grove-Universal-4-Pin-20cm-Unbuckled-Cable-%285-PCs-Pack%29-p-749.html) x 1
 - ブレッドボード x 1
@@ -38,7 +38,7 @@ Grove を用いらずに複数の I2C モジュールを取り扱う方法につ
 
 
 
-Grove I2C Hub は、4つの Grove コネクタを備えた I2C モジュールを接続するためのハブです。4ピンの [Grove 4ピン ケーブル](https://www.seeedstudio.com/Grove-Universal-4-Pin-Buckled-20cm-Cable-5-PCs-pack-p-936.html)を経由すれば、後述する[Grove Digital Light Sensor](http://wiki.seeed.cc/Grove-Digital_Light_Sensor/)など Grove コネクタを備えた I2C モジュールを直接接続することができます。
+Grove I2C Hub は、4つの Grove コネクタを備えた I2C モジュールを接続するためのハブです。4ピンの [Grove 4ピン ケーブル](https://www.seeedstudio.com/Grove-Universal-4-Pin-Buckled-20cm-Cable-5-PCs-pack-p-936.html)を経由すれば、後述する[Grove Digital Light Sensor](https://wiki.seeedstudio.com/Grove-Digital_Light_Sensor/)など Grove コネクタを備えた I2C モジュールを直接接続することができます。
 
 Raspi や [チュートリアル 2](https://tutorial.chirimen.org/raspi/section2
 ) でも利用した ADT7410 などピンヘッダを備えた（あるいは事前にスルーホールにピンヘッダをはんだ付けしてある）モジュールとの接続には、[Grove 4ピン ジャンパ メスケーブル](https://www.seeedstudio.com/grove-to-4-pin-254-female-jumper-wire5-pcs-pack-p-1020.html) 経由で接続することができます。
@@ -54,7 +54,7 @@ Raspi や [チュートリアル 2](https://tutorial.chirimen.org/raspi/section2
 
 「1.準備」のパートに記載したものに加え、下記を用意してください。
 
-- [光センサ(Grove Digital Light Sensor)](http://wiki.seeed.cc/Grove-Digital_Light_Sensor/) x 1
+- [光センサ(Grove Digital Light Sensor)](https://wiki.seeedstudio.com/Grove-Digital_Light_Sensor/) x 1
 
 Raspberry Piとの接続方法については、下記回路図を参照ください。
 
@@ -91,7 +91,7 @@ example のコードから、光センサに関係する部分を見ていきま
 
 index.html
 ```html
-    : 
+    :
     <script src="node_modules/@chirimen-raspi/polyfill/polyfill.js"></script>
     <script src="node_modules/@chirimen-raspi/chirimen-driver-i2c-grove-light/GROVELIGHT.js"></script>
     <script src="./main.js" defer></script>
@@ -376,7 +376,6 @@ main.js もこれまでの他のセンサーとほとんど同じです。
 
 このチュートリアルで扱ったコードは以下のページで参照できます:
 
-- [GitHub リポジトリで参照](https://github.com/chirimen-oh/tutorials/tree/master/raspi/examples/section3)
 - ブラウザで開くページ
   - Grove I2C 光センサ: [JSBin](https://r.chirimen.org/jsbin-i2c-grove-light), [CodeSandbox](https://r.chirimen.org/csb-grove-light)
   - 測距センサ (VL53L0X): [JSBin](https://r.chirimen.org/jsbin-i2c-vl53l0x), [CodeSandbox](https://r.chirimen.org/csb-vl53l0x)

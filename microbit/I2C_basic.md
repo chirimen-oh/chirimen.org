@@ -8,7 +8,7 @@ layout: tutorial
 
 CHIRIMEN with micro:bit（以下 「CHIRIMEN microbit」） を使ったプログラミングを通じて、Web I2C API の使い方を学びます。
 
-[前回](section2.md) は温度センサを使いながら Web I2C API の基本的な利用方法を学びました。今回は温度センサ以外のI2Cセンサの使い方を見ていきましょう。
+[前回](I2C_starter_sht.md) は温度センサを使いながら Web I2C API の基本的な利用方法を学びました。今回は温度センサ以外のI2Cセンサの使い方を見ていきましょう。
 
 ここでは例として光センサ、距離センサ、加速度センサの 3 つについて詳しく説明しますが、最後に「他の I2C モジュールも使ってみる」として紹介しているように、CHIRIMEN ではそれ以外にも多くの I2C デバイス (あるいは I2C の ADC を使って様々なアナログセンサ類) が簡単に扱えるようになっており、 [examples ページ](https://chirimen.org/chirimen-micro-bit/examples/#i2c) に回路図とサンプルコードが用意されています。各自興味のあるセンサを順に試していってください。
 
@@ -28,7 +28,7 @@ CHIRIMEN with micro:bit（以下 「CHIRIMEN microbit」） を使ったプロ�
 - 各種 example が  [examples ページ](https://chirimen.org/chirimen-micro-bit/examples/#i2c)に配線図と一緒に置いてある
 - Web アプリからの GPIO の制御には [Web GPIO API](http://browserobo.github.io/WebGPIO) を利用する
 - GPIO ポートは「出力モード」で LED の ON/OFF などが行え「入力モード」では GPIO ポートの状態を読み取れる
-- デバイスの初期化などは非同期処理であり [async と await を用いて処理する](appendix0.md)
+- デバイスの初期化などは非同期処理であり [async と await を用いて処理する](/js/async.md))
 - Webアプリからの I2C 制御には [Web I2C API](http://browserobo.github.io/WebI2C) を利用する
 - I2C モジュールはドライバライブラリを使い SlaveAddress を指定して初期化してから操作する
 
@@ -78,7 +78,7 @@ example のコードから、光センサに関係する部分を見ていきま
 
 index.html
 ```html
-    : 
+    :
     <script type="text/javascript" src="https://chirimen.org/chirimen-micro-bit/polyfill/microBitBLE.js"></script>
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@chirimen/bh1750"></script>
     <script src="./main.js" defer></script>
@@ -111,7 +111,7 @@ function connect(){
     await bh1750.set_sensitivity(128);
     readData();
 }
- 
+
 function readData(){
   while (readEnable) {
     var val = await bh1750.measure_high_res();
@@ -187,7 +187,7 @@ VL53L0X.html
     :
   <body>
     :
-    <input type="button" value="Connect" onclick="connect();"/> 
+    <input type="button" value="Connect" onclick="connect();"/>
     <div id="msg">---</div>
     :
   </body>
@@ -360,8 +360,11 @@ main.js もこれまでの他のセンサーとほとんど同じです。
 
 - ブレッドボード x 1
 - ジャンパー線 (使用する I2C モジュールの数に応じて必要数用意してください)
-  ![](imgs/section0/L.jpg)
-  > 画像にある LED と抵抗はこの項目では特に必要ありません。
+
+<!-- FIXME: 画像リンク切れ
+![](imgs/section0/L.jpg)
+> 画像にある LED と抵抗はこの項目では特に必要ありません。
+-->
 
 ## b. モジュールを複数接続する
 
@@ -379,7 +382,9 @@ I2C モジュールを複数利用するのは一見難しそうに見えるか�
 
 ![接続例](https://chirimen.org/chirimen-micro-bit/examples/I2C_MULTI/imgs/pinbit_MULTI.png)
 
+<!-- FIXME: リンク切れ: grove.md
 **補足：接続を簡単に行える Grove という規格のデバイスを用いれば、 Grove Hub というパーツで簡単に複数のデバイスを接続することが可能です。長所短所ともにありますので、詳しくは [Grove 編チュートリアル](grove.md)をご覧ください。**
+-->
 
 [i2cdetect webApp](https://chirimen.org/chirimen-micro-bit/examples/i2cdetect/index.html)を使って、センサーの接続を確認します。下図のように、Slave Address 0x23(BG1750), 0x44(SHT31)が確認できれば、配線はうまくできています。
 ![](imgs/dualSensorsDetect.png)
@@ -425,7 +430,7 @@ I2C モジュールを複数利用するのは一見難しそうに見えるか�
    - `sht30` は SHT31(SHT30兼用) のドライバで、SHT31 を利用するのに必要です。
 
    - `bh1750` は BH1750 のドライバで、BH1750 利用するのに必要です。
-  
+
    - `main.js` は2つのモジュールからデータを読み込むためにここで用意(自分でコーディング)する js です。詳しくは後述します。
 
   続いて、body を書いていきます。
@@ -459,7 +464,7 @@ I2C モジュールを複数利用するのは一見難しそうに見えるか�
     microBitBle = await microBitBleFactory.connect();
     var i2cAccess = await microBitBle.requestI2CAccess();
     var port = i2cAccess.ports.get(1);
-  
+
     sht30 = new SHT30(port, 0x44);
     bh1750 = new BH1750(port, 0x23);
     await sht30.init();
@@ -468,7 +473,7 @@ I2C モジュールを複数利用するのは一見難しそうに見えるか�
     readEnable = true;
     readData();
   }
-  
+
   async function readData() {
     var head_sht30 = document.getElementById("head_sht30");
     var head_bh1750 = document.getElementById("head_bh1750");
@@ -486,20 +491,20 @@ I2C モジュールを複数利用するのは一見難しそうに見えるか�
       } catch (error) {
         console.log("bh1750 error:" + error);
       }
-  
+
       sleep(500);
     }
   }
   ```
-  
+
   基本的にはそれぞれのモジュール用の `main.js` を合わせただけですので、各々の細かい内容については各センサーの解説をご確認ください。
-  
+
   では、どこに注意して、或いはどこを修正して2つの `main.js` を1つにまとめれば良いのでしょうか？
 
   → 主に、
 
   - `i2cAccess` と `port` の初期化は1回だけ行えば良いため、最初に1度のみ書く。
-  
+
   - 変数名を重複させないように適宜変更する。（例：`head` など）
 
   などの点に注意してをつけましょう。
@@ -519,7 +524,10 @@ CHIRIMEN microbit には、他にも [examples](https://chirimen.org/chirimen-mi
 - i2c-grove-gesture : 「[Grove Gesture](http://wiki.seeed.cc/Grove-Gesture_v1.0/)」(簡単なジェスチャーを判定するセンサ)の接続例です。
 - i2c-grove-oledDisplay : 「[Grove OLED Display](https://www.seeedstudio.com/Grove-OLED-Display-0.96%26quot%3B-p-781.html)」(Grove端子で接続できるOLED Display)の接続例です。
 - i2c-grove-touch : 「[Grove Touch Sensor](http://wiki.seeed.cc/Grove-I2C_Touch_Sensor/)」(Grove端子で接続できるタッチセンサ)の接続例です。
-  >最後の 3 デバイスは Grove 規格に対応したものです。Grove の利用方法や説明については、[こちらのチュートリアル](grove.md)をご確認ください。
+
+<!-- FIXME: リンク切れ: grove.md
+最後の 3 デバイスは Grove 規格に対応したものです。Grove の利用方法や説明については、[こちらのチュートリアル](grove.md)をご確認ください。
+-->
 
 
 ## I2C デバイスを複数使う場合の注意事項
@@ -563,4 +571,6 @@ I2Cデバイスを同時に接続して使用するとき、重要な注意事�
   - ３軸ジャイロ＋３軸加速度センサー(MPU6050): [codesandbox](https://codesandbox.io/s/github/chirimen-oh/chirimen-micro-bit/tree/master/examples/I2C_MPU6050), [github](https://github.com/chirimen-oh/chirimen-micro-bit/blob/master/examples/I2C_MPU6050/)
   - 複数センサの利用 (SHT31 + BH1750): [codesandbox](https://codesandbox.io/s/github/chirimen-oh/chirimen-micro-bit/tree/master/examples/I2C_MULTI), [github](https://github.com/chirimen-oh/chirimen-micro-bit/blob/master/examples/I2C_MULTI/)
 
+<!-- FIXME: リンク切れ
 次のCHIRIMEN with micro:bit チュートリアルでは、『[Web GPIO APIとWeb I2C APIを組み合わせたプログラミング](section4.md)』に挑戦します！
+-->

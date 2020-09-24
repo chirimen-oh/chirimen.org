@@ -17,7 +17,7 @@ CHIRIMEN with micro:bit （以下「CHIRIMEN microbit」）を使ったプログ
 - 各種 example が [`https://chirimen.org/chirimen-micro-bit/examples/`](https://chirimen.org/chirimen-micro-bit/examples/) 配下に配線図と一緒に置いてある
 - Web アプリからの GPIO の制御には [Web GPIO API](http://browserobo.github.io/WebGPIO) を利用する
 - GPIO ポートは「出力モード」で LED の ON/OFF などが行え「入力モード」では GPIO ポートの状態を読み取れる
-- デバイスの初期化などは非同期処理であり [async と await を用いて処理する](../ty51822r3/appendix0.md)
+- デバイスの初期化などは非同期処理であり [async と await を用いて処理する](/js/async.md)
 
 # 1. 準備
 
@@ -25,7 +25,7 @@ CHIRIMEN with micro:bit （以下「CHIRIMEN microbit」）を使ったプログ
 
 このチュートリアル全体で必要になるハードウエア・部品は下記の通りです。以下の部品はスターターキットに入っています。
 
-- [L チカしてみよう](section0.md) に記載の[「基本ハードウエア」](imgs/pc_mbit_usb_con.jpg)
+- [L チカしてみよう](GPIO_starter.md) に記載の[「基本ハードウエア」](imgs/pc_mbit_usb_con.jpg)
 - [microbitブレークアウトボード](imgs/pinbit.jpg) x 1
 - [ブレッドボード](imgs/breadboardImg.jpg)
 - ジャンパーワイヤー (オス-オス) x 4
@@ -92,7 +92,7 @@ I2Cデバイスは一般的に小さなチップ部品です。下の拡大写�
 ![I2Cで利用するピンの位置](imgs/pinbit_i2cpin.jpg)
 
 ### 配線しよう
-図を見ながらジャンパーワイヤ 4 本で SHT31 を接続します。 
+図を見ながらジャンパーワイヤ 4 本で SHT31 を接続します。
 
 実際に配線した写真は以下の通りです。sht31 の表裏にも注意し、micro:bitとSHT31モジュールのピン名が合うように結線してください。
 
@@ -109,7 +109,7 @@ I2Cデバイスは一般的に小さなチップ部品です。下の拡大写�
 
 `44`という表示が見えます。これは 16 進数表示であり `0x44` という意味です。`0x44` は、SHT31 の SlaveAddress と思われますが、念のためデータシートも確認してみましょう。(19,1eは常に表示されるSlaveAddressで、今はひとまず無視してください。)
 
-> [SHT31/SHT30 のデータシート](https://www.sensirion.com/fileadmin/user_upload/customers/sensirion/Dokumente/2_Humidity_Sensors/Datasheets/Sensirion_Humidity_Sensors_SHT3x_Datasheet_digital.pdf) 
+> [SHT31/SHT30 のデータシート](https://www.sensirion.com/fileadmin/user_upload/customers/sensirion/Dokumente/2_Humidity_Sensors/Datasheets/Sensirion_Humidity_Sensors_SHT3x_Datasheet_digital.pdf)
 
 データシートの P.9 にI2C Address in Hex. representation、ここに SlaveAddress の記載があります。SHT31 は`0x44`がデフォルトの SlaveAddress で、ADDR ピンの HIGH/LOW により SlaveAddeess を0x44か0x45に変更できることがわかります。
 
@@ -155,7 +155,7 @@ index.html
   :
   <body>
     :
-  <input type="button" value="Connect" onclick="connect();"/> 
+  <input type="button" value="Connect" onclick="connect();"/>
   <div id="msg">---</div>
     :
   </body>

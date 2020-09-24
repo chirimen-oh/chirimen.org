@@ -30,7 +30,7 @@ layout: tutorial
 
 使用する部品の一覧は次の通りです。
 
-- [CHIRIMEN for Raspberry Pi](section0.md) が動作する Raspberry Pi (ここでは [Raspberry Pi 3 Model B](https://www.raspberrypi.org/products/raspberry-pi-3-model-b/) を利用します) 
+- [CHIRIMEN for Raspberry Pi](section0.md) が動作する Raspberry Pi (ここでは [Raspberry Pi 3 Model B](https://www.raspberrypi.org/products/raspberry-pi-3-model-b/) を利用します)
 - [Arduino UNO R3](https://www.switch-science.com/catalog/789/)
 - [EasyDriver ステッピングモータードライバ v4.4](https://www.switch-science.com/catalog/2242/)
 - [I2C バス用双方向電圧レベル変換モジュール(FXMA2102)](http://akizukidenshi.com/catalog/g/gM-05825/)
@@ -127,7 +127,7 @@ Raspberry Pi で ターミナルを起動して次のコマンドを入力する
 ここまでくれば回路としての動作は大丈夫です。CHIRIMEN の Web アプリから動かしてみましょう。
 ブラウザで次のアドレスにアクセスします。
 
-[**chirimen.org : i2c-arduino-steppingMotor Example**](https://chirimen.org/chirimen/gc/i2c/i2c-arduino-steppingMotor)
+[**chirimen.org : i2c-arduino-steppingMotor Example**](https://r.chirimen.org/csb-arduino-steppingmotor)
 
 下のような画面になり、1 秒の停止をはさみながらモーターが 1 回転ずつ正方向逆方向交互に動くはずです。
 

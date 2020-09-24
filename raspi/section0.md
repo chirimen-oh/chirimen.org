@@ -58,6 +58,7 @@ CHIRIMEN for Raspberry Pi の起動に最低限必要となる基本ハードウ
 起動する前に、SD カードへ CHIRIMEN Raspi 環境（[起動イメージファイル](https://r.chirimen.org/sdimage)） を書き込んでおく必要があります。
 
 手順は [CHIRIMEN for Raspberry Pi 3 の SD カードを作成する](sdcard.md) を参照してください。
+
 - raspi 4 対応版については現在準備中です
 
 # 3. CHIRIMEN for Raspberry Pi を起動してみよう
@@ -65,6 +66,7 @@ CHIRIMEN for Raspberry Pi の起動に最低限必要となる基本ハードウ
 ## 接続方法
 
 機材が揃ったら、いよいよ Raspi を接続して起動してみましょう。基本ハードウエアを下図のように接続してください。(Raspi への電源ケーブルの接続は最後にしましょう)
+
 - Raspi 4 では電源ケーブルが USB Type C ケーブルとなりますが、基本的な接続方法は以下と同様です
 
 [{% cloudinary imgs/section0/h2.jpg alt="接続方法" %}](imgs/section0/h2.jpg)
@@ -78,6 +80,7 @@ CHIRIMEN for Raspberry Pi の起動に最低限必要となる基本ハードウ
 電源を入れると Raspi の microSD コネクタ横の赤い LED が点灯し、OS の起動後、下記のようなデスクトップ画面が表示されたら CHIRIMEN Raspi の起動に成功しています (OS イメージや画面サイズにより細部は異なることがあります)。おめでとうございます！
 
 <!-- TODO: デスクトップ画面のスクリーンショット古い -->
+
 {% cloudinary imgs/screenshots/20191002_desktop.png alt="CHIRIMEN for Raspberry Pi desktop 画面" %}
 
 ## 残念ながら上記画面が表示されなかった！？
@@ -219,7 +222,7 @@ CHIRIMEN Raspi はウェブブラウザをプログラムの実行環境とし�
 ## 非同期処理について
 
 物理デバイス制御やネットワーク通信などを行う際には、応答待ち中にブラウザが停止しないよう非同期処理を使う必要があります。
-本チュートリアルではこれを [async 関数](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/async_function) で記述しています。非同期処理を知らない人や async 関数を使ったことがない人は、必要に応じて[こちらの資料「非同期処理 (async await 版)」](appendix0.md) も参照してください。
+本チュートリアルではこれを [async 関数](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/async_function) で記述しています。非同期処理を知らない人や async 関数を使ったことがない人は、必要に応じて[こちらの資料「非同期処理 (async await 版)」](/js/async.md) も参照してください。
 
 非同期処理を使いこなすのは難しいですが、本チュートリアルでは次のルールでコードを書けば大丈夫です:
 

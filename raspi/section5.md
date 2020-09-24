@@ -22,7 +22,7 @@ https://github.com/g200kg/chirimen-webbluetooth
 
 # ライブデモ
 
-オンラインで実際に動作するサンプルは下のリンクで公開されています。CHIRIMEN for RasPi 上で全ての機能を動かすには下の部品を揃える必要がありますが、もし [PLAYBULB](https://www.mipow.co.jp/category_playbulb.html) ([sphere](https://www.croy.co.jp/mipow/btl301w.html) または [candle](https://www.croy.co.jp/mipow/btl300.html))をお持ちであれば(BLE対応の)ノートPCからでもマイク周りの動作を試す事ができます。
+オンラインで実際に動作するサンプルは下のリンクで公開されています。CHIRIMEN for RasPi 上で全ての機能を動かすには下の部品を揃える必要がありますが、もし [PLAYBULB](https://www.croy.co.jp/mipow/playbulb.html) ([sphere](https://www.croy.co.jp/mipow/btl301w.html) または [candle](https://www.croy.co.jp/mipow/btl300.html))をお持ちであれば(BLE対応の)ノートPCからでもマイク周りの動作を試す事ができます。
 
 [ライブデモ](https://g200kg.github.io/chirimen-webbluetooth/)
 

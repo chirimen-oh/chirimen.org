@@ -1,3 +1,5 @@
+<!-- FIXME: メンテされてない古い文書 -->
+
 # [webGPIO-etc-on-microbit-via-webBluetooth](http://chirimen.org/webGPIO-etc-on-microbit-via-webBluetooth/) #
  [micro:bit](https://ja.wikipedia.org/wiki/BBC_Micro:bit)内蔵のセンサーやLED、スイッチ、GPIOポートを、[web bluetooth](https://webbluetoothcg.github.io/web-bluetooth/)API経由でウェブアプリから使う。専用ライブラリが用意されており比較的簡単にコーディングできる。GPIOポートAPIは[webGPIO](https://rawgit.com/browserobo/WebGPIO/master/index.html)に準拠、拡張機能としてアナログ入力に対応。[CHIRIMEN for RPi3](https://chirimen.org/chirimen-raspi3/)のGPIO(WebGPIO),I2C(WebI2C)とも同時利用可能。
 

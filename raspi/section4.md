@@ -25,8 +25,8 @@ CHIRIMEN for Raspberry Pi（以下 「CHIRIMEN RasPi」） を使ったプログ
 - 利用可能な GPIO Port 番号・種類と位置は壁紙を見よう
 - Web アプリからの GPIO の制御には [Web GPIO API](http://browserobo.github.io/WebGPIO) を利用する
 - GPIO ポートは「出力モード」で LED の ON/OFF などが行え「入力モード」では GPIO ポートの状態を読み取れる
-- デバイスの初期化などは非同期処理であり [async と await を用いて処理する](appendix0.md)
-- Webアプリからの I2C 制御には [Web I2C API](http://browserobo.github.io/WebI2C) を利用する
+- デバイスの初期化などは非同期処理であり [async と await を用いて処理する](/js/async.md)
+- Web アプリからの I2C 制御には [Web I2C API](http://browserobo.github.io/WebI2C) を利用する
 - I2C モジュールはドライバライブラリを使い SlaveAddress を指定して初期化してから操作する
 - I2C モジュールは SlaveAddress が違えば 1 つの I2C バス上に複数接続することができる
 
@@ -87,7 +87,7 @@ Raspberry Pi との接続方法については、下記回路図を参照くだ�
 [jsfiddle](https://jsfiddle.net/) の`HTML`ペインには下記内容のコードを記載してください。
 
 1. [Web GPIO API / Web I2C API の polyfill](https://r.chirimen.org/polyfill.js) を読み込むコード
-2. [ADT7410 のドライバーライブラリ](https://r.chirimen.org/adt7410.js)を読み込むコード ※任意。[以前の記事](srction2.md) を参考に、ドライバーを使わずに書いても良いです。
+2. [ADT7410 のドライバーライブラリ](https://r.chirimen.org/adt7410.js)を読み込むコード ※任意。[以前の記事](section2.md) を参考に、ドライバーを使わずに書いても良いです。
 3. 温度表示用の要素 (DIV タグなど)
 
 ## JavaScript
@@ -131,7 +131,7 @@ Raspberry Pi との接続方法については、下記回路図を参照くだ�
 
 このため、プログラミングを進める時は jsfiddle などで進め、ある程度コードが固まって来たら index.html ファイルなどに保存して、ブラウザで直接 index.html を表示する方が良いでしょう。
 
-  > Jsbin や Jsfiddle と似たサービスとして、[Code Sandbox (以下 CSB)](https://codesandbox.io/) がありますが、こちらは実行結果画面を別タブとして開くことができるのでおすすめです (但し、上記2サービスと比べて CSB は多くのリソースを必要とするため、Raspberry Pi 3 以前の RasPi での動作は難があるかもしれません)。
+> Jsbin や Jsfiddle と似たサービスとして、[Code Sandbox (以下 CSB)](https://codesandbox.io/) がありますが、こちらは実行結果画面を別タブとして開くことができるのでおすすめです (但し、上記 2 サービスと比べて CSB は多くのリソースを必要とするため、Raspberry Pi 3 以前の RasPi での動作は難があるかもしれません)。
 
 さらに、サイネージのような作品の場合、ブラウザのメニューやタスクバーすらも表示せずに全画面表示にしたいケースもあるでしょう。
 
@@ -148,7 +148,7 @@ Raspberry Pi の Chromium Browser で全画面表示を行うには、コマン�
 - [Web Bluetooth API](https://webbluetoothcg.github.io/web-bluetooth/) : Web アプリから BLE を使った通信を行うための API です。無線で外部機器と通信することができます。入出力が可能です。
 - [Web MIDI API](https://www.w3.org/TR/webmidi/) : Web アプリから MIDI 機器と通信するための API です。外部機器との入出力が可能です。
 - key イベント/Mouse イベントの応用 : USB-HID デバイスを作成できる Arduino Leonardo などを利用することで、そういったボードからの入力をキーイベントやマウスイベントとして受け取ることができます。入力にしか使えませんが、USB 経由で Key イベントに対応するブラウザは非常に多いので、様々な環境への応用が必要な場合には選択肢になりうると思います。
-> Note: これらのAPIは [Feature Policy](https://w3c.github.io/webappsec-feature-policy/) の制限（iframe 内からは埋め込み側で明示許可されていない API は利用不可）により、JSbin や JSfiddleは動作しません。ローカルで実行するか、上述の [CSB](https://codesandbox.io/) を利用してください。
+  > Note: これらの API は [Feature Policy](https://w3c.github.io/webappsec-feature-policy/) の制限（iframe 内からは埋め込み側で明示許可されていない API は利用不可）により、JSbin や JSfiddle は動作しません。ローカルで実行するか、上述の [CSB](https://codesandbox.io/) を利用してください。
 
 また、将来的には USB 機器が直接ブラウザから制御可能になる Web USB API なども利用可能になる可能性がありますが、残念ながら現在のバージョンの CHIRIMEN for Raspberry Pi 環境で利用している Chromium Browser では利用できません。
 
@@ -166,15 +166,14 @@ GitHub Pages の使い方は、下記記事が参考になります。
 
 ## d. Raspberry Pi で使えなかった機能 (WIP)
 
-Raspberry Pi は非常に使いやすい SBC（シングルボードコンピュータ）ですが、一般的な PC と比べるとやはり非力です。(※Raspi4ではだいぶ改善されました！)
-
+Raspberry Pi は非常に使いやすい SBC（シングルボードコンピュータ）ですが、一般的な PC と比べるとやはり非力です。(※Raspi4 ではだいぶ改善されました！)
 
 筆者が試してダメだー！ってなったポイントを書いてみたいと思います。(今後も追記予定)
 
 > 他にもいろいろあると思うのでコメントいただけたら嬉しいです！
 
 - WebGL がまともに動作しない → 諦めて Canvas を使おう
-  - (追記) まだ検証できていませんが、Raspi4では重すぎないものであれば動かせそうです。
+  - (追記) まだ検証できていませんが、Raspi4 では重すぎないものであれば動かせそうです。
 - Speech Synthesis API が動作しない
 
 # さいごに

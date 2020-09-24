@@ -349,7 +349,7 @@ mainFunction();
 
 async function mainFunction() {
   var connectButton = document.getElementById("connect");
-  connectButton.onclick = connect;  
+  connectButton.onclick = connect;
   var onoff = document.getElementById("onoff");
   onoff.onmousedown = onLed;
   onoff.onmouseup = offLed;
@@ -617,7 +617,7 @@ Web GPIO API の機能が一通り確認できましたので、次は違う部�
 
 プルダウンのGPIOポートを使った典型的な回路は以下のようになります。
   >Note: 図のVCCは、基本的にはmicrobitの3V端子ではありません。DC負荷用に別に用意した電源を使用するべきです。ちびギアモータを使った次章の例では、モータの消費電力が十分小さいため例外的にRaspberry Pi3の3V端子から電力を得ています。一方GNDはRaspbeery Pi3と、このDC負荷用電源とを共に接続します。
-  
+
 ![NCh MOSFET schematic](../raspi/imgs/section1/DC3motor-schematic.svg)
 <!--
 {% cloudinary imgs/section1/DC3motor-schematic.svg alt="mosfet schematic" %}
@@ -645,7 +645,9 @@ Web GPIO API の機能が一通り確認できましたので、次は違う部�
 
 回路図の配置を多少調整していますが、黄色のジャンパーピンと黒のジャンパーピンの間をスイッチでオンオフできるように配線するのは同じです。手持ちのスイッチやジャンパワイヤに合わせて上手く配線してみてください。
 
+<!-- FIXME: 画像ファイルへのリンク切れ
 ※上の回路図例は 2pin のタクトスイッチを利用したものになっています。4pin のタクトスイッチを利用した回路図例は[こちら](imgs/section1/DC3motor.png)をご覧ください。
+-->
 
 さて、それでは遊んでみましょう。
 
@@ -665,7 +667,7 @@ LED が点灯する替わりにちびギアモータが動くようになりま�
 # まとめ
 
 このチュートリアルでは、実際にコードを書きながら Web GPIO API の基本的な利用方法を学びました。
-- CHIRIMEN micro bitを接続し、Web GPIO APIを有効にする 
+- CHIRIMEN micro bitを接続し、Web GPIO APIを有効にする
 (UI要素`onclick`〜`microBitBleFactory.connect()`)
 - Web GPIO API を使った GPIO 出力ポートの設定と出力処理までの流れ (`microBitBle.requestGPIOAccess()`〜`port.write()`）
 - Web GPIO API を使った GPIO 入力ポートの設定と読み出し処理の流れ (`microBitBle.requestGPIOAccess()`〜`port.read()`）

@@ -17,7 +17,7 @@ CHIRIMEN with micro:bit （以下「CHIRIMEN microbit」）を使ったプログ
 - 各種 example が [`https://chirimen.org/chirimen-micro-bit/examples/`](https://chirimen.org/chirimen-micro-bit/examples/) 配下に配線図と一緒に置いてある
 - Web アプリからの GPIO の制御には [Web GPIO API](http://browserobo.github.io/WebGPIO) を利用する
 - GPIO ポートは「出力モード」で LED の ON/OFF などが行え「入力モード」では GPIO ポートの状態を読み取れる
-- デバイスの初期化などは非同期処理であり [async と await を用いて処理する](../ty51822r3/appendix0.md)
+- デバイスの初期化などは非同期処理であり [async と await を用いて処理する](/js/async.md)
 
 # 1. 準備
 
@@ -25,7 +25,7 @@ CHIRIMEN with micro:bit （以下「CHIRIMEN microbit」）を使ったプログ
 
 このチュートリアル全体で必要になるハードウエア・部品は下記の通りです。以下の部品はスターターキットに入っています。
 
-- [L チカしてみよう](section0.md) に記載の[「基本ハードウエア」](imgs/pc_mbit_usb_con.jpg)
+- [L チカしてみよう](GPIO_starter.md) に記載の[「基本ハードウエア」](imgs/pc_mbit_usb_con.jpg)
 - [microbitブレークアウトボード](imgs/pinbit.jpg) x 1
 - [ブレッドボード](imgs/breadboardImg.jpg)
 - ジャンパーワイヤー (オス-オス) x 4
@@ -147,12 +147,12 @@ index.html
 ```html
   :
   <script type="text/javascript" src="https://chirimen.org/chirimen-micro-bit/polyfill/microBitBLE.js"></script>
-  <script type="text/javascript" src="https://chirimen.org/chirimen/gc/i2c/i2c-ADT7410/node_modules/@chirimen-raspi/chirimen-driver-i2c-adt7410/ADT7410.js"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@chirimen/adt7410/adt7410.js"></script>
   <script type="text/javascript" src="main.js"></script>
   :
   <body>
     :
-  <input type="button" value="Connect" onclick="connect();"/> 
+  <input type="button" value="Connect" onclick="connect();"/>
   <div id="msg">---</div>
     :
   </body>
@@ -224,7 +224,7 @@ CHIRIMEN microbit で利用可能な I2C ポート番号は`1`番だけです。
 
 ### adt7410 = new ADT7410(i2cPort,0x48)
 
-ドライバーライブラリ[(ADT7410.js)]("https://chirimen.org/chirimen/gc/i2c/i2c-ADT7410/node_modules/@chirimen-raspi/chirimen-driver-i2c-adt7410/ADT7410.js)を使い **ATD7410 を操作する為のインスタンスを生成** しています。
+ドライバーライブラリ[(ADT7410.js)](https://cdn.jsdelivr.net/npm/@chirimen/adt7410/adt7410.js)を使い **ATD7410 を操作する為のインスタンスを生成** しています。
 
 ### await adt7410.init()
 
@@ -236,7 +236,7 @@ CHIRIMEN microbit で利用可能な I2C ポート番号は`1`番だけです。
 
 **ADT7410 の仕様に基づくデータ読み出し処理です**。
 
-ドライバーライブラリ[(ADT7410.js)]("https://chirimen.org/chirimen/gc/i2c/i2c-ADT7410/node_modules/@chirimen-raspi/chirimen-driver-i2c-adt7410/ADT7410.js)内部では、`I2CSlaveDevice.read8()` という API を 2 回呼び出すことで、温度データの [MSB](https://ja.wikipedia.org/wiki/最上位ビット), [LSB](https://ja.wikipedia.org/wiki/最下位ビット) を 8bit ずつ読み出し、両方の読み出しが終わった時点で MSB と LSB を合成、16bit データとしたのちに、温度データに変換して返却しています。
+ドライバーライブラリ[(ADT7410.js)](https://cdn.jsdelivr.net/npm/@chirimen/adt7410/adt7410.js)内部では、`I2CSlaveDevice.read8()` という API を 2 回呼び出すことで、温度データの [MSB](https://ja.wikipedia.org/wiki/最上位ビット), [LSB](https://ja.wikipedia.org/wiki/最下位ビット) を 8bit ずつ読み出し、両方の読み出しが終わった時点で MSB と LSB を合成、16bit データとしたのちに、温度データに変換して返却しています。
 
 ### Web I2C API に着目して流れをまとめると
 
@@ -249,7 +249,7 @@ ADT7410 ドライバーライブラリの内部の処理をまとめると次の
 
 この流れは、ADT7410 以外の他の I2C デバイスでも基本的に同様になります。
 
-I2C デバイスにより変わるのは、`port.open()`に指定する SlaveAddress と、[5.の実際の処理](5度センサーadt7410の値をドライバーを使わずに読むコードを書いてみる) になります。
+I2C デバイスにより変わるのは、`port.open()`に指定する SlaveAddress と、[5.の実際の処理](#section-4) になります。
 
 CHIRIMEN microbit ではいろいろなデバイスのサンプルコードとドライバーを回路図と共に [example として用意されています](https://chirimen.org/chirimen-micro-bit/examples/#i2c)。Examples に無い I2C デバイスでも、上記流れを押さえておけば対応するコードを書くのはそれほど難しくありません。
 
