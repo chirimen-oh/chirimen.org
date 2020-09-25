@@ -146,9 +146,9 @@ index.html
 
 ```html
   :
-  <script type="text/javascript" src="https://chirimen.org/chirimen-micro-bit/polyfill/microBitBLE.js"></script>
-  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@chirimen/adt7410/adt7410.js"></script>
-  <script type="text/javascript" src="main.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@chirimen/microbit"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@chirimen/adt7410"></script>
+  <script src="main.js"></script>
   :
   <body>
     :
@@ -158,9 +158,9 @@ index.html
   </body>
 ```
 
-まず最初に読み込んでいるのが `microBitBLE.js`。Web GPIO API の時に出てきたものと同じ Web GPIO API と Web I2C API の Polyfill です。
+まず最初に読み込んでいるのが `https://cdn.jsdelivr.net/npm/@chirimen/microbit`。Web GPIO API の時に出てきたものと同じ Web GPIO API と Web I2C API の Polyfill です。
 
-次に読み込んでいるのが、`ADT7410.js`。このファイルは、Web I2C API を使って ADT7410 との通信を行うためのドライバー (ハードウェアを操作する為のライブラリ) です。
+次に読み込んでいるのが、`https://cdn.jsdelivr.net/npm/@chirimen/adt7410`。このファイルは、Web I2C API を使って ADT7410 との通信を行うためのドライバー (ハードウェアを操作する為のライブラリ) です。
 
 最後に読み込んでいる `main.js` が、ドライバーライブラリを使ってこのアプリケーションの動作を記述している部分です。
 
@@ -275,7 +275,7 @@ example と同じコードを書いても面白くないので、今回は`i2c-A
   <head>
     <meta charset="UTF-8" />
   </head>
-  <script src="https://chirimen.org/chirimen-micro-bit/polyfill/microBitBLE.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@chirimen/microbit"></script>
   <script src="main.js">	</script>
   <body>
 	  <input id="cnct" type="button" value="Connect" ></input>

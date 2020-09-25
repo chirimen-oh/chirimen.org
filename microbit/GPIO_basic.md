@@ -92,7 +92,7 @@ HTML に `<button>` と `<div>` 要素を 1 つづつ作ります。
 
 ```html
 <link rel="stylesheet" href="styles.css" />
-<script src="https://chirimen.org/chirimen-micro-bit/polyfill/microBitBLE.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@chirimen/microbit"></script>
 ```
 
 
@@ -222,7 +222,7 @@ index.htmlのほうはこのようになります。
     <button id="onoff">LED ON/OFF</button>
     <div id="ledView"></div>
     <link rel="stylesheet" href="styles.css" />
-    <script src="https://chirimen.org/chirimen-micro-bit/polyfill/microBitBLE.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@chirimen/microbit"></script>
     <script src="main.js"></script>
   </body>
 </html>

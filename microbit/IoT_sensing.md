@@ -98,7 +98,7 @@ relayServerを使うということは、情報をインターネット上のウ
 * `<script>`要素で3つのjavascriptコードを読み込んでいます。
   * RelayServer.js
   relayServiceを使うために提供されているライブラリです。
-  * microBitBLE.js
+  * https://cdn.jsdelivr.net/npm/@chirimen/microbit
   特に説明は不要ですね
   * mbit.js
   これが自分で書くコードです。特に説明不要ですね
@@ -114,10 +114,10 @@ micro:bitをBluetooth接続する引き金になるボタン。`connect()`を呼
 
   **mbit.html**の`<input>`ボタンを押すとこの初期化関数が呼び出されます。
   * `// chirimen with micro:bitの初期化`
-  
+
     これまで同様なので省略します
   * `// webSocketリレーの初期化` ([詳しくはこちらを参照](https://chirimen.org/remote-connection/#使用方法))
- 
+
     * `var relay = RelayServer("achex", "chirimenSocket" );`
 
       RelayServer.jsを使って、relayServiceのひとつ**achex**に接続しています。

@@ -79,8 +79,8 @@ example のコードから、光センサに関係する部分を見ていきま
 index.html
 ```html
     :
-    <script type="text/javascript" src="https://chirimen.org/chirimen-micro-bit/polyfill/microBitBLE.js"></script>
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@chirimen/bh1750"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@chirimen/microbit"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@chirimen/bh1750"></script>
     <script src="./main.js" defer></script>
     :
   <body>
@@ -181,9 +181,9 @@ example のコードから、測距センサに関係する部分を見ていき
 VL53L0X.html
 ```html
     :
-    <script type="text/javascript" src="https://chirimen.org/chirimen-micro-bit/polyfill/microBitBLE.js"></script>
-    <script type="text/javascript" src="https://chirimen.org/chirimen/gc/i2c/i2c-VL53L0X/node_modules/@chirimen-raspi/chirimen-driver-i2c-vl53l0x/VL53L0X.js"></script>
-    <script type="text/javascript" src="main.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@chirimen/microbit"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@chirimen/vl53l0x"></script>
+    <script src="main.js"></script>
     :
   <body>
     :
@@ -193,7 +193,7 @@ VL53L0X.html
   </body>
 ```
 
-HTML は ADT7410(又はSHT31) の時とほとんど同じです。ドライバーライブラリは `VL53L0X.js` に変わりました。
+HTML は ADT7410(又はSHT31) の時とほとんど同じです。ドライバーライブラリは `https://cdn.jsdelivr.net/npm/@chirimen/vl53l0x` に変わりました。
 
 ### c-2. main.js
 
@@ -272,9 +272,9 @@ exampleのコードを見てみましょう。
 index.html
 ```html
     :
-    <script type="text/javascript" src="https://chirimen.org/chirimen-micro-bit/polyfill/microBitBLE.js"></script>
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@chirimen/mpu6050"></script>
-    <script type="text/javascript" src="main.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@chirimen/microbit"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@chirimen/mpu6050"></script>
+    <script src="main.js"></script>
     :
   <body>
     :
@@ -416,9 +416,9 @@ I2C モジュールを複数利用するのは一見難しそうに見えるか�
     <head>
       <meta charset="UTF-8" />
       <title>SHT31 & BH1750</title>
-      <script type="text/javascript" src="https://chirimen.org/chirimen-micro-bit/polyfill/microBitBLE.js"></script>
-      <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@chirimen/sht30"></script>
-      <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@chirimen/bh1750"></script>
+      <script src="https://cdn.jsdelivr.net/npm/@chirimen/microbit"></script>
+      <script src="https://cdn.jsdelivr.net/npm/@chirimen/sht30"></script>
+      <script src="https://cdn.jsdelivr.net/npm/@chirimen/bh1750"></script>
       <script src="./main.js" defer></script>
     </head>
   ```

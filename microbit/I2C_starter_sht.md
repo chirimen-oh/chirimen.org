@@ -149,9 +149,9 @@ index.html
 
 ```html
   :
-  <script type="text/javascript" src="https://chirimen.org/chirimen-micro-bit/polyfill/microBitBLE.js"></script>
-  <script type="text/javascript" src="https://chirimen.org/chirimen/gc/contrib/examples/i2c-SHT30/node_modules/@chirimen-raspi/chirimen-driver-i2c-sht30/SHT30.js"></script>
-  <script type="text/javascript" src="main.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@chirimen/microbit"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@chirimen/sht30"></script>
+  <script src="main.js"></script>
   :
   <body>
     :
@@ -161,9 +161,9 @@ index.html
   </body>
 ```
 
-まず最初に読み込んでいるのが `microBitBLE.js`。Web GPIO API の時に出てきたものと同じ Web GPIO API と Web I2C API の Polyfill です。
+まず最初に読み込んでいるのが `https://cdn.jsdelivr.net/npm/@chirimen/microbit`。Web GPIO API の時に出てきたものと同じ Web GPIO API と Web I2C API の Polyfill です。
 
-次に読み込んでいるのが、`SHT30.js`。このファイルは、Web I2C API を使って SHT31 との通信を行うためのドライバー (ハードウェアを操作する為のライブラリ) です。
+次に読み込んでいるのが、`https://cdn.jsdelivr.net/npm/@chirimen/sht30`。このファイルは、Web I2C API を使って SHT30 との通信を行うためのドライバー (ハードウェアを操作する為のライブラリ) です。
 
 最後に読み込んでいる `main.js` が、ドライバーライブラリを使ってこのアプリケーションの動作を記述している部分です。
 
@@ -221,7 +221,7 @@ CHIRIMEN microbit で利用可能な I2C ポート番号は`1`番だけです。
 
 ### sht = new SHT30(i2cPort, 0x44)
 
-ドライバーライブラリ[(SHT30.js)](https://chirimen.org/chirimen/gc/contrib/examples/i2c-SHT30/node_modules/@chirimen-raspi/chirimen-driver-i2c-sht30/SHT30.js)を使い **SHT31 を操作する為のインスタンスを生成** しています。 2番目のパラメータでSlaveAddressを指定しています。(SlaveAddress0x45のモジュールはここを0x45に変更する)
+ドライバーライブラリ[(SHT30.js)](https://cdn.jsdelivr.net/npm/@chirimen/sht30)を使い **SHT31 を操作する為のインスタンスを生成** しています。 2番目のパラメータでSlaveAddressを指定しています。(SlaveAddress0x45のモジュールはここを0x45に変更する)
 
 ### await sht.init()
 
@@ -233,7 +233,7 @@ CHIRIMEN microbit で利用可能な I2C ポート番号は`1`番だけです。
 
 **SHT31 の仕様に基づくデータ読み出し処理です**。
 
-ドライバーライブラリ[(SHT30.js)](https://chirimen.org/chirimen/gc/contrib/examples/i2c-SHT30/node_modules/@chirimen-raspi/chirimen-driver-i2c-sht30/SHT30.js)内部では、まず`I2CSlaveDevice.write8()`というAPIで、I2Cデバイス内部のレジスタ0x2Cに0x06を書き込んでいます。これはSHT31を High repeatability measurementモードに設定しています。その後`wait()`関数で100ms待機します。次に`I2CSlaveDevice.readBytes()` という API で 8bitデータを6バイト連続で読み配列に投入しています。　温度データは0バイト目、1バイト目、　湿度データは3バイト目と4バイト目をそれぞれデータの [MSB](https://ja.wikipedia.org/wiki/最上位ビット), [LSB](https://ja.wikipedia.org/wiki/最下位ビット) として MSB と LSB を合成、16bit データとしたのちに、温度及び湿度データに変換して返却しています。 ([ドライバライブラリをgithubで見てみる](https://github.com/chirimen-oh/chirimen/blob/master/gc/contrib/examples/i2c-SHT30/node_modules/%40chirimen-raspi/chirimen-driver-i2c-sht30/SHT30.js))
+ドライバーライブラリ[(SHT30.js)](https://cdn.jsdelivr.net/npm/@chirimen/sht30)内部では、まず`I2CSlaveDevice.write8()`というAPIで、I2Cデバイス内部のレジスタ0x2Cに0x06を書き込んでいます。これはSHT31を High repeatability measurementモードに設定しています。その後`wait()`関数で100ms待機します。次に`I2CSlaveDevice.readBytes()` という API で 8bitデータを6バイト連続で読み配列に投入しています。　温度データは0バイト目、1バイト目、　湿度データは3バイト目と4バイト目をそれぞれデータの [MSB](https://ja.wikipedia.org/wiki/最上位ビット), [LSB](https://ja.wikipedia.org/wiki/最下位ビット) として MSB と LSB を合成、16bit データとしたのちに、温度及び湿度データに変換して返却しています。 ([ドライバライブラリをgithubで見てみる](https://github.com/chirimen-oh/chirimen/blob/master/gc/contrib/examples/i2c-SHT30/node_modules/%40chirimen-raspi/chirimen-driver-i2c-sht30/SHT30.js))
 
 ### Web I2C API に着目して流れをまとめると
 
@@ -274,7 +274,7 @@ example と同じコードを書いても面白くないので、今回は`SHT30
   <head>
     <meta charset="UTF-8" />
   </head>
-  <script src="https://chirimen.org/chirimen-micro-bit/polyfill/microBitBLE.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@chirimen/microbit"></script>
   <script src="main.js">	</script>
   <body>
 	  <input id="cnct" type="button" value="Connect" ></input>
