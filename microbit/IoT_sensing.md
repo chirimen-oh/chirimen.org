@@ -55,11 +55,21 @@ CHIRIMEN with micro:bitはウェブブラウザを使うのに、実はウェブ
 
 実はこれは簡単ではありません。webAppsはインターネット上のあらゆるコンピュータ（サーバやブラウザの乗ったPCも含め）にURLでアクセスする必要がありますが、相手のPCにURLでアクセスすることは難しいのです。
 
-一方、(あらかじめ用意されていれば)ウェブサーバにはURLでアクセスできます。そこで登場するのがrelayServerです。relayServerは特定のウェブサイトの固有名ではなく、「ウェブアプリ間でリアルタイム性の高いデータのやり取りを仲介する」という機能を持ったウェブサイトの抽象的な名称です。(SNSとかblogとかというのと同じです）
+一方、(あらかじめ用意されていれば)ウェブサーバにはURLでアクセスできます。そこで登場するのがrelayServerです。下図のようにrelayServer(Web Socket Relay Service)を介してwebAppsが通信します。
+
+ ![](https://chirimen.org/remote-connection/imgs/relay.png)
+
+relayServerは特定のウェブサイトの固有名ではなく、「ウェブアプリ間でリアルタイム性の高いデータのやり取りを仲介する」という機能を持ったウェブサイトの抽象的な名称です。(SNSとかblogとかというのと同じです）
+
+relayServerはトークン(ユーザーやシステムごとに割り当てられたランダムな文字列)ごとにスペース(図の濃い青色)が設けられ、その中にいくつかのチャンネル(図の茶色)を置くことができます。
+同じトークンとチャンネルにアクセスしたウェブアプリ同士が通信でき、図ではウェブアプリは２個つながっていますが、何個でもつなげることができます。チャットスペースのようなイメージですね。
 
 今回は、このようなrelayServerの機能を持つウェブサイトとして[achex](https://achex.ca/)という、無料で利用できるサイトを使うことにします。
 
+### relayServer.js
+
 relayServerの機能は他にもいろいろなサイトが提供していますが、リアルタイム性の高い情報のやり取りのために[WebSocket](https://ja.wikipedia.org/wiki/WebSocket)というブラウザがサポートする標準機能がよく使われます。サイトごとに差異は主に接続できる端末の管理と情報の取り扱いに関する機能になります。そこでrelayServerサイトによる差異を吸収し自由に切り替えられ、webSocketのAPI仕様に沿った作法でwebApps間の通信を簡単に使えるようにするライブラリ[relayServer.js](https://chirimen.org/remote-connection/)を用意しましたので、それを使ってシステムを組むことにします。
+
 
 
 ### セキュリティを考えよう
@@ -77,3 +87,78 @@ relayServerを使うということは、情報をインターネット上のウ
   * **micro:bit side webApp** リンクを開きます。
   * これまで通り[connect]ボタンを押して、micro:bitを接続します。
 * スマートフォン側を見てみましょう。micro:bitの内蔵センサーの情報が約1秒おきに表示されていると思います。
+
+## コード解説
+
+### センシング(micro:bit)側
+
+#### mbit.html
+
+* codesandboxのFilesパネルで[mbit.html](https://codesandbox.io/s/github/chirimen-oh/chirimen-micro-bit/tree/master/examples/remote_example1?file=/mbit.html)を選びます。
+* `<script>`要素で3つのjavascriptコードを読み込んでいます。
+  * RelayServer.js
+  relayServiceを使うために提供されているライブラリです。
+  * microBitBLE.js
+  特に説明は不要ですね
+  * mbit.js
+  これが自分で書くコードです。特に説明不要ですね
+* `<input>`要素
+micro:bitをBluetooth接続する引き金になるボタン。`connect()`を呼び出します。これも説明不要ですね。
+* `<div id="msgDiv">` 要素
+ここに確認用のメッセージを出すことにします。
+
+#### mbit.js
+
+* Filesパネルで[mbit.html](https://codesandbox.io/s/github/chirimen-oh/chirimen-micro-bit/tree/master/examples/remote_example1?file=/mbit.js)を選びます。自分で書くべきコード部分です。
+* `async function connect()` :　初期化
+ **mbit.html**の`<input>`ボタンを押すと呼び出されます。
+  * `// chirimen with micro:bitの初期化` : これまで同様なので省略します
+  * `// webSocketリレーの初期化` ([詳しくはこちらを参照](https://chirimen.org/remote-connection/#使用方法))
+ 
+    * `var relay = RelayServer("achex", "chirimenSocket" );`
+     RelayServer.jsを使って、relayServiceのひとつ**achex**に接続しています。
+     第二引数`("chirimenSocket")`はそのサービスを使うためのトークンですが、**achex**は任意の文字列で利用できてます。
+    * `channel = await relay.subscribe("chirimenMbitSensors");`
+    変数`channel`にRelayServerのチャンネルのインスタンスを登録
+    引数はチャンネル名で、自分で好きな名前を与えられます。
+  * 初期化完了したら`sendSensorData();`を呼び出し
+
+  * `sendSensorData();`
+  無限ループでセンサーの値を1秒おきに読んでrelayServerに送信します。
+    * `var sensorData = await microBitBle.readSensor();`
+    micro:bit内蔵センサー（温度・加速度等すべて）の値を読み込む関数。読み込んだ値は構造化されています。[APIの仕様はこちら](https://chirimen.org/chirimen-micro-bit/guidebooks/extendedFunctions.html#内蔵デバイスの利用機能)
+    * `sensorData.time=(new Date()).toString();`
+    センサーの値のインスタンスに　取得した日時を念のため追加しています。
+    * `channel.send(sensorData);`
+    登録したチャンネル(`channel`)にsensorDataの内容を全部送信。
+    * `await sleep(1000);`
+    1秒待ってループを繰り返します。
+
+### 遠隔モニタ側
+
+#### pc.html
+
+* Filesパネルで[pc.html](https://codesandbox.io/s/github/chirimen-oh/chirimen-micro-bit/tree/master/examples/remote_example1?file=/pc.html)を選びます。
+* こちらはmicro:bitをつながないので、`<script>`要素で読み込むjavascriptコードは2個
+  * RelayServer.js
+  relayServiceを使うために提供されているライブラリです。
+  * pc.js
+  これが自分で書くコードです。
+* `table`で整形された形でセンサーの値を表示しています
+
+#### pc.js
+
+* Filesパネルで[pc.js](https://codesandbox.io/s/github/chirimen-oh/chirimen-micro-bit/tree/master/examples/remote_example1?file=/pc.js)を選びます。
+* `onload = async function()`
+このコンテンツのロードが完了したら実行される関数。
+*
+  ```
+  var relay = RelayServer("achex", "chirimenSocket" );
+  channel = await relay.subscribe("chirimenMbitSensors");
+  ```
+  mbit.jsと全く同じです。トークンとチャンネル名とも送信側と全く同じでないとつながりませんね。
+* `channel.onmessage = getMessage;`
+チャンネルにメッセージがポストされた時に起動する関数を登録しています。
+
+* `function getMessage(msg)`
+登録した関数の第一引数(`msg`)には　送信されたメッセージが構造もそのままで届きます。　そこで`msg`のメンバー変数にアクセスして`table`の該当セルにセンシングした値を投入しています。
