@@ -109,30 +109,39 @@ micro:bitをBluetooth接続する引き金になるボタン。`connect()`を呼
 
 #### mbit.js
 
-* Filesパネルで[mbit.html](https://codesandbox.io/s/github/chirimen-oh/chirimen-micro-bit/tree/master/examples/remote_example1?file=/mbit.js)を選びます。自分で書くべきコード部分です。
-* `async function connect()` :　初期化
- **mbit.html**の`<input>`ボタンを押すと呼び出されます。
-  * `// chirimen with micro:bitの初期化` : これまで同様なので省略します
+* Filesパネルで[mbit.js](https://codesandbox.io/s/github/chirimen-oh/chirimen-micro-bit/tree/master/examples/remote_example1?file=/mbit.js)を選びます。自分で書くべきコード部分です。
+* `async function connect()`
+
+  **mbit.html**の`<input>`ボタンを押すとこの初期化関数が呼び出されます。
+  * `// chirimen with micro:bitの初期化`
+  
+    これまで同様なので省略します
   * `// webSocketリレーの初期化` ([詳しくはこちらを参照](https://chirimen.org/remote-connection/#使用方法))
  
     * `var relay = RelayServer("achex", "chirimenSocket" );`
-     RelayServer.jsを使って、relayServiceのひとつ**achex**に接続しています。
-     第二引数`("chirimenSocket")`はそのサービスを使うためのトークンですが、**achex**は任意の文字列で利用できてます。
+
+      RelayServer.jsを使って、relayServiceのひとつ**achex**に接続しています。
+      第二引数`("chirimenSocket")`はそのサービスを使うためのトークンですが、**achex**は任意の文字列で利用できてます。
     * `channel = await relay.subscribe("chirimenMbitSensors");`
-    変数`channel`にRelayServerのチャンネルのインスタンスを登録
-    引数はチャンネル名で、自分で好きな名前を与えられます。
+
+      変数`channel`にRelayServerのチャンネルのインスタンスを登録
+      引数はチャンネル名で、自分で好きな名前を与えられます。
   * 初期化完了したら`sendSensorData();`を呼び出し
 
   * `sendSensorData();`
-  無限ループでセンサーの値を1秒おきに読んでrelayServerに送信します。
+    無限ループでセンサーの値を1秒おきに読んでrelayServerに送信します。
     * `var sensorData = await microBitBle.readSensor();`
-    micro:bit内蔵センサー（温度・加速度等すべて）の値を読み込む関数。読み込んだ値は構造化されています。[APIの仕様はこちら](https://chirimen.org/chirimen-micro-bit/guidebooks/extendedFunctions.html#内蔵デバイスの利用機能)
+
+      micro:bit内蔵センサー（温度・加速度等すべて）の値を読み込む関数。読み込んだ値は構造化されています。[APIの仕様はこちら](https://chirimen.org/chirimen-micro-bit/guidebooks/extendedFunctions.html#内蔵デバイスの利用機能)
     * `sensorData.time=(new Date()).toString();`
-    センサーの値のインスタンスに　取得した日時を念のため追加しています。
+
+      センサーの値のインスタンスに　取得した日時を念のため追加しています。
     * `channel.send(sensorData);`
-    登録したチャンネル(`channel`)にsensorDataの内容を全部送信。
+
+      登録したチャンネル(`channel`)にsensorDataの内容を全部送信。
     * `await sleep(1000);`
-    1秒待ってループを繰り返します。
+
+      1秒待ってループを繰り返します。
 
 ### 遠隔モニタ側
 
@@ -161,4 +170,4 @@ micro:bitをBluetooth接続する引き金になるボタン。`connect()`を呼
 チャンネルにメッセージがポストされた時に起動する関数を登録しています。
 
 * `function getMessage(msg)`
-登録した関数の第一引数(`msg`)には　送信されたメッセージが構造もそのままで届きます。　そこで`msg`のメンバー変数にアクセスして`table`の該当セルにセンシングした値を投入しています。
+登録した関数の第一引数(`msg`)のメンバ変数msg.dataに送信されたメッセージが構造もそのままで届きます。　そこで`msg.data`でセンシングしたデータを取得して`table`の該当セルにその値を記入しています。
