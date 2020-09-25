@@ -233,7 +233,7 @@ CHIRIMEN microbit で利用可能な I2C ポート番号は`1`番だけです。
 
 **SHT31 の仕様に基づくデータ読み出し処理です**。
 
-ドライバーライブラリ[(SHT30.js)](https://cdn.jsdelivr.net/npm/@chirimen/sht30)内部では、まず`I2CSlaveDevice.write8()`というAPIで、I2Cデバイス内部のレジスタ0x2Cに0x06を書き込んでいます。これはSHT31を High repeatability measurementモードに設定しています。その後`wait()`関数で100ms待機します。次に`I2CSlaveDevice.readBytes()` という API で 8bitデータを6バイト連続で読み配列に投入しています。　温度データは0バイト目、1バイト目、　湿度データは3バイト目と4バイト目をそれぞれデータの [MSB](https://ja.wikipedia.org/wiki/最上位ビット), [LSB](https://ja.wikipedia.org/wiki/最下位ビット) として MSB と LSB を合成、16bit データとしたのちに、温度及び湿度データに変換して返却しています。 ([ドライバライブラリをgithubで見てみる](https://github.com/chirimen-oh/chirimen/blob/master/gc/contrib/examples/i2c-SHT30/node_modules/%40chirimen-raspi/chirimen-driver-i2c-sht30/SHT30.js))
+ドライバーライブラリ[(SHT30.js)](https://cdn.jsdelivr.net/npm/@chirimen/sht30)内部では、まず`I2CSlaveDevice.write8()`というAPIで、I2Cデバイス内部のレジスタ0x2Cに0x06を書き込んでいます。これはSHT31を High repeatability measurementモードに設定しています。その後`wait()`関数で100ms待機します。次に`I2CSlaveDevice.readBytes()` という API で 8bitデータを6バイト連続で読み配列に投入しています。　温度データは0バイト目、1バイト目、　湿度データは3バイト目と4バイト目をそれぞれデータの [MSB](https://ja.wikipedia.org/wiki/最上位ビット), [LSB](https://ja.wikipedia.org/wiki/最下位ビット) として MSB と LSB を合成、16bit データとしたのちに、温度及び湿度データに変換して返却しています。 ([ドライバライブラリをgithubで見てみる](https://github.com/chirimen-oh/chirimen-drivers/tree/master/packages/sht30/sht30.mjs))
 
 ### Web I2C API に着目して流れをまとめると
 
