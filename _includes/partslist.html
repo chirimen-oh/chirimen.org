@@ -1,0 +1,63 @@
+<table>
+  <tr>
+    <th>部品型番/カテゴリ</th>
+    <th>説明</th>
+    <th>画像</th>
+    <th>各種リンク</th>
+  </tr>
+  <!-- {% assign partslist = site.data.partslist | where: 'インターフェイス', include.interface %} -->
+  <!-- {% for parts in partslist %} -->
+  <tr>
+    <td>
+      <div>
+        <!-- {% if parts['商品URL'] %} -->
+        <a href="{{ parts['商品URL'] }}">{{ parts['型番'] }}</a>
+        <!-- {% else %} -->
+        <span>{{ parts['型番'] }}</span>
+        <!-- {% endif %} -->
+      </div>
+      <div>{{ parts['カテゴリー'] }}</div>
+    </td>
+    <td>
+      <!-- {% if parts['説明'] %} -->
+      <span>{{ parts['説明'] }}</span>
+      <!-- {% else %} -->
+      <span>-</span>
+      <!-- {% endif %} -->
+    </td>
+    <td>
+      <!-- {% if parts['画像URL'] %} -->
+      <img alt="{{ parts['型番'] }}" src="{{ parts['画像URL'] }}" loading="lazy" />
+      <!-- {% else %} -->
+      <span>-</span>
+      <!-- {% endif %} -->
+    </td>
+    <td>
+      <!-- {% if parts['サンプルコードURL'] %} -->
+      <div><a href="{{ parts['サンプルコードURL'] }}">サンプルコード</a></div>
+      <!-- {% endif %} -->
+      <!-- {% if parts['回路図URL'] %} -->
+      <div><a href="{{ parts['回路図URL'] }}">回路図</a></div>
+      <!-- {% endif %} -->
+      <!-- {% if parts['データシートURL'] %} -->
+      <div><a href="{{ parts['データシートURL'] }}">データシート</a></div>
+      <!-- {% endif %} -->
+      <!-- {% if parts['製造元資料URL'] %} -->
+      <div><a href="{{ parts['製造元資料URL'] }}">製造元資料</a></div>
+      <!-- {% endif %} -->
+      <!-- {% if parts['アプリケーションノートURL'] %} -->
+      <div><a href="{{ parts['アプリケーションノートURL'] }}">アプリケーションノート</a></div>
+      <!-- {% endif %} -->
+      <!-- {% if parts['仕様書URL'] %} -->
+      <div><a href="{{ parts['仕様書URL'] }}">仕様書</a></div>
+      <!-- {% endif %} -->
+      <!-- {% if parts['説明書URL'] %} -->
+      <div><a href="{{ parts['説明書URL'] }}">説明書</a></div>
+      <!-- {% endif %} -->
+      <!-- {% if parts['ガイドURL'] %} -->
+      <div><a href="{{ parts['ガイドURL'] }}">ガイド</a></div>
+      <!-- {% endif %} -->
+    </td>
+  </tr>
+  <!-- {% endfor %} -->
+</table>
