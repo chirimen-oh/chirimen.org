@@ -32,8 +32,7 @@ npm のためのファイル package.json を作成します。
 npm init -y
 ```
 
-作業用のディレクトリの中に npm パッケージ [node-web-gpio
-](https://www.npmjs.com/package/node-web-gpio) と [node-web-i2c](https://www.npmjs.com/package/node-web-i2c) をインストールします。
+作業用のディレクトリの中に npm パッケージ [node-web-gpio](https://www.npmjs.com/package/node-web-gpio) と [node-web-i2c](https://www.npmjs.com/package/node-web-i2c) をインストールします。
 
 ```sh
 npm install node-web-gpio node-web-i2c
