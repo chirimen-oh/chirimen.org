@@ -52,11 +52,7 @@ Raspberry Pi に接続した LED を点滅させるプログラムを書きま�
 空のテキストファイル main.js を作成し、Node.js のための JavaScript のプログラムを書きます。
 
 ```sh
-touch main.js
-```
-
-```sh
-xdg-open main.js
+editor main.js
 ```
 
 テキストエディターで main.js を次のように書きます。
@@ -90,7 +86,7 @@ Node.js で main.js を実行するには、次のコマンドを実行します
 node main.js
 ```
 
-LEDが点滅すれば完成です 🎉
+LED が点滅すれば完成です 🎉
 
 ## いろいろなデバイスを試す
 
