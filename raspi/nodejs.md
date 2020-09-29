@@ -96,7 +96,7 @@ LEDが点滅すれば完成です 🎉
 
 CHIRIMEN ブラウザーから利用できるいろいろなデバイスはすべて同じように Node.js から扱うことができます。
 
-たとえば、次のコードは[温度センサー ADS1015](http://akizukidenshi.com/catalog/g/gM-06675/)を利用して温度を表示するプログラムです。
+たとえば、次のコードは[温度センサー ADT7410](http://akizukidenshi.com/catalog/g/gM-06675/)を利用して温度を表示するプログラムです。
 
 ```js
 const { requestI2CAccess } = require("node-web-i2c");
