@@ -30,7 +30,7 @@
 | ![](imgs/parts/chibigear.png) | ![](imgs/parts/ADT7410.png) | - |
 
 <!--
-| ブレークアウトボード | ブレッドボード | ジャンパーワイヤー | リード付き LED | リード抵抗 (150Ω) | リード抵抗 (1KΩ) | リード抵抗 (10KΩ) | タクトスイッチ | Nch MOSFET | ちびギアモータ | SHT30 | 
+| ブレークアウトボード | ブレッドボード | ジャンパーワイヤー | リード付き LED | リード抵抗 (150Ω) | リード抵抗 (1KΩ) | リード抵抗 (10KΩ) | タクトスイッチ | Nch MOSFET | ちびギアモータ | SHT30 |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | ![](imgs/pinbit.jpg) | ![](imgs/breadboardImg.jpg) | ![](imgs/parts/MtoM.png) | ![](imgs/parts/LED.png) | ![](imgs/parts/150Ohm.png) | ![](imgs/parts/1kOhm.png) | ![](imgs/parts/10kOhm.png) | ![](imgs/parts/switch.png) | ![](imgs/parts/MOSFET.png) | ![](imgs/parts/chibigear.png) | ![](imgs/parts/ADT7410.png) |
 -->
@@ -82,7 +82,7 @@
   ![USBでmicro:bitをPCに接続する](imgs/pc_mbit_usb_con.jpg)
 -　micro:bitにCHIRIMEN サポートプログラムを書き込む
   - Chrome or 最新のEdgeブラウザで<a href="https://chirimen.org/chirimen-micro-bit/guidebooks/link2original.html#https://makecode.microbit.org/_Jh51P7beW6Kb" target="_blank">こちらのページ(https://makecode.microbit.org/_Jh51P7beW6Kb)</a>にアクセス
- 
+
 - 以下の手順でプログラムを書き込む
 
 | 1 このボタンを押す | 2 このボタンを押す | 3 このボタンを押す |
@@ -113,18 +113,19 @@
   - [codesandbox](https://codesandbox.io/)(web上でプログラミングができるサービス)でCHIRIMEN with micro:bitのサンプルを読み込みます。
   - 画面上でソースコードを改変することもできます。File-Save`(CTRL+S)`で変更を反映(変更したコードにはランダムな文字列のURLが振られるので、それをどこかに控えておきます)
 - 矢印で示したボタンを押し、新しいタブでウェブアプリを動かす **(注：新しいタブで動かさないと正常に動作しません)**
-![codesandbox初期画面](imgs/csb0.jpg) 
+![codesandbox初期画面](imgs/csb0.jpg)
 - 新しいタブでサンプルのウェブアプリが開いたら、そのCONNECT ボタンを押す。
-![example独立ウィンド起動](imgs/csb1.jpg) 
+![example独立ウィンド起動](imgs/csb1.jpg)
 - Bluetooth接続ダイアログが出るので、接続先のmicro:bitを選択し(ピンクの〇)、ペア設定ボタン(赤い〇)を押す
-![exampleBluetooth接続](imgs/csb2.jpg) 
+![exampleBluetooth接続](imgs/csb2.jpg)
   - これでウェブアプリがBluetoothを使ってmicro:bitに接続しました。*（参考：micro:bitに◇マークが一瞬表示されます）*
   - *接続に失敗した場合は、micro:bit背面リセットボタンを押しハートマークが表示されてから、ウェブアプリのタブをリロードして再度CONNECTを押してみます*
 - ウェブアプリのUIを操作すると、micro:bitをコントロールできます
-![example動作の様子](imgs/csb3.jpg) 
+![example動作の様子](imgs/csb3.jpg)
 
 # 3. 動作確認完了
 
 お疲れ様でした！　CHIRIMEN with micro:bitによるIoTプロトタイピング環境の準備ができました。
 
-## 次はフィジカルコンピューティングセットを使った、**デバイス操作～基礎編**に進みましょう
+## 次はフィジカルコンピューティングセットを使った、[デバイス操作～基礎編](./GPIO_starter.md) に進みましょう
+
