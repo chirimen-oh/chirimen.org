@@ -45,11 +45,15 @@ CHIRIMEN with micro:bit を利用する際には、**ワークッショップ開
 - I2C が不安定であれば USB での通信に切り替える
 - I2C デバイスは同じ型番のセンサーであっても個体 (基盤設計) によってデフォルト I2C アドレスが異なります。そのセンサーだけ動かない場合は I2C アドレスを [I2C detect](https://chirimen.org/chirimen-micro-bit/examples/i2cdetect/index.html) で確認するようにしてください。
   - micro:bit は最初から I2C アドレスを持っているセンサーが 2 つ内蔵されています。そのアドレスではないことに注意。
+- Bluettooth/USB 対応で micro:bit に書き込むプログラムが変わるが、起動時にハートマークか V マークがでるかで区別してください
+- I2C デバイスの動作が不安定なときは I2C デバイスへの電源共有も切断・再起動させてみましょう (RasPi でも同じ)
+  - 電源オフ、ブラウザリロード、電源オン、ブラウザから Connect の順番でリセット・リトライ操作をします
 
 ## 講師向けリンク集
 
 - micro:bit firmware: https://microbit.org/get-started/user-guide/firmware/
 - CHIRIMEN with micro:bit ブログラム
+  - コミュニティで随時開発してバージョンアップ、URL が変わるので注意 (近日、固定 URL からのリダイレクトに変えます)
   - Bluetooth 向け
     - MakeCode: https://makecode.microbit.org/_Jh51P7beW6Kb
   - USB 向け: https://github.com/chirimen-oh/chirimen-micro-bit/tree/master/alpha
