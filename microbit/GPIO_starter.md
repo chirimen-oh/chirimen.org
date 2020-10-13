@@ -54,7 +54,7 @@ CHIRIMEN with micro:bit は、PC 上のウェブアプリを組むだけで、�
 LED を microbit と正しく配線する必要があります。LED は 2 本のリード線が出ていますが、長い方がアノード（+側）、短い側がカソード（-側）です。
 
 L チカのための配線図は以下の通りです。
-![Lチカ配線図](https://chirimen.org/chirimen-micro-bit/examples/GPIO1/imgs/pinbit_microbit_Hello_Real_World.png)
+![Lチカ配線図](imgs/pinbit_microbit_Hello_Real_World.png)
 
 LED のリード線の方向に注意しながら、この図の通りにジャンパーワイヤやブレッドボードを使って配線してみましょう。
 
