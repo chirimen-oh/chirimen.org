@@ -105,10 +105,10 @@ CHIRIMEN with micro:bit を利用するに際して、知っておくと良い�
 
 良くある質問、よく使うテクニック、困ったときのデバッグとトラブルシューティングや教える側が知っておくべきことなどをまとめています。
 
-- [良くある質問](../raspi/faq.md)
-- [Tips・テクニック集](../raspi/tips.md)
-- [デバッグ・トラブルシューティング](../raspi/debug.md)
-- [講師向けページ](../raspi/teacher.md)
+- [良くある質問](../raspi/faq.md) - **このページは Raspberry Pi 用、micro:bit 用は準備中です**
+- [Tips・テクニック集](../raspi/tips.md) - **このページは Raspberry Pi 用、micro:bit 用は準備中です**
+- [デバッグ・トラブルシューティング](../raspi/debug.md) - **このページは Raspberry Pi 用、micro:bit 用は準備中です**
+- [講師向けページ](./teacher.md)
 
 <div class="hide-on-production">
   <!-- tutorial.chirimen.org では hide-on-production クラスの中は表示されない -->
