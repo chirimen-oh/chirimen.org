@@ -251,9 +251,8 @@ raspi との接続方法については、下記回路図を参照ください�
 
 ## b. 接続確認とexampleの実行
 
-i2cdetect で接続を確認しておきましょう。
+[i2cdetect webAppで接続を確認](https://chirimen.org/chirimen-micro-bit/examples/i2cdetect/index.html)しておきましょう。
 
-`$ i2cdetect -y -r 1`
 
 SlaveAddress `0x68` が見つかれば接続OKです。次に [codesandboxでexample](https://codesandbox.io/s/github/chirimen-oh/chirimen-micro-bit/tree/master/examples/I2C_MPU6050) を動かします。
 

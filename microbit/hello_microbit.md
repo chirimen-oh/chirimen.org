@@ -26,8 +26,8 @@
 | ![](imgs/parts/LED.png) | ![](imgs/parts/150Ohm.png) | ![](imgs/parts/1kOhm.png) |
  リード抵抗 (10KΩ) 茶黒橙金 | タクトスイッチ | Nch MOSFET (2SK4017) |
 | ![](imgs/parts/10kOhm.png) | ![](imgs/parts/switch.png) | ![](imgs/parts/MOSFET.png) |
-| ちびギアモータ | ADT7410 | - |
-| ![](imgs/parts/chibigear.png) | ![](imgs/parts/ADT7410.png) | - |
+| ちびギアモータ | ADT7410 | 又はSHT30 |
+| ![](imgs/parts/chibigear.png) | ![](imgs/parts/ADT7410.png) | ![](imgs/parts/SHT30.jpg) |
 
 <!--
 | ブレークアウトボード | ブレッドボード | ジャンパーワイヤー | リード付き LED | リード抵抗 (150Ω) | リード抵抗 (1KΩ) | リード抵抗 (10KΩ) | タクトスイッチ | Nch MOSFET | ちびギアモータ | SHT30 |
@@ -66,11 +66,10 @@
   - リード抵抗 (1KΩ) x 1 (茶・黒・赤・金)
   - リード抵抗 (10KΩ) x 1 (茶・黒・橙・金)
   - [ちびギアモータ(ピンヘッダ付き)](https://tiisaishop.dip.jp/product/sgm/)
-  - [ADT7410 温度センサーモジュール](http://akizukidenshi.com/catalog/g/gM-06675/) (ピンヘッダ半田付け済み)
+  - I2Cセンサーモジュール(以下のいずれか)
+    - [ADT7410 温度センサーモジュール](http://akizukidenshi.com/catalog/g/gM-06675/) (ピンヘッダ半田付け済み)
+    - [SHT30 温度・湿度センサーモジュール](https://www.amazon.co.jp/dp/B07HBSLLSY/) (ピンヘッダ半田付け済み)
 
-  <!--
-  - [SHT30 温度・湿度センサーモジュール](https://www.amazon.co.jp/dp/B07HBSLLSY/) (ピンヘッダ半田付け済み)
-  -->
 
 
 -----
