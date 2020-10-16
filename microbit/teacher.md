@@ -20,20 +20,37 @@ CHIRIMEN for Raspberry Pi (以下、CHIRIMEN RasPi) と本チュートリアル 
 
 CHIRIMEN with micro:bit を利用する際には、**ワークッショップ開始前に以下の準備が必要です**。
 
-- 機材の準備
-  - micro:bit 本体以外に **通信可能な** micro USB ケーブル、micro:bit の給電コネクタに対応した電池ボックス、電池、ブレイクアウトボードなどの準備が必要です。
-  - firmware の書き換え忘れや、Bluetooth 通信が使えない・安定しない場合に備えて、必ず USB 通信ケーブルを用意してください。
-  - 最近の Mac など、Type-C 端子はあるが Type-A 端子がない PC を持ち込まれる場合に備えて、Type-A / Type-C 変換アダプタもあると安心です
-- micro:bit のファームウェアバージョンを最新にアップデートする
-  - micro:bit の Bluetooth, USB についてはファームウェアバージョンが古いと安定動作しません
-  - **必ず全ての micro:bit のファームウェアを事前に最新版にしてください**。手順は [公式サイトの Firmware ページ](https://microbit.org/get-started/user-guide/firmware/) をご覧ください。
-- CHIRIMEN with micro:bit のプログラムを書き込む
-  - mico:bit のプログラムの書き換えは最初に参加者にさせると Web Bluetooth の
-- 地磁気センサー (コンパス) のキャリブレーションを事前に実施しておく
-  - 地磁気センサー初回利用時には `TILT TO FILL SCREEN` とメッセージが流れ、キャリプレーション操作を求められます。これは毎回ではなく初回だけですので、利用している micro:bit 毎に発生するかどうかが分かれ、ワークショップが混乱してしまいがちです。
-    講師側で全端末の地磁気センサーを一度は利用して、キャリブレーション操作を行ってください
-  - 地磁気センサーの校正方法はこちらを参照: https://tinkering-mbit.github.io/microbit-workshop-guide/devices/compass.html
-  - 地磁気センサー (全内蔵センサー) を使うテストコードはこちら: https://chirimen.org/chirimen-micro-bit/examples/Embed/index.html
+### 0. 機材の準備
+
+- micro:bit 本体以外に **通信可能な** micro USB ケーブル、micro:bit の給電コネクタに対応した電池ボックス、電池、ブレイクアウトボードなどの準備が必要です。
+- firmware の書き換え忘れや、Bluetooth 通信が使えない・安定しない場合に備えて、必ず USB 通信ケーブルを用意してください。
+- 最近の Mac など、Type-C 端子はあるが Type-A 端子がない PC を持ち込まれる場合に備えて、Type-A / Type-C 変換アダプタもあると安心です
+- 2010 年頃までの PC は Bluetooth の対応バージョンが古く、サポート対象外です。Bluetooth 4.0 (BLE) をサポートする PC または Bluetooth ドングルを用意してください。
+
+### 1. micro:bit のファームウェアバージョンを最新にアップデートする
+
+- **必ず全ての micro:bit のファームウェアを事前に更新してください**。
+- 手順は [公式サイトの Firmware ページ](https://microbit.org/get-started/user-guide/firmware/) をご覧ください。
+  - 裏側のスイッチを押しながら USB ケーブルを接続、PC から `MAINTENANCE` ドライブとして認識されている状態でファームウェアの `hex` ファイルを保存すると自動的にファームウェアバージョンの差し替え、再起動が行われます。
+- micro:bit の Bluetooth, USB 処理についてはファームウェアバージョンが古いと全く動作しない、または安定動作しません。
+- 2020年10月の CHIRIMEN with micro:bit の動作試験には micro:bit firmware version 253 を利用しました。
+
+### 2. CHIRIMEN with micro:bit のプログラムを書き込む
+
+- mico:bit のプログラムの書き換えは PC 環境・ブラウザによって WebUSB の動作状況が異なるため、ユーザによって振る舞い・手順が違い初心者には意外と難しいです。
+- まず最初に試すときの手順が簡単であることは大切ですので、主催者側で事前に書き込みをしておきましょう。
+
+### 3. 地磁気センサー (コンパス) のキャリブレーションを事前に実施しておく
+
+- 地磁気センサー初回利用時には `TILT TO FILL SCREEN` とメッセージが流れ、校正(キャリプレーション)操作を求められます。
+- ワークショップを円滑に進めるためには、講師側で全端末の地磁気センサーを一度は利用して、校正操作を行ってください
+  - 校正結果はボードに保存されるため、毎回ではなく初回だけ必要です。
+  - 一度試験した micro:bit では発生しない手順ですし、メッセージに気付きその意味を理解するのも意外と難しいため、ワークショップが混乱してしまいがちです。
+- 地磁気センサーの校正方法は [こちらのページのビデオをご覧ください](https://tinkering-mbit.github.io/microbit-workshop-guide/devices/compass.html)
+  - 校正作業は全方向に傾ける必要があるため、結構コツのいる操作ですが、一定時間内に行う必要があります。
+  - 最初は戸惑い一度では出来ないことが多いですが、慣れて頂くしかありません。そういう意味でも参加者にさせず、講師側での準備が必要な手順です。
+- 地磁気センサーを使うには [内蔵センサーの読み取りテストコード](https://chirimen.org/chirimen-micro-bit/examples/Embed/index.html) がご利用頂けます。
+  - CHIRIMEN のコードに限らず、micro:bit で内蔵地磁気センサーを利用するコードを実行するものであれば何でも構いません。
 
 ## CHIRIMEN with micro:bit の注意事項
 
