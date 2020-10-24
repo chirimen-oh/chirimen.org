@@ -56,7 +56,7 @@
 本編では部品が揃っていることだけを確認しましょう。
   - micro:bit用ブレークアウトボード
     - このチュートリアルでは[pimoroni pin:bit](https://www.sengoku.co.jp/mod/sgk_cart/detail.php?code=EEHD-5AWW)を使用しています
-    - 他に[SparkFun micro:bit Breakout (with Headers)](https://www.sengoku.co.jp/mod/sgk_cart/detail.php?code=EEHD-56JS)、ジェネリック品 mbit などが使用できますが、ピン配列の差異に注意して配線してください。
+    - 他に[SparkFun micro:bit Breakout (with Headers)](https://www.sengoku.co.jp/mod/sgk_cart/detail.php?code=EEHD-56JS)、[ジェネリック品](https://ja.aliexpress.com/item/4001118934669.html) の [m:bit](https://ja.aliexpress.com/item/4000143210124.html) などが使用できますが、ピン配列の差異に注意して配線してください。
   - ブレッドボード (通常サイズまたはミニサイズ) × 1
   - リード付き LED × 1
   - タクトスイッチ × 1
@@ -76,11 +76,11 @@
 # 1. CHIRIMEN with micro:bitをセットアップしよう
 
 ## micro:bitにCHIRIMENサポートプログラム(CHIRIMEN BLE brigde)を書き込む
-- PCのBluetoothを有効にする
-- USBケーブルを使ってmicrp:bitとPCを繋ぐ
+- PC の Bluetooth を有効にする
+- USB ケーブルを使って micro:bit と PC を繋ぐ
   ![USBでmicro:bitをPCに接続する](imgs/pc_mbit_usb_con.jpg)
 -　micro:bitにCHIRIMEN サポートプログラムを書き込む
-  - Chrome or 最新のEdgeブラウザで<a href="https://chirimen.org/chirimen-micro-bit/guidebooks/link2original.html#https://makecode.microbit.org/_Jh51P7beW6Kb" target="_blank">こちらのページ(https://makecode.microbit.org/_Jh51P7beW6Kb)</a>にアクセス
+  - Chrome or 最新のEdgeブラウザで <a href="https://r.chirimen.org/makecode-chirimen" target="_blank">MakeCode ページ</a> にアクセス
 
 - 以下の手順でプログラムを書き込む
 
