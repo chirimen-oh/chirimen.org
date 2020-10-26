@@ -46,11 +46,16 @@ CHIRIMEN with micro:bit を利用する際には、**ワークッショップ開
 - ワークショップを円滑に進めるためには、講師側で全端末の地磁気センサーを一度は利用して、校正操作を行ってください
   - 校正結果はボードに保存されるため、毎回ではなく初回だけ必要です。
   - 一度試験した micro:bit では発生しない手順ですし、メッセージに気付きその意味を理解するのも意外と難しいため、ワークショップが混乱してしまいがちです。
-- 地磁気センサーの校正方法は [こちらのページのビデオをご覧ください](https://tinkering-mbit.github.io/microbit-workshop-guide/devices/compass.html)
+- 地磁気センサーの校正方法は [こちらのページのビデオをご覧ください](https://chirimen.org/chirimen-micro-bit/guidebooks/features.html)
   - 校正作業は全方向に傾ける必要があるため、結構コツのいる操作ですが、一定時間内に行う必要があります。
   - 最初は戸惑い一度では出来ないことが多いですが、慣れて頂くしかありません。そういう意味でも参加者にさせず、講師側での準備が必要な手順です。
 - 地磁気センサーを使うには [内蔵センサーの読み取りテストコード](https://chirimen.org/chirimen-micro-bit/examples/Embed/index.html) がご利用頂けます。
   - CHIRIMEN のコードに限らず、micro:bit で内蔵地磁気センサーを利用するコードを実行するものであれば何でも構いません。
+
+### 4. Bluetooth デバイス ID をメモして micro:bit に貼り付けておく
+
+- CHIRIMEN with micro:bit ブリッジブログラムを書き込んだ複数の micro:bit を同時に起動すると、ブラウザから `Connect` ボタンを押して接続する際に選択するデバイスリストに複数の micro:bit がリスト表示されて区別できないと困ります。
+
 
 ## CHIRIMEN with micro:bit の注意事項
 
@@ -76,9 +81,9 @@ CHIRIMEN with micro:bit を利用する際には、**ワークッショップ開
     - MakeCode: https://makecode.microbit.org/_Jh51P7beW6Kb
   - USB 向け: https://github.com/chirimen-oh/chirimen-micro-bit/tree/master/alpha
     - MakeCode https://makecode.microbit.org/_XPuM8WFsKR2E
-- CHIRIMEN with micro:bit チュートリアル https://tutorial.chirimen.org/microbit/
+- CHIRIMEN with micro:bit チュートリアル: https://tutorial.chirimen.org/microbit/
   - example 集 https://chirimen.org/chirimen-micro-bit/examples/
     - 内蔵センサー: https://chirimen.org/chirimen-micro-bit/examples/Embed/index.html
     - I2C detect: https://chirimen.org/chirimen-micro-bit/examples/i2cdetect/index.html
-
+- micro:bit 標準搭載機能利用時の注意: https://chirimen.org/chirimen-micro-bit/guidebooks/features.html
 
