@@ -75,13 +75,12 @@
 -----
 # 1. CHIRIMEN with micro:bitをセットアップしよう
 
-## micro:bitにCHIRIMENサポートプログラム(CHIRIMEN BLE brigde)を書き込む
+## micro:bit に CHIRIMEN サポートプログラムを書き込む
 - PC の Bluetooth を有効にする
 - USB ケーブルを使って micro:bit と PC を繋ぐ
   ![USBでmicro:bitをPCに接続する](imgs/pc_mbit_usb_con.jpg)
--　micro:bitにCHIRIMEN サポートプログラムを書き込む
+-　micro:bitにCHIRIMEN サポートプログラム (CHIRIMEN BLE brigde) を書き込む
   - Chrome or 最新のEdgeブラウザで <a href="https://r.chirimen.org/makecode-chirimen" target="_blank">MakeCode ページ</a> にアクセス
-
 - 以下の手順でプログラムを書き込む
 
 | 1 このボタンを押す | 2 このボタンを押す | 3 このボタンを押す |
@@ -92,8 +91,8 @@
   | -- | -- | -- |
   | ![USB接続ダイアログ](imgs/ssInst4.jpg) | ![ダウンロードボタン](imgs/ssInst5.jpg) | ![](imgs/mbitInst.jpg) |
 
-- CHIRIMEN with micro:bitを使ったIoTプロトタイピングでは、PCのブラウザで動くウェブアプリの開発だけを行います。**micro:bitへのプログラムの書き込みは今回一度だけ行えば以降必要ありません**
-  - 他の一般的なmicro:bitを使ったプログラミングを行うときは単に上書きしてください。その後、CHIRIMEN with micro:bitを使ったIoTプロトタイピングに戻るときには再度この手順を行ってCHIRIMENサポートプログラムをmicro:bitに書き込んでください。
+- CHIRIMEN with micro:bit を使った IoT プロトタイピングでは、PC のブラウザで動くウェブアプリの開発だけを行います。**micro:bit へのサポートプログラムの書き込みは初回に一度行えば以降必要ありません**
+  - 通常の micro:bit を使ったプログラミング (MakeCode で開発するもの) を行うときは単に上書きしてください。その後、CHIRIMEN with micro:bit を使った IoT プロトタイピングに戻るときには再度この手順で CHIRIMEN サポートプログラム を micro:bit に書き込んでください (基本的に同時併用は出来ません)。
   - [CHIRIMEN with micro:bitのシステム構成はこちら](https://chirimen.org/chirimen-micro-bit/guidebooks/systemConfiguration.html)
 
 -----
@@ -109,17 +108,18 @@
 
 ## codesandboxを使って、micro:bitを操作するウェブアプリを動かす
 - [このページ](https://codesandbox.io/s/github/chirimen-oh/chirimen-micro-bit/tree/master/examples/Embed?module=main.js)にアクセスする
-  - [codesandbox](https://codesandbox.io/)(web上でプログラミングができるサービス)でCHIRIMEN with micro:bitのサンプルを読み込みます。
+  - [codesandbox](https://codesandbox.io/)(web上でプログラミングができるサービス)で CHIRIMEN with micro:bit のサンプルを読み込みます。
   - 画面上でソースコードを改変することもできます。File-Save`(CTRL+S)`で変更を反映(変更したコードにはランダムな文字列のURLが振られるので、それをどこかに控えておきます)
-- 矢印で示したボタンを押し、新しいタブでウェブアプリを動かす **(注：新しいタブで動かさないと正常に動作しません)**
+- 矢印で示したボタンを押し、新しいタブでウェブアプリを動かす **(注： 新しいタブで開かないと動作しません。Web Bluetooth 通信は CodeSandbox の iframe 内では使えないためです)**
 ![codesandbox初期画面](imgs/csb0.jpg)
-- 新しいタブでサンプルのウェブアプリが開いたら、そのCONNECT ボタンを押す。
+- 新しいタブでサンプルのウェブアプリが開いたら、その `CONNECT` ボタンを押す。
 ![example独立ウィンド起動](imgs/csb1.jpg)
-- Bluetooth接続ダイアログが出るので、接続先のmicro:bitを選択し(ピンクの〇)、ペア設定ボタン(赤い〇)を押す
+- Bluetooth 接続ダイアログが出るので、接続先の micro:bit を選択し(ピンクの〇)、ペア設定ボタン(赤い〇)を押す
 ![exampleBluetooth接続](imgs/csb2.jpg)
   - これでウェブアプリがBluetoothを使ってmicro:bitに接続しました。*（参考：micro:bitに◇マークが一瞬表示されます）*
   - *接続に失敗した場合は、micro:bit背面リセットボタンを押しハートマークが表示されてから、ウェブアプリのタブをリロードして再度CONNECTを押してみます*
-- ウェブアプリのUIを操作すると、micro:bitをコントロールできます
+  - 複数の micro:bit に同時に電源が入っていると接続先 micro:bit デバイスが複数表示されます。自分の micro:bit の ID に繋ぐよう注意してください。
+- ウェブアプリの UI を操作すると、micro:bit をコントロールできます
 ![example動作の様子](imgs/csb3.jpg)
 
 # 3. 動作確認完了
