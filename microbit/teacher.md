@@ -39,7 +39,7 @@ CHIRIMEN with micro:bit を利用する際には、**ワークッショップ開
 
 - mico:bit のプログラムの書き換えは PC 環境・ブラウザによって WebUSB の動作状況が異なるため、ユーザによって振る舞い・手順が違い初心者は意外と手間取ります。
 - まず最初に L チカなどを試すところまでが簡単であることはやる気を保ち愉しさを感じてもらう為に大切ですので、主催者側で事前に書き込みをしておきましょう。
-- [MakeCode の CHIRIMEN with micro:bit ブリッジプログラム](https://r.chirimen.org/makecode-chirimen)
+- [MakeCode の CHIRIMEN with micro:bit ブリッジプログラム (bluetooth 用)](https://r.chirimen.org/makecode-chirimen)
 - 勿論、十分な時間と個別サポートが出来る場合には参加者全員が自ら書き換えできるようになる、何をしているか分かるようになることは有意義です
 
 ### 3. 地磁気センサー (コンパス) のキャリブレーションを事前に実施しておく
@@ -83,9 +83,10 @@ CHIRIMEN with micro:bit を利用する際には、**ワークッショップ開
 - micro:bit firmware: https://microbit.org/get-started/user-guide/firmware/
 - CHIRIMEN with micro:bit ブログラム
   - コミュニティで随時開発してバージョンアップ、URL が変わるので注意 (近日、固定 URL からのリダイレクトに変えます)
-  - Bluetooth 向け
+  - Bluetooth 通信用
     - MakeCode: https://r.chirimen.org/makecode-chirimen
-  - USB 向け: https://github.com/chirimen-oh/chirimen-micro-bit/tree/master/alpha
+  - USB 通信用
+    - 使い方説明: https://github.com/chirimen-oh/chirimen-micro-bit/tree/master/alpha
     - MakeCode: https://r.chirimen.org/makecode-chirimen-alpha
 - CHIRIMEN with micro:bit チュートリアル: https://tutorial.chirimen.org/microbit/
   - example 集 https://chirimen.org/chirimen-micro-bit/examples/
