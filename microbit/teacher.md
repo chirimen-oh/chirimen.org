@@ -56,10 +56,10 @@ CHIRIMEN with micro:bit を利用する際には、**ワークッショップ開
 
 ### 4. Bluetooth デバイス ID をメモして micro:bit に貼り付けておく
 
+{% cloudinary small imgs/microbit_with_blue_id.JPG alt="micro:bit裏面にBLE IDを貼り付けた写真" class="right" style="width: 35%; margin: 0 0 0 1em;" %}
+
 - CHIRIMEN with micro:bit ブリッジブログラムを書き込んだ複数の micro:bit を同時に起動すると、ブラウザから `Connect` ボタンを押して接続する際に選択するデバイスリストに micro:bit (`BBC micro:bit [xxxxx]`) が複数表示されてしまいます。今のところ、自分が接続しようとしている micro:bit を区別するには、事前にその個体の ID を知っておく以外に方法はありません。
 - 一人で複数台を同時利用する場合、複数人が同一会場で利用する場合、いずれの場合であってもそれぞれの個体の ID を記載したシールを micro:bit 本体の裏面にシールで貼り付けるなどしてください。上記、地磁気センサーの校正作業と同時にしておくと良いかと思います。
-
-{% cloudinary small imgs/microbit_with_blue_id.JPG alt="micro:bit裏面にBLE IDを貼り付けた写真" class="right" style="width: 35%; margin: 0 0 0 1em;" %}
 
 ## CHIRIMEN with micro:bit の注意事項
 
