@@ -48,11 +48,13 @@ CHIRIMEN with micro:bit を利用する際には、**ワークッショップ開
 - ワークショップを円滑に進めるためには、講師側で全端末の地磁気センサーを一度は利用して、校正操作を行ってください
   - 校正結果はボードに保存されるため、毎回ではなく初回だけ必要です。
   - 一度試験した micro:bit では発生しない手順ですし、メッセージに気付きその意味を理解するのも意外と難しいため、ワークショップが混乱してしまいがちです。
-- 地磁気センサーの校正方法は [こちらのページのビデオをご覧ください](https://chirimen.org/chirimen-micro-bit/guidebooks/features.html)
+- 地磁気センサーの校正方法は下記の動画をご覧ください。
   - 校正作業は全方向に傾ける必要があるため、結構コツのいる操作ですが、一定時間内に行う必要があります。
   - 最初は戸惑い一度では出来ないことが多いですが、慣れて頂くしかありません。そういう意味でも参加者にさせず、講師側での準備が必要な手順です。
 - 地磁気センサーを使うには [内蔵センサーの読み取りテストコード](https://chirimen.org/chirimen-micro-bit/examples/Embed/index.html) がご利用頂けます。
   - CHIRIMEN のコードに限らず、micro:bit で内蔵地磁気センサーを利用するコードを実行するものであれば何でも構いません。
+
+<div style="width:100%;height:0px;position:relative;padding-bottom:75.000%;"><iframe src="https://streamable.com/e/5c9ppl?loop=0" frameborder="0" width="100%" height="100%" allowfullscreen="" style="width:100%;height:100%;position:absolute;left:0px;top:0px;overflow:hidden;" loading="lazy"></iframe></div>
 
 ### 4. Bluetooth デバイス ID をメモして micro:bit に貼り付けておく
 
