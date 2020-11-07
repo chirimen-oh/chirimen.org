@@ -107,8 +107,8 @@
 ![バッテリー駆動](imgs/mbitBatt_2.jpg)
 
 ## codesandboxを使って、micro:bitを操作するウェブアプリを動かす
-- [このページ](https://codesandbox.io/s/github/chirimen-oh/chirimen-micro-bit/tree/master/examples/Embed?module=main.js)にアクセスする
-  - [codesandbox](https://codesandbox.io/)(web上でプログラミングができるサービス)で CHIRIMEN with micro:bit のサンプルを読み込みます。
+- [CodeSandbox で　CHIRIMEN with micro:bit のサンプルコード](https://codesandbox.io/s/github/chirimen-oh/chirimen-micro-bit/tree/master/examples/Embed?module=main.js) を開く
+  - [CodeSandbox](https://codesandbox.io/) (web上でプログラミングができるサービス) で [CHIRIMEN with micro:bit のサンプル](https://codesandbox.io/s/github/chirimen-oh/chirimen-micro-bit/tree/master/examples/Embed?module=main.js) を読み込みます。
   - 画面上でソースコードを改変することもできます。File-Save`(CTRL+S)`で変更を反映(変更したコードにはランダムな文字列のURLが振られるので、それをどこかに控えておきます)
 - 矢印で示したボタンを押し、新しいタブでウェブアプリを動かす **(注： 新しいタブで開かないと動作しません。Web Bluetooth 通信は CodeSandbox の iframe 内では使えないためです)**
 ![codesandbox初期画面](imgs/csb0.jpg)
