@@ -479,8 +479,6 @@ for (;;) {
 LED の処理と組み合わせた全体のコードは次のようになります。LED表示用とスイッチ検出用のport変数が被らないように注意します。:
 
 ```js
-import "./styles.css";
-
 mainFunction();
 
 async function mainFunction() {
@@ -544,8 +542,6 @@ async function readSwitchLoop() {
 `port.onchange()` の説明は後回しにして、さきほどのサンプルを `port.onchange()` を使ったコードに書き換えてみます。
 
 ```js
-import "./styles.css";
-
 mainFunction();
 
 async function mainFunction() {
