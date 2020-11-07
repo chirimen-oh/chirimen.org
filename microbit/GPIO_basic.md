@@ -55,10 +55,13 @@ LED は、0 番ポートに接続しておいてください。
 
 ## b. HTML/CSS を記載する
 
+では、プログラムを書き始めます。まずは　[CodeSandbox](https://codesandbox.io/) にアクセスし、画面右上の　`Create a sandbox` ボタンを押してください。プログラムのテンプレートリストが表示されるので、`Static` ("静的な"Webページの意味) を選択してください。 `index.html` 
+
+
 さて、まずはボタンと LED の状態インジケータを画面上に作ってみましょう。
 HTML に `<button>` と `<div>` 要素を 1 つづつ作ります。
 
-[codesandbox](https://codesandbox.io/)にアクセスし、`Create a sandbox`ボタンを押し、Static ("静的な"Webページの意味) でコード編集を始めます。
+[codesandbox](https://codesandbox.io/)にアクセスし、画面右上の　`Create a sandbox`ボタンを押し、Static ("静的な"Webページの意味) でコード編集を始めます。
 
 この画面のFilesパネルの index.html を選んで`<body>`要素以下に下記コードを挿入します。
 
@@ -447,7 +450,7 @@ var val = await port.read(); // Port 2の状態を読み込む
   var port = gpioAccess.ports.get(2)); // Port 2 を取得
   await port.export("in"); // Port 2 を「入力モード」に。
   setInterval(() => {
-    var val = await port.read(); // Port 5の状態を読み込む
+    var val = await port.read(); // Port 2 の状態を読み込む
     //
     // ここにswitchの状態による処理を書き足す
     //
