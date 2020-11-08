@@ -27,7 +27,7 @@
     </td>
     <td>
       <!-- {% if parts['画像URL'] %} -->
-      <img alt="{{ parts['型番'] }}" src="{{ parts['画像URL'] }}" loading="lazy" />
+      <img alt="{{ parts['型番'] }}" src="{{ parts['画像URL'] }}" /> <!-- loading="lazy" がなんか悪さしてませんか？画像サイズが定まらず(開発ツールで32767みたいな値が・・) -->
       <!-- {% else %} -->
       <span>-</span>
       <!-- {% endif %} -->
@@ -56,6 +56,9 @@
       <!-- {% endif %} -->
       <!-- {% if parts['ガイドURL'] %} -->
       <div><a href="{{ parts['ガイドURL'] }}">ガイド</a></div>
+      <!-- {% endif %} -->
+      <!-- {% if parts['microbitサンプルコードURL'] %} -->
+      <div><a href="{{ parts['microbitサンプルコードURL'] }}">microbitサンプルコード</a></div>
       <!-- {% endif %} -->
     </td>
   </tr>
