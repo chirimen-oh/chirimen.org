@@ -75,7 +75,7 @@ CHIRIMEN with micro:bit 対応デバイスのドライバ・回路図・サン�
 チュートリアルで基本が分かったら、どんなことが出来るか色々なデバイスを使ったサンプルを見て、書き換えて、試してみましょう。
 
 - [対応デバイスのリスト](../raspi/partslist.md)
-  - 一部micro:bitで非対応なデバイスがあります (**鋭意整備中**)
+  - 一部micro:bit用サンプルが未整備なデバイスがあります (**鋭意整備中**)
 - [GPIO Example](https://chirimen.org/chirimen-micro-bit/examples/#gpio)
   - GPIO を使ったサンプル集です。L チカやボタンは勿論、人感センサーやモーター制御等にも使います
 - [I2C Example](https://chirimen.org/chirimen-micro-bit/examples/#i2c)
