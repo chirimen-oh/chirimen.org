@@ -1,4 +1,4 @@
-# CHIRIMEN for Raspberry Pi 対応デバイス / パーツ リスト
+# CHIRIMEN for Raspberry Pi / micro:bit 対応デバイス / パーツ リスト
 
 ## I2C センサー
 
