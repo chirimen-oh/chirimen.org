@@ -1,4 +1,4 @@
-<table style="word-break:normal"> <!-- word-break:keep-all がなんか悪さしてませんか？画像サイズが極小になる・・ -->
+<table style="word-break:normal"> <!-- word-break:keep-all がなんか悪さしてませんか？画像サイズが極小になる・・ そして、imgのloading="lazy" がそれに何かサイドエフェクトをかけてより不可思議な挙動に？-->
   <tr>
     <th>部品型番/カテゴリ</th>
     <th>説明</th>
@@ -27,7 +27,7 @@
     </td>
     <td>
       <!-- {% if parts['画像URL'] %} -->
-      <img alt="{{ parts['型番'] }}" src="{{ parts['画像URL'] }}" loading="lazy" /> 
+      <img alt="{{ parts['型番'] }}" src="{{ parts['画像URL'] }}" /> 
       <!-- {% else %} -->
       <span>-</span>
       <!-- {% endif %} -->
