@@ -1,4 +1,4 @@
-<table>
+<table style="word-break:normal"> <!-- word-break:keep-all がなんか悪さしてませんか？画像サイズが極小になる・・ -->
   <tr>
     <th>部品型番/カテゴリ</th>
     <th>説明</th>
@@ -27,7 +27,7 @@
     </td>
     <td>
       <!-- {% if parts['画像URL'] %} -->
-      <img alt="{{ parts['型番'] }}" src="{{ parts['画像URL'] }}" /> <!-- loading="lazy" がなんか悪さしてませんか？画像サイズが定まらず(開発ツールで32767みたいな値が・・) -->
+      <img alt="{{ parts['型番'] }}" src="{{ parts['画像URL'] }}" loading="lazy" /> 
       <!-- {% else %} -->
       <span>-</span>
       <!-- {% endif %} -->
