@@ -24,4 +24,4 @@ TY51822r3 向けの CHIRIMEN を試すには、[ファームウェアの書き�
 
 micro:bit 向けの CHIRIMEN を試すには、[チュートリアルの Hello micro:bit - 準備編](https://tutorial.chirimen.org/microbit/hello_microbit)に従ってmicro:bitにサポートプログラムを書き込みます。その後はRaspberry Pi 3 向けの CHIRIMEN とほぼ同様にお試し頂けます。
 
-[CHIRIMEN with ty51822r3 のチュートリアル](https://tutorial.chirimen.org/microbit/)
+[CHIRIMEN with micrp:bit のチュートリアル](https://tutorial.chirimen.org/microbit/)
