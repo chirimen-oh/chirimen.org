@@ -42,6 +42,13 @@ CHIRIMEN for Raspberry Pi の起動に最低限必要となる基本ハードウ
   - 初期設定の日本語 (JIS) 配列以外のキーボードを利用する際は [raspi-config コマンド](http://igarashi-systems.com/sample/translation/raspberry-pi/configuration/raspi-config.html) で変更してください
 - [CHIRIMEN 起動イメージ](sdcard.md)入りの micro SD カード (8GB 以上必須、Class 10 以上で高速なものを推奨) × 1
 
+#### ヒント: Raspberry Pi とヒートシンク
+
+[{% cloudinary imgs/section0/raspberry-pi-4-installation-of-heat-sink.png alt="ヒートシンクの取り付け" %}](imgs/section0/raspberry-pi-4-installation-of-heat-sink.png)
+
+Raspberry Pi の CPU は非常に高温になるため冷却しなければなりません。
+あらかじめ CPU には熱伝達テープでヒートシンクを取り付けておきましょう。
+
 ### L チカに必要となるパーツ
 
 基本ハードウエアに加え「L チカ (えるちか)」を実施するには下記パーツも追加で必要です。
