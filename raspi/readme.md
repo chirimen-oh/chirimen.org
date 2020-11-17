@@ -87,6 +87,7 @@ JavaScript 未経験者・初心者向けの資料集や、良くある質問、
 
 本チュートリアルは日々更新していますが、使用機材や手順を大きく変更することもあります。お手持ちの機材が古い場合や、以前学習したときのものを参照したい場合、アーカイブサイトをご覧ください。
 
+- [2019 年度のスターターキットを利用するチュートリアル](https://webiot-2019--tutorial-chirimen-org.netlify.app/raspi/)
 - [2018 年度のスターターキットを利用するチュートリアル](https://webiot-2018--tutorial-chirimen-org.netlify.com/raspi3/ja/)
   - DC Fan を含む、初期スターターキットを使うチュートリアルです。
   - [Web x IoT Makers Challenge 2018-19](https://webiotmakers.github.io/) で採用されていたバージョンです。
