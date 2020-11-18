@@ -27,7 +27,8 @@ LED と温度センサーを使ってみる最小限のお試しページです�
 - [1. GPIO の使い方](section1.md)
   - マウスクリックで操作するブラウザ画面のボタンと物理スイッチ (タクトスイッチ) の両方で LED やモーターを制御するサンプルを通じて GPIO の基本を学びます。
 - [2. センサーを使ってみよう (初めての I2C)](section2.md)
-  - 温度センサーの値をドライバーを使う場合と [WebI2C API](http://browserobo.github.io/WebI2C) を直接操作する場合の 2 パターンで読み取ることで、I2C デバイス操作の基本を学びます。
+  - 温度センサーの値をドライバーを使って取り扱う方法を学びます。
+  - 温度センサーの型番が ADT7410 の場合、 [ADT7410 版のページ](https://webiot-2019--tutorial-chirimen-org.netlify.app/raspi/section2)を参照してください。
 
 ## 応用編
 
@@ -35,13 +36,14 @@ LED と温度センサーを使ってみる最小限のお試しページです�
 
 - [3. I2C の使い方](section3.md)
   - いろいろな I2C デバイスを接続したり、複数の I2C デバイスの同時操作について学びます。
-  - [Grove 編](grove.md)では、Grove を利用したI2C デバイスの同時操作について学べます。
+  - [Grove 編](grove.md)では、Grove を利用した I2C デバイスの同時操作について学べます。
 - [4. GPIO/I2C のまとめ](section4.md)
   - これまでの総括として GPIO と I2C の両方を組み合わせて動かしてみます。
 
 ここまでできたら Example 集を見ていろいろなデバイスを試したり自分で好きなものを作ってみましょう。
 
 ## 発展編
+
 ここまでの例では飽き足らない人のための発展的な使い方を紹介します。興味のあるものがあればお試しください。
 **注意: 学校や講習会などで参加者全員で学習する場合は応用編までで十分です。**
 
@@ -96,12 +98,12 @@ JavaScript 未経験者・初心者向けの資料集や、良くある質問、
   - 本チュートリアルサイトの元となる、CHIRIMEN コミュニティメンバーが当初 Qiita などで執筆していた記事のリンク集です。
 
 <div class="hide-on-production">
-  <!-- tutorial.chirimen.org では hide-on-production クラスの中は表示されない -->
+<!-- tutorial.chirimen.org では hide-on-production クラスの中は表示されない -->
 
-  ## Latest Version / 最新版
+## Latest Version / 最新版
 
-  Latest version of this document is hosted on https://tutorial.chirimen.org/raspi/
+Latest version of this document is hosted on https://tutorial.chirimen.org/raspi/
 
-  このサイトの最新オンライン版は https://tutorial.chirimen.org/raspi/ でご覧頂けます
+このサイトの最新オンライン版は https://tutorial.chirimen.org/raspi/ でご覧頂けます
+
 </div>
-

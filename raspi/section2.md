@@ -14,7 +14,6 @@ CHIRIMEN for Raspberry Pi （以下「CHIRIMEN RasPi」）を使ったプログ�
 
 前回までのチュートリアルで学んだことは下記のとおりです。
 
-- 各種 example が `~/Desktop/gc/` 配下に配線図と一緒に置いてある ([オンライン版もある](https://r.chirimen.org/examples))
 - 利用可能な GPIO Port 番号・種類と位置は壁紙を見よう
 - Web アプリからの GPIO の制御には [Web GPIO API](http://browserobo.github.io/WebGPIO) を利用する
 - GPIO ポートは「出力モード」で LED の ON/OFF などが行え「入力モード」では GPIO ポートの状態を読み取れる
@@ -28,130 +27,151 @@ CHIRIMEN for Raspberry Pi （以下「CHIRIMEN RasPi」）を使ったプログ�
 
 - [L チカしてみよう](section0.md) に記載の「基本ハードウエア」
 - ジャンパーワイヤー (メス-メス) x 4
-- [温度センサ (ADT7410)](http://akizukidenshi.com/catalog/g/gM-06675/) x 1
-
-**注意:** 秋月電子の ADT7410 モジュール付属の細いピンヘッダはブレッドボードへの差し込み専用で、ジャンパーワイヤのソケットに刺すと接触不良となります。 **通常の太さのピンヘッダをハンダ付けしてください。**
+- 温湿度センサー (SHT30 または SHT31、SHT35) x 1
+  - あらかじめピンヘッダーが取り付けられているものを想定
 
 # 2. I2C とは
 
-[I2C](https://ja.wikipedia.org/wiki/I2C) とは 2 線式の同期式シリアル通信インタフェースです。「アイ・スクエア・シー」とか「アイ・ ツー・シー」などと読みます。I2C では SDA（シリアルデータ）と SCL（シリアルクロック）の 2 本の線で通信を行います。
+[I2C](https://ja.wikipedia.org/wiki/I2C) とは 2 線式の同期式シリアル通信インタフェースです。「アイ・スクエア・シー」や「アイ・ ツー・シー」と読みます。I2C では SDA（シリアルデータ）と SCL（シリアルクロック）の 2 本の線で通信を行います。
 
 {% cloudinary half imgs/section2/i2c-bus.png alt="i2c-bus" %}
 
-上図のように、i2c の SDA、SCL は複数のモジュール間で共有され、これを「I2C バス」と言います。I2C ではマスターとスレーブの間で通信が行われます。常にマスター側からスレーブ側に要求が行われ、スレーブ側からマスター側へ要求を行うことはできません。
+上図のように、I2C の SDA、SCL は複数のデバイス間で共有され、これを「I2C バス」と言います。I2C ではマスターとスレーブの間で通信が行われます。常にマスター側からスレーブ側に要求が行われ、スレーブ側からマスター側へ要求を行うことはできません。
 
 マスターは、スレーブが持つ「SlaveAddress (スレーブアドレス)」を指定して、特定のスレーブとの通信を行います。このため、同じ I2C バス上に同じ SlaveAddress のスレーブを繋ぐことはできません。
 
 {% cloudinary imgs/section2/i2c-bus2.png alt="i2c-bus2" %}
 
-通信するモジュール同士が同一基板上にない場合には、SDA、SCL の 2 本の通信線に加え電源や GND の線を加えて 4 本のケーブルを用いて接続するのが一般的です。電源電圧はデバイスに応じたものを繋ぐ必要があります。
+通信するデバイス同士が同一基板上にない場合には、SDA、SCL の 2 本の通信線に加え電源や GND の線を加えて 4 本のケーブルを用いて接続するのが一般的です。電源電圧はデバイスに応じたものを繋ぐ必要があります。
 
-詳細は下記をご参照ください。
+#### ヒント: I2C について
+
+I2C に関する詳細は下記をご参照ください。
 
 - [I2C](https://ja.wikipedia.org/wiki/I2C) - Wikipedia
 - I2C バス仕様書 最新版（[日本語](https://www.nxp.com/docs/ja/user-guide/UM10204.pdf)、[English](http://www.nxp.com/documents/user_manual/UM10204.pdf)）
 - [I2C の使い方](http://www.picfun.com/i2cframe.html)（後閑哲也氏サイト)
 
-ここでは I2C の概要として下記を押さえておきましょう。
+## ポイント
 
-- I2C には複数のモジュールが繋がる（I2C バス）
-- I2C に繋がるモジュールにはマスターとスレーブがある
-- I2C では必ずマスターからスレーブに対して通信要求が行われる
-- I2C スレーブは SlaveAddress を持っている
-- 同じ I2C バスに同じ SlaveAddress のスレーブは繋げない
+I2C の概要として下記を押さえておきましょう。
 
-# 3. 温度センサー(ADT7410)を使ってみる
+- I2C バスを介して複数のデバイスが繋がる
+- I2C デバイスにはマスターとスレーブがある
+- I2C ではマスターからスレーブに対して通信要求が行われる
+- I2C スレーブは SlaveAddress を持つ
+- 同じ I2C バスに同じ SlaveAddress のデバイスは繋げない
 
-それでは実際に I2C に対応したモジュールを使ってみましょう。CHIRIMEN RasPi では `/home/pi/Desktop/gc/i2c/` フォルダにセンサーなど、いくつかの I2C モジュールを使うサンプルがプリインストールされています。
+# 3. 温湿度センサー (SHT30)を使ってみる
 
-この中から、ADT7410 という温度センサーモジュールを使ってみたいと思います。Raspberry Pi と ADT7410 との接続方法(回路図)と example コードは `/home/pi/Desktop/gc/i2c/i2c-ADT7410/` フォルダに格納されています。
+それでは実際に I2C に対応したデバイスを使ってみましょう。CHIRIMEN RasPi では [https://r.chirimen.org/examples](https://r.chirimen.org/examples#i2cExamples) にセンサーなど、いくつかの I2C デバイスを使うサンプルコードと Raspi との接続方法を示す回路図が提供されています。
 
-> I2C バス上、RasPi がマスター、ADT7410 がスレーブになります。
+この中から、SHT30 という温度センサーデバイスを使ってみたいと思います。
+
+I2C バス上では、RasPi がマスター、SHT30 がスレーブになります。
 
 ## a. 部品と配線について
 
-まずは、回路図の画像 `/home/pi/Desktop/gc/i2c/i2c-ADT7410/schematic.png` を開いてください。
+まずは、[配線図の画像](https://chirimen.org/chirimen/gc/contrib/examples/i2c-SHT30/SHT30schematic.png) を開いてください。
 
-{% cloudinary imgs/section2/parts.jpg alt="parts" %}
+![[配線図](https://chirimen.org/chirimen/gc/contrib/examples/i2c-SHT30/SHT30schematic.png)](https://chirimen.org/chirimen/gc/contrib/examples/i2c-SHT30/SHT30schematic.png)
 
-図を見ながらジャンパーワイヤ 4 本で ATD7410 を接続します。 **ADT7410 は 4 本のジャンパーピンを左右逆に繋いでしまうと、短時間で非常に高温になり故障するだけでなく火傷してしまいます** ので、配線には注意してください。
+{% cloudinary imgs/section2/sht3x.jpg alt="sht3x" %}
 
-[{% cloudinary imgs/section2/schematic_warning.png alt="schematic" %}](imgs/section2/schematic_warning.png)
+#### 注意: 配線時のポイント
 
-下記が RasPi 側の接続ピンの位置を拡大した図になります。間違えないよう接続してください。
-
-{% cloudinary imgs/section2/I2C.png alt="I2Cで利用するピンの位置" %}
-
-実際に配線した写真は以下の通りです。ADT7410 の表裏にも注意してください。
-
-{% cloudinary imgs/section2/temperature_real.jpg alt="実際の配線写真" %}
+配線の接続先やデバイスの基板の表裏など間違えないように注意してください。
+配線を間違えると、故障や怪我などの原因になることがあります。おかしいなと思ったら、すぐに外して、配線をきちんと確認しましょう。
 
 ## b. 接続がうまくいったか確認する
 
-ここで、`i2cdetect` を使って ADT7410 が正しく接続・認識できているか、その SlaveAddress は何か確認してみましょう。ターミナルを起動して下記コマンドを入力してみてください。
+`i2cdetect` を使って SlaveAddress を確認し、正しく接続・認識できているか確かめてみましょう。ターミナルを起動して下記コマンドを入力してみてください。
 
-`$ i2cdetect -y -r 1`
+```sh
+i2cdetect -y -r 1
+```
 
-正しく接続できていれば (配線を誤ってセンサーを壊してない限り) 下記のような画面が表示されるはずです。
+正しく接続できていれば下記のように表示されるはずです。
 
-[{% cloudinary imgs/section2/ADT7410.png alt="ADT7410接続中" %}](imgs/section2/ADT7410.png)
+```
+$ i2cdetect -y -r 1
+     0  1  2  3  4  5  6  7  8  9  a  b  c  d  e  f
+00:          -- -- -- -- -- -- -- -- -- -- -- -- --
+10: -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
+20: -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
+30: -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
+40: -- -- -- -- 44 -- -- -- -- -- -- -- -- -- -- --
+50: -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
+60: -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
+70: -- -- -- -- -- -- -- --
+```
 
-`48`という表示が見えます。これは 16 進数表示であり `0x48` という意味です。`0x48` は、ADT7410 の SlaveAddress と思われますが、念のためデータシートも確認してみましょう。
+`44`という表示が見えます。これは 16 進数表示であり、 `0x44` は SHT30 の SlaveAddress です。
 
-> [ADT7410 のデータシート](http://www.analog.com/media/en/technical-documentation/data-sheets/ADT7410.pdf)
+念のためデータシートも確認してみましょう。
 
-データシートの P.17 に「SERIAL BUS ADDRESS」の項があり、ここに SlaveAddress の記載があります。ADT7410 は`0x48`がデフォルトの SlaveAddress で、A0,A1 ピンの HIGH/LOW により SlaveAddeess の下位 2bit を変更できることがわかります。
+> | SHT3x-DIS     | I2C Address in Hex. representation | Condition                            |
+> | ------------- | ---------------------------------- | ------------------------------------ |
+> | I2C address A | 0x44 (default)                     | ADDR (pin 2) connected to logic low  |
+> | I2C address B | 0x45                               | ADDR (pin 2) connected to logic high |
+>
+> **Table 8 I2C device addresses.**
+>
+> [SHT30 のデータシート p.9](https://www.sensirion.com/fileadmin/user_upload/customers/sensirion/Dokumente/2_Humidity_Sensors/Datasheets/Sensirion_Humidity_Sensors_SHT3x_Datasheet_digital.pdf)より引用
 
-{% cloudinary imgs/section2/I2CBusAddressOptions.png alt="I2C Bus Address Options" %}
-(ADT7410 Data Sheet より抜粋)
+SHT30 は`0x44`がデフォルトの SlaveAddress で、ADDR ピンの HIGH/LOW により SlaveAddeess を `0x44` か `0x45` に変更できることがわかります。
 
-[秋月電子の ADT7410 モジュール](http://akizukidenshi.com/catalog/g/gM-06675/) の場合、3.3V に接続している端子側に A0A1 と書かれた端子に半田を付けてショートさせることで SlaveAddress を変更できます。他のデバイスと SlaveAddress が被ってしまった場合や複数の温度センサーを同時に接続したい場合に変更してください。
+### 認識されないとき
 
-試しに、一度 RasPi の 3.3V に接続している線を抜いて、もう一度 `i2cdetect -y -r 1` を実行してみてください。
+試しに I2C デバイスへの電源供給を止めて、認識されないケースをあえて確かめてみます。
+一度 RasPi の 3.3V に接続している線を抜いて、もう一度 `i2cdetect -y -r 1` を実行してみてください。
 
-{% cloudinary imgs/section2/ADT7410OFF.png alt="ADT7410の電源OFF" %}
+```
+$ i2cdetect -y -r 1
+     0  1  2  3  4  5  6  7  8  9  a  b  c  d  e  f
+00:          -- -- -- -- -- -- -- -- -- -- -- -- --
+10: -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
+20: -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
+30: -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
+40: -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
+50: -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
+60: -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
+70: -- -- -- -- -- -- -- --
+```
 
-`0x48` が見つからなくなりました。これで、間違いなく ADT7410 の SlaveAddress が`0x48`となっていることが確認できました。再度、先ほど外した 3.3V の線を戻して ADT7410 に電源を供給しておいてください。
+`44` という表示が見つからなくなりました。このことによって間違いなく SHT30 の SlaveAddress が `0x44` となっていることを確認できました。
+確認できたら、先ほど外した 3.3V の線を戻して再び SHT30 に電源を供給して認識されるようにしておきましょう。
 
-SlaveAddress を確認する i2cdetect には WebI2C を使って実装したものもあります。`/home/pi/Desktop/gc/i2c/i2c-detect/index.html` を開くか [オンライン版](http://r.chirimen.org/i2cdetect) をご利用ください。但し、WebI2C 版の i2c-detect を利用中は他のページから I2C デバイスを操作できません。確認が済んだらタブを閉じるようにしましょう。
+#### ヒント: WebI2C 版 i2cdetect
+
+SlaveAddress を確認する i2cdetect には WebI2C を使って実装したものもあります。[https://r.chirimen.org/i2cdetect](https://r.chirimen.org/i2cdetect) をご利用ください。ただし、WebI2C 版 i2cdetect を利用中は他のページから I2C デバイスを操作できません。確認が済んだらタブを閉じるようにしましょう。
 
 ## c. example を実行してみる
 
-配線と SlaveAddress が確認できましたので、さっそく動かしてみましょう。ADT7410 のためのサンプルコードは先ほどの配線図と同じフォルダ (`/home/pi/Desktop/gc/i2c/i2c-ADT7410/index.html`) に格納されています。ダブルクリックすると、ブラウザが起動し下記のような画面になります。
+配線と SlaveAddress が確認できましたので、さっそく動かしてみましょう。
 
-{% cloudinary imgs/section2/browser.png alt="browser" %}
+[https://r.chirimen.org/examples](https://r.chirimen.org/examples#i2cExamples) にある [CodeSandbox で SHT30 のサンプルコード](https://r.chirimen.org/csb-sht30)を開きます。
 
-画面の回路図の下の数値が温度（摂氏）になります。ADT7410 センサに触ると、ゆっくりと温度が上がるはずです。
+{% cloudinary imgs/section2/codesandbox.png alt="codesandbox" %}
 
-ADT7410 は I2C という通信方式でセンサーデータを送出するモジュールです。この情報を Web I2C API 経由で Web アプリが読み取り、画面に情報を表示しているわけです。
+画面の数値が温度（℃）と湿度（％）になります。SHT30 のセンサーの部分に触ると、ゆっくりと温度が上がるはずです。
 
-# 4. 温度センサー (ADT7410) example のコードを読んでみる
+SHT30 は I2C という通信方式でセンサーデータを送出するデバイスです。この情報を Web I2C API 経由で Web アプリが読み取り、画面に情報を表示しているわけです。
+
+# 4. 温湿度センサー (SHT30) サンプルコードを読んでみる
 
 それでは、コードを見てみましょう。
-
-`/home/pi/Desktop/gc/i2c/i2c-ADT7410/` 配下の `index.html`、`main.js` をみてみます。
+`index.html`、`main.js` を見てみます。
 
 ## d-1. index.html
 
 下記が index.html の中から主要な部分を抜き出したコードです。
 
-index.html
+<script src="https://emgithub.com/embed.js?target=https%3A%2F%2Fgithub.com%2Fchirimen-oh%2Fchirimen%2Fblob%2F8d14c8a35319c1df287126eef1aa41c1f3b8c856%2Fgc%2Fi2c%2Fi2c-SHT30%2Findex.html%23L7-L9&style=github&showBorder=on&showFileMeta=on"></script>
 
-```html
-  :
-  <script src="node_modules/@chirimen-raspi/polyfill/polyfill.js"></script>
-  <script src="node_modules/@chirimen-raspi/chirimen-driver-i2c-adt7410/ADT7410.js"></script>
-  <script src="./main.js" defer></script>
-  :
-  <body>
-    :
-    <p id="head">TEST</p>
-  </body>
-```
+最初に読み込んでいるのが `polyfill.js`。Web GPIO API の時に出てきたものと同じ `https://r.chirimen.org/polyfill.js` です。
 
-まず最初に読み込んでいるのが `polyfill.js`。Web GPIO API の時に出てきた `https://r.chirimen.org/polyfill.js` と同じ Web GPIO API と Web I2C API の Polyfill です。
-
-次に読み込んでいるのが、`ADT7410.js`。このファイルは、Web I2C API を使って ADT7410 との通信を行うためのドライバー (ハードウェアを操作する為のライブラリ) です。オンラインの最新版を使う場合は `https://r.chirimen.org/adt7410.js` を指定してください。
+次に読み込んでいるのが、`https://cdn.jsdelivr.net/npm/@chirimen/sht30`。このファイルは、Web I2C API を使って SHT30 との通信を行うためのドライバー (ハードウェアを操作する為のライブラリ) です。
 
 最後に読み込んでいる `main.js` が、ドライバーライブラリを使ってこのアプリケーションの動作を記述している部分です。
 
@@ -159,11 +179,7 @@ index.html
 
 次に、`main.js` を見てみましょう。
 
-main.js
-
-```js
-{% include_relative examples/section2/s2_1.js -%}
-```
+<script src="https://emgithub.com/embed.js?target=https%3A%2F%2Fgithub.com%2Fchirimen-oh%2Fchirimen%2Fblob%2F8d14c8a35319c1df287126eef1aa41c1f3b8c856%2Fgc%2Fi2c%2Fi2c-SHT30%2Fmain.js&style=github&showBorder=on&showFileMeta=on"></script>
 
 ここで温度センサーの情報を定期的に取得し、画面に出力する処理が行われています。
 少し詳し解説してみます。
@@ -176,75 +192,50 @@ Web I2C API を利用するための **`I2CAccess` インタフェースを取�
 
 `I2CAccess.ports` は、利用可能な I2C ポートの一覧です。
 
-```js
-var port = i2cAccess.ports.get(1);
-```
+<script src="https://emgithub.com/embed.js?target=https%3A%2F%2Fgithub.com%2Fchirimen-oh%2Fchirimen%2Fblob%2F8d14c8a35319c1df287126eef1aa41c1f3b8c856%2Fgc%2Fi2c%2Fi2c-SHT30%2Fmain.js%23L7-L7&style=github&showBorder=on&showFileMeta=on"></script>
 
 CHIRIMEN RasPi で利用可能な I2C ポート番号は`1`番だけです。ポート番号に`1` を指定して **`port` オブジェクトを取得** しています。
 
-### var adt7410 = new ADT7410(port,0x48)
+### new SHT30(port, 0x44)
 
-ドライバーライブラリを使い **ATD7410 を操作する為のインスタンスを生成** しています。
+ドライバーライブラリを使い **SHT30 を操作する為のインスタンスを生成** しています。
 
-### await adt7410.init()
+<script src="https://emgithub.com/embed.js?target=https%3A%2F%2Fgithub.com%2Fchirimen-oh%2Fchirimen%2Fblob%2F8d14c8a35319c1df287126eef1aa41c1f3b8c856%2Fgc%2Fi2c%2Fi2c-SHT30%2Fmain.js%23L8-L8&style=github&showBorder=on&showFileMeta=on"></script>
 
-ドライバーライブラリのインスタンス (adt7410) の `init()` メソッドを通じて **I2C ポートを開いてセンサーを初期化** しています。
+### await sht30.init()
 
-具体的に内部では、インスタンス生成時に指定した `port` オブジェクトと `slaveAddress(0x48)` を用いて `I2CPort.open()` を行なっています。`I2CPort.open()` が成功すると、`I2CSlaveDevice` という I2C ポートへデータ書き込みや読み込みなどを行うインタフェースが返されます。`I2CSlaveDevice` インタフェースは、ライブラリ内に保存され、その後の処理でこのインターフェースを使って I2C デバイスである adt7410 と通信可能になります。
+ドライバーライブラリのインスタンス (`sht30`) の `init()` メソッドを通じて **I2C ポートを開いてセンサーを初期化** しています。
 
-### await adt7410.read()
+<script src="https://emgithub.com/embed.js?target=https%3A%2F%2Fgithub.com%2Fchirimen-oh%2Fchirimen%2Fblob%2F8d14c8a35319c1df287126eef1aa41c1f3b8c856%2Fgc%2Fi2c%2Fi2c-SHT30%2Fmain.js%23L9-L9&style=github&showBorder=on&showFileMeta=on"></script>
 
-**ADT7410 の仕様に基づくデータ読み出し処理です**。
+具体的に内部では、インスタンス生成時に指定した `port` オブジェクトと `slaveAddress(0x44)` を用いて `I2CPort.open()` を行なっています。`I2CPort.open()` が成功すると、`I2CSlaveDevice` という I2C ポートへデータ書き込みや読み込みなどを行うインタフェースが返されます。`I2CSlaveDevice` インタフェースは、ライブラリ内に保存され、その後の処理でこのインターフェイスを使って I2C デバイス SHT30 との通信が可能になります。
 
-内部では、`I2CSlaveDevice.read8()` という API を 2 回呼び出すことで、温度データの [MSB](https://ja.wikipedia.org/wiki/最上位ビット), [LSB](https://ja.wikipedia.org/wiki/最下位ビット) を 8bit ずつ読み出し、両方の読み出しが終わった時点で MSB と LSB を合成、16bit データとしたのちに、温度データに変換して返却しています。
+### await sht30.readData()
+
+**SHT30 の仕様に基づくデータ読み出し処理です**。
+
+<script src="https://emgithub.com/embed.js?target=https%3A%2F%2Fgithub.com%2Fchirimen-oh%2Fchirimen%2Fblob%2F8d14c8a35319c1df287126eef1aa41c1f3b8c856%2Fgc%2Fi2c%2Fi2c-SHT30%2Fmain.js%23L12-L12&style=github&showBorder=on&showFileMeta=on"></script>
+
+ドライバーライブラリ内部では、SHT30 から得られる温度と湿度それぞれ 16bit の数値を、温度・湿度の物理量の数値に変換して返却しています。
+
+[ドライバーライブラリを GitHub で見てみる](https://github.com/chirimen-oh/chirimen-drivers/tree/master/packages/sht30/sht30.mjs)
 
 ### Web I2C API に着目して流れをまとめると
 
-ADT7410 ドライバーライブラリの内部の処理をまとめると次の通りです。
+ドライバーライブラリの内部の処理も含めて流れをまとめると次の通りです。
 
-1. **I2C の準備:** await navigator.requestI2CAccess() で I2CAccess インタフェースを取得
-2. **ポートの準備:** i2cAccess.ports.get(1) で、1 番ポートの `port` オブジェクトを取得
-3. **デバイス初期化:** await port.open(0x48) で、SlaveAddress 0x48 番の I2CSlaveDevice インタフェースを取得
-4. **データ読み込み:** i2cSlave.read8() で 温度データ を読み込み (ADT7410 の場合、常に 2 回セット)
+1. **I2C の準備:** `await navigator.requestI2CAccess()` で I2CAccess インタフェースを取得
+2. **ポートの準備:** `await i2cAccess.ports.get(1)` で、1 番ポートの `port` オブジェクトを取得
+3. **デバイス初期化:** `await port.open(0x44)` で、SlaveAddress `0x44` 番の I2CSlaveDevice インタフェースを取得
+4. **データ読み込み・書き込み:** デバイスに応じて値の取得と物理量への変換
 
-この流れは、ADT7410 以外の他の I2C デバイスでも基本的に同様になります。
+この流れは他の I2C デバイスでも基本的に同様になります。
 
-I2C デバイスにより変わるのは、`port.open()`に指定する SlaveAddress と、[5.の実際の処理](#section-4) になります。
+I2C デバイスにより変わるのは、`port.open()`に指定する SlaveAddress とデータ読み込み・書き込み処理になります。
 
-CHIRIMEN RasPi ではいろいろなデバイスのサンプルコードとドライバーを回路図と共に [example として用意されています](https://r.chirimen.org/examples)。Examples に無い I2C デバイスでも、上記流れを押さえておけば対応するコードを書くのはそれほど難しくありません。
+CHIRIMEN RasPi ではいろいろなデバイスのサンプルコードとドライバーを回路図と共に [Examples として用意されています](https://r.chirimen.org/examples)。Examples にない I2C デバイスでも、上記流れを押さえておけば対応するコードを書くのはそれほど難しくありません。
 
 新たな I2C デバイスへの対応方法については、「[CHIRIMEN で I2C デバイスを使ってみる](https://qiita.com/tadfmac/items/04257bfe982ba0f050bb)」も参考にしてください (CHIRIMEN RasPi ではなく、CHIRIMEN 専用ボード向けの記事ですが、Web I2C API への対応観点では同じ方法論で対応が可能です)
-
-# 5. 温度センサーの値をドライバーを使わずに読んでみる
-
-それでは、ADT7410 ドライバー内部での処理の流れがだいたいわかったところで、ドライバーを使わずに自力で値を読み込むコードを一応書いてみましょう。
-
-example と同じコードを書いても面白くないので、今回は`i2c-ADT7410.js`は使わずに、[JSFiddle](https://jsfiddle.net/) を使って一通り温度を読み込む処理を書いてみましょう。
-
-もし、ブラウザで `/home/pi/Desktop/gc/i2c/i2c-ADT7410/index.html` 開いている場合、一度閉じておいてください。
-
-## JSFiddle で HTML を書く
-
-それでは始めましょう。JSFiddle の HTML ペインに Polyfill の読み込みと、温度表示用のタグだけ書きます。
-
-```html
-<div id="ADT7410value">---</div>
-<script src="https://r.chirimen.org/polyfill.js"></script>
-```
-
-こんな感じで良いでしょう。
-
-## JavaScript を書いてみる
-
-次に JavaScript です。今回は定期的なポーリング処理が必要になるので、[GPIO の使い方 c. スイッチに反応するようにする (port.read()を使ってみる)](section1.md#c--portread) の時に書いたコードが参考になります。JSFiddle では `LOAD TYPE` の設定を `On Load` 以外にするのをお忘れなく。
-
-```js
-{% include_relative examples/section2/s2_2.js -%}
-```
-
-JavaScript を書いたら、`▷ Run` を押して実行してみましょう。温度センサーの値が表示されるはずです。
-
-ADT7410 を指で触って温度が変わることを確認してみてください。
 
 # まとめ
 
@@ -252,14 +243,11 @@ ADT7410 を指で触って温度が変わることを確認してみてくださ
 
 - I2C の基礎知識
 - i2cdetect を使った Raspi に接続された I2C モジュールの SlaveAddress 確認方法
-- Web I2C API を使った処理の流れ
-- ADT7410 温度センサーの制御方法
+- SHT30 温湿度センサーを取り扱う方法
 
-このチュートリアルで書いたコードは以下のページで参照できます:
+このチュートリアルで書いたコードは以下のページで参照できます。
 
-- [GitHub リポジトリで参照](https://github.com/chirimen-oh/tutorials/tree/master/raspi/examples/section2)
-- ブラウザで開くページ (各ステップ)
-  - [ADT7410 温度センサー (ドライバを使ったコード例)](examples/section2/s2_1.html)
-  - [ADT7410 温度センサー (ドライバを使わないコード例)](examples/section2/s2_2.html)
+- [GitHub リポジトリで参照](https://github.com/chirimen-oh/chirimen/tree/master/gc/i2c/i2c-SHT30)
+- [CodeSandbox で参照](https://r.chirimen.org/csb-sht30)
 
 次の『[チュートリアル 3. I2C の使い方](section3.md)』では加速度センサーなど他のセンサーも触っていきます。
