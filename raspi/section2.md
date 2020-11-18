@@ -72,9 +72,9 @@ I2C バス上では、RasPi がマスター、SHT30 がスレーブになりま�
 
 ## a. 部品と配線について
 
-まずは、[配線図の画像](https://chirimen.org/chirimen/gc/contrib/examples/i2c-SHT30/SHT30schematic.png) を開いてください。
+まずは、[配線図の画像](https://chirimen.org/chirimen/gc/i2c/i2c-SHT30/schematic.png) を開いてください。
 
-![[配線図](https://chirimen.org/chirimen/gc/contrib/examples/i2c-SHT30/SHT30schematic.png)](https://chirimen.org/chirimen/gc/contrib/examples/i2c-SHT30/SHT30schematic.png)
+![[配線図](https://chirimen.org/chirimen/gc/i2c/i2c-SHT30/schematic.png)](https://chirimen.org/chirimen/gc/i2c/i2c-SHT30/schematic.png)
 
 {% cloudinary imgs/section2/sht3x.jpg alt="sht3x" %}
 
