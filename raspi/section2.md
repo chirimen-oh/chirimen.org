@@ -64,7 +64,7 @@ I2C の概要として下記を押さえておきましょう。
 
 # 3. 温湿度センサー (SHT30)を使ってみる
 
-それでは実際に I2C に対応したデバイスを使ってみましょう。CHIRIMEN RasPi では [https://r.chirimen.org/examples](https://r.chirimen.org/examples#i2cExamples) にセンサーなど、いくつかの I2C デバイスを使うサンプルコードと Raspi との接続方法を示す回路図が提供されています。
+それでは実際に I2C に対応したデバイスを使ってみましょう。CHIRIMEN RasPi では [Examples](https://r.chirimen.org/examples#i2cExamples) にセンサーなど、いくつかの I2C デバイスを使うサンプルコードと Raspi との接続方法を示す回路図が提供されています。
 
 この中から、SHT30 という温度センサーデバイスを使ってみたいと思います。
 
@@ -150,7 +150,7 @@ SlaveAddress を確認する i2cdetect には WebI2C を使って実装したも
 
 配線と SlaveAddress が確認できましたので、さっそく動かしてみましょう。
 
-[https://r.chirimen.org/examples](https://r.chirimen.org/examples#i2cExamples) にある [CodeSandbox で SHT30 のサンプルコード](https://r.chirimen.org/csb-sht30)を開きます。
+[Examples](https://r.chirimen.org/examples#i2cExamples) > [CodeSandbox で SHT30 のサンプルコード](https://r.chirimen.org/csb-sht30)を開きます。
 
 {% cloudinary imgs/section2/codesandbox.png alt="codesandbox" %}
 
