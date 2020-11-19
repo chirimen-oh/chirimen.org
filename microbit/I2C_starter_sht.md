@@ -29,7 +29,9 @@ CHIRIMEN with micro:bit （以下「CHIRIMEN microbit」）を使ったプログ
 - [microbitブレークアウトボード](imgs/pinbit.jpg) x 1
 - [ブレッドボード](imgs/breadboardImg.jpg)
 - ジャンパーワイヤー (オス-オス) x 4
-- [湿度・温度センサ (SHT31)](http://akizukidenshi.com/catalog/g/gK-12125/) x 1 (SHT30もほぼ同じように使えます([データシート](https://www.sensirion.com/fileadmin/user_upload/customers/sensirion/Dokumente/2_Humidity_Sensors/Datasheets/Sensirion_Humidity_Sensors_SHT3x_Datasheet_digital.pdf)によると測定範囲精度が違う))
+- [湿度・温度センサ (SHT31)](http://akizukidenshi.com/catalog/g/gK-12125/) x 1
+  - または SHT30 ([Amazon](https://www.amazon.co.jp/s?k=sht30), [AliExpress](https://ja.aliexpress.com/item/32962846003.html))。
+  - note: SHT31 は氷点下や 65 度以上などの高温での計測時の精度が SHT30 よりも少し高いが室温程度ではほぼ同様の類似モデルです。同シリーズには他にも SHT35 などもありますがそちらは未検証です。 (参考: [データシート](https://www.sensirion.com/fileadmin/user_upload/customers/sensirion/Dokumente/2_Humidity_Sensors/Datasheets/Sensirion_Humidity_Sensors_SHT3x_Datasheet_digital.pdf))
 
 | ブレークアウトボード | ブレッドボード | ジャンパーワイヤー | SHT31 |
 | -- | -- | -- | -- |
@@ -109,7 +111,7 @@ I2Cデバイスは一般的に小さなチップ部品です。下の拡大写�
 
 `44`という表示が見えます。これは 16 進数表示であり `0x44` という意味です。`0x44` は、SHT31 の SlaveAddress と思われますが、念のためデータシートも確認してみましょう。(19,1eは常に表示されるSlaveAddressで、今はひとまず無視してください。)
 
-> [SHT31/SHT30 のデータシート](https://www.sensirion.com/fileadmin/user_upload/customers/sensirion/Dokumente/2_Humidity_Sensors/Datasheets/Sensirion_Humidity_Sensors_SHT3x_Datasheet_digital.pdf)
+> [SHT30/SHT31 のデータシート](https://www.sensirion.com/fileadmin/user_upload/customers/sensirion/Dokumente/2_Humidity_Sensors/Datasheets/Sensirion_Humidity_Sensors_SHT3x_Datasheet_digital.pdf)
 
 データシートの P.9 にI2C Address in Hex. representation、ここに SlaveAddress の記載があります。SHT31 は`0x44`がデフォルトの SlaveAddress で、ADDR ピンの HIGH/LOW により SlaveAddeess を0x44か0x45に変更できることがわかります。
 
@@ -221,13 +223,13 @@ CHIRIMEN microbit で利用可能な I2C ポート番号は`1`番だけです。
 
 ### sht = new SHT30(i2cPort, 0x44)
 
-ドライバーライブラリ[(SHT30.js)](https://cdn.jsdelivr.net/npm/@chirimen/sht30)を使い **SHT31 を操作する為のインスタンスを生成** しています。 2番目のパラメータでSlaveAddressを指定しています。(SlaveAddress0x45のモジュールはここを0x45に変更する)
+ドライバーライブラリ[(SHT30.js)](https://cdn.jsdelivr.net/npm/@chirimen/sht30)を使い **SHT30/31 を操作する為のインスタンスを生成** しています。 2番目のパラメータでSlaveAddressを指定しています。(SlaveAddress0x45のモジュールはここを0x45に変更する)
 
 ### await sht.init()
 
 ドライバーライブラリのインスタンス (sht) の `init()` メソッドを通じて **I2C ポートを開いてセンサーを初期化** しています。
 
-具体的に内部では、インスタンス生成時に指定した `port` オブジェクトと `slaveAddress(0x44)` を用いて `I2CPort.open()` を行なっています。`I2CPort.open()` が成功すると、`I2CSlaveDevice` という I2C ポートへデータ書き込みや読み込みなどを行うインタフェースが返されます。`I2CSlaveDevice` インタフェースは、ライブラリ内に保存され、その後の処理でこのインターフェースを使って I2C デバイスである sht30 と通信可能になります。
+具体的に内部では、インスタンス生成時に指定した `port` オブジェクトと `slaveAddress(0x44)` を用いて `I2CPort.open()` を行なっています。`I2CPort.open()` が成功すると、`I2CSlaveDevice` という I2C ポートへデータ書き込みや読み込みなどを行うインタフェースが返されます。`I2CSlaveDevice` インタフェースは、ライブラリ内に保存され、その後の処理でこのインターフェースを使って I2C デバイスである sht30/31 と通信可能になります。
 
 ### await sht.read()
 
@@ -324,9 +326,9 @@ async function readData() {
 
 JavaScript を書いたら、いつものように![](imgs/lbtn.png)ボタンを押して別ウィンドでwebAppsを実行してみてください。
 
-SHT31 を指で触って温度や湿度が変わることを確認してみてください。
+SHT30/31 を指で触って温度や湿度が変わることを確認してみてください。
 
-最後に、[ここにドライバーを使わないでSHT31を使ったコードを置いてあります](https://codesandbox.io/s/github/chirimen-oh/chirimen-micro-bit/tree/master/examples/I2C7b_SHT30)
+最後に、[ここにドライバーを使わないで SHT30/31 を使ったコードを置いてあります](https://codesandbox.io/s/github/chirimen-oh/chirimen-micro-bit/tree/master/examples/I2C7b_SHT30)
 
 # まとめ
 
@@ -339,7 +341,7 @@ SHT31 を指で触って温度や湿度が変わることを確認してみて�
 
 このチュートリアルで書いたコードは以下のページで参照できます:
 
-- SHT31 湿度・温度センサー (ドライバを使ったコード例) [codesandbox](https://codesandbox.io/s/github/chirimen-oh/chirimen-micro-bit/tree/master/examples/I2C7_SHT30), [github](https://github.com/chirimen-oh/chirimen-micro-bit/blob/master/examples/I2C7_SHT30/)
 - SHT30 湿度・温度センサー (ドライバを使わないコード例) [codesandbox](https://codesandbox.io/s/github/chirimen-oh/chirimen-micro-bit/tree/master/examples/I2C7b_SHT30), [github](https://github.com/chirimen-oh/chirimen-micro-bit/blob/master/examples/I2C7b_SHT30/)
+- SHT31 湿度・温度センサー (ドライバを使ったコード例) [codesandbox](https://codesandbox.io/s/github/chirimen-oh/chirimen-micro-bit/tree/master/examples/I2C7_SHT30), [github](https://github.com/chirimen-oh/chirimen-micro-bit/blob/master/examples/I2C7_SHT30/)
 
 次の『[チュートリアル 4. I2C の使い方](I2C_basic.md)』では加速度センサーなど他のセンサーも触っていきます。
