@@ -23,9 +23,10 @@ LED と温度センサーを使ってみる最小限のお試しページです�
 まずはシンプルな GPIO 入出力や I2C センサーの操作方法を学びましょう。
 
 - [0. L チカしてみよう (初めての GPIO)](section0.md)
-  - [WebGPIO API](http://browserobo.github.io/WebGPIO) を使って定期的に LED を点滅するサンプルを動かしてみます。
+  - WebGPIO API を使って定期的に LED を点滅するサンプルを動かしてみます。
 - [1. GPIO の使い方](section1.md)
   - マウスクリックで操作するブラウザ画面のボタンと物理スイッチ (タクトスイッチ) の両方で LED やモーターを制御するサンプルを通じて GPIO の基本を学びます。
+  - オンラインエディター JSFiddle を使う場合、[JSFiddle 版のページ](https://webiot-2019--tutorial-chirimen-org.netlify.app/raspi/section1)を参照してください。
 - [2. センサーを使ってみよう (初めての I2C)](section2.md)
   - 温度センサーの値をドライバーを使って取り扱う方法を学びます。
   - 温度センサーの型番が ADT7410 の場合、 [ADT7410 版のページ](https://webiot-2019--tutorial-chirimen-org.netlify.app/raspi/section2)を参照してください。

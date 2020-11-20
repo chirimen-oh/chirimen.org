@@ -12,7 +12,7 @@ permalink: /raspi/section0
 
 ## CHIRIMEN for Raspberry Pi とは
 
-CHIRIMEN for Raspberry Pi は、Raspberry Pi (以下 Raspi) で動作する IoT プログラミング環境です。[Web GPIO API](http://browserobo.github.io/WebGPIO) や [Web I2C API](http://browserobo.github.io/WebI2C) といった JavaScript でハードを制御する API を活用したプログラミングにより、Web アプリ上で Raspi に接続した電子パーツを直接制御できます。
+CHIRIMEN for Raspberry Pi は、Raspberry Pi (以下 Raspi) で動作する IoT プログラミング環境です。[Web GPIO API](http://browserobo.github.io/WebGPIO) や [Web I2C API](http://browserobo.github.io/WebI2C) といった JavaScript でハードウェアを制御する API を活用したプログラミングにより、Web アプリ上で Raspi に接続した電子パーツを直接制御できます。
 
 {% cloudinary imgs/section0/CHIRIMENforRaspberryPi3.png alt="CHIRIMEN for Raspberry Pi の活用イメージ" %}
 
@@ -20,19 +20,19 @@ CHIRIMEN for Raspberry Pi は、Raspberry Pi (以下 Raspi) で動作する IoT 
 
 ## 用意するもの
 
-### 基本ハードウエア
+### 基本ハードウェア
 
-CHIRIMEN for Raspberry Pi の起動に最低限必要となる基本ハードウエアは次の通りです。
+CHIRIMEN for Raspberry Pi の起動に最低限必要となる基本ハードウェアは次の通りです。
 
-[{% cloudinary imgs/section0/Raspi3.jpg alt="Raspi の起動に必要なハードウエア一覧" %}](imgs/section0/Raspi3.jpg)
+[{% cloudinary imgs/section0/Raspi3.jpg alt="Raspi の起動に必要なハードウェア一覧" %}](imgs/section0/Raspi3.jpg)
 
-- Raspberry Pi本体 × 1
-  - CHIRIMEN for Raspberry Pi は [Raspberry Pi 3 Model B](https://www.raspberrypi.org/products/raspberry-pi-3-model-b/) 、 [Raspberry Pi 3 Model B+](https://www.raspberrypi.org/products/raspberry-pi-3-model-b-plus/) 、 [Raspberry Pi 4 Model B](https://www.raspberrypi.org/products/raspberry-pi-4-model-b/) の3モデルに対応しています。
+- Raspberry Pi 本体 × 1
+  - CHIRIMEN for Raspberry Pi は [Raspberry Pi 3 Model B](https://www.raspberrypi.org/products/raspberry-pi-3-model-b/) 、 [Raspberry Pi 3 Model B+](https://www.raspberrypi.org/products/raspberry-pi-3-model-b-plus/) 、 [Raspberry Pi 4 Model B](https://www.raspberrypi.org/products/raspberry-pi-4-model-b/) の 3 モデルに対応しています。
   - 補足: Raspberry Pi 3 Model A+ も対応見込みですが執筆時点では未検証です
 - AC アダプタ + micro B USB 電源ケーブル × 1
   - 例: [Raspberry Pi 用電源セット(5V 3.0A) - Pi3 フル負荷検証済](https://www.physical-computing.jp/product/1171)
   - 注意: 一般的なスマホ向けのもの (1.0〜2.0A 程度の出力) でも起動できますが、公式には 3.0A を必要としており、PC からの給電などでは電力不足で性能低下や不安定な原因になります。microUSB 端子は強度が高くないためスイッチ付きで抜き差し回数を少なくできるケーブル付のものがオススメです
-  - 注意2: Raspi 4 の一部初期ロットでは E-marked チップを搭載している USB(Type C) ケーブルでの給電ができないことが判明しています。詳しくは[こちら](https://jp.techcrunch.com/2019/07/10/2019-07-10-the-raspberry-pi-4-doesnt-work-with-all-usb-c-cables/)をご覧ください。
+  - 注意 2: Raspi 4 の一部初期ロットでは E-marked チップを搭載している USB(Type C) ケーブルでの給電ができないことが判明しています。詳しくは[こちら](https://jp.techcrunch.com/2019/07/10/2019-07-10-the-raspberry-pi-4-doesnt-work-with-all-usb-c-cables/)をご覧ください。
 - HDMI 入力つきのモニタ (720P の解像度に対応したもの) × 1
   - モバイルモニタでも文字が見やすいようデフォルト解像度を 720p としています
 - HDMI ケーブル (モニタ側の端子と合うものを選んでください) × 1
@@ -51,7 +51,7 @@ Raspberry Pi の CPU は非常に高温になるため冷却しなければな�
 
 ### L チカに必要となるパーツ
 
-基本ハードウエアに加え「L チカ (えるちか)」を実施するには下記パーツも追加で必要です。
+基本ハードウェアに加え「L チカ (えるちか)」を実施するには下記パーツも追加で必要です。
 
 {% cloudinary imgs/section0/L.jpg alt="Lチカに必要なパーツ一覧" %}
 
@@ -62,17 +62,15 @@ Raspberry Pi の CPU は非常に高温になるため冷却しなければな�
 
 ## SD カードへ CHIRIMEN for Raspberry Pi 環境を書き込む
 
-起動する前に、SD カードへ CHIRIMEN Raspi 環境（[起動イメージファイル](https://r.chirimen.org/sdimage)） を書き込んでおく必要があります。
+起動する前に、SD カードへ CHIRIMEN Raspi 環境（[起動イメージファイル](https://r.chirimen.org/sdimage)）を書き込んでおく必要があります。
 
 手順は [CHIRIMEN for Raspberry Pi 3 の SD カードを作成する](sdcard.md) を参照してください。
-
-- raspi 4 対応版については現在準備中です
 
 # 3. CHIRIMEN for Raspberry Pi を起動してみよう
 
 ## 接続方法
 
-機材が揃ったら、いよいよ Raspi を接続して起動してみましょう。基本ハードウエアを下図のように接続してください。(Raspi への電源ケーブルの接続は最後にしましょう)
+機材が揃ったら、いよいよ Raspi を接続して起動してみましょう。基本ハードウェアを下図のように接続してください。(Raspi への電源ケーブルの接続は最後にしましょう)
 
 - Raspi 4 では電源ケーブルが USB Type C ケーブルとなりますが、基本的な接続方法は以下と同様です
 
@@ -99,9 +97,9 @@ Raspberry Pi の CPU は非常に高温になるため冷却しなければな�
 ## WiFi の設定
 
 デスクトップ画面が表示されたら、さっそく WiFi を設定して、インターネットに繋げてみましょう。
-CHIRIMEN Raspi では、ネットワークに繋がずローカルファイルでプログラミングも可能ですが、[JS Bin](https://jsbin.com/) や [JSFiddle](https://jsfiddle.net/) あるいは [CodeSandbox](https://codesandbox.io/) などブラウザ上で動くエディタを活用することで、より簡単にプログラミングできます。
+CHIRIMEN Raspi では、ネットワークに繋がずローカルファイルでプログラミングも可能ですが、[CodeSandbox](https://codesandbox.io/) などブラウザ上で動くエディターを活用することで、より簡単にプログラミングできます。
 
-ぜひ、最初にインターネットに接続しておきましょう。WiFi の設定は、タスクバーの右上の WiFi アイコンから行えます。
+ぜひ、最初にインターネット接続しておきましょう。WiFi の設定は、タスクバーの右上の WiFi アイコンから行えます。
 
 {% cloudinary imgs/section0/wifi.png alt="WiFi設定" %}
 
@@ -148,7 +146,7 @@ LED のリード線の方向に注意しながら、この図の通りにジャ�
 - [Raspberry Pi の GPIO](https://tool-lab.com/make/raspberrypi-startup-22/)
 - [テスターを使って抵抗値を確かめる](http://startelc.com/elcLink/tester/elc_nArtcTester2.html#chapter-2)
 
-## example を実行してみる
+## サンプルコードを実行してみる
 
 配線がうまくできたら、さっそく動かしてみましょう。
 L チカのためのサンプルコードは先ほどの配線図と同じフォルダに格納されています。
@@ -173,7 +171,7 @@ L チカに成功しましたか？！
 
 ## うまくいかなかったら?
 
-配線に誤りがないか (特にジャンパーワイヤを指す Raspi 側のピン)、複数のタブで同じ L チカコードを開いていないかなどを確認しても原因が分からない場合、`F12` キーやブラウザのメニュー → 「その他のツール」→「デベロッパーツール」で `Console` を開いて何かエラーメッセージが出ていないか確認してください。詳しくは [トラブルシューティングページ](debug.md) を参考にしてください。
+配線に誤りがないか (とくにジャンパーワイヤを指す Raspi 側のピン)、複数のタブで同じ L チカコードを開いていないかなどを確認しても原因が分からない場合、`F12` キーやブラウザのメニュー → 「その他のツール」→「デベロッパーツール」で `Console` を開いて何かエラーメッセージが出ていないか確認してください。詳しくは [トラブルシューティングページ](debug.md) を参考にしてください。
 
 # 5. コードを眺めてみよう
 
@@ -181,50 +179,48 @@ L チカに成功しましたか？！
 
 今度はオンラインの example からさきほどと同じ L チカを実行してコードを眺めてみましょう。
 
-その前に一つ注意です。CHIRIMEN Raspi での GPIO などの操作には排他制御があり、同一の GPIO ピンを複数のプログラムから同時操作はできません。同一ページもしくは同一ピンを使うページを同時に開くと正しく動作しません。
+#### 注意: 複数のブラウザウィンドウやタブでは実行できない
 
-**オンラインの example を起動する前に、必ず先ほど開いた `file:///home/pi/Desktop/gc/gpio/LEDblink/index.html` のブラウザウィンドウ (タブ) は閉じてください。先に既存ウィンドウを閉じておかないと、サンプルが正常に動作しなくなります。**
+CHIRIMEN Raspi での GPIO などの操作には排他制御があり、同一の GPIO ピンを複数のプログラムから同時操作はできません。同一ページもしくは同一ピンを使うページを同時に開くと正しく動作しません。
 
-既に開いているウィンドウを確実に閉じるには、一度ブラウザを閉じてから、再度ブラウザを起動すると確実です (通常はタブだけ消しても十分です)。
+**サンプルコードを実行する前に、必ず先ほど開いた `file:///home/pi/Desktop/gc/gpio/LEDblink/index.html` のブラウザウィンドウ (タブ) は閉じてください。先に既存ウィンドウを閉じておかないと、サンプルが正常に動作しなくなります。**
 
 {% cloudinary imgs/section0/b.png alt="ブラウザの再起動" %}
 
-## オンラインの example の実行
+## サンプルコードの実行
 
-それでは、さっそくオンラインの example を実行してみます。
+それでは、さっそくサンプルコードを実行してみます。
 配線は、さきほどのままで OK です。
 
-[オンラインの example へのリンク](https://r.chirimen.org/gpio-blink)は、ブラウザを起動後、ブックマークバーにある[Examples](https://r.chirimen.org/examples)のページの中にあります。
+[サンプルコードへのリンク](https://r.chirimen.org/csb-gpio-blink)は、ブラウザを起動後、ブックマークバーにある[Examples](https://r.chirimen.org/examples)のページの中にあります。
 
-{% cloudinary imgs/section0/gpio-blink-online-example.png alt="https://r.chirimen.org/gpio-blink へのリンク" %}
+{% cloudinary imgs/section0/link-to-led-blink-csb.png alt="https://r.chirimen.org/csb-gpio-blink へのリンク" %}
 
-そのまま起動すると下記のような画面になります。(下記スクリーンショットはアクセス直後の画面から JS Bin のタイトルバー部の「Output」タブを 1 回押して非表示にしています)
+そのまま起動すると下記のような画面になります。
 
-<!-- TODO: 古いコードの画像になってる -->
-
-{% cloudinary imgs/section0/JSBinLexample.png alt="JS BinでのLチカexample画面" %}
+{% cloudinary imgs/section0/led-blink-csb.png alt="CodeSandbox でのLチカサンプルコード画面" %}
 
 それでは、コードを眺めてみましょう。
 
 ## HTML
 
-```html
-{% include_relative examples/section0/s0.html -%}
-```
+<script src="https://emgithub.com/embed.js?target=https%3A%2F%2Fgithub.com%2Fchirimen-oh%2Fchirimen%2Fblob%2F5c520c21820304901553f2adf22da1012f54722d%2Fgc%2Fgpio%2FLEDblink%2Findex.html&style=github&showBorder=on&showFileMeta=on"></script>
+
+ポイントは `<script ...></script>` の部分です。
+
+<script src="https://emgithub.com/embed.js?target=https%3A%2F%2Fgithub.com%2Fchirimen-oh%2Fchirimen%2Fblob%2F5c520c21820304901553f2adf22da1012f54722d%2Fgc%2Fgpio%2FLEDblink%2Findex.html%23L7-L8&style=github&showBorder=on&showFileMeta=on"></script>
 
 `polyfill.js` という JavaScript ライブラリを読み込んでいます。これは [Web GPIO API](http://browserobo.github.io/WebGPIO) と、[Web I2C API](http://browserobo.github.io/WebI2C) という W3C でドラフト提案中の 2 つの API への [Polyfill (新しい API を未実装のブラウザでも同じコードが書けるようにするためのライブラリ)](https://developer.mozilla.org/ja/docs/Glossary/Polyfill) で、最初に読み込むとそれ以降のコードで GPIO や I2C を操作する JavaScript API が使えるようになります。
 
-** `/home/pi/Desktop/gc/gpio/LEDblink/index.html` などの example では、インターネット未接続時にも動作するよう Polyfill を含めたコード一式をローカルにコピーしてあるので `node_modules/@chirimen-raspi/polyfill/polyfill.js` のようなパスで読み込みます。オンラインにホストされている最新版を読み込む場合には `https://r.chirimen.org/polyfill.js` を指定します。**
+次の行にある `main.js` は、JavaScript のプログラム本体です。
 
 ## JavaScript
 
-```javascript
-{% include_relative examples/section0/s0.js -%}
-```
+<script src="https://emgithub.com/embed.js?target=https%3A%2F%2Fgithub.com%2Fchirimen-oh%2Fchirimen%2Fblob%2F5c520c21820304901553f2adf22da1012f54722d%2Fgc%2Fgpio%2FLEDblink%2Fmain.js&style=github&showBorder=on&showFileMeta=on"></script>
 
-### 注記
+### ヒント: JavaScript の基礎
 
-CHIRIMEN Raspi はウェブブラウザをプログラムの実行環境として用いてシステムを構築します。ウェブブラウザが実行できるプログラムのプログラミング言語は JavaScript です。JavaScript を学んだことのない人は、まず[こちらの資料「JavaScript 1 Day 講習」](https://r.chirimen.org/1dayjs)を履修しましょう。
+CHIRIMEN Raspi はウェブブラウザをプログラムの実行環境として用いてシステムを構築します。ウェブブラウザが実行できるプログラムのプログラミング言語は JavaScript です。JavaScript を学んだことのない人は、まず[こちらの資料「JavaScript 初学者向け資料集」](/js/readme.md)を参照してください。
 
 ## 非同期処理について
 
@@ -239,20 +235,18 @@ CHIRIMEN Raspi はウェブブラウザをプログラムの実行環境とし�
 - **非同期処理を含む関数は前に `async` を付けて非同期関数として定義する**
   - `async function 関数名() { ... }` のように頭に `async` を付けると非同期関数となります
 
-非同期関数を `await` なしで呼び出すと返り値は Promise オブジェクトとなるため Promise について理解しておかなければ返り値の判断や実行順序が入れ替わって意図せぬ挙動になります。例えば、ポートの初期化を `await` なしで呼び出すと、初期化完了前に次の行の処理を続け、初期化未完了のハードを操作しようとして失敗したり、ネットワーク通信完了前に受信データを読みだそうとして失敗します。
+非同期関数を `await` なしで呼び出すと返り値は Promise オブジェクトとなるため Promise について理解しておかなければ返り値の判断や実行順序が入れ替わって意図せぬ挙動になります。たとえば、ポートの初期化を `await` なしで呼び出すと、初期化完了前に次の行の処理を続け、初期化未完了のハードウェアを操作しようとして失敗したり、ネットワーク通信完了前に受信データを読みだそうとして失敗します。
 
-ハードを触るときは常に非同期呼び出しをする (その処理を含む関数も入れ子で非同期呼び出しする) と決めておけば迷うことなく、コードの実行順序も上から下に見たとおりの順番で実行されて読みやすくなります。
-
-### Note:
-
-本チュートリアルで非同期処理を async 関数に統一している理由は、記述がシンプルで初心者も読み書きしやすいコードになるからです。この機能は比較的新しい JavaScript 言語機能 (ECMASCript 2017) ですが、Raspi 上で使う上で問題はありません ([様々なウェブブラウザでのサポート状況](https://caniuse.com/#feat=async-functions))。
+ハードウェアを制御するときは基本的に非同期呼び出しをする (その処理を含む関数も入れ子で非同期呼び出しする) と決めておけば迷うことなく、コードの実行順序も上から下に見たとおりの順番で実行されて読みやすくなります。
 
 ## 処理の解説
 
 今回の JavaScript ファイルで、最初に呼び出されるコードは `await navigator.requestGPIOAccess()` です。
 ここで先ほど出て来た [Web GPIO API](http://browserobo.github.io/WebGPIO) を使い、`gpioAccess` という GPIO にアクセスするためのインタフェースを取得しています。
 
-**関数の呼び出しに `await` 接頭詞を付けることに注意してください。** この関数は非同期関数ですが、その処理の完了を待ってから次の処理をする必要があります。そして `await` 接頭詞を使うので、それを含む関数(`mainFunction()`)は async 接頭詞を付けて非同期関数として定義しなければなりません。
+<script src="https://emgithub.com/embed.js?target=https%3A%2F%2Fgithub.com%2Fchirimen-oh%2Fchirimen%2Fblob%2F5c520c21820304901553f2adf22da1012f54722d%2Fgc%2Fgpio%2FLEDblink%2Fmain.js%23L4-L4&style=github&showBorder=on&showFileMeta=on"></script>
+
+**関数の呼び出しに `await` 接頭詞を付けることに注意してください。** この関数は非同期関数ですが、その処理の完了を待ってから次の処理をする必要があります。そして `await` 接頭詞を使うので、それを含む関数(`main()`)は async 接頭詞を付けて非同期関数として定義しなければなりません。
 
 コードを読み進める前に、ここで少し GPIO について記載しておきたいと思います。
 
@@ -260,9 +254,9 @@ CHIRIMEN Raspi はウェブブラウザをプログラムの実行環境とし�
 
 [GPIO](https://ja.wikipedia.org/wiki/GPIO)は、「General-purpose input/output」の略で汎用的な入出力インタフェースのことです。
 
-Raspi に実装されている 40 本のピンヘッダから GPIO を利用することができます。（40 本全てのピンが GPIO として利用できるわけではありません）
+Raspi に実装されている 40 本のピンヘッダから GPIO を利用することができます。
 
-CHIRIMEN Raspi では Raspi が提供する 40 本のピンヘッダのうち、下記緑色のピン(合計 17 本)を Web アプリから利用可能な GPIO として設定しています。
+CHIRIMEN Raspi では Raspi が提供する 40 本のピンヘッダのうち、下記緑色のピン(合計 17 本)が利用可能です。
 
 Raspi の GPIO 端子は、GND 端子との間に、0V もしくは 3.3V の電圧を印加(出力)したり、逆に 0V もしくは 3.3V の電圧を検知(入力)したりすることができます。LED は数 mA の電流を流すことによって点灯できる電子部品のため、印加する電圧を 3.3V(点灯)、0V(消灯) と変化させることで L チカが実現できるのです。
 
@@ -272,39 +266,53 @@ Raspi の GPIO 端子は、GND 端子との間に、0V もしくは 3.3V の電�
 
 ## GPIOPort の処理
 
-さて、コードに戻りましょう。 **`var port = gpioAccess.ports.get(26);` で GPIO の 26 番ポートにアクセスするためのオブジェクト** を取得しています。続いて、 **`await port.export("out")` で GPIO の 26 番を「出力設定」にしています**。これにより LED への電圧の切り替えが可能になっています。
+さて、コードに戻りましょう。 **`const port = gpioAccess.ports.get(26)` で GPIO の 26 番ポートにアクセスするためのオブジェクト** を取得しています。
 
-最後に `await sleep(1000)` で 1000ms = 1 秒 待機させて無限ループをつくることで、 1 秒毎に `port.write(1)` と `port.write(0)` を交互に呼び出し、GPIO 26 番に対する電圧を 3.3V → 0V → 3.3V → 0V と繰り返し設定しています。
+<script src="https://emgithub.com/embed.js?target=https%3A%2F%2Fgithub.com%2Fchirimen-oh%2Fchirimen%2Fblob%2F5c520c21820304901553f2adf22da1012f54722d%2Fgc%2Fgpio%2FLEDblink%2Fmain.js%23L5-L5&style=github&showBorder=on&showFileMeta=on"></script>
 
-LED は一定以上の電圧 (赤色 LED だと概ね 1.8V 程度、青色 LED だと 3.1V 程度) 以上になると点灯する性質を持っていますので、3.3V になったときに点灯、0V になったときに消灯を繰り返すことになります。
+続いて、 **`await port.export("out")` で GPIO の 26 番を「出力設定」にしています**。これにより LED への電圧の切り替えが可能になっています。
+
+<script src="https://emgithub.com/embed.js?target=https%3A%2F%2Fgithub.com%2Fchirimen-oh%2Fchirimen%2Fblob%2F5c520c21820304901553f2adf22da1012f54722d%2Fgc%2Fgpio%2FLEDblink%2Fmain.js%23L7-L7&style=github&showBorder=on&showFileMeta=on"></script>
+
+最後に、無限ループのなかで `await sleep(1000)` によって 1000 ms (1 秒) 待機さ 1 秒ごとに `await port.write(1)` と `await port.write(0)` を交互に呼び出し、GPIO 26 番に加える電圧を 3.3V → 0V → 3.3V → 0V → … と繰り返しています。
+
+<script src="https://emgithub.com/embed.js?target=https%3A%2F%2Fgithub.com%2Fchirimen-oh%2Fchirimen%2Fblob%2F5c520c21820304901553f2adf22da1012f54722d%2Fgc%2Fgpio%2FLEDblink%2Fmain.js%23L9-L17&style=github&showBorder=on&showFileMeta=on"></script>
+
+LED は一定以上の電圧を加え、電流を流すと点灯する性質を持っています。
+つまり、3.3 V を加えたとき点灯し、0 V を加えたとき消灯、これを繰り返すことになります。
+
+#### ヒント: LED の電圧
+
+LED の順方向電圧は色により異なっており、赤色 LED は 1.8V 程度、青色 LED は 3.1V 程度とされています。
+
+## プログラムの流れ
 
 まとめると下図のような流れになります。
 
 {% cloudinary imgs/section0/s.png alt="シーケンス" %}
 
-## example を修正してみよう
+## サンプルコードを編集してみよう
 
-JS Bin の JavaScript のペイン (コードが表示されているところ) をクリックするとカーソルが表示されコード修正も可能です。
-試しにいろいろ変えてみましょう。
+CodeSandbox では、中央のペインをクリックして編集画面にカーソルを置くと、プログラムを編集できます。
 
-- 点滅周期を早くしたり遅くしたりしてみる
-- 点灯する時間と消灯する時間を変えてみる
-- GPIO ポートを他のポートに変えてみる (ジャンパーワイヤも指定番号の GPIO ピンに配線する)
-- index.html にボタンなどのインターフェースを作ってみて、押すと LED が反応するようにする
-- などなど...
+試しにいろいろ変えてみましょう。例としていくつか挙げてみます。
+
+- 点滅周期を早く・遅く
+- 点灯する時間と消灯する時間を変える
+- GPIO ポートを他のポートに変える・配線を変える
+- index.html を編集し、画面の見た目や振る舞いを変える
 
 # まとめ
 
 このチュートリアルでは、下記を実践してみました。
 
 - CHIRIMEN for Raspberry Pi の起動
-- L チカのサンプルを動かしてみた
-- JS Bin で L チカのコードを変更してみた
+- L チカのサンプルコードを動かしてみた
+- CodeSandbox でサンプルコードを編集してみた
 
-このチュートリアルで書いたコードは以下のページで参照できます:
+このチュートリアルで書いたコードは以下のページで参照できます。
 
-- [GitHub リポジトリで参照](https://github.com/chirimen-oh/tutorials/tree/master/raspi/examples/section0)
-- ブラウザで開くページ
-  - [L チカコード (画面は空白です)](examples/section0/s0.html)
+- [GitHub リポジトリで参照](https://github.com/chirimen-oh/chirimen/tree/master/gc/gpio/LEDblink)
+- [CodeSandbox で参照](https://r.chirimen.org/csb-gpio-blink)
 
 次の『[チュートリアル 1. GPIO の使い方](section1.md)』では GPIO の入力方法について学びます。
