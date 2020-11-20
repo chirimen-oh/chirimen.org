@@ -146,7 +146,7 @@ $ i2cdetect -y -r 1
 
 SlaveAddress を確認する i2cdetect には WebI2C を使って実装したものもあります。[https://r.chirimen.org/i2cdetect](https://r.chirimen.org/i2cdetect) をご利用ください。ただし、WebI2C 版 i2cdetect を利用中は他のページから I2C デバイスを操作できません。確認が済んだらタブを閉じるようにしましょう。
 
-## c. example を実行してみる
+## c. サンプルコードを実行してみる
 
 配線と SlaveAddress が確認できましたので、さっそく動かしてみましょう。
 
