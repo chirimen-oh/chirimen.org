@@ -1,9 +1,11 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta charset="utf-8"/>
-    <meta content="width=device-width" name="viewport"/>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width" />
     <title>Section1</title>
+    <script src="https://r.chirimen.org/polyfill.js"></script>
+    <script src="./main.js" defer></script>
     <style>
       #ledView {
         width: 60px;
@@ -12,12 +14,10 @@
         background-color: black;
       }
     </style>
-    <script src="https://r.chirimen.org/polyfill.js"></script>
-    <script src="s1_1.js"></script>
   </head>
 
   <body>
-    <button id="onoff">LED ON/OFF</button>
+    <button id="button">LED ON/OFF</button>
     <div id="ledView"></div>
   </body>
 </html>
