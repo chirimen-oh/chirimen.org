@@ -17,11 +17,11 @@ CHIRIMEN Raspi の基本的な操作方法は「[L チカしてみよう](sectio
 このチュートリアル全体で必要になるハードウェア・部品は下記の通りです。
 
 - [L チカしてみよう](section0.md) に記載の「基本ハードウェア」と「L チカに必要となるパーツ」
-- タクトスイッチ (2pin, 4pin を使う場合は向きに注意) x 1
+- 2pin タクトスイッチ (4pin を使う場合は向きに注意) x 1
 - ジャンパーワイヤー (オス-メス) x 5
 - [Nch MOSFET (2SK4017)](http://akizukidenshi.com/catalog/g/gI-07597/)
-- リード抵抗 (1KΩ) x 1
-- リード抵抗 (10KΩ) x 1
+- [リード抵抗 (1KΩ)](https://akizukidenshi.com/catalog/g/gR-07980/) x 1
+- [リード抵抗 (10KΩ)](https://akizukidenshi.com/catalog/g/gR-07990/) x 1
 - [ちびギアモータ](https://tiisai.dip.jp/?p=2676) x 1
 
 ## CHIRIMEN for Raspberry Pi の起動と L チカの確認
