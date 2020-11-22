@@ -362,10 +362,10 @@ LED が点灯する代わりに、ギアモータを動かせるようになり�
 
 - [GitHub リポジトリで参照](https://github.com/chirimen-oh/tutorials/tree/master/raspi/examples/section1)
 - ブラウザで開くページ (各ステップ)
-  - [画面のボタンで画面の要素の色を変える](examples/section1/s1_1/)
-  - [他面のボタンで LED が光り画面の要素の色も変わる](examples/section1/s1_2/)
-  - [マウスで画面のボタンを押している間だけ LED が光る](examples/section1/s1_3/)
-  - [タクトスイッチを押している間だけ LED が光る](examples/section1/s1_4/)
-  - [画面のボタンまたはタクトスイッチを押している間だけ LED が光る](examples/section1/s1_5/)
+  - [画面のボタンで画面の要素の色を変える](examples/section1/s1_1/) - [CodeSandBox で参照](https://codesandbox.io/s/github/chirimen-oh/tutorials/tree/master/raspi/examples/section1/s1_1/?module=main.js)
+  - [他面のボタンで LED が光り画面の要素の色も変わる](examples/section1/s1_2/) - [CodeSandBox で参照](https://codesandbox.io/s/github/chirimen-oh/tutorials/tree/master/raspi/examples/section1/s1_2/?module=main.js)
+  - [マウスで画面のボタンを押している間だけ LED が光る](examples/section1/s1_3/) - [CodeSandBox で参照](https://codesandbox.io/s/github/chirimen-oh/tutorials/tree/master/raspi/examples/section1/s1_3/?module=main.js)
+  - [タクトスイッチを押している間だけ LED が光る](examples/section1/s1_4/) - [CodeSandBox で参照](https://codesandbox.io/s/github/chirimen-oh/tutorials/tree/master/raspi/examples/section1/s1_4/?module=main.js)
+  - [画面のボタンまたはタクトスイッチを押している間だけ LED が光る](examples/section1/s1_5/) - [CodeSandBox で参照](https://codesandbox.io/s/github/chirimen-oh/tutorials/tree/master/raspi/examples/section1/s1_5/?module=main.js)
 
 次の『[チュートリアル 2. センサーを使ってみよう](section2.md)』では Web I2C API を使ってセンサーの値を読み出す手順を学習します。
