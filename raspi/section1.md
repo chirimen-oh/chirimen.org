@@ -248,6 +248,7 @@ while (true) {
   await sleep(100); // 100 ms 待機
 }
 
+// sleep() は polyfill 内で定義済みなので省略可能:
 function sleep(ms) {
   return new Promise(function(resolve) {
     setTimeout(resolve, ms);
