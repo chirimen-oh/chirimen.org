@@ -75,12 +75,21 @@ CHIRIMEN for Raspberry Pi 対応デバイスのドライバ・回路図・サン
 Basic GPIO/I2C Examle のデバイスは CHIRIMEN Raspi の OS イメージ公開前に動作検証をしている CHIRIMEN Certified デバイスです。
 Advanced Example は個人レベルで動作確認して追加されている contrib デバイスです。いずれも元のソースコードは [こちら](https://github.com/chirimen-oh/chirimen/tree/master/gc) に収録されています。
 
-## Appendix, Tips, FAQ, Links etc...
+## 予備知識
 
-JavaScript 未経験者・初心者向けの資料集や、良くある質問、Tips やテクニック、デバッグとトラブルシューティングのページを用意しています。
+CHIRIMEN for Raspberry Pi を利用するに際して、知っておくと良い予備知識やツールの使い方が学べるドキュメントです。
 
+- [GitHub ハンズオン](https://github.com/webiotmakers/github-handson)
+  - GitHub の基本的な使い方の分かるハンズオン資料です。
+- [CodeSandbox ガイド](https://csb-jp.github.io/)
+  - ブラウザ上で開発する CodeSandbox の使い方を確認しましょう。
 - [JavaScript 初学者向け資料集](/js/)
   - JavaScript 1 Day 講習資料、JavaScript 本格入門書、チートシートなどはこちら
+
+## Appendix, Tips, FAQ, Links etc...
+
+良くある質問、よく使うテクニック、困ったときのデバッグとトラブルシューティングや教える側が知っておくべきことなどをまとめています。
+
 - [良くある質問](faq.md)
 - [Tips・テクニック集](tips.md)
 - [デバッグ・トラブルシューティング](debug.md)
