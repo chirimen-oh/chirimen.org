@@ -29,14 +29,14 @@ CHIRIMEN for Raspberry Pi の起動に最低限必要となる基本ハードウ
 - Raspberry Pi 本体 × 1
   - CHIRIMEN for Raspberry Pi は [Raspberry Pi 3 Model B](https://www.raspberrypi.org/products/raspberry-pi-3-model-b/) 、 [Raspberry Pi 3 Model B+](https://www.raspberrypi.org/products/raspberry-pi-3-model-b-plus/) 、 [Raspberry Pi 4 Model B](https://www.raspberrypi.org/products/raspberry-pi-4-model-b/) の 3 モデルに対応しています。
   - 補足: Raspberry Pi 3 Model A+ も対応見込みですが執筆時点では未検証です
-- AC アダプタ + micro B USB 電源ケーブル × 1
-  - 例: [Raspberry Pi 用電源セット(5V 3.0A) - Pi3 フル負荷検証済](https://www.physical-computing.jp/product/1171)
-  - 注意: 一般的なスマホ向けのもの (1.0〜2.0A 程度の出力) でも起動できますが、公式には 3.0A を必要としており、PC からの給電などでは電力不足で性能低下や不安定な原因になります。microUSB 端子は強度が高くないためスイッチ付きで抜き差し回数を少なくできるケーブル付のものがオススメです
+- AC アダプタ + micro B USB 電源ケーブル または Type-C USB 電源ケーブル × 1
+  - 例: [Raspberry Pi 3 用電源セット(5V 3.0A) - Pi3 フル負荷検証済](https://www.physical-computing.jp/product/1171)
+  - 例: [Raspberry Pi 4 用電源セット(5V 3.0A) - Pi4 フル負荷検証済](https://www.physical-computing.jp/product/2088)
+  - 注意 1: 一般的なスマホ向けのもの (1.0〜2.0A 程度の出力) でも起動できますが、公式には 3.0A を必要としており、PC からの給電などでは電力不足で性能低下や不安定な原因になります。microUSB 端子は強度が高くないためスイッチ付きで抜き差し回数を少なくできるケーブル付のものがオススメです
   - 注意 2: Raspi 4 の一部初期ロットでは E-marked チップを搭載している USB(Type C) ケーブルでの給電ができないことが判明しています。詳しくは[こちら](https://jp.techcrunch.com/2019/07/10/2019-07-10-the-raspberry-pi-4-doesnt-work-with-all-usb-c-cables/)をご覧ください。
-- HDMI 入力つきのモニタ (720P の解像度に対応したもの) × 1
-  - モバイルモニタでも文字が見やすいようデフォルト解像度を 720p としています
+- HDMI 入力つきのモニタ × 1
 - HDMI ケーブル (モニタ側の端子と合うものを選んでください) × 1
-  - Raspi 4 では 通常の HDMI 端子 (HDMI Type A) ではなく、マイクロ HDMI 端子 (HDMI Type D) が搭載されているため、対応するケーブルにご注意ください。
+  - RasPi 4 では 通常の HDMI 端子 (HDMI Type A) ではなく、マイクロ HDMI 端子 (HDMI Type D) が搭載されているため、対応するケーブルにご注意ください。
 - USB マウス × 1
 - USB キーボード (日本語配列) × 1
   - 初期設定の日本語 (JIS) 配列以外のキーボードを利用する際は [raspi-config コマンド](http://igarashi-systems.com/sample/translation/raspberry-pi/configuration/raspi-config.html) で変更してください
@@ -46,8 +46,8 @@ CHIRIMEN for Raspberry Pi の起動に最低限必要となる基本ハードウ
 
 [{% cloudinary imgs/section0/raspberry-pi-4-installation-of-heat-sink.png alt="ヒートシンクの取り付け" %}](imgs/section0/raspberry-pi-4-installation-of-heat-sink.png)
 
-Raspberry Pi の CPU は非常に高温になるため冷却しなければなりません。
-あらかじめ CPU には熱伝達テープでヒートシンクを取り付けておきましょう。
+Raspberry Pi (特に Raspi 4) の CPU は非常に高温になるため冷却しなければなりません (冷却不足では高負荷時に CPU 速度が大幅に低下します)。
+あらかじめ CPU には熱伝達シールでヒートシンクを取り付けておきましょう。
 
 ### L チカに必要となるパーツ
 
@@ -64,7 +64,7 @@ Raspberry Pi の CPU は非常に高温になるため冷却しなければな�
 
 起動する前に、SD カードへ CHIRIMEN Raspi 環境（[起動イメージファイル](https://r.chirimen.org/sdimage)）を書き込んでおく必要があります。
 
-手順は [CHIRIMEN for Raspberry Pi 3 の SD カードを作成する](sdcard.md) を参照してください。
+手順は [CHIRIMEN for Raspberry Pi の SD カードを作成する](sdcard.md) を参照してください。
 
 # 3. CHIRIMEN for Raspberry Pi を起動してみよう
 
@@ -92,11 +92,11 @@ Raspberry Pi の CPU は非常に高温になるため冷却しなければな�
 
 違う画面が表示される場合には、CHIRIMEN Raspi とは異なる SD カードで起動された可能性があります。その場合は、[SD カードの作成手順](sdcard.md) に従って CHIRIMEN 用のイメージを作成してください。
 
-電源を入れても何も画面に映らないような場合には、配線が誤っている可能性があります。配線を再度確認してみましょう。LED が点灯していない場合、AC アダプタまで電気が来ていないかも知れません。[トラブルシューティングページ](debug.md) も参考にしてください。
+電源を入れても何も画面に映らないような場合は配線も再確認してみましょう。Raspi ボード上の LED が点灯していない場合、AC アダプタまで電気が来ていないかも知れません。[トラブルシューティングページ](debug.md) も参考にしてください。
 
 ## WiFi の設定
 
-デスクトップ画面が表示されたら、さっそく WiFi を設定して、インターネットに繋げてみましょう。
+画面が無事表示されたら、さっそく WiFi を設定して、インターネットに繋げましょう。
 CHIRIMEN Raspi では、ネットワークに繋がずローカルファイルでプログラミングも可能ですが、[CodeSandbox](https://codesandbox.io/) などブラウザ上で動くエディターを活用することで、より簡単にプログラミングできます。
 
 ぜひ、最初にインターネット接続しておきましょう。WiFi の設定は、タスクバーの右上の WiFi アイコンから行えます。
@@ -132,13 +132,13 @@ L チカのための配線図は、基本的な作例集（examples）と一緒�
 
 LED のリード線の方向に注意しながら、この図の通りにジャンパーワイヤやブレッドボードを使って配線してみましょう。
 
-配線図では LED の下側のリード線が折れ曲がり長い方がアノード (+側) です。`schematic.png`で使用されている抵抗は"120Ω"です。使用する抵抗は、LED にあったものを使用してください。
+配線図では LED の下側のリード線が折れ曲がり長い方がアノード (+側) です。`schematic.png`で使用されている抵抗は "120Ω" ですが、LED に合わせたものであれば他の抵抗値でも構いません。抵抗値によって明るさも変わります。
 
-実際に配線してみると、こんな感じになりました。
-
-{% cloudinary imgs/section0/h.jpg alt="配線してみました" %}
+{% cloudinary imgs/section0/h.jpg alt="配線してみた様子" %}
 
 ### 参考
+
+ブレッドボード、LED や回路の基本はこちらも参考になります:
 
 - [ブレッドボードの使い方](https://www.sunhayato.co.jp/blog/2015/03/04/7)
 - [LED の使い方](https://www.marutsu.co.jp/pc/static/large_order/led)
@@ -148,14 +148,13 @@ LED のリード線の方向に注意しながら、この図の通りにジャ�
 
 ## サンプルコードを実行してみる
 
-配線がうまくできたら、さっそく動かしてみましょう。
-L チカのためのサンプルコードは先ほどの配線図と同じフォルダに格納されています。
+配線ができたら、動かしてみましょう。 L チカのサンプルコードは配線図と同じフォルダに格納されています。
 
 ```
 /home/pi/Desktop/gc/gpio/LEDblink/index.html
 ```
 
-`index.html` をダブルクリックすると、ブラウザが起動し、先ほど配線した LED が点滅しているはずです！
+`index.html` をダブルクリックすると、ブラウザが起動し、先ほど配線した LED が点滅しはじめます！
 
 ## ブラウザ画面
 
@@ -171,28 +170,27 @@ L チカに成功しましたか？！
 
 ## うまくいかなかったら?
 
-配線に誤りがないか (とくにジャンパーワイヤを指す Raspi 側のピン)、複数のタブで同じ L チカコードを開いていないかなどを確認しても原因が分からない場合、`F12` キーやブラウザのメニュー → 「その他のツール」→「デベロッパーツール」で `Console` を開いて何かエラーメッセージが出ていないか確認してください。詳しくは [トラブルシューティングページ](debug.md) を参考にしてください。
+配線に誤りがないか (特にジャンパーワイヤを刺す Raspi 側のピン)、複数のタブで同じ L チカコードを開いていないかなど確認してください。原因が分からない場合、`F12` キーやブラウザのメニュー → 「その他のツール」→「デベロッパーツール」で `Console` を開いてエラーメッセージが出ていないか確認してください。詳しくは [トラブルシューティングページ](debug.md) を参考にしてください。
 
 # 5. コードを眺めてみよう
 
-さきほどは、L チカをデスクトップにある example から実行してみました。実は、CHIRIMEN Raspi にはもうひとつ、「オンラインの example」が用意されており、オンライン版ではコードを書き換えながら学習を進められます。
+さきほどは、L チカをデスクトップ (オフライン・ローカル) の example から実行してみました。実は、CHIRIMEN Raspi にはもうひとつ、「オンラインの example」が用意されており、オンライン版ではブラウザ上でコードを書き換えながら試せます。
 
 今度はオンラインの example からさきほどと同じ L チカを実行してコードを眺めてみましょう。
 
 #### 注意: 複数のブラウザウィンドウやタブでは実行できない
 
-CHIRIMEN Raspi での GPIO などの操作には排他制御があり、同一の GPIO ピンを複数のプログラムから同時操作はできません。同一ページもしくは同一ピンを使うページを同時に開くと正しく動作しません。
+CHIRIMEN Raspi での GPIO などの操作には排他制御があり、同一の GPIO ピンを複数のプログラム (ページ・タブ) から同時操作できません。同一ページもしくは同一ピンを使うページを同時に開くと正しく動作しません。
 
-**サンプルコードを実行する前に、必ず先ほど開いた `file:///home/pi/Desktop/gc/gpio/LEDblink/index.html` のブラウザウィンドウ (タブ) は閉じてください。先に既存ウィンドウを閉じておかないと、サンプルが正常に動作しなくなります。**
+**サンプルコードを実行する前に、必ず先ほど開いた `file:///home/pi/Desktop/gc/gpio/LEDblink/index.html` のブラウザウィンドウ (タブ) は閉じてください。**
 
 {% cloudinary imgs/section0/b.png alt="ブラウザの再起動" %}
 
 ## サンプルコードの実行
 
-それでは、さっそくサンプルコードを実行してみます。
-配線は、さきほどのままで OK です。
+それでは、さっそくサンプルコードを実行してみます。配線は、さきほどのままで OK です。
 
-[サンプルコードへのリンク](https://r.chirimen.org/csb-gpio-blink)は、ブラウザを起動後、ブックマークバーにある[Examples](https://r.chirimen.org/examples)のページの中にあります。
+[サンプルコードへのリンク](https://r.chirimen.org/csb-gpio-blink)は、ブラウザを起動後、ブックマークバーにある[Examples](https://r.chirimen.org/examples)のページ中にあります。
 
 {% cloudinary imgs/section0/link-to-led-blink-csb.png alt="https://r.chirimen.org/csb-gpio-blink へのリンク" %}
 
@@ -220,24 +218,24 @@ CHIRIMEN Raspi での GPIO などの操作には排他制御があり、同一�
 
 ### ヒント: JavaScript の基礎
 
-CHIRIMEN Raspi はウェブブラウザをプログラムの実行環境として用いてシステムを構築します。ウェブブラウザが実行できるプログラムのプログラミング言語は JavaScript です。JavaScript を学んだことのない人は、まず[こちらの資料「JavaScript 初学者向け資料集」](/js/readme.md)を参照してください。
+CHIRIMEN Raspi はウェブブラウザ (または Node.js) をプログラムの実行環境に利用します。このときに使うプログラミング言語は JavaScript です。JavaScript に慣れていない人は、[こちらの資料「JavaScript 初学者向け資料集」](../js/readme.md)も参考にしてください。
 
 ## 非同期処理について
 
-物理デバイス制御やネットワーク通信などを行う際には、応答待ち中にブラウザが停止しないよう非同期処理を使う必要があります。
-本チュートリアルではこれを [async 関数](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/async_function) で記述しています。非同期処理を知らない人や async 関数を使ったことがない人は、必要に応じて[こちらの資料「非同期処理 (async await 版)」](/js/async.md) も参照してください。
+物理デバイス制御やネットワーク通信などでは、応答待ち中にブラウザが停止しないよう非同期処理を使う必要があります。
+本チュートリアルではこれを [async 関数](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/async_function) で記述しています。async 関数による非同期処理に慣れていない人は、[こちらの資料「非同期処理 (async await 版)」](../js/async.md) も参考にしてください。
 
 非同期処理を使いこなすのは難しいですが、本チュートリアルでは次のルールでコードを書けば大丈夫です:
 
 - **非同期関数の呼び出し時には前に `await` を付けて呼び出す**
-  - 非同期関数呼び出し前に `await` を付けるとその処理が終わってから次のコードが実行されます
-  - GPIO や I2C の初期化、ポートの設定などは非同期関数なので `await` キーワードを付けて呼び出します
+  - 非同期関数呼び出し前に `await` を付けると、その処理の完了を待ってから次のコードが実行されます
+  - GPIO/I2C の初期化、ポートの設定などは非同期処理なので `await` キーワードを付けて呼び出します
 - **非同期処理を含む関数は前に `async` を付けて非同期関数として定義する**
-  - `async function 関数名() { ... }` のように頭に `async` を付けると非同期関数となります
+  - `async function 関数名() { ... }` のように頭に `async` を付けるだけで非同期関数になります
 
-非同期関数を `await` なしで呼び出すと返り値は Promise オブジェクトとなるため Promise について理解しておかなければ返り値の判断や実行順序が入れ替わって意図せぬ挙動になります。たとえば、ポートの初期化を `await` なしで呼び出すと、初期化完了前に次の行の処理を続け、初期化未完了のハードウェアを操作しようとして失敗したり、ネットワーク通信完了前に受信データを読みだそうとして失敗します。
+非同期関数を `await` なしで呼び出すと返り値が Promise オブジェクトとなり、Promise を理解しないと返り値の判断や実行順序が入れ替わり意図せぬ挙動になります。例えば、ポートの初期化を `await` なしで呼ぶと、ポート初期化前に初期化未完了のハードウェアを操作しようとして失敗したりします。
 
-ハードウェアを制御するときは基本的に非同期呼び出しをする (その処理を含む関数も入れ子で非同期呼び出しする) と決めておけば迷うことなく、コードの実行順序も上から下に見たとおりの順番で実行されて読みやすくなります。
+ハードウェアを制御するときは基本的に非同期呼び出しをする (その処理を含む関数もまた非同期で呼びす) と決めておけば迷うことなく、コードの実行順序も上から下に見たとおりの順番で実行され読み書きしやすくなります。
 
 ## 処理の解説
 
@@ -246,9 +244,9 @@ CHIRIMEN Raspi はウェブブラウザをプログラムの実行環境とし�
 
 <script src="https://emgithub.com/embed.js?target=https%3A%2F%2Fgithub.com%2Fchirimen-oh%2Fchirimen%2Fblob%2F5c520c21820304901553f2adf22da1012f54722d%2Fgc%2Fgpio%2FLEDblink%2Fmain.js%23L4-L4&style=github&showBorder=on&showFileMeta=on"></script>
 
-**関数の呼び出しに `await` 接頭詞を付けることに注意してください。** この関数は非同期関数ですが、その処理の完了を待ってから次の処理をする必要があります。そして `await` 接頭詞を使うので、それを含む関数(`main()`)は async 接頭詞を付けて非同期関数として定義しなければなりません。
+**関数の呼び出しに `await` 接頭詞を付けることに注意してください。** この関数は非同期関数で、その処理の完了を待ってから次の処理をする必要があります。また、`await` 接頭詞を使うコードを含むために、それを含む関数 `main()` は async 接頭詞付きの非同期関数として定義する必要があります。
 
-コードを読み進める前に、ここで少し GPIO について記載しておきたいと思います。
+コードを読み進める前に、ここで少し GPIO について説明します。
 
 ## GPIO とは
 
