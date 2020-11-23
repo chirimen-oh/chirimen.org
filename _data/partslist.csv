@@ -26,13 +26,13 @@ I2C,サーボモータ・DCモータ コントローラ,PCA9685,https://www.swit
 I2C,サーボモータ,SG90 Servo,https://akizukidenshi.com/catalog/g/gM-08761/,アームを指定した角度をに動かすことのできる部品です,,https://r.chirimen.org/examples/#I2C-PCA9685,,https://akizukidenshi.com/download/ds/towerpro/SG90_a.pdf,,,,,,
 I2C,サーボモータ・DCモータ コントローラ,PCA9685 PWM,https://www.switch-science.com/catalog/961/,詳細はExamplesをご覧ください,partsImgs/PCA9685.jpg,https://r.chirimen.org/examples/#GPIO-I2C-PWMHBridge-1,,,,,,,,
 I2C,温湿度複合センサ,SHT30/31,,温度と湿度の両方が測定可能なセンサ,partsImgs/SHT30.jpg,http://chirimen.org/chirimen/gc/top/examples/#I2C-SHT30,,,,,,,,https://chirimen.org/chirimen-micro-bit/examples/#I2C7_SHT30
-I2C,色センサ,TCS34725,,I2C接続の色センサー,partsImgs/TCS34725.jpg,http://chirimen.org/chirimen/gc/top/examples/#I2C-TCS34725,,,,,,,,
-I2C,レーザー距離センサ,VL53L1X,,VL53L0Xより高出力長距離タイプ,partsImgs/VL53L1X.jpg,http://chirimen.org/chirimen/gc/top/examples/#I2C-VL53L1X,,,,,,,,https://chirimen.org/chirimen-micro-bit/examples/#I2C_VL53L1X
-I2C,電流センサ,INA219,,比較的大きなDC電流を測定するセンサ,partsImgs/INA219.jpg,http://chirimen.org/chirimen/gc/top/examples/#I2C-INA219,,,,,,,,https://chirimen.org/chirimen-micro-bit/examples/#I2C_INA219
-I2C,非接触温度センサ,MLX90614,,赤外線を利用した非接触型温度センサー,partsImgs/MLX90614.jpg,http://chirimen.org/chirimen/gc/top/examples/#I2C-MLX90614,,,,,,,,https://chirimen.org/chirimen-micro-bit/examples/#I2C_MLX90614
-I2C,近接・環境光・ジェスチャーセンサー,APDS9960,,近接・環境光・ジェスチャーを読み取るセンサー,partsImgs/null,http://chirimen.org/chirimen/gc/top/examples/#I2C-APDS9960,,,,,,,,
-I2C,多目的インターフェース,seesaw,,デジタル・アナログ入力・PWM出力・NeopixelLEDドライブ等の機能を持つ多目的ボード,partsImgs/SeeSaw.jpg,http://chirimen.org/chirimen/gc/top/examples/#I2C-seesaw,,,,,,,,
-I2C,照度センサー,BH1750,,照度センサー,partsImgs/BH1750.jpg,http://chirimen.org/chirimen/gc/top/examples/#I2C-BH1750,,,,,,,,https://chirimen.org/chirimen-micro-bit/examples/#I2C_BH1750
+I2C,色センサ,TCS34725,https://akizukidenshi.com/catalog/g/gM-08220/,I2C接続の色センサー,partsImgs/TCS34725.jpg,http://chirimen.org/chirimen/gc/top/examples/#I2C-TCS34725,,,,,,,,
+I2C,レーザー距離センサ,VL53L1X,https://www.switch-science.com/catalog/3938/,VL53L0Xより高出力長距離タイプ,partsImgs/VL53L1X.jpg,http://chirimen.org/chirimen/gc/top/examples/#I2C-VL53L1X,,,,,,,,https://chirimen.org/chirimen-micro-bit/examples/#I2C_VL53L1X
+I2C,電流センサ,INA219,https://akizukidenshi.com/catalog/g/gM-08221/,比較的大きなDC電流を測定するセンサ,partsImgs/INA219.jpg,http://chirimen.org/chirimen/gc/top/examples/#I2C-INA219,,,,,,,,https://chirimen.org/chirimen-micro-bit/examples/#I2C_INA219
+I2C,非接触温度センサ,MLX90614,https://www.sengoku.co.jp/mod/sgk_cart/detail.php?code=EEHD-4EZP,赤外線を利用した非接触型温度センサー,partsImgs/MLX90614.jpg,http://chirimen.org/chirimen/gc/top/examples/#I2C-MLX90614,,,,,,,,https://chirimen.org/chirimen-micro-bit/examples/#I2C_MLX90614
+I2C,近接・環境光・ジェスチャーセンサー,APDS9960,https://www.switch-science.com/catalog/3531/,近接・環境光・ジェスチャーを読み取るセンサー,partsImgs/null,http://chirimen.org/chirimen/gc/top/examples/#I2C-APDS9960,,,,,,,,
+I2C,多目的インターフェース,seesaw,https://www.switch-science.com/catalog/3551/,デジタル・アナログ入力・PWM出力・NeopixelLEDドライブ等の機能を持つ多目的ボード,partsImgs/SeeSaw.jpg,http://chirimen.org/chirimen/gc/top/examples/#I2C-seesaw,,,,,,,,
+I2C,照度センサー,BH1750,https://www.amazon.co.jp/dp/B011IGZD7E,照度センサー,partsImgs/BH1750.jpg,http://chirimen.org/chirimen/gc/top/examples/#I2C-BH1750,,,,,,,,https://chirimen.org/chirimen-micro-bit/examples/#I2C_BH1750
 GPIO,LED,赤色LED,https://akizukidenshi.com/catalog/g/gI-00624/,通電すると光る部品です(必ず抵抗を挟んで利用してください),partsImgs/LED.jpg,https://r.chirimen.org/examples/#GPIO-Blink,,,,,,,,https://chirimen.org/chirimen-micro-bit/examples/#GPIO1
 GPIO,LED,黄色LED,https://akizukidenshi.com/catalog/g/gI-00626/,通電すると光る部品です(必ず抵抗を挟んで利用してください),partsImgs/LED.jpg,https://r.chirimen.org/examples/#GPIO-Blink,,,,,,,,https://chirimen.org/chirimen-micro-bit/examples/#GPIO1
 GPIO,LED,黄緑色LED,https://akizukidenshi.com/catalog/g/gI-00625,通電すると光る部品です(必ず抵抗を挟んで利用してください),partsImgs/LED.jpg,https://r.chirimen.org/examples/#GPIO-Blink,,,,,,,,https://chirimen.org/chirimen-micro-bit/examples/#GPIO1
