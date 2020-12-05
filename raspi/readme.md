@@ -99,9 +99,9 @@ CHIRIMEN for Raspberry Pi を利用するに際して、知っておくと良い
 
 本チュートリアルは日々更新していますが、使用機材や手順を大きく変更することもあります。お手持ちの機材が古い場合や、以前学習したときのものを参照したい場合、アーカイブサイトをご覧ください。
 
-- [2019 年度のスターターキットを利用するチュートリアル](https://webiot-2019--tutorial-chirimen-org.netlify.app/raspi/)
+- [2019 年度のスターターキットを利用するチュートリアル](https://webiot-2019--chirimen-org.netlify.app/raspi/)
   - [Web x IoT Makers Challenge 2019-20](https://webiotmakers.github.io/2019/) で採用されていたバージョンです。
-- [2018 年度のスターターキットを利用するチュートリアル](https://webiot-2018--tutorial-chirimen-org.netlify.app/raspi3/ja/)
+- [2018 年度のスターターキットを利用するチュートリアル](https://webiot-2018--chirimen-org.netlify.app/raspi3/ja/)
   - DC Fan を含む、初期スターターキットを使うチュートリアルです。
   - [Web x IoT Makers Challenge 2018-19](https://webiotmakers.github.io/2018/) で採用されていたバージョンです。
 - [オリジナルチュートリアル (Qiita 版)](deprecated.md)
