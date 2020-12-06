@@ -67,6 +67,8 @@ Raspberry Pi との接続方法については、下記回路図を参照くだ�
 
 {% cloudinary imgs/section4/schematic_new.png alt="回路図" %}
 
+注意! 上記の配線図は GND 配線が不足しています。図を差し替えるまでは [こちらの画像](https://user-images.githubusercontent.com/188166/101273839-6282bc80-37dc-11eb-8741-9ac208b3d1a9.png) を参照して GND も配線した状態で動かしてください。
+
 ## b. 接続確認
 
 今回の回路用のコードはまだ書いていませんので、下記方法で配線の確認をおこなっておきましょう。
