@@ -41,7 +41,7 @@ LED と温度センサーを使ってみる最小限のお試しページです�
 - [4. GPIO/I2C のまとめ](section4.md)
   - これまでの総括として GPIO と I2C の両方を組み合わせて動かしてみます。
 
-ここまでできたら Example 集を見ていろいろなデバイスを試したり自分で好きなものを作ってみましょう。
+ここまでできたら [Example 集](https://r.chirimen.org/examples) を見ていろいろなデバイスを試したり自分で好きなものを作ってみましょう。
 
 ## 発展編
 
@@ -72,8 +72,7 @@ CHIRIMEN for Raspberry Pi 対応デバイスのドライバ・回路図・サン
 - [Advanced Example](https://r.chirimen.org/examples#advanced)
 - [Remote (IoT) Example](https://chirimen.org/chirimen/gc/top/examples/#remote)
 
-Basic GPIO/I2C Examle のデバイスは CHIRIMEN Raspi の OS イメージ公開前に動作検証をしている CHIRIMEN Certified デバイスです。
-Advanced Example は個人レベルで動作確認して追加されている contrib デバイスです。いずれも元のソースコードは [こちら](https://github.com/chirimen-oh/chirimen/tree/master/gc) に収録されています。
+それぞれ回路図を確認して配線した上で「デモ」を開いて実行したり、「CSB」からエディタを開いて書き換えながら試してください。I2C デバイスは同じ型番でも I2C アドレスが異なる場合があります。動かない場合は i2c detect でアドレスを確認してみてください。元のソースコードは [こちら](https://github.com/chirimen-oh/chirimen/tree/master/gc) に収録されています。
 
 ## 予備知識
 
