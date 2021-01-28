@@ -103,7 +103,7 @@ CHIRIMEN with micro:bit （以下「CHIRIMEN microbit」）を使ったプログ
 
 ![ADT7410接続中](imgs/ADT7410detect.png)
 
-`48`という表示が見えます。これは 16 進数表示であり `0x48` という意味です。`0x48` は、ADT7410 の SlaveAddress と思われますが、念のためデータシートも確認してみましょう。(19,1eは常に表示されるSlaveAddressで、今はひとまず無視してください。)
+`48`という表示が見えます。これは 16 進数表示であり `0x48` という意味です。`0x48` は、ADT7410 の SlaveAddress と思われますが、念のためデータシートも確認してみましょう。((micro:bit V1.5の場合) 19,1eは常に表示されるSlaveAddressで、今はひとまず無視してください。)
 
 > [ADT7410 のデータシート](http://www.analog.com/media/en/technical-documentation/data-sheets/ADT7410.pdf)
 
