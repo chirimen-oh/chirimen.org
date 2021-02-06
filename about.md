@@ -1,27 +1,56 @@
 ## CHIRIMEN について
 
-CHIRIMEN とは、Web ブラウザからハードウェアを制御するプロトタイピング環境です。
+CHIRIMEN とは、Web ブラウザや Node.js の JavaScript からハードウェアを制御するプロトタイピング環境です。
 
-CHIRIMEN コミュニティと W3C の [Browsers and Robotics コミュニティグループ](https://www.w3.org/community/browserobo/)では、JavaScript で Web アプリから電子パーツを直接制御できる低レベルハードウェア制御 API ([WebGPIO API](http://browserobo.github.io/WebGPIO) や [WebI2C API](http://browserobo.github.io/WebI2C) など) の標準化に向けての検討や、それらの API を実際の開発ボード上で試せるようにするプロトタイプ環境の開発を行っています。
+CHIRIMEN コミュニティと W3C の [Browsers and Robotics コミュニティグループ](https://www.w3.org/community/browserobo/)では、JavaScript で Web アプリから電子パーツを直接制御できる低レベルハードウェア制御 API ([WebGPIO API](http://browserobo.github.io/WebGPIO) や [WebI2C API](http://browserobo.github.io/WebI2C) など) の標準化に向けての検討・提案や、それらの API を実際の開発ボード上で試せるようにするプロトタイプ環境の実装を行っています。
 
 Web ページ中の JavaScript で直接ハードを制御できる環境を実現することで、既存の Web 関連の知識・環境・サービスをすべて活かしたまま、同じプログラムの中で簡単に画面やサービスと電子パーツを制御可能になります。電子パーツの制御だけのために専用のツールや開発環境を用意したり、複数の言語やプログラムを連携した複雑な仕組みを理解して作る必要がないため、素早くプロトタイピングを行ったり、プログラミング初学者が IoT の基礎を学ぶ上で最適な環境です。
 
-現在、CHIRIMEN コミュニティでは最新の CHIRIMEN 環境を Raspberry Pi 3 などのデバイスに向けに公開・メンテナンスしており、このサイトではその使い方を学ぶためのチュートリアルを掲載しています。
+ブラウザが必要ないときは Node.js からも同じコードでハードを制御可能なよう全てのライブラリとドライバーを実装しています。
 
-## CHIRIMEN for Raspberry Pi 3 で試すには
+現在、CHIRIMEN コミュニティでは最新の CHIRIMEN 環境を Raspberry Pi や micro:bit などのデバイスに向けに公開・メンテナンスしており、このサイトではその使い方を学ぶためのチュートリアルを掲載しています。
 
-Raspberry Pi 3 向けの CHIRIMEN 環境を試すには、[ビルドイメージ](https://r.chirimen.org/sdimage) をダウンロードして [Etcher](https://www.balena.io/etcher/) などを使って [microSD カードに焼き込み](raspi/sdcard.md)、Raspberry Pi 3 もしくは Raspberry Pi 3B+ を起動してください。CHIRIMEN Raspi3 を使ったプロトタイピングに必要な環境とサンプルコードが全てセットアップされた状態のイメージとなっており、このサイトのチュートリアルをすぐにお試し頂けます。
+## CHIRIMEN 環境
 
-[CHIRIMEN for Raspberry Pi3 のチュートリアル](https://tutorial.chirimen.org/raspi/)
+CHIRIMEN 環境を使ってハードとソフトを組み合わせたデバイスを作るには、まず CHIRIMEN 環境が動作する環境を用意して頂く必要があります。以下のようなボードコンピュータをサポートしているので、お好みの環境を選んでご利用ください。
 
-## CHIRIMEN を TY51822r3 で試すには
+- [Raspberry Pi](https://www.raspberrypi.org/)
+  - Raspberry Pi 3 以降をサポートしています。Raspberry Pi 状の Chrome ブラウザ (または Firefox など) でコードの実行もコードの編集もでき、Raspberry Pi 一式があれば、別途パソコンなどを用意する必要はありません。
+- [micro:bit](https://microbit.org/)
+  - micro:bit version 1.5 以降をサポートしています。パソコン (またはスマートフォンなど) の Chrome ブラウザ (または Chromium ベースの Edge や Braveなど) から Web Bluetooth を使って micro:bit に書き込むブリッジプログラムを通じてハードを制御します。別途パソコンが必要でペアリングの手間や通信速度に課題はありますが、安価かつ電池駆動可能で内蔵センサーもいくつか使える点はメリットです。
+- [TY51822r3](https://www.switch-science.com/catalog/2574/)
+  - Switch Scicence の mbed ボード TY51822r3 でも CHIRIMEN 環境をサポートしています。
+  - 但し、販売元での在庫が切れているボードであることもあり、メンテナンス・テストを十分出来ていないところがありますがご容赦ください。
 
-TY51822r3 向けの CHIRIMEN を試すには、[ファームウェアの書き換え](https://tutorial.chirimen.org/ty51822r3/setting#ty51822r3--chirimen-with-ty51822r3-)を行ってください。Raspberry Pi 3 向けの CHIRIMEN とほぼ同様にお試し頂けます。
+各 CHIRIMEN 環境では各ボード毎の Polyfill やブリッジプログラムが異なる以外、基本的には同じコード・同じドライバモジュールで各デバイス・パーツを制御できます。対応デバイス一覧ページをご覧ください。
 
-[CHIRIMEN with ty51822r3 のチュートリアル](https://tutorial.chirimen.org/ty51822r3/)
+- [対応デバイス・パーツのリスト](partslist)
 
-## CHIRIMEN を micro:bit で試すには
+## CHIRIMEN for Raspberry Pi
 
-micro:bit 向けの CHIRIMEN を試すには、[チュートリアルの Hello micro:bit - 準備編](https://tutorial.chirimen.org/microbit/hello_microbit)に従ってmicro:bitにサポートプログラムを書き込みます。その後はRaspberry Pi 3 向けの CHIRIMEN とほぼ同様にお試し頂けます。
+Raspberry Pi 向けの CHIRIMEN 環境を試すには、[ビルドイメージ](https://r.chirimen.org/sdimage) をダウンロードして [Etcher](https://www.balena.io/etcher/) などを使って [microSD カードに焼き込み](raspi/sdcard.md)、Raspberry Pi 3/3B+/4 を起動してください。CHIRIMEN を使ったプロトタイピングに必要な環境とサンプルコードが全てセットアップされた状態のイメージとなっており、チュートリアルをすぐにお試し頂けます。
 
-[CHIRIMEN with micrp:bit のチュートリアル](https://tutorial.chirimen.org/microbit/)
+[CHIRIMEN for Raspberry Pi について](raspi)
+
+Raspberry Pi では [Node.js から使うこともできます](raspi/nodejs)。
+
+## CHIRIMEN with micro:bit
+
+micro:bit 向けの CHIRIMEN を試すには、[Hello micro:bit - 準備編](microbit/hello_microbit)に従ってmicro:bitにサポートプログラムを書き込みます。その後はRaspberry Pi 向けの CHIRIMEN とほぼ同様にお試し頂けます。
+
+[CHIRIMEN with micrp:bit について](microbit)
+
+## CHIRIMEN for TY51822r3
+
+TY51822r3 向けの CHIRIMEN を試すには、[ファームウェアの書き換え](ty51822r3/setting#ty51822r3--chirimen-with-ty51822r3-)を行ってください。Raspberry Pi 3 向けの CHIRIMEN とほぼ同様にお試し頂けます。
+
+[CHIRIMEN with ty51822r3 について](ty51822r3)
+
+## コミュニティについて
+
+何か不明点や困ったことがあれば CHIRIMEN コミュニティの [Slack](http://chirimen-oh.slack.com/) や [Github](https://github.com/chirimen-oh/) の各リポジトリの issues でご連絡・ご相談ください。コミュニティの有志メンバーで
+
+- [Slack](http://chirimen-oh.slack.com/) - 参加は[自己招待フォーム](https://docs.google.com/forms/d/e/1FAIpQLScyfyFZbe7uZbQQzSQq78tRqtRKWXvmDRR_dO39wtzYIQFV5g/viewform)をご利用ください
+- [Github](https://github.com/chirimen-oh/)
+- [Facebook](https://www.facebook.com/groups/chirimen/)
+- [Twitter](https://twitter.com/chirimen_oh)

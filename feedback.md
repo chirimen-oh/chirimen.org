@@ -92,18 +92,18 @@ Github Pages は Jekyll テンプレートが使われており、詳細につ�
   - [Front matter](https://jekyllrb.com/docs/front-matter/) markdown 冒頭の `---` 行で囲まれたメタデータ定義セクション (YAML front matter block) の説明
   - [Includes](https://jekyllrb.com/docs/includes/) 使い回したいパーツがある場合に `_includes` ディレクトリ配下に定義をおいて読み込む方法
 
-## ローカルビルド手順
+## ローカルビルド・編集手順
 
 手元の PC でサイトをビルドしながら編集したい場合、OS に応じた手順で ruby をインストールし `gem install bundler` で bundler もインストールしてください (一般的な Ruby 開発環境構築と同じ)。ruby と bundler まで用意できていたら次の手順でサイトをビルドできます:
 
 ```sh
-git clone git@github.com:chirimen-oh/tutorials.git
-cd tutorials
+git clone git@github.com:chirimen-oh/chirimen.org.git
+cd chirimen.org
 bundle install --path vendor/bundle
 bundle exec jekyll serve
 ```
 
-あとはブラウザで `http://127.0.0.1:4000/` を開いて出力を確認してください。
+あとはブラウザで `http://127.0.0.1:4000/` を開いて出力を確認してください。`_config.yml` など一部のファイルを除き編集・保存すると即時リビルド・反映されます (ライブリロードは入っていないため保存後にブラウザのリロードは必要です)。
 
 ## コミュニティ Slack
 

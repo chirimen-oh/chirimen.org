@@ -2,7 +2,7 @@
 
 ## CHIRIMEN とは
 
-CHIRIMEN とは、Web ブラウザからハードウェア制御も可能にしたプロトタイピング環境です。ブラウザの JavaScript からセンサーや電子パーツを制御できるため、デジタルのソフトとフィジカルなハードを同じプログラムで容易に連携できます。例えば L チカコードはこの通りです:
+CHIRIMEN とは、Web ブラウザや Node.js の JavaScript からハードウェア制御が可能なプロトタイピング環境です。デジタルのソフトとフィジカルなハードを連携するデバイスを JavaScript だけで容易に実現できます。例えば L チカコードはこの通りです:
 
 ```javascript
 window.onload = async function() {
@@ -20,7 +20,7 @@ window.onload = async function() {
 };
 ```
 
-ブラウザだけで簡単に[サンプルコードの確認・編集](https://r.chirimen.org/csb-gpio-blink)から公開までできます。Web 開発の知識と環境が全てそのまま活かせる CHIRIMEN は、素早くハードとソフトを融合させたプロトタイピングを行ったり、[最も人気で実践的なプログラミング言語](https://octoverse.github.com/#top-languages) JavaScript と IoT をプログラミング初心者でも楽しく簡単に学ぶのに最適な環境です。詳しくは [CHIRIMEN について](about.md) ページをご覧ください。
+ブラウザだけで[サンプルコードの確認・編集・フォークして公開](https://r.chirimen.org/csb-gpio-blink)まで簡単にでき、Web 開発の知識と環境がそのまま活かせる CHIRIMEN は、ハードとソフトを融合させたプロトタイピングや、[最も人気で実践的なプログラミング言語](https://octoverse.github.com/#top-languages) JavaScript と IoT を初心者でも楽しく学ぶのに最適です。詳しくは [CHIRIMEN について](about.md) ページをご覧ください。
 
 ## チュートリアル
 

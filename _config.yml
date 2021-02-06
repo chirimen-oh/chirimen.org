@@ -1,14 +1,15 @@
 # see: https://github.com/pages-themes/cayman
 theme: jekyll-theme-cayman
 repository: chirimen-oh/tutorials
-title: '<a href="/" style="color: white">CHIRIMEN チュートリアル</a>'
+title: '<a href="/" style="color: white">CHIRIMEN OPEN HARDWARE</a>'
 description: >-
-  ブラウザからハードを制御する <a href="https://chirimen.org/" style="color: white">CHIRIMEN</a> のチュートリアル集です<br>
-  対応ボード別チュートリアル: <a href="/raspi/" style="color: white">Raspberry Pi</a>
-  / 
-  <a href="/ty51822r3/" style="color: white">TY51822r3</a>
-  / 
-  <a href="/microbit/" style="color: white">micro:bit</a>
+  <!-- ブラウザからハードを制御する CHIRIMEN のコミュニティサイトです<br> -->
+  対応ボード別チュートリアル : <a href="/raspi/" style="color: white">Raspberry Pi</a>
+  / <a href="/microbit/" style="color: white">micro:bit</a>
+  / <a href="/ty51822r3/" style="color: white">TY51822r3</a><br>
+  <a href="/partslist" style="color: white">対応デバイスリスト</a>
+  / <a href="/about" style="color: white">CHIRIMEN について</a>
+  / <a href="https://docs.google.com/forms/d/e/1FAIpQLScyfyFZbe7uZbQQzSQq78tRqtRKWXvmDRR_dO39wtzYIQFV5g/viewform" style="color: white">Slack に参加</a>
 show_downloads: false
 # google_analytics:
 include:
