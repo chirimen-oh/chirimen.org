@@ -5,10 +5,11 @@
 https://tutorial-chirimen-org.netlify.com/*   https://tutorial.chirimen.org/:splat 301!
 
 # redirect from obsolete path to new path
-/raspberrypi/*  /raspi/:splat
-/raspi3/ja/*    /raspi/:splat
-/raspi3/en/*    /en/raspi/:splat
-/raspi3/*  /raspi/:splat
+/raspberrypi/*    /raspi/:splat
+/raspi3/ja/*      /raspi/:splat
+/raspi3/en/*      /en/raspi/:splat
+/raspi3/*         /raspi/:splat
+/raspi/partslist  /partslist
 
 # Proxy polyfill and driver files
 /raspi/examples/polyfill/*  https://chirimen.org/chirimen-raspi3/gc/polyfill/:splat  200
