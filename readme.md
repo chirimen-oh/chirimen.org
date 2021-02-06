@@ -22,15 +22,15 @@ window.onload = async function() {
 
 ブラウザだけで[サンプルコードの確認・編集・フォークして公開](https://r.chirimen.org/csb-gpio-blink)まで簡単にでき、Web 開発の知識と環境がそのまま活かせる CHIRIMEN は、ハードとソフトを融合させたプロトタイピングや、[最も人気で実践的なプログラミング言語](https://octoverse.github.com/#top-languages) JavaScript と IoT を初心者でも楽しく学ぶのに最適です。詳しくは [CHIRIMEN について](about.md) ページをご覧ください。
 
-## チュートリアル
+## CHIRIMEN チュートリアル
 
-上記のように WebGPIO, WebI2C が使える CHIRIMEN 環境は現在 [Rasbpebbry Pi](https://www.raspberrypi.org/), [TY51822r3](https://www.switch-science.com/catalog/2574/), [micro:bit](https://microbit.org/ja/) 向けに実装されています。お持ちのボードに合わせたものをご覧ください:
+上記のように WebGPIO, WebI2C が使える CHIRIMEN 環境は現在 [Rasbpebbry Pi](https://www.raspberrypi.org/), [micro:bit](https://microbit.org/ja/), [TY51822r3](https://www.switch-science.com/catalog/2574/) 向けに実装されています。お持ちのボードに合わせたものをご覧ください:
 
 - [CHIRIMEN for Raspberry Pi](/raspi/)
-- [CHIRIMEN with ty51822r3](/ty51822r3/)
 - [CHIRIMEN with micro:bit](/microbit/)
+- [CHIRIMEN with ty51822r3](/ty51822r3/)
 
-注: Raspberry Pi ではボード上のブラウザからハードを制御しますが、TY51822r3 や micro:bit では PC やスマホなど他の端末のブラウザから Web Bluetooth を使いリモート制御します。
+注: Raspberry Pi ではボード上のブラウザからハードを制御しますが、TY51822r3 や micro:bit ではパソコンやスマホなどのブラウザから Bluetooth 経由でリモート制御します。
 
 <div class="hide-on-production">
   <!-- tutorial.chirimen.org では hide-on-production クラスの中は表示されない -->

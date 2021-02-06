@@ -7,8 +7,9 @@ description: >-
   対応ボード別チュートリアル : <a href="/raspi/" style="color: white">Raspberry Pi</a>
   / <a href="/microbit/" style="color: white">micro:bit</a>
   / <a href="/ty51822r3/" style="color: white">TY51822r3</a><br>
-  <a href="/partslist" style="color: white">対応デバイスリスト</a>
-  / <a href="/about" style="color: white">CHIRIMEN について</a>
+  <a href="/about" style="color: white">CHIRIMEN について</a>
+  / <a href="/partslist" style="color: white">対応デバイスリスト</a>
+  / <a href="/reference" style="color: white">資料集</a>
   / <a href="https://docs.google.com/forms/d/e/1FAIpQLScyfyFZbe7uZbQQzSQq78tRqtRKWXvmDRR_dO39wtzYIQFV5g/viewform" style="color: white">Slack に参加</a>
 show_downloads: false
 # google_analytics:

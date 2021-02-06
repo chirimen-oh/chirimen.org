@@ -85,6 +85,8 @@ CHIRIMEN for Raspberry Pi を利用するに際して、知っておくと良い
 - [JavaScript 初学者向け資料集](/js/)
   - JavaScript 1 Day 講習資料、JavaScript 本格入門書、チートシートなどはこちら
 
+その他、電子工作など一般的な知識は [予備知識・資料集](/reference.md) を参照してください。
+
 ## Appendix, Tips, FAQ, Links etc...
 
 良くある質問、よく使うテクニック、困ったときのデバッグとトラブルシューティングや教える側が知っておくべきことなどをまとめています。
