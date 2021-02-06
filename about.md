@@ -14,12 +14,12 @@ Web ページ中の JavaScript で直接ハードを制御できる環境を実�
 
 CHIRIMEN 環境を使ってハードとソフトを組み合わせたデバイスを作るには、まず CHIRIMEN 環境が動作する環境を用意して頂く必要があります。以下のようなボードコンピュータをサポートしているので、お好みの環境を選んでご利用ください。
 
-- [Raspberry Pi](https://www.raspberrypi.org/)
-  - Raspberry Pi 3 以降をサポートしています。Raspberry Pi 状の Chrome ブラウザ (または Firefox など) でコードの実行もコードの編集もでき、Raspberry Pi 一式があれば、別途パソコンなどを用意する必要はありません。
-- [micro:bit](https://microbit.org/)
-  - micro:bit version 1.5 以降をサポートしています。パソコン (またはスマートフォンなど) の Chrome ブラウザ (または Chromium ベースの Edge や Braveなど) から Web Bluetooth を使って micro:bit に書き込むブリッジプログラムを通じてハードを制御します。別途パソコンが必要でペアリングの手間や通信速度に課題はありますが、安価かつ電池駆動可能で内蔵センサーもいくつか使える点はメリットです。
-- [TY51822r3](https://www.switch-science.com/catalog/2574/)
-  - Switch Scicence の mbed ボード TY51822r3 でも CHIRIMEN 環境をサポートしています。
+- [Raspberry Pi](raspi)
+  - [Raspberry Pi](https://www.raspberrypi.org/) 3 以降をサポートしています。Raspberry Pi 上の Chrome ブラウザ (または Firefox など) でコードの実行もコードの編集もでき、Raspberry Pi 一式があれば、別途パソコンなどを用意する必要はありません。[ブラウザを使わず Node.js からも使えます。](raspi/nodejs)
+- [micro:bit](microbit)
+  - [micro:bit](https://microbit.org/) version 1.5 以降をサポートしています。パソコン (またはスマートフォンなど) の Chrome ブラウザ (または Chromium ベースの Edge や Braveなど) から Web Bluetooth を使って micro:bit に書き込むブリッジプログラムを通じてハードを制御します。別途パソコンが必要でペアリングの手間や通信速度に課題はありますが、安価かつ電池駆動可能で内蔵センサーもいくつか使える点はメリットです。
+- [TY51822r3](ty51822r3)
+  - Switch Scicence の mbed ボード [TY51822r3](https://www.switch-science.com/catalog/2574/) でも CHIRIMEN 環境をサポートしています。
   - 但し、販売元での在庫が切れているボードであることもあり、メンテナンス・テストを十分出来ていないところがありますがご容赦ください。
 
 各 CHIRIMEN 環境では各ボード毎の Polyfill やブリッジプログラムが異なる以外、基本的には同じコード・同じドライバモジュールで各デバイス・パーツを制御できます。対応デバイス一覧ページをご覧ください。
