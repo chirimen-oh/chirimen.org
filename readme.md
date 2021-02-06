@@ -41,3 +41,6 @@ window.onload = async function() {
 
   このサイトの最新オンライン版は https://tutorial.chirimen.org/ でご覧頂けます
 </div>
+
+<a class="twitter-timeline" data-height="600" data-dnt="true" href="https://twitter.com/chirimen_oh?ref_src=twsrc%5Etfw">Tweets by chirimen_oh</a>
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
