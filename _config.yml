@@ -1,6 +1,6 @@
 # see: https://github.com/pages-themes/cayman
 theme: jekyll-theme-cayman
-repository: chirimen-oh/tutorials
+repository: chirimen-oh/chirimen.org
 title: '<a href="/" style="color: white">CHIRIMEN OPEN HARDWARE</a>'
 description: >-
   <!-- ブラウザからハードを制御する CHIRIMEN のコミュニティサイトです<br> -->

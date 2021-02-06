@@ -31,11 +31,19 @@
       {{ content }}
 
       <footer class="site-footer">
+        <span>
+          <a href="/code-of-conduct">行動規範</a>
+          | <a href="/feedback">ご指摘・ご提案</a>
+          | <a href="https://docs.google.com/forms/d/e/1FAIpQLScyfyFZbe7uZbQQzSQq78tRqtRKWXvmDRR_dO39wtzYIQFV5g/viewform">Slack に参加</a>
+          | <a href="https://www.facebook.com/groups/chirimen/">Facebook</a>
+          | <a href="https://twitter.com/chirimen_oh">Twitter</a>
+        </span>
         {% if site.github.is_project_page %}
-          <span class="site-footer-owner"><a href="{{ site.github.repository_url }}">{{ site.github.repository_name }}</a> is maintained by <a href="{{ site.github.owner_url }}">{{ site.github.owner_name }}</a>.</span>
+          <span class="site-footer-owner">
+            Github: <a href="{{ site.github.owner_url }}">{{ site.github.owner_name }}</a>/<a href="{{ site.github.repository_url }}">{{ site.github.repository_name }}</a>
+            | <a href="{{ site.github.repository_url }}/edit/master/{{ page.path }}">このページを編集</a>
+          </span>
         {% endif %}
-        <span><a href="/feedback">about Feedback to this Tutorials / 本チュートリアルへのご指摘や提案について</a></span>
-        <p><a href="{{ site.github.repository_url }}/edit/master/{{ page.path }}">Improve this page / 現在のページを GitHub で編集する</a></p>
       </footer>
     </main>
   </body>
