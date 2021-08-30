@@ -1,6 +1,7 @@
 {
     "name": "myApp",
     "private": true,
+    "type": "module",
     "dependencies": {
         "node-web-gpio": "latest",
         "node-web-i2c": "latest",
