@@ -10,4 +10,4 @@
 |  リモートサーボ  |  [remote_example8](remote_example8)  |  I2CのPCA9685 Port0のサーボをブラウザでコントロール |  -  |
 |  リモート温湿度センサ  |  [remote_example5](remote_example5) |  I2CのSHT30で測った温度と湿度をブラウザで表示 |  -  |
 
-Note:リモートExampleはmbit.jsをRPiZeroで動かす(```node mbit.js```)、PC.htmlをリモートのPC/スマホのブラウザで動かす。
+Note:　リモートExampleはmbit.jsをRPiZeroで動かす(```node mbit.js```)、PC.htmlをリモートのPC/スマホのブラウザで動かす。
