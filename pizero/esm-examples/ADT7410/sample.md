@@ -1,6 +1,23 @@
-import {requestI2CAccess} from "./node_modules/node-web-i2c/index.js";
-import ADT7410 from "@chirimen/adt7410";
-const sleep = msec => new Promise(resolve => setTimeout(resolve, msec));
+# ADT7410 温度センサー
+
+## 配線図
+
+![配線図1](./schematic.png "schematic")
+![配線図2](./schematic_warning.png "schematic")
+
+# ドライバのインストール
+
+```
+npm i @chirimen/adt7410
+```
+
+# サンプルコード
+
+```javascript
+const { requestI2CAccess } = require("node-web-i2c");
+const ADT7410 = require("@chirimen/adt7410");
+const { promisify } = require("util");
+const sleep = promisify(setTimeout);
 
 main();
 
@@ -16,3 +33,5 @@ async function main() {
     await sleep(1000);
   }
 }
+```
+
