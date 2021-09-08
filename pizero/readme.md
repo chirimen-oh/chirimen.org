@@ -44,7 +44,7 @@ PiZero自体はディスプレイやキーボードを接続する必要はあ�
   * 起動してUSBデバイスとして出現するまでにしばらく(数十秒)かかります)
   ![OTG PORT Information on device manager](https://chirimen.org/PiZeroWebSerialConsole/imgs/OTG_PORT_W10.png)
 * [**こちらのWeb Serial RPiZero TerminalページにPCのブラウザでアクセス**](https://chirimen.org/PiZeroWebSerialConsole/PiZeroWebSerialConsole.html)
- (以降、このウィンドをターミナルウィンドと呼びます)
+ (以降、このウィンドを**ターミナルウィンド**と呼びます)
 * ```Connect and Login PiZero```ボタンを押す
   * 接続ダイアログが出現
   ![connection dialog](https://chirimen.org/PiZeroWebSerialConsole/imgs/SerialDialog.png)
@@ -79,7 +79,7 @@ PiZero自体はディスプレイやキーボードを接続する必要はあ�
     * PASSWORD: ```raspberry```
   * もしもあなたがlinuxのシェルコンソール画面に慣れている場合は、ターミナルウィンドのコンソールにコマンドをタイプしてそのまま使用することもできます。
   * 確認できたらWiFi Settingウィンドを閉じてください。
-* 以上でステップ２完了です！　ステップ3に進んでください。
+* 以上でステップ２完了です。　ステップ3に進んでください。
 
 ## ステップ３ (CHIRIMEN環境設定)
 
@@ -155,17 +155,19 @@ blink();
 
 # いろいろなデバイスのサンプルを試す
 
-色々なデバイスのサンプルが用意されています。まずは、今回はその中からI2CセンサーのADT7410を試しましょう。
+色々なデバイスのサンプルが用意されています。まずは、その中から[I2C](https://tutorial.chirimen.org/raspi/section2#:~:text=I2C%20%E3%81%A8%E3%81%AF%202%20%E7%B7%9A,%E3%81%A7%E9%80%9A%E4%BF%A1%E3%82%92%E8%A1%8C%E3%81%84%E3%81%BE%E3%81%99%E3%80%82)センサーのADT7410を試しましょう。
 
 * ターミナルウィンドの```CHIRIMEN Panel```ボタンを押す
 * 出現したCHIRIMEN Panelの```Get Examples```ボタンを押す
 * ID : adt7410を探します(上から5個目ぐらい)
-  * 回路図リンクを押すと回路図が出てきますので、回路を組みます。
+  * 回路図リンクを押すと回路図が出てきますので、回路を組みます。なお、接続は下の図のようになります。
+    ![PiZero温度センサー図](./imgs/pizero_temp.png)
   * ```JS GET```ボタンを押すと、開発ディレクトリ(```~/myApp```)に、サンプルコードが保存されます。
-  * main-adt7410.jsというファイル名で保存されます。
+    * **main-adt7410.js**というファイル名で保存されます。
+    * ターミナルウィンドの右側のファイルマネージャでmain-adt7410.js⇒編集 を選ぶと、エディタで編集できます。
 
 ## I2Cセンサーが認識さていることを確認する
-* CHIRIMEN Panelの```i2c detect```ボタンを押すと、48が表示されていればうまく接続されています。
+* CHIRIMEN Panelの```i2c detect```ボタンを押すと、**48**が表示されていればうまく接続されています。
 <pre>
      0  1  2  3  4  5  6  7  8  9  a  b  c  d  e  f
 00:          -- -- -- -- -- -- -- -- -- -- -- -- -- 
@@ -184,9 +186,6 @@ blink();
 * 温度が1秒ごとにコンソールに表示されます。
 * 終了は CTRL+C
 
-なお、接続は下の図のようになります。
-
-![PiZero温度センサー図](./imgs/pizero_temp.png)
 
 デバイスを扱うためのパッケージについてさらに知りたい場合は [サンプル一覧](esm-examples/) を参照してください。
 
@@ -209,8 +208,8 @@ blink();
 
 以下の手順で~/myAppディレクトリ以外にも設定できます。
 
-* ```[mkdir](https://atmarkit.itmedia.co.jp/ait/articles/1606/07/news015.html) [自分用の作業ディレクトリ]``` 
-* ```[cd](https://atmarkit.itmedia.co.jp/ait/articles/1712/14/news021.html) [自分用の作業ディレクトリ]```
-* ```[wget](https://atmarkit.itmedia.co.jp/ait/articles/1606/20/news024.html) https://tutorial.chirimen.org/pizero/package.json```
+* ```mkdir [自分用の作業ディレクトリ]```  ([mkdir](https://atmarkit.itmedia.co.jp/ait/articles/1606/07/news015.html) コマンドとは)
+* ```cd [自分用の作業ディレクトリ]``` ([cd](https://atmarkit.itmedia.co.jp/ait/articles/1712/14/news021.html)コマンドとは)
+* ```wget https://tutorial.chirimen.org/pizero/package.json``` ([wget](https://atmarkit.itmedia.co.jp/ait/articles/1606/20/news024.html)コマンドとは)
 * ```wget https://tutorial.chirimen.org/pizero/esm-examples/remote_example4/RelayServer.js``` ([RelayServer.js](https://chirimen.org/remote-connection/)を使う場合)
 * ```npm install```
