@@ -1,0 +1,77 @@
+<!doctype html>
+<html>
+<head>
+<title>ECMA Script Module Examples for CHIRIMEN with Node.js/Rarpberry Pi Zero</title>
+</head>
+<script>
+var exData={};
+onload=async function(){
+	await getData();
+	for ( var cat in exData ){
+		buildTable(cat);
+	}
+}
+
+async function getData(){
+	var response = await fetch("index_examples.csv");
+	var csv = await response.text();
+	var csv = csv.split("\n");
+	var cat;
+	for ( var line of csv){
+		if ( line.length >1 && line.indexOf("#")!=0){
+			line = line.split(",");
+			if ( line.length == 1 ){
+				cat = line[0];
+				//console.log("CATEGORY::",cat);
+				exData[cat]=[];
+			} else {
+				exData[cat].push(line);
+				//console.log(line);
+			}
+		}
+	}
+	console.log(exData);
+}
+var co_base="https://chirimen.org/chirimen/gc/top/examples/#";
+function buildTable(cat){
+	var tbl = document.getElementById("Tbl"+cat);
+	var catData = exData[cat];
+	console.log(tbl,catData);
+	tbl.insertAdjacentHTML('afterbegin', '<tr><td width="100">ID</td><td width="200">タイトル</td><td width="400">概要</td><td>回路図</td><td>JS GET</td><td>CHIRIMEN ORIG参考リンク</td>');
+	for ( var item of catData ){
+		var id_td = document.createElement("td");
+		id_td.innerText=item[0];
+		var title_td = document.createElement("td");
+		title_td.innerText=item[1];
+		var exp_td = document.createElement("td");
+		exp_td.innerHTML=item[2];
+		var sch_td = document.createElement("td");
+		sch_td.innerHTML="<a href='./"+item[0]+"/index.html' target='_schematics'>回路図</a>";
+		var js_td = document.createElement("td");
+		js_td.innerHTML="<a href='./"+item[0]+"/main.js' target='_js'>JS GET</a>";
+		var co_td = document.createElement("td");
+		co_td.innerHTML="<a href='"+co_base+cat+"-"+item[0].toUpperCase()+"' target='_original'>参考</a>";
+		
+		var tr = document.createElement("tr");
+		tr.appendChild(id_td);
+		tr.appendChild(title_td);
+		tr.appendChild(exp_td);
+		tr.appendChild(sch_td);
+		tr.appendChild(js_td);
+		tr.appendChild(co_td);
+		tbl.appendChild(tr);
+	}
+}
+</script>
+<body>
+<h2>CHIRIMEN with Node.js / RPi Zero Examples</h2>
+
+<h3>GPIO Examples</h3>
+<table border="1" id="TblGPIO"></table>
+<h3>I2C Examples</h3>
+<table border="1" id="TblI2C"></table>
+<h3>REMOTE Examples</h3>
+<table border="1" id="TblREMOTE"></table>
+<a href="https://chirimen.org/chirimen/gc/top/examples/#i2cExamples">詳しくはこちらを見てね</a>
+</body>
+</html>
