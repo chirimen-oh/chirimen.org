@@ -86,7 +86,7 @@ function jsGet(eid){
 	var jsURL = defDir + eid +"/main.js";
 	//console.log("jsGet:",eid,jsURL);
 	//console.log("postMessage:",jsURL,new URL(iframeReferrer).origin);
-	parent.window.postMessage({req:"getSrc",url:jsURL},new URL(iframeReferrer).origin);
+	parent.window.postMessage({req:"getSrc",url:jsURL, exampleId:eid},new URL(iframeReferrer).origin);
 }
 </script>
 <body>
