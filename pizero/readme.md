@@ -52,11 +52,12 @@ PiZero自体はディスプレイやキーボードを接続する必要はあ�
 * コンソール(左側の黒い画面の最下部)に以下のコマンドプロンプトが表示されればステップ１完了です。引き続きステップ２に進んでください
   * ```pi@raspberrypi:~$```
 
-:::
-CHIRIMEN with Node.jsではRaspberry Pi OS(Linux)をコマンドラインインターフェース・シェル(bash)で操作します。ただしこの講習で使うコマンドはごくわずかです。(node コマンドのみ)
+### Note:
+
+* CHIRIMEN with Node.jsではRaspberry Pi OS(Linux)をコマンドラインインターフェース・シェル(bash)で操作します。
+  * ただしこの講習で使うコマンドはごくわずかです。　（**node** コマンドと[CTRL+C](CTRLキーと**"C"**を同時に押す))
 * [CLIとは](https://atmarkit.itmedia.co.jp/ait/articles/1602/19/news025.html)
 * [シェルとコマンドプロンプト](https://atmarkit.itmedia.co.jp/ait/articles/1603/02/news016.html)
-:::
 
 ## ステップ２ (WiFi設定)
 
