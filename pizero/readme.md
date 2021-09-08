@@ -87,7 +87,7 @@ PiZero自体はディスプレイやキーボードを接続する必要はあ�
 * ２～３分ほどセットアップ完了するのを待ちます。
   * CHIRIMEN Panelウィンドに、CONGRATURATIONS. setup completed!とメッセージが出たらセットアップ完了です。
   * Note: ターミナルウィンドには細かな進捗状況が出てきます。
-
+* ```~/myApp```が今後CHIRIMEN環境でのプログラミングで使用するディレクトリです。
 * 以上ですべての初期設定完了です！
 
 
@@ -209,7 +209,8 @@ blink();
 
 # CHIRIMEN環境の任意のディレクトリへのセットアップ
 以下で可能です。
-* [自分用の作業ディレクトリ]を作る
-* cd [自分用の作業ディレクトリ]
-* wget xxxxx
-* npm install
+* ```[自分用の作業ディレクトリ]```を作る
+* ```cd [自分用の作業ディレクトリ]```
+* ```wget https://tutorial.chirimen.org/pizero/package.json```
+* ```wget https://tutorial.chirimen.org/pizero/esm-examples/remote_example4/RelayServer.js``` ([RelayServer.js](https://chirimen.org/remote-connection/)を使う場合)
+* ```npm install```
