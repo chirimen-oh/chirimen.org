@@ -59,7 +59,7 @@ function buildTable(cat){
 		
 		var js_td = document.createElement("td");
 		if ( iframeReferrer ){
-			js_td.innerHTML="<input type='button' value='JS GET' onclick='jsGet(\""+item[0]+"\",\"'+cat+'\")'></input>";
+			js_td.innerHTML="<input type='button' value='JS GET' onclick='jsGet(\""+item[0]+"\",\""+cat+"\")'></input>";
 		} else {
 			js_td.innerHTML="<a href='./"+item[0]+"/main.js' target='_js'>JS GET</a>";
 		}
