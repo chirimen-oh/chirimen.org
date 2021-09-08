@@ -209,8 +209,8 @@ blink();
 
 以下の手順で~/myAppディレクトリ以外にも設定できます。
 
-* ```mkdir [自分用の作業ディレクトリ]```
-* ```cd [自分用の作業ディレクトリ]```
-* ```wget https://tutorial.chirimen.org/pizero/package.json```
+* ```[mkdir](https://atmarkit.itmedia.co.jp/ait/articles/1606/07/news015.html) [自分用の作業ディレクトリ]``` 
+* ```[cd](https://atmarkit.itmedia.co.jp/ait/articles/1712/14/news021.html) [自分用の作業ディレクトリ]```
+* ```[wget](https://atmarkit.itmedia.co.jp/ait/articles/1606/20/news024.html) https://tutorial.chirimen.org/pizero/package.json```
 * ```wget https://tutorial.chirimen.org/pizero/esm-examples/remote_example4/RelayServer.js``` ([RelayServer.js](https://chirimen.org/remote-connection/)を使う場合)
 * ```npm install```
