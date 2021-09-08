@@ -1,18 +1,18 @@
 <!doctype html>
 <html>
 <head>
-	<title>ECMA Script Module Examples for CHIRIMEN with Node.js/Rarpberry Pi Zero</title>
-	<meta charset="utf-8"></meta>
+<title>ECMA Script Module Examples for CHIRIMEN with Node.js/Rarpberry Pi Zero</title>
 </head>
 <script>
-	// Programmed by S.Takagi 2021/9/8
 var exData={};
-var setWget=false;
+var iframeReferrer=null;
 onload=async function(){
-	await getData();
-	if ( window.opener){
-		setWget = true;
+	// check if this window is inside iframe
+	if (window.self !== window.top){
+		iframeReferrer = document.referrer;
 	}
+	
+	await getData();
 	for ( var cat in exData ){
 		buildTable(cat);
 	}
@@ -58,7 +58,7 @@ function buildTable(cat){
 		sch_td.innerHTML="<a href='./"+item[0]+"/index.html' target='_schematics'>回路図</a>";
 		
 		var js_td = document.createElement("td");
-		if ( setWget ){
+		if ( iframeReferrer ){
 			js_td.innerHTML="<input type='button' value='JS GET' onclick='jsGet(\""+item[0]+"\")'></input>";
 		} else {
 			js_td.innerHTML="<a href='./"+item[0]+"/main.js' target='_js'>JS GET</a>";
@@ -78,10 +78,15 @@ function buildTable(cat){
 	}
 }
 
+var defDir = "https://tutorial.chirimen.org/pizero/esm-examples/"
 function jsGet(eid){
-	var jsURL = "https://tutorial.chirimen.org/pizero/esm-examples/"+eid +"/main.js";
-	console.log("jsGet:",eid,jsURL);
-	window.opener.getJS(jsURL);
+	var thisURL = new URL(window.location.href);
+	defDir = thisURL.origin + thisURL.pathname.substring(0,thisURL.pathname.lastIndexOf("/")+1);
+	
+	var jsURL = defDir + eid +"/main.js";
+	//console.log("jsGet:",eid,jsURL);
+	//console.log("postMessage:",jsURL,new URL(iframeReferrer).origin);
+	parent.window.postMessage({req:"getSrc",url:jsURL},new URL(iframeReferrer).origin);
 }
 </script>
 <body>
