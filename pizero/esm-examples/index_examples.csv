@@ -20,19 +20,17 @@ bme280,温度・湿度・気圧,I2C接続の温度・湿度・気圧　複合セ
 bmp180,温度・気圧,I2C接続の温度・気圧　複合センサーBMP180で取得した値を表示します。
 bmp280,温度・気圧,I2C接続の温度・気圧　複合センサーで取得した値を表示します。（BMP280は、BMP180とは別のデバイスです。注意）
 #bme680,温度・湿度・気圧・ガス,I2C接続の温度・湿度・気圧・ガス　複合センサーで取得した値を表示します。スレーブアドレスが 0x76 のものと 0x77 のものがあるので注意
-#ccs811,CO2, TVOCセンサ,I2C接続のCO2, TVOCセンサCS811を使用します。
+#ccs811,CO2, TVOCセンサ、I2C接続のCO2、TVOCセンサCS811を使用します。
 gp2y0e03,距離センサ,I2C接続の赤外線測距センサー（センサーから障害物までの距離を測るセンサー）GP2Y0E03の値を表示します。
 ina219,電流・電力,I2C接続のDC電流センサーINA219で取得した値を表示します。電圧と電力も取得できます。
 mlx90614,赤外線温度センサ,I2C接続の赤外線温度センサーMLX90614で取得した値を表示します。周囲温度も取得できます。
 mpr121,タッチセンサ,I2C接続のタッチセンサー（静電容量式タッチキー）MPR121によるタッチ検出をおこないます。Grove-Touchもしくはジェネリック品
 mpu6050,３軸ジャイロ＋３軸加速度,I2C接続の３軸ジャイロ(角速度)＋３軸加速度　複合センサーMPU6050で取得した値を表示します。
-mpu9250,３軸ジャイロ＋３軸加速度＋３軸磁気,I2C接続の３軸ジャイロ＋３軸加速度＋３軸磁気　複合センサーMPU9250で取得した値を表示します。
-このセンサーは、MPU6500(３軸ジャイロ＋３軸加速度)とAK8963(３軸磁気)という二つのI2Cセンサが１パッケージに封入された複合センサです。適切に初期化されるとこれら２個のI2Cスレーブデバイスが出現します
-neopixel-i2c,NEOPIXEL LED,<a href="https://learn.adafruit.com/adafruit-neopixel-uberguide/the-magic-of-neopixels">Neopixel LED</a> (シンプルな配線の多数のLEDの発光を個々に制御できるフルカラーLED)をATTINY85をI2Cコントローラにして使用します。ATTINY85には<a href="https://github.com/chirimen-oh/accessories/blob/master/others/neopixel_i2c_TH/tips.md">ここで紹介されているファームウェア</a>を焼いておく必要があります。簡単に組み立てられるようにしたオープンソースハードの<a href="https://github.com/chirimen-oh/accessories/blob/master/others/neopixel_i2c_TH/">専用コントローラボード</a>もあります
-簡単に組み立てられるようにしたオープンソースハードの専用コントローラボードもあります。
+mpu9250,３軸ジャイロ＋３軸加速度＋３軸磁気,I2C接続の３軸ジャイロ＋３軸加速度＋３軸磁気　複合センサーMPU9250で取得した値を表示します。このセンサーは、MPU6500(３軸ジャイロ＋３軸加速度)とAK8963(３軸磁気)という二つのI2Cセンサが１パッケージに封入された複合センサです。適切に初期化されるとこれら２個のI2Cスレーブデバイスが出現します
+neopixel-i2c,NEOPIXEL LED,<a href="https://learn.adafruit.com/adafruit-neopixel-uberguide/the-magic-of-neopixels">Neopixel LED</a> (シンプルな配線の多数のLEDの発光を個々に制御できるフルカラーLED)をATTINY85をI2Cコントローラにして使用します。ATTINY85には<a href="https://github.com/chirimen-oh/accessories/blob/master/others/neopixel_i2c_TH/tips.md">ここで紹介されているファームウェア</a>を焼いておく必要があります。簡単に組み立てられるようにしたオープンソースハードの<a href="https://github.com/chirimen-oh/accessories/blob/master/others/neopixel_i2c_TH/">専用コントローラボード</a>もあります。
 paj7620,ジェスチャーセンサ,I2C接続のジェスチャーセンサーPAJ7620（センサーの前で手などを動かすと動かした方向などのモーションを検出するセンサー）の検出結果を表示します。Grove-Gestureもしくはジェネリック品
 pca9685,サーボモータ,I2C接続のPWMドライバーPCA9685経由でサーボモーターを駆動します。（RaspberryからPWMドライバーをI2C接続し、 PWMドライバとサーボモータ、外部電源を接続します。詳細は回路図を参照ください）
-pcf8591,電圧測定・電圧出力,I2C接続の8ビットAD,DAコンバータPCF8591を使います。
+pcf8591,電圧測定・電圧出力,I2C接続の8ビットAD、DAコンバータPCF8591を使います。
 s11059,カラーセンサ,I2C接続のRGBカラーセンサーで取得した値を表示します。
 #seesaw,多機能I/F,I2C接続の多機能インターフェースボードseesawを使用します。adafruitのseesawはデジタル入出力、アナログ入力、PWM出力、NeopixelLEDドライブ等の機能を持つ多目的なインターフェースボードです。このサンプルではNeopixelLED以外の機能を動かしています。
 #seesawNpix,NeopixelLED,I2C接続の多機能インターフェースボードseesawでI2C接続の多機能インターフェースボードseesawでNeopixelLEDモジュールを２個ドライブしています。
