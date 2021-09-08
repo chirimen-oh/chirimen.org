@@ -42,7 +42,7 @@ PiZero自体はディスプレイやキーボードを接続する必要はあ�
 * PCでRaspberry Pi Zeroが認識されたことを確認します (Windows10のデバイスマネージャの例) 
   * 起動してUSBデバイスとして出現するまでにしばらく(数十秒)かかります)
   ![OTG PORT Information on device manager](https://chirimen.org/PiZeroWebSerialConsole/imgs/OTG_PORT_W10.png)
-* [**こちらのWeb Serial RPiZero Terminalページにブラウザでアクセス**](https://chirimen.org/PiZeroWebSerialConsole/PiZeroWebSerialConsole.html)
+* [**こちらのWeb Serial RPiZero TerminalページにPCのブラウザでアクセス**](https://chirimen.org/PiZeroWebSerialConsole/PiZeroWebSerialConsole.html)
  (以降、このウィンドをターミナルウィンドと呼びます)
 * ```Connect and Login PiZero```ボタンを押す
   * 接続ダイアログが出現
