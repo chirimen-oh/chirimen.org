@@ -35,6 +35,8 @@ PiZero自体はディスプレイやキーボードを接続する必要はあ�
 
 * [Raspberry Pi OS LiteをUSB Serialで使用可能にしたSDイメージ](https://github.com/kou029w/chirimen-os/releases/)をRaspberry Pi Zeroに差し込みます。
 * PCのUSBとRaspberry Pi ZeroのUSB OTGポートをUSBケーブルでつなぎます
+  * PiZero側はつなぐポート要注意　ここに繋ぎます
+  ![pi zero otg port](https://chirimen.org/PiZeroWebSerialConsole/imgs/PiZeroW_OTG.JPG)
   * PCからのUSB給電でRaspberry Pi Zeroが起動します。
 * PCでRaspberry Pi Zeroが認識されたことを確認します (Windows10のデバイスマネージャの例) 
   * 起動してUSBデバイスとして出現するまでにしばらく(数十秒)かかります)
