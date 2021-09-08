@@ -59,7 +59,7 @@ function buildTable(cat){
 		
 		var js_td = document.createElement("td");
 		if ( iframeReferrer ){
-			js_td.innerHTML="<input type='button' value='JS GET' onclick='jsGet(\""+item[0]+"\")'></input>";
+			js_td.innerHTML="<input type='button' value='JS GET' onclick='jsGet(\""+item[0]+"\",\"'+cat+'\")'></input>";
 		} else {
 			js_td.innerHTML="<a href='./"+item[0]+"/main.js' target='_js'>JS GET</a>";
 		}
@@ -79,14 +79,14 @@ function buildTable(cat){
 }
 
 var defDir = "https://tutorial.chirimen.org/pizero/esm-examples/"
-function jsGet(eid){
+function jsGet(eid,cat){
 	var thisURL = new URL(window.location.href);
 	defDir = thisURL.origin + thisURL.pathname.substring(0,thisURL.pathname.lastIndexOf("/")+1);
 	
 	var jsURL = defDir + eid +"/main.js";
 	//console.log("jsGet:",eid,jsURL);
 	//console.log("postMessage:",jsURL,new URL(iframeReferrer).origin);
-	parent.window.postMessage({req:"getSrc",url:jsURL, exampleId:eid},new URL(iframeReferrer).origin);
+	parent.window.postMessage({req:"getSrc",url:jsURL, exampleId:eid, category:cat},new URL(iframeReferrer).origin);
 }
 </script>
 <body>
@@ -98,6 +98,6 @@ function jsGet(eid){
 <table border="1" id="TblI2C"></table>
 <h3>REMOTE Examples</h3>
 <table border="1" id="TblREMOTE"></table>
-<a href="https://chirimen.org/chirimen/gc/top/examples/#i2cExamples">詳しくはこちらを見てね</a>
+<!--<a href="https://chirimen.org/chirimen/gc/top/examples/#i2cExamples">詳しくはこちらを見てね</a>-->
 </body>
 </html>
