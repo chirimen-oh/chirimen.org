@@ -1,12 +1,18 @@
 <!doctype html>
 <html>
 <head>
-<title>ECMA Script Module Examples for CHIRIMEN with Node.js/Rarpberry Pi Zero</title>
+	<title>ECMA Script Module Examples for CHIRIMEN with Node.js/Rarpberry Pi Zero</title>
+	<meta charset="utf-8"></meta>
 </head>
 <script>
+	// Programmed by S.Takagi 2021/9/8
 var exData={};
+var setWget=false;
 onload=async function(){
 	await getData();
+	if ( window.opener){
+		setWget = true;
+	}
 	for ( var cat in exData ){
 		buildTable(cat);
 	}
@@ -41,14 +47,23 @@ function buildTable(cat){
 	for ( var item of catData ){
 		var id_td = document.createElement("td");
 		id_td.innerText=item[0];
+		
 		var title_td = document.createElement("td");
 		title_td.innerText=item[1];
+		
 		var exp_td = document.createElement("td");
 		exp_td.innerHTML=item[2];
+		
 		var sch_td = document.createElement("td");
 		sch_td.innerHTML="<a href='./"+item[0]+"/index.html' target='_schematics'>回路図</a>";
+		
 		var js_td = document.createElement("td");
-		js_td.innerHTML="<a href='./"+item[0]+"/main.js' target='_js'>JS GET</a>";
+		if ( setWget ){
+			js_td.innerHTML="<input type='button' value='JS GET' onclick='jsGet(\""+item[0]+"\")'></input>";
+		} else {
+			js_td.innerHTML="<a href='./"+item[0]+"/main.js' target='_js'>JS GET</a>";
+		}
+		
 		var co_td = document.createElement("td");
 		co_td.innerHTML="<a href='"+co_base+cat+"-"+item[0].toUpperCase()+"' target='_original'>参考</a>";
 		
@@ -61,6 +76,12 @@ function buildTable(cat){
 		tr.appendChild(co_td);
 		tbl.appendChild(tr);
 	}
+}
+
+function jsGet(eid){
+	var jsURL = "https://tutorial.chirimen.org/pizero/esm-examples/"+eid +"/main.js";
+	console.log("jsGet:",eid,jsURL);
+	window.opener.getJS(jsURL);
 }
 </script>
 <body>
