@@ -113,6 +113,7 @@ Raspberry Pi に接続した LED を点滅させるプログラムを書きま�
 
 以下のプログラムを書き写します（コピペ）
 
+
 ```javascript:hello.js
 
 import {requestGPIOAccess} from "./node_modules/node-web-gpio/dist/index.js";
@@ -134,6 +135,7 @@ async function blink() {
 
 blink();
 ```
+
 * 書き終えたら保存します。(CTRL+C、もしくは```Saveボタン```)
 * ターミナルウィンドの右側に hello.jsが出来ていることを確認します
 * エディタウィンドを閉じます
