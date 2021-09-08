@@ -11,6 +11,7 @@ CHIRIMEN with Node.js on Raspberry Pi Zero W を用いたIoT実習資料の Hell
 # 準備
 
 ## ステップ０ (PCをWiFiに接続)
+
 * 会場(もしくは開発場所)で提供されているWiFiアクセスポイントにまずは接続してください。
 
 ## ステップ１（ターミナル接続）
@@ -85,8 +86,8 @@ PiZero自体はディスプレイやキーボードを接続する必要はあ�
 * ターミナルウィンドの```CHIRIMEN Panel```ボタンを押す。
 * CHIRIMEN Panelウィンドが開いたら、```Setup CHIRIMEN```ボタンを押す。
 * ２～３分ほどセットアップ完了するのを待ちます。
-  * CHIRIMEN Panelウィンドに、CONGRATURATIONS. setup completed!とメッセージが出たらセットアップ完了です。
-  * Note: ターミナルウィンドには細かな進捗状況が出てきます。
+  * CHIRIMEN Panelウィンドの進捗メッセージが、CONGRATURATIONS. setup completed!となればセットアップ完了です。
+  * Note: ターミナルウィンドのコンソールにはより細かな進捗状況が表示されます。
 * ```~/myApp```が今後CHIRIMEN環境でのプログラミングで使用するディレクトリです。
 * 以上ですべての初期設定完了です！
 
@@ -94,6 +95,7 @@ PiZero自体はディスプレイやキーボードを接続する必要はあ�
 # Hello Real World（Lチカを実行する）
 
 ## 配線
+
 PiZero とパーツを使って下の図の通りに配線します。
 
 ![PiZero配線図](./imgs/pizero_led.png)
@@ -112,11 +114,10 @@ Raspberry Pi に接続した LED を点滅させるプログラムを書きま�
 * ```create```ボタンを押す
 * JS Editorウィンドが出現
 
-以下のプログラムを書き写します（コピペ）
+以下のプログラムをJS Editorに書き写します（コピペ）
 
 
 ```javascript
-
 import {requestGPIOAccess} from "./node_modules/node-web-gpio/dist/index.js";
 const sleep = msec => new Promise(resolve => setTimeout(resolve, msec));
 
@@ -142,6 +143,7 @@ blink();
 * エディタウィンドを閉じます
 
 ## 実行する
+
 * ターミナルウィンドのコンソール部(ウィンド左側)のプロンプト(画面一番下)が以下になっていることを確認します
   * ```pi@raspberrypi:~/myApp$```
 * コンソール部をクリックして、入力可能状態にしてから、以下の文字を入力します。
@@ -182,17 +184,13 @@ blink();
 * 温度が1秒ごとにコンソールに表示されます。
 * 終了は CTRL+C
 
-
 なお、接続は下の図のようになります。
 
 ![PiZero温度センサー図](./imgs/pizero_temp.png)
 
-
-
 デバイスを扱うためのパッケージについてさらに知りたい場合は [サンプル一覧](esm-examples/) を参照してください。
 
 また、CHIRIMEN チュートリアルのなかには、Web GPIO や Web I2C によって扱うことのできる[外部デバイスとサンプルコードの一覧があります](https://tutorial.chirimen.org/raspi/partslist)。こちらも参考になるかもしれません。
-
 
 
 # CHIRIMEN ブラウザー版との差異
@@ -208,7 +206,9 @@ blink();
 |   | <pre>```const sleep = msec => new Promise(resolve => setTimeout(resolve, msec));```</pre> |
 
 # CHIRIMEN環境の任意のディレクトリへのセットアップ
-以下で可能です。
+
+~/myAppディレクトリ以外でも設定できます。以下で可能です。
+
 * ```[自分用の作業ディレクトリ]```を作る
 * ```cd [自分用の作業ディレクトリ]```
 * ```wget https://tutorial.chirimen.org/pizero/package.json```
