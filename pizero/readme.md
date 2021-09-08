@@ -60,6 +60,7 @@ PiZero自体はディスプレイやキーボードを接続する必要はあ�
     * [CTRL+C](https://atmarkit.itmedia.co.jp/ait/articles/1708/04/news015_2.html)(CTRLキーとCを同時に押す:実行中のコマンドを終了させる))
 * [CLIとは](https://atmarkit.itmedia.co.jp/ait/articles/1602/19/news025.html)
 * [シェルとコマンドプロンプト](https://atmarkit.itmedia.co.jp/ait/articles/1603/02/news016.html)
+* もしもあなたがlinuxのシェルコンソール画面に慣れている場合は、ターミナルウィンドのコンソールにその他のシェル(bash)コマンドをタイプして使用することもできます。
 
 ## ステップ２ (WiFi設定)
 
@@ -86,7 +87,6 @@ PiZero自体はディスプレイやキーボードを接続する必要はあ�
     * PORT: 22
     * ID: ```pi```
     * PASSWORD: ```raspberry```
-  * もしもあなたがlinuxのシェルコンソール画面に慣れている場合は、ターミナルウィンドのコンソールにコマンドをタイプしてそのまま使用することもできます。
   * 確認できたらWiFi Settingウィンドを閉じてください。
 * 以上でステップ２完了です。　ステップ3に進んでください。
 
