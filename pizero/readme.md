@@ -52,6 +52,12 @@ PiZero自体はディスプレイやキーボードを接続する必要はあ�
 * コンソール(左側の黒い画面の最下部)に以下のコマンドプロンプトが表示されればステップ１完了です。引き続きステップ２に進んでください
   * ```pi@raspberrypi:~$```
 
+:::
+CHIRIMEN with Node.jsではRaspberry Pi OS(Linux)をコマンドラインインターフェース・シェル(bash)で操作します。ただしこの講習で使うコマンドはごくわずかです。(node コマンドのみ)
+* [CLIとは](https://atmarkit.itmedia.co.jp/ait/articles/1602/19/news025.html)
+* [シェルとコマンドプロンプト](https://atmarkit.itmedia.co.jp/ait/articles/1603/02/news016.html)
+:::
+
 ## ステップ２ (WiFi設定)
 
 * ターミナルウィンドの```wifi panel```ボタンを押す
@@ -148,6 +154,8 @@ blink();
   * ```pi@raspberrypi:~/myApp$```
 * コンソール部をクリックして、入力可能状態にしてから、以下の文字を入力します。
 * ```node hello.js``` ENTER
+  * **node** はjavascriptのコードを実行する[インタープリタ](https://ja.wikipedia.org/wiki/%E3%82%A4%E3%83%B3%E3%82%BF%E3%83%97%E3%83%AA%E3%82%BF)
+  * [nodeコマンドについて](https://atmarkit.itmedia.co.jp/ait/articles/1102/28/news105.html)
 * LED が点滅すれば完成です 🎉
 * プログラムを止めるには、コンソール部で ```CTRL+C``` を押します。
 
@@ -160,14 +168,16 @@ blink();
 * ターミナルウィンドの```CHIRIMEN Panel```ボタンを押す
 * 出現したCHIRIMEN Panelの```Get Examples```ボタンを押す
 * ID : adt7410を探します(上から5個目ぐらい)
-  * 回路図リンクを押すと回路図が出てきますので、回路を組みます。なお、接続は下の図のようになります。
-    ![PiZero温度センサー図](./imgs/pizero_temp.png)
-  * ```JS GET```ボタンを押すと、開発ディレクトリ(```~/myApp```)に、サンプルコードが保存されます。
-    * **main-adt7410.js**というファイル名で保存されます。
-    * ターミナルウィンドの右側のファイルマネージャでmain-adt7410.js⇒編集 を選ぶと、エディタで編集できます。
+* 回路図リンクを押すと回路図が出てきますので、回路を組みます。なお、接続は下の図のようになります。
+  ![PiZero温度センサー図](./imgs/pizero_temp.png)
+* ```JS GET```ボタンを押すと、開発ディレクトリ(```~/myApp```)に、サンプルコードが保存されます。
+  * **main-adt7410.js**というファイル名で保存されます。
+  * ターミナルウィンドの右側のファイルマネージャでmain-adt7410.js⇒編集 を選ぶと、エディタで編集できます。
 
 ## I2Cセンサーが認識さていることを確認する
+
 * CHIRIMEN Panelの```i2c detect```ボタンを押すと、**48**が表示されていればうまく接続されています。
+  * [ic2 detectとは](https://tutorial.chirimen.org/ty51822r3/i2cdetect)
 <pre>
      0  1  2  3  4  5  6  7  8  9  a  b  c  d  e  f
 00:          -- -- -- -- -- -- -- -- -- -- -- -- -- 
