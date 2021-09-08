@@ -2,8 +2,9 @@
 
 # 概要
 
-Raspberry Pi Zero（以降、PiZero）の Node.js から Web GPIO API と Web I2C API を扱う方法です。
-[CHIRIMEN チュートリアルの中の記事](https://tutorial.chirimen.org/raspi/nodejs)を PiZero で実行した記事となります。
+CHIRIMEN with Node.js on Raspberry Pi Zero W を用いたIoT実習資料の Hello Real World編　ドラフトです。
+
+[pizeronodejs.md](pizeronodejs.md)の内容をもとに、Web Serial RPiZero Terminalを使うことで操作を簡単化し、更にプログラム作法をECMA Script Moduleにあわせています。
 
 
 
