@@ -206,5 +206,9 @@ blink();
 | -- | -- |
 |   | <pre>```const sleep = msec => new Promise(resolve => setTimeout(resolve, msec));```</pre> |
 
-
-
+# CHIRIMEN環境の任意のディレクトリへのセットアップ
+以下で可能です。
+* [自分用の作業ディレクトリ]を作る
+* cd [自分用の作業ディレクトリ]
+* wget xxxxx
+* npm install
