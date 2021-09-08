@@ -1,6 +1,7 @@
 ## ECMA Script Module化したExamples
 
-
+[index_examples.csv](index_examples.csv)を参照
+<!--
 |  概要  |  ディレクトリ名  |  内容  |  回路図  |
 | ---- | ---- | ---- | ---- |
 |  Lチカ  |  [hello-real-world](hello-real-world)  |  GPIO PORT26に繋いだLEDを点滅させる  |  -  |
@@ -10,7 +11,7 @@
 |  リモートサーボ  |  [remote_example8](remote_example8)  |  I2CのPCA9685 Port0のサーボをブラウザでコントロール |  -  |
 |  リモート温湿度センサ  |  [remote_example5](remote_example5) |  I2CのSHT30で測った温度と湿度をブラウザで表示 |  -  |
 |  ...  |  ... |  ...その他いろいろ　コンテンツ整備中 |  -  |
-
+-->
 
 
 Note:　リモートExampleはmbit.jsをRPiZeroで動かす(```node mbit.js```)、PC.htmlをリモートのPC/スマホのブラウザで動かす。
