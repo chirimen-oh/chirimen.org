@@ -62,6 +62,8 @@ PiZero自体はディスプレイやキーボードを接続する必要はあ�
 * [CLIとは](https://atmarkit.itmedia.co.jp/ait/articles/1602/19/news025.html)
 * [シェルとコマンドプロンプト](https://atmarkit.itmedia.co.jp/ait/articles/1603/02/news016.html)
 * もしもあなたがlinuxのシェルコンソール画面に慣れている場合は、ターミナルウィンドのコンソールにその他のシェル(bash)コマンドをタイプして使用することもできます。
+* ターミナルウィンドの概要
+![ターミナルウィンドの説明](imgs/termWin.svg)
 
 ## ステップ２ (WiFi設定)
 
