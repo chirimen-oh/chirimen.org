@@ -34,8 +34,8 @@ CHIRIMEN with Node.js on Raspberry Pi Zero W を用いたIoT実習資料の Hell
 
 PiZero自体はディスプレイやキーボードを接続する必要はありません。
 
-* [Raspberry Pi OS LiteをUSB Serialで使用可能にしたSDイメージ](https://github.com/kou029w/chirimen-os/releases/)をRaspberry Pi Zeroに差し込みます。
-  * 講習会では書き込み済みOSイメージが配布されると思いますが、自分で作る場合は[ここなどを参考に](https://tutorial.chirimen.org/raspi/sdcard)(ただし書き込むべきイメージは違います([これを書き込みます](https://github.com/kou029w/chirimen-os/releases/)))
+* [Raspberry Pi OS LiteをUSB Serialで使用可能にしたイメージ](https://github.com/kou029w/chirimen-os/releases/)を書き込んだSDカードをRaspberry Pi Zeroに差し込みます。
+  * 講習会では書き込み済みSDが配布されると思いますが、自分で作る場合は[ここなどを参考に](https://tutorial.chirimen.org/raspi/sdcard)(ただし書き込むべきイメージは違います([これを書き込みます](https://github.com/kou029w/chirimen-os/releases/)))
 * PCのUSBとRaspberry Pi ZeroのUSB OTGポートをUSBケーブルでつなぎます
   * PiZero側はつなぐポート要注意　ここに繋ぎます
   ![pi zero otg port](https://chirimen.org/PiZeroWebSerialConsole/imgs/PiZeroW_OTG.JPG)
