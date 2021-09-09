@@ -10,11 +10,9 @@ CHIRIMEN with Node.js on Raspberry Pi Zero W を用いたIoT実習資料の Hell
 
 # 準備
 
-## ステップ０ (PCをWiFiに接続)
+## ステップ０ (物品準備、PCをWiFiに接続)
 
-* 会場(もしくは開発場所)で提供されているWiFiアクセスポイントにまずは接続してください。
-
-## ステップ１（ターミナル接続）
+### 必要な物品リスト
 
 以下を用意します
 * Raspberry Pi Zero W
@@ -25,7 +23,6 @@ CHIRIMEN with Node.js on Raspberry Pi Zero W を用いたIoT実習資料の Hell
   * Macintosh(多分大丈夫-未確認)
     * ブラウザはChromeが必要です。
 * USBケーブル (USB A - MicroB)
-
 * Lチカパーツ類
   * ブレッドボード
   * LED
@@ -34,6 +31,11 @@ CHIRIMEN with Node.js on Raspberry Pi Zero W を用いたIoT実習資料の Hell
 
 PiZero自体はディスプレイやキーボードを接続する必要はありません。
 
+### PCをWiFiに接続
+* 会場(もしくは開発場所)で提供されているWiFiアクセスポイントにまずはPCを接続してください。
+
+## ステップ１（ターミナル接続）
+
 * [Raspberry Pi OS LiteをUSB Serialで使用可能にしたイメージ](https://github.com/kou029w/chirimen-os/releases/)を書き込んだSDカードをRaspberry Pi Zeroに差し込みます。
   * 講習会では書き込み済みSDが配布されると思いますが、自分で作る場合は[ここなどを参考に](https://tutorial.chirimen.org/raspi/sdcard)(ただし書き込むべきイメージは違います([これを書き込みます](https://github.com/kou029w/chirimen-os/releases/)))
 * PCのUSBとRaspberry Pi ZeroのUSB OTGポートをUSBケーブルでつなぎます
@@ -41,7 +43,8 @@ PiZero自体はディスプレイやキーボードを接続する必要はあ�
   ![pi zero otg port](https://chirimen.org/PiZeroWebSerialConsole/imgs/PiZeroW_OTG.JPG)
   * PCからのUSB給電でRaspberry Pi Zeroが起動します。
 * PCでRaspberry Pi Zeroが認識されたことを確認します (Windows10のデバイスマネージャの例) 
-  * 起動してUSBデバイスとして出現するまでにしばらく(数十秒)かかります)
+  * 給電後USBデバイスとして出現するまでにしばらく(数十秒)かかります)
+  * Windowsの場合、ポートの番号(COMnのnの部分)は環境ごとに異なります
   ![OTG PORT Information on device manager](https://chirimen.org/PiZeroWebSerialConsole/imgs/OTG_PORT_W10.png)
 * [**こちらのWeb Serial RPiZero TerminalページにPCのブラウザでアクセス**](https://chirimen.org/PiZeroWebSerialConsole/PiZeroWebSerialConsole.html)
  (以降、このウィンドを**ターミナルウィンド**と呼びます)
@@ -78,7 +81,7 @@ PiZero自体はディスプレイやキーボードを接続する必要はあ�
   * これでRaspberry Pi Zeroが再起動をはじめます
 * WiFiウィンドを閉じ、ターミナルウィンドに戻る
 * ターミナルウィンドの```Close Connection```ボタンを押す
-* 30秒ほど待つ（Raspberry Pi Zeroが再起動します
+* 30秒ほど待つ（Raspberry Pi Zeroが再起動します)
   * ---
 * ```Connect and Login PiZero```ボタンを押し接続する
   * 接続ダイアログが出現⇒接続するとこれまで同様コマンドプロンプトが出現
