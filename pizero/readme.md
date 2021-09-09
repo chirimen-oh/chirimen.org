@@ -110,6 +110,7 @@ PiZero とパーツを使って下の図の通りに配線します。
 
 ![PiZero配線図](./imgs/pizero_led.png)
 
+* [LEDの極性に注意！](https://tutorial.chirimen.org/raspi/hellorealworld#section-1)
 
 ## プログラムを書く
 
