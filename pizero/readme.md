@@ -173,7 +173,7 @@ blink();
 * 出現したCHIRIMEN Panelの```Get Examples```ボタンを押す
 * ID : adt7410を探します(上から5個目ぐらい)
 * 回路図リンクを押すと回路図が出てきますので、回路を組みます。なお、接続は下の図のようになります。
-  * [センサーの極性に注意！](https://tutorial.chirimen.org/raspi/hellorealworld#section-2)
+* [センサーの極性に注意！](https://tutorial.chirimen.org/raspi/hellorealworld#section-2)
   ![PiZero温度センサー図](./imgs/pizero_temp.png)
 * ```JS GET```ボタンを押すと、開発ディレクトリ(```~/myApp```)に、サンプルコードが保存されます。
   * **main-adt7410.js**というファイル名で保存されます。
