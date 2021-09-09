@@ -42,7 +42,7 @@ PiZero自体はディスプレイやキーボードを接続する必要はあ�
   * PiZero側はつなぐポート要注意　ここに繋ぎます
   ![pi zero otg port](https://chirimen.org/PiZeroWebSerialConsole/imgs/PiZeroW_OTG.JPG)
   * PCからのUSB給電でRaspberry Pi Zeroが起動します。
-* PCでRaspberry Pi Zeroが認識されたことを確認します (Windows10のデバイスマネージャの例) 
+* PCでRaspberry Pi Zeroが認識されたことを確認します ([Windows10のデバイスマネージャ](https://askpc.panasonic.co.jp/beginner/guide/ten07/7013.html)の例) 
   * 給電後USBデバイスとして出現するまでにしばらく(数十秒)かかります)
   * Windowsの場合、ポートの番号(COMnのnの部分)は環境ごとに異なります
   ![OTG PORT Information on device manager](https://chirimen.org/PiZeroWebSerialConsole/imgs/OTG_PORT_W10.png)
