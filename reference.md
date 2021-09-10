@@ -4,8 +4,8 @@ CHIRIMEN を利用するに際して、知っておくと良い予備知識や�
 
 ### JavaScript
 
-- [JavaScript 初学者向け資料集](/js/)
-  - JavaScript 1 Day 講習資料、JavaScript 本格入門書、チートシートなどはこちら
+- JavaScript 初学者向け資料集
+  - [JavaScript 1 Day 講習資料、JavaScript 本格入門書、チートシートなどはこちら](/js/)
   - [JavaScript Primer - 迷わないための入門書](https://jsprimer.net/)
 
 ### Github と開発環境
