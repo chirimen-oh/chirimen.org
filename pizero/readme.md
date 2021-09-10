@@ -114,6 +114,7 @@ PiZero自体はディスプレイやキーボードを接続する必要はあ�
 
 PiZero とパーツを使って下の図の通りに配線します。
 * [LEDの極性に注意！](https://tutorial.chirimen.org/raspi/hellorealworld#section-1)
+* [配線の基礎知識](https://tutorial.chirimen.org/reference#section-1)
 
 ![PiZero配線図](./imgs/pizero_led.png)
 
