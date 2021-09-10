@@ -27,7 +27,7 @@ CHIRIMEN を利用するに際して、知っておくと良い予備知識や�
   - [小さいブレッドボード (Switch Science)](https://www.sunhayato.co.jp/material2/ett03/item_787)
   - [ミニブレッドボード (秋月電子)](https://akizukidenshi.com/catalog/g/gP-05155/)
 - タクトスイッチ
-  - タクトスイッチとは (準備中)
+  - [タクトスイッチとは (準備中)](https://tutorial.chirimen.org/raspi/section1#section-4)
   - [タクトスイッチ製品例 (アルプスアルパイン)](https://tech.alpsalpine.com/prod/j/html/tact/snapin/skhw/skhwala010.html)
 - GPIO
   - [Raspberry Pi の GPIO 概要 (ツールラボ)](https://tool-lab.com/raspberrypi-startup-22/)
