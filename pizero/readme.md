@@ -17,11 +17,13 @@ CHIRIMEN with Node.js on Raspberry Pi Zero W を用いたIoT実習資料の Hell
 以下を用意します
 * Raspberry Pi Zero W
 * [Raspberry Pi OS LiteをUSB Serialで使用可能にしたSDイメージ](https://github.com/kou029w/chirimen-os/releases/)
+  * 講習会では書き込み済みSDが配布されると思いますが、自分で作る場合は[ここなどを参考に](https://tutorial.chirimen.org/raspi/sdcard)(ただし書き込むべきイメージは違います([これを書き込みます](https://github.com/kou029w/chirimen-os/releases/)))
 * ブラウザの載ったパソコン
   * Windows 10 PC
     * ブラウザは標準のEdgeもしくはChromeを使います。
   * Macintosh(多分大丈夫-未確認)
     * ブラウザはChromeが必要です。
+  * いずれもUSBとWiFiが使える必要があります。
 * USBケーブル (USB A - MicroB)
 * Lチカパーツ類
   * ブレッドボード
@@ -37,7 +39,6 @@ PiZero自体はディスプレイやキーボードを接続する必要はあ�
 ## ステップ１（ターミナル接続）
 
 * [Raspberry Pi OS LiteをUSB Serialで使用可能にしたイメージ](https://github.com/kou029w/chirimen-os/releases/)を書き込んだSDカードをRaspberry Pi Zeroに差し込みます。
-  * 講習会では書き込み済みSDが配布されると思いますが、自分で作る場合は[ここなどを参考に](https://tutorial.chirimen.org/raspi/sdcard)(ただし書き込むべきイメージは違います([これを書き込みます](https://github.com/kou029w/chirimen-os/releases/)))
 * PCのUSBとRaspberry Pi ZeroのUSB OTGポートをUSBケーブルでつなぎます
   * PiZero側はつなぐポート要注意　ここに繋ぎます
   ![pi zero otg port](https://chirimen.org/PiZeroWebSerialConsole/imgs/PiZeroW_OTG.JPG)
