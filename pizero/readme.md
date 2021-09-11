@@ -179,7 +179,9 @@ blink();
 
 # いろいろなデバイスのサンプルを試す
 
-色々なデバイスのサンプルが用意されています。まずは、その中から[I2C](https://tutorial.chirimen.org/raspi/section2#:~:text=I2C%20%E3%81%A8%E3%81%AF%202%20%E7%B7%9A,%E3%81%A7%E9%80%9A%E4%BF%A1%E3%82%92%E8%A1%8C%E3%81%84%E3%81%BE%E3%81%99%E3%80%82)センサーのADT7410を試しましょう。(SHT30(orSHT31)は次章を参照)
+色々な[デバイスのサンプル](esm-examples/)が用意されています。まずは、その中からI2CセンサーのADT7410を試しましょう。(SHT30(orSHT31)は次章を参照)
+
+* [I2Cとは？](https://tutorial.chirimen.org/raspi/section2#i2c-)
 
 ## ADT7410編
 * ターミナルウィンドの```CHIRIMEN Panel```ボタンを押す
@@ -192,11 +194,12 @@ blink();
 * ```JS GET```ボタンを押すと、開発ディレクトリ(```~/myApp```)に、サンプルコードが保存されます。
   * **main-adt7410.js**というファイル名で保存されます。
   * Note: ターミナルウィンドの右側のファイルマネージャでmain-adt7410.js⇒編集 を選ぶと、エディタで編集できます。
+    * ソースコードを見てみましょう
     * 今は編集不要ですが、サンプルをベースに応用プログラムを作るときには編集しましょう。
 
 ### I2Cセンサーが認識さていることを確認する
 
-* CHIRIMEN Panelの```i2c detect```ボタンを押すと、**48**が表示されていればうまく接続されています。
+* CHIRIMEN Panelの```i2c detect```ボタンを押すと、[ADT7410のI2Cアドレス](https://akizukidenshi.com/download/ds/akizuki/AE-ADT7410_aw.pdf) **48**が表示されていればうまく接続されています。
   * [ic2 detectとは](https://tutorial.chirimen.org/ty51822r3/i2cdetect)
 <pre>
      0  1  2  3  4  5  6  7  8  9  a  b  c  d  e  f
@@ -227,11 +230,12 @@ SHT30は温度に加えて湿度も測定できるI2C接続の多機能センサ
 * ```JS GET```ボタンを押すと、開発ディレクトリ(```~/myApp```)に、サンプルコードが保存されます。
   * **main-sht730.js**というファイル名で保存されます。
   * Note: ターミナルウィンドの右側のファイルマネージャでmain-sht30.js⇒編集 を選ぶと、エディタで編集できます。
+    * ソースコードを見てみましょう
     * 今は編集不要ですが、サンプルをベースに応用プログラムを作るときには編集しましょう。
 
-## I2Cセンサーが認識さていることを確認する
+### I2Cセンサー(SHT30)が認識さていることを確認する
 
-* CHIRIMEN Panelの```i2c detect```ボタンを押すと、**44**が表示されていればうまく接続されています。
+* CHIRIMEN Panelの```i2c detect```ボタンを押すと、[SHT30のI2Cアドレス](https://strawberry-linux.com/pub/Sensirion_Humidity_SHT3x_DIS_Datasheet_V3_J.pdf)**44**が表示されていればうまく接続されています。
   * [ic2 detectとは](https://tutorial.chirimen.org/ty51822r3/i2cdetect)
 <pre>
      0  1  2  3  4  5  6  7  8  9  a  b  c  d  e  f
@@ -245,16 +249,18 @@ SHT30は温度に加えて湿度も測定できるI2C接続の多機能センサ
 70: -- -- -- -- -- -- -- --                       
 </pre>
 
-## 実行する
+### 実行する
 * ターミナルウィンドのコンソールのプロンプトが```pi@raspberrypi:~/myApp$```となっていることを確認
 * ターミナルウィンドのコンソールに、```node main-sht30.js``` [ENTER] と入力して実行。
 * 温度と湿度が1秒ごとにコンソールに表示されます。
 * 終了は CTRL+C
 
+## その他のデバイスも試してみる
 
-デバイスを扱うためのパッケージについてさらに知りたい場合は [サンプル一覧](esm-examples/) を参照してください。
+* ターミナルウィンドの```CHIRIMEN Panel```ボタン⇒CHIRIMEN Panelの```Get Examples```ボタンで出現するリストのデバイスがすぐ試せます。
+* このリストの直リンクは[こちら](esm-examples/)です。⇒ [(サンプル一覧)](esm-examples/)  CHIRIMEN RPiZeroをつないでいないときはこちらを眺めてください。
 
-また、CHIRIMEN チュートリアルのなかには、Web GPIO や Web I2C によって扱うことのできる[外部デバイスとサンプルコードの一覧があります](https://tutorial.chirimen.org/raspi/partslist)。こちらも参考になるかもしれません。
+また、CHIRIMEN チュートリアルのなかには、Web GPIO や Web I2C によって扱うことのできる[外部デバイスの写真や様々なCHIRIMEN環境のサンプルコードの一覧があります](https://tutorial.chirimen.org/raspi/partslist)。こちらも参考になるかもしれません。(CHIRIMENはRaspberry Pi ZeroW以外に、Raspberry Pi 3,4や、micro:bit等でも使用できます）
 
 
 # CHIRIMEN ブラウザー版との差異
