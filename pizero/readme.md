@@ -199,7 +199,7 @@ blink();
 
 ### I2Cセンサーが認識さていることを確認する
 
-* CHIRIMEN Panelの```i2c detect```ボタンを押すと、[ADT7410のI2Cアドレス](https://akizukidenshi.com/download/ds/akizuki/AE-ADT7410_aw.pdf) **48**が表示されていればうまく接続されています。
+* CHIRIMEN Panelの```i2c detect```ボタンを押すと、[ADT7410のI2Cアドレス](https://akizukidenshi.com/download/ds/akizuki/AE-ADT7410_aw.pdf)　0x**48**が表示されていればうまく接続されています。
   * [ic2 detectとは](https://tutorial.chirimen.org/ty51822r3/i2cdetect)
 <pre>
      0  1  2  3  4  5  6  7  8  9  a  b  c  d  e  f
@@ -235,7 +235,7 @@ SHT30は温度に加えて湿度も測定できるI2C接続の多機能センサ
 
 ### I2Cセンサー(SHT30)が認識さていることを確認する
 
-* CHIRIMEN Panelの```i2c detect```ボタンを押すと、[SHT30のI2Cアドレス](https://strawberry-linux.com/pub/Sensirion_Humidity_SHT3x_DIS_Datasheet_V3_J.pdf)**44**が表示されていればうまく接続されています。
+* CHIRIMEN Panelの```i2c detect```ボタンを押すと、[SHT30のI2Cアドレス](https://strawberry-linux.com/pub/Sensirion_Humidity_SHT3x_DIS_Datasheet_V3_J.pdf)　0x**44**が表示されていればうまく接続されています。
   * [ic2 detectとは](https://tutorial.chirimen.org/ty51822r3/i2cdetect)
 <pre>
      0  1  2  3  4  5  6  7  8  9  a  b  c  d  e  f
@@ -260,7 +260,7 @@ SHT30は温度に加えて湿度も測定できるI2C接続の多機能センサ
 * ターミナルウィンドの```CHIRIMEN Panel```ボタン⇒CHIRIMEN Panelの```Get Examples```ボタンで出現するリストのデバイスがすぐ試せます。
 * このリストの直リンクは[こちら](esm-examples/)です。⇒ [(サンプル一覧)](esm-examples/)  CHIRIMEN RPiZeroをつないでいないときはこちらを眺めてください。
 
-また、CHIRIMEN チュートリアルのなかには、Web GPIO や Web I2C によって扱うことのできる[外部デバイスの写真や様々なCHIRIMEN環境のサンプルコードの一覧があります](https://tutorial.chirimen.org/raspi/partslist)。こちらも参考になるかもしれません。(CHIRIMENはRaspberry Pi ZeroW以外に、Raspberry Pi 3,4や、micro:bit等でも使用できます）
+また、CHIRIMEN チュートリアルのなかには、Web GPIO や Web I2C によって扱うことのできる[外部デバイスの写真や様々なCHIRIMEN環境のサンプルコードの一覧があります](https://tutorial.chirimen.org/raspi/partslist)。こちらも参考になるかもしれません。(CHIRIMENは[Raspberry Pi ZeroW以外に、Raspberry Pi 3,4や、micro:bit等](../)でも使用できます）
 
 
 # CHIRIMEN ブラウザー版との差異
