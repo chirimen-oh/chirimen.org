@@ -258,7 +258,7 @@ SHT30は温度に加えて湿度も測定できるI2C接続の多機能センサ
 ## その他のデバイスも試してみる
 
 * ターミナルウィンドの```CHIRIMEN Panel```ボタン⇒CHIRIMEN Panelの```Get Examples```ボタンで出現するリストのデバイスがすぐ試せます。
-* このリストの直リンクは[こちら](esm-examples/)です。⇒ [(サンプル一覧)](esm-examples/)  CHIRIMEN RPiZeroをつないでいないときはこちらを眺めてください。
+* このリストの直リンクは[こちら(サンプル一覧)](esm-examples/)です。CHIRIMEN RPiZeroをPCにつないでいないときはこちらを眺めてください。
 
 また、CHIRIMEN チュートリアルのなかには、Web GPIO や Web I2C によって扱うことのできる[外部デバイスの写真や様々なCHIRIMEN環境のサンプルコードの一覧があります](https://tutorial.chirimen.org/raspi/partslist)。こちらも参考になるかもしれません。(CHIRIMENは[Raspberry Pi ZeroW以外に、Raspberry Pi 3,4や、micro:bit等](../)でも使用できます）
 
