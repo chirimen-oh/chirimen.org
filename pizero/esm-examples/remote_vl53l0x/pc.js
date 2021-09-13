@@ -1,8 +1,6 @@
 // Remote Example1 - controller
 import {RelayServer} from "./RelayServer.js";
 
-window.getData = getData;
-
 var channel;
 onload = async function(){
 	// webSocketリレーの初期化
