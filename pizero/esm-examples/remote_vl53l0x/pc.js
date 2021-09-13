@@ -14,5 +14,5 @@ function getMessage(msg){ // メッセージを受信したときに起動する
 	var mdata = msg.data;
 	messageDiv.innerText = JSON.stringify(mdata);
 	console.log("mdata:",mdata);
-	distanceTd.innerText = mdata;
+	distanceTd.innerText = mdata + " mm";
 }
