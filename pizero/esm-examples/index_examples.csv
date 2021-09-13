@@ -48,3 +48,4 @@ remote_example4,リモートLチカ,GPIO PORT26に繋いだLEDをブラウザか
 remote_example5,リモート温湿度センサ,I2CのSHT30で測った温度と湿度をブラウザで表示
 remote_example8,リモートサーボ,I2CのPCA9685 Port0のサーボをブラウザでコントロール
 remote_example9,リモートオンオフセンサ,GPIO PORT5に繋いだスイッチ(On/Offセンサ)をブラウザでモニタ
+remote_vl53l0x,リモート距離センサ,I2CのVL53L0Xで測った距離をブラウザで表示（インターバル表示）
