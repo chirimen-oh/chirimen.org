@@ -3,11 +3,11 @@ lang: ja
 permalink: /raspi/
 ---
 
-## CHIRIMEN for Raspberry Pi チュートリアル
+## CHIRIMEN チュートリアル (Raspberry Pi 向け)
 
-CHIRIMEN for Raspberry Pi を用いた IoT システムプロトタイピングスキル習得のためのチュートリアル資料です。
+CHIRIMEN を [Raspberry Pi](https://www.raspberrypi.org/) で動かして IoT システムのプロトタイピングやスキル習得するためのチュートリアル資料です。
 
-JavaScript プログラミング未経験者は、ページ下部で紹介している資料・サイトも参照しつつご覧ください。
+本ページではこちらでは Raspberry Pi のうちメインの Model B/B+ 系列やキーボード一体型向けの 400 などを対象としています。Raspberry Pi Zero については [Pi Zero 専用のページ](/pizero/) をご覧ください。また、JavaScript プログラミング未経験者は、ページ下部で紹介している資料・サイトも参照しつつご覧ください。
 
 ## Hello Real World
 
