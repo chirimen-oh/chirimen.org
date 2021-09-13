@@ -1,6 +1,9 @@
 # CHIRIMEN 対応デバイスリスト
 
-CHIRIMEN for Raspberry Pi や CHIRIMEN with micro:bit などの CHIRIMEN 環境での利用を検証済みのパーツや WebI2C で利用する CHIRIMEN 用ドライバーを用意している I2C デバイスを紹介します。
+市販されているセンサーやアクチュエータなどのうち、CHIRIMEN 環境での利用を検証しサンプルコード一式 (I2C デバイスについては CHIRIMEN 用ドライバーを含む) を用意しているデバイス一覧です。
+
+こちらに掲載がないデバイスについても、デジタル GPIO デバイスであればそのまま、アナログ GPIO デバイスであれば ADC を経由で簡単に利用頂けます (I2C デバイスについてはドライバーの用意も必要です)。
+
 ## I2C センサー
 
 {% include partslist.html interface='I2C' %}
