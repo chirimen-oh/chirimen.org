@@ -4,7 +4,8 @@ repository: chirimen-oh/chirimen.org
 title: '<a href="/" style="color: white">CHIRIMEN OPEN HARDWARE</a>'
 description: >-
   <!-- ブラウザからハードを制御する CHIRIMEN のコミュニティサイトです<br> -->
-  対応ボード別チュートリアル : <a href="/raspi/" style="color: white">Raspberry Pi</a>
+  対応ボード別ページ : <a href="/raspi/" style="color: white">Raspberry Pi</a>
+  / <a href="/pizero/" style="color: white">Pi Zero</a>
   / <a href="/microbit/" style="color: white">micro:bit</a>
   / <a href="/ty51822r3/" style="color: white">TY51822r3</a><br>
   <a href="/about" style="color: white">CHIRIMEN について</a>
