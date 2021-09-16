@@ -18,7 +18,7 @@ CHIRIMEN with Node.js on Raspberry Pi Zero W を用いたIoT実習資料の Hell
 * Raspberry Pi Zero W
   * [秋月電子](https://akizukidenshi.com/catalog/g/gM-12961/),[スイッチサイエンス](https://www.switch-science.com/catalog/3646/),[マルツ](https://www.marutsu.co.jp/pc/i/1320453/)
 * [Raspberry Pi OS LiteをUSB Serialで使用可能にしたSDイメージ](https://github.com/kou029w/chirimen-os/releases/)
-  * 講習会では書き込み済みSDが配布されると思いますが、自分で作る場合は[ここなどを参考に](https://tutorial.chirimen.org/raspi/sdcard)(ただし書き込むべきイメージは違います([これを書き込みます](https://github.com/kou029w/chirimen-os/releases/)))
+  * 講習会では書き込み済みSDが配布されると思いますが、自分で作る場合は[こちら](../raspi/sdcard)や[こちら](../raspi/sdcard)(書き込むべきイメージはLite版の方です。([これを書き込みます](https://github.com/kou029w/chirimen-os/releases/)))
 * ブラウザの載ったパソコン
   * Windows 10 PC
     * ブラウザは標準のEdgeもしくはChromeを使います。
