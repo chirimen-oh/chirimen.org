@@ -8,7 +8,7 @@ CHIRIMEN for Raspberry Pi (以下 CHIRIMEN Raspi) を利用するには Raspberr
 
 SD カードに起動イメージを焼き込むには Windows, macOS または Linux の PC と SD カードリーダーが必要です。
 
-また、高速かつ安全に焼き込みをするため [Raspberry Pi Imager](https://www.raspberrypi.org/software/) をダウンロード・インストールしてください (dd コマンドなどを使うことも出来ますが上級者向けのため割愛します)。
+また、SDイメージを作るPC用のツールとして、[Raspberry Pi Imager](https://www.raspberrypi.org/software/) をダウンロード・PCにインストールしてください (dd コマンドなどを使うことも出来ますが上級者向けのため割愛します)。
 
 ## 2. 起動イメージのダウンロード
 
