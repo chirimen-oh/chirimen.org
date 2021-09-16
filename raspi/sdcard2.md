@@ -22,7 +22,7 @@ SD カードの書き込みに使う PC で最新の起動イメージをダウ�
 ## 3. SD カードにイメージを焼き込む
 
 イメージファイルの準備が出来たら microSD カード (8GB 以上必須、Class 10 以上で高速なものを推奨) をカードリーダーに指し込み、[Raspberry Pi Imager](https://www.raspberrypi.org/software/) を起動してください。
-![Imagerの起動画面](../imgs/RaspberryPiImager1.png)
+![Imagerの起動画面](./imgs/imager/RaspberryPiImager1.png)
 
 `CHOOSE OS` ボタンを押すと出てくるダイアログで、`Use Custom`を選びます。そして先ほどダウンロード (と展開) したイメージファイルを選択します。
 ![Imagerの起動画面](./imgs/imager/RaspberryPiImager2.png)
