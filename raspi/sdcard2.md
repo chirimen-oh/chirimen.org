@@ -28,7 +28,7 @@ SD カードの書き込みに使う PC で最新の起動イメージをダウ�
 ![Imagerの起動画面](./imgs/imager/RaspberryPiImager2.png)
 ![Imagerの起動画面](./imgs/imager/RaspberryPiImager3.png)
 
-、`CHOOSE STORAGE` で指し込んだ SD カードのドライブを選択 (間違ったドライブを選択するとそのデータが消えてしまうため要注意) し、`WRITE` ボタンを押してください。
+`CHOOSE STORAGE` で指し込んだ SD カードのドライブを選択 (間違ったドライブを選択するとそのデータが消えてしまうため要注意) し、`WRITE` ボタンを押してください。
 
 
 ## 4. 起動を確認する
