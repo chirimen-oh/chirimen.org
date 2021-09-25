@@ -76,6 +76,7 @@ PiZero自体はディスプレイやキーボードを接続する必要はあ�
 ## ステップ２ (WiFi設定)
 
 * ターミナルウィンドの```wifi panel```ボタンを押す
+  ![WiFi Setting](./imgs/WiFiSetting.png)
   * ウィンドが開き、WiFiアクセスポイントがスキャンされます。ステルスでないものはリストアップされているので、以降の作業の参考にしてください。
   * Raspberry Pi Zero Wは2.4GHz帯のWiFiにのみ対応しています。
 * ウィンド下部に、会場(もしくは開発場所)で提供されているWiFiアクセス情報を入力する
@@ -94,6 +95,8 @@ PiZero自体はディスプレイやキーボードを接続する必要はあ�
 * ```wifi Info```ボタンを押す
   * 表示された情報をチェックします
   * wlan0: inet xxx.xxx.xxx.xxx　(xxxは数字)のようにIPアドレスが設定されていれば接続成功しています。
+![WiFi Setting_IPaddress](./imgs/WiFiSettingIPaddress.png)
+
   <!--  * あとでping chirimen.org OK も入れよう。-->
   * もしもあなたがsshやscp(winSCP)などのツールに慣れている場合、上記のアドレスでssh接続できます
     * PORT: 22
