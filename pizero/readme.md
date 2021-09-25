@@ -267,6 +267,9 @@ SHT30は温度に加えて湿度も測定できるI2C接続の多機能センサ
 
 また、CHIRIMEN チュートリアルのなかには、Web GPIO や Web I2C によって扱うことのできる[外部デバイスの写真や様々なCHIRIMEN環境のサンプルコードの一覧があります](https://tutorial.chirimen.org/raspi/partslist)。こちらも参考になるかもしれません。(CHIRIMENは[Raspberry Pi ZeroW以外に、Raspberry Pi 3,4や、micro:bit等](../)でも使用できます）
 
+# JavaScript の基礎
+
+JavaScript に慣れていない人は、こちらの資料「JavaScript 初学者向け資料集」も参考にしてください。
 
 # CHIRIMEN ブラウザー版との差異
 
