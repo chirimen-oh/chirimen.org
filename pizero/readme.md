@@ -269,7 +269,7 @@ SHT30は温度に加えて湿度も測定できるI2C接続の多機能センサ
 
 # JavaScript の基礎
 
-JavaScript に慣れていない人は、こちらの資料「JavaScript 初学者向け資料集」も参考にしてください。
+JavaScript に慣れていない人は、[「JavaScript 初学者向け資料集」](https://tutorial.chirimen.org/js/) も参考にしてください。
 
 # CHIRIMEN ブラウザー版との差異
 
