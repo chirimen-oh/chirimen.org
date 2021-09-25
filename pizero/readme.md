@@ -76,9 +76,9 @@ PiZero自体はディスプレイやキーボードを接続する必要はあ�
 ## ステップ２ (WiFi設定)
 
 * ターミナルウィンドの```wifi panel```ボタンを押す
-  ![WiFi Setting](./imgs/WiFiSetting.png)
   * ウィンドが開き、WiFiアクセスポイントがスキャンされます。ステルスでないものはリストアップされているので、以降の作業の参考にしてください。
   * Raspberry Pi Zero Wは2.4GHz帯のWiFiにのみ対応しています。
+    ![WiFi Setting](./imgs/WiFiSetting.png)
 * ウィンド下部に、会場(もしくは開発場所)で提供されているWiFiアクセス情報を入力する
   * SSID欄
   * PASS PHRASE欄
@@ -143,20 +143,22 @@ Raspberry Pi に接続した LED を点滅させるプログラムを書きま�
 
 
 ```javascript
-import {requestGPIOAccess} from "./node_modules/node-web-gpio/dist/index.js";
-const sleep = msec => new Promise(resolve => setTimeout(resolve, msec));
+import {requestGPIOAccess} from "./node_modules/node-web-gpio/dist/index.js"; // WebGPIO を使えるようにするためのライブラリをインポート
+const sleep = msec => new Promise(resolve => setTimeout(resolve, msec)); // sleep 関数を定義
 
 async function blink() {
-  const gpioAccess = await requestGPIOAccess();
-  const port = gpioAccess.ports.get(26);
+  const gpioAccess = await requestGPIOAccess(); // GPIO を操作する 
+  const port = gpioAccess.ports.get(26); // 26 番ポートを操作する
 
-  await port.export("out");
+  await port.export("out"); // ポートを出力モードに設定
 
+  // 無限ループ
   for (;;) {
-    await port.write(1);
-    await sleep(1000);
-    await port.write(0);
-    await sleep(1000);
+    // 1秒間隔で LED が点滅します
+    await port.write(1); // LEDを点灯
+    await sleep(1000);   // 1000 ms (1秒) 待機
+    await port.write(0); // LEDを消灯
+    await sleep(1000);   // 1000 ms (1秒) 待機
   }
 }
 
