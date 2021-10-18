@@ -35,6 +35,8 @@ CHIRIMEN with Node.js on Raspberry Pi Zero W を用いたIoT実習資料の Hell
   * [ADT7410モジュール](https://akizukidenshi.com/catalog/g/gM-06675/)　もしくは [SHT30モジュール](https://www.amazon.co.jp/dp/B083NHJSL9/)
   * ジャンパーワイヤ オス-メス 2本
 
+![Parts Images](imgs/chirimenPiZeroSet.jpg)
+
 PiZero自体はディスプレイやキーボードを接続する必要はありません。
 
 ### PCをWiFiに接続
@@ -266,6 +268,11 @@ SHT30は温度に加えて湿度も測定できるI2C接続の多機能センサ
 * このリストの直リンクは[こちら(サンプル一覧)](esm-examples/)です。CHIRIMEN RPiZeroをPCにつないでいないときはこちらを眺めてください。
 
 また、CHIRIMEN チュートリアルのなかには、Web GPIO や Web I2C によって扱うことのできる[外部デバイスの写真や様々なCHIRIMEN環境のサンプルコードの一覧があります](https://tutorial.chirimen.org/raspi/partslist)。こちらも参考になるかもしれません。(CHIRIMENは[Raspberry Pi ZeroW以外に、Raspberry Pi 3,4や、micro:bit等](../)でも使用できます）
+
+### Raspberry Pi Zeroのピン配列
+
+GPIO, 電源, GND, I2C信号線などのピン配列を記載します。
+![Raspberry Pi Pinout](https://chirimen.org/PiZeroWebSerialConsole/wallpaperS.png)
 
 # JavaScript の基礎
 
