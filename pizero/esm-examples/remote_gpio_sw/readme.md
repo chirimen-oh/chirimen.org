@@ -8,4 +8,4 @@ GPIO PORT26に繋ぎます
 
 ## 遠隔モニタ(PC/スマホブラウザ)側
 
-[pc.html](pc.html)を起動します。
+[pc/index.html](index.html)を起動します。

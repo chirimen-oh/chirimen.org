@@ -4,7 +4,7 @@
 GPIO
 hello-real-world,Lチカ,GPIO PORT26に繋いだLEDを点滅させる
 gpio-onchange,スイッチ,GPIO PORT5に繋いだスイッチのON/OFFを検知する
-gpio-polling,スイッチ,GPIO PORT5に繋いだスイッチのON/OFFをポーリングで検知する
+gpio-polling,スイッチ2,GPIO PORT5に繋いだスイッチのON/OFFをポーリングで検知する
 #HBridge,モータ正転・逆転制御,GPIO接続のH-BridgeモータドライバでDCモータの正転・逆転制御を可能にします。
 #I2C-PWMHBridge,モータ正転・逆転・速度制御,GPIO接続のH-Bridgeモータドライバ及びI2C接続のPWMドライバPCA9685でDCモータの正転・逆転さらに速度制御を可能にします。
 #I2C-PWMHBridge2,モータ正転・逆転・速度制御,H-BridgeモータドライバとPWMドライバPCA9685でDCモータの正逆転速度制御をします。こちらの回路ではPWM信号を2つ使います。PWM端子やENABLE端子などを持たないコントローラにも応用できます。

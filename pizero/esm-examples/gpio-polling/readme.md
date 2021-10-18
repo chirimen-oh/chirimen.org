@@ -1,4 +1,4 @@
-# GPIOスイッチ (GPIO INPUT)
+# GPIOスイッチ2 (GPIO POLLING INPUT)
 
 ## 配線図
 

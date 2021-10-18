@@ -1,8 +1,8 @@
-# CHIRIMEN with Node.js / Raspberry Pi Zero W
+# **CHIRIMEN Raspberry Pi Zero W チュートリアル**
 
 # 概要
 
-CHIRIMEN with Node.js on Raspberry Pi Zero W を用いたIoT実習資料の Hello Real World編　ドラフトです。
+CHIRIMEN Raspberry Pi Zero版 を用いたIoT実習資料の Hello Real World編　ドラフトです。
 
 [pizeronodejs.md](pizeronodejs.md)の内容をもとに、Web Serial RPiZero Terminalを使うことで操作を簡単化し、更にプログラム作法をECMA Script Moduleにあわせています。
 
@@ -184,46 +184,117 @@ blink();
 * LED が点滅すれば完成です 🎉
 * プログラムを止めるには、コンソール部で ```CTRL+C``` を押します。
 
-# いろいろなデバイスのサンプルを試す
+
+# Raspberry Pi について
+
+* 教育・学習用として設計されたボードコンピュータ
+  * ボードコンピュータ～PC・スマホとの違い
+* Linuxが動作するボードコンピュータとして、安価でとても高いシェアを持ち世界中で容易に入手できる
+
+## Raspberry Pi Zeroのピン配列
+
+GPIO, 電源, GND, I2C信号線などのピン配列を記載します。
+* 白い文字で書かれたピンだけが使えます
+* GND、3.3V、5Vはそれぞれ電源とグランドです
+* 数字 + PD||PUと書かれているピンはGPIO端子(詳細は次章)
+  * PD:プルダウン, PU:プルアップ
+* SCL, SDAはI2Cインターフェースのピンです(詳細は次章)
+![Raspberry Pi Pinout](https://chirimen.org/PiZeroWebSerialConsole/wallpaperS.png)
+
+# CHIRIMEN について
+
+* Web技術（Web Browserで使われている技術）を使って、フィジカルコンピューティング、IoTの学習・プロトタイピングができる、開発環境。
+  * フィジカルコンピューティングとは？
+  * IoTとは？
+* 広く使われている標準技術のなかで学習できるので
+  * 学習のハードルが低い
+  * 得たスキルが広く長く役立つ
+  * インターネットでノウハウを検索しやすい
+
+## CHIRIMEN Raspberry Pi Zero版について
+
+* PiZero上ではWeb Browserを動かさない。
+* Node.jsというJava Scriptインタープリターだけが動く
+  * ブラウザの機能のうち一部だけがPiZero上で使える
+    * プログラミング言語 ～ Java Script
+    * 画面表示やGUIに関わらないAPI
+    * 通信プロトコル
+  * 使えないのはブラウザを使った画面表示やGUI
+
+* ブラウザを使った画面やGUIは
+  * ネットを介してスマホやPC上で ⇒ これが代表的にIoTと呼ばれるデザインパターン
+  * Raspberry Pi Zeroは、IoTエッジデバイスとして動作
+
+# JavaScript の基礎
+
+JavaScript に慣れていない人は、[「JavaScript 初学者向け資料集」](https://tutorial.chirimen.org/js/) も参考にしてください。
+
+
+# いろいろなデバイスを試す
 
 色々な[デバイスのサンプル](esm-examples/)が用意されています。これらを用いてデバイスの制御方法を学んでいきましょう。
 
-## GPIOを試す
+# GPIOを試す
 
-### GPIOを理解する
-* [GPIOとは？](https://tutorial.chirimen.org/raspi/section1#gpio)
+## GPIOを理解する
+* [GPIOとは？](https://tutorial.chirimen.org/raspi/section0#gpio-)
 
-### GPIO出力
+## GPIO出力
 
-GPIOの出力はLチカで実験済みですね！
+GPIOの出力はLチカで実験済みですね
 
-### GPIO入力
+## GPIO入力
+GPIO端子の**入力が変化したら**というイベントによってGPIOの入力を使います。
 
 * ターミナルウィンドの```CHIRIMEN Panel```ボタンを押す
 * 出現したCHIRIMEN Panelの```Get Examples```ボタンを押す
-* ID : gpio-onchangeを探します
+* ID : **gpio-onchange**を探します
 * 回路図リンクを押すと回路図が出てきますので、回路を組みます。
 
 * ```JS GET```ボタンを押すと、開発ディレクトリ(```~/myApp```)に、サンプルコードが保存されます。
   * **main-gpio-onchange.js**というファイル名で保存されます。
   * ターミナルウィンドの右側のファイルマネージャでmain-gpio-onchange.js⇒編集 を選びます。
     * ソースコードを見てみましょう
-    * 今は編集不要ですが、サンプルをベースに応用プログラムを作るときには編集しましょう。
+    * 今回は編集不要ですが、サンプルをベースに応用プログラムを作るときには編集しましょう。
 
 *実行する
   * ターミナルウィンドのコンソールのプロンプトが```pi@raspberrypi:~/myApp$```となっていることを確認
-  * ターミナルウィンドのコンソールに、```node main-adt7410.js``` [ENTER] と入力して実行。
+  * ターミナルウィンドのコンソールに、```node main-gpio-onchange.js``` [ENTER] と入力して実行。
   * タクトスイッチを押してみます。
-  * タクトスイッチが押されるたびにコンソール画面に0(押された状態)、1(離した状態)が交互に表示されます。
+  * タクトスイッチが押されるたびにコンソール画面に**0**(押された状態)、**1**(離した状態)が交互に表示されます。
     * Note: GPIOポート5は、Pull-Up(開放状態でHighレベル)です。そのため離した状態で１が出力されます。スイッチを押すとポートがGNDと接続され、Lowレベルになり、0が出力されます。
 * 終了は CTRL+C
 
-##
-まずは、その中からI2CセンサーのADT7410を試しましょう。(SHT30(orSHT31)は次章を参照)
+## GPIO入力(ポーリング)
+入力ではイベントの他にポーリングというテクニックが広く使われます。（次章のI2Cデバイスからの入力では専らポーリング）
+
+* ターミナルウィンドの```CHIRIMEN Panel```ボタンを押す
+* 出現したCHIRIMEN Panelの```Get Examples```ボタンを押す
+* ID : **gpio-polling**を探します
+* 回路は前章と同じなのでそのままにしておきます。
+* ```JS GET```ボタンを押すと、開発ディレクトリ(```~/myApp```)に、サンプルコードが保存されます。
+  * **main-gpio-polling.js**というファイル名で保存されます。
+  * ターミナルウィンドの右側のファイルマネージャでmain-gpio-polling.js⇒編集 を選びソースコードを見てみましょう
+
+* 実行する
+  * プロンプトが```pi@raspberrypi:~/myApp$```となっていることを確認
+  * コンソールに、```node main-gpio-polling.js``` [ENTER] と入力して実行。
+  * 0.3秒おきにポート5の値がコンソールに表示されていきます。
+  * タクトスイッチを押してみます。
+  * タクトスイッチが押されると、**0**に変化します。
+* 終了は CTRL+C
+
+
+# I2Cデバイスを試す
+
+## I2Cを理解する
 
 * [I2Cとは？](https://tutorial.chirimen.org/raspi/section2#i2c-)
 
 ## ADT7410編
+
+まずは、その中からI2CセンサーのADT7410を試しましょう。(SHT30(orSHT31)は次章を参照)
+
 * ターミナルウィンドの```CHIRIMEN Panel```ボタンを押す
 * 出現したCHIRIMEN Panelの```Get Examples```ボタンを押す
 * ID : adt7410を探します(上から5個目ぐらい)
@@ -295,21 +366,14 @@ SHT30は温度に加えて湿度も測定できるI2C接続の多機能センサ
 * 温度と湿度が1秒ごとにコンソールに表示されます。
 * 終了は CTRL+C
 
-## その他のデバイスも試してみる
+# 他のいろいろなデバイスを試してみる
 
 * ターミナルウィンドの```CHIRIMEN Panel```ボタン⇒CHIRIMEN Panelの```Get Examples```ボタンで出現するリストのデバイスがすぐ試せます。
+* **REMOTE Examples**については次の章に進んでから試しましょう。
 * このリストの直リンクは[こちら(サンプル一覧)](esm-examples/)です。CHIRIMEN RPiZeroをPCにつないでいないときはこちらを眺めてください。
 
-また、CHIRIMEN チュートリアルのなかには、Web GPIO や Web I2C によって扱うことのできる[外部デバイスの写真や様々なCHIRIMEN環境のサンプルコードの一覧があります](https://tutorial.chirimen.org/raspi/partslist)。こちらも参考になるかもしれません。(CHIRIMENは[Raspberry Pi ZeroW以外に、Raspberry Pi 3,4や、micro:bit等](../)でも使用できます）
+また、こちらには、Web GPIO や Web I2C によって扱うことのできる[外部デバイスの写真や様々なCHIRIMEN環境のサンプルコードの一覧があります](https://tutorial.chirimen.org/raspi/partslist)。こちらも参考になるかもしれません。(CHIRIMENは[Raspberry Pi ZeroW以外に、Raspberry Pi 3,4や、micro:bit等](../)でも使用できます）
 
-### Raspberry Pi Zeroのピン配列
-
-GPIO, 電源, GND, I2C信号線などのピン配列を記載します。
-![Raspberry Pi Pinout](https://chirimen.org/PiZeroWebSerialConsole/wallpaperS.png)
-
-# JavaScript の基礎
-
-JavaScript に慣れていない人は、[「JavaScript 初学者向け資料集」](https://tutorial.chirimen.org/js/) も参考にしてください。
 
 # CHIRIMEN ブラウザー版との差異
 
