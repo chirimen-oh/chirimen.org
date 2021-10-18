@@ -43,7 +43,11 @@ function buildTable(cat){
 	var tbl = document.getElementById("Tbl"+cat);
 	var catData = exData[cat];
 	console.log(tbl,catData);
-	tbl.insertAdjacentHTML('afterbegin', '<tr><td width="100">ID</td><td width="200">タイトル</td><td width="400">概要</td><td>回路図</td><td>JS GET</td><td>CHIRIMEN ORIG参考リンク</td>');
+	if ( cat == "REMOTE" ){
+		tbl.insertAdjacentHTML('afterbegin', '<tr><td width="100">ID</td><td width="200">タイトル</td><td width="400">概要</td><td>回路図</td><td>JS GET</td><td>PC側webApp (CodeSandbox)</td><td>CHIRIMEN ORIG参考リンク</td>');
+	} else {
+		tbl.insertAdjacentHTML('afterbegin', '<tr><td width="100">ID</td><td width="200">タイトル</td><td width="400">概要</td><td>回路図</td><td>JS GET</td><td>CHIRIMEN ORIG参考リンク</td>');
+	}
 	for ( var item of catData ){
 		var id_td = document.createElement("td");
 		id_td.innerText=item[0];
@@ -73,6 +77,14 @@ function buildTable(cat){
 		tr.appendChild(exp_td);
 		tr.appendChild(sch_td);
 		tr.appendChild(js_td);
+		
+		if ( caat="REMOTE"){
+			var pc_td = document.createElement("td");
+			pc_td.innerHTML="<a href='"+getRemotePcCsb(item[0]) + "' target='_pcCsb'>EDIT</a>";
+			tr.appendChild(pc_td);
+		}
+		
+		
 		tr.appendChild(co_td);
 		tbl.appendChild(tr);
 	}
@@ -88,6 +100,13 @@ function jsGet(eid,cat){
 	//console.log("postMessage:",jsURL,new URL(iframeReferrer).origin);
 	parent.window.postMessage({req:"getSrc",url:jsURL, exampleId:eid, category:cat},new URL(iframeReferrer).origin);
 }
+
+function getRemotePcCsb(exId){
+	var csbUrl=`https://codesandbox.io/s/github/chirimen-oh/chirimen.org/tree/master/pizero/esm-examples/${exId}/pc?module=pc.js`;
+	return ( csbUrl);
+	
+}
+
 </script>
 <body>
 <h2>CHIRIMEN with Node.js / RPi Zero Examples</h2>
