@@ -366,6 +366,43 @@ SHT30は温度に加えて湿度も測定できるI2C接続の多機能センサ
 * 温度と湿度が1秒ごとにコンソールに表示されます。
 * 終了は CTRL+C
 
+
+# IoTを試す
+
+## 遠隔LEDコントロール
+![system configuration](imgs/IoTsystemConf.png)
+IoTは、制御されるデバイス（上図ではCHIRIMEN PiZeroW)と、利用者端末（上図ではWebApp PC-side）に加えて、これらの間でデータを中継するサーバ（クラウド）が必要になります。
+今回はWeb標準技術であるWebSocketプロトコルを中継するサーバを用いてLEDを備えたCHIRIMENデバイスとスマホやPCのWebAppを繋いだIoTシステムを作ります。
+
+### 配線する
+配線は最初のLチカそのままです。
+![PiZero配線図](./imgs/pizero_led.png)
+
+### CHIRIMENデバイス側にコードを入れる
+
+* ターミナルウィンドの```CHIRIMEN Panel```ボタンを押す
+* 出現したCHIRIMEN Panelの```Get Examples```ボタンを押す
+* ID : **remote_gpio_led**の行を探します（もう一度この行の情報を使います）
+* ```JS GET```ボタンを押すと、開発ディレクトリ(```~/myApp```)に、サンプルコードが保存されます。
+  * **main-remote_gpio_led.js**というファイル名で保存されます。
+  * ターミナルウィンドの右側のファイルマネージャでmain-remote_gpio_led.js⇒編集 を選びソースコードを見てみましょう
+
+* 実行する
+  * ターミナルウィンドのコンソールのプロンプトが```pi@raspberrypi:~/myApp$```となっていることを確認
+  * ターミナルウィンドのコンソールに、```node main-remote_gpio_led.js``` [ENTER] と入力して実行。
+![CHIRIMEN PiZero Console](imgs/RC_NODE.png)
+  * なお、実験が終わったら終了は CTRL+C です。
+
+### PC側のコードを準備する
+* CHIRIMEN Panelに戻り、ID : **remote_gpio_led**の行にある、```CSB EDIT```リンクをクリックする。
+  * CodeSandboxというオンラインのWebApp開発環境のウィンドが開き、PC側のコードが表示されています。編集もできます。
+  * また、右側（もしくは右下）のフレームにはLEDを遠隔コントロールするためのwebAppが既に実行されています。
+  * webAppを使ってLEDが制御できることを確かめてみましょう。
+
+![Code Sandbox Image](imgs/RC_CSB.svg)
+
+
+
 # 他のいろいろなデバイスを試してみる
 
 * ターミナルウィンドの```CHIRIMEN Panel```ボタン⇒CHIRIMEN Panelの```Get Examples```ボタンで出現するリストのデバイスがすぐ試せます。
