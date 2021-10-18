@@ -31,11 +31,13 @@ CHIRIMEN with Node.js on Raspberry Pi Zero W を用いたIoT実習資料の Hell
   * LED
   * 1KΩ抵抗
   * ジャンパーワイヤ オス-メス 2本
+* GPIO入力実験用追加パーツ
+  * タクトスイッチ
 * 温度センシング実験用追加パーツ
   * [ADT7410モジュール](https://akizukidenshi.com/catalog/g/gM-06675/)　もしくは [SHT30モジュール](https://www.amazon.co.jp/dp/B083NHJSL9/)
   * ジャンパーワイヤ オス-メス 2本
 
-![Parts Images](imgs/chirimenPiZeroSet.jpg)
+![Parts Images](imgs/chirimenPiZeroSet2.jpg)
 
 PiZero自体はディスプレイやキーボードを接続する必要はありません。
 
@@ -182,11 +184,42 @@ blink();
 * LED が点滅すれば完成です 🎉
 * プログラムを止めるには、コンソール部で ```CTRL+C``` を押します。
 
-
-
 # いろいろなデバイスのサンプルを試す
 
-色々な[デバイスのサンプル](esm-examples/)が用意されています。まずは、その中からI2CセンサーのADT7410を試しましょう。(SHT30(orSHT31)は次章を参照)
+色々な[デバイスのサンプル](esm-examples/)が用意されています。これらを用いてデバイスの制御方法を学んでいきましょう。
+
+## GPIOを試す
+
+### GPIOを理解する
+* [GPIOとは？](https://tutorial.chirimen.org/raspi/section1#gpio)
+
+### GPIO出力
+
+GPIOの出力はLチカで実験済みですね！
+
+### GPIO入力
+
+* ターミナルウィンドの```CHIRIMEN Panel```ボタンを押す
+* 出現したCHIRIMEN Panelの```Get Examples```ボタンを押す
+* ID : gpio-onchangeを探します
+* 回路図リンクを押すと回路図が出てきますので、回路を組みます。
+
+* ```JS GET```ボタンを押すと、開発ディレクトリ(```~/myApp```)に、サンプルコードが保存されます。
+  * **main-gpio-onchange.js**というファイル名で保存されます。
+  * ターミナルウィンドの右側のファイルマネージャでmain-gpio-onchange.js⇒編集 を選びます。
+    * ソースコードを見てみましょう
+    * 今は編集不要ですが、サンプルをベースに応用プログラムを作るときには編集しましょう。
+
+*実行する
+  * ターミナルウィンドのコンソールのプロンプトが```pi@raspberrypi:~/myApp$```となっていることを確認
+  * ターミナルウィンドのコンソールに、```node main-adt7410.js``` [ENTER] と入力して実行。
+  * タクトスイッチを押してみます。
+  * タクトスイッチが押されるたびにコンソール画面に0(押された状態)、1(離した状態)が交互に表示されます。
+    * Note: GPIOポート5は、Pull-Up(開放状態でHighレベル)です。そのため離した状態で１が出力されます。スイッチを押すとポートがGNDと接続され、Lowレベルになり、0が出力されます。
+* 終了は CTRL+C
+
+##
+まずは、その中からI2CセンサーのADT7410を試しましょう。(SHT30(orSHT31)は次章を参照)
 
 * [I2Cとは？](https://tutorial.chirimen.org/raspi/section2#i2c-)
 
