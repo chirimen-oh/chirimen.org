@@ -1,5 +1,5 @@
 // Remote Example4 - controller
-import {RelayServer} from "./RelayServer.js";
+import {RelayServer} from "../RelayServer.js";
 
 window.OnLED = OnLED;
 window.OffLED = OffLED;

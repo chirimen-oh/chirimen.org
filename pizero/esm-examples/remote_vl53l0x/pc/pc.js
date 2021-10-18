@@ -1,5 +1,5 @@
 // Remote Example1 - controller
-import {RelayServer} from "./RelayServer.js";
+import {RelayServer} from "../RelayServer.js";
 
 var channel;
 onload = async function(){
