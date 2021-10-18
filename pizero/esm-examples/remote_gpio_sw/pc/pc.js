@@ -1,5 +1,5 @@
 // Remote Example4 - controller
-import {RelayServer} from "../RelayServer.js";
+import {RelayServer} from "https://chirimen.org/remote-connection/js/beta/RelayServer.js";
 
 var channel;
 onload = async function(){

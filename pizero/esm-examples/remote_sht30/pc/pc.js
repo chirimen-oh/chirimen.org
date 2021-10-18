@@ -1,5 +1,5 @@
 // Remote Example1 - controller
-import {RelayServer} from "../RelayServer.js";
+import {RelayServer} from "https://chirimen.org/remote-connection/js/beta/RelayServer.js";
 
 window.getData = getData;
 
