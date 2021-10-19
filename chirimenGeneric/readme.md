@@ -415,3 +415,7 @@ var humidity = 100 * (mdata[3] * 256 + mdata[4]) / 65535.0;
 ```
 ドライバーライブラリ内部では、上記のようにSHT30 に単発の高精度計測を指示し、得られた温度と湿度それぞれ 16bit の数値を、温度・湿度の物理量の浮動小数点数に変換して返却しています。
 
+# IoT
+## webSocketとpub/sub services
+## Webhooks
+## W3C WoT, FIWARE
