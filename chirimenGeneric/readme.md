@@ -454,7 +454,7 @@ var humidity = 100 * (mdata[3] * 256 + mdata[4]) / 65535.0;
 
 一方、(あらかじめ用意されていれば)ウェブサーバにはURLでアクセスできます。そこで登場するのがrelayServerです。下図のようにrelayServer(Web Socket Relay Service)を介してwebAppsが通信します。
 
- ![IoT System Configuration](../pizero/imgs/iotsystemconf.png)
+ ![IoT System Configuration](../pizero/imgs/IoTsystemConf.png)
 
 relayServerは特定のウェブサイトの固有名ではなく、「ウェブアプリ間でリアルタイム性の高いデータのやり取りを仲介する」という機能を持ったウェブサイトの抽象的な名称でpub/sub servicesと呼ばれることもあります。(SNSとかblogとかというのと同じです）
 
