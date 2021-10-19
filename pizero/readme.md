@@ -33,6 +33,10 @@ CHIRIMEN Raspberry Pi Zero版 を用いたIoT実習資料の Hello Real World編
   * ジャンパーワイヤ オス-メス 2本
 * GPIO入力実験用追加パーツ
   * タクトスイッチ
+* モーター制御用追加パーツ
+  * 10KΩ抵抗
+  * MOSFET
+  * ちびギヤモーター
 * 温度センシング実験用追加パーツ
   * [ADT7410モジュール](https://akizukidenshi.com/catalog/g/gM-06675/)　もしくは [SHT30モジュール](https://www.amazon.co.jp/dp/B083NHJSL9/)
   * ジャンパーワイヤ オス-メス 2本
@@ -241,7 +245,10 @@ JavaScript に慣れていない人は、[「JavaScript 初学者向け資料集
 
 ## GPIO出力
 
-GPIOの出力はLチカで実験済みですね
+GPIOの出力はLチカで実験済みですね。そこで今回はモーターを動かしてみましょう。回路図は以下のようになります。
+![GPIO Motor](./esm-examples/hello-real-world/PiZero_gpio0Motor.png)
+
+コードはLチカと全く同じです。
 
 ## GPIO入力
 GPIO端子の**入力が変化したら**というイベントによってGPIOの入力を使います。
@@ -336,7 +343,8 @@ SHT30は温度に加えて湿度も測定できるI2C接続の多機能センサ
 * ターミナルウィンドの```CHIRIMEN Panel```ボタンを押す
 * 出現したCHIRIMEN Panelの```Get Examples```ボタンを押す
 * ID : sht30を探します
-* 回路図リンクを押すと回路図が出てきますので、回路を組みます。
+* 回路図リンクを押すと回路図が出てきますので、回路を組みます。なお、接続は下の図のようになります。
+![SHT31 schematic](./esm-examples/sht30/schematic.png)
 
 * ```JS GET```ボタンを押すと、開発ディレクトリ(```~/myApp```)に、サンプルコードが保存されます。
   * **main-sht730.js**というファイル名で保存されます。
