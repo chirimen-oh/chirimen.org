@@ -26,13 +26,15 @@ LED の順方向電圧は色により異なっており、赤色 LED は 1.8V �
 | ------------------------------- | ----------------------------------------- |
 | ![外観](../microbit/imgs/breadboardImg.jpg) | ![内部の接続状態](../microbit/imgs/breadboardSch.png) |
 
+* +と-のライン(上下の横のピン列)が無いブレッドボードもあります（CHIRIMEN Starter Kitのブレッドボードにはありません）
+
 ## 抵抗値の読み方
 - [抵抗値の読み方](http://www.jarl.org/Japanese/7_Technical/lib1/teikou.htm)
 - [テスターを使って抵抗値を確かめる](http://startelc.com/elcLink/tester/elc_nArtcTester2.html#chapter-2)
 
 
 # javascript
-標準化されたプログラミング言語の一種で、ウェブブラウザが代表的な実行環境です(プログラムコードを解釈して動作させるシステム)。CHIRIMENでもRasberry Pi及びmicro:bit版はウェブブラウザを実行環境として使用します。Raspberry Pi Zero版はNode.jsを実行環境として使っています
+標準化されたプログラミング言語の一種で、ウェブブラウザが代表的な実行環境です(プログラムコードを解釈して動作させるシステム)。CHIRIMENでもRasberry Pi及びmicro:bit版はウェブブラウザを実行環境として使用します。Raspberry Pi Zero版はNode.jsを実行環境として使っています。
 別名としてECMA Scriptと呼ばれることもあります。
 * [Mozilla Developer Networkの解説](https://developer.mozilla.org/ja/docs/Web/JavaScript)
 
@@ -44,7 +46,7 @@ JavaScript に慣れていない人は、[「JavaScript 初学者向け資料集
 ## javascriptコード・ライブラリの読み込み
 
 ### ウェブアプリ：HTMLで読み込み
-Raspberry Pi Zero版以外のCHIRIMENはプログラムの起点はHTMLファイルです。（ウェブアプリ）。ブラウザはまずHTMLファイルを読み込んだうえで、そこに書かれた内容で動きます。したがって作ったコードや必要なライブラリの読み込みは全てこのHTMLの中で指定します。
+Raspberry Pi Zero版以外のCHIRIMENはプログラムの起点はHTMLファイルです。（ウェブアプリ）ブラウザはまずHTMLファイルを読み込んだうえで、そこに書かれた内容で動きます。したがって作ったコードや必要なライブラリの読み込みは基本的に全てこのHTMLの中で指定します。（なお、javascript Moduleを有効化している場合はjavascriptコードの中でjsライブラリを読み込むことがある）
 
 ポイントは `<script ...></script>` の部分です。
 `polyfill.js` という JavaScript ライブラリを読み込んでいます。これは [Web GPIO API](http://browserobo.github.io/WebGPIO) と、[Web I2C API](http://browserobo.github.io/WebI2C) という W3C でドラフト提案中の 2 つの API への [Polyfill (新しい API を未実装のブラウザでも同じコードが書けるようにするためのライブラリ)](https://developer.mozilla.org/ja/docs/Glossary/Polyfill) で、最初に読み込むとそれ以降のコードで GPIO や I2C を操作する JavaScript API が使えるようになります。
@@ -56,7 +58,12 @@ Raspberry Pi Zero版はプログラムの起点が自分が作ったjavascript�
 
 CHIRIMEN環境のために必要なライブラリや、[I2Cデバイスのドライバ](#WebI2Cとデバイスドライバ)(後述)は次のECMA Script Moduleという仕組みを使って読み込みます。
 
-### ECMA Script Module (javascript Module)
+### javascript Module (ECMA Script Module)
+* ウェブアプリでのModule有効化：HTMLのscript要素でjavascriptを読み込むとき、ttype="module"プロパティを設定する。
+  * `<script type="module" src="main.js"></script>`
+* import文で外部のライブラリを読み込む。
+  *  `{RelayServer} from "https://chirimen.org/remote-connection/js/beta/RelayServer.js";`
+* [例を見てみる](https://codesandbox.io/s/github/chirimen-oh/chirimen.org/tree/master/pizero/esm-examples/remote_gpio_led/pc)
 * [Mozilla Developer Networkの解説](https://developer.mozilla.org/ja/docs/Web/JavaScript/Guide/Modules)
 
 
