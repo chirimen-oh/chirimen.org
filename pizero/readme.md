@@ -458,6 +458,14 @@ IoTは、制御されるデバイス（上図ではCHIRIMEN PiZeroW)と、利用
 #### Raspberry Pi Zero側コード
 * ターミナルウィンドの右側のファイルマネージャでmain-remote_gpio_led.js⇒表示 を選び、ソースコードを読んでみましょう
 * これまで通りWebGPIOライブラリの読み込み
+* [relayServer.js](../chirimenGeneric/#relayserverjs)ライブラリの読み込み
+  * Node.jsではrelayServerライブラリに加えて、webSocketライブラリの読み込みが必要です。
+
+```
+import nodeWebSocketLib from "websocket"; // https://www.npmjs.com/package/websocket
+import {RelayServer} from "./RelayServer.js";
+```
+
 * [relayServer.js](../chirimenGeneric/#relayserverjs)を使って、PCからの操作指示を受信
   * [初期化](../chirimenGeneric/#section-16)
   * [受信処理](../chirimenGeneric/#section-18)(コールバック関数の設定)
@@ -466,6 +474,9 @@ IoTは、制御されるデバイス（上図ではCHIRIMEN PiZeroW)と、利用
 #### PC側コード
 * CodeSandboxで開いているPC.jsを見てみましょう
 * [javascript Module](../chirimenGeneric/#javascript-module-ecma-script-module)仕様に基づいてrelayServer.jsを読み込み
+
+`import {RelayServer} from "https://chirimen.org/remote-connection/js/beta/RelayServer.js";`
+
 * [relayServer.js](../chirimenGeneric/#relayserverjs)を使い、UIを通してユーザからの操作指示を送信
   * [初期化](../chirimenGeneric/#section-16)
   * [送信処理](../chirimenGeneric/#section-17)～(UI(ボタン)に設置したコールバック関数をもとに送信
