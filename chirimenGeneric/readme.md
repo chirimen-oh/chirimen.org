@@ -1,5 +1,8 @@
 # ハードウェア・デバイス
 
+- [予備知識・資料集～電子工作について](../reference#section-1)
+
+
 ## そもそも「L チカ」って何？
 
 「L チカ」とは、LED を点けたり消したりチカチカ点滅させることです。今回は「LED を点ける」「LED を消す」をプログラムで繰り返し実行することで実現します。
@@ -18,22 +21,44 @@ LED の順方向電圧は色により異なっており、赤色 LED は 1.8V �
 
 ## ブレッドボード
 - [ブレッドボードの使い方](https://www.sunhayato.co.jp/blog/2015/03/04/7)
+  | 外観                            | 内部の接続状態                            |
+  | ------------------------------- | ----------------------------------------- |
+  | ![外観](../microbit/imgs/breadboardImg.jpg) | ![内部の接続状態](../microbit/imgs/breadboardSch.png) |
 
 ## 抵抗値の読み方
 - [抵抗値の読み方](http://www.jarl.org/Japanese/7_Technical/lib1/teikou.htm)
 - [テスターを使って抵抗値を確かめる](http://startelc.com/elcLink/tester/elc_nArtcTester2.html#chapter-2)
 
 
-# ソフトウェア・ソースコード
-## HTML
-### javascriptコードの読み込み
+# javascript
+標準化されたプログラミング言語の一種で、ウェブブラウザが代表的な実行環境です(プログラムコードを解釈して動作させるシステム)。CHIRIMENでもRasberry Pi及びmicro:bit版はウェブブラウザを実行環境として使用します。Raspberry Pi Zero版はNode.jsを実行環境として使っています
+別名としてECMA Scriptと呼ばれることもあります。
+* [Mozilla Developer Networkの解説](https://developer.mozilla.org/ja/docs/Web/JavaScript)
+
+## JavaScript の基礎
+JavaScript に慣れていない人は、[「JavaScript 初学者向け資料集」](../js/readme.md)を参考にしてください。
+
+* その他の情報：[予備知識・資料集の情報](../reference#javascript)
+
+## javascriptコード・ライブラリの読み込み
+
+### ウェブアプリ：HTMLで読み込み
+Raspberry Pi Zero版以外のCHIRIMENはプログラムの起点はHTMLファイルです。（ウェブアプリ）。ブラウザはまずHTMLファイルを読み込んだうえで、そこに書かれた内容で動きます。したがって作ったコードや必要なライブラリの読み込みは全てこのHTMLの中で指定します。
+
 ポイントは `<script ...></script>` の部分です。
 `polyfill.js` という JavaScript ライブラリを読み込んでいます。これは [Web GPIO API](http://browserobo.github.io/WebGPIO) と、[Web I2C API](http://browserobo.github.io/WebI2C) という W3C でドラフト提案中の 2 つの API への [Polyfill (新しい API を未実装のブラウザでも同じコードが書けるようにするためのライブラリ)](https://developer.mozilla.org/ja/docs/Glossary/Polyfill) で、最初に読み込むとそれ以降のコードで GPIO や I2C を操作する JavaScript API が使えるようになります。
 
 次の行にある `main.js` は、JavaScript のプログラム本体です。
 
-## JavaScript の基礎
-CHIRIMEN Raspi はウェブブラウザ (または Node.js) をプログラムの実行環境に利用します。このときに使うプログラミング言語は JavaScript です。JavaScript に慣れていない人は、[こちらの資料「JavaScript 初学者向け資料集」](../js/readme.md)も参考にしてください。
+### Node.js (CHIRIMEN Raspberry Pi Zero版)
+Raspberry Pi Zero版はプログラムの起点が自分が作ったjavascriptコード自体になります。ブラウザの代わりにNode.jsというjavascriptコードだけを解釈するソフト（javascript インタープリタ）にコードを読み込ませて実行します。
+
+CHIRIMEN環境のために必要なライブラリや、[I2Cデバイスのドライバ](#WebI2Cとデバイスドライバ)(後述)は次のECMA Script Moduleという仕組みを使って読み込みます。
+
+### ECMA Script Module (javascript Module)
+* [Mozilla Developer Networkの解説](https://developer.mozilla.org/ja/docs/Web/JavaScript/Guide/Modules)
+
+
 
 ## 非同期処理
 
@@ -52,6 +77,13 @@ CHIRIMEN Raspi はウェブブラウザ (または Node.js) をプログラム�
 
 ハードウェアを制御するときは基本的に非同期呼び出しをする (その処理を含む関数もまた非同期で呼びす) と決めておけば迷うことなく、コードの実行順序も上から下に見たとおりの順番で実行され読み書きしやすくなります。
 
+## 開発環境
+### GitHub
+* [予備知識・資料集を参照ください](../reference#github-)
+### CodeSandbox
+* [予備知識・資料集を参照ください](../reference#github-)
+* ![CodeSandbox画面](../pizero/imgs/RC_CSB.svg)
+
 # GPIO
 
 ## GPIOとは
@@ -60,16 +92,24 @@ CHIRIMEN Raspi はウェブブラウザ (または Node.js) をプログラム�
 
 Raspi に実装されている 40 本のピンヘッダから GPIO を利用することができます。
 
-CHIRIMEN Raspi では Raspi が提供する 40 本のピンヘッダのうち、下記緑色のピン(合計 17 本)が利用可能です。
+CHIRIMEN Raspi、Raspi Zero では Raspi が提供する 40 本のピンヘッダのうち、下記緑色のピン(合計 17 本)が利用可能です。CHIRIMEN micro:bitでは[こちらのページ](https://chirimen.org/chirimen-micro-bit/guidebooks/diff_rpi3.html#%E4%BD%BF%E7%94%A8%E3%81%A7%E3%81%8D%E3%82%8Bgpio%E3%83%9D%E3%83%BC%E3%83%88)に記載されている端子が利用可能です。
 
 Raspiやmicro:bit の GPIO 端子は、GND 端子との間に、0V もしくは 3.3V の電圧を印加(出力)したり、逆に 0V もしくは 3.3V の電圧を検知(入力)したりすることができます。LED は数 mA の電流を流すことによって点灯できる電子部品のため、印加する電圧を 3.3V(点灯)、0V(消灯) と変化させることで L チカが実現できるのです。
 
 詳しくは[こちらのサイトの解説](https://tool-lab.com/make/raspberrypi-startup-22/)などを参考にしてみましょう。
 
 ### Raspberry Piのピン配置図
+![Raspi PIN配置図](../raspi/imgs/section0/Raspi3PIN.png)
+<!--
 {% cloudinary ../raspi/imgs/section0/Raspi3PIN.png alt="Raspi PIN配置図" %}
+-->
 ### Raspverry Pi Zeroのピン配置図
+
+　Raspberry PiのI2C端子と同じ配列です。
+
 ### micro:bitのピン配置図
+下図のSCL, SDAがI2C端子です (P19,P20～オレンジ色I2C1のグループ)
+![micro:bitのI端子](https://tech.microbit.org/docs/hardware/assets/edge_connector.svg)
 
 
 ## GPIOポートの初期化
@@ -190,13 +230,19 @@ I2Cデバイスは小型のICチップデバイスとなっており、デバイ
 通信するデバイス同士が同一基板上にない場合には、SDA、SCL の 2 本の通信線に加え電源や GND の線を加えて 4 本のケーブルを用いて接続するのが一般的です。電源電圧はデバイスに応じたものを繋ぐ必要があります。
 
 ### Raspberry PiのI2C端子
-
+下図のSCL, SDAがI2C端子です（黄色の端子）
 ![Raspi PIN配置図](../raspi/imgs/section0/Raspi3PIN.png)
 <!--
 {% cloudinary ../raspi/imgs/section0/Raspi3PIN.png alt="Raspi PIN配置図" %}
 -->
 ### Raspverry Pi ZeroのI2C端子
+
+　Raspberry PiのI2C端子と同じ配列です。
+
 ### micro:bitのI2C端子
+下図のSCL, SDAがI2C端子です (P19,P20～オレンジ色I2C1のグループ)
+![micro:bitのI端子](https://tech.microbit.org/docs/hardware/assets/edge_connector.svg)
+
 
 
 ## 参考: I2C に関する詳細情報
