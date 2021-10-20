@@ -258,6 +258,7 @@ GPIOの出力はLチカで実験済みですね。そこで今回はモーター
   * [Node.jsについて](../chirimenGeneric/#nodejs-chirimen-raspberry-pi-zero)
 * ターミナルウィンドの右側のファイルマネージャでhello.js⇒表示 を選び、ソースコードを読んでみましょう
 * WebGPIOライブラリを読み込み
+
 　`import {requestGPIOAccess} from "./node_modules/node-web-gpio/dist/index.js";`
   * [javascript module](../chirimenGeneric/#javascript-module-ecma-script-module) に基づいてWebGPIOライブラリを読み込みます。これでWeb GPIO APIが使えるようになりました。
 * [GPIOポートの初期化処理](../chirimenGeneric/#gpio-2)
@@ -288,6 +289,7 @@ GPIO端子の**入力が変化したら関数を実行**という機能によっ
 ### コードを読む
 * ターミナルウィンドの右側のファイルマネージャでmain-gpio-onchange.js⇒表示 を選び、ソースコードを読んでみましょう
 * WebGPIOライブラリを読み込み
+
 　`import {requestGPIOAccess} from "./node_modules/node-web-gpio/dist/index.js";`
   * [javascript module](../chirimenGeneric/#javascript-module-ecma-script-module) に基づいてWebGPIOライブラリを読み込みます。これでWeb GPIO APIが使えるようになりました。
 * [GPIOポートの初期化処理を行う](../chirimenGeneric/#gpio-2)
@@ -315,6 +317,7 @@ GPIO端子の**入力が変化したら関数を実行**という機能によっ
 ### コードを読む
 * ターミナルウィンドの右側のファイルマネージャでmain-gpio-polling.js⇒表示 を選び、ソースコードを読んでみましょう
 * WebGPIOライブラリを読み込み
+
 　`import {requestGPIOAccess} from "./node_modules/node-web-gpio/dist/index.js";`
   * [javascript module](../chirimenGeneric/#javascript-module-ecma-script-module) に基づいてWebGPIOライブラリを読み込みます。これでWeb GPIO APIが使えるようになりました。
 * [GPIOポートの初期化処理を行う](../chirimenGeneric/#gpio-2)
@@ -368,6 +371,7 @@ SHT30は温度に加えて湿度も測定できるI2C接続の多機能センサ
 ### コードを読む
 * ターミナルウィンドの右側のファイルマネージャでmain-sht730.js⇒表示 を選び、ソースコードを読んでみましょう
 * [WebI2CライブラリとSHT30デバイスドライバを読み込み](../chirimenGeneric/#webi2c)
+
 　`import {requestI2CAccess} from "./node_modules/node-web-i2c/index.js";`
   `import SHT30 from "@chirimen/sht30";`
   * [javascript module](../chirimenGeneric/#javascript-module-ecma-script-module) に基づいてWebI2Cライブラリを読み込みます。
@@ -420,12 +424,14 @@ SHT30は温度に加えて湿度も測定できるI2C接続の多機能センサ
 ![system configuration](imgs/IoTsystemConf.png)
 IoTは、制御されるデバイス（上図ではCHIRIMEN PiZeroW)と、利用者端末（上図ではWebApp PC-side）に加えて、これらの間でデータを中継するサーバ（クラウド）が必要になります。
 今回はWeb標準技術であるWebSocketプロトコルを中継するサーバを用いてLEDを備えたCHIRIMENデバイスとスマホやPCのWebAppを繋いだIoTシステムを作ります。
+### [IoT](../chirimengeneric/#iot)
+### [WebSoeketとRelayServer](../chirimengeneric/#websocketpubsub-services)
 
 ### 配線する
 配線は最初のLチカそのままです。
 ![PiZero配線図](./imgs/pizero_led.png)
 
-### CHIRIMENデバイス側にコードを入れる
+### CHIRIMENデバイス側にコードを入れ、実行する
 
 * ターミナルウィンドの```CHIRIMEN Panel```ボタンを押す
 * 出現したCHIRIMEN Panelの```Get Examples```ボタンを押す
@@ -440,7 +446,7 @@ IoTは、制御されるデバイス（上図ではCHIRIMEN PiZeroW)と、利用
 ![CHIRIMEN PiZero Console](imgs/RC_NODE.png)
   * なお、実験が終わったら終了は CTRL+C です。
 
-### PC側のコードを準備する
+### PC側のコードを準備し、実行する
 * CHIRIMEN Panelに戻り、ID : **remote_gpio_led**の行にある、```CSB EDIT```リンクをクリックする。
   * CodeSandboxというオンラインのWebApp開発環境のウィンドが開き、PC側のコードが表示されています。編集もできます。
   * また、右側（もしくは右下）のフレームにはLEDを遠隔コントロールするためのwebAppが既に実行されています。
@@ -448,7 +454,21 @@ IoTは、制御されるデバイス（上図ではCHIRIMEN PiZeroW)と、利用
 
 ![Code Sandbox Image](imgs/RC_CSB.svg)
 
+### コードを読む
+#### Raspberry Pi Zero側コード
+* ターミナルウィンドの右側のファイルマネージャでmain-remote_gpio_led.js⇒表示 を選び、ソースコードを読んでみましょう
+* これまで通りWebGPIOライブラリの読み込み
+* [relayServer.js](../chirimengeneric/#relayserverjs)を使って、PCからの操作指示を受信
+  * [初期化](../chirimengeneric/#section-16)
+  * [受信処理](../chirimengeneric/#section-18)(コールバック関数の設定)
+* 受信した内容をもとに[GPIO出力を操作](../chirimenGeneric/#gpioport-)してLEDを点灯・消灯
 
+#### PC側コード
+* CodeSandboxで開いているPC.jsを見てみましょう
+* [javascript Module](../chirimengeneric/#javascript-module-ecma-script-module)仕様に基づいてrelayServer.jsを読み込み
+* [relayServer.js](../chirimengeneric/#relayserverjs)を使い、UIを通してユーザからの操作指示を送信
+  * [初期化](../chirimengeneric/#section-16)
+  * [送信処理](../chirimengeneric/#section-17)～(UI(ボタン)に設置したコールバック関数をもとに送信
 
 # 他のいろいろなデバイスを試してみる
 
