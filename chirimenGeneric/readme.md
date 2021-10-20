@@ -114,11 +114,9 @@ Raspiやmicro:bit の GPIO 端子は、GND 端子との間に、0V もしくは 
 {% cloudinary ../raspi/imgs/section0/Raspi3PIN.png alt="Raspi PIN配置図" %}
 -->
 ### Raspverry Pi Zeroのピン配置図
-
-　Raspberry PiのI2C端子と同じ配列です。
+Raspberry PiのI2C端子と同じ配列です。
 
 ### micro:bitのピン配置図
-下図のSCL, SDAがI2C端子です (P19,P20～オレンジ色I2C1のグループ)
 ![micro:bitのI端子](https://tech.microbit.org/docs/hardware/assets/edge_connector.svg)
 
 
@@ -298,14 +296,15 @@ I2Cデバイスは一般的に小さなチップ部品です。下の拡大写�
 
 `i2cdetect` を使って SlaveAddress を確認し、正しく接続・認識できているか確かめてみましょう。ターミナルを起動して下記コマンドを入力してみてください。
 
-### コマンドラインから(microbit版はコマンドラインがないので使えません)
+* [ic2 detectとは](https://tutorial.chirimen.org/ty51822r3/i2cdetect)
+
+### コマンドラインから
 ```sh
 i2cdetect -y -r 1
-
 ```
+(microbit版はコマンドラインがないので下記webAppを使いましょう)
 
 ### i2cdetect webApp
-  * [ic2 detectとは](https://tutorial.chirimen.org/ty51822r3/i2cdetect)
 #### Raspberry Pi
 SlaveAddress を確認する i2cdetect には WebI2C(後述) を使って実装したwebApp版もあります。[https://r.chirimen.org/i2cdetect](https://r.chirimen.org/i2cdetect) をご利用ください。ただし、WebI2C 版 i2cdetect を利用中は他のページから I2C デバイスを操作できません。確認が済んだらタブを閉じるようにしましょう。
 
