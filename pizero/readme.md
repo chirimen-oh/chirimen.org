@@ -462,7 +462,7 @@ IoTは、制御されるデバイス（上図ではCHIRIMEN PiZeroW)と、利用
   * Node.jsではrelayServerライブラリに加えて、webSocketライブラリの読み込みが必要です。
 
 ```
-import nodeWebSocketLib from "websocket"; // https://www.npmjs.com/package/websocket
+import nodeWebSocketLib from "websocket";
 import {RelayServer} from "./RelayServer.js";
 ```
 
