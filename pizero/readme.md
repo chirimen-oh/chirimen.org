@@ -124,15 +124,15 @@ PiZero自体はディスプレイやキーボードを接続する必要はあ�
 * 以上ですべての初期設定完了です！
 
 
-# Hello Real World（[Lチカ](../chirimengeneric/#l-)を実行する）
+# Hello Real World（[Lチカ](../chirimenGeneric/#l-)を実行する）
 
 ## 配線
 
 PiZero とパーツを使って下の図の通りに配線します。
 * [LEDの極性に注意！](https://tutorial.chirimen.org/raspi/hellorealworld#section-1)
-  * [LEDの説明](../chirimengeneric/#led)
-* [ブレッドボードの使い方](../chirimengeneric/#section-1)
-* [抵抗値の読み方](../chirimengeneric/#section-2)
+  * [LEDの説明](../chirimenGeneric/#led)
+* [ブレッドボードの使い方](../chirimenGeneric/#section-1)
+* [抵抗値の読み方](../chirimenGeneric/#section-2)
 * [その他、配線の基礎知識](https://tutorial.chirimen.org/reference#section-1)
 
 
@@ -234,8 +234,8 @@ GPIO, 電源, GND, I2C信号線などのピン配列を記載します。
 
 # JavaScript の基礎
 
-* [こちらを参照してください](../chirimengeneric/#javascript-)
-* [非同期処理 async/await](../chirimengeneric/#section-3)を多用します。
+* [こちらを参照してください](../chirimenGeneric/#javascript-)
+* [非同期処理 async/await](../chirimenGeneric/#section-3)を多用します。
 
 # いろいろなデバイスを試す
 
@@ -244,7 +244,7 @@ GPIO, 電源, GND, I2C信号線などのピン配列を記載します。
 # GPIOを試す
 
 ## GPIOを理解する
-* [GPIOとは？](../chirimengeneric/#gpio)
+* [GPIOとは？](../chirimenGeneric/#gpio)
 
 ## GPIO出力
 
@@ -255,13 +255,13 @@ GPIOの出力はLチカで実験済みですね。そこで今回はモーター
 
 ### コードを読む
 * 前提：CHIRIMEN Rasoberryu Pi ZeroはNode.jsをプログラム実行環境（インタープリタ）として使っています。
-  * [Node.jsについて](../chirimengeneric/#nodejs-chirimen-raspberry-pi-zero)
+  * [Node.jsについて](../chirimenGeneric/#nodejs-chirimen-raspberry-pi-zero)
 * ターミナルウィンドの右側のファイルマネージャでhello.js⇒表示 を選び、ソースコードを読んでみましょう
 * WebGPIOライブラリを読み込み
 　`import {requestGPIOAccess} from "./node_modules/node-web-gpio/dist/index.js";`
-  * [javascript module](../chirimengeneric/#javascript-module-ecma-script-module) に基づいてWebGPIOライブラリを読み込みます。これでWeb GPIO APIが使えるようになりました。
-* [GPIOポートの初期化処理](../chirimengeneric/#gpio-2)
-* [GPIOPortの出力処理](../chirimengeneric/#gpioport-)
+  * [javascript module](../chirimenGeneric/#javascript-module-ecma-script-module) に基づいてWebGPIOライブラリを読み込みます。これでWeb GPIO APIが使えるようになりました。
+* [GPIOポートの初期化処理](../chirimenGeneric/#gpio-2)
+* [GPIOPortの出力処理](../chirimenGeneric/#gpioport-)
 
 ## GPIO入力
 GPIO端子の**入力が変化したら関数を実行**という機能によってGPIOの入力を使います。
@@ -289,9 +289,9 @@ GPIO端子の**入力が変化したら関数を実行**という機能によっ
 * ターミナルウィンドの右側のファイルマネージャでmain-gpio-onchange.js⇒表示 を選び、ソースコードを読んでみましょう
 * WebGPIOライブラリを読み込み
 　`import {requestGPIOAccess} from "./node_modules/node-web-gpio/dist/index.js";`
-  * [javascript module](../chirimengeneric/#javascript-module-ecma-script-module) に基づいてWebGPIOライブラリを読み込みます。これでWeb GPIO APIが使えるようになりました。
-* [GPIOポートの初期化処理を行う](../chirimengeneric/#gpio-2)
-* [onchangeによる入力処理](../chirimengeneric/#onchange)
+  * [javascript module](../chirimenGeneric/#javascript-module-ecma-script-module) に基づいてWebGPIOライブラリを読み込みます。これでWeb GPIO APIが使えるようになりました。
+* [GPIOポートの初期化処理を行う](../chirimenGeneric/#gpio-2)
+* [onchangeによる入力処理](../chirimenGeneric/#onchange)
 
 ## GPIO入力(ポーリング)
 入力ではイベントの他にポーリングというテクニックが広く使われます。（次章のI2Cデバイスからの入力では専らポーリング）
@@ -316,20 +316,20 @@ GPIO端子の**入力が変化したら関数を実行**という機能によっ
 * ターミナルウィンドの右側のファイルマネージャでmain-gpio-polling.js⇒表示 を選び、ソースコードを読んでみましょう
 * WebGPIOライブラリを読み込み
 　`import {requestGPIOAccess} from "./node_modules/node-web-gpio/dist/index.js";`
-  * [javascript module](../chirimengeneric/#javascript-module-ecma-script-module) に基づいてWebGPIOライブラリを読み込みます。これでWeb GPIO APIが使えるようになりました。
-* [GPIOポートの初期化処理を行う](../chirimengeneric/#gpio-2)
-* [単純入力＋ポーリングによる入力処理](../chirimengeneric/#section-6)
+  * [javascript module](../chirimenGeneric/#javascript-module-ecma-script-module) に基づいてWebGPIOライブラリを読み込みます。これでWeb GPIO APIが使えるようになりました。
+* [GPIOポートの初期化処理を行う](../chirimenGeneric/#gpio-2)
+* [単純入力＋ポーリングによる入力処理](../chirimenGeneric/#section-6)
 
 
 # I2Cデバイスを試す
 
 ## I2Cを理解する
 
-* [I2Cとは？](../chirimengeneric/#i2c)
+* [I2Cとは？](../chirimenGeneric/#i2c)
 
 ## SHT30編
 SHT30は温度に加えて湿度も測定できるI2C接続の多機能センサーです。SHT31もほぼ同等に使えます。(SHT31のほうが精度が高い)
-* [SHT30/SHT31について](../chirimengeneric/#i2ci2c--sht30-sht31)
+* [SHT30/SHT31について](../chirimenGeneric/#i2ci2c--sht30-sht31)
 
 * ターミナルウィンドの```CHIRIMEN Panel```ボタンを押す
 * 出現したCHIRIMEN Panelの```Get Examples```ボタンを押す
@@ -346,7 +346,7 @@ SHT30は温度に加えて湿度も測定できるI2C接続の多機能センサ
 ### I2Cセンサー(SHT30)が認識さていることを確認する
 
 * CHIRIMEN Panelの```i2c detect```ボタンを押すと、[SHT30のI2Cアドレス](https://strawberry-linux.com/pub/Sensirion_Humidity_SHT3x_DIS_Datasheet_V3_J.pdf)　0x**44**が表示されていればうまく接続されています。
-  * [ic2 detectとは](../chirimengeneric/#b-i2cdetect)
+  * [ic2 detectとは](../chirimenGeneric/#b-i2cdetect)
 <pre>
      0  1  2  3  4  5  6  7  8  9  a  b  c  d  e  f
 00:          -- -- -- -- -- -- -- -- -- -- -- -- -- 
@@ -367,11 +367,11 @@ SHT30は温度に加えて湿度も測定できるI2C接続の多機能センサ
 
 ### コードを読む
 * ターミナルウィンドの右側のファイルマネージャでmain-sht730.js⇒表示 を選び、ソースコードを読んでみましょう
-* [WebI2CライブラリとSHT30デバイスドライバを読み込み](../chirimengeneric/#webi2c)
+* [WebI2CライブラリとSHT30デバイスドライバを読み込み](../chirimenGeneric/#webi2c)
 　`import {requestI2CAccess} from "./node_modules/node-web-i2c/index.js";`
   `import SHT30 from "@chirimen/sht30";`
-  * [javascript module](../chirimengeneric/#javascript-module-ecma-script-module) に基づいてWebI2Cライブラリを読み込みます。
-* [I2C 温湿度センサー (SHT30, SHT31)の初期化と使用](../chirimengeneric/#i2c--sht30-sht31)
+  * [javascript module](../chirimenGeneric/#javascript-module-ecma-script-module) に基づいてWebI2Cライブラリを読み込みます。
+* [I2C 温湿度センサー (SHT30, SHT31)の初期化と使用](../chirimenGeneric/#i2c--sht30-sht31)
 
 
 ## ADT7410編
