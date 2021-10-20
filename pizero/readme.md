@@ -124,13 +124,17 @@ PiZero自体はディスプレイやキーボードを接続する必要はあ�
 * 以上ですべての初期設定完了です！
 
 
-# Hello Real World（Lチカを実行する）
+# Hello Real World（[Lチカ](../chirimengeneric/#l-)を実行する）
 
 ## 配線
 
 PiZero とパーツを使って下の図の通りに配線します。
 * [LEDの極性に注意！](https://tutorial.chirimen.org/raspi/hellorealworld#section-1)
-* [配線の基礎知識](https://tutorial.chirimen.org/reference#section-1)
+  * [LEDの説明](../chirimengeneric/#led)
+* [ブレッドボードの使い方](../chirimengeneric/#section-1)
+* [抵抗値の読み方](../chirimengeneric/#section-2)
+* [その他、配線の基礎知識](https://tutorial.chirimen.org/reference#section-1)
+
 
 ![PiZero配線図](./imgs/pizero_led.png)
 
@@ -188,7 +192,6 @@ blink();
 * LED が点滅すれば完成です 🎉
 * プログラムを止めるには、コンソール部で ```CTRL+C``` を押します。
 
-
 # Raspberry Pi について
 
 * 教育・学習用として設計されたボードコンピュータ
@@ -210,7 +213,7 @@ GPIO, 電源, GND, I2C信号線などのピン配列を記載します。
 * Web技術（Web Browserで使われている技術）を使って、フィジカルコンピューティング、IoTの学習・プロトタイピングができる、開発環境。
   * フィジカルコンピューティングとは？
   * IoTとは？
-* 広く使われている標準技術のなかで学習できるので
+* 特徴：広く使われている標準技術のなかで学習できるので
   * 学習のハードルが低い
   * 得たスキルが広く長く役立つ
   * インターネットでノウハウを検索しやすい
@@ -231,8 +234,8 @@ GPIO, 電源, GND, I2C信号線などのピン配列を記載します。
 
 # JavaScript の基礎
 
-JavaScript に慣れていない人は、[「JavaScript 初学者向け資料集」](https://tutorial.chirimen.org/js/) も参考にしてください。
-
+* [こちらを参照してください](../chirimengeneric/#javascript-)
+* [非同期処理 async/await](../chirimengeneric/#section-3)を多用します。
 
 # いろいろなデバイスを試す
 
@@ -241,7 +244,7 @@ JavaScript に慣れていない人は、[「JavaScript 初学者向け資料集
 # GPIOを試す
 
 ## GPIOを理解する
-* [GPIOとは？](https://tutorial.chirimen.org/raspi/section0#gpio-)
+* [GPIOとは？](../chirimengeneric/#gpio)
 
 ## GPIO出力
 
@@ -250,8 +253,18 @@ GPIOの出力はLチカで実験済みですね。そこで今回はモーター
 
 コードはLチカと全く同じです。
 
+### コードを読む
+* 前提：CHIRIMEN Rasoberryu Pi ZeroはNode.jsをプログラム実行環境（インタープリタ）として使っています。
+  * [Node.jsについて](../chirimengeneric/#nodejs-chirimen-raspberry-pi-zero)
+* ターミナルウィンドの右側のファイルマネージャでhello.js⇒表示 を選び、ソースコードを読んでみましょう
+* WebGPIOライブラリを読み込み
+　* `import {requestGPIOAccess} from "./node_modules/node-web-gpio/dist/index.js";`
+  * [javascript module](../chirimengeneric/#javascript-module-ecma-script-module) に基づいてWebGPIOライブラリを読み込みます。これでWeb GPIO APIが使えるようになりました。
+* [GPIOポートの初期化処理](../chirimengeneric/#gpio-2)
+* [GPIOPortの出力処理](../chirimengeneric/#gpioport-)
+
 ## GPIO入力
-GPIO端子の**入力が変化したら**というイベントによってGPIOの入力を使います。
+GPIO端子の**入力が変化したら関数を実行**という機能によってGPIOの入力を使います。
 
 * ターミナルウィンドの```CHIRIMEN Panel```ボタンを押す
 * 出現したCHIRIMEN Panelの```Get Examples```ボタンを押す
@@ -264,13 +277,21 @@ GPIO端子の**入力が変化したら**というイベントによってGPIO�
     * ソースコードを見てみましょう
     * 今回は編集不要ですが、サンプルをベースに応用プログラムを作るときには編集しましょう。
 
-*実行する
+* 実行する
   * ターミナルウィンドのコンソールのプロンプトが```pi@raspberrypi:~/myApp$```となっていることを確認
   * ターミナルウィンドのコンソールに、```node main-gpio-onchange.js``` [ENTER] と入力して実行。
   * タクトスイッチを押してみます。
   * タクトスイッチが押されるたびにコンソール画面に**0**(押された状態)、**1**(離した状態)が交互に表示されます。
     * Note: GPIOポート5は、Pull-Up(開放状態でHighレベル)です。そのため離した状態で１が出力されます。スイッチを押すとポートがGNDと接続され、Lowレベルになり、0が出力されます。
 * 終了は CTRL+C
+
+### コードを読む
+* ターミナルウィンドの右側のファイルマネージャでmain-gpio-onchange.js⇒表示 を選び、ソースコードを読んでみましょう
+* WebGPIOライブラリを読み込み
+　* `import {requestGPIOAccess} from "./node_modules/node-web-gpio/dist/index.js";`
+  * [javascript module](../chirimengeneric/#javascript-module-ecma-script-module) に基づいてWebGPIOライブラリを読み込みます。これでWeb GPIO APIが使えるようになりました。
+* [GPIOポートの初期化処理を行う](../chirimengeneric/#gpio-2)
+* [onchangeによる入力処理](../chirimengeneric/#onchange)
 
 ## GPIO入力(ポーリング)
 入力ではイベントの他にポーリングというテクニックが広く使われます。（次章のI2Cデバイスからの入力では専らポーリング）
@@ -291,12 +312,57 @@ GPIO端子の**入力が変化したら**というイベントによってGPIO�
   * タクトスイッチが押されると、**0**に変化します。
 * 終了は CTRL+C
 
+### コードを読む
+* ターミナルウィンドの右側のファイルマネージャでmain-gpio-polling.js⇒表示 を選び、ソースコードを読んでみましょう
+* WebGPIOライブラリを読み込み
+　* `import {requestGPIOAccess} from "./node_modules/node-web-gpio/dist/index.js";`
+  * [javascript module](../chirimengeneric/#javascript-module-ecma-script-module) に基づいてWebGPIOライブラリを読み込みます。これでWeb GPIO APIが使えるようになりました。
+* [GPIOポートの初期化処理を行う](../chirimengeneric/#gpio-2)
+* [単純入力＋ポーリングによる入力処理](../chirimengeneric/#section-6)
+
 
 # I2Cデバイスを試す
 
 ## I2Cを理解する
 
 * [I2Cとは？](https://tutorial.chirimen.org/raspi/section2#i2c-)
+
+## SHT30編
+SHT30は温度に加えて湿度も測定できるI2C接続の多機能センサーです。SHT31もほぼ同等に使えます。(SHT31のほうが精度が高い)
+
+* ターミナルウィンドの```CHIRIMEN Panel```ボタンを押す
+* 出現したCHIRIMEN Panelの```Get Examples```ボタンを押す
+* ID : sht30を探します
+* 回路図リンクを押すと回路図が出てきますので、回路を組みます。なお、接続は下の図のようになります。
+![SHT31 schematic](./esm-examples/sht30/schematic.png)
+
+* ```JS GET```ボタンを押すと、開発ディレクトリ(```~/myApp```)に、サンプルコードが保存されます。
+  * **main-sht730.js**というファイル名で保存されます。
+  * Note: ターミナルウィンドの右側のファイルマネージャでmain-sht30.js⇒編集 を選ぶと、エディタで編集できます。
+    * ソースコードを見てみましょう
+    * 今は編集不要ですが、サンプルをベースに応用プログラムを作るときには編集しましょう。
+
+### I2Cセンサー(SHT30)が認識さていることを確認する
+
+* CHIRIMEN Panelの```i2c detect```ボタンを押すと、[SHT30のI2Cアドレス](https://strawberry-linux.com/pub/Sensirion_Humidity_SHT3x_DIS_Datasheet_V3_J.pdf)　0x**44**が表示されていればうまく接続されています。
+  * [ic2 detectとは](https://tutorial.chirimen.org/ty51822r3/i2cdetect)
+<pre>
+     0  1  2  3  4  5  6  7  8  9  a  b  c  d  e  f
+00:          -- -- -- -- -- -- -- -- -- -- -- -- -- 
+10: -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- 
+20: -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- 
+30: -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- 
+40: -- -- -- -- 44 -- -- -- -- -- -- -- -- -- -- -- 
+50: -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- 
+60: -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- 
+70: -- -- -- -- -- -- -- --                       
+</pre>
+
+### 実行する
+* ターミナルウィンドのコンソールのプロンプトが```pi@raspberrypi:~/myApp$```となっていることを確認
+* ターミナルウィンドのコンソールに、```node main-sht30.js``` [ENTER] と入力して実行。
+* 温度と湿度が1秒ごとにコンソールに表示されます。
+* 終了は CTRL+C
 
 ## ADT7410編
 
@@ -335,43 +401,6 @@ GPIO端子の**入力が変化したら**というイベントによってGPIO�
 * ターミナルウィンドのコンソールのプロンプトが```pi@raspberrypi:~/myApp$```となっていることを確認
 * ターミナルウィンドのコンソールに、```node main-adt7410.js``` [ENTER] と入力して実行。
 * 温度が1秒ごとにコンソールに表示されます。
-* 終了は CTRL+C
-
-## SHT30編
-SHT30は温度に加えて湿度も測定できるI2C接続の多機能センサーです。SHT31もほぼ同等に使えます。(SHT31のほうが精度が高い)
-
-* ターミナルウィンドの```CHIRIMEN Panel```ボタンを押す
-* 出現したCHIRIMEN Panelの```Get Examples```ボタンを押す
-* ID : sht30を探します
-* 回路図リンクを押すと回路図が出てきますので、回路を組みます。なお、接続は下の図のようになります。
-![SHT31 schematic](./esm-examples/sht30/schematic.png)
-
-* ```JS GET```ボタンを押すと、開発ディレクトリ(```~/myApp```)に、サンプルコードが保存されます。
-  * **main-sht730.js**というファイル名で保存されます。
-  * Note: ターミナルウィンドの右側のファイルマネージャでmain-sht30.js⇒編集 を選ぶと、エディタで編集できます。
-    * ソースコードを見てみましょう
-    * 今は編集不要ですが、サンプルをベースに応用プログラムを作るときには編集しましょう。
-
-### I2Cセンサー(SHT30)が認識さていることを確認する
-
-* CHIRIMEN Panelの```i2c detect```ボタンを押すと、[SHT30のI2Cアドレス](https://strawberry-linux.com/pub/Sensirion_Humidity_SHT3x_DIS_Datasheet_V3_J.pdf)　0x**44**が表示されていればうまく接続されています。
-  * [ic2 detectとは](https://tutorial.chirimen.org/ty51822r3/i2cdetect)
-<pre>
-     0  1  2  3  4  5  6  7  8  9  a  b  c  d  e  f
-00:          -- -- -- -- -- -- -- -- -- -- -- -- -- 
-10: -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- 
-20: -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- 
-30: -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- 
-40: -- -- -- -- 44 -- -- -- -- -- -- -- -- -- -- -- 
-50: -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- 
-60: -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- 
-70: -- -- -- -- -- -- -- --                       
-</pre>
-
-### 実行する
-* ターミナルウィンドのコンソールのプロンプトが```pi@raspberrypi:~/myApp$```となっていることを確認
-* ターミナルウィンドのコンソールに、```node main-sht30.js``` [ENTER] と入力して実行。
-* 温度と湿度が1秒ごとにコンソールに表示されます。
 * 終了は CTRL+C
 
 
