@@ -424,8 +424,8 @@ SHT30は温度に加えて湿度も測定できるI2C接続の多機能センサ
 ![system configuration](imgs/IoTsystemConf.png)
 IoTは、制御されるデバイス（上図ではCHIRIMEN PiZeroW)と、利用者端末（上図ではWebApp PC-side）に加えて、これらの間でデータを中継するサーバ（クラウド）が必要になります。
 今回はWeb標準技術であるWebSocketプロトコルを中継するサーバを用いてLEDを備えたCHIRIMENデバイスとスマホやPCのWebAppを繋いだIoTシステムを作ります。
-### [IoT](../chirimengeneric/#iot)
-### [WebSoeketとRelayServer](../chirimengeneric/#websocketpubsub-services)
+### [IoT](../chirimenGeneric/#iot)
+### [WebSoeketとRelayServer](../chirimenGeneric/#websocketpubsub-services)
 
 ### 配線する
 配線は最初のLチカそのままです。
@@ -458,17 +458,17 @@ IoTは、制御されるデバイス（上図ではCHIRIMEN PiZeroW)と、利用
 #### Raspberry Pi Zero側コード
 * ターミナルウィンドの右側のファイルマネージャでmain-remote_gpio_led.js⇒表示 を選び、ソースコードを読んでみましょう
 * これまで通りWebGPIOライブラリの読み込み
-* [relayServer.js](../chirimengeneric/#relayserverjs)を使って、PCからの操作指示を受信
-  * [初期化](../chirimengeneric/#section-16)
-  * [受信処理](../chirimengeneric/#section-18)(コールバック関数の設定)
+* [relayServer.js](../chirimenGeneric/#relayserverjs)を使って、PCからの操作指示を受信
+  * [初期化](../chirimenGeneric/#section-16)
+  * [受信処理](../chirimenGeneric/#section-18)(コールバック関数の設定)
 * 受信した内容をもとに[GPIO出力を操作](../chirimenGeneric/#gpioport-)してLEDを点灯・消灯
 
 #### PC側コード
 * CodeSandboxで開いているPC.jsを見てみましょう
-* [javascript Module](../chirimengeneric/#javascript-module-ecma-script-module)仕様に基づいてrelayServer.jsを読み込み
-* [relayServer.js](../chirimengeneric/#relayserverjs)を使い、UIを通してユーザからの操作指示を送信
-  * [初期化](../chirimengeneric/#section-16)
-  * [送信処理](../chirimengeneric/#section-17)～(UI(ボタン)に設置したコールバック関数をもとに送信
+* [javascript Module](../chirimenGeneric/#javascript-module-ecma-script-module)仕様に基づいてrelayServer.jsを読み込み
+* [relayServer.js](../chirimenGeneric/#relayserverjs)を使い、UIを通してユーザからの操作指示を送信
+  * [初期化](../chirimenGeneric/#section-16)
+  * [送信処理](../chirimenGeneric/#section-17)～(UI(ボタン)に設置したコールバック関数をもとに送信
 
 # 他のいろいろなデバイスを試してみる
 
