@@ -62,7 +62,9 @@ CHIRIMEN環境のために必要なライブラリや、[I2Cデバイスのド�
 * ウェブアプリでのModule有効化：HTMLのscript要素でjavascriptを読み込むとき、ttype="module"プロパティを設定する。
   * `<script type="module" src="main.js"></script>`
 * import文で外部のライブラリを読み込む。
-  *  `{RelayServer} from "https://chirimen.org/remote-connection/js/beta/RelayServer.js";`
+  *  `import {RelayServer} from "https://chirimen.org/remote-connection/js/beta/RelayServer.js";`
+*  importされるライブラリ側には、importできるオブジェクトを指定するexport文を記述する。
+  * `export {RelayServer};`
 * [例を見てみる](https://codesandbox.io/s/github/chirimen-oh/chirimen.org/tree/master/pizero/esm-examples/remote_gpio_led/pc)
 * [Mozilla Developer Networkの解説](https://developer.mozilla.org/ja/docs/Web/JavaScript/Guide/Modules)
 
