@@ -257,7 +257,7 @@ GPIOの出力はLチカで実験済みですね。そこで今回はモーター
 * 前提：CHIRIMEN Rasoberryu Pi ZeroはNode.jsをプログラム実行環境（インタープリタ）として使っています。
   * [Node.jsについて](../chirimenGeneric/#nodejs-chirimen-raspberry-pi-zero)
 * ターミナルウィンドの右側のファイルマネージャでhello.js⇒表示 を選び、ソースコードを読んでみましょう
-* WebGPIOライブラリを読み込み
+* WebGPIOライブラリを読み込み ([javascript Module](../chirimenGeneric/#javascript-module-ecma-script-module)仕様に従って)
 
 　`import {requestGPIOAccess} from "./node_modules/node-web-gpio/dist/index.js";`
   * [javascript module](../chirimenGeneric/#javascript-module-ecma-script-module) に基づいてWebGPIOライブラリを読み込みます。これでWeb GPIO APIが使えるようになりました。
