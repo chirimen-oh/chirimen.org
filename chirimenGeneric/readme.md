@@ -52,7 +52,7 @@ LED の順方向電圧は色により異なっており、赤色 LED は 1.8V �
 - [テスターを使って抵抗値を確かめる](http://startelc.com/elcLink/tester/elc_nArtcTester2.html#chapter-2)
 
 
-# javascript
+# JavaScript
 標準化されたプログラミング言語の一種で、ウェブブラウザが代表的な実行環境です(プログラムコードを解釈して動作させるシステム)。CHIRIMENでもRasberry Pi及びmicro:bit版はウェブブラウザを実行環境として使用します。Raspberry Pi Zero版はNode.jsを実行環境として使っています。
 別名としてECMA Scriptと呼ばれることもあります。
 * [Mozilla Developer Networkの解説](https://developer.mozilla.org/ja/docs/Web/JavaScript)
