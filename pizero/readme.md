@@ -70,7 +70,7 @@ PiZero自体はディスプレイやキーボードを接続する必要はあ�
 
 ### Note:
 
-* CHIRIMEN with Node.jsではRaspberry Pi OS(Linux)をコマンドラインインターフェース(CLI)・シェル(bash)で操作します。
+* CHIRIMEN Raspberry Pi Zero版ではRaspberry Pi OS(Linux)をコマンドラインインターフェース(CLI)・シェル(bash)で操作します。
   * ただしこの講習で使うコマンドはごくわずかです。
     * **node** コマンド(後述)
     * [CTRL+C](https://atmarkit.itmedia.co.jp/ait/articles/1708/04/news015_2.html)(CTRLキーとCを同時に押す:実行中のコマンドを終了させる))
