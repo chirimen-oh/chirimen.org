@@ -187,7 +187,7 @@ blink();
   * ```pi@raspberrypi:~/myApp$```
 * コンソール部をクリックして、入力可能状態にしてから、以下の文字を入力します。
 * ```node hello.js``` ENTER
-  * **node** はjavascriptのコードを実行する[インタープリタ](https://ja.wikipedia.org/wiki/%E3%82%A4%E3%83%B3%E3%82%BF%E3%83%97%E3%83%AA%E3%82%BF)
+  * **node** はJavaScriptのコードを実行する[インタープリタ](https://ja.wikipedia.org/wiki/%E3%82%A4%E3%83%B3%E3%82%BF%E3%83%97%E3%83%AA%E3%82%BF)
   * [nodeコマンドについて](https://atmarkit.itmedia.co.jp/ait/articles/1102/28/news105.html)
 * LED が点滅すれば完成です 🎉
 * プログラムを止めるには、コンソール部で ```CTRL+C``` を押します。
@@ -253,10 +253,10 @@ GPIOの出力はLチカで実験済みですね。そこで今回はモーター
 * 前提：CHIRIMEN Rasoberryu Pi ZeroはNode.jsをプログラム実行環境（インタープリタ）として使っています。
   * [Node.jsについて](../chirimenGeneric/#nodejs-chirimen-raspberry-pi-zero)
 * ターミナルウィンドの右側のファイルマネージャでhello.js⇒表示 を選び、ソースコードを読んでみましょう
-* WebGPIOライブラリを読み込み ([javascript Module](../chirimenGeneric/#javascript-module-ecma-script-module)仕様に従って)
+* WebGPIOライブラリを読み込み ([JavaScript Module](../chirimenGeneric/#javascript-module-ecma-script-module)仕様に従って)
 
 　`import {requestGPIOAccess} from "./node_modules/node-web-gpio/dist/index.js";`
-  * [javascript module](../chirimenGeneric/#javascript-module-ecma-script-module) に基づいてWebGPIOライブラリを読み込みます。これでWeb GPIO APIが使えるようになりました。
+  * [JavaScript module](../chirimenGeneric/#javascript-module-ecma-script-module) に基づいてWebGPIOライブラリを読み込みます。これでWeb GPIO APIが使えるようになりました。
 * [GPIOポートの初期化処理](../chirimenGeneric/#gpio-2)
 * [GPIOPortの出力処理](../chirimenGeneric/#gpioport-)
 
@@ -287,7 +287,7 @@ GPIO端子の**入力が変化したら関数を実行**という機能によっ
 * WebGPIOライブラリを読み込み
 
 　`import {requestGPIOAccess} from "./node_modules/node-web-gpio/dist/index.js";`
-  * [javascript module](../chirimenGeneric/#javascript-module-ecma-script-module) に基づいてWebGPIOライブラリを読み込みます。これでWeb GPIO APIが使えるようになりました。
+  * [JavaScript module](../chirimenGeneric/#javascript-module-ecma-script-module) に基づいてWebGPIOライブラリを読み込みます。これでWeb GPIO APIが使えるようになりました。
 * [GPIOポートの初期化処理を行う](../chirimenGeneric/#gpio-2)
 * [onchangeによる入力処理](../chirimenGeneric/#onchange)
 
@@ -315,7 +315,7 @@ GPIO端子の**入力が変化したら関数を実行**という機能によっ
 * WebGPIOライブラリを読み込み
 
 　`import {requestGPIOAccess} from "./node_modules/node-web-gpio/dist/index.js";`
-  * [javascript module](../chirimenGeneric/#javascript-module-ecma-script-module) に基づいてWebGPIOライブラリを読み込みます。これでWeb GPIO APIが使えるようになりました。
+  * [JavaScript module](../chirimenGeneric/#javascript-module-ecma-script-module) に基づいてWebGPIOライブラリを読み込みます。これでWeb GPIO APIが使えるようになりました。
 * [GPIOポートの初期化処理を行う](../chirimenGeneric/#gpio-2)
 * [単純入力＋ポーリングによる入力処理](../chirimenGeneric/#section-6)
 
@@ -370,7 +370,7 @@ SHT30は温度に加えて湿度も測定できるI2C接続の多機能センサ
 
 　`import {requestI2CAccess} from "./node_modules/node-web-i2c/index.js";`
   `import SHT30 from "@chirimen/sht30";`
-  * [javascript module](../chirimenGeneric/#javascript-module-ecma-script-module) に基づいてWebI2Cライブラリを読み込みます。
+  * [JavaScript module](../chirimenGeneric/#javascript-module-ecma-script-module) に基づいてWebI2Cライブラリを読み込みます。
 * [I2C 温湿度センサー (SHT30, SHT31)の初期化と使用](../chirimenGeneric/#i2c--sht30-sht31)
 
 
@@ -469,7 +469,7 @@ import {RelayServer} from "./RelayServer.js";
 
 #### PC側コード
 * CodeSandboxで開いているPC.jsを見てみましょう
-* [javascript Module](../chirimenGeneric/#javascript-module-ecma-script-module)仕様に基づいてrelayServer.jsを読み込み
+* [JavaScript Module](../chirimenGeneric/#javascript-module-ecma-script-module)仕様に基づいてrelayServer.jsを読み込み
 
 `import {RelayServer} from "https://chirimen.org/remote-connection/js/beta/RelayServer.js";`
 
