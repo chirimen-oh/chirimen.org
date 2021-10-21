@@ -26,7 +26,7 @@ CHIRIMEN 環境を使ってハードとソフトを組み合わせたデバイ�
 
 - [対応デバイス・パーツのリスト](partslist)
 
-## CHIRIMEN for Raspberry Pi
+## CHIRIMEN Raspberry Pi版
 
 Raspberry Pi 向けの CHIRIMEN 環境を試すには、[ビルドイメージ](https://r.chirimen.org/sdimage) をダウンロードして [Etcher](https://www.balena.io/etcher/) などを使って [microSD カードに焼き込み](raspi/sdcard.md)、Raspberry Pi 3/3B+/4 を起動してください。CHIRIMEN を使ったプロトタイピングに必要な環境とサンプルコードが全てセットアップされた状態のイメージとなっており、チュートリアルをすぐにお試し頂けます。
 
@@ -34,13 +34,17 @@ Raspberry Pi 向けの CHIRIMEN 環境を試すには、[ビルドイメージ](
 
 Raspberry Pi では [Node.js から使うこともできます](raspi/nodejs)。
 
-## CHIRIMEN with micro:bit
+## CHIRIMEN Raspberry Pi Zero版
+Raspberry Pi Zero　(ネットワーク環境が必要なため、Zero W　もしくは Zero WH (ピンヘッダはんだ付け済み品) の使用を強く推奨します。)の CHIRIMEN 環境を試すには、[ビルドイメージ](https://github.com/chirimen-oh/chirimen-lite/releases) をダウンロードして、 [こちら](raspi/sdcard2)や[こちら](raspi/sdcard)を参考にして[microSD カードに焼き込み](raspi/sdcard.md)、Raspberry Pi Zero を起動してください。その後は[こちら](pizero/)に従って使用を開始してください。
+
+
+## CHIRIMEN micro:bit版
 
 micro:bit 向けの CHIRIMEN を試すには、[Hello micro:bit - 準備編](microbit/hello_microbit)に従ってmicro:bitにサポートプログラムを書き込みます。その後はRaspberry Pi 向けの CHIRIMEN とほぼ同様にお試し頂けます。
 
 [CHIRIMEN with micrp:bit について](microbit)
 
-## CHIRIMEN for TY51822r3
+## CHIRIMEN TY51822r3版
 
 TY51822r3 向けの CHIRIMEN を試すには、[ファームウェアの書き換え](ty51822r3/setting#ty51822r3--chirimen-with-ty51822r3-)を行ってください。Raspberry Pi 3 向けの CHIRIMEN とほぼ同様にお試し頂けます。
 
