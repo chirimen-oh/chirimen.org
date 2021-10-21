@@ -217,9 +217,9 @@ GPIO, 電源, GND, I2C信号線などのピン配列を記載します。
 ## CHIRIMEN Raspberry Pi Zero版について
 
 * PiZero上ではWeb Browserを動かさない。
-* Node.jsというJava Scriptインタープリターだけが動く
+* Node.jsというJavaScriptインタープリターだけが動く
   * ブラウザの機能のうち一部だけがPiZero上で使える
-    * プログラミング言語 ～ Java Script
+    * プログラミング言語 ～ JavaScript
     * 画面表示やGUIに関わらないAPI
     * 通信プロトコル
   * 使えないのはブラウザを使った画面表示やGUI
