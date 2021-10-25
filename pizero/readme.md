@@ -244,10 +244,13 @@ GPIO, 電源, GND, I2C信号線などのピン配列を記載します。
 
 ## GPIO出力
 
-GPIOの出力はLチカで実験済みですね。そこで今回はモーターを動かしてみましょう。回路図は以下のようになります。
+GPIOの出力はLチカで実験済みですね。そこで今回はモーターを動かしてみましょう。MOSFETを使った回路図は以下のようになります。
 ![GPIO Motor](./esm-examples/hello-real-world/PiZero_gpio0Motor.png)
 
 コードはLチカと全く同じです。
+
+### 回路について
+* [MOSFETを使った大電力制御](../chirimenGeneric/#mosfet)
 
 ### コードを読む
 * 前提：CHIRIMEN Rasoberryu Pi ZeroはNode.jsをプログラム実行環境（インタープリタ）として使っています。
