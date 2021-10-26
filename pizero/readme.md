@@ -1,3 +1,8 @@
+---
+layout: tutorial
+lang: ja
+---
+
 # **CHIRIMEN Raspberry Pi Zero W チュートリアル**
 
 # 概要
@@ -198,7 +203,8 @@ blink();
   * ボードコンピュータ～PC・スマホとの違い
 * Linuxが動作するボードコンピュータとして、安価でとても高いシェアを持ち世界中で容易に入手できる
 * 今回使用するRaspberry Pi ZeroWは、その中でも特に安価([2000円以下](https://www.switch-science.com/catalog/3200/))で小型・低消費電力の機種、HDMI出力はあるもののブラウザを動かすだけの処理能力がありませんが、IoTのエッジデバイス（センサーやアクチュエータが載ったデバイスでディスプレイはあるとしても簡易のもの）には適しています。
-  * フルセットのブラウザを使ったデバイスを作りたい場合は[CHIRIMEN Raspberry Pi版](../raspi/)が使用できます。
+  * フルセットのブラウザが内蔵されたデバイスを作りたい場合は[CHIRIMEN Raspberry Pi版](../raspi/)が使用できます。
+  * インターネットを経由してPCやスマホのブラウザから遠隔操作するシステムはPi ZeroW版でつくれます。[IoTの章](#iot)まで進めましょう。
 
 ## Raspberry Pi Zeroのピン配列
 
