@@ -1,6 +1,7 @@
 ---
 layout: tutorial
 lang: ja
+permalink: /pizero
 ---
 
 # **CHIRIMEN Raspberry Pi Zero W チュートリアル**
