@@ -240,10 +240,6 @@ GPIO, 電源, GND, I2C信号線などのピン配列を記載します。
 * [こちらを参照してください](../chirimenGeneric/#javascript-)
 * [非同期処理 async/await](../chirimenGeneric/#section-3)を多用します。
 
-# いろいろなデバイスを試す
-
-色々な[デバイスのサンプル](esm-examples/)が用意されています。これらを用いてデバイスの制御方法を学んでいきましょう。
-
 # GPIOを試す
 
 ## GPIOを理解する
@@ -490,7 +486,6 @@ import {RelayServer} from "./RelayServer.js";
 # 他のいろいろなデバイスを試してみる
 
 * ターミナルウィンドの```CHIRIMEN Panel```ボタン⇒CHIRIMEN Panelの```Get Examples```ボタンで出現するリストのデバイスがすぐ試せます。
-* **REMOTE Examples**については次の章に進んでから試しましょう。
 * このリストの直リンクは[こちら(サンプル一覧)](esm-examples/)です。CHIRIMEN RPiZeroをPCにつないでいないときはこちらを眺めてください。
 
 また、こちらには、Web GPIO や Web I2C によって扱うことのできる[外部デバイスの写真や様々なCHIRIMEN環境のサンプルコードの一覧があります](https://tutorial.chirimen.org/raspi/partslist)。こちらも参考になるかもしれません。(CHIRIMENは[Raspberry Pi ZeroW以外に、Raspberry Pi 3,4や、micro:bit等](../)でも使用できます）
