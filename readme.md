@@ -31,7 +31,7 @@ window.onload = async function() {
 - [micro:bit 用チュートリアル](/microbit/)
 - [ty51822r3 用チュートリアル](/ty51822r3/)
 
-注: Raspberry Pi ではボード上のブラウザからハードを制御しますが、TY51822r3 や micro:bit ではパソコンやスマホなどのブラウザから Bluetooth 経由でリモート制御します。
+注: Raspberry Pi (ModelB)ではボード上のブラウザからハードを制御、TY51822r3 や micro:bit ではパソコンやスマホなどのブラウザから Bluetooth 経由でリモート制御、Paspberry PiZeroはNode.jsで制御しますが、いずれのボードコンピュータ用のコードもほぼ同じように書くことができます。
 
 <div class="hide-on-production">
   <!-- tutorial.chirimen.org では hide-on-production クラスの中は表示されない -->

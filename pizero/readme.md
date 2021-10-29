@@ -1,8 +1,14 @@
+---
+layout: tutorial
+lang: ja
+permalink: /pizero/
+---
+
 # **CHIRIMEN Raspberry Pi Zero W チュートリアル**
 
 # 概要
 
-CHIRIMEN Raspberry Pi Zero版 を用いたIoT実習資料(ドラフト)です。
+CHIRIMEN Raspberry Pi Zero版 を用いたIoT実習資料です。
 
 [pizeronodejs.md](pizeronodejs.md)の内容をもとに、Web Serial RPiZero Terminalを使うことで操作を簡単化し、更にプログラム作法をECMA Script Moduleにあわせています。
 
@@ -198,7 +204,8 @@ blink();
   * ボードコンピュータ～PC・スマホとの違い
 * Linuxが動作するボードコンピュータとして、安価でとても高いシェアを持ち世界中で容易に入手できる
 * 今回使用するRaspberry Pi ZeroWは、その中でも特に安価([2000円以下](https://www.switch-science.com/catalog/3200/))で小型・低消費電力の機種、HDMI出力はあるもののブラウザを動かすだけの処理能力がありませんが、IoTのエッジデバイス（センサーやアクチュエータが載ったデバイスでディスプレイはあるとしても簡易のもの）には適しています。
-  * フルセットのブラウザを使ったデバイスを作りたい場合は[CHIRIMEN Raspberry Pi版](../raspi/)が使用できます。
+  * フルセットのブラウザが内蔵されたデバイスを作りたい場合は[CHIRIMEN Raspberry Pi版](../raspi/)が使用できます。
+  * インターネットを経由してPCやスマホのブラウザから遠隔操作するシステムはPi ZeroW版でつくれます。[IoTの章](#iot)まで進めましょう。
 
 ## Raspberry Pi Zeroのピン配列
 
@@ -233,10 +240,6 @@ GPIO, 電源, GND, I2C信号線などのピン配列を記載します。
 * [こちらを参照してください](../chirimenGeneric/#javascript-)
 * [非同期処理 async/await](../chirimenGeneric/#section-3)を多用します。
 
-# いろいろなデバイスを試す
-
-色々な[デバイスのサンプル](esm-examples/)が用意されています。これらを用いてデバイスの制御方法を学んでいきましょう。
-
 # GPIOを試す
 
 ## GPIOを理解する
@@ -244,10 +247,13 @@ GPIO, 電源, GND, I2C信号線などのピン配列を記載します。
 
 ## GPIO出力
 
-GPIOの出力はLチカで実験済みですね。そこで今回はモーターを動かしてみましょう。回路図は以下のようになります。
+GPIOの出力はLチカで実験済みですね。そこで今回はモーターを動かしてみましょう。MOSFETを使った回路図は以下のようになります。
 ![GPIO Motor](./esm-examples/hello-real-world/PiZero_gpio0Motor.png)
 
 コードはLチカと全く同じです。
+
+### 回路について
+* [MOSFETを使った大電力制御](../chirimenGeneric/#mosfet)
 
 ### コードを読む
 * 前提：CHIRIMEN Rasoberryu Pi ZeroはNode.jsをプログラム実行環境（インタープリタ）として使っています。
@@ -480,7 +486,6 @@ import {RelayServer} from "./RelayServer.js";
 # 他のいろいろなデバイスを試してみる
 
 * ターミナルウィンドの```CHIRIMEN Panel```ボタン⇒CHIRIMEN Panelの```Get Examples```ボタンで出現するリストのデバイスがすぐ試せます。
-* **REMOTE Examples**については次の章に進んでから試しましょう。
 * このリストの直リンクは[こちら(サンプル一覧)](esm-examples/)です。CHIRIMEN RPiZeroをPCにつないでいないときはこちらを眺めてください。
 
 また、こちらには、Web GPIO や Web I2C によって扱うことのできる[外部デバイスの写真や様々なCHIRIMEN環境のサンプルコードの一覧があります](https://tutorial.chirimen.org/raspi/partslist)。こちらも参考になるかもしれません。(CHIRIMENは[Raspberry Pi ZeroW以外に、Raspberry Pi 3,4や、micro:bit等](../)でも使用できます）
