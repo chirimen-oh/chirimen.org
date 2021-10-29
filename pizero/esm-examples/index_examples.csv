@@ -7,6 +7,7 @@ gpio-onchange,スイッチ,GPIO PORT5に繋いだスイッチのON/OFFを検知�
 gpio-polling,スイッチ2,GPIO PORT5に繋いだスイッチのON/OFFをポーリングで検知する
 gpio-inout,スイッチ+LED,GPIO PORT5に繋いだスイッチのON/OFFを検知してPORT26に繋いだLEDを点灯/消灯する
 hbridge1,モータ正転・逆転制御,GPIO接続のH-BridgeモータドライバでDCモータの正転・逆転制御を可能にします。
+a4988,ステッピングモータ制御,GPIO接続のA4988ステッピングモータ専用ドライバで２相ステッピングモータの正転・逆転・回転ステップ数を制御を可能にします。
 #I2C-PWMHBridge,モータ正転・逆転・速度制御,GPIO接続のH-Bridgeモータドライバ及びI2C接続のPWMドライバPCA9685でDCモータの正転・逆転さらに速度制御を可能にします。
 
 I2C
