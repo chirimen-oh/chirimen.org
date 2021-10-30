@@ -163,7 +163,7 @@ Raspiやmicro:bit の GPIO 端子は、GND 端子との間に、0V もしくは 
 {% cloudinary ../raspi/imgs/section0/Raspi3PIN.png alt="Raspi PIN配置図" %}
 -->
 ### Raspverry Pi Zeroのピン配置図
-Raspberry PiのI2C端子と同じ配列です。
+Raspberry Piの端子と同じ配列です。
 
 ### micro:bitのピン配置図
 ![micro:bitのI端子](https://tech.microbit.org/docs/hardware/assets/edge_connector.svg)
