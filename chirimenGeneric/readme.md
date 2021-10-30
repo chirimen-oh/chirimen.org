@@ -169,7 +169,7 @@ Raspberry PiのI2C端子と同じ配列です。
 ![micro:bitのI端子](https://tech.microbit.org/docs/hardware/assets/edge_connector.svg)
 
 ### プルアップ(PU)、プルダウン(PD)
-GPIOポートを入力モードで使用する場合、ポート入力が解放状態(電気的に切り離されている状態)に入力される値があります。
+GPIOポートを入力モードで使用する場合、ポートが解放状態(電気的に切り離されている状態)のときに設定される値があります。
 プルアップは1、プルダウンは0になります。　Raspberry Piのピン配置図に書かれているPU,PDがその設定値です。micro:bitではすべてプルダウンに設定されていますが、GPIOポート初期化時にプルアップに設定することもできます。
 
 * [より詳しく知る(voltechno)](https://voltechno.com/blog/pullup-pulldown/)
