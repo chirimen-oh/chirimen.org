@@ -490,6 +490,22 @@ import {RelayServer} from "./RelayServer.js";
 
 また、こちらには、Web GPIO や Web I2C によって扱うことのできる[外部デバイスの写真や様々なCHIRIMEN環境のサンプルコードの一覧があります](https://tutorial.chirimen.org/raspi/partslist)。こちらも参考になるかもしれません。(CHIRIMENは[Raspberry Pi ZeroW以外に、Raspberry Pi 3,4や、micro:bit等](../)でも使用できます）
 
+# 常駐プログラム化する
+
+ターミナルウィンドからnodeコマンドで実行指示しなくても、電源投入後 自動的に指定したコードを起動する設定（常駐プログラム化）ができます。
+このチュートリアルでは、[forever](https://www.npmjs.com/package/forever)を使用する設定を専用GUIを用いて行ってみましょう。
+
+* ターミナルウィンドの```CHIRIMEN Panel```ボタン⇒CHIRIMEN Panelの```Resident App Conf.```ボタンを押します。 
+  * UIが使用可能状態になるまで数秒かかります。
+* 開発ディレクトリ(**~/MyApp**)内にあるjavascriptコードがリストアップされます。
+* 各行の```Now Running```列は常駐状態、```App Name```はコードのファイル名、```Select```は選択用チェックボックスです。
+  * ```Now Running```欄には現在常駐プログラム化しているコードに、```RUNNING```が表示されています。（常駐プログラムがなければ全部の行が空白になります）
+  * ```Select```欄のチェックボックスをチェックすると、そのコードが常駐プログラム化します。（常駐プログラムは一個だけ指定できます）
+    * 設定が反映され、常駐状態が確認できるようになるまで、２０秒ぐらいかかります
+  * 一番上の```STOP ALL APPS```のチェックボックスをチェックすると、常駐プログラムを解除できます。
+
+
+* *Note: 常駐化のツールとしては、他にもsystemd service unit, openrc, cron, pm2, forever 等があります。Webでそれぞれの特徴を調べて用途に合ったものを選択して設定しても良いでしょう。
 
 # CHIRIMEN ブラウザー版との差異
 
