@@ -500,7 +500,7 @@ import {RelayServer} from "./RelayServer.js";
 
 * ターミナルウィンドの```CHIRIMEN Panel```ボタン⇒CHIRIMEN Panelの```Resident App Conf.```ボタンを押します。 
   * UIが使用可能状態になるまで数秒かかります。
-* 開発ディレクトリ(**~/MyApp**)内にあるjavascriptコードがリストアップされます。
+* 開発ディレクトリ```~/myApp```内にあるjavascriptコードがリストアップされます。
 * 各行の```Now Running```列は常駐状態、```App Name```はコードのファイル名、```Select```は選択用チェックボックスです。
   * ```Now Running```欄には現在常駐プログラム化しているコードに、```RUNNING```が表示されています。（常駐プログラムがなければ全部の行が空白になります）
   * ```Select```欄のチェックボックスをチェックすると、そのコードが常駐プログラム化します。（常駐プログラムは一個だけ指定できます）
