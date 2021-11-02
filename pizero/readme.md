@@ -28,9 +28,12 @@ CHIRIMEN Raspberry Pi Zero版 を用いたIoT実習資料です。
 * ブラウザの載ったパソコン
   * Windows 10 PC
     * ブラウザは標準のEdgeもしくはChromeを使います。
-  * Macintosh(多分大丈夫-未確認)
+  * Macintosh
     * ブラウザはChromeが必要です。
   * いずれもUSBとWiFiが使える必要があります。
+  * *Note: Linuxでは次の設定で利用可能になるとの報告をいただいています*
+    * Ubuntu Studio: ```chmod a+rw /dev/ttyACM0```
+    * Ubuntu Desktop 20.04 LTS: ```sudo gpasswd -a "$(whoami)" dialout```
 * USBケーブル (USB A - MicroB)
 * Lチカ用パーツ
   * ブレッドボード
