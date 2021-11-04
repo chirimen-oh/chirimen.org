@@ -47,7 +47,7 @@ CHIRIMEN Raspberry Pi Zero版 を用いたIoT実習資料です。
   * [ADT7410モジュール](https://akizukidenshi.com/catalog/g/gM-06675/)　もしくは [SHT30モジュール](https://www.amazon.co.jp/dp/B083NHJSL9/)
   * ジャンパーワイヤ オス-メス 2本
 
-![Parts Images](imgs/chirimenPiZeroSet2.jpg)
+![Parts Images](imgs/PartsList.svg)
 
 PiZero自体はディスプレイやキーボードを接続する必要はありません。
 
