@@ -157,16 +157,22 @@ Raspiやmicro:bit の GPIO 端子は、GND 端子との間に、0V もしくは 
 詳しくは[こちらのサイトの解説](https://tool-lab.com/make/raspberrypi-startup-22/)などを参考にしてみましょう。
 
 ### Raspberry Piのピン配置図
-![Raspi PIN配置図](../raspi/imgs/section0/Raspi3PIN.png)
+![Raspi PIN配置図](https://chirimen.org/PiZeroWebSerialConsole/wallpaperS.png)
 <!--
+![Raspi PIN配置図](../raspi/imgs/section0/Raspi3PIN.png)
 {% cloudinary ../raspi/imgs/section0/Raspi3PIN.png alt="Raspi PIN配置図" %}
 -->
 ### Raspverry Pi Zeroのピン配置図
-Raspberry PiのI2C端子と同じ配列です。
+Raspberry Piの端子と同じ配列です。
 
 ### micro:bitのピン配置図
 ![micro:bitのI端子](https://tech.microbit.org/docs/hardware/assets/edge_connector.svg)
 
+### プルアップ(PU)、プルダウン(PD)
+GPIOポートを入力モードで使用する場合、ポートが解放状態(電気的に切り離されている状態)のときに設定される値があります。
+プルアップは1、プルダウンは0になります。　Raspberry Piのピン配置図に書かれているPU,PDがその設定値です。micro:bitではすべてプルダウンに設定されていますが、GPIOポート初期化時にプルアップに設定することもできます。
+
+* [より詳しく知る(voltechno)](https://voltechno.com/blog/pullup-pulldown/)
 
 ## GPIOポートの初期化
 今回の JavaScript ファイルで、最初に呼び出されるコードは `await navigator.requestGPIOAccess()` です。
