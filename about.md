@@ -44,7 +44,7 @@ Raspberry Pi Zero　(ネットワーク環境が必要なため、Zero W　も�
 
 micro:bit 向けの CHIRIMEN を試すには、[Hello micro:bit - 準備編](microbit/hello_microbit)に従ってmicro:bitにサポートプログラムを書き込みます。その後はRaspberry Pi 向けの CHIRIMEN とほぼ同様にお試し頂けます。
 
-[CHIRIMEN with micrp:bit について](microbit)
+[CHIRIMEN with micro:bit について](microbit)
 
 ## CHIRIMEN TY51822r3版
 
