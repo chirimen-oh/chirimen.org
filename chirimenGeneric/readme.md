@@ -595,13 +595,17 @@ relayServerサイトによる差異を吸収し複数の事業者を自由に切
 ###### 初期化（受信側、送信側共通の処理
 [詳しくはこちらを参照](https://chirimen.org/remote-connection/#使用方法)
 
-* `var relay = RelayServer("achex", "chirimenSocket" );`
+```javascript
+import {RelayServer} from "https://chirimen.org/remote-connection/js/beta/RelayServer.js";
+var relay = RelayServer("achex", "chirimenSocket" );
+```
 
-  RelayServer.jsを使って、relayServiceのひとつ**achex**に接続しています。
-  第二引数`("chirimenSocket")`はそのサービスを使うためのトークンですが、**achex**は任意の文字列で利用できてます。
+  import文でライブラリRelayServer.jsを読み込んだ後、relayServiceのひとつ**achex**に接続しています。
+  RelayServerの第二引数`("chirimenSocket")`はそのサービスを使うためのトークンですが、**achex**は任意の文字列で利用できてます。
 
-    * Node.jsでは第三引数が必要になります (後述)
+    * Node.jsでは第三,第四引数が必要になります (後述)
 
+##### チャンネルの作成
 * `channel = await relay.subscribe("chirimenMbitSensors");`
 
   変数`channel`にRelayServerのチャンネルのインスタンスを登録
@@ -627,6 +631,23 @@ relayServerサイトによる差異を吸収し複数の事業者を自由に切
 #### セキュリティを考えよう
 
 relayServerを使うということは、情報をインターネット上のウェブサイトに送信することになります。すると このウェブサイトがその情報をどのように取り扱うのかを理解しておく必要があります。achexは無料で使え　しかもユーザ登録も不要です。つまりこのサイトに送信した情報は誰でも見ることができてしまうということです。（ただし、トークンとチャンネルを知る必要がある。これがachexのセキュリティレベル）今回は個人情報などのセキュリティを考慮する必要がない、チュートリアルで使うセンシングデータを送るだけですので問題ありませんが、セキュリティを考慮する必要がある多くの用途ではそのセキュリティ基準に適合したサイトを契約して利用する、もしくは自分でそのようなサイトを立てるなどの必要が出てきます。relayServer.jsでも[いくつかの商用サイト](https://chirimen.org/remote-connection/#%E3%82%B5%E3%83%BC%E3%83%93%E3%82%B9%E3%81%94%E3%81%A8%E3%81%AE%E5%88%A9%E7%94%A8%E6%96%B9%E6%B3%95)の比較と使用方法が記載されているので参考にしてください。
+
+#### Node.jsでの利用
+
+初期化手順に差異があります。
+
+```javascript
+import nodeWebSocketLib from "websocket";
+import {RelayServer} from "./RelayServer.js";
+var relay = RelayServer("achex", "chirimenSocket" , nodeWebSocketLib, "https://chirimen.org");
+```
+
+* Node.jsではwebSocketを使用するためにはwebsocketライブラリが必要なので読み込みます
+* RelayServer.jsやwebSocket等のライブラリは、ローカルからの読み込みになります
+* RelayServerの第三引数でwebsocketライブラリを渡す必要があります
+* RelayServerの第四引数で、リファラーURLの指定が必要です
+  * webアプリの場合はそのコンテンツの配信元のURLがリファラーとして自動設定されますが、Node.jsのアプリはローカルにあるので別途指定が必要
+  * achexの場合URLは何でも許可されますが、他のRelayServiceによっては あらかじめ指定したリファラーが設定されていなければアクセス拒否されるものもあります(これも一つのセキュリティ)
 
 ## Webhooks
 relayServerが必要なほどリアルタイム性は求めないけれど、むしろ既存のWebサービス・アプリと簡単につなぎたいようなケースでは、httpをそのまま使うことができるでしょう。ただし既存のWebサービス・アプリはウェブブラウザを介して人が操作することが前提でつくられていますので、直接センサーやアクチュエータ（を制御するコンピュータとプログラム～IoTデバイス）をつなげるにはハードルがあります。
