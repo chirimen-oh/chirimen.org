@@ -603,7 +603,7 @@ var relay = RelayServer("achex", "chirimenSocket" );
   import文でライブラリRelayServer.jsを読み込んだ後、relayServiceのひとつ**achex**に接続しています。
   RelayServerの第二引数`("chirimenSocket")`はそのサービスを使うためのトークンですが、**achex**は任意の文字列で利用できてます。
 
-* Node.jsでは第三,第四引数が必要になります (後述)
+*Node.jsでは第三,第四引数が必要になります (後述)*
 
 ##### チャンネルの作成
 * `channel = await relay.subscribe("chirimenMbitSensors");`
