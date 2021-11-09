@@ -326,7 +326,7 @@ GPIO端子の**入力が変化したら関数を実行**という機能によっ
 　`import {requestGPIOAccess} from "./node_modules/node-web-gpio/dist/index.js";`
   * [JavaScript module](../chirimenGeneric/#javascript-module-ecma-script-module) に基づいてWebGPIOライブラリを読み込みます。これでWeb GPIO APIが使えるようになりました。
 * [GPIOポートの初期化処理を行う](../chirimenGeneric/#gpio-2)
-* [単純入力＋ポーリングによる入力処理](../chirimenGeneric/#section-6)
+* [単純入力＋ポーリングによる入力処理](../chirimenGeneric/#section-7)
 
 
 # I2Cデバイスを試す
