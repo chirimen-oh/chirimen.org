@@ -429,6 +429,9 @@ SHT30は温度に加えて湿度も測定できるI2C接続の多機能センサ
 ![system configuration](imgs/IoTsystemConf.png)
 IoTは、制御されるデバイス（上図ではCHIRIMEN PiZeroW)と、利用者端末（上図ではWebApp PC-side）に加えて、これらの間でデータを中継するサーバ（クラウド）が必要になります。
 今回はWeb標準技術であるWebSocketプロトコルを中継するサーバを用いてLEDを備えたCHIRIMENデバイスとスマホやPCのWebAppを繋いだIoTシステムを作ります。
+
+Note: [モーター制御の回路](./#gpio-2)を組めば、そのまま遠隔モーターコントロールができます
+
 ### [IoT](../chirimenGeneric/#iot)
 ### [WebSoeketとRelayServer](../chirimenGeneric/#websocketpubsub-services)
 
