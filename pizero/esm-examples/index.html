@@ -16,6 +16,10 @@ onload=async function(){
 	for ( var cat in exData ){
 		buildTable(cat);
 	}
+	setTimeout(function(){
+		var te=document.getElementById(location.hash.substring(1));
+		te.scrollIntoView();
+	},10);
 }
 
 async function getData(){
