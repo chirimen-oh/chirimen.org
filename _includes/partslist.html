@@ -3,6 +3,7 @@
     <th>部品型番/カテゴリ</th>
     <th>説明</th>
     <th>画像</th>
+    <th>サンプルコード</th>
     <th>各種リンク</th>
   </tr>
   <!-- {% assign partslist = site.data.partslist | where: 'インターフェイス', include.interface %} -->
@@ -34,8 +35,16 @@
     </td>
     <td>
       <!-- {% if parts['サンプルコードURL'] %} -->
-      <div><a href="{{ parts['サンプルコードURL'] }}">サンプルコード</a></div>
+      <div><a href="{{ parts['サンプルコードURL'] }}">Raspberry Pi</a></div>
       <!-- {% endif %} -->
+      <!-- {% if parts['piZeroサンプルコードURL'] %} -->
+      <div><a href="{{ parts['piZeroサンプルコードURL'] }}">pi Zero</a></div>
+      <!-- {% endif %} -->
+      <!-- {% if parts['microbitサンプルコードURL'] %} -->
+      <div><a href="{{ parts['microbitサンプルコードURL'] }}">micro:bit</a></div>
+      <!-- {% endif %} -->
+    </td>
+    <td>
       <!-- {% if parts['回路図URL'] %} -->
       <div><a href="{{ parts['回路図URL'] }}">回路図</a></div>
       <!-- {% endif %} -->
@@ -56,9 +65,6 @@
       <!-- {% endif %} -->
       <!-- {% if parts['ガイドURL'] %} -->
       <div><a href="{{ parts['ガイドURL'] }}">ガイド</a></div>
-      <!-- {% endif %} -->
-      <!-- {% if parts['microbitサンプルコードURL'] %} -->
-      <div><a href="{{ parts['microbitサンプルコードURL'] }}">microbitサンプルコード</a></div>
       <!-- {% endif %} -->
     </td>
   </tr>
