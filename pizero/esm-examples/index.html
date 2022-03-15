@@ -18,7 +18,10 @@ onload=async function(){
 	}
 	setTimeout(function(){
 		var te=document.getElementById(location.hash.substring(1));
-		te.scrollIntoView();
+		if ( te ){
+			te.style.backgroundColor="yellow";
+			te.scrollIntoView();
+		}
 	},10);
 }
 
