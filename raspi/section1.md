@@ -186,11 +186,11 @@ GPIO ポートにかける電圧を Web アプリで変化させたい時には�
 <!--
 {% cloudinary imgs/section1/s.png alt="スイッチを追加した配線" %}
 -->
-![スイッチを追加した配線](imgs/section1/s.png)
+![スイッチを追加した配線](imgs/section1/s_old.png)
 
 #### ヒント: 配線図とタクトスイッチの種類が異なる
 
-タクトスイッチが 2pin ではなく 4pin の場合、[4pin のタクトスイッチを利用した配線図](imgs/section1/DC3motor.png)をご覧ください。
+タクトスイッチが 2pin ではなく 4pin の場合、[4pin のタクトスイッチを利用した配線図](imgs/section1/s.png)をご覧ください。
 
 ### 今回のスイッチは「プルアップ」回路で接続
 
