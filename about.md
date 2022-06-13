@@ -1,20 +1,18 @@
-## CHIRIMEN について
+## CHIRIMEN とは
 
-CHIRIMEN とは、Web ブラウザや Node.js の JavaScript からハードウェアを制御するプロトタイピング環境です。
+CHIRIMEN は Web ブラウザや Node.js の JavaScript からハードウェアを制御するプロトタイピング環境です。
 
-CHIRIMEN コミュニティと W3C の [Browsers and Robotics コミュニティグループ](https://www.w3.org/community/browserobo/)では、JavaScript で Web アプリから電子パーツを直接制御できる低レベルハードウェア制御 API ([WebGPIO API](http://browserobo.github.io/WebGPIO) や [WebI2C API](http://browserobo.github.io/WebI2C) など) の標準化に向けての検討・提案や、それらの API を実際の開発ボード上で試せるようにするプロトタイプ環境の実装を行っています。
+CHIRIMEN コミュニティと W3C の [Browsers and Robotics コミュニティグループ](https://www.w3.org/community/browserobo/)では、JavaScript で Web アプリから電子パーツを直接制御できる低レベルハードウェア制御 API ([WebGPIO API](http://browserobo.github.io/WebGPIO) や [WebI2C API](http://browserobo.github.io/WebI2C) など) の標準化に向けての検討・提案と、それらの API を Raspberry Pi などの開発ボード上で使うプロトタイプ環境 (CHIRIMEN 環境) を実装しています。
 
-Web ページ中の JavaScript で直接ハードを制御できる環境を実現することで、既存の Web 関連の知識・環境・サービスをすべて活かしたまま、同じプログラムの中で簡単に画面やサービスと電子パーツを制御可能になります。　また、開発環境についても なるべくWebブラウザ上で動くように工夫されています。
+Web ページや Node.js の JavaScript から直接ハードを制御でき、既存の Web 関連の知識・環境・サービスをすべて活かしたまま、単一プログラムで簡単に画面やサービスと電子パーツを連携できます。　開発環境もローカルエディタだけでは無く Web ブラウザ上のオンラインエディタで動くようにしており、[サンプルコード集](https://chirimen.org/chirimen/gc/top/examples/)の通り配線しタブを開くだけですぐに[多数の電子パーツ](partslist)を試して頂けます。
 
-電子パーツの制御だけのために専用のツールや開発環境を用意したり、複数の言語やプログラムを連携した複雑な仕組みや、独特のフレームワークを理解して作る必要がなく、標準化されたWeb技術をベースとしているため、素早くプロトタイピングを行ったり、プログラミング初学者が IoT の基礎を学ぶ上で最適な環境です。
+電子パーツ制御のために専用のツールや開発環境を用意したり、複数の言語やプログラムを連携させたり、独特のフレームワークを学習・利用したりする必要はありません。Web 標準技術をベースとしており、素早いプロトタイピングやプログラミング初学者の IoT 学習に最適です。
 
-ブラウザが必要ないときは Node.js からも同じコードでハードを制御可能なよう全てのライブラリとドライバーを実装しています。
+[Raspberry Pi Zero を使う場合](pizero) のような低性能環境や、ブラウザ無しで動作させたいときは、ライブラリの読み込み部分だけを変えれば Node.js でも同じコードでハードを制御可能なユニバーサル環境です。
 
-現在、CHIRIMEN コミュニティでは最新の CHIRIMEN 環境を Raspberry Pi や micro:bit などのデバイスに向けに公開・メンテナンスしており、このサイトではその使い方を学ぶためのチュートリアルを掲載しています。
+## CHIRIMEN の動作環境
 
-## CHIRIMEN 環境
-
-CHIRIMEN 環境を使ってハードとソフトを組み合わせたデバイスを作るには、まず CHIRIMEN 環境が動作する環境を用意して頂く必要があります。以下のようなボードコンピュータをサポートしているので、お好みの環境を選んでご利用ください。
+CHIRIMEN が動作する環境は、以下の通りです。お手持ちのボードや用途に応じてご利用ください。
 
 - [Raspberry Pi](raspi)
   - [Raspberry Pi](https://www.raspberrypi.org/) 3 以降をサポートしています。Raspberry Pi 上の Chrome ブラウザ (または Firefox など) でコードの実行もコードの編集もでき、Raspberry Pi 一式があれば、別途パソコンなどを用意する必要はありません。[ブラウザを使わず Node.js からも使えます。](raspi/nodejs)
@@ -26,33 +24,33 @@ CHIRIMEN 環境を使ってハードとソフトを組み合わせたデバイ�
   - Switch Scicence の mbed ボード [TY51822r3](https://www.switch-science.com/catalog/2574/) でも CHIRIMEN 環境をサポートしています。
   - 但し、販売元での在庫が切れているボードであることもあり、メンテナンス・テストを十分出来ていないところがありますがご容赦ください。
 
-各 CHIRIMEN 環境では各ボード毎の Polyfill やブリッジプログラムが異なる以外、基本的には同じコード・同じドライバモジュールで各デバイス・パーツを制御できます。対応デバイス一覧ページをご覧ください。
+すべての CHIRIMEN 環境では各ボード毎のライブラリやブリッジプログラムが異なる以外、基本的には同じコード・同じドライバモジュールで各デバイス・パーツを制御できます。対応デバイス一覧ページをご覧ください。
 
-- [対応デバイス・パーツのリスト](partslist)
+- [対応デバイス・パーツ一覧](partslist)
 
-## CHIRIMEN Raspberry Pi版
+## CHIRIMEN Raspberry Pi 版
 
-Raspberry Pi 向けの CHIRIMEN 環境を試すには、[ビルドイメージ](https://r.chirimen.org/sdimage) をダウンロードして [Etcher](https://www.balena.io/etcher/) などを使って [microSD カードに焼き込み](raspi/sdcard.md)、Raspberry Pi 3/3B+/4 を起動してください。CHIRIMEN を使ったプロトタイピングに必要な環境とサンプルコードが全てセットアップされた状態のイメージとなっており、チュートリアルをすぐにお試し頂けます。
+Raspberry Pi で CHIRIMEN 環境を使うには、[ビルドイメージ](https://r.chirimen.org/sdimage) を [Raspberry Pi Imager](raspi/sdcard2) や [Etcher で microSD カードに書き込み](raspi/sdcard)、Raspberry Pi を起動してください。CHIRIMEN を使ったプロトタイピングに必要な環境とサンプルコードが全てセットアップされた状態のイメージとなっており、チュートリアルをすぐにお試し頂けます。
 
-[CHIRIMEN for Raspberry Pi について](raspi)
+- [CHIRIMEN for Raspberry Pi について](raspi)
+- [Node.js から使うこともできます](raspi/nodejs)
 
-Raspberry Pi では [Node.js から使うこともできます](raspi/nodejs)。
+## CHIRIMEN Raspberry Pi Zero 版
+Raspberry Pi Zero　(ネットワーク環境が必要なため、Zero W　もしくは Zero WH (ピンヘッダはんだ付け済み品) の使用を強く推奨します。)で CHIRIMEN 環境を使うには、[ビルドイメージ](https://github.com/chirimen-oh/chirimen-lite/releases) を、 [Raspberry Pi Imager](raspi/sdcard2) や [Etcher で microSD カードに書き込み](raspi/sdcard)、Raspberry Pi Zero を起動してください。
 
-## CHIRIMEN Raspberry Pi Zero版
-Raspberry Pi Zero　(ネットワーク環境が必要なため、Zero W　もしくは Zero WH (ピンヘッダはんだ付け済み品) の使用を強く推奨します。)の CHIRIMEN 環境を試すには、[ビルドイメージ](https://github.com/chirimen-oh/chirimen-lite/releases) をダウンロードして、 [こちら](raspi/sdcard2)や[こちら](raspi/sdcard)を参考にして[microSD カードに焼き込み](raspi/sdcard.md)、Raspberry Pi Zero を起動してください。その後は[こちら](pizero/)に従って使用を開始してください。
+- [CHIRIMEN for Raspberry Zero について](pizero)
 
+## CHIRIMEN micro:bit 版
 
-## CHIRIMEN micro:bit版
+micro:bit で CHIRIMEN を使うには、[Hello micro:bit - 準備編](microbit/hello_microbit)に従って micro:bit にサポートプログラムを書き込みます。その後は Raspberry Pi 向けの CHIRIMEN とほぼ同様にお試し頂けます。
 
-micro:bit 向けの CHIRIMEN を試すには、[Hello micro:bit - 準備編](microbit/hello_microbit)に従ってmicro:bitにサポートプログラムを書き込みます。その後はRaspberry Pi 向けの CHIRIMEN とほぼ同様にお試し頂けます。
-
-[CHIRIMEN with micro:bit について](microbit)
+- [CHIRIMEN with micro:bit について](microbit)
 
 ## CHIRIMEN TY51822r3版
 
-TY51822r3 向けの CHIRIMEN を試すには、[ファームウェアの書き換え](ty51822r3/setting#ty51822r3--chirimen-with-ty51822r3-)を行ってください。Raspberry Pi 3 向けの CHIRIMEN とほぼ同様にお試し頂けます。
+TY51822r3 で CHIRIMEN を使うには、[ファームウェアの書き換え](ty51822r3/setting#ty51822r3--chirimen-with-ty51822r3-)を行ってください。Raspberry Pi 向けの CHIRIMEN とほぼ同様にお試し頂けます。
 
-[CHIRIMEN with ty51822r3 について](ty51822r3)
+- [CHIRIMEN with ty51822r3 について](ty51822r3)
 
 ## コミュニティについて
 
