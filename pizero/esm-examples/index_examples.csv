@@ -9,6 +9,7 @@ gpio-inout,スイッチ+LED,GPIO PORT5に繋いだスイッチのON/OFFを検知
 hbridge1,モータ正転・逆転制御,GPIO接続のH-BridgeモータドライバでDCモータの正転・逆転制御を可能にします。
 a4988,ステッピングモータ制御,GPIO接続のA4988ステッピングモータ専用ドライバで２相ステッピングモータの正転・逆転・回転ステップ数を制御を可能にします。
 #I2C-PWMHBridge,モータ正転・逆転・速度制御,GPIO接続のH-Bridgeモータドライバ及びI2C接続のPWMドライバPCA9685でDCモータの正転・逆転さらに速度制御を可能にします。
+gpio-camera,スイッチ+カメラ,GPIOのスイッチをトリガにしてPiZero専用カメラ撮影
 
 I2C
 ads1015,電圧測定(ADC),I2C接続のADC（アナログ・デジタルコンバータ）ADS1015経由で電圧を表示します。
@@ -53,3 +54,4 @@ remote_pca9685,リモートサーボ,I2CのPCA9685 Port0のサーボをブラウ
 remote_gpio_sw,リモートオンオフセンサ,GPIO PORT5に繋いだスイッチ(On/Offセンサ)をブラウザでモニタ
 remote_vl53l0x,リモート距離センサ,I2CのVL53L0Xで測った距離をブラウザで表示（インターバル表示）
 remote_sht30_gpioin,リモート温湿度センサ+GPIO,GPIOのスイッチをトリガにしてI2CのSHT30で測った温度と湿度をブラウザで表示
+#remote_camera,リモートカメラ,PiZero専用カメラでリモート撮影
