@@ -54,4 +54,4 @@ remote_pca9685,リモートサーボ,I2CのPCA9685 Port0のサーボをブラウ
 remote_gpio_sw,リモートオンオフセンサ,GPIO PORT5に繋いだスイッチ(On/Offセンサ)をブラウザでモニタ
 remote_vl53l0x,リモート距離センサ,I2CのVL53L0Xで測った距離をブラウザで表示（インターバル表示）
 remote_sht30_gpioin,リモート温湿度センサ+GPIO,GPIOのスイッチをトリガにしてI2CのSHT30で測った温度と湿度をブラウザで表示
-#remote_camera,リモートカメラ,PiZero専用カメラでリモート撮影
+remote_camera,リモートカメラ,PiZero専用カメラでリモート撮影
