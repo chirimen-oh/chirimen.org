@@ -19,9 +19,9 @@ async function connect(){
 	
 	
 	// webSocketリレーの初期化
-	var relay = RelayServer("achex", "chirimenSocket" , nodeWebSocketLib, "https://chirimen.org");
+	var relay = RelayServer("chirimentest", "chirimenSocket" , nodeWebSocketLib, "https://chirimen.org");
 	channel = await relay.subscribe("chirimenMbitRemoteServo");
-	console.log("achex web socketリレーサービスに接続しました");
+	console.log("web socketリレーサービスに接続しました");
 	channel.onmessage=moveServo;
 }
 

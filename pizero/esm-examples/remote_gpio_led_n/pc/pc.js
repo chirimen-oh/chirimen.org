@@ -7,9 +7,9 @@ window.OffLED = OffLED;
 var channel;
 onload = async function(){
 	// webSocketリレーの初期化
-	var relay = RelayServer("achex", "chirimenSocket" );
+	var relay = RelayServer("chirimentest", "chirimenSocket" );
 	channel = await relay.subscribe("chirimenLED");
-	messageDiv.innerText="achex web socketリレーサービスに接続しました";
+	messageDiv.innerText="web socketリレーサービスに接続しました";
 	channel.onmessage = getMessage;
 }
 

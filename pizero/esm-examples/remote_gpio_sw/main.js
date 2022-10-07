@@ -17,9 +17,9 @@ async function connect(){
 	await gpioPort0.export("in"); //port0 out
 	
 	// webSocketリレーの初期化
-	var relay = RelayServer("achex", "chirimenSocket" , nodeWebSocketLib, "https://chirimen.org");
+	var relay = RelayServer("chirimentest", "chirimenSocket" , nodeWebSocketLib, "https://chirimen.org");
 	channel = await relay.subscribe("chirimenSW");
-	console.log("achex web socketリレーサービスに接続しました");
+	console.log("web socketリレーサービスに接続しました");
 	gpioPort0.onchange=testChange; // ISSUE gpioのonchangeの仕様が異なる
 }
 
