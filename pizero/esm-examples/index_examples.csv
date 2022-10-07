@@ -50,6 +50,7 @@ REMOTE
 remote_gpio_led,リモートLチカ,GPIO PORT26に繋いだLEDをブラウザからOn/Off
 remote_sht30,リモート温湿度センサ,I2CのSHT30で測った温度と湿度をブラウザで表示
 remote_pca9685,リモートサーボ,I2CのPCA9685 Port0のサーボをブラウザでコントロール
+remote_hbridge_pca9685,リモートモーター正転・逆転・速度制御,IH-BridgeモータドライバとPWMドライバPCA9685でDCモータの正逆転速度をブラウザでコントロール
 remote_gpio_sw,リモートオンオフセンサ,GPIO PORT5に繋いだスイッチ(On/Offセンサ)をブラウザでモニタ
 remote_vl53l0x,リモート距離センサ,I2CのVL53L0Xで測った距離をブラウザで表示（インターバル表示）
 remote_sht30_gpioin,リモート温湿度センサ+GPIO,GPIOのスイッチをトリガにしてI2CのSHT30で測った温度と湿度をブラウザで表示
