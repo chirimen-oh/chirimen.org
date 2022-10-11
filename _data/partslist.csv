@@ -63,7 +63,7 @@ GPIO,ステッピングモータコントローラ,A4988,https://www.amazon.co.j
 アクチュエータ,ギヤードモータ,ちびギヤモータ,https://tiisaishop.dip.jp/product/sg/,小型のギヤードモータです,partsImgs/chibiGear.jpg,,,https://tiisai.dip.jp/?p=2676,,,,,https://tutorial.chirimen.org/raspi/section1#led--,,
 その他,ブレッドボード,,,,partsImgs/breadBoardS.jpg,,,,,,,,,,
 その他,ジャンパー線,,,,partsImgs/jumperFM.jpg,,,,,,,,,,
-その他,カメラ,,,,partsImgs/camera.jpg,,,,,,,,,,
+その他,カメラ,,https://www.amazon.co.jp/dp/B073RCXGQS/,,partsImgs/camera.jpg,,,,,,,,,,https://tutorial.chirimen.org/pizero/esm-examples/#GPIO_gpio-camera
 その他,ファン,,,,partsImgs/fan.jpg,,,,,,,,,,
 その他,抵抗,,,,partsImgs/register.jpg,,,,,,,,,,
 ボードコンピューター,マイクロビット,,https://www.amazon.co.jp/dp/B074N6D55L,,partsImgs/microbit.jpg,,,,,,,,https://microbit.org/ja/guide/,,
