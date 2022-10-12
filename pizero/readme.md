@@ -21,7 +21,7 @@ CHIRIMEN Raspberry Pi Zero版 を用いたIoT実習資料です。
 ### 必要な物品リスト
 
 以下を用意します
-* Raspberry Pi Zero W 、 Pi Zero **2** W も使用できます(2022/10/12 update)
+* Raspberry Pi Zero W 、( Pi Zero **2** W も使用できます(2022/10/12 update) )
   * Pi Zero: [ケイエスワイ](https://raspberry-pi.ksyic.com/main/index/pdp.id/799/pdp.open/799), [秋月電子](https://akizukidenshi.com/catalog/g/gM-12961/), [スイッチサイエンス](https://www.switch-science.com/catalog/3646/), [マルツ](https://www.marutsu.co.jp/pc/i/1320453/)
   * Pi Zero **2** W: [ケイエスワイ](https://raspberry-pi.ksyic.com/main/index/pdp.id/851/pdp.open/851)
 * [Raspberry Pi OS LiteをUSB Serialで使用可能にしたイメージ](https://github.com/kou029w/chirimen-os/releases/)を書き込んだmicroSDカード
