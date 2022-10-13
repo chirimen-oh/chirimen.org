@@ -7,6 +7,7 @@
         "node-web-i2c": "latest",
         "websocket": "latest",
         "@chirimen/adt7410": "latest",
+        "@chirimen/aht10": "latest",
         "@chirimen/tca9548a": "latest",
         "@chirimen/grove-accelerometer": "latest",
         "@chirimen/pca9685": "latest",
