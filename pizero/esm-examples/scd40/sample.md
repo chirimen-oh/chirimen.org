@@ -1,3 +1,18 @@
+# SCD40/4x CO2センサー
+
+## 配線図
+
+![配線図](./schematic.png "schematic")
+
+# ドライバのインストール
+
+```
+npm i @chirimen/scd40
+```
+
+# サンプルコード
+
+```javascript
 import { requestI2CAccess } from "./node_modules/node-web-i2c/index.js";
 import SCD40 from "@chirimen/scd40";
 const sleep = (msec) => new Promise((resolve) => setTimeout(resolve, msec));
@@ -20,3 +35,6 @@ async function main() {
 		await sleep(1000);
 	}
 }
+
+```
+
