@@ -70,7 +70,7 @@ async function main() {
 			ht.set_led(i, 1);
 		}
 		await ht.write_display();
-		**/
 		await sleep(1000);
+		**/
 	}
 }
