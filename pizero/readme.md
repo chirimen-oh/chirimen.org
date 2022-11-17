@@ -71,7 +71,7 @@ PiZero自体はディスプレイやキーボードを接続する必要はあ�
   ![OTG PORT Information on device manager](https://chirimen.org/PiZeroWebSerialConsole/imgs/OTG_PORT_W10.png)
 * [**こちらのWeb Serial RPiZero TerminalページにPCのブラウザでアクセス**](https://chirimen.org/PiZeroWebSerialConsole/PiZeroWebSerialConsole.html)
  (以降、このウィンドを**ターミナルウィンド**と呼びます)
-* ```Connect and Login PiZero```ボタンを押す
+* ```[Connect and Login PiZero]```ボタンを押す
   * 接続ダイアログが出現
   ![connection dialog](https://chirimen.org/PiZeroWebSerialConsole/imgs/SerialDialog.png)
   * 上で認識したデバイス（ポート番号）を接続する
@@ -80,15 +80,16 @@ PiZero自体はディスプレイやキーボードを接続する必要はあ�
 
 ### Note:
 
-* CHIRIMEN Raspberry Pi Zero版ではRaspberry Pi OS(Linux)をコマンドラインインターフェース(CLI)・シェル(bash)で操作します。
+* CHIRIMEN Raspberry Pi Zero版では[Raspberry Pi OS Lite](https://www.raspberrypi.com/software/operating-systems/)(Linux)をコマンドラインインターフェース(CLI)・シェル(bash)で操作します。
   * ただしこの講習で使うコマンドはごくわずかです。
     * **node** コマンド(後述)
     * [CTRL+C](https://atmarkit.itmedia.co.jp/ait/articles/1708/04/news015_2.html)(CTRLキーとCを同時に押す:実行中のコマンドを終了させる))
-  * その他のほとんどの操作（コマンド）は、ターミナルウィンドやそこから起動される別画面のGUIがコマンド操作を代行しています。GUIを操作するとコンソールにコマンドが入力されるのがわかると思います。
+  * その他のほとんどの操作（コマンド）は、ターミナルウィンドやそこから起動される別画面のGUIがコマンド操作を代行しています。図1.1のGUIを操作するとコンソールにコマンドが入力されるのがわかると思います。
 * [CLIとは](https://atmarkit.itmedia.co.jp/ait/articles/1602/19/news025.html)
 * [シェルとコマンドプロンプト](https://atmarkit.itmedia.co.jp/ait/articles/1603/02/news016.html)
 * もしもあなたがlinuxのシェルコンソール画面に慣れている場合は、ターミナルウィンドのコンソールにその他のシェル(bash)コマンドをタイプして使用することもできます。
-* ターミナルウィンドの概要
+  * たとえば ```ls-al``` とタイプするとおコンソール画面にディレクトリ内のファイルのリストが表示されます。
+* ターミナルウィンドの概要 (図1.1)
 ![ターミナルウィンドの説明](imgs/termWin.svg)
 
 ## ステップ２ (WiFi設定)
@@ -97,9 +98,10 @@ PiZero自体はディスプレイやキーボードを接続する必要はあ�
   * ウィンドが開き、WiFiアクセスポイントがスキャンされます。ステルスでないものはリストアップされているので、以降の作業の参考にしてください。
   * Raspberry Pi Zero Wは2.4GHz帯のWiFiにのみ対応しています。
     ![WiFi Setting](./imgs/WiFiSetting.png)
-* ウィンド下部に、会場(もしくは開発場所)で提供されているWiFiアクセス情報を入力する
+* ウィンド下部に、会場(もしくは開発場所)で提供されているWiFiアクセス情報を入力する (いずれも大文字小文字の区別があるので注意してください。)
   * SSID欄
   * PASS PHRASE欄
+  
 * ```SET WiFi```ボタンを押す
 * ```Reboot```ボタンを押す
   * これでRaspberry Pi Zeroが再起動をはじめます
@@ -116,7 +118,7 @@ PiZero自体はディスプレイやキーボードを接続する必要はあ�
 ![WiFi Setting_IPaddress](./imgs/WiFiSettingIPaddress.png)
 
   <!--  * あとでping chirimen.org OK も入れよう。-->
-  * もしもあなたがsshやscp(winSCP)などのツールに慣れている場合、上記のアドレスでssh接続できます
+  * もしもあなたがsshやscp (WinSCP, teraterm等)などのツールに慣れている場合、上記のアドレスでssh接続できます
     * PORT: 22
     * ID: ```pi```
     * PASSWORD: ```raspberry```
@@ -127,7 +129,7 @@ PiZero自体はディスプレイやキーボードを接続する必要はあ�
 
 * ターミナルウィンドの```CHIRIMEN Panel```ボタンを押す。
 * CHIRIMEN Panelウィンドが開いたら、```Setup CHIRIMEN```ボタンを押す。
-* ２～３分ほどセットアップ完了するのを待ちます。
+* 数分、セットアップ完了するのを待ちます。（ネットワーク環境にも依存しますが10分程度かかるかもしれません）
   * CHIRIMEN Panelウィンドの進捗メッセージが、CONGRATURATIONS. setup completed!となればセットアップ完了です。
   * Note: ターミナルウィンドのコンソールにはより細かな進捗状況が表示されます。
 * ```~/myApp```が今後CHIRIMEN環境でのプログラミングで使用するディレクトリです。
@@ -146,7 +148,16 @@ PiZero とパーツを使って下の図の通りに配線します。
 * [その他、配線の基礎知識](https://tutorial.chirimen.org/reference#section-1)
 
 
+* Note:
+  * 間違ったピンに差し込むと場合によってはPiZeroが停止したり故障することもあります。（たとえば3.3V端子とGND端子を接続してしまうなど。)
+  * そのため、慣れるまでは一旦PiZeroをシャットダウン、USBケーブルも外し電源OFFにしてから配線すると安全です
+    * シャットダウンコマンド：```sudo shutdown -h now```
+
 ![PiZero配線図](./imgs/pizero_led.png)
+
+* 配線に使うケーブルの色に厳密な決まりはありませんが、一般的にGNDは黒(や黒っぽい色)、電源(VCC, +3.3V, +5V)には赤(や赤っぽい色)が用いられます。配線間違いを防ぐためにもなるべく合わせましょう。
+* 抵抗やLEDの足(リード線)は手で簡単に曲げられます。ブレッドボードに差し込めるように適当に成型してください。
+* 上図のPiZeroは上から見たものです
 
 ## プログラムを書く
 
@@ -161,7 +172,7 @@ Raspberry Pi に接続した LED を点滅させるプログラムを書きま�
 * ```create```ボタンを押す
 * JS Editorウィンドが出現
 
-以下のプログラムをJS Editorに書き写します（コピペ）
+以下のプログラムをJS Editorに書き写します ～ コピペ（下記プログラム部分を選択してCTRL+c、JS Editorウィンド上でCTRL+v））
 
 
 ```javascript
@@ -187,7 +198,7 @@ async function blink() {
 blink();
 ```
 
-* 書き終えたら保存します。(```Saveボタン```もしくはCTRL+S)
+* 書き終えたら保存します。(```Saveボタン```もしくはCTRL+s)
 * ターミナルウィンドの右側(ファイルマネージャ)に hello.jsが出現していることを確認します
 * エディタウィンドを閉じます
 
@@ -196,11 +207,11 @@ blink();
 * ターミナルウィンドのコンソール部(ウィンド左側)のプロンプト(画面一番下)が以下になっていることを確認します
   * ```pi@raspberrypi:~/myApp$```
 * コンソール部をクリックして、入力可能状態にしてから、以下の文字を入力します。
-* ```node hello.js``` ENTER
+* ```node hello.js``` ENTERキー
   * **node** はJavaScriptのコードを実行する[インタープリタ](https://ja.wikipedia.org/wiki/%E3%82%A4%E3%83%B3%E3%82%BF%E3%83%97%E3%83%AA%E3%82%BF)
   * [nodeコマンドについて](https://atmarkit.itmedia.co.jp/ait/articles/1102/28/news105.html)
 * LED が点滅すれば完成です 🎉
-* プログラムを止めるには、コンソール部で ```CTRL+C``` を押します。
+* プログラムを止めるには、コンソール部で ```CTRL+c``` を押します。
 
 # Raspberry Pi について
 
@@ -490,6 +501,18 @@ import {RelayServer} from "./RelayServer.js";
   * [初期化](../chirimenGeneric/#section-16)
   * [送信処理](../chirimenGeneric/#section-17)～(UI(ボタン)に設置したコールバック関数をもとに送信
 
+
+#### 自分専用チャンネルで制御
+
+  サンプルのコードは共通のチャンネルを使って制御しています。この状態では複数の人が同時に実習していると混信します。(他の人のPCでON/OFFを指示しても、自分のLEDがON/OFFする。同じチャンネルを使っているため。)
+  
+  これはこれで使い道はあるのですが、自分のLEDは自分だけで制御したい場合は専用のチャンネルを使って制御しましょう。　チャンネルの指定はPiZero側のコードと、PC側のコード両方を同時に同じ内容で設定する必要があり、以下の部分になります。
+  
+  ```channel = awasit relay.subscribe("chirimenLED");```
+  
+  この```chirimenLED```という文字列(チャンネル名)を他の人と被らない別のチャンネル名に書き換えます(```chirimenLED5```など)
+
+
 # 他のいろいろなデバイスを試してみる
 
 * ターミナルウィンドの```CHIRIMEN Panel```ボタン⇒CHIRIMEN Panelの```Get Examples```ボタンで出現するリストのデバイスがすぐ試せます。
@@ -502,14 +525,20 @@ import {RelayServer} from "./RelayServer.js";
 ターミナルウィンドからnodeコマンドで実行指示しなくても、電源投入後 自動的に指定したコードを起動する設定（常駐プログラム化）ができます。
 このチュートリアルでは、[forever](https://www.npmjs.com/package/forever)を使用する設定を専用GUIを用いて行ってみましょう。
 
-* ターミナルウィンドの```CHIRIMEN Panel```ボタン⇒CHIRIMEN Panelの```Resident App Conf.```ボタンを押します。 
-  * UIが使用可能状態になるまで数秒かかります。
+* ターミナルウィンドの```[CHIRIMEN Panel]```ボタン⇒CHIRIMEN Panelの```[Resident App Conf.]```ボタンを押します。 
+  * 専用画面のUIが使用可能状態になるまで数秒かかります。
 * 開発ディレクトリ```~/myApp```内にあるjavascriptコードがリストアップされます。
 * 各行の```Now Running```列は常駐状態、```App Name```はコードのファイル名、```Select```は選択用チェックボックスです。
   * ```Now Running```欄には現在常駐プログラム化しているコードに、```RUNNING```が表示されています。（常駐プログラムがなければ全部の行が空白になります）
   * ```Select```欄のチェックボックスをチェックすると、そのコードが常駐プログラム化します。（常駐プログラムは一個だけ指定できます）
     * 設定が反映され、常駐状態が確認できるようになるまで、２０秒ぐらいかかります
-  * 一番上の```STOP ALL APPS```のチェックボックスをチェックすると、常駐プログラムを解除できます。
+      * 常駐状態の再確認は```[Resident App Conf.]```ボタンで可能
+      * 設定できたらシャットダウンしてPCとのUSB接続も外します
+        * シャットダウンコマンド: ```sudo shutdown -h now```
+      * その後PiZeroをモバイルバッテリなどにつないで独立して稼働させます。
+        * PiZeroの緑色LEDの点滅が収まると、概ね常駐プログラムが起動
+        * その後PCからリモートコントロールしてみましょう
+  * PCに接続しなおして、一番上の```STOP ALL APPS```のチェックボックスをチェックすると、常駐プログラムを解除できます。
 
 
 * *Note: 常駐化のツールとしては、他にもsystemd service unit, openrc, cron, pm2, forever 等があります。Webでそれぞれの特徴を調べて用途に合ったものを選択して設定しても良いでしょう。*
