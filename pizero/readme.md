@@ -83,7 +83,7 @@ PiZero自体はディスプレイやキーボードを接続する必要はあ�
 * CHIRIMEN Raspberry Pi Zero版では[Raspberry Pi OS Lite](https://www.raspberrypi.com/software/operating-systems/)(Linux)をコマンドラインインターフェース(CLI)・シェル(bash)で操作します。
   * ただしこの講習で使うコマンドはごくわずかです。
     * **node** コマンド(後述)
-    * [CTRL+C](https://atmarkit.itmedia.co.jp/ait/articles/1708/04/news015_2.html)(CTRLキーとCを同時に押す:実行中のコマンドを終了させる))
+    * [CTRL+c](https://atmarkit.itmedia.co.jp/ait/articles/1708/04/news015_2.html)(CTRLキーとcを同時に押す:実行中のコマンドを終了させる))
   * その他のほとんどの操作（コマンド）は、ターミナルウィンドやそこから起動される別画面のGUIがコマンド操作を代行しています。図1.1のGUIを操作するとコンソールにコマンドが入力されるのがわかると思います。
 * [CLIとは](https://atmarkit.itmedia.co.jp/ait/articles/1602/19/news025.html)
 * [シェルとコマンドプロンプト](https://atmarkit.itmedia.co.jp/ait/articles/1603/02/news016.html)
@@ -94,7 +94,7 @@ PiZero自体はディスプレイやキーボードを接続する必要はあ�
 
 ## ステップ２ (WiFi設定)
 
-* ターミナルウィンドの```wifi panel```ボタンを押す
+* ターミナルウィンドの```[wifi panel]```ボタンを押す
   * ウィンドが開き、WiFiアクセスポイントがスキャンされます。ステルスでないものはリストアップされているので、以降の作業の参考にしてください。
   * Raspberry Pi Zero Wは2.4GHz帯のWiFiにのみ対応しています。
     ![WiFi Setting](./imgs/WiFiSetting.png)
@@ -102,17 +102,17 @@ PiZero自体はディスプレイやキーボードを接続する必要はあ�
   * SSID欄
   * PASS PHRASE欄
   
-* ```SET WiFi```ボタンを押す
-* ```Reboot```ボタンを押す
+* ```[SET WiFi]```ボタンを押す
+* ```[Reboot]```ボタンを押す
   * これでRaspberry Pi Zeroが再起動をはじめます
 * WiFiウィンドを閉じ、ターミナルウィンドに戻る
-* ターミナルウィンドの```Close Connection```ボタンを押す
+* ターミナルウィンドの```[Close Connection]```ボタンを押す
 * 30秒ほど待つ（Raspberry Pi Zeroが再起動します)
   * ---
-* ```Connect and Login PiZero```ボタンを押し接続する
+* ```[Connect and Login PiZero]```ボタンを押し接続する
   * 接続ダイアログが出現⇒接続するとこれまで同様コマンドプロンプトが出現
-* ```wifi panel```ボタンを再び押す
-* ```wifi Info```ボタンを押す
+* ```[wifi panel]```ボタンを再び押す
+* ```[wifi Info]```ボタンを押す
   * 表示された情報をチェックします
   * wlan0: inet xxx.xxx.xxx.xxx　(xxxは数字)のようにIPアドレスが設定されていれば接続成功しています。
 ![WiFi Setting_IPaddress](./imgs/WiFiSettingIPaddress.png)
@@ -127,8 +127,8 @@ PiZero自体はディスプレイやキーボードを接続する必要はあ�
 
 ## ステップ３ (CHIRIMEN環境設定)
 
-* ターミナルウィンドの```CHIRIMEN Panel```ボタンを押す。
-* CHIRIMEN Panelウィンドが開いたら、```Setup CHIRIMEN```ボタンを押す。
+* ターミナルウィンドの```[CHIRIMEN Panel]```ボタンを押す。
+* CHIRIMEN Panelウィンドが開いたら、```[Setup CHIRIMEN]```ボタンを押す。
 * 数分、セットアップ完了するのを待ちます。（ネットワーク環境にも依存しますが10分程度かかるかもしれません）
   * CHIRIMEN Panelウィンドの進捗メッセージが、CONGRATURATIONS. setup completed!となればセットアップ完了です。
   * Note: ターミナルウィンドのコンソールにはより細かな進捗状況が表示されます。
@@ -167,9 +167,9 @@ Raspberry Pi に接続した LED を点滅させるプログラムを書きま�
 * myAppディレクトリに移動します。
   * コンソールの右側のファイルマネージャでmyApp⇒移動を選ぶ
   * このディレクトリが開発環境が設定されているディレクトリです。
-* ```Create New Text```ボタンを押す
+* ```[Create New Text]```ボタンを押す
 * 入力欄に```hello.js```と入力
-* ```create```ボタンを押す
+* ```[create]```ボタンを押す
 * JS Editorウィンドが出現
 
 以下のプログラムをJS Editorに書き写します ～ コピペ（下記プログラム部分を選択してCTRL+c、JS Editorウィンド上でCTRL+v））
@@ -198,12 +198,13 @@ async function blink() {
 blink();
 ```
 
-* 書き終えたら保存します。(```Saveボタン```もしくはCTRL+s)
+* 書き終えたら保存します。(```[Save]ボタン```もしくはCTRL+s)
 * ターミナルウィンドの右側(ファイルマネージャ)に hello.jsが出現していることを確認します
 * エディタウィンドを閉じます
 
 ## 実行する
 
+* [**ターミナルウィンド**](https://chirimen.org/PiZeroWebSerialConsole/PiZeroWebSerialConsole.html) に接続します
 * ターミナルウィンドのコンソール部(ウィンド左側)のプロンプト(画面一番下)が以下になっていることを確認します
   * ```pi@raspberrypi:~/myApp$```
 * コンソール部をクリックして、入力可能状態にしてから、以下の文字を入力します。
@@ -284,12 +285,12 @@ GPIOの出力はLチカで実験済みですね。そこで今回はモーター
 ## GPIO入力
 GPIO端子の**入力が変化したら関数を実行**という機能によってGPIOの入力を使います。
 
-* ターミナルウィンドの```CHIRIMEN Panel```ボタンを押す
-* 出現したCHIRIMEN Panelの```Get Examples```ボタンを押す
+* ターミナルウィンドの```[CHIRIMEN Panel]```ボタンを押す
+* 出現したCHIRIMEN Panelの```[Get Examples]```ボタンを押す
 * ID : **gpio-onchange**を探します
 * 回路図リンクを押すと回路図が出てきますので、回路を組みます。
 
-* ```JS GET```ボタンを押すと、開発ディレクトリ(```~/myApp```)に、サンプルコードが保存されます。
+* ```[JS GET]```ボタンを押すと、開発ディレクトリ(```~/myApp```)に、サンプルコードが保存されます。
   * **main-gpio-onchange.js**というファイル名で保存されます。
   * ターミナルウィンドの右側のファイルマネージャでmain-gpio-onchange.js⇒編集 を選びます。
     * ソースコードを見てみましょう
@@ -301,7 +302,7 @@ GPIO端子の**入力が変化したら関数を実行**という機能によっ
   * タクトスイッチを押してみます。
   * タクトスイッチが押されるたびにコンソール画面に**0**(押された状態)、**1**(離した状態)が交互に表示されます。
     * Note: GPIOポート5は、Pull-Up(開放状態でHighレベル)です。そのため離した状態で１が出力されます。スイッチを押すとポートがGNDと接続され、Lowレベルになり、0が出力されます。
-* 終了は CTRL+C
+* 終了は CTRL+c
 
 ### コードを読む
 * ターミナルウィンドの右側のファイルマネージャでmain-gpio-onchange.js⇒表示 を選び、ソースコードを読んでみましょう
@@ -315,11 +316,11 @@ GPIO端子の**入力が変化したら関数を実行**という機能によっ
 ## GPIO入力(ポーリング)
 入力ではイベントの他にポーリングというテクニックが広く使われます。（次章のI2Cデバイスからの入力では専らポーリング）
 
-* ターミナルウィンドの```CHIRIMEN Panel```ボタンを押す
-* 出現したCHIRIMEN Panelの```Get Examples```ボタンを押す
+* ターミナルウィンドの```[CHIRIMEN Panel]```ボタンを押す
+* 出現したCHIRIMEN Panelの```[Get Examples]```ボタンを押す
 * ID : **gpio-polling**を探します
 * 回路は前章と同じなのでそのままにしておきます。
-* ```JS GET```ボタンを押すと、開発ディレクトリ(```~/myApp```)に、サンプルコードが保存されます。
+* ```[JS GET]```ボタンを押すと、開発ディレクトリ(```~/myApp```)に、サンプルコードが保存されます。
   * **main-gpio-polling.js**というファイル名で保存されます。
   * ターミナルウィンドの右側のファイルマネージャでmain-gpio-polling.js⇒編集 を選びソースコードを見てみましょう
 
@@ -329,7 +330,7 @@ GPIO端子の**入力が変化したら関数を実行**という機能によっ
   * 0.3秒おきにポート5の値がコンソールに表示されていきます。
   * タクトスイッチを押してみます。
   * タクトスイッチが押されると、**0**に変化します。
-* 終了は CTRL+C
+* 終了は CTRL+c
 
 ### コードを読む
 * ターミナルウィンドの右側のファイルマネージャでmain-gpio-polling.js⇒表示 を選び、ソースコードを読んでみましょう
@@ -351,13 +352,13 @@ GPIO端子の**入力が変化したら関数を実行**という機能によっ
 SHT30は温度に加えて湿度も測定できるI2C接続の多機能センサーです。SHT31もほぼ同等に使えます。(SHT31のほうが精度が高い)
 * [SHT30/SHT31について](../chirimenGeneric/#i2ci2c--sht30-sht31)
 
-* ターミナルウィンドの```CHIRIMEN Panel```ボタンを押す
-* 出現したCHIRIMEN Panelの```Get Examples```ボタンを押す
+* ターミナルウィンドの```[CHIRIMEN Panel]```ボタンを押す
+* 出現したCHIRIMEN Panelの```[Get Examples]```ボタンを押す
 * ID : sht30を探します
 * 回路図リンクを押すと回路図が出てきますので、回路を組みます。なお、接続は下の図のようになります。
 ![SHT31 schematic](./esm-examples/sht30/schematic.png)
 
-* ```JS GET```ボタンを押すと、開発ディレクトリ(```~/myApp```)に、サンプルコードが保存されます。
+* ```[JS GET]```ボタンを押すと、開発ディレクトリ(```~/myApp```)に、サンプルコードが保存されます。
   * **main-sht30.js**というファイル名で保存されます。
   * Note: ターミナルウィンドの右側のファイルマネージャでmain-sht30.js⇒編集 を選ぶと、エディタで編集できます。
     * ソースコードを見てみましょう
@@ -365,7 +366,7 @@ SHT30は温度に加えて湿度も測定できるI2C接続の多機能センサ
 
 ### I2Cセンサー(SHT30)が認識さていることを確認する
 
-* CHIRIMEN Panelの```i2c detect```ボタンを押すと、[SHT30のI2Cアドレス](https://strawberry-linux.com/pub/Sensirion_Humidity_SHT3x_DIS_Datasheet_V3_J.pdf)　0x**44**が表示されていればうまく接続されています。
+* CHIRIMEN Panelの```[i2c detect]```ボタンを押すと、[SHT30のI2Cアドレス](https://strawberry-linux.com/pub/Sensirion_Humidity_SHT3x_DIS_Datasheet_V3_J.pdf)　0x**44**が表示されていればうまく接続されています。
   * [ic2 detectとは](../chirimenGeneric/#b-i2cdetect)
 <pre>
      0  1  2  3  4  5  6  7  8  9  a  b  c  d  e  f
@@ -383,7 +384,7 @@ SHT30は温度に加えて湿度も測定できるI2C接続の多機能センサ
 * ターミナルウィンドのコンソールのプロンプトが```pi@raspberrypi:~/myApp$```となっていることを確認
 * ターミナルウィンドのコンソールに、```node main-sht30.js``` [ENTER] と入力して実行。
 * 温度と湿度が1秒ごとにコンソールに表示されます。
-* 終了は CTRL+C
+* 終了は CTRL+c
 
 ### コードを読む
 * ターミナルウィンドの右側のファイルマネージャでmain-sht30.js⇒表示 を選び、ソースコードを読んでみましょう
@@ -399,14 +400,14 @@ SHT30は温度に加えて湿度も測定できるI2C接続の多機能センサ
 
 まずは、その中からI2CセンサーのADT7410を試しましょう。(SHT30(orSHT31)は次章を参照)
 
-* ターミナルウィンドの```CHIRIMEN Panel```ボタンを押す
-* 出現したCHIRIMEN Panelの```Get Examples```ボタンを押す
+* ターミナルウィンドの```[CHIRIMEN Panel]```ボタンを押す
+* 出現したCHIRIMEN Panelの```[Get Examples]```ボタンを押す
 * ID : adt7410を探します(上から5個目ぐらい)
 * 回路図リンクを押すと回路図が出てきますので、回路を組みます。なお、接続は下の図のようになります。
   * [センサーの極性に注意！](https://tutorial.chirimen.org/raspi/hellorealworld#section-2)
 
 ![PiZero温度センサー図](./imgs/pizero_temp.png)
-* ```JS GET```ボタンを押すと、開発ディレクトリ(```~/myApp```)に、サンプルコードが保存されます。
+* ```[JS GET]```ボタンを押すと、開発ディレクトリ(```~/myApp```)に、サンプルコードが保存されます。
   * **main-adt7410.js**というファイル名で保存されます。
   * Note: ターミナルウィンドの右側のファイルマネージャでmain-adt7410.js⇒編集 を選ぶと、エディタで編集できます。
     * ソースコードを見てみましょう
@@ -414,7 +415,7 @@ SHT30は温度に加えて湿度も測定できるI2C接続の多機能センサ
 
 ### I2Cセンサーが認識さていることを確認する
 
-* CHIRIMEN Panelの```i2c detect```ボタンを押すと、[ADT7410のI2Cアドレス](https://akizukidenshi.com/download/ds/akizuki/AE-ADT7410_aw.pdf)　0x**48**が表示されていればうまく接続されています。
+* CHIRIMEN Panelの```[i2c detect]```ボタンを押すと、[ADT7410のI2Cアドレス](https://akizukidenshi.com/download/ds/akizuki/AE-ADT7410_aw.pdf)　0x**48**が表示されていればうまく接続されています。
   * [ic2 detectとは](https://tutorial.chirimen.org/ty51822r3/i2cdetect)
 <pre>
      0  1  2  3  4  5  6  7  8  9  a  b  c  d  e  f
@@ -432,7 +433,7 @@ SHT30は温度に加えて湿度も測定できるI2C接続の多機能センサ
 * ターミナルウィンドのコンソールのプロンプトが```pi@raspberrypi:~/myApp$```となっていることを確認
 * ターミナルウィンドのコンソールに、```node main-adt7410.js``` [ENTER] と入力して実行。
 * 温度が1秒ごとにコンソールに表示されます。
-* 終了は CTRL+C
+* 終了は CTRL+c
 
 
 # IoTを試す
@@ -453,10 +454,10 @@ Note: [モーター制御の回路](./#gpio-2)を組めば、そのまま遠隔�
 
 ### CHIRIMENデバイス側にコードを入れ、実行する
 
-* ターミナルウィンドの```CHIRIMEN Panel```ボタンを押す
-* 出現したCHIRIMEN Panelの```Get Examples```ボタンを押す
+* ターミナルウィンドの```[CHIRIMEN Panel]```ボタンを押す
+* 出現したCHIRIMEN Panelの```[Get Examples]```ボタンを押す
 * ID : **remote_gpio_led**の行を探します（もう一度この行の情報を使います）
-* ```JS GET```ボタンを押すと、開発ディレクトリ(```~/myApp```)に、サンプルコードが保存されます。
+* ```[JS GET]```ボタンを押すと、開発ディレクトリ(```~/myApp```)に、サンプルコードが保存されます。
   * **main-remote_gpio_led.js**というファイル名で保存されます。
   * ターミナルウィンドの右側のファイルマネージャでmain-remote_gpio_led.js⇒編集 を選びソースコードを見てみましょう
 
@@ -464,7 +465,7 @@ Note: [モーター制御の回路](./#gpio-2)を組めば、そのまま遠隔�
   * ターミナルウィンドのコンソールのプロンプトが```pi@raspberrypi:~/myApp$```となっていることを確認
   * ターミナルウィンドのコンソールに、```node main-remote_gpio_led.js``` [ENTER] と入力して実行。
 ![CHIRIMEN PiZero Console](imgs/RC_NODE.png)
-  * なお、実験が終わったら終了は CTRL+C です。
+  * なお、実験が終わったら終了は CTRL+c です。
 
 ### PC側のコードを準備し、実行する
 * CHIRIMEN Panelに戻り、ID : **remote_gpio_led**の行にある、```CSB EDIT```リンクをクリックする。
@@ -515,7 +516,7 @@ import {RelayServer} from "./RelayServer.js";
 
 # 他のいろいろなデバイスを試してみる
 
-* ターミナルウィンドの```CHIRIMEN Panel```ボタン⇒CHIRIMEN Panelの```Get Examples```ボタンで出現するリストのデバイスがすぐ試せます。
+* ターミナルウィンドの```[CHIRIMEN Panel]```ボタン⇒CHIRIMEN Panelの```[Get Examples]``ボタンで出現するリストのデバイスがすぐ試せます。
 * このリストの直リンクは[こちら(サンプル一覧)](esm-examples/)です。CHIRIMEN RPiZeroをPCにつないでいないときはこちらを眺めてください。
 
 また、こちらには、Web GPIO や Web I2C によって扱うことのできる[外部デバイスの写真や様々なCHIRIMEN環境のサンプルコードの一覧があります](https://tutorial.chirimen.org/raspi/partslist)。こちらも参考になるかもしれません。(CHIRIMENは[Raspberry Pi ZeroW以外に、Raspberry Pi 3,4や、micro:bit等](../)でも使用できます）
