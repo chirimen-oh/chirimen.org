@@ -58,7 +58,7 @@ PiZero自体はディスプレイやキーボードを接続する必要はあ�
 ### PCをWiFiに接続
 * 会場(もしくは開発場所)で提供されているWiFiアクセスポイントにまずはPCを接続してください。
 
-## ステップ１（ターミナル接続）
+## ステップ１（[ターミナル接続](https://chirimen.org/PiZeroWebSerialConsole/PiZeroWebSerialConsole.html) ）
 
 * [Raspberry Pi OS LiteをUSB Serialで使用可能にしたイメージ](https://github.com/kou029w/chirimen-os/releases/)を書き込んだmicroSDカードをRaspberry Pi Zeroに差し込みます。
 * PCのUSBとRaspberry Pi ZeroのUSB OTGポートをUSBケーブルでつなぎます
@@ -204,7 +204,6 @@ blink();
 
 ## 実行する
 
-* [**ターミナルウィンド**](https://chirimen.org/PiZeroWebSerialConsole/PiZeroWebSerialConsole.html) に接続します
 * ターミナルウィンドのコンソール部(ウィンド左側)のプロンプト(画面一番下)が以下になっていることを確認します
   * ```pi@raspberrypi:~/myApp$```
 * コンソール部をクリックして、入力可能状態にしてから、以下の文字を入力します。
