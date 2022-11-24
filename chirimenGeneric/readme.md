@@ -45,7 +45,7 @@ LED の順方向電圧は色により異なっており、赤色 LED は 1.8V �
 
 
 ## ブレッドボード
-- [ブレッドボードの使い方](https://shop.sunhayato.co.jp/blogs/problem-solving/breadboard)
+- [ブレッドボードの使い方](https://shop.sunhayato.co.jp/blogs/problem-solving/breadboard) (サンハヤト社)
 
 | 外観                            | 内部の接続状態                            |
 | ------------------------------- | ----------------------------------------- |
