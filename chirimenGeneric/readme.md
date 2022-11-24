@@ -1,6 +1,7 @@
 ---
 layout: tutorial
 lang: ja
+permalink: /chirimenGeneric/
 ---
 
 # CHIRIMEN
