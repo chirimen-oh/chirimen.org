@@ -99,7 +99,7 @@ JavaScript に慣れていない人は、[「JavaScript 初学者向け資料集
 ## javascriptコード・ライブラリの読み込み
 
 ### ウェブアプリ：HTMLで読み込み
-Raspberry Pi Zero版以外のCHIRIMENはプログラムの起点はHTMLファイルです。（ウェブアプリ）ブラウザはまずHTMLファイルを読み込んだうえで、そこに書かれた内容で動きます。したがって作ったコードや必要なライブラリの読み込みは基本的に全てこのHTMLの中で指定します。（なお、javascript Moduleを有効化している場合はjavascriptコードの中でjsライブラリを読み込むことがある）
+Raspberry Pi Zero版以外のCHIRIMENはプログラムの起点はHTMLファイルです。（[ウェブアプリ](https://ja.wikipedia.org/wiki/%E3%82%A6%E3%82%A7%E3%83%96%E3%82%A2%E3%83%97%E3%83%AA%E3%82%B1%E3%83%BC%E3%82%B7%E3%83%A7%E3%83%B3)）ブラウザはまずHTMLファイルを読み込んだうえで、そこに書かれた内容で動きます。したがって作ったコードや必要なライブラリの読み込みは基本的に全てこのHTMLの中で指定します。（なお、javascript Moduleを有効化している場合はjavascriptコードの中でjsライブラリを読み込むことがある）
 
 ポイントは `<script ...></script>` の部分です。
 `polyfill.js` という JavaScript ライブラリを読み込んでいます。これは [Web GPIO API](http://browserobo.github.io/WebGPIO) と、[Web I2C API](http://browserobo.github.io/WebI2C) という W3C でドラフト提案中の 2 つの API への [Polyfill (新しい API を未実装のブラウザでも同じコードが書けるようにするためのライブラリ)](https://developer.mozilla.org/ja/docs/Glossary/Polyfill) で、最初に読み込むとそれ以降のコードで GPIO や I2C を操作する JavaScript API が使えるようになります。
@@ -107,7 +107,7 @@ Raspberry Pi Zero版以外のCHIRIMENはプログラムの起点はHTMLファイ
 次の行にある `main.js` は、JavaScript のプログラム本体です。
 
 ### Node.js (CHIRIMEN Raspberry Pi Zero版)
-Raspberry Pi Zero版はプログラムの起点が自分が作ったjavascriptコード自体になります。ブラウザの代わりにNode.jsというjavascriptコードだけを解釈するソフト（javascript インタープリタ）にコードを読み込ませて実行します。
+Raspberry Pi Zero版はプログラムの起点が自分が作ったjavascriptコード自体になります。ブラウザの代わりに[Node.js](https://ja.wikipedia.org/wiki/Node.js)というjavascriptコードだけを解釈するソフト（javascript [インタープリタ](https://ja.wikipedia.org/wiki/%E3%82%A4%E3%83%B3%E3%82%BF%E3%83%97%E3%83%AA%E3%82%BF)）にコードを読み込ませて実行します。
 
 CHIRIMEN環境のために必要なライブラリや、[I2Cデバイスのドライバ](#WebI2Cとデバイスドライバ)(後述)は次のECMA Script Moduleという仕組みを使って読み込みます。
 
@@ -126,7 +126,7 @@ CHIRIMEN環境のために必要なライブラリや、[I2Cデバイスのド�
 ## 非同期処理
 
 物理デバイス制御やネットワーク通信などでは、応答待ち中にブラウザが停止しないよう非同期処理を使う必要があります。
-本チュートリアルではこれを [async 関数](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/async_function) で記述しています。async 関数による非同期処理に慣れていない人は、[こちらの資料「非同期処理 (async await 版)」](../js/async.md) も参考にしてください。
+本チュートリアルではこれを [async 関数](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/async_function) で記述しています。async 関数による非同期処理に慣れていない人は、[こちらの資料「非同期処理 (async await 版)」](../js/async.md) も参考にしてください。非同期処理についてより詳しくは [JS Primer の非同期処理説明ページ](https://jsprimer.net/basic/async/) をご覧ください。
 
 非同期処理を使いこなすのは難しいですが、本チュートリアルでは次のルールでコードを書けば大丈夫です:
 
