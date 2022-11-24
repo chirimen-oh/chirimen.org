@@ -45,13 +45,16 @@ LED の順方向電圧は色により異なっており、赤色 LED は 1.8V �
 
 
 ## ブレッドボード
-- [ブレッドボードの使い方](https://www.sunhayato.co.jp/blog/2015/03/04/7)
+- [ブレッドボードの使い方](https://shop.sunhayato.co.jp/blogs/problem-solving/breadboard)
 
 | 外観                            | 内部の接続状態                            |
 | ------------------------------- | ----------------------------------------- |
 | ![外観](../microbit/imgs/breadboardImg.jpg) | ![内部の接続状態](../microbit/imgs/breadboardSch.png) |
 
 * +と-のライン(上下の横のピン列)が無いブレッドボードもあります（CHIRIMEN Starter Kitのブレッドボードにはありません）
+
+* 配線に使うケーブルの色に厳密な決まりはありませんが、一般的にGNDは黒(や黒っぽい色)、電源(VCC, +3.3V, +5V)には赤(や赤っぽい色)が用いられます。配線間違いを防ぐためにもなるべく合わせましょう。
+* 抵抗やLEDの足(リード線)は手で簡単に曲げられます。ブレッドボードに差し込めるように適当に成型してください。
 
 ## 抵抗値の読み方
 - [抵抗値の読み方](http://www.jarl.org/Japanese/7_Technical/lib1/teikou.htm)
