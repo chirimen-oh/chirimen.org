@@ -470,6 +470,7 @@ Note: [モーター制御の回路](./#gpio-2)を組めば、そのまま遠隔�
 ### PC側のコードを準備し、実行する
 * CHIRIMEN Panelに戻り、ID : **remote_gpio_led**の行にある、```CSB EDIT```リンクをクリックする。
   * CodeSandboxというオンラインのWebApp開発環境のウィンドが開き、PC側のコードが表示されています。編集もできます。
+    * 詳しい解説：[CodeSandbox ガイド](https://csb-jp.github.io/)
   * また、右側（もしくは右下）のフレームにはLEDを遠隔コントロールするためのwebAppが既に実行されています。
   * webAppを使ってLEDが制御できることを確かめてみましょう。
 
@@ -555,7 +556,7 @@ CHIRIMEN for Raspberry Pi を利用するに際して、知っておくと良い
 - [JavaScript 初学者向け資料集](/js/)
   - JavaScript 1 Day 講習資料、JavaScript 本格入門書、チートシートなどはこちら
 
-その他、電子工作など一般的な知識は [予備知識・資料集](../reference.md) や、[共通資料集](../chirimenGeneric.md)を参照してください。
+その他、電子工作など一般的な知識は [予備知識・資料集](../reference.md) や、[共通資料集](../chirimenGeneric/)を参照してください。
 
 
 
