@@ -2,7 +2,7 @@
 # github pagesのJekyllの機能で_dataにあるcsvを使ってテーブル化することも考えましたが、テーブル化だけでなく、cvsv自体をデータとしてwebから使いたいケースに対応できなさそうなのでwebAppsで組み立てることにした・・・
 
 GPIO
-hello-real-world,Lチカ,GPIO PORT26に繋いだLEDを点滅させる
+hello-real-world,Lチカ or モーターON/OFF,GPIO PORT26に繋いだLEDを点滅させる。またはモータのOn/Offを繰り返す
 gpio-onchange,スイッチ,GPIO PORT5に繋いだスイッチのON/OFFを検知する
 gpio-polling,スイッチ2,GPIO PORT5に繋いだスイッチのON/OFFをポーリングで検知する
 gpio-inout,スイッチ+(LED or モータ),GPIO PORT5に繋いだスイッチのON/OFFを検知してPORT26に繋いだLEDもしくはモータをON/OFFする
