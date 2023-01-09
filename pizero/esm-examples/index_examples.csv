@@ -5,7 +5,7 @@ GPIO
 hello-real-world,Lチカ,GPIO PORT26に繋いだLEDを点滅させる
 gpio-onchange,スイッチ,GPIO PORT5に繋いだスイッチのON/OFFを検知する
 gpio-polling,スイッチ2,GPIO PORT5に繋いだスイッチのON/OFFをポーリングで検知する
-gpio-inout,スイッチ+LED,GPIO PORT5に繋いだスイッチのON/OFFを検知してPORT26に繋いだLEDを点灯/消灯する
+gpio-inout,スイッチ+(LED or モータ),GPIO PORT5に繋いだスイッチのON/OFFを検知してPORT26に繋いだLEDもしくはモータをON/OFFする
 gpio-onchange,タッチセンサ,GPIO PORT5に繋いだタッチセンサ(TP223使用)のON/OFFを検知する
 hbridge1,モータ正転・逆転制御,GPIO接続のH-BridgeモータドライバでDCモータの正転・逆転制御を可能にします。
 a4988,ステッピングモータ制御,GPIO接続のA4988ステッピングモータ専用ドライバで２相ステッピングモータの正転・逆転・回転ステップ数を制御を可能にします。<span style="color:red">ステッピングモータは停止中も常に電流が流れているため容易に加熱します。火傷に注意！</span>
