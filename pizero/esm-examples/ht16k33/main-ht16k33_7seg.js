@@ -6,6 +6,7 @@ import HT16K33 from "@chirimen/ht16k33"; // 7セグLED拡張版を使用する
 const sleep = (msec) => new Promise((resolve) => setTimeout(resolve, msec));
 
 async function set4digitLED(ht,num,deg){
+	// set4digitLED()の後、write_display()を必ず呼ぶので、関数でまとめたもの
 	ht.set4digitLED(num,deg);
 	await ht.write_display();
 }
@@ -50,7 +51,6 @@ async function main() {
         await sleep(1000);
         await set4digitLED(ht, 0);
         await sleep(1000);
-        /** LEDを一個づつ設定する関数の使用例 **/
         for (var i = 0; i < 1; i += 0.01) {
             await set4digitLED(ht, i, 2);
             await sleep(10);

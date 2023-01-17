@@ -13,7 +13,6 @@ async function main() {
 	const port = i2cAccess.ports.get(1);
 	const ht = new HT16K33(port);
 	await ht.init();
-	ht.setAitendo8x8();
 	
 	//await ht.set_blink(ht.HT16K33_BLINK_1HZ);
 	//await ht.set_brightness(6);
