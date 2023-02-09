@@ -34,13 +34,16 @@ Adafruit、keystudioとマトリクスの結線が異なりますが、設定変
 配線が同じであれば、amazonやaliexpress等で販売されているジェネリック品でも使用できると思います。（動作はAitendo製品で確認）
 * 対応品：aitendo
   * https://www.aitendo.com/product/14540
+  * https://www.aitendo.com/product/18690
+  * https://www.aitendo.com/product/20785
 
 * サンプルコード [./main-ht16k33_7seg.js](./main-ht16k33_7seg.js)
 
 ### 4桁 14セグメントLEDモジュール
 数字やアルファベットが表示可能なLEDモジュール。配線が同じであれば、amazonやaliexpress等で販売されているジェネリック品でも使用できると思います。（動作はAitendo製品で確認）
 * 対応品：aitendo
-  * https://www.aitendo.com/product/14540
+  * https://www.aitendo.com/product/20812
+  * https://www.aitendo.com/product/20811
 
 * サンプルコード [./main-ht16k33_14seg.js](./main-ht16k33_14seg.js)
 
