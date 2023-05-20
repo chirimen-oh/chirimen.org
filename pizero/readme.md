@@ -13,7 +13,6 @@ CHIRIMEN Raspberry Pi Zero版 を用いたIoT実習資料です。
 [pizeronodejs.md](pizeronodejs.md)の内容をもとに、Web Serial RPiZero Terminalを使うことで操作を簡単化し、更にプログラム作法をECMA Script Moduleにあわせています。
 
 
-
 # 準備
 
 ## ステップ０ (物品準備、PCをWiFiに接続)
@@ -100,8 +99,7 @@ PiZero自体はディスプレイやキーボードを接続する必要はあ�
     ![WiFi Setting](./imgs/WiFiSetting.png)
 * ウィンド下部に、会場(もしくは開発場所)で提供されているWiFiアクセス情報を入力する (いずれも大文字小文字の区別があるので注意してください。)
   * SSID欄
-  * PASS PHRASE欄
-  
+  * PASS PHRASE欄 
 * ```[SET WiFi]```ボタンを押す
 * ```[Reboot]```ボタンを押す
   * これでRaspberry Pi Zeroが再起動をはじめます
@@ -116,7 +114,6 @@ PiZero自体はディスプレイやキーボードを接続する必要はあ�
   * 表示された情報をチェックします
   * wlan0: inet xxx.xxx.xxx.xxx　(xxxは数字)のようにIPアドレスが設定されていれば接続成功しています。
 ![WiFi Setting_IPaddress](./imgs/WiFiSettingIPaddress.png)
-
   <!--  * あとでping chirimen.org OK も入れよう。-->
   * もしもあなたがsshやscp (WinSCP, teraterm等)などのツールに慣れている場合、上記のアドレスでssh接続できます
     * PORT: 22
@@ -135,7 +132,6 @@ PiZero自体はディスプレイやキーボードを接続する必要はあ�
 * ```~/myApp```が今後CHIRIMEN環境でのプログラミングで使用するディレクトリです。
 * 以上ですべての初期設定完了です！
 
-
 # Hello Real World（[Lチカ](../chirimenGeneric/#l-)を実行する）
 
 ## 配線
@@ -148,10 +144,10 @@ PiZero とパーツを使って下の図の通りに配線します。
 * [その他、配線の基礎知識](https://tutorial.chirimen.org/reference#section-1)
 
 
-* Note:
-  * 間違ったピンに差し込むと場合によってはPiZeroが停止したり故障することもあります。（たとえば3.3V端子とGND端子を接続してしまうなど。)
-  * そのため、慣れるまでは一旦PiZeroをシャットダウン、USBケーブルも外し電源OFFにしてから配線すると安全です
-    * シャットダウンコマンド：```sudo shutdown -h now```
+**注意**
+* 間違ったピンに差し込むと場合によってはPiZeroが停止したり故障することもあります。（たとえば3.3V端子とGND端子を接続してしまうなど。)
+* そのため、慣れるまでは一旦PiZeroをシャットダウン、USBケーブルも外し電源OFFにしてから配線すると安全です
+   * シャットダウンコマンド：```sudo shutdown -h now```
 
 ![PiZero配線図](./imgs/pizero_led.png)
 
@@ -174,8 +170,7 @@ Raspberry Pi に接続した LED を点滅させるプログラムを書きま�
 
 以下のプログラムをJS Editorに書き写します ～ コピペ（下記プログラム部分を選択してCTRL+c、JS Editorウィンド上でCTRL+v））
 
-
-```javascript
+```js
 import {requestGPIOAccess} from "./node_modules/node-web-gpio/dist/index.js"; // WebGPIO を使えるようにするためのライブラリをインポート
 const sleep = msec => new Promise(resolve => setTimeout(resolve, msec)); // sleep 関数を定義
 
@@ -225,6 +220,7 @@ blink();
 ## Raspberry Pi Zeroのピン配列
 
 GPIO, 電源, GND, I2C信号線などのピン配列を記載します。
+
 * 白い文字で書かれたピンだけが使えます
 * GND、3.3V、5Vはそれぞれ電源とグランドです
 * 数字 + PD||PUと書かれているピンはGPIO端子(詳細は次章)
@@ -245,7 +241,6 @@ GPIO, 電源, GND, I2C信号線などのピン配列を記載します。
     * 画面表示やGUIに関わらないAPI
     * 通信プロトコル
   * 使えないのはブラウザを使った画面表示やGUI
-
 * ブラウザを使った画面やGUIは
   * ネットを介してスマホやPCからコントロール ⇒ これが代表的にIoTと呼ばれるデザインパターン
     * このとき、Raspberry Pi Zeroは、IoTエッジデバイスとして動作
@@ -275,26 +270,24 @@ GPIOの出力はLチカで実験済みですね。そこで今回はモーター
   * [Node.jsについて](../chirimenGeneric/#nodejs-chirimen-raspberry-pi-zero)
 * ターミナルウィンドの右側のファイルマネージャでhello.js⇒表示 を選び、ソースコードを読んでみましょう
 * WebGPIOライブラリを読み込み ([JavaScript Module](../chirimenGeneric/#javascript-module-ecma-script-module)仕様に従って)
-
 　`import {requestGPIOAccess} from "./node_modules/node-web-gpio/dist/index.js";`
   * [JavaScript module](../chirimenGeneric/#javascript-module-ecma-script-module) に基づいてWebGPIOライブラリを読み込みます。これでWeb GPIO APIが使えるようになりました。
 * [GPIOポートの初期化処理](../chirimenGeneric/#gpio-2)
 * [GPIOPortの出力処理](../chirimenGeneric/#gpioport-)
 
 ## GPIO入力
+
 GPIO端子の**入力が変化したら関数を実行**という機能によってGPIOの入力を使います。
 
 * ターミナルウィンドの```[CHIRIMEN Panel]```ボタンを押す
 * 出現したCHIRIMEN Panelの```[Get Examples]```ボタンを押す
 * ID : **gpio-onchange**を探します
 * 回路図リンクを押すと回路図が出てきますので、回路を組みます。
-
 * ```[JS GET]```ボタンを押すと、開発ディレクトリ(```~/myApp```)に、サンプルコードが保存されます。
   * **main-gpio-onchange.js**というファイル名で保存されます。
   * ターミナルウィンドの右側のファイルマネージャでmain-gpio-onchange.js⇒編集 を選びます。
     * ソースコードを見てみましょう
     * 今回は編集不要ですが、サンプルをベースに応用プログラムを作るときには編集しましょう。
-
 * 実行する
   * ターミナルウィンドのコンソールのプロンプトが```pi@raspberrypi:~/myApp$```となっていることを確認
   * ターミナルウィンドのコンソールに、```node main-gpio-onchange.js``` [ENTER] と入力して実行。
@@ -306,7 +299,6 @@ GPIO端子の**入力が変化したら関数を実行**という機能によっ
 ### コードを読む
 * ターミナルウィンドの右側のファイルマネージャでmain-gpio-onchange.js⇒表示 を選び、ソースコードを読んでみましょう
 * WebGPIOライブラリを読み込み
-
 　`import {requestGPIOAccess} from "./node_modules/node-web-gpio/dist/index.js";`
   * [JavaScript module](../chirimenGeneric/#javascript-module-ecma-script-module) に基づいてWebGPIOライブラリを読み込みます。これでWeb GPIO APIが使えるようになりました。
 * [GPIOポートの初期化処理を行う](../chirimenGeneric/#gpio-2)
@@ -334,7 +326,6 @@ GPIO端子の**入力が変化したら関数を実行**という機能によっ
 ### コードを読む
 * ターミナルウィンドの右側のファイルマネージャでmain-gpio-polling.js⇒表示 を選び、ソースコードを読んでみましょう
 * WebGPIOライブラリを読み込み
-
 　`import {requestGPIOAccess} from "./node_modules/node-web-gpio/dist/index.js";`
   * [JavaScript module](../chirimenGeneric/#javascript-module-ecma-script-module) に基づいてWebGPIOライブラリを読み込みます。これでWeb GPIO APIが使えるようになりました。
 * [GPIOポートの初期化処理を行う](../chirimenGeneric/#gpio-2)
@@ -348,6 +339,7 @@ GPIO端子の**入力が変化したら関数を実行**という機能によっ
 * [I2Cとは？](../chirimenGeneric/#i2c)
 
 ## SHT30編
+
 SHT30は温度に加えて湿度も測定できるI2C接続の多機能センサーです。SHT31もほぼ同等に使えます。(SHT31のほうが精度が高い)
 * [SHT30/SHT31について](../chirimenGeneric/#i2ci2c--sht30-sht31)
 
@@ -367,6 +359,7 @@ SHT30は温度に加えて湿度も測定できるI2C接続の多機能センサ
 
 * CHIRIMEN Panelの```[i2c detect]```ボタンを押すと、[SHT30のI2Cアドレス](https://strawberry-linux.com/pub/Sensirion_Humidity_SHT3x_DIS_Datasheet_V3_J.pdf)　0x**44**が表示されていればうまく接続されています。
   * [ic2 detectとは](../chirimenGeneric/#b-i2cdetect)
+
 <pre>
      0  1  2  3  4  5  6  7  8  9  a  b  c  d  e  f
 00:          -- -- -- -- -- -- -- -- -- -- -- -- -- 
@@ -380,12 +373,14 @@ SHT30は温度に加えて湿度も測定できるI2C接続の多機能センサ
 </pre>
 
 ### 実行する
+
 * ターミナルウィンドのコンソールのプロンプトが```pi@raspberrypi:~/myApp$```となっていることを確認
 * ターミナルウィンドのコンソールに、```node main-sht30.js``` [ENTER] と入力して実行。
 * 温度と湿度が1秒ごとにコンソールに表示されます。
 * 終了は CTRL+c
 
 ### コードを読む
+
 * ターミナルウィンドの右側のファイルマネージャでmain-sht30.js⇒表示 を選び、ソースコードを読んでみましょう
 * [WebI2CライブラリとSHT30デバイスドライバを読み込み](../chirimenGeneric/#webi2c)
 
@@ -417,6 +412,7 @@ SHT30は温度に加えて湿度も測定できるI2C接続の多機能センサ
 
 * CHIRIMEN Panelの```[i2c detect]```ボタンを押すと、[ADT7410のI2Cアドレス](https://akizukidenshi.com/download/ds/akizuki/AE-ADT7410_aw.pdf)　0x**48**が表示されていればうまく接続されています。
   * [ic2 detectとは](https://tutorial.chirimen.org/ty51822r3/i2cdetect)
+
 <pre>
      0  1  2  3  4  5  6  7  8  9  a  b  c  d  e  f
 00:          -- -- -- -- -- -- -- -- -- -- -- -- -- 
@@ -430,15 +426,16 @@ SHT30は温度に加えて湿度も測定できるI2C接続の多機能センサ
 </pre>
 
 ### 実行する
+
 * ターミナルウィンドのコンソールのプロンプトが```pi@raspberrypi:~/myApp$```となっていることを確認
 * ターミナルウィンドのコンソールに、```node main-adt7410.js``` [ENTER] と入力して実行。
 * 温度が1秒ごとにコンソールに表示されます。
 * 終了は CTRL+c
 
-
 # IoTを試す
 
 ## 遠隔LEDコントロール
+
 ![system configuration](imgs/IoTsystemConf.png)
 IoTは、制御されるデバイス（上図ではCHIRIMEN PiZeroW)と、利用者端末（上図ではWebApp PC-side）に加えて、これらの間でデータを中継するサーバ（クラウド）が必要になります。
 今回はWeb標準技術であるWebSocketプロトコルを中継するサーバを用いてLEDを備えたCHIRIMENデバイスとスマホやPCのWebAppを繋いだIoTシステムを作ります。
@@ -449,6 +446,7 @@ Note: [モーター制御の回路](./#gpio-2)を組めば、そのまま遠隔�
 ### [WebSoeketとRelayServer](../chirimenGeneric/#websocketpubsub-services)
 
 ### 配線する
+
 配線は最初のLチカそのままです。
 ![PiZero配線図](./imgs/pizero_led.png)
 
@@ -460,7 +458,6 @@ Note: [モーター制御の回路](./#gpio-2)を組めば、そのまま遠隔�
 * ```[JS GET]```ボタンを押すと、開発ディレクトリ(```~/myApp```)に、サンプルコードが保存されます。
   * **main-remote_gpio_led.js**というファイル名で保存されます。
   * ターミナルウィンドの右側のファイルマネージャでmain-remote_gpio_led.js⇒編集 を選びソースコードを見てみましょう
-
 * 実行する
   * ターミナルウィンドのコンソールのプロンプトが```pi@raspberrypi:~/myApp$```となっていることを確認
   * ターミナルウィンドのコンソールに、```node main-remote_gpio_led.js``` [ENTER] と入力して実行。
@@ -557,7 +554,6 @@ CHIRIMEN for Raspberry Pi を利用するに際して、知っておくと良い
   - JavaScript 1 Day 講習資料、JavaScript 本格入門書、チートシートなどはこちら
 
 その他、電子工作など一般的な知識は [予備知識・資料集](../reference.md) や、[共通資料集](../chirimenGeneric/)を参照してください。
-
 
 
 # CHIRIMEN ブラウザー版との差異
