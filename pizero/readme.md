@@ -120,6 +120,7 @@ PiZero自体はディスプレイやキーボードを接続する必要はあ�
     * ID: ```pi```
     * PASSWORD: ```raspberry```
   * 確認できたらWiFi Settingウィンドを閉じてください。
+<!--
 * 以上でステップ２完了です。　ステップ3に進んでください。
 
 ## ステップ３ (CHIRIMEN環境設定)
@@ -130,6 +131,8 @@ PiZero自体はディスプレイやキーボードを接続する必要はあ�
   * CHIRIMEN Panelウィンドの進捗メッセージが、CONGRATURATIONS. setup completed!となればセットアップ完了です。
   * Note: ターミナルウィンドのコンソールにはより細かな進捗状況が表示されます。
 * ```~/myApp```が今後CHIRIMEN環境でのプログラミングで使用するディレクトリです。
+-->
+
 * 以上ですべての初期設定完了です！
 
 # Hello Real World（[Lチカ](../chirimenGeneric/#l-)を実行する）
