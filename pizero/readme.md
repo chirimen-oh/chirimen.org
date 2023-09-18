@@ -50,9 +50,11 @@ CHIRIMEN Raspberry Pi Zero版 を用いたIoT実習資料です。
   * [ADT7410モジュール](https://akizukidenshi.com/catalog/g/gM-06675/)　もしくは [SHT30モジュール](https://www.amazon.co.jp/dp/B083NHJSL9/)
   * ジャンパーワイヤ オス-メス 2本
 
-![Parts Images](imgs/PartsList2.svg)
+  ![Parts Images](imgs/PartsList2.png)
 
 PiZero自体はディスプレイやキーボードを接続する必要はありません。
+
+<hr class="page-wrap" />
 
 ### PCをWiFiに接続
 * 会場(もしくは開発場所)で提供されているWiFiアクセスポイントにまずはPCを接続してください。
@@ -90,6 +92,8 @@ PiZero自体はディスプレイやキーボードを接続する必要はあ�
   * たとえば ```ls -al``` とタイプするとおコンソール画面にディレクトリ内のファイルのリストが表示されます。
 * ターミナルウィンドの概要 (図1.1)
 ![ターミナルウィンドの説明](imgs/termWin.svg)
+
+<hr class="page-wrap" />
 
 ## ステップ２ (WiFi設定)
 
@@ -134,6 +138,8 @@ PiZero自体はディスプレイやキーボードを接続する必要はあ�
 -->
 
 * 以上ですべての初期設定完了です！
+
+<hr class="page-wrap" />
 
 # Hello Real World（[Lチカ](../chirimenGeneric/#l-)を実行する）
 
