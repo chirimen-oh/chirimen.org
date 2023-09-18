@@ -54,10 +54,10 @@ CHIRIMEN Raspberry Pi Zero版 を用いたIoT実習資料です。
 
 PiZero自体はディスプレイやキーボードを接続する必要はありません。
 
-<hr class="page-wrap" />
-
 ### PCをWiFiに接続
 * 会場(もしくは開発場所)で提供されているWiFiアクセスポイントにまずはPCを接続してください。
+
+<hr class="page-wrap" />
 
 ## ステップ１（[ターミナル接続](https://chirimen.org/PiZeroWebSerialConsole/PiZeroWebSerialConsole.html) ）
 
