@@ -12,3 +12,15 @@ tutoril for chirimen lite & raspberry pi zero
 - Awesome Vivliostyle <https://github.com/vivliostyle/awesome-vivliostyle#readme>
 - Vivliostyle (GitHub) <https://github.com/vivliostyle>
 - Vivliostyle <https://vivliostyle.org>
+
+## how to build/preview
+
+- for biuld
+  ```
+  $ cd your-directory/chirimen.org/pizero-book
+  $ npm run build
+  ```
+- for preview
+  ```
+  $ npm run preview
+  ```
