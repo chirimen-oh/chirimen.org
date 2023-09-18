@@ -144,3 +144,23 @@ nav[role='doc-toc'] {
   break-before: page;
   font-size: 120%;
 }
+
+nav#toc li a::after,
+nav[role='doc-toc'] li a::after {
+  text-align: right;
+  content: target-counter(attr(href), page);
+  align-self: flex-end;
+  flex: none;
+  order: 2;
+}
+
+/*# sourceMappingURL=theme.css.map */
+
+/* hrで改ページ */
+hr.page-wrap {
+  break-before: page;
+  visibility: hidden;
+  margin: 0px;
+  padding: 0px;
+  height: 1px;
+}
