@@ -50,7 +50,9 @@ CHIRIMEN Raspberry Pi Zero版 を用いたIoT実習資料です。
   * [ADT7410モジュール](https://akizukidenshi.com/catalog/g/gM-06675/)　もしくは [SHT30モジュール](https://www.amazon.co.jp/dp/B083NHJSL9/)
   * ジャンパーワイヤ オス-メス 2本
 
-  ![Parts Images](imgs/PartsList2.png)
+<hr class="page-wrap" />
+
+  ![Parts Images](imgs/PartsList2.svg)
 
 PiZero自体はディスプレイやキーボードを接続する必要はありません。
 
@@ -91,7 +93,8 @@ PiZero自体はディスプレイやキーボードを接続する必要はあ�
 * もしもあなたがlinuxのシェルコンソール画面に慣れている場合は、ターミナルウィンドのコンソールにその他のシェル(bash)コマンドをタイプして使用することもできます。
   * たとえば ```ls -al``` とタイプするとおコンソール画面にディレクトリ内のファイルのリストが表示されます。
 * ターミナルウィンドの概要 (図1.1)
-![ターミナルウィンドの説明](imgs/termWin.svg)
+
+  ![ターミナルウィンドの説明](imgs/termWin.svg)
 
 <hr class="page-wrap" />
 
@@ -101,6 +104,9 @@ PiZero自体はディスプレイやキーボードを接続する必要はあ�
   * ウィンドが開き、WiFiアクセスポイントがスキャンされます。ステルスでないものはリストアップされているので、以降の作業の参考にしてください。
   * Raspberry Pi Zero Wは2.4GHz帯のWiFiにのみ対応しています。
     ![WiFi Setting](./imgs/WiFiSetting.png)
+
+<hr class="page-wrap" />
+
 * ウィンド下部に、会場(もしくは開発場所)で提供されているWiFiアクセス情報を入力する (いずれも大文字小文字の区別があるので注意してください。)
   * SSID欄
   * PASS PHRASE欄 
@@ -110,7 +116,6 @@ PiZero自体はディスプレイやキーボードを接続する必要はあ�
 * WiFiウィンドを閉じ、ターミナルウィンドに戻る
 * ターミナルウィンドの```[Close Connection]```ボタンを押す
 * 30秒ほど待つ（Raspberry Pi Zeroが再起動します)
-  * ---
 * ```[Connect and Login PiZero]```ボタンを押し接続する
   * 接続ダイアログが出現⇒接続するとこれまで同様コマンドプロンプトが出現
 * ```[wifi panel]```ボタンを再び押す
@@ -124,18 +129,6 @@ PiZero自体はディスプレイやキーボードを接続する必要はあ�
     * ID: ```pi```
     * PASSWORD: ```raspberry```
   * 確認できたらWiFi Settingウィンドを閉じてください。
-<!--
-* 以上でステップ２完了です。　ステップ3に進んでください。
-
-## ステップ３ (CHIRIMEN環境設定)
-
-* ターミナルウィンドの```[CHIRIMEN Panel]```ボタンを押す。
-* CHIRIMEN Panelウィンドが開いたら、```[Setup CHIRIMEN]```ボタンを押す。
-* 数分、セットアップ完了するのを待ちます。（ネットワーク環境にも依存しますが10分程度かかるかもしれません）
-  * CHIRIMEN Panelウィンドの進捗メッセージが、CONGRATURATIONS. setup completed!となればセットアップ完了です。
-  * Note: ターミナルウィンドのコンソールにはより細かな進捗状況が表示されます。
-* ```~/myApp```が今後CHIRIMEN環境でのプログラミングで使用するディレクトリです。
--->
 
 * 以上ですべての初期設定完了です！
 
@@ -163,6 +156,8 @@ PiZero とパーツを使って下の図の通りに配線します。
 * 配線に使うケーブルの色に厳密な決まりはありませんが、一般的にGNDは黒(や黒っぽい色)、電源(VCC, +3.3V, +5V)には赤(や赤っぽい色)が用いられます。配線間違いを防ぐためにもなるべく合わせましょう。
 * 抵抗やLEDの足(リード線)は手で簡単に曲げられます。ブレッドボードに差し込めるように適当に成型してください。
 * 上図のPiZeroは上から見たものです
+
+<hr class="page-wrap" />
 
 ## プログラムを書く
 
@@ -217,6 +212,8 @@ blink();
 * LED が点滅すれば完成です 🎉
 * プログラムを止めるには、コンソール部で ```CTRL+c``` を押します。
 
+<hr class="page-wrap" />
+
 # Raspberry Pi について
 
 * 教育・学習用として設計されたシングルボードコンピュータ
@@ -236,6 +233,8 @@ GPIO, 電源, GND, I2C信号線などのピン配列を記載します。
   * PD:プルダウン, PU:プルアップ
 * SCL, SDAはI2Cインターフェースのピンです(詳細は次章)
 ![Raspberry Pi Pinout](https://chirimen.org/PiZeroWebSerialConsole/wallpaperS.png)
+
+<hr class="page-wrap" />
 
 # CHIRIMEN について
 
@@ -259,6 +258,8 @@ GPIO, 電源, GND, I2C信号線などのピン配列を記載します。
 * [こちらを参照してください](../chirimenGeneric/#javascript-)
 * [非同期処理 async/await](../chirimenGeneric/#section-3)を多用します。
 
+<hr class="page-wrap" />
+
 # GPIOを試す
 
 ## GPIOを理解する
@@ -270,6 +271,8 @@ GPIOの出力はLチカで実験済みですね。そこで今回はモーター
 ![GPIO Motor](./esm-examples/hello-real-world/PiZero_gpio0Motor.png)
 
 コードはLチカと全く同じです。
+
+<hr class="page-wrap" />
 
 ### 回路について
 * [MOSFETを使った大電力制御](../chirimenGeneric/#mosfet)
@@ -340,6 +343,7 @@ GPIO端子の**入力が変化したら関数を実行**という機能によっ
 * [GPIOポートの初期化処理を行う](../chirimenGeneric/#gpio-2)
 * [単純入力＋ポーリングによる入力処理](../chirimenGeneric/#section-7)
 
+<hr class="page-wrap" />
 
 # I2Cデバイスを試す
 
@@ -356,7 +360,10 @@ SHT30は温度に加えて湿度も測定できるI2C接続の多機能センサ
 * 出現したCHIRIMEN Panelの```[Get Examples]```ボタンを押す
 * ID : sht30を探します
 * 回路図リンクを押すと回路図が出てきますので、回路を組みます。なお、接続は下の図のようになります。
-![SHT31 schematic](./esm-examples/sht30/schematic.png)
+
+<hr class="page-wrap" />
+
+  ![SHT31 schematic](./esm-examples/sht30/schematic.png)
 
 * ```[JS GET]```ボタンを押すと、開発ディレクトリ(```~/myApp```)に、サンプルコードが保存されます。
   * **main-sht30.js**というファイル名で保存されます。
@@ -398,6 +405,7 @@ SHT30は温度に加えて湿度も測定できるI2C接続の多機能センサ
   * [JavaScript module](../chirimenGeneric/#javascript-module-ecma-script-module) に基づいてWebI2Cライブラリを読み込みます。
 * [I2C 温湿度センサー (SHT30, SHT31)の初期化と使用](../chirimenGeneric/#i2c--sht30-sht31)
 
+<hr class="page-wrap" />
 
 ## ADT7410編
 
@@ -473,6 +481,8 @@ Note: [モーター制御の回路](./#gpio-2)を組めば、そのまま遠隔�
 ![CHIRIMEN PiZero Console](imgs/RC_NODE.png)
   * なお、実験が終わったら終了は CTRL+c です。
 
+<hr class="page-wrap" />
+
 ### PC側のコードを準備し、実行する
 * CHIRIMEN Panelに戻り、ID : **remote_gpio_led**の行にある、```CSB EDIT```リンクをクリックする。
   * CodeSandboxというオンラインのWebApp開発環境のウィンドが開き、PC側のコードが表示されています。編集もできます。
@@ -480,7 +490,10 @@ Note: [モーター制御の回路](./#gpio-2)を組めば、そのまま遠隔�
   * また、右側（もしくは右下）のフレームにはLEDを遠隔コントロールするためのwebAppが既に実行されています。
   * webAppを使ってLEDが制御できることを確かめてみましょう。
 
-![Code Sandbox Image](imgs/RC_CSB.svg)
+  ![Code Sandbox Image](imgs/RC_CSB.svg)
+
+
+<hr class="page-wrap" />
 
 ### コードを読む
 #### Raspberry Pi Zero側コード
