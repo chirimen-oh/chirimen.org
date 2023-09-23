@@ -165,7 +165,7 @@ hr.page-wrap {
   height: 1px;
 }
 
-/* #toc li {
+#toc li {
   list-style: none;
 
   ol {
@@ -196,4 +196,4 @@ hr.page-wrap {
       order: 2;
     }
   }
-} */
+}
