@@ -583,12 +583,10 @@ CHIRIMEN for Raspberry Pi を利用するに際して、知っておくと良い
 | CHIRIMEN ブラウザー版       | Node.js                                                      |
 | --------------------------- | ------------------------------------------------------------ |
 | ライブラリ、ドライバーはhtmlで読み込む | jsの中で直接読み込む |
-| <pre>```<script src="polyfill.js"></script >```</pre> | <pre>```import {requestGPIOAccess} from "./node_modules/node-web-gpio/dist/index.js";```</pre><br><pre>```import {requestI2CAccess} from "./node_modules/node-web-i2c/index.js";```</pre> |
-|  <pre>```<script src="..../adt7410.js"></script >```</pre>   | <pre>```import ADT7410 from "@chirimen/adt7410";```</pre>  |
-
-|   | Sleep関数を宣言する  |
-| -- | -- |
-|   | <pre>```const sleep = msec => new Promise(resolve => setTimeout(resolve, msec));```</pre> |
+| `<script src="polyfill.js"></script >` | `import {requestGPIOAccess} from "./node_modules/node-web-gpio/dist/index.js";`<br />`import {requestI2CAccess} from "./node_modules/node-web-i2c/index.js";` |
+| `<script src="..../adt7410.js"></script >` | `import ADT7410 from "@chirimen/adt7410";`  |
+|  ー | Sleep関数を宣言する  |
+| ー  | `const sleep = msec => new Promise(resolve => setTimeout(resolve, msec));` |
 
 # CHIRIMEN環境の任意のディレクトリへのセットアップ
 

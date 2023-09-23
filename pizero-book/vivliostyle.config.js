@@ -5,7 +5,13 @@ module.exports = {
   // size: 'A4', // paper size.
   theme: '@vivliostyle/theme-techbook@^1.0.0', // .css or local dir or npm package. default to undefined.
   entry: [
+    // {
+    //   path: 'toc.md',
+    //   rel: 'contents',
+    // },
+    'toc.md',
     '../pizero/readme.md', // `title` is automatically guessed from the file (frontmatter > first heading).
+    // '../chirimenGeneric/readme.md',
     // {
     //   path: 'epigraph.md',
     //   title: 'Epigraph', // title can be overwritten (entry > file),
@@ -22,7 +28,8 @@ module.exports = {
   //   },
   // ],
   // workspaceDir: '.vivliostyle', // directory which is saved intermediate files.
-  // toc: true, // whether generate and include ToC HTML or not, default to 'false'.
+  toc: true, // whether generate and include ToC HTML or not, default to 'false'.
+  tocTitle: '目次',
   // cover: './cover.png', // cover image. default to undefined.
   // vfm: { // options of VFM processor
   //   hardLineBreaks: true, // converts line breaks of VFM to <br> tags. default to 'false'.
