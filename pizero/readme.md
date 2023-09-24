@@ -62,7 +62,7 @@ PiZero自体はディスプレイやキーボードを接続する必要はあ�
 * [Raspberry Pi OS LiteをUSB Serialで使用可能にしたイメージ](https://github.com/kou029w/chirimen-os/releases/)を書き込んだmicroSDカードをRaspberry Pi Zeroに差し込みます。
 * PCのUSBとRaspberry Pi ZeroのUSB OTGポートをUSBケーブルでつなぎます
   * PiZero側はつなぐポート要注意　ここに繋ぎます
-  ![pi zero otg port](https://chirimen.org/PiZeroWebSerialConsole/imgs/PiZeroW_OTG.JPG){height=100}
+  ![pi zero otg port](https://chirimen.org/PiZeroWebSerialConsole/imgs/PiZeroW_OTG.JPG){height=160}
   * PCからのUSB給電でRaspberry Pi Zeroが起動します。
 * PCでRaspberry Pi Zeroが認識されたことを確認します ([Windows10のデバイスマネージャ](https://askpc.panasonic.co.jp/beginner/guide/ten07/7013.html)の例) 
   * 給電後USBデバイスとして出現するまでにしばらく(数十秒)かかります）
@@ -72,7 +72,7 @@ PiZero自体はディスプレイやキーボードを接続する必要はあ�
  (以降、このウィンドを**ターミナルウィンド**と呼びます)
 * ```[Connect and Login PiZero]```ボタンを押す
   * 接続ダイアログが出現
-  ![connection dialog](imgs/SerialDialog.png){height=100}
+    ![connection dialog](imgs/SerialDialog.png){height=155}
   * 上で認識したデバイス（ポート番号）を接続する
 * コンソール(左側の黒い画面の最下部)に以下のコマンドプロンプトが表示されればステップ１完了です。引き続きステップ２に進んでください
   * ```pi@raspberrypi:~$```
@@ -319,6 +319,8 @@ GPIO端子の**入力が変化したら関数を実行**という機能によっ
 * [GPIOポートの初期化処理を行う](../chirimenGeneric/#gpio-2)
 * [onchangeによる入力処理](../chirimenGeneric/#onchange)
 
+<hr class="page-wrap" />
+
 ## GPIO入力(ポーリング)
 入力ではイベントの他にポーリングというテクニックが広く使われます。（次章のI2Cデバイスからの入力では専らポーリング）
 
@@ -505,12 +507,10 @@ Note: [モーター制御の回路](./#gpio-2)を組めば、そのまま遠隔�
 * これまで通りWebGPIOライブラリの読み込み
 * [relayServer.js](../chirimenGeneric/#relayserverjs)ライブラリの読み込み
   * Node.jsではrelayServerライブラリに加えて、webSocketライブラリの読み込みが必要です。
-
-```
-import nodeWebSocketLib from "websocket";
-import {RelayServer} from "./RelayServer.js";
-```
-
+    ```
+    import nodeWebSocketLib from "websocket";
+    import {RelayServer} from "./RelayServer.js";
+    ```
 * [relayServer.js](../chirimenGeneric/#relayserverjs)を使って、PCからの操作指示を受信
   * [初期化](../chirimenGeneric/#section-16)
   * [受信処理](../chirimenGeneric/#section-18)(コールバック関数の設定)
@@ -519,24 +519,26 @@ import {RelayServer} from "./RelayServer.js";
 #### PC側コード
 * CodeSandboxで開いているPC.jsを見てみましょう
 * [JavaScript Module](../chirimenGeneric/#javascript-module-ecma-script-module)仕様に基づいてrelayServer.jsを読み込み
-
-`import {RelayServer} from "https://chirimen.org/remote-connection/js/beta/RelayServer.js";`
-
+  ```
+  import {RelayServer} from "https://chirimen.org/remote-connection/js/beta/RelayServer.js";
+  ```
 * [relayServer.js](../chirimenGeneric/#relayserverjs)を使い、UIを通してユーザからの操作指示を送信
   * [初期化](../chirimenGeneric/#section-16)
   * [送信処理](../chirimenGeneric/#section-17)～(UI(ボタン)に設置したコールバック関数をもとに送信
 
+<hr class="page-wrap" />
 
 #### 自分専用チャンネルで制御
 
   サンプルのコードは共通のチャンネルを使って制御しています。この状態では複数の人が同時に実習していると混信します。(他の人のPCでON/OFFを指示しても、自分のLEDがON/OFFする。同じチャンネルを使っているため。)
-  
+
   これはこれで使い道はあるのですが、自分のLEDは自分だけで制御したい場合は専用のチャンネルを使って制御しましょう。　チャンネルの指定はPiZero側のコードと、PC側のコード両方を同時に同じ内容で設定する必要があり、以下の部分になります。
-  
+
   ```channel = await relay.subscribe("chirimenLED");```
-  
+
   この```chirimenLED```という文字列(チャンネル名)を他の人と被らない別のチャンネル名に書き換えます(```chirimenLED5```など)
 
+<hr class="page-wrap" />
 
 # 他のいろいろなデバイスを試してみる
 
@@ -590,8 +592,7 @@ CHIRIMEN for Raspberry Pi を利用するに際して、知っておくと良い
 | ライブラリ、ドライバーはhtmlで読み込む | jsの中で直接読み込む |
 | `<script src="polyfill.js"></script >` | `import {requestGPIOAccess} from "./node_modules/node-web-gpio/dist/index.js";`<br />`import {requestI2CAccess} from "./node_modules/node-web-i2c/index.js";` |
 | `<script src="..../adt7410.js"></script >` | `import ADT7410 from "@chirimen/adt7410";`  |
-|  ー | Sleep関数を宣言する  |
-| ー  | `const sleep = msec => new Promise(resolve => setTimeout(resolve, msec));` |
+| ー  | Sleep関数を宣言する<br />`const sleep = msec => new Promise(resolve => setTimeout(resolve, msec));` |
 
 # CHIRIMEN環境の任意のディレクトリへのセットアップ
 

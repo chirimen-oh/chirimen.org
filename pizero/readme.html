@@ -105,7 +105,7 @@
               <li>
                 PiZero側はつなぐポート要注意　ここに繋ぎます
                 
-                <img src="https://chirimen.org/PiZeroWebSerialConsole/imgs/PiZeroW_OTG.JPG" alt="pi zero otg port" height="100">
+                <img src="https://chirimen.org/PiZeroWebSerialConsole/imgs/PiZeroW_OTG.JPG" alt="pi zero otg port" height="160">
               </li>
               <li>PCからのUSB給電でRaspberry Pi Zeroが起動します。</li>
             </ul>
@@ -129,7 +129,7 @@
               <li>
                 接続ダイアログが出現
                 
-                <img src="imgs/SerialDialog.png" alt="connection dialog" height="100">
+                <img src="imgs/SerialDialog.png" alt="connection dialog" height="155">
               </li>
               <li>上で認識したデバイス（ポート番号）を接続する</li>
             </ul>
@@ -512,6 +512,7 @@
             <li><a href="../chirimenGeneric/#gpio-2">GPIOポートの初期化処理を行う</a></li>
             <li><a href="../chirimenGeneric/#onchange">onchangeによる入力処理</a></li>
           </ul>
+          <hr class="page-wrap">
         </section>
       </section>
       <section class="level2" aria-labelledby="gpio入力ポーリング">
@@ -805,13 +806,12 @@
               <li>これまで通りWebGPIOライブラリの読み込み</li>
               <li><a href="../chirimenGeneric/#relayserverjs">relayServer.js</a>ライブラリの読み込み
                 <ul>
-                  <li>Node.jsではrelayServerライブラリに加えて、webSocketライブラリの読み込みが必要です。</li>
+                  <li>Node.jsではrelayServerライブラリに加えて、webSocketライブラリの読み込みが必要です。
+                    <pre class="language-text"><code class="language-text">import nodeWebSocketLib from "websocket";
+import {RelayServer} from "./RelayServer.js";</code></pre>
+                  </li>
                 </ul>
               </li>
-            </ul>
-            <pre class="language-text"><code class="language-text">import nodeWebSocketLib from "websocket";
-import {RelayServer} from "./RelayServer.js";</code></pre>
-            <ul>
               <li><a href="../chirimenGeneric/#relayserverjs">relayServer.js</a>を使って、PCからの操作指示を受信
                 <ul>
                   <li><a href="../chirimenGeneric/#section-16">初期化</a></li>
@@ -825,10 +825,9 @@ import {RelayServer} from "./RelayServer.js";</code></pre>
             <h4 id="pc側コード">PC側コード</h4>
             <ul>
               <li>CodeSandboxで開いているPC.jsを見てみましょう</li>
-              <li><a href="../chirimenGeneric/#javascript-module-ecma-script-module">JavaScript Module</a>仕様に基づいてrelayServer.jsを読み込み</li>
-            </ul>
-            <p><code>import {RelayServer} from "https://chirimen.org/remote-connection/js/beta/RelayServer.js";</code></p>
-            <ul>
+              <li><a href="../chirimenGeneric/#javascript-module-ecma-script-module">JavaScript Module</a>仕様に基づいてrelayServer.jsを読み込み
+                <pre class="language-text"><code class="language-text">import {RelayServer} from "https://chirimen.org/remote-connection/js/beta/RelayServer.js";</code></pre>
+              </li>
               <li><a href="../chirimenGeneric/#relayserverjs">relayServer.js</a>を使い、UIを通してユーザからの操作指示を送信
                 <ul>
                   <li><a href="../chirimenGeneric/#section-16">初期化</a></li>
@@ -836,6 +835,7 @@ import {RelayServer} from "./RelayServer.js";</code></pre>
                 </ul>
               </li>
             </ul>
+            <hr class="page-wrap">
           </section>
           <section class="level4" aria-labelledby="自分専用チャンネルで制御">
             <h4 id="自分専用チャンネルで制御">自分専用チャンネルで制御</h4>
@@ -843,6 +843,7 @@ import {RelayServer} from "./RelayServer.js";</code></pre>
             <p>これはこれで使い道はあるのですが、自分のLEDは自分だけで制御したい場合は専用のチャンネルを使って制御しましょう。　チャンネルの指定はPiZero側のコードと、PC側のコード両方を同時に同じ内容で設定する必要があり、以下の部分になります。</p>
             <p><code>channel = await relay.subscribe("chirimenLED");</code></p>
             <p>この<code>chirimenLED</code>という文字列(チャンネル名)を他の人と被らない別のチャンネル名に書き換えます(<code>chirimenLED5</code>など)</p>
+            <hr class="page-wrap">
           </section>
         </section>
       </section>
@@ -950,11 +951,7 @@ import {RelayServer} from "./RelayServer.js";</code></pre>
           </tr>
           <tr>
             <td>ー</td>
-            <td>Sleep関数を宣言する</td>
-          </tr>
-          <tr>
-            <td>ー</td>
-            <td><code>const sleep = msec => new Promise(resolve => setTimeout(resolve, msec));</code></td>
+            <td>Sleep関数を宣言する<br><code>const sleep = msec => new Promise(resolve => setTimeout(resolve, msec));</code></td>
           </tr>
         </tbody>
       </table>
