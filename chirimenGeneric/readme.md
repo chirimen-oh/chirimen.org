@@ -5,7 +5,7 @@ permalink: /chirimenGeneric/
 ---
 
 # CHIRIMEN
-![](CHIRIMEN_pf.png)
+![CHIRIMEN_pf](CHIRIMEN_pf.png)
 CHIRIMEN とは、Webの標準的な技術・ブラウザやNode.js等で実行できるJavaScript で電子パーツを制御し、[フィジカルコンピューティング](https://www.iizuka.kyutech.ac.jp/faculty/physicalcomputing)や[IoTシステム](#iot)を開発可能なプロトタイピング環境です。
 
 デジタルのソフトとフィジカルなハードをWWW上で連携するデバイスを Web標準技術、JavaScript だけで容易に実現できます。
@@ -22,6 +22,8 @@ CHIRIMEN とは、Webの標準的な技術・ブラウザやNode.js等で実行�
   * WWWのサービスと簡単に連携できる
   * ユーザーインターフェースやコンテンツを簡単に作れる
   * Webブラウザを使って開発できる
+
+<hr class="page-wrap" />
  
 # ハードウェア・デバイス
 
@@ -43,7 +45,8 @@ CHIRIMEN とは、Webの標準的な技術・ブラウザやNode.js等で実行�
 
 LED の順方向電圧は色により異なっており、赤色 LED は 1.8V 程度、青色 LED は 3.1V 程度とされています。
 
-
+<hr class="page-wrap" />
+ 
 ## ブレッドボード
 - [ブレッドボードの使い方](https://shop.sunhayato.co.jp/blogs/problem-solving/breadboard) (サンハヤト社)
 
@@ -59,6 +62,8 @@ LED の順方向電圧は色により異なっており、赤色 LED は 1.8V �
 ## 抵抗値の読み方
 - [抵抗値の読み方](http://www.jarl.org/Japanese/7_Technical/lib1/teikou.htm)
 - [テスターを使って抵抗値を確かめる](http://startelc.com/elcLink/tester/elc_nArtcTester2.html#chapter-2)
+
+<hr class="page-wrap" />
 
 ## MOSFETによる大電力制御
 ### GPIO の制約事項
@@ -78,6 +83,8 @@ Raspberry Pi の GPIO ポートは、全体で流せる電流の上限が決め�
 
 ![MOSFET](../raspi/imgs/section1/mosfet.png)
 
+<hr class="page-wrap" />
+
 プルダウンの GPIO ポートを使った典型的な回路は以下のようになります。
 
 ![NCh MOSFET schematic](../raspi/imgs/section1/DC3motor-schematic.svg)
@@ -89,6 +96,7 @@ DC 負荷用に Raspberry Pi とは別に電源を用意するのが望ましい
 
 ちびギアモータを使った作例では、その消費電力が十分小さいので、例外的に Raspberry Pi の 5V 端子か電力を供給しています。
 
+<hr class="page-wrap" />
 
 # JavaScript
 標準化されたプログラミング言語の一種で、ウェブブラウザが代表的な実行環境です(プログラムコードを解釈して動作させるシステム)。CHIRIMENでもRasberry Pi及びmicro:bit版はウェブブラウザを実行環境として使用します。Raspberry Pi Zero版はNode.jsを実行環境として使っています。
@@ -110,6 +118,8 @@ Raspberry Pi Zero版以外のCHIRIMENはプログラムの起点はHTMLファイ
 
 次の行にある `main.js` は、JavaScript のプログラム本体です。
 
+<hr class="page-wrap" />
+
 ### Node.js (CHIRIMEN Raspberry Pi Zero版)
 Raspberry Pi Zero版はプログラムの起点が自分が作ったjavascriptコード自体になります。ブラウザの代わりに[Node.js](https://ja.wikipedia.org/wiki/Node.js)というjavascriptコードだけを解釈するソフト（javascript [インタープリタ](https://ja.wikipedia.org/wiki/%E3%82%A4%E3%83%B3%E3%82%BF%E3%83%97%E3%83%AA%E3%82%BF)）にコードを読み込ませて実行します。
 
@@ -125,7 +135,7 @@ CHIRIMEN環境のために必要なライブラリや、[I2Cデバイスのド�
 * [例を見てみる](https://codesandbox.io/s/github/chirimen-oh/chirimen.org/tree/master/pizero/esm-examples/remote_gpio_led/pc)
 * [Mozilla Developer Networkの解説](https://developer.mozilla.org/ja/docs/Web/JavaScript/Guide/Modules)
 
-
+<hr class="page-wrap" />
 
 ## 非同期処理
 
@@ -144,12 +154,16 @@ CHIRIMEN環境のために必要なライブラリや、[I2Cデバイスのド�
 
 ハードウェアを制御するときは基本的に非同期呼び出しをする (その処理を含む関数もまた非同期で呼びす) と決めておけば迷うことなく、コードの実行順序も上から下に見たとおりの順番で実行され読み書きしやすくなります。
 
+<hr class="page-wrap" />
+
 ## 開発環境
 ### GitHub
 * [予備知識・資料集を参照ください](../reference#github-)
 ### CodeSandbox
 * [予備知識・資料集を参照ください](../reference#github-)
 * ![CodeSandbox画面](../pizero/imgs/RC_CSB.svg)
+
+<hr class="page-wrap" />
 
 # GPIO
 
@@ -183,6 +197,8 @@ GPIOポートを入力モードで使用する場合、ポートが解放状態(
 
 * [より詳しく知る(voltechno)](https://voltechno.com/blog/pullup-pulldown/)
 
+<hr class="page-wrap" />
+
 ## GPIOポートの初期化
 今回の JavaScript ファイルで、最初に呼び出されるコードは `await navigator.requestGPIOAccess()` です。
 ここで先ほど出て来た [Web GPIO API](http://browserobo.github.io/WebGPIO) を使い、`gpioAccess` という GPIO にアクセスするためのインタフェースを取得しています。
@@ -190,6 +206,8 @@ GPIOポートを入力モードで使用する場合、ポートが解放状態(
 <script src="https://emgithub.com/embed.js?target=https%3A%2F%2Fgithub.com%2Fchirimen-oh%2Fchirimen%2Fblob%2F5c520c21820304901553f2adf22da1012f54722d%2Fgc%2Fgpio%2FLEDblink%2Fmain.js%23L4-L4&style=github&showBorder=on&showFileMeta=on"></script>
 
 **関数の呼び出しに `await` 接頭詞を付けることに注意してください。** この関数は非同期関数で、その処理の完了を待ってから次の処理をする必要があります。また、`await` 接頭詞を使うコードを含むために、それを含む関数 `main()` は async 接頭詞付きの非同期関数として定義する必要があります。
+
+<hr class="page-wrap" />
 
 ## GPIOPort の出力処理
 GPIOの**出力**機能を使います。
@@ -213,6 +231,7 @@ LED は一定以上の電圧を加え、電流を流すと点灯する性質を�
 - 点灯する時間と消灯する時間を変える (同上)
 - GPIO ポートを他のポートに変える・配線を変える (```gpioAccess.ports.get```の引数を変更)
 
+<hr class="page-wrap" />
 
 ## GPIOPortの入力処理
 GPIOポートに繋いだスイッチやセンサーの状態を取得するには、GPIOの**入力**機能を使います。出力とは違って入力は二つの方法があります。onchangeとポーリングの二つの方法があります。
@@ -276,6 +295,7 @@ function sleep(ms) {
 }
 ```
 
+<hr class="page-wrap" />
 
 # I2C
 ## I2Cの概要
@@ -314,7 +334,7 @@ I2Cデバイスは小型のICチップデバイスとなっており、デバイ
 下図のSCL, SDAがI2C端子です (P19,P20～オレンジ色I2C1のグループ)
 ![micro:bitのI端子](https://tech.microbit.org/docs/hardware/assets/edge_connector.svg)
 
-
+<hr class="page-wrap" />
 
 ## 参考: I2C に関する詳細情報
 
@@ -323,6 +343,8 @@ I2C に関する詳細は下記をご参照ください。
 - [I2C](https://ja.wikipedia.org/wiki/I2C) - Wikipedia
 - I2C バス仕様書 最新版（[日本語](https://www.nxp.com/docs/ja/user-guide/UM10204.pdf)、[English](http://www.nxp.com/documents/user_manual/UM10204.pdf)）
 - [I2C の使い方](http://www.picfun.com/i2cframe.html)（後閑哲也氏サイト)
+
+<hr class="page-wrap" />
 
 ## ポイント
 
@@ -344,6 +366,8 @@ I2C に対応したデバイスの実例を見てみましょう。CHIRIMENで�
   - または SHT30 ([Amazon](https://www.amazon.co.jp/s?k=sht30), [AliExpress](https://ja.aliexpress.com/item/32962846003.html))。
   - note: SHT31 は氷点下や 65 度以上などの高温での計測時の精度が SHT30 よりも少し高いが室温程度ではほぼ同様の類似モデルです。同シリーズには他にも SHT35 などもありますがそちらは未検証です。 (参考: [データシート](https://www.sensirion.com/fileadmin/user_upload/customers/sensirion/Dokumente/2_Humidity_Sensors/Datasheets/Sensirion_Humidity_Sensors_SHT3x_Datasheet_digital.pdf))
 
+<hr class="page-wrap" />
+
 ### I2Cデバイスモジュールの接続について
 I2Cデバイスは一般的に小さなチップ部品です。下の拡大写真で緑で囲んだものがSHT31の本体で 上下に出ている微細な端子を接続して使いますが、微細過ぎてプロトタイピングには向きません。そこでブレッドボードで使いやすい端子に変換したモジュールが販売されています。モジュールには**赤で囲んだように端子名の記載**があります。これを**ホストのコンピュータの端子名と一致させて結線**することでI2Cデバイスが正しく接続されます。(電源端子はVIN,V+,3V,VCCなど別名になっていることがあります)
 
@@ -360,6 +384,8 @@ I2Cデバイスは一般的に小さなチップ部品です。下の拡大写�
 `i2cdetect` を使って SlaveAddress を確認し、正しく接続・認識できているか確かめてみましょう。ターミナルを起動して下記コマンドを入力してみてください。
 
 * [ic2 detectとは](https://tutorial.chirimen.org/ty51822r3/i2cdetect)
+
+<hr class="page-wrap" />
 
 ### コマンドラインから
 ```sh
@@ -432,6 +458,7 @@ $ i2cdetect -y -r 1
 `44` という表示が見つからなくなりました。このことによって間違いなく SHT30 の SlaveAddress が `0x44` となっていることを確認できました。
 確認できたら、先ほど外した 3.3V の線を戻して再び SHT30 に電源を供給して認識されるようにしておきましょう。
 
+<hr class="page-wrap" />
 
 ## WebI2Cとデバイスドライバ
 
@@ -550,6 +577,8 @@ var humidity = 100 * (mdata[3] * 256 + mdata[4]) / 65535.0;
 ```
 ドライバーライブラリ内部では、上記のようにSHT30 に単発の高精度計測を指示し、得られた温度と湿度それぞれ 16bit の数値を、温度・湿度の物理量の浮動小数点数に変換して返却しています。
 
+<hr class="page-wrap" />
+
 # IoT
 これまでのチュートリアルでは、いずれもそのコンピュータに直接接続されたデバイスを使うものでした。このようなシステムは「スタンドアロン」と呼ばれます。
 今までは、ウェブブラウザを使っていたのに、実はウェブの重要な機能～インターネット上の情報基盤WWWを活用したシステムを作っていなかったのです。（開発環境としてはgithubやcodesandboxなどWWW上の情報サービスを活用していますが）
@@ -657,6 +686,8 @@ var relay = RelayServer("achex", "chirimenSocket" , nodeWebSocketLib, "https://c
 * RelayServerの第四引数で、[リファラー](https://e-words.jp/w/%E3%83%AA%E3%83%95%E3%82%A1%E3%83%A9.html)の指定が必要です
   * webアプリの場合はそのコンテンツの配信元のURLがリファラーとして自動設定されますが、Node.jsのアプリはローカルにあるので別途指定が必要
   * achexの場合URLは何でも許可されますが、他のrelayServerサービスでは あらかじめ指定したリファラーが設定されていなければアクセス拒否されるものもあります(これも一つのセキュリティ)
+
+<hr class="page-wrap" />
 
 ## Webhooks
 relayServerが必要なほどリアルタイム性は求めないけれど、むしろ既存のWebサービス・アプリと簡単につなぎたいようなケースでは、httpをそのまま使うことができるでしょう。ただし既存のWebサービス・アプリはウェブブラウザを介して人が操作することが前提でつくられていますので、直接センサーやアクチュエータ（を制御するコンピュータとプログラム～IoTデバイス）をつなげるにはハードルがあります。
