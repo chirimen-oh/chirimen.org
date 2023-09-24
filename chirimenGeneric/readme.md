@@ -135,8 +135,6 @@ CHIRIMEN環境のために必要なライブラリや、[I2Cデバイスのド�
 * [例を見てみる](https://codesandbox.io/s/github/chirimen-oh/chirimen.org/tree/master/pizero/esm-examples/remote_gpio_led/pc)
 * [Mozilla Developer Networkの解説](https://developer.mozilla.org/ja/docs/Web/JavaScript/Guide/Modules)
 
-<hr class="page-wrap" />
-
 ## 非同期処理
 
 物理デバイス制御やネットワーク通信などでは、応答待ち中にブラウザが停止しないよう非同期処理を使う必要があります。
@@ -153,8 +151,6 @@ CHIRIMEN環境のために必要なライブラリや、[I2Cデバイスのド�
 非同期関数を `await` なしで呼び出すと返り値が Promise オブジェクトとなり、Promise を理解しないと返り値の判断や実行順序が入れ替わり意図せぬ挙動になります。例えば、ポートの初期化を `await` なしで呼ぶと、ポート初期化前に初期化未完了のハードウェアを操作しようとして失敗したりします。
 
 ハードウェアを制御するときは基本的に非同期呼び出しをする (その処理を含む関数もまた非同期で呼びす) と決めておけば迷うことなく、コードの実行順序も上から下に見たとおりの順番で実行され読み書きしやすくなります。
-
-<hr class="page-wrap" />
 
 ## 開発環境
 ### GitHub
@@ -180,6 +176,7 @@ Raspiやmicro:bit の GPIO 端子は、GND 端子との間に、0V もしくは 
 詳しくは[こちらのサイトの解説](https://tool-lab.com/make/raspberrypi-startup-22/)などを参考にしてみましょう。
 
 ### Raspberry Piのピン配置図
+
 ![Raspi PIN配置図](https://chirimen.org/PiZeroWebSerialConsole/wallpaperS.png)
 <!--
 ![Raspi PIN配置図](../raspi/imgs/section0/Raspi3PIN.png)
@@ -189,7 +186,7 @@ Raspiやmicro:bit の GPIO 端子は、GND 端子との間に、0V もしくは 
 Raspberry Piの端子と同じ配列です。
 
 ### micro:bitのピン配置図
-![micro:bitのI端子](https://tech.microbit.org/docs/hardware/assets/edge_connector.svg)
+![micro:bitのI端子](https://tech.microbit.org/docs/hardware/assets/edge_connector.svg){height=350}
 
 ### プルアップ(PU)、プルダウン(PD)
 GPIOポートを入力モードで使用する場合、ポートが解放状態(電気的に切り離されている状態)のときに設定される値があります。
@@ -206,8 +203,6 @@ GPIOポートを入力モードで使用する場合、ポートが解放状態(
 <script src="https://emgithub.com/embed.js?target=https%3A%2F%2Fgithub.com%2Fchirimen-oh%2Fchirimen%2Fblob%2F5c520c21820304901553f2adf22da1012f54722d%2Fgc%2Fgpio%2FLEDblink%2Fmain.js%23L4-L4&style=github&showBorder=on&showFileMeta=on"></script>
 
 **関数の呼び出しに `await` 接頭詞を付けることに注意してください。** この関数は非同期関数で、その処理の完了を待ってから次の処理をする必要があります。また、`await` 接頭詞を使うコードを含むために、それを含む関数 `main()` は async 接頭詞付きの非同期関数として定義する必要があります。
-
-<hr class="page-wrap" />
 
 ## GPIOPort の出力処理
 GPIOの**出力**機能を使います。
@@ -235,7 +230,6 @@ LED は一定以上の電圧を加え、電流を流すと点灯する性質を�
 
 ## GPIOPortの入力処理
 GPIOポートに繋いだスイッチやセンサーの状態を取得するには、GPIOの**入力**機能を使います。出力とは違って入力は二つの方法があります。onchangeとポーリングの二つの方法があります。
-
 
 ### onchange編
 GPIOポートの値が変化するたびに、指定した関数が実行されます。
@@ -322,19 +316,22 @@ I2Cデバイスは小型のICチップデバイスとなっており、デバイ
 
 ### Raspberry PiのI2C端子
 下図のSCL, SDAがI2C端子です（黄色の端子）
-![Raspi PIN配置図](../raspi/imgs/section0/Raspi3PIN.png)
+
+![Raspi PIN配置図](../raspi/imgs/section0/Raspi3PIN.png){height=600}
 <!--
 {% cloudinary ../raspi/imgs/section0/Raspi3PIN.png alt="Raspi PIN配置図" %}
 -->
+
 ### Raspverry Pi ZeroのI2C端子
 
 　Raspberry PiのI2C端子と同じ配列です。
 
+<hr class="page-wrap" />
+
 ### micro:bitのI2C端子
 下図のSCL, SDAがI2C端子です (P19,P20～オレンジ色I2C1のグループ)
-![micro:bitのI端子](https://tech.microbit.org/docs/hardware/assets/edge_connector.svg)
 
-<hr class="page-wrap" />
+![micro:bitのI端子](https://tech.microbit.org/docs/hardware/assets/edge_connector.svg){height=400}
 
 ## 参考: I2C に関する詳細情報
 
@@ -385,13 +382,13 @@ I2Cデバイスは一般的に小さなチップ部品です。下の拡大写�
 
 * [ic2 detectとは](https://tutorial.chirimen.org/ty51822r3/i2cdetect)
 
-<hr class="page-wrap" />
-
 ### コマンドラインから
 ```sh
 i2cdetect -y -r 1
 ```
 (microbit版はコマンドラインがないので下記webAppを使いましょう)
+
+<hr class="page-wrap" />
 
 ### i2cdetect webApp
 #### Raspberry Pi
@@ -477,17 +474,36 @@ CHIRIMENでは、GPIOインターフェースをWeb GPIOと呼ぶAPIで使用し
 
  Raspberry Pi, micro:bitでは、index.htmlの中で、Raspberry Pi Zero Wではmain.jsの中で以下のライブラリを読み込んでいます。
   
-* WebI2C APIを使用できるようにするためのライブラリ( Raspberry Pi: `polyfill.js`, micro:bit: `microbitble.js`, Raspberry Pi Zero W: xxx)でうｓ。
-
+* WebI2C APIを使用できるようにするためのライブラリ( Raspberry Pi: `polyfill.js`, micro:bit: `microbitble.js`, Raspberry Pi Zero W: xxx)です。
 * ( Raspberry Pi, micro:bit:`https://cdn.jsdelivr.net/npm/@chirimen/sht30`、 Raspberry Pi Zero W: `@chirimen/sht30`)　このファイルは、Web I2C API を使って SHT30 との通信を行うための、SHT30用のデバイスドライバー (ハードウェアを操作する為のライブラリ) です。
 
 `main.js` がドライバーライブラリを使ってこのアプリケーションの動作を記述している部分です。
+
+<hr class="page-wrap" />
 
 #### d-2. main.js
 
 次に、`main.js` の処理の流れを見てみましょう。
 
-<script src="https://emgithub.com/embed.js?target=https%3A%2F%2Fgithub.com%2Fchirimen-oh%2Fchirimen%2Fblob%2F8d14c8a35319c1df287126eef1aa41c1f3b8c856%2Fgc%2Fi2c%2Fi2c-SHT30%2Fmain.js&style=github&showBorder=on&showFileMeta=on"></script>
+```js
+main();
+
+async function main() {
+  const temperatureDisplay = document.getElementById("temperatureDisplay");
+  const humidityDisplay = document.getElementById("humidityDisplay");
+  const i2cAccess = await navigator.requestI2CAccess();
+  const port = i2cAccess.ports.get(1);
+  const sht30 = new SHT30(port, 0x44);
+  await sht30.init();
+
+  while (true) {
+    const { humidity, temperature } = await sht30.readData();
+    temperatureDisplay.innerHTML = `${temperature.toFixed(2)} ℃`;
+    humidityDisplay.innerHTML = `${humidity.toFixed(2)} %`;
+    await sleep(500);
+  }
+}
+```
 
 ここで温度センサーの情報を定期的に取得し、画面に出力する処理が行われています。
 少し詳し解説してみます。
@@ -500,21 +516,28 @@ Web I2C API を利用するための **`I2CAccess` インタフェースを取�
 
 `I2CAccess.ports` は、利用可能な I2C ポートの一覧です。
 
-<script src="https://emgithub.com/embed.js?target=https%3A%2F%2Fgithub.com%2Fchirimen-oh%2Fchirimen%2Fblob%2F8d14c8a35319c1df287126eef1aa41c1f3b8c856%2Fgc%2Fi2c%2Fi2c-SHT30%2Fmain.js%23L7-L7&style=github&showBorder=on&showFileMeta=on"></script>
+```js
+const port = i2cAccess.ports.get(1);
+```
 
 CHIRIMEN RasPi、RasPiZero、micro:bit で利用可能な I2C ポート番号は`1`番だけです。ポート番号に`1` を指定して **`port` オブジェクトを取得** しています。
+
+<hr class="page-wrap" />
 
 ##### new SHT30(port, 0x44)
 
 ドライバーライブラリを使い **SHT30 を操作する為のインスタンスを生成** しています。
-
-<script src="https://emgithub.com/embed.js?target=https%3A%2F%2Fgithub.com%2Fchirimen-oh%2Fchirimen%2Fblob%2F8d14c8a35319c1df287126eef1aa41c1f3b8c856%2Fgc%2Fi2c%2Fi2c-SHT30%2Fmain.js%23L8-L8&style=github&showBorder=on&showFileMeta=on"></script>
+```js
+const sht30 = new SHT30(port, 0x44);
+```
 
 ##### await sht30.init()
 
 ドライバーライブラリのインスタンス (`sht30`) の `init()` メソッドを通じて **I2C ポートを開いてセンサーを初期化** しています。
 
-<script src="https://emgithub.com/embed.js?target=https%3A%2F%2Fgithub.com%2Fchirimen-oh%2Fchirimen%2Fblob%2F8d14c8a35319c1df287126eef1aa41c1f3b8c856%2Fgc%2Fi2c%2Fi2c-SHT30%2Fmain.js%23L9-L9&style=github&showBorder=on&showFileMeta=on"></script>
+```js
+await sht30.init();
+```
 
 具体的に内部では、インスタンス生成時に指定した `port` オブジェクトと `slaveAddress(0x44)` を用いて `I2CPort.open()` を行なっています。`I2CPort.open()` が成功すると、`I2CSlaveDevice` という I2C ポートへデータ書き込みや読み込みなどを行うインタフェースが返されます。`I2CSlaveDevice` インタフェースは、ライブラリ内に保存され、その後の処理でこのインターフェイスを使って I2C デバイス SHT30 との通信が可能になります。
 
@@ -524,7 +547,9 @@ CHIRIMEN RasPi、RasPiZero、micro:bit で利用可能な I2C ポート番号は
 
 **SHT30 の仕様に基づくデータ読み出し処理です**。
 
-<script src="https://emgithub.com/embed.js?target=https%3A%2F%2Fgithub.com%2Fchirimen-oh%2Fchirimen%2Fblob%2F8d14c8a35319c1df287126eef1aa41c1f3b8c856%2Fgc%2Fi2c%2Fi2c-SHT30%2Fmain.js%23L12-L12&style=github&showBorder=on&showFileMeta=on"></script>
+```js
+const { humidity, temperature } = await sht30.readData();
+```
 
 ドライバーライブラリ内部では、SHT30 から得られる温度と湿度それぞれ 16bit の数値を、温度・湿度の物理量の数値に変換して返却しています。
 
@@ -537,6 +562,7 @@ CHIRIMEN RasPi、RasPiZero、micro:bit で利用可能な I2C ポート番号は
 
 この流れは他の I2C デバイスでも基本的に同様になります。
 
+<hr class="page-wrap" />
 
 ### デバイスドライバーなしにSHT30を使う
 

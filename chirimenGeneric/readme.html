@@ -190,7 +190,6 @@
             <li><a href="https://codesandbox.io/s/github/chirimen-oh/chirimen.org/tree/master/pizero/esm-examples/remote_gpio_led/pc">例を見てみる</a></li>
             <li><a href="https://developer.mozilla.org/ja/docs/Web/JavaScript/Guide/Modules">Mozilla Developer Networkの解説</a></li>
           </ul>
-          <hr class="page-wrap">
         </section>
       </section>
       <section class="level2" aria-labelledby="非同期処理">
@@ -215,7 +214,6 @@
         </ul>
         <p>非同期関数を <code>await</code> なしで呼び出すと返り値が Promise オブジェクトとなり、Promise を理解しないと返り値の判断や実行順序が入れ替わり意図せぬ挙動になります。例えば、ポートの初期化を <code>await</code> なしで呼ぶと、ポート初期化前に初期化未完了のハードウェアを操作しようとして失敗したりします。</p>
         <p>ハードウェアを制御するときは基本的に非同期呼び出しをする (その処理を含む関数もまた非同期で呼びす) と決めておけば迷うことなく、コードの実行順序も上から下に見たとおりの順番で実行され読み書きしやすくなります。</p>
-        <hr class="page-wrap">
       </section>
       <section class="level2" aria-labelledby="開発環境">
         <h2 id="開発環境">開発環境</h2>
@@ -261,7 +259,7 @@
         <section class="level3" aria-labelledby="microbitのピン配置図">
           <h3 id="microbitのピン配置図">micro:bitのピン配置図</h3>
           <figure>
-            <img src="https://tech.microbit.org/docs/hardware/assets/edge_connector.svg" alt="micro:bitのI端子">
+            <img src="https://tech.microbit.org/docs/hardware/assets/edge_connector.svg" alt="micro:bitのI端子" height="350">
             <figcaption aria-hidden="true">micro:bitのI端子</figcaption>
           </figure>
         </section>
@@ -285,7 +283,6 @@
         </p>
         <script src="https://emgithub.com/embed.js?target=https%3A%2F%2Fgithub.com%2Fchirimen-oh%2Fchirimen%2Fblob%2F5c520c21820304901553f2adf22da1012f54722d%2Fgc%2Fgpio%2FLEDblink%2Fmain.js%23L4-L4&#x26;style=github&#x26;showBorder=on&#x26;showFileMeta=on"></script>
         <p><strong>関数の呼び出しに <code>await</code> 接頭詞を付けることに注意してください。</strong> この関数は非同期関数で、その処理の完了を待ってから次の処理をする必要があります。また、<code>await</code> 接頭詞を使うコードを含むために、それを含む関数 <code>main()</code> は async 接頭詞付きの非同期関数として定義する必要があります。</p>
-        <hr class="page-wrap">
       </section>
       <section class="level2" aria-labelledby="gpioport-の出力処理">
         <h2 id="gpioport-の出力処理">GPIOPort の出力処理</h2>
@@ -400,26 +397,26 @@
         <p>通信するデバイス同士が同一基板上にない場合には、SDA、SCL の 2 本の通信線に加え電源や GND の線を加えて 4 本のケーブルを用いて接続するのが一般的です。電源電圧はデバイスに応じたものを繋ぐ必要があります。</p>
         <section class="level3" aria-labelledby="raspberry-piのi2c端子">
           <h3 id="raspberry-piのi2c端子">Raspberry PiのI2C端子</h3>
-          <p>
-            下図のSCL, SDAがI2C端子です（黄色の端子）
-            
-            <img src="../raspi/imgs/section0/Raspi3PIN.png" alt="Raspi PIN配置図">
-          </p><!--
+          <p>下図のSCL, SDAがI2C端子です（黄色の端子）</p>
+          <figure>
+            <img src="../raspi/imgs/section0/Raspi3PIN.png" alt="Raspi PIN配置図" height="600">
+            <figcaption aria-hidden="true">Raspi PIN配置図</figcaption>
+          </figure><!--
           {% cloudinary ../raspi/imgs/section0/Raspi3PIN.png alt="Raspi PIN配置図" %}
           -->
         </section>
         <section class="level3" aria-labelledby="raspverry-pi-zeroのi2c端子">
           <h3 id="raspverry-pi-zeroのi2c端子">Raspverry Pi ZeroのI2C端子</h3>
           <p>　Raspberry PiのI2C端子と同じ配列です。</p>
+          <hr class="page-wrap">
         </section>
         <section class="level3" aria-labelledby="microbitのi2c端子">
           <h3 id="microbitのi2c端子">micro:bitのI2C端子</h3>
-          <p>
-            下図のSCL, SDAがI2C端子です (P19,P20～オレンジ色I2C1のグループ)
-            
-            <img src="https://tech.microbit.org/docs/hardware/assets/edge_connector.svg" alt="micro:bitのI端子">
-          </p>
-          <hr class="page-wrap">
+          <p>下図のSCL, SDAがI2C端子です (P19,P20～オレンジ色I2C1のグループ)</p>
+          <figure>
+            <img src="https://tech.microbit.org/docs/hardware/assets/edge_connector.svg" alt="micro:bitのI端子" height="400">
+            <figcaption aria-hidden="true">micro:bitのI端子</figcaption>
+          </figure>
         </section>
       </section>
       <section class="level2" aria-labelledby="参考-i2c-に関する詳細情報">
@@ -483,11 +480,11 @@
         <ul>
           <li><a href="https://tutorial.chirimen.org/ty51822r3/i2cdetect">ic2 detectとは</a></li>
         </ul>
-        <hr class="page-wrap">
         <section class="level3" aria-labelledby="コマンドラインから">
           <h3 id="コマンドラインから">コマンドラインから</h3>
           <pre class="language-sh"><code class="language-sh">i2cdetect -y -r 1</code></pre>
           <p>(microbit版はコマンドラインがないので下記webAppを使いましょう)</p>
+          <hr class="page-wrap">
         </section>
         <section class="level3" aria-labelledby="i2cdetect-webapp">
           <h3 id="i2cdetect-webapp">i2cdetect webApp</h3>
@@ -586,18 +583,31 @@
           <h3 id="i2c-温湿度センサー-sht30-sht31の使用例">I2C 温湿度センサー (SHT30, SHT31)の使用例</h3>
           <p>Raspberry Pi, micro:bitでは、index.htmlの中で、Raspberry Pi Zero Wではmain.jsの中で以下のライブラリを読み込んでいます。</p>
           <ul>
-            <li>
-              <p>WebI2C APIを使用できるようにするためのライブラリ( Raspberry Pi: <code>polyfill.js</code>, micro:bit: <code>microbitble.js</code>, Raspberry Pi Zero W: xxx)でうｓ。</p>
-            </li>
-            <li>
-              <p>( Raspberry Pi, micro:bit:<code>https://cdn.jsdelivr.net/npm/@chirimen/sht30</code>、 Raspberry Pi Zero W: <code>@chirimen/sht30</code>)　このファイルは、Web I2C API を使って SHT30 との通信を行うための、SHT30用のデバイスドライバー (ハードウェアを操作する為のライブラリ) です。</p>
-            </li>
+            <li>WebI2C APIを使用できるようにするためのライブラリ( Raspberry Pi: <code>polyfill.js</code>, micro:bit: <code>microbitble.js</code>, Raspberry Pi Zero W: xxx)です。</li>
+            <li>( Raspberry Pi, micro:bit:<code>https://cdn.jsdelivr.net/npm/@chirimen/sht30</code>、 Raspberry Pi Zero W: <code>@chirimen/sht30</code>)　このファイルは、Web I2C API を使って SHT30 との通信を行うための、SHT30用のデバイスドライバー (ハードウェアを操作する為のライブラリ) です。</li>
           </ul>
           <p><code>main.js</code> がドライバーライブラリを使ってこのアプリケーションの動作を記述している部分です。</p>
+          <hr class="page-wrap">
           <section class="level4" aria-labelledby="d-2-mainjs">
             <h4 id="d-2-mainjs">d-2. main.js</h4>
             <p>次に、<code>main.js</code> の処理の流れを見てみましょう。</p>
-            <script src="https://emgithub.com/embed.js?target=https%3A%2F%2Fgithub.com%2Fchirimen-oh%2Fchirimen%2Fblob%2F8d14c8a35319c1df287126eef1aa41c1f3b8c856%2Fgc%2Fi2c%2Fi2c-SHT30%2Fmain.js&#x26;style=github&#x26;showBorder=on&#x26;showFileMeta=on"></script>
+            <pre class="language-js"><code class="language-js"><span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token keyword">async</span> <span class="token keyword">function</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">const</span> temperatureDisplay <span class="token operator">=</span> <span class="token dom variable">document</span><span class="token punctuation">.</span><span class="token method function property-access">getElementById</span><span class="token punctuation">(</span><span class="token string">"temperatureDisplay"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token keyword">const</span> humidityDisplay <span class="token operator">=</span> <span class="token dom variable">document</span><span class="token punctuation">.</span><span class="token method function property-access">getElementById</span><span class="token punctuation">(</span><span class="token string">"humidityDisplay"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token keyword">const</span> i2cAccess <span class="token operator">=</span> <span class="token keyword control-flow">await</span> <span class="token dom variable">navigator</span><span class="token punctuation">.</span><span class="token method function property-access">requestI2CAccess</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token keyword">const</span> port <span class="token operator">=</span> i2cAccess<span class="token punctuation">.</span><span class="token property-access">ports</span><span class="token punctuation">.</span><span class="token method function property-access">get</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token keyword">const</span> sht30 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">SHT30</span><span class="token punctuation">(</span>port<span class="token punctuation">,</span> <span class="token number">0x44</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token keyword control-flow">await</span> sht30<span class="token punctuation">.</span><span class="token method function property-access">init</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+  <span class="token keyword control-flow">while</span> <span class="token punctuation">(</span><span class="token boolean">true</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">const</span> <span class="token punctuation">{</span> humidity<span class="token punctuation">,</span> temperature <span class="token punctuation">}</span> <span class="token operator">=</span> <span class="token keyword control-flow">await</span> sht30<span class="token punctuation">.</span><span class="token method function property-access">readData</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    temperatureDisplay<span class="token punctuation">.</span><span class="token property-access">innerHTML</span> <span class="token operator">=</span> <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token html language-html"><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>temperature<span class="token punctuation">.</span><span class="token method function property-access">toFixed</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token interpolation-punctuation punctuation">}</span></span> ℃</span><span class="token template-punctuation string">`</span></span><span class="token punctuation">;</span>
+    humidityDisplay<span class="token punctuation">.</span><span class="token property-access">innerHTML</span> <span class="token operator">=</span> <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token html language-html"><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>humidity<span class="token punctuation">.</span><span class="token method function property-access">toFixed</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token interpolation-punctuation punctuation">}</span></span> %</span><span class="token template-punctuation string">`</span></span><span class="token punctuation">;</span>
+    <span class="token keyword control-flow">await</span> <span class="token function">sleep</span><span class="token punctuation">(</span><span class="token number">500</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre>
             <p>
               ここで温度センサーの情報を定期的に取得し、画面に出力する処理が行われています。
               少し詳し解説してみます。
@@ -609,25 +619,26 @@
             <section class="level5" aria-labelledby="i2caccessportsget">
               <h5 id="i2caccessportsget">i2cAccess.ports.get()</h5>
               <p><code>I2CAccess.ports</code> は、利用可能な I2C ポートの一覧です。</p>
-              <script src="https://emgithub.com/embed.js?target=https%3A%2F%2Fgithub.com%2Fchirimen-oh%2Fchirimen%2Fblob%2F8d14c8a35319c1df287126eef1aa41c1f3b8c856%2Fgc%2Fi2c%2Fi2c-SHT30%2Fmain.js%23L7-L7&#x26;style=github&#x26;showBorder=on&#x26;showFileMeta=on"></script>
+              <pre class="language-js"><code class="language-js"><span class="token keyword">const</span> port <span class="token operator">=</span> i2cAccess<span class="token punctuation">.</span><span class="token property-access">ports</span><span class="token punctuation">.</span><span class="token method function property-access">get</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
               <p>CHIRIMEN RasPi、RasPiZero、micro:bit で利用可能な I2C ポート番号は<code>1</code>番だけです。ポート番号に<code>1</code> を指定して <strong><code>port</code> オブジェクトを取得</strong> しています。</p>
+              <hr class="page-wrap">
             </section>
             <section class="level5" aria-labelledby="new-sht30port-0x44">
               <h5 id="new-sht30port-0x44">new SHT30(port, 0x44)</h5>
               <p>ドライバーライブラリを使い <strong>SHT30 を操作する為のインスタンスを生成</strong> しています。</p>
-              <script src="https://emgithub.com/embed.js?target=https%3A%2F%2Fgithub.com%2Fchirimen-oh%2Fchirimen%2Fblob%2F8d14c8a35319c1df287126eef1aa41c1f3b8c856%2Fgc%2Fi2c%2Fi2c-SHT30%2Fmain.js%23L8-L8&#x26;style=github&#x26;showBorder=on&#x26;showFileMeta=on"></script>
+              <pre class="language-js"><code class="language-js"><span class="token keyword">const</span> sht30 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">SHT30</span><span class="token punctuation">(</span>port<span class="token punctuation">,</span> <span class="token number">0x44</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
             </section>
             <section class="level5" aria-labelledby="await-sht30init">
               <h5 id="await-sht30init">await sht30.init()</h5>
               <p>ドライバーライブラリのインスタンス (<code>sht30</code>) の <code>init()</code> メソッドを通じて <strong>I2C ポートを開いてセンサーを初期化</strong> しています。</p>
-              <script src="https://emgithub.com/embed.js?target=https%3A%2F%2Fgithub.com%2Fchirimen-oh%2Fchirimen%2Fblob%2F8d14c8a35319c1df287126eef1aa41c1f3b8c856%2Fgc%2Fi2c%2Fi2c-SHT30%2Fmain.js%23L9-L9&#x26;style=github&#x26;showBorder=on&#x26;showFileMeta=on"></script>
+              <pre class="language-js"><code class="language-js"><span class="token keyword control-flow">await</span> sht30<span class="token punctuation">.</span><span class="token method function property-access">init</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
               <p>具体的に内部では、インスタンス生成時に指定した <code>port</code> オブジェクトと <code>slaveAddress(0x44)</code> を用いて <code>I2CPort.open()</code> を行なっています。<code>I2CPort.open()</code> が成功すると、<code>I2CSlaveDevice</code> という I2C ポートへデータ書き込みや読み込みなどを行うインタフェースが返されます。<code>I2CSlaveDevice</code> インタフェースは、ライブラリ内に保存され、その後の処理でこのインターフェイスを使って I2C デバイス SHT30 との通信が可能になります。</p>
             </section>
             <section class="level5" aria-labelledby="await-sht30readdata">
               <h5 id="await-sht30readdata">await sht30.readData()</h5>
               <p>これで実際にデータを読み取っています。 この読み取り関数はGPIOで紹介した、一回きりの単純入力に相当するものです。そのため連続的な変化を知りたい場合はポーリングルーチンを組む必要がありますね。</p>
               <p><strong>SHT30 の仕様に基づくデータ読み出し処理です</strong>。</p>
-              <script src="https://emgithub.com/embed.js?target=https%3A%2F%2Fgithub.com%2Fchirimen-oh%2Fchirimen%2Fblob%2F8d14c8a35319c1df287126eef1aa41c1f3b8c856%2Fgc%2Fi2c%2Fi2c-SHT30%2Fmain.js%23L12-L12&#x26;style=github&#x26;showBorder=on&#x26;showFileMeta=on"></script>
+              <pre class="language-js"><code class="language-js"><span class="token keyword">const</span> <span class="token punctuation">{</span> humidity<span class="token punctuation">,</span> temperature <span class="token punctuation">}</span> <span class="token operator">=</span> <span class="token keyword control-flow">await</span> sht30<span class="token punctuation">.</span><span class="token method function property-access">readData</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
               <p>ドライバーライブラリ内部では、SHT30 から得られる温度と湿度それぞれ 16bit の数値を、温度・湿度の物理量の数値に変換して返却しています。</p>
             </section>
           </section>
@@ -640,6 +651,7 @@
               <li><strong>データ読み込み・書き込み:</strong></li>
             </ol>
             <p>この流れは他の I2C デバイスでも基本的に同様になります。</p>
+            <hr class="page-wrap">
           </section>
         </section>
         <section class="level3" aria-labelledby="デバイスドライバーなしにsht30を使う">
