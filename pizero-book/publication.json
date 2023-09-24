@@ -7,8 +7,14 @@
   "conformsTo": "https://github.com/vivliostyle/vivliostyle-cli",
   "name": "pizero-book",
   "author": "CHIRIMEN Open Hardware Community <chirimen.open.hardware@gmail.com>",
-  "dateModified": "2023-09-18T09:12:02.684Z",
+  "dateModified": "2023-09-24T08:09:03.584Z",
   "readingOrder": [
+    {
+      "url": "toc.html",
+      "name": "目次",
+      "rel": "contents",
+      "type": "LinkedResource"
+    },
     {
       "url": "../pizero/readme.html",
       "name": "CHIRIMEN Raspberry Pi Zero W チュートリアル"
