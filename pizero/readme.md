@@ -104,9 +104,6 @@ PiZero自体はディスプレイやキーボードを接続する必要はあ�
   * ウィンドが開き、WiFiアクセスポイントがスキャンされます。ステルスでないものはリストアップされているので、以降の作業の参考にしてください。
   * Raspberry Pi Zero Wは2.4GHz帯のWiFiにのみ対応しています。
     ![WiFi Setting](./imgs/WiFiSetting.png)
-
-<hr class="page-wrap" />
-
 * ウィンド下部に、会場(もしくは開発場所)で提供されているWiFiアクセス情報を入力する (いずれも大文字小文字の区別があるので注意してください。)
   * SSID欄
   * PASS PHRASE欄 
@@ -286,6 +283,8 @@ GPIOの出力はLチカで実験済みですね。そこで今回はモーター
   * [JavaScript module](../chirimenGeneric/#javascript-module-ecma-script-module) に基づいてWebGPIOライブラリを読み込みます。これでWeb GPIO APIが使えるようになりました。
 * [GPIOポートの初期化処理](../chirimenGeneric/#gpio-2)
 * [GPIOPortの出力処理](../chirimenGeneric/#gpioport-)
+
+<hr class="page-wrap" />
 
 ## GPIO入力
 
@@ -577,6 +576,7 @@ CHIRIMEN for Raspberry Pi を利用するに際して、知っておくと良い
 
 その他、電子工作など一般的な知識は [予備知識・資料集](../reference.md) や、[共通資料集](../chirimenGeneric/)を参照してください。
 
+<hr class="page-wrap" />
 
 # CHIRIMEN ブラウザー版との差異
 
