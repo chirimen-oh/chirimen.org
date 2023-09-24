@@ -2,16 +2,13 @@
 <html lang="ja">
   <head>
     <meta charset="utf-8">
-    <title>CHIRIMEN Raspberry Pi Zero W チュートリアル</title>
+    <title>概要</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="layout" content="tutorial">
     <meta name="permalink" content="/pizero/">
     <link rel="stylesheet" href="../pizero-book/themes/packages/@vivliostyle/theme-techbook/theme.css">
   </head>
   <body>
-    <section class="level1" aria-labelledby="chirimen-raspberry-pi-zero-w-チュートリアル">
-      <h1 id="chirimen-raspberry-pi-zero-w-チュートリアル"><strong>CHIRIMEN Raspberry Pi Zero W チュートリアル</strong></h1>
-    </section>
     <section class="level1" aria-labelledby="概要">
       <h1 id="概要">概要</h1>
       <p>CHIRIMEN Raspberry Pi Zero版 を用いたIoT実習資料です。</p>
@@ -85,10 +82,10 @@
               </ul>
             </li>
           </ul>
-          <hr class="page-wrap">
-          <p>
-            <img src="imgs/PartsList2.svg" alt="Parts Images">
-          </p>
+          <figure>
+            <img src="imgs/PartsList2.svg" alt="Parts Images" height="360">
+            <figcaption aria-hidden="true">Parts Images</figcaption>
+          </figure>
           <p>PiZero自体はディスプレイやキーボードを接続する必要はありません。</p>
         </section>
         <section class="level3" aria-labelledby="pcをwifiに接続">
@@ -108,14 +105,14 @@
               <li>
                 PiZero側はつなぐポート要注意　ここに繋ぎます
                 
-                <img src="https://chirimen.org/PiZeroWebSerialConsole/imgs/PiZeroW_OTG.JPG" alt="pi zero otg port">
+                <img src="https://chirimen.org/PiZeroWebSerialConsole/imgs/PiZeroW_OTG.JPG" alt="pi zero otg port" height="100">
               </li>
               <li>PCからのUSB給電でRaspberry Pi Zeroが起動します。</li>
             </ul>
           </li>
           <li>PCでRaspberry Pi Zeroが認識されたことを確認します (<a href="https://askpc.panasonic.co.jp/beginner/guide/ten07/7013.html">Windows10のデバイスマネージャ</a>の例)
             <ul>
-              <li>給電後USBデバイスとして出現するまでにしばらく(数十秒)かかります)</li>
+              <li>給電後USBデバイスとして出現するまでにしばらく(数十秒)かかります）</li>
               <li>
                 Windowsの場合、ポートの番号(COMnのnの部分)は環境ごとに異なります
                 
@@ -132,7 +129,7 @@
               <li>
                 接続ダイアログが出現
                 
-                <img src="imgs/SerialDialog.png" alt="connection dialog">
+                <img src="imgs/SerialDialog.png" alt="connection dialog" height="100">
               </li>
               <li>上で認識したデバイス（ポート番号）を接続する</li>
             </ul>
@@ -143,6 +140,7 @@
             </ul>
           </li>
         </ul>
+        <hr class="page-wrap">
         <section class="level3" aria-labelledby="note">
           <h3 id="note">Note:</h3>
           <ul>
@@ -152,7 +150,7 @@
                 <li>ただしこの講習で使うコマンドはごくわずかです。
                   <ul>
                     <li><strong>node</strong> コマンド(後述)</li>
-                    <li><a href="https://atmarkit.itmedia.co.jp/ait/articles/1708/04/news015_2.html">CTRL+c</a>(CTRLキーとcを同時に押す:実行中のコマンドを終了させる))</li>
+                    <li><a href="https://atmarkit.itmedia.co.jp/ait/articles/1708/04/news015_2.html">CTRL+c</a>(CTRLキーとcを同時に押す:実行中のコマンドを終了させる)</li>
                   </ul>
                 </li>
                 <li>その他のほとんどの操作（コマンド）は、ターミナルウィンドやそこから起動される別画面のGUIがコマンド操作を代行しています。図1.1のGUIを操作するとコンソールにコマンドが入力されるのがわかると思います。</li>
@@ -184,8 +182,7 @@
       <section class="level2" aria-labelledby="ステップ２-wifi設定">
         <h2 id="ステップ２-wifi設定">ステップ２ (WiFi設定)</h2>
         <ul>
-          <li>
-            <p>ターミナルウィンドの<code>[wifi panel]</code>ボタンを押す</p>
+          <li>ターミナルウィンドの<code>[wifi panel]</code>ボタンを押す
             <ul>
               <li>ウィンドが開き、WiFiアクセスポイントがスキャンされます。ステルスでないものはリストアップされているので、以降の作業の参考にしてください。</li>
               <li>
@@ -195,31 +192,24 @@
               </li>
             </ul>
           </li>
-          <li>
-            <p>ウィンド下部に、会場(もしくは開発場所)で提供されているWiFiアクセス情報を入力する (いずれも大文字小文字の区別があるので注意してください。)</p>
+          <li>ウィンド下部に、会場(もしくは開発場所)で提供されているWiFiアクセス情報を入力する (いずれも大文字小文字の区別があるので注意してください。)
             <ul>
               <li>SSID欄</li>
               <li>PASS PHRASE欄</li>
             </ul>
           </li>
-          <li>
-            <p><code>[SET WiFi]</code>ボタンを押す</p>
-          </li>
-          <li>
-            <p><code>[Reboot]</code>ボタンを押す</p>
+          <li><code>[SET WiFi]</code>ボタンを押す</li>
+          <li><code>[Reboot]</code>ボタンを押す
             <ul>
               <li>これでRaspberry Pi Zeroが再起動をはじめます</li>
             </ul>
           </li>
-          <li>
-            <p>WiFiウィンドを閉じ、ターミナルウィンドに戻る</p>
-          </li>
-          <li>
-            <p>ターミナルウィンドの<code>[Close Connection]</code>ボタンを押す</p>
-          </li>
-          <li>
-            <p>30秒ほど待つ（Raspberry Pi Zeroが再起動します)</p>
-          </li>
+          <li>WiFiウィンドを閉じ、ターミナルウィンドに戻る</li>
+          <li>ターミナルウィンドの<code>[Close Connection]</code>ボタンを押す</li>
+          <li>30秒ほど待つ（Raspberry Pi Zeroが再起動します）</li>
+        </ul>
+        <hr class="page-wrap">
+        <ul>
           <li>
             <p><code>[Connect and Login PiZero]</code>ボタンを押し接続する</p>
             <ul>
@@ -272,7 +262,7 @@
         </ul>
         <p><strong>注意</strong></p>
         <ul>
-          <li>間違ったピンに差し込むと場合によってはPiZeroが停止したり故障することもあります。（たとえば3.3V端子とGND端子を接続してしまうなど。)</li>
+          <li>間違ったピンに差し込むと場合によってはPiZeroが停止したり故障することもあります。（たとえば3.3V端子とGND端子を接続してしまうなど。）</li>
           <li>そのため、慣れるまでは一旦PiZeroをシャットダウン、USBケーブルも外し電源OFFにしてから配線すると安全です
             <ul>
               <li>シャットダウンコマンド：<code>sudo shutdown -h now</code></li>
@@ -280,7 +270,7 @@
           </li>
         </ul>
         <figure>
-          <img src="./imgs/pizero_led.png" alt="PiZero配線図">
+          <img src="./imgs/pizero_led.png" alt="PiZero配線図" height="200">
           <figcaption aria-hidden="true">PiZero配線図</figcaption>
         </figure>
         <ul>
@@ -294,7 +284,7 @@
         <h2 id="プログラムを書く">プログラムを書く</h2>
         <p>Raspberry Pi に接続した LED を点滅させるプログラムを書きます。</p>
         <ul>
-          <li>ターミナルウィンドでRaspberry Pi Zeroに接続します。（ステップ１が完了した状態)</li>
+          <li>ターミナルウィンドでRaspberry Pi Zeroに接続します。（ステップ１が完了した状態）</li>
           <li>myAppディレクトリに移動します。
             <ul>
               <li>コンソールの右側のファイルマネージャでmyApp⇒移動を選ぶ</li>
@@ -381,12 +371,12 @@
               <li>PD:プルダウン, PU:プルアップ</li>
             </ul>
           </li>
-          <li>
-            SCL, SDAはI2Cインターフェースのピンです(詳細は次章)
-            
-            <img src="https://chirimen.org/PiZeroWebSerialConsole/wallpaperS.png" alt="Raspberry Pi Pinout">
-          </li>
+          <li>SCL, SDAはI2Cインターフェースのピンです(詳細は次章)</li>
         </ul>
+        <hr class="page-wrap">
+        <p>
+          <img src="https://chirimen.org/PiZeroWebSerialConsole/wallpaperS.png" alt="Raspberry Pi Pinout">
+        </p>
         <hr class="page-wrap">
       </section>
     </section>
@@ -441,13 +431,12 @@
       </section>
       <section class="level2" aria-labelledby="gpio出力">
         <h2 id="gpio出力">GPIO出力</h2>
-        <p>
-          GPIOの出力はLチカで実験済みですね。そこで今回はモーターを動かしてみましょう。MOSFETを使った回路図は以下のようになります。
-          
-          <img src="./esm-examples/hello-real-world/PiZero_gpio0Motor.png" alt="GPIO Motor">
-        </p>
+        <p>GPIOの出力はLチカで実験済みですね。そこで今回はモーターを動かしてみましょう。MOSFETを使った回路図は以下のようになります。</p>
+        <figure>
+          <img src="./esm-examples/hello-real-world/PiZero_gpio0Motor.png" alt="GPIO Motor" height="200">
+          <figcaption aria-hidden="true">GPIO Motor</figcaption>
+        </figure>
         <p>コードはLチカと全く同じです。</p>
-        <hr class="page-wrap">
         <section class="level3" aria-labelledby="回路について">
           <h3 id="回路について">回路について</h3>
           <ul>
@@ -606,14 +595,13 @@
           </li>
           <li>
             <p>回路図リンクを押すと回路図が出てきますので、回路を組みます。なお、接続は下の図のようになります。</p>
+            <figure>
+              <img src="./esm-examples/sht30/schematic.png" alt="SHT31 schematic" height="220">
+              <figcaption aria-hidden="true">SHT31 schematic</figcaption>
+            </figure>
           </li>
-        </ul>
-        <hr class="page-wrap">
-        <p>
-          <img src="./esm-examples/sht30/schematic.png" alt="SHT31 schematic">
-        </p>
-        <ul>
-          <li><code>[JS GET]</code>ボタンを押すと、開発ディレクトリ(<code>~/myApp</code>)に、サンプルコードが保存されます。
+          <li>
+            <p><code>[JS GET]</code>ボタンを押すと、開発ディレクトリ(<code>~/myApp</code>)に、サンプルコードが保存されます。</p>
             <ul>
               <li><strong>main-sht30.js</strong>というファイル名で保存されます。</li>
               <li>Note: ターミナルウィンドの右側のファイルマネージャでmain-sht30.js⇒編集 を選ぶと、エディタで編集できます。
@@ -625,8 +613,9 @@
             </ul>
           </li>
         </ul>
-        <section class="level3" aria-labelledby="i2cセンサーsht30が認識さていることを確認する">
-          <h3 id="i2cセンサーsht30が認識さていることを確認する">I2Cセンサー(SHT30)が認識さていることを確認する</h3>
+        <hr class="page-wrap">
+        <section class="level3" aria-labelledby="i2cセンサーsht30が認識されていることを確認する">
+          <h3 id="i2cセンサーsht30が認識されていることを確認する">I2Cセンサー(SHT30)が認識されていることを確認する</h3>
           <ul>
             <li>CHIRIMEN Panelの<code>[i2c detect]</code>ボタンを押すと、<a href="https://strawberry-linux.com/pub/Sensirion_Humidity_SHT3x_DIS_Datasheet_V3_J.pdf">SHT30のI2Cアドレス</a>　0x<strong>44</strong>が表示されていればうまく接続されています。
               <ul>
@@ -704,8 +693,9 @@
             </ul>
           </li>
         </ul>
-        <section class="level3" aria-labelledby="i2cセンサーが認識さていることを確認する">
-          <h3 id="i2cセンサーが認識さていることを確認する">I2Cセンサーが認識さていることを確認する</h3>
+        <hr class="page-wrap">
+        <section class="level3" aria-labelledby="i2cセンサーが認識されていることを確認する">
+          <h3 id="i2cセンサーが認識されていることを確認する">I2Cセンサーが認識されていることを確認する</h3>
           <ul>
             <li>CHIRIMEN Panelの<code>[i2c detect]</code>ボタンを押すと、<a href="https://akizukidenshi.com/download/ds/akizuki/AE-ADT7410_aw.pdf">ADT7410のI2Cアドレス</a>　0x<strong>48</strong>が表示されていればうまく接続されています。
               <ul>
@@ -753,11 +743,12 @@
         </section>
         <section class="level3" aria-labelledby="配線する">
           <h3 id="配線する">配線する</h3>
-          <p>
-            配線は最初のLチカそのままです。
-            
-            <img src="./imgs/pizero_led.png" alt="PiZero配線図">
-          </p>
+          <p>配線は最初のLチカそのままです。</p>
+          <figure>
+            <img src="./imgs/pizero_led.png" alt="PiZero配線図" height="200">
+            <figcaption aria-hidden="true">PiZero配線図</figcaption>
+          </figure>
+          <hr class="page-wrap">
         </section>
         <section class="level3" aria-labelledby="chirimenデバイス側にコードを入れ実行する">
           <h3 id="chirimenデバイス側にコードを入れ実行する">CHIRIMENデバイス側にコードを入れ、実行する</h3>
@@ -777,19 +768,17 @@
                 <li>
                   ターミナルウィンドのコンソールに、<code>node main-remote_gpio_led.js</code> [ENTER] と入力して実行。
                   
-                  <img src="imgs/RC_NODE.png" alt="CHIRIMEN PiZero Console">
+                  <img src="imgs/RC_NODE.png" alt="CHIRIMEN PiZero Console" height="70">
                 </li>
                 <li>なお、実験が終わったら終了は CTRL+c です。</li>
               </ul>
             </li>
           </ul>
-          <hr class="page-wrap">
         </section>
         <section class="level3" aria-labelledby="pc側のコードを準備し実行する">
           <h3 id="pc側のコードを準備し実行する">PC側のコードを準備し、実行する</h3>
           <ul>
-            <li>
-              <p>CHIRIMEN Panelに戻り、ID : <strong>remote_gpio_led</strong>の行にある、<code>CSB EDIT</code>リンクをクリックする。</p>
+            <li>CHIRIMEN Panelに戻り、ID : <strong>remote_gpio_led</strong>の行にある、<code>CSB EDIT</code>リンクをクリックする。
               <ul>
                 <li>CodeSandboxというオンラインのWebApp開発環境のウィンドが開き、PC側のコードが表示されています。編集もできます。
                   <ul>
@@ -797,12 +786,12 @@
                   </ul>
                 </li>
                 <li>また、右側（もしくは右下）のフレームにはLEDを遠隔コントロールするためのwebAppが既に実行されています。</li>
-                <li>webAppを使ってLEDが制御できることを確かめてみましょう。</li>
+                <li>
+                  webAppを使ってLEDが制御できることを確かめてみましょう。
+                  
+                  <img src="imgs/RC_CSB.svg" alt="Code Sandbox Image" height="260">
+                </li>
               </ul>
-              <figure>
-                <img src="imgs/RC_CSB.svg" alt="Code Sandbox Image">
-                <figcaption aria-hidden="true">Code Sandbox Image</figcaption>
-              </figure>
             </li>
           </ul>
           <hr class="page-wrap">

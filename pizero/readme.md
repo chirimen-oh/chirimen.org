@@ -4,8 +4,6 @@ lang: ja
 permalink: /pizero/
 ---
 
-# **CHIRIMEN Raspberry Pi Zero W チュートリアル**
-
 # 概要
 
 CHIRIMEN Raspberry Pi Zero版 を用いたIoT実習資料です。
@@ -50,9 +48,7 @@ CHIRIMEN Raspberry Pi Zero版 を用いたIoT実習資料です。
   * [ADT7410モジュール](https://akizukidenshi.com/catalog/g/gM-06675/)　もしくは [SHT30モジュール](https://www.amazon.co.jp/dp/B083NHJSL9/)
   * ジャンパーワイヤ オス-メス 2本
 
-<hr class="page-wrap" />
-
-  ![Parts Images](imgs/PartsList2.svg)
+![Parts Images](imgs/PartsList2.svg){height=360}
 
 PiZero自体はディスプレイやキーボードを接続する必要はありません。
 
@@ -66,27 +62,29 @@ PiZero自体はディスプレイやキーボードを接続する必要はあ�
 * [Raspberry Pi OS LiteをUSB Serialで使用可能にしたイメージ](https://github.com/kou029w/chirimen-os/releases/)を書き込んだmicroSDカードをRaspberry Pi Zeroに差し込みます。
 * PCのUSBとRaspberry Pi ZeroのUSB OTGポートをUSBケーブルでつなぎます
   * PiZero側はつなぐポート要注意　ここに繋ぎます
-  ![pi zero otg port](https://chirimen.org/PiZeroWebSerialConsole/imgs/PiZeroW_OTG.JPG)
+  ![pi zero otg port](https://chirimen.org/PiZeroWebSerialConsole/imgs/PiZeroW_OTG.JPG){height=100}
   * PCからのUSB給電でRaspberry Pi Zeroが起動します。
 * PCでRaspberry Pi Zeroが認識されたことを確認します ([Windows10のデバイスマネージャ](https://askpc.panasonic.co.jp/beginner/guide/ten07/7013.html)の例) 
-  * 給電後USBデバイスとして出現するまでにしばらく(数十秒)かかります)
+  * 給電後USBデバイスとして出現するまでにしばらく(数十秒)かかります）
   * Windowsの場合、ポートの番号(COMnのnの部分)は環境ごとに異なります
   ![OTG PORT Information on device manager](imgs/OTG_PORT_W10.png)
 * [**こちらのWeb Serial RPiZero TerminalページにPCのブラウザでアクセス**](https://chirimen.org/PiZeroWebSerialConsole/PiZeroWebSerialConsole.html)
  (以降、このウィンドを**ターミナルウィンド**と呼びます)
 * ```[Connect and Login PiZero]```ボタンを押す
   * 接続ダイアログが出現
-  ![connection dialog](imgs/SerialDialog.png)
+  ![connection dialog](imgs/SerialDialog.png){height=100}
   * 上で認識したデバイス（ポート番号）を接続する
 * コンソール(左側の黒い画面の最下部)に以下のコマンドプロンプトが表示されればステップ１完了です。引き続きステップ２に進んでください
   * ```pi@raspberrypi:~$```
+
+<hr class="page-wrap" />
 
 ### Note:
 
 * CHIRIMEN Raspberry Pi Zero版では[Raspberry Pi OS Lite](https://www.raspberrypi.com/software/operating-systems/)(Linux)をコマンドラインインターフェース(CLI)・シェル(bash)で操作します。
   * ただしこの講習で使うコマンドはごくわずかです。
     * **node** コマンド(後述)
-    * [CTRL+c](https://atmarkit.itmedia.co.jp/ait/articles/1708/04/news015_2.html)(CTRLキーとcを同時に押す:実行中のコマンドを終了させる))
+    * [CTRL+c](https://atmarkit.itmedia.co.jp/ait/articles/1708/04/news015_2.html)(CTRLキーとcを同時に押す:実行中のコマンドを終了させる)
   * その他のほとんどの操作（コマンド）は、ターミナルウィンドやそこから起動される別画面のGUIがコマンド操作を代行しています。図1.1のGUIを操作するとコンソールにコマンドが入力されるのがわかると思います。
 * [CLIとは](https://atmarkit.itmedia.co.jp/ait/articles/1602/19/news025.html)
 * [シェルとコマンドプロンプト](https://atmarkit.itmedia.co.jp/ait/articles/1603/02/news016.html)
@@ -112,7 +110,10 @@ PiZero自体はディスプレイやキーボードを接続する必要はあ�
   * これでRaspberry Pi Zeroが再起動をはじめます
 * WiFiウィンドを閉じ、ターミナルウィンドに戻る
 * ターミナルウィンドの```[Close Connection]```ボタンを押す
-* 30秒ほど待つ（Raspberry Pi Zeroが再起動します)
+* 30秒ほど待つ（Raspberry Pi Zeroが再起動します）
+
+<hr class="page-wrap" />
+
 * ```[Connect and Login PiZero]```ボタンを押し接続する
   * 接続ダイアログが出現⇒接続するとこれまで同様コマンドプロンプトが出現
 * ```[wifi panel]```ボタンを再び押す
@@ -144,11 +145,11 @@ PiZero とパーツを使って下の図の通りに配線します。
 
 
 **注意**
-* 間違ったピンに差し込むと場合によってはPiZeroが停止したり故障することもあります。（たとえば3.3V端子とGND端子を接続してしまうなど。)
+* 間違ったピンに差し込むと場合によってはPiZeroが停止したり故障することもあります。（たとえば3.3V端子とGND端子を接続してしまうなど。）
 * そのため、慣れるまでは一旦PiZeroをシャットダウン、USBケーブルも外し電源OFFにしてから配線すると安全です
    * シャットダウンコマンド：```sudo shutdown -h now```
 
-![PiZero配線図](./imgs/pizero_led.png)
+![PiZero配線図](./imgs/pizero_led.png){height=200}
 
 * 配線に使うケーブルの色に厳密な決まりはありませんが、一般的にGNDは黒(や黒っぽい色)、電源(VCC, +3.3V, +5V)には赤(や赤っぽい色)が用いられます。配線間違いを防ぐためにもなるべく合わせましょう。
 * 抵抗やLEDの足(リード線)は手で簡単に曲げられます。ブレッドボードに差し込めるように適当に成型してください。
@@ -160,7 +161,7 @@ PiZero とパーツを使って下の図の通りに配線します。
 
 Raspberry Pi に接続した LED を点滅させるプログラムを書きます。
 
-* ターミナルウィンドでRaspberry Pi Zeroに接続します。（ステップ１が完了した状態)
+* ターミナルウィンドでRaspberry Pi Zeroに接続します。（ステップ１が完了した状態）
 * myAppディレクトリに移動します。
   * コンソールの右側のファイルマネージャでmyApp⇒移動を選ぶ
   * このディレクトリが開発環境が設定されているディレクトリです。
@@ -229,7 +230,11 @@ GPIO, 電源, GND, I2C信号線などのピン配列を記載します。
 * 数字 + PD||PUと書かれているピンはGPIO端子(詳細は次章)
   * PD:プルダウン, PU:プルアップ
 * SCL, SDAはI2Cインターフェースのピンです(詳細は次章)
-![Raspberry Pi Pinout](https://chirimen.org/PiZeroWebSerialConsole/wallpaperS.png)
+
+
+<hr class="page-wrap" />
+
+  ![Raspberry Pi Pinout](https://chirimen.org/PiZeroWebSerialConsole/wallpaperS.png)
 
 <hr class="page-wrap" />
 
@@ -265,11 +270,10 @@ GPIO, 電源, GND, I2C信号線などのピン配列を記載します。
 ## GPIO出力
 
 GPIOの出力はLチカで実験済みですね。そこで今回はモーターを動かしてみましょう。MOSFETを使った回路図は以下のようになります。
-![GPIO Motor](./esm-examples/hello-real-world/PiZero_gpio0Motor.png)
+
+![GPIO Motor](./esm-examples/hello-real-world/PiZero_gpio0Motor.png){height=200}
 
 コードはLチカと全く同じです。
-
-<hr class="page-wrap" />
 
 ### 回路について
 * [MOSFETを使った大電力制御](../chirimenGeneric/#mosfet)
@@ -360,9 +364,7 @@ SHT30は温度に加えて湿度も測定できるI2C接続の多機能センサ
 * ID : sht30を探します
 * 回路図リンクを押すと回路図が出てきますので、回路を組みます。なお、接続は下の図のようになります。
 
-<hr class="page-wrap" />
-
-  ![SHT31 schematic](./esm-examples/sht30/schematic.png)
+  ![SHT31 schematic](./esm-examples/sht30/schematic.png){height=220}
 
 * ```[JS GET]```ボタンを押すと、開発ディレクトリ(```~/myApp```)に、サンプルコードが保存されます。
   * **main-sht30.js**というファイル名で保存されます。
@@ -370,7 +372,9 @@ SHT30は温度に加えて湿度も測定できるI2C接続の多機能センサ
     * ソースコードを見てみましょう
     * 今は編集不要ですが、サンプルをベースに応用プログラムを作るときには編集しましょう。
 
-### I2Cセンサー(SHT30)が認識さていることを確認する
+<hr class="page-wrap" />
+
+### I2Cセンサー(SHT30)が認識されていることを確認する
 
 * CHIRIMEN Panelの```[i2c detect]```ボタンを押すと、[SHT30のI2Cアドレス](https://strawberry-linux.com/pub/Sensirion_Humidity_SHT3x_DIS_Datasheet_V3_J.pdf)　0x**44**が表示されていればうまく接続されています。
   * [ic2 detectとは](../chirimenGeneric/#b-i2cdetect)
@@ -424,7 +428,9 @@ SHT30は温度に加えて湿度も測定できるI2C接続の多機能センサ
     * ソースコードを見てみましょう
     * 今は編集不要ですが、サンプルをベースに応用プログラムを作るときには編集しましょう。
 
-### I2Cセンサーが認識さていることを確認する
+<hr class="page-wrap" />
+
+### I2Cセンサーが認識されていることを確認する
 
 * CHIRIMEN Panelの```[i2c detect]```ボタンを押すと、[ADT7410のI2Cアドレス](https://akizukidenshi.com/download/ds/akizuki/AE-ADT7410_aw.pdf)　0x**48**が表示されていればうまく接続されています。
   * [ic2 detectとは](https://tutorial.chirimen.org/ty51822r3/i2cdetect)
@@ -464,7 +470,10 @@ Note: [モーター制御の回路](./#gpio-2)を組めば、そのまま遠隔�
 ### 配線する
 
 配線は最初のLチカそのままです。
-![PiZero配線図](./imgs/pizero_led.png)
+
+![PiZero配線図](./imgs/pizero_led.png){height=200}
+
+<hr class="page-wrap" />
 
 ### CHIRIMENデバイス側にコードを入れ、実行する
 
@@ -477,10 +486,8 @@ Note: [モーター制御の回路](./#gpio-2)を組めば、そのまま遠隔�
 * 実行する
   * ターミナルウィンドのコンソールのプロンプトが```pi@raspberrypi:~/myApp$```となっていることを確認
   * ターミナルウィンドのコンソールに、```node main-remote_gpio_led.js``` [ENTER] と入力して実行。
-![CHIRIMEN PiZero Console](imgs/RC_NODE.png)
+    ![CHIRIMEN PiZero Console](imgs/RC_NODE.png){height=70}
   * なお、実験が終わったら終了は CTRL+c です。
-
-<hr class="page-wrap" />
 
 ### PC側のコードを準備し、実行する
 * CHIRIMEN Panelに戻り、ID : **remote_gpio_led**の行にある、```CSB EDIT```リンクをクリックする。
@@ -488,9 +495,7 @@ Note: [モーター制御の回路](./#gpio-2)を組めば、そのまま遠隔�
     * 詳しい解説：[CodeSandbox ガイド](https://csb-jp.github.io/)
   * また、右側（もしくは右下）のフレームにはLEDを遠隔コントロールするためのwebAppが既に実行されています。
   * webAppを使ってLEDが制御できることを確かめてみましょう。
-
-  ![Code Sandbox Image](imgs/RC_CSB.svg)
-
+![Code Sandbox Image](imgs/RC_CSB.svg){height=260}
 
 <hr class="page-wrap" />
 
