@@ -65,7 +65,7 @@ PiZero自体はディスプレイやキーボードを接続する必要はあ�
   ![pi zero otg port](https://chirimen.org/PiZeroWebSerialConsole/imgs/PiZeroW_OTG.JPG)
   * PCからのUSB給電でRaspberry Pi Zeroが起動します。
 * PCでRaspberry Pi Zeroが認識されたことを確認します ([Windows10のデバイスマネージャ](https://askpc.panasonic.co.jp/beginner/guide/ten07/7013.html)の例) 
-  * 給電後USBデバイスとして出現するまでにしばらく(数十秒)かかります)
+  * 給電後USBデバイスとして出現するまでにしばらく(数十秒)かかります
   * Windowsの場合、ポートの番号(COMnのnの部分)は環境ごとに異なります
   ![OTG PORT Information on device manager](imgs/OTG_PORT_W10.png)
 * [**こちらのWeb Serial RPiZero TerminalページにPCのブラウザでアクセス**](https://chirimen.org/PiZeroWebSerialConsole/PiZeroWebSerialConsole.html)
@@ -82,7 +82,7 @@ PiZero自体はディスプレイやキーボードを接続する必要はあ�
 * CHIRIMEN Raspberry Pi Zero版では[Raspberry Pi OS Lite](https://www.raspberrypi.com/software/operating-systems/)(Linux)をコマンドラインインターフェース(CLI)・シェル(bash)で操作します。
   * ただしこの講習で使うコマンドはごくわずかです。
     * **node** コマンド(後述)
-    * [CTRL+c](https://atmarkit.itmedia.co.jp/ait/articles/1708/04/news015_2.html)(CTRLキーとcを同時に押す:実行中のコマンドを終了させる))
+    * [CTRL+c](https://atmarkit.itmedia.co.jp/ait/articles/1708/04/news015_2.html)（CTRLキーとcを同時に押す:実行中のコマンドを終了させる）
   * その他のほとんどの操作（コマンド）は、ターミナルウィンドやそこから起動される別画面のGUIがコマンド操作を代行しています。図1.1のGUIを操作するとコンソールにコマンドが入力されるのがわかると思います。
 * [CLIとは](https://atmarkit.itmedia.co.jp/ait/articles/1602/19/news025.html)
 * [シェルとコマンドプロンプト](https://atmarkit.itmedia.co.jp/ait/articles/1603/02/news016.html)
@@ -105,7 +105,7 @@ PiZero自体はディスプレイやキーボードを接続する必要はあ�
   * これでRaspberry Pi Zeroが再起動をはじめます
 * WiFiウィンドを閉じ、ターミナルウィンドに戻る
 * ターミナルウィンドの```[Close Connection]```ボタンを押す
-* 30秒ほど待つ（Raspberry Pi Zeroが再起動します)
+* 30秒ほど待つ（Raspberry Pi Zeroが再起動します）
   * ---
 * ```[Connect and Login PiZero]```ボタンを押し接続する
   * 接続ダイアログが出現⇒接続するとこれまで同様コマンドプロンプトが出現
@@ -148,7 +148,7 @@ PiZero とパーツを使って下の図の通りに配線します。
 
 
 **注意**
-* 間違ったピンに差し込むと場合によってはPiZeroが停止したり故障することもあります。（たとえば3.3V端子とGND端子を接続してしまうなど。)
+* 間違ったピンに差し込むと場合によってはPiZeroが停止したり故障することもあります。（たとえば3.3V端子とGND端子を接続してしまうなど。）
 * そのため、慣れるまでは一旦PiZeroをシャットダウン、USBケーブルも外し電源OFFにしてから配線すると安全です
    * シャットダウンコマンド：```sudo shutdown -h now```
 
@@ -162,7 +162,7 @@ PiZero とパーツを使って下の図の通りに配線します。
 
 Raspberry Pi に接続した LED を点滅させるプログラムを書きます。
 
-* ターミナルウィンドでRaspberry Pi Zeroに接続します。（ステップ１が完了した状態)
+* ターミナルウィンドでRaspberry Pi Zeroに接続します。（ステップ１が完了した状態）
 * myAppディレクトリに移動します。
   * コンソールの右側のファイルマネージャでmyApp⇒移動を選ぶ
   * このディレクトリが開発環境が設定されているディレクトリです。
@@ -358,7 +358,7 @@ SHT30は温度に加えて湿度も測定できるI2C接続の多機能センサ
     * ソースコードを見てみましょう
     * 今は編集不要ですが、サンプルをベースに応用プログラムを作るときには編集しましょう。
 
-### I2Cセンサー(SHT30)が認識さていることを確認する
+### I2Cセンサー(SHT30)が認識されていることを確認する
 
 * CHIRIMEN Panelの```[i2c detect]```ボタンを押すと、[SHT30のI2Cアドレス](https://strawberry-linux.com/pub/Sensirion_Humidity_SHT3x_DIS_Datasheet_V3_J.pdf)　0x**44**が表示されていればうまく接続されています。
   * [ic2 detectとは](../chirimenGeneric/#b-i2cdetect)
@@ -411,7 +411,7 @@ SHT30は温度に加えて湿度も測定できるI2C接続の多機能センサ
     * ソースコードを見てみましょう
     * 今は編集不要ですが、サンプルをベースに応用プログラムを作るときには編集しましょう。
 
-### I2Cセンサーが認識さていることを確認する
+### I2Cセンサーが認識されていることを確認する
 
 * CHIRIMEN Panelの```[i2c detect]```ボタンを押すと、[ADT7410のI2Cアドレス](https://akizukidenshi.com/download/ds/akizuki/AE-ADT7410_aw.pdf)　0x**48**が表示されていればうまく接続されています。
   * [ic2 detectとは](https://tutorial.chirimen.org/ty51822r3/i2cdetect)
@@ -440,7 +440,7 @@ SHT30は温度に加えて湿度も測定できるI2C接続の多機能センサ
 ## 遠隔LEDコントロール
 
 ![system configuration](imgs/IoTsystemConf.png)
-IoTは、制御されるデバイス（上図ではCHIRIMEN PiZeroW)と、利用者端末（上図ではWebApp PC-side）に加えて、これらの間でデータを中継するサーバ（クラウド）が必要になります。
+IoTは、制御されるデバイス（上図ではCHIRIMEN PiZeroW）と、利用者端末（上図ではWebApp PC-side）に加えて、これらの間でデータを中継するサーバ（クラウド）が必要になります。
 今回はWeb標準技術であるWebSocketプロトコルを中継するサーバを用いてLEDを備えたCHIRIMENデバイスとスマホやPCのWebAppを繋いだIoTシステムを作ります。
 
 Note: [モーター制御の回路](./#gpio-2)を組めば、そのまま遠隔モーターコントロールができます
@@ -501,7 +501,7 @@ import {RelayServer} from "./RelayServer.js";
 
 * [relayServer.js](../chirimenGeneric/#relayserverjs)を使い、UIを通してユーザからの操作指示を送信
   * [初期化](../chirimenGeneric/#section-16)
-  * [送信処理](../chirimenGeneric/#section-17)～(UI(ボタン)に設置したコールバック関数をもとに送信
+  * [送信処理](../chirimenGeneric/#section-17)～（UI(ボタン)に設置したコールバック関数をもとに送信
 
 
 #### 自分専用チャンネルで制御
