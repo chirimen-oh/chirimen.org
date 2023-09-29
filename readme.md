@@ -2,7 +2,7 @@
 
 ## CHIRIMEN とは
 
-CHIRIMEN とは、Web ブラウザや Node.js の JavaScript からハードウェア制御が可能なプロトタイピング環境です。デジタルのソフトとフィジカルなハードを連携するデバイスを JavaScript だけで容易に実現できます。例えば L チカコードはこの通りです:
+CHIRIMEN とは、Web ブラウザや Node.js の JavaScript からハードウェア制御が可能なオープンソースのプロトタイピング環境です。デジタルのソフトとフィジカルなハードを連携するデバイスを JavaScript だけで容易に実現できます。例えば L チカコードはこの通りです:
 
 ```javascript
 window.onload = async function() {
