@@ -24,3 +24,15 @@ tutoril for chirimen lite & raspberry pi zero
   ```
   $ npm run preview
   ```
+
+## 目次の生成
+
+```
+$ npm run generate-toc
+```
+
+toc.md の最初に index.md の表紙行が出るので手動で削除する
+
+### ページ番号が ?? になるとき
+
+scripts/gfenerate-toc.js の replaceAll で変換処理を追加する

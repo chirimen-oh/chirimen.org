@@ -1,9 +1,3 @@
----
-layout: tutorial
-lang: ja
-permalink: /chirimenGeneric/
----
-
 # CHIRIMEN
 ![CHIRIMEN_pf](CHIRIMEN_pf.png)
 CHIRIMEN とは、Webの標準的な技術・ブラウザやNode.js等で実行できるJavaScript で電子パーツを制御し、[フィジカルコンピューティング](https://www.iizuka.kyutech.ac.jp/faculty/physicalcomputing)や[IoTシステム](#iot)を開発可能なプロトタイピング環境です。
@@ -46,8 +40,9 @@ CHIRIMEN とは、Webの標準的な技術・ブラウザやNode.js等で実行�
 LED の順方向電圧は色により異なっており、赤色 LED は 1.8V 程度、青色 LED は 3.1V 程度とされています。
 
 <hr class="page-wrap" />
- 
+
 ## ブレッドボード
+
 - [ブレッドボードの使い方](https://shop.sunhayato.co.jp/blogs/problem-solving/breadboard) (サンハヤト社)
 
 | 外観                            | 内部の接続状態                            |
@@ -154,8 +149,11 @@ CHIRIMEN環境のために必要なライブラリや、[I2Cデバイスのド�
 
 ## 開発環境
 ### GitHub
+
 * [予備知識・資料集を参照ください](../reference#github-)
+
 ### CodeSandbox
+
 * [予備知識・資料集を参照ください](../reference#github-)
 * ![CodeSandbox画面](../pizero/imgs/RC_CSB.svg)
 

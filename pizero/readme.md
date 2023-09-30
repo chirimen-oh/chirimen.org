@@ -1,9 +1,3 @@
----
-layout: tutorial
-lang: ja
-permalink: /pizero/
----
-
 # 概要
 
 CHIRIMEN Raspberry Pi Zero版 を用いたIoT実習資料です。
@@ -57,7 +51,7 @@ PiZero自体はディスプレイやキーボードを接続する必要はあ�
 
 <hr class="page-wrap" />
 
-## ステップ１（[ターミナル接続](https://chirimen.org/PiZeroWebSerialConsole/PiZeroWebSerialConsole.html) ）
+## ステップ１（ターミナル接続）
 
 * [Raspberry Pi OS LiteをUSB Serialで使用可能にしたイメージ](https://github.com/kou029w/chirimen-os/releases/)を書き込んだmicroSDカードをRaspberry Pi Zeroに差し込みます。
 * PCのUSBとRaspberry Pi ZeroのUSB OTGポートをUSBケーブルでつなぎます
@@ -132,7 +126,7 @@ PiZero自体はディスプレイやキーボードを接続する必要はあ�
 
 <hr class="page-wrap" />
 
-# Hello Real World（[Lチカ](../chirimenGeneric/#l-)を実行する）
+# Hello Real World（Lチカを実行する）
 
 ## 配線
 
@@ -466,8 +460,8 @@ IoTは、制御されるデバイス（上図ではCHIRIMEN PiZeroW)と、利用
 
 Note: [モーター制御の回路](./#gpio-2)を組めば、そのまま遠隔モーターコントロールができます
 
-### [IoT](../chirimenGeneric/#iot)
-### [WebSoeketとRelayServer](../chirimenGeneric/#websocketpubsub-services)
+- [IoT](../chirimenGeneric/#iot)
+- [WebSoeketとRelayServer](../chirimenGeneric/#websocketpubsub-services)
 
 ### 配線する
 

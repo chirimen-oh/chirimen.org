@@ -152,6 +152,7 @@ nav[role='doc-toc'] li a::after {
   align-self: flex-end;
   flex: none;
   order: 2;
+  float: right;
 }
 
 /*# sourceMappingURL=theme.css.map */

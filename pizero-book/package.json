@@ -5,10 +5,12 @@
   "author": "CHIRIMEN Open Hardware Community <chirimen.open.hardware@gmail.com>",
   "scripts": {
     "build": "vivliostyle build",
-    "preview": "vivliostyle preview"
+    "preview": "vivliostyle preview",
+    "generate-toc": "node scripts/generate-toc.js"
   },
   "dependencies": {
-    "@vivliostyle/cli": "latest"
+    "@vivliostyle/cli": "latest",
+    "marked": "^4.3.0"
   },
   "license": "MPL-2.0",
   "private": true
