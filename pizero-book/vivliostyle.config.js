@@ -14,6 +14,7 @@ module.exports = {
     // 'toc.md',
     '../pizero/readme.md', // `title` is automatically guessed from the file (frontmatter > first heading).
     '../chirimenGeneric/readme.md',
+    '../pizero/parts-book2.md',
     // {
     //   path: 'epigraph.md',
     //   title: 'Epigraph', // title can be overwritten (entry > file),
