@@ -49,14 +49,18 @@ $ ./build.sh
 
 ```sh
 chirimen.org/pizero-book 
-├── build.sh # ビルドシェル
-├── docs # 各種ページ md
-├── images # 各種ページ素材
+│   # ビルドシェル
+├── build.sh
+│   # 各種ページ md
+├── docs
+│   # 各種ページ素材
+├── images
 ├── package-lock.json
 ├── package.json
 ├── publication.json
 ├── scripts
-│   └── generate-toc.js # 目次生成シェル
+│   │   # 目次生成シェル
+│   └── generate-toc.js
 ├── themes
 │   ├── package-lock.json
 │   ├── package.json
@@ -64,7 +68,9 @@ chirimen.org/pizero-book
 │       └── @vivliostyle
 │           ├── theme-base
 │           └── theme-techbook
-│               ├── theme.css # ドキュメント用スタイル
+│               │   # ドキュメント用css
+│               ├── theme.css
 │               └── vivliostyle.config.js
-└── vivliostyle.config.js # ドキュメント設定
+│   # ドキュメント設定 js
+└── vivliostyle.config.js
 ```
