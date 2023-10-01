@@ -23,7 +23,7 @@
 :root {
   --vs-font-family: 'Neue Frutiger World', 'Verdana', 'Hiragino Sans',
     sans-serif;
-  --vs-font-size-on-print: 75%;
+  --vs-font-size-on-print: 50%;
   --vs-line-height: 1.7;
   --vs-widows-orphans: 3;
 

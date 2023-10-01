@@ -2,7 +2,7 @@ module.exports = {
   title: 'CHIRIMEN Raspberry Pi Zero W チュートリアル', // populated into `publication.json`, default to `title` of the first entry or `name` in `package.json`.
   author: 'CHIRIMEN Open Hardware Community <chirimen.open.hardware@gmail.com>', // default to `author` in `package.json` or undefined.
   language: 'ja', // default to undefined.
-  size: 'A4', // paper size.
+  size: 'B5', // paper size.
   theme: '@vivliostyle/theme-techbook@^1.0.0', // .css or local dir or npm package. default to undefined.
   entry: [
     'index.md',
