@@ -42,7 +42,7 @@ CHIRIMEN Raspberry Pi Zero版 を用いたIoT実習資料です。
   * [ADT7410モジュール](https://akizukidenshi.com/catalog/g/gM-06675/)　もしくは [SHT30モジュール](https://www.amazon.co.jp/dp/B083NHJSL9/)
   * ジャンパーワイヤ オス-メス 2本
 
-![Parts Images](imgs/PartsList2.svg){height=360}
+![Parts Images](../../pizero/imgs/PartsList2.svg){height=360}
 
 PiZero自体はディスプレイやキーボードを接続する必要はありません。
 
@@ -61,12 +61,12 @@ PiZero自体はディスプレイやキーボードを接続する必要はあ�
 * PCでRaspberry Pi Zeroが認識されたことを確認します ([Windows10のデバイスマネージャ](https://askpc.panasonic.co.jp/beginner/guide/ten07/7013.html)の例) 
   * 給電後USBデバイスとして出現するまでにしばらく(数十秒)かかります）
   * Windowsの場合、ポートの番号(COMnのnの部分)は環境ごとに異なります
-  ![OTG PORT Information on device manager](imgs/OTG_PORT_W10.png)
+  ![OTG PORT Information on device manager](../../pizero/imgs/OTG_PORT_W10.png)
 * [**こちらのWeb Serial RPiZero TerminalページにPCのブラウザでアクセス**](https://chirimen.org/PiZeroWebSerialConsole/PiZeroWebSerialConsole.html)
  (以降、このウィンドを**ターミナルウィンド**と呼びます)
 * ```[Connect and Login PiZero]```ボタンを押す
   * 接続ダイアログが出現
-    ![connection dialog](imgs/SerialDialog.png){height=155}
+    ![connection dialog](../../pizero/imgs/SerialDialog.png){height=155}
   * 上で認識したデバイス（ポート番号）を接続する
 * コンソール(左側の黒い画面の最下部)に以下のコマンドプロンプトが表示されればステップ１完了です。引き続きステップ２に進んでください
   * ```pi@raspberrypi:~$```
@@ -86,7 +86,7 @@ PiZero自体はディスプレイやキーボードを接続する必要はあ�
   * たとえば ```ls -al``` とタイプするとおコンソール画面にディレクトリ内のファイルのリストが表示されます。
 * ターミナルウィンドの概要 (図1.1)
 
-  ![ターミナルウィンドの説明](imgs/termWin.svg)
+  ![ターミナルウィンドの説明](../../pizero/imgs/termWin.svg)
 
 <hr class="page-wrap" />
 
@@ -95,7 +95,7 @@ PiZero自体はディスプレイやキーボードを接続する必要はあ�
 * ターミナルウィンドの```[wifi panel]```ボタンを押す
   * ウィンドが開き、WiFiアクセスポイントがスキャンされます。ステルスでないものはリストアップされているので、以降の作業の参考にしてください。
   * Raspberry Pi Zero Wは2.4GHz帯のWiFiにのみ対応しています。
-    ![WiFi Setting](./imgs/WiFiSetting.png)
+    ![WiFi Setting](../../pizero/imgs/WiFiSetting.png)
 * ウィンド下部に、会場(もしくは開発場所)で提供されているWiFiアクセス情報を入力する (いずれも大文字小文字の区別があるので注意してください。)
   * SSID欄
   * PASS PHRASE欄 
@@ -114,7 +114,7 @@ PiZero自体はディスプレイやキーボードを接続する必要はあ�
 * ```[wifi Info]```ボタンを押す
   * 表示された情報をチェックします
   * wlan0: inet xxx.xxx.xxx.xxx　(xxxは数字)のようにIPアドレスが設定されていれば接続成功しています。
-![WiFi Setting_IPaddress](./imgs/WiFiSettingIPaddress.png)
+![WiFi Setting_IPaddress](../../pizero/imgs/WiFiSettingIPaddress.png)
   <!--  * あとでping chirimen.org OK も入れよう。-->
   * もしもあなたがsshやscp (WinSCP, teraterm等)などのツールに慣れている場合、上記のアドレスでssh接続できます
     * PORT: 22
@@ -143,7 +143,7 @@ PiZero とパーツを使って下の図の通りに配線します。
 * そのため、慣れるまでは一旦PiZeroをシャットダウン、USBケーブルも外し電源OFFにしてから配線すると安全です
    * シャットダウンコマンド：```sudo shutdown -h now```
 
-![PiZero配線図](./imgs/pizero_led.png){height=200}
+![PiZero配線図](../../pizero/imgs/pizero_led.png){height=200}
 
 * 配線に使うケーブルの色に厳密な決まりはありませんが、一般的にGNDは黒(や黒っぽい色)、電源(VCC, +3.3V, +5V)には赤(や赤っぽい色)が用いられます。配線間違いを防ぐためにもなるべく合わせましょう。
 * 抵抗やLEDの足(リード線)は手で簡単に曲げられます。ブレッドボードに差し込めるように適当に成型してください。
@@ -417,7 +417,7 @@ SHT30は温度に加えて湿度も測定できるI2C接続の多機能センサ
 * 回路図リンクを押すと回路図が出てきますので、回路を組みます。なお、接続は下の図のようになります。
   * [センサーの極性に注意！](https://tutorial.chirimen.org/raspi/hellorealworld#section-2)
 
-![PiZero温度センサー図](./imgs/pizero_temp.png)
+![PiZero温度センサー図](../../pizero/imgs/pizero_temp.png)
 * ```[JS GET]```ボタンを押すと、開発ディレクトリ(```~/myApp```)に、サンプルコードが保存されます。
   * **main-adt7410.js**というファイル名で保存されます。
   * Note: ターミナルウィンドの右側のファイルマネージャでmain-adt7410.js⇒編集 を選ぶと、エディタで編集できます。
@@ -454,7 +454,7 @@ SHT30は温度に加えて湿度も測定できるI2C接続の多機能センサ
 
 ## 遠隔LEDコントロール
 
-![system configuration](imgs/IoTsystemConf.png)
+![system configuration](../../pizero/imgs/IoTsystemConf.png)
 IoTは、制御されるデバイス（上図ではCHIRIMEN PiZeroW)と、利用者端末（上図ではWebApp PC-side）に加えて、これらの間でデータを中継するサーバ（クラウド）が必要になります。
 今回はWeb標準技術であるWebSocketプロトコルを中継するサーバを用いてLEDを備えたCHIRIMENデバイスとスマホやPCのWebAppを繋いだIoTシステムを作ります。
 
@@ -467,7 +467,7 @@ Note: [モーター制御の回路](./#gpio-2)を組めば、そのまま遠隔�
 
 配線は最初のLチカそのままです。
 
-![PiZero配線図](./imgs/pizero_led.png){height=200}
+![PiZero配線図](../../pizero/imgs/pizero_led.png){height=200}
 
 <hr class="page-wrap" />
 
@@ -482,7 +482,7 @@ Note: [モーター制御の回路](./#gpio-2)を組めば、そのまま遠隔�
 * 実行する
   * ターミナルウィンドのコンソールのプロンプトが```pi@raspberrypi:~/myApp$```となっていることを確認
   * ターミナルウィンドのコンソールに、```node main-remote_gpio_led.js``` [ENTER] と入力して実行。
-    ![CHIRIMEN PiZero Console](imgs/RC_NODE.png){height=70}
+    ![CHIRIMEN PiZero Console](../../pizero/imgs/RC_NODE.png){height=70}
   * なお、実験が終わったら終了は CTRL+c です。
 
 ### PC側のコードを準備し、実行する
@@ -491,7 +491,7 @@ Note: [モーター制御の回路](./#gpio-2)を組めば、そのまま遠隔�
     * 詳しい解説：[CodeSandbox ガイド](https://csb-jp.github.io/)
   * また、右側（もしくは右下）のフレームにはLEDを遠隔コントロールするためのwebAppが既に実行されています。
   * webAppを使ってLEDが制御できることを確かめてみましょう。
-![Code Sandbox Image](imgs/RC_CSB.svg){height=260}
+![Code Sandbox Image](../../pizero/imgs/RC_CSB.svg){height=260}
 
 <hr class="page-wrap" />
 

@@ -10,14 +10,14 @@
     <section class="level1" aria-labelledby="chirimen">
       <h1 id="chirimen">CHIRIMEN</h1>
       <p>
-        <img src="CHIRIMEN_pf.png" alt="CHIRIMEN_pf">
+        <img src="../../chirimenGeneric/CHIRIMEN_pf.png" alt="CHIRIMEN_pf">
         CHIRIMEN とは、Webの標準的な技術・ブラウザやNode.js等で実行できるJavaScript で電子パーツを制御し、<a href="https://www.iizuka.kyutech.ac.jp/faculty/physicalcomputing">フィジカルコンピューティング</a>や<a href="#iot">IoTシステム</a>を開発可能なプロトタイピング環境です。
       </p>
       <p>デジタルのソフトとフィジカルなハードをWWW上で連携するデバイスを Web標準技術、JavaScript だけで容易に実現できます。</p>
       <section class="level2" aria-labelledby="chirimenについて">
         <h2 id="chirimenについて">CHIRIMENについて</h2>
         <ul>
-          <li><a href="../../about.md">こちらを参照ください</a></li>
+          <li><a href="../../../about.md">こちらを参照ください</a></li>
         </ul>
       </section>
       <section class="level2" aria-labelledby="chirimenのメリット">
@@ -77,10 +77,10 @@
           <tbody>
             <tr>
               <td>
-                <img src="../microbit/imgs/breadboardImg.jpg" alt="外観">
+                <img src="../../microbit/imgs/breadboardImg.jpg" alt="外観">
               </td>
               <td>
-                <img src="../microbit/imgs/breadboardSch.png" alt="内部の接続状態">
+                <img src="../../microbit/imgs/breadboardSch.png" alt="内部の接続状態">
               </td>
             </tr>
           </tbody>
@@ -122,13 +122,13 @@
         <p><a href="https://ja.wikipedia.org/wiki/MOSFET">MOSFET</a> とは<a href="https://ja.wikipedia.org/wiki/%E9%9B%BB%E7%95%8C%E5%8A%B9%E6%9E%9C%E3%83%88%E3%83%A9%E3%83%B3%E3%82%B8%E3%82%B9%E3%82%BF">電界効果トランジスタ (FET)</a> の一種で、主にスイッチング素子として利用される (小さな電圧の変更で大きな電流・電圧のオンオフを切り替える) 部品です。</p>
         <p>今回は Nch MOSFET「<a href="http://akizukidenshi.com/catalog/g/gI-07597/">2SK4017</a>」を利用します。</p>
         <figure>
-          <img src="../raspi/imgs/section1/mosfet.png" alt="MOSFET">
+          <img src="../../raspi/imgs/section1/mosfet.png" alt="MOSFET">
           <figcaption aria-hidden="true">MOSFET</figcaption>
         </figure>
         <hr class="page-wrap">
         <p>プルダウンの GPIO ポートを使った典型的な回路は以下のようになります。</p>
         <figure>
-          <img src="../raspi/imgs/section1/DC3motor-schematic.svg" alt="NCh MOSFET schematic">
+          <img src="../../raspi/imgs/section1/DC3motor-schematic.svg" alt="NCh MOSFET schematic">
           <figcaption aria-hidden="true">NCh MOSFET schematic</figcaption>
         </figure>
         <section class="level3" aria-labelledby="電源">
@@ -231,7 +231,7 @@
           <ul>
             <li><a href="../reference#github-">予備知識・資料集を参照ください</a></li>
             <li>
-              <img src="../pizero/imgs/RC_CSB.svg" alt="CodeSandbox画面">
+              <img src="../../pizero/imgs/RC_CSB.svg" alt="CodeSandbox画面">
             </li>
           </ul>
           <hr class="page-wrap">
@@ -252,10 +252,7 @@
           <figure>
             <img src="https://chirimen.org/PiZeroWebSerialConsole/wallpaperS.png" alt="Raspi PIN配置図">
             <figcaption aria-hidden="true">Raspi PIN配置図</figcaption>
-          </figure><!--
-          ![Raspi PIN配置図](../raspi/imgs/section0/Raspi3PIN.png)
-          {% cloudinary ../raspi/imgs/section0/Raspi3PIN.png alt="Raspi PIN配置図" %}
-          -->
+          </figure>
         </section>
         <section class="level3" aria-labelledby="raspverry-pi-zeroのピン配置図">
           <h3 id="raspverry-pi-zeroのピン配置図">Raspverry Pi Zeroのピン配置図</h3>
@@ -286,7 +283,7 @@
           今回の JavaScript ファイルで、最初に呼び出されるコードは <code>await navigator.requestGPIOAccess()</code> です。
           ここで先ほど出て来た <a href="http://browserobo.github.io/WebGPIO">Web GPIO API</a> を使い、<code>gpioAccess</code> という GPIO にアクセスするためのインタフェースを取得しています。
         </p>
-        <script src="https://emgithub.com/embed.js?target=https%3A%2F%2Fgithub.com%2Fchirimen-oh%2Fchirimen%2Fblob%2F5c520c21820304901553f2adf22da1012f54722d%2Fgc%2Fgpio%2FLEDblink%2Fmain.js%23L4-L4&#x26;style=github&#x26;showBorder=on&#x26;showFileMeta=on"></script>
+        <pre class="language-js"><code class="language-js"><span class="token keyword">const</span> gpioAccess <span class="token operator">=</span> <span class="token keyword control-flow">await</span> <span class="token dom variable">navigator</span><span class="token punctuation">.</span><span class="token method function property-access">requestGPIOAccess</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// GPIO を操作する</span></code></pre>
         <p><strong>関数の呼び出しに <code>await</code> 接頭詞を付けることに注意してください。</strong> この関数は非同期関数で、その処理の完了を待ってから次の処理をする必要があります。また、<code>await</code> 接頭詞を使うコードを含むために、それを含む関数 <code>main()</code> は async 接頭詞付きの非同期関数として定義する必要があります。</p>
       </section>
       <section class="level2" aria-labelledby="gpioport-の出力処理">
@@ -295,11 +292,18 @@
           GPIOの<strong>出力</strong>機能を使います。
           <strong><code>const port = gpioAccess.ports.get(26)</code> で GPIO の 26 番ポートにアクセスするためのオブジェクト</strong> を取得しています。
         </p>
-        <script src="https://emgithub.com/embed.js?target=https%3A%2F%2Fgithub.com%2Fchirimen-oh%2Fchirimen%2Fblob%2F5c520c21820304901553f2adf22da1012f54722d%2Fgc%2Fgpio%2FLEDblink%2Fmain.js%23L5-L5&#x26;style=github&#x26;showBorder=on&#x26;showFileMeta=on"></script>
+        <pre class="language-js"><code class="language-js"><span class="token keyword">const</span> port <span class="token operator">=</span> gpioAccess<span class="token punctuation">.</span><span class="token property-access">ports</span><span class="token punctuation">.</span><span class="token method function property-access">get</span><span class="token punctuation">(</span><span class="token number">26</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 26 番ポートを操作する</span></code></pre>
         <p>続いて、 <strong><code>await port.export("out")</code> で GPIO の 26 番を「出力設定」にしています</strong>。これにより LED への電圧の切り替えが可能になっています。</p>
-        <script src="https://emgithub.com/embed.js?target=https%3A%2F%2Fgithub.com%2Fchirimen-oh%2Fchirimen%2Fblob%2F5c520c21820304901553f2adf22da1012f54722d%2Fgc%2Fgpio%2FLEDblink%2Fmain.js%23L7-L7&#x26;style=github&#x26;showBorder=on&#x26;showFileMeta=on"></script>
+        <pre class="language-js"><code class="language-js"><span class="token keyword control-flow">await</span> port<span class="token punctuation">.</span><span class="token keyword module">export</span><span class="token punctuation">(</span><span class="token string">"out"</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// ポートを出力モードに設定</span></code></pre>
         <p>最後に、無限ループのなかで <code>await sleep(1000)</code> によって 1000 ms (1 秒) 待機さ 1 秒ごとに <code>await port.write(1)</code> と <code>await port.write(0)</code> を交互に呼び出し、GPIO 26 番に加える電圧を 3.3V → 0V → 3.3V → 0V → … と繰り返しています。</p>
-        <script src="https://emgithub.com/embed.js?target=https%3A%2F%2Fgithub.com%2Fchirimen-oh%2Fchirimen%2Fblob%2F5c520c21820304901553f2adf22da1012f54722d%2Fgc%2Fgpio%2FLEDblink%2Fmain.js%23L9-L17&#x26;style=github&#x26;showBorder=on&#x26;showFileMeta=on"></script>
+        <pre class="language-js"><code class="language-js">  <span class="token comment">// 無限ループ</span>
+  <span class="token keyword control-flow">while</span> <span class="token punctuation">(</span><span class="token boolean">true</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment">// 1秒間隔で LED が点滅します。</span>
+    <span class="token keyword control-flow">await</span> port<span class="token punctuation">.</span><span class="token method function property-access">write</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// LED を点灯</span>
+    <span class="token keyword control-flow">await</span> <span class="token function">sleep</span><span class="token punctuation">(</span><span class="token number">1000</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 1000 ms (1秒) 待機</span>
+    <span class="token keyword control-flow">await</span> port<span class="token punctuation">.</span><span class="token method function property-access">write</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// LED を消灯</span>
+    <span class="token keyword control-flow">await</span> <span class="token function">sleep</span><span class="token punctuation">(</span><span class="token number">1000</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 1000 ms (1秒) 待機</span>
+  <span class="token punctuation">}</span></code></pre>
         <p>
           LED は一定以上の電圧を加え、電流を流すと点灯する性質を持っています。
           つまり、3.3 V を加えたとき点灯し、0 V を加えたとき消灯、これを繰り返すことになります。
@@ -320,8 +324,39 @@
         <section class="level3" aria-labelledby="onchange編">
           <h3 id="onchange編">onchange編</h3>
           <p>GPIOポートの値が変化するたびに、指定した関数が実行されます。</p>
-          <script src="https://emgithub.com/embed.js?target=https%3A%2F%2Fgithub.com%2Fchirimen-oh%2Ftutorials%2Ftree%2F163ce18afdddd4d55c251b6b8b8d4181d3aa1695%2Fraspi%2Fexamples%2Fsection1%2Fs1_5%2Fmain.js&#x26;style=github&#x26;showBorder=on&#x26;showFileMeta=on"></script>
+          <pre class="language-js"><code class="language-js"><span class="token keyword">async</span> <span class="token keyword">function</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">const</span> button <span class="token operator">=</span> <span class="token dom variable">document</span><span class="token punctuation">.</span><span class="token method function property-access">getElementById</span><span class="token punctuation">(</span><span class="token string">"button"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token keyword">const</span> ledView <span class="token operator">=</span> <span class="token dom variable">document</span><span class="token punctuation">.</span><span class="token method function property-access">getElementById</span><span class="token punctuation">(</span><span class="token string">"ledView"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token keyword">const</span> gpioAccess <span class="token operator">=</span> <span class="token keyword control-flow">await</span> <span class="token dom variable">navigator</span><span class="token punctuation">.</span><span class="token method function property-access">requestGPIOAccess</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token keyword">const</span> ledPort <span class="token operator">=</span> gpioAccess<span class="token punctuation">.</span><span class="token property-access">ports</span><span class="token punctuation">.</span><span class="token method function property-access">get</span><span class="token punctuation">(</span><span class="token number">26</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// LED の GPIO ポート番号</span>
+  <span class="token keyword control-flow">await</span> ledPort<span class="token punctuation">.</span><span class="token keyword module">export</span><span class="token punctuation">(</span><span class="token string">"out"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token keyword">const</span> switchPort <span class="token operator">=</span> gpioAccess<span class="token punctuation">.</span><span class="token property-access">ports</span><span class="token punctuation">.</span><span class="token method function property-access">get</span><span class="token punctuation">(</span><span class="token number">5</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// タクトスイッチの GPIO ポート番号</span>
+  <span class="token keyword control-flow">await</span> switchPort<span class="token punctuation">.</span><span class="token keyword module">export</span><span class="token punctuation">(</span><span class="token string">"in"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+  <span class="token keyword">async</span> <span class="token keyword">function</span> <span class="token function">light</span><span class="token punctuation">(</span><span class="token parameter">lit</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword control-flow">await</span> ledPort<span class="token punctuation">.</span><span class="token method function property-access">write</span><span class="token punctuation">(</span>lit <span class="token operator">?</span> <span class="token number">1</span> <span class="token operator">:</span> <span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">const</span> color <span class="token operator">=</span> lit <span class="token operator">?</span> <span class="token string">"red"</span> <span class="token operator">:</span> <span class="token string">"black"</span><span class="token punctuation">;</span>
+    ledView<span class="token punctuation">.</span><span class="token property-access">style</span><span class="token punctuation">.</span><span class="token property-access">backgroundColor</span> <span class="token operator">=</span> color<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+
+  button<span class="token punctuation">.</span><span class="token method-variable function-variable method function property-access">onmousedown</span> <span class="token operator">=</span> <span class="token keyword">async</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword control-flow">await</span> <span class="token function">light</span><span class="token punctuation">(</span><span class="token boolean">true</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+  button<span class="token punctuation">.</span><span class="token method-variable function-variable method function property-access">onmouseup</span> <span class="token operator">=</span> <span class="token keyword">async</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword control-flow">await</span> <span class="token function">light</span><span class="token punctuation">(</span><span class="token boolean">false</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+  <span class="token comment">// Pull-up なので押したとき 0、それ以外では 1 が得られる</span>
+  switchPort<span class="token punctuation">.</span><span class="token method-variable function-variable method function property-access">onchange</span> <span class="token operator">=</span> <span class="token keyword">async</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">state</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">const</span> lit <span class="token operator">=</span> state <span class="token operator">===</span> <span class="token number">0</span><span class="token punctuation">;</span>
+    <span class="token keyword control-flow">await</span> <span class="token function">light</span><span class="token punctuation">(</span>lit<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
           <p><code>port.onchange</code> は <strong>入力モードの GPIO ポートの「状態変化時に呼び出される関数を設定する」</strong> 機能です。このような関数のことをコールバック関数と呼びます。下記の<code>port.read()</code> を使ったコードと異なりポーリング処理が不要でコードも簡潔ですが、値が変化したタイミング以外では読み取りができませんのでユースケースが少し限られます。</p>
+          <hr class="page-wrap">
         </section>
         <section class="level3" aria-labelledby="単純入力ポーリング">
           <h3 id="単純入力ポーリング">単純入力＋ポーリング</h3>
@@ -382,7 +417,7 @@
         <h2 id="i2cの概要">I2Cの概要</h2>
         <p><a href="https://ja.wikipedia.org/wiki/I2C">I2C</a> とは 2 線式の同期式シリアル通信インタフェースです。「アイ・スクエア・シー」や「アイ・ ツー・シー」と読みます。I2C では SDA（シリアルデータ）と SCL（シリアルクロック）の 2 本の線で通信を行います。</p>
         <figure>
-          <img src="../raspi/imgs/section2/i2c-bus.png" alt="i2c-bus">
+          <img src="../../raspi/imgs/section2/i2c-bus.png" alt="i2c-bus">
           <figcaption aria-hidden="true">i2c-bus</figcaption>
         </figure><!--
         {% cloudinary half ../raspi/imgs/section2/i2c-bus.png alt="i2c-bus" %}
@@ -394,7 +429,7 @@
           I2Cデバイスは小型のICチップデバイスとなっており、デバイスによってはSlaveAddressは製品ごとに固定されています。
         </p>
         <figure>
-          <img src="../raspi/imgs/section2/i2c-bus2.png" alt="i2c-bus2">
+          <img src="../../raspi/imgs/section2/i2c-bus2.png" alt="i2c-bus2">
           <figcaption aria-hidden="true">i2c-bus2</figcaption>
         </figure><!--
         {% cloudinary ../raspi/imgs/section2/i2c-bus2.png alt="i2c-bus2" %}
@@ -404,7 +439,7 @@
           <h3 id="raspberry-piのi2c端子">Raspberry PiのI2C端子</h3>
           <p>下図のSCL, SDAがI2C端子です（黄色の端子）</p>
           <figure>
-            <img src="../raspi/imgs/section0/Raspi3PIN.png" alt="Raspi PIN配置図" height="600">
+            <img src="../../raspi/imgs/section0/Raspi3PIN.png" alt="Raspi PIN配置図" height="600">
             <figcaption aria-hidden="true">Raspi PIN配置図</figcaption>
           </figure><!--
           {% cloudinary ../raspi/imgs/section0/Raspi3PIN.png alt="Raspi PIN配置図" %}
@@ -467,7 +502,7 @@
           <h3 id="i2cデバイスモジュールの接続について">I2Cデバイスモジュールの接続について</h3>
           <p>I2Cデバイスは一般的に小さなチップ部品です。下の拡大写真で緑で囲んだものがSHT31の本体で 上下に出ている微細な端子を接続して使いますが、微細過ぎてプロトタイピングには向きません。そこでブレッドボードで使いやすい端子に変換したモジュールが販売されています。モジュールには<strong>赤で囲んだように端子名の記載</strong>があります。これを<strong>ホストのコンピュータの端子名と一致させて結線</strong>することでI2Cデバイスが正しく接続されます。(電源端子はVIN,V+,3V,VCCなど別名になっていることがあります)</p>
           <figure>
-            <img src="../microbit/imgs/SHT31ModulePin.jpg" alt="I2Cmodule">
+            <img src="../../microbit/imgs/SHT31ModulePin.jpg" alt="I2Cmodule">
             <figcaption aria-hidden="true">I2Cmodule</figcaption>
           </figure>
           <section class="level4" aria-labelledby="注意-配線時のポイント">
@@ -706,7 +741,7 @@
         <section class="level3" aria-labelledby="システム構成">
           <h3 id="システム構成">システム構成</h3>
           <figure>
-            <img src="../pizero/imgs/IoTsystemConf.png" alt="sysConfImg">
+            <img src="../../pizero/imgs/IoTsystemConf.png" alt="sysConfImg">
             <figcaption aria-hidden="true">sysConfImg</figcaption>
           </figure>
           <p>今回のチュートリアルでつくるIoTシステムの構成図です。</p>

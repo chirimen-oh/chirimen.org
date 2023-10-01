@@ -81,7 +81,7 @@
             </li>
           </ul>
           <figure>
-            <img src="imgs/PartsList2.svg" alt="Parts Images" height="360">
+            <img src="../../pizero/imgs/PartsList2.svg" alt="Parts Images" height="360">
             <figcaption aria-hidden="true">Parts Images</figcaption>
           </figure>
           <p>PiZero自体はディスプレイやキーボードを接続する必要はありません。</p>
@@ -114,7 +114,7 @@
               <li>
                 Windowsの場合、ポートの番号(COMnのnの部分)は環境ごとに異なります
                 
-                <img src="imgs/OTG_PORT_W10.png" alt="OTG PORT Information on device manager">
+                <img src="../../pizero/imgs/OTG_PORT_W10.png" alt="OTG PORT Information on device manager">
               </li>
             </ul>
           </li>
@@ -127,7 +127,7 @@
               <li>
                 接続ダイアログが出現
                 
-                <img src="imgs/SerialDialog.png" alt="connection dialog" height="155">
+                <img src="../../pizero/imgs/SerialDialog.png" alt="connection dialog" height="155">
               </li>
               <li>上で認識したデバイス（ポート番号）を接続する</li>
             </ul>
@@ -169,7 +169,7 @@
             <li>
               <p>ターミナルウィンドの概要 (図1.1)</p>
               <figure>
-                <img src="imgs/termWin.svg" alt="ターミナルウィンドの説明">
+                <img src="../../pizero/imgs/termWin.svg" alt="ターミナルウィンドの説明">
                 <figcaption aria-hidden="true">ターミナルウィンドの説明</figcaption>
               </figure>
             </li>
@@ -186,7 +186,7 @@
               <li>
                 Raspberry Pi Zero Wは2.4GHz帯のWiFiにのみ対応しています。
                 
-                <img src="./imgs/WiFiSetting.png" alt="WiFi Setting">
+                <img src="../../pizero/imgs/WiFiSetting.png" alt="WiFi Setting">
               </li>
             </ul>
           </li>
@@ -224,7 +224,7 @@
               <li>
                 wlan0: inet xxx.xxx.xxx.xxx　(xxxは数字)のようにIPアドレスが設定されていれば接続成功しています。
                 
-                <img src="./imgs/WiFiSettingIPaddress.png" alt="WiFi Setting_IPaddress"><!--  * あとでping chirimen.org OK も入れよう。-->
+                <img src="../../pizero/imgs/WiFiSettingIPaddress.png" alt="WiFi Setting_IPaddress"><!--  * あとでping chirimen.org OK も入れよう。-->
               </li>
               <li>もしもあなたがsshやscp (WinSCP, teraterm等)などのツールに慣れている場合、上記のアドレスでssh接続できます
                 <ul>
@@ -268,7 +268,7 @@
           </li>
         </ul>
         <figure>
-          <img src="./imgs/pizero_led.png" alt="PiZero配線図" height="200">
+          <img src="../../pizero/imgs/pizero_led.png" alt="PiZero配線図" height="200">
           <figcaption aria-hidden="true">PiZero配線図</figcaption>
         </figure>
         <ul>
@@ -676,7 +676,7 @@
           </li>
         </ul>
         <figure>
-          <img src="./imgs/pizero_temp.png" alt="PiZero温度センサー図">
+          <img src="../../pizero/imgs/pizero_temp.png" alt="PiZero温度センサー図">
           <figcaption aria-hidden="true">PiZero温度センサー図</figcaption>
         </figure>
         <ul>
@@ -729,7 +729,7 @@
       <section class="level2" aria-labelledby="遠隔ledコントロール">
         <h2 id="遠隔ledコントロール">遠隔LEDコントロール</h2>
         <p>
-          <img src="imgs/IoTsystemConf.png" alt="system configuration">
+          <img src="../../pizero/imgs/IoTsystemConf.png" alt="system configuration">
           IoTは、制御されるデバイス（上図ではCHIRIMEN PiZeroW)と、利用者端末（上図ではWebApp PC-side）に加えて、これらの間でデータを中継するサーバ（クラウド）が必要になります。
           今回はWeb標準技術であるWebSocketプロトコルを中継するサーバを用いてLEDを備えたCHIRIMENデバイスとスマホやPCのWebAppを繋いだIoTシステムを作ります。
         </p>
@@ -742,7 +742,7 @@
           <h3 id="配線する">配線する</h3>
           <p>配線は最初のLチカそのままです。</p>
           <figure>
-            <img src="./imgs/pizero_led.png" alt="PiZero配線図" height="200">
+            <img src="../../pizero/imgs/pizero_led.png" alt="PiZero配線図" height="200">
             <figcaption aria-hidden="true">PiZero配線図</figcaption>
           </figure>
           <hr class="page-wrap">
@@ -765,7 +765,7 @@
                 <li>
                   ターミナルウィンドのコンソールに、<code>node main-remote_gpio_led.js</code> [ENTER] と入力して実行。
                   
-                  <img src="imgs/RC_NODE.png" alt="CHIRIMEN PiZero Console" height="70">
+                  <img src="../../pizero/imgs/RC_NODE.png" alt="CHIRIMEN PiZero Console" height="70">
                 </li>
                 <li>なお、実験が終わったら終了は CTRL+c です。</li>
               </ul>
@@ -786,7 +786,7 @@
                 <li>
                   webAppを使ってLEDが制御できることを確かめてみましょう。
                   
-                  <img src="imgs/RC_CSB.svg" alt="Code Sandbox Image" height="260">
+                  <img src="../../pizero/imgs/RC_CSB.svg" alt="Code Sandbox Image" height="260">
                 </li>
               </ul>
             </li>

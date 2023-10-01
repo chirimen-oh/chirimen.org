@@ -1,11 +1,11 @@
 # CHIRIMEN
-![CHIRIMEN_pf](CHIRIMEN_pf.png)
+![CHIRIMEN_pf](../../chirimenGeneric/CHIRIMEN_pf.png)
 CHIRIMEN とは、Webの標準的な技術・ブラウザやNode.js等で実行できるJavaScript で電子パーツを制御し、[フィジカルコンピューティング](https://www.iizuka.kyutech.ac.jp/faculty/physicalcomputing)や[IoTシステム](#iot)を開発可能なプロトタイピング環境です。
 
 デジタルのソフトとフィジカルなハードをWWW上で連携するデバイスを Web標準技術、JavaScript だけで容易に実現できます。
 
 ## CHIRIMENについて
-* [こちらを参照ください](../../about.md)
+* [こちらを参照ください](../../../about.md)
 
 ## CHIRIMENのメリット
 * 広く使われている標準技術を学習できるので
@@ -47,7 +47,7 @@ LED の順方向電圧は色により異なっており、赤色 LED は 1.8V �
 
 | 外観                            | 内部の接続状態                            |
 | ------------------------------- | ----------------------------------------- |
-| ![外観](../microbit/imgs/breadboardImg.jpg) | ![内部の接続状態](../microbit/imgs/breadboardSch.png) |
+| ![外観](../../microbit/imgs/breadboardImg.jpg) | ![内部の接続状態](../../microbit/imgs/breadboardSch.png) |
 
 * +と-のライン(上下の横のピン列)が無いブレッドボードもあります（CHIRIMEN Starter Kitのブレッドボードにはありません）
 
@@ -76,13 +76,13 @@ Raspberry Pi の GPIO ポートは、全体で流せる電流の上限が決め�
 
 今回は Nch MOSFET「[2SK4017](http://akizukidenshi.com/catalog/g/gI-07597/)」を利用します。
 
-![MOSFET](../raspi/imgs/section1/mosfet.png)
+![MOSFET](../../raspi/imgs/section1/mosfet.png)
 
 <hr class="page-wrap" />
 
 プルダウンの GPIO ポートを使った典型的な回路は以下のようになります。
 
-![NCh MOSFET schematic](../raspi/imgs/section1/DC3motor-schematic.svg)
+![NCh MOSFET schematic](../../raspi/imgs/section1/DC3motor-schematic.svg)
 
 ### 電源
 
@@ -155,7 +155,7 @@ CHIRIMEN環境のために必要なライブラリや、[I2Cデバイスのド�
 ### CodeSandbox
 
 * [予備知識・資料集を参照ください](../reference#github-)
-* ![CodeSandbox画面](../pizero/imgs/RC_CSB.svg)
+* ![CodeSandbox画面](../../pizero/imgs/RC_CSB.svg)
 
 <hr class="page-wrap" />
 
@@ -176,10 +176,7 @@ Raspiやmicro:bit の GPIO 端子は、GND 端子との間に、0V もしくは 
 ### Raspberry Piのピン配置図
 
 ![Raspi PIN配置図](https://chirimen.org/PiZeroWebSerialConsole/wallpaperS.png)
-<!--
-![Raspi PIN配置図](../raspi/imgs/section0/Raspi3PIN.png)
-{% cloudinary ../raspi/imgs/section0/Raspi3PIN.png alt="Raspi PIN配置図" %}
--->
+
 ### Raspverry Pi Zeroのピン配置図
 Raspberry Piの端子と同じ配列です。
 
@@ -198,7 +195,9 @@ GPIOポートを入力モードで使用する場合、ポートが解放状態(
 今回の JavaScript ファイルで、最初に呼び出されるコードは `await navigator.requestGPIOAccess()` です。
 ここで先ほど出て来た [Web GPIO API](http://browserobo.github.io/WebGPIO) を使い、`gpioAccess` という GPIO にアクセスするためのインタフェースを取得しています。
 
-<script src="https://emgithub.com/embed.js?target=https%3A%2F%2Fgithub.com%2Fchirimen-oh%2Fchirimen%2Fblob%2F5c520c21820304901553f2adf22da1012f54722d%2Fgc%2Fgpio%2FLEDblink%2Fmain.js%23L4-L4&style=github&showBorder=on&showFileMeta=on"></script>
+```js
+const gpioAccess = await navigator.requestGPIOAccess(); // GPIO を操作する
+```
 
 **関数の呼び出しに `await` 接頭詞を付けることに注意してください。** この関数は非同期関数で、その処理の完了を待ってから次の処理をする必要があります。また、`await` 接頭詞を使うコードを含むために、それを含む関数 `main()` は async 接頭詞付きの非同期関数として定義する必要があります。
 
@@ -206,15 +205,28 @@ GPIOポートを入力モードで使用する場合、ポートが解放状態(
 GPIOの**出力**機能を使います。
 **`const port = gpioAccess.ports.get(26)` で GPIO の 26 番ポートにアクセスするためのオブジェクト** を取得しています。
 
-<script src="https://emgithub.com/embed.js?target=https%3A%2F%2Fgithub.com%2Fchirimen-oh%2Fchirimen%2Fblob%2F5c520c21820304901553f2adf22da1012f54722d%2Fgc%2Fgpio%2FLEDblink%2Fmain.js%23L5-L5&style=github&showBorder=on&showFileMeta=on"></script>
+```js
+const port = gpioAccess.ports.get(26); // 26 番ポートを操作する
+```
 
 続いて、 **`await port.export("out")` で GPIO の 26 番を「出力設定」にしています**。これにより LED への電圧の切り替えが可能になっています。
 
-<script src="https://emgithub.com/embed.js?target=https%3A%2F%2Fgithub.com%2Fchirimen-oh%2Fchirimen%2Fblob%2F5c520c21820304901553f2adf22da1012f54722d%2Fgc%2Fgpio%2FLEDblink%2Fmain.js%23L7-L7&style=github&showBorder=on&showFileMeta=on"></script>
+```js
+await port.export("out"); // ポートを出力モードに設定
+```
 
 最後に、無限ループのなかで `await sleep(1000)` によって 1000 ms (1 秒) 待機さ 1 秒ごとに `await port.write(1)` と `await port.write(0)` を交互に呼び出し、GPIO 26 番に加える電圧を 3.3V → 0V → 3.3V → 0V → … と繰り返しています。
 
-<script src="https://emgithub.com/embed.js?target=https%3A%2F%2Fgithub.com%2Fchirimen-oh%2Fchirimen%2Fblob%2F5c520c21820304901553f2adf22da1012f54722d%2Fgc%2Fgpio%2FLEDblink%2Fmain.js%23L9-L17&style=github&showBorder=on&showFileMeta=on"></script>
+```js
+  // 無限ループ
+  while (true) {
+    // 1秒間隔で LED が点滅します。
+    await port.write(1); // LED を点灯
+    await sleep(1000); // 1000 ms (1秒) 待機
+    await port.write(0); // LED を消灯
+    await sleep(1000); // 1000 ms (1秒) 待機
+  }
+```
 
 LED は一定以上の電圧を加え、電流を流すと点灯する性質を持っています。
 つまり、3.3 V を加えたとき点灯し、0 V を加えたとき消灯、これを繰り返すことになります。
@@ -232,9 +244,43 @@ GPIOポートに繋いだスイッチやセンサーの状態を取得するに�
 ### onchange編
 GPIOポートの値が変化するたびに、指定した関数が実行されます。
 
-<script src="https://emgithub.com/embed.js?target=https%3A%2F%2Fgithub.com%2Fchirimen-oh%2Ftutorials%2Ftree%2F163ce18afdddd4d55c251b6b8b8d4181d3aa1695%2Fraspi%2Fexamples%2Fsection1%2Fs1_5%2Fmain.js&style=github&showBorder=on&showFileMeta=on"></script>
+```js
+async function main() {
+  const button = document.getElementById("button");
+  const ledView = document.getElementById("ledView");
+  const gpioAccess = await navigator.requestGPIOAccess();
+  const ledPort = gpioAccess.ports.get(26); // LED の GPIO ポート番号
+  await ledPort.export("out");
+  const switchPort = gpioAccess.ports.get(5); // タクトスイッチの GPIO ポート番号
+  await switchPort.export("in");
+
+  async function light(lit) {
+    await ledPort.write(lit ? 1 : 0);
+    const color = lit ? "red" : "black";
+    ledView.style.backgroundColor = color;
+  }
+
+  button.onmousedown = async function() {
+    await light(true);
+  };
+
+  button.onmouseup = async function() {
+    await light(false);
+  };
+
+  // Pull-up なので押したとき 0、それ以外では 1 が得られる
+  switchPort.onchange = async function(state) {
+    const lit = state === 0;
+    await light(lit);
+  };
+}
+
+main();
+```
 
  `port.onchange` は **入力モードの GPIO ポートの「状態変化時に呼び出される関数を設定する」** 機能です。このような関数のことをコールバック関数と呼びます。下記の`port.read()` を使ったコードと異なりポーリング処理が不要でコードも簡潔ですが、値が変化したタイミング以外では読み取りができませんのでユースケースが少し限られます。
+
+<hr class="page-wrap" />
 
 ### 単純入力＋ポーリング
 こちらはGPIOポートの入力値を一回きり単発で取得する単純入力機能と、ポーリングの組み合わせです。
@@ -294,7 +340,7 @@ function sleep(ms) {
 
 [I2C](https://ja.wikipedia.org/wiki/I2C) とは 2 線式の同期式シリアル通信インタフェースです。「アイ・スクエア・シー」や「アイ・ ツー・シー」と読みます。I2C では SDA（シリアルデータ）と SCL（シリアルクロック）の 2 本の線で通信を行います。
 
-![i2c-bus](../raspi/imgs/section2/i2c-bus.png)
+![i2c-bus](../../raspi/imgs/section2/i2c-bus.png)
 <!--
 {% cloudinary half ../raspi/imgs/section2/i2c-bus.png alt="i2c-bus" %}
 -->
@@ -305,7 +351,7 @@ function sleep(ms) {
 マスターは、スレーブが持つ「SlaveAddress (スレーブアドレス)」を指定して、特定のスレーブとの通信を行います。このため、同じ I2C バス上に同じ SlaveAddress のスレーブを繋ぐことはできません。
 I2Cデバイスは小型のICチップデバイスとなっており、デバイスによってはSlaveAddressは製品ごとに固定されています。
 
-![i2c-bus2](../raspi/imgs/section2/i2c-bus2.png )
+![i2c-bus2](../../raspi/imgs/section2/i2c-bus2.png )
 <!--
 {% cloudinary ../raspi/imgs/section2/i2c-bus2.png alt="i2c-bus2" %}
 -->
@@ -315,7 +361,7 @@ I2Cデバイスは小型のICチップデバイスとなっており、デバイ
 ### Raspberry PiのI2C端子
 下図のSCL, SDAがI2C端子です（黄色の端子）
 
-![Raspi PIN配置図](../raspi/imgs/section0/Raspi3PIN.png){height=600}
+![Raspi PIN配置図](../../raspi/imgs/section0/Raspi3PIN.png){height=600}
 <!--
 {% cloudinary ../raspi/imgs/section0/Raspi3PIN.png alt="Raspi PIN配置図" %}
 -->
@@ -366,7 +412,7 @@ I2C に対応したデバイスの実例を見てみましょう。CHIRIMENで�
 ### I2Cデバイスモジュールの接続について
 I2Cデバイスは一般的に小さなチップ部品です。下の拡大写真で緑で囲んだものがSHT31の本体で 上下に出ている微細な端子を接続して使いますが、微細過ぎてプロトタイピングには向きません。そこでブレッドボードで使いやすい端子に変換したモジュールが販売されています。モジュールには**赤で囲んだように端子名の記載**があります。これを**ホストのコンピュータの端子名と一致させて結線**することでI2Cデバイスが正しく接続されます。(電源端子はVIN,V+,3V,VCCなど別名になっていることがあります)
 
-![I2Cmodule](../microbit/imgs/SHT31ModulePin.jpg)
+![I2Cmodule](../../microbit/imgs/SHT31ModulePin.jpg)
 
 
 #### 注意: 配線時のポイント
@@ -612,7 +658,7 @@ var humidity = 100 * (mdata[3] * 256 + mdata[4]) / 65535.0;
 ## webSocketとpub/sub services
 ### システム構成
 
-![sysConfImg](../pizero/imgs/IoTsystemConf.png)
+![sysConfImg](../../pizero/imgs/IoTsystemConf.png)
 
 今回のチュートリアルでつくるIoTシステムの構成図です。
 
