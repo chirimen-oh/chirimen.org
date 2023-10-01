@@ -1,3 +1,11 @@
+---
+layout: tutorial
+lang: ja
+permalink: /pizero/
+---
+
+# **CHIRIMEN Raspberry Pi Zero W チュートリアル**
+
 # 概要
 
 CHIRIMEN Raspberry Pi Zero版 を用いたIoT実習資料です。
@@ -42,53 +50,46 @@ CHIRIMEN Raspberry Pi Zero版 を用いたIoT実習資料です。
   * [ADT7410モジュール](https://akizukidenshi.com/catalog/g/gM-06675/)　もしくは [SHT30モジュール](https://www.amazon.co.jp/dp/B083NHJSL9/)
   * ジャンパーワイヤ オス-メス 2本
 
-![Parts Images](imgs/PartsList2.svg){height=360}
+![Parts Images](imgs/PartsList2.svg)
 
 PiZero自体はディスプレイやキーボードを接続する必要はありません。
 
 ### PCをWiFiに接続
 * 会場(もしくは開発場所)で提供されているWiFiアクセスポイントにまずはPCを接続してください。
 
-<hr class="page-wrap" />
-
-## ステップ１（ターミナル接続）
+## ステップ１（[ターミナル接続](https://chirimen.org/PiZeroWebSerialConsole/PiZeroWebSerialConsole.html) ）
 
 * [Raspberry Pi OS LiteをUSB Serialで使用可能にしたイメージ](https://github.com/kou029w/chirimen-os/releases/)を書き込んだmicroSDカードをRaspberry Pi Zeroに差し込みます。
 * PCのUSBとRaspberry Pi ZeroのUSB OTGポートをUSBケーブルでつなぎます
   * PiZero側はつなぐポート要注意　ここに繋ぎます
-  ![pi zero otg port](https://chirimen.org/PiZeroWebSerialConsole/imgs/PiZeroW_OTG.JPG){height=160}
+  ![pi zero otg port](https://chirimen.org/PiZeroWebSerialConsole/imgs/PiZeroW_OTG.JPG)
   * PCからのUSB給電でRaspberry Pi Zeroが起動します。
 * PCでRaspberry Pi Zeroが認識されたことを確認します ([Windows10のデバイスマネージャ](https://askpc.panasonic.co.jp/beginner/guide/ten07/7013.html)の例) 
-  * 給電後USBデバイスとして出現するまでにしばらく(数十秒)かかります）
+  * 給電後USBデバイスとして出現するまでにしばらく(数十秒)かかります
   * Windowsの場合、ポートの番号(COMnのnの部分)は環境ごとに異なります
   ![OTG PORT Information on device manager](imgs/OTG_PORT_W10.png)
 * [**こちらのWeb Serial RPiZero TerminalページにPCのブラウザでアクセス**](https://chirimen.org/PiZeroWebSerialConsole/PiZeroWebSerialConsole.html)
  (以降、このウィンドを**ターミナルウィンド**と呼びます)
 * ```[Connect and Login PiZero]```ボタンを押す
   * 接続ダイアログが出現
-    ![connection dialog](imgs/SerialDialog.png){height=155}
+  ![connection dialog](imgs/SerialDialog.png)
   * 上で認識したデバイス（ポート番号）を接続する
 * コンソール(左側の黒い画面の最下部)に以下のコマンドプロンプトが表示されればステップ１完了です。引き続きステップ２に進んでください
   * ```pi@raspberrypi:~$```
-
-<hr class="page-wrap" />
 
 ### Note:
 
 * CHIRIMEN Raspberry Pi Zero版では[Raspberry Pi OS Lite](https://www.raspberrypi.com/software/operating-systems/)(Linux)をコマンドラインインターフェース(CLI)・シェル(bash)で操作します。
   * ただしこの講習で使うコマンドはごくわずかです。
     * **node** コマンド(後述)
-    * [CTRL+c](https://atmarkit.itmedia.co.jp/ait/articles/1708/04/news015_2.html)(CTRLキーとcを同時に押す:実行中のコマンドを終了させる)
+    * [CTRL+c](https://atmarkit.itmedia.co.jp/ait/articles/1708/04/news015_2.html)（CTRLキーとcを同時に押す:実行中のコマンドを終了させる）
   * その他のほとんどの操作（コマンド）は、ターミナルウィンドやそこから起動される別画面のGUIがコマンド操作を代行しています。図1.1のGUIを操作するとコンソールにコマンドが入力されるのがわかると思います。
 * [CLIとは](https://atmarkit.itmedia.co.jp/ait/articles/1602/19/news025.html)
 * [シェルとコマンドプロンプト](https://atmarkit.itmedia.co.jp/ait/articles/1603/02/news016.html)
 * もしもあなたがlinuxのシェルコンソール画面に慣れている場合は、ターミナルウィンドのコンソールにその他のシェル(bash)コマンドをタイプして使用することもできます。
   * たとえば ```ls -al``` とタイプするとおコンソール画面にディレクトリ内のファイルのリストが表示されます。
 * ターミナルウィンドの概要 (図1.1)
-
-  ![ターミナルウィンドの説明](imgs/termWin.svg)
-
-<hr class="page-wrap" />
+![ターミナルウィンドの説明](imgs/termWin.svg)
 
 ## ステップ２ (WiFi設定)
 
@@ -105,9 +106,7 @@ PiZero自体はディスプレイやキーボードを接続する必要はあ�
 * WiFiウィンドを閉じ、ターミナルウィンドに戻る
 * ターミナルウィンドの```[Close Connection]```ボタンを押す
 * 30秒ほど待つ（Raspberry Pi Zeroが再起動します）
-
-<hr class="page-wrap" />
-
+  * ---
 * ```[Connect and Login PiZero]```ボタンを押し接続する
   * 接続ダイアログが出現⇒接続するとこれまで同様コマンドプロンプトが出現
 * ```[wifi panel]```ボタンを再び押す
@@ -121,12 +120,22 @@ PiZero自体はディスプレイやキーボードを接続する必要はあ�
     * ID: ```pi```
     * PASSWORD: ```raspberry```
   * 確認できたらWiFi Settingウィンドを閉じてください。
+<!--
+* 以上でステップ２完了です。　ステップ3に進んでください。
+
+## ステップ３ (CHIRIMEN環境設定)
+
+* ターミナルウィンドの```[CHIRIMEN Panel]```ボタンを押す。
+* CHIRIMEN Panelウィンドが開いたら、```[Setup CHIRIMEN]```ボタンを押す。
+* 数分、セットアップ完了するのを待ちます。（ネットワーク環境にも依存しますが10分程度かかるかもしれません）
+  * CHIRIMEN Panelウィンドの進捗メッセージが、CONGRATURATIONS. setup completed!となればセットアップ完了です。
+  * Note: ターミナルウィンドのコンソールにはより細かな進捗状況が表示されます。
+* ```~/myApp```が今後CHIRIMEN環境でのプログラミングで使用するディレクトリです。
+-->
 
 * 以上ですべての初期設定完了です！
 
-<hr class="page-wrap" />
-
-# Hello Real World（Lチカを実行する）
+# Hello Real World（[Lチカ](../chirimenGeneric/#l-)を実行する）
 
 ## 配線
 
@@ -143,13 +152,11 @@ PiZero とパーツを使って下の図の通りに配線します。
 * そのため、慣れるまでは一旦PiZeroをシャットダウン、USBケーブルも外し電源OFFにしてから配線すると安全です
    * シャットダウンコマンド：```sudo shutdown -h now```
 
-![PiZero配線図](./imgs/pizero_led.png){height=200}
+![PiZero配線図](./imgs/pizero_led.png)
 
 * 配線に使うケーブルの色に厳密な決まりはありませんが、一般的にGNDは黒(や黒っぽい色)、電源(VCC, +3.3V, +5V)には赤(や赤っぽい色)が用いられます。配線間違いを防ぐためにもなるべく合わせましょう。
 * 抵抗やLEDの足(リード線)は手で簡単に曲げられます。ブレッドボードに差し込めるように適当に成型してください。
 * 上図のPiZeroは上から見たものです
-
-<hr class="page-wrap" />
 
 ## プログラムを書く
 
@@ -204,8 +211,6 @@ blink();
 * LED が点滅すれば完成です 🎉
 * プログラムを止めるには、コンソール部で ```CTRL+c``` を押します。
 
-<hr class="page-wrap" />
-
 # Raspberry Pi について
 
 * 教育・学習用として設計されたシングルボードコンピュータ
@@ -224,13 +229,7 @@ GPIO, 電源, GND, I2C信号線などのピン配列を記載します。
 * 数字 + PD||PUと書かれているピンはGPIO端子(詳細は次章)
   * PD:プルダウン, PU:プルアップ
 * SCL, SDAはI2Cインターフェースのピンです(詳細は次章)
-
-
-<hr class="page-wrap" />
-
-  ![Raspberry Pi Pinout](https://chirimen.org/PiZeroWebSerialConsole/wallpaperS.png)
-
-<hr class="page-wrap" />
+![Raspberry Pi Pinout](https://chirimen.org/PiZeroWebSerialConsole/wallpaperS.png)
 
 # CHIRIMEN について
 
@@ -254,8 +253,6 @@ GPIO, 電源, GND, I2C信号線などのピン配列を記載します。
 * [こちらを参照してください](../chirimenGeneric/#javascript-)
 * [非同期処理 async/await](../chirimenGeneric/#section-3)を多用します。
 
-<hr class="page-wrap" />
-
 # GPIOを試す
 
 ## GPIOを理解する
@@ -264,8 +261,7 @@ GPIO, 電源, GND, I2C信号線などのピン配列を記載します。
 ## GPIO出力
 
 GPIOの出力はLチカで実験済みですね。そこで今回はモーターを動かしてみましょう。MOSFETを使った回路図は以下のようになります。
-
-![GPIO Motor](./esm-examples/hello-real-world/PiZero_gpio0Motor.png){height=200}
+![GPIO Motor](./esm-examples/hello-real-world/PiZero_gpio0Motor.png)
 
 コードはLチカと全く同じです。
 
@@ -281,8 +277,6 @@ GPIOの出力はLチカで実験済みですね。そこで今回はモーター
   * [JavaScript module](../chirimenGeneric/#javascript-module-ecma-script-module) に基づいてWebGPIOライブラリを読み込みます。これでWeb GPIO APIが使えるようになりました。
 * [GPIOポートの初期化処理](../chirimenGeneric/#gpio-2)
 * [GPIOPortの出力処理](../chirimenGeneric/#gpioport-)
-
-<hr class="page-wrap" />
 
 ## GPIO入力
 
@@ -313,8 +307,6 @@ GPIO端子の**入力が変化したら関数を実行**という機能によっ
 * [GPIOポートの初期化処理を行う](../chirimenGeneric/#gpio-2)
 * [onchangeによる入力処理](../chirimenGeneric/#onchange)
 
-<hr class="page-wrap" />
-
 ## GPIO入力(ポーリング)
 入力ではイベントの他にポーリングというテクニックが広く使われます。（次章のI2Cデバイスからの入力では専らポーリング）
 
@@ -342,7 +334,6 @@ GPIO端子の**入力が変化したら関数を実行**という機能によっ
 * [GPIOポートの初期化処理を行う](../chirimenGeneric/#gpio-2)
 * [単純入力＋ポーリングによる入力処理](../chirimenGeneric/#section-7)
 
-<hr class="page-wrap" />
 
 # I2Cデバイスを試す
 
@@ -359,16 +350,13 @@ SHT30は温度に加えて湿度も測定できるI2C接続の多機能センサ
 * 出現したCHIRIMEN Panelの```[Get Examples]```ボタンを押す
 * ID : sht30を探します
 * 回路図リンクを押すと回路図が出てきますので、回路を組みます。なお、接続は下の図のようになります。
-
-  ![SHT31 schematic](./esm-examples/sht30/schematic.png){height=220}
+![SHT31 schematic](./esm-examples/sht30/schematic.png)
 
 * ```[JS GET]```ボタンを押すと、開発ディレクトリ(```~/myApp```)に、サンプルコードが保存されます。
   * **main-sht30.js**というファイル名で保存されます。
   * Note: ターミナルウィンドの右側のファイルマネージャでmain-sht30.js⇒編集 を選ぶと、エディタで編集できます。
     * ソースコードを見てみましょう
     * 今は編集不要ですが、サンプルをベースに応用プログラムを作るときには編集しましょう。
-
-<hr class="page-wrap" />
 
 ### I2Cセンサー(SHT30)が認識されていることを確認する
 
@@ -404,7 +392,6 @@ SHT30は温度に加えて湿度も測定できるI2C接続の多機能センサ
   * [JavaScript module](../chirimenGeneric/#javascript-module-ecma-script-module) に基づいてWebI2Cライブラリを読み込みます。
 * [I2C 温湿度センサー (SHT30, SHT31)の初期化と使用](../chirimenGeneric/#i2c--sht30-sht31)
 
-<hr class="page-wrap" />
 
 ## ADT7410編
 
@@ -423,8 +410,6 @@ SHT30は温度に加えて湿度も測定できるI2C接続の多機能センサ
   * Note: ターミナルウィンドの右側のファイルマネージャでmain-adt7410.js⇒編集 を選ぶと、エディタで編集できます。
     * ソースコードを見てみましょう
     * 今は編集不要ですが、サンプルをベースに応用プログラムを作るときには編集しましょう。
-
-<hr class="page-wrap" />
 
 ### I2Cセンサーが認識されていることを確認する
 
@@ -455,21 +440,18 @@ SHT30は温度に加えて湿度も測定できるI2C接続の多機能センサ
 ## 遠隔LEDコントロール
 
 ![system configuration](imgs/IoTsystemConf.png)
-IoTは、制御されるデバイス（上図ではCHIRIMEN PiZeroW)と、利用者端末（上図ではWebApp PC-side）に加えて、これらの間でデータを中継するサーバ（クラウド）が必要になります。
+IoTは、制御されるデバイス（上図ではCHIRIMEN PiZeroW）と、利用者端末（上図ではWebApp PC-side）に加えて、これらの間でデータを中継するサーバ（クラウド）が必要になります。
 今回はWeb標準技術であるWebSocketプロトコルを中継するサーバを用いてLEDを備えたCHIRIMENデバイスとスマホやPCのWebAppを繋いだIoTシステムを作ります。
 
 Note: [モーター制御の回路](./#gpio-2)を組めば、そのまま遠隔モーターコントロールができます
 
-- [IoT](../chirimenGeneric/#iot)
-- [WebSoeketとRelayServer](../chirimenGeneric/#websocketpubsub-services)
+### [IoT](../chirimenGeneric/#iot)
+### [WebSoeketとRelayServer](../chirimenGeneric/#websocketpubsub-services)
 
 ### 配線する
 
 配線は最初のLチカそのままです。
-
-![PiZero配線図](./imgs/pizero_led.png){height=200}
-
-<hr class="page-wrap" />
+![PiZero配線図](./imgs/pizero_led.png)
 
 ### CHIRIMENデバイス側にコードを入れ、実行する
 
@@ -482,7 +464,7 @@ Note: [モーター制御の回路](./#gpio-2)を組めば、そのまま遠隔�
 * 実行する
   * ターミナルウィンドのコンソールのプロンプトが```pi@raspberrypi:~/myApp$```となっていることを確認
   * ターミナルウィンドのコンソールに、```node main-remote_gpio_led.js``` [ENTER] と入力して実行。
-    ![CHIRIMEN PiZero Console](imgs/RC_NODE.png){height=70}
+![CHIRIMEN PiZero Console](imgs/RC_NODE.png)
   * なお、実験が終わったら終了は CTRL+c です。
 
 ### PC側のコードを準備し、実行する
@@ -491,9 +473,8 @@ Note: [モーター制御の回路](./#gpio-2)を組めば、そのまま遠隔�
     * 詳しい解説：[CodeSandbox ガイド](https://csb-jp.github.io/)
   * また、右側（もしくは右下）のフレームにはLEDを遠隔コントロールするためのwebAppが既に実行されています。
   * webAppを使ってLEDが制御できることを確かめてみましょう。
-![Code Sandbox Image](imgs/RC_CSB.svg){height=260}
 
-<hr class="page-wrap" />
+![Code Sandbox Image](imgs/RC_CSB.svg)
 
 ### コードを読む
 #### Raspberry Pi Zero側コード
@@ -501,10 +482,12 @@ Note: [モーター制御の回路](./#gpio-2)を組めば、そのまま遠隔�
 * これまで通りWebGPIOライブラリの読み込み
 * [relayServer.js](../chirimenGeneric/#relayserverjs)ライブラリの読み込み
   * Node.jsではrelayServerライブラリに加えて、webSocketライブラリの読み込みが必要です。
-    ```
-    import nodeWebSocketLib from "websocket";
-    import {RelayServer} from "./RelayServer.js";
-    ```
+
+```
+import nodeWebSocketLib from "websocket";
+import {RelayServer} from "./RelayServer.js";
+```
+
 * [relayServer.js](../chirimenGeneric/#relayserverjs)を使って、PCからの操作指示を受信
   * [初期化](../chirimenGeneric/#section-16)
   * [受信処理](../chirimenGeneric/#section-18)(コールバック関数の設定)
@@ -513,26 +496,24 @@ Note: [モーター制御の回路](./#gpio-2)を組めば、そのまま遠隔�
 #### PC側コード
 * CodeSandboxで開いているPC.jsを見てみましょう
 * [JavaScript Module](../chirimenGeneric/#javascript-module-ecma-script-module)仕様に基づいてrelayServer.jsを読み込み
-  ```
-  import {RelayServer} from "https://chirimen.org/remote-connection/js/beta/RelayServer.js";
-  ```
+
+`import {RelayServer} from "https://chirimen.org/remote-connection/js/beta/RelayServer.js";`
+
 * [relayServer.js](../chirimenGeneric/#relayserverjs)を使い、UIを通してユーザからの操作指示を送信
   * [初期化](../chirimenGeneric/#section-16)
-  * [送信処理](../chirimenGeneric/#section-17)～(UI(ボタン)に設置したコールバック関数をもとに送信
+  * [送信処理](../chirimenGeneric/#section-17)～（UI(ボタン)に設置したコールバック関数をもとに送信
 
-<hr class="page-wrap" />
 
 #### 自分専用チャンネルで制御
 
   サンプルのコードは共通のチャンネルを使って制御しています。この状態では複数の人が同時に実習していると混信します。(他の人のPCでON/OFFを指示しても、自分のLEDがON/OFFする。同じチャンネルを使っているため。)
-
+  
   これはこれで使い道はあるのですが、自分のLEDは自分だけで制御したい場合は専用のチャンネルを使って制御しましょう。　チャンネルの指定はPiZero側のコードと、PC側のコード両方を同時に同じ内容で設定する必要があり、以下の部分になります。
-
+  
   ```channel = await relay.subscribe("chirimenLED");```
-
+  
   この```chirimenLED```という文字列(チャンネル名)を他の人と被らない別のチャンネル名に書き換えます(```chirimenLED5```など)
 
-<hr class="page-wrap" />
 
 # 他のいろいろなデバイスを試してみる
 
@@ -577,16 +558,15 @@ CHIRIMEN for Raspberry Pi を利用するに際して、知っておくと良い
 
 その他、電子工作など一般的な知識は [予備知識・資料集](../reference.md) や、[共通資料集](../chirimenGeneric/)を参照してください。
 
-<hr class="page-wrap" />
 
 # CHIRIMEN ブラウザー版との差異
 
 | CHIRIMEN ブラウザー版       | Node.js                                                      |
 | --------------------------- | ------------------------------------------------------------ |
 | ライブラリ、ドライバーはhtmlで読み込む | jsの中で直接読み込む |
-| `<script src="polyfill.js"></script >` | `import {requestGPIOAccess} from "./node_modules/node-web-gpio/dist/index.js";`<br />`import {requestI2CAccess} from "./node_modules/node-web-i2c/index.js";` |
-| `<script src="..../adt7410.js"></script >` | `import ADT7410 from "@chirimen/adt7410";`  |
-| ー  | Sleep関数を宣言する<br />`const sleep = msec => new Promise(resolve => setTimeout(resolve, msec));` |
+| <pre>```<script src="polyfill.js"></script >```</pre> | <pre>```import {requestGPIOAccess} from "./node_modules/node-web-gpio/dist/index.js";```</pre><br><pre>```import {requestI2CAccess} from "./node_modules/node-web-i2c/index.js";```</pre> |
+|  <pre>```<script src="..../adt7410.js"></script >```</pre>   | <pre>```import ADT7410 from "@chirimen/adt7410";```</pre>  |
+|   | Sleep関数を宣言する<br><pre>```const sleep = msec => new Promise(resolve => setTimeout(resolve, msec));```</pre> |
 
 # CHIRIMEN環境の任意のディレクトリへのセットアップ
 

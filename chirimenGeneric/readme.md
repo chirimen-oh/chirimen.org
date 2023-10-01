@@ -1,5 +1,11 @@
+---
+layout: tutorial
+lang: ja
+permalink: /chirimenGeneric/
+---
+
 # CHIRIMEN
-![CHIRIMEN_pf](CHIRIMEN_pf.png)
+![](CHIRIMEN_pf.png)
 CHIRIMEN とは、Webの標準的な技術・ブラウザやNode.js等で実行できるJavaScript で電子パーツを制御し、[フィジカルコンピューティング](https://www.iizuka.kyutech.ac.jp/faculty/physicalcomputing)や[IoTシステム](#iot)を開発可能なプロトタイピング環境です。
 
 デジタルのソフトとフィジカルなハードをWWW上で連携するデバイスを Web標準技術、JavaScript だけで容易に実現できます。
@@ -16,8 +22,6 @@ CHIRIMEN とは、Webの標準的な技術・ブラウザやNode.js等で実行�
   * WWWのサービスと簡単に連携できる
   * ユーザーインターフェースやコンテンツを簡単に作れる
   * Webブラウザを使って開発できる
-
-<hr class="page-wrap" />
  
 # ハードウェア・デバイス
 
@@ -39,10 +43,8 @@ CHIRIMEN とは、Webの標準的な技術・ブラウザやNode.js等で実行�
 
 LED の順方向電圧は色により異なっており、赤色 LED は 1.8V 程度、青色 LED は 3.1V 程度とされています。
 
-<hr class="page-wrap" />
 
 ## ブレッドボード
-
 - [ブレッドボードの使い方](https://shop.sunhayato.co.jp/blogs/problem-solving/breadboard) (サンハヤト社)
 
 | 外観                            | 内部の接続状態                            |
@@ -57,8 +59,6 @@ LED の順方向電圧は色により異なっており、赤色 LED は 1.8V �
 ## 抵抗値の読み方
 - [抵抗値の読み方](http://www.jarl.org/Japanese/7_Technical/lib1/teikou.htm)
 - [テスターを使って抵抗値を確かめる](http://startelc.com/elcLink/tester/elc_nArtcTester2.html#chapter-2)
-
-<hr class="page-wrap" />
 
 ## MOSFETによる大電力制御
 ### GPIO の制約事項
@@ -78,8 +78,6 @@ Raspberry Pi の GPIO ポートは、全体で流せる電流の上限が決め�
 
 ![MOSFET](../raspi/imgs/section1/mosfet.png)
 
-<hr class="page-wrap" />
-
 プルダウンの GPIO ポートを使った典型的な回路は以下のようになります。
 
 ![NCh MOSFET schematic](../raspi/imgs/section1/DC3motor-schematic.svg)
@@ -91,7 +89,6 @@ DC 負荷用に Raspberry Pi とは別に電源を用意するのが望ましい
 
 ちびギアモータを使った作例では、その消費電力が十分小さいので、例外的に Raspberry Pi の 5V 端子か電力を供給しています。
 
-<hr class="page-wrap" />
 
 # JavaScript
 標準化されたプログラミング言語の一種で、ウェブブラウザが代表的な実行環境です(プログラムコードを解釈して動作させるシステム)。CHIRIMENでもRasberry Pi及びmicro:bit版はウェブブラウザを実行環境として使用します。Raspberry Pi Zero版はNode.jsを実行環境として使っています。
@@ -113,8 +110,6 @@ Raspberry Pi Zero版以外のCHIRIMENはプログラムの起点はHTMLファイ
 
 次の行にある `main.js` は、JavaScript のプログラム本体です。
 
-<hr class="page-wrap" />
-
 ### Node.js (CHIRIMEN Raspberry Pi Zero版)
 Raspberry Pi Zero版はプログラムの起点が自分が作ったjavascriptコード自体になります。ブラウザの代わりに[Node.js](https://ja.wikipedia.org/wiki/Node.js)というjavascriptコードだけを解釈するソフト（javascript [インタープリタ](https://ja.wikipedia.org/wiki/%E3%82%A4%E3%83%B3%E3%82%BF%E3%83%97%E3%83%AA%E3%82%BF)）にコードを読み込ませて実行します。
 
@@ -129,6 +124,8 @@ CHIRIMEN環境のために必要なライブラリや、[I2Cデバイスのド�
   * `export {RelayServer};`
 * [例を見てみる](https://codesandbox.io/s/github/chirimen-oh/chirimen.org/tree/master/pizero/esm-examples/remote_gpio_led/pc)
 * [Mozilla Developer Networkの解説](https://developer.mozilla.org/ja/docs/Web/JavaScript/Guide/Modules)
+
+
 
 ## 非同期処理
 
@@ -149,15 +146,10 @@ CHIRIMEN環境のために必要なライブラリや、[I2Cデバイスのド�
 
 ## 開発環境
 ### GitHub
-
 * [予備知識・資料集を参照ください](../reference#github-)
-
 ### CodeSandbox
-
 * [予備知識・資料集を参照ください](../reference#github-)
 * ![CodeSandbox画面](../pizero/imgs/RC_CSB.svg)
-
-<hr class="page-wrap" />
 
 # GPIO
 
@@ -174,7 +166,6 @@ Raspiやmicro:bit の GPIO 端子は、GND 端子との間に、0V もしくは 
 詳しくは[こちらのサイトの解説](https://tool-lab.com/make/raspberrypi-startup-22/)などを参考にしてみましょう。
 
 ### Raspberry Piのピン配置図
-
 ![Raspi PIN配置図](https://chirimen.org/PiZeroWebSerialConsole/wallpaperS.png)
 <!--
 ![Raspi PIN配置図](../raspi/imgs/section0/Raspi3PIN.png)
@@ -184,15 +175,13 @@ Raspiやmicro:bit の GPIO 端子は、GND 端子との間に、0V もしくは 
 Raspberry Piの端子と同じ配列です。
 
 ### micro:bitのピン配置図
-![micro:bitのI端子](https://tech.microbit.org/docs/hardware/assets/edge_connector.svg){height=350}
+![micro:bitのI端子](https://tech.microbit.org/docs/hardware/assets/edge_connector.svg)
 
 ### プルアップ(PU)、プルダウン(PD)
 GPIOポートを入力モードで使用する場合、ポートが解放状態(電気的に切り離されている状態)のときに設定される値があります。
 プルアップは1、プルダウンは0になります。　Raspberry Piのピン配置図に書かれているPU,PDがその設定値です。micro:bitではすべてプルダウンに設定されていますが、GPIOポート初期化時にプルアップに設定することもできます。
 
 * [より詳しく知る(voltechno)](https://voltechno.com/blog/pullup-pulldown/)
-
-<hr class="page-wrap" />
 
 ## GPIOポートの初期化
 今回の JavaScript ファイルで、最初に呼び出されるコードは `await navigator.requestGPIOAccess()` です。
@@ -224,10 +213,10 @@ LED は一定以上の電圧を加え、電流を流すと点灯する性質を�
 - 点灯する時間と消灯する時間を変える (同上)
 - GPIO ポートを他のポートに変える・配線を変える (```gpioAccess.ports.get```の引数を変更)
 
-<hr class="page-wrap" />
 
 ## GPIOPortの入力処理
 GPIOポートに繋いだスイッチやセンサーの状態を取得するには、GPIOの**入力**機能を使います。出力とは違って入力は二つの方法があります。onchangeとポーリングの二つの方法があります。
+
 
 ### onchange編
 GPIOポートの値が変化するたびに、指定した関数が実行されます。
@@ -287,7 +276,6 @@ function sleep(ms) {
 }
 ```
 
-<hr class="page-wrap" />
 
 # I2C
 ## I2Cの概要
@@ -314,22 +302,19 @@ I2Cデバイスは小型のICチップデバイスとなっており、デバイ
 
 ### Raspberry PiのI2C端子
 下図のSCL, SDAがI2C端子です（黄色の端子）
-
-![Raspi PIN配置図](../raspi/imgs/section0/Raspi3PIN.png){height=600}
+![Raspi PIN配置図](../raspi/imgs/section0/Raspi3PIN.png)
 <!--
 {% cloudinary ../raspi/imgs/section0/Raspi3PIN.png alt="Raspi PIN配置図" %}
 -->
-
 ### Raspverry Pi ZeroのI2C端子
 
 　Raspberry PiのI2C端子と同じ配列です。
 
-<hr class="page-wrap" />
-
 ### micro:bitのI2C端子
 下図のSCL, SDAがI2C端子です (P19,P20～オレンジ色I2C1のグループ)
+![micro:bitのI端子](https://tech.microbit.org/docs/hardware/assets/edge_connector.svg)
 
-![micro:bitのI端子](https://tech.microbit.org/docs/hardware/assets/edge_connector.svg){height=400}
+
 
 ## 参考: I2C に関する詳細情報
 
@@ -338,8 +323,6 @@ I2C に関する詳細は下記をご参照ください。
 - [I2C](https://ja.wikipedia.org/wiki/I2C) - Wikipedia
 - I2C バス仕様書 最新版（[日本語](https://www.nxp.com/docs/ja/user-guide/UM10204.pdf)、[English](http://www.nxp.com/documents/user_manual/UM10204.pdf)）
 - [I2C の使い方](http://www.picfun.com/i2cframe.html)（後閑哲也氏サイト)
-
-<hr class="page-wrap" />
 
 ## ポイント
 
@@ -360,8 +343,6 @@ I2C に対応したデバイスの実例を見てみましょう。CHIRIMENで�
 - [湿度・温度センサ (SHT31)](http://akizukidenshi.com/catalog/g/gK-12125/) x 1
   - または SHT30 ([Amazon](https://www.amazon.co.jp/s?k=sht30), [AliExpress](https://ja.aliexpress.com/item/32962846003.html))。
   - note: SHT31 は氷点下や 65 度以上などの高温での計測時の精度が SHT30 よりも少し高いが室温程度ではほぼ同様の類似モデルです。同シリーズには他にも SHT35 などもありますがそちらは未検証です。 (参考: [データシート](https://www.sensirion.com/fileadmin/user_upload/customers/sensirion/Dokumente/2_Humidity_Sensors/Datasheets/Sensirion_Humidity_Sensors_SHT3x_Datasheet_digital.pdf))
-
-<hr class="page-wrap" />
 
 ### I2Cデバイスモジュールの接続について
 I2Cデバイスは一般的に小さなチップ部品です。下の拡大写真で緑で囲んだものがSHT31の本体で 上下に出ている微細な端子を接続して使いますが、微細過ぎてプロトタイピングには向きません。そこでブレッドボードで使いやすい端子に変換したモジュールが販売されています。モジュールには**赤で囲んだように端子名の記載**があります。これを**ホストのコンピュータの端子名と一致させて結線**することでI2Cデバイスが正しく接続されます。(電源端子はVIN,V+,3V,VCCなど別名になっていることがあります)
@@ -385,8 +366,6 @@ I2Cデバイスは一般的に小さなチップ部品です。下の拡大写�
 i2cdetect -y -r 1
 ```
 (microbit版はコマンドラインがないので下記webAppを使いましょう)
-
-<hr class="page-wrap" />
 
 ### i2cdetect webApp
 #### Raspberry Pi
@@ -453,7 +432,6 @@ $ i2cdetect -y -r 1
 `44` という表示が見つからなくなりました。このことによって間違いなく SHT30 の SlaveAddress が `0x44` となっていることを確認できました。
 確認できたら、先ほど外した 3.3V の線を戻して再び SHT30 に電源を供給して認識されるようにしておきましょう。
 
-<hr class="page-wrap" />
 
 ## WebI2Cとデバイスドライバ
 
@@ -472,36 +450,17 @@ CHIRIMENでは、GPIOインターフェースをWeb GPIOと呼ぶAPIで使用し
 
  Raspberry Pi, micro:bitでは、index.htmlの中で、Raspberry Pi Zero Wではmain.jsの中で以下のライブラリを読み込んでいます。
   
-* WebI2C APIを使用できるようにするためのライブラリ( Raspberry Pi: `polyfill.js`, micro:bit: `microbitble.js`, Raspberry Pi Zero W: xxx)です。
+* WebI2C APIを使用できるようにするためのライブラリ( Raspberry Pi: `polyfill.js`, micro:bit: `microbitble.js`, Raspberry Pi Zero W: xxx)でうｓ。
+
 * ( Raspberry Pi, micro:bit:`https://cdn.jsdelivr.net/npm/@chirimen/sht30`、 Raspberry Pi Zero W: `@chirimen/sht30`)　このファイルは、Web I2C API を使って SHT30 との通信を行うための、SHT30用のデバイスドライバー (ハードウェアを操作する為のライブラリ) です。
 
 `main.js` がドライバーライブラリを使ってこのアプリケーションの動作を記述している部分です。
-
-<hr class="page-wrap" />
 
 #### d-2. main.js
 
 次に、`main.js` の処理の流れを見てみましょう。
 
-```js
-main();
-
-async function main() {
-  const temperatureDisplay = document.getElementById("temperatureDisplay");
-  const humidityDisplay = document.getElementById("humidityDisplay");
-  const i2cAccess = await navigator.requestI2CAccess();
-  const port = i2cAccess.ports.get(1);
-  const sht30 = new SHT30(port, 0x44);
-  await sht30.init();
-
-  while (true) {
-    const { humidity, temperature } = await sht30.readData();
-    temperatureDisplay.innerHTML = `${temperature.toFixed(2)} ℃`;
-    humidityDisplay.innerHTML = `${humidity.toFixed(2)} %`;
-    await sleep(500);
-  }
-}
-```
+<script src="https://emgithub.com/embed.js?target=https%3A%2F%2Fgithub.com%2Fchirimen-oh%2Fchirimen%2Fblob%2F8d14c8a35319c1df287126eef1aa41c1f3b8c856%2Fgc%2Fi2c%2Fi2c-SHT30%2Fmain.js&style=github&showBorder=on&showFileMeta=on"></script>
 
 ここで温度センサーの情報を定期的に取得し、画面に出力する処理が行われています。
 少し詳し解説してみます。
@@ -514,28 +473,21 @@ Web I2C API を利用するための **`I2CAccess` インタフェースを取�
 
 `I2CAccess.ports` は、利用可能な I2C ポートの一覧です。
 
-```js
-const port = i2cAccess.ports.get(1);
-```
+<script src="https://emgithub.com/embed.js?target=https%3A%2F%2Fgithub.com%2Fchirimen-oh%2Fchirimen%2Fblob%2F8d14c8a35319c1df287126eef1aa41c1f3b8c856%2Fgc%2Fi2c%2Fi2c-SHT30%2Fmain.js%23L7-L7&style=github&showBorder=on&showFileMeta=on"></script>
 
 CHIRIMEN RasPi、RasPiZero、micro:bit で利用可能な I2C ポート番号は`1`番だけです。ポート番号に`1` を指定して **`port` オブジェクトを取得** しています。
-
-<hr class="page-wrap" />
 
 ##### new SHT30(port, 0x44)
 
 ドライバーライブラリを使い **SHT30 を操作する為のインスタンスを生成** しています。
-```js
-const sht30 = new SHT30(port, 0x44);
-```
+
+<script src="https://emgithub.com/embed.js?target=https%3A%2F%2Fgithub.com%2Fchirimen-oh%2Fchirimen%2Fblob%2F8d14c8a35319c1df287126eef1aa41c1f3b8c856%2Fgc%2Fi2c%2Fi2c-SHT30%2Fmain.js%23L8-L8&style=github&showBorder=on&showFileMeta=on"></script>
 
 ##### await sht30.init()
 
 ドライバーライブラリのインスタンス (`sht30`) の `init()` メソッドを通じて **I2C ポートを開いてセンサーを初期化** しています。
 
-```js
-await sht30.init();
-```
+<script src="https://emgithub.com/embed.js?target=https%3A%2F%2Fgithub.com%2Fchirimen-oh%2Fchirimen%2Fblob%2F8d14c8a35319c1df287126eef1aa41c1f3b8c856%2Fgc%2Fi2c%2Fi2c-SHT30%2Fmain.js%23L9-L9&style=github&showBorder=on&showFileMeta=on"></script>
 
 具体的に内部では、インスタンス生成時に指定した `port` オブジェクトと `slaveAddress(0x44)` を用いて `I2CPort.open()` を行なっています。`I2CPort.open()` が成功すると、`I2CSlaveDevice` という I2C ポートへデータ書き込みや読み込みなどを行うインタフェースが返されます。`I2CSlaveDevice` インタフェースは、ライブラリ内に保存され、その後の処理でこのインターフェイスを使って I2C デバイス SHT30 との通信が可能になります。
 
@@ -545,9 +497,7 @@ await sht30.init();
 
 **SHT30 の仕様に基づくデータ読み出し処理です**。
 
-```js
-const { humidity, temperature } = await sht30.readData();
-```
+<script src="https://emgithub.com/embed.js?target=https%3A%2F%2Fgithub.com%2Fchirimen-oh%2Fchirimen%2Fblob%2F8d14c8a35319c1df287126eef1aa41c1f3b8c856%2Fgc%2Fi2c%2Fi2c-SHT30%2Fmain.js%23L12-L12&style=github&showBorder=on&showFileMeta=on"></script>
 
 ドライバーライブラリ内部では、SHT30 から得られる温度と湿度それぞれ 16bit の数値を、温度・湿度の物理量の数値に変換して返却しています。
 
@@ -560,7 +510,6 @@ const { humidity, temperature } = await sht30.readData();
 
 この流れは他の I2C デバイスでも基本的に同様になります。
 
-<hr class="page-wrap" />
 
 ### デバイスドライバーなしにSHT30を使う
 
@@ -600,8 +549,6 @@ var cTemp = ((((mdata[0] * 256.0) + mdata[1]) * 175) / 65535.0) - 45;
 var humidity = 100 * (mdata[3] * 256 + mdata[4]) / 65535.0;
 ```
 ドライバーライブラリ内部では、上記のようにSHT30 に単発の高精度計測を指示し、得られた温度と湿度それぞれ 16bit の数値を、温度・湿度の物理量の浮動小数点数に変換して返却しています。
-
-<hr class="page-wrap" />
 
 # IoT
 これまでのチュートリアルでは、いずれもそのコンピュータに直接接続されたデバイスを使うものでした。このようなシステムは「スタンドアロン」と呼ばれます。
@@ -710,8 +657,6 @@ var relay = RelayServer("achex", "chirimenSocket" , nodeWebSocketLib, "https://c
 * RelayServerの第四引数で、[リファラー](https://e-words.jp/w/%E3%83%AA%E3%83%95%E3%82%A1%E3%83%A9.html)の指定が必要です
   * webアプリの場合はそのコンテンツの配信元のURLがリファラーとして自動設定されますが、Node.jsのアプリはローカルにあるので別途指定が必要
   * achexの場合URLは何でも許可されますが、他のrelayServerサービスでは あらかじめ指定したリファラーが設定されていなければアクセス拒否されるものもあります(これも一つのセキュリティ)
-
-<hr class="page-wrap" />
 
 ## Webhooks
 relayServerが必要なほどリアルタイム性は求めないけれど、むしろ既存のWebサービス・アプリと簡単につなぎたいようなケースでは、httpをそのまま使うことができるでしょう。ただし既存のWebサービス・アプリはウェブブラウザを介して人が操作することが前提でつくられていますので、直接センサーやアクチュエータ（を制御するコンピュータとプログラム～IoTデバイス）をつなげるにはハードルがあります。
