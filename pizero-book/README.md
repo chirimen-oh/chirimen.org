@@ -36,3 +36,10 @@ toc.md の最初に index.md の表紙行が出るので手動で削除する
 ### ページ番号が ?? になるとき
 
 scripts/gfenerate-toc.js の replaceAll で変換処理を追加する
+
+## 目次・ドキュメント一括出力
+下記コマンドを実行
+
+```sh
+$ ./build.sh
+```
