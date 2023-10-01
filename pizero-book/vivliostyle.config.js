@@ -7,7 +7,7 @@ module.exports = {
   entry: [
     './docs/index.md',
     {
-      path: 'toc.md',
+      path: './docs/toc.md',
       rel: 'contents',
       title: '目次',
     },
