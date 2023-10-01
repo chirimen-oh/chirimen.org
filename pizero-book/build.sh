@@ -3,7 +3,6 @@
 clear
 
 echo 'remove old html'
-rm toc.html
 find docs/ -type f -name "*.html" -exec rm {} \;
 
 npm run generate-toc
