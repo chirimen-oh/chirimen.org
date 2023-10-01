@@ -5,16 +5,16 @@ module.exports = {
   size: 'B5', // paper size.
   theme: '@vivliostyle/theme-techbook@^1.0.0', // .css or local dir or npm package. default to undefined.
   entry: [
-    'index.md',
+    './docs/index.md',
     {
       path: 'toc.md',
       rel: 'contents',
       title: '目次',
     },
     // 'toc.md',
-    '../pizero/readme.md', // `title` is automatically guessed from the file (frontmatter > first heading).
-    '../chirimenGeneric/readme.md',
-    '../pizero/parts-book2.md',
+    './docs/readme.md', // `title` is automatically guessed from the file (frontmatter > first heading).
+    './docs/chirimenGeneric.md',
+    './docs/parts-list.md',
     // {
     //   path: 'epigraph.md',
     //   title: 'Epigraph', // title can be overwritten (entry > file),
