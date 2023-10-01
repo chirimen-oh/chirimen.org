@@ -43,3 +43,28 @@ scripts/gfenerate-toc.js の replaceAll で変換処理を追加する
 ```sh
 $ ./build.sh
 ```
+
+
+## ディレクトリ構成
+
+```sh
+chirimen.org/pizero-book 
+├── build.sh # ビルドシェル
+├── docs # 各種ページ md
+├── images # 各種ページ素材
+├── package-lock.json
+├── package.json
+├── publication.json
+├── scripts
+│   └── generate-toc.js # 目次生成シェル
+├── themes
+│   ├── package-lock.json
+│   ├── package.json
+│   └── packages
+│       └── @vivliostyle
+│           ├── theme-base
+│           └── theme-techbook
+│               ├── theme.css # ドキュメント用スタイル
+│               └── vivliostyle.config.js
+└── vivliostyle.config.js # ドキュメント設定
+```
