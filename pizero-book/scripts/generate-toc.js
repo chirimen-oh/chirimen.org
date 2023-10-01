@@ -43,7 +43,7 @@ const tocFromEntry = entry
 
 const toc = `<nav id="toc" role="doc-toc">\n\n## 目次\n\n${tocFromEntry}\n</nav>`;
 
-fs.writeFileSync("./docs/toc.md", toc, { encoding: "utf8" });
+fs.writeFileSync("toc.md", toc, { encoding: "utf8" });
 
 console.log("✨ toc.md generated.\n");
 console.log(toc);
