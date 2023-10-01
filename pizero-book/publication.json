@@ -8,14 +8,14 @@
   "name": "CHIRIMEN Raspberry Pi Zero W チュートリアル",
   "author": "CHIRIMEN Open Hardware Community <chirimen.open.hardware@gmail.com>",
   "inLanguage": "ja",
-  "dateModified": "2023-10-01T07:45:16.381Z",
+  "dateModified": "2023-10-01T08:46:24.060Z",
   "readingOrder": [
     {
       "url": "docs/index.html",
       "name": "CHIRIMEN Raspberry Pi Zero W チュートリアル"
     },
     {
-      "url": "docs/toc.html",
+      "url": "toc.html",
       "name": "目次",
       "rel": "contents",
       "type": "LinkedResource"
@@ -30,7 +30,7 @@
     },
     {
       "url": "docs/parts-list.html",
-      "name": "パーツリスト"
+      "name": "CHIRIMEN 対応デバイスリスト"
     }
   ],
   "resources": [],
