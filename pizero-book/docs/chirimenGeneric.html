@@ -1,0 +1,851 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8">
+    <title>CHIRIMEN</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../themes/packages/@vivliostyle/theme-techbook/theme.css">
+  </head>
+  <body>
+    <section class="level1" aria-labelledby="chirimen">
+      <h1 id="chirimen">CHIRIMEN</h1>
+      <p>
+        <img src="CHIRIMEN_pf.png" alt="CHIRIMEN_pf">
+        CHIRIMEN とは、Webの標準的な技術・ブラウザやNode.js等で実行できるJavaScript で電子パーツを制御し、<a href="https://www.iizuka.kyutech.ac.jp/faculty/physicalcomputing">フィジカルコンピューティング</a>や<a href="#iot">IoTシステム</a>を開発可能なプロトタイピング環境です。
+      </p>
+      <p>デジタルのソフトとフィジカルなハードをWWW上で連携するデバイスを Web標準技術、JavaScript だけで容易に実現できます。</p>
+      <section class="level2" aria-labelledby="chirimenについて">
+        <h2 id="chirimenについて">CHIRIMENについて</h2>
+        <ul>
+          <li><a href="../../about.md">こちらを参照ください</a></li>
+        </ul>
+      </section>
+      <section class="level2" aria-labelledby="chirimenのメリット">
+        <h2 id="chirimenのメリット">CHIRIMENのメリット</h2>
+        <ul>
+          <li>広く使われている標準技術を学習できるので
+            <ul>
+              <li>学習のハードルが低い</li>
+              <li>得たスキルが広く長く役立つ</li>
+              <li>インターネットでノウハウを検索しやすい</li>
+            </ul>
+          </li>
+          <li>Web技術を活用するので
+            <ul>
+              <li>WWWのサービスと簡単に連携できる</li>
+              <li>ユーザーインターフェースやコンテンツを簡単に作れる</li>
+              <li>Webブラウザを使って開発できる</li>
+            </ul>
+          </li>
+        </ul>
+        <hr class="page-wrap"># ハードウェア・デバイス
+        <ul>
+          <li><a href="../reference#section-1">予備知識・資料集～電子工作について</a></li>
+        </ul>
+      </section>
+      <section class="level2" aria-labelledby="そもそもl-チカって何">
+        <h2 id="そもそもl-チカって何">そもそも「L チカ」って何？</h2>
+        <p>「L チカ」とは、LED を点けたり消したりチカチカ点滅させることです。今回は「LED を点ける」「LED を消す」をプログラムで繰り返し実行することで実現します。</p>
+        <ul>
+          <li>参考：<a href="https://ja.wikipedia.org/wiki/%E7%99%BA%E5%85%89%E3%83%80%E3%82%A4%E3%82%AA%E3%83%BC%E3%83%89">LED（発光ダイオード）</a></li>
+        </ul>
+      </section>
+      <section class="level2" aria-labelledby="led">
+        <h2 id="led">LED</h2>
+        <ul>
+          <li><a href="https://ja.wikipedia.org/wiki/%E7%99%BA%E5%85%89%E3%83%80%E3%82%A4%E3%82%AA%E3%83%BC%E3%83%89">LED（発光ダイオード）</a></li>
+          <li><a href="https://www.marutsu.co.jp/pc/static/large_order/led">LED の使い方</a></li>
+        </ul>
+        <section class="level3" aria-labelledby="ヒント-led-の電圧">
+          <h3 id="ヒント-led-の電圧">ヒント: LED の電圧</h3>
+          <p>LED の順方向電圧は色により異なっており、赤色 LED は 1.8V 程度、青色 LED は 3.1V 程度とされています。</p>
+          <hr class="page-wrap">
+        </section>
+      </section>
+      <section class="level2" aria-labelledby="ブレッドボード">
+        <h2 id="ブレッドボード">ブレッドボード</h2>
+        <ul>
+          <li><a href="https://shop.sunhayato.co.jp/blogs/problem-solving/breadboard">ブレッドボードの使い方</a> (サンハヤト社)</li>
+        </ul>
+        <table>
+          <thead>
+            <tr>
+              <th>外観</th>
+              <th>内部の接続状態</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>
+                <img src="../microbit/imgs/breadboardImg.jpg" alt="外観">
+              </td>
+              <td>
+                <img src="../microbit/imgs/breadboardSch.png" alt="内部の接続状態">
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <ul>
+          <li>
+            <p>+と-のライン(上下の横のピン列)が無いブレッドボードもあります（CHIRIMEN Starter Kitのブレッドボードにはありません）</p>
+          </li>
+          <li>
+            <p>配線に使うケーブルの色に厳密な決まりはありませんが、一般的にGNDは黒(や黒っぽい色)、電源(VCC, +3.3V, +5V)には赤(や赤っぽい色)が用いられます。配線間違いを防ぐためにもなるべく合わせましょう。</p>
+          </li>
+          <li>
+            <p>抵抗やLEDの足(リード線)は手で簡単に曲げられます。ブレッドボードに差し込めるように適当に成型してください。</p>
+          </li>
+        </ul>
+      </section>
+      <section class="level2" aria-labelledby="抵抗値の読み方">
+        <h2 id="抵抗値の読み方">抵抗値の読み方</h2>
+        <ul>
+          <li><a href="http://www.jarl.org/Japanese/7_Technical/lib1/teikou.htm">抵抗値の読み方</a></li>
+          <li><a href="http://startelc.com/elcLink/tester/elc_nArtcTester2.html#chapter-2">テスターを使って抵抗値を確かめる</a></li>
+        </ul>
+        <hr class="page-wrap">
+      </section>
+      <section class="level2" aria-labelledby="mosfetによる大電力制御">
+        <h2 id="mosfetによる大電力制御">MOSFETによる大電力制御</h2>
+        <section class="level3" aria-labelledby="gpio-の制約事項">
+          <h3 id="gpio-の制約事項">GPIO の制約事項</h3>
+          <p>Raspberry Pi の GPIO ポートは、全体で流せる電流の上限が決められています。</p>
+          <ul>
+            <li><a href="https://elinux.org/RPi_Low-level_peripherals#Power_pins">合計 50mA</a></li>
+            <li>3.3 V</li>
+          </ul>
+          <p>小さな LED 数個の場合はこの条件内で使えますが、モーターやソレノイド、パワー LED など電流を多く消費するデバイスは直接接続して使うことができません。</p>
+        </section>
+      </section>
+      <section class="level2" aria-labelledby="mosfet-とは">
+        <h2 id="mosfet-とは">MOSFET とは</h2>
+        <p><a href="https://ja.wikipedia.org/wiki/MOSFET">MOSFET</a> とは<a href="https://ja.wikipedia.org/wiki/%E9%9B%BB%E7%95%8C%E5%8A%B9%E6%9E%9C%E3%83%88%E3%83%A9%E3%83%B3%E3%82%B8%E3%82%B9%E3%82%BF">電界効果トランジスタ (FET)</a> の一種で、主にスイッチング素子として利用される (小さな電圧の変更で大きな電流・電圧のオンオフを切り替える) 部品です。</p>
+        <p>今回は Nch MOSFET「<a href="http://akizukidenshi.com/catalog/g/gI-07597/">2SK4017</a>」を利用します。</p>
+        <figure>
+          <img src="../raspi/imgs/section1/mosfet.png" alt="MOSFET">
+          <figcaption aria-hidden="true">MOSFET</figcaption>
+        </figure>
+        <hr class="page-wrap">
+        <p>プルダウンの GPIO ポートを使った典型的な回路は以下のようになります。</p>
+        <figure>
+          <img src="../raspi/imgs/section1/DC3motor-schematic.svg" alt="NCh MOSFET schematic">
+          <figcaption aria-hidden="true">NCh MOSFET schematic</figcaption>
+        </figure>
+        <section class="level3" aria-labelledby="電源">
+          <h3 id="電源">電源</h3>
+          <p>
+            図の GND 端子は Raspberry Pi と DC 負荷用電源のものと共通ですが、VCC 端子は、基本的には Raspberry Pi の 3.3V や 5V 端子とは異なります。
+            DC 負荷用に Raspberry Pi とは別に電源を用意するのが望ましいです。
+          </p>
+          <p>ちびギアモータを使った作例では、その消費電力が十分小さいので、例外的に Raspberry Pi の 5V 端子か電力を供給しています。</p>
+          <hr class="page-wrap">
+        </section>
+      </section>
+    </section>
+    <section class="level1" aria-labelledby="javascript">
+      <h1 id="javascript">JavaScript</h1>
+      <p>
+        標準化されたプログラミング言語の一種で、ウェブブラウザが代表的な実行環境です(プログラムコードを解釈して動作させるシステム)。CHIRIMENでもRasberry Pi及びmicro:bit版はウェブブラウザを実行環境として使用します。Raspberry Pi Zero版はNode.jsを実行環境として使っています。
+        別名としてECMA Scriptと呼ばれることもあります。
+      </p>
+      <ul>
+        <li><a href="https://developer.mozilla.org/ja/docs/Web/JavaScript">Mozilla Developer Networkの解説</a></li>
+      </ul>
+      <section class="level2" aria-labelledby="javascript-の基礎">
+        <h2 id="javascript-の基礎">JavaScript の基礎</h2>
+        <p>JavaScript に慣れていない人は、<a href="../js/readme.md">「JavaScript 初学者向け資料集」</a>を参考にしてください。</p>
+        <ul>
+          <li>その他の情報：<a href="../reference#javascript">予備知識・資料集の情報</a></li>
+        </ul>
+      </section>
+      <section class="level2" aria-labelledby="javascriptコードライブラリの読み込み">
+        <h2 id="javascriptコードライブラリの読み込み">javascriptコード・ライブラリの読み込み</h2>
+        <section class="level3" aria-labelledby="ウェブアプリhtmlで読み込み">
+          <h3 id="ウェブアプリhtmlで読み込み">ウェブアプリ：HTMLで読み込み</h3>
+          <p>Raspberry Pi Zero版以外のCHIRIMENはプログラムの起点はHTMLファイルです。（<a href="https://ja.wikipedia.org/wiki/%E3%82%A6%E3%82%A7%E3%83%96%E3%82%A2%E3%83%97%E3%83%AA%E3%82%B1%E3%83%BC%E3%82%B7%E3%83%A7%E3%83%B3">ウェブアプリ</a>）ブラウザはまずHTMLファイルを読み込んだうえで、そこに書かれた内容で動きます。したがって作ったコードや必要なライブラリの読み込みは基本的に全てこのHTMLの中で指定します。（なお、javascript Moduleを有効化している場合はjavascriptコードの中でjsライブラリを読み込むことがある）</p>
+          <p>
+            ポイントは <code>&#x3C;script ...>&#x3C;/script></code> の部分です。
+            <code>polyfill.js</code> という JavaScript ライブラリを読み込んでいます。これは <a href="http://browserobo.github.io/WebGPIO">Web GPIO API</a> と、<a href="http://browserobo.github.io/WebI2C">Web I2C API</a> という W3C でドラフト提案中の 2 つの API への <a href="https://developer.mozilla.org/ja/docs/Glossary/Polyfill">Polyfill (新しい API を未実装のブラウザでも同じコードが書けるようにするためのライブラリ)</a> で、最初に読み込むとそれ以降のコードで GPIO や I2C を操作する JavaScript API が使えるようになります。
+          </p>
+          <p>次の行にある <code>main.js</code> は、JavaScript のプログラム本体です。</p>
+          <hr class="page-wrap">
+        </section>
+        <section class="level3" aria-labelledby="nodejs-chirimen-raspberry-pi-zero版">
+          <h3 id="nodejs-chirimen-raspberry-pi-zero版">Node.js (CHIRIMEN Raspberry Pi Zero版)</h3>
+          <p>Raspberry Pi Zero版はプログラムの起点が自分が作ったjavascriptコード自体になります。ブラウザの代わりに<a href="https://ja.wikipedia.org/wiki/Node.js">Node.js</a>というjavascriptコードだけを解釈するソフト（javascript <a href="https://ja.wikipedia.org/wiki/%E3%82%A4%E3%83%B3%E3%82%BF%E3%83%97%E3%83%AA%E3%82%BF">インタープリタ</a>）にコードを読み込ませて実行します。</p>
+          <p>CHIRIMEN環境のために必要なライブラリや、<a href="#WebI2C%E3%81%A8%E3%83%87%E3%83%90%E3%82%A4%E3%82%B9%E3%83%89%E3%83%A9%E3%82%A4%E3%83%90">I2Cデバイスのドライバ</a>(後述)は次のECMA Script Moduleという仕組みを使って読み込みます。</p>
+        </section>
+        <section class="level3" aria-labelledby="javascript-module-ecma-script-module">
+          <h3 id="javascript-module-ecma-script-module">javascript Module (ECMA Script Module)</h3>
+          <ul>
+            <li>ウェブアプリでのModule有効化：HTMLのscript要素でjavascriptを読み込むとき、ttype="module"プロパティを設定する。
+              <ul>
+                <li><code>&#x3C;script type="module" src="main.js">&#x3C;/script></code></li>
+              </ul>
+            </li>
+            <li>import文で外部のライブラリを読み込む。
+              <ul>
+                <li><code>import {RelayServer} from "https://chirimen.org/remote-connection/js/beta/RelayServer.js";</code></li>
+              </ul>
+            </li>
+            <li>importされるライブラリ側には、importできるオブジェクトを指定するexport文を記述する。</li>
+            <li><code>export {RelayServer};</code></li>
+            <li><a href="https://codesandbox.io/s/github/chirimen-oh/chirimen.org/tree/master/pizero/esm-examples/remote_gpio_led/pc">例を見てみる</a></li>
+            <li><a href="https://developer.mozilla.org/ja/docs/Web/JavaScript/Guide/Modules">Mozilla Developer Networkの解説</a></li>
+          </ul>
+        </section>
+      </section>
+      <section class="level2" aria-labelledby="非同期処理">
+        <h2 id="非同期処理">非同期処理</h2>
+        <p>
+          物理デバイス制御やネットワーク通信などでは、応答待ち中にブラウザが停止しないよう非同期処理を使う必要があります。
+          本チュートリアルではこれを <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/async_function">async 関数</a> で記述しています。async 関数による非同期処理に慣れていない人は、<a href="../js/async.md">こちらの資料「非同期処理 (async await 版)」</a> も参考にしてください。非同期処理についてより詳しくは <a href="https://jsprimer.net/basic/async/">JS Primer の非同期処理説明ページ</a> をご覧ください。
+        </p>
+        <p>非同期処理を使いこなすのは難しいですが、本チュートリアルでは次のルールでコードを書けば大丈夫です:</p>
+        <ul>
+          <li><strong>非同期関数の呼び出し時には前に <code>await</code> を付けて呼び出す</strong>
+            <ul>
+              <li>非同期関数呼び出し前に <code>await</code> を付けると、その処理の完了を待ってから次のコードが実行されます</li>
+              <li>GPIO/I2C の初期化、ポートの設定などは非同期処理なので <code>await</code> キーワードを付けて呼び出します</li>
+            </ul>
+          </li>
+          <li><strong>非同期処理を含む関数は前に <code>async</code> を付けて非同期関数として定義する</strong>
+            <ul>
+              <li><code>async function 関数名() { ... }</code> のように頭に <code>async</code> を付けるだけで非同期関数になります</li>
+            </ul>
+          </li>
+        </ul>
+        <p>非同期関数を <code>await</code> なしで呼び出すと返り値が Promise オブジェクトとなり、Promise を理解しないと返り値の判断や実行順序が入れ替わり意図せぬ挙動になります。例えば、ポートの初期化を <code>await</code> なしで呼ぶと、ポート初期化前に初期化未完了のハードウェアを操作しようとして失敗したりします。</p>
+        <p>ハードウェアを制御するときは基本的に非同期呼び出しをする (その処理を含む関数もまた非同期で呼びす) と決めておけば迷うことなく、コードの実行順序も上から下に見たとおりの順番で実行され読み書きしやすくなります。</p>
+      </section>
+      <section class="level2" aria-labelledby="開発環境">
+        <h2 id="開発環境">開発環境</h2>
+        <section class="level3" aria-labelledby="github">
+          <h3 id="github">GitHub</h3>
+          <ul>
+            <li><a href="../reference#github-">予備知識・資料集を参照ください</a></li>
+          </ul>
+        </section>
+        <section class="level3" aria-labelledby="codesandbox">
+          <h3 id="codesandbox">CodeSandbox</h3>
+          <ul>
+            <li><a href="../reference#github-">予備知識・資料集を参照ください</a></li>
+            <li>
+              <img src="../pizero/imgs/RC_CSB.svg" alt="CodeSandbox画面">
+            </li>
+          </ul>
+          <hr class="page-wrap">
+        </section>
+      </section>
+    </section>
+    <section class="level1" aria-labelledby="gpio">
+      <h1 id="gpio">GPIO</h1>
+      <section class="level2" aria-labelledby="gpioとは">
+        <h2 id="gpioとは">GPIOとは</h2>
+        <p><a href="https://ja.wikipedia.org/wiki/GPIO">GPIO</a>は、「General-purpose input/output」の略で汎用的な入出力インタフェースのことです。</p>
+        <p>Raspi に実装されている 40 本のピンヘッダから GPIO を利用することができます。</p>
+        <p>CHIRIMEN Raspi、Raspi Zero では Raspi が提供する 40 本のピンヘッダのうち、下記緑色のピン(合計 17 本)が利用可能です。CHIRIMEN micro:bitでは<a href="https://chirimen.org/chirimen-micro-bit/guidebooks/diff_rpi3.html#%E4%BD%BF%E7%94%A8%E3%81%A7%E3%81%8D%E3%82%8Bgpio%E3%83%9D%E3%83%BC%E3%83%88">こちらのページ</a>に記載されている端子が利用可能です。</p>
+        <p>Raspiやmicro:bit の GPIO 端子は、GND 端子との間に、0V もしくは 3.3V の電圧を印加(出力)したり、逆に 0V もしくは 3.3V の電圧を検知(入力)したりすることができます。LED は数 mA の電流を流すことによって点灯できる電子部品のため、印加する電圧を 3.3V(点灯)、0V(消灯) と変化させることで L チカが実現できるのです。</p>
+        <p>詳しくは<a href="https://tool-lab.com/make/raspberrypi-startup-22/">こちらのサイトの解説</a>などを参考にしてみましょう。</p>
+        <section class="level3" aria-labelledby="raspberry-piのピン配置図">
+          <h3 id="raspberry-piのピン配置図">Raspberry Piのピン配置図</h3>
+          <figure>
+            <img src="https://chirimen.org/PiZeroWebSerialConsole/wallpaperS.png" alt="Raspi PIN配置図">
+            <figcaption aria-hidden="true">Raspi PIN配置図</figcaption>
+          </figure><!--
+          ![Raspi PIN配置図](../raspi/imgs/section0/Raspi3PIN.png)
+          {% cloudinary ../raspi/imgs/section0/Raspi3PIN.png alt="Raspi PIN配置図" %}
+          -->
+        </section>
+        <section class="level3" aria-labelledby="raspverry-pi-zeroのピン配置図">
+          <h3 id="raspverry-pi-zeroのピン配置図">Raspverry Pi Zeroのピン配置図</h3>
+          <p>Raspberry Piの端子と同じ配列です。</p>
+        </section>
+        <section class="level3" aria-labelledby="microbitのピン配置図">
+          <h3 id="microbitのピン配置図">micro:bitのピン配置図</h3>
+          <figure>
+            <img src="https://tech.microbit.org/docs/hardware/assets/edge_connector.svg" alt="micro:bitのI端子" height="350">
+            <figcaption aria-hidden="true">micro:bitのI端子</figcaption>
+          </figure>
+        </section>
+        <section class="level3" aria-labelledby="プルアップpuプルダウンpd">
+          <h3 id="プルアップpuプルダウンpd">プルアップ(PU)、プルダウン(PD)</h3>
+          <p>
+            GPIOポートを入力モードで使用する場合、ポートが解放状態(電気的に切り離されている状態)のときに設定される値があります。
+            プルアップは1、プルダウンは0になります。　Raspberry Piのピン配置図に書かれているPU,PDがその設定値です。micro:bitではすべてプルダウンに設定されていますが、GPIOポート初期化時にプルアップに設定することもできます。
+          </p>
+          <ul>
+            <li><a href="https://voltechno.com/blog/pullup-pulldown/">より詳しく知る(voltechno)</a></li>
+          </ul>
+          <hr class="page-wrap">
+        </section>
+      </section>
+      <section class="level2" aria-labelledby="gpioポートの初期化">
+        <h2 id="gpioポートの初期化">GPIOポートの初期化</h2>
+        <p>
+          今回の JavaScript ファイルで、最初に呼び出されるコードは <code>await navigator.requestGPIOAccess()</code> です。
+          ここで先ほど出て来た <a href="http://browserobo.github.io/WebGPIO">Web GPIO API</a> を使い、<code>gpioAccess</code> という GPIO にアクセスするためのインタフェースを取得しています。
+        </p>
+        <script src="https://emgithub.com/embed.js?target=https%3A%2F%2Fgithub.com%2Fchirimen-oh%2Fchirimen%2Fblob%2F5c520c21820304901553f2adf22da1012f54722d%2Fgc%2Fgpio%2FLEDblink%2Fmain.js%23L4-L4&#x26;style=github&#x26;showBorder=on&#x26;showFileMeta=on"></script>
+        <p><strong>関数の呼び出しに <code>await</code> 接頭詞を付けることに注意してください。</strong> この関数は非同期関数で、その処理の完了を待ってから次の処理をする必要があります。また、<code>await</code> 接頭詞を使うコードを含むために、それを含む関数 <code>main()</code> は async 接頭詞付きの非同期関数として定義する必要があります。</p>
+      </section>
+      <section class="level2" aria-labelledby="gpioport-の出力処理">
+        <h2 id="gpioport-の出力処理">GPIOPort の出力処理</h2>
+        <p>
+          GPIOの<strong>出力</strong>機能を使います。
+          <strong><code>const port = gpioAccess.ports.get(26)</code> で GPIO の 26 番ポートにアクセスするためのオブジェクト</strong> を取得しています。
+        </p>
+        <script src="https://emgithub.com/embed.js?target=https%3A%2F%2Fgithub.com%2Fchirimen-oh%2Fchirimen%2Fblob%2F5c520c21820304901553f2adf22da1012f54722d%2Fgc%2Fgpio%2FLEDblink%2Fmain.js%23L5-L5&#x26;style=github&#x26;showBorder=on&#x26;showFileMeta=on"></script>
+        <p>続いて、 <strong><code>await port.export("out")</code> で GPIO の 26 番を「出力設定」にしています</strong>。これにより LED への電圧の切り替えが可能になっています。</p>
+        <script src="https://emgithub.com/embed.js?target=https%3A%2F%2Fgithub.com%2Fchirimen-oh%2Fchirimen%2Fblob%2F5c520c21820304901553f2adf22da1012f54722d%2Fgc%2Fgpio%2FLEDblink%2Fmain.js%23L7-L7&#x26;style=github&#x26;showBorder=on&#x26;showFileMeta=on"></script>
+        <p>最後に、無限ループのなかで <code>await sleep(1000)</code> によって 1000 ms (1 秒) 待機さ 1 秒ごとに <code>await port.write(1)</code> と <code>await port.write(0)</code> を交互に呼び出し、GPIO 26 番に加える電圧を 3.3V → 0V → 3.3V → 0V → … と繰り返しています。</p>
+        <script src="https://emgithub.com/embed.js?target=https%3A%2F%2Fgithub.com%2Fchirimen-oh%2Fchirimen%2Fblob%2F5c520c21820304901553f2adf22da1012f54722d%2Fgc%2Fgpio%2FLEDblink%2Fmain.js%23L9-L17&#x26;style=github&#x26;showBorder=on&#x26;showFileMeta=on"></script>
+        <p>
+          LED は一定以上の電圧を加え、電流を流すと点灯する性質を持っています。
+          つまり、3.3 V を加えたとき点灯し、0 V を加えたとき消灯、これを繰り返すことになります。
+        </p>
+        <section class="level3" aria-labelledby="サンプルコードを編集してみよう">
+          <h3 id="サンプルコードを編集してみよう">サンプルコードを編集してみよう</h3>
+          <ul>
+            <li>点滅周期を早く・遅く (<code>sleep()</code>の引数を変更)</li>
+            <li>点灯する時間と消灯する時間を変える (同上)</li>
+            <li>GPIO ポートを他のポートに変える・配線を変える (<code>gpioAccess.ports.get</code>の引数を変更)</li>
+          </ul>
+          <hr class="page-wrap">
+        </section>
+      </section>
+      <section class="level2" aria-labelledby="gpioportの入力処理">
+        <h2 id="gpioportの入力処理">GPIOPortの入力処理</h2>
+        <p>GPIOポートに繋いだスイッチやセンサーの状態を取得するには、GPIOの<strong>入力</strong>機能を使います。出力とは違って入力は二つの方法があります。onchangeとポーリングの二つの方法があります。</p>
+        <section class="level3" aria-labelledby="onchange編">
+          <h3 id="onchange編">onchange編</h3>
+          <p>GPIOポートの値が変化するたびに、指定した関数が実行されます。</p>
+          <script src="https://emgithub.com/embed.js?target=https%3A%2F%2Fgithub.com%2Fchirimen-oh%2Ftutorials%2Ftree%2F163ce18afdddd4d55c251b6b8b8d4181d3aa1695%2Fraspi%2Fexamples%2Fsection1%2Fs1_5%2Fmain.js&#x26;style=github&#x26;showBorder=on&#x26;showFileMeta=on"></script>
+          <p><code>port.onchange</code> は <strong>入力モードの GPIO ポートの「状態変化時に呼び出される関数を設定する」</strong> 機能です。このような関数のことをコールバック関数と呼びます。下記の<code>port.read()</code> を使ったコードと異なりポーリング処理が不要でコードも簡潔ですが、値が変化したタイミング以外では読み取りができませんのでユースケースが少し限られます。</p>
+        </section>
+        <section class="level3" aria-labelledby="単純入力ポーリング">
+          <h3 id="単純入力ポーリング">単純入力＋ポーリング</h3>
+          <p>こちらはGPIOポートの入力値を一回きり単発で取得する単純入力機能と、ポーリングの組み合わせです。</p>
+          <section class="level4" aria-labelledby="ポーリングとは">
+            <h4 id="ポーリングとは">ポーリングとは</h4>
+            <p>
+              様々な情報や値の取得や入力のための基本的な機能・関数は、入力を指定した瞬間、一回きり取得するだけのものがほとんどです。そこで、無限ループをつくりこの中で一回きりの入力を定期的に繰り返すことで、入力の変化を読み取る　ということがよく行われます。このような処理を一般にポーリングと呼びます。 (<a href="https://ja.wikipedia.org/wiki/%E3%83%9D%E3%83%BC%E3%83%AA%E3%83%B3%E3%82%B0_(%E6%83%85%E5%A0%B1)">wikipedia:ポーリング</a>)
+              ポーリングはセンサーの情報入力だけでなく、たとえば電子メールの到着を通知するために定期的にメールサーバにメール着信数を確認する　といった、ネットワークサービスでの処理など様々なシステムで広く使われています。
+            </p>
+          </section>
+          <section class="level4" aria-labelledby="gpioの単純入力関数">
+            <h4 id="gpioの単純入力関数">GPIOの単純入力関数</h4>
+            <p>単純に「GPIO ポートの状態を読み込む」には <code>port.read()</code> を使います。</p>
+            <p><code>port.read()</code> で GPIO を読み込むコードは次のように書けます:</p>
+            <pre class="language-js"><code class="language-js"><span class="token keyword">const</span> gpioAccess <span class="token operator">=</span> <span class="token keyword control-flow">await</span> <span class="token dom variable">navigator</span><span class="token punctuation">.</span><span class="token method function property-access">requestGPIOAccess</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">const</span> switchPort <span class="token operator">=</span> gpioAccess<span class="token punctuation">.</span><span class="token property-access">ports</span><span class="token punctuation">.</span><span class="token method function property-access">get</span><span class="token punctuation">(</span><span class="token number">5</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// GPIO ポート 5 番を取得</span>
+<span class="token keyword control-flow">await</span> switchPort<span class="token punctuation">.</span><span class="token keyword module">export</span><span class="token punctuation">(</span><span class="token string">"in"</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 「入力モード」に</span>
+<span class="token keyword">const</span> state <span class="token operator">=</span> <span class="token keyword control-flow">await</span> switchPort<span class="token punctuation">.</span><span class="token method function property-access">read</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// GPIO ポート 5 番に接続したスイッチの状態を読み込む</span></code></pre>
+            <section class="level5" aria-labelledby="await-portexport">
+              <h5 id="await-portexport">await port.export()</h5>
+              <p><code>port.export("in")</code> により取得した <strong>GPIO ポートを「入力モード」で初期化</strong> しています。このモードは GPIO ポートにかかる電圧を Web アプリ側から読み取りたい時に使います。初期化は非同期処理であり <code>await</code> で完了を待つ必要があることに注意してください。</p>
+            </section>
+            <section class="level5" aria-labelledby="await-portread">
+              <h5 id="await-portread">await port.read()</h5>
+              <p><code>port.export("in")</code> で入力モードに設定した <strong>GPIO ポートの現時点の状態を読み取ります</strong>。読み取りは非同期処理になるので <code>await</code> で完了を待つようにしてください。</p>
+            </section>
+            <section class="level5" aria-labelledby="ポーリングルーチン">
+              <h5 id="ポーリングルーチン">ポーリングルーチン</h5>
+              <p>上記コードで GPIO ポートの読み取りを 1 度だけ行えますが、今回は「スイッチが押され状態を監視する」必要がありますので、定期的に <code>await port.read()</code> を繰り返して GPIO ポートの状態を監視するポーリングのルーチンを組みます。</p>
+              <pre class="language-js"><code class="language-js"><span class="token keyword">const</span> gpioAccess <span class="token operator">=</span> <span class="token keyword control-flow">await</span> <span class="token dom variable">navigator</span><span class="token punctuation">.</span><span class="token method function property-access">requestGPIOAccess</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">const</span> switchPort <span class="token operator">=</span> gpioAccess<span class="token punctuation">.</span><span class="token property-access">ports</span><span class="token punctuation">.</span><span class="token method function property-access">get</span><span class="token punctuation">(</span><span class="token number">5</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword control-flow">await</span> switchPort<span class="token punctuation">.</span><span class="token keyword module">export</span><span class="token punctuation">(</span><span class="token string">"in"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">// 無限ループ</span>
+<span class="token keyword control-flow">while</span> <span class="token punctuation">(</span><span class="token boolean">true</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">const</span> state <span class="token operator">=</span> <span class="token keyword control-flow">await</span> switchPort<span class="token punctuation">.</span><span class="token method function property-access">read</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token operator">/</span>
+  <span class="token comment">//</span>
+  <span class="token comment">// ここにswitchの状態による処理を書き足す</span>
+  <span class="token comment">//</span>
+  <span class="token keyword control-flow">await</span> <span class="token function">sleep</span><span class="token punctuation">(</span><span class="token number">100</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 100 ms 待機</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">// sleep() は polyfill 内で定義済みなので省略可能:</span>
+<span class="token keyword">function</span> <span class="token function">sleep</span><span class="token punctuation">(</span><span class="token parameter">ms</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword control-flow">return</span> <span class="token keyword">new</span> <span class="token class-name">Promise</span><span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">resolve</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token function">setTimeout</span><span class="token punctuation">(</span>resolve<span class="token punctuation">,</span> ms<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+              <hr class="page-wrap">
+            </section>
+          </section>
+        </section>
+      </section>
+    </section>
+    <section class="level1" aria-labelledby="i2c">
+      <h1 id="i2c">I2C</h1>
+      <section class="level2" aria-labelledby="i2cの概要">
+        <h2 id="i2cの概要">I2Cの概要</h2>
+        <p><a href="https://ja.wikipedia.org/wiki/I2C">I2C</a> とは 2 線式の同期式シリアル通信インタフェースです。「アイ・スクエア・シー」や「アイ・ ツー・シー」と読みます。I2C では SDA（シリアルデータ）と SCL（シリアルクロック）の 2 本の線で通信を行います。</p>
+        <figure>
+          <img src="../raspi/imgs/section2/i2c-bus.png" alt="i2c-bus">
+          <figcaption aria-hidden="true">i2c-bus</figcaption>
+        </figure><!--
+        {% cloudinary half ../raspi/imgs/section2/i2c-bus.png alt="i2c-bus" %}
+        -->
+        <p>上図のように、I2C の SDA、SCL は複数のデバイス間で共有され、これを「I2C バス」と言います。I2C ではマスターとスレーブの間で通信が行われます。常にマスター側からスレーブ側に要求が行われ、スレーブ側からマスター側へ要求を行うことはできません。</p>
+        <p>本チュートリアルでいえばCHIRIMEN環境を動かすボードコンピュータがマスターとなり、ここに接続されるセンサーやアクチュエータデバイスなどがスレーブとして想定されます。スレーブデバイスの一例として<a href="../partslist">こちらに紹介</a>されているI2Cデバイスをご覧ください。</p>
+        <p>
+          マスターは、スレーブが持つ「SlaveAddress (スレーブアドレス)」を指定して、特定のスレーブとの通信を行います。このため、同じ I2C バス上に同じ SlaveAddress のスレーブを繋ぐことはできません。
+          I2Cデバイスは小型のICチップデバイスとなっており、デバイスによってはSlaveAddressは製品ごとに固定されています。
+        </p>
+        <figure>
+          <img src="../raspi/imgs/section2/i2c-bus2.png" alt="i2c-bus2">
+          <figcaption aria-hidden="true">i2c-bus2</figcaption>
+        </figure><!--
+        {% cloudinary ../raspi/imgs/section2/i2c-bus2.png alt="i2c-bus2" %}
+        -->
+        <p>通信するデバイス同士が同一基板上にない場合には、SDA、SCL の 2 本の通信線に加え電源や GND の線を加えて 4 本のケーブルを用いて接続するのが一般的です。電源電圧はデバイスに応じたものを繋ぐ必要があります。</p>
+        <section class="level3" aria-labelledby="raspberry-piのi2c端子">
+          <h3 id="raspberry-piのi2c端子">Raspberry PiのI2C端子</h3>
+          <p>下図のSCL, SDAがI2C端子です（黄色の端子）</p>
+          <figure>
+            <img src="../raspi/imgs/section0/Raspi3PIN.png" alt="Raspi PIN配置図" height="600">
+            <figcaption aria-hidden="true">Raspi PIN配置図</figcaption>
+          </figure><!--
+          {% cloudinary ../raspi/imgs/section0/Raspi3PIN.png alt="Raspi PIN配置図" %}
+          -->
+        </section>
+        <section class="level3" aria-labelledby="raspverry-pi-zeroのi2c端子">
+          <h3 id="raspverry-pi-zeroのi2c端子">Raspverry Pi ZeroのI2C端子</h3>
+          <p>　Raspberry PiのI2C端子と同じ配列です。</p>
+          <hr class="page-wrap">
+        </section>
+        <section class="level3" aria-labelledby="microbitのi2c端子">
+          <h3 id="microbitのi2c端子">micro:bitのI2C端子</h3>
+          <p>下図のSCL, SDAがI2C端子です (P19,P20～オレンジ色I2C1のグループ)</p>
+          <figure>
+            <img src="https://tech.microbit.org/docs/hardware/assets/edge_connector.svg" alt="micro:bitのI端子" height="400">
+            <figcaption aria-hidden="true">micro:bitのI端子</figcaption>
+          </figure>
+        </section>
+      </section>
+      <section class="level2" aria-labelledby="参考-i2c-に関する詳細情報">
+        <h2 id="参考-i2c-に関する詳細情報">参考: I2C に関する詳細情報</h2>
+        <p>I2C に関する詳細は下記をご参照ください。</p>
+        <ul>
+          <li><a href="https://ja.wikipedia.org/wiki/I2C">I2C</a> - Wikipedia</li>
+          <li>I2C バス仕様書 最新版（<a href="https://www.nxp.com/docs/ja/user-guide/UM10204.pdf">日本語</a>、<a href="http://www.nxp.com/documents/user_manual/UM10204.pdf">English</a>）</li>
+          <li><a href="http://www.picfun.com/i2cframe.html">I2C の使い方</a>（後閑哲也氏サイト)</li>
+        </ul>
+        <hr class="page-wrap">
+      </section>
+      <section class="level2" aria-labelledby="ポイント">
+        <h2 id="ポイント">ポイント</h2>
+        <p>I2C の概要として下記を押さえておきましょう。</p>
+        <ul>
+          <li>I2C バスを介して複数のデバイスが繋がる</li>
+          <li>I2C デバイスにはマスターとスレーブがある</li>
+          <li>I2C ではマスターからスレーブに対して通信要求が行われる</li>
+          <li>I2C スレーブは SlaveAddress を持つ</li>
+          <li>同じ I2C バスに同じ SlaveAddress のデバイスは繋げない</li>
+        </ul>
+      </section>
+      <section class="level2" aria-labelledby="i2cデバイスの実例i2c-温湿度センサー-sht30-sht31">
+        <h2 id="i2cデバイスの実例i2c-温湿度センサー-sht30-sht31">I2Cデバイスの実例：I2C 温湿度センサー (SHT30, SHT31)</h2>
+        <p>
+          I2C に対応したデバイスの実例を見てみましょう。CHIRIMENでは <a href="../partslist#i2c-">Examples</a> にセンサーなど、いくつかの I2C デバイスを使うサンプルコードと Raspi との接続方法を示す回路図が提供されており、SHT30/SHT31も紹介されて
+          います。
+        </p>
+        <section class="level3" aria-labelledby="sht30-sht31について">
+          <h3 id="sht30-sht31について">SHT30, SHT31について</h3>
+          <ul>
+            <li><a href="http://akizukidenshi.com/catalog/g/gK-12125/">湿度・温度センサ (SHT31)</a> x 1
+              <ul>
+                <li>または SHT30 (<a href="https://www.amazon.co.jp/s?k=sht30">Amazon</a>, <a href="https://ja.aliexpress.com/item/32962846003.html">AliExpress</a>)。</li>
+                <li>note: SHT31 は氷点下や 65 度以上などの高温での計測時の精度が SHT30 よりも少し高いが室温程度ではほぼ同様の類似モデルです。同シリーズには他にも SHT35 などもありますがそちらは未検証です。 (参考: <a href="https://www.sensirion.com/fileadmin/user_upload/customers/sensirion/Dokumente/2_Humidity_Sensors/Datasheets/Sensirion_Humidity_Sensors_SHT3x_Datasheet_digital.pdf">データシート</a>)</li>
+              </ul>
+            </li>
+          </ul>
+          <hr class="page-wrap">
+        </section>
+        <section class="level3" aria-labelledby="i2cデバイスモジュールの接続について">
+          <h3 id="i2cデバイスモジュールの接続について">I2Cデバイスモジュールの接続について</h3>
+          <p>I2Cデバイスは一般的に小さなチップ部品です。下の拡大写真で緑で囲んだものがSHT31の本体で 上下に出ている微細な端子を接続して使いますが、微細過ぎてプロトタイピングには向きません。そこでブレッドボードで使いやすい端子に変換したモジュールが販売されています。モジュールには<strong>赤で囲んだように端子名の記載</strong>があります。これを<strong>ホストのコンピュータの端子名と一致させて結線</strong>することでI2Cデバイスが正しく接続されます。(電源端子はVIN,V+,3V,VCCなど別名になっていることがあります)</p>
+          <figure>
+            <img src="../microbit/imgs/SHT31ModulePin.jpg" alt="I2Cmodule">
+            <figcaption aria-hidden="true">I2Cmodule</figcaption>
+          </figure>
+          <section class="level4" aria-labelledby="注意-配線時のポイント">
+            <h4 id="注意-配線時のポイント">注意: 配線時のポイント</h4>
+            <p>
+              配線の接続先やデバイスの基板の表裏など間違えないように注意してください。
+              配線を間違えると、故障や怪我などの原因になることがあります。おかしいなと思ったら、すぐに外して、配線をきちんと確認しましょう。
+            </p>
+          </section>
+        </section>
+      </section>
+      <section class="level2" aria-labelledby="b-i2cdetectで接続がうまくいったか確認する">
+        <h2 id="b-i2cdetectで接続がうまくいったか確認する">b. i2cdetectで接続がうまくいったか確認する</h2>
+        <p><code>i2cdetect</code> を使って SlaveAddress を確認し、正しく接続・認識できているか確かめてみましょう。ターミナルを起動して下記コマンドを入力してみてください。</p>
+        <ul>
+          <li><a href="https://tutorial.chirimen.org/ty51822r3/i2cdetect">ic2 detectとは</a></li>
+        </ul>
+        <section class="level3" aria-labelledby="コマンドラインから">
+          <h3 id="コマンドラインから">コマンドラインから</h3>
+          <pre class="language-sh"><code class="language-sh">i2cdetect -y -r 1</code></pre>
+          <p>(microbit版はコマンドラインがないので下記webAppを使いましょう)</p>
+          <hr class="page-wrap">
+        </section>
+        <section class="level3" aria-labelledby="i2cdetect-webapp">
+          <h3 id="i2cdetect-webapp">i2cdetect webApp</h3>
+          <section class="level4" aria-labelledby="raspberry-pi">
+            <h4 id="raspberry-pi">Raspberry Pi</h4>
+            <p>SlaveAddress を確認する i2cdetect には WebI2C(後述) を使って実装したwebApp版もあります。<a href="https://r.chirimen.org/i2cdetect">https://r.chirimen.org/i2cdetect</a> をご利用ください。ただし、WebI2C 版 i2cdetect を利用中は他のページから I2C デバイスを操作できません。確認が済んだらタブを閉じるようにしましょう。</p>
+          </section>
+          <section class="level4" aria-labelledby="raspberry-pizerow">
+            <h4 id="raspberry-pizerow">Raspberry PiZeroW</h4>
+            <p>Raspberry PiZeroWでは、<a href="https://chirimen.org/PiZeroWebSerialConsole/PiZeroWebSerialConsole.html">ターミナルウィンド</a>⇒CHIRIMEN Panel⇒i2c detect　でコマンドラインのショートカットが使えます。</p>
+          </section>
+          <section class="level4" aria-labelledby="microbit">
+            <h4 id="microbit">micro:bit</h4>
+            <p>microbitではWebI2C(後述) を使って実装した専用のwebAppが使えます。</p>
+            <p><a href="https://chirimen.org/chirimen-micro-bit/examples/i2cdetect/index.html">i2cdetect microbit webApp</a></p>
+          </section>
+        </section>
+        <section class="level3" aria-labelledby="i2c-detectの結果">
+          <h3 id="i2c-detectの結果">i2c detectの結果</h3>
+          <p>正しく接続できていれば下記のように表示されるはずです。</p>
+          <pre class="language-text"><code class="language-text">$ i2cdetect -y -r 1
+     0  1  2  3  4  5  6  7  8  9  a  b  c  d  e  f
+00:          -- -- -- -- -- -- -- -- -- -- -- -- --
+10: -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
+20: -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
+30: -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
+40: -- -- -- -- 44 -- -- -- -- -- -- -- -- -- -- --
+50: -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
+60: -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
+70: -- -- -- -- -- -- -- --</code></pre>
+          <p><code>44</code>という表示が見えます。これは 16 進数表示であり、 <code>0x44</code> は SHT30 の SlaveAddress です。</p>
+          <p>念のためSHT30のデータシートも確認してみましょう。</p>
+          <blockquote>
+            <table>
+              <thead>
+                <tr>
+                  <th>SHT3x-DIS</th>
+                  <th>I2C Address in Hex. representation</th>
+                  <th>Condition</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>I2C address A</td>
+                  <td>0x44 (default)</td>
+                  <td>ADDR (pin 2) connected to logic low</td>
+                </tr>
+                <tr>
+                  <td>I2C address B</td>
+                  <td>0x45</td>
+                  <td>ADDR (pin 2) connected to logic high</td>
+                </tr>
+              </tbody>
+            </table>
+            <p><strong>Table 8 I2C device addresses.</strong></p>
+            <p><a href="https://www.sensirion.com/fileadmin/user_upload/customers/sensirion/Dokumente/2_Humidity_Sensors/Datasheets/Sensirion_Humidity_Sensors_SHT3x_Datasheet_digital.pdf">SHT30 のデータシート p.9</a>より引用</p>
+          </blockquote>
+          <p>SHT30 は<code>0x44</code>がデフォルトの SlaveAddress で、ADDR ピンの HIGH/LOW により SlaveAddeess を <code>0x44</code> か <code>0x45</code> に変更できることがわかります。</p>
+        </section>
+        <section class="level3" aria-labelledby="認識されないとき">
+          <h3 id="認識されないとき">認識されないとき</h3>
+          <p>
+            試しに I2C デバイスへの電源供給を止めて、認識されないケースをあえて確かめてみます。
+            一度 RasPi の 3.3V に接続している線を抜いて、もう一度 <code>i2cdetect -y -r 1</code> を実行してみてください。
+          </p>
+          <pre class="language-text"><code class="language-text">$ i2cdetect -y -r 1
+     0  1  2  3  4  5  6  7  8  9  a  b  c  d  e  f
+00:          -- -- -- -- -- -- -- -- -- -- -- -- --
+10: -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
+20: -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
+30: -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
+40: -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
+50: -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
+60: -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
+70: -- -- -- -- -- -- -- --</code></pre>
+          <p>
+            <code>44</code> という表示が見つからなくなりました。このことによって間違いなく SHT30 の SlaveAddress が <code>0x44</code> となっていることを確認できました。
+            確認できたら、先ほど外した 3.3V の線を戻して再び SHT30 に電源を供給して認識されるようにしておきましょう。
+          </p>
+          <hr class="page-wrap">
+        </section>
+      </section>
+      <section class="level2" aria-labelledby="webi2cとデバイスドライバ">
+        <h2 id="webi2cとデバイスドライバ">WebI2Cとデバイスドライバ</h2>
+        <p>CHIRIMENでは、GPIOインターフェースをWeb GPIOと呼ぶAPIで使用しました。I2Cインターフェースに接続されたスレーブデバイスは<a href="http://browserobo.github.io/WebI2C">Web I2C API</a>と呼ぶAPIによって使用することができます。</p>
+        <p>
+          しかしI2CスレーブデバイスはGPIOの先に繋げるデバイスと比べてずっと複雑な機能を持っています。実際にはそれは極小のコンピュータで、I2Cを通しデバイス専用のコマンドやデータを送受信（通信）し、固有の機能を利用します。
+          このようなコードは、各デバイスのデータシートをよく読み込んだうえで書くことができます。これはかなり手間のかかる開発ですので簡単にデバイスが使用できるライブラリ(デバイスドライバ)があらかじめ用意されています。
+        </p>
+        <section class="level3" aria-labelledby="デバイスドライバが用意されているi2cデバイスのリスト">
+          <h3 id="デバイスドライバが用意されているi2cデバイスのリスト">デバイスドライバが用意されているI2Cデバイスのリスト</h3>
+          <p><a href="../partslist#i2c-">デバイスドライバが用意され簡単に利用できるI2Cデバイスのリスト</a></p>
+          <p>よく利用される、30種類ぐらいの比較的安価なデバイス向けのドライバが用意されています。</p>
+        </section>
+        <section class="level3" aria-labelledby="i2c-温湿度センサー-sht30-sht31の使用例">
+          <h3 id="i2c-温湿度センサー-sht30-sht31の使用例">I2C 温湿度センサー (SHT30, SHT31)の使用例</h3>
+          <p>Raspberry Pi, micro:bitでは、index.htmlの中で、Raspberry Pi Zero Wではmain.jsの中で以下のライブラリを読み込んでいます。</p>
+          <ul>
+            <li>WebI2C APIを使用できるようにするためのライブラリ( Raspberry Pi: <code>polyfill.js</code>, micro:bit: <code>microbitble.js</code>, Raspberry Pi Zero W: xxx)です。</li>
+            <li>( Raspberry Pi, micro:bit:<code>https://cdn.jsdelivr.net/npm/@chirimen/sht30</code>、 Raspberry Pi Zero W: <code>@chirimen/sht30</code>)　このファイルは、Web I2C API を使って SHT30 との通信を行うための、SHT30用のデバイスドライバー (ハードウェアを操作する為のライブラリ) です。</li>
+          </ul>
+          <p><code>main.js</code> がドライバーライブラリを使ってこのアプリケーションの動作を記述している部分です。</p>
+          <hr class="page-wrap">
+          <section class="level4" aria-labelledby="d-2-mainjs">
+            <h4 id="d-2-mainjs">d-2. main.js</h4>
+            <p>次に、<code>main.js</code> の処理の流れを見てみましょう。</p>
+            <pre class="language-js"><code class="language-js"><span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token keyword">async</span> <span class="token keyword">function</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">const</span> temperatureDisplay <span class="token operator">=</span> <span class="token dom variable">document</span><span class="token punctuation">.</span><span class="token method function property-access">getElementById</span><span class="token punctuation">(</span><span class="token string">"temperatureDisplay"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token keyword">const</span> humidityDisplay <span class="token operator">=</span> <span class="token dom variable">document</span><span class="token punctuation">.</span><span class="token method function property-access">getElementById</span><span class="token punctuation">(</span><span class="token string">"humidityDisplay"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token keyword">const</span> i2cAccess <span class="token operator">=</span> <span class="token keyword control-flow">await</span> <span class="token dom variable">navigator</span><span class="token punctuation">.</span><span class="token method function property-access">requestI2CAccess</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token keyword">const</span> port <span class="token operator">=</span> i2cAccess<span class="token punctuation">.</span><span class="token property-access">ports</span><span class="token punctuation">.</span><span class="token method function property-access">get</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token keyword">const</span> sht30 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">SHT30</span><span class="token punctuation">(</span>port<span class="token punctuation">,</span> <span class="token number">0x44</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token keyword control-flow">await</span> sht30<span class="token punctuation">.</span><span class="token method function property-access">init</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+  <span class="token keyword control-flow">while</span> <span class="token punctuation">(</span><span class="token boolean">true</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">const</span> <span class="token punctuation">{</span> humidity<span class="token punctuation">,</span> temperature <span class="token punctuation">}</span> <span class="token operator">=</span> <span class="token keyword control-flow">await</span> sht30<span class="token punctuation">.</span><span class="token method function property-access">readData</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    temperatureDisplay<span class="token punctuation">.</span><span class="token property-access">innerHTML</span> <span class="token operator">=</span> <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token html language-html"><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>temperature<span class="token punctuation">.</span><span class="token method function property-access">toFixed</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token interpolation-punctuation punctuation">}</span></span> ℃</span><span class="token template-punctuation string">`</span></span><span class="token punctuation">;</span>
+    humidityDisplay<span class="token punctuation">.</span><span class="token property-access">innerHTML</span> <span class="token operator">=</span> <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token html language-html"><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>humidity<span class="token punctuation">.</span><span class="token method function property-access">toFixed</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token interpolation-punctuation punctuation">}</span></span> %</span><span class="token template-punctuation string">`</span></span><span class="token punctuation">;</span>
+    <span class="token keyword control-flow">await</span> <span class="token function">sleep</span><span class="token punctuation">(</span><span class="token number">500</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre>
+            <p>
+              ここで温度センサーの情報を定期的に取得し、画面に出力する処理が行われています。
+              少し詳し解説してみます。
+            </p>
+            <section class="level5" aria-labelledby="await-navigatorrequesti2caccess">
+              <h5 id="await-navigatorrequesti2caccess">await navigator.requestI2CAccess()</h5>
+              <p>Web I2C API を利用するための <strong><code>I2CAccess</code> インタフェースを取得</strong> するための最初の API 呼び出しです。この関数も非同期処理ですので <code>await</code> で処理完了を待機し、その結果正しくインタフェースが取得されたら <code>i2cAccess</code> オブジェクトに保持します。</p>
+            </section>
+            <section class="level5" aria-labelledby="i2caccessportsget">
+              <h5 id="i2caccessportsget">i2cAccess.ports.get()</h5>
+              <p><code>I2CAccess.ports</code> は、利用可能な I2C ポートの一覧です。</p>
+              <pre class="language-js"><code class="language-js"><span class="token keyword">const</span> port <span class="token operator">=</span> i2cAccess<span class="token punctuation">.</span><span class="token property-access">ports</span><span class="token punctuation">.</span><span class="token method function property-access">get</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+              <p>CHIRIMEN RasPi、RasPiZero、micro:bit で利用可能な I2C ポート番号は<code>1</code>番だけです。ポート番号に<code>1</code> を指定して <strong><code>port</code> オブジェクトを取得</strong> しています。</p>
+              <hr class="page-wrap">
+            </section>
+            <section class="level5" aria-labelledby="new-sht30port-0x44">
+              <h5 id="new-sht30port-0x44">new SHT30(port, 0x44)</h5>
+              <p>ドライバーライブラリを使い <strong>SHT30 を操作する為のインスタンスを生成</strong> しています。</p>
+              <pre class="language-js"><code class="language-js"><span class="token keyword">const</span> sht30 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">SHT30</span><span class="token punctuation">(</span>port<span class="token punctuation">,</span> <span class="token number">0x44</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+            </section>
+            <section class="level5" aria-labelledby="await-sht30init">
+              <h5 id="await-sht30init">await sht30.init()</h5>
+              <p>ドライバーライブラリのインスタンス (<code>sht30</code>) の <code>init()</code> メソッドを通じて <strong>I2C ポートを開いてセンサーを初期化</strong> しています。</p>
+              <pre class="language-js"><code class="language-js"><span class="token keyword control-flow">await</span> sht30<span class="token punctuation">.</span><span class="token method function property-access">init</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+              <p>具体的に内部では、インスタンス生成時に指定した <code>port</code> オブジェクトと <code>slaveAddress(0x44)</code> を用いて <code>I2CPort.open()</code> を行なっています。<code>I2CPort.open()</code> が成功すると、<code>I2CSlaveDevice</code> という I2C ポートへデータ書き込みや読み込みなどを行うインタフェースが返されます。<code>I2CSlaveDevice</code> インタフェースは、ライブラリ内に保存され、その後の処理でこのインターフェイスを使って I2C デバイス SHT30 との通信が可能になります。</p>
+            </section>
+            <section class="level5" aria-labelledby="await-sht30readdata">
+              <h5 id="await-sht30readdata">await sht30.readData()</h5>
+              <p>これで実際にデータを読み取っています。 この読み取り関数はGPIOで紹介した、一回きりの単純入力に相当するものです。そのため連続的な変化を知りたい場合はポーリングルーチンを組む必要がありますね。</p>
+              <p><strong>SHT30 の仕様に基づくデータ読み出し処理です</strong>。</p>
+              <pre class="language-js"><code class="language-js"><span class="token keyword">const</span> <span class="token punctuation">{</span> humidity<span class="token punctuation">,</span> temperature <span class="token punctuation">}</span> <span class="token operator">=</span> <span class="token keyword control-flow">await</span> sht30<span class="token punctuation">.</span><span class="token method function property-access">readData</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+              <p>ドライバーライブラリ内部では、SHT30 から得られる温度と湿度それぞれ 16bit の数値を、温度・湿度の物理量の数値に変換して返却しています。</p>
+            </section>
+          </section>
+          <section class="level4" aria-labelledby="web-i2c-api-に着目して流れをまとめると">
+            <h4 id="web-i2c-api-に着目して流れをまとめると">Web I2C API に着目して流れをまとめると</h4>
+            <ol>
+              <li><strong>I2C の準備:</strong> <code>await navigator.requestI2CAccess()</code> で I2CAccess インタフェースを取得</li>
+              <li><strong>ポートの準備:</strong> <code>await i2cAccess.ports.get(1)</code> で、1 番ポートの <code>port</code> オブジェクトを取得</li>
+              <li><strong>デバイス初期化:</strong> <code>await port.open(0x44)</code> で、SlaveAddress <code>0x44</code> 番の I2CSlaveDevice インタフェースを取得</li>
+              <li><strong>データ読み込み・書き込み:</strong></li>
+            </ol>
+            <p>この流れは他の I2C デバイスでも基本的に同様になります。</p>
+            <hr class="page-wrap">
+          </section>
+        </section>
+        <section class="level3" aria-labelledby="デバイスドライバーなしにsht30を使う">
+          <h3 id="デバイスドライバーなしにsht30を使う">デバイスドライバーなしにSHT30を使う</h3>
+          <p>デバイスドライバーはI2Cデバイスを簡単に使えるようにするライブラリでしかありませんので、ライブラリなしにWebI2CAPIを用いて直接デバイスを使うこともできます。運悪くデバイスドライバーが用意されていないI2Cデバイスを使いたい場合や、デバイスドライバーで省略されている機能を使いたい場合などのために、<a href="http://browserobo.github.io/WebI2C">Web I2C API</a>の振る舞いを理解しておきましょう。</p>
+          <p>まず、デバイスドライバーなしに使うにはそのデバイスのデータシートをよく読み込みながら開発する必要があります。</p>
+          <p><strong><a href="https://www.sensirion.com/fileadmin/user_upload/customers/sensirion/Dokumente/2_Humidity_Sensors/Datasheets/Sensirion_Humidity_Sensors_SHT3x_Datasheet_digital.pdf">SHT30データシート</a></strong></p>
+          <p><a href="https://github.com/chirimen-oh/chirimen-drivers/tree/master/packages/sht30/sht30.js">ドライバーライブラリを GitHub で見てみる</a></p>
+          <p>それではSHT30ドライバのコードを見てみましょう。</p>
+          <ul>
+            <li>初期化 <code>init()</code></li>
+          </ul>
+          <pre class="language-js"><code class="language-js"><span class="token keyword control-flow">if</span> <span class="token punctuation">(</span><span class="token operator">!</span>slaveAddress<span class="token punctuation">)</span><span class="token punctuation">{</span>
+		slaveAddress <span class="token operator">=</span> <span class="token number">0x44</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+          <p>データシート（９ページ)に記載の通り、ドライバでは　指定がない場合スレーブアドレス0x44を指定して通信を開始しています。</p>
+          <ul>
+            <li>データの読み取り <code>readData()</code></li>
+          </ul>
+          <pre class="language-js"><code class="language-js"><span class="token comment">// 単発高精度計測指示コマンドをi2cインターフェースに送信（</span>
+<span class="token comment">// データシート９～１０ページ、及び２ページ（計測精度スペック））</span>
+<span class="token keyword control-flow">await</span> <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token property-access">i2cSlave</span><span class="token punctuation">.</span><span class="token method function property-access">write8</span><span class="token punctuation">(</span><span class="token number">0x2C</span><span class="token punctuation">,</span> <span class="token number">0x06</span><span class="token punctuation">)</span><span class="token punctuation">;</span> 
+<span class="token comment">// 計測完了の待機時間(100ms)</span>
+<span class="token comment">//（データシート７ページ～15ms以上の待機）</span>
+<span class="token keyword control-flow">await</span> <span class="token function">sleep</span><span class="token punctuation">(</span><span class="token number">100</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">// i2cインターフェースから、６バイトの計測データを読み取り</span>
+<span class="token comment">//（データシート１０ページ）</span>
+<span class="token keyword">var</span> mdata <span class="token operator">=</span> <span class="token keyword control-flow">await</span> <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token property-access">i2cSlave</span><span class="token punctuation">.</span><span class="token method function property-access">readBytes</span><span class="token punctuation">(</span><span class="token number">6</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">// 計算式（データシート１４ページ）に従い温度（摂氏）を算出</span>
+<span class="token keyword">var</span> cTemp <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">(</span>mdata<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span> <span class="token operator">*</span> <span class="token number">256.0</span><span class="token punctuation">)</span> <span class="token operator">+</span> mdata<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token operator">*</span> <span class="token number">175</span><span class="token punctuation">)</span> <span class="token operator">/</span> <span class="token number">65535.0</span><span class="token punctuation">)</span> <span class="token operator">-</span> <span class="token number">45</span><span class="token punctuation">;</span>
+<span class="token comment">// 同様に湿度（％）を算出</span>
+<span class="token keyword">var</span> humidity <span class="token operator">=</span> <span class="token number">100</span> <span class="token operator">*</span> <span class="token punctuation">(</span>mdata<span class="token punctuation">[</span><span class="token number">3</span><span class="token punctuation">]</span> <span class="token operator">*</span> <span class="token number">256</span> <span class="token operator">+</span> mdata<span class="token punctuation">[</span><span class="token number">4</span><span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token operator">/</span> <span class="token number">65535.0</span><span class="token punctuation">;</span></code></pre>
+          <p>ドライバーライブラリ内部では、上記のようにSHT30 に単発の高精度計測を指示し、得られた温度と湿度それぞれ 16bit の数値を、温度・湿度の物理量の浮動小数点数に変換して返却しています。</p>
+          <hr class="page-wrap">
+        </section>
+      </section>
+    </section>
+    <section class="level1" aria-labelledby="iot">
+      <h1 id="iot">IoT</h1>
+      <p>
+        これまでのチュートリアルでは、いずれもそのコンピュータに直接接続されたデバイスを使うものでした。このようなシステムは「スタンドアロン」と呼ばれます。
+        今までは、ウェブブラウザを使っていたのに、実はウェブの重要な機能～インターネット上の情報基盤WWWを活用したシステムを作っていなかったのです。（開発環境としてはgithubやcodesandboxなどWWW上の情報サービスを活用していますが）
+      </p>
+      <p>このようなインターネットを活用するシステムのことをIoT (Internet of Thingの略)と呼びます。ただし単にPCやスマホで使うウェブサービスがIoTと呼ばれることがありません。チュートリアルで学んだようなセンサーやアクチュエータがシステムに組み込まれ、物理的なモノと相互作用するようなものを特にIoTと呼びます。（なお、WWWを用いずネットワーク部のインターネットだけを使ったものでもIoTと呼びます。詳しくは<a href="https://ja.wikipedia.org/wiki/%E3%83%A2%E3%83%8E%E3%81%AE%E3%82%A4%E3%83%B3%E3%82%BF%E3%83%BC%E3%83%8D%E3%83%83%E3%83%88">wiki</a>や、<a href="https://smartiot-forum.jp/application/files/5315/8642/5503/iot-jinzai-text_verR0202.pdf">こちらの資料</a>なども参考にしてください）</p>
+      <section class="level2" aria-labelledby="websocketとpubsub-services">
+        <h2 id="websocketとpubsub-services">webSocketとpub/sub services</h2>
+        <section class="level3" aria-labelledby="システム構成">
+          <h3 id="システム構成">システム構成</h3>
+          <figure>
+            <img src="../pizero/imgs/IoTsystemConf.png" alt="sysConfImg">
+            <figcaption aria-hidden="true">sysConfImg</figcaption>
+          </figure>
+          <p>今回のチュートリアルでつくるIoTシステムの構成図です。</p>
+          <p>
+            インターネットを介して、左側のアクチュエータやLEDを右側のウェブアプリから操作したり、
+            左側でセンシングしたデータを右側のウェブアプリで表示させたりするシステムですね。
+          </p>
+          <p>構成要素を見ていきます。</p>
+          <ul>
+            <li>
+              <p>左側のボードコンピュータはCHIRIMENを使ったプログラミングで使用してきた環境やデバイスを使います。</p>
+            </li>
+            <li>
+              <p>右側のPCはどんなブラウザでも動かせるので、スマートフォンを使うこともできます。<br>インターネットにつながっていさえすれば別の場所のPCやスマホでも動きます。これがIoTの便利なところ～遠隔操作ですね。</p>
+            </li>
+            <li>
+              <p>InternetのrelayServiceが見慣れないものだと思います。以下で解説します。</p>
+            </li>
+          </ul>
+        </section>
+        <section class="level3" aria-labelledby="relayservice">
+          <h3 id="relayservice">relayService</h3>
+          <p>送り側(左側)のWebAppsが、受け側(右側)のwebAppsに情報を送るなら、直接接続するのが簡単そうです。これはピアツーピア通信と言います。</p>
+          <p>実はこれは簡単ではありません。webAppsはインターネット上のあらゆるコンピュータ（サーバやブラウザの乗ったPCも含め）にURLでアクセスする必要がありますが、相手のPCにURLでアクセスすることは難しいのです。</p>
+          <p>一方、(あらかじめ用意されていれば)ウェブサーバにはURLでアクセスできます。そこで登場するのがrelayServerです。下図のようにrelayServer(Web Socket Relay Service)を介してwebAppsが通信します。</p>
+          <p>
+            <img src="https://chirimen.org/remote-connection/imgs/relay.png" alt="Relay Server Configuration">
+          </p>
+          <p>relayServerは特定のウェブサイトの固有名ではなく、「ウェブアプリ間でリアルタイム性の高いデータのやり取りを仲介する」という機能を持ったウェブサイトの抽象的な名称でpub/sub servicesと呼ばれることもあります。(SNSとかblogとかというのと同じです）</p>
+          <p>relayServerはトークン(ユーザーやシステムごとに割り当てられたランダムな文字列)ごとにスペース(図の濃い青色)が設けられ、その中にいくつかのチャンネル(図の茶色)を置くことができます。</p>
+          <p>同じトークンとチャンネルにアクセスしたウェブアプリ同士が通信でき、図ではウェブアプリは２個つながっていますが、何個でもつなげることができます。チャットスペースのようなイメージですね。</p>
+          <section class="level4" aria-labelledby="リアルタイム性">
+            <h4 id="リアルタイム性">リアルタイム性</h4>
+            <p>例えば遠隔からカメラのパンチルトをコントロールしたい　などのケースを考えると、IoTではデバイスのコントロールを機敏に行いたいケースが多くあります。（リアルタイム性の高いユースケースが多い）このようなリアルタイム性の高い情報のやり取りのために<a href="https://ja.wikipedia.org/wiki/WebSocket">WebSocket</a>というブラウザが標準としてサポートするプロトコルがよく使われます。</p>
+          </section>
+          <section class="level4" aria-labelledby="relayserverjs">
+            <h4 id="relayserverjs">relayServer.js</h4>
+            <p>IoTにはrelayServerの機能を持つウェブサイトが必要になりますが、これを誰かが運営しなければなりません。実習やプロトタイピングのためにこのようなサイトを自分たちで立ち上げるのはかなり大変ですが、インターネット上では既にいくつもの事業者がrelayServerサービスを提供しています。</p>
+            <p>今回はCHIRIMEN環境の試験用に、CHIRIMEN用に用意された検証用サービス(chirimentest)を使うことにしますが、いくつかある事業者間でサービスの内容に差異があります。サイトごとの差異は主に接続できる端末の管理と情報の取り扱いに関する機能になります。</p>
+            <p><a href="https://chirimen.org/remote-connection/">relayServer.js</a>は、relayServerサービスによる差異を吸収し複数の事業者を自由に切り替えられ、webSocketの標準API仕様に沿った作法でwebApps(含Node.jsプログラム)間の通信を簡単に使えるようにするライブラリです。</p>
+            <section class="level5" aria-labelledby="プログラムの流れ">
+              <h5 id="プログラムの流れ">プログラムの流れ</h5>
+              <section class="level6" aria-labelledby="初期化受信側送信側共通の処理">
+                <h6 id="初期化受信側送信側共通の処理">初期化（受信側、送信側共通の処理</h6>
+                <p><a href="https://chirimen.org/remote-connection/#%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95">詳しくはこちらを参照</a></p>
+                <pre class="language-javascript"><code class="language-javascript"><span class="token keyword module">import</span> <span class="token imports"><span class="token punctuation">{</span><span class="token maybe-class-name">RelayServer</span><span class="token punctuation">}</span></span> <span class="token keyword module">from</span> <span class="token string">"https://chirimen.org/remote-connection/js/beta/RelayServer.js"</span><span class="token punctuation">;</span>
+<span class="token keyword">var</span> relay <span class="token operator">=</span> <span class="token function"><span class="token maybe-class-name">RelayServer</span></span><span class="token punctuation">(</span><span class="token string">"achex"</span><span class="token punctuation">,</span> <span class="token string">"chirimenSocket"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+                <p>
+                  import文でライブラリRelayServer.jsを読み込んだ後、relayServiceのひとつ<strong>achex</strong>に接続しています。
+                  RelayServerの第二引数<code>("chirimenSocket")</code>はそのサービスを使うためのトークンですが、<strong>achex</strong>は任意の文字列で利用できてます。
+                </p>
+                <p><em>Node.jsでは第三,第四引数が必要になります (後述)</em></p>
+              </section>
+            </section>
+            <section class="level5" aria-labelledby="チャンネルの作成">
+              <h5 id="チャンネルの作成">チャンネルの作成</h5>
+              <ul>
+                <li>
+                  <p><code>channel = await relay.subscribe("chirimenMbitSensors");</code></p>
+                  <p>
+                    変数<code>channel</code>にRelayServerのチャンネルのインスタンスを登録
+                    引数はチャンネル名で、自分で好きな名前を与えられます。
+                  </p>
+                  <p>受信側と送信側で同じサービス、トークン、チャンネルを指定する必要があります。</p>
+                </li>
+              </ul>
+            </section>
+            <section class="level5" aria-labelledby="データの送信">
+              <h5 id="データの送信">データの送信</h5>
+              <ul>
+                <li>
+                  <p><code>channel.send(data);</code></p>
+                  <p>任意のデータ(data)をrelayServerの指定チャンネルに送信します。</p>
+                  <p>dataは文字列だけでなく、連想配列(構造化されたデータ、オブジェクト)も送信可能です。</p>
+                </li>
+              </ul>
+            </section>
+            <section class="level5" aria-labelledby="データの受信">
+              <h5 id="データの受信">データの受信</h5>
+              <ul>
+                <li>
+                  <p>
+                    <code>channel.onmessage = getMessage;</code>
+                    チャンネルにメッセージがポストされた時に起動する関数(コールバック関数)を登録しています。
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    <code>function getMessage(msg)</code>
+                    上で登録した関数の第一引数(<code>msg</code>)のメンバ変数msg.dataに送信されたメッセージが構造もそのままで届きます。
+                  </p>
+                </li>
+              </ul>
+            </section>
+          </section>
+          <section class="level4" aria-labelledby="セキュリティを考えよう">
+            <h4 id="セキュリティを考えよう">セキュリティを考えよう</h4>
+            <p>relayServerを使うということは、情報をインターネット上のウェブサイトに送信することになります。すると このウェブサイトがその情報をどのように取り扱うのかを理解しておく必要があります。achexは無料で使え　しかもユーザ登録も不要です。つまりこのサイトに送信した情報は誰でも見ることができてしまうということです。（ただし、トークンとチャンネルを知る必要がある。これがachexのセキュリティレベル）今回は個人情報などのセキュリティを考慮する必要がない、チュートリアルで使うセンシングデータを送るだけですので問題ありませんが、セキュリティを考慮する必要がある多くの用途ではそのセキュリティ基準に適合したサイトを契約して利用する、もしくは自分でそのようなサイトを立てるなどの必要が出てきます。relayServer.jsでも<a href="https://chirimen.org/remote-connection/#%E3%82%B5%E3%83%BC%E3%83%93%E3%82%B9%E3%81%94%E3%81%A8%E3%81%AE%E5%88%A9%E7%94%A8%E6%96%B9%E6%B3%95">いくつかの商用サイト</a>の比較と使用方法が記載されているので参考にしてください。</p>
+          </section>
+          <section class="level4" aria-labelledby="nodejsでの利用">
+            <h4 id="nodejsでの利用">Node.jsでの利用</h4>
+            <p>初期化手順に差異があります。</p>
+            <pre class="language-javascript"><code class="language-javascript"><span class="token keyword module">import</span> <span class="token imports">nodeWebSocketLib</span> <span class="token keyword module">from</span> <span class="token string">"websocket"</span><span class="token punctuation">;</span>
+<span class="token keyword module">import</span> <span class="token imports"><span class="token punctuation">{</span><span class="token maybe-class-name">RelayServer</span><span class="token punctuation">}</span></span> <span class="token keyword module">from</span> <span class="token string">"./RelayServer.js"</span><span class="token punctuation">;</span>
+<span class="token keyword">var</span> relay <span class="token operator">=</span> <span class="token function"><span class="token maybe-class-name">RelayServer</span></span><span class="token punctuation">(</span><span class="token string">"achex"</span><span class="token punctuation">,</span> <span class="token string">"chirimenSocket"</span> <span class="token punctuation">,</span> nodeWebSocketLib<span class="token punctuation">,</span> <span class="token string">"https://chirimen.org"</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+            <ul>
+              <li>Node.jsではwebSocketを使用するためにはwebsocketライブラリが必要なので読み込みます</li>
+              <li>RelayServer.jsやwebSocket等のライブラリは、ローカルからの読み込みになります</li>
+              <li>RelayServerの第三引数でwebsocketライブラリを渡す必要があります</li>
+              <li>RelayServerの第四引数で、<a href="https://e-words.jp/w/%E3%83%AA%E3%83%95%E3%82%A1%E3%83%A9.html">リファラー</a>の指定が必要です
+                <ul>
+                  <li>webアプリの場合はそのコンテンツの配信元のURLがリファラーとして自動設定されますが、Node.jsのアプリはローカルにあるので別途指定が必要</li>
+                  <li>achexの場合URLは何でも許可されますが、他のrelayServerサービスでは あらかじめ指定したリファラーが設定されていなければアクセス拒否されるものもあります(これも一つのセキュリティ)</li>
+                </ul>
+              </li>
+            </ul>
+            <hr class="page-wrap">
+          </section>
+        </section>
+      </section>
+      <section class="level2" aria-labelledby="webhooks">
+        <h2 id="webhooks">Webhooks</h2>
+        <p>
+          relayServerが必要なほどリアルタイム性は求めないけれど、むしろ既存のWebサービス・アプリと簡単につなぎたいようなケースでは、httpをそのまま使うことができるでしょう。ただし既存のWebサービス・アプリはウェブブラウザを介して人が操作することが前提でつくられていますので、直接センサーやアクチュエータ（を制御するコンピュータとプログラム～IoTデバイス）をつなげるにはハードルがあります。
+          IFTTTに代表されるようなWebhooksサービスは、httpを活用することで既存の多くのウェブサービス（twitterやgoogleのサービスなど）とIoTデバイスを簡単に接続できるようにする中継サービスです。
+        </p>
+      </section>
+      <section class="level2" aria-labelledby="iotクラウドサービス">
+        <h2 id="iotクラウドサービス">IoTクラウドサービス</h2>
+        <p>Webhookのような中継サービスを介さずに、直接IoTデバイスを接続できるように設計されたサービスが多くの事業者から提供されています。これらのサービスを使うには、各サービス事業者ごとに提供しているAPI・プロトコル等の仕様に基づいた開発が必要になります。</p>
+      </section>
+      <section class="level2" aria-labelledby="w3c-wot-fiware">
+        <h2 id="w3c-wot-fiware">W3C WoT, FIWARE</h2>
+        <p>先述のようなIoT事業者間の非互換を解消するとともに、多様なユースケースにも対応するための国際標準化が現在進行中です。</p>
+        <ul>
+          <li><a href="https://www.w3.org/WoT/">WoT</a></li>
+          <li><a href="https://www.fiware.org/">FIWARE</a></li>
+        </ul>
+      </section>
+    </section>
+  </body>
+</html>

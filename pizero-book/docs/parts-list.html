@@ -1,0 +1,762 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8">
+    <title>パーツリスト</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../themes/packages/@vivliostyle/theme-techbook/theme.css">
+  </head>
+  <body>
+    <section class="level1" aria-labelledby="パーツリスト">
+      <h1 id="パーツリスト">パーツリスト</h1>
+      <table>
+        <thead>
+          <tr>
+            <th align="center">インターフェイス</th>
+            <th align="left">カテゴリー</th>
+            <th align="left">型番</th>
+            <th align="left">説明</th>
+            <th align="left">画像 URL</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td align="center">I2C</td>
+            <td align="left">ADC(アナログ電圧測定)</td>
+            <td align="left">ADS1015</td>
+            <td align="left">アナログ電圧を 12bit 精度のデジタル信号に変換する部品で、アナログセンサ等を利用する際に必要です</td>
+            <td align="left">
+              <img src="../partsImgs/ADS1015.jpg" width="100">
+            </td>
+          </tr>
+          <tr>
+            <td align="center">I2C</td>
+            <td align="left">ADC(アナログ電圧測定)</td>
+            <td align="left">ADS1115</td>
+            <td align="left">アナログ電圧を 16bit 精度のデジタル信号に変換する部品で、アナログセンサ等を利用する際に必要です</td>
+            <td align="left">
+              <img src="../partsImgs/ADS1115.JPG" width="100">
+            </td>
+          </tr>
+          <tr>
+            <td align="center">I2C</td>
+            <td align="left">ADC DAC(アナログ電圧出力) 複合</td>
+            <td align="left">PCF8591</td>
+            <td align="left">ADC と DAC が一つになった部品です(デジタル側は 8bit)</td>
+            <td align="left">
+              <img src="../partsImgs/PCF8591.JPG" width="100">
+            </td>
+          </tr>
+          <tr>
+            <td align="center">I2C</td>
+            <td align="left">温度センサ</td>
+            <td align="left">ADT7410</td>
+            <td align="left">-55℃ から +150℃ まで測定できる温度センサです</td>
+            <td align="left">
+              <img src="../partsImgs/ADT7410.JPG" width="100">
+            </td>
+          </tr>
+          <tr>
+            <td align="center">I2C</td>
+            <td align="left">サーモグラフィ</td>
+            <td align="left">AMG8833</td>
+            <td align="left">センサから見て上下左右のおよそ 60 度の範囲を 8x8 ピクセルに分割し、それぞれのエリアについて 0℃ ～ 80℃ の範囲で測定可能なサーモグラフィです</td>
+            <td align="left">
+              <img src="../partsImgs/AMG8833.JPG" width="100">
+            </td>
+          </tr>
+          <tr>
+            <td align="center">I2C</td>
+            <td align="left">温度 圧力 湿度 複合センサ</td>
+            <td align="left">BME280</td>
+            <td align="left">温度、湿度、気圧の測定ができる複合センサです</td>
+            <td align="left">
+              <img src="../partsImgs/BME280.JPG" width="100">
+            </td>
+          </tr>
+          <tr>
+            <td align="center">I2C</td>
+            <td align="left">温度 圧力 複合センサ</td>
+            <td align="left">BMP180</td>
+            <td align="left">温度と気圧の測定ができる複合センサです</td>
+            <td align="left">
+              <img src="../partsImgs/BMP180.JPG" width="100">
+            </td>
+          </tr>
+          <tr>
+            <td align="center">I2C</td>
+            <td align="left">温度 圧力 複合センサ</td>
+            <td align="left">BMP280</td>
+            <td align="left">温度と気圧の測定ができる複合センサです(BMP180 の後継品で精度が向上しています)</td>
+            <td align="left">
+              <img src="../partsImgs/BMP280.jpeg">
+            </td>
+          </tr>
+          <tr>
+            <td align="center">I2C</td>
+            <td align="left">距離センサ</td>
+            <td align="left">GP2Y0E03</td>
+            <td align="left">センサから対象物までの距離を測定できるセンサです( 50cm 程度まで)</td>
+            <td align="left">
+              <img src="../partsImgs/gp2y0e03.JPG" width="100">
+            </td>
+          </tr>
+          <tr>
+            <td align="center">I2C</td>
+            <td align="left">距離センサ</td>
+            <td align="left">VL53L0X</td>
+            <td align="left">センサから対象物までの距離を測定できるセンサです( 2m 程度まで)</td>
+            <td align="left">
+              <img src="../partsImgs/VL53L0X.JPG" width="100">
+            </td>
+          </tr>
+          <tr>
+            <td align="center">I2C</td>
+            <td align="left">ジェスチャーセンサ</td>
+            <td align="left">Grove-Gesture (PAJ7620U2)</td>
+            <td align="left">手を「上、下、左、右、遠ざかる、近づく、時計回り、反時計回り、手を振る」と動かしたときにそれらを検出するセンサです</td>
+            <td align="left">
+              <img src="../partsImgs/Grove-Gesture.JPG" width="100">
+            </td>
+          </tr>
+          <tr>
+            <td align="center">I2C</td>
+            <td align="left">光センサ</td>
+            <td align="left">Grove-Light (TSL2561)</td>
+            <td align="left">0.1lx から 40000lx まで測定可能な照度センサです</td>
+            <td align="left">
+              <img src="../partsImgs/Grove-Light.JPG" width="100">
+            </td>
+          </tr>
+          <tr>
+            <td align="center">I2C</td>
+            <td align="left">小型ディスプレイ Grove-OledDisplay (SSD1308)</td>
+            <td align="left">0.96inch、128x64dot の小型 OLED (有機 EL) ディスプレイです</td>
+            <td align="left">-</td>
+            <td align="left">-</td>
+          </tr>
+          <tr>
+            <td align="center">I2C</td>
+            <td align="left">タッチセンサ</td>
+            <td align="left">Grove-Touch (MPR121)</td>
+            <td align="left">指などの接触を検出するセンサです</td>
+            <td align="left">-</td>
+          </tr>
+          <tr>
+            <td align="center">I2C</td>
+            <td align="left">カラーセンサ</td>
+            <td align="left">S11059</td>
+            <td align="left">RGB 各色と赤外線の強度を測定するセンサです</td>
+            <td align="left">
+              <img src="../partsImgs/S11059.JPG" width="100">
+            </td>
+          </tr>
+          <tr>
+            <td align="center">I2C</td>
+            <td align="left">紫外線(UV)センサ</td>
+            <td align="left">VEML6070</td>
+            <td align="left">紫外線の強度を測定できるセンサです</td>
+            <td align="left">
+              <img src="../partsImgs/VEML6070.JPG" width="100">
+            </td>
+          </tr>
+          <tr>
+            <td align="center">I2C</td>
+            <td align="left">3 軸加速度センサ</td>
+            <td align="left">Grove-Accelerometer (ADXL345)</td>
+            <td align="left">3 軸の加速度を検出できるセンサです</td>
+            <td align="left"></td>
+          </tr>
+          <tr>
+            <td align="center">I2C</td>
+            <td align="left">3 軸加速度+ジャイロ 複合センサ</td>
+            <td align="left">MPU6050</td>
+            <td align="left">3 軸の加速度に加え、ジャイロの測定も可能な複合センサです</td>
+            <td align="left">
+              <img src="../partsImgs/MPU6050.JPG" width="100">
+            </td>
+          </tr>
+          <tr>
+            <td align="center">I2C</td>
+            <td align="left">3 軸加速度+ジャイロ+磁気 複合センサ</td>
+            <td align="left">MPU9250</td>
+            <td align="left">3 軸の加速度、ジャイロのほか、磁気も測定可能な複合センサです</td>
+            <td align="left">
+              <img src="../partsImgs/MPU9250_.JPG" width="100">
+            </td>
+          </tr>
+          <tr>
+            <td align="center">I2C</td>
+            <td align="left">フルカラー LED アレイ</td>
+            <td align="left">Neopixel LED コントローラ</td>
+            <td align="left">多数のフルカラー LED を個々に制御可能なコントローラです(詳細は Examples をご覧ください)</td>
+            <td align="left">
+              <img src="../partsImgs/neopixelI2c.JPG" width="100">
+            </td>
+          </tr>
+          <tr>
+            <td align="center">I2C</td>
+            <td align="left">フルカラー LED アレイ</td>
+            <td align="left">Neopixel LED 8x8</td>
+            <td align="left">NEOPIXEL 対応の 8x8 LED パネルです</td>
+            <td align="left">
+              <img src="../partsImgs/neopixel64.JPG" width="100">
+            </td>
+          </tr>
+          <tr>
+            <td align="center">I2C</td>
+            <td align="left">フルカラー LED アレイ</td>
+            <td align="left">Neopixel LED 12x12</td>
+            <td align="left">円形のパネルです</td>
+            <td align="left">
+              <img src="../partsImgs/neopixel12.JPG" width="100">
+            </td>
+          </tr>
+          <tr>
+            <td align="center">I2C</td>
+            <td align="left">フルカラー LED アレイ</td>
+            <td align="left">Neopixel LED 60x60</td>
+            <td align="left">20 個のパネルを 3 つ組み合わせることで 60 個のパネルとなります</td>
+            <td align="left">
+              <img src="../partsImgs/neopixel60.JPG" width="100">
+            </td>
+          </tr>
+          <tr>
+            <td align="center">I2C</td>
+            <td align="left">LED マトリックス</td>
+            <td align="left">HT16K33 搭載 8x8LED モジュール（その１）</td>
+            <td align="left">マトリクス LED 制御可能なコントローラが搭載された LED モジュールです(詳細は Examples をご覧ください)。 Adafruit の 8x8LED 搭載品と　 Keyestudio KS0336 8*8 Matrix Module I2C はピン配置を除き同等品です</td>
+            <td align="left">
+              <img src="../partsImgs/HT16K33.JPG" width="100">
+            </td>
+          </tr>
+          <tr>
+            <td align="center">I2C</td>
+            <td align="left">LED マトリックス</td>
+            <td align="left">HT16K33 搭載 8x8LED モジュール（その２）</td>
+            <td align="left">上記と同等のコントローラですが、LED の論理配列が異なる aitendo 製 8x8LED モジュールです。ドライバの設定が若干個なります。</td>
+            <td align="left">
+              <img src="../partsImgs/HT16K33_8x8ait.JPG" width="100">
+            </td>
+          </tr>
+          <tr>
+            <td align="center">I2C</td>
+            <td align="left">LED マトリックス</td>
+            <td align="left">HT16K33 搭載 16x8LED モジュール</td>
+            <td align="left">上記と同等のコントローラが載った、16x8 マトリクス LED のモジュールです。</td>
+            <td align="left">
+              <img src="../partsImgs/HT16K33_16x8.JPG" width="100">
+            </td>
+          </tr>
+          <tr>
+            <td align="center">I2C</td>
+            <td align="left">LED マトリックス</td>
+            <td align="left">HT16K33 搭載 7 セグメント LED モジュール</td>
+            <td align="left">上記と同等のコントローラが載った、7 セグメント LED のモジュールです。</td>
+            <td align="left">
+              <img src="../partsImgs/HT16K33_7seg.JPG" width="100">
+            </td>
+          </tr>
+          <tr>
+            <td align="center">I2C</td>
+            <td align="left">LED マトリックス</td>
+            <td align="left">HT16K33 搭載 14 セグメント LED モジュール</td>
+            <td align="left">上記と同等のコントローラが載った、14 セグメント LED のモジュールです。</td>
+            <td align="left">
+              <img src="../partsImgs/HT16K33_14seg.JPG" width="100">
+            </td>
+          </tr>
+          <tr>
+            <td align="center">I2C</td>
+            <td align="left">サーボモータ・DC モータ コントローラ</td>
+            <td align="left">PCA9685</td>
+            <td align="left">サーボモータを PWM 制御できる部品で、サーボモータを利用する際に必要です</td>
+            <td align="left">
+              <img src="../partsImgs/PCA9685.JPG" width="100">
+            </td>
+          </tr>
+          <tr>
+            <td align="center">I2C</td>
+            <td align="left">サーボモータ</td>
+            <td align="left">SG90 Servo</td>
+            <td align="left">アームを指定した角度をに動かすことのできる部品です</td>
+            <td align="left">-</td>
+          </tr>
+          <tr>
+            <td align="center">I2C</td>
+            <td align="left">サーボモータ・DC モータ コントローラ</td>
+            <td align="left">PCA9685 PWM</td>
+            <td align="left">詳細は Examples をご覧ください</td>
+            <td align="left">
+              <img src="../partsImgs/PCA9685.JPG" width="100">
+            </td>
+          </tr>
+          <tr>
+            <td align="center">I2C</td>
+            <td align="left">温湿度複合センサ</td>
+            <td align="left">SHT30/31</td>
+            <td align="left">温度と湿度の両方が測定可能なセンサ</td>
+            <td align="left">
+              <img src="../partsImgs/SHT30.JPG" width="100">
+            </td>
+          </tr>
+          <tr>
+            <td align="center">I2C</td>
+            <td align="left">温湿度複合センサ</td>
+            <td align="left">AHT10</td>
+            <td align="left">温度と湿度の両方が測定可能なセンサ</td>
+            <td align="left">
+              <img src="../partsImgs/AHT10.JPG" width="100">
+            </td>
+          </tr>
+          <tr>
+            <td align="center">I2C</td>
+            <td align="left">温湿度複合センサ</td>
+            <td align="left">HTU21D</td>
+            <td align="left">温度と湿度の両方が測定可能なセンサ</td>
+            <td align="left">
+              <img src="../partsImgs/HTU21D.JPG" width="100">
+            </td>
+          </tr>
+          <tr>
+            <td align="center">I2C</td>
+            <td align="left">色センサ</td>
+            <td align="left">TCS34725</td>
+            <td align="left">I2C 接続の色センサー</td>
+            <td align="left">
+              <img src="../partsImgs/TCS34725.JPG" width="100">
+            </td>
+          </tr>
+          <tr>
+            <td align="center">I2C</td>
+            <td align="left">レーザー距離センサ</td>
+            <td align="left">VL53L1X</td>
+            <td align="left">VL53L0X より高出力長距離タイプ</td>
+            <td align="left">
+              <img src="../partsImgs/VL53L1X.JPG" width="100">
+            </td>
+          </tr>
+          <tr>
+            <td align="center">I2C</td>
+            <td align="left">電流センサ</td>
+            <td align="left">INA219</td>
+            <td align="left">比較的大きな DC 電流を測定するセンサ</td>
+            <td align="left">
+              <img src="../partsImgs/INA219.JPG" width="100">
+            </td>
+          </tr>
+          <tr>
+            <td align="center">I2C</td>
+            <td align="left">非接触温度センサ</td>
+            <td align="left">MLX90614</td>
+            <td align="left">赤外線を利用した非接触型温度センサー</td>
+            <td align="left">
+              <img src="../partsImgs/MLX90614.JPG" width="100">
+            </td>
+          </tr>
+          <tr>
+            <td align="center">I2C</td>
+            <td align="left">近接・環境光・ジェスチャーセンサー</td>
+            <td align="left">APDS9960</td>
+            <td align="left">近接・環境光・ジェスチャーを読み取るセンサー</td>
+            <td align="left">
+              <img src="../partsImgs/APDS9960.JPG" width="100">
+            </td>
+          </tr>
+          <tr>
+            <td align="center">I2C</td>
+            <td align="left">多目的インターフェース</td>
+            <td align="left">seesaw</td>
+            <td align="left">デジタル・アナログ入力・PWM 出力・NeopixelLED ドライブ等の機能を持つ多目的ボード</td>
+            <td align="left">
+              <img src="../partsImgs/SeeSaw.JPG" width="100">
+            </td>
+          </tr>
+          <tr>
+            <td align="center">I2C</td>
+            <td align="left">照度センサー</td>
+            <td align="left">BH1750</td>
+            <td align="left">照度センサー</td>
+            <td align="left">
+              <img src="../partsImgs/BH1750.JPG" width="100">
+            </td>
+          </tr>
+          <tr>
+            <td align="center">I2C</td>
+            <td align="left">CO2 センサ</td>
+            <td align="left">SCD40</td>
+            <td align="left">CO2 センサ(CO2 濃度が PPM 値で高精度に計測できるセンサーです)</td>
+            <td align="left">
+              <img src="../partsImgs/SCD40.JPG" width="100">
+            </td>
+          </tr>
+          <tr>
+            <td align="center">I2C</td>
+            <td align="left">CO2+TVOC センサ</td>
+            <td align="left">CCS811</td>
+            <td align="left">CO2+TVOC センサ</td>
+            <td align="left">
+              <img src="../partsImgs/CCS811.JPG" width="100">
+            </td>
+          </tr>
+          <tr>
+            <td align="center">I2C</td>
+            <td align="left">温度 湿度 気圧 ガス 複合センサ</td>
+            <td align="left">BME680</td>
+            <td align="left">温度、湿度、気圧さらにガスが測れる複合センサです</td>
+            <td align="left">
+              <img src="../partsImgs/BME680.JPG" width="100">
+            </td>
+          </tr>
+          <tr>
+            <td align="center">GPIO</td>
+            <td align="left">LED</td>
+            <td align="left">赤色 LED</td>
+            <td align="left">通電すると光る部品です(必ず抵抗を挟んで利用してください)</td>
+            <td align="left">
+              <img src="../partsImgs/LED.JPG" width="100">
+            </td>
+          </tr>
+          <tr>
+            <td align="center">GPIO</td>
+            <td align="left">LED</td>
+            <td align="left">黄色 LED</td>
+            <td align="left">通電すると光る部品です(必ず抵抗を挟んで利用してください)</td>
+            <td align="left">
+              <img src="../partsImgs/LED.JPG" width="100">
+            </td>
+          </tr>
+          <tr>
+            <td align="center">GPIO</td>
+            <td align="left">LED</td>
+            <td align="left">黄緑色 LED</td>
+            <td align="left">通電すると光る部品です(必ず抵抗を挟んで利用してください)</td>
+            <td align="left">
+              <img src="../partsImgs/LED.JPG" width="100">
+            </td>
+          </tr>
+          <tr>
+            <td align="center">GPIO</td>
+            <td align="left">カーボン抵抗</td>
+            <td align="left">150Ω</td>
+            <td align="left">必要な場所に電気抵抗を入れる部品です(ここでは通常のものよりサイズが大きく、抵抗値が読みやすい商品を紹介しています)</td>
+            <td align="left">
+              <img src="../partsImgs/register-2.JPG" width="100">
+            </td>
+          </tr>
+          <tr>
+            <td align="center">GPIO</td>
+            <td align="left">カーボン抵抗</td>
+            <td align="left">10kΩ</td>
+            <td align="left">必要な場所に電気抵抗を入れる部品です(ここでは通常のものよりサイズが大きく、抵抗値が読みやすい商品を紹介しています)</td>
+            <td align="left">
+              <img src="../partsImgs/register-2.JPG" width="100">
+            </td>
+          </tr>
+          <tr>
+            <td align="center">GPIO</td>
+            <td align="left">カーボン抵抗</td>
+            <td align="left">1kΩ</td>
+            <td align="left">必要な場所に電気抵抗を入れる部品です(ここでは通常のものよりサイズが大きく、抵抗値が読みやすい商品を紹介しています)</td>
+            <td align="left">
+              <img src="../partsImgs/register-2.JPG" width="100">
+            </td>
+          </tr>
+          <tr>
+            <td align="center">GPIO</td>
+            <td align="left">タクトスイッチ</td>
+            <td align="left">2pin</td>
+            <td align="left">ボタンを押している間だけ電気を流す部品です(chirimen チュートリアルでは 2pin のものを採用しています)</td>
+            <td align="left">
+              <img src="../partsImgs/tactSwitch.JPG" width="100">
+            </td>
+          </tr>
+          <tr>
+            <td align="center">GPIO</td>
+            <td align="left">タクトスイッチ</td>
+            <td align="left">4pin</td>
+            <td align="left">ボタンを押している間だけ電気を流す部品です(chirimen チュートリアルでは 2pin のものを採用しています)</td>
+            <td align="left">
+              <img src="../partsImgs/tactSwitch.JPG" width="100">
+            </td>
+          </tr>
+          <tr>
+            <td align="center">GPIO</td>
+            <td align="left">マイクロスイッチ</td>
+            <td align="left">SS-10GL13</td>
+            <td align="left">小型のスイッチです</td>
+            <td align="left">
+              <img src="../partsImgs/microSw.jpeg">
+            </td>
+          </tr>
+          <tr>
+            <td align="center">GPIO</td>
+            <td align="left">タッチセンサ/スイッチ</td>
+            <td align="left">TP223</td>
+            <td align="left">タッチセンサ(スイッチ)です。金属の近接(1-2mm 程度の接近)も感知でき応用が利きます。</td>
+            <td align="left">
+              <img src="../partsImgs/TP223.JPG" width="100">
+            </td>
+          </tr>
+          <tr>
+            <td align="center">GPIO</td>
+            <td align="left">Nch パワー MOSFET</td>
+            <td align="left">2SK4017</td>
+            <td align="left">直流電流の On/Off 制御を行う部品です</td>
+            <td align="left">
+              <img src="../partsImgs/FET.JPG" width="100">
+            </td>
+          </tr>
+          <tr>
+            <td align="center">GPIO</td>
+            <td align="left">Nch パワー MOSFET モジュール</td>
+            <td align="left">IRF520 (ドライバモジュール)</td>
+            <td align="left">上の FET を利用したモーター制御と同等の回路が組まれたモジュールです IRF520 パワー MOSFET が用られています</td>
+            <td align="left">
+              <img src="../partsImgs/FET2.JPG" width="100">
+            </td>
+          </tr>
+          <tr>
+            <td align="center">GPIO</td>
+            <td align="left">DC モーター 正逆転コントローラ</td>
+            <td align="left">L298N (ドライバモジュール)</td>
+            <td align="left">ST マイクロ社のフルブリッジドライバである L298N を使用した DC モーターコントローラです</td>
+            <td align="left">
+              <img src="../partsImgs/L298N.JPG" width="100">
+            </td>
+          </tr>
+          <tr>
+            <td align="center">GPIO</td>
+            <td align="left">DC モータ 正逆転コントローラ</td>
+            <td align="left">L9110S</td>
+            <td align="left">L9110 を使用した DC モータコントローラです</td>
+            <td align="left">
+              <img src="../partsImgs/L9110S.jpeg">
+            </td>
+          </tr>
+          <tr>
+            <td align="center">GPIO</td>
+            <td align="left">DC モータ 正逆転コントローラ</td>
+            <td align="left">MX1508</td>
+            <td align="left">L298N を使用した DC モータコントローラです</td>
+            <td align="left">
+              <img src="../partsImgs/MX1508.JPG" width="100">
+            </td>
+          </tr>
+          <tr>
+            <td align="center">GPIO</td>
+            <td align="left">DC モータ 正逆転コントローラ</td>
+            <td align="left">TB6612FNG</td>
+            <td align="left">TOSHIBA 製 TB6612FNG を利用したモータドライバです</td>
+            <td align="left">
+              <img src="../partsImgs/TB6612FNG.JPG" width="100">
+            </td>
+          </tr>
+          <tr>
+            <td align="center">GPIO</td>
+            <td align="left">赤外線人感センサ</td>
+            <td align="left">KP-IR412</td>
+            <td align="left">人体に反応するセンサです</td>
+            <td align="left">
+              <img src="../partsImgs/pyro1.JPG" width="100">
+            </td>
+          </tr>
+          <tr>
+            <td align="center">GPIO</td>
+            <td align="left">赤外線人感センサ</td>
+            <td align="left">HC-SR501</td>
+            <td align="left">人体に反応するセンサです</td>
+            <td align="left">
+              <img src="../partsImgs/pyro2.JPG" width="100">
+            </td>
+          </tr>
+          <tr>
+            <td align="center">GPIO</td>
+            <td align="left">ステッピングモータコントローラ</td>
+            <td align="left">A4988</td>
+            <td align="left">バイポーラステッピングモータを制御するドライバです</td>
+            <td align="left">
+              <img src="../partsImgs/A4988.JPG" width="100">
+            </td>
+          </tr>
+          <tr>
+            <td align="center">アナログ</td>
+            <td align="left">雨センサ</td>
+            <td align="left">RD-4P</td>
+            <td align="left">雨(水)を検出するセンサです(GPIO)</td>
+            <td align="left">
+              <img src="../partsImgs/rain.JPG" width="100">
+            </td>
+          </tr>
+          <tr>
+            <td align="center">アナログ</td>
+            <td align="left">水センサ</td>
+            <td align="left">M-WL-J3Y</td>
+            <td align="left">水を検出するセンサです</td>
+            <td align="left">
+              <img src="../partsImgs/water.JPG" width="100">
+            </td>
+          </tr>
+          <tr>
+            <td align="center">アナログ</td>
+            <td align="left">圧力センサ(小)</td>
+            <td align="left">FSR 400</td>
+            <td align="left">圧力が検知できるセンサです</td>
+            <td align="left">
+              <img src="../partsImgs/pressureS.JPG" width="100">
+            </td>
+          </tr>
+          <tr>
+            <td align="center">アナログ</td>
+            <td align="left">可変抵抗</td>
+            <td align="left">TSR-3386</td>
+            <td align="left">抵抗値を変化させられる抵抗です</td>
+            <td align="left">
+              <img src="../partsImgs/VR.JPG" width="100">
+            </td>
+          </tr>
+          <tr>
+            <td align="center">アナログ</td>
+            <td align="left">ロードセル</td>
+            <td align="left">ジェネリック品多種</td>
+            <td align="left">加重により抵抗値が微少に変化する素子。差動入力にした ADS1115 で利用可能です</td>
+            <td align="left">
+              <img src="../partsImgs/LoadCell.JPG" width="100">
+            </td>
+          </tr>
+          <tr>
+            <td align="center">アクチュエータ</td>
+            <td align="left">サーボモータ</td>
+            <td align="left">SG90</td>
+            <td align="left">Tower Pro 製の小型サーボモータです</td>
+            <td align="left">-</td>
+          </tr>
+          <tr>
+            <td align="center">アクチュエータ</td>
+            <td align="left">DC モータ</td>
+            <td align="left">各 Examples をご参照ください</td>
+            <td align="left">-</td>
+            <td align="left">-</td>
+          </tr>
+          <tr>
+            <td align="center">アクチュエータ</td>
+            <td align="left">2 相バイポーラステッピングモータ</td>
+            <td align="left">多種(例は TS3692N65)</td>
+            <td align="left">A4988 をご参照ください</td>
+            <td align="left">
+              <img src="../partsImgs/StepperMotor.JPG" width="100">
+            </td>
+          </tr>
+          <tr>
+            <td align="center">アクチュエータ</td>
+            <td align="left">ギヤードモータ</td>
+            <td align="left">ちびギヤモータ</td>
+            <td align="left">小型のギヤードモータです</td>
+            <td align="left">
+              <img src="../partsImgs/chibiGear.JPG" width="100">
+            </td>
+          </tr>
+          <tr>
+            <td align="center">その他</td>
+            <td align="left">ブレッドボード</td>
+            <td align="left">-</td>
+            <td align="left">-</td>
+            <td align="left">
+              <img src="../partsImgs/breadBoardS.JPG" width="100">
+            </td>
+          </tr>
+          <tr>
+            <td align="center">その他</td>
+            <td align="left">ジャンパー線</td>
+            <td align="left">-</td>
+            <td align="left">-</td>
+            <td align="left">
+              <img src="../partsImgs/jumperFM.JPG" width="100">
+            </td>
+          </tr>
+          <tr>
+            <td align="center">その他</td>
+            <td align="left">カメラ</td>
+            <td align="left">-</td>
+            <td align="left">-</td>
+            <td align="left">
+              <img src="../partsImgs/camera.JPG" width="100">
+            </td>
+          </tr>
+          <tr>
+            <td align="center">その他</td>
+            <td align="left">ファン</td>
+            <td align="left">-</td>
+            <td align="left">-</td>
+            <td align="left">
+              <img src="../partsImgs/fan.JPG" width="100">
+            </td>
+          </tr>
+          <tr>
+            <td align="center">その他</td>
+            <td align="left">抵抗</td>
+            <td align="left">-</td>
+            <td align="left">-</td>
+            <td align="left">
+              <img src="../partsImgs/register.JPG" width="100">
+            </td>
+          </tr>
+          <tr>
+            <td align="center">ボードコンピューター</td>
+            <td align="left">マイクロビット</td>
+            <td align="left">-</td>
+            <td align="left">-</td>
+            <td align="left">
+              <img src="../partsImgs/microbit.JPG" width="100">
+            </td>
+          </tr>
+          <tr>
+            <td align="center">ボードコンピューター</td>
+            <td align="left">ブレークアウト</td>
+            <td align="left">-</td>
+            <td align="left">-</td>
+            <td align="left">
+              <img src="../partsImgs/microbitBreakout.JPG" width="100">
+            </td>
+          </tr>
+          <tr>
+            <td align="center">GPIO</td>
+            <td align="left">LED</td>
+            <td align="left">フレキシブルＬＥＤ　緑色</td>
+            <td align="left">通電すると光る部品です(必ず抵抗を挟んで利用してください)</td>
+            <td align="left">
+              <img src="../partsImgs/M-18007.JPG" width="100">
+            </td>
+          </tr>
+          <tr>
+            <td align="center">GPIO</td>
+            <td align="left">LED</td>
+            <td align="left">フレキシブルＬＥＤ　赤色</td>
+            <td align="left">通電すると光る部品です(必ず抵抗を挟んで利用してください)</td>
+            <td align="left">
+              <img src="../partsImgs/M-18006.JPG" width="100">
+            </td>
+          </tr>
+          <tr>
+            <td align="center">GPIO</td>
+            <td align="left">LED</td>
+            <td align="left">フレキシブルＬＥＤ　黄色</td>
+            <td align="left">通電すると光る部品です(必ず抵抗を挟んで利用してください)</td>
+            <td align="left">
+              <img src="../partsImgs/M-18010.JPG" width="100">
+            </td>
+          </tr>
+          <tr>
+            <td align="center">GPIO</td>
+            <td align="left">LED</td>
+            <td align="left">フレキシブルＬＥＤ　ピンク色</td>
+            <td align="left">通電すると光る部品です(必ず抵抗を挟んで利用してください)</td>
+            <td align="left">
+              <img src="../partsImgs/M-18009.JPG" width="100">
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+  </body>
+</html>
