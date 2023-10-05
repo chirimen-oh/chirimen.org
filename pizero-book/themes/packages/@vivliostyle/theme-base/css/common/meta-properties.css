@@ -51,7 +51,7 @@
    * Spacing
    */
   --vs-spacing-rlh: calc(var(--vs-line-height) * 1rem);
-  --vs-spacing-inline-indent: min(2ch, 5vw);
+  --vs-spacing-inline-indent: min(4ch, 5vw);
 
   /**
    * Borders
