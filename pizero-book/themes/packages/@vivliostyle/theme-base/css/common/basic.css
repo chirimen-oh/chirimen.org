@@ -596,6 +596,11 @@ figcaption {
   text-indent: var(--vs--figcaption-text-indent);
 }
 
+ul > li > img {
+  margin-block: var(--vs--figure-margin-block);
+  margin-inline: var(--vs--figure-margin-inline);
+}
+
 ul,
 ol,
 dl {
