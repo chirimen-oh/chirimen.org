@@ -73,6 +73,10 @@
     margin-block: var(--vs-footnote--item-margin-block);
     margin-inline: var(--vs-footnote--item-margin-inline);
   }
+
+  .footnote > a {
+    text-decoration: none;
+  }
 }
 
 @-adapt-footnote-area {

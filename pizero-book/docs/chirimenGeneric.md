@@ -26,13 +26,9 @@ CHIRIMEN とは、Webの標準的な技術・ブラウザやNode.js等で実行�
 
 ## そもそも「L チカ」って何？
 
-「L チカ」とは、LED を点けたり消したりチカチカ点滅させることです。今回は「LED を点ける」「LED を消す」をプログラムで繰り返し実行することで実現します。
-
-- 参考：[LED（発光ダイオード）](https://ja.wikipedia.org/wiki/%E7%99%BA%E5%85%89%E3%83%80%E3%82%A4%E3%82%AA%E3%83%BC%E3%83%89)
-
+「L チカ」とは、LED（発光ダイオード）<span class="footnote">https://ja.wikipedia.org/wiki/発光ダイオード</span>を点けたり消したりチカチカ点滅させることです。今回は「LED を点ける」「LED を消す」をプログラムで繰り返し実行することで実現します。
 
 ## LED
-- [LED（発光ダイオード）](https://ja.wikipedia.org/wiki/%E7%99%BA%E5%85%89%E3%83%80%E3%82%A4%E3%82%AA%E3%83%BC%E3%83%89)
 - [LED の使い方](https://www.marutsu.co.jp/pc/static/large_order/led)
 
 ### ヒント: LED の電圧
@@ -171,7 +167,7 @@ CHIRIMEN Raspi、Raspi Zero では Raspi が提供する 40 本のピンヘッ�
 
 Raspiやmicro:bit の GPIO 端子は、GND 端子との間に、0V もしくは 3.3V の電圧を印加(出力)したり、逆に 0V もしくは 3.3V の電圧を検知(入力)したりすることができます。LED は数 mA の電流を流すことによって点灯できる電子部品のため、印加する電圧を 3.3V(点灯)、0V(消灯) と変化させることで L チカが実現できるのです。
 
-詳しくは[こちらのサイトの解説](https://tool-lab.com/make/raspberrypi-startup-22/)などを参考にしてみましょう。
+詳しくは[ツール・ラボ/第22回 Raspberry PiのGPIO概要](https://tool-lab.com/make/raspberrypi-startup-22/)などを参考にしてみましょう。
 
 ### Raspberry Piのピン配置図
 
@@ -187,7 +183,7 @@ Raspberry Piの端子と同じ配列です。
 GPIOポートを入力モードで使用する場合、ポートが解放状態(電気的に切り離されている状態)のときに設定される値があります。
 プルアップは1、プルダウンは0になります。　Raspberry Piのピン配置図に書かれているPU,PDがその設定値です。micro:bitではすべてプルダウンに設定されていますが、GPIOポート初期化時にプルアップに設定することもできます。
 
-* [より詳しく知る(voltechno)](https://voltechno.com/blog/pullup-pulldown/)
+より詳しく知りたい場合は [プルアップ抵抗・プルダウン抵抗とは？電子回路に必須の考え方/voltechno](https://voltechno.com/blog/pullup-pulldown/) を参照してください。
 
 <hr class="page-wrap" />
 
@@ -286,7 +282,8 @@ main();
 こちらはGPIOポートの入力値を一回きり単発で取得する単純入力機能と、ポーリングの組み合わせです。
 
 #### ポーリングとは
-様々な情報や値の取得や入力のための基本的な機能・関数は、入力を指定した瞬間、一回きり取得するだけのものがほとんどです。そこで、無限ループをつくりこの中で一回きりの入力を定期的に繰り返すことで、入力の変化を読み取る　ということがよく行われます。このような処理を一般にポーリングと呼びます。 ([wikipedia:ポーリング](https://ja.wikipedia.org/wiki/%E3%83%9D%E3%83%BC%E3%83%AA%E3%83%B3%E3%82%B0_(%E6%83%85%E5%A0%B1)))
+
+様々な情報や値の取得や入力のための基本的な機能・関数は、入力を指定した瞬間、一回きり取得するだけのものがほとんどです。そこで、無限ループをつくりこの中で一回きりの入力を定期的に繰り返すことで、入力の変化を読み取る　ということがよく行われます。このような処理を一般にポーリング<span class="footnote">https://ja.wikipedia.org/wiki/ポーリング_(情報)</span>と呼びます。
 ポーリングはセンサーの情報入力だけでなく、たとえば電子メールの到着を通知するために定期的にメールサーバにメール着信数を確認する　といった、ネットワークサービスでの処理など様々なシステムで広く使われています。
 
 #### GPIOの単純入力関数
@@ -424,8 +421,6 @@ I2Cデバイスは一般的に小さなチップ部品です。下の拡大写�
 
 `i2cdetect` を使って SlaveAddress を確認し、正しく接続・認識できているか確かめてみましょう。ターミナルを起動して下記コマンドを入力してみてください。
 
-* [ic2 detectとは](https://tutorial.chirimen.org/ty51822r3/i2cdetect)
-
 ### コマンドラインから
 ```sh
 i2cdetect -y -r 1
@@ -436,7 +431,8 @@ i2cdetect -y -r 1
 
 ### i2cdetect webApp
 #### Raspberry Pi
-SlaveAddress を確認する i2cdetect には WebI2C(後述) を使って実装したwebApp版もあります。[https://r.chirimen.org/i2cdetect](https://r.chirimen.org/i2cdetect) をご利用ください。ただし、WebI2C 版 i2cdetect を利用中は他のページから I2C デバイスを操作できません。確認が済んだらタブを閉じるようにしましょう。
+SlaveAddress を確認する i2cdetect には WebI2C(後述) を使って実装したwebApp版もあります。https://r.chirimen.org/i2cdetect をご利用ください。ただし、WebI2C 版 i2cdetect を利用中は他のペ
+ージから I2C デバイスを操作できません。確認が済んだらタブを閉じるようにしましょう。
 
 #### Raspberry PiZeroW
 Raspberry PiZeroWでは、[ターミナルウィンド](https://chirimen.org/PiZeroWebSerialConsole/PiZeroWebSerialConsole.html)⇒CHIRIMEN Panel⇒i2c detect　でコマンドラインのショートカットが使えます。
@@ -615,11 +611,7 @@ const { humidity, temperature } = await sht30.readData();
 
 まず、デバイスドライバーなしに使うにはそのデバイスのデータシートをよく読み込みながら開発する必要があります。
 
-**[SHT30データシート](https://www.sensirion.com/fileadmin/user_upload/customers/sensirion/Dokumente/2_Humidity_Sensors/Datasheets/Sensirion_Humidity_Sensors_SHT3x_Datasheet_digital.pdf)**
-
-[ドライバーライブラリを GitHub で見てみる](https://github.com/chirimen-oh/chirimen-drivers/tree/master/packages/sht30/sht30.js)
-
-それではSHT30ドライバのコードを見てみましょう。
+それでは[SHT30ドライバのコード](https://github.com/chirimen-oh/chirimen-drivers/tree/master/packages/sht30/sht30.js)を見てみましょう。
 
 * 初期化 `init()`
 ```js
@@ -627,7 +619,8 @@ if (!slaveAddress){
 		slaveAddress = 0x44;
 }
 ```
-データシート（９ページ)に記載の通り、ドライバでは　指定がない場合スレーブアドレス0x44を指定して通信を開始しています。
+
+[SHT30データシート](https://www.sensirion.com/fileadmin/user_upload/customers/sensirion/Dokumente/2_Humidity_Sensors/Datasheets/Sensirion_Humidity_Sensors_SHT3x_Datasheet_digital.pdf) の９ページに記載の通り、ドライバでは指定がない場合スレーブアドレス0x44を指定して通信を開始しています。
 
 * データの読み取り `readData()`
 ```js
@@ -653,7 +646,7 @@ var humidity = 100 * (mdata[3] * 256 + mdata[4]) / 65535.0;
 これまでのチュートリアルでは、いずれもそのコンピュータに直接接続されたデバイスを使うものでした。このようなシステムは「スタンドアロン」と呼ばれます。
 今までは、ウェブブラウザを使っていたのに、実はウェブの重要な機能～インターネット上の情報基盤WWWを活用したシステムを作っていなかったのです。（開発環境としてはgithubやcodesandboxなどWWW上の情報サービスを活用していますが）
 
-このようなインターネットを活用するシステムのことをIoT (Internet of Thingの略)と呼びます。ただし単にPCやスマホで使うウェブサービスがIoTと呼ばれることがありません。チュートリアルで学んだようなセンサーやアクチュエータがシステムに組み込まれ、物理的なモノと相互作用するようなものを特にIoTと呼びます。（なお、WWWを用いずネットワーク部のインターネットだけを使ったものでもIoTと呼びます。詳しくは[wiki](https://ja.wikipedia.org/wiki/%E3%83%A2%E3%83%8E%E3%81%AE%E3%82%A4%E3%83%B3%E3%82%BF%E3%83%BC%E3%83%8D%E3%83%83%E3%83%88)や、[こちらの資料](https://smartiot-forum.jp/application/files/5315/8642/5503/iot-jinzai-text_verR0202.pdf)なども参考にしてください）
+このようなインターネットを活用するシステムのことをIoT (Internet of Thingの略)と呼びます。ただし単にPCやスマホで使うウェブサービスがIoTと呼ばれることがありません。チュートリアルで学んだようなセンサーやアクチュエータがシステムに組み込まれ、物理的なモノと相互作用するようなものを特にIoTと呼びます。（なお、WWWを用いずネットワーク部のインターネットだけを使ったものでもIoTと呼びます。詳しくはwiki<span class="footnote">https://ja.wikipedia.org/wiki/モノのインターネット</span>や、[総務省「IoT機器等の電波利用システムの適正利用のためのICT人材育成事業」における講習会テキスト](https://smartiot-forum.jp/application/files/5315/8642/5503/iot-jinzai-text_verR0202.pdf)なども参考にしてください）
 
 ## webSocketとpub/sub services
 ### システム構成
@@ -699,9 +692,9 @@ IoTにはrelayServerの機能を持つウェブサイトが必要になります
 
 [relayServer.js](https://chirimen.org/remote-connection/)は、relayServerサービスによる差異を吸収し複数の事業者を自由に切り替えられ、webSocketの標準API仕様に沿った作法でwebApps(含Node.jsプログラム)間の通信を簡単に使えるようにするライブラリです。
 
-##### プログラムの流れ
-###### 初期化（受信側、送信側共通の処理
-[詳しくはこちらを参照](https://chirimen.org/remote-connection/#使用方法)
+#### relayServer.js を使ったプログラムの流れ
+
+##### 初期化（受信側、送信側共通の処理
 
 ```javascript
 import {RelayServer} from "https://chirimen.org/remote-connection/js/beta/RelayServer.js";
@@ -738,7 +731,7 @@ var relay = RelayServer("achex", "chirimenSocket" );
 
 #### セキュリティを考えよう
 
-relayServerを使うということは、情報をインターネット上のウェブサイトに送信することになります。すると このウェブサイトがその情報をどのように取り扱うのかを理解しておく必要があります。achexは無料で使え　しかもユーザ登録も不要です。つまりこのサイトに送信した情報は誰でも見ることができてしまうということです。（ただし、トークンとチャンネルを知る必要がある。これがachexのセキュリティレベル）今回は個人情報などのセキュリティを考慮する必要がない、チュートリアルで使うセンシングデータを送るだけですので問題ありませんが、セキュリティを考慮する必要がある多くの用途ではそのセキュリティ基準に適合したサイトを契約して利用する、もしくは自分でそのようなサイトを立てるなどの必要が出てきます。relayServer.jsでも[いくつかの商用サイト](https://chirimen.org/remote-connection/#%E3%82%B5%E3%83%BC%E3%83%93%E3%82%B9%E3%81%94%E3%81%A8%E3%81%AE%E5%88%A9%E7%94%A8%E6%96%B9%E6%B3%95)の比較と使用方法が記載されているので参考にしてください。
+relayServerを使うということは、情報をインターネット上のウェブサイトに送信することになります。すると このウェブサイトがその情報をどのように取り扱うのかを理解しておく必要があります。achexは無料で使え　しかもユーザ登録も不要です。つまりこのサイトに送信した情報は誰でも見ることができてしまうということです。（ただし、トークンとチャンネルを知る必要がある。これがachexのセキュリティレベル）今回は個人情報などのセキュリティを考慮する必要がない、チュートリアルで使うセンシングデータを送るだけですので問題ありませんが、セキュリティを考慮する必要がある多くの用途ではそのセキュリティ基準に適合したサイトを契約して利用する、もしくは自分でそのようなサイトを立てるなどの必要が出てきます。relayServer.jsでもいくつかの商用サイトの比較と使用方法が記載されているので参考にしてください。
 
 #### Node.jsでの利用
 

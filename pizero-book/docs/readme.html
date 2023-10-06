@@ -26,11 +26,7 @@
                 <li>Pi Zero <strong>2</strong> W: <a href="https://raspberry-pi.ksyic.com/main/index/pdp.id/851/pdp.open/851">ケイエスワイ</a></li>
               </ul>
             </li>
-            <li><a href="https://github.com/chirimen-oh/chirimen-lite/releases">Raspberry Pi OS LiteをUSB Serialで使用可能にしたイメージ</a>を書き込んだmicroSDカード
-              <ul>
-                <li>講習会では書き込み済みmicroSDが配布されると思いますが、自分で作る場合は<a href="../raspi/sdcard2">こちら</a>や<a href="../raspi/sdcard">こちら</a>(書き込むべきイメージはLite版の方です。(<a href="https://github.com/chirimen-oh/chirimen-lite/releases">これを書き込みます</a>))</li>
-              </ul>
-            </li>
+            <li><a href="https://github.com/chirimen-oh/chirimen-lite/releases">Raspberry Pi OS LiteをUSB Serialで使用可能にしたイメージ</a>を書き込んだmicroSDカード</li>
             <li>ブラウザの載ったパソコン
               <ul>
                 <li>Windows 10 PC
@@ -143,7 +139,7 @@
           <h3 id="note">Note:</h3>
           <ul>
             <li>
-              <p>CHIRIMEN Raspberry Pi Zero版では<a href="https://www.raspberrypi.com/software/operating-systems/">Raspberry Pi OS Lite</a>(Linux)をコマンドラインインターフェース(CLI)・シェル(bash)で操作します。</p>
+              <p>CHIRIMEN Raspberry Pi Zero版では<a href="https://www.raspberrypi.com/software/operating-systems/">Raspberry Pi OS Lite</a>(Linux)を<a href="https://atmarkit.itmedia.co.jp/ait/articles/1602/19/news025.html">コマンドラインインターフェース(CLI)</a>・<a href="https://atmarkit.itmedia.co.jp/ait/articles/1603/02/news016.html">シェル(bash)</a>で操作します。</p>
               <ul>
                 <li>ただしこの講習で使うコマンドはごくわずかです。
                   <ul>
@@ -153,12 +149,6 @@
                 </li>
                 <li>その他のほとんどの操作（コマンド）は、ターミナルウィンドやそこから起動される別画面のGUIがコマンド操作を代行しています。図1.1のGUIを操作するとコンソールにコマンドが入力されるのがわかると思います。</li>
               </ul>
-            </li>
-            <li>
-              <p><a href="https://atmarkit.itmedia.co.jp/ait/articles/1602/19/news025.html">CLIとは</a></p>
-            </li>
-            <li>
-              <p><a href="https://atmarkit.itmedia.co.jp/ait/articles/1603/02/news016.html">シェルとコマンドプロンプト</a></p>
             </li>
             <li>
               <p>もしもあなたがlinuxのシェルコンソール画面に慣れている場合は、ターミナルウィンドのコンソールにその他のシェル(bash)コマンドをタイプして使用することもできます。</p>
@@ -332,8 +322,7 @@
           <li>コンソール部をクリックして、入力可能状態にしてから、以下の文字を入力します。</li>
           <li><code>node hello.js</code> ENTERキー
             <ul>
-              <li><strong>node</strong> はJavaScriptのコードを実行する<a href="https://ja.wikipedia.org/wiki/%E3%82%A4%E3%83%B3%E3%82%BF%E3%83%97%E3%83%AA%E3%82%BF">インタープリタ</a></li>
-              <li><a href="https://atmarkit.itmedia.co.jp/ait/articles/1102/28/news105.html">nodeコマンドについて</a></li>
+              <li><a href="https://atmarkit.itmedia.co.jp/ait/articles/1102/28/news105.html"><strong>node</strong></a> はJavaScriptのコードを実行するインタープリタ<span class="footnote"><a href="https://ja.wikipedia.org/wiki/%E3%82%A4%E3%83%B3%E3%82%BF%E3%83%97%E3%83%AA%E3%82%BF">https://ja.wikipedia.org/wiki/インタプリタ</a></span></li>
             </ul>
           </li>
           <li>LED が点滅すれば完成です 🎉</li>
@@ -345,11 +334,7 @@
     <section class="level1" aria-labelledby="raspberry-pi-について">
       <h1 id="raspberry-pi-について">Raspberry Pi について</h1>
       <ul>
-        <li>教育・学習用として設計されたシングルボードコンピュータ
-          <ul>
-            <li><a href="https://elchika.com/dic/%E3%82%B7%E3%83%B3%E3%82%B0%E3%83%AB%E3%83%9C%E3%83%BC%E3%83%89%E3%82%B3%E3%83%B3%E3%83%94%E3%83%A5%E3%83%BC%E3%82%BF/">シングルボードコンピュータ～PC・スマホとの違い</a></li>
-          </ul>
-        </li>
+        <li>教育・学習用として設計されたシングルボードコンピュータ<span class="footnote"><a href="https://elchika.com/dic/%E3%82%B7%E3%83%B3%E3%82%B0%E3%83%AB%E3%83%9C%E3%83%BC%E3%83%89%E3%82%B3%E3%83%B3%E3%83%94%E3%83%A5%E3%83%BC%E3%82%BF/">https://elchika.com/dic/シングルボードコンピュータ/</a></span></li>
         <li>Linuxが動作するシングルボードコンピュータとして、安価でとても高いシェアを持ち世界中で容易に入手できる</li>
         <li>今回使用するRaspberry Pi ZeroWは、その中でも特に安価(<a href="https://www.switch-science.com/catalog/3200/">2000円以下</a>)で小型・低消費電力の機種、HDMI出力はあるもののブラウザを動かすだけの処理能力がありませんが、IoTのエッジデバイス（センサーやアクチュエータが載ったデバイスでディスプレイはあるとしても簡易のもの）には適しています。
           <ul>
@@ -669,11 +654,7 @@
           <li>ターミナルウィンドの<code>[CHIRIMEN Panel]</code>ボタンを押す</li>
           <li>出現したCHIRIMEN Panelの<code>[Get Examples]</code>ボタンを押す</li>
           <li>ID : adt7410を探します(上から5個目ぐらい)</li>
-          <li>回路図リンクを押すと回路図が出てきますので、回路を組みます。なお、接続は下の図のようになります。
-            <ul>
-              <li><a href="https://tutorial.chirimen.org/raspi/hellorealworld#section-2">センサーの極性に注意！</a></li>
-            </ul>
-          </li>
+          <li>回路図リンクを押すと回路図が出てきますので、回路を組みます。なお、接続は下の図のようになります。</li>
         </ul>
         <figure>
           <img src="../../pizero/imgs/pizero_temp.png" alt="PiZero温度センサー図">
@@ -692,15 +673,15 @@
             </ul>
           </li>
         </ul>
-        <hr class="page-wrap">
+        <section class="level4" aria-labelledby="センサーの極性に注意">
+          <h4 id="センサーの極性に注意">センサーの極性に注意</h4>
+          <pre class="language-text"><code class="language-text">温度センサー ADT7410 を用意した場合、図と同じように配線します。配線(特に電源線)を間違えるとセンサーが高熱になり火傷・破損するので注意してください。</code></pre>
+          <hr class="page-wrap">
+        </section>
         <section class="level3" aria-labelledby="i2cセンサーが認識されていることを確認する">
           <h3 id="i2cセンサーが認識されていることを確認する">I2Cセンサーが認識されていることを確認する</h3>
           <ul>
-            <li>CHIRIMEN Panelの<code>[i2c detect]</code>ボタンを押すと、<a href="https://akizukidenshi.com/download/ds/akizuki/AE-ADT7410_aw.pdf">ADT7410のI2Cアドレス</a>　0x<strong>48</strong>が表示されていればうまく接続されています。
-              <ul>
-                <li><a href="https://tutorial.chirimen.org/ty51822r3/i2cdetect">ic2 detectとは</a></li>
-              </ul>
-            </li>
+            <li>CHIRIMEN Panelの<a href="https://tutorial.chirimen.org/ty51822r3/i2cdetect"><code>[i2c detect]</code></a>ボタンを押すと、<a href="https://akizukidenshi.com/download/ds/akizuki/AE-ADT7410_aw.pdf">ADT7410のI2Cアドレス</a>　0x<strong>48</strong>が表示されていればうまく接続されています。</li>
           </ul>
           <pre>     0  1  2  3  4  5  6  7  8  9  a  b  c  d  e  f
 00:          -- -- -- -- -- -- -- -- -- -- -- -- -- 
@@ -777,11 +758,7 @@
           <ul>
             <li>CHIRIMEN Panelに戻り、ID : <strong>remote_gpio_led</strong>の行にある、<code>CSB EDIT</code>リンクをクリックする。
               <ul>
-                <li>CodeSandboxというオンラインのWebApp開発環境のウィンドが開き、PC側のコードが表示されています。編集もできます。
-                  <ul>
-                    <li>詳しい解説：<a href="https://csb-jp.github.io/">CodeSandbox ガイド</a></li>
-                  </ul>
-                </li>
+                <li><a href="https://csb-jp.github.io/">CodeSandbox</a>というオンラインのWebApp開発環境のウィンドが開き、PC側のコードが表示されています。編集もできます。</li>
                 <li>また、右側（もしくは右下）のフレームにはLEDを遠隔コントロールするためのwebAppが既に実行されています。</li>
                 <li>
                   webAppを使ってLEDが制御できることを確かめてみましょう。
@@ -920,7 +897,7 @@ import {RelayServer} from "./RelayServer.js";</code></pre>
           </ul>
         </li>
       </ul>
-      <p>その他、電子工作など一般的な知識は <a href="../reference.md">予備知識・資料集</a> や、<a href="../chirimenGeneric/">共通資料集</a>を参照してください。</p>
+      <p>その他、電子工作など一般的な知識は <a href="https://tutorial.chirimen.org/reference">予備知識・資料集</a> や、<a href="https://tutorial.chirimen.org/chirimengeneric/">共通資料集</a>を参照してください。</p>
       <hr class="page-wrap">
     </section>
     <section class="level1" aria-labelledby="chirimen-ブラウザー版との差異">

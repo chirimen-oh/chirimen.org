@@ -45,15 +45,11 @@
       </section>
       <section class="level2" aria-labelledby="そもそもl-チカって何">
         <h2 id="そもそもl-チカって何">そもそも「L チカ」って何？</h2>
-        <p>「L チカ」とは、LED を点けたり消したりチカチカ点滅させることです。今回は「LED を点ける」「LED を消す」をプログラムで繰り返し実行することで実現します。</p>
-        <ul>
-          <li>参考：<a href="https://ja.wikipedia.org/wiki/%E7%99%BA%E5%85%89%E3%83%80%E3%82%A4%E3%82%AA%E3%83%BC%E3%83%89">LED（発光ダイオード）</a></li>
-        </ul>
+        <p>「L チカ」とは、LED（発光ダイオード）<span class="footnote"><a href="https://ja.wikipedia.org/wiki/%E7%99%BA%E5%85%89%E3%83%80%E3%82%A4%E3%82%AA%E3%83%BC%E3%83%89">https://ja.wikipedia.org/wiki/発光ダイオード</a></span>を点けたり消したりチカチカ点滅させることです。今回は「LED を点ける」「LED を消す」をプログラムで繰り返し実行することで実現します。</p>
       </section>
       <section class="level2" aria-labelledby="led">
         <h2 id="led">LED</h2>
         <ul>
-          <li><a href="https://ja.wikipedia.org/wiki/%E7%99%BA%E5%85%89%E3%83%80%E3%82%A4%E3%82%AA%E3%83%BC%E3%83%89">LED（発光ダイオード）</a></li>
           <li><a href="https://www.marutsu.co.jp/pc/static/large_order/led">LED の使い方</a></li>
         </ul>
         <section class="level3" aria-labelledby="ヒント-led-の電圧">
@@ -246,7 +242,7 @@
         <p>Raspi に実装されている 40 本のピンヘッダから GPIO を利用することができます。</p>
         <p>CHIRIMEN Raspi、Raspi Zero では Raspi が提供する 40 本のピンヘッダのうち、下記緑色のピン(合計 17 本)が利用可能です。CHIRIMEN micro:bitでは<a href="https://chirimen.org/chirimen-micro-bit/guidebooks/diff_rpi3.html#%E4%BD%BF%E7%94%A8%E3%81%A7%E3%81%8D%E3%82%8Bgpio%E3%83%9D%E3%83%BC%E3%83%88">こちらのページ</a>に記載されている端子が利用可能です。</p>
         <p>Raspiやmicro:bit の GPIO 端子は、GND 端子との間に、0V もしくは 3.3V の電圧を印加(出力)したり、逆に 0V もしくは 3.3V の電圧を検知(入力)したりすることができます。LED は数 mA の電流を流すことによって点灯できる電子部品のため、印加する電圧を 3.3V(点灯)、0V(消灯) と変化させることで L チカが実現できるのです。</p>
-        <p>詳しくは<a href="https://tool-lab.com/make/raspberrypi-startup-22/">こちらのサイトの解説</a>などを参考にしてみましょう。</p>
+        <p>詳しくは<a href="https://tool-lab.com/make/raspberrypi-startup-22/">ツール・ラボ/第22回 Raspberry PiのGPIO概要</a>などを参考にしてみましょう。</p>
         <section class="level3" aria-labelledby="raspberry-piのピン配置図">
           <h3 id="raspberry-piのピン配置図">Raspberry Piのピン配置図</h3>
           <figure>
@@ -271,9 +267,7 @@
             GPIOポートを入力モードで使用する場合、ポートが解放状態(電気的に切り離されている状態)のときに設定される値があります。
             プルアップは1、プルダウンは0になります。　Raspberry Piのピン配置図に書かれているPU,PDがその設定値です。micro:bitではすべてプルダウンに設定されていますが、GPIOポート初期化時にプルアップに設定することもできます。
           </p>
-          <ul>
-            <li><a href="https://voltechno.com/blog/pullup-pulldown/">より詳しく知る(voltechno)</a></li>
-          </ul>
+          <p>より詳しく知りたい場合は <a href="https://voltechno.com/blog/pullup-pulldown/">プルアップ抵抗・プルダウン抵抗とは？電子回路に必須の考え方/voltechno</a> を参照してください。</p>
           <hr class="page-wrap">
         </section>
       </section>
@@ -364,7 +358,7 @@
           <section class="level4" aria-labelledby="ポーリングとは">
             <h4 id="ポーリングとは">ポーリングとは</h4>
             <p>
-              様々な情報や値の取得や入力のための基本的な機能・関数は、入力を指定した瞬間、一回きり取得するだけのものがほとんどです。そこで、無限ループをつくりこの中で一回きりの入力を定期的に繰り返すことで、入力の変化を読み取る　ということがよく行われます。このような処理を一般にポーリングと呼びます。 (<a href="https://ja.wikipedia.org/wiki/%E3%83%9D%E3%83%BC%E3%83%AA%E3%83%B3%E3%82%B0_(%E6%83%85%E5%A0%B1)">wikipedia:ポーリング</a>)
+              様々な情報や値の取得や入力のための基本的な機能・関数は、入力を指定した瞬間、一回きり取得するだけのものがほとんどです。そこで、無限ループをつくりこの中で一回きりの入力を定期的に繰り返すことで、入力の変化を読み取る　ということがよく行われます。このような処理を一般にポーリング<span class="footnote"><a href="https://ja.wikipedia.org/wiki/%E3%83%9D%E3%83%BC%E3%83%AA%E3%83%B3%E3%82%B0_(%E6%83%85%E5%A0%B1)">https://ja.wikipedia.org/wiki/ポーリング_(情報)</a></span>と呼びます。
               ポーリングはセンサーの情報入力だけでなく、たとえば電子メールの到着を通知するために定期的にメールサーバにメール着信数を確認する　といった、ネットワークサービスでの処理など様々なシステムで広く使われています。
             </p>
           </section>
@@ -517,9 +511,6 @@
       <section class="level2" aria-labelledby="b-i2cdetectで接続がうまくいったか確認する">
         <h2 id="b-i2cdetectで接続がうまくいったか確認する">b. i2cdetectで接続がうまくいったか確認する</h2>
         <p><code>i2cdetect</code> を使って SlaveAddress を確認し、正しく接続・認識できているか確かめてみましょう。ターミナルを起動して下記コマンドを入力してみてください。</p>
-        <ul>
-          <li><a href="https://tutorial.chirimen.org/ty51822r3/i2cdetect">ic2 detectとは</a></li>
-        </ul>
         <section class="level3" aria-labelledby="コマンドラインから">
           <h3 id="コマンドラインから">コマンドラインから</h3>
           <pre class="language-sh"><code class="language-sh">i2cdetect -y -r 1</code></pre>
@@ -530,7 +521,10 @@
           <h3 id="i2cdetect-webapp">i2cdetect webApp</h3>
           <section class="level4" aria-labelledby="raspberry-pi">
             <h4 id="raspberry-pi">Raspberry Pi</h4>
-            <p>SlaveAddress を確認する i2cdetect には WebI2C(後述) を使って実装したwebApp版もあります。<a href="https://r.chirimen.org/i2cdetect">https://r.chirimen.org/i2cdetect</a> をご利用ください。ただし、WebI2C 版 i2cdetect を利用中は他のページから I2C デバイスを操作できません。確認が済んだらタブを閉じるようにしましょう。</p>
+            <p>
+              SlaveAddress を確認する i2cdetect には WebI2C(後述) を使って実装したwebApp版もあります。<a href="https://r.chirimen.org/i2cdetect">https://r.chirimen.org/i2cdetect</a> をご利用ください。ただし、WebI2C 版 i2cdetect を利用中は他のペ
+              ージから I2C デバイスを操作できません。確認が済んだらタブを閉じるようにしましょう。
+            </p>
           </section>
           <section class="level4" aria-labelledby="raspberry-pizerow">
             <h4 id="raspberry-pizerow">Raspberry PiZeroW</h4>
@@ -698,16 +692,14 @@
           <h3 id="デバイスドライバーなしにsht30を使う">デバイスドライバーなしにSHT30を使う</h3>
           <p>デバイスドライバーはI2Cデバイスを簡単に使えるようにするライブラリでしかありませんので、ライブラリなしにWebI2CAPIを用いて直接デバイスを使うこともできます。運悪くデバイスドライバーが用意されていないI2Cデバイスを使いたい場合や、デバイスドライバーで省略されている機能を使いたい場合などのために、<a href="http://browserobo.github.io/WebI2C">Web I2C API</a>の振る舞いを理解しておきましょう。</p>
           <p>まず、デバイスドライバーなしに使うにはそのデバイスのデータシートをよく読み込みながら開発する必要があります。</p>
-          <p><strong><a href="https://www.sensirion.com/fileadmin/user_upload/customers/sensirion/Dokumente/2_Humidity_Sensors/Datasheets/Sensirion_Humidity_Sensors_SHT3x_Datasheet_digital.pdf">SHT30データシート</a></strong></p>
-          <p><a href="https://github.com/chirimen-oh/chirimen-drivers/tree/master/packages/sht30/sht30.js">ドライバーライブラリを GitHub で見てみる</a></p>
-          <p>それではSHT30ドライバのコードを見てみましょう。</p>
+          <p>それでは<a href="https://github.com/chirimen-oh/chirimen-drivers/tree/master/packages/sht30/sht30.js">SHT30ドライバのコード</a>を見てみましょう。</p>
           <ul>
             <li>初期化 <code>init()</code></li>
           </ul>
           <pre class="language-js"><code class="language-js"><span class="token keyword control-flow">if</span> <span class="token punctuation">(</span><span class="token operator">!</span>slaveAddress<span class="token punctuation">)</span><span class="token punctuation">{</span>
 		slaveAddress <span class="token operator">=</span> <span class="token number">0x44</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span></code></pre>
-          <p>データシート（９ページ)に記載の通り、ドライバでは　指定がない場合スレーブアドレス0x44を指定して通信を開始しています。</p>
+          <p><a href="https://www.sensirion.com/fileadmin/user_upload/customers/sensirion/Dokumente/2_Humidity_Sensors/Datasheets/Sensirion_Humidity_Sensors_SHT3x_Datasheet_digital.pdf">SHT30データシート</a> の９ページに記載の通り、ドライバでは指定がない場合スレーブアドレス0x44を指定して通信を開始しています。</p>
           <ul>
             <li>データの読み取り <code>readData()</code></li>
           </ul>
@@ -735,7 +727,7 @@
         これまでのチュートリアルでは、いずれもそのコンピュータに直接接続されたデバイスを使うものでした。このようなシステムは「スタンドアロン」と呼ばれます。
         今までは、ウェブブラウザを使っていたのに、実はウェブの重要な機能～インターネット上の情報基盤WWWを活用したシステムを作っていなかったのです。（開発環境としてはgithubやcodesandboxなどWWW上の情報サービスを活用していますが）
       </p>
-      <p>このようなインターネットを活用するシステムのことをIoT (Internet of Thingの略)と呼びます。ただし単にPCやスマホで使うウェブサービスがIoTと呼ばれることがありません。チュートリアルで学んだようなセンサーやアクチュエータがシステムに組み込まれ、物理的なモノと相互作用するようなものを特にIoTと呼びます。（なお、WWWを用いずネットワーク部のインターネットだけを使ったものでもIoTと呼びます。詳しくは<a href="https://ja.wikipedia.org/wiki/%E3%83%A2%E3%83%8E%E3%81%AE%E3%82%A4%E3%83%B3%E3%82%BF%E3%83%BC%E3%83%8D%E3%83%83%E3%83%88">wiki</a>や、<a href="https://smartiot-forum.jp/application/files/5315/8642/5503/iot-jinzai-text_verR0202.pdf">こちらの資料</a>なども参考にしてください）</p>
+      <p>このようなインターネットを活用するシステムのことをIoT (Internet of Thingの略)と呼びます。ただし単にPCやスマホで使うウェブサービスがIoTと呼ばれることがありません。チュートリアルで学んだようなセンサーやアクチュエータがシステムに組み込まれ、物理的なモノと相互作用するようなものを特にIoTと呼びます。（なお、WWWを用いずネットワーク部のインターネットだけを使ったものでもIoTと呼びます。詳しくはwiki<span class="footnote"><a href="https://ja.wikipedia.org/wiki/%E3%83%A2%E3%83%8E%E3%81%AE%E3%82%A4%E3%83%B3%E3%82%BF%E3%83%BC%E3%83%8D%E3%83%83%E3%83%88">https://ja.wikipedia.org/wiki/モノのインターネット</a></span>や、<a href="https://smartiot-forum.jp/application/files/5315/8642/5503/iot-jinzai-text_verR0202.pdf">総務省「IoT機器等の電波利用システムの適正利用のためのICT人材育成事業」における講習会テキスト</a>なども参考にしてください）</p>
       <section class="level2" aria-labelledby="websocketとpubsub-services">
         <h2 id="websocketとpubsub-services">webSocketとpub/sub services</h2>
         <section class="level3" aria-labelledby="システム構成">
@@ -782,19 +774,18 @@
             <p>IoTにはrelayServerの機能を持つウェブサイトが必要になりますが、これを誰かが運営しなければなりません。実習やプロトタイピングのためにこのようなサイトを自分たちで立ち上げるのはかなり大変ですが、インターネット上では既にいくつもの事業者がrelayServerサービスを提供しています。</p>
             <p>今回はCHIRIMEN環境の試験用に、CHIRIMEN用に用意された検証用サービス(chirimentest)を使うことにしますが、いくつかある事業者間でサービスの内容に差異があります。サイトごとの差異は主に接続できる端末の管理と情報の取り扱いに関する機能になります。</p>
             <p><a href="https://chirimen.org/remote-connection/">relayServer.js</a>は、relayServerサービスによる差異を吸収し複数の事業者を自由に切り替えられ、webSocketの標準API仕様に沿った作法でwebApps(含Node.jsプログラム)間の通信を簡単に使えるようにするライブラリです。</p>
-            <section class="level5" aria-labelledby="プログラムの流れ">
-              <h5 id="プログラムの流れ">プログラムの流れ</h5>
-              <section class="level6" aria-labelledby="初期化受信側送信側共通の処理">
-                <h6 id="初期化受信側送信側共通の処理">初期化（受信側、送信側共通の処理</h6>
-                <p><a href="https://chirimen.org/remote-connection/#%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95">詳しくはこちらを参照</a></p>
-                <pre class="language-javascript"><code class="language-javascript"><span class="token keyword module">import</span> <span class="token imports"><span class="token punctuation">{</span><span class="token maybe-class-name">RelayServer</span><span class="token punctuation">}</span></span> <span class="token keyword module">from</span> <span class="token string">"https://chirimen.org/remote-connection/js/beta/RelayServer.js"</span><span class="token punctuation">;</span>
+          </section>
+          <section class="level4" aria-labelledby="relayserverjs-を使ったプログラムの流れ">
+            <h4 id="relayserverjs-を使ったプログラムの流れ">relayServer.js を使ったプログラムの流れ</h4>
+            <section class="level5" aria-labelledby="初期化受信側送信側共通の処理">
+              <h5 id="初期化受信側送信側共通の処理">初期化（受信側、送信側共通の処理</h5>
+              <pre class="language-javascript"><code class="language-javascript"><span class="token keyword module">import</span> <span class="token imports"><span class="token punctuation">{</span><span class="token maybe-class-name">RelayServer</span><span class="token punctuation">}</span></span> <span class="token keyword module">from</span> <span class="token string">"https://chirimen.org/remote-connection/js/beta/RelayServer.js"</span><span class="token punctuation">;</span>
 <span class="token keyword">var</span> relay <span class="token operator">=</span> <span class="token function"><span class="token maybe-class-name">RelayServer</span></span><span class="token punctuation">(</span><span class="token string">"achex"</span><span class="token punctuation">,</span> <span class="token string">"chirimenSocket"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
-                <p>
-                  import文でライブラリRelayServer.jsを読み込んだ後、relayServiceのひとつ<strong>achex</strong>に接続しています。
-                  RelayServerの第二引数<code>("chirimenSocket")</code>はそのサービスを使うためのトークンですが、<strong>achex</strong>は任意の文字列で利用できてます。
-                </p>
-                <p><em>Node.jsでは第三,第四引数が必要になります (後述)</em></p>
-              </section>
+              <p>
+                import文でライブラリRelayServer.jsを読み込んだ後、relayServiceのひとつ<strong>achex</strong>に接続しています。
+                RelayServerの第二引数<code>("chirimenSocket")</code>はそのサービスを使うためのトークンですが、<strong>achex</strong>は任意の文字列で利用できてます。
+              </p>
+              <p><em>Node.jsでは第三,第四引数が必要になります (後述)</em></p>
             </section>
             <section class="level5" aria-labelledby="チャンネルの作成">
               <h5 id="チャンネルの作成">チャンネルの作成</h5>
@@ -839,7 +830,7 @@
           </section>
           <section class="level4" aria-labelledby="セキュリティを考えよう">
             <h4 id="セキュリティを考えよう">セキュリティを考えよう</h4>
-            <p>relayServerを使うということは、情報をインターネット上のウェブサイトに送信することになります。すると このウェブサイトがその情報をどのように取り扱うのかを理解しておく必要があります。achexは無料で使え　しかもユーザ登録も不要です。つまりこのサイトに送信した情報は誰でも見ることができてしまうということです。（ただし、トークンとチャンネルを知る必要がある。これがachexのセキュリティレベル）今回は個人情報などのセキュリティを考慮する必要がない、チュートリアルで使うセンシングデータを送るだけですので問題ありませんが、セキュリティを考慮する必要がある多くの用途ではそのセキュリティ基準に適合したサイトを契約して利用する、もしくは自分でそのようなサイトを立てるなどの必要が出てきます。relayServer.jsでも<a href="https://chirimen.org/remote-connection/#%E3%82%B5%E3%83%BC%E3%83%93%E3%82%B9%E3%81%94%E3%81%A8%E3%81%AE%E5%88%A9%E7%94%A8%E6%96%B9%E6%B3%95">いくつかの商用サイト</a>の比較と使用方法が記載されているので参考にしてください。</p>
+            <p>relayServerを使うということは、情報をインターネット上のウェブサイトに送信することになります。すると このウェブサイトがその情報をどのように取り扱うのかを理解しておく必要があります。achexは無料で使え　しかもユーザ登録も不要です。つまりこのサイトに送信した情報は誰でも見ることができてしまうということです。（ただし、トークンとチャンネルを知る必要がある。これがachexのセキュリティレベル）今回は個人情報などのセキュリティを考慮する必要がない、チュートリアルで使うセンシングデータを送るだけですので問題ありませんが、セキュリティを考慮する必要がある多くの用途ではそのセキュリティ基準に適合したサイトを契約して利用する、もしくは自分でそのようなサイトを立てるなどの必要が出てきます。relayServer.jsでもいくつかの商用サイトの比較と使用方法が記載されているので参考にしてください。</p>
           </section>
           <section class="level4" aria-labelledby="nodejsでの利用">
             <h4 id="nodejsでの利用">Node.jsでの利用</h4>
