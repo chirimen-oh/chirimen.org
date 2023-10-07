@@ -210,14 +210,14 @@ const port = i2cAccess.ports.get(1);
 
 CHIRIMEN RasPi、RasPiZero、で利用可能な I2C ポート番号は`1`番だけです。ポート番号に`1` を指定して **`port` オブジェクトを取得** しています。
 
-<hr class="page-wrap" />
-
 ##### new SHT30(port, 0x44)
 
 ドライバーライブラリを使い **SHT30 を操作する為のインスタンスを生成** しています。
 ```js
 const sht30 = new SHT30(port, 0x44);
 ```
+
+<hr class="page-wrap" />
 
 ##### await sht30.init()
 

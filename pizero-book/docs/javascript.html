@@ -33,12 +33,12 @@
             <code>polyfill.js</code> という JavaScript ライブラリを読み込んでいます。これは <a href="http://browserobo.github.io/WebGPIO">Web GPIO API</a> と、<a href="http://browserobo.github.io/WebI2C">Web I2C API</a> という W3C でドラフト提案中の 2 つの API への <a href="https://developer.mozilla.org/ja/docs/Glossary/Polyfill">Polyfill (新しい API を未実装のブラウザでも同じコードが書けるようにするためのライブラリ)</a> で、最初に読み込むとそれ以降のコードで GPIO や I2C を操作する JavaScript API が使えるようになります。
           </p>
           <p>次の行にある <code>main.js</code> は、JavaScript のプログラム本体です。</p>
-          <hr class="page-wrap">
         </section>
         <section class="level3" aria-labelledby="nodejs-chirimen-raspberry-pi-zero版">
           <h3 id="nodejs-chirimen-raspberry-pi-zero版">Node.js (CHIRIMEN Raspberry Pi Zero版)</h3>
           <p>Raspberry Pi Zero版はプログラムの起点が自分が作ったjavascriptコード自体になります。ブラウザの代わりに<a href="https://ja.wikipedia.org/wiki/Node.js">Node.js</a>というjavascriptコードだけを解釈するソフト（javascript <a href="https://ja.wikipedia.org/wiki/%E3%82%A4%E3%83%B3%E3%82%BF%E3%83%97%E3%83%AA%E3%82%BF">インタープリタ</a>）にコードを読み込ませて実行します。</p>
           <p>CHIRIMEN環境のために必要なライブラリや、<a href="#WebI2C%E3%81%A8%E3%83%87%E3%83%90%E3%82%A4%E3%82%B9%E3%83%89%E3%83%A9%E3%82%A4%E3%83%90">I2Cデバイスのドライバ</a>(後述)は次のECMA Script Moduleという仕組みを使って読み込みます。</p>
+          <hr class="page-wrap">
         </section>
         <section class="level3" aria-labelledby="javascript-module-ecma-script-module">
           <h3 id="javascript-module-ecma-script-module">javascript Module (ECMA Script Module)</h3>
@@ -82,6 +82,7 @@
         </ul>
         <p>非同期関数を <code>await</code> なしで呼び出すと返り値が Promise オブジェクトとなり、Promise を理解しないと返り値の判断や実行順序が入れ替わり意図せぬ挙動になります。例えば、ポートの初期化を <code>await</code> なしで呼ぶと、ポート初期化前に初期化未完了のハードウェアを操作しようとして失敗したりします。</p>
         <p>ハードウェアを制御するときは基本的に非同期呼び出しをする (その処理を含む関数もまた非同期で呼びす) と決めておけば迷うことなく、コードの実行順序も上から下に見たとおりの順番で実行され読み書きしやすくなります。</p>
+        <hr class="page-wrap">
       </section>
       <section class="level2" aria-labelledby="開発環境">
         <h2 id="開発環境">開発環境</h2>

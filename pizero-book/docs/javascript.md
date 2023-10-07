@@ -18,12 +18,12 @@ Raspberry Pi Zero版以外のCHIRIMENはプログラムの起点はHTMLファイ
 
 次の行にある `main.js` は、JavaScript のプログラム本体です。
 
-<hr class="page-wrap" />
-
 ### Node.js (CHIRIMEN Raspberry Pi Zero版)
 Raspberry Pi Zero版はプログラムの起点が自分が作ったjavascriptコード自体になります。ブラウザの代わりに[Node.js](https://ja.wikipedia.org/wiki/Node.js)というjavascriptコードだけを解釈するソフト（javascript [インタープリタ](https://ja.wikipedia.org/wiki/%E3%82%A4%E3%83%B3%E3%82%BF%E3%83%97%E3%83%AA%E3%82%BF)）にコードを読み込ませて実行します。
 
 CHIRIMEN環境のために必要なライブラリや、[I2Cデバイスのドライバ](#WebI2Cとデバイスドライバ)(後述)は次のECMA Script Moduleという仕組みを使って読み込みます。
+
+<hr class="page-wrap" />
 
 ### javascript Module (ECMA Script Module)
 * ウェブアプリでのModule有効化：HTMLのscript要素でjavascriptを読み込むとき、ttype="module"プロパティを設定する。
@@ -51,6 +51,8 @@ CHIRIMEN環境のために必要なライブラリや、[I2Cデバイスのド�
 非同期関数を `await` なしで呼び出すと返り値が Promise オブジェクトとなり、Promise を理解しないと返り値の判断や実行順序が入れ替わり意図せぬ挙動になります。例えば、ポートの初期化を `await` なしで呼ぶと、ポート初期化前に初期化未完了のハードウェアを操作しようとして失敗したりします。
 
 ハードウェアを制御するときは基本的に非同期呼び出しをする (その処理を含む関数もまた非同期で呼びす) と決めておけば迷うことなく、コードの実行順序も上から下に見たとおりの順番で実行され読み書きしやすくなります。
+
+<hr class="page-wrap" />
 
 ## 開発環境
 ### GitHub
