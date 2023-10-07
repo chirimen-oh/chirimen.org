@@ -54,7 +54,7 @@ CHIRIMEN for Raspberry Pi を利用するに際して、知っておくと良い
 
 <hr class="page-wrap" />
 
-# CHIRIMEN ブラウザー版との差異
+## CHIRIMEN ブラウザー版との差異
 
 | CHIRIMEN ブラウザー版       | Node.js                                                      |
 | --------------------------- | ------------------------------------------------------------ |
@@ -63,7 +63,7 @@ CHIRIMEN for Raspberry Pi を利用するに際して、知っておくと良い
 | `<script src="..../adt7410.js"></script >` | `import ADT7410 from "@chirimen/adt7410";`  |
 | ー  | Sleep関数を宣言する<br />`const sleep = msec => new Promise(resolve => setTimeout(resolve, msec));` |
 
-# CHIRIMEN環境の任意のディレクトリへのセットアップ
+## CHIRIMEN環境の任意のディレクトリへのセットアップ
 
 以下のコマンド手順で~/myAppディレクトリ以外にも設定できます。
 
