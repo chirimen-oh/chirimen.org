@@ -16,7 +16,6 @@ CHIRIMEN Raspberry Pi Zero版 を用いたIoT実習資料です。
   * Pi Zero: [ケイエスワイ](https://raspberry-pi.ksyic.com/main/index/pdp.id/799/pdp.open/799), [秋月電子](https://akizukidenshi.com/catalog/g/gM-12961/), [スイッチサイエンス](https://www.switch-science.com/catalog/3646/), [マルツ](https://www.marutsu.co.jp/pc/i/1320453/)
   * Pi Zero **2** W: [ケイエスワイ](https://raspberry-pi.ksyic.com/main/index/pdp.id/851/pdp.open/851)
 * [Raspberry Pi OS LiteをUSB Serialで使用可能にしたイメージ](https://github.com/chirimen-oh/chirimen-lite/releases)を書き込んだmicroSDカード
-  * 講習会では書き込み済みmicroSDが配布されると思いますが、自分で作る場合は[こちら](../raspi/sdcard2)や[こちら](../raspi/sdcard)(書き込むべきイメージはLite版の方です。([これを書き込みます](https://github.com/chirimen-oh/chirimen-lite/releases)))
 * ブラウザの載ったパソコン
   * Windows 10 PC
     * ブラウザは標準のEdgeもしくはChromeを使います。
@@ -75,13 +74,11 @@ PiZero自体はディスプレイやキーボードを接続する必要はあ�
 
 ### Note:
 
-* CHIRIMEN Raspberry Pi Zero版では[Raspberry Pi OS Lite](https://www.raspberrypi.com/software/operating-systems/)(Linux)をコマンドラインインターフェース(CLI)・シェル(bash)で操作します。
+* CHIRIMEN Raspberry Pi Zero版では[Raspberry Pi OS Lite](https://www.raspberrypi.com/software/operating-systems/)(Linux)を[コマンドラインインターフェース(CLI)](https://atmarkit.itmedia.co.jp/ait/articles/1602/19/news025.html)・[シェル(bash)](https://atmarkit.itmedia.co.jp/ait/articles/1603/02/news016.html)で操作します。
   * ただしこの講習で使うコマンドはごくわずかです。
     * **node** コマンド(後述)
     * [CTRL+c](https://atmarkit.itmedia.co.jp/ait/articles/1708/04/news015_2.html)(CTRLキーとcを同時に押す:実行中のコマンドを終了させる)
   * その他のほとんどの操作（コマンド）は、ターミナルウィンドやそこから起動される別画面のGUIがコマンド操作を代行しています。図1.1のGUIを操作するとコンソールにコマンドが入力されるのがわかると思います。
-* [CLIとは](https://atmarkit.itmedia.co.jp/ait/articles/1602/19/news025.html)
-* [シェルとコマンドプロンプト](https://atmarkit.itmedia.co.jp/ait/articles/1603/02/news016.html)
 * もしもあなたがlinuxのシェルコンソール画面に慣れている場合は、ターミナルウィンドのコンソールにその他のシェル(bash)コマンドをタイプして使用することもできます。
   * たとえば ```ls -al``` とタイプするとおコンソール画面にディレクトリ内のファイルのリストが表示されます。
 * ターミナルウィンドの概要 (図1.1)
@@ -199,8 +196,7 @@ blink();
   * ```pi@raspberrypi:~/myApp$```
 * コンソール部をクリックして、入力可能状態にしてから、以下の文字を入力します。
 * ```node hello.js``` ENTERキー
-  * **node** はJavaScriptのコードを実行する[インタープリタ](https://ja.wikipedia.org/wiki/%E3%82%A4%E3%83%B3%E3%82%BF%E3%83%97%E3%83%AA%E3%82%BF)
-  * [nodeコマンドについて](https://atmarkit.itmedia.co.jp/ait/articles/1102/28/news105.html)
+  * [**node**](https://atmarkit.itmedia.co.jp/ait/articles/1102/28/news105.html) はJavaScriptのコードを実行するインタープリタ<span class="footnote">https://ja.wikipedia.org/wiki/インタプリタ</span>
 * LED が点滅すれば完成です 🎉
 * プログラムを止めるには、コンソール部で ```CTRL+c``` を押します。
 
@@ -208,8 +204,7 @@ blink();
 
 # Raspberry Pi について
 
-* 教育・学習用として設計されたシングルボードコンピュータ
-  * [シングルボードコンピュータ～PC・スマホとの違い](https://elchika.com/dic/%E3%82%B7%E3%83%B3%E3%82%B0%E3%83%AB%E3%83%9C%E3%83%BC%E3%83%89%E3%82%B3%E3%83%B3%E3%83%94%E3%83%A5%E3%83%BC%E3%82%BF/)
+* 教育・学習用として設計されたシングルボードコンピュータ<span class="footnote">https://elchika.com/dic/シングルボードコンピュータ/</span>
 * Linuxが動作するシングルボードコンピュータとして、安価でとても高いシェアを持ち世界中で容易に入手できる
 * 今回使用するRaspberry Pi ZeroWは、その中でも特に安価([2000円以下](https://www.switch-science.com/catalog/3200/))で小型・低消費電力の機種、HDMI出力はあるもののブラウザを動かすだけの処理能力がありませんが、IoTのエッジデバイス（センサーやアクチュエータが載ったデバイスでディスプレイはあるとしても簡易のもの）には適しています。
   * フルセットのブラウザが内蔵されたデバイスを作りたい場合は[CHIRIMEN Raspberry Pi版](../raspi/)が使用できます。
@@ -415,7 +410,6 @@ SHT30は温度に加えて湿度も測定できるI2C接続の多機能センサ
 * 出現したCHIRIMEN Panelの```[Get Examples]```ボタンを押す
 * ID : adt7410を探します(上から5個目ぐらい)
 * 回路図リンクを押すと回路図が出てきますので、回路を組みます。なお、接続は下の図のようになります。
-  * [センサーの極性に注意！](https://tutorial.chirimen.org/raspi/hellorealworld#section-2)
 
 ![PiZero温度センサー図](../../pizero/imgs/pizero_temp.png)
 * ```[JS GET]```ボタンを押すと、開発ディレクトリ(```~/myApp```)に、サンプルコードが保存されます。
@@ -424,12 +418,15 @@ SHT30は温度に加えて湿度も測定できるI2C接続の多機能センサ
     * ソースコードを見てみましょう
     * 今は編集不要ですが、サンプルをベースに応用プログラムを作るときには編集しましょう。
 
+#### センサーの極性に注意
+
+    温度センサー ADT7410 を用意した場合、図と同じように配線します。配線(特に電源線)を間違えるとセンサーが高熱になり火傷・破損するので注意してください。
+
 <hr class="page-wrap" />
 
 ### I2Cセンサーが認識されていることを確認する
 
-* CHIRIMEN Panelの```[i2c detect]```ボタンを押すと、[ADT7410のI2Cアドレス](https://akizukidenshi.com/download/ds/akizuki/AE-ADT7410_aw.pdf)　0x**48**が表示されていればうまく接続されています。
-  * [ic2 detectとは](https://tutorial.chirimen.org/ty51822r3/i2cdetect)
+* CHIRIMEN Panelの[```[i2c detect]```](https://tutorial.chirimen.org/ty51822r3/i2cdetect)ボタンを押すと、[ADT7410のI2Cアドレス](https://akizukidenshi.com/download/ds/akizuki/AE-ADT7410_aw.pdf)　0x**48**が表示されていればうまく接続されています。
 
 <pre>
      0  1  2  3  4  5  6  7  8  9  a  b  c  d  e  f
@@ -487,8 +484,7 @@ Note: [モーター制御の回路](./#gpio-2)を組めば、そのまま遠隔�
 
 ### PC側のコードを準備し、実行する
 * CHIRIMEN Panelに戻り、ID : **remote_gpio_led**の行にある、```CSB EDIT```リンクをクリックする。
-  * CodeSandboxというオンラインのWebApp開発環境のウィンドが開き、PC側のコードが表示されています。編集もできます。
-    * 詳しい解説：[CodeSandbox ガイド](https://csb-jp.github.io/)
+  * [CodeSandbox](https://csb-jp.github.io/)というオンラインのWebApp開発環境のウィンドが開き、PC側のコードが表示されています。編集もできます。
   * また、右側（もしくは右下）のフレームにはLEDを遠隔コントロールするためのwebAppが既に実行されています。
   * webAppを使ってLEDが制御できることを確かめてみましょう。
 ![Code Sandbox Image](../../pizero/imgs/RC_CSB.svg){height=260}
@@ -575,7 +571,7 @@ CHIRIMEN for Raspberry Pi を利用するに際して、知っておくと良い
 - [JavaScript 初学者向け資料集](/js/)
   - JavaScript 1 Day 講習資料、JavaScript 本格入門書、チートシートなどはこちら
 
-その他、電子工作など一般的な知識は [予備知識・資料集](../reference.md) や、[共通資料集](../chirimenGeneric/)を参照してください。
+その他、電子工作など一般的な知識は [予備知識・資料集](https://tutorial.chirimen.org/reference) や、[共通資料集](https://tutorial.chirimen.org/chirimengeneric/)を参照してください。
 
 <hr class="page-wrap" />
 
