@@ -11,9 +11,14 @@ module.exports = {
       rel: 'contents',
       title: '目次',
     },
-    // 'toc.md',
+    './docs/what-is-chirimen.md',
+    './docs/raspberry-pi.md',
     './docs/readme.md', // `title` is automatically guessed from the file (frontmatter > first heading).
-    './docs/chirimenGeneric.md',
+    './docs/javascript.md',
+    './docs/gpio.md',
+    './docs/i2c.md',
+    './docs/iot.md',
+    // './docs/chirimenGeneric.md',
     './docs/parts-list.md',
     // {
     //   path: 'epigraph.md',

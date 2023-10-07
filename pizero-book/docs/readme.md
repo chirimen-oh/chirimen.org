@@ -1,11 +1,4 @@
-# 概要
-
-CHIRIMEN Raspberry Pi Zero版 を用いたIoT実習資料です。
-
-[pizeronodejs.md](pizeronodejs.md)の内容をもとに、Web Serial RPiZero Terminalを使うことで操作を簡単化し、更にプログラム作法をECMA Script Moduleにあわせています。
-
-
-# 準備
+# CHIRIMEN Raspberry Pi Zero版 の準備
 
 ## ステップ０ (物品準備、PCをWiFiに接続)
 
@@ -192,6 +185,9 @@ blink();
 * ターミナルウィンドの右側(ファイルマネージャ)に hello.jsが出現していることを確認します
 * エディタウィンドを閉じます
 
+<hr class="page-wrap" />
+
+
 ## 実行する
 
 * ターミナルウィンドのコンソール部(ウィンド左側)のプロンプト(画面一番下)が以下になっていることを確認します
@@ -204,59 +200,10 @@ blink();
 
 <hr class="page-wrap" />
 
-# Raspberry Pi について
-
-* 教育・学習用として設計されたシングルボードコンピュータ<span class="footnote">https://elchika.com/dic/シングルボードコンピュータ/</span>
-* Linuxが動作するシングルボードコンピュータとして、安価でとても高いシェアを持ち世界中で容易に入手できる
-* 今回使用するRaspberry Pi ZeroWは、その中でも特に安価([2000円以下](https://www.switch-science.com/catalog/3200/))で小型・低消費電力の機種、HDMI出力はあるもののブラウザを動かすだけの処理能力がありませんが、IoTのエッジデバイス（センサーやアクチュエータが載ったデバイスでディスプレイはあるとしても簡易のもの）には適しています。
-  * フルセットのブラウザが内蔵されたデバイスを作りたい場合は[CHIRIMEN Raspberry Pi版](../raspi/)が使用できます。
-  * インターネットを経由してPCやスマホのブラウザから遠隔操作するシステムは　このPi ZeroW版でつくれます。[IoTの章](#iot)まで進めましょう。
-
-## Raspberry Pi Zeroのピン配列
-
-GPIO, 電源, GND, I2C信号線などのピン配列を記載します。
-
-* 白い文字で書かれたピンだけが使えます
-* GND、3.3V、5Vはそれぞれ電源とグランドです
-* 数字 + PD||PUと書かれているピンはGPIO端子(詳細は次章)
-  * PD:プルダウン, PU:プルアップ
-* SCL, SDAはI2Cインターフェースのピンです(詳細は次章)
-
-
-<hr class="page-wrap" />
-
-  ![Raspberry Pi Pinout](https://chirimen.org/PiZeroWebSerialConsole/wallpaperS.png)
-
-<hr class="page-wrap" />
-
-# CHIRIMEN について
-
-* [こちらを参照ください](../chirimenGeneric/#chirimen)
-
-## CHIRIMEN Raspberry Pi Zero版について
-
-* PiZero上ではWeb Browserを動かさない。
-* Node.jsというJavaScriptインタープリターだけが動く
-  * ブラウザの機能のうち一部だけがPiZero上で使える
-    * プログラミング言語 ～ JavaScript
-    * 画面表示やGUIに関わらないAPI
-    * 通信プロトコル
-  * 使えないのはブラウザを使った画面表示やGUI
-* ブラウザを使った画面やGUIは
-  * ネットを介してスマホやPCからコントロール ⇒ これが代表的にIoTと呼ばれるデザインパターン
-    * このとき、Raspberry Pi Zeroは、IoTエッジデバイスとして動作
-
-# JavaScript の基礎
-
-* [こちらを参照してください](../chirimenGeneric/#javascript-)
-* [非同期処理 async/await](../chirimenGeneric/#section-3)を多用します。
-
-<hr class="page-wrap" />
-
 # GPIOを試す
 
 ## GPIOを理解する
-* [GPIOとは？](../chirimenGeneric/#gpio)
+* [GPIOとは？](./gpio.md)
 
 ## GPIO出力
 
@@ -345,7 +292,7 @@ GPIO端子の**入力が変化したら関数を実行**という機能によっ
 
 ## I2Cを理解する
 
-* [I2Cとは？](../chirimenGeneric/#i2c)
+* [I2Cとは？](./i2c.md)
 
 ## SHT30編
 
@@ -561,37 +508,3 @@ Note: [モーター制御の回路](./#gpio-2)を組めば、そのまま遠隔�
 
 
 * *Note: 常駐化のツールとしては、他にもsystemd service unit, openrc, cron, pm2, forever 等があります。Webでそれぞれの特徴を調べて用途に合ったものを選択して設定しても良いでしょう。*
-
-# 予備知識
-
-CHIRIMEN for Raspberry Pi を利用するに際して、知っておくと良い予備知識やツールの使い方が学べるドキュメントです。
-
-- [GitHub ハンズオン](https://github.com/webiotmakers/github-handson)
-  - GitHub の基本的な使い方の分かるハンズオン資料です。
-- [CodeSandbox ガイド](https://csb-jp.github.io/)
-  - ブラウザ上で開発する CodeSandbox の使い方を確認しましょう。
-- [JavaScript 初学者向け資料集](/js/)
-  - JavaScript 1 Day 講習資料、JavaScript 本格入門書、チートシートなどはこちら
-
-その他、電子工作など一般的な知識は [予備知識・資料集](https://tutorial.chirimen.org/reference) や、[共通資料集](https://tutorial.chirimen.org/chirimengeneric/)を参照してください。
-
-<hr class="page-wrap" />
-
-# CHIRIMEN ブラウザー版との差異
-
-| CHIRIMEN ブラウザー版       | Node.js                                                      |
-| --------------------------- | ------------------------------------------------------------ |
-| ライブラリ、ドライバーはhtmlで読み込む | jsの中で直接読み込む |
-| `<script src="polyfill.js"></script >` | `import {requestGPIOAccess} from "./node_modules/node-web-gpio/dist/index.js";`<br />`import {requestI2CAccess} from "./node_modules/node-web-i2c/index.js";` |
-| `<script src="..../adt7410.js"></script >` | `import ADT7410 from "@chirimen/adt7410";`  |
-| ー  | Sleep関数を宣言する<br />`const sleep = msec => new Promise(resolve => setTimeout(resolve, msec));` |
-
-# CHIRIMEN環境の任意のディレクトリへのセットアップ
-
-以下のコマンド手順で~/myAppディレクトリ以外にも設定できます。
-
-* ```mkdir [自分用の作業ディレクトリ]```  ([mkdir](https://atmarkit.itmedia.co.jp/ait/articles/1606/07/news015.html) コマンドとは)
-* ```cd [自分用の作業ディレクトリ]``` ([cd](https://atmarkit.itmedia.co.jp/ait/articles/1712/14/news021.html)コマンドとは)
-* ```wget https://tutorial.chirimen.org/pizero/package.json``` ([wget](https://atmarkit.itmedia.co.jp/ait/articles/1606/20/news024.html)コマンドとは)
-* ```wget https://chirimen.org/remote-connection/js/beta/RelayServer.js``` ([RelayServer.js](https://chirimen.org/remote-connection/)を使う場合)
-* ```npm install``` ([npm](https://atmarkit.itmedia.co.jp/ait/articles/1606/17/news030.html)とは)
