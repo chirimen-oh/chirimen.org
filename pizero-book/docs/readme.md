@@ -161,17 +161,21 @@ Raspberry Pi に接続した LED を点滅させるプログラムを書きま�
 * ```[create]```ボタンを押す
 * JS Editorウィンドが出現
 
-以下のプログラムをJS Editorに書き写します ～ コピペ（下記プログラム部分を選択してCTRL+c、JS Editorウィンド上でCTRL+v））
+以下のプログラムをJS Editorに書き写します
 
 ```js
-import {requestGPIOAccess} from "./node_modules/node-web-gpio/dist/index.js"; // WebGPIO を使えるようにするためのライブラリをインポート
-const sleep = msec => new Promise(resolve => setTimeout(resolve, msec)); // sleep 関数を定義
+// WebGPIO を使えるようにするためのライブラリをインポート
+import {requestGPIOAccess} from "./node_modules/node-web-gpio/dist/index.js";
+// sleep 関数を定義
+const sleep = msec => new Promise(resolve => setTimeout(resolve, msec));
 
 async function blink() {
-  const gpioAccess = await requestGPIOAccess(); // GPIO を操作する 
-  const port = gpioAccess.ports.get(26); // 26 番ポートを操作する
-
-  await port.export("out"); // ポートを出力モードに設定
+  // GPIO を操作する
+  const gpioAccess = await requestGPIOAccess();
+  // 26 番ポートを操作する
+  const port = gpioAccess.ports.get(26);
+  // ポートを出力モードに設定
+  await port.export("out");
 
   // 無限ループ
   for (;;) {
