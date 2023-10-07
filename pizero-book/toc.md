@@ -54,11 +54,11 @@
     1. [Webhooks](./docs/iot.html#webhooks)
     1. [IoTクラウドサービス](./docs/iot.html#iotクラウドサービス)
     1. [W3C WoT, FIWARE](./docs/iot.html#w3c-wot-fiware)
-    1. [I2C センサー](./docs/parts-list.html#i2c-センサー)
-    1. [GPIO センサー・アクチュエータコントローラー](./docs/parts-list.html#gpio-センサーアクチュエータコントローラー)
-    1. [アナログセンサー (I2C ADC で読み取り)](./docs/parts-list.html#アナログセンサー-i2c-adc-で読み取り)
-    1. [アクチュエータ](./docs/parts-list.html#アクチュエータ)
-    1. [その他](./docs/parts-list.html#その他)
-    1. [ボードコンピューター](./docs/parts-list.html#ボードコンピューター)
+    1. [I2C センサー](./docs/device-list.html#i2c-センサー)
+    1. [GPIO センサー・アクチュエータコントローラー](./docs/device-list.html#gpio-センサーアクチュエータコントローラー)
+    1. [アナログセンサー (I2C ADC で読み取り)](./docs/device-list.html#アナログセンサー-i2c-adc-で読み取り)
+    1. [アクチュエータ](./docs/device-list.html#アクチュエータ)
+    1. [その他](./docs/device-list.html#その他)
+    1. [ボードコンピューター](./docs/device-list.html#ボードコンピューター)
 
 </nav>
