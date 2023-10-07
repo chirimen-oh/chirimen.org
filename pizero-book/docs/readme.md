@@ -70,8 +70,6 @@ PiZero自体はディスプレイやキーボードを接続する必要はあ�
 * コンソール(左側の黒い画面の最下部)に以下のコマンドプロンプトが表示されればステップ１完了です。引き続きステップ２に進んでください
   * ```pi@raspberrypi:~$```
 
-<hr class="page-wrap" />
-
 ### Note:
 
 * CHIRIMEN Raspberry Pi Zero版では[Raspberry Pi OS Lite](https://www.raspberrypi.com/software/operating-systems/)(Linux)を[コマンドラインインターフェース(CLI)](https://atmarkit.itmedia.co.jp/ait/articles/1602/19/news025.html)・[シェル(bash)](https://atmarkit.itmedia.co.jp/ait/articles/1603/02/news016.html)で操作します。
@@ -264,7 +262,7 @@ GPIO, 電源, GND, I2C信号線などのピン配列を記載します。
 
 GPIOの出力はLチカで実験済みですね。そこで今回はモーターを動かしてみましょう。MOSFETを使った回路図は以下のようになります。
 
-![GPIO Motor](./esm-examples/hello-real-world/PiZero_gpio0Motor.png){height=200}
+![GPIO Motor](../../pizero/esm-examples/hello-real-world/PiZero_gpio0Motor.png){height=200}
 
 コードはLチカと全く同じです。
 
@@ -359,7 +357,7 @@ SHT30は温度に加えて湿度も測定できるI2C接続の多機能センサ
 * ID : sht30を探します
 * 回路図リンクを押すと回路図が出てきますので、回路を組みます。なお、接続は下の図のようになります。
 
-  ![SHT31 schematic](./esm-examples/sht30/schematic.png){height=220}
+  ![SHT31 schematic](../../pizero/esm-examples/sht30/schematic.png){height=220}
 
 * ```[JS GET]```ボタンを押すと、開発ディレクトリ(```~/myApp```)に、サンプルコードが保存されます。
   * **main-sht30.js**というファイル名で保存されます。
