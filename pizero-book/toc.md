@@ -71,5 +71,8 @@
     1. [アクチュエータ](./docs/device-list.html#アクチュエータ)
     1. [その他](./docs/device-list.html#その他)
     1. [ボードコンピューター](./docs/device-list.html#ボードコンピューター)
+1. [Special Thanks](./docs/thanks.html#special-thanks)
+    1. [表紙・イラスト](./docs/thanks.html#表紙イラスト)
+    1. [Works](./docs/thanks.html#works)
 
 </nav>

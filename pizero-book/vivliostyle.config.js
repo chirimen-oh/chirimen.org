@@ -20,6 +20,7 @@ module.exports = {
     './docs/iot.md',
     './docs/document.md',
     './docs/device-list.md',
+    './docs/thanks.md',
     // {
     //   path: 'epigraph.md',
     //   title: 'Epigraph', // title can be overwritten (entry > file),
