@@ -203,7 +203,7 @@ blink();
 # GPIOを試す
 
 ## GPIOを理解する
-* [GPIOとは？](./gpio.md)
+* [GPIOとは？](./gpio.html)
 
 ## GPIO出力
 
@@ -292,7 +292,7 @@ GPIO端子の**入力が変化したら関数を実行**という機能によっ
 
 ## I2Cを理解する
 
-* [I2Cとは？](./i2c.md)
+* [I2Cとは？](./i2c.html)
 
 ## SHT30編
 
