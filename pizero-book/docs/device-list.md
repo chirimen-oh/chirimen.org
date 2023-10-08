@@ -98,7 +98,7 @@ Raspberry Pi などの CHIRIMEN の動作環境とそれぞれのチュートリ
 |カテゴリー|型番|説明|画像 URL|QR|
 |:----|:----|:----|:----|:----:|
 |サーボモータ|SG90|Tower Pro 製の小型サーボモータです|-|![](../../partsImgs/qr/QR_68_SG90.png){width=100}|
-|DC モータ|各 Examples をご参照ください|-|-|
+|DC モータ|各 Examples をご参照ください|-|-|-|
 |2 相バイポーラステッピングモータ|多種(例は TS3692N65)|A4988 をご参照ください|![](../../partsImgs/StepperMotor.JPG){width=100}|![](../../partsImgs/qr/QR_69_多種(例はTS3692N65).png){width=100}|
 |ギヤードモータ|ちびギヤモータ|小型のギヤードモータです|![](../../partsImgs/chibiGear.JPG){width=100}|![](../../partsImgs/qr/QR_70_ちびギヤモータ.png){width=100}|
 
