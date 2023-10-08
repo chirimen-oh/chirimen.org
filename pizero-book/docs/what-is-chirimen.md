@@ -28,7 +28,7 @@ CHIRIMEN コミュニティと W3C の [Browsers and Robotics コミュニティ
 CHIRIMEN が動作する環境は、以下の通りです。お手持ちのボードや用途に応じてご利用ください。
 
 - [Raspberry Pi](raspi)
-  - [Raspberry Pi](https://www.raspberrypi.org/) 3 以降をサポートしています。Raspberry Pi 上の Chrome ブラウザ (または Firefox など) でコードの実行もコードの編集もでき、Raspberry Pi 一式があれば、別途パソコンなどを用意する必要はありません。[ブラウザを使わず Node.js からも使えます。](raspi/nodejs)
+  - [Raspberry Pi](https://www.raspberrypi.org/) 3 以降をサポートしています。Raspberry Pi 上の Chrome ブラウザ (または Firefox など) でコードの実行もコードの編集もでき、Raspberry Pi 一式があれば、別途パソコンなどを用意する必要はありません。[ブラウザを使わず Node.js からも使えます。](https://tutorial.chirimen.org/raspi/nodejs)
 - [Raspberry Pi Zero](pizero)
   - [Raspberry Pi Zero](https://www.raspberrypi.org/) をサポートしています。Raspberry Pi Zero上のNode.jsをjavascript処理系として動作します。Pi Zeroはブラウザ稼働には力不足ですが、典型的なIoTデバイス構築に適しています。コード編集や環境設定はPC上のブラウザからUSB経由で行え、Pi ZeroとPCがあれば別途開発環境は必要ありません。
 - [micro:bit](microbit)
@@ -47,7 +47,7 @@ CHIRIMEN for Raspberry Pi を利用するに際して、知っておくと良い
   - GitHub の基本的な使い方の分かるハンズオン資料です。
 - [CodeSandbox ガイド](https://csb-jp.github.io/)
   - ブラウザ上で開発する CodeSandbox の使い方を確認しましょう。
-- [JavaScript 初学者向け資料集](/js/)
+- [JavaScript 初学者向け資料集](https://tutorial.chirimen.org/js/)
   - JavaScript 1 Day 講習資料、JavaScript 本格入門書、チートシートなどはこちら
 
 その他、電子工作など一般的な知識は [予備知識・資料集](https://tutorial.chirimen.org/reference) や、[共通資料集](https://tutorial.chirimen.org/chirimengeneric/)を参照してください。
