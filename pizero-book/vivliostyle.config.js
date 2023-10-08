@@ -18,6 +18,7 @@ module.exports = {
     './docs/gpio.md',
     './docs/i2c.md',
     './docs/iot.md',
+    './docs/document.md',
     './docs/device-list.md',
     // {
     //   path: 'epigraph.md',
