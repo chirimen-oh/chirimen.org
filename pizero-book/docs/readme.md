@@ -121,8 +121,8 @@ PiZero自体はディスプレイやキーボードを接続する必要はあ�
 PiZero とパーツを使って下の図の通りに配線します。
 * [LEDの極性に注意！](https://tutorial.chirimen.org/raspi/hellorealworld#section-1)
   * [LEDの説明](https://tutorial.chirimen.org/chirimenGeneric/#led)
-* [ブレッドボードの使い方](https://tutorial.chirimen.org/chirimenGeneric/#section-1)
-* [抵抗値の読み方](https://tutorial.chirimen.org/chirimenGeneric/#section-2)
+* [ブレッドボードの使い方](https://shop.sunhayato.co.jp/blogs/problem-solving/breadboard) (サンハヤト社)
+* [抵抗値の読み方](./document.html#抵抗値の読み方)
 * [その他、配線の基礎知識](https://tutorial.chirimen.org/reference#section-1)
 
 
@@ -214,7 +214,7 @@ GPIOの出力はLチカで実験済みですね。そこで今回はモーター
 コードはLチカと全く同じです。
 
 ### 回路について
-* [MOSFETを使った大電力制御](https://tutorial.chirimen.org/chirimenGeneric/#mosfet)
+* [MOSFETを使った大電力制御](./document.html#mosfet-とは)
 
 ### コードを読む
 * 前提：CHIRIMEN Rasoberryu Pi ZeroはNode.jsをプログラム実行環境（インタープリタ）として使っています。

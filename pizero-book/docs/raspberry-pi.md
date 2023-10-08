@@ -17,4 +17,4 @@ GPIO, 電源, GND, I2C信号線などのピン配列を記載します。
 * SCL, SDAはI2Cインターフェースのピンです(詳細は次章)
 
 
-![Raspberry Pi Pinout](https://chirimen.org/PiZeroWebSerialConsole/wallpaperS.png){height=330}
+![Raspberry Pi Pinout](https://chirimen.org/PiZeroWebSerialConsole/wallpaperS.png){height=320}
