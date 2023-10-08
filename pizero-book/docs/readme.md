@@ -120,10 +120,10 @@ PiZero自体はディスプレイやキーボードを接続する必要はあ�
 
 PiZero とパーツを使って下の図の通りに配線します。
 * [LEDの極性に注意！](https://tutorial.chirimen.org/raspi/hellorealworld#section-1)
-  * [LEDの説明](https://tutorial.chirimen.org/chirimenGeneric/#led)
+  * [LEDの説明](./document.html#led)
 * [ブレッドボードの使い方](https://shop.sunhayato.co.jp/blogs/problem-solving/breadboard) (サンハヤト社)
 * [抵抗値の読み方](./document.html#抵抗値の読み方)
-* [その他、配線の基礎知識](https://tutorial.chirimen.org/reference#section-1)
+* [その他、配線の基礎知識](./document.html#電子工作)
 
 
 **注意**
@@ -218,13 +218,13 @@ GPIOの出力はLチカで実験済みですね。そこで今回はモーター
 
 ### コードを読む
 * 前提：CHIRIMEN Rasoberryu Pi ZeroはNode.jsをプログラム実行環境（インタープリタ）として使っています。
-  * [Node.jsについて](https://tutorial.chirimen.org/chirimenGeneric/#nodejs-chirimen-raspberry-pi-zero)
+  * [Node.jsについて](./javascript.html#javascriptコードライブラリの読み込み)
 * ターミナルウィンドの右側のファイルマネージャでhello.js⇒表示 を選び、ソースコードを読んでみましょう
-* WebGPIOライブラリを読み込み ([JavaScript Module](https://tutorial.chirimen.org/chirimenGeneric/#javascript-module-ecma-script-module)仕様に従って)
+* WebGPIOライブラリを読み込み ([JavaScript Module](./javascript.html#javascript)仕様に従って)
 　`import {requestGPIOAccess} from "./node_modules/node-web-gpio/dist/index.js";`
-  * [JavaScript module](https://tutorial.chirimen.org/chirimenGeneric/#javascript-module-ecma-script-module) に基づいてWebGPIOライブラリを読み込みます。これでWeb GPIO APIが使えるようになりました。
-* [GPIOポートの初期化処理](https://tutorial.chirimen.org/chirimenGeneric/#gpio-2)
-* [GPIOPortの出力処理](https://tutorial.chirimen.org/chirimenGeneric/#gpioport-)
+  * [JavaScript module](./javascript.html#javascript) に基づいてWebGPIOライブラリを読み込みます。これでWeb GPIO APIが使えるようになりました。
+* [GPIOポートの初期化処理](./gpio.html#gpioポートの初期化)
+* [GPIOPortの出力処理](./gpio.html#gpioport-の出力処理)
 
 <hr class="page-wrap" />
 
@@ -253,9 +253,9 @@ GPIO端子の**入力が変化したら関数を実行**という機能によっ
 * ターミナルウィンドの右側のファイルマネージャでmain-gpio-onchange.js⇒表示 を選び、ソースコードを読んでみましょう
 * WebGPIOライブラリを読み込み
 　`import {requestGPIOAccess} from "./node_modules/node-web-gpio/dist/index.js";`
-  * [JavaScript module](https://tutorial.chirimen.org/chirimenGeneric/#javascript-module-ecma-script-module) に基づいてWebGPIOライブラリを読み込みます。これでWeb GPIO APIが使えるようになりました。
-* [GPIOポートの初期化処理を行う](https://tutorial.chirimen.org/chirimenGeneric/#gpio-2)
-* [onchangeによる入力処理](https://tutorial.chirimen.org/chirimenGeneric/#onchange)
+  * [JavaScript module](./javascript.html#javascript) に基づいてWebGPIOライブラリを読み込みます。これでWeb GPIO APIが使えるようになりました。
+* [GPIOポートの初期化処理を行う](./gpio.html#gpioポートの初期化)
+* [onchangeによる入力処理](./gpio.html#onchange編)
 
 <hr class="page-wrap" />
 
@@ -282,9 +282,9 @@ GPIO端子の**入力が変化したら関数を実行**という機能によっ
 * ターミナルウィンドの右側のファイルマネージャでmain-gpio-polling.js⇒表示 を選び、ソースコードを読んでみましょう
 * WebGPIOライブラリを読み込み
 　`import {requestGPIOAccess} from "./node_modules/node-web-gpio/dist/index.js";`
-  * [JavaScript module](https://tutorial.chirimen.org/chirimenGeneric/#javascript-module-ecma-script-module) に基づいてWebGPIOライブラリを読み込みます。これでWeb GPIO APIが使えるようになりました。
-* [GPIOポートの初期化処理を行う](https://tutorial.chirimen.org/chirimenGeneric/#gpio-2)
-* [単純入力＋ポーリングによる入力処理](https://tutorial.chirimen.org/chirimenGeneric/#section-7)
+  * [JavaScript module](./javascript.html#javascript) に基づいてWebGPIOライブラリを読み込みます。これでWeb GPIO APIが使えるようになりました。
+* [GPIOポートの初期化処理を行う](./gpio.html#gpioポートの初期化)
+* [単純入力＋ポーリングによる入力処理](./gpio.html#単純入力ポーリング)
 
 <hr class="page-wrap" />
 
@@ -297,7 +297,7 @@ GPIO端子の**入力が変化したら関数を実行**という機能によっ
 ## SHT30編
 
 SHT30は温度に加えて湿度も測定できるI2C接続の多機能センサーです。SHT31もほぼ同等に使えます。(SHT31のほうが精度が高い)
-* [SHT30/SHT31について](https://tutorial.chirimen.org/chirimenGeneric/#i2ci2c--sht30-sht31)
+* [SHT30/SHT31について](./i2c.html#i2cデバイスの実例i2c-温湿度センサー-sht30-sht31)
 
 * ターミナルウィンドの```[CHIRIMEN Panel]```ボタンを押す
 * 出現したCHIRIMEN Panelの```[Get Examples]```ボタンを押す
@@ -317,7 +317,7 @@ SHT30は温度に加えて湿度も測定できるI2C接続の多機能センサ
 ### I2Cセンサー(SHT30)が認識されていることを確認する
 
 * CHIRIMEN Panelの```[i2c detect]```ボタンを押すと、[SHT30のI2Cアドレス](https://strawberry-linux.com/pub/Sensirion_Humidity_SHT3x_DIS_Datasheet_V3_J.pdf)　0x**44**が表示されていればうまく接続されています。
-  * [ic2 detectとは](https://tutorial.chirimen.org/chirimenGeneric/#b-i2cdetect)
+  * [ic2 detectとは](./i2c.html#b-i2cdetectで接続がうまくいったか確認する)
 
 <pre>
      0  1  2  3  4  5  6  7  8  9  a  b  c  d  e  f
@@ -345,8 +345,8 @@ SHT30は温度に加えて湿度も測定できるI2C接続の多機能センサ
 
 　`import {requestI2CAccess} from "./node_modules/node-web-i2c/index.js";`
   `import SHT30 from "@chirimen/sht30";`
-  * [JavaScript module](https://tutorial.chirimen.org/chirimenGeneric/#javascript-module-ecma-script-module) に基づいてWebI2Cライブラリを読み込みます。
-* [I2C 温湿度センサー (SHT30, SHT31)の初期化と使用](https://tutorial.chirimen.org/chirimenGeneric/#i2c--sht30-sht31)
+  * [JavaScript module](./javascript.html#javascript) に基づいてWebI2Cライブラリを読み込みます。
+* [I2C 温湿度センサー (SHT30, SHT31)の初期化と使用](./i2c.html#i2c-温湿度センサー-sht30-sht31の使用例)
 
 <hr class="page-wrap" />
 
@@ -406,8 +406,8 @@ IoTは、制御されるデバイス（上図ではCHIRIMEN PiZeroW)と、利用
 
 Note: [モーター制御の回路](./#gpio-2)を組めば、そのまま遠隔モーターコントロールができます
 
-- [IoT](https://tutorial.chirimen.org/chirimenGeneric/#iot)
-- [WebSoeketとRelayServer](https://tutorial.chirimen.org/chirimenGeneric/#websocketpubsub-services)
+- [IoT](./iot.html)
+- [WebSoeketとRelayServer](./iot.html#websocketとpubsub-services)
 
 ### 配線する
 
@@ -444,24 +444,24 @@ Note: [モーター制御の回路](./#gpio-2)を組めば、そのまま遠隔�
 #### Raspberry Pi Zero側コード
 * ターミナルウィンドの右側のファイルマネージャでmain-remote_gpio_led.js⇒表示 を選び、ソースコードを読んでみましょう
 * これまで通りWebGPIOライブラリの読み込み
-* [relayServer.js](https://tutorial.chirimen.org/chirimenGeneric/#relayserverjs)ライブラリの読み込み
+* [relayServer.js](./iot.html#relayserverjs)ライブラリの読み込み
   * Node.jsではrelayServerライブラリに加えて、webSocketライブラリの読み込みが必要です。
     ```
     import nodeWebSocketLib from "websocket";
     import {RelayServer} from "./RelayServer.js";
     ```
-* [relayServer.js](https://tutorial.chirimen.org/chirimenGeneric/#relayserverjs)を使って、PCからの操作指示を受信
+* [relayServer.js](./iot.html#relayserverjs)を使って、PCからの操作指示を受信
   * [初期化](https://tutorial.chirimen.org/chirimenGeneric/#section-16)
   * [受信処理](https://tutorial.chirimen.org/chirimenGeneric/#section-18)(コールバック関数の設定)
-* 受信した内容をもとに[GPIO出力を操作](https://tutorial.chirimen.org/chirimenGeneric/#gpioport-)してLEDを点灯・消灯
+* 受信した内容をもとに[GPIO出力を操作](./gpio.html#gpioport-の出力処理)してLEDを点灯・消灯
 
 #### PC側コード
 * CodeSandboxで開いているPC.jsを見てみましょう
-* [JavaScript Module](https://tutorial.chirimen.org/chirimenGeneric/#javascript-module-ecma-script-module)仕様に基づいてrelayServer.jsを読み込み
+* [JavaScript Module](./javascript.html#javascript)仕様に基づいてrelayServer.jsを読み込み
   ```
   import {RelayServer} from "https://chirimen.org/remote-connection/js/beta/RelayServer.js";
   ```
-* [relayServer.js](https://tutorial.chirimen.org/chirimenGeneric/#relayserverjs)を使い、UIを通してユーザからの操作指示を送信
+* [relayServer.js](./iot.html#relayserverjs)を使い、UIを通してユーザからの操作指示を送信
   * [初期化](https://tutorial.chirimen.org/chirimenGeneric/#section-16)
   * [送信処理](https://tutorial.chirimen.org/chirimenGeneric/#section-17)～(UI(ボタン)に設置したコールバック関数をもとに送信
 
