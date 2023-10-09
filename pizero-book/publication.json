@@ -8,7 +8,7 @@
   "name": "CHIRIMEN Raspberry Pi Zero W チュートリアル",
   "author": "CHIRIMEN Open Hardware Community <chirimen.open.hardware@gmail.com>",
   "inLanguage": "ja",
-  "dateModified": "2023-10-08T14:07:19.426Z",
+  "dateModified": "2023-10-09T10:03:20.985Z",
   "readingOrder": [
     {
       "url": "docs/index.html",
@@ -22,39 +22,39 @@
     },
     {
       "url": "docs/what-is-chirimen.html",
-      "name": "CHIRIMEN"
+      "name": "1. CHIRIMEN について"
     },
     {
       "url": "docs/raspberry-pi.html",
-      "name": "Raspberry Pi について"
+      "name": "2. Raspberry Pi について"
     },
     {
       "url": "docs/readme.html",
-      "name": "CHIRIMEN Raspberry Pi Zero版 の準備"
+      "name": "3. CHIRIMEN Raspberry Pi Zero版 の準備"
     },
     {
       "url": "docs/javascript.html",
-      "name": "JavaScript"
+      "name": "10. JavaScript"
     },
     {
       "url": "docs/gpio.html",
-      "name": "GPIO"
+      "name": "11. GPIO"
     },
     {
       "url": "docs/i2c.html",
-      "name": "I2C"
+      "name": "12. I2C"
     },
     {
       "url": "docs/iot.html",
-      "name": "IoT"
+      "name": "13. IoT"
     },
     {
       "url": "docs/document.html",
-      "name": "予備知識・資料集"
+      "name": "14. 予備知識・資料集"
     },
     {
       "url": "docs/device-list.html",
-      "name": "CHIRIMEN 対応デバイスリスト"
+      "name": "15. CHIRIMEN 対応デバイスリスト"
     },
     {
       "url": "docs/thanks.html",
