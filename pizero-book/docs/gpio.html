@@ -2,33 +2,33 @@
 <html lang="ja">
   <head>
     <meta charset="utf-8">
-    <title>GPIO</title>
+    <title>11. GPIO</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="../themes/packages/@vivliostyle/theme-techbook/theme.css">
   </head>
   <body>
-    <section class="level1" aria-labelledby="gpio">
-      <h1 id="gpio">GPIO</h1>
-      <section class="level2" aria-labelledby="gpioとは">
-        <h2 id="gpioとは">GPIOとは</h2>
+    <section class="level1" aria-labelledby="11-gpio">
+      <h1 id="11-gpio">11. GPIO</h1>
+      <section class="level2" aria-labelledby="111-gpioとは">
+        <h2 id="111-gpioとは">11.1. GPIOとは</h2>
         <p><a href="https://ja.wikipedia.org/wiki/GPIO">GPIO</a>は、「General-purpose input/output」の略で汎用的な入出力インタフェースのことです。</p>
         <p>Raspi に実装されている 40 本のピンヘッダから GPIO を利用することができます。</p>
         <p>CHIRIMEN Raspi、Raspi Zero では Raspi が提供する 40 本のピンヘッダのうち、下記緑色のピン(合計 17 本)が利用可能です。</p>
         <p>Raspiの GPIO 端子は、GND 端子との間に、0V もしくは 3.3V の電圧を印加(出力)したり、逆に 0V もしくは 3.3V の電圧を検知(入力)したりすることができます。LED は数 mA の電流を流すことによって点灯できる電子部品のため、印加する電圧を 3.3V(点灯)、0V(消灯) と変化させることで L チカが実現できるのです。</p>
         <p>詳しくは<a href="https://tool-lab.com/make/raspberrypi-startup-22/">ツール・ラボ/第22回 Raspberry PiのGPIO概要</a>などを参考にしてみましょう。</p>
-        <section class="level3" aria-labelledby="raspberry-piのピン配置図">
-          <h3 id="raspberry-piのピン配置図">Raspberry Piのピン配置図</h3>
+        <section class="level3" aria-labelledby="1111-raspberry-piのピン配置図">
+          <h3 id="1111-raspberry-piのピン配置図">11.1.1. Raspberry Piのピン配置図</h3>
           <figure>
             <img src="https://chirimen.org/PiZeroWebSerialConsole/wallpaperS.png" alt="Raspi PIN配置図">
             <figcaption aria-hidden="true">Raspi PIN配置図</figcaption>
           </figure>
         </section>
-        <section class="level3" aria-labelledby="raspverry-pi-zeroのピン配置図">
-          <h3 id="raspverry-pi-zeroのピン配置図">Raspverry Pi Zeroのピン配置図</h3>
+        <section class="level3" aria-labelledby="1112-raspverry-pi-zeroのピン配置図">
+          <h3 id="1112-raspverry-pi-zeroのピン配置図">11.1.2. Raspverry Pi Zeroのピン配置図</h3>
           <p>Raspberry Piの端子と同じ配列です。</p>
         </section>
-        <section class="level3" aria-labelledby="プルアップpuプルダウンpd">
-          <h3 id="プルアップpuプルダウンpd">プルアップ(PU)、プルダウン(PD)</h3>
+        <section class="level3" aria-labelledby="1113-プルアップpuプルダウンpd">
+          <h3 id="1113-プルアップpuプルダウンpd">11.1.3. プルアップ(PU)、プルダウン(PD)</h3>
           <p>
             GPIOポートを入力モードで使用する場合、ポートが解放状態(電気的に切り離されている状態)のときに設定される値があります。
             プルアップは1、プルダウンは0になります。　Raspberry Piのピン配置図に書かれているPU,PDがその設定値です。
@@ -37,8 +37,8 @@
           <hr class="page-wrap">
         </section>
       </section>
-      <section class="level2" aria-labelledby="gpioポートの初期化">
-        <h2 id="gpioポートの初期化">GPIOポートの初期化</h2>
+      <section class="level2" aria-labelledby="112-gpioポートの初期化">
+        <h2 id="112-gpioポートの初期化">11.2. GPIOポートの初期化</h2>
         <p>
           今回の JavaScript ファイルで、最初に呼び出されるコードは <code>await navigator.requestGPIOAccess()</code> です。
           ここで先ほど出て来た <a href="http://browserobo.github.io/WebGPIO">Web GPIO API</a> を使い、<code>gpioAccess</code> という GPIO にアクセスするためのインタフェースを取得しています。
@@ -46,8 +46,8 @@
         <pre class="language-js"><code class="language-js"><span class="token keyword">const</span> gpioAccess <span class="token operator">=</span> <span class="token keyword control-flow">await</span> <span class="token dom variable">navigator</span><span class="token punctuation">.</span><span class="token method function property-access">requestGPIOAccess</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// GPIO を操作する</span></code></pre>
         <p><strong>関数の呼び出しに <code>await</code> 接頭詞を付けることに注意してください。</strong> この関数は非同期関数で、その処理の完了を待ってから次の処理をする必要があります。また、<code>await</code> 接頭詞を使うコードを含むために、それを含む関数 <code>main()</code> は async 接頭詞付きの非同期関数として定義する必要があります。</p>
       </section>
-      <section class="level2" aria-labelledby="gpioport-の出力処理">
-        <h2 id="gpioport-の出力処理">GPIOPort の出力処理</h2>
+      <section class="level2" aria-labelledby="113-gpioport-の出力処理">
+        <h2 id="113-gpioport-の出力処理">11.3. GPIOPort の出力処理</h2>
         <p>
           GPIOの<strong>出力</strong>機能を使います。
           <strong><code>const port = gpioAccess.ports.get(26)</code> で GPIO の 26 番ポートにアクセスするためのオブジェクト</strong> を取得しています。
@@ -68,8 +68,8 @@
           LED は一定以上の電圧を加え、電流を流すと点灯する性質を持っています。
           つまり、3.3 V を加えたとき点灯し、0 V を加えたとき消灯、これを繰り返すことになります。
         </p>
-        <section class="level3" aria-labelledby="サンプルコードを編集してみよう">
-          <h3 id="サンプルコードを編集してみよう">サンプルコードを編集してみよう</h3>
+        <section class="level3" aria-labelledby="1131-サンプルコードを編集してみよう">
+          <h3 id="1131-サンプルコードを編集してみよう">11.3.1. サンプルコードを編集してみよう</h3>
           <ul>
             <li>点滅周期を早く・遅く (<code>sleep()</code>の引数を変更)</li>
             <li>点灯する時間と消灯する時間を変える (同上)</li>
@@ -78,11 +78,11 @@
           <hr class="page-wrap">
         </section>
       </section>
-      <section class="level2" aria-labelledby="gpioportの入力処理">
-        <h2 id="gpioportの入力処理">GPIOPortの入力処理</h2>
+      <section class="level2" aria-labelledby="114-gpioportの入力処理">
+        <h2 id="114-gpioportの入力処理">11.4. GPIOPortの入力処理</h2>
         <p>GPIOポートに繋いだスイッチやセンサーの状態を取得するには、GPIOの<strong>入力</strong>機能を使います。出力とは違って入力は二つの方法があります。onchangeとポーリングの二つの方法があります。</p>
-        <section class="level3" aria-labelledby="onchange編">
-          <h3 id="onchange編">onchange編</h3>
+        <section class="level3" aria-labelledby="1141-onchange編">
+          <h3 id="1141-onchange編">11.4.1. onchange編</h3>
           <p>GPIOポートの値が変化するたびに、指定した関数が実行されます。</p>
           <pre class="language-js"><code class="language-js"><span class="token keyword">async</span> <span class="token keyword">function</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
   <span class="token keyword">const</span> button <span class="token operator">=</span> <span class="token dom variable">document</span><span class="token punctuation">.</span><span class="token method function property-access">getElementById</span><span class="token punctuation">(</span><span class="token string">"button"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
@@ -118,34 +118,34 @@
           <p><code>port.onchange</code> は <strong>入力モードの GPIO ポートの「状態変化時に呼び出される関数を設定する」</strong> 機能です。このような関数のことをコールバック関数と呼びます。下記の<code>port.read()</code> を使ったコードと異なりポーリング処理が不要でコードも簡潔ですが、値が変化したタイミング以外では読み取りができませんのでユースケースが少し限られます。</p>
           <hr class="page-wrap">
         </section>
-        <section class="level3" aria-labelledby="単純入力ポーリング">
-          <h3 id="単純入力ポーリング">単純入力＋ポーリング</h3>
+        <section class="level3" aria-labelledby="1142-単純入力ポーリング">
+          <h3 id="1142-単純入力ポーリング">11.4.2. 単純入力＋ポーリング</h3>
           <p>こちらはGPIOポートの入力値を一回きり単発で取得する単純入力機能と、ポーリングの組み合わせです。</p>
-          <section class="level4" aria-labelledby="ポーリングとは">
-            <h4 id="ポーリングとは">ポーリングとは</h4>
+          <section class="level4" aria-labelledby="11421-ポーリングとは">
+            <h4 id="11421-ポーリングとは">11.4.2.1. ポーリングとは</h4>
             <p>
               様々な情報や値の取得や入力のための基本的な機能・関数は、入力を指定した瞬間、一回きり取得するだけのものがほとんどです。そこで、無限ループをつくりこの中で一回きりの入力を定期的に繰り返すことで、入力の変化を読み取る　ということがよく行われます。このような処理を一般にポーリング<span class="footnote"><a href="https://ja.wikipedia.org/wiki/%E3%83%9D%E3%83%BC%E3%83%AA%E3%83%B3%E3%82%B0_(%E6%83%85%E5%A0%B1)">https://ja.wikipedia.org/wiki/ポーリング_(情報)</a></span>と呼びます。
               ポーリングはセンサーの情報入力だけでなく、たとえば電子メールの到着を通知するために定期的にメールサーバにメール着信数を確認する　といった、ネットワークサービスでの処理など様々なシステムで広く使われています。
             </p>
           </section>
-          <section class="level4" aria-labelledby="gpioの単純入力関数">
-            <h4 id="gpioの単純入力関数">GPIOの単純入力関数</h4>
+          <section class="level4" aria-labelledby="11422-gpioの単純入力関数">
+            <h4 id="11422-gpioの単純入力関数">11.4.2.2. GPIOの単純入力関数</h4>
             <p>単純に「GPIO ポートの状態を読み込む」には <code>port.read()</code> を使います。</p>
             <p><code>port.read()</code> で GPIO を読み込むコードは次のように書けます:</p>
             <pre class="language-js"><code class="language-js"><span class="token keyword">const</span> gpioAccess <span class="token operator">=</span> <span class="token keyword control-flow">await</span> <span class="token dom variable">navigator</span><span class="token punctuation">.</span><span class="token method function property-access">requestGPIOAccess</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token keyword">const</span> switchPort <span class="token operator">=</span> gpioAccess<span class="token punctuation">.</span><span class="token property-access">ports</span><span class="token punctuation">.</span><span class="token method function property-access">get</span><span class="token punctuation">(</span><span class="token number">5</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// GPIO ポート 5 番を取得</span>
 <span class="token keyword control-flow">await</span> switchPort<span class="token punctuation">.</span><span class="token keyword module">export</span><span class="token punctuation">(</span><span class="token string">"in"</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 「入力モード」に</span>
 <span class="token keyword">const</span> state <span class="token operator">=</span> <span class="token keyword control-flow">await</span> switchPort<span class="token punctuation">.</span><span class="token method function property-access">read</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// GPIO ポート 5 番に接続したスイッチの状態を読み込む</span></code></pre>
-            <section class="level5" aria-labelledby="await-portexport">
-              <h5 id="await-portexport">await port.export()</h5>
-              <p><code>port.export("in")</code> により取得した <strong>GPIO ポートを「入力モード」で初期化</strong> しています。このモードは GPIO ポートにかかる電圧を Web アプリ側から読み取りたい時に使います。初期化は非同期処理であり <code>await</code> で完了を待つ必要があることに注意してください。</p>
-            </section>
-            <section class="level5" aria-labelledby="await-portread">
-              <h5 id="await-portread">await port.read()</h5>
-              <p><code>port.export("in")</code> で入力モードに設定した <strong>GPIO ポートの現時点の状態を読み取ります</strong>。読み取りは非同期処理になるので <code>await</code> で完了を待つようにしてください。</p>
-            </section>
-            <section class="level5" aria-labelledby="ポーリングルーチン">
-              <h5 id="ポーリングルーチン">ポーリングルーチン</h5>
+          </section>
+          <section class="level4" aria-labelledby="11423-await-portexport">
+            <h4 id="11423-await-portexport">11.4.2.3. await port.export()</h4>
+            <p><code>port.export("in")</code> により取得した <strong>GPIO ポートを「入力モード」で初期化</strong> しています。このモードは GPIO ポートにかかる電圧を Web アプリ側から読み取りたい時に使います。初期化は非同期処理であり <code>await</code> で完了を待つ必要があることに注意してください。</p>
+          </section>
+          <section class="level4" aria-labelledby="11424-await-portread">
+            <h4 id="11424-await-portread">11.4.2.4. await port.read()</h4>
+            <p><code>port.export("in")</code> で入力モードに設定した <strong>GPIO ポートの現時点の状態を読み取ります</strong>。読み取りは非同期処理になるので <code>await</code> で完了を待つようにしてください。</p>
+            <section class="level5" aria-labelledby="114231-ポーリングルーチン">
+              <h5 id="114231-ポーリングルーチン">11.4.2.3.1. ポーリングルーチン</h5>
               <p>上記コードで GPIO ポートの読み取りを 1 度だけ行えますが、今回は「スイッチが押され状態を監視する」必要がありますので、定期的に <code>await port.read()</code> を繰り返して GPIO ポートの状態を監視するポーリングのルーチンを組みます。</p>
               <pre class="language-js"><code class="language-js"><span class="token keyword">const</span> gpioAccess <span class="token operator">=</span> <span class="token keyword control-flow">await</span> <span class="token dom variable">navigator</span><span class="token punctuation">.</span><span class="token method function property-access">requestGPIOAccess</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token keyword">const</span> switchPort <span class="token operator">=</span> gpioAccess<span class="token punctuation">.</span><span class="token property-access">ports</span><span class="token punctuation">.</span><span class="token method function property-access">get</span><span class="token punctuation">(</span><span class="token number">5</span><span class="token punctuation">)</span><span class="token punctuation">;</span>

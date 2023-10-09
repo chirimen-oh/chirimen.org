@@ -1,6 +1,6 @@
-# GPIO
+# 11. GPIO
 
-## GPIOとは
+## 11.1. GPIOとは
 
 [GPIO](https://ja.wikipedia.org/wiki/GPIO)は、「General-purpose input/output」の略で汎用的な入出力インタフェースのことです。
 
@@ -12,14 +12,14 @@ Raspiの GPIO 端子は、GND 端子との間に、0V もしくは 3.3V の電�
 
 詳しくは[ツール・ラボ/第22回 Raspberry PiのGPIO概要](https://tool-lab.com/make/raspberrypi-startup-22/)などを参考にしてみましょう。
 
-### Raspberry Piのピン配置図
+### 11.1.1. Raspberry Piのピン配置図
 
 ![Raspi PIN配置図](https://chirimen.org/PiZeroWebSerialConsole/wallpaperS.png)
 
-### Raspverry Pi Zeroのピン配置図
+### 11.1.2. Raspverry Pi Zeroのピン配置図
 Raspberry Piの端子と同じ配列です。
 
-### プルアップ(PU)、プルダウン(PD)
+### 11.1.3. プルアップ(PU)、プルダウン(PD)
 GPIOポートを入力モードで使用する場合、ポートが解放状態(電気的に切り離されている状態)のときに設定される値があります。
 プルアップは1、プルダウンは0になります。　Raspberry Piのピン配置図に書かれているPU,PDがその設定値です。
 
@@ -27,7 +27,7 @@ GPIOポートを入力モードで使用する場合、ポートが解放状態(
 
 <hr class="page-wrap" />
 
-## GPIOポートの初期化
+## 11.2. GPIOポートの初期化
 今回の JavaScript ファイルで、最初に呼び出されるコードは `await navigator.requestGPIOAccess()` です。
 ここで先ほど出て来た [Web GPIO API](http://browserobo.github.io/WebGPIO) を使い、`gpioAccess` という GPIO にアクセスするためのインタフェースを取得しています。
 
@@ -37,7 +37,7 @@ const gpioAccess = await navigator.requestGPIOAccess(); // GPIO を操作する
 
 **関数の呼び出しに `await` 接頭詞を付けることに注意してください。** この関数は非同期関数で、その処理の完了を待ってから次の処理をする必要があります。また、`await` 接頭詞を使うコードを含むために、それを含む関数 `main()` は async 接頭詞付きの非同期関数として定義する必要があります。
 
-## GPIOPort の出力処理
+## 11.3. GPIOPort の出力処理
 GPIOの**出力**機能を使います。
 **`const port = gpioAccess.ports.get(26)` で GPIO の 26 番ポートにアクセスするためのオブジェクト** を取得しています。
 
@@ -67,17 +67,17 @@ await port.export("out"); // ポートを出力モードに設定
 LED は一定以上の電圧を加え、電流を流すと点灯する性質を持っています。
 つまり、3.3 V を加えたとき点灯し、0 V を加えたとき消灯、これを繰り返すことになります。
 
-### サンプルコードを編集してみよう
+### 11.3.1. サンプルコードを編集してみよう
 - 点滅周期を早く・遅く (```sleep()```の引数を変更)
 - 点灯する時間と消灯する時間を変える (同上)
 - GPIO ポートを他のポートに変える・配線を変える (```gpioAccess.ports.get```の引数を変更)
 
 <hr class="page-wrap" />
 
-## GPIOPortの入力処理
+## 11.4. GPIOPortの入力処理
 GPIOポートに繋いだスイッチやセンサーの状態を取得するには、GPIOの**入力**機能を使います。出力とは違って入力は二つの方法があります。onchangeとポーリングの二つの方法があります。
 
-### onchange編
+### 11.4.1. onchange編
 GPIOポートの値が変化するたびに、指定した関数が実行されます。
 
 ```js
@@ -118,15 +118,15 @@ main();
 
 <hr class="page-wrap" />
 
-### 単純入力＋ポーリング
+### 11.4.2. 単純入力＋ポーリング
 こちらはGPIOポートの入力値を一回きり単発で取得する単純入力機能と、ポーリングの組み合わせです。
 
-#### ポーリングとは
+#### 11.4.2.1. ポーリングとは
 
 様々な情報や値の取得や入力のための基本的な機能・関数は、入力を指定した瞬間、一回きり取得するだけのものがほとんどです。そこで、無限ループをつくりこの中で一回きりの入力を定期的に繰り返すことで、入力の変化を読み取る　ということがよく行われます。このような処理を一般にポーリング<span class="footnote">https://ja.wikipedia.org/wiki/ポーリング_(情報)</span>と呼びます。
 ポーリングはセンサーの情報入力だけでなく、たとえば電子メールの到着を通知するために定期的にメールサーバにメール着信数を確認する　といった、ネットワークサービスでの処理など様々なシステムで広く使われています。
 
-#### GPIOの単純入力関数
+#### 11.4.2.2. GPIOの単純入力関数
 単純に「GPIO ポートの状態を読み込む」には `port.read()` を使います。
 
 `port.read()` で GPIO を読み込むコードは次のように書けます:
@@ -138,15 +138,15 @@ await switchPort.export("in"); // 「入力モード」に
 const state = await switchPort.read(); // GPIO ポート 5 番に接続したスイッチの状態を読み込む
 ```
 
-##### await port.export()
+#### 11.4.2.3. await port.export()
 
 `port.export("in")` により取得した **GPIO ポートを「入力モード」で初期化** しています。このモードは GPIO ポートにかかる電圧を Web アプリ側から読み取りたい時に使います。初期化は非同期処理であり `await` で完了を待つ必要があることに注意してください。
 
-##### await port.read()
+#### 11.4.2.4. await port.read()
 
 `port.export("in")` で入力モードに設定した **GPIO ポートの現時点の状態を読み取ります**。読み取りは非同期処理になるので `await` で完了を待つようにしてください。
 
-##### ポーリングルーチン
+##### 11.4.2.3.1. ポーリングルーチン
 上記コードで GPIO ポートの読み取りを 1 度だけ行えますが、今回は「スイッチが押され状態を監視する」必要がありますので、定期的に `await port.read()` を繰り返して GPIO ポートの状態を監視するポーリングのルーチンを組みます。
 
 ```js

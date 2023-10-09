@@ -2,17 +2,17 @@
 <html lang="ja">
   <head>
     <meta charset="utf-8">
-    <title>CHIRIMEN Raspberry Pi Zero版 の準備</title>
+    <title>3. CHIRIMEN Raspberry Pi Zero版 の準備</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="../themes/packages/@vivliostyle/theme-techbook/theme.css">
   </head>
   <body>
-    <section class="level1" aria-labelledby="chirimen-raspberry-pi-zero版-の準備">
-      <h1 id="chirimen-raspberry-pi-zero版-の準備">CHIRIMEN Raspberry Pi Zero版 の準備</h1>
-      <section class="level2" aria-labelledby="ステップ０-物品準備pcをwifiに接続">
-        <h2 id="ステップ０-物品準備pcをwifiに接続">ステップ０ (物品準備、PCをWiFiに接続)</h2>
-        <section class="level3" aria-labelledby="必要な物品リスト">
-          <h3 id="必要な物品リスト">必要な物品リスト</h3>
+    <section class="level1" aria-labelledby="3-chirimen-raspberry-pi-zero版-の準備">
+      <h1 id="3-chirimen-raspberry-pi-zero版-の準備">3. CHIRIMEN Raspberry Pi Zero版 の準備</h1>
+      <section class="level2" aria-labelledby="31-ステップ０-物品準備pcをwifiに接続">
+        <h2 id="31-ステップ０-物品準備pcをwifiに接続">3.1. ステップ０ (物品準備、PCをWiFiに接続)</h2>
+        <section class="level3" aria-labelledby="311-必要な物品リスト">
+          <h3 id="311-必要な物品リスト">3.1.1. 必要な物品リスト</h3>
           <p>以下を用意します</p>
           <ul>
             <li>Raspberry Pi Zero W 、( Pi Zero <strong>2</strong> W も使用できます(2022/10/12 update) )
@@ -77,16 +77,16 @@
           </figure>
           <p>PiZero自体はディスプレイやキーボードを接続する必要はありません。</p>
         </section>
-        <section class="level3" aria-labelledby="pcをwifiに接続">
-          <h3 id="pcをwifiに接続">PCをWiFiに接続</h3>
+        <section class="level3" aria-labelledby="312-pcをwifiに接続">
+          <h3 id="312-pcをwifiに接続">3.1.2 PCをWiFiに接続</h3>
           <ul>
             <li>会場(もしくは開発場所)で提供されているWiFiアクセスポイントにまずはPCを接続してください。</li>
           </ul>
           <hr class="page-wrap">
         </section>
       </section>
-      <section class="level2" aria-labelledby="ステップ１ターミナル接続">
-        <h2 id="ステップ１ターミナル接続">ステップ１（ターミナル接続）</h2>
+      <section class="level2" aria-labelledby="32-ステップ１ターミナル接続">
+        <h2 id="32-ステップ１ターミナル接続">3.2. ステップ１（ターミナル接続）</h2>
         <ul>
           <li><a href="https://github.com/kou029w/chirimen-os/releases/">Raspberry Pi OS LiteをUSB Serialで使用可能にしたイメージ</a>を書き込んだmicroSDカードをRaspberry Pi Zeroに差し込みます。</li>
           <li>PCのUSBとRaspberry Pi ZeroのUSB OTGポートをUSBケーブルでつなぎます
@@ -129,8 +129,8 @@
             </ul>
           </li>
         </ul>
-        <section class="level3" aria-labelledby="note">
-          <h3 id="note">Note:</h3>
+        <section class="level3" aria-labelledby="321-note">
+          <h3 id="321-note">3.2.1. Note:</h3>
           <ul>
             <li>
               <p>CHIRIMEN Raspberry Pi Zero版では<a href="https://www.raspberrypi.com/software/operating-systems/">Raspberry Pi OS Lite</a>(Linux)を<a href="https://atmarkit.itmedia.co.jp/ait/articles/1602/19/news025.html">コマンドラインインターフェース(CLI)</a>・<a href="https://atmarkit.itmedia.co.jp/ait/articles/1603/02/news016.html">シェル(bash)</a>で操作します。</p>
@@ -161,8 +161,8 @@
           <hr class="page-wrap">
         </section>
       </section>
-      <section class="level2" aria-labelledby="ステップ２-wifi設定">
-        <h2 id="ステップ２-wifi設定">ステップ２ (WiFi設定)</h2>
+      <section class="level2" aria-labelledby="33-ステップ２-wifi設定">
+        <h2 id="33-ステップ２-wifi設定">3.3. ステップ２ (WiFi設定)</h2>
         <ul>
           <li>ターミナルウィンドの<code>[wifi panel]</code>ボタンを押す
             <ul>
@@ -227,10 +227,10 @@
         <hr class="page-wrap">
       </section>
     </section>
-    <section class="level1" aria-labelledby="hello-real-worldlチカを実行する">
-      <h1 id="hello-real-worldlチカを実行する">Hello Real World（Lチカを実行する）</h1>
-      <section class="level2" aria-labelledby="配線">
-        <h2 id="配線">配線</h2>
+    <section class="level1" aria-labelledby="4-hello-real-worldlチカを実行する">
+      <h1 id="4-hello-real-worldlチカを実行する">4. Hello Real World（Lチカを実行する）</h1>
+      <section class="level2" aria-labelledby="41-配線">
+        <h2 id="41-配線">4.1. 配線</h2>
         <p>PiZero とパーツを使って下の図の通りに配線します。</p>
         <ul>
           <li><a href="https://tutorial.chirimen.org/raspi/hellorealworld#section-1">LEDの極性に注意！</a>
@@ -262,8 +262,8 @@
         </ul>
         <hr class="page-wrap">
       </section>
-      <section class="level2" aria-labelledby="プログラムを書く">
-        <h2 id="プログラムを書く">プログラムを書く</h2>
+      <section class="level2" aria-labelledby="42-プログラムを書く">
+        <h2 id="42-プログラムを書く">4.2. プログラムを書く</h2>
         <p>Raspberry Pi に接続した LED を点滅させるプログラムを書きます。</p>
         <ul>
           <li>ターミナルウィンドでRaspberry Pi Zeroに接続します。（ステップ１が完了した状態）</li>
@@ -310,8 +310,8 @@
         </ul>
         <hr class="page-wrap">
       </section>
-      <section class="level2" aria-labelledby="実行する">
-        <h2 id="実行する">実行する</h2>
+      <section class="level2" aria-labelledby="43-実行する">
+        <h2 id="43-実行する">4.3. 実行する</h2>
         <ul>
           <li>ターミナルウィンドのコンソール部(ウィンド左側)のプロンプト(画面一番下)が以下になっていることを確認します
             <ul>
@@ -330,30 +330,30 @@
         <hr class="page-wrap">
       </section>
     </section>
-    <section class="level1" aria-labelledby="gpioを試す">
-      <h1 id="gpioを試す">GPIOを試す</h1>
-      <section class="level2" aria-labelledby="gpioを理解する">
-        <h2 id="gpioを理解する">GPIOを理解する</h2>
+    <section class="level1" aria-labelledby="5-gpioを試す">
+      <h1 id="5-gpioを試す">5. GPIOを試す</h1>
+      <section class="level2" aria-labelledby="51-gpioを理解する">
+        <h2 id="51-gpioを理解する">5.1. GPIOを理解する</h2>
         <ul>
           <li><a href="./gpio.html">GPIOとは？</a></li>
         </ul>
       </section>
-      <section class="level2" aria-labelledby="gpio出力">
-        <h2 id="gpio出力">GPIO出力</h2>
+      <section class="level2" aria-labelledby="52-gpio出力">
+        <h2 id="52-gpio出力">5.2. GPIO出力</h2>
         <p>GPIOの出力はLチカで実験済みですね。そこで今回はモーターを動かしてみましょう。MOSFETを使った回路図は以下のようになります。</p>
         <figure>
           <img src="../../pizero/esm-examples/hello-real-world/PiZero_gpio0Motor.png" alt="GPIO Motor" height="200">
           <figcaption aria-hidden="true">GPIO Motor</figcaption>
         </figure>
         <p>コードはLチカと全く同じです。</p>
-        <section class="level3" aria-labelledby="回路について">
-          <h3 id="回路について">回路について</h3>
+        <section class="level3" aria-labelledby="521-回路について">
+          <h3 id="521-回路について">5.2.1. 回路について</h3>
           <ul>
             <li><a href="./document.html#mosfet-%E3%81%A8%E3%81%AF">MOSFETを使った大電力制御</a></li>
           </ul>
         </section>
-        <section class="level3" aria-labelledby="コードを読む">
-          <h3 id="コードを読む">コードを読む</h3>
+        <section class="level3" aria-labelledby="522-コードを読む">
+          <h3 id="522-コードを読む">5.2.2. コードを読む</h3>
           <ul>
             <li>前提：CHIRIMEN Rasoberryu Pi ZeroはNode.jsをプログラム実行環境（インタープリタ）として使っています。
               <ul>
@@ -374,8 +374,8 @@
           <hr class="page-wrap">
         </section>
       </section>
-      <section class="level2" aria-labelledby="gpio入力">
-        <h2 id="gpio入力">GPIO入力</h2>
+      <section class="level2" aria-labelledby="53-gpio入力">
+        <h2 id="53-gpio入力">5.3. GPIO入力</h2>
         <p>GPIO端子の<strong>入力が変化したら関数を実行</strong>という機能によってGPIOの入力を使います。</p>
         <ul>
           <li>ターミナルウィンドの<code>[CHIRIMEN Panel]</code>ボタンを押す</li>
@@ -407,8 +407,8 @@
           </li>
           <li>終了は CTRL+c</li>
         </ul>
-        <section class="level3" aria-labelledby="コードを読む-1">
-          <h3 id="コードを読む-1">コードを読む</h3>
+        <section class="level3" aria-labelledby="531-コードを読む">
+          <h3 id="531-コードを読む">5.3.1. コードを読む</h3>
           <ul>
             <li>ターミナルウィンドの右側のファイルマネージャでmain-gpio-onchange.js⇒表示 を選び、ソースコードを読んでみましょう</li>
             <li>
@@ -424,8 +424,8 @@
           <hr class="page-wrap">
         </section>
       </section>
-      <section class="level2" aria-labelledby="gpio入力ポーリング">
-        <h2 id="gpio入力ポーリング">GPIO入力(ポーリング)</h2>
+      <section class="level2" aria-labelledby="54-gpio入力ポーリング">
+        <h2 id="54-gpio入力ポーリング">5.4. GPIO入力(ポーリング)</h2>
         <p>入力ではイベントの他にポーリングというテクニックが広く使われます。（次章のI2Cデバイスからの入力では専らポーリング）</p>
         <ul>
           <li>
@@ -461,8 +461,8 @@
             <p>終了は CTRL+c</p>
           </li>
         </ul>
-        <section class="level3" aria-labelledby="コードを読む-2">
-          <h3 id="コードを読む-2">コードを読む</h3>
+        <section class="level3" aria-labelledby="541-コードを読む">
+          <h3 id="541-コードを読む">5.4.1. コードを読む</h3>
           <ul>
             <li>ターミナルウィンドの右側のファイルマネージャでmain-gpio-polling.js⇒表示 を選び、ソースコードを読んでみましょう</li>
             <li>
@@ -479,16 +479,16 @@
         </section>
       </section>
     </section>
-    <section class="level1" aria-labelledby="i2cデバイスを試す">
-      <h1 id="i2cデバイスを試す">I2Cデバイスを試す</h1>
-      <section class="level2" aria-labelledby="i2cを理解する">
-        <h2 id="i2cを理解する">I2Cを理解する</h2>
+    <section class="level1" aria-labelledby="6-i2cデバイスを試す">
+      <h1 id="6-i2cデバイスを試す">6. I2Cデバイスを試す</h1>
+      <section class="level2" aria-labelledby="61-i2cを理解する">
+        <h2 id="61-i2cを理解する">6.1. I2Cを理解する</h2>
         <ul>
           <li><a href="./i2c.html">I2Cとは？</a></li>
         </ul>
       </section>
-      <section class="level2" aria-labelledby="sht30編">
-        <h2 id="sht30編">SHT30編</h2>
+      <section class="level2" aria-labelledby="62-sht30編">
+        <h2 id="62-sht30編">6.2. SHT30編</h2>
         <p>SHT30は温度に加えて湿度も測定できるI2C接続の多機能センサーです。SHT31もほぼ同等に使えます。(SHT31のほうが精度が高い)</p>
         <ul>
           <li>
@@ -524,8 +524,8 @@
           </li>
         </ul>
         <hr class="page-wrap">
-        <section class="level3" aria-labelledby="i2cセンサーsht30が認識されていることを確認する">
-          <h3 id="i2cセンサーsht30が認識されていることを確認する">I2Cセンサー(SHT30)が認識されていることを確認する</h3>
+        <section class="level3" aria-labelledby="621-i2cセンサーsht30が認識されていることを確認する">
+          <h3 id="621-i2cセンサーsht30が認識されていることを確認する">6.2.1. I2Cセンサー(SHT30)が認識されていることを確認する</h3>
           <ul>
             <li>CHIRIMEN Panelの<code>[i2c detect]</code>ボタンを押すと、<a href="https://strawberry-linux.com/pub/Sensirion_Humidity_SHT3x_DIS_Datasheet_V3_J.pdf">SHT30のI2Cアドレス</a>　0x<strong>44</strong>が表示されていればうまく接続されています。
               <ul>
@@ -544,8 +544,8 @@
 70: -- -- -- -- -- -- -- --                       
 </pre>
         </section>
-        <section class="level3" aria-labelledby="実行する-1">
-          <h3 id="実行する-1">実行する</h3>
+        <section class="level3" aria-labelledby="622-実行する">
+          <h3 id="622-実行する">6.2.2. 実行する</h3>
           <ul>
             <li>ターミナルウィンドのコンソールのプロンプトが<code>pi@raspberrypi:~/myApp$</code>となっていることを確認</li>
             <li>ターミナルウィンドのコンソールに、<code>node main-sht30.js</code> [ENTER] と入力して実行。</li>
@@ -553,8 +553,8 @@
             <li>終了は CTRL+c</li>
           </ul>
         </section>
-        <section class="level3" aria-labelledby="コードを読む-3">
-          <h3 id="コードを読む-3">コードを読む</h3>
+        <section class="level3" aria-labelledby="623-コードを読む">
+          <h3 id="623-コードを読む">6.2.3. コードを読む</h3>
           <ul>
             <li>ターミナルウィンドの右側のファイルマネージャでmain-sht30.js⇒表示 を選び、ソースコードを読んでみましょう</li>
             <li><a href="https://tutorial.chirimen.org/chirimenGeneric/#webi2c">WebI2CライブラリとSHT30デバイスドライバを読み込み</a></li>
@@ -570,8 +570,8 @@
           <hr class="page-wrap">
         </section>
       </section>
-      <section class="level2" aria-labelledby="adt7410編">
-        <h2 id="adt7410編">ADT7410編</h2>
+      <section class="level2" aria-labelledby="63-adt7410編">
+        <h2 id="63-adt7410編">6.3. ADT7410編</h2>
         <p>
           温度センサーADT7410を使います。
           もし、SHT30を使用する場合は、「IoTを試す」の章まで読み飛ばしてください。
@@ -604,8 +604,8 @@
           <pre class="language-text"><code class="language-text">温度センサー ADT7410 を用意した場合、図と同じように配線します。配線(特に電源線)を間違えるとセンサーが高熱になり火傷・破損するので注意してください。</code></pre>
           <hr class="page-wrap">
         </section>
-        <section class="level3" aria-labelledby="i2cセンサーが認識されていることを確認する">
-          <h3 id="i2cセンサーが認識されていることを確認する">I2Cセンサーが認識されていることを確認する</h3>
+        <section class="level3" aria-labelledby="631-i2cセンサーが認識されていることを確認する">
+          <h3 id="631-i2cセンサーが認識されていることを確認する">6.3.1. I2Cセンサーが認識されていることを確認する</h3>
           <ul>
             <li>CHIRIMEN Panelの<a href="https://tutorial.chirimen.org/ty51822r3/i2cdetect"><code>[i2c detect]</code></a>ボタンを押すと、<a href="https://akizukidenshi.com/download/ds/akizuki/AE-ADT7410_aw.pdf">ADT7410のI2Cアドレス</a>　0x<strong>48</strong>が表示されていればうまく接続されています。</li>
           </ul>
@@ -620,8 +620,8 @@
 70: -- -- -- -- -- -- -- --                       
 </pre>
         </section>
-        <section class="level3" aria-labelledby="実行する-2">
-          <h3 id="実行する-2">実行する</h3>
+        <section class="level3" aria-labelledby="632-実行する">
+          <h3 id="632-実行する">6.3.2. 実行する</h3>
           <ul>
             <li>ターミナルウィンドのコンソールのプロンプトが<code>pi@raspberrypi:~/myApp$</code>となっていることを確認</li>
             <li>ターミナルウィンドのコンソールに、<code>node main-adt7410.js</code> [ENTER] と入力して実行。</li>
@@ -631,10 +631,10 @@
         </section>
       </section>
     </section>
-    <section class="level1" aria-labelledby="iotを試す">
-      <h1 id="iotを試す">IoTを試す</h1>
-      <section class="level2" aria-labelledby="遠隔ledコントロール">
-        <h2 id="遠隔ledコントロール">遠隔LEDコントロール</h2>
+    <section class="level1" aria-labelledby="7-iotを試す">
+      <h1 id="7-iotを試す">7. IoTを試す</h1>
+      <section class="level2" aria-labelledby="71-遠隔ledコントロール">
+        <h2 id="71-遠隔ledコントロール">7.1. 遠隔LEDコントロール</h2>
         <p>
           <img src="../../pizero/imgs/IoTsystemConf.png" alt="system configuration">
           IoTは、制御されるデバイス（上図ではCHIRIMEN PiZeroW)と、利用者端末（上図ではWebApp PC-side）に加えて、これらの間でデータを中継するサーバ（クラウド）が必要になります。
@@ -645,8 +645,8 @@
           <li><a href="./iot.html">IoT</a></li>
           <li><a href="./iot.html#websocket%E3%81%A8pubsub-services">WebSoeketとRelayServer</a></li>
         </ul>
-        <section class="level3" aria-labelledby="配線する">
-          <h3 id="配線する">配線する</h3>
+        <section class="level3" aria-labelledby="711-配線する">
+          <h3 id="711-配線する">7.1.1. 配線する</h3>
           <p>配線は最初のLチカそのままです。</p>
           <figure>
             <img src="../../pizero/imgs/pizero_led.png" alt="PiZero配線図" height="200">
@@ -654,8 +654,8 @@
           </figure>
           <hr class="page-wrap">
         </section>
-        <section class="level3" aria-labelledby="chirimenデバイス側にコードを入れ実行する">
-          <h3 id="chirimenデバイス側にコードを入れ実行する">CHIRIMENデバイス側にコードを入れ、実行する</h3>
+        <section class="level3" aria-labelledby="712-chirimenデバイス側にコードを入れ実行する">
+          <h3 id="712-chirimenデバイス側にコードを入れ実行する">7.1.2. CHIRIMENデバイス側にコードを入れ、実行する</h3>
           <ul>
             <li>ターミナルウィンドの<code>[CHIRIMEN Panel]</code>ボタンを押す</li>
             <li>出現したCHIRIMEN Panelの<code>[Get Examples]</code>ボタンを押す</li>
@@ -679,8 +679,8 @@
             </li>
           </ul>
         </section>
-        <section class="level3" aria-labelledby="pc側のコードを準備し実行する">
-          <h3 id="pc側のコードを準備し実行する">PC側のコードを準備し、実行する</h3>
+        <section class="level3" aria-labelledby="713-pc側のコードを準備し実行する">
+          <h3 id="713-pc側のコードを準備し実行する">7.1.3. PC側のコードを準備し、実行する</h3>
           <ul>
             <li>CHIRIMEN Panelに戻り、ID : <strong>remote_gpio_led</strong>の行にある、<code>CSB EDIT</code>リンクをクリックする。
               <ul>
@@ -696,10 +696,10 @@
           </ul>
           <hr class="page-wrap">
         </section>
-        <section class="level3" aria-labelledby="コードを読む-4">
-          <h3 id="コードを読む-4">コードを読む</h3>
-          <section class="level4" aria-labelledby="raspberry-pi-zero側コード">
-            <h4 id="raspberry-pi-zero側コード">Raspberry Pi Zero側コード</h4>
+        <section class="level3" aria-labelledby="714-コードを読む">
+          <h3 id="714-コードを読む">7.1.4. コードを読む</h3>
+          <section class="level4" aria-labelledby="7141-raspberry-pi-zero側コード">
+            <h4 id="7141-raspberry-pi-zero側コード">7.1.4.1. Raspberry Pi Zero側コード</h4>
             <ul>
               <li>ターミナルウィンドの右側のファイルマネージャでmain-remote_gpio_led.js⇒表示 を選び、ソースコードを読んでみましょう</li>
               <li>これまで通りWebGPIOライブラリの読み込み</li>
@@ -720,8 +720,8 @@ import {RelayServer} from "./RelayServer.js";</code></pre>
               <li>受信した内容をもとに<a href="./gpio.html#gpioport-%E3%81%AE%E5%87%BA%E5%8A%9B%E5%87%A6%E7%90%86">GPIO出力を操作</a>してLEDを点灯・消灯</li>
             </ul>
           </section>
-          <section class="level4" aria-labelledby="pc側コード">
-            <h4 id="pc側コード">PC側コード</h4>
+          <section class="level4" aria-labelledby="7142-pc側コード">
+            <h4 id="7142-pc側コード">7.1.4.2. PC側コード</h4>
             <ul>
               <li>CodeSandboxで開いているPC.jsを見てみましょう</li>
               <li><a href="./javascript.html#javascript">JavaScript Module</a>仕様に基づいてrelayServer.jsを読み込み
@@ -735,8 +735,8 @@ import {RelayServer} from "./RelayServer.js";</code></pre>
               </li>
             </ul>
           </section>
-          <section class="level4" aria-labelledby="自分専用チャンネルで制御">
-            <h4 id="自分専用チャンネルで制御">自分専用チャンネルで制御</h4>
+          <section class="level4" aria-labelledby="7143-自分専用チャンネルで制御">
+            <h4 id="7143-自分専用チャンネルで制御">7.1.4.3. 自分専用チャンネルで制御</h4>
             <p>サンプルのコードは共通のチャンネルを使って制御しています。この状態では複数の人が同時に実習していると混信します。(他の人のPCでON/OFFを指示しても、自分のLEDがON/OFFする。同じチャンネルを使っているため。)</p>
             <p>これはこれで使い道はあるのですが、自分のLEDは自分だけで制御したい場合は専用のチャンネルを使って制御しましょう。　チャンネルの指定はPiZero側のコードと、PC側のコード両方を同時に同じ内容で設定する必要があり、以下の部分になります。</p>
             <p><code>channel = await relay.subscribe("chirimenLED");</code></p>
@@ -746,16 +746,16 @@ import {RelayServer} from "./RelayServer.js";</code></pre>
         </section>
       </section>
     </section>
-    <section class="level1" aria-labelledby="他のいろいろなデバイスを試してみる">
-      <h1 id="他のいろいろなデバイスを試してみる">他のいろいろなデバイスを試してみる</h1>
+    <section class="level1" aria-labelledby="8-他のいろいろなデバイスを試してみる">
+      <h1 id="8-他のいろいろなデバイスを試してみる">8. 他のいろいろなデバイスを試してみる</h1>
       <ul>
         <li>ターミナルウィンドの<code>[CHIRIMEN Panel]</code>ボタン⇒CHIRIMEN Panelの`<code>[Get Examples]</code>ボタンで出現するリストのデバイスがすぐ試せます。</li>
         <li>このリストの直リンクは<a href="esm-examples/">こちら(サンプル一覧)</a>です。CHIRIMEN RPiZeroをPCにつないでいないときはこちらを眺めてください。</li>
       </ul>
       <p>また、こちらには、Web GPIO や Web I2C によって扱うことのできる<a href="https://tutorial.chirimen.org/raspi/partslist">外部デバイスの写真や様々なCHIRIMEN環境のサンプルコードの一覧があります</a>。こちらも参考になるかもしれません。(CHIRIMENは<a href="../">Raspberry Pi ZeroW以外に、Raspberry Pi 3,4や、micro:bit等</a>でも使用できます）</p>
     </section>
-    <section class="level1" aria-labelledby="常駐プログラム化する">
-      <h1 id="常駐プログラム化する">常駐プログラム化する</h1>
+    <section class="level1" aria-labelledby="9-常駐プログラム化する">
+      <h1 id="9-常駐プログラム化する">9. 常駐プログラム化する</h1>
       <p>
         ターミナルウィンドからnodeコマンドで実行指示しなくても、電源投入後 自動的に指定したコードを起動する設定（常駐プログラム化）ができます。
         このチュートリアルでは、<a href="https://www.npmjs.com/package/forever">forever</a>を使用する設定を専用GUIを用いて行ってみましょう。

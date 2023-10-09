@@ -2,22 +2,22 @@
 <html lang="ja">
   <head>
     <meta charset="utf-8">
-    <title>IoT</title>
+    <title>13. IoT</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="../themes/packages/@vivliostyle/theme-techbook/theme.css">
   </head>
   <body>
-    <section class="level1" aria-labelledby="iot">
-      <h1 id="iot">IoT</h1>
+    <section class="level1" aria-labelledby="13-iot">
+      <h1 id="13-iot">13. IoT</h1>
       <p>
         これまでのチュートリアルでは、いずれもそのコンピュータに直接接続されたデバイスを使うものでした。このようなシステムは「スタンドアロン」と呼ばれます。
         今までは、ウェブブラウザを使っていたのに、実はウェブの重要な機能～インターネット上の情報基盤WWWを活用したシステムを作っていなかったのです。（開発環境としてはgithubやcodesandboxなどWWW上の情報サービスを活用していますが）
       </p>
       <p>このようなインターネットを活用するシステムのことをIoT (Internet of Thingの略)と呼びます。ただし単にPCやスマホで使うウェブサービスがIoTと呼ばれることがありません。チュートリアルで学んだようなセンサーやアクチュエータがシステムに組み込まれ、物理的なモノと相互作用するようなものを特にIoTと呼びます。（なお、WWWを用いずネットワーク部のインターネットだけを使ったものでもIoTと呼びます。詳しくはwiki<span class="footnote"><a href="https://ja.wikipedia.org/wiki/%E3%83%A2%E3%83%8E%E3%81%AE%E3%82%A4%E3%83%B3%E3%82%BF%E3%83%BC%E3%83%8D%E3%83%83%E3%83%88">https://ja.wikipedia.org/wiki/モノのインターネット</a></span>や、<a href="https://smartiot-forum.jp/application/files/5315/8642/5503/iot-jinzai-text_verR0202.pdf">総務省「IoT機器等の電波利用システムの適正利用のためのICT人材育成事業」における講習会テキスト</a>なども参考にしてください）</p>
-      <section class="level2" aria-labelledby="websocketとpubsub-services">
-        <h2 id="websocketとpubsub-services">webSocketとpub/sub services</h2>
-        <section class="level3" aria-labelledby="システム構成">
-          <h3 id="システム構成">システム構成</h3>
+      <section class="level2" aria-labelledby="131-websocketとpubsub-services">
+        <h2 id="131-websocketとpubsub-services">13.1. webSocketとpub/sub services</h2>
+        <section class="level3" aria-labelledby="1311-システム構成">
+          <h3 id="1311-システム構成">13.1.1. システム構成</h3>
           <figure>
             <img src="../../pizero/imgs/IoTsystemConf.png" alt="sysConfImg">
             <figcaption aria-hidden="true">sysConfImg</figcaption>
@@ -40,8 +40,8 @@
             </li>
           </ul>
         </section>
-        <section class="level3" aria-labelledby="relayservice">
-          <h3 id="relayservice">relayService</h3>
+        <section class="level3" aria-labelledby="1312-relayservice">
+          <h3 id="1312-relayservice">13.1.2. relayService</h3>
           <p>送り側(左側)のWebAppsが、受け側(右側)のwebAppsに情報を送るなら、直接接続するのが簡単そうです。これはピアツーピア通信と言います。</p>
           <p>実はこれは簡単ではありません。webAppsはインターネット上のあらゆるコンピュータ（サーバやブラウザの乗ったPCも含め）にURLでアクセスする必要がありますが、相手のPCにURLでアクセスすることは難しいのです。</p>
           <p>一方、(あらかじめ用意されていれば)ウェブサーバにはURLでアクセスできます。そこで登場するのがrelayServerです。下図のようにrelayServer(Web Socket Relay Service)を介してwebAppsが通信します。</p>
@@ -51,20 +51,20 @@
           <p>relayServerは特定のウェブサイトの固有名ではなく、「ウェブアプリ間でリアルタイム性の高いデータのやり取りを仲介する」という機能を持ったウェブサイトの抽象的な名称でpub/sub servicesと呼ばれることもあります。(SNSとかblogとかというのと同じです）</p>
           <p>relayServerはトークン(ユーザーやシステムごとに割り当てられたランダムな文字列)ごとにスペース(図の濃い青色)が設けられ、その中にいくつかのチャンネル(図の茶色)を置くことができます。</p>
           <p>同じトークンとチャンネルにアクセスしたウェブアプリ同士が通信でき、図ではウェブアプリは２個つながっていますが、何個でもつなげることができます。チャットスペースのようなイメージですね。</p>
-          <section class="level4" aria-labelledby="リアルタイム性">
-            <h4 id="リアルタイム性">リアルタイム性</h4>
+          <section class="level4" aria-labelledby="13121-リアルタイム性">
+            <h4 id="13121-リアルタイム性">13.1.2.1 リアルタイム性</h4>
             <p>例えば遠隔からカメラのパンチルトをコントロールしたい　などのケースを考えると、IoTではデバイスのコントロールを機敏に行いたいケースが多くあります。（リアルタイム性の高いユースケースが多い）このようなリアルタイム性の高い情報のやり取りのために<a href="https://ja.wikipedia.org/wiki/WebSocket">WebSocket</a>というブラウザが標準としてサポートするプロトコルがよく使われます。</p>
           </section>
-          <section class="level4" aria-labelledby="relayserverjs">
-            <h4 id="relayserverjs">relayServer.js</h4>
+          <section class="level4" aria-labelledby="13122-relayserverjs">
+            <h4 id="13122-relayserverjs">13.1.2.2. relayServer.js</h4>
             <p>IoTにはrelayServerの機能を持つウェブサイトが必要になりますが、これを誰かが運営しなければなりません。実習やプロトタイピングのためにこのようなサイトを自分たちで立ち上げるのはかなり大変ですが、インターネット上では既にいくつもの事業者がrelayServerサービスを提供しています。</p>
             <p>今回はCHIRIMEN環境の試験用に、CHIRIMEN用に用意された検証用サービス(chirimentest)を使うことにしますが、いくつかある事業者間でサービスの内容に差異があります。サイトごとの差異は主に接続できる端末の管理と情報の取り扱いに関する機能になります。</p>
             <p><a href="https://chirimen.org/remote-connection/">relayServer.js</a>は、relayServerサービスによる差異を吸収し複数の事業者を自由に切り替えられ、webSocketの標準API仕様に沿った作法でwebApps(含Node.jsプログラム)間の通信を簡単に使えるようにするライブラリです。</p>
           </section>
-          <section class="level4" aria-labelledby="relayserverjs-を使ったプログラムの流れ">
-            <h4 id="relayserverjs-を使ったプログラムの流れ">relayServer.js を使ったプログラムの流れ</h4>
-            <section class="level5" aria-labelledby="初期化受信側送信側共通の処理">
-              <h5 id="初期化受信側送信側共通の処理">初期化（受信側、送信側共通の処理</h5>
+          <section class="level4" aria-labelledby="13123-relayserverjs-を使ったプログラムの流れ">
+            <h4 id="13123-relayserverjs-を使ったプログラムの流れ">13.1.2.3. relayServer.js を使ったプログラムの流れ</h4>
+            <section class="level5" aria-labelledby="131231-初期化受信側送信側共通の処理">
+              <h5 id="131231-初期化受信側送信側共通の処理">13.1.2.3.1. 初期化（受信側、送信側共通の処理</h5>
               <pre class="language-javascript"><code class="language-javascript"><span class="token keyword module">import</span> <span class="token imports"><span class="token punctuation">{</span><span class="token maybe-class-name">RelayServer</span><span class="token punctuation">}</span></span> <span class="token keyword module">from</span> <span class="token string">"https://chirimen.org/remote-connection/js/beta/RelayServer.js"</span><span class="token punctuation">;</span>
 <span class="token keyword">var</span> relay <span class="token operator">=</span> <span class="token function"><span class="token maybe-class-name">RelayServer</span></span><span class="token punctuation">(</span><span class="token string">"achex"</span><span class="token punctuation">,</span> <span class="token string">"chirimenSocket"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
               <p>
@@ -73,8 +73,8 @@
               </p>
               <p><em>Node.jsでは第三,第四引数が必要になります (後述)</em></p>
             </section>
-            <section class="level5" aria-labelledby="チャンネルの作成">
-              <h5 id="チャンネルの作成">チャンネルの作成</h5>
+            <section class="level5" aria-labelledby="131232-チャンネルの作成">
+              <h5 id="131232-チャンネルの作成">13.1.2.3.2. チャンネルの作成</h5>
               <ul>
                 <li>
                   <p><code>channel = await relay.subscribe("chirimenMbitSensors");</code></p>
@@ -86,8 +86,8 @@
                 </li>
               </ul>
             </section>
-            <section class="level5" aria-labelledby="データの送信">
-              <h5 id="データの送信">データの送信</h5>
+            <section class="level5" aria-labelledby="131233-データの送信">
+              <h5 id="131233-データの送信">13.1.2.3.3. データの送信</h5>
               <ul>
                 <li>
                   <p><code>channel.send(data);</code></p>
@@ -96,8 +96,8 @@
                 </li>
               </ul>
             </section>
-            <section class="level5" aria-labelledby="データの受信">
-              <h5 id="データの受信">データの受信</h5>
+            <section class="level5" aria-labelledby="131234-データの受信">
+              <h5 id="131234-データの受信">13.1.2.3.4. データの受信</h5>
               <ul>
                 <li>
                   <p>
@@ -114,12 +114,12 @@
               </ul>
             </section>
           </section>
-          <section class="level4" aria-labelledby="セキュリティを考えよう">
-            <h4 id="セキュリティを考えよう">セキュリティを考えよう</h4>
+          <section class="level4" aria-labelledby="13124-セキュリティを考えよう">
+            <h4 id="13124-セキュリティを考えよう">13.1.2.4. セキュリティを考えよう</h4>
             <p>relayServerを使うということは、情報をインターネット上のウェブサイトに送信することになります。すると このウェブサイトがその情報をどのように取り扱うのかを理解しておく必要があります。achexは無料で使え　しかもユーザ登録も不要です。つまりこのサイトに送信した情報は誰でも見ることができてしまうということです。（ただし、トークンとチャンネルを知る必要がある。これがachexのセキュリティレベル）今回は個人情報などのセキュリティを考慮する必要がない、チュートリアルで使うセンシングデータを送るだけですので問題ありませんが、セキュリティを考慮する必要がある多くの用途ではそのセキュリティ基準に適合したサイトを契約して利用する、もしくは自分でそのようなサイトを立てるなどの必要が出てきます。relayServer.jsでもいくつかの商用サイトの比較と使用方法が記載されているので参考にしてください。</p>
           </section>
-          <section class="level4" aria-labelledby="nodejsでの利用">
-            <h4 id="nodejsでの利用">Node.jsでの利用</h4>
+          <section class="level4" aria-labelledby="13125-nodejsでの利用">
+            <h4 id="13125-nodejsでの利用">13.1.2.5. Node.jsでの利用</h4>
             <p>初期化手順に差異があります。</p>
             <pre class="language-javascript"><code class="language-javascript"><span class="token keyword module">import</span> <span class="token imports">nodeWebSocketLib</span> <span class="token keyword module">from</span> <span class="token string">"websocket"</span><span class="token punctuation">;</span>
 <span class="token keyword module">import</span> <span class="token imports"><span class="token punctuation">{</span><span class="token maybe-class-name">RelayServer</span><span class="token punctuation">}</span></span> <span class="token keyword module">from</span> <span class="token string">"./RelayServer.js"</span><span class="token punctuation">;</span>
@@ -138,19 +138,19 @@
           </section>
         </section>
       </section>
-      <section class="level2" aria-labelledby="webhooks">
-        <h2 id="webhooks">Webhooks</h2>
+      <section class="level2" aria-labelledby="132-webhooks">
+        <h2 id="132-webhooks">13.2. Webhooks</h2>
         <p>
           relayServerが必要なほどリアルタイム性は求めないけれど、むしろ既存のWebサービス・アプリと簡単につなぎたいようなケースでは、httpをそのまま使うことができるでしょう。ただし既存のWebサービス・アプリはウェブブラウザを介して人が操作することが前提でつくられていますので、直接センサーやアクチュエータ（を制御するコンピュータとプログラム～IoTデバイス）をつなげるにはハードルがあります。
           IFTTTに代表されるようなWebhooksサービスは、httpを活用することで既存の多くのウェブサービス（twitterやgoogleのサービスなど）とIoTデバイスを簡単に接続できるようにする中継サービスです。
         </p>
       </section>
-      <section class="level2" aria-labelledby="iotクラウドサービス">
-        <h2 id="iotクラウドサービス">IoTクラウドサービス</h2>
+      <section class="level2" aria-labelledby="133-iotクラウドサービス">
+        <h2 id="133-iotクラウドサービス">13.3. IoTクラウドサービス</h2>
         <p>Webhookのような中継サービスを介さずに、直接IoTデバイスを接続できるように設計されたサービスが多くの事業者から提供されています。これらのサービスを使うには、各サービス事業者ごとに提供しているAPI・プロトコル等の仕様に基づいた開発が必要になります。</p>
       </section>
-      <section class="level2" aria-labelledby="w3c-wot-fiware">
-        <h2 id="w3c-wot-fiware">W3C WoT, FIWARE</h2>
+      <section class="level2" aria-labelledby="134-w3c-wot-fiware">
+        <h2 id="134-w3c-wot-fiware">13.4. W3C WoT, FIWARE</h2>
         <p>先述のようなIoT事業者間の非互換を解消するとともに、多様なユースケースにも対応するための国際標準化が現在進行中です。</p>
         <ul>
           <li><a href="https://www.w3.org/WoT/">WoT</a></li>
