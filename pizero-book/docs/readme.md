@@ -34,14 +34,14 @@
   * [ADT7410モジュール](https://akizukidenshi.com/catalog/g/gM-06675/)　もしくは [SHT30モジュール](https://www.amazon.co.jp/dp/B083NHJSL9/)
   * ジャンパーワイヤ オス-メス 2本
 
+<hr class="page-wrap" />
+
 ![Parts Images](../../pizero/imgs/PartsList2.svg){height=360}
 
 PiZero自体はディスプレイやキーボードを接続する必要はありません。
 
 ### 3.1.2 PCをWiFiに接続
 * 会場(もしくは開発場所)で提供されているWiFiアクセスポイントにまずはPCを接続してください。
-
-<hr class="page-wrap" />
 
 ## 3.2. ステップ１（ターミナル接続）
 

@@ -67,10 +67,7 @@
               <h5 id="131231-初期化受信側送信側共通の処理">13.1.2.3.1. 初期化（受信側、送信側共通の処理</h5>
               <pre class="language-javascript"><code class="language-javascript"><span class="token keyword module">import</span> <span class="token imports"><span class="token punctuation">{</span><span class="token maybe-class-name">RelayServer</span><span class="token punctuation">}</span></span> <span class="token keyword module">from</span> <span class="token string">"https://chirimen.org/remote-connection/js/beta/RelayServer.js"</span><span class="token punctuation">;</span>
 <span class="token keyword">var</span> relay <span class="token operator">=</span> <span class="token function"><span class="token maybe-class-name">RelayServer</span></span><span class="token punctuation">(</span><span class="token string">"achex"</span><span class="token punctuation">,</span> <span class="token string">"chirimenSocket"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
-              <p>
-                import文でライブラリRelayServer.jsを読み込んだ後、relayServiceのひとつ<strong>achex</strong>に接続しています。
-                RelayServerの第二引数<code>("chirimenSocket")</code>はそのサービスを使うためのトークンですが、<strong>achex</strong>は任意の文字列で利用できてます。
-              </p>
+              <p>import文でライブラリRelayServer.jsを読み込んだ後、relayServiceのひとつ<strong>achex</strong>に接続しています。<br>RelayServerの第二引数<code>("chirimenSocket")</code>はそのサービスを使うためのトークンですが、<strong>achex</strong>は任意の文字列で利用できてます。</p>
               <p><em>Node.jsでは第三,第四引数が必要になります (後述)</em></p>
             </section>
             <section class="level5" aria-labelledby="131232-チャンネルの作成">
@@ -116,7 +113,7 @@
           </section>
           <section class="level4" aria-labelledby="13124-セキュリティを考えよう">
             <h4 id="13124-セキュリティを考えよう">13.1.2.4. セキュリティを考えよう</h4>
-            <p>relayServerを使うということは、情報をインターネット上のウェブサイトに送信することになります。すると このウェブサイトがその情報をどのように取り扱うのかを理解しておく必要があります。achexは無料で使え　しかもユーザ登録も不要です。つまりこのサイトに送信した情報は誰でも見ることができてしまうということです。（ただし、トークンとチャンネルを知る必要がある。これがachexのセキュリティレベル）今回は個人情報などのセキュリティを考慮する必要がない、チュートリアルで使うセンシングデータを送るだけですので問題ありませんが、セキュリティを考慮する必要がある多くの用途ではそのセキュリティ基準に適合したサイトを契約して利用する、もしくは自分でそのようなサイトを立てるなどの必要が出てきます。relayServer.jsでもいくつかの商用サイトの比較と使用方法が記載されているので参考にしてください。</p>
+            <p>relayServerを使うということは、情報をインターネット上のウェブサイトに送信することになります。<br>すると このウェブサイトがその情報をどのように取り扱うのかを理解しておく必要があります。<br>achexは無料で使え　しかもユーザ登録も不要です。つまりこのサイトに送信した情報は誰でも見ることができてしまうということです。（ただし、トークンとチャンネルを知る必要がある。これがachexのセキュリティレベル）<br>今回は個人情報などのセキュリティを考慮する必要がない、チュートリアルで使うセンシングデータを送るだけですので問題ありませんが、セキュリティを考慮する必要がある多くの用途ではそのセキュリティ基準に適合したサイトを契約して利用する、もしくは自分でそのようなサイトを立てるなどの必要が出てきます。<br>relayServer.jsでもいくつかの商用サイトの比較と使用方法が記載されているので参考にしてください。</p>
           </section>
           <section class="level4" aria-labelledby="13125-nodejsでの利用">
             <h4 id="13125-nodejsでの利用">13.1.2.5. Node.jsでの利用</h4>
