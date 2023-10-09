@@ -4,9 +4,9 @@
 * [Mozilla Developer Networkの解説](https://developer.mozilla.org/ja/docs/Web/JavaScript)
 
 ## JavaScript の基礎
-JavaScript に慣れていない人は、[「JavaScript 初学者向け資料集」](../js/readme.md)を参考にしてください。
+JavaScript に慣れていない人は、[「JavaScript 初学者向け資料集」](https://tutorial.chirimen.org/js/)を参考にしてください。
 
-* その他の情報：[予備知識・資料集の情報](../reference#javascript)
+* その他の情報：[予備知識・資料集の情報](https://tutorial.chirimen.org/reference)
 
 ## javascriptコード・ライブラリの読み込み
 
@@ -21,7 +21,7 @@ Raspberry Pi Zero版以外のCHIRIMENはプログラムの起点はHTMLファイ
 ### Node.js (CHIRIMEN Raspberry Pi Zero版)
 Raspberry Pi Zero版はプログラムの起点が自分が作ったjavascriptコード自体になります。ブラウザの代わりに[Node.js](https://ja.wikipedia.org/wiki/Node.js)というjavascriptコードだけを解釈するソフト（javascript [インタープリタ](https://ja.wikipedia.org/wiki/%E3%82%A4%E3%83%B3%E3%82%BF%E3%83%97%E3%83%AA%E3%82%BF)）にコードを読み込ませて実行します。
 
-CHIRIMEN環境のために必要なライブラリや、[I2Cデバイスのドライバ](#WebI2Cとデバイスドライバ)(後述)は次のECMA Script Moduleという仕組みを使って読み込みます。
+CHIRIMEN環境のために必要なライブラリや、[I2Cデバイスのドライバ](./i2c.html#webi2cとデバイスドライバ)(後述)は次のECMA Script Moduleという仕組みを使って読み込みます。
 
 <hr class="page-wrap" />
 
@@ -38,7 +38,7 @@ CHIRIMEN環境のために必要なライブラリや、[I2Cデバイスのド�
 ## 非同期処理
 
 物理デバイス制御やネットワーク通信などでは、応答待ち中にブラウザが停止しないよう非同期処理を使う必要があります。
-本チュートリアルではこれを [async 関数](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/async_function) で記述しています。async 関数による非同期処理に慣れていない人は、[こちらの資料「非同期処理 (async await 版)」](../js/async.md) も参考にしてください。非同期処理についてより詳しくは [JS Primer の非同期処理説明ページ](https://jsprimer.net/basic/async/) をご覧ください。
+本チュートリアルではこれを [async 関数](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/async_function) で記述しています。async 関数による非同期処理に慣れていない人は、[こちらの資料「非同期処理 (async await 版)」](https://tutorial.chirimen.org/js/async) も参考にしてください。非同期処理についてより詳しくは [JS Primer の非同期処理説明ページ](https://jsprimer.net/basic/async/) をご覧ください。
 
 非同期処理を使いこなすのは難しいですが、本チュートリアルでは次のルールでコードを書けば大丈夫です:
 
@@ -57,9 +57,9 @@ CHIRIMEN環境のために必要なライブラリや、[I2Cデバイスのド�
 ## 開発環境
 ### GitHub
 
-* [予備知識・資料集を参照ください](../reference#github-)
+* [予備知識・資料集を参照ください](https://tutorial.chirimen.org/reference#github-)
 
 ### CodeSandbox
 
-* [予備知識・資料集を参照ください](../reference#github-)
+* [予備知識・資料集を参照ください](https://tutorial.chirimen.org/reference#github-)
 * ![CodeSandbox画面](../../pizero/imgs/RC_CSB.svg)
