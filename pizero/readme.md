@@ -361,7 +361,7 @@ SHT30は温度に加えて湿度も測定できるI2C接続の多機能センサ
 ### I2Cセンサー(SHT30)が認識されていることを確認する
 
 * CHIRIMEN Panelの```[i2c detect]```ボタンを押すと、[SHT30のI2Cアドレス](https://strawberry-linux.com/pub/Sensirion_Humidity_SHT3x_DIS_Datasheet_V3_J.pdf)　0x**44**が表示されていればうまく接続されています。
-  * [ic2 detectとは](../chirimenGeneric/#b-i2cdetect)
+  * [i2c detectとは](../chirimenGeneric/#b-i2cdetect)
 
 <pre>
      0  1  2  3  4  5  6  7  8  9  a  b  c  d  e  f
@@ -414,7 +414,7 @@ SHT30は温度に加えて湿度も測定できるI2C接続の多機能センサ
 ### I2Cセンサーが認識されていることを確認する
 
 * CHIRIMEN Panelの```[i2c detect]```ボタンを押すと、[ADT7410のI2Cアドレス](https://akizukidenshi.com/download/ds/akizuki/AE-ADT7410_aw.pdf)　0x**48**が表示されていればうまく接続されています。
-  * [ic2 detectとは](https://tutorial.chirimen.org/ty51822r3/i2cdetect)
+  * [i2c detectとは](https://tutorial.chirimen.org/ty51822r3/i2cdetect)
 
 <pre>
      0  1  2  3  4  5  6  7  8  9  a  b  c  d  e  f
