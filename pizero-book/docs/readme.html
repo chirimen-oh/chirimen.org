@@ -2,18 +2,13 @@
 <html lang="ja">
   <head>
     <meta charset="utf-8">
-    <title>概要</title>
+    <title>CHIRIMEN Raspberry Pi Zero版 の準備</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="../themes/packages/@vivliostyle/theme-techbook/theme.css">
   </head>
   <body>
-    <section class="level1" aria-labelledby="概要">
-      <h1 id="概要">概要</h1>
-      <p>CHIRIMEN Raspberry Pi Zero版 を用いたIoT実習資料です。</p>
-      <p><a href="pizeronodejs.md">pizeronodejs.md</a>の内容をもとに、Web Serial RPiZero Terminalを使うことで操作を簡単化し、更にプログラム作法をECMA Script Moduleにあわせています。</p>
-    </section>
-    <section class="level1" aria-labelledby="準備">
-      <h1 id="準備">準備</h1>
+    <section class="level1" aria-labelledby="chirimen-raspberry-pi-zero版-の準備">
+      <h1 id="chirimen-raspberry-pi-zero版-の準備">CHIRIMEN Raspberry Pi Zero版 の準備</h1>
       <section class="level2" aria-labelledby="ステップ０-物品準備pcをwifiに接続">
         <h2 id="ステップ０-物品準備pcをwifiに接続">ステップ０ (物品準備、PCをWiFiに接続)</h2>
         <section class="level3" aria-labelledby="必要な物品リスト">
@@ -313,6 +308,7 @@
           <li>ターミナルウィンドの右側(ファイルマネージャ)に hello.jsが出現していることを確認します</li>
           <li>エディタウィンドを閉じます</li>
         </ul>
+        <hr class="page-wrap">
       </section>
       <section class="level2" aria-labelledby="実行する">
         <h2 id="実行する">実行する</h2>
@@ -334,85 +330,12 @@
         <hr class="page-wrap">
       </section>
     </section>
-    <section class="level1" aria-labelledby="raspberry-pi-について">
-      <h1 id="raspberry-pi-について">Raspberry Pi について</h1>
-      <ul>
-        <li>教育・学習用として設計されたシングルボードコンピュータ<span class="footnote"><a href="https://elchika.com/dic/%E3%82%B7%E3%83%B3%E3%82%B0%E3%83%AB%E3%83%9C%E3%83%BC%E3%83%89%E3%82%B3%E3%83%B3%E3%83%94%E3%83%A5%E3%83%BC%E3%82%BF/">https://elchika.com/dic/シングルボードコンピュータ/</a></span></li>
-        <li>Linuxが動作するシングルボードコンピュータとして、安価でとても高いシェアを持ち世界中で容易に入手できる</li>
-        <li>今回使用するRaspberry Pi ZeroWは、その中でも特に安価(<a href="https://www.switch-science.com/catalog/3200/">2000円以下</a>)で小型・低消費電力の機種、HDMI出力はあるもののブラウザを動かすだけの処理能力がありませんが、IoTのエッジデバイス（センサーやアクチュエータが載ったデバイスでディスプレイはあるとしても簡易のもの）には適しています。
-          <ul>
-            <li>フルセットのブラウザが内蔵されたデバイスを作りたい場合は<a href="../raspi/">CHIRIMEN Raspberry Pi版</a>が使用できます。</li>
-            <li>インターネットを経由してPCやスマホのブラウザから遠隔操作するシステムは　このPi ZeroW版でつくれます。<a href="#iot">IoTの章</a>まで進めましょう。</li>
-          </ul>
-        </li>
-      </ul>
-      <section class="level2" aria-labelledby="raspberry-pi-zeroのピン配列">
-        <h2 id="raspberry-pi-zeroのピン配列">Raspberry Pi Zeroのピン配列</h2>
-        <p>GPIO, 電源, GND, I2C信号線などのピン配列を記載します。</p>
-        <ul>
-          <li>白い文字で書かれたピンだけが使えます</li>
-          <li>GND、3.3V、5Vはそれぞれ電源とグランドです</li>
-          <li>数字 + PD||PUと書かれているピンはGPIO端子(詳細は次章)
-            <ul>
-              <li>PD:プルダウン, PU:プルアップ</li>
-            </ul>
-          </li>
-          <li>SCL, SDAはI2Cインターフェースのピンです(詳細は次章)</li>
-        </ul>
-        <hr class="page-wrap">
-        <p>
-          <img src="https://chirimen.org/PiZeroWebSerialConsole/wallpaperS.png" alt="Raspberry Pi Pinout">
-        </p>
-        <hr class="page-wrap">
-      </section>
-    </section>
-    <section class="level1" aria-labelledby="chirimen-について">
-      <h1 id="chirimen-について">CHIRIMEN について</h1>
-      <ul>
-        <li><a href="../chirimenGeneric/#chirimen">こちらを参照ください</a></li>
-      </ul>
-      <section class="level2" aria-labelledby="chirimen-raspberry-pi-zero版について">
-        <h2 id="chirimen-raspberry-pi-zero版について">CHIRIMEN Raspberry Pi Zero版について</h2>
-        <ul>
-          <li>PiZero上ではWeb Browserを動かさない。</li>
-          <li>Node.jsというJavaScriptインタープリターだけが動く
-            <ul>
-              <li>ブラウザの機能のうち一部だけがPiZero上で使える
-                <ul>
-                  <li>プログラミング言語 ～ JavaScript</li>
-                  <li>画面表示やGUIに関わらないAPI</li>
-                  <li>通信プロトコル</li>
-                </ul>
-              </li>
-              <li>使えないのはブラウザを使った画面表示やGUI</li>
-            </ul>
-          </li>
-          <li>ブラウザを使った画面やGUIは
-            <ul>
-              <li>ネットを介してスマホやPCからコントロール ⇒ これが代表的にIoTと呼ばれるデザインパターン
-                <ul>
-                  <li>このとき、Raspberry Pi Zeroは、IoTエッジデバイスとして動作</li>
-                </ul>
-              </li>
-            </ul>
-          </li>
-        </ul>
-      </section>
-    </section>
-    <section class="level1" aria-labelledby="javascript-の基礎">
-      <h1 id="javascript-の基礎">JavaScript の基礎</h1>
-      <ul>
-        <li><a href="../chirimenGeneric/#javascript-">こちらを参照してください</a></li>
-        <li><a href="../chirimenGeneric/#section-3">非同期処理 async/await</a>を多用します。</li>
-      </ul>
-      <hr class="page-wrap">
-    </section>
     <section class="level1" aria-labelledby="gpioを試す">
       <h1 id="gpioを試す">GPIOを試す</h1>
       <section class="level2" aria-labelledby="gpioを理解する">
         <h2 id="gpioを理解する">GPIOを理解する</h2>
         <ul>
-          <li><a href="../chirimenGeneric/#gpio">GPIOとは？</a></li>
+          <li><a href="./gpio.md">GPIOとは？</a></li>
         </ul>
       </section>
       <section class="level2" aria-labelledby="gpio出力">
@@ -561,7 +484,7 @@
       <section class="level2" aria-labelledby="i2cを理解する">
         <h2 id="i2cを理解する">I2Cを理解する</h2>
         <ul>
-          <li><a href="../chirimenGeneric/#i2c">I2Cとは？</a></li>
+          <li><a href="./i2c.md">I2Cとは？</a></li>
         </ul>
       </section>
       <section class="level2" aria-labelledby="sht30編">
@@ -811,7 +734,6 @@ import {RelayServer} from "./RelayServer.js";</code></pre>
                 </ul>
               </li>
             </ul>
-            <hr class="page-wrap">
           </section>
           <section class="level4" aria-labelledby="自分専用チャンネルで制御">
             <h4 id="自分専用チャンネルで制御">自分専用チャンネルで制御</h4>
@@ -878,69 +800,6 @@ import {RelayServer} from "./RelayServer.js";</code></pre>
         <li>
           <p><em>Note: 常駐化のツールとしては、他にもsystemd service unit, openrc, cron, pm2, forever 等があります。Webでそれぞれの特徴を調べて用途に合ったものを選択して設定しても良いでしょう。</em></p>
         </li>
-      </ul>
-    </section>
-    <section class="level1" aria-labelledby="予備知識">
-      <h1 id="予備知識">予備知識</h1>
-      <p>CHIRIMEN for Raspberry Pi を利用するに際して、知っておくと良い予備知識やツールの使い方が学べるドキュメントです。</p>
-      <ul>
-        <li><a href="https://github.com/webiotmakers/github-handson">GitHub ハンズオン</a>
-          <ul>
-            <li>GitHub の基本的な使い方の分かるハンズオン資料です。</li>
-          </ul>
-        </li>
-        <li><a href="https://csb-jp.github.io/">CodeSandbox ガイド</a>
-          <ul>
-            <li>ブラウザ上で開発する CodeSandbox の使い方を確認しましょう。</li>
-          </ul>
-        </li>
-        <li><a href="/js/">JavaScript 初学者向け資料集</a>
-          <ul>
-            <li>JavaScript 1 Day 講習資料、JavaScript 本格入門書、チートシートなどはこちら</li>
-          </ul>
-        </li>
-      </ul>
-      <p>その他、電子工作など一般的な知識は <a href="https://tutorial.chirimen.org/reference">予備知識・資料集</a> や、<a href="https://tutorial.chirimen.org/chirimengeneric/">共通資料集</a>を参照してください。</p>
-      <hr class="page-wrap">
-    </section>
-    <section class="level1" aria-labelledby="chirimen-ブラウザー版との差異">
-      <h1 id="chirimen-ブラウザー版との差異">CHIRIMEN ブラウザー版との差異</h1>
-      <table>
-        <thead>
-          <tr>
-            <th>CHIRIMEN ブラウザー版</th>
-            <th>Node.js</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>ライブラリ、ドライバーはhtmlで読み込む</td>
-            <td>jsの中で直接読み込む</td>
-          </tr>
-          <tr>
-            <td><code>&#x3C;script src="polyfill.js">&#x3C;/script ></code></td>
-            <td><code>import {requestGPIOAccess} from "./node_modules/node-web-gpio/dist/index.js";</code><br><code>import {requestI2CAccess} from "./node_modules/node-web-i2c/index.js";</code></td>
-          </tr>
-          <tr>
-            <td><code>&#x3C;script src="..../adt7410.js">&#x3C;/script ></code></td>
-            <td><code>import ADT7410 from "@chirimen/adt7410";</code></td>
-          </tr>
-          <tr>
-            <td>ー</td>
-            <td>Sleep関数を宣言する<br><code>const sleep = msec => new Promise(resolve => setTimeout(resolve, msec));</code></td>
-          </tr>
-        </tbody>
-      </table>
-    </section>
-    <section class="level1" aria-labelledby="chirimen環境の任意のディレクトリへのセットアップ">
-      <h1 id="chirimen環境の任意のディレクトリへのセットアップ">CHIRIMEN環境の任意のディレクトリへのセットアップ</h1>
-      <p>以下のコマンド手順で~/myAppディレクトリ以外にも設定できます。</p>
-      <ul>
-        <li><code>mkdir [自分用の作業ディレクトリ]</code> (<a href="https://atmarkit.itmedia.co.jp/ait/articles/1606/07/news015.html">mkdir</a> コマンドとは)</li>
-        <li><code>cd [自分用の作業ディレクトリ]</code> (<a href="https://atmarkit.itmedia.co.jp/ait/articles/1712/14/news021.html">cd</a>コマンドとは)</li>
-        <li><code>wget https://tutorial.chirimen.org/pizero/package.json</code> (<a href="https://atmarkit.itmedia.co.jp/ait/articles/1606/20/news024.html">wget</a>コマンドとは)</li>
-        <li><code>wget https://chirimen.org/remote-connection/js/beta/RelayServer.js</code> (<a href="https://chirimen.org/remote-connection/">RelayServer.js</a>を使う場合)</li>
-        <li><code>npm install</code> (<a href="https://atmarkit.itmedia.co.jp/ait/articles/1606/17/news030.html">npm</a>とは)</li>
       </ul>
     </section>
   </body>

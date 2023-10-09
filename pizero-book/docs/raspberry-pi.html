@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8">
+    <title>Raspberry Pi について</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../themes/packages/@vivliostyle/theme-techbook/theme.css">
+  </head>
+  <body>
+    <section class="level1" aria-labelledby="raspberry-pi-について">
+      <h1 id="raspberry-pi-について">Raspberry Pi について</h1>
+      <ul>
+        <li>教育・学習用として設計されたシングルボードコンピュータ<span class="footnote"><a href="https://elchika.com/dic/%E3%82%B7%E3%83%B3%E3%82%B0%E3%83%AB%E3%83%9C%E3%83%BC%E3%83%89%E3%82%B3%E3%83%B3%E3%83%94%E3%83%A5%E3%83%BC%E3%82%BF/">https://elchika.com/dic/シングルボードコンピュータ/</a></span></li>
+        <li>Linuxが動作するシングルボードコンピュータとして、安価でとても高いシェアを持ち世界中で容易に入手できる</li>
+        <li>今回使用するRaspberry Pi ZeroWは、その中でも特に安価(<a href="https://www.switch-science.com/catalog/3200/">2000円以下</a>)で小型・低消費電力の機種、HDMI出力はあるもののブラウザを動かすだけの処理能力がありませんが、IoTのエッジデバイス（センサーやアクチュエータが載ったデバイスでディスプレイはあるとしても簡易のもの）には適しています。
+          <ul>
+            <li>フルセットのブラウザが内蔵されたデバイスを作りたい場合は<a href="../raspi/">CHIRIMEN Raspberry Pi版</a>が使用できます。</li>
+            <li>インターネットを経由してPCやスマホのブラウザから遠隔操作するシステムは　このPi ZeroW版でつくれます。<a href="./iot.md">IoTの章</a>まで進めましょう。</li>
+          </ul>
+        </li>
+      </ul>
+      <section class="level2" aria-labelledby="raspberry-pi-zeroのピン配列">
+        <h2 id="raspberry-pi-zeroのピン配列">Raspberry Pi Zeroのピン配列</h2>
+        <p>GPIO, 電源, GND, I2C信号線などのピン配列を記載します。</p>
+        <ul>
+          <li>白い文字で書かれたピンだけが使えます</li>
+          <li>GND、3.3V、5Vはそれぞれ電源とグランドです</li>
+          <li>数字 + PD||PUと書かれているピンはGPIO端子(詳細は次章)
+            <ul>
+              <li>PD:プルダウン, PU:プルアップ</li>
+            </ul>
+          </li>
+          <li>SCL, SDAはI2Cインターフェースのピンです(詳細は次章)</li>
+        </ul>
+        <figure>
+          <img src="https://chirimen.org/PiZeroWebSerialConsole/wallpaperS.png" alt="Raspberry Pi Pinout" height="330">
+          <figcaption aria-hidden="true">Raspberry Pi Pinout</figcaption>
+        </figure>
+      </section>
+    </section>
+  </body>
+</html>
