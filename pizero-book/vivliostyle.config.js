@@ -18,8 +18,7 @@ module.exports = {
     './docs/gpio.md',
     './docs/i2c.md',
     './docs/iot.md',
-    // './docs/chirimenGeneric.md',
-    './docs/parts-list.md',
+    './docs/device-list.md',
     // {
     //   path: 'epigraph.md',
     //   title: 'Epigraph', // title can be overwritten (entry > file),
