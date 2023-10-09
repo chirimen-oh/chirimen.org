@@ -120,10 +120,10 @@ PiZero自体はディスプレイやキーボードを接続する必要はあ�
 
 PiZero とパーツを使って下の図の通りに配線します。
 * [LEDの極性に注意！](https://tutorial.chirimen.org/raspi/hellorealworld#section-1)
-  * [LEDの説明](./document.html#led)
+  * LEDの説明<span class="footnote">14.6. LED 参照</span>
 * [ブレッドボードの使い方](https://shop.sunhayato.co.jp/blogs/problem-solving/breadboard) (サンハヤト社)
-* [抵抗値の読み方](./document.html#抵抗値の読み方)
-* [その他、配線の基礎知識](./document.html#電子工作)
+* 抵抗値の読み方<span class="footnote">14.8. 抵抗値の読み方参照</span>
+* その他、配線の基礎知識<span class="footnote">14.3. 電子工作参照</span>
 
 
 **注意**
@@ -203,28 +203,28 @@ blink();
 # 5. GPIOを試す
 
 ## 5.1. GPIOを理解する
-* [GPIOとは？](./gpio.html)
+* GPIOとは？<span class="footnote">11.1. GPIOとは参照</span>
 
 ## 5.2. GPIO出力
 
 GPIOの出力はLチカで実験済みですね。そこで今回はモーターを動かしてみましょう。MOSFETを使った回路図は以下のようになります。
 
-![GPIO Motor](../../pizero/esm-examples/hello-real-world/PiZero_gpio0Motor.png){height=200}
+![GPIO Motor](../../pizero/esm-examples/hello-real-world/PiZero_gpio0Motor.png){height=190}
 
 コードはLチカと全く同じです。
 
 ### 5.2.1. 回路について
-* [MOSFETを使った大電力制御](./document.html#mosfet-とは)
+* MOSFETを使った大電力制御<span class="footnote">14.10. MOSFET とは参照</span>
 
 ### 5.2.2. コードを読む
 * 前提：CHIRIMEN Rasoberryu Pi ZeroはNode.jsをプログラム実行環境（インタープリタ）として使っています。
-  * [Node.jsについて](./javascript.html#javascriptコードライブラリの読み込み)
+  * Node.jsについて<span class="footnote">10.2.2. Node.js (CHIRIMEN Raspberry Pi Zero版)参照</span>
 * ターミナルウィンドの右側のファイルマネージャでhello.js⇒表示 を選び、ソースコードを読んでみましょう
-* WebGPIOライブラリを読み込み ([JavaScript Module](./javascript.html#javascript)仕様に従って)
+* WebGPIOライブラリを読み込み (JavaScript Module<span class="footnote">10.2.3. javascript Module (ECMA Script Module)参照</span>仕様に従って)
 　`import {requestGPIOAccess} from "./node_modules/node-web-gpio/dist/index.js";`
-  * [JavaScript module](./javascript.html#javascript) に基づいてWebGPIOライブラリを読み込みます。これでWeb GPIO APIが使えるようになりました。
-* [GPIOポートの初期化処理](./gpio.html#gpioポートの初期化)
-* [GPIOPortの出力処理](./gpio.html#gpioport-の出力処理)
+  * JavaScript module<span class="footnote">10.2.3. javascript Module (ECMA Script Module)参照</span>に基づいてWebGPIOライブラリを読み込みます。これでWeb GPIO APIが使えるようになりました。
+* GPIOポートの初期化処理<span class="footnote">11.2. GPIOポートの初期化参照</span>
+* GPIOPortの出力処理理<span class="footnote">11.3. GPIOPort の出力処理参照</span>
 
 <hr class="page-wrap" />
 
@@ -253,9 +253,9 @@ GPIO端子の**入力が変化したら関数を実行**という機能によっ
 * ターミナルウィンドの右側のファイルマネージャでmain-gpio-onchange.js⇒表示 を選び、ソースコードを読んでみましょう
 * WebGPIOライブラリを読み込み
 　`import {requestGPIOAccess} from "./node_modules/node-web-gpio/dist/index.js";`
-  * [JavaScript module](./javascript.html#javascript) に基づいてWebGPIOライブラリを読み込みます。これでWeb GPIO APIが使えるようになりました。
-* [GPIOポートの初期化処理を行う](./gpio.html#gpioポートの初期化)
-* [onchangeによる入力処理](./gpio.html#onchange編)
+  * JavaScript module<span class="footnote">10.2.3. javascript Module (ECMA Script Module)参照</span>に基づいてWebGPIOライブラリを読み込みます。これでWeb GPIO APIが使えるようになりました。
+* GPIOポートの初期化処理を行う<span class="footnote">11.2. GPIOポートの初期化参照参照</span>
+* onchangeによる入力処理<span class="footnote">11.4.1. onchange編参照</span>
 
 <hr class="page-wrap" />
 
@@ -282,9 +282,9 @@ GPIO端子の**入力が変化したら関数を実行**という機能によっ
 * ターミナルウィンドの右側のファイルマネージャでmain-gpio-polling.js⇒表示 を選び、ソースコードを読んでみましょう
 * WebGPIOライブラリを読み込み
 　`import {requestGPIOAccess} from "./node_modules/node-web-gpio/dist/index.js";`
-  * [JavaScript module](./javascript.html#javascript) に基づいてWebGPIOライブラリを読み込みます。これでWeb GPIO APIが使えるようになりました。
-* [GPIOポートの初期化処理を行う](./gpio.html#gpioポートの初期化)
-* [単純入力＋ポーリングによる入力処理](./gpio.html#単純入力ポーリング)
+  * JavaScript module<span class="footnote">10.2.3. javascript Module (ECMA Script Module)参照</span>に基づいてWebGPIOライブラリを読み込みます。これでWeb GPIO APIが使えるようになりました。
+* GPIOポートの初期化処理を行う<span class="footnote">11.2. GPIOポートの初期化参照</span>
+* 単純入力＋ポーリングによる入力処理<span class="footnote">11.4.2. 単純入力＋ポーリング参照</span>
 
 <hr class="page-wrap" />
 
@@ -292,12 +292,12 @@ GPIO端子の**入力が変化したら関数を実行**という機能によっ
 
 ## 6.1. I2Cを理解する
 
-* [I2Cとは？](./i2c.html)
+* I2Cとは？<span class="footnote">12. I2C参照</span>
 
 ## 6.2. SHT30編
 
 SHT30は温度に加えて湿度も測定できるI2C接続の多機能センサーです。SHT31もほぼ同等に使えます。(SHT31のほうが精度が高い)
-* [SHT30/SHT31について](./i2c.html#i2cデバイスの実例i2c-温湿度センサー-sht30-sht31)
+* SHT30/SHT31について<span class="footnote">12.4.1. SHT30, SHT31について参照</span>
 
 * ターミナルウィンドの```[CHIRIMEN Panel]```ボタンを押す
 * 出現したCHIRIMEN Panelの```[Get Examples]```ボタンを押す
@@ -317,7 +317,7 @@ SHT30は温度に加えて湿度も測定できるI2C接続の多機能センサ
 ### 6.2.1. I2Cセンサー(SHT30)が認識されていることを確認する
 
 * CHIRIMEN Panelの```[i2c detect]```ボタンを押すと、[SHT30のI2Cアドレス](https://strawberry-linux.com/pub/Sensirion_Humidity_SHT3x_DIS_Datasheet_V3_J.pdf)　0x**44**が表示されていればうまく接続されています。
-  * [ic2 detectとは](./i2c.html#b-i2cdetectで接続がうまくいったか確認する)
+  * i2c detectとは<span class="footnote">12.5. i2cdetectで接続がうまくいったか確認する参照</span>
 
 <pre>
      0  1  2  3  4  5  6  7  8  9  a  b  c  d  e  f
@@ -345,8 +345,8 @@ SHT30は温度に加えて湿度も測定できるI2C接続の多機能センサ
 
 　`import {requestI2CAccess} from "./node_modules/node-web-i2c/index.js";`
   `import SHT30 from "@chirimen/sht30";`
-  * [JavaScript module](./javascript.html#javascript) に基づいてWebI2Cライブラリを読み込みます。
-* [I2C 温湿度センサー (SHT30, SHT31)の初期化と使用](./i2c.html#i2c-温湿度センサー-sht30-sht31の使用例)
+  * JavaScript module<span class="footnote">10.2.3. javascript Module (ECMA Script Module)参照</span>に基づいてWebI2Cライブラリを読み込みます。
+* I2C 温湿度センサー (SHT30, SHT31)の初期化と使用<span class="footnote">12.6.2. I2C 温湿度センサー (SHT30, SHT31)の使用例参照</span>
 
 <hr class="page-wrap" />
 
@@ -404,10 +404,10 @@ SHT30は温度に加えて湿度も測定できるI2C接続の多機能センサ
 IoTは、制御されるデバイス（上図ではCHIRIMEN PiZeroW)と、利用者端末（上図ではWebApp PC-side）に加えて、これらの間でデータを中継するサーバ（クラウド）が必要になります。
 今回はWeb標準技術であるWebSocketプロトコルを中継するサーバを用いてLEDを備えたCHIRIMENデバイスとスマホやPCのWebAppを繋いだIoTシステムを作ります。
 
-Note: [モーター制御の回路](./#gpio-2)を組めば、そのまま遠隔モーターコントロールができます
+Note: モーター制御の回路<span class="footnote">5.2. GPIO出力参照</span> を組めば、そのまま遠隔モーターコントロールができます
 
-- [IoT](./iot.html)
-- [WebSoeketとRelayServer](./iot.html#websocketとpubsub-services)
+- IoT<span class="footnote">13. IoT 参照</span> 
+- WebSoeketとRelayServer<span class="footnote">13.1. webSocketとpub/sub services 参照</span> 
 
 ### 7.1.1. 配線する
 
@@ -436,7 +436,7 @@ Note: [モーター制御の回路](./#gpio-2)を組めば、そのまま遠隔�
   * [CodeSandbox](https://csb-jp.github.io/)というオンラインのWebApp開発環境のウィンドが開き、PC側のコードが表示されています。編集もできます。
   * また、右側（もしくは右下）のフレームにはLEDを遠隔コントロールするためのwebAppが既に実行されています。
   * webAppを使ってLEDが制御できることを確かめてみましょう。
-![Code Sandbox Image](../../pizero/imgs/RC_CSB.svg){height=260}
+![Code Sandbox Image](../../pizero/imgs/RC_CSB.svg){height=240}
 
 <hr class="page-wrap" />
 
@@ -444,26 +444,26 @@ Note: [モーター制御の回路](./#gpio-2)を組めば、そのまま遠隔�
 #### 7.1.4.1. Raspberry Pi Zero側コード
 * ターミナルウィンドの右側のファイルマネージャでmain-remote_gpio_led.js⇒表示 を選び、ソースコードを読んでみましょう
 * これまで通りWebGPIOライブラリの読み込み
-* [relayServer.js](./iot.html#relayserverjs)ライブラリの読み込み
+* relayServer.js<span class="footnote">13.1.2.2. relayServer.js 参照</span> ライブラリの読み込み
   * Node.jsではrelayServerライブラリに加えて、webSocketライブラリの読み込みが必要です。
     ```
     import nodeWebSocketLib from "websocket";
     import {RelayServer} from "./RelayServer.js";
     ```
-* [relayServer.js](./iot.html#relayserverjs)を使って、PCからの操作指示を受信
-  * [初期化](https://tutorial.chirimen.org/chirimenGeneric/#section-16)
-  * [受信処理](https://tutorial.chirimen.org/chirimenGeneric/#section-18)(コールバック関数の設定)
-* 受信した内容をもとに[GPIO出力を操作](./gpio.html#gpioport-の出力処理)してLEDを点灯・消灯
+* relayServer.js<span class="footnote">13.1. webSocketとpub/sub services 参照</span> を使って、PCからの操作指示を受信
+  * 初期化<span class="footnote">13.1.2.3.1. 初期化（受信側、送信側共通の処理参照</span>
+  * 受信処理<span class="footnote">13.1.2.3.2. チャンネルの作成参照</span>(コールバック関数の設定)
+* 受信した内容をもとにGPIO出力を操作<span class="footnote">11.3. GPIOPort の出力処理参照</span>してLEDを点灯・消灯
 
 #### 7.1.4.2. PC側コード
 * CodeSandboxで開いているPC.jsを見てみましょう
-* [JavaScript Module](./javascript.html#javascript)仕様に基づいてrelayServer.jsを読み込み
+* JavaScript Module<span class="footnote">10.2.3. javascript Module (ECMA Script Module)参照</span>仕様に基づいてrelayServer.jsを読み込み
   ```
   import {RelayServer} from "https://chirimen.org/remote-connection/js/beta/RelayServer.js";
   ```
-* [relayServer.js](./iot.html#relayserverjs)を使い、UIを通してユーザからの操作指示を送信
-  * [初期化](https://tutorial.chirimen.org/chirimenGeneric/#section-16)
-  * [送信処理](https://tutorial.chirimen.org/chirimenGeneric/#section-17)～(UI(ボタン)に設置したコールバック関数をもとに送信
+* relayServer.js<span class="footnote">13.1. webSocketとpub/sub services 参照</span> を使い、UIを通してユーザからの操作指示を送信
+  * 初期化<span class="footnote">13.1.2.3.1. 初期化（受信側、送信側共通の処理参照</span> 
+  * 送信処理<span class="footnote">13.1.2.3.3. データの送信参照</span> ～UI(ボタン)に設置したコールバック関数をもとに送信
 
 #### 7.1.4.3. 自分専用チャンネルで制御
 
