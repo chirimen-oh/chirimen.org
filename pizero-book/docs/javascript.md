@@ -21,7 +21,7 @@ Raspberry Pi Zero版以外のCHIRIMENはプログラムの起点はHTMLファイ
 ### 10.2.2. Node.js (CHIRIMEN Raspberry Pi Zero版)
 Raspberry Pi Zero版はプログラムの起点が自分が作ったjavascriptコード自体になります。ブラウザの代わりに[Node.js](https://ja.wikipedia.org/wiki/Node.js)というjavascriptコードだけを解釈するソフト（javascript [インタープリタ](https://ja.wikipedia.org/wiki/%E3%82%A4%E3%83%B3%E3%82%BF%E3%83%97%E3%83%AA%E3%82%BF)）にコードを読み込ませて実行します。
 
-CHIRIMEN環境のために必要なライブラリや、[I2Cデバイスのドライバ](./i2c.html#webi2cとデバイスドライバ)(後述)は次のECMA Script Moduleという仕組みを使って読み込みます。
+CHIRIMEN環境のために必要なライブラリや、I2Cデバイスのドライバ<span class="footnote">12.6. WebI2Cとデバイスドライバ参照</span>(後述)は次のECMA Script Moduleという仕組みを使って読み込みます。
 
 <hr class="page-wrap" />
 
