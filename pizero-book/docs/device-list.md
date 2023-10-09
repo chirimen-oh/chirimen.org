@@ -4,7 +4,7 @@
 
 こちらに掲載がないデバイスについても、デジタル GPIO デバイスであればそのまま、アナログ GPIO デバイスであれば ADC を経由で簡単に利用頂けます (I2C デバイスについてはドライバーの用意も必要です)。
 
-Raspberry Pi などの CHIRIMEN の動作環境とそれぞれのチュートリアルは <span class="footnote">1. CHIRIMEN について</span> をご覧ください。
+Raspberry Pi などの CHIRIMEN の動作環境とそれぞれのチュートリアルは <span class="footnote">1. CHIRIMEN について参照</span> をご覧ください。
 
 ## 15.1. I2C センサー
 
