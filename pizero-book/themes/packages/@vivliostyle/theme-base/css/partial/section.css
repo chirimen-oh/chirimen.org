@@ -23,9 +23,9 @@
   --vs-section--h1-marker-display: inline;
   --vs-section--h1-marker-content: counter(vs-counter-doc) "章 ";
   --vs-section--h2-marker-display: inline;
-  --vs-section--h2-marker-content: counter(vs-counter-doc) "." counter(vs-counter-sections) " ";
+  --vs-section--h2-marker-content: counter(vs-counter-doc) "." counter(vs-counter-sec-h2) " ";
   --vs-section--h3-marker-display: inline;
-  --vs-section--h3-marker-content: counter(vs-counter-doc) "." counter(vs-counter-sections) "." counter(vs-counter-sec-h3) " ";
+  --vs-section--h3-marker-content: counter(vs-counter-doc) "." counter(vs-counter-sec-h2) "." counter(vs-counter-sec-h3) " ";
 }
 
 :lang(ja) {
