@@ -2,13 +2,13 @@
 <html lang="ja">
   <head>
     <meta charset="utf-8">
-    <title>10. JavaScript</title>
+    <title>JavaScript</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="../themes/packages/@vivliostyle/theme-techbook/theme.css">
   </head>
   <body>
-    <section class="level1" aria-labelledby="10-javascript">
-      <h1 id="10-javascript">10. JavaScript</h1>
+    <section class="level1" aria-labelledby="javascript">
+      <h1 id="javascript">JavaScript</h1>
       <p>
         標準化されたプログラミング言語の一種で、ウェブブラウザが代表的な実行環境です(プログラムコードを解釈して動作させるシステム)。CHIRIMENでもRasberry Pi及びmicro:bit版はウェブブラウザを実行環境として使用します。Raspberry Pi Zero版はNode.jsを実行環境として使っています。
         別名としてECMA Scriptと呼ばれることもあります。
@@ -16,17 +16,17 @@
       <ul>
         <li><a href="https://developer.mozilla.org/ja/docs/Web/JavaScript">Mozilla Developer Networkの解説</a></li>
       </ul>
-      <section class="level2" aria-labelledby="101-javascript-の基礎">
-        <h2 id="101-javascript-の基礎">10.1. JavaScript の基礎</h2>
+      <section class="level2" aria-labelledby="javascript-の基礎">
+        <h2 id="javascript-の基礎">JavaScript の基礎</h2>
         <p>JavaScript に慣れていない人は、<a href="https://tutorial.chirimen.org/js/">「JavaScript 初学者向け資料集」</a>を参考にしてください。</p>
         <ul>
           <li>その他の情報：<a href="https://tutorial.chirimen.org/reference">予備知識・資料集の情報</a></li>
         </ul>
       </section>
-      <section class="level2" aria-labelledby="102-javascriptコードライブラリの読み込み">
-        <h2 id="102-javascriptコードライブラリの読み込み">10.2. javascriptコード・ライブラリの読み込み</h2>
-        <section class="level3" aria-labelledby="1021-ウェブアプリhtmlで読み込み">
-          <h3 id="1021-ウェブアプリhtmlで読み込み">10.2.1. ウェブアプリ：HTMLで読み込み</h3>
+      <section class="level2" aria-labelledby="javascriptコードライブラリの読み込み">
+        <h2 id="javascriptコードライブラリの読み込み">javascriptコード・ライブラリの読み込み</h2>
+        <section class="level3" aria-labelledby="ウェブアプリhtmlで読み込み">
+          <h3 id="ウェブアプリhtmlで読み込み">ウェブアプリ：HTMLで読み込み</h3>
           <p>Raspberry Pi Zero版以外のCHIRIMENはプログラムの起点はHTMLファイルです。（<a href="https://ja.wikipedia.org/wiki/%E3%82%A6%E3%82%A7%E3%83%96%E3%82%A2%E3%83%97%E3%83%AA%E3%82%B1%E3%83%BC%E3%82%B7%E3%83%A7%E3%83%B3">ウェブアプリ</a>）ブラウザはまずHTMLファイルを読み込んだうえで、そこに書かれた内容で動きます。したがって作ったコードや必要なライブラリの読み込みは基本的に全てこのHTMLの中で指定します。（なお、javascript Moduleを有効化している場合はjavascriptコードの中でjsライブラリを読み込むことがある）</p>
           <p>
             ポイントは <code>&#x3C;script ...>&#x3C;/script></code> の部分です。
@@ -34,14 +34,14 @@
           </p>
           <p>次の行にある <code>main.js</code> は、JavaScript のプログラム本体です。</p>
         </section>
-        <section class="level3" aria-labelledby="1022-nodejs-chirimen-raspberry-pi-zero版">
-          <h3 id="1022-nodejs-chirimen-raspberry-pi-zero版">10.2.2. Node.js (CHIRIMEN Raspberry Pi Zero版)</h3>
+        <section class="level3" aria-labelledby="nodejs-chirimen-raspberry-pi-zero版">
+          <h3 id="nodejs-chirimen-raspberry-pi-zero版">Node.js (CHIRIMEN Raspberry Pi Zero版)</h3>
           <p>Raspberry Pi Zero版はプログラムの起点が自分が作ったjavascriptコード自体になります。ブラウザの代わりに<a href="https://ja.wikipedia.org/wiki/Node.js">Node.js</a>というjavascriptコードだけを解釈するソフト（javascript <a href="https://ja.wikipedia.org/wiki/%E3%82%A4%E3%83%B3%E3%82%BF%E3%83%97%E3%83%AA%E3%82%BF">インタープリタ</a>）にコードを読み込ませて実行します。</p>
           <p>CHIRIMEN環境のために必要なライブラリや、I2Cデバイスのドライバ<span class="footnote">12.6. WebI2Cとデバイスドライバ参照</span>(後述)は次のECMA Script Moduleという仕組みを使って読み込みます。</p>
           <hr class="page-wrap">
         </section>
-        <section class="level3" aria-labelledby="1023-javascript-module-ecma-script-module">
-          <h3 id="1023-javascript-module-ecma-script-module">10.2.3. javascript Module (ECMA Script Module)</h3>
+        <section class="level3" aria-labelledby="javascript-module-ecma-script-module">
+          <h3 id="javascript-module-ecma-script-module">javascript Module (ECMA Script Module)</h3>
           <ul>
             <li>ウェブアプリでのModule有効化：HTMLのscript要素でjavascriptを読み込むとき、ttype="module"プロパティを設定する。
               <ul>
@@ -60,8 +60,8 @@
           </ul>
         </section>
       </section>
-      <section class="level2" aria-labelledby="103-非同期処理">
-        <h2 id="103-非同期処理">10.3. 非同期処理</h2>
+      <section class="level2" aria-labelledby="非同期処理">
+        <h2 id="非同期処理">非同期処理</h2>
         <p>
           物理デバイス制御やネットワーク通信などでは、応答待ち中にブラウザが停止しないよう非同期処理を使う必要があります。
           本チュートリアルではこれを <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/async_function">async 関数</a> で記述しています。async 関数による非同期処理に慣れていない人は、<a href="https://tutorial.chirimen.org/js/async">こちらの資料「非同期処理 (async await 版)」</a> も参考にしてください。非同期処理についてより詳しくは <a href="https://jsprimer.net/basic/async/">JS Primer の非同期処理説明ページ</a> をご覧ください。
@@ -84,16 +84,16 @@
         <p>ハードウェアを制御するときは基本的に非同期呼び出しをする (その処理を含む関数もまた非同期で呼びす) と決めておけば迷うことなく、コードの実行順序も上から下に見たとおりの順番で実行され読み書きしやすくなります。</p>
         <hr class="page-wrap">
       </section>
-      <section class="level2" aria-labelledby="104-開発環境">
-        <h2 id="104-開発環境">10.4. 開発環境</h2>
-        <section class="level3" aria-labelledby="1041-github">
-          <h3 id="1041-github">10.4.1. GitHub</h3>
+      <section class="level2" aria-labelledby="開発環境">
+        <h2 id="開発環境">開発環境</h2>
+        <section class="level3" aria-labelledby="github">
+          <h3 id="github">GitHub</h3>
           <ul>
             <li><a href="https://tutorial.chirimen.org/reference#github-">予備知識・資料集を参照ください</a></li>
           </ul>
         </section>
-        <section class="level3" aria-labelledby="1042-codesandbox">
-          <h3 id="1042-codesandbox">10.4.2. CodeSandbox</h3>
+        <section class="level3" aria-labelledby="codesandbox">
+          <h3 id="codesandbox">CodeSandbox</h3>
           <ul>
             <li><a href="https://tutorial.chirimen.org/reference#github-">予備知識・資料集を参照ください</a></li>
             <li>

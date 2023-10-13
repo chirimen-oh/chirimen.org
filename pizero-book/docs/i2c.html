@@ -2,15 +2,15 @@
 <html lang="ja">
   <head>
     <meta charset="utf-8">
-    <title>12. I2C</title>
+    <title>I2C</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="../themes/packages/@vivliostyle/theme-techbook/theme.css">
   </head>
   <body>
-    <section class="level1" aria-labelledby="12-i2c">
-      <h1 id="12-i2c">12. I2C</h1>
-      <section class="level2" aria-labelledby="121-i2cの概要">
-        <h2 id="121-i2cの概要">12.1. I2Cの概要</h2>
+    <section class="level1" aria-labelledby="i2c">
+      <h1 id="i2c">I2C</h1>
+      <section class="level2" aria-labelledby="i2cの概要">
+        <h2 id="i2cの概要">I2Cの概要</h2>
         <p><a href="https://ja.wikipedia.org/wiki/I2C">I2C</a> とは 2 線式の同期式シリアル通信インタフェースです。「アイ・スクエア・シー」や「アイ・ ツー・シー」と読みます。I2C では SDA（シリアルデータ）と SCL（シリアルクロック）の 2 本の線で通信を行います。</p>
         <figure>
           <img src="../../raspi/imgs/section2/i2c-bus.png" alt="i2c-bus">
@@ -27,22 +27,22 @@
           <figcaption aria-hidden="true">i2c-bus2</figcaption>
         </figure>
         <p>通信するデバイス同士が同一基板上にない場合には、SDA、SCL の 2 本の通信線に加え電源や GND の線を加えて 4 本のケーブルを用いて接続するのが一般的です。電源電圧はデバイスに応じたものを繋ぐ必要があります。</p>
-        <section class="level3" aria-labelledby="1211-raspberry-piのi2c端子">
-          <h3 id="1211-raspberry-piのi2c端子">12.1.1 Raspberry PiのI2C端子</h3>
+        <section class="level3" aria-labelledby="raspberry-piのi2c端子">
+          <h3 id="raspberry-piのi2c端子">Raspberry PiのI2C端子</h3>
           <p>下図のSCL, SDAがI2C端子です（黄色の端子）</p>
           <figure>
             <img src="../../raspi/imgs/section0/Raspi3PIN.png" alt="Raspi PIN配置図" height="600">
             <figcaption aria-hidden="true">Raspi PIN配置図</figcaption>
           </figure>
         </section>
-        <section class="level3" aria-labelledby="1212-raspverry-pi-zeroのi2c端子">
-          <h3 id="1212-raspverry-pi-zeroのi2c端子">12.1.2. Raspverry Pi ZeroのI2C端子</h3>
+        <section class="level3" aria-labelledby="raspverry-pi-zeroのi2c端子">
+          <h3 id="raspverry-pi-zeroのi2c端子">Raspverry Pi ZeroのI2C端子</h3>
           <p>　Raspberry PiのI2C端子と同じ配列です。</p>
           <hr class="page-wrap">
         </section>
       </section>
-      <section class="level2" aria-labelledby="122-参考-i2c-に関する詳細情報">
-        <h2 id="122-参考-i2c-に関する詳細情報">12.2. 参考: I2C に関する詳細情報</h2>
+      <section class="level2" aria-labelledby="参考-i2c-に関する詳細情報">
+        <h2 id="参考-i2c-に関する詳細情報">参考: I2C に関する詳細情報</h2>
         <p>I2C に関する詳細は下記をご参照ください。</p>
         <ul>
           <li><a href="https://ja.wikipedia.org/wiki/I2C">I2C</a> - Wikipedia</li>
@@ -50,8 +50,8 @@
           <li><a href="http://www.picfun.com/i2cframe.html">I2C の使い方</a>（後閑哲也氏サイト）</li>
         </ul>
       </section>
-      <section class="level2" aria-labelledby="123-ポイント">
-        <h2 id="123-ポイント">12.3. ポイント</h2>
+      <section class="level2" aria-labelledby="ポイント">
+        <h2 id="ポイント">ポイント</h2>
         <p>I2C の概要として下記を押さえておきましょう。</p>
         <ul>
           <li>I2C バスを介して複数のデバイスが繋がる</li>
@@ -61,14 +61,14 @@
           <li>同じ I2C バスに同じ SlaveAddress のデバイスは繋げない</li>
         </ul>
       </section>
-      <section class="level2" aria-labelledby="124-i2cデバイスの実例i2c-温湿度センサー-sht30-sht31">
-        <h2 id="124-i2cデバイスの実例i2c-温湿度センサー-sht30-sht31">12.4. I2Cデバイスの実例：I2C 温湿度センサー (SHT30, SHT31)</h2>
+      <section class="level2" aria-labelledby="i2cデバイスの実例i2c-温湿度センサー-sht30-sht31">
+        <h2 id="i2cデバイスの実例i2c-温湿度センサー-sht30-sht31">I2Cデバイスの実例：I2C 温湿度センサー (SHT30, SHT31)</h2>
         <p>
           I2C に対応したデバイスの実例を見てみましょう。CHIRIMENでは <a href="../partslist#i2c-">Examples</a> にセンサーなど、いくつかの I2C デバイスを使うサンプルコードと Raspi との接続方法を示す回路図が提供されており、SHT30/SHT31も紹介されて
           います。
         </p>
-        <section class="level3" aria-labelledby="1241-sht30-sht31について">
-          <h3 id="1241-sht30-sht31について">12.4.1. SHT30, SHT31について</h3>
+        <section class="level3" aria-labelledby="sht30-sht31について">
+          <h3 id="sht30-sht31について">SHT30, SHT31について</h3>
           <ul>
             <li><a href="http://akizukidenshi.com/catalog/g/gK-12125/">湿度・温度センサ (SHT31)</a> x 1
               <ul>
@@ -79,47 +79,45 @@
           </ul>
           <hr class="page-wrap">
         </section>
-        <section class="level3" aria-labelledby="1242-i2cデバイスモジュールの接続について">
-          <h3 id="1242-i2cデバイスモジュールの接続について">12.4.2. I2Cデバイスモジュールの接続について</h3>
+        <section class="level3" aria-labelledby="i2cデバイスモジュールの接続について">
+          <h3 id="i2cデバイスモジュールの接続について">I2Cデバイスモジュールの接続について</h3>
           <p>I2Cデバイスは一般的に小さなチップ部品です。下の拡大写真で緑で囲んだものがSHT31の本体で 上下に出ている微細な端子を接続して使いますが、微細過ぎてプロトタイピングには向きません。そこでブレッドボードで使いやすい端子に変換したモジュールが販売されています。モジュールには<strong>赤で囲んだように端子名の記載</strong>があります。これを<strong>ホストのコンピュータの端子名と一致させて結線</strong>することでI2Cデバイスが正しく接続されます。(電源端子はVIN,V+,3V,VCCなど別名になっていることがあります)</p>
           <figure>
             <img src="../../microbit/imgs/SHT31ModulePin.jpg" alt="I2Cmodule" height="150">
             <figcaption aria-hidden="true">I2Cmodule</figcaption>
           </figure>
-          <section class="level4" aria-labelledby="12421-注意-配線時のポイント">
-            <h4 id="12421-注意-配線時のポイント">12.4.2.1. 注意: 配線時のポイント</h4>
-            <p>
-              配線の接続先やデバイスの基板の表裏など間違えないように注意してください。
-              配線を間違えると、故障や怪我などの原因になることがあります。おかしいなと思ったら、すぐに外して、配線をきちんと確認しましょう。
-            </p>
+          <section class="level4" aria-labelledby="注意-配線時のポイント">
+            <h4 id="注意-配線時のポイント">注意: 配線時のポイント</h4>
+            <pre class="language-text"><code class="language-text">配線の接続先やデバイスの基板の表裏など間違えないように注意してください。
+配線を間違えると、故障や怪我などの原因になることがあります。おかしいなと思ったら、すぐに外して、配線をきちんと確認しましょう。</code></pre>
           </section>
         </section>
       </section>
-      <section class="level2" aria-labelledby="125-i2cdetectで接続がうまくいったか確認する">
-        <h2 id="125-i2cdetectで接続がうまくいったか確認する">12.5. i2cdetectで接続がうまくいったか確認する</h2>
+      <section class="level2" aria-labelledby="i2cdetectで接続がうまくいったか確認する">
+        <h2 id="i2cdetectで接続がうまくいったか確認する">i2cdetectで接続がうまくいったか確認する</h2>
         <p><code>i2cdetect</code> を使って SlaveAddress を確認し、正しく接続・認識できているか確かめてみましょう。ターミナルを起動して下記コマンドを入力してみてください。</p>
-        <section class="level3" aria-labelledby="1251-コマンドラインから">
-          <h3 id="1251-コマンドラインから">12.5.1. コマンドラインから</h3>
+        <section class="level3" aria-labelledby="コマンドラインから">
+          <h3 id="コマンドラインから">コマンドラインから</h3>
           <pre class="language-sh"><code class="language-sh">i2cdetect -y -r 1</code></pre>
           <p>(microbit版はコマンドラインがないので下記webAppを使いましょう)</p>
         </section>
-        <section class="level3" aria-labelledby="1252-i2cdetect-webapp">
-          <h3 id="1252-i2cdetect-webapp">12.5.2. i2cdetect webApp</h3>
-          <section class="level4" aria-labelledby="12521-raspberry-pi">
-            <h4 id="12521-raspberry-pi">12.5.2.1. Raspberry Pi</h4>
+        <section class="level3" aria-labelledby="i2cdetect-webapp">
+          <h3 id="i2cdetect-webapp">i2cdetect webApp</h3>
+          <section class="level4" aria-labelledby="raspberry-pi">
+            <h4 id="raspberry-pi">Raspberry Pi</h4>
             <p>
               SlaveAddress を確認する i2cdetect には WebI2C(後述) を使って実装したwebApp版もあります。<a href="https://r.chirimen.org/i2cdetect">https://r.chirimen.org/i2cdetect</a> をご利用ください。ただし、WebI2C 版 i2cdetect を利用中は他のペ
               ージから I2C デバイスを操作できません。確認が済んだらタブを閉じるようにしましょう。
             </p>
           </section>
-          <section class="level4" aria-labelledby="12522-raspberry-pizerow">
-            <h4 id="12522-raspberry-pizerow">12.5.2.2. Raspberry PiZeroW</h4>
+          <section class="level4" aria-labelledby="raspberry-pizerow">
+            <h4 id="raspberry-pizerow">Raspberry PiZeroW</h4>
             <p>Raspberry PiZeroWでは、<a href="https://chirimen.org/PiZeroWebSerialConsole/PiZeroWebSerialConsole.html">ターミナルウィンド</a>⇒CHIRIMEN Panel⇒i2c detect　でコマンドラインのショートカットが使えます。</p>
             <hr class="page-wrap">
           </section>
         </section>
-        <section class="level3" aria-labelledby="1253-i2c-detectの結果">
-          <h3 id="1253-i2c-detectの結果">12.5.3. i2c detectの結果</h3>
+        <section class="level3" aria-labelledby="i2c-detectの結果">
+          <h3 id="i2c-detectの結果">i2c detectの結果</h3>
           <p>正しく接続できていれば下記のように表示されるはずです。</p>
           <pre class="language-text"><code class="language-text">$ i2cdetect -y -r 1
      0  1  2  3  4  5  6  7  8  9  a  b  c  d  e  f
@@ -161,8 +159,8 @@
           <p>SHT30 は<code>0x44</code>がデフォルトの SlaveAddress で、ADDR ピンの HIGH/LOW により SlaveAddeess を <code>0x44</code> か <code>0x45</code> に変更できることがわかります。</p>
           <hr class="page-wrap">
         </section>
-        <section class="level3" aria-labelledby="1254-認識されないとき">
-          <h3 id="1254-認識されないとき">12.5.4. 認識されないとき</h3>
+        <section class="level3" aria-labelledby="認識されないとき">
+          <h3 id="認識されないとき">認識されないとき</h3>
           <p>
             試しに I2C デバイスへの電源供給を止めて、認識されないケースをあえて確かめてみます。
             一度 RasPi の 3.3V に接続している線を抜いて、もう一度 <code>i2cdetect -y -r 1</code> を実行してみてください。
@@ -183,20 +181,20 @@
           </p>
         </section>
       </section>
-      <section class="level2" aria-labelledby="126-webi2cとデバイスドライバ">
-        <h2 id="126-webi2cとデバイスドライバ">12.6. WebI2Cとデバイスドライバ</h2>
+      <section class="level2" aria-labelledby="webi2cとデバイスドライバ">
+        <h2 id="webi2cとデバイスドライバ">WebI2Cとデバイスドライバ</h2>
         <p>CHIRIMENでは、GPIOインターフェースをWeb GPIOと呼ぶAPIで使用しました。I2Cインターフェースに接続されたスレーブデバイスは<a href="http://browserobo.github.io/WebI2C">Web I2C API</a>と呼ぶAPIによって使用することができます。</p>
         <p>
           しかしI2CスレーブデバイスはGPIOの先に繋げるデバイスと比べてずっと複雑な機能を持っています。実際にはそれは極小のコンピュータで、I2Cを通しデバイス専用のコマンドやデータを送受信（通信）し、固有の機能を利用します。
           このようなコードは、各デバイスのデータシートをよく読み込んだうえで書くことができます。これはかなり手間のかかる開発ですので簡単にデバイスが使用できるライブラリ(デバイスドライバ)があらかじめ用意されています。
         </p>
-        <section class="level3" aria-labelledby="1261-デバイスドライバが用意されているi2cデバイスのリスト">
-          <h3 id="1261-デバイスドライバが用意されているi2cデバイスのリスト">12.6.1. デバイスドライバが用意されているI2Cデバイスのリスト</h3>
+        <section class="level3" aria-labelledby="デバイスドライバが用意されているi2cデバイスのリスト">
+          <h3 id="デバイスドライバが用意されているi2cデバイスのリスト">デバイスドライバが用意されているI2Cデバイスのリスト</h3>
           <p><a href="../partslist#i2c-">デバイスドライバが用意され簡単に利用できるI2Cデバイスのリスト</a></p>
           <p>よく利用される、30種類ぐらいの比較的安価なデバイス向けのドライバが用意されています。</p>
         </section>
-        <section class="level3" aria-labelledby="1262-i2c-温湿度センサー-sht30-sht31の使用例">
-          <h3 id="1262-i2c-温湿度センサー-sht30-sht31の使用例">12.6.2. I2C 温湿度センサー (SHT30, SHT31)の使用例</h3>
+        <section class="level3" aria-labelledby="i2c-温湿度センサー-sht30-sht31の使用例">
+          <h3 id="i2c-温湿度センサー-sht30-sht31の使用例">I2C 温湿度センサー (SHT30, SHT31)の使用例</h3>
           <p>Raspberry Pi では、index.htmlの中で、Raspberry Pi Zero Wではmain.jsの中で以下のライブラリを読み込んでいます。</p>
           <ul>
             <li>WebI2C APIを使用できるようにするためのライブラリ( Raspberry Pi: <code>polyfill.js</code>, Raspberry Pi Zero W: xxx)です。</li>
@@ -204,8 +202,8 @@
           </ul>
           <p><code>main.js</code> がドライバーライブラリを使ってこのアプリケーションの動作を記述している部分です。</p>
           <hr class="page-wrap">
-          <section class="level4" aria-labelledby="12621-mainjs">
-            <h4 id="12621-mainjs">12.6.2.1. main.js</h4>
+          <section class="level4" aria-labelledby="mainjs">
+            <h4 id="mainjs">main.js</h4>
             <p>次に、<code>main.js</code> の処理の流れを見てみましょう。</p>
             <pre class="language-js"><code class="language-js"><span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
@@ -228,38 +226,38 @@
               ここで温度センサーの情報を定期的に取得し、画面に出力する処理が行われています。
               少し詳し解説してみます。
             </p>
-            <section class="level5" aria-labelledby="126211-await-navigatorrequesti2caccess">
-              <h5 id="126211-await-navigatorrequesti2caccess">12.6.2.1.1. await navigator.requestI2CAccess()</h5>
+            <section class="level5" aria-labelledby="await-navigatorrequesti2caccess">
+              <h5 id="await-navigatorrequesti2caccess">await navigator.requestI2CAccess()</h5>
               <p>Web I2C API を利用するための <strong><code>I2CAccess</code> インタフェースを取得</strong> するための最初の API 呼び出しです。この関数も非同期処理ですので <code>await</code> で処理完了を待機し、その結果正しくインタフェースが取得されたら <code>i2cAccess</code> オブジェクトに保持します。</p>
             </section>
-            <section class="level5" aria-labelledby="126212-i2caccessportsget">
-              <h5 id="126212-i2caccessportsget">12.6.2.1.2. i2cAccess.ports.get()</h5>
+            <section class="level5" aria-labelledby="i2caccessportsget">
+              <h5 id="i2caccessportsget">i2cAccess.ports.get()</h5>
               <p><code>I2CAccess.ports</code> は、利用可能な I2C ポートの一覧です。</p>
               <pre class="language-js"><code class="language-js"><span class="token keyword">const</span> port <span class="token operator">=</span> i2cAccess<span class="token punctuation">.</span><span class="token property-access">ports</span><span class="token punctuation">.</span><span class="token method function property-access">get</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
               <p>CHIRIMEN RasPi、RasPiZero、で利用可能な I2C ポート番号は<code>1</code>番だけです。ポート番号に<code>1</code> を指定して <strong><code>port</code> オブジェクトを取得</strong> しています。</p>
             </section>
-            <section class="level5" aria-labelledby="126213-new-sht30port-0x44">
-              <h5 id="126213-new-sht30port-0x44">12.6.2.1.3 new SHT30(port, 0x44)</h5>
+            <section class="level5" aria-labelledby="new-sht30port-0x44">
+              <h5 id="new-sht30port-0x44">new SHT30(port, 0x44)</h5>
               <p>ドライバーライブラリを使い <strong>SHT30 を操作する為のインスタンスを生成</strong> しています。</p>
               <pre class="language-js"><code class="language-js"><span class="token keyword">const</span> sht30 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">SHT30</span><span class="token punctuation">(</span>port<span class="token punctuation">,</span> <span class="token number">0x44</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
               <hr class="page-wrap">
             </section>
-            <section class="level5" aria-labelledby="126214-await-sht30init">
-              <h5 id="126214-await-sht30init">12.6.2.1.4. await sht30.init()</h5>
+            <section class="level5" aria-labelledby="await-sht30init">
+              <h5 id="await-sht30init">await sht30.init()</h5>
               <p>ドライバーライブラリのインスタンス (<code>sht30</code>) の <code>init()</code> メソッドを通じて <strong>I2C ポートを開いてセンサーを初期化</strong> しています。</p>
               <pre class="language-js"><code class="language-js"><span class="token keyword control-flow">await</span> sht30<span class="token punctuation">.</span><span class="token method function property-access">init</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
               <p>具体的に内部では、インスタンス生成時に指定した <code>port</code> オブジェクトと <code>slaveAddress(0x44)</code> を用いて <code>I2CPort.open()</code> を行なっています。<code>I2CPort.open()</code> が成功すると、<code>I2CSlaveDevice</code> という I2C ポートへデータ書き込みや読み込みなどを行うインタフェースが返されます。<code>I2CSlaveDevice</code> インタフェースは、ライブラリ内に保存され、その後の処理でこのインターフェイスを使って I2C デバイス SHT30 との通信が可能になります。</p>
             </section>
-            <section class="level5" aria-labelledby="126215-await-sht30readdata">
-              <h5 id="126215-await-sht30readdata">12.6.2.1.5. await sht30.readData()</h5>
+            <section class="level5" aria-labelledby="await-sht30readdata">
+              <h5 id="await-sht30readdata">await sht30.readData()</h5>
               <p>これで実際にデータを読み取っています。 この読み取り関数はGPIOで紹介した、一回きりの単純入力に相当するものです。そのため連続的な変化を知りたい場合はポーリングルーチンを組む必要がありますね。</p>
               <p><strong>SHT30 の仕様に基づくデータ読み出し処理です</strong>。</p>
               <pre class="language-js"><code class="language-js"><span class="token keyword">const</span> <span class="token punctuation">{</span> humidity<span class="token punctuation">,</span> temperature <span class="token punctuation">}</span> <span class="token operator">=</span> <span class="token keyword control-flow">await</span> sht30<span class="token punctuation">.</span><span class="token method function property-access">readData</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
               <p>ドライバーライブラリ内部では、SHT30 から得られる温度と湿度それぞれ 16bit の数値を、温度・湿度の物理量の数値に変換して返却しています。</p>
             </section>
           </section>
-          <section class="level4" aria-labelledby="12622-web-i2c-api-に着目して流れをまとめると">
-            <h4 id="12622-web-i2c-api-に着目して流れをまとめると">12.6.2.2. Web I2C API に着目して流れをまとめると</h4>
+          <section class="level4" aria-labelledby="web-i2c-api-に着目して流れをまとめると">
+            <h4 id="web-i2c-api-に着目して流れをまとめると">Web I2C API に着目して流れをまとめると</h4>
             <ol>
               <li><strong>I2C の準備:</strong> <code>await navigator.requestI2CAccess()</code> で I2CAccess インタフェースを取得</li>
               <li><strong>ポートの準備:</strong> <code>await i2cAccess.ports.get(1)</code> で、1 番ポートの <code>port</code> オブジェクトを取得</li>
@@ -270,8 +268,8 @@
             <hr class="page-wrap">
           </section>
         </section>
-        <section class="level3" aria-labelledby="127-デバイスドライバーなしにsht30を使う">
-          <h3 id="127-デバイスドライバーなしにsht30を使う">12.7. デバイスドライバーなしにSHT30を使う</h3>
+        <section class="level3" aria-labelledby="デバイスドライバーなしにsht30を使う">
+          <h3 id="デバイスドライバーなしにsht30を使う">デバイスドライバーなしにSHT30を使う</h3>
           <p>デバイスドライバーはI2Cデバイスを簡単に使えるようにするライブラリでしかありませんので、ライブラリなしにWebI2CAPIを用いて直接デバイスを使うこともできます。運悪くデバイスドライバーが用意されていないI2Cデバイスを使いたい場合や、デバイスドライバーで省略されている機能を使いたい場合などのために、<a href="http://browserobo.github.io/WebI2C">Web I2C API</a>の振る舞いを理解しておきましょう。</p>
           <p>まず、デバイスドライバーなしに使うにはそのデバイスのデータシートをよく読み込みながら開発する必要があります。</p>
           <p>それでは<a href="https://github.com/chirimen-oh/chirimen-drivers/tree/master/packages/sht30/sht30.js">SHT30ドライバのコード</a>を見てみましょう。</p>

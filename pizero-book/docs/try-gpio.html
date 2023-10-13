@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8">
+    <title>GPIOを試す</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../themes/packages/@vivliostyle/theme-techbook/theme.css">
+  </head>
+  <body>
+    <section class="level1" aria-labelledby="gpioを試す">
+      <h1 id="gpioを試す">GPIOを試す</h1>
+      <section class="level2" aria-labelledby="gpioを理解する">
+        <h2 id="gpioを理解する">GPIOを理解する</h2>
+        <ul>
+          <li>GPIOとは？<span class="footnote">11.1. GPIOとは参照</span></li>
+        </ul>
+      </section>
+      <section class="level2" aria-labelledby="gpio出力">
+        <h2 id="gpio出力">GPIO出力</h2>
+        <p>GPIOの出力はLチカで実験済みですね。そこで今回はモーターを動かしてみましょう。MOSFETを使った回路図は以下のようになります。</p>
+        <figure>
+          <img src="../../pizero/esm-examples/hello-real-world/PiZero_gpio0Motor.png" alt="GPIO Motor" height="190">
+          <figcaption aria-hidden="true">GPIO Motor</figcaption>
+        </figure>
+        <p>コードはLチカと全く同じです。</p>
+        <section class="level3" aria-labelledby="回路について">
+          <h3 id="回路について">回路について</h3>
+          <ul>
+            <li>MOSFETを使った大電力制御<span class="footnote">14.10. MOSFET とは参照</span></li>
+          </ul>
+        </section>
+        <section class="level3" aria-labelledby="コードを読む">
+          <h3 id="コードを読む">コードを読む</h3>
+          <ul>
+            <li>前提：CHIRIMEN Rasoberryu Pi ZeroはNode.jsをプログラム実行環境（インタープリタ）として使っています。
+              <ul>
+                <li>Node.jsについて<span class="footnote">10.2.2. Node.js (CHIRIMEN Raspberry Pi Zero版)参照</span></li>
+              </ul>
+            </li>
+            <li>ターミナルウィンドの右側のファイルマネージャでhello.js⇒表示 を選び、ソースコードを読んでみましょう</li>
+            <li>
+              WebGPIOライブラリを読み込み (JavaScript Module<span class="footnote">10.2.3. javascript Module (ECMA Script Module)参照</span>仕様に従って)
+              　<code>import {requestGPIOAccess} from "./node_modules/node-web-gpio/dist/index.js";</code>
+              <ul>
+                <li>JavaScript module<span class="footnote">10.2.3. javascript Module (ECMA Script Module)参照</span>に基づいてWebGPIOライブラリを読み込みます。これでWeb GPIO APIが使えるようになりました。</li>
+              </ul>
+            </li>
+            <li>GPIOポートの初期化処理<span class="footnote">11.2. GPIOポートの初期化参照</span></li>
+            <li>GPIOPortの出力処理理<span class="footnote">11.3. GPIOPort の出力処理参照</span></li>
+          </ul>
+          <hr class="page-wrap">
+        </section>
+      </section>
+      <section class="level2" aria-labelledby="gpio入力">
+        <h2 id="gpio入力">GPIO入力</h2>
+        <p>GPIO端子の<strong>入力が変化したら関数を実行</strong>という機能によってGPIOの入力を使います。</p>
+        <ul>
+          <li>ターミナルウィンドの<code>[CHIRIMEN Panel]</code>ボタンを押す</li>
+          <li>出現したCHIRIMEN Panelの<code>[Get Examples]</code>ボタンを押す</li>
+          <li>ID : <strong>gpio-onchange</strong>を探します</li>
+          <li>回路図リンクを押すと回路図が出てきますので、回路を組みます。</li>
+          <li><code>[JS GET]</code>ボタンを押すと、開発ディレクトリ(<code>~/myApp</code>)に、サンプルコードが保存されます。
+            <ul>
+              <li><strong>main-gpio-onchange.js</strong>というファイル名で保存されます。</li>
+              <li>ターミナルウィンドの右側のファイルマネージャでmain-gpio-onchange.js⇒編集 を選びます。
+                <ul>
+                  <li>ソースコードを見てみましょう</li>
+                  <li>今回は編集不要ですが、サンプルをベースに応用プログラムを作るときには編集しましょう。</li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+          <li>実行する
+            <ul>
+              <li>ターミナルウィンドのコンソールのプロンプトが<code>pi@raspberrypi:~/myApp$</code>となっていることを確認</li>
+              <li>ターミナルウィンドのコンソールに、<code>node main-gpio-onchange.js</code> [ENTER] と入力して実行。</li>
+              <li>タクトスイッチを押してみます。</li>
+              <li>タクトスイッチが押されるたびにコンソール画面に<strong>0</strong>(押された状態)、<strong>1</strong>(離した状態)が交互に表示されます。
+                <ul>
+                  <li>Note: GPIOポート5は、Pull-Up(開放状態でHighレベル)です。そのため離した状態で１が出力されます。スイッチを押すとポートがGNDと接続され、Lowレベルになり、0が出力されます。</li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+          <li>終了は CTRL+c</li>
+        </ul>
+        <section class="level3" aria-labelledby="コードを読む-1">
+          <h3 id="コードを読む-1">コードを読む</h3>
+          <ul>
+            <li>ターミナルウィンドの右側のファイルマネージャでmain-gpio-onchange.js⇒表示 を選び、ソースコードを読んでみましょう</li>
+            <li>
+              WebGPIOライブラリを読み込み
+              　<code>import {requestGPIOAccess} from "./node_modules/node-web-gpio/dist/index.js";</code>
+              <ul>
+                <li>JavaScript module<span class="footnote">10.2.3. javascript Module (ECMA Script Module)参照</span>に基づいてWebGPIOライブラリを読み込みます。これでWeb GPIO APIが使えるようになりました。</li>
+              </ul>
+            </li>
+            <li>GPIOポートの初期化処理を行う<span class="footnote">11.2. GPIOポートの初期化参照参照</span></li>
+            <li>onchangeによる入力処理<span class="footnote">11.4.1. onchange編参照</span></li>
+          </ul>
+          <hr class="page-wrap">
+        </section>
+      </section>
+      <section class="level2" aria-labelledby="gpio入力ポーリング">
+        <h2 id="gpio入力ポーリング">GPIO入力(ポーリング)</h2>
+        <p>入力ではイベントの他にポーリングというテクニックが広く使われます。（次章のI2Cデバイスからの入力では専らポーリング）</p>
+        <ul>
+          <li>
+            <p>ターミナルウィンドの<code>[CHIRIMEN Panel]</code>ボタンを押す</p>
+          </li>
+          <li>
+            <p>出現したCHIRIMEN Panelの<code>[Get Examples]</code>ボタンを押す</p>
+          </li>
+          <li>
+            <p>ID : <strong>gpio-polling</strong>を探します</p>
+          </li>
+          <li>
+            <p>回路は前章と同じなのでそのままにしておきます。</p>
+          </li>
+          <li>
+            <p><code>[JS GET]</code>ボタンを押すと、開発ディレクトリ(<code>~/myApp</code>)に、サンプルコードが保存されます。</p>
+            <ul>
+              <li><strong>main-gpio-polling.js</strong>というファイル名で保存されます。</li>
+              <li>ターミナルウィンドの右側のファイルマネージャでmain-gpio-polling.js⇒編集 を選びソースコードを見てみましょう</li>
+            </ul>
+          </li>
+          <li>
+            <p>実行する</p>
+            <ul>
+              <li>プロンプトが<code>pi@raspberrypi:~/myApp$</code>となっていることを確認</li>
+              <li>コンソールに、<code>node main-gpio-polling.js</code> [ENTER] と入力して実行。</li>
+              <li>0.3秒おきにポート5の値がコンソールに表示されていきます。</li>
+              <li>タクトスイッチを押してみます。</li>
+              <li>タクトスイッチが押されると、<strong>0</strong>に変化します。</li>
+            </ul>
+          </li>
+          <li>
+            <p>終了は CTRL+c</p>
+          </li>
+        </ul>
+        <section class="level3" aria-labelledby="コードを読む-2">
+          <h3 id="コードを読む-2">コードを読む</h3>
+          <ul>
+            <li>ターミナルウィンドの右側のファイルマネージャでmain-gpio-polling.js⇒表示 を選び、ソースコードを読んでみましょう</li>
+            <li>
+              WebGPIOライブラリを読み込み
+              　<code>import {requestGPIOAccess} from "./node_modules/node-web-gpio/dist/index.js";</code>
+              <ul>
+                <li>JavaScript module<span class="footnote">10.2.3. javascript Module (ECMA Script Module)参照</span>に基づいてWebGPIOライブラリを読み込みます。これでWeb GPIO APIが使えるようになりました。</li>
+              </ul>
+            </li>
+            <li>GPIOポートの初期化処理を行う<span class="footnote">11.2. GPIOポートの初期化参照</span></li>
+            <li>単純入力＋ポーリングによる入力処理<span class="footnote">11.4.2. 単純入力＋ポーリング参照</span></li>
+          </ul>
+          <hr class="page-wrap">
+        </section>
+      </section>
+    </section>
+  </body>
+</html>

@@ -8,7 +8,7 @@
   "name": "CHIRIMEN Raspberry Pi Zero W チュートリアル",
   "author": "CHIRIMEN Open Hardware Community <chirimen.open.hardware@gmail.com>",
   "inLanguage": "ja",
-  "dateModified": "2023-10-09T10:59:02.868Z",
+  "dateModified": "2023-10-13T03:15:14.275Z",
   "readingOrder": [
     {
       "url": "docs/index.html",
@@ -22,39 +22,63 @@
     },
     {
       "url": "docs/what-is-chirimen.html",
-      "name": "1. CHIRIMEN について"
+      "name": "CHIRIMEN について"
     },
     {
       "url": "docs/raspberry-pi.html",
-      "name": "2. Raspberry Pi について"
+      "name": "Raspberry Pi について"
     },
     {
-      "url": "docs/readme.html",
-      "name": "3. CHIRIMEN Raspberry Pi Zero版 の準備"
+      "url": "docs/pizero-init.html",
+      "name": "CHIRIMEN Raspberry Pi Zero版 の準備"
+    },
+    {
+      "url": "docs/hello-world.html",
+      "name": "Hello Real World（Lチカを実行する）"
+    },
+    {
+      "url": "docs/try-gpio.html",
+      "name": "GPIOを試す"
+    },
+    {
+      "url": "docs/try-i2c.html",
+      "name": "I2Cデバイスを試す"
+    },
+    {
+      "url": "docs/try-iot.html",
+      "name": "IoTを試す"
+    },
+    {
+      "url": "docs/try-devices.html",
+      "name": "他のいろいろなデバイスを試してみる"
+    },
+    {
+      "url": "docs/daemon.html",
+      "name": "常駐プログラム化する"
     },
     {
       "url": "docs/javascript.html",
-      "name": "10. JavaScript"
+      "name": "JavaScript"
     },
     {
       "url": "docs/gpio.html",
-      "name": "11. GPIO"
+      "name": "GPIO"
     },
     {
       "url": "docs/i2c.html",
-      "name": "12. I2C"
+      "name": "I2C"
     },
     {
       "url": "docs/iot.html",
-      "name": "13. IoT"
+      "name": "IoT"
     },
     {
       "url": "docs/document.html",
-      "name": "14. 予備知識・資料集"
+      "name": "予備知識・資料集"
     },
     {
       "url": "docs/device-list.html",
-      "name": "15. CHIRIMEN 対応デバイスリスト"
+      "name": "CHIRIMEN 対応デバイスリスト"
     },
     {
       "url": "docs/thanks.html",
