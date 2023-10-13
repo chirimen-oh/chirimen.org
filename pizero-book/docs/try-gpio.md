@@ -83,5 +83,3 @@ GPIO端子の**入力が変化したら関数を実行**という機能によっ
   * JavaScript module<span class="footnote">10.2.3. javascript Module (ECMA Script Module)参照</span>に基づいてWebGPIOライブラリを読み込みます。これでWeb GPIO APIが使えるようになりました。
 * GPIOポートの初期化処理を行う<span class="footnote">11.2. GPIOポートの初期化参照</span>
 * 単純入力＋ポーリングによる入力処理<span class="footnote">11.4.2. 単純入力＋ポーリング参照</span>
-
-<hr class="page-wrap" />

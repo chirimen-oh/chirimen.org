@@ -76,5 +76,3 @@ Note: モーター制御の回路<span class="footnote">5.2. GPIO出力参照</s
   ```channel = await relay.subscribe("chirimenLED");```
 
   この```chirimenLED```という文字列(チャンネル名)を他の人と被らない別のチャンネル名に書き換えます(```chirimenLED5```など)
-
-<hr class="page-wrap" />

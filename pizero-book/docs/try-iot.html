@@ -117,7 +117,6 @@ import {RelayServer} from "./RelayServer.js";</code></pre>
             <p>これはこれで使い道はあるのですが、自分のLEDは自分だけで制御したい場合は専用のチャンネルを使って制御しましょう。　チャンネルの指定はPiZero側のコードと、PC側のコード両方を同時に同じ内容で設定する必要があり、以下の部分になります。</p>
             <p><code>channel = await relay.subscribe("chirimenLED");</code></p>
             <p>この<code>chirimenLED</code>という文字列(チャンネル名)を他の人と被らない別のチャンネル名に書き換えます(<code>chirimenLED5</code>など)</p>
-            <hr class="page-wrap">
           </section>
         </section>
       </section>
