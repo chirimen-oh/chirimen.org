@@ -5,6 +5,7 @@
 ## Works
 - [@Aritaka-hub](https://github.com/Aritaka-hub)
 - [@gurezo](https://github.com/gurezo)
+- [@kazygumi](https://github.com/kazygumi)
 - [@satakagi](https://github.com/satakagi)
 - [@sizuhiko](https://twitter.com/sizuhiko)
 
