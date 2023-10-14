@@ -35,7 +35,7 @@ I2C に関する詳細は下記をご参照ください。
 
 - [I2C](https://ja.wikipedia.org/wiki/I2C) - Wikipedia
 - I2C バス仕様書 最新版（[日本語](https://www.nxp.com/docs/ja/user-guide/UM10204.pdf)、[English](http://www.nxp.com/documents/user_manual/UM10204.pdf)）
-- [I2C の使い方](http://www.picfun.com/i2cframe.html)（後閑哲也氏サイト)
+- [I2C の使い方](http://www.picfun.com/i2cframe.html)（後閑哲也氏サイト）
 
 ## ポイント
 
@@ -67,10 +67,10 @@ I2Cデバイスは一般的に小さなチップ部品です。下の拡大写�
 
 #### 注意: 配線時のポイント
 
-配線の接続先やデバイスの基板の表裏など間違えないように注意してください。
-配線を間違えると、故障や怪我などの原因になることがあります。おかしいなと思ったら、すぐに外して、配線をきちんと確認しましょう。
+    配線の接続先やデバイスの基板の表裏など間違えないように注意してください。
+    配線を間違えると、故障や怪我などの原因になることがあります。おかしいなと思ったら、すぐに外して、配線をきちんと確認しましょう。
 
-## b. i2cdetectで接続がうまくいったか確認する
+## i2cdetectで接続がうまくいったか確認する
 
 `i2cdetect` を使って SlaveAddress を確認し、正しく接続・認識できているか確かめてみましょう。ターミナルを起動して下記コマンドを入力してみてください。
 
@@ -169,7 +169,7 @@ CHIRIMENでは、GPIOインターフェースをWeb GPIOと呼ぶAPIで使用し
 
 <hr class="page-wrap" />
 
-#### d-2. main.js
+#### main.js
 
 次に、`main.js` の処理の流れを見てみましょう。
 

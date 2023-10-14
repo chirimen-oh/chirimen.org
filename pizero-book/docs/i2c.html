@@ -47,7 +47,7 @@
         <ul>
           <li><a href="https://ja.wikipedia.org/wiki/I2C">I2C</a> - Wikipedia</li>
           <li>I2C バス仕様書 最新版（<a href="https://www.nxp.com/docs/ja/user-guide/UM10204.pdf">日本語</a>、<a href="http://www.nxp.com/documents/user_manual/UM10204.pdf">English</a>）</li>
-          <li><a href="http://www.picfun.com/i2cframe.html">I2C の使い方</a>（後閑哲也氏サイト)</li>
+          <li><a href="http://www.picfun.com/i2cframe.html">I2C の使い方</a>（後閑哲也氏サイト）</li>
         </ul>
       </section>
       <section class="level2" aria-labelledby="ポイント">
@@ -88,15 +88,13 @@
           </figure>
           <section class="level4" aria-labelledby="注意-配線時のポイント">
             <h4 id="注意-配線時のポイント">注意: 配線時のポイント</h4>
-            <p>
-              配線の接続先やデバイスの基板の表裏など間違えないように注意してください。
-              配線を間違えると、故障や怪我などの原因になることがあります。おかしいなと思ったら、すぐに外して、配線をきちんと確認しましょう。
-            </p>
+            <pre class="language-text"><code class="language-text">配線の接続先やデバイスの基板の表裏など間違えないように注意してください。
+配線を間違えると、故障や怪我などの原因になることがあります。おかしいなと思ったら、すぐに外して、配線をきちんと確認しましょう。</code></pre>
           </section>
         </section>
       </section>
-      <section class="level2" aria-labelledby="b-i2cdetectで接続がうまくいったか確認する">
-        <h2 id="b-i2cdetectで接続がうまくいったか確認する">b. i2cdetectで接続がうまくいったか確認する</h2>
+      <section class="level2" aria-labelledby="i2cdetectで接続がうまくいったか確認する">
+        <h2 id="i2cdetectで接続がうまくいったか確認する">i2cdetectで接続がうまくいったか確認する</h2>
         <p><code>i2cdetect</code> を使って SlaveAddress を確認し、正しく接続・認識できているか確かめてみましょう。ターミナルを起動して下記コマンドを入力してみてください。</p>
         <section class="level3" aria-labelledby="コマンドラインから">
           <h3 id="コマンドラインから">コマンドラインから</h3>
@@ -204,8 +202,8 @@
           </ul>
           <p><code>main.js</code> がドライバーライブラリを使ってこのアプリケーションの動作を記述している部分です。</p>
           <hr class="page-wrap">
-          <section class="level4" aria-labelledby="d-2-mainjs">
-            <h4 id="d-2-mainjs">d-2. main.js</h4>
+          <section class="level4" aria-labelledby="mainjs">
+            <h4 id="mainjs">main.js</h4>
             <p>次に、<code>main.js</code> の処理の流れを見てみましょう。</p>
             <pre class="language-js"><code class="language-js"><span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 

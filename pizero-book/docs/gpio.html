@@ -115,7 +115,7 @@
 <span class="token punctuation">}</span>
 
 <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
-          <p><code>port.onchange</code> は <strong>入力モードの GPIO ポートの「状態変化時に呼び出される関数を設定する」</strong> 機能です。このような関数のことをコールバック関数と呼びます。下記の<code>port.read()</code> を使ったコードと異なりポーリング処理が不要でコードも簡潔ですが、値が変化したタイミング以外では読み取りができませんのでユースケースが少し限られます。</p>
+          <p><code>port.onchange</code> は <strong>入力モードの GPIO ポートの「状態変化時に呼び出される関数を設定する」</strong> 機能です。<br>このような関数のことをコールバック関数と呼びます。<br>下記の<code>port.read()</code> を使ったコードと異なりポーリング処理が不要でコードも簡潔ですが、値が変化したタイミング以外では読み取りができませんのでユースケースが少し限られます。</p>
           <hr class="page-wrap">
         </section>
         <section class="level3" aria-labelledby="単純入力ポーリング">
@@ -136,14 +136,14 @@
 <span class="token keyword">const</span> switchPort <span class="token operator">=</span> gpioAccess<span class="token punctuation">.</span><span class="token property-access">ports</span><span class="token punctuation">.</span><span class="token method function property-access">get</span><span class="token punctuation">(</span><span class="token number">5</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// GPIO ポート 5 番を取得</span>
 <span class="token keyword control-flow">await</span> switchPort<span class="token punctuation">.</span><span class="token keyword module">export</span><span class="token punctuation">(</span><span class="token string">"in"</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 「入力モード」に</span>
 <span class="token keyword">const</span> state <span class="token operator">=</span> <span class="token keyword control-flow">await</span> switchPort<span class="token punctuation">.</span><span class="token method function property-access">read</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// GPIO ポート 5 番に接続したスイッチの状態を読み込む</span></code></pre>
-            <section class="level5" aria-labelledby="await-portexport">
-              <h5 id="await-portexport">await port.export()</h5>
-              <p><code>port.export("in")</code> により取得した <strong>GPIO ポートを「入力モード」で初期化</strong> しています。このモードは GPIO ポートにかかる電圧を Web アプリ側から読み取りたい時に使います。初期化は非同期処理であり <code>await</code> で完了を待つ必要があることに注意してください。</p>
-            </section>
-            <section class="level5" aria-labelledby="await-portread">
-              <h5 id="await-portread">await port.read()</h5>
-              <p><code>port.export("in")</code> で入力モードに設定した <strong>GPIO ポートの現時点の状態を読み取ります</strong>。読み取りは非同期処理になるので <code>await</code> で完了を待つようにしてください。</p>
-            </section>
+          </section>
+          <section class="level4" aria-labelledby="await-portexport">
+            <h4 id="await-portexport">await port.export()</h4>
+            <p><code>port.export("in")</code> により取得した <strong>GPIO ポートを「入力モード」で初期化</strong> しています。このモードは GPIO ポートにかかる電圧を Web アプリ側から読み取りたい時に使います。初期化は非同期処理であり <code>await</code> で完了を待つ必要があることに注意してください。</p>
+          </section>
+          <section class="level4" aria-labelledby="await-portread">
+            <h4 id="await-portread">await port.read()</h4>
+            <p><code>port.export("in")</code> で入力モードに設定した <strong>GPIO ポートの現時点の状態を読み取ります</strong>。読み取りは非同期処理になるので <code>await</code> で完了を待つようにしてください。</p>
             <section class="level5" aria-labelledby="ポーリングルーチン">
               <h5 id="ポーリングルーチン">ポーリングルーチン</h5>
               <p>上記コードで GPIO ポートの読み取りを 1 度だけ行えますが、今回は「スイッチが押され状態を監視する」必要がありますので、定期的に <code>await port.read()</code> を繰り返して GPIO ポートの状態を監視するポーリングのルーチンを組みます。</p>

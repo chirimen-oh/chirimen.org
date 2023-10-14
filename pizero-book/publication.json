@@ -8,7 +8,7 @@
   "name": "CHIRIMEN Raspberry Pi Zero W チュートリアル",
   "author": "CHIRIMEN Open Hardware Community <chirimen.open.hardware@gmail.com>",
   "inLanguage": "ja",
-  "dateModified": "2023-10-08T14:07:19.426Z",
+  "dateModified": "2023-10-14T09:10:41.870Z",
   "readingOrder": [
     {
       "url": "docs/index.html",
@@ -22,15 +22,39 @@
     },
     {
       "url": "docs/what-is-chirimen.html",
-      "name": "CHIRIMEN"
+      "name": "CHIRIMEN について"
     },
     {
       "url": "docs/raspberry-pi.html",
       "name": "Raspberry Pi について"
     },
     {
-      "url": "docs/readme.html",
+      "url": "docs/pizero-init.html",
       "name": "CHIRIMEN Raspberry Pi Zero版 の準備"
+    },
+    {
+      "url": "docs/hello-world.html",
+      "name": "Hello Real World（Lチカを実行する）"
+    },
+    {
+      "url": "docs/try-gpio.html",
+      "name": "GPIOを試す"
+    },
+    {
+      "url": "docs/try-i2c.html",
+      "name": "I2Cデバイスを試す"
+    },
+    {
+      "url": "docs/try-iot.html",
+      "name": "IoTを試す"
+    },
+    {
+      "url": "docs/try-devices.html",
+      "name": "他のいろいろなデバイスを試してみる"
+    },
+    {
+      "url": "docs/daemon.html",
+      "name": "常駐プログラム化する"
     },
     {
       "url": "docs/javascript.html",

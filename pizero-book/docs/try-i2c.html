@@ -1,0 +1,163 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8">
+    <title>I2Cデバイスを試す</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../themes/packages/@vivliostyle/theme-techbook/theme.css">
+  </head>
+  <body>
+    <section class="level1" aria-labelledby="i2cデバイスを試す">
+      <h1 id="i2cデバイスを試す">I2Cデバイスを試す</h1>
+      <section class="level2" aria-labelledby="i2cを理解する">
+        <h2 id="i2cを理解する">I2Cを理解する</h2>
+        <ul>
+          <li>I2Cとは？<span class="footnote">12. I2C参照</span></li>
+        </ul>
+      </section>
+      <section class="level2" aria-labelledby="sht30編">
+        <h2 id="sht30編">SHT30編</h2>
+        <p>SHT30は温度に加えて湿度も測定できるI2C接続の多機能センサーです。SHT31もほぼ同等に使えます。(SHT31のほうが精度が高い)</p>
+        <ul>
+          <li>
+            <p>SHT30/SHT31について<span class="footnote">12.4.1. SHT30, SHT31について参照</span></p>
+          </li>
+          <li>
+            <p>ターミナルウィンドの<code>[CHIRIMEN Panel]</code>ボタンを押す</p>
+          </li>
+          <li>
+            <p>出現したCHIRIMEN Panelの<code>[Get Examples]</code>ボタンを押す</p>
+          </li>
+          <li>
+            <p>ID : sht30を探します</p>
+          </li>
+          <li>
+            <p>回路図リンクを押すと回路図が出てきますので、回路を組みます。なお、接続は下の図のようになります。</p>
+            <figure>
+              <img src="../../pizero/esm-examples/sht30/schematic.png" alt="SHT31 schematic" height="220">
+              <figcaption aria-hidden="true">SHT31 schematic</figcaption>
+            </figure>
+          </li>
+          <li>
+            <p><code>[JS GET]</code>ボタンを押すと、開発ディレクトリ(<code>~/myApp</code>)に、サンプルコードが保存されます。</p>
+            <ul>
+              <li><strong>main-sht30.js</strong>というファイル名で保存されます。</li>
+              <li>Note: ターミナルウィンドの右側のファイルマネージャでmain-sht30.js⇒編集 を選ぶと、エディタで編集できます。
+                <ul>
+                  <li>ソースコードを見てみましょう</li>
+                  <li>今は編集不要ですが、サンプルをベースに応用プログラムを作るときには編集しましょう。</li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+        </ul>
+        <hr class="page-wrap">
+        <section class="level3" aria-labelledby="i2cセンサーsht30が認識されていることを確認する">
+          <h3 id="i2cセンサーsht30が認識されていることを確認する">I2Cセンサー(SHT30)が認識されていることを確認する</h3>
+          <ul>
+            <li>CHIRIMEN Panelの<code>[i2c detect]</code>ボタンを押すと、<a href="https://strawberry-linux.com/pub/Sensirion_Humidity_SHT3x_DIS_Datasheet_V3_J.pdf">SHT30のI2Cアドレス</a>　0x<strong>44</strong>が表示されていればうまく接続されています。
+              <ul>
+                <li>i2c detectとは<span class="footnote">12.5. i2cdetectで接続がうまくいったか確認する参照</span></li>
+              </ul>
+            </li>
+          </ul>
+          <pre>     0  1  2  3  4  5  6  7  8  9  a  b  c  d  e  f
+00:          -- -- -- -- -- -- -- -- -- -- -- -- -- 
+10: -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- 
+20: -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- 
+30: -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- 
+40: -- -- -- -- 44 -- -- -- -- -- -- -- -- -- -- -- 
+50: -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- 
+60: -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- 
+70: -- -- -- -- -- -- -- --                       
+</pre>
+        </section>
+        <section class="level3" aria-labelledby="実行する">
+          <h3 id="実行する">実行する</h3>
+          <ul>
+            <li>ターミナルウィンドのコンソールのプロンプトが<code>pi@raspberrypi:~/myApp$</code>となっていることを確認</li>
+            <li>ターミナルウィンドのコンソールに、<code>node main-sht30.js</code> [ENTER] と入力して実行。</li>
+            <li>温度と湿度が1秒ごとにコンソールに表示されます。</li>
+            <li>終了は CTRL+c</li>
+          </ul>
+        </section>
+        <section class="level3" aria-labelledby="コードを読む">
+          <h3 id="コードを読む">コードを読む</h3>
+          <ul>
+            <li>ターミナルウィンドの右側のファイルマネージャでmain-sht30.js⇒表示 を選び、ソースコードを読んでみましょう</li>
+            <li><a href="https://tutorial.chirimen.org/chirimenGeneric/#webi2c">WebI2CライブラリとSHT30デバイスドライバを読み込み</a></li>
+          </ul>
+          <p>
+            　<code>import {requestI2CAccess} from "./node_modules/node-web-i2c/index.js";</code>
+            <code>import SHT30 from "@chirimen/sht30";</code>
+          </p>
+          <ul>
+            <li>JavaScript module<span class="footnote">10.2.3. javascript Module (ECMA Script Module)参照</span>に基づいてWebI2Cライブラリを読み込みます。</li>
+            <li>I2C 温湿度センサー (SHT30, SHT31)の初期化と使用<span class="footnote">12.6.2. I2C 温湿度センサー (SHT30, SHT31)の使用例参照</span></li>
+          </ul>
+          <hr class="page-wrap">
+        </section>
+      </section>
+      <section class="level2" aria-labelledby="adt7410編">
+        <h2 id="adt7410編">ADT7410編</h2>
+        <p>
+          温度センサーADT7410を使います。
+          もし、SHT30を使用する場合は、「IoTを試す」の章まで読み飛ばしてください。
+        </p>
+        <ul>
+          <li>ターミナルウィンドの<code>[CHIRIMEN Panel]</code>ボタンを押す</li>
+          <li>出現したCHIRIMEN Panelの<code>[Get Examples]</code>ボタンを押す</li>
+          <li>ID : adt7410を探します(上から5個目ぐらい)</li>
+          <li>回路図リンクを押すと回路図が出てきますので、回路を組みます。なお、接続は下の図のようになります。</li>
+        </ul>
+        <figure>
+          <img src="../../pizero/imgs/pizero_temp.png" alt="PiZero温度センサー図">
+          <figcaption aria-hidden="true">PiZero温度センサー図</figcaption>
+        </figure>
+        <ul>
+          <li><code>[JS GET]</code>ボタンを押すと、開発ディレクトリ(<code>~/myApp</code>)に、サンプルコードが保存されます。
+            <ul>
+              <li><strong>main-adt7410.js</strong>というファイル名で保存されます。</li>
+              <li>Note: ターミナルウィンドの右側のファイルマネージャでmain-adt7410.js⇒編集 を選ぶと、エディタで編集できます。
+                <ul>
+                  <li>ソースコードを見てみましょう</li>
+                  <li>今は編集不要ですが、サンプルをベースに応用プログラムを作るときには編集しましょう。</li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+        </ul>
+        <section class="level4" aria-labelledby="センサーの極性に注意">
+          <h4 id="センサーの極性に注意">センサーの極性に注意</h4>
+          <pre class="language-text"><code class="language-text">温度センサー ADT7410 を用意した場合、図と同じように配線します。配線(特に電源線)を間違えるとセンサーが高熱になり火傷・破損するので注意してください。</code></pre>
+          <hr class="page-wrap">
+        </section>
+        <section class="level3" aria-labelledby="i2cセンサーが認識されていることを確認する">
+          <h3 id="i2cセンサーが認識されていることを確認する">I2Cセンサーが認識されていることを確認する</h3>
+          <ul>
+            <li>CHIRIMEN Panelの<a href="https://tutorial.chirimen.org/ty51822r3/i2cdetect"><code>[i2c detect]</code></a>ボタンを押すと、<a href="https://akizukidenshi.com/download/ds/akizuki/AE-ADT7410_aw.pdf">ADT7410のI2Cアドレス</a>　0x<strong>48</strong>が表示されていればうまく接続されています。</li>
+          </ul>
+          <pre>     0  1  2  3  4  5  6  7  8  9  a  b  c  d  e  f
+00:          -- -- -- -- -- -- -- -- -- -- -- -- -- 
+10: -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- 
+20: -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- 
+30: -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- 
+40: -- -- -- -- -- -- -- -- 48 -- -- -- -- -- -- -- 
+50: -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- 
+60: -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- 
+70: -- -- -- -- -- -- -- --                       
+</pre>
+        </section>
+        <section class="level3" aria-labelledby="実行する-1">
+          <h3 id="実行する-1">実行する</h3>
+          <ul>
+            <li>ターミナルウィンドのコンソールのプロンプトが<code>pi@raspberrypi:~/myApp$</code>となっていることを確認</li>
+            <li>ターミナルウィンドのコンソールに、<code>node main-adt7410.js</code> [ENTER] と入力して実行。</li>
+            <li>温度が1秒ごとにコンソールに表示されます。</li>
+            <li>終了は CTRL+c</li>
+          </ul>
+        </section>
+      </section>
+    </section>
+  </body>
+</html>

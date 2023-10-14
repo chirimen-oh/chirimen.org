@@ -1,10 +1,11 @@
-﻿# CHIRIMEN 対応デバイスリスト
+﻿
+# CHIRIMEN 対応デバイスリスト
 
 市販のセンサーやアクチュエータなどのうち、CHIRIMEN 環境での利用を検証し配線図とサンプルコード一式 (I2C デバイスは CHIRIMEN 用ドライバー含む) を用意しているデバイスの一覧です。
 
 こちらに掲載がないデバイスについても、デジタル GPIO デバイスであればそのまま、アナログ GPIO デバイスであれば ADC を経由で簡単に利用頂けます (I2C デバイスについてはドライバーの用意も必要です)。
 
-Raspberry Pi などの CHIRIMEN の動作環境とそれぞれのチュートリアルは [CHIRIMEN について](./what-is-chirimen.html) をご覧ください。
+Raspberry Pi などの CHIRIMEN の動作環境とそれぞれのチュートリアルは <span class="footnote">1. CHIRIMEN について参照</span> をご覧ください。
 
 ## I2C センサー
 
@@ -101,22 +102,5 @@ Raspberry Pi などの CHIRIMEN の動作環境とそれぞれのチュートリ
 |DC モータ|各 Examples をご参照ください|-|-|-|
 |2 相バイポーラステッピングモータ|多種(例は TS3692N65)|A4988 をご参照ください|![](../../partsImgs/StepperMotor.JPG){width=100}|![](../../partsImgs/qr/QR_69_多種(例はTS3692N65).png){width=100}|
 |ギヤードモータ|ちびギヤモータ|小型のギヤードモータです|![](../../partsImgs/chibiGear.JPG){width=100}|![](../../partsImgs/qr/QR_70_ちびギヤモータ.png){width=100}|
-
-## その他
-
-|カテゴリー|型番|説明|画像 URL|QR|
-|:----|:----|:----|:----|:----:|
-|ブレッドボード|-|-|![](../../partsImgs/breadBoardS.JPG){width=100}|-|
-|ジャンパー線|-|-|![](../../partsImgs/jumperFM.JPG){width=100}|-|
-|カメラ|-|-|![](../../partsImgs/camera.JPG){width=100}|-|
-|ファン|-|-|![](../../partsImgs/fan.JPG){width=100}|-|
-|抵抗|-|-|![](../../partsImgs/register.JPG){width=100}|-|
-
-## ボードコンピューター
-
-|カテゴリー|型番|説明|画像 URL|QR|
-|:----|:----|:----|:----|:----:|
-|マイクロビット|-|-|![](../../partsImgs/microbit.JPG){width=100}|-|
-|ブレークアウト|-|-|![](../../partsImgs/microbitBreakout.JPG){width=100}|-|
 
 ![CHIRIMEN 対応デバイスリスト QR コード](../images/parts-list-qr.png)

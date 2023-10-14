@@ -29,7 +29,7 @@
 
 一方、(あらかじめ用意されていれば)ウェブサーバにはURLでアクセスできます。そこで登場するのがrelayServerです。下図のようにrelayServer(Web Socket Relay Service)を介してwebAppsが通信します。
 
- ![Relay Server Configuration](https://chirimen.org/remote-connection/imgs/relay.png)
+  ![Relay Server Configuration](https://chirimen.org/remote-connection/imgs/relay.png)
 
 relayServerは特定のウェブサイトの固有名ではなく、「ウェブアプリ間でリアルタイム性の高いデータのやり取りを仲介する」という機能を持ったウェブサイトの抽象的な名称でpub/sub servicesと呼ばれることもあります。(SNSとかblogとかというのと同じです）
 
@@ -57,8 +57,8 @@ import {RelayServer} from "https://chirimen.org/remote-connection/js/beta/RelayS
 var relay = RelayServer("achex", "chirimenSocket" );
 ```
 
-  import文でライブラリRelayServer.jsを読み込んだ後、relayServiceのひとつ**achex**に接続しています。
-  RelayServerの第二引数`("chirimenSocket")`はそのサービスを使うためのトークンですが、**achex**は任意の文字列で利用できてます。
+import文でライブラリRelayServer.jsを読み込んだ後、relayServiceのひとつ**achex**に接続しています。  
+RelayServerの第二引数`("chirimenSocket")`はそのサービスを使うためのトークンですが、**achex**は任意の文字列で利用できてます。
 
 *Node.jsでは第三,第四引数が必要になります (後述)*
 
@@ -84,10 +84,13 @@ var relay = RelayServer("achex", "chirimenSocket" );
 * `function getMessage(msg)`
 上で登録した関数の第一引数(`msg`)のメンバ変数msg.dataに送信されたメッセージが構造もそのままで届きます。
 
-
 #### セキュリティを考えよう
 
-relayServerを使うということは、情報をインターネット上のウェブサイトに送信することになります。すると このウェブサイトがその情報をどのように取り扱うのかを理解しておく必要があります。achexは無料で使え　しかもユーザ登録も不要です。つまりこのサイトに送信した情報は誰でも見ることができてしまうということです。（ただし、トークンとチャンネルを知る必要がある。これがachexのセキュリティレベル）今回は個人情報などのセキュリティを考慮する必要がない、チュートリアルで使うセンシングデータを送るだけですので問題ありませんが、セキュリティを考慮する必要がある多くの用途ではそのセキュリティ基準に適合したサイトを契約して利用する、もしくは自分でそのようなサイトを立てるなどの必要が出てきます。relayServer.jsでもいくつかの商用サイトの比較と使用方法が記載されているので参考にしてください。
+relayServerを使うということは、情報をインターネット上のウェブサイトに送信することになります。  
+すると このウェブサイトがその情報をどのように取り扱うのかを理解しておく必要があります。  
+achexは無料で使え　しかもユーザ登録も不要です。つまりこのサイトに送信した情報は誰でも見ることができてしまうということです。（ただし、トークンとチャンネルを知る必要がある。これがachexのセキュリティレベル）  
+今回は個人情報などのセキュリティを考慮する必要がない、チュートリアルで使うセンシングデータを送るだけですので問題ありませんが、セキュリティを考慮する必要がある多くの用途ではそのセキュリティ基準に適合したサイトを契約して利用する、もしくは自分でそのようなサイトを立てるなどの必要が出てきます。  
+relayServer.jsでもいくつかの商用サイトの比較と使用方法が記載されているので参考にしてください。
 
 #### Node.jsでの利用
 
