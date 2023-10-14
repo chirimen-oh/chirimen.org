@@ -1,19 +1,19 @@
-# 14. 予備知識・資料集
+# 予備知識・資料集
 
 CHIRIMEN を利用するに際して、知っておくと良い予備知識やツールの使い方が学べるドキュメントをまとめています。
 
-## 14.1. JavaScript 初学者向け資料集
+## JavaScript 初学者向け資料集
 - [JavaScript 1 Day 講習資料、JavaScript 本格入門書、チートシートなどはこちら](https://tutorial.chirimen.org/js/)
 - [JavaScript Primer - 迷わないための入門書](https://jsprimer.net/)
 
-## 14.2. Github と開発環境
+## Github と開発環境
 
 - [GitHub ハンズオン](https://github.com/webiotmakers/github-handson)
   - GitHub の基本的な使い方の分かるハンズオン資料です。
 - [CodeSandbox ガイド](https://csb-jp.github.io/)
   - ブラウザ上で開発する CodeSandbox の使い方を確認しましょう。
 
-## 14.3. 電子工作
+## 電子工作
 
 - LED
   - [LED 基本ガイド (marutsu)](https://www.marutsu.co.jp/pc/static/large_order/led)
@@ -35,23 +35,23 @@ CHIRIMEN を利用するに際して、知っておくと良い予備知識や�
 
 <hr class="page-wrap" />
 
-## 14.4. ハードウェア・デバイス
+## ハードウェア・デバイス
 
 - [予備知識・資料集～電子工作について](../reference#section-1)
 
 
-## 14.5. そもそも「L チカ」って何？
+## そもそも「L チカ」って何？
 
 「L チカ」とは、LED（発光ダイオード）<span class="footnote">https://ja.wikipedia.org/wiki/発光ダイオード</span>を点けたり消したりチカチカ点滅させることです。今回は「LED を点ける」「LED を消す」をプログラムで繰り返し実行することで実現します。
 
-## 14.6. LED
+## LED
 - [LED の使い方](https://www.marutsu.co.jp/pc/static/large_order/led)
 
-### 14.6.1. ヒント: LED の電圧
+### ヒント: LED の電圧
 
 LED の順方向電圧は色により異なっており、赤色 LED は 1.8V 程度、青色 LED は 3.1V 程度とされています。
 
-## 14.7. ブレッドボード
+## ブレッドボード
 
 - [ブレッドボードの使い方](https://shop.sunhayato.co.jp/blogs/problem-solving/breadboard) (サンハヤト社)
 
@@ -64,14 +64,14 @@ LED の順方向電圧は色により異なっており、赤色 LED は 1.8V �
 * 配線に使うケーブルの色に厳密な決まりはありませんが、一般的にGNDは黒(や黒っぽい色)、電源(VCC, +3.3V, +5V)には赤(や赤っぽい色)が用いられます。配線間違いを防ぐためにもなるべく合わせましょう。
 * 抵抗やLEDの足(リード線)は手で簡単に曲げられます。ブレッドボードに差し込めるように適当に成型してください。
 
-## 14.8. 抵抗値の読み方
+## 抵抗値の読み方
 - [抵抗値の読み方](http://www.jarl.org/Japanese/7_Technical/lib1/teikou.htm)
 - [テスターを使って抵抗値を確かめる](http://startelc.com/elcLink/tester/elc_nArtcTester2.html#chapter-2)
 
 <hr class="page-wrap" />
 
-## 14.9. MOSFETによる大電力制御
-### 14.9.1 GPIO の制約事項
+## MOSFETによる大電力制御
+### GPIO の制約事項
 
 Raspberry Pi の GPIO ポートは、全体で流せる電流の上限が決められています。
 
@@ -80,7 +80,7 @@ Raspberry Pi の GPIO ポートは、全体で流せる電流の上限が決め�
 
 小さな LED 数個の場合はこの条件内で使えますが、モーターやソレノイド、パワー LED など電流を多く消費するデバイスは直接接続して使うことができません。
 
-## 14.10. MOSFET とは
+## MOSFET とは
 
 [MOSFET](https://ja.wikipedia.org/wiki/MOSFET) とは[電界効果トランジスタ (FET)](https://ja.wikipedia.org/wiki/%E9%9B%BB%E7%95%8C%E5%8A%B9%E6%9E%9C%E3%83%88%E3%83%A9%E3%83%B3%E3%82%B8%E3%82%B9%E3%82%BF) の一種で、主にスイッチング素子として利用される (小さな電圧の変更で大きな電流・電圧のオンオフを切り替える) 部品です。
 
@@ -94,7 +94,7 @@ Raspberry Pi の GPIO ポートは、全体で流せる電流の上限が決め�
 
 ![NCh MOSFET schematic](../../raspi/imgs/section1/DC3motor-schematic.svg){height=300}
 
-### 14.11. 電源
+### 電源
 
 図の GND 端子は Raspberry Pi と DC 負荷用電源のものと共通ですが、VCC 端子は、基本的には Raspberry Pi の 3.3V や 5V 端子とは異なります。
 DC 負荷用に Raspberry Pi とは別に電源を用意するのが望ましいです。

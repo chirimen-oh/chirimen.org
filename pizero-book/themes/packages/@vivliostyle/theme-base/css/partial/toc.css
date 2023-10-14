@@ -3,8 +3,8 @@
   --vs-toc--anchor-text-decoration: none;
   --vs-toc--anchor-text-decoration-on-hover: underline;
   --vs-toc--anchor-text-indent: 1ch;
-  --vs-toc--marker-content: counter(vs-counter-toc) ' ';
-  --vs-toc--marker-display: none;
+  --vs-toc--marker-content: counter(vs-counter-toc) '. ';
+  --vs-toc--marker-display: inline;
   --vs-toc--marker-text-align: start;
   --vs-toc--ol-indent-size: 2rem;
   --vs-toc--page-counter-display: inline;
@@ -16,6 +16,7 @@
 [role='doc-toc'] {
   --vs--ol-padding-inline-start: var(--vs-toc--ol-indent-size);
   --vs--ol-minimum-inline-indent-size: 0rem;
+  --vs-section--h2-marker-display: none;
 }
 
 :is(#toc, [role='doc-toc']) ol {

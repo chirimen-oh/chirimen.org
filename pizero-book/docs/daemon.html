@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8">
+    <title>常駐プログラム化する</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../themes/packages/@vivliostyle/theme-techbook/theme.css">
+  </head>
+  <body>
+    <section class="level1" aria-labelledby="常駐プログラム化する">
+      <h1 id="常駐プログラム化する">常駐プログラム化する</h1>
+      <p>
+        ターミナルウィンドからnodeコマンドで実行指示しなくても、電源投入後 自動的に指定したコードを起動する設定（常駐プログラム化）ができます。
+        このチュートリアルでは、<a href="https://www.npmjs.com/package/forever">forever</a>を使用する設定を専用GUIを用いて行ってみましょう。
+      </p>
+      <ul>
+        <li>
+          <p>ターミナルウィンドの<code>[CHIRIMEN Panel]</code>ボタン⇒CHIRIMEN Panelの<code>[Resident App Conf.]</code>ボタンを押します。</p>
+          <ul>
+            <li>専用画面のUIが使用可能状態になるまで数秒かかります。</li>
+          </ul>
+        </li>
+        <li>
+          <p>開発ディレクトリ<code>~/myApp</code>内にあるjavascriptコードがリストアップされます。</p>
+        </li>
+        <li>
+          <p>各行の<code>Now Running</code>列は常駐状態、<code>App Name</code>はコードのファイル名、<code>Select</code>は選択用チェックボックスです。</p>
+          <ul>
+            <li><code>Now Running</code>欄には現在常駐プログラム化しているコードに、<code>RUNNING</code>が表示されています。（常駐プログラムがなければ全部の行が空白になります）</li>
+            <li><code>Select</code>欄のチェックボックスをチェックすると、そのコードが常駐プログラム化します。（常駐プログラムは一個だけ指定できます）
+              <ul>
+                <li>設定が反映され、常駐状態が確認できるようになるまで、２０秒ぐらいかかります
+                  <ul>
+                    <li>常駐状態の再確認は<code>[Resident App Conf.]</code>ボタンで可能</li>
+                    <li>設定できたらシャットダウンしてPCとのUSB接続も外します
+                      <ul>
+                        <li>シャットダウンコマンド: <code>sudo shutdown -h now</code></li>
+                      </ul>
+                    </li>
+                    <li>その後PiZeroをモバイルバッテリなどにつないで独立して稼働させます。
+                      <ul>
+                        <li>PiZeroの緑色LEDの点滅が収まると、概ね常駐プログラムが起動</li>
+                        <li>その後PCからリモートコントロールしてみましょう</li>
+                      </ul>
+                    </li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+            <li>PCに接続しなおして、一番上の<code>STOP ALL APPS</code>のチェックボックスをチェックすると、常駐プログラムを解除できます。</li>
+          </ul>
+        </li>
+        <li>
+          <p><em>Note: 常駐化のツールとしては、他にもsystemd service unit, openrc, cron, pm2, forever 等があります。Webでそれぞれの特徴を調べて用途に合ったものを選択して設定しても良いでしょう。</em></p>
+        </li>
+      </ul>
+    </section>
+  </body>
+</html>

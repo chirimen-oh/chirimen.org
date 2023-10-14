@@ -9,11 +9,13 @@ const entry = config.entry.filter(
 );
 const tocFromEntry = entry
   .map((content) => {
+    console.log('****', content);
     const s = fs.readFileSync(content, { encoding: "utf8" });
     const tokens = marked.lexer(s);
     const headings = tokens.filter(
       (t) => t.type === "heading"
     );
+    console.log('*******', headings);
     const listItem = headings.reduce((prev, crr) => {
       if (crr.depth > 2) return prev;
       return (prev += `${"    ".repeat(crr.depth - 1)}1. [${crr.text}](${content
@@ -34,6 +36,7 @@ const tocFromEntry = entry
             .replaceAll("？", "")
             .replaceAll("・", "")
             .replaceAll(",", "")
+            .replaceAll("/", "")
             .toLocaleLowerCase()}`
       })\n`);
     }, "");

@@ -1,4 +1,4 @@
-# 1. CHIRIMEN について
+# CHIRIMEN について
 ![CHIRIMEN_pf](../../chirimenGeneric/CHIRIMEN_pf.png)
 
 CHIRIMEN は Web ブラウザや Node.js の JavaScript からハードウェアを制御するプロトタイピング環境です。
@@ -11,7 +11,7 @@ Raspberry Pi Zero を使う場合<span class="footnote">3. CHIRIMEN Raspberry Pi
 
 デジタルのソフトとフィジカルなハードをWWW上で連携するデバイスを Web標準技術、JavaScript だけで容易に実現できます。
 
-## 1.1. CHIRIMENのメリット
+## CHIRIMENのメリット
 * 広く使われている標準技術を学習できるので
   * 学習のハードルが低い
   * 得たスキルが広く長く役立つ
@@ -23,7 +23,7 @@ Raspberry Pi Zero を使う場合<span class="footnote">3. CHIRIMEN Raspberry Pi
 
 <hr class="page-wrap" />
 
-## 1.2. CHIRIMEN の動作環境
+## CHIRIMEN の動作環境
 
 CHIRIMEN が動作する環境は、以下の通りです。お手持ちのボードや用途に応じてご利用ください。
 
@@ -39,7 +39,7 @@ CHIRIMEN が動作する環境は、以下の通りです。お手持ちのボ�
 
 すべての CHIRIMEN 環境では各ボード毎のライブラリやブリッジプログラムが異なる以外、基本的には同じコード・同じドライバモジュールで各デバイス・パーツを制御できます。対応デバイス一覧ページをご覧ください。
 
-## 1.3. 予備知識
+## 予備知識
 
 CHIRIMEN for Raspberry Pi を利用するに際して、知っておくと良い予備知識やツールの使い方が学べるドキュメントです。
 
@@ -54,7 +54,7 @@ CHIRIMEN for Raspberry Pi を利用するに際して、知っておくと良い
 
 <hr class="page-wrap" />
 
-## 1.4. CHIRIMEN ブラウザー版との差異
+## CHIRIMEN ブラウザー版との差異
 
 | CHIRIMEN ブラウザー版       | Node.js                                                      |
 | --------------------------- | ------------------------------------------------------------ |
@@ -63,7 +63,7 @@ CHIRIMEN for Raspberry Pi を利用するに際して、知っておくと良い
 | `<script src="..../adt7410.js"></script >` | `import ADT7410 from "@chirimen/adt7410";`  |
 | ー  | Sleep関数を宣言する<br />`const sleep = msec => new Promise(resolve => setTimeout(resolve, msec));` |
 
-## 1.5. CHIRIMEN環境の任意のディレクトリへのセットアップ
+## CHIRIMEN環境の任意のディレクトリへのセットアップ
 
 以下のコマンド手順で~/myAppディレクトリ以外にも設定できます。
 
@@ -73,7 +73,7 @@ CHIRIMEN for Raspberry Pi を利用するに際して、知っておくと良い
 * ```wget https://chirimen.org/remote-connection/js/beta/RelayServer.js``` ([RelayServer.js](https://chirimen.org/remote-connection/)を使う場合)
 * ```npm install``` ([npm](https://atmarkit.itmedia.co.jp/ait/articles/1606/17/news030.html)とは)
 
-## 1.6. コミュニティについて
+## コミュニティについて
 
 何か不明点や困ったことがあれば CHIRIMEN コミュニティの [Slack](http://chirimen-oh.slack.com/) や [Github](https://github.com/chirimen-oh/) の各リポジトリの issues でご連絡・ご相談ください。コミュニティの有志メンバーで
 

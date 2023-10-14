@@ -1,0 +1,230 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8">
+    <title>CHIRIMEN Raspberry Pi Zero版 の準備</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../themes/packages/@vivliostyle/theme-techbook/theme.css">
+  </head>
+  <body>
+    <section class="level1" aria-labelledby="chirimen-raspberry-pi-zero版-の準備">
+      <h1 id="chirimen-raspberry-pi-zero版-の準備">CHIRIMEN Raspberry Pi Zero版 の準備</h1>
+      <section class="level2" aria-labelledby="ステップ０-物品準備pcをwifiに接続">
+        <h2 id="ステップ０-物品準備pcをwifiに接続">ステップ０ (物品準備、PCをWiFiに接続)</h2>
+        <section class="level3" aria-labelledby="必要な物品リスト">
+          <h3 id="必要な物品リスト">必要な物品リスト</h3>
+          <p>以下を用意します</p>
+          <ul>
+            <li>Raspberry Pi Zero W 、( Pi Zero <strong>2</strong> W も使用できます(2022/10/12 update) )
+              <ul>
+                <li>Pi Zero: <a href="https://raspberry-pi.ksyic.com/main/index/pdp.id/799/pdp.open/799">ケイエスワイ</a>, <a href="https://akizukidenshi.com/catalog/g/gM-12961/">秋月電子</a>, <a href="https://www.switch-science.com/catalog/3646/">スイッチサイエンス</a>, <a href="https://www.marutsu.co.jp/pc/i/1320453/">マルツ</a></li>
+                <li>Pi Zero <strong>2</strong> W: <a href="https://raspberry-pi.ksyic.com/main/index/pdp.id/851/pdp.open/851">ケイエスワイ</a></li>
+              </ul>
+            </li>
+            <li><a href="https://github.com/chirimen-oh/chirimen-lite/releases">Raspberry Pi OS LiteをUSB Serialで使用可能にしたイメージ</a>を書き込んだmicroSDカード</li>
+            <li>ブラウザの載ったパソコン
+              <ul>
+                <li>Windows 10 PC
+                  <ul>
+                    <li>ブラウザは標準のEdgeもしくはChromeを使います。</li>
+                  </ul>
+                </li>
+                <li>Macintosh
+                  <ul>
+                    <li>ブラウザはChromeが必要です。</li>
+                  </ul>
+                </li>
+                <li>いずれもUSBとWiFiが使える必要があります。</li>
+                <li><em>Note: Linux PCのChromeでは次の設定で利用可能になるとの報告をいただいています</em>
+                  <ul>
+                    <li>Ubuntu Studio: <code>sudo chmod a+rw /dev/ttyACM0</code></li>
+                    <li>Ubuntu Desktop 20.04 LTS: <code>sudo gpasswd -a "$(whoami)" dialout</code></li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+            <li>USBケーブル (USB A - MicroB)</li>
+            <li>Lチカ用パーツ
+              <ul>
+                <li>ブレッドボード</li>
+                <li>LED</li>
+                <li>1KΩ抵抗</li>
+                <li>ジャンパーワイヤ オス-メス 2本</li>
+              </ul>
+            </li>
+            <li>GPIO入力実験用追加パーツ
+              <ul>
+                <li>タクトスイッチ</li>
+              </ul>
+            </li>
+            <li>モーター制御用追加パーツ
+              <ul>
+                <li>10KΩ抵抗</li>
+                <li>MOSFET</li>
+                <li>ちびギヤモーター</li>
+              </ul>
+            </li>
+            <li>温度センシング実験用追加パーツ
+              <ul>
+                <li><a href="https://akizukidenshi.com/catalog/g/gM-06675/">ADT7410モジュール</a>　もしくは <a href="https://www.amazon.co.jp/dp/B083NHJSL9/">SHT30モジュール</a></li>
+                <li>ジャンパーワイヤ オス-メス 2本</li>
+              </ul>
+            </li>
+          </ul>
+          <hr class="page-wrap">
+          <figure>
+            <img src="../../pizero/imgs/PartsList2.svg" alt="Parts Images" height="360">
+            <figcaption aria-hidden="true">Parts Images</figcaption>
+          </figure>
+          <p>PiZero自体はディスプレイやキーボードを接続する必要はありません。</p>
+        </section>
+        <section class="level3" aria-labelledby="pcをwifiに接続">
+          <h3 id="pcをwifiに接続">PCをWiFiに接続</h3>
+          <ul>
+            <li>会場(もしくは開発場所)で提供されているWiFiアクセスポイントにまずはPCを接続してください。</li>
+          </ul>
+        </section>
+      </section>
+      <section class="level2" aria-labelledby="ステップ１ターミナル接続">
+        <h2 id="ステップ１ターミナル接続">ステップ１（ターミナル接続）</h2>
+        <ul>
+          <li><a href="https://github.com/kou029w/chirimen-os/releases/">Raspberry Pi OS LiteをUSB Serialで使用可能にしたイメージ</a>を書き込んだmicroSDカードをRaspberry Pi Zeroに差し込みます。</li>
+          <li>PCのUSBとRaspberry Pi ZeroのUSB OTGポートをUSBケーブルでつなぎます
+            <ul>
+              <li>
+                PiZero側はつなぐポート要注意　ここに繋ぎます
+                
+                <img src="https://chirimen.org/PiZeroWebSerialConsole/imgs/PiZeroW_OTG.JPG" alt="pi zero otg port" height="160">
+              </li>
+              <li>PCからのUSB給電でRaspberry Pi Zeroが起動します。</li>
+            </ul>
+          </li>
+          <li>PCでRaspberry Pi Zeroが認識されたことを確認します (<a href="https://askpc.panasonic.co.jp/beginner/guide/ten07/7013.html">Windows10のデバイスマネージャ</a>の例)
+            <ul>
+              <li>給電後USBデバイスとして出現するまでにしばらく(数十秒)かかります）</li>
+              <li>
+                Windowsの場合、ポートの番号(COMnのnの部分)は環境ごとに異なります
+                
+                <img src="../../pizero/imgs/OTG_PORT_W10.png" alt="OTG PORT Information on device manager">
+              </li>
+            </ul>
+          </li>
+          <li>
+            <a href="https://chirimen.org/PiZeroWebSerialConsole/PiZeroWebSerialConsole.html"><strong>こちらのWeb Serial RPiZero TerminalページにPCのブラウザでアクセス</strong></a>
+            (以降、このウィンドを<strong>ターミナルウィンド</strong>と呼びます)
+          </li>
+          <li><code>[Connect and Login PiZero]</code>ボタンを押す
+            <ul>
+              <li>
+                接続ダイアログが出現
+                
+                <img src="../../pizero/imgs/SerialDialog.png" alt="connection dialog" height="155">
+              </li>
+              <li>上で認識したデバイス（ポート番号）を接続する</li>
+            </ul>
+          </li>
+          <li>コンソール(左側の黒い画面の最下部)に以下のコマンドプロンプトが表示されればステップ１完了です。引き続きステップ２に進んでください
+            <ul>
+              <li><code>pi@raspberrypi:~$</code></li>
+            </ul>
+          </li>
+        </ul>
+        <section class="level3" aria-labelledby="note">
+          <h3 id="note">Note:</h3>
+          <ul>
+            <li>
+              <p>CHIRIMEN Raspberry Pi Zero版では<a href="https://www.raspberrypi.com/software/operating-systems/">Raspberry Pi OS Lite</a>(Linux)を<a href="https://atmarkit.itmedia.co.jp/ait/articles/1602/19/news025.html">コマンドラインインターフェース(CLI)</a>・<a href="https://atmarkit.itmedia.co.jp/ait/articles/1603/02/news016.html">シェル(bash)</a>で操作します。</p>
+              <ul>
+                <li>ただしこの講習で使うコマンドはごくわずかです。
+                  <ul>
+                    <li><strong>node</strong> コマンド(後述)</li>
+                    <li><a href="https://atmarkit.itmedia.co.jp/ait/articles/1708/04/news015_2.html">CTRL+c</a>(CTRLキーとcを同時に押す:実行中のコマンドを終了させる)</li>
+                  </ul>
+                </li>
+                <li>その他のほとんどの操作（コマンド）は、ターミナルウィンドやそこから起動される別画面のGUIがコマンド操作を代行しています。図1.1のGUIを操作するとコンソールにコマンドが入力されるのがわかると思います。</li>
+              </ul>
+            </li>
+            <li>
+              <p>もしもあなたがlinuxのシェルコンソール画面に慣れている場合は、ターミナルウィンドのコンソールにその他のシェル(bash)コマンドをタイプして使用することもできます。</p>
+              <ul>
+                <li>たとえば <code>ls -al</code> とタイプするとおコンソール画面にディレクトリ内のファイルのリストが表示されます。</li>
+              </ul>
+            </li>
+            <li>
+              <p>ターミナルウィンドの概要 (図1.1)</p>
+              <figure>
+                <img src="../../pizero/imgs/termWin.svg" alt="ターミナルウィンドの説明">
+                <figcaption aria-hidden="true">ターミナルウィンドの説明</figcaption>
+              </figure>
+            </li>
+          </ul>
+          <hr class="page-wrap">
+        </section>
+      </section>
+      <section class="level2" aria-labelledby="ステップ２-wifi設定">
+        <h2 id="ステップ２-wifi設定">ステップ２ (WiFi設定)</h2>
+        <ul>
+          <li>ターミナルウィンドの<code>[wifi panel]</code>ボタンを押す
+            <ul>
+              <li>ウィンドが開き、WiFiアクセスポイントがスキャンされます。ステルスでないものはリストアップされているので、以降の作業の参考にしてください。</li>
+              <li>
+                Raspberry Pi Zero Wは2.4GHz帯のWiFiにのみ対応しています。
+                
+                <img src="../../pizero/imgs/WiFiSetting.png" alt="WiFi Setting">
+              </li>
+            </ul>
+          </li>
+          <li>ウィンド下部に、会場(もしくは開発場所)で提供されているWiFiアクセス情報を入力する (いずれも大文字小文字の区別があるので注意してください。)
+            <ul>
+              <li>SSID欄</li>
+              <li>PASS PHRASE欄</li>
+            </ul>
+          </li>
+          <li><code>[SET WiFi]</code>ボタンを押す</li>
+          <li><code>[Reboot]</code>ボタンを押す
+            <ul>
+              <li>これでRaspberry Pi Zeroが再起動をはじめます</li>
+            </ul>
+          </li>
+          <li>WiFiウィンドを閉じ、ターミナルウィンドに戻る</li>
+          <li>ターミナルウィンドの<code>[Close Connection]</code>ボタンを押す</li>
+          <li>30秒ほど待つ（Raspberry Pi Zeroが再起動します）</li>
+        </ul>
+        <hr class="page-wrap">
+        <ul>
+          <li>
+            <p><code>[Connect and Login PiZero]</code>ボタンを押し接続する</p>
+            <ul>
+              <li>接続ダイアログが出現⇒接続するとこれまで同様コマンドプロンプトが出現</li>
+            </ul>
+          </li>
+          <li>
+            <p><code>[wifi panel]</code>ボタンを再び押す</p>
+          </li>
+          <li>
+            <p><code>[wifi Info]</code>ボタンを押す</p>
+            <ul>
+              <li>表示された情報をチェックします</li>
+              <li>
+                wlan0: inet xxx.xxx.xxx.xxx　(xxxは数字)のようにIPアドレスが設定されていれば接続成功しています。
+                
+                <img src="../../pizero/imgs/WiFiSettingIPaddress.png" alt="WiFi Setting_IPaddress"><!--  * あとでping chirimen.org OK も入れよう。-->
+              </li>
+              <li>もしもあなたがsshやscp (WinSCP, teraterm等)などのツールに慣れている場合、上記のアドレスでssh接続できます
+                <ul>
+                  <li>PORT: 22</li>
+                  <li>ID: <code>pi</code></li>
+                  <li>PASSWORD: <code>raspberry</code></li>
+                </ul>
+              </li>
+              <li>確認できたらWiFi Settingウィンドを閉じてください。</li>
+            </ul>
+          </li>
+          <li>
+            <p>以上ですべての初期設定完了です！</p>
+          </li>
+        </ul>
+      </section>
+    </section>
+  </body>
+</html>
