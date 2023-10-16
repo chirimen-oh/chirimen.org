@@ -27,6 +27,7 @@
   width: 20em;
 }
 
-[role='doc-colophon'] :not(.footnote) > a[href^='http']::before {
+[role='doc-colophon'] :not(.footnote) > a[href^='http']::before,
+[role='doc-colophon'] :not(.footnote) > a[href^='http']::after {
   display: none;
 }
