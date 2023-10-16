@@ -48,7 +48,7 @@
       var(--vs-crossref--counter-style)
     );
   --vs-crossref--marker-fig-content: '図'
-    counter(vs-counter-fig, var(--vs-crossref--counter-style)) ': ';
+    counter(vs-counter-doc) '.' counter(vs-counter-fig, var(--vs-crossref--counter-style)) ': ';
   --vs-crossref--marker-tbl-content: '表'
     counter(vs-counter-tbl, var(--vs-crossref--counter-style)) ': ';
   --vs-crossref--call-fig-content-on-screen: '図???';

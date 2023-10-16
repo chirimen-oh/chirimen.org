@@ -22,15 +22,14 @@
           <li>抵抗値の読み方<span class="footnote">14.8. 抵抗値の読み方参照</span></li>
           <li>その他、配線の基礎知識<span class="footnote">14.3. 電子工作参照</span></li>
         </ul>
-        <p><strong>注意</strong></p>
-        <ul>
-          <li>間違ったピンに差し込むと場合によってはPiZeroが停止したり故障することもあります。（たとえば3.3V端子とGND端子を接続してしまうなど。）</li>
-          <li>そのため、慣れるまでは一旦PiZeroをシャットダウン、USBケーブルも外し電源OFFにしてから配線すると安全です
-            <ul>
-              <li>シャットダウンコマンド：<code>sudo shutdown -h now</code></li>
-            </ul>
-          </li>
-        </ul>
+        <div class="note" role="doc-note">
+          <section class="level3" aria-labelledby="注意">
+            <h3 id="注意">注意</h3>
+            <pre class="language-text"><code class="language-text">間違ったピンに差し込むと場合によってはPiZeroが停止したり故障することもあります。（たとえば3.3V端子とGND端子を接続してしまうなど。）
+そのため、慣れるまでは一旦PiZeroをシャットダウン、USBケーブルも外し電源OFFにしてから配線すると安全です</code></pre>
+            <p>シャットダウンコマンド：<code>sudo shutdown -h now</code></p>
+          </section>
+        </div>
         <figure>
           <img src="../../pizero/imgs/pizero_led.png" alt="PiZero配線図" height="200">
           <figcaption aria-hidden="true">PiZero配線図</figcaption>
@@ -40,26 +39,26 @@
           <li>抵抗やLEDの足(リード線)は手で簡単に曲げられます。ブレッドボードに差し込めるように適当に成型してください。</li>
           <li>上図のPiZeroは上から見たものです</li>
         </ul>
-        <hr class="page-wrap">
       </section>
-      <section class="level2" aria-labelledby="プログラムを書く">
-        <h2 id="プログラムを書く">プログラムを書く</h2>
-        <p>Raspberry Pi に接続した LED を点滅させるプログラムを書きます。</p>
-        <ul>
-          <li>ターミナルウィンドでRaspberry Pi Zeroに接続します。（ステップ１が完了した状態）</li>
-          <li>myAppディレクトリに移動します。
-            <ul>
-              <li>コンソールの右側のファイルマネージャでmyApp⇒移動を選ぶ</li>
-              <li>このディレクトリが開発環境が設定されているディレクトリです。</li>
-            </ul>
-          </li>
-          <li><code>[Create New Text]</code>ボタンを押す</li>
-          <li>入力欄に<code>hello.js</code>と入力</li>
-          <li><code>[create]</code>ボタンを押す</li>
-          <li>JS Editorウィンドが出現</li>
-        </ul>
-        <p>以下のプログラムをJS Editorに書き写します</p>
-        <pre class="language-js"><code class="language-js"><span class="token comment">// WebGPIO を使えるようにするためのライブラリをインポート</span>
+    </section>
+    <section class="level2" aria-labelledby="プログラムを書く">
+      <h2 id="プログラムを書く">プログラムを書く</h2>
+      <p>Raspberry Pi に接続した LED を点滅させるプログラムを書きます。</p>
+      <ul>
+        <li>ターミナルウィンドでRaspberry Pi Zeroに接続します。（ステップ１が完了した状態）</li>
+        <li>myAppディレクトリに移動します。
+          <ul>
+            <li>コンソールの右側のファイルマネージャでmyApp⇒移動を選ぶ</li>
+            <li>このディレクトリが開発環境が設定されているディレクトリです。</li>
+          </ul>
+        </li>
+        <li><code>[Create New Text]</code>ボタンを押す</li>
+        <li>入力欄に<code>hello.js</code>と入力</li>
+        <li><code>[create]</code>ボタンを押す</li>
+        <li>JS Editorウィンドが出現</li>
+      </ul>
+      <p>以下のプログラムをJS Editorに書き写します</p>
+      <pre class="language-js"><code class="language-js"><span class="token comment">// WebGPIO を使えるようにするためのライブラリをインポート</span>
 <span class="token keyword module">import</span> <span class="token imports"><span class="token punctuation">{</span>requestGPIOAccess<span class="token punctuation">}</span></span> <span class="token keyword module">from</span> <span class="token string">"./node_modules/node-web-gpio/dist/index.js"</span><span class="token punctuation">;</span>
 <span class="token comment">// sleep 関数を定義</span>
 <span class="token keyword">const</span> <span class="token function-variable function">sleep</span> <span class="token operator">=</span> <span class="token parameter">msec</span> <span class="token arrow operator">=></span> <span class="token keyword">new</span> <span class="token class-name">Promise</span><span class="token punctuation">(</span><span class="token parameter">resolve</span> <span class="token arrow operator">=></span> <span class="token function">setTimeout</span><span class="token punctuation">(</span>resolve<span class="token punctuation">,</span> msec<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
@@ -83,31 +82,30 @@
 <span class="token punctuation">}</span>
 
 <span class="token function">blink</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
-        <ul>
-          <li>書き終えたら保存します。(<code>[Save]ボタン</code>もしくはCTRL+s)</li>
-          <li>ターミナルウィンドの右側(ファイルマネージャ)に hello.jsが出現していることを確認します</li>
-          <li>エディタウィンドを閉じます</li>
-        </ul>
-        <hr class="page-wrap">
-      </section>
-      <section class="level2" aria-labelledby="実行する">
-        <h2 id="実行する">実行する</h2>
-        <ul>
-          <li>ターミナルウィンドのコンソール部(ウィンド左側)のプロンプト(画面一番下)が以下になっていることを確認します
-            <ul>
-              <li><code>pi@raspberrypi:~/myApp$</code></li>
-            </ul>
-          </li>
-          <li>コンソール部をクリックして、入力可能状態にしてから、以下の文字を入力します。</li>
-          <li><code>node hello.js</code> ENTERキー
-            <ul>
-              <li><a href="https://atmarkit.itmedia.co.jp/ait/articles/1102/28/news105.html"><strong>node</strong></a> はJavaScriptのコードを実行するインタープリタ<span class="footnote"><a href="https://ja.wikipedia.org/wiki/%E3%82%A4%E3%83%B3%E3%82%BF%E3%83%97%E3%83%AA%E3%82%BF">https://ja.wikipedia.org/wiki/インタプリタ</a></span></li>
-            </ul>
-          </li>
-          <li>LED が点滅すれば完成です 🎉</li>
-          <li>プログラムを止めるには、コンソール部で <code>CTRL+c</code> を押します。</li>
-        </ul>
-      </section>
+      <ul>
+        <li>書き終えたら保存します。(<code>[Save]ボタン</code>もしくはCTRL+s)</li>
+        <li>ターミナルウィンドの右側(ファイルマネージャ)に hello.jsが出現していることを確認します</li>
+        <li>エディタウィンドを閉じます</li>
+      </ul>
+      <hr class="page-wrap">
+    </section>
+    <section class="level2" aria-labelledby="実行する">
+      <h2 id="実行する">実行する</h2>
+      <ul>
+        <li>ターミナルウィンドのコンソール部(ウィンド左側)のプロンプト(画面一番下)が以下になっていることを確認します
+          <ul>
+            <li><code>pi@raspberrypi:~/myApp$</code></li>
+          </ul>
+        </li>
+        <li>コンソール部をクリックして、入力可能状態にしてから、以下の文字を入力します。</li>
+        <li><code>node hello.js</code> ENTERキー
+          <ul>
+            <li><a href="https://atmarkit.itmedia.co.jp/ait/articles/1102/28/news105.html"><strong>node</strong></a> はJavaScriptのコードを実行するインタープリタ<span class="footnote"><a href="https://ja.wikipedia.org/wiki/%E3%82%A4%E3%83%B3%E3%82%BF%E3%83%97%E3%83%AA%E3%82%BF">https://ja.wikipedia.org/wiki/インタプリタ</a></span></li>
+          </ul>
+        </li>
+        <li>LED が点滅すれば完成です 🎉</li>
+        <li>プログラムを止めるには、コンソール部で <code>CTRL+c</code> を押します。</li>
+      </ul>
     </section>
   </body>
 </html>

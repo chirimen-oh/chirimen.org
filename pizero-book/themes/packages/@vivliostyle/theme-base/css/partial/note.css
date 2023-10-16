@@ -1,0 +1,8 @@
+[role='doc-note'] {
+  --vs-section--h2-marker-display: none;
+  --vs-section--h3-marker-display: none;
+
+  background: Gainsboro;
+  padding: 2em;
+  border-radius: 1em;
+}
