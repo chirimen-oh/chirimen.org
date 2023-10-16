@@ -70,8 +70,5 @@
     1. [GPIO センサー・アクチュエータコントローラー](./docs/device-list.html#gpio-センサーアクチュエータコントローラー)
     1. [アナログセンサー (I2C ADC で読み取り)](./docs/device-list.html#アナログセンサー-i2c-adc-で読み取り)
     1. [アクチュエータ](./docs/device-list.html#アクチュエータ)
-1. [Special Thanks](./docs/thanks.html#special-thanks)
-    1. [表紙・イラスト](./docs/thanks.html#表紙イラスト)
-    1. [Works](./docs/thanks.html#works)
 
 </nav>

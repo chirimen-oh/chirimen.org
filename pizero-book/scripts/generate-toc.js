@@ -8,6 +8,7 @@ const entry = config.entry.filter(
   (e) => typeof e === "string"
 );
 const tocFromEntry = entry
+  .filter((content) => content !== './docs/thanks.md')
   .map((content) => {
     console.log('****', content);
     const s = fs.readFileSync(content, { encoding: "utf8" });
