@@ -63,20 +63,21 @@ PiZero自体はディスプレイやキーボードを接続する必要はあ�
 * コンソール(左側の黒い画面の最下部)に以下のコマンドプロンプトが表示されればステップ１完了です。引き続きステップ２に進んでください
   * ```pi@raspberrypi:~$```
 
+<section class="note break-after-page" role="doc-note">
+
 ### Note:
 
 * CHIRIMEN Raspberry Pi Zero版では[Raspberry Pi OS Lite](https://www.raspberrypi.com/software/operating-systems/)(Linux)を[コマンドラインインターフェース(CLI)](https://atmarkit.itmedia.co.jp/ait/articles/1602/19/news025.html)・[シェル(bash)](https://atmarkit.itmedia.co.jp/ait/articles/1603/02/news016.html)で操作します。
   * ただしこの講習で使うコマンドはごくわずかです。
     * **node** コマンド(後述)
     * [CTRL+c](https://atmarkit.itmedia.co.jp/ait/articles/1708/04/news015_2.html)(CTRLキーとcを同時に押す:実行中のコマンドを終了させる)
-  * その他のほとんどの操作（コマンド）は、ターミナルウィンドやそこから起動される別画面のGUIがコマンド操作を代行しています。図1.1のGUIを操作するとコンソールにコマンドが入力されるのがわかると思います。
+  * その他のほとんどの操作（コマンド）は、ターミナルウィンドやそこから起動される別画面のGUIがコマンド操作を代行しています。図3.2のGUIを操作するとコンソールにコマンドが入力されるのがわかると思います。
 * もしもあなたがlinuxのシェルコンソール画面に慣れている場合は、ターミナルウィンドのコンソールにその他のシェル(bash)コマンドをタイプして使用することもできます。
   * たとえば ```ls -al``` とタイプするとおコンソール画面にディレクトリ内のファイルのリストが表示されます。
-* ターミナルウィンドの概要 (図1.1)
 
-  ![ターミナルウィンドの説明](../../pizero/imgs/termWin.svg)
+![ターミナルウィンドの説明](../../pizero/imgs/termWin.svg)
 
-<hr class="page-wrap" />
+</section>
 
 ## ステップ２ (WiFi設定)
 
