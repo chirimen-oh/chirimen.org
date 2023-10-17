@@ -18,15 +18,12 @@ I2Cデバイスは小型のICチップデバイスとなっており、デバイ
 
 通信するデバイス同士が同一基板上にない場合には、SDA、SCL の 2 本の通信線に加え電源や GND の線を加えて 4 本のケーブルを用いて接続するのが一般的です。電源電圧はデバイスに応じたものを繋ぐ必要があります。
 
-### Raspberry PiのI2C端子
+### Raspverry Pi ZeroのI2C端子
 下図のSCL, SDAがI2C端子です（黄色の端子）
 
 ![Raspi PIN配置図](../../raspi/imgs/section0/Raspi3PIN.png){height=600}
 
-
-### Raspverry Pi ZeroのI2C端子
-
-　Raspberry PiのI2C端子と同じ配列です。
+Raspberry PiのI2C端子と同じ配列です。
 
 <hr class="page-wrap" />
 
@@ -48,23 +45,19 @@ I2C の概要として下記を押さえておきましょう。
 - I2C スレーブは SlaveAddress を持つ
 - 同じ I2C バスに同じ SlaveAddress のデバイスは繋げない
 
-
-## SHT30, SHT31について
-- [湿度・温度センサ (SHT31)](http://akizukidenshi.com/catalog/g/gK-12125/) x 1
-  - または SHT30 ([Amazon](https://www.amazon.co.jp/s?k=sht30), [AliExpress](https://ja.aliexpress.com/item/32962846003.html))。
-  - note: SHT31 は氷点下や 65 度以上などの高温での計測時の精度が SHT30 よりも少し高いが室温程度ではほぼ同様の類似モデルです。同シリーズには他にも SHT35 などもありますがそちらは未検証です。 (参考: [データシート](https://www.sensirion.com/fileadmin/user_upload/customers/sensirion/Dokumente/2_Humidity_Sensors/Datasheets/Sensirion_Humidity_Sensors_SHT3x_Datasheet_digital.pdf))
-
-<hr class="page-wrap" />
-
 ### I2Cデバイスモジュールの接続について
-I2Cデバイスは一般的に小さなチップ部品です。下の拡大写真で緑で囲んだものがSHT31の本体で 上下に出ている微細な端子を接続して使いますが、微細過ぎてプロトタイピングには向きません。そこでブレッドボードで使いやすい端子に変換したモジュールが販売されています。モジュールには**赤で囲んだように端子名の記載**があります。これを**ホストのコンピュータの端子名と一致させて結線**することでI2Cデバイスが正しく接続されます。(電源端子はVIN,V+,3V,VCCなど別名になっていることがあります)
+I2Cデバイスは一般的に小さなチップ部品です。下の拡大写真で下の枠線で囲んだものがSHT31の本体で 上下に出ている微細な端子を接続して使いますが、微細過ぎてプロトタイピングには向きません。そこでブレッドボードで使いやすい端子に変換したモジュールが販売されています。モジュールには**上の枠線囲んだように端子名の記載**があります。これを**ホストのコンピュータの端子名と一致させて結線**することでI2Cデバイスが正しく接続されます。(電源端子はVIN,V+,3V,VCCなど別名になっていることがあります)
 
 ![I2Cmodule](../../microbit/imgs/SHT31ModulePin.jpg){height=120}
+
+<section class="note" role="doc-note">
 
 #### 注意: 配線時のポイント
 
     配線の接続先やデバイスの基板の表裏など間違えないように注意してください。
     配線を間違えると、故障や怪我などの原因になることがあります。おかしいなと思ったら、すぐに外して、配線をきちんと確認しましょう。
+
+</section>
 
 ## i2cdetectで接続がうまくいったか確認する
 
@@ -77,14 +70,8 @@ i2cdetect -y -r 1
 (microbit版はコマンドラインがないので下記webAppを使いましょう)
 
 ### i2cdetect webApp
-#### Raspberry Pi
-SlaveAddress を確認する i2cdetect には WebI2C(後述) を使って実装したwebApp版もあります。https://r.chirimen.org/i2cdetect をご利用ください。ただし、WebI2C 版 i2cdetect を利用中は他のペ
-ージから I2C デバイスを操作できません。確認が済んだらタブを閉じるようにしましょう。
 
-#### Raspberry PiZeroW
-Raspberry PiZeroWでは、[ターミナルウィンド](https://chirimen.org/PiZeroWebSerialConsole/PiZeroWebSerialConsole.html)⇒CHIRIMEN Panel⇒i2c detect　でコマンドラインのショートカットが使えます。
-
-<hr class="page-wrap" />
+Raspberry PiZeroWでは、[ターミナルウィンド](https://chirimen.org/PiZeroWebSerialConsole/PiZeroWebSerialConsole.html) ⇒ CHIRIMEN Panel ⇒ i2c detect　でコマンドラインのショートカットが使えます。
 
 ### i2c detectの結果
 
@@ -118,8 +105,6 @@ $ i2cdetect -y -r 1
 
 SHT30 は`0x44`がデフォルトの SlaveAddress で、ADDR ピンの HIGH/LOW により SlaveAddeess を `0x44` か `0x45` に変更できることがわかります。
 
-<hr class="page-wrap" />
-
 ### 認識されないとき
 
 試しに I2C デバイスへの電源供給を止めて、認識されないケースをあえて確かめてみます。
@@ -150,49 +135,101 @@ CHIRIMENでは、GPIOインターフェースをWeb GPIOと呼ぶAPIで使用し
 
 ### デバイスドライバが用意されているI2Cデバイスのリスト
 
-[デバイスドライバが用意され簡単に利用できるI2Cデバイスのリスト](../partslist#i2c-)
+デバイスドライバが用意され簡単に利用できるI2Cデバイスのリスト<span class="footnote">13.1 I2Cセンター</span>
 
 よく利用される、30種類ぐらいの比較的安価なデバイス向けのドライバが用意されています。
 
-### I2C 温湿度センサー (SHT30, SHT31)の使用例
-
- Raspberry Pi では、index.htmlの中で、Raspberry Pi Zero Wではmain.jsの中で以下のライブラリを読み込んでいます。
-  
-* WebI2C APIを使用できるようにするためのライブラリ( Raspberry Pi: `polyfill.js`, Raspberry Pi Zero W: xxx)です。
-* ( Raspberry Pi, Raspberry Pi Zero W: `@chirimen/sht30`)　このファイルは、Web I2C API を使って SHT30 との通信を行うための、SHT30用のデバイスドライバー (ハードウェアを操作する為のライブラリ) です。
-
-`main.js` がドライバーライブラリを使ってこのアプリケーションの動作を記述している部分です。
-
 <hr class="page-wrap" />
 
-#### main.js
+## I2C 温湿度センサーの使用例
 
-次に、`main.js` の処理の流れを見てみましょう。
+### SHT30, SHT31について
+- [湿度・温度センサ (SHT31)](http://akizukidenshi.com/catalog/g/gK-12125/) x 1
+  - または SHT30 ([Amazon](https://www.amazon.co.jp/s?k=sht30), [AliExpress](https://ja.aliexpress.com/item/32962846003.html))。
+  - note: SHT31 は氷点下や 65 度以上などの高温での計測時の精度が SHT30 よりも少し高いが室温程度ではほぼ同様の類似モデルです。同シリーズには他にも SHT35 などもありますがそちらは未検証です。 (参考: [データシート](https://www.sensirion.com/fileadmin/user_upload/customers/sensirion/Dokumente/2_Humidity_Sensors/Datasheets/Sensirion_Humidity_Sensors_SHT3x_Datasheet_digital.pdf))
+
+### SHT30編
+
+SHT30は温度に加えて湿度も測定できるI2C接続の多機能センサーです。SHT31もほぼ同等に使えます。(SHT31のほうが精度が高い)
+
+* ターミナルウィンドの```[CHIRIMEN Panel]```ボタンを押す
+* 出現したCHIRIMEN Panelの```[Get Examples]```ボタンを押す
+* ID : sht30を探します
+* 回路図リンクを押すと回路図が出てきますので、回路を組みます。なお、接続は下の図のようになります。
+
+  ![SHT31 schematic](../../pizero/esm-examples/sht30/schematic.png){height=220}
+
+* ```[JS GET]```ボタンを押すと、開発ディレクトリ(```~/myApp```)に、サンプルコードが保存されます。
+  * **main-sht30.js**というファイル名で保存されます。
+  * Note: ターミナルウィンドの右側のファイルマネージャでmain-sht30.js⇒編集 を選ぶと、エディタで編集できます。
+    * ソースコードを見てみましょう
+    * 今は編集不要ですが、サンプルをベースに応用プログラムを作るときには編集しましょう。
+
+#### I2Cセンサー(SHT30)が認識されていることを確認する
+
+* CHIRIMEN Panelの```[i2c detect]```ボタンを押すと、[SHT30のI2Cアドレス](https://strawberry-linux.com/pub/Sensirion_Humidity_SHT3x_DIS_Datasheet_V3_J.pdf)　0x**44**が表示されていればうまく接続されています。
+
+<pre>
+     0  1  2  3  4  5  6  7  8  9  a  b  c  d  e  f
+00:          -- -- -- -- -- -- -- -- -- -- -- -- -- 
+10: -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- 
+20: -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- 
+30: -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- 
+40: -- -- -- -- 44 -- -- -- -- -- -- -- -- -- -- -- 
+50: -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- 
+60: -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- 
+70: -- -- -- -- -- -- -- --                       
+</pre>
+
+#### 実行する
+
+* ターミナルウィンドのコンソールのプロンプトが```pi@raspberrypi:~/myApp$```となっていることを確認
+* ターミナルウィンドのコンソールに、```node main-sht30.js``` [ENTER] と入力して実行。
+* 温度と湿度が1秒ごとにコンソールに表示されます。
+* 終了は CTRL+c
+
+#### コードを読む
+
+* ターミナルウィンドの右側のファイルマネージャでmain-sht30.js⇒表示 を選び、ソースコードを読んでみましょう
 
 ```js
+import {requestI2CAccess} from "./node_modules/node-web-i2c/index.js";
+import SHT30 from "@chirimen/sht30";
+const sleep = msec => new Promise(resolve => setTimeout(resolve, msec));
+
 main();
 
 async function main() {
-  const temperatureDisplay = document.getElementById("temperatureDisplay");
-  const humidityDisplay = document.getElementById("humidityDisplay");
-  const i2cAccess = await navigator.requestI2CAccess();
+  const i2cAccess = await requestI2CAccess();
   const port = i2cAccess.ports.get(1);
   const sht30 = new SHT30(port, 0x44);
   await sht30.init();
 
   while (true) {
     const { humidity, temperature } = await sht30.readData();
-    temperatureDisplay.innerHTML = `${temperature.toFixed(2)} ℃`;
-    humidityDisplay.innerHTML = `${humidity.toFixed(2)} %`;
+    console.log(
+      [
+        `Humidity: ${humidity.toFixed(2)}%`,
+        `Temperature: ${temperature.toFixed(2)} degree`
+      ].join(", ")
+    );
+
     await sleep(500);
   }
 }
 ```
 
+##### WebI2CライブラリとSHT30デバイスドライバを読み込む
+
+`node-web-i2c` は WebI2C API を使用できるようにするためのライブラリです。
+`@chirimen/sht30` は、Web I2C API を使って SHT30 との通信を行うための、SHT30用のデバイスドライバー (ハードウェアを操作する為のライブラリ) です。
+`main.js` がドライバーライブラリを使ってこのアプリケーションの動作を記述している部分です。
+
+次に、`main.js` の処理の流れを見てみましょう。
 ここで温度センサーの情報を定期的に取得し、画面に出力する処理が行われています。
 少し詳し解説してみます。
 
-##### await navigator.requestI2CAccess()
+##### await requestI2CAccess()
 
 Web I2C API を利用するための **`I2CAccess` インタフェースを取得** するための最初の API 呼び出しです。この関数も非同期処理ですので `await` で処理完了を待機し、その結果正しくインタフェースが取得されたら `i2cAccess` オブジェクトに保持します。
 
@@ -212,8 +249,6 @@ CHIRIMEN RasPi、RasPiZero、で利用可能な I2C ポート番号は`1`番だ�
 ```js
 const sht30 = new SHT30(port, 0x44);
 ```
-
-<hr class="page-wrap" />
 
 ##### await sht30.init()
 
@@ -239,14 +274,12 @@ const { humidity, temperature } = await sht30.readData();
 
 #### Web I2C API に着目して流れをまとめると
 
-1. **I2C の準備:** `await navigator.requestI2CAccess()` で I2CAccess インタフェースを取得
+1. **I2C の準備:** `await requestI2CAccess()` で I2CAccess インタフェースを取得
 2. **ポートの準備:** `await i2cAccess.ports.get(1)` で、1 番ポートの `port` オブジェクトを取得
 3. **デバイス初期化:** `await port.open(0x44)` で、SlaveAddress `0x44` 番の I2CSlaveDevice インタフェースを取得
 4. **データ読み込み・書き込み:** 
 
 この流れは他の I2C デバイスでも基本的に同様になります。
-
-<hr class="page-wrap" />
 
 ### デバイスドライバーなしにSHT30を使う
 
@@ -284,65 +317,7 @@ var humidity = 100 * (mdata[3] * 256 + mdata[4]) / 65535.0;
 ```
 ドライバーライブラリ内部では、上記のようにSHT30 に単発の高精度計測を指示し、得られた温度と湿度それぞれ 16bit の数値を、温度・湿度の物理量の浮動小数点数に変換して返却しています。
 
-<hr class="page-wrap" />
-
-## SHT30編
-
-SHT30は温度に加えて湿度も測定できるI2C接続の多機能センサーです。SHT31もほぼ同等に使えます。(SHT31のほうが精度が高い)
-* SHT30/SHT31について<span class="footnote">12.4.1. SHT30, SHT31について参照</span>
-
-* ターミナルウィンドの```[CHIRIMEN Panel]```ボタンを押す
-* 出現したCHIRIMEN Panelの```[Get Examples]```ボタンを押す
-* ID : sht30を探します
-* 回路図リンクを押すと回路図が出てきますので、回路を組みます。なお、接続は下の図のようになります。
-
-  ![SHT31 schematic](../../pizero/esm-examples/sht30/schematic.png){height=220}
-
-* ```[JS GET]```ボタンを押すと、開発ディレクトリ(```~/myApp```)に、サンプルコードが保存されます。
-  * **main-sht30.js**というファイル名で保存されます。
-  * Note: ターミナルウィンドの右側のファイルマネージャでmain-sht30.js⇒編集 を選ぶと、エディタで編集できます。
-    * ソースコードを見てみましょう
-    * 今は編集不要ですが、サンプルをベースに応用プログラムを作るときには編集しましょう。
-
-<hr class="page-wrap" />
-
-### I2Cセンサー(SHT30)が認識されていることを確認する
-
-* CHIRIMEN Panelの```[i2c detect]```ボタンを押すと、[SHT30のI2Cアドレス](https://strawberry-linux.com/pub/Sensirion_Humidity_SHT3x_DIS_Datasheet_V3_J.pdf)　0x**44**が表示されていればうまく接続されています。
-  * i2c detectとは<span class="footnote">12.5. i2cdetectで接続がうまくいったか確認する参照</span>
-
-<pre>
-     0  1  2  3  4  5  6  7  8  9  a  b  c  d  e  f
-00:          -- -- -- -- -- -- -- -- -- -- -- -- -- 
-10: -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- 
-20: -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- 
-30: -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- 
-40: -- -- -- -- 44 -- -- -- -- -- -- -- -- -- -- -- 
-50: -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- 
-60: -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- 
-70: -- -- -- -- -- -- -- --                       
-</pre>
-
-### 実行する
-
-* ターミナルウィンドのコンソールのプロンプトが```pi@raspberrypi:~/myApp$```となっていることを確認
-* ターミナルウィンドのコンソールに、```node main-sht30.js``` [ENTER] と入力して実行。
-* 温度と湿度が1秒ごとにコンソールに表示されます。
-* 終了は CTRL+c
-
-### コードを読む
-
-* ターミナルウィンドの右側のファイルマネージャでmain-sht30.js⇒表示 を選び、ソースコードを読んでみましょう
-* [WebI2CライブラリとSHT30デバイスドライバを読み込み](https://tutorial.chirimen.org/chirimenGeneric/#webi2c)
-
-　`import {requestI2CAccess} from "./node_modules/node-web-i2c/index.js";`
-  `import SHT30 from "@chirimen/sht30";`
-  * JavaScript module<span class="footnote">10.2.3. javascript Module (ECMA Script Module)参照</span>に基づいてWebI2Cライブラリを読み込みます。
-* I2C 温湿度センサー (SHT30, SHT31)の初期化と使用<span class="footnote">6.6.2. I2C 温湿度センサー (SHT30, SHT31)の使用例参照</span>
-
-<hr class="page-wrap" />
-
-## ADT7410編
+### ADT7410編
 
 温度センサーADT7410を使います。
 もし、SHT30を使用する場合は、「IoTを試す」の章まで読み飛ばしてください。
@@ -359,11 +334,13 @@ SHT30は温度に加えて湿度も測定できるI2C接続の多機能センサ
     * ソースコードを見てみましょう
     * 今は編集不要ですが、サンプルをベースに応用プログラムを作るときには編集しましょう。
 
+<section class="note break-after-page" role="doc-note">
+
 #### センサーの極性に注意
 
     温度センサー ADT7410 を用意した場合、図と同じように配線します。配線(特に電源線)を間違えるとセンサーが高熱になり火傷・破損するので注意してください。
 
-<hr class="page-wrap" />
+</section>
 
 ### I2Cセンサーが認識されていることを確認する
 
