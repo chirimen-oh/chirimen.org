@@ -21,8 +21,6 @@ module.exports = {
     './docs/try-devices.md',
     './docs/daemon.md',
     './docs/javascript.md',
-    './docs/gpio.md',
-    './docs/i2c.md',
     './docs/iot.md',
     './docs/document.md',
     './docs/device-list.md',
