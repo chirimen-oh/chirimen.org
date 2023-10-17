@@ -8,8 +8,8 @@ IoTは、制御されるデバイス（上図ではCHIRIMEN PiZeroW)と、利用
 
 Note: モーター制御の回路<span class="footnote">5.2. GPIO出力参照</span> を組めば、そのまま遠隔モーターコントロールができます
 
-- IoT<span class="footnote">13. IoT 参照</span> 
-- WebSoeketとRelayServer<span class="footnote">13.1. webSocketとpub/sub services 参照</span> 
+- IoT<span class="footnote">11. IoT 参照</span> 
+- WebSoeketとRelayServer<span class="footnote">11.1. webSocketとpub/sub services 参照</span> 
 
 ### 配線する
 
@@ -46,15 +46,15 @@ Note: モーター制御の回路<span class="footnote">5.2. GPIO出力参照</s
 #### Raspberry Pi Zero側コード
 * ターミナルウィンドの右側のファイルマネージャでmain-remote_gpio_led.js⇒表示 を選び、ソースコードを読んでみましょう
 * これまで通りWebGPIOライブラリの読み込み
-* relayServer.js<span class="footnote">13.1.2.2. relayServer.js 参照</span> ライブラリの読み込み
+* relayServer.js<span class="footnote">11.1.2. relayServer 参照</span> ライブラリの読み込み
   * Node.jsではrelayServerライブラリに加えて、webSocketライブラリの読み込みが必要です。
     ```
     import nodeWebSocketLib from "websocket";
     import {RelayServer} from "./RelayServer.js";
     ```
-* relayServer.js<span class="footnote">13.1. webSocketとpub/sub services 参照</span> を使って、PCからの操作指示を受信
-  * 初期化<span class="footnote">13.1.2.3.1. 初期化（受信側、送信側共通の処理参照</span>
-  * 受信処理<span class="footnote">13.1.2.3.2. チャンネルの作成参照</span>(コールバック関数の設定)
+* relayServer.js<span class="footnote">11.1. webSocketとpub/sub services 参照</span> を使って、PCからの操作指示を受信
+  * 初期化
+  * 受信処理(コールバック関数の設定)
 * 受信した内容をもとにGPIO出力を操作<span class="footnote">11.3. GPIOPort の出力処理参照</span>してLEDを点灯・消灯
 
 #### PC側コード
@@ -63,9 +63,9 @@ Note: モーター制御の回路<span class="footnote">5.2. GPIO出力参照</s
   ```
   import {RelayServer} from "https://chirimen.org/remote-connection/js/beta/RelayServer.js";
   ```
-* relayServer.js<span class="footnote">13.1. webSocketとpub/sub services 参照</span> を使い、UIを通してユーザからの操作指示を送信
-  * 初期化<span class="footnote">13.1.2.3.1. 初期化（受信側、送信側共通の処理参照</span> 
-  * 送信処理<span class="footnote">13.1.2.3.3. データの送信参照</span> ～UI(ボタン)に設置したコールバック関数をもとに送信
+* relayServer.js<span class="footnote">11.1. webSocketとpub/sub services 参照</span> を使い、UIを通してユーザからの操作指示を送信
+  * 初期化（受信側、送信側共通の処理参照</span> 
+  * 送信処理 ～UI(ボタン)に設置したコールバック関数をもとに送信
 
 #### 自分専用チャンネルで制御
 
