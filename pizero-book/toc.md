@@ -27,7 +27,6 @@
     1. [I2Cの概要](./docs/try-i2c.html#i2cの概要)
     1. [参考: I2C に関する詳細情報](./docs/try-i2c.html#参考-i2c-に関する詳細情報)
     1. [ポイント](./docs/try-i2c.html#ポイント)
-    1. [SHT30, SHT31について](./docs/try-i2c.html#sht30-sht31について)
     1. [i2cdetectで接続がうまくいったか確認する](./docs/try-i2c.html#i2cdetectで接続がうまくいったか確認する)
     1. [WebI2Cとデバイスドライバ](./docs/try-i2c.html#webi2cとデバイスドライバ)
     1. [I2C 温湿度センサーの使用例](./docs/try-i2c.html#i2c-温湿度センサーの使用例)
