@@ -4,10 +4,10 @@
 
 PiZero とパーツを使って下の図の通りに配線します。
 * [LEDの極性に注意！](https://tutorial.chirimen.org/raspi/hellorealworld#section-1)
-  * LEDの説明<span class="footnote">12.6. LED 参照</span>
+  * LED 基本ガイド (marutsu)<span class="footnote">https://www.marutsu.co.jp/pc/static/large_order/led</span>
 * [ブレッドボードの使い方](https://shop.sunhayato.co.jp/blogs/problem-solving/breadboard) (サンハヤト社)
-* 抵抗値の読み方<span class="footnote">12.8. 抵抗値の読み方参照</span>
-* その他、配線の基礎知識<span class="footnote">12.3. 電子工作参照</span>
+* 抵抗のカラーコードの読み方(JARL)<span class="footnote">https://www.jarl.org/Japanese/7_Technical/lib1/teikou.htm</span>
+* その他、配線の基礎知識<span class="footnote">12 章の参考リンクから該当情報を参照ください</span>
 
 
 <div class="note" role="doc-note">
