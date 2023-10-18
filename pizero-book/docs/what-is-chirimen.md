@@ -7,7 +7,7 @@ CHIRIMEN コミュニティと W3C の [Browsers and Robotics コミュニティ
 
 電子パーツ制御のために専用のツールや開発環境を用意したり、複数の言語やプログラムを連携させたり、独特のフレームワークを学習・利用したりする必要はありません。Web 標準技術をベースとしており、素早いプロトタイピングやプログラミング初学者の IoT 学習に最適です。
 
-Raspberry Pi Zero を使う場合<span class="footnote">3. CHIRIMEN Raspberry Pi Zero版 の準備参照</span> のような低性能環境や、ブラウザ無しで動作させたいときは、ライブラリの読み込み部分だけを変えれば Node.js でも同じコードでハードを制御可能なユニバーサル環境です。
+Raspberry Pi Zero を使う場合<span class="footnote">3 章 CHIRIMEN Raspberry Pi Zero版 の準備参照</span> のような低性能環境や、ブラウザ無しで動作させたいときは、ライブラリの読み込み部分だけを変えれば Node.js でも同じコードでハードを制御可能なユニバーサル環境です。
 
 デジタルのソフトとフィジカルなハードをWWW上で連携するデバイスを Web標準技術、JavaScript だけで容易に実現できます。
 
@@ -29,7 +29,7 @@ CHIRIMEN が動作する環境は、以下の通りです。お手持ちのボ�
 
 - [Raspberry Pi](https://tutorial.chirimen.org/raspi)
   - [Raspberry Pi](https://www.raspberrypi.org/) 3 以降をサポートしています。Raspberry Pi 上の Chrome ブラウザ (または Firefox など) でコードの実行もコードの編集もでき、Raspberry Pi 一式があれば、別途パソコンなどを用意する必要はありません。[ブラウザを使わず Node.js からも使えます。](https://tutorial.chirimen.org/raspi/nodejs)
-- Raspberry Pi Zero<span class="footnote">3. CHIRIMEN Raspberry Pi Zero版 の準備参照</span>
+- Raspberry Pi Zero<span class="footnote">3 章 CHIRIMEN Raspberry Pi Zero版 の準備参照</span>
   - [Raspberry Pi Zero](https://www.raspberrypi.org/) をサポートしています。Raspberry Pi Zero上のNode.jsをjavascript処理系として動作します。Pi Zeroはブラウザ稼働には力不足ですが、典型的なIoTデバイス構築に適しています。コード編集や環境設定はPC上のブラウザからUSB経由で行え、Pi ZeroとPCがあれば別途開発環境は必要ありません。
 - [micro:bit](https://tutorial.chirimen.org/microbit)
   - [micro:bit](https://microbit.org/) version 1.5 以降をサポートしています。パソコン (またはスマートフォンなど) の Chrome ブラウザ (または Chromium ベースの Edge や Braveなど) から Web Bluetooth を使って micro:bit に書き込むブリッジプログラムを通じてハードを制御します。別途パソコンが必要でペアリングの手間や通信速度に課題はありますが、安価かつ電池駆動可能で内蔵センサーもいくつか使える点はメリットです。
