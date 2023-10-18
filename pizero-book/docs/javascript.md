@@ -4,9 +4,9 @@
 * [Mozilla Developer Networkの解説](https://developer.mozilla.org/ja/docs/Web/JavaScript)
 
 ## JavaScript の基礎
-JavaScript に慣れていない人は、[「JavaScript 初学者向け資料集」](https://tutorial.chirimen.org/js/)を参考にしてください。
+JavaScript に慣れていない人は、下記ページを参考にしてください。
 
-* その他の情報：[予備知識・資料集の情報](https://tutorial.chirimen.org/reference)
+* 「JavaScript 初学者向け資料集」<span class="footnote">12 章の参考リンクから該当情報を参照ください</span>を参照してください。
 
 ## javascriptコード・ライブラリの読み込み
 
