@@ -19,7 +19,7 @@ I2Cデバイスは小型のICチップデバイスとなっており、デバイ
 通信するデバイス同士が同一基板上にない場合には、SDA、SCL の 2 本の通信線に加え電源や GND の線を加えて 4 本のケーブルを用いて接続するのが一般的です。電源電圧はデバイスに応じたものを繋ぐ必要があります。
 
 ### Raspverry Pi ZeroのI2C端子
-下図のSCL, SDAがI2C端子です（黄色の端子）
+下図のSCL, SDAがI2C端子です
 
 ![Raspberry Pi PIN配置図](../../raspi/imgs/section0/Raspi3PIN.png){height=600}
 
