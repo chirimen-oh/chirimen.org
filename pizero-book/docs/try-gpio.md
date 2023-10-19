@@ -31,9 +31,7 @@ GPIOの出力はLチカで実験済みですね。そこで今回はモーター
 
 ### コードを読む
 
-* 前提：CHIRIMEN Rasoberryu Pi ZeroはNode.jsをプログラム実行環境（インタープリタ）として使っています。
-  * Node.jsについて<span class="footnote">10.2.2. Node.js (CHIRIMEN Raspberry Pi Zero版)参照</span>
-* ターミナルウィンドの右側のファイルマネージャでhello.js⇒表示 を選び、ソースコードを読んでみましょう
+ターミナルウィンドの右側のファイルマネージャでhello.js⇒表示 を選び、ソースコードを読んでみましょう
 
 #### WebGPIOライブラリを読み込む
 
