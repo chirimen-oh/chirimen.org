@@ -66,11 +66,14 @@
       </section>
       <section class="level2" aria-labelledby="i2cdetectで接続がうまくいったか確認する">
         <h2 id="i2cdetectで接続がうまくいったか確認する">i2cdetectで接続がうまくいったか確認する</h2>
-        <p><code>i2cdetect</code> を使って SlaveAddress を確認し、正しく接続・認識できているか確かめてみましょう。ターミナルを起動して下記コマンドを入力してみてください。</p>
+        <p>
+          <code>i2cdetect</code> を使って SlaveAddress を確認し、正しく接続・認識できているか確かめられます。
+          実際に次節以降の使用例で利用しますが、ここではコマンドの操作方法を解説します。
+        </p>
         <section class="level3" aria-labelledby="コマンドラインから">
           <h3 id="コマンドラインから">コマンドラインから</h3>
+          <p>ターミナルを起動して下記コマンドを入力してみてください。</p>
           <pre class="language-sh"><code class="language-sh">i2cdetect -y -r 1</code></pre>
-          <p>(microbit版はコマンドラインがないので下記webAppを使いましょう)</p>
         </section>
         <section class="level3" aria-labelledby="i2cdetect-webapp">
           <h3 id="i2cdetect-webapp">i2cdetect webApp</h3>
