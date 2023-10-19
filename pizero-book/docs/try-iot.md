@@ -12,7 +12,7 @@ IoTは、制御されるデバイス（上図ではCHIRIMEN PiZeroW)と、利用
 
 モーター制御の回路<span class="footnote">6.2. GPIO出力参照</span> を組めば、そのまま遠隔モーターコントロールができます
 
-- IoT<span class="footnote">12. IoT 参照</span> 
+- IoT<span class="footnote">12 章 IoT 参照</span> 
 - WebSoeketとRelayServer<span class="footnote">12.1. WebSocketとpub/sub services 参照</span> 
 
 </div>
