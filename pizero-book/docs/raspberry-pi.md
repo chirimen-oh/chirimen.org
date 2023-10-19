@@ -12,9 +12,9 @@ GPIO, 電源, GND, I2C信号線などのピン配列を記載します。
 
 * 白い文字で書かれたピンだけが使えます
 * GND、3.3V、5Vはそれぞれ電源とグランドです
-* 数字 + PD||PUと書かれているピンはGPIO端子(詳細は次章)
+* 数字 + PD||PUと書かれているピンはGPIO端子
   * PD:プルダウン, PU:プルアップ
-* SCL, SDAはI2Cインターフェースのピンです(詳細は次章)
+* SCL, SDAはI2Cインターフェースのピンです
 
 
 ![Raspberry Pi Pinout](https://chirimen.org/PiZeroWebSerialConsole/wallpaperS.png){height=305}
