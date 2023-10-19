@@ -27,13 +27,13 @@ Raspberry Pi Zero を使う場合<span class="footnote">4 章 CHIRIMEN Raspberry
 
 CHIRIMEN が動作する環境は、以下の通りです。お手持ちのボードや用途に応じてご利用ください。
 
-- [Raspberry Pi](https://tutorial.chirimen.org/raspi)
-  - [Raspberry Pi](https://www.raspberrypi.org/) 3 以降をサポートしています。Raspberry Pi 上の Chrome ブラウザ (または Firefox など) でコードの実行もコードの編集もでき、Raspberry Pi 一式があれば、別途パソコンなどを用意する必要はありません。[ブラウザを使わず Node.js からも使えます。](https://tutorial.chirimen.org/raspi/nodejs)
-- Raspberry Pi Zero<span class="footnote">4 章 CHIRIMEN Raspberry Pi Zero版 の準備参照</span>
+- Raspberry Pi
+  - [Raspberry Pi](https://www.raspberrypi.org/) 3 以降をサポートしています。Raspberry Pi 上の Chrome ブラウザ (または Firefox など) でコードの実行もコードの編集もでき、Raspberry Pi 一式があれば、別途パソコンなどを用意する必要はありません。ブラウザを使わず Node.js からも使えます。
+- Raspberry Pi Zero
   - [Raspberry Pi Zero](https://www.raspberrypi.org/) をサポートしています。Raspberry Pi Zero上のNode.jsをjavascript処理系として動作します。Pi Zeroはブラウザ稼働には力不足ですが、典型的なIoTデバイス構築に適しています。コード編集や環境設定はPC上のブラウザからUSB経由で行え、Pi ZeroとPCがあれば別途開発環境は必要ありません。
-- [micro:bit](https://tutorial.chirimen.org/microbit)
+- micro:bit
   - [micro:bit](https://microbit.org/) version 1.5 以降をサポートしています。パソコン (またはスマートフォンなど) の Chrome ブラウザ (または Chromium ベースの Edge や Braveなど) から Web Bluetooth を使って micro:bit に書き込むブリッジプログラムを通じてハードを制御します。別途パソコンが必要でペアリングの手間や通信速度に課題はありますが、安価かつ電池駆動可能で内蔵センサーもいくつか使える点はメリットです。
-- [TY51822r3](https://tutorial.chirimen.org/ty51822r3)
+- TY51822r3
   - Switch Scicence の mbed ボード [TY51822r3](https://www.switch-science.com/catalog/2574/) でも CHIRIMEN 環境をサポートしています。
   - 但し、販売元での在庫が切れているボードであることもあり、メンテナンス・テストを十分出来ていないところがありますがご容赦ください。
 
