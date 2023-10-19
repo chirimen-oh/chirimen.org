@@ -51,15 +51,3 @@ CHIRIMEN環境のために必要なライブラリや、I2Cデバイスのドラ
 非同期関数を `await` なしで呼び出すと返り値が Promise オブジェクトとなり、Promise を理解しないと返り値の判断や実行順序が入れ替わり意図せぬ挙動になります。例えば、ポートの初期化を `await` なしで呼ぶと、ポート初期化前に初期化未完了のハードウェアを操作しようとして失敗したりします。
 
 ハードウェアを制御するときは基本的に非同期呼び出しをする (その処理を含む関数もまた非同期で呼びす) と決めておけば迷うことなく、コードの実行順序も上から下に見たとおりの順番で実行され読み書きしやすくなります。
-
-<hr class="page-wrap" />
-
-## 開発環境
-### GitHub
-
-* [予備知識・資料集を参照ください](https://tutorial.chirimen.org/reference#github-)
-
-### CodeSandbox
-
-* [予備知識・資料集を参照ください](https://tutorial.chirimen.org/reference#github-)
-* ![CodeSandbox画面](../../pizero/imgs/RC_CSB.svg)
