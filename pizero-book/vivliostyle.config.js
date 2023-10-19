@@ -11,6 +11,7 @@ module.exports = {
       rel: 'contents',
       title: '目次',
     },
+    './docs/intro.md',
     './docs/what-is-chirimen.md',
     './docs/raspberry-pi.md',
     './docs/pizero-init.md',

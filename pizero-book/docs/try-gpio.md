@@ -5,19 +5,13 @@
 
 [GPIO](https://ja.wikipedia.org/wiki/GPIO)は、「General-purpose input/output」の略で汎用的な入出力インタフェースのことです。
 
-Raspi に実装されている 40 本のピンヘッダから GPIO を利用することができます。
+Raspberry Pi に実装されている 40 本のピンヘッダから GPIO を利用することができます。
 
-CHIRIMEN Raspi、Raspi Zero では Raspi が提供する 40 本のピンヘッダのうち、下記緑色のピン(合計 17 本)が利用可能です。
+CHIRIMEN Raspberry Pi、Raspberry Pi Zero では Raspberry Pi が提供する 40 本のピンヘッダ<span class="footnote">3.1 Raspberry Pi Zeroのピン配列</span>のうち、GPIO端子(合計 17 本)が利用可能です。
 
-Raspiの GPIO 端子は、GND 端子との間に、0V もしくは 3.3V の電圧を印加(出力)したり、逆に 0V もしくは 3.3V の電圧を検知(入力)したりすることができます。LED は数 mA の電流を流すことによって点灯できる電子部品のため、印加する電圧を 3.3V(点灯)、0V(消灯) と変化させることで L チカが実現できるのです。
+Raspberry Piの GPIO 端子は、GND 端子との間に、0V もしくは 3.3V の電圧を印加(出力)したり、逆に 0V もしくは 3.3V の電圧を検知(入力)したりすることができます。LED は数 mA の電流を流すことによって点灯できる電子部品のため、印加する電圧を 3.3V(点灯)、0V(消灯) と変化させることで L チカが実現できるのです。
 
 詳しくは[ツール・ラボ/第22回 Raspberry PiのGPIO概要](https://tool-lab.com/make/raspberrypi-startup-22/)などを参考にしてみましょう。
-
-### Raspberry Pi Zeroのピン配置図
-
-![Raspi PIN配置図](https://chirimen.org/PiZeroWebSerialConsole/wallpaperS.png)
-
-Raspberry Piの端子と同じ配列です。
 
 ### プルアップ(PU)、プルダウン(PD)
 GPIOポートを入力モードで使用する場合、ポートが解放状態(電気的に切り離されている状態)のときに設定される値があります。
@@ -29,7 +23,7 @@ GPIOポートを入力モードで使用する場合、ポートが解放状態(
 
 ## GPIO出力
 
-GPIOの出力はLチカで実験済みですね。そこで今回はモーターを動かしてみましょう。MOSFET<span class="footnote">12 章の参考リンクから該当情報を参照ください</span>を使った回路図は以下のようになります。
+GPIOの出力はLチカで実験済みですね。そこで今回はモーターを動かしてみましょう。MOSFET<span class="footnote">13 章の参考リンクから該当情報を参照ください</span>を使った回路図は以下のようになります。
 
 ![GPIO Motor](../../pizero/esm-examples/hello-real-world/PiZero_gpio0Motor.png){height=190}
 
@@ -37,9 +31,7 @@ GPIOの出力はLチカで実験済みですね。そこで今回はモーター
 
 ### コードを読む
 
-* 前提：CHIRIMEN Rasoberryu Pi ZeroはNode.jsをプログラム実行環境（インタープリタ）として使っています。
-  * Node.jsについて<span class="footnote">10.2.2. Node.js (CHIRIMEN Raspberry Pi Zero版)参照</span>
-* ターミナルウィンドの右側のファイルマネージャでhello.js⇒表示 を選び、ソースコードを読んでみましょう
+ターミナルウィンドの右側のファイルマネージャでhello.js⇒表示 を選び、ソースコードを読んでみましょう
 
 #### WebGPIOライブラリを読み込む
 
@@ -47,7 +39,7 @@ GPIOの出力はLチカで実験済みですね。そこで今回はモーター
 import {requestGPIOAccess} from "./node_modules/node-web-gpio/dist/index.js";
 ```
 
-JavaScript module<span class="footnote">10.2.3. javascript Module (ECMA Script Module)参照</span>に基づいてWebGPIOライブラリを読み込みます。これでWeb GPIO APIが使えるようになりました。
+JavaScript module<span class="footnote">10.2.3. JavaScript Module (ECMA Script Module)参照</span>に基づいてWebGPIOライブラリを読み込みます。これでWeb GPIO APIが使えるようになりました。
 
 #### GPIOポートの初期化
 
@@ -122,6 +114,8 @@ GPIOポートに繋いだスイッチやセンサーの状態を取得するに�
   * ターミナルウィンドの右側のファイルマネージャでmain-gpio-onchange.js⇒編集 を選びます。
     * 今回は編集不要ですが、サンプルをベースに応用プログラムを作るときには編集しましょう。
 
+<hr class="page-wrap" />
+
 #### コードを読む
 
 GPIOポートの値が変化するたびに、指定した関数が実行されます。
@@ -156,8 +150,15 @@ switchCheck();
 * ターミナルウィンドのコンソールに、```node main-gpio-onchange.js``` [ENTER] と入力して実行。
 * タクトスイッチを押してみます。
 * タクトスイッチが押されるたびにコンソール画面に**0**(押された状態)、**1**(離した状態)が交互に表示されます。
-  * Note: GPIOポート5は、Pull-Up(開放状態でHighレベル)です。そのため離した状態で１が出力されます。スイッチを押すとポートがGNDと接続され、Lowレベルになり、0が出力されます。
 * 終了は CTRL+c
+
+<div class="note" role="doc-note">
+
+##### Note
+
+GPIOポート5は、Pull-Up(開放状態でHighレベル)です。そのため離した状態で１が出力されます。スイッチを押すとポートがGNDと接続され、Lowレベルになり、0が出力されます。
+
+</div>
 
 ### ポーリング
 
@@ -175,8 +176,9 @@ switchCheck();
 
 #### ポーリングとは
 
-様々な情報や値の取得や入力のための基本的な機能・関数は、入力を指定した瞬間、一回きり取得するだけのものがほとんどです。そこで、無限ループをつくりこの中で一回きりの入力を定期的に繰り返すことで、入力の変化を読み取る　ということがよく行われます。このような処理を一般にポーリング<span class="footnote">https://ja.wikipedia.org/wiki/ポーリング_(情報)</span>と呼びます。
-ポーリングはセンサーの情報入力だけでなく、たとえば電子メールの到着を通知するために定期的にメールサーバにメール着信数を確認する　といった、ネットワークサービスでの処理など様々なシステムで広く使われています。
+様々な情報や値の取得や入力のための基本的な機能・関数は、入力を指定した瞬間、一回きり取得するだけのものがほとんどです。そこで、無限ループをつくりこの中で一回きりの入力を定期的に繰り返すことで、入力の変化を読み取るということがよく行われます。このような処理を一般にポーリング<span class="footnote">https://ja.wikipedia.org/wiki/ポーリング_(情報)</span>と呼びます。
+
+ポーリングはセンサーの情報入力だけでなく、たとえば電子メールの到着を通知するために定期的にメールサーバにメール着信数を確認するといった、ネットワークサービスでの処理など様々なシステムで広く使われています。
 
 </section>
 
@@ -202,6 +204,8 @@ const state = await switchPort.read(); // GPIO ポート 5 番に接続したス
 ###### await port.read()
 
 `port.export("in")` で入力モードに設定した **GPIO ポートの現時点の状態を読み取ります**。読み取りは非同期処理になるので `await` で完了を待つようにしてください。
+
+<hr class="page-wrap" />
 
 ##### ポーリングルーチン
 

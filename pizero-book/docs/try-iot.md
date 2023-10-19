@@ -6,10 +6,16 @@
 IoTは、制御されるデバイス（上図ではCHIRIMEN PiZeroW)と、利用者端末（上図ではWebApp PC-side）に加えて、これらの間でデータを中継するサーバ（クラウド）が必要になります。
 今回はWeb標準技術であるWebSocketプロトコルを中継するサーバを用いてLEDを備えたCHIRIMENデバイスとスマホやPCのWebAppを繋いだIoTシステムを作ります。
 
-Note: モーター制御の回路<span class="footnote">5.2. GPIO出力参照</span> を組めば、そのまま遠隔モーターコントロールができます
+<div class="note" role="doc-note">
 
-- IoT<span class="footnote">11. IoT 参照</span> 
-- WebSoeketとRelayServer<span class="footnote">11.1. webSocketとpub/sub services 参照</span> 
+### Note
+
+モーター制御の回路<span class="footnote">6.2. GPIO出力参照</span> を組めば、そのまま遠隔モーターコントロールができます
+
+- IoT<span class="footnote">12. IoT 参照</span> 
+- WebSoeketとRelayServer<span class="footnote">12.1. WebSocketとpub/sub services 参照</span> 
+
+</div>
 
 ### 配線する
 
@@ -46,24 +52,24 @@ Note: モーター制御の回路<span class="footnote">5.2. GPIO出力参照</s
 #### Raspberry Pi Zero側コード
 * ターミナルウィンドの右側のファイルマネージャでmain-remote_gpio_led.js⇒表示 を選び、ソースコードを読んでみましょう
 * これまで通りWebGPIOライブラリの読み込み
-* relayServer.js<span class="footnote">11.1.2. relayServer 参照</span> ライブラリの読み込み
-  * Node.jsではrelayServerライブラリに加えて、webSocketライブラリの読み込みが必要です。
+* relayServer.js<span class="footnote">12.1.2. relayServer 参照</span> ライブラリの読み込み
+  * Node.jsではrelayServerライブラリに加えて、websocketライブラリの読み込みが必要です。
     ```
     import nodeWebSocketLib from "websocket";
     import {RelayServer} from "./RelayServer.js";
     ```
-* relayServer.js<span class="footnote">11.1. webSocketとpub/sub services 参照</span> を使って、PCからの操作指示を受信
+* relayServer.js<span class="footnote">12.1. WebSocketとpub/sub services 参照</span> を使って、PCからの操作指示を受信
   * 初期化
   * 受信処理(コールバック関数の設定)
-* 受信した内容をもとにGPIO出力を操作<span class="footnote">11.3. GPIOPort の出力処理参照</span>してLEDを点灯・消灯
+* 受信した内容をもとにGPIO出力を操作<span class="footnote">12.3. GPIOPort の出力処理参照</span>してLEDを点灯・消灯
 
 #### PC側コード
 * CodeSandboxで開いているPC.jsを見てみましょう
-* JavaScript Module<span class="footnote">10.2.3. javascript Module (ECMA Script Module)参照</span>仕様に基づいてrelayServer.jsを読み込み
+* JavaScript Module<span class="footnote">11.2.3. JavaScript Module (ECMA Script Module)参照</span>仕様に基づいてrelayServer.jsを読み込み
   ```
   import {RelayServer} from "https://chirimen.org/remote-connection/js/beta/RelayServer.js";
   ```
-* relayServer.js<span class="footnote">11.1. webSocketとpub/sub services 参照</span> を使い、UIを通してユーザからの操作指示を送信
+* relayServer.js<span class="footnote">12.1. WebSocketとpub/sub services 参照</span> を使い、UIを通してユーザからの操作指示を送信
   * 初期化（受信側、送信側共通の処理参照</span> 
   * 送信処理 ～UI(ボタン)に設置したコールバック関数をもとに送信
 

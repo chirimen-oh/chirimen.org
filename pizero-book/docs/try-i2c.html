@@ -17,7 +17,7 @@
           <figcaption aria-hidden="true">i2c-bus</figcaption>
         </figure>
         <p>上図のように、I2C の SDA、SCL は複数のデバイス間で共有され、これを「I2C バス」と言います。I2C ではマスターとスレーブの間で通信が行われます。常にマスター側からスレーブ側に要求が行われ、スレーブ側からマスター側へ要求を行うことはできません。</p>
-        <p>本チュートリアルでいえばCHIRIMEN環境を動かすボードコンピュータがマスターとなり、ここに接続されるセンサーやアクチュエータデバイスなどがスレーブとして想定されます。スレーブデバイスの一例として<a href="../partslist">こちらに紹介</a>されているI2Cデバイスをご覧ください。</p>
+        <p>本チュートリアルでいえばCHIRIMEN環境を動かすボードコンピュータがマスターとなり、ここに接続されるセンサーやアクチュエータデバイスなどがスレーブとして想定されます。スレーブデバイスの一例として紹介されているI2Cデバイス<span class="footnote">14.1 I2Cセンサー</span>をご覧ください。</p>
         <p>
           マスターは、スレーブが持つ「SlaveAddress (スレーブアドレス)」を指定して、特定のスレーブとの通信を行います。このため、同じ I2C バス上に同じ SlaveAddress のスレーブを繋ぐことはできません。
           I2Cデバイスは小型のICチップデバイスとなっており、デバイスによってはSlaveAddressは製品ごとに固定されています。
@@ -29,23 +29,14 @@
         <p>通信するデバイス同士が同一基板上にない場合には、SDA、SCL の 2 本の通信線に加え電源や GND の線を加えて 4 本のケーブルを用いて接続するのが一般的です。電源電圧はデバイスに応じたものを繋ぐ必要があります。</p>
         <section class="level3" aria-labelledby="raspverry-pi-zeroのi2c端子">
           <h3 id="raspverry-pi-zeroのi2c端子">Raspverry Pi ZeroのI2C端子</h3>
-          <p>下図のSCL, SDAがI2C端子です（黄色の端子）</p>
+          <p>下図のSCL, SDAがI2C端子です</p>
           <figure>
-            <img src="../../raspi/imgs/section0/Raspi3PIN.png" alt="Raspi PIN配置図" height="600">
-            <figcaption aria-hidden="true">Raspi PIN配置図</figcaption>
+            <img src="../../raspi/imgs/section0/Raspi3PIN.png" alt="Raspberry Pi PIN配置図" height="600">
+            <figcaption aria-hidden="true">Raspberry Pi PIN配置図</figcaption>
           </figure>
           <p>Raspberry PiのI2C端子と同じ配列です。</p>
           <hr class="page-wrap">
         </section>
-      </section>
-      <section class="level2" aria-labelledby="参考-i2c-に関する詳細情報">
-        <h2 id="参考-i2c-に関する詳細情報">参考: I2C に関する詳細情報</h2>
-        <p>I2C に関する詳細は下記をご参照ください。</p>
-        <ul>
-          <li><a href="https://ja.wikipedia.org/wiki/I2C">I2C</a> - Wikipedia</li>
-          <li>I2C バス仕様書 最新版（<a href="https://www.nxp.com/docs/ja/user-guide/UM10204.pdf">日本語</a>、<a href="http://www.nxp.com/documents/user_manual/UM10204.pdf">English</a>）</li>
-          <li><a href="http://www.picfun.com/i2cframe.html">I2C の使い方</a>（後閑哲也氏サイト）</li>
-        </ul>
       </section>
       <section class="level2" aria-labelledby="ポイント">
         <h2 id="ポイント">ポイント</h2>
@@ -75,11 +66,14 @@
       </section>
       <section class="level2" aria-labelledby="i2cdetectで接続がうまくいったか確認する">
         <h2 id="i2cdetectで接続がうまくいったか確認する">i2cdetectで接続がうまくいったか確認する</h2>
-        <p><code>i2cdetect</code> を使って SlaveAddress を確認し、正しく接続・認識できているか確かめてみましょう。ターミナルを起動して下記コマンドを入力してみてください。</p>
+        <p>
+          <code>i2cdetect</code> を使って SlaveAddress を確認し、正しく接続・認識できているか確かめられます。
+          実際に次節以降の使用例で利用しますが、ここではコマンドの操作方法を解説します。
+        </p>
         <section class="level3" aria-labelledby="コマンドラインから">
           <h3 id="コマンドラインから">コマンドラインから</h3>
+          <p>ターミナルを起動して下記コマンドを入力してみてください。</p>
           <pre class="language-sh"><code class="language-sh">i2cdetect -y -r 1</code></pre>
-          <p>(microbit版はコマンドラインがないので下記webAppを使いましょう)</p>
         </section>
         <section class="level3" aria-labelledby="i2cdetect-webapp">
           <h3 id="i2cdetect-webapp">i2cdetect webApp</h3>
@@ -126,12 +120,13 @@
             <p><a href="https://www.sensirion.com/fileadmin/user_upload/customers/sensirion/Dokumente/2_Humidity_Sensors/Datasheets/Sensirion_Humidity_Sensors_SHT3x_Datasheet_digital.pdf">SHT30 のデータシート p.9</a>より引用</p>
           </blockquote>
           <p>SHT30 は<code>0x44</code>がデフォルトの SlaveAddress で、ADDR ピンの HIGH/LOW により SlaveAddeess を <code>0x44</code> か <code>0x45</code> に変更できることがわかります。</p>
+          <hr class="page-wrap">
         </section>
         <section class="level3" aria-labelledby="認識されないとき">
           <h3 id="認識されないとき">認識されないとき</h3>
           <p>
             試しに I2C デバイスへの電源供給を止めて、認識されないケースをあえて確かめてみます。
-            一度 RasPi の 3.3V に接続している線を抜いて、もう一度 <code>i2cdetect -y -r 1</code> を実行してみてください。
+            一度 Raspberry Pi の 3.3V に接続している線を抜いて、もう一度 <code>i2cdetect -y -r 1</code> を実行してみてください。
           </p>
           <pre class="language-text"><code class="language-text">$ i2cdetect -y -r 1
      0  1  2  3  4  5  6  7  8  9  a  b  c  d  e  f
@@ -158,7 +153,7 @@
         </p>
         <section class="level3" aria-labelledby="デバイスドライバが用意されているi2cデバイスのリスト">
           <h3 id="デバイスドライバが用意されているi2cデバイスのリスト">デバイスドライバが用意されているI2Cデバイスのリスト</h3>
-          <p>デバイスドライバが用意され簡単に利用できるI2Cデバイスのリスト<span class="footnote">13.1 I2Cセンター</span></p>
+          <p>デバイスドライバが用意され簡単に利用できるI2Cデバイスのリスト<span class="footnote">14.1 I2Cセンター</span></p>
           <p>よく利用される、30種類ぐらいの比較的安価なデバイス向けのドライバが用意されています。</p>
           <hr class="page-wrap">
         </section>
@@ -180,24 +175,17 @@
           <h3 id="sht30編">SHT30編</h3>
           <p>SHT30は温度に加えて湿度も測定できるI2C接続の多機能センサーです。SHT31もほぼ同等に使えます。(SHT31のほうが精度が高い)</p>
           <ul>
-            <li>
-              <p>ターミナルウィンドの<code>[CHIRIMEN Panel]</code>ボタンを押す</p>
-            </li>
-            <li>
-              <p>出現したCHIRIMEN Panelの<code>[Get Examples]</code>ボタンを押す</p>
-            </li>
-            <li>
-              <p>ID : sht30を探します</p>
-            </li>
-            <li>
-              <p>回路図リンクを押すと回路図が出てきますので、回路を組みます。なお、接続は下の図のようになります。</p>
-              <figure>
-                <img src="../../pizero/esm-examples/sht30/schematic.png" alt="SHT31 schematic" height="220">
-                <figcaption aria-hidden="true">SHT31 schematic</figcaption>
-              </figure>
-            </li>
-            <li>
-              <p><code>[JS GET]</code>ボタンを押すと、開発ディレクトリ(<code>~/myApp</code>)に、サンプルコードが保存されます。</p>
+            <li>ターミナルウィンドの<code>[CHIRIMEN Panel]</code>ボタンを押す</li>
+            <li>出現したCHIRIMEN Panelの<code>[Get Examples]</code>ボタンを押す</li>
+            <li>ID : sht30を探します</li>
+            <li>回路図リンクを押すと回路図が出てきますので、回路を組みます。なお、接続は下の図のようになります。</li>
+          </ul>
+          <figure>
+            <img src="../../pizero/esm-examples/sht30/schematic.png" alt="SHT31 schematic" height="220">
+            <figcaption aria-hidden="true">SHT31 schematic</figcaption>
+          </figure>
+          <ul>
+            <li><code>[JS GET]</code>ボタンを押すと、開発ディレクトリ(<code>~/myApp</code>)に、サンプルコードが保存されます。
               <ul>
                 <li><strong>main-sht30.js</strong>というファイル名で保存されます。</li>
                 <li>Note: ターミナルウィンドの右側のファイルマネージャでmain-sht30.js⇒編集 を選ぶと、エディタで編集できます。
@@ -273,7 +261,7 @@
               <p>
                 次に、<code>main.js</code> の処理の流れを見てみましょう。
                 ここで温度センサーの情報を定期的に取得し、画面に出力する処理が行われています。
-                少し詳し解説してみます。
+                少し詳しく解説してみます。
               </p>
             </section>
             <section class="level5" aria-labelledby="await-requesti2caccess">
@@ -284,7 +272,7 @@
               <h5 id="i2caccessportsget">i2cAccess.ports.get()</h5>
               <p><code>I2CAccess.ports</code> は、利用可能な I2C ポートの一覧です。</p>
               <pre class="language-js"><code class="language-js"><span class="token keyword">const</span> port <span class="token operator">=</span> i2cAccess<span class="token punctuation">.</span><span class="token property-access">ports</span><span class="token punctuation">.</span><span class="token method function property-access">get</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
-              <p>CHIRIMEN RasPi、RasPiZero、で利用可能な I2C ポート番号は<code>1</code>番だけです。ポート番号に<code>1</code> を指定して <strong><code>port</code> オブジェクトを取得</strong> しています。</p>
+              <p>CHIRIMEN Raspberry Pi、Raspberry PiZero、で利用可能な I2C ポート番号は<code>1</code>番だけです。ポート番号に<code>1</code> を指定して <strong><code>port</code> オブジェクトを取得</strong> しています。</p>
             </section>
             <section class="level5" aria-labelledby="new-sht30port-0x44">
               <h5 id="new-sht30port-0x44">new SHT30(port, 0x44)</h5>

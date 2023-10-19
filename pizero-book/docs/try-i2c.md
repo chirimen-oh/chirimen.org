@@ -8,7 +8,7 @@
 
 上図のように、I2C の SDA、SCL は複数のデバイス間で共有され、これを「I2C バス」と言います。I2C ではマスターとスレーブの間で通信が行われます。常にマスター側からスレーブ側に要求が行われ、スレーブ側からマスター側へ要求を行うことはできません。
 
-本チュートリアルでいえばCHIRIMEN環境を動かすボードコンピュータがマスターとなり、ここに接続されるセンサーやアクチュエータデバイスなどがスレーブとして想定されます。スレーブデバイスの一例として[こちらに紹介](../partslist)されているI2Cデバイスをご覧ください。
+本チュートリアルでいえばCHIRIMEN環境を動かすボードコンピュータがマスターとなり、ここに接続されるセンサーやアクチュエータデバイスなどがスレーブとして想定されます。スレーブデバイスの一例として紹介されているI2Cデバイス<span class="footnote">14.1 I2Cセンサー</span>をご覧ください。
 
 マスターは、スレーブが持つ「SlaveAddress (スレーブアドレス)」を指定して、特定のスレーブとの通信を行います。このため、同じ I2C バス上に同じ SlaveAddress のスレーブを繋ぐことはできません。
 I2Cデバイスは小型のICチップデバイスとなっており、デバイスによってはSlaveAddressは製品ごとに固定されています。
@@ -19,21 +19,13 @@ I2Cデバイスは小型のICチップデバイスとなっており、デバイ
 通信するデバイス同士が同一基板上にない場合には、SDA、SCL の 2 本の通信線に加え電源や GND の線を加えて 4 本のケーブルを用いて接続するのが一般的です。電源電圧はデバイスに応じたものを繋ぐ必要があります。
 
 ### Raspverry Pi ZeroのI2C端子
-下図のSCL, SDAがI2C端子です（黄色の端子）
+下図のSCL, SDAがI2C端子です
 
-![Raspi PIN配置図](../../raspi/imgs/section0/Raspi3PIN.png){height=600}
+![Raspberry Pi PIN配置図](../../raspi/imgs/section0/Raspi3PIN.png){height=600}
 
 Raspberry PiのI2C端子と同じ配列です。
 
 <hr class="page-wrap" />
-
-## 参考: I2C に関する詳細情報
-
-I2C に関する詳細は下記をご参照ください。
-
-- [I2C](https://ja.wikipedia.org/wiki/I2C) - Wikipedia
-- I2C バス仕様書 最新版（[日本語](https://www.nxp.com/docs/ja/user-guide/UM10204.pdf)、[English](http://www.nxp.com/documents/user_manual/UM10204.pdf)）
-- [I2C の使い方](http://www.picfun.com/i2cframe.html)（後閑哲也氏サイト）
 
 ## ポイント
 
@@ -61,13 +53,16 @@ I2Cデバイスは一般的に小さなチップ部品です。下の拡大写�
 
 ## i2cdetectで接続がうまくいったか確認する
 
-`i2cdetect` を使って SlaveAddress を確認し、正しく接続・認識できているか確かめてみましょう。ターミナルを起動して下記コマンドを入力してみてください。
+`i2cdetect` を使って SlaveAddress を確認し、正しく接続・認識できているか確かめられます。
+実際に次節以降の使用例で利用しますが、ここではコマンドの操作方法を解説します。
 
 ### コマンドラインから
+
+ターミナルを起動して下記コマンドを入力してみてください。
+
 ```sh
 i2cdetect -y -r 1
 ```
-(microbit版はコマンドラインがないので下記webAppを使いましょう)
 
 ### i2cdetect webApp
 
@@ -105,10 +100,12 @@ $ i2cdetect -y -r 1
 
 SHT30 は`0x44`がデフォルトの SlaveAddress で、ADDR ピンの HIGH/LOW により SlaveAddeess を `0x44` か `0x45` に変更できることがわかります。
 
+<hr class="page-wrap" />
+
 ### 認識されないとき
 
 試しに I2C デバイスへの電源供給を止めて、認識されないケースをあえて確かめてみます。
-一度 RasPi の 3.3V に接続している線を抜いて、もう一度 `i2cdetect -y -r 1` を実行してみてください。
+一度 Raspberry Pi の 3.3V に接続している線を抜いて、もう一度 `i2cdetect -y -r 1` を実行してみてください。
 
 ```
 $ i2cdetect -y -r 1
@@ -135,7 +132,7 @@ CHIRIMENでは、GPIOインターフェースをWeb GPIOと呼ぶAPIで使用し
 
 ### デバイスドライバが用意されているI2Cデバイスのリスト
 
-デバイスドライバが用意され簡単に利用できるI2Cデバイスのリスト<span class="footnote">13.1 I2Cセンター</span>
+デバイスドライバが用意され簡単に利用できるI2Cデバイスのリスト<span class="footnote">14.1 I2Cセンター</span>
 
 よく利用される、30種類ぐらいの比較的安価なデバイス向けのドライバが用意されています。
 
@@ -157,7 +154,7 @@ SHT30は温度に加えて湿度も測定できるI2C接続の多機能センサ
 * ID : sht30を探します
 * 回路図リンクを押すと回路図が出てきますので、回路を組みます。なお、接続は下の図のようになります。
 
-  ![SHT31 schematic](../../pizero/esm-examples/sht30/schematic.png){height=220}
+![SHT31 schematic](../../pizero/esm-examples/sht30/schematic.png){height=220}
 
 * ```[JS GET]```ボタンを押すと、開発ディレクトリ(```~/myApp```)に、サンプルコードが保存されます。
   * **main-sht30.js**というファイル名で保存されます。
@@ -227,7 +224,7 @@ async function main() {
 
 次に、`main.js` の処理の流れを見てみましょう。
 ここで温度センサーの情報を定期的に取得し、画面に出力する処理が行われています。
-少し詳し解説してみます。
+少し詳しく解説してみます。
 
 ##### await requestI2CAccess()
 
@@ -241,7 +238,7 @@ Web I2C API を利用するための **`I2CAccess` インタフェースを取�
 const port = i2cAccess.ports.get(1);
 ```
 
-CHIRIMEN RasPi、RasPiZero、で利用可能な I2C ポート番号は`1`番だけです。ポート番号に`1` を指定して **`port` オブジェクトを取得** しています。
+CHIRIMEN Raspberry Pi、Raspberry PiZero、で利用可能な I2C ポート番号は`1`番だけです。ポート番号に`1` を指定して **`port` オブジェクトを取得** しています。
 
 ##### new SHT30(port, 0x44)
 
