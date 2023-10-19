@@ -100,6 +100,8 @@ $ i2cdetect -y -r 1
 
 SHT30 は`0x44`がデフォルトの SlaveAddress で、ADDR ピンの HIGH/LOW により SlaveAddeess を `0x44` か `0x45` に変更できることがわかります。
 
+<hr class="page-wrap" />
+
 ### 認識されないとき
 
 試しに I2C デバイスへの電源供給を止めて、認識されないケースをあえて確かめてみます。
@@ -152,7 +154,7 @@ SHT30は温度に加えて湿度も測定できるI2C接続の多機能センサ
 * ID : sht30を探します
 * 回路図リンクを押すと回路図が出てきますので、回路を組みます。なお、接続は下の図のようになります。
 
-  ![SHT31 schematic](../../pizero/esm-examples/sht30/schematic.png){height=220}
+![SHT31 schematic](../../pizero/esm-examples/sht30/schematic.png){height=220}
 
 * ```[JS GET]```ボタンを押すと、開発ディレクトリ(```~/myApp```)に、サンプルコードが保存されます。
   * **main-sht30.js**というファイル名で保存されます。
