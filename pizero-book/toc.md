@@ -2,6 +2,7 @@
 
 ## 目次
 
+1. [はじめに](./docs/intro.html#はじめに)
 1. [CHIRIMEN について](./docs/what-is-chirimen.html#chirimen-について)
     1. [CHIRIMENのメリット](./docs/what-is-chirimen.html#chirimenのメリット)
     1. [CHIRIMEN の動作環境](./docs/what-is-chirimen.html#chirimen-の動作環境)

@@ -29,7 +29,7 @@ GPIOポートを入力モードで使用する場合、ポートが解放状態(
 
 ## GPIO出力
 
-GPIOの出力はLチカで実験済みですね。そこで今回はモーターを動かしてみましょう。MOSFET<span class="footnote">12 章の参考リンクから該当情報を参照ください</span>を使った回路図は以下のようになります。
+GPIOの出力はLチカで実験済みですね。そこで今回はモーターを動かしてみましょう。MOSFET<span class="footnote">13 章の参考リンクから該当情報を参照ください</span>を使った回路図は以下のようになります。
 
 ![GPIO Motor](../../pizero/esm-examples/hello-real-world/PiZero_gpio0Motor.png){height=190}
 

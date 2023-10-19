@@ -16,10 +16,10 @@
           IoTは、制御されるデバイス（上図ではCHIRIMEN PiZeroW)と、利用者端末（上図ではWebApp PC-side）に加えて、これらの間でデータを中継するサーバ（クラウド）が必要になります。
           今回はWeb標準技術であるWebSocketプロトコルを中継するサーバを用いてLEDを備えたCHIRIMENデバイスとスマホやPCのWebAppを繋いだIoTシステムを作ります。
         </p>
-        <p>Note: モーター制御の回路<span class="footnote">5.2. GPIO出力参照</span> を組めば、そのまま遠隔モーターコントロールができます</p>
+        <p>Note: モーター制御の回路<span class="footnote">6.2. GPIO出力参照</span> を組めば、そのまま遠隔モーターコントロールができます</p>
         <ul>
-          <li>IoT<span class="footnote">11. IoT 参照</span></li>
-          <li>WebSoeketとRelayServer<span class="footnote">11.1. webSocketとpub/sub services 参照</span></li>
+          <li>IoT<span class="footnote">12. IoT 参照</span></li>
+          <li>WebSoeketとRelayServer<span class="footnote">12.1. webSocketとpub/sub services 参照</span></li>
         </ul>
         <section class="level3" aria-labelledby="配線する">
           <h3 id="配線する">配線する</h3>
@@ -79,7 +79,7 @@
             <ul>
               <li>ターミナルウィンドの右側のファイルマネージャでmain-remote_gpio_led.js⇒表示 を選び、ソースコードを読んでみましょう</li>
               <li>これまで通りWebGPIOライブラリの読み込み</li>
-              <li>relayServer.js<span class="footnote">11.1.2. relayServer 参照</span> ライブラリの読み込み
+              <li>relayServer.js<span class="footnote">12.1.2. relayServer 参照</span> ライブラリの読み込み
                 <ul>
                   <li>Node.jsではrelayServerライブラリに加えて、webSocketライブラリの読み込みが必要です。
                     <pre class="language-text"><code class="language-text">import nodeWebSocketLib from "websocket";
@@ -87,23 +87,23 @@ import {RelayServer} from "./RelayServer.js";</code></pre>
                   </li>
                 </ul>
               </li>
-              <li>relayServer.js<span class="footnote">11.1. webSocketとpub/sub services 参照</span> を使って、PCからの操作指示を受信
+              <li>relayServer.js<span class="footnote">12.1. webSocketとpub/sub services 参照</span> を使って、PCからの操作指示を受信
                 <ul>
                   <li>初期化</li>
                   <li>受信処理(コールバック関数の設定)</li>
                 </ul>
               </li>
-              <li>受信した内容をもとにGPIO出力を操作<span class="footnote">11.3. GPIOPort の出力処理参照</span>してLEDを点灯・消灯</li>
+              <li>受信した内容をもとにGPIO出力を操作<span class="footnote">12.3. GPIOPort の出力処理参照</span>してLEDを点灯・消灯</li>
             </ul>
           </section>
           <section class="level4" aria-labelledby="pc側コード">
             <h4 id="pc側コード">PC側コード</h4>
             <ul>
               <li>CodeSandboxで開いているPC.jsを見てみましょう</li>
-              <li>JavaScript Module<span class="footnote">10.2.3. javascript Module (ECMA Script Module)参照</span>仕様に基づいてrelayServer.jsを読み込み
+              <li>JavaScript Module<span class="footnote">11.2.3. javascript Module (ECMA Script Module)参照</span>仕様に基づいてrelayServer.jsを読み込み
                 <pre class="language-text"><code class="language-text">import {RelayServer} from "https://chirimen.org/remote-connection/js/beta/RelayServer.js";</code></pre>
               </li>
-              <li>relayServer.js<span class="footnote">11.1. webSocketとpub/sub services 参照</span> を使い、UIを通してユーザからの操作指示を送信
+              <li>relayServer.js<span class="footnote">12.1. webSocketとpub/sub services 参照</span> を使い、UIを通してユーザからの操作指示を送信
                 <ul>
                   <li>初期化（受信側、送信側共通の処理参照</li>
                   <li>送信処理 ～UI(ボタン)に設置したコールバック関数をもとに送信</li>
