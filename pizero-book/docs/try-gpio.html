@@ -144,62 +144,63 @@
               <li>ターミナルウィンドのコンソールのプロンプトが<code>pi@raspberrypi:~/myApp$</code>となっていることを確認</li>
               <li>ターミナルウィンドのコンソールに、<code>node main-gpio-onchange.js</code> [ENTER] と入力して実行。</li>
               <li>タクトスイッチを押してみます。</li>
-              <li>タクトスイッチが押されるたびにコンソール画面に<strong>0</strong>(押された状態)、<strong>1</strong>(離した状態)が交互に表示されます。
-                <ul>
-                  <li>Note: GPIOポート5は、Pull-Up(開放状態でHighレベル)です。そのため離した状態で１が出力されます。スイッチを押すとポートがGNDと接続され、Lowレベルになり、0が出力されます。</li>
-                </ul>
-              </li>
+              <li>タクトスイッチが押されるたびにコンソール画面に<strong>0</strong>(押された状態)、<strong>1</strong>(離した状態)が交互に表示されます。</li>
               <li>終了は CTRL+c</li>
             </ul>
+            <div class="note" role="doc-note">
+              <section class="level5" aria-labelledby="note">
+                <h5 id="note">Note</h5>
+                <p>GPIOポート5は、Pull-Up(開放状態でHighレベル)です。そのため離した状態で１が出力されます。スイッチを押すとポートがGNDと接続され、Lowレベルになり、0が出力されます。</p>
+              </section>
+            </div>
           </section>
         </section>
-        <section class="level3" aria-labelledby="ポーリング">
-          <h3 id="ポーリング">ポーリング</h3>
-          <p>入力ではイベントの他にポーリングというテクニックが広く使われます。（次章のI2Cデバイスからの入力では専らポーリング）</p>
-          <ul>
-            <li>ターミナルウィンドの<code>[CHIRIMEN Panel]</code>ボタンを押す</li>
-            <li>出現したCHIRIMEN Panelの<code>[Get Examples]</code>ボタンを押す</li>
-            <li>ID : <strong>gpio-polling</strong>を探します</li>
-            <li>回路は <code>onchange編</code> と同じなのでそのままにしておきます。</li>
-            <li><code>[JS GET]</code>ボタンを押すと、開発ディレクトリ(<code>~/myApp</code>)に、サンプルコードが保存されます。
-              <ul>
-                <li><strong>main-gpio-polling.js</strong>というファイル名で保存されます。</li>
-                <li>ターミナルウィンドの右側のファイルマネージャでmain-gpio-polling.js⇒編集 を選びソースコードを見てみましょう</li>
-              </ul>
-            </li>
-          </ul>
-          <section class="note" role="doc-note">
-            <section class="level4" aria-labelledby="ポーリングとは">
-              <h4 id="ポーリングとは">ポーリングとは</h4>
-              <p>
-                様々な情報や値の取得や入力のための基本的な機能・関数は、入力を指定した瞬間、一回きり取得するだけのものがほとんどです。そこで、無限ループをつくりこの中で一回きりの入力を定期的に繰り返すことで、入力の変化を読み取る　ということがよく行われます。このような処理を一般にポーリング<span class="footnote"><a href="https://ja.wikipedia.org/wiki/%E3%83%9D%E3%83%BC%E3%83%AA%E3%83%B3%E3%82%B0_(%E6%83%85%E5%A0%B1)">https://ja.wikipedia.org/wiki/ポーリング_(情報)</a></span>と呼びます。
-                ポーリングはセンサーの情報入力だけでなく、たとえば電子メールの到着を通知するために定期的にメールサーバにメール着信数を確認する　といった、ネットワークサービスでの処理など様々なシステムで広く使われています。
-              </p>
-            </section>
+      </section>
+      <section class="level3" aria-labelledby="ポーリング">
+        <h3 id="ポーリング">ポーリング</h3>
+        <p>入力ではイベントの他にポーリングというテクニックが広く使われます。（次章のI2Cデバイスからの入力では専らポーリング）</p>
+        <ul>
+          <li>ターミナルウィンドの<code>[CHIRIMEN Panel]</code>ボタンを押す</li>
+          <li>出現したCHIRIMEN Panelの<code>[Get Examples]</code>ボタンを押す</li>
+          <li>ID : <strong>gpio-polling</strong>を探します</li>
+          <li>回路は <code>onchange編</code> と同じなのでそのままにしておきます。</li>
+          <li><code>[JS GET]</code>ボタンを押すと、開発ディレクトリ(<code>~/myApp</code>)に、サンプルコードが保存されます。
+            <ul>
+              <li><strong>main-gpio-polling.js</strong>というファイル名で保存されます。</li>
+              <li>ターミナルウィンドの右側のファイルマネージャでmain-gpio-polling.js⇒編集 を選びソースコードを見てみましょう</li>
+            </ul>
+          </li>
+        </ul>
+        <section class="note" role="doc-note">
+          <section class="level4" aria-labelledby="ポーリングとは">
+            <h4 id="ポーリングとは">ポーリングとは</h4>
+            <p>様々な情報や値の取得や入力のための基本的な機能・関数は、入力を指定した瞬間、一回きり取得するだけのものがほとんどです。そこで、無限ループをつくりこの中で一回きりの入力を定期的に繰り返すことで、入力の変化を読み取るということがよく行われます。このような処理を一般にポーリング<span class="footnote"><a href="https://ja.wikipedia.org/wiki/%E3%83%9D%E3%83%BC%E3%83%AA%E3%83%B3%E3%82%B0_(%E6%83%85%E5%A0%B1)">https://ja.wikipedia.org/wiki/ポーリング_(情報)</a></span>と呼びます。</p>
+            <p>ポーリングはセンサーの情報入力だけでなく、たとえば電子メールの到着を通知するために定期的にメールサーバにメール着信数を確認するといった、ネットワークサービスでの処理など様々なシステムで広く使われています。</p>
           </section>
-          <section class="level4" aria-labelledby="コードを読む-2">
-            <h4 id="コードを読む-2">コードを読む</h4>
-            <section class="level5" aria-labelledby="gpioの単純入力関数">
-              <h5 id="gpioの単純入力関数">GPIOの単純入力関数</h5>
-              <p>単純に「GPIO ポートの状態を読み込む」には <code>port.read()</code> を使います。</p>
-              <p><code>port.read()</code> で GPIO を読み込むコードは次のように書けます:</p>
-              <pre class="language-js"><code class="language-js"><span class="token keyword">const</span> gpioAccess <span class="token operator">=</span> <span class="token keyword control-flow">await</span> <span class="token dom variable">navigator</span><span class="token punctuation">.</span><span class="token method function property-access">requestGPIOAccess</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        </section>
+        <section class="level4" aria-labelledby="コードを読む-2">
+          <h4 id="コードを読む-2">コードを読む</h4>
+          <section class="level5" aria-labelledby="gpioの単純入力関数">
+            <h5 id="gpioの単純入力関数">GPIOの単純入力関数</h5>
+            <p>単純に「GPIO ポートの状態を読み込む」には <code>port.read()</code> を使います。</p>
+            <p><code>port.read()</code> で GPIO を読み込むコードは次のように書けます:</p>
+            <pre class="language-js"><code class="language-js"><span class="token keyword">const</span> gpioAccess <span class="token operator">=</span> <span class="token keyword control-flow">await</span> <span class="token dom variable">navigator</span><span class="token punctuation">.</span><span class="token method function property-access">requestGPIOAccess</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token keyword">const</span> switchPort <span class="token operator">=</span> gpioAccess<span class="token punctuation">.</span><span class="token property-access">ports</span><span class="token punctuation">.</span><span class="token method function property-access">get</span><span class="token punctuation">(</span><span class="token number">5</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// GPIO ポート 5 番を取得</span>
 <span class="token keyword control-flow">await</span> switchPort<span class="token punctuation">.</span><span class="token keyword module">export</span><span class="token punctuation">(</span><span class="token string">"in"</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 「入力モード」に</span>
 <span class="token keyword">const</span> state <span class="token operator">=</span> <span class="token keyword control-flow">await</span> switchPort<span class="token punctuation">.</span><span class="token method function property-access">read</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// GPIO ポート 5 番に接続したスイッチの状態を読み込む</span></code></pre>
-              <section class="level6" aria-labelledby="await-portexport">
-                <h6 id="await-portexport">await port.export()</h6>
-                <p><code>port.export("in")</code> により取得した <strong>GPIO ポートを「入力モード」で初期化</strong> しています。このモードは GPIO ポートにかかる電圧を Web アプリ側から読み取りたい時に使います。初期化は非同期処理であり <code>await</code> で完了を待つ必要があることに注意してください。</p>
-              </section>
-              <section class="level6" aria-labelledby="await-portread">
-                <h6 id="await-portread">await port.read()</h6>
-                <p><code>port.export("in")</code> で入力モードに設定した <strong>GPIO ポートの現時点の状態を読み取ります</strong>。読み取りは非同期処理になるので <code>await</code> で完了を待つようにしてください。</p>
-              </section>
+            <section class="level6" aria-labelledby="await-portexport">
+              <h6 id="await-portexport">await port.export()</h6>
+              <p><code>port.export("in")</code> により取得した <strong>GPIO ポートを「入力モード」で初期化</strong> しています。このモードは GPIO ポートにかかる電圧を Web アプリ側から読み取りたい時に使います。初期化は非同期処理であり <code>await</code> で完了を待つ必要があることに注意してください。</p>
             </section>
-            <section class="level5" aria-labelledby="ポーリングルーチン">
-              <h5 id="ポーリングルーチン">ポーリングルーチン</h5>
-              <p>上記コードで GPIO ポートの読み取りを 1 度だけ行えますが、今回は「スイッチが押され状態を監視する」必要がありますので、定期的に <code>await port.read()</code> を繰り返して GPIO ポートの状態を監視するポーリングのルーチンを組みます。</p>
-              <pre class="language-js"><code class="language-js"><span class="token keyword module">import</span> <span class="token imports"><span class="token punctuation">{</span>requestGPIOAccess<span class="token punctuation">}</span></span> <span class="token keyword module">from</span> <span class="token string">"./node_modules/node-web-gpio/dist/index.js"</span><span class="token punctuation">;</span>
+            <section class="level6" aria-labelledby="await-portread">
+              <h6 id="await-portread">await port.read()</h6>
+              <p><code>port.export("in")</code> で入力モードに設定した <strong>GPIO ポートの現時点の状態を読み取ります</strong>。読み取りは非同期処理になるので <code>await</code> で完了を待つようにしてください。</p>
+            </section>
+          </section>
+          <section class="level5" aria-labelledby="ポーリングルーチン">
+            <h5 id="ポーリングルーチン">ポーリングルーチン</h5>
+            <p>上記コードで GPIO ポートの読み取りを 1 度だけ行えますが、今回は「スイッチが押され状態を監視する」必要がありますので、定期的に <code>await port.read()</code> を繰り返して GPIO ポートの状態を監視するポーリングのルーチンを組みます。</p>
+            <pre class="language-js"><code class="language-js"><span class="token keyword module">import</span> <span class="token imports"><span class="token punctuation">{</span>requestGPIOAccess<span class="token punctuation">}</span></span> <span class="token keyword module">from</span> <span class="token string">"./node_modules/node-web-gpio/dist/index.js"</span><span class="token punctuation">;</span>
 <span class="token keyword">const</span> <span class="token function-variable function">sleep</span> <span class="token operator">=</span> <span class="token parameter">msec</span> <span class="token arrow operator">=></span> <span class="token keyword">new</span> <span class="token class-name">Promise</span><span class="token punctuation">(</span><span class="token parameter">resolve</span> <span class="token arrow operator">=></span> <span class="token function">setTimeout</span><span class="token punctuation">(</span>resolve<span class="token punctuation">,</span> msec<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
 <span class="token keyword">async</span> <span class="token keyword">function</span> <span class="token function">switchCheck</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
@@ -219,20 +220,19 @@
   <span class="token punctuation">}</span>
 
 <span class="token punctuation">}</span></code></pre>
-            </section>
           </section>
         </section>
-        <section class="level3" aria-labelledby="実行する-1">
-          <h3 id="実行する-1">実行する</h3>
-          <ul>
-            <li>プロンプトが<code>pi@raspberrypi:~/myApp$</code>となっていることを確認</li>
-            <li>コンソールに、<code>node main-gpio-polling.js</code> [ENTER] と入力して実行。</li>
-            <li>0.3秒おきにポート5の値がコンソールに表示されていきます。</li>
-            <li>タクトスイッチを押してみます。</li>
-            <li>タクトスイッチが押されると、<strong>0</strong>に変化します。</li>
-            <li>終了は CTRL+c</li>
-          </ul>
-        </section>
+      </section>
+      <section class="level3" aria-labelledby="実行する-1">
+        <h3 id="実行する-1">実行する</h3>
+        <ul>
+          <li>プロンプトが<code>pi@raspberrypi:~/myApp$</code>となっていることを確認</li>
+          <li>コンソールに、<code>node main-gpio-polling.js</code> [ENTER] と入力して実行。</li>
+          <li>0.3秒おきにポート5の値がコンソールに表示されていきます。</li>
+          <li>タクトスイッチを押してみます。</li>
+          <li>タクトスイッチが押されると、<strong>0</strong>に変化します。</li>
+          <li>終了は CTRL+c</li>
+        </ul>
       </section>
     </section>
   </body>

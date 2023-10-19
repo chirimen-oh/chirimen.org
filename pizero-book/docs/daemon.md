@@ -18,5 +18,10 @@
         * その後PCからリモートコントロールしてみましょう
   * PCに接続しなおして、一番上の```STOP ALL APPS```のチェックボックスをチェックすると、常駐プログラムを解除できます。
 
+<div class="note" role="doc-note">
 
-* *Note: 常駐化のツールとしては、他にもsystemd service unit, openrc, cron, pm2, forever 等があります。Webでそれぞれの特徴を調べて用途に合ったものを選択して設定しても良いでしょう。*
+## Note
+
+常駐化のツールとしては、他にもsystemd service unit, openrc, cron, pm2, forever 等があります。Webでそれぞれの特徴を調べて用途に合ったものを選択して設定しても良いでしょう。
+
+</div>
