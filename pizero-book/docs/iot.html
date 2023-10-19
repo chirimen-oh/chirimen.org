@@ -11,11 +11,11 @@
       <h1 id="iot">IoT</h1>
       <p>
         これまでのチュートリアルでは、いずれもそのコンピュータに直接接続されたデバイスを使うものでした。このようなシステムは「スタンドアロン」と呼ばれます。
-        今までは、ウェブブラウザを使っていたのに、実はウェブの重要な機能～インターネット上の情報基盤WWWを活用したシステムを作っていなかったのです。（開発環境としてはgithubやcodesandboxなどWWW上の情報サービスを活用していますが）
+        今までは、ウェブブラウザを使っていたのに、実はウェブの重要な機能～インターネット上の情報基盤WWWを活用したシステムを作っていなかったのです。（開発環境としてはgithubやCodeSandboxなどWWW上の情報サービスを活用していますが）
       </p>
       <p>このようなインターネットを活用するシステムのことをIoT (Internet of Thingの略)と呼びます。ただし単にPCやスマホで使うウェブサービスがIoTと呼ばれることがありません。チュートリアルで学んだようなセンサーやアクチュエータがシステムに組み込まれ、物理的なモノと相互作用するようなものを特にIoTと呼びます。（なお、WWWを用いずネットワーク部のインターネットだけを使ったものでもIoTと呼びます。詳しくはwiki<span class="footnote"><a href="https://ja.wikipedia.org/wiki/%E3%83%A2%E3%83%8E%E3%81%AE%E3%82%A4%E3%83%B3%E3%82%BF%E3%83%BC%E3%83%8D%E3%83%83%E3%83%88">https://ja.wikipedia.org/wiki/モノのインターネット</a></span>や、<a href="https://smartiot-forum.jp/application/files/5315/8642/5503/iot-jinzai-text_verR0202.pdf">総務省「IoT機器等の電波利用システムの適正利用のためのICT人材育成事業」における講習会テキスト</a>なども参考にしてください）</p>
       <section class="level2" aria-labelledby="websocketとpubsub-services">
-        <h2 id="websocketとpubsub-services">webSocketとpub/sub services</h2>
+        <h2 id="websocketとpubsub-services">WebSocketとpub/sub services</h2>
         <section class="level3" aria-labelledby="システム構成">
           <h3 id="システム構成">システム構成</h3>
           <figure>
@@ -59,7 +59,7 @@
             <h4 id="relayserverjs">relayServer.js</h4>
             <p>IoTにはrelayServerの機能を持つウェブサイトが必要になりますが、これを誰かが運営しなければなりません。実習やプロトタイピングのためにこのようなサイトを自分たちで立ち上げるのはかなり大変ですが、インターネット上では既にいくつもの事業者がrelayServerサービスを提供しています。</p>
             <p>今回はCHIRIMEN環境の試験用に、CHIRIMEN用に用意された検証用サービス(chirimentest)を使うことにしますが、いくつかある事業者間でサービスの内容に差異があります。サイトごとの差異は主に接続できる端末の管理と情報の取り扱いに関する機能になります。</p>
-            <p><a href="https://chirimen.org/remote-connection/">relayServer.js</a>は、relayServerサービスによる差異を吸収し複数の事業者を自由に切り替えられ、webSocketの標準API仕様に沿った作法でwebApps(含Node.jsプログラム)間の通信を簡単に使えるようにするライブラリです。</p>
+            <p><a href="https://chirimen.org/remote-connection/">relayServer.js</a>は、relayServerサービスによる差異を吸収し複数の事業者を自由に切り替えられ、WebSocketの標準API仕様に沿った作法でwebApps(含Node.jsプログラム)間の通信を簡単に使えるようにするライブラリです。</p>
           </section>
           <section class="level4" aria-labelledby="relayserverjs-を使ったプログラムの流れ">
             <h4 id="relayserverjs-を使ったプログラムの流れ">relayServer.js を使ったプログラムの流れ</h4>
@@ -113,7 +113,13 @@
           </section>
           <section class="level4" aria-labelledby="セキュリティを考えよう">
             <h4 id="セキュリティを考えよう">セキュリティを考えよう</h4>
-            <p>relayServerを使うということは、情報をインターネット上のウェブサイトに送信することになります。<br>すると このウェブサイトがその情報をどのように取り扱うのかを理解しておく必要があります。<br>achexは無料で使え　しかもユーザ登録も不要です。つまりこのサイトに送信した情報は誰でも見ることができてしまうということです。（ただし、トークンとチャンネルを知る必要がある。これがachexのセキュリティレベル）<br>今回は個人情報などのセキュリティを考慮する必要がない、チュートリアルで使うセンシングデータを送るだけですので問題ありませんが、セキュリティを考慮する必要がある多くの用途ではそのセキュリティ基準に適合したサイトを契約して利用する、もしくは自分でそのようなサイトを立てるなどの必要が出てきます。<br>relayServer.jsでもいくつかの商用サイトの比較と使用方法が記載されているので参考にしてください。</p>
+            <p>
+              relayServerを使うということは、情報をインターネット上のウェブサイトに送信することになります。
+              すると このウェブサイトがその情報をどのように取り扱うのかを理解しておく必要があります。
+              achexは無料で使え、しかもユーザ登録も不要です。つまりこのサイトに送信した情報は誰でも見ることができてしまうということです。（ただし、トークンとチャンネルを知る必要がある。これがachexのセキュリティレベル）
+              今回は個人情報などのセキュリティを考慮する必要がない、チュートリアルで使うセンシングデータを送るだけですので問題ありませんが、セキュリティを考慮する必要がある多くの用途ではそのセキュリティ基準に適合したサイトを契約して利用する、もしくは自分でそのようなサイトを立てるなどの必要が出てきます。
+              relayServer.jsでもいくつかの商用サイトの比較と使用方法が記載されているので参考にしてください。
+            </p>
           </section>
           <section class="level4" aria-labelledby="nodejsでの利用">
             <h4 id="nodejsでの利用">Node.jsでの利用</h4>
@@ -122,10 +128,10 @@
 <span class="token keyword module">import</span> <span class="token imports"><span class="token punctuation">{</span><span class="token maybe-class-name">RelayServer</span><span class="token punctuation">}</span></span> <span class="token keyword module">from</span> <span class="token string">"./RelayServer.js"</span><span class="token punctuation">;</span>
 <span class="token keyword">var</span> relay <span class="token operator">=</span> <span class="token function"><span class="token maybe-class-name">RelayServer</span></span><span class="token punctuation">(</span><span class="token string">"achex"</span><span class="token punctuation">,</span> <span class="token string">"chirimenSocket"</span> <span class="token punctuation">,</span> nodeWebSocketLib<span class="token punctuation">,</span> <span class="token string">"https://chirimen.org"</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
             <ul>
-              <li>Node.jsではwebSocketを使用するためにはwebsocketライブラリが必要なので読み込みます</li>
-              <li>RelayServer.jsやwebSocket等のライブラリは、ローカルからの読み込みになります</li>
+              <li>Node.jsではWebSocketを使用するためにはwebsocketライブラリが必要なので読み込みます</li>
+              <li>RelayServer.jsやwebsocket等のライブラリは、ローカルからの読み込みになります</li>
               <li>RelayServerの第三引数でwebsocketライブラリを渡す必要があります</li>
-              <li>RelayServerの第四引数で、<a href="https://e-words.jp/w/%E3%83%AA%E3%83%95%E3%82%A1%E3%83%A9.html">リファラー</a>の指定が必要です
+              <li>RelayServerの第四引数で、リファラー<span class="footnote"><a href="https://e-words.jp/w/%E3%83%AA%E3%83%95%E3%82%A1%E3%83%A9.html">https://e-words.jp/w/リファラ.html</a></span> の指定が必要です
                 <ul>
                   <li>webアプリの場合はそのコンテンツの配信元のURLがリファラーとして自動設定されますが、Node.jsのアプリはローカルにあるので別途指定が必要</li>
                   <li>achexの場合URLは何でも許可されますが、他のrelayServerサービスでは あらかじめ指定したリファラーが設定されていなければアクセス拒否されるものもあります(これも一つのセキュリティ)</li>

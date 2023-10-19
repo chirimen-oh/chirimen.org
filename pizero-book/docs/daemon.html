@@ -14,17 +14,13 @@
         このチュートリアルでは、<a href="https://www.npmjs.com/package/forever">forever</a>を使用する設定を専用GUIを用いて行ってみましょう。
       </p>
       <ul>
-        <li>
-          <p>ターミナルウィンドの<code>[CHIRIMEN Panel]</code>ボタン⇒CHIRIMEN Panelの<code>[Resident App Conf.]</code>ボタンを押します。</p>
+        <li>ターミナルウィンドの<code>[CHIRIMEN Panel]</code>ボタン⇒CHIRIMEN Panelの<code>[Resident App Conf.]</code>ボタンを押します。
           <ul>
             <li>専用画面のUIが使用可能状態になるまで数秒かかります。</li>
           </ul>
         </li>
-        <li>
-          <p>開発ディレクトリ<code>~/myApp</code>内にあるjavascriptコードがリストアップされます。</p>
-        </li>
-        <li>
-          <p>各行の<code>Now Running</code>列は常駐状態、<code>App Name</code>はコードのファイル名、<code>Select</code>は選択用チェックボックスです。</p>
+        <li>開発ディレクトリ<code>~/myApp</code>内にあるJavaScriptコードがリストアップされます。</li>
+        <li>各行の<code>Now Running</code>列は常駐状態、<code>App Name</code>はコードのファイル名、<code>Select</code>は選択用チェックボックスです。
           <ul>
             <li><code>Now Running</code>欄には現在常駐プログラム化しているコードに、<code>RUNNING</code>が表示されています。（常駐プログラムがなければ全部の行が空白になります）</li>
             <li><code>Select</code>欄のチェックボックスをチェックすると、そのコードが常駐プログラム化します。（常駐プログラムは一個だけ指定できます）
@@ -50,10 +46,13 @@
             <li>PCに接続しなおして、一番上の<code>STOP ALL APPS</code>のチェックボックスをチェックすると、常駐プログラムを解除できます。</li>
           </ul>
         </li>
-        <li>
-          <p><em>Note: 常駐化のツールとしては、他にもsystemd service unit, openrc, cron, pm2, forever 等があります。Webでそれぞれの特徴を調べて用途に合ったものを選択して設定しても良いでしょう。</em></p>
-        </li>
       </ul>
+      <div class="note" role="doc-note">
+        <section class="level2" aria-labelledby="note">
+          <h2 id="note">Note</h2>
+          <p>常駐化のツールとしては、他にもsystemd service unit, openrc, cron, pm2, forever 等があります。Webでそれぞれの特徴を調べて用途に合ったものを選択して設定しても良いでしょう。</p>
+        </section>
+      </div>
     </section>
   </body>
 </html>
