@@ -5,11 +5,11 @@
 
 [GPIO](https://ja.wikipedia.org/wiki/GPIO)は、「General-purpose input/output」の略で汎用的な入出力インタフェースのことです。
 
-Raspi に実装されている 40 本のピンヘッダから GPIO を利用することができます。
+Raspberry Pi に実装されている 40 本のピンヘッダから GPIO を利用することができます。
 
-CHIRIMEN Raspi、Raspi Zero では Raspi が提供する 40 本のピンヘッダ<span class="footnote">3.1 Raspberry Pi Zeroのピン配列</span>のうち、GPIO端子(合計 17 本)が利用可能です。
+CHIRIMEN Raspberry Pi、Raspberry Pi Zero では Raspberry Pi が提供する 40 本のピンヘッダ<span class="footnote">3.1 Raspberry Pi Zeroのピン配列</span>のうち、GPIO端子(合計 17 本)が利用可能です。
 
-Raspiの GPIO 端子は、GND 端子との間に、0V もしくは 3.3V の電圧を印加(出力)したり、逆に 0V もしくは 3.3V の電圧を検知(入力)したりすることができます。LED は数 mA の電流を流すことによって点灯できる電子部品のため、印加する電圧を 3.3V(点灯)、0V(消灯) と変化させることで L チカが実現できるのです。
+Raspberry Piの GPIO 端子は、GND 端子との間に、0V もしくは 3.3V の電圧を印加(出力)したり、逆に 0V もしくは 3.3V の電圧を検知(入力)したりすることができます。LED は数 mA の電流を流すことによって点灯できる電子部品のため、印加する電圧を 3.3V(点灯)、0V(消灯) と変化させることで L チカが実現できるのです。
 
 詳しくは[ツール・ラボ/第22回 Raspberry PiのGPIO概要](https://tool-lab.com/make/raspberrypi-startup-22/)などを参考にしてみましょう。
 

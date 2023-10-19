@@ -21,7 +21,7 @@ I2Cデバイスは小型のICチップデバイスとなっており、デバイ
 ### Raspverry Pi ZeroのI2C端子
 下図のSCL, SDAがI2C端子です（黄色の端子）
 
-![Raspi PIN配置図](../../raspi/imgs/section0/Raspi3PIN.png){height=600}
+![Raspberry Pi PIN配置図](../../raspi/imgs/section0/Raspi3PIN.png){height=600}
 
 Raspberry PiのI2C端子と同じ配列です。
 
