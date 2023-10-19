@@ -39,7 +39,7 @@ GPIOの出力はLチカで実験済みですね。そこで今回はモーター
 import {requestGPIOAccess} from "./node_modules/node-web-gpio/dist/index.js";
 ```
 
-JavaScript module<span class="footnote">10.2.3. javascript Module (ECMA Script Module)参照</span>に基づいてWebGPIOライブラリを読み込みます。これでWeb GPIO APIが使えるようになりました。
+JavaScript module<span class="footnote">10.2.3. JavaScript Module (ECMA Script Module)参照</span>に基づいてWebGPIOライブラリを読み込みます。これでWeb GPIO APIが使えるようになりました。
 
 #### GPIOポートの初期化
 

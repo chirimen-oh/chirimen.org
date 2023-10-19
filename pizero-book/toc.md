@@ -47,7 +47,7 @@
     1. [W3C WoT, FIWARE](./docs/iot.html#w3c-wot-fiware)
 1. [予備知識・資料集](./docs/document.html#予備知識資料集)
     1. [JavaScript 初学者向け資料集](./docs/document.html#javascript-初学者向け資料集)
-    1. [Github と開発環境](./docs/document.html#github-と開発環境)
+    1. [GitHub と開発環境](./docs/document.html#github-と開発環境)
     1. [電子工作](./docs/document.html#電子工作)
     1. [ハードウェア・デバイス](./docs/document.html#ハードウェアデバイス)
     1. [そもそも「L チカ」って何？](./docs/document.html#そもそもl-チカって何)

@@ -1,10 +1,10 @@
 # IoT
 これまでのチュートリアルでは、いずれもそのコンピュータに直接接続されたデバイスを使うものでした。このようなシステムは「スタンドアロン」と呼ばれます。
-今までは、ウェブブラウザを使っていたのに、実はウェブの重要な機能～インターネット上の情報基盤WWWを活用したシステムを作っていなかったのです。（開発環境としてはgithubやcodesandboxなどWWW上の情報サービスを活用していますが）
+今までは、ウェブブラウザを使っていたのに、実はウェブの重要な機能～インターネット上の情報基盤WWWを活用したシステムを作っていなかったのです。（開発環境としてはgithubやCodeSandboxなどWWW上の情報サービスを活用していますが）
 
 このようなインターネットを活用するシステムのことをIoT (Internet of Thingの略)と呼びます。ただし単にPCやスマホで使うウェブサービスがIoTと呼ばれることがありません。チュートリアルで学んだようなセンサーやアクチュエータがシステムに組み込まれ、物理的なモノと相互作用するようなものを特にIoTと呼びます。（なお、WWWを用いずネットワーク部のインターネットだけを使ったものでもIoTと呼びます。詳しくはwiki<span class="footnote">https://ja.wikipedia.org/wiki/モノのインターネット</span>や、[総務省「IoT機器等の電波利用システムの適正利用のためのICT人材育成事業」における講習会テキスト](https://smartiot-forum.jp/application/files/5315/8642/5503/iot-jinzai-text_verR0202.pdf)なども参考にしてください）
 
-## webSocketとpub/sub services
+## WebSocketとpub/sub services
 ### システム構成
 
 ![sysConfImg](../../pizero/imgs/IoTsystemConf.png)
@@ -46,7 +46,7 @@ IoTにはrelayServerの機能を持つウェブサイトが必要になります
 
 今回はCHIRIMEN環境の試験用に、CHIRIMEN用に用意された検証用サービス(chirimentest)を使うことにしますが、いくつかある事業者間でサービスの内容に差異があります。サイトごとの差異は主に接続できる端末の管理と情報の取り扱いに関する機能になります。
 
-[relayServer.js](https://chirimen.org/remote-connection/)は、relayServerサービスによる差異を吸収し複数の事業者を自由に切り替えられ、webSocketの標準API仕様に沿った作法でwebApps(含Node.jsプログラム)間の通信を簡単に使えるようにするライブラリです。
+[relayServer.js](https://chirimen.org/remote-connection/)は、relayServerサービスによる差異を吸収し複数の事業者を自由に切り替えられ、WebSocketの標準API仕様に沿った作法でwebApps(含Node.jsプログラム)間の通信を簡単に使えるようにするライブラリです。
 
 #### relayServer.js を使ったプログラムの流れ
 
@@ -102,8 +102,8 @@ import {RelayServer} from "./RelayServer.js";
 var relay = RelayServer("achex", "chirimenSocket" , nodeWebSocketLib, "https://chirimen.org");
 ```
 
-* Node.jsではwebSocketを使用するためにはwebsocketライブラリが必要なので読み込みます
-* RelayServer.jsやwebSocket等のライブラリは、ローカルからの読み込みになります
+* Node.jsではWebSocketを使用するためにはwebsocketライブラリが必要なので読み込みます
+* RelayServer.jsやwebsocket等のライブラリは、ローカルからの読み込みになります
 * RelayServerの第三引数でwebsocketライブラリを渡す必要があります
 * RelayServerの第四引数で、リファラー<span class="footnote">https://e-words.jp/w/リファラ.html</span> の指定が必要です
   * webアプリの場合はそのコンテンツの配信元のURLがリファラーとして自動設定されますが、Node.jsのアプリはローカルにあるので別途指定が必要

@@ -6,7 +6,7 @@ CHIRIMEN を利用するに際して、知っておくと良い予備知識や�
 - [JavaScript 1 Day 講習資料、JavaScript 本格入門書、チートシートなどはこちら](https://tutorial.chirimen.org/js/)
 - [JavaScript Primer - 迷わないための入門書](https://jsprimer.net/)
 
-## Github と開発環境
+## GitHub と開発環境
 
 - [GitHub ハンズオン](https://github.com/webiotmakers/github-handson)
   - GitHub の基本的な使い方の分かるハンズオン資料です。

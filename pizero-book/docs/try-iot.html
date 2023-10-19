@@ -19,7 +19,7 @@
         <p>Note: モーター制御の回路<span class="footnote">6.2. GPIO出力参照</span> を組めば、そのまま遠隔モーターコントロールができます</p>
         <ul>
           <li>IoT<span class="footnote">12. IoT 参照</span></li>
-          <li>WebSoeketとRelayServer<span class="footnote">12.1. webSocketとpub/sub services 参照</span></li>
+          <li>WebSoeketとRelayServer<span class="footnote">12.1. WebSocketとpub/sub services 参照</span></li>
         </ul>
         <section class="level3" aria-labelledby="配線する">
           <h3 id="配線する">配線する</h3>
@@ -81,13 +81,13 @@
               <li>これまで通りWebGPIOライブラリの読み込み</li>
               <li>relayServer.js<span class="footnote">12.1.2. relayServer 参照</span> ライブラリの読み込み
                 <ul>
-                  <li>Node.jsではrelayServerライブラリに加えて、webSocketライブラリの読み込みが必要です。
+                  <li>Node.jsではrelayServerライブラリに加えて、websocketライブラリの読み込みが必要です。
                     <pre class="language-text"><code class="language-text">import nodeWebSocketLib from "websocket";
 import {RelayServer} from "./RelayServer.js";</code></pre>
                   </li>
                 </ul>
               </li>
-              <li>relayServer.js<span class="footnote">12.1. webSocketとpub/sub services 参照</span> を使って、PCからの操作指示を受信
+              <li>relayServer.js<span class="footnote">12.1. WebSocketとpub/sub services 参照</span> を使って、PCからの操作指示を受信
                 <ul>
                   <li>初期化</li>
                   <li>受信処理(コールバック関数の設定)</li>
@@ -100,10 +100,10 @@ import {RelayServer} from "./RelayServer.js";</code></pre>
             <h4 id="pc側コード">PC側コード</h4>
             <ul>
               <li>CodeSandboxで開いているPC.jsを見てみましょう</li>
-              <li>JavaScript Module<span class="footnote">11.2.3. javascript Module (ECMA Script Module)参照</span>仕様に基づいてrelayServer.jsを読み込み
+              <li>JavaScript Module<span class="footnote">11.2.3. JavaScript Module (ECMA Script Module)参照</span>仕様に基づいてrelayServer.jsを読み込み
                 <pre class="language-text"><code class="language-text">import {RelayServer} from "https://chirimen.org/remote-connection/js/beta/RelayServer.js";</code></pre>
               </li>
-              <li>relayServer.js<span class="footnote">12.1. webSocketとpub/sub services 参照</span> を使い、UIを通してユーザからの操作指示を送信
+              <li>relayServer.js<span class="footnote">12.1. WebSocketとpub/sub services 参照</span> を使い、UIを通してユーザからの操作指示を送信
                 <ul>
                   <li>初期化（受信側、送信側共通の処理参照</li>
                   <li>送信処理 ～UI(ボタン)に設置したコールバック関数をもとに送信</li>

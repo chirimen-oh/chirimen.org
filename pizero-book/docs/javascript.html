@@ -24,10 +24,10 @@
         </ul>
       </section>
       <section class="level2" aria-labelledby="javascriptコードライブラリの読み込み">
-        <h2 id="javascriptコードライブラリの読み込み">javascriptコード・ライブラリの読み込み</h2>
+        <h2 id="javascriptコードライブラリの読み込み">JavaScriptコード・ライブラリの読み込み</h2>
         <section class="level3" aria-labelledby="ウェブアプリhtmlで読み込み">
           <h3 id="ウェブアプリhtmlで読み込み">ウェブアプリ：HTMLで読み込み</h3>
-          <p>Raspberry Pi Zero版以外のCHIRIMENはプログラムの起点はHTMLファイルです。（<a href="https://ja.wikipedia.org/wiki/%E3%82%A6%E3%82%A7%E3%83%96%E3%82%A2%E3%83%97%E3%83%AA%E3%82%B1%E3%83%BC%E3%82%B7%E3%83%A7%E3%83%B3">ウェブアプリ</a>）ブラウザはまずHTMLファイルを読み込んだうえで、そこに書かれた内容で動きます。したがって作ったコードや必要なライブラリの読み込みは基本的に全てこのHTMLの中で指定します。（なお、javascript Moduleを有効化している場合はjavascriptコードの中でjsライブラリを読み込むことがある）</p>
+          <p>Raspberry Pi Zero版以外のCHIRIMENはプログラムの起点はHTMLファイルです。（<a href="https://ja.wikipedia.org/wiki/%E3%82%A6%E3%82%A7%E3%83%96%E3%82%A2%E3%83%97%E3%83%AA%E3%82%B1%E3%83%BC%E3%82%B7%E3%83%A7%E3%83%B3">ウェブアプリ</a>）ブラウザはまずHTMLファイルを読み込んだうえで、そこに書かれた内容で動きます。したがって作ったコードや必要なライブラリの読み込みは基本的に全てこのHTMLの中で指定します。（なお、JavaScript Moduleを有効化している場合はJavaScriptコードの中でJavaScriptライブラリを読み込むことがある）</p>
           <p>
             ポイントは <code>&#x3C;script ...>&#x3C;/script></code> の部分です。
             <code>polyfill.js</code> という JavaScript ライブラリを読み込んでいます。これは <a href="http://browserobo.github.io/WebGPIO">Web GPIO API</a> と、<a href="http://browserobo.github.io/WebI2C">Web I2C API</a> という W3C でドラフト提案中の 2 つの API への <a href="https://developer.mozilla.org/ja/docs/Glossary/Polyfill">Polyfill (新しい API を未実装のブラウザでも同じコードが書けるようにするためのライブラリ)</a> で、最初に読み込むとそれ以降のコードで GPIO や I2C を操作する JavaScript API が使えるようになります。
@@ -36,26 +36,22 @@
         </section>
         <section class="level3" aria-labelledby="nodejs-chirimen-raspberry-pi-zero版">
           <h3 id="nodejs-chirimen-raspberry-pi-zero版">Node.js (CHIRIMEN Raspberry Pi Zero版)</h3>
-          <p>Raspberry Pi Zero版はプログラムの起点が自分が作ったjavascriptコード自体になります。ブラウザの代わりに<a href="https://ja.wikipedia.org/wiki/Node.js">Node.js</a>というjavascriptコードだけを解釈するソフト（javascript <a href="https://ja.wikipedia.org/wiki/%E3%82%A4%E3%83%B3%E3%82%BF%E3%83%97%E3%83%AA%E3%82%BF">インタープリタ</a>）にコードを読み込ませて実行します。</p>
+          <p>Raspberry Pi Zero版はプログラムの起点が自分が作ったJavaScriptコード自体になります。ブラウザの代わりに<a href="https://ja.wikipedia.org/wiki/Node.js">Node.js</a>というJavaScriptコードだけを解釈するソフト（JavaScript <a href="https://ja.wikipedia.org/wiki/%E3%82%A4%E3%83%B3%E3%82%BF%E3%83%97%E3%83%AA%E3%82%BF">インタープリタ</a>）にコードを読み込ませて実行します。</p>
           <p>CHIRIMEN環境のために必要なライブラリや、I2Cデバイスのドライバ<span class="footnote">7.5. WebI2Cとデバイスドライバ参照</span>(後述)は次のECMA Script Moduleという仕組みを使って読み込みます。</p>
           <hr class="page-wrap">
         </section>
         <section class="level3" aria-labelledby="javascript-module-ecma-script-module">
-          <h3 id="javascript-module-ecma-script-module">javascript Module (ECMA Script Module)</h3>
+          <h3 id="javascript-module-ecma-script-module">JavaScript Module (ECMA Script Module)</h3>
           <ul>
-            <li>ウェブアプリでのModule有効化：HTMLのscript要素でjavascriptを読み込むとき、ttype="module"プロパティを設定する。
-              <ul>
-                <li><code>&#x3C;script type="module" src="main.js">&#x3C;/script></code></li>
-              </ul>
+            <li>ウェブアプリでのModule有効化：HTMLのscript要素でJavaScriptを読み込むときは、<code>type="module"</code> プロパティを設定する。
+              <pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;</span>script</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>module<span class="token punctuation">"</span></span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>main.js<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token script"></span><span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;/</span>script</span><span class="token punctuation">></span></span></code></pre>
             </li>
             <li>import文で外部のライブラリを読み込む。
-              <ul>
-                <li><code>import {RelayServer} from "https://chirimen.org/remote-connection/js/beta/RelayServer.js";</code></li>
-              </ul>
+              <pre class="language-js"><code class="language-js"><span class="token keyword module">import</span> <span class="token imports"><span class="token punctuation">{</span><span class="token maybe-class-name">RelayServer</span><span class="token punctuation">}</span></span> <span class="token keyword module">from</span> <span class="token string">"https://chirimen.org/remote-connection/js/beta/RelayServer.js"</span><span class="token punctuation">;</span></code></pre>
             </li>
-            <li>importされるライブラリ側には、importできるオブジェクトを指定するexport文を記述する。</li>
-            <li><code>export {RelayServer};</code></li>
-            <li><a href="https://codesandbox.io/s/github/chirimen-oh/chirimen.org/tree/master/pizero/esm-examples/remote_gpio_led/pc">例を見てみる</a></li>
+            <li>importされるライブラリ側には、importできるオブジェクトを指定するexport文を記述する。
+              <pre class="language-js"><code class="language-js"><span class="token keyword module">export</span> <span class="token exports"><span class="token punctuation">{</span><span class="token maybe-class-name">RelayServer</span><span class="token punctuation">}</span></span><span class="token punctuation">;</span></code></pre>
+            </li>
             <li><a href="https://developer.mozilla.org/ja/docs/Web/JavaScript/Guide/Modules">Mozilla Developer Networkの解説</a></li>
           </ul>
         </section>

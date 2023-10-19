@@ -103,7 +103,7 @@ SHT30 は`0x44`がデフォルトの SlaveAddress で、ADDR ピンの HIGH/LOW 
 ### 認識されないとき
 
 試しに I2C デバイスへの電源供給を止めて、認識されないケースをあえて確かめてみます。
-一度 RasPi の 3.3V に接続している線を抜いて、もう一度 `i2cdetect -y -r 1` を実行してみてください。
+一度 Raspberry Pi の 3.3V に接続している線を抜いて、もう一度 `i2cdetect -y -r 1` を実行してみてください。
 
 ```
 $ i2cdetect -y -r 1
@@ -222,7 +222,7 @@ async function main() {
 
 次に、`main.js` の処理の流れを見てみましょう。
 ここで温度センサーの情報を定期的に取得し、画面に出力する処理が行われています。
-少し詳し解説してみます。
+少し詳しく解説してみます。
 
 ##### await requestI2CAccess()
 
@@ -236,7 +236,7 @@ Web I2C API を利用するための **`I2CAccess` インタフェースを取�
 const port = i2cAccess.ports.get(1);
 ```
 
-CHIRIMEN RasPi、RasPiZero、で利用可能な I2C ポート番号は`1`番だけです。ポート番号に`1` を指定して **`port` オブジェクトを取得** しています。
+CHIRIMEN Raspberry Pi、Raspberry PiZero、で利用可能な I2C ポート番号は`1`番だけです。ポート番号に`1` を指定して **`port` オブジェクトを取得** しています。
 
 ##### new SHT30(port, 0x44)
 

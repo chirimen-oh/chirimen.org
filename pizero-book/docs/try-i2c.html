@@ -125,7 +125,7 @@
           <h3 id="認識されないとき">認識されないとき</h3>
           <p>
             試しに I2C デバイスへの電源供給を止めて、認識されないケースをあえて確かめてみます。
-            一度 RasPi の 3.3V に接続している線を抜いて、もう一度 <code>i2cdetect -y -r 1</code> を実行してみてください。
+            一度 Raspberry Pi の 3.3V に接続している線を抜いて、もう一度 <code>i2cdetect -y -r 1</code> を実行してみてください。
           </p>
           <pre class="language-text"><code class="language-text">$ i2cdetect -y -r 1
      0  1  2  3  4  5  6  7  8  9  a  b  c  d  e  f
@@ -267,7 +267,7 @@
               <p>
                 次に、<code>main.js</code> の処理の流れを見てみましょう。
                 ここで温度センサーの情報を定期的に取得し、画面に出力する処理が行われています。
-                少し詳し解説してみます。
+                少し詳しく解説してみます。
               </p>
             </section>
             <section class="level5" aria-labelledby="await-requesti2caccess">
@@ -278,7 +278,7 @@
               <h5 id="i2caccessportsget">i2cAccess.ports.get()</h5>
               <p><code>I2CAccess.ports</code> は、利用可能な I2C ポートの一覧です。</p>
               <pre class="language-js"><code class="language-js"><span class="token keyword">const</span> port <span class="token operator">=</span> i2cAccess<span class="token punctuation">.</span><span class="token property-access">ports</span><span class="token punctuation">.</span><span class="token method function property-access">get</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
-              <p>CHIRIMEN RasPi、RasPiZero、で利用可能な I2C ポート番号は<code>1</code>番だけです。ポート番号に<code>1</code> を指定して <strong><code>port</code> オブジェクトを取得</strong> しています。</p>
+              <p>CHIRIMEN Raspberry Pi、Raspberry PiZero、で利用可能な I2C ポート番号は<code>1</code>番だけです。ポート番号に<code>1</code> を指定して <strong><code>port</code> オブジェクトを取得</strong> しています。</p>
             </section>
             <section class="level5" aria-labelledby="new-sht30port-0x44">
               <h5 id="new-sht30port-0x44">new SHT30(port, 0x44)</h5>
