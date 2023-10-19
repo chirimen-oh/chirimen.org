@@ -6,7 +6,8 @@
 
 その他、何か不明点や困ったことがあれば CHIRIMEN コミュニティの Slack や GitHub の各リポジトリの issues でご連絡・ご相談ください。
 
-- [Slack](http://chirimen-oh.slack.com/) - 参加は[CHIRIMENチュートリアル - コミュニティについて](https://tutorial.chirimen.org/about)の自己招待フォームリンクからお願いします
-- [GitHub](https://github.com/chirimen-oh/)
-- [Facebook](https://www.facebook.com/groups/chirimen/)
-- [Twitter](https://twitter.com/chirimen_oh)
+- [Slack @chirimen-oh](http://chirimen-oh.slack.com/)
+  - 参加は[CHIRIMENチュートリアル - コミュニティについて](https://tutorial.chirimen.org/about)の自己招待フォームリンクからお願いします
+- [GitHub @chirimen-oh](https://github.com/chirimen-oh/)
+- [Facebook @chirimen](https://www.facebook.com/groups/chirimen/)
+- [X (旧Twitter) @chirimen_oh](https://twitter.com/chirimen_oh)
