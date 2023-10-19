@@ -30,6 +30,11 @@ CHIRIMEN を利用するに際して、知っておくと良い予備知識や�
 - GPIO
   - [Raspberry Pi の GPIO 概要 (ツールラボ)](https://tool-lab.com/raspberrypi-startup-22/)
   - [プルアップとプルダウン(VOLTECHNO)](https://voltechno.com/blog/pullup-pulldown/)
+- I2C
+  - [I2C](https://ja.wikipedia.org/wiki/I2C) - Wikipedia
+  - I2C バス仕様書 最新版（[日本語](https://www.nxp.com/docs/ja/user-guide/UM10204.pdf)、[English](http://www.nxp.com/documents/user_manual/UM10204.pdf)）
+  - [I2C の使い方](http://www.picfun.com/i2cframe.html)（後閑哲也氏サイト）
+
 - 電源・電力
   - デバイス駆動に必要な電源 (準備中)
 
