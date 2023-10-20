@@ -1,3 +1,3 @@
-![](../images/chiri.jpg){width=600}
+![](../images/chiri-pi-zero.jpg)
 
 CHIRIMEN Raspberry Pi Zero W チュートリアル表紙仮置き
