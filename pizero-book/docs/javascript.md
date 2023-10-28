@@ -6,7 +6,7 @@
 ## JavaScript の基礎
 JavaScript に慣れていない人は、下記ページを参考にしてください。
 
-* 「JavaScript 初学者向け資料集」<span class="footnote">13 章の参考リンクから該当情報を参照ください</span>を参照してください。
+* 「JavaScript 初学者向け資料集」（13 章 予備知識参照）を参照してください。
 
 ## JavaScriptコード・ライブラリの読み込み
 
