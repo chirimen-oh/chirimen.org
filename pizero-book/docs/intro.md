@@ -13,4 +13,4 @@
 - [X (旧Twitter) @chirimen_oh](https://twitter.com/chirimen_oh)
 
 
-**早く試してみたい方は、`第4章`から始めてください**
+**早く試してみたい方は、`第4章`から始めてください。**
