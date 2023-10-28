@@ -6,12 +6,12 @@
 ## JavaScript の基礎
 JavaScript に慣れていない人は、下記ページを参考にしてください。
 
-* 「JavaScript 初学者向け資料集」（13 章 予備知識参照）を参照してください。
+* 「JavaScript 初学者向け資料集」（第 13 章 予備知識参照）を参照してください。
 
 ## JavaScriptコード・ライブラリの読み込み
 
-### ウェブアプリ：HTMLで読み込み
-Raspberry Pi Zero版以外のCHIRIMENはプログラムの起点はHTMLファイルです。（[ウェブアプリ](https://ja.wikipedia.org/wiki/%E3%82%A6%E3%82%A7%E3%83%96%E3%82%A2%E3%83%97%E3%83%AA%E3%82%B1%E3%83%BC%E3%82%B7%E3%83%A7%E3%83%B3)）ブラウザはまずHTMLファイルを読み込んだうえで、そこに書かれた内容で動きます。したがって作ったコードや必要なライブラリの読み込みは基本的に全てこのHTMLの中で指定します。（なお、JavaScript Moduleを有効化している場合はJavaScriptコードの中でJavaScriptライブラリを読み込むことがある）
+### ウェブアプリ： HTML で読み込み
+Raspberry Pi Zero 版以外の CHIRIMEN はプログラムの起点はHTMLファイルです。（[ウェブアプリ](https://ja.wikipedia.org/wiki/%E3%82%A6%E3%82%A7%E3%83%96%E3%82%A2%E3%83%97%E3%83%AA%E3%82%B1%E3%83%BC%E3%82%B7%E3%83%A7%E3%83%B3)）ブラウザはまず HTML ファイルを読み込んだうえで、そこに書かれた内容で動きます。したがって作ったコードや必要なライブラリの読み込みは基本的に全てこの HTML の中で指定します。（なお、 JavaScript Module を有効化している場合は JavaScript コードの中で JavaScript ライブラリを読み込むことがある）
 
 ポイントは `<script ...></script>` の部分です。
 `polyfill.js` という JavaScript ライブラリを読み込んでいます。これは [Web GPIO API](http://browserobo.github.io/WebGPIO) と、[Web I2C API](http://browserobo.github.io/WebI2C) という W3C でドラフト提案中の 2 つの API への [Polyfill (新しい API を未実装のブラウザでも同じコードが書けるようにするためのライブラリ)](https://developer.mozilla.org/ja/docs/Glossary/Polyfill) で、最初に読み込むとそれ以降のコードで GPIO や I2C を操作する JavaScript API が使えるようになります。
@@ -19,14 +19,14 @@ Raspberry Pi Zero版以外のCHIRIMENはプログラムの起点はHTMLファイ
 次の行にある `main.js` は、JavaScript のプログラム本体です。
 
 ### Node.js (CHIRIMEN Raspberry Pi Zero版)
-Raspberry Pi Zero版はプログラムの起点が自分が作ったJavaScriptコード自体になります。ブラウザの代わりに[Node.js](https://ja.wikipedia.org/wiki/Node.js)というJavaScriptコードだけを解釈するソフト（JavaScript [インタープリタ](https://ja.wikipedia.org/wiki/%E3%82%A4%E3%83%B3%E3%82%BF%E3%83%97%E3%83%AA%E3%82%BF)）にコードを読み込ませて実行します。
+Raspberry Pi Zero版はプログラムの起点が自分が作った JavaScript コード自体になります。ブラウザの代わりに [Node.js](https://ja.wikipedia.org/wiki/Node.js)というJavaScriptコードだけを解釈するソフト（JavaScript [インタープリタ](https://ja.wikipedia.org/wiki/%E3%82%A4%E3%83%B3%E3%82%BF%E3%83%97%E3%83%AA%E3%82%BF)）にコードを読み込ませて実行します。
 
-CHIRIMEN環境のために必要なライブラリや I2C デバイスのドライバ（7.5. WebI2Cとデバイスドライバ参照）は、次のECMA Script Moduleという仕組みを使って読み込みます。
+CHIRIMEN 環境のために必要なライブラリや I2C デバイスのドライバ（7.5. WebI2C とデバイスドライバ参照）は、次の ECMA Script Module という仕組みを使って読み込みます。
 
 <hr class="page-wrap" />
 
 ### JavaScript Module (ECMA Script Module)
-* ウェブアプリでのModule有効化：HTMLのscript要素でJavaScriptを読み込むときは、``type="module"`` プロパティを設定する。
+* ウェブアプリでの Module 有効化： HTML の script 要素でJavaScriptを読み込むときは、 ``type="module"`` プロパティを設定する。
   ```html
   <script type="module" src="main.js"></script>
   ```
@@ -43,7 +43,7 @@ CHIRIMEN環境のために必要なライブラリや I2C デバイスのドラ�
 ## 非同期処理
 
 物理デバイス制御やネットワーク通信などでは、応答待ち中にブラウザが停止しないよう非同期処理を使う必要があります。
-本チュートリアルではこれを [async 関数](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/async_function) で記述しています。async 関数による非同期処理に慣れていない人は、[こちらの資料「非同期処理 (async await 版)」](https://tutorial.chirimen.org/js/async) も参考にしてください。非同期処理についてより詳しくは [JS Primer の非同期処理説明ページ](https://jsprimer.net/basic/async/) をご覧ください。
+本チュートリアルではこれを [async 関数](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/async_function) で記述しています。 async 関数による非同期処理に慣れていない人は、[こちらの資料「非同期処理 (async await 版)」](https://tutorial.chirimen.org/js/async) も参考にしてください。非同期処理についてより詳しくは [JS Primer の非同期処理説明ページ](https://jsprimer.net/basic/async/) をご覧ください。
 
 非同期処理を使いこなすのは難しいですが、本チュートリアルでは次のルールでコードを書けば大丈夫です:
 
@@ -53,6 +53,6 @@ CHIRIMEN環境のために必要なライブラリや I2C デバイスのドラ�
 - **非同期処理を含む関数は前に `async` を付けて非同期関数として定義する**
   - `async function 関数名() { ... }` のように頭に `async` を付けるだけで非同期関数になります
 
-非同期関数を `await` なしで呼び出すと返り値が Promise オブジェクトとなり、Promise を理解しないと返り値の判断や実行順序が入れ替わり意図せぬ挙動になります。例えば、ポートの初期化を `await` なしで呼ぶと、ポート初期化前に初期化未完了のハードウェアを操作しようとして失敗したりします。
+非同期関数を `await` なしで呼び出すと返り値が Promise オブジェクトとなり、 Promise を理解しないと返り値の判断や実行順序が入れ替わり意図せぬ挙動になります。例えば、ポートの初期化を `await` なしで呼ぶと、ポート初期化前に初期化未完了のハードウェアを操作しようとして失敗したりします。
 
 ハードウェアを制御するときは基本的に非同期呼び出しをする (その処理を含む関数もまた非同期で呼びす) と決めておけば迷うことなく、コードの実行順序も上から下に見たとおりの順番で実行され読み書きしやすくなります。
