@@ -2,33 +2,33 @@
 <html lang="ja">
   <head>
     <meta charset="utf-8">
-    <title>GPIOを試す</title>
+    <title>GPIO　を試す</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="../themes/packages/@vivliostyle/theme-techbook/theme.css">
   </head>
   <body>
     <section class="level1" aria-labelledby="gpioを試す">
-      <h1 id="gpioを試す">GPIOを試す</h1>
+      <h1 id="gpioを試す">GPIO　を試す</h1>
       <section class="level2" aria-labelledby="gpioとは">
-        <h2 id="gpioとは">GPIOとは</h2>
+        <h2 id="gpioとは">GPIO　とは</h2>
         <p><a href="https://ja.wikipedia.org/wiki/GPIO">GPIO</a>は、「General-purpose input/output」の略で汎用的な入出力インタフェースのことです。</p>
         <p>Raspberry Pi に実装されている 40 本のピンヘッダから GPIO を利用することができます。</p>
         <p>CHIRIMEN Raspberry Pi、Raspberry Pi Zero では Raspberry Pi が提供する 40 本のピンヘッダ（第 3 章 1 Raspberry Pi Zeroのピン配列参照）のうち、GPIO端子(合計 17 本)が利用可能です。</p>
-        <p>Raspberry Piの GPIO 端子は、GND 端子との間に、0V もしくは 3.3V の電圧を印加(出力)したり、逆に 0V もしくは 3.3V の電圧を検知(入力)したりすることができます。LED は数 mA の電流を流すことによって点灯できる電子部品のため、印加する電圧を 3.3V(点灯)、0V(消灯) と変化させることで L チカが実現できるのです。</p>
+        <p>Raspberry Piの GPIO 端子は、 GND 端子との間に、0V もしくは 3.3V の電圧を印加(出力)したり、逆に 0V もしくは 3.3V の電圧を検知(入力)したりすることができます。 LED は数 mA の電流を流すことによって点灯できる電子部品のため、印加する電圧を 3.3V(点灯)、0V(消灯) と変化させることで L チカが実現できるのです。</p>
         <p>詳しくは<a href="https://tool-lab.com/make/raspberrypi-startup-22/">ツール・ラボ/第22回 Raspberry PiのGPIO概要</a>などを参考にしてみましょう。</p>
         <section class="level3" aria-labelledby="プルアップpuプルダウンpd">
           <h3 id="プルアップpuプルダウンpd">プルアップ(PU)、プルダウン(PD)</h3>
           <p>
-            GPIOポートを入力モードで使用する場合、ポートが解放状態(電気的に切り離されている状態)のときに設定される値があります。
-            プルアップは1、プルダウンは0になります。　Raspberry Piのピン配置図に書かれているPU,PDがその設定値です。
+            GPIO ポートを入力モードで使用する場合、ポートが解放状態(電気的に切り離されている状態)のときに設定される値があります。
+            プルアップは 1 、プルダウンは 0 になります。 Raspberry Pi のピン配置図に書かれているPU,PDがその設定値です。
           </p>
           <p>より詳しく知りたい場合は <a href="https://voltechno.com/blog/pullup-pulldown/">プルアップ抵抗・プルダウン抵抗とは？電子回路に必須の考え方/voltechno</a> を参照してください。</p>
           <hr class="page-wrap">
         </section>
       </section>
-      <section class="level2" aria-labelledby="gpio出力">
-        <h2 id="gpio出力">GPIO出力</h2>
-        <p>GPIOの出力はLチカで実験済みですね。そこで今回はモーターを動かしてみましょう。MOSFET（13 章 予備知識参照）を使った回路図は以下のようになります。</p>
+      <section class="level2" aria-labelledby="gpio-出力">
+        <h2 id="gpio-出力">GPIO 出力</h2>
+        <p>GPIO の出力は L チカで実験済みですね。そこで今回はモーターを動かしてみましょう。 MOSFET（第 13 章 予備知識参照）を使った回路図は以下のようになります。</p>
         <figure>
           <img src="../../pizero/esm-examples/hello-real-world/PiZero_gpio0Motor.png" alt="GPIO Motor" height="190">
           <figcaption aria-hidden="true">GPIO Motor</figcaption>
@@ -36,14 +36,14 @@
         <p>コードはLチカと全く同じです。</p>
         <section class="level3" aria-labelledby="コードを読む">
           <h3 id="コードを読む">コードを読む</h3>
-          <p>ターミナルウィンドの右側のファイルマネージャでhello.js⇒表示 を選び、ソースコードを読んでみましょう</p>
-          <section class="level4" aria-labelledby="webgpioライブラリを読み込む">
-            <h4 id="webgpioライブラリを読み込む">WebGPIOライブラリを読み込む</h4>
+          <p>ターミナルウィンドの右側のファイルマネージャで hello.js ⇒表示 を選び、ソースコードを読んでみましょう</p>
+          <section class="level4" aria-labelledby="webgpio-ライブラリを読み込む">
+            <h4 id="webgpio-ライブラリを読み込む">WebGPIO ライブラリを読み込む</h4>
             <pre class="language-js"><code class="language-js"><span class="token keyword module">import</span> <span class="token imports"><span class="token punctuation">{</span>requestGPIOAccess<span class="token punctuation">}</span></span> <span class="token keyword module">from</span> <span class="token string">"./node_modules/node-web-gpio/dist/index.js"</span><span class="token punctuation">;</span></code></pre>
-            <p>JavaScript module（第 10 章 2.3. JavaScript Module (ECMA Script Module)参照）に基づいてWebGPIOライブラリを読み込みます。これでWeb GPIO APIが使えるようになりました。</p>
+            <p>JavaScript module（第 10 章 2.3. JavaScript Module (ECMA Script Module)参照）に基づいて WebGPIO ライブラリを読み込みます。これでWeb GPIO APIが使えるようになりました。</p>
           </section>
           <section class="level4" aria-labelledby="gpioポートの初期化">
-            <h4 id="gpioポートの初期化">GPIOポートの初期化</h4>
+            <h4 id="gpioポートの初期化">GPIO　ポートの初期化</h4>
             <p>
               今回の JavaScript ファイルで、最初に呼び出されるコードは <code>await navigator.requestGPIOAccess()</code> です。
               ここで先ほど出て来た <a href="http://browserobo.github.io/WebGPIO">Web GPIO API</a> を使い、<code>gpioAccess</code> という GPIO にアクセスするためのインタフェースを取得しています。
@@ -65,7 +65,7 @@
             <pre class="language-js"><code class="language-js"><span class="token keyword">const</span> port <span class="token operator">=</span> gpioAccess<span class="token punctuation">.</span><span class="token property-access">ports</span><span class="token punctuation">.</span><span class="token method function property-access">get</span><span class="token punctuation">(</span><span class="token number">26</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 26 番ポートを操作する</span></code></pre>
             <p>続いて、 <strong><code>await port.export("out")</code> で GPIO の 26 番を「出力設定」にしています</strong>。これにより LED への電圧の切り替えが可能になっています。</p>
             <pre class="language-js"><code class="language-js"><span class="token keyword control-flow">await</span> port<span class="token punctuation">.</span><span class="token keyword module">export</span><span class="token punctuation">(</span><span class="token string">"out"</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// ポートを出力モードに設定</span></code></pre>
-            <p>最後に、無限ループのなかで <code>await sleep(1000)</code> によって 1000 ms (1 秒) 待機さ 1 秒ごとに <code>await port.write(1)</code> と <code>await port.write(0)</code> を交互に呼び出し、GPIO 26 番に加える電圧を 3.3V → 0V → 3.3V → 0V → … と繰り返しています。</p>
+            <p>最後に、無限ループのなかで <code>await sleep(1000)</code> によって 1000 ms (1 秒) 待機さ 1 秒ごとに <code>await port.write(1)</code> と <code>await port.write(0)</code> を交互に呼び出し、 GPIO 26 番に加える電圧を 3.3V → 0V → 3.3V → 0V → … と繰り返しています。</p>
             <pre class="language-js"><code class="language-js">  <span class="token comment">// 無限ループ</span>
   <span class="token keyword control-flow">while</span> <span class="token punctuation">(</span><span class="token boolean">true</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
     <span class="token comment">// 1秒間隔でモーターが回転します。</span>
@@ -76,14 +76,14 @@
   <span class="token punctuation">}</span></code></pre>
             <p>
               LED やモーターは一定以上の電圧を加え、電流を流すと動作（点灯/回転）する性質を持っています。
-              つまり、3.3 V を加えたとき動作し、0 V を加えたとき停止、これを繰り返すことになります。
+              つまり 3.3 V を加えたとき動作し、 0 V を加えたとき停止、これを繰り返すことになります。
             </p>
           </section>
         </section>
         <section class="level3" aria-labelledby="サンプルコードを編集してみよう">
           <h3 id="サンプルコードを編集してみよう">サンプルコードを編集してみよう</h3>
           <ul>
-            <li>周期を早く・遅く (<code>sleep()</code>の引数を変更)</li>
+            <li>周期を早く・遅く (<code>sleep()</code> の引数を変更)</li>
             <li>動作する時間と停止する時間を変える (同上)</li>
             <li>GPIO ポートを他のポートに変える・配線を変える (<code>gpioAccess.ports.get</code>の引数を変更)</li>
           </ul>
@@ -91,24 +91,24 @@
         </section>
       </section>
       <section class="level2" aria-labelledby="gpio入力">
-        <h2 id="gpio入力">GPIO入力</h2>
-        <p>GPIO端子の<strong>入力が変化したら関数を実行</strong>という機能によってGPIOの入力を使います。</p>
-        <p>GPIOポートに繋いだスイッチやセンサーの状態を取得するには、GPIOの<strong>入力</strong>機能を使います。出力とは違って入力は二つの方法があります。onchangeとポーリングの二つの方法があります。</p>
+        <h2 id="gpio入力">GPIO　入力</h2>
+        <p>GPIO 端子の<strong>入力が変化したら関数を実行</strong>という機能によって GPIO の入力を使います。</p>
+        <p>GPIOポートに繋いだスイッチやセンサーの状態を取得するには、 GPIO の<strong>入力</strong>機能を使います。出力とは違って入力は二つの方法があります。onchangeとポーリングの二つの方法があります。</p>
         <figure>
-          <img src="../../pizero/esm-examples/gpio-onchange/PiZero_gpio1.png" alt="GPIOスイッチ (GPIO INPUT)" height="190">
-          <figcaption aria-hidden="true">GPIOスイッチ (GPIO INPUT)</figcaption>
+          <img src="../../pizero/esm-examples/gpio-onchange/PiZero_gpio1.png" alt="GPIO スイッチ (GPIO INPUT)" height="190">
+          <figcaption aria-hidden="true">GPIO スイッチ (GPIO INPUT)</figcaption>
         </figure>
-        <section class="level3" aria-labelledby="onchange編">
-          <h3 id="onchange編">onchange編</h3>
+        <section class="level3" aria-labelledby="onchange-編">
+          <h3 id="onchange-編">onchange 編</h3>
           <ul>
-            <li>ターミナルウィンドの<code>[CHIRIMEN Panel]</code>ボタンを押す</li>
-            <li>出現したCHIRIMEN Panelの<code>[Get Examples]</code>ボタンを押す</li>
-            <li>ID : <strong>gpio-onchange</strong>を探します</li>
+            <li>ターミナルウィンドの <code>[CHIRIMEN Panel]</code> ボタンを押す</li>
+            <li>出現した CHIRIMEN Panelの <code>[Get Examples]</code> ボタンを押す</li>
+            <li>ID : <strong>gpio-onchange</strong> を探します</li>
             <li>回路図リンクを押すと回路図が出てきますので、回路を組みます。</li>
-            <li><code>[JS GET]</code>ボタンを押すと、開発ディレクトリ(<code>~/myApp</code>)に、サンプルコードが保存されます。
+            <li><code>[JS GET]</code> ボタンを押すと、開発ディレクトリ (<code>~/myApp</code>) に、サンプルコードが保存されます。
               <ul>
                 <li><strong>main-gpio-onchange.js</strong>というファイル名で保存されます。</li>
-                <li>ターミナルウィンドの右側のファイルマネージャでmain-gpio-onchange.js⇒編集 を選びます。
+                <li>ターミナルウィンドの右側のファイルマネージャで main-gpio-onchange.js ⇒ 編集を選びます。
                   <ul>
                     <li>今回は編集不要ですが、サンプルをベースに応用プログラムを作るときには編集しましょう。</li>
                   </ul>
@@ -119,7 +119,7 @@
           <hr class="page-wrap">
           <section class="level4" aria-labelledby="コードを読む-1">
             <h4 id="コードを読む-1">コードを読む</h4>
-            <p>GPIOポートの値が変化するたびに、指定した関数が実行されます。</p>
+            <p>GPIO ポートの値が変化するたびに、指定した関数が実行されます。</p>
             <pre class="language-js"><code class="language-js"><span class="token keyword module">import</span> <span class="token imports"><span class="token punctuation">{</span>requestGPIOAccess<span class="token punctuation">}</span></span> <span class="token keyword module">from</span> <span class="token string">"./node_modules/node-web-gpio/dist/index.js"</span><span class="token punctuation">;</span>
 <span class="token keyword">const</span> <span class="token function-variable function">sleep</span> <span class="token operator">=</span> <span class="token parameter">msec</span> <span class="token arrow operator">=></span> <span class="token keyword">new</span> <span class="token class-name">Promise</span><span class="token punctuation">(</span><span class="token parameter">resolve</span> <span class="token arrow operator">=></span> <span class="token function">setTimeout</span><span class="token punctuation">(</span>resolve<span class="token punctuation">,</span> msec<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
@@ -137,21 +137,21 @@
 <span class="token punctuation">}</span>
 
 <span class="token function">switchCheck</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
-            <p><code>port.onchange</code> は <strong>入力モードの GPIO ポートの「状態変化時に呼び出される関数を設定する」</strong> 機能です。<br>このような関数のことをコールバック関数と呼びます。<br>次節の「GPIO入力(ポーリング)」と異なりポーリング処理が不要でコードも簡潔ですが、値が変化したタイミング以外では読み取りができませんのでユースケースが少し限られます。</p>
+            <p><code>port.onchange</code> は <strong>入力モードの GPIO ポートの「状態変化時に呼び出される関数を設定する」</strong> 機能です。<br>このような関数のことをコールバック関数と呼びます。<br>次節の「GPIO 入力(ポーリング)」と異なりポーリング処理が不要でコードも簡潔ですが、値が変化したタイミング以外では読み取りができませんのでユースケースが少し限られます。</p>
           </section>
           <section class="level4" aria-labelledby="実行する">
             <h4 id="実行する">実行する</h4>
             <ul>
-              <li>ターミナルウィンドのコンソールのプロンプトが<code>pi@raspberrypi:~/myApp$</code>となっていることを確認</li>
-              <li>ターミナルウィンドのコンソールに、<code>node main-gpio-onchange.js</code> [ENTER] と入力して実行。</li>
+              <li>ターミナルウィンドのコンソールのプロンプトが <code>pi@raspberrypi:~/myApp$</code> となっていることを確認</li>
+              <li>ターミナルウィンドのコンソールに、 <code>node main-gpio-onchange.js</code> [ENTER] と入力して実行。</li>
               <li>タクトスイッチを押してみます。</li>
-              <li>タクトスイッチが押されるたびにコンソール画面に<strong>0</strong>(押された状態)、<strong>1</strong>(離した状態)が交互に表示されます。</li>
+              <li>タクトスイッチが押されるたびにコンソール画面に <strong>0</strong> (押された状態)、 <strong>1</strong> (離した状態)が交互に表示されます。</li>
               <li>終了は CTRL+c</li>
             </ul>
             <div class="note" role="doc-note">
               <section class="level5" aria-labelledby="note">
                 <h5 id="note">Note</h5>
-                <p>GPIOポート5は、Pull-Up(開放状態でHighレベル)です。そのため離した状態で１が出力されます。スイッチを押すとポートがGNDと接続され、Lowレベルになり、0が出力されます。</p>
+                <p>GPIO ポート 5 は、 Pull-Up (開放状態で High レベル)です。そのため離した状態で １ が出力されます。スイッチを押すとポートが GND と接続され、 Low レベルになり、 0 が出力されます。</p>
               </section>
             </div>
           </section>
@@ -161,14 +161,14 @@
         <h3 id="ポーリング">ポーリング</h3>
         <p>入力ではイベントの他にポーリングというテクニックが広く使われます。（次章のI2Cデバイスからの入力では専らポーリング）</p>
         <ul>
-          <li>ターミナルウィンドの<code>[CHIRIMEN Panel]</code>ボタンを押す</li>
-          <li>出現したCHIRIMEN Panelの<code>[Get Examples]</code>ボタンを押す</li>
-          <li>ID : <strong>gpio-polling</strong>を探します</li>
+          <li>ターミナルウィンドの <code>[CHIRIMEN Panel]</code> ボタンを押す</li>
+          <li>出現した CHIRIMEN Panel の<code>[Get Examples]</code> ボタンを押す</li>
+          <li>ID : <strong>gpio-polling</strong> を探します</li>
           <li>回路は <code>onchange編</code> と同じなのでそのままにしておきます。</li>
-          <li><code>[JS GET]</code>ボタンを押すと、開発ディレクトリ(<code>~/myApp</code>)に、サンプルコードが保存されます。
+          <li><code>[JS GET]</code> ボタンを押すと、開発ディレクトリ (<code>~/myApp</code>) に、サンプルコードが保存されます。
             <ul>
-              <li><strong>main-gpio-polling.js</strong>というファイル名で保存されます。</li>
-              <li>ターミナルウィンドの右側のファイルマネージャでmain-gpio-polling.js⇒編集 を選びソースコードを見てみましょう</li>
+              <li><strong>main-gpio-polling.js</strong> というファイル名で保存されます。</li>
+              <li>ターミナルウィンドの右側のファイルマネージャで main-gpio-polling.js ⇒ 編集 を選びソースコードを見てみましょう</li>
             </ul>
           </li>
         </ul>
@@ -181,8 +181,8 @@
         </section>
         <section class="level4" aria-labelledby="コードを読む-2">
           <h4 id="コードを読む-2">コードを読む</h4>
-          <section class="level5" aria-labelledby="gpioの単純入力関数">
-            <h5 id="gpioの単純入力関数">GPIOの単純入力関数</h5>
+          <section class="level5" aria-labelledby="gpio-の単純入力関数">
+            <h5 id="gpio-の単純入力関数">GPIO の単純入力関数</h5>
             <p>単純に「GPIO ポートの状態を読み込む」には <code>port.read()</code> を使います。</p>
             <p><code>port.read()</code> で GPIO を読み込むコードは次のように書けます:</p>
             <pre class="language-js"><code class="language-js"><span class="token keyword">const</span> gpioAccess <span class="token operator">=</span> <span class="token keyword control-flow">await</span> <span class="token dom variable">navigator</span><span class="token punctuation">.</span><span class="token method function property-access">requestGPIOAccess</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
@@ -228,11 +228,11 @@
       <section class="level3" aria-labelledby="実行する-1">
         <h3 id="実行する-1">実行する</h3>
         <ul>
-          <li>プロンプトが<code>pi@raspberrypi:~/myApp$</code>となっていることを確認</li>
-          <li>コンソールに、<code>node main-gpio-polling.js</code> [ENTER] と入力して実行。</li>
-          <li>0.3秒おきにポート5の値がコンソールに表示されていきます。</li>
+          <li>プロンプトが <code>pi@raspberrypi:~/myApp$</code> となっていることを確認</li>
+          <li>コンソールに、 <code>node main-gpio-polling.js</code> [ENTER] と入力して実行。</li>
+          <li>0.3 秒おきにポート 5 の値がコンソールに表示されていきます。</li>
           <li>タクトスイッチを押してみます。</li>
-          <li>タクトスイッチが押されると、<strong>0</strong>に変化します。</li>
+          <li>タクトスイッチが押されると、 <strong>0</strong> に変化します。</li>
           <li>終了は CTRL+c</li>
         </ul>
       </section>
