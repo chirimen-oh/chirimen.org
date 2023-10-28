@@ -7,7 +7,7 @@
 
 Raspberry Pi に実装されている 40 本のピンヘッダから GPIO を利用することができます。
 
-CHIRIMEN Raspberry Pi、Raspberry Pi Zero では Raspberry Pi が提供する 40 本のピンヘッダ<span class="footnote">3.1 Raspberry Pi Zeroのピン配列</span>のうち、GPIO端子(合計 17 本)が利用可能です。
+CHIRIMEN Raspberry Pi、Raspberry Pi Zero では Raspberry Pi が提供する 40 本のピンヘッダ（第 3 章 1 Raspberry Pi Zeroのピン配列参照）のうち、GPIO端子(合計 17 本)が利用可能です。
 
 Raspberry Piの GPIO 端子は、GND 端子との間に、0V もしくは 3.3V の電圧を印加(出力)したり、逆に 0V もしくは 3.3V の電圧を検知(入力)したりすることができます。LED は数 mA の電流を流すことによって点灯できる電子部品のため、印加する電圧を 3.3V(点灯)、0V(消灯) と変化させることで L チカが実現できるのです。
 
@@ -39,7 +39,7 @@ GPIOの出力はLチカで実験済みですね。そこで今回はモーター
 import {requestGPIOAccess} from "./node_modules/node-web-gpio/dist/index.js";
 ```
 
-JavaScript module<span class="footnote">10.2.3. JavaScript Module (ECMA Script Module)参照</span>に基づいてWebGPIOライブラリを読み込みます。これでWeb GPIO APIが使えるようになりました。
+JavaScript module（第 10 章 2.3. JavaScript Module (ECMA Script Module)参照）に基づいてWebGPIOライブラリを読み込みます。これでWeb GPIO APIが使えるようになりました。
 
 #### GPIOポートの初期化
 

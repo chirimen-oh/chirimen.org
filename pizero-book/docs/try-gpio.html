@@ -13,7 +13,7 @@
         <h2 id="gpioとは">GPIOとは</h2>
         <p><a href="https://ja.wikipedia.org/wiki/GPIO">GPIO</a>は、「General-purpose input/output」の略で汎用的な入出力インタフェースのことです。</p>
         <p>Raspberry Pi に実装されている 40 本のピンヘッダから GPIO を利用することができます。</p>
-        <p>CHIRIMEN Raspberry Pi、Raspberry Pi Zero では Raspberry Pi が提供する 40 本のピンヘッダ<span class="footnote">3.1 Raspberry Pi Zeroのピン配列</span>のうち、GPIO端子(合計 17 本)が利用可能です。</p>
+        <p>CHIRIMEN Raspberry Pi、Raspberry Pi Zero では Raspberry Pi が提供する 40 本のピンヘッダ（第 3 章 1 Raspberry Pi Zeroのピン配列参照）のうち、GPIO端子(合計 17 本)が利用可能です。</p>
         <p>Raspberry Piの GPIO 端子は、GND 端子との間に、0V もしくは 3.3V の電圧を印加(出力)したり、逆に 0V もしくは 3.3V の電圧を検知(入力)したりすることができます。LED は数 mA の電流を流すことによって点灯できる電子部品のため、印加する電圧を 3.3V(点灯)、0V(消灯) と変化させることで L チカが実現できるのです。</p>
         <p>詳しくは<a href="https://tool-lab.com/make/raspberrypi-startup-22/">ツール・ラボ/第22回 Raspberry PiのGPIO概要</a>などを参考にしてみましょう。</p>
         <section class="level3" aria-labelledby="プルアップpuプルダウンpd">
@@ -40,7 +40,7 @@
           <section class="level4" aria-labelledby="webgpioライブラリを読み込む">
             <h4 id="webgpioライブラリを読み込む">WebGPIOライブラリを読み込む</h4>
             <pre class="language-js"><code class="language-js"><span class="token keyword module">import</span> <span class="token imports"><span class="token punctuation">{</span>requestGPIOAccess<span class="token punctuation">}</span></span> <span class="token keyword module">from</span> <span class="token string">"./node_modules/node-web-gpio/dist/index.js"</span><span class="token punctuation">;</span></code></pre>
-            <p>JavaScript module<span class="footnote">10.2.3. JavaScript Module (ECMA Script Module)参照</span>に基づいてWebGPIOライブラリを読み込みます。これでWeb GPIO APIが使えるようになりました。</p>
+            <p>JavaScript module（第 10 章 2.3. JavaScript Module (ECMA Script Module)参照）に基づいてWebGPIOライブラリを読み込みます。これでWeb GPIO APIが使えるようになりました。</p>
           </section>
           <section class="level4" aria-labelledby="gpioポートの初期化">
             <h4 id="gpioポートの初期化">GPIOポートの初期化</h4>
