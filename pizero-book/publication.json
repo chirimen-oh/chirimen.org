@@ -8,7 +8,7 @@
   "name": "CHIRIMEN Raspberry Pi Zero W チュートリアル",
   "author": "CHIRIMEN Open Hardware Community <chirimen.open.hardware@gmail.com>",
   "inLanguage": "ja",
-  "dateModified": "2023-10-28T05:49:41.601Z",
+  "dateModified": "2023-10-28T09:02:13.380Z",
   "readingOrder": [
     {
       "url": "docs/index.html",
@@ -38,19 +38,19 @@
     },
     {
       "url": "docs/hello-world.html",
-      "name": "Hello Real World（Lチカを実行する）"
+      "name": "Hello Real World（ L チカを実行する）"
     },
     {
       "url": "docs/try-gpio.html",
-      "name": "GPIOを試す"
+      "name": "GPIO　を試す"
     },
     {
       "url": "docs/try-i2c.html",
-      "name": "I2Cデバイスを試す"
+      "name": "I2C デバイスを試す"
     },
     {
       "url": "docs/try-iot.html",
-      "name": "IoTを試す"
+      "name": "IoT を試す"
     },
     {
       "url": "docs/try-devices.html",
