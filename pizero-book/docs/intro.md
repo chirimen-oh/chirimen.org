@@ -11,3 +11,6 @@
 - [GitHub @chirimen-oh](https://github.com/chirimen-oh/)
 - [Facebook @chirimen](https://www.facebook.com/groups/chirimen/)
 - [X (旧Twitter) @chirimen_oh](https://twitter.com/chirimen_oh)
+
+
+**早く試してみたい方は、`第4章`から始めてください。**
