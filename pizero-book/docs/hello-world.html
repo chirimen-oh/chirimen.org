@@ -2,42 +2,42 @@
 <html lang="ja">
   <head>
     <meta charset="utf-8">
-    <title>Hello Real World（Lチカを実行する）</title>
+    <title>Hello Real World（ L チカを実行する）</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="../themes/packages/@vivliostyle/theme-techbook/theme.css">
   </head>
   <body>
-    <section class="level1" aria-labelledby="hello-real-worldlチカを実行する">
-      <h1 id="hello-real-worldlチカを実行する">Hello Real World（Lチカを実行する）</h1>
+    <section class="level1" aria-labelledby="hello-real-world-l-チカを実行する">
+      <h1 id="hello-real-world-l-チカを実行する">Hello Real World（ L チカを実行する）</h1>
       <section class="level2" aria-labelledby="配線">
         <h2 id="配線">配線</h2>
-        <p>PiZero とパーツを使って下の図の通りに配線します。</p>
+        <p>Pi Zero とパーツを使って下の図の通りに配線します。</p>
         <ul>
-          <li><a href="https://tutorial.chirimen.org/raspi/hellorealworld#section-1">LEDの極性に注意！</a>
+          <li><a href="https://tutorial.chirimen.org/raspi/hellorealworld#section-1">LED の極性に注意！</a>
             <ul>
               <li>LED 基本ガイド (marutsu)<span class="footnote"><a href="https://www.marutsu.co.jp/pc/static/large_order/led">https://www.marutsu.co.jp/pc/static/large_order/led</a></span></li>
             </ul>
           </li>
           <li><a href="https://shop.sunhayato.co.jp/blogs/problem-solving/breadboard">ブレッドボードの使い方</a> (サンハヤト社)</li>
           <li>抵抗のカラーコードの読み方(JARL)<span class="footnote"><a href="https://www.jarl.org/Japanese/7_Technical/lib1/teikou.htm">https://www.jarl.org/Japanese/7_Technical/lib1/teikou.htm</a></span></li>
-          <li>その他、配線の基礎知識（13 章 予備知識参照）</li>
+          <li>その他、配線の基礎知識（第 13 章 予備知識参照）</li>
         </ul>
         <div class="note" role="doc-note">
           <section class="level3" aria-labelledby="注意">
             <h3 id="注意">注意</h3>
-            <pre class="language-text"><code class="language-text">間違ったピンに差し込むと場合によってはPiZeroが停止したり故障することもあります。（たとえば3.3V端子とGND端子を接続してしまうなど。）
-そのため、慣れるまでは一旦PiZeroをシャットダウン、USBケーブルも外し電源OFFにしてから配線すると安全です</code></pre>
+            <pre class="language-text"><code class="language-text">間違ったピンに差し込むと場合によっては Pi Zero が停止したり故障することもあります。（たとえば 3.3V 端子と GND 端子を接続してしまうなど。）
+そのため、慣れるまでは一旦 Pi Zero をシャットダウン、 USB ケーブルも外し電源 OFF にしてから配線すると安全です</code></pre>
             <p>シャットダウンコマンド：<code>sudo shutdown -h now</code></p>
           </section>
         </div>
         <figure>
-          <img src="../../pizero/imgs/pizero_led.png" alt="PiZero配線図" height="200">
-          <figcaption aria-hidden="true">PiZero配線図</figcaption>
+          <img src="../../pizero/imgs/pizero_led.png" alt="Pi Zero 配線図" height="200">
+          <figcaption aria-hidden="true">Pi Zero 配線図</figcaption>
         </figure>
         <ul>
-          <li>配線に使うケーブルの色に厳密な決まりはありませんが、一般的にGNDは黒(や黒っぽい色)、電源(VCC, +3.3V, +5V)には赤(や赤っぽい色)が用いられます。配線間違いを防ぐためにもなるべく合わせましょう。</li>
-          <li>抵抗やLEDの足(リード線)は手で簡単に曲げられます。ブレッドボードに差し込めるように適当に成型してください。</li>
-          <li>上図のPiZeroは上から見たものです</li>
+          <li>配線に使うケーブルの色に厳密な決まりはありませんが、一般的に GND は黒(や黒っぽい色)、電源(VCC, +3.3V, +5V)には赤(や赤っぽい色)が用いられます。配線間違いを防ぐためにもなるべく合わせましょう。</li>
+          <li>抵抗や LED の足(リード線)は手で簡単に曲げられます。ブレッドボードに差し込めるように適当に成型してください。</li>
+          <li>上図の Pi Zero は上から見たものです</li>
         </ul>
       </section>
     </section>
@@ -45,19 +45,19 @@
       <h2 id="プログラムを書く">プログラムを書く</h2>
       <p>Raspberry Pi に接続した LED を点滅させるプログラムを書きます。</p>
       <ul>
-        <li>ターミナルウィンドでRaspberry Pi Zeroに接続します。（ステップ１が完了した状態）</li>
+        <li>ターミナルウィンドで Raspberry Pi Zero に接続します。（ステップ１が完了した状態）</li>
         <li>myAppディレクトリに移動します。
           <ul>
             <li>コンソールの右側のファイルマネージャでmyApp⇒移動を選ぶ</li>
             <li>このディレクトリが開発環境が設定されているディレクトリです。</li>
           </ul>
         </li>
-        <li><code>[Create New Text]</code>ボタンを押す</li>
-        <li>入力欄に<code>hello.js</code>と入力</li>
-        <li><code>[create]</code>ボタンを押す</li>
-        <li>JS Editorウィンドが出現</li>
+        <li><code>[Create New Text]</code> ボタンを押す</li>
+        <li>入力欄に <code>hello.js</code> と入力</li>
+        <li><code>[create]</code> ボタンを押す</li>
+        <li>JS Editor ウィンドウが出現</li>
       </ul>
-      <p>以下のプログラムをJS Editorに書き写します</p>
+      <p>以下のプログラムをJS Editorに書き写します。</p>
       <pre class="language-js"><code class="language-js"><span class="token comment">// WebGPIO を使えるようにするためのライブラリをインポート</span>
 <span class="token keyword module">import</span> <span class="token imports"><span class="token punctuation">{</span>requestGPIOAccess<span class="token punctuation">}</span></span> <span class="token keyword module">from</span> <span class="token string">"./node_modules/node-web-gpio/dist/index.js"</span><span class="token punctuation">;</span>
 <span class="token comment">// sleep 関数を定義</span>
@@ -83,8 +83,8 @@
 
 <span class="token function">blink</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
       <ul>
-        <li>書き終えたら保存します。(<code>[Save]ボタン</code>もしくはCTRL+s)</li>
-        <li>ターミナルウィンドの右側(ファイルマネージャ)に hello.jsが出現していることを確認します</li>
+        <li>書き終えたら保存します。(<code>[Save]ボタン</code> もしくは CTRL+s)</li>
+        <li>ターミナルウィンドの右側(ファイルマネージャ)に hello.js が出現していることを確認します。</li>
         <li>エディタウィンドを閉じます</li>
       </ul>
       <hr class="page-wrap">
@@ -92,15 +92,15 @@
     <section class="level2" aria-labelledby="実行する">
       <h2 id="実行する">実行する</h2>
       <ul>
-        <li>ターミナルウィンドのコンソール部(ウィンド左側)のプロンプト(画面一番下)が以下になっていることを確認します
+        <li>ターミナルウィンドのコンソール部(ウィンド左側)のプロンプト(画面一番下)が以下になっていることを確認します。
           <ul>
             <li><code>pi@raspberrypi:~/myApp$</code></li>
           </ul>
         </li>
         <li>コンソール部をクリックして、入力可能状態にしてから、以下の文字を入力します。</li>
-        <li><code>node hello.js</code> ENTERキー
+        <li><code>node hello.js</code> ENTER キー
           <ul>
-            <li><a href="https://atmarkit.itmedia.co.jp/ait/articles/1102/28/news105.html"><strong>node</strong></a> はJavaScriptのコードを実行するインタープリタ<span class="footnote"><a href="https://ja.wikipedia.org/wiki/%E3%82%A4%E3%83%B3%E3%82%BF%E3%83%97%E3%83%AA%E3%82%BF">https://ja.wikipedia.org/wiki/インタプリタ</a></span></li>
+            <li><a href="https://atmarkit.itmedia.co.jp/ait/articles/1102/28/news105.html"><strong>node</strong></a> は JavaScript のコードを実行するインタープリタ<span class="footnote"><a href="https://ja.wikipedia.org/wiki/%E3%82%A4%E3%83%B3%E3%82%BF%E3%83%97%E3%83%AA%E3%82%BF">https://ja.wikipedia.org/wiki/インタプリタ</a></span></li>
           </ul>
         </li>
         <li>LED が点滅すれば完成です 🎉</li>
