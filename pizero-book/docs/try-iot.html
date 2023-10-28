@@ -2,19 +2,19 @@
 <html lang="ja">
   <head>
     <meta charset="utf-8">
-    <title>IoTを試す</title>
+    <title>IoT を試す</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="../themes/packages/@vivliostyle/theme-techbook/theme.css">
   </head>
   <body>
-    <section class="level1" aria-labelledby="iotを試す">
-      <h1 id="iotを試す">IoTを試す</h1>
-      <section class="level2" aria-labelledby="遠隔ledコントロール">
-        <h2 id="遠隔ledコントロール">遠隔LEDコントロール</h2>
+    <section class="level1" aria-labelledby="iot-を試す">
+      <h1 id="iot-を試す">IoT を試す</h1>
+      <section class="level2" aria-labelledby="遠隔-led-コントロール">
+        <h2 id="遠隔-led-コントロール">遠隔 LED コントロール</h2>
         <p>
           <img src="../../pizero/imgs/IoTsystemConf.png" alt="system configuration">
-          IoTは、制御されるデバイス（上図ではCHIRIMEN PiZeroW）と、利用者端末（上図ではWebApp PC-side）に加えて、これらの間でデータを中継するサーバ（クラウド）が必要になります。
-          今回はWeb標準技術であるWebSocketプロトコルを中継するサーバを用いてLEDを備えたCHIRIMENデバイスとスマホやPCのWebAppを繋いだIoTシステムを作ります。
+          IoT は、制御されるデバイス（上図では CHIRIMEN Pi Zero W）と、利用者端末（上図では WebApp PC-side）に加えて、これらの間でデータを中継するサーバ（クラウド）が必要になります。
+          今回は Web 標準技術である WebSocket プロトコルを中継するサーバを用いて LED を備えた CHIRIMEN デバイスとスマホや PC の WebApp を繋いだ IoT システムを作ります。
         </p>
         <div class="note" role="doc-note">
           <section class="level3" aria-labelledby="note">
@@ -29,30 +29,30 @@
       </section>
       <section class="level3" aria-labelledby="配線する">
         <h3 id="配線する">配線する</h3>
-        <p>配線は最初のLチカそのままです。</p>
+        <p>配線は最初の L チカそのままです。</p>
         <figure>
-          <img src="../../pizero/imgs/pizero_led.png" alt="PiZero配線図" height="200">
-          <figcaption aria-hidden="true">PiZero配線図</figcaption>
+          <img src="../../pizero/imgs/pizero_led.png" alt="Pi Zero配線図" height="200">
+          <figcaption aria-hidden="true">Pi Zero配線図</figcaption>
         </figure>
         <hr class="page-wrap">
       </section>
-      <section class="level3" aria-labelledby="chirimenデバイス側にコードを入れ実行する">
-        <h3 id="chirimenデバイス側にコードを入れ実行する">CHIRIMENデバイス側にコードを入れ、実行する</h3>
+      <section class="level3" aria-labelledby="chirimen-デバイス側にコードを入れ実行する">
+        <h3 id="chirimen-デバイス側にコードを入れ実行する">CHIRIMEN デバイス側にコードを入れ、実行する</h3>
         <ul>
-          <li>ターミナルウィンドの<code>[CHIRIMEN Panel]</code>ボタンを押す</li>
-          <li>出現したCHIRIMEN Panelの<code>[Get Examples]</code>ボタンを押す</li>
+          <li>ターミナルウィンドの <code>[CHIRIMEN Panel]</code> ボタンを押す</li>
+          <li>出現したCHIRIMEN Panelの <code>[Get Examples]</code> ボタンを押す</li>
           <li>ID : <strong>remote_gpio_led</strong>の行を探します（もう一度この行の情報を使います）</li>
-          <li><code>[JS GET]</code>ボタンを押すと、開発ディレクトリ(<code>~/myApp</code>)に、サンプルコードが保存されます。
+          <li><code>[JS GET]</code> ボタンを押すと、開発ディレクトリ (<code>~/myApp</code>) に、サンプルコードが保存されます。
             <ul>
-              <li><strong>main-remote_gpio_led.js</strong>というファイル名で保存されます。</li>
-              <li>ターミナルウィンドの右側のファイルマネージャでmain-remote_gpio_led.js⇒編集 を選びソースコードを見てみましょう</li>
+              <li><strong>main-remote_gpio_led.js</strong> というファイル名で保存されます。</li>
+              <li>ターミナルウィンドの右側のファイルマネージャで main-remote_gpio_led.js ⇒ 編集を選びソースコードを見てみましょう</li>
             </ul>
           </li>
           <li>実行する
             <ul>
-              <li>ターミナルウィンドのコンソールのプロンプトが<code>pi@raspberrypi:~/myApp$</code>となっていることを確認</li>
+              <li>ターミナルウィンドのコンソールのプロンプトが <code>pi@raspberrypi:~/myApp$</code> となっていることを確認</li>
               <li>
-                ターミナルウィンドのコンソールに、<code>node main-remote_gpio_led.js</code> [ENTER] と入力して実行。
+                ターミナルウィンドのコンソールに、 <code>node main-remote_gpio_led.js</code> [ENTER] と入力して実行。
                 
                 <img src="../../pizero/imgs/RC_NODE.png" alt="CHIRIMEN PiZero Console" height="70">
               </li>
@@ -61,15 +61,15 @@
           </li>
         </ul>
       </section>
-      <section class="level3" aria-labelledby="pc側のコードを準備し実行する">
-        <h3 id="pc側のコードを準備し実行する">PC側のコードを準備し、実行する</h3>
+      <section class="level3" aria-labelledby="pc-側のコードを準備し実行する">
+        <h3 id="pc-側のコードを準備し実行する">PC 側のコードを準備し、実行する</h3>
         <ul>
-          <li>CHIRIMEN Panelに戻り、ID : <strong>remote_gpio_led</strong>の行にある、<code>CSB EDIT</code>リンクをクリックする。
+          <li>CHIRIMEN Panel に戻り、 ID : <strong>remote_gpio_led</strong> の行にある、 <code>CSB EDIT</code> リンクをクリックする。
             <ul>
-              <li><a href="https://csb-jp.github.io/">CodeSandbox</a>というオンラインのWebApp開発環境のウィンドが開き、PC側のコードが表示されています。編集もできます。</li>
-              <li>また、右側（もしくは右下）のフレームにはLEDを遠隔コントロールするためのwebAppが既に実行されています。</li>
+              <li><a href="https://csb-jp.github.io/">CodeSandbox</a> というオンラインの WebApp 開発環境のウィンドが開き、 PC 側のコードが表示されています。編集もできます。</li>
+              <li>また、右側（もしくは右下）のフレームには LED を遠隔コントロールするための webApp が既に実行されています。</li>
               <li>
-                webAppを使ってLEDが制御できることを確かめてみましょう。
+                webApp を使って LED が制御できることを確かめてみましょう。
                 
                 <img src="../../pizero/imgs/RC_CSB.svg" alt="Code Sandbox Image" height="240">
               </li>
@@ -80,36 +80,36 @@
       </section>
       <section class="level3" aria-labelledby="コードを読む">
         <h3 id="コードを読む">コードを読む</h3>
-        <section class="level4" aria-labelledby="raspberry-pi-zero側コード">
-          <h4 id="raspberry-pi-zero側コード">Raspberry Pi Zero側コード</h4>
+        <section class="level4" aria-labelledby="raspberry-pi-zero-側コード">
+          <h4 id="raspberry-pi-zero-側コード">Raspberry Pi Zero 側コード</h4>
           <ul>
-            <li>ターミナルウィンドの右側のファイルマネージャでmain-remote_gpio_led.js⇒表示 を選び、ソースコードを読んでみましょう</li>
-            <li>これまで通りWebGPIOライブラリの読み込み</li>
-            <li>relayServer.js（第 12 章 1.2. relayServer 参照）ライブラリの読み込み
+            <li>ターミナルウィンドの右側のファイルマネージャで main-remote_gpio_led.js ⇒ 表示 を選び、ソースコードを読んでみましょう</li>
+            <li>これまで通り WebGPIO ライブラリの読み込み</li>
+            <li>relayServer.js （第 12 章 1.2. relayServer 参照）ライブラリの読み込み
               <ul>
-                <li>Node.jsではrelayServerライブラリに加えて、websocketライブラリの読み込みが必要です。
+                <li>Node.js では relayServer ライブラリに加えて、 websocket ライブラリの読み込みが必要です。
                   <pre class="language-text"><code class="language-text">import nodeWebSocketLib from "websocket";
 import {RelayServer} from "./RelayServer.js";</code></pre>
                 </li>
               </ul>
             </li>
-            <li>relayServer.j第 12 章 1. WebSocketとpub/sub services 参照）を使って、PCからの操作指示を受信
+            <li>relayServer.js 第 12 章 1. WebSocketとpub/sub services 参照）を使って、 PC からの操作指示を受信
               <ul>
                 <li>初期化</li>
                 <li>受信処理(コールバック関数の設定)</li>
               </ul>
             </li>
-            <li>受信した内容をもとにGPIO出力を操作（第 12 章 3. GPIOPort の出力処理参照）してLEDを点灯・消灯</li>
+            <li>受信した内容をもとにGPIO出力を操作（第 12 章 3. GPIOPort の出力処理参照）して LED を点灯・消灯</li>
           </ul>
         </section>
-        <section class="level4" aria-labelledby="pc側コード">
-          <h4 id="pc側コード">PC側コード</h4>
+        <section class="level4" aria-labelledby="pc-側コード">
+          <h4 id="pc-側コード">PC 側コード</h4>
           <ul>
-            <li>CodeSandboxで開いているPC.jsを見てみましょう</li>
-            <li>JavaScript Module（第 11 章 2.3. JavaScript Module (ECMA Script Module)参照）仕様に基づいてrelayServer.jsを読み込み
+            <li>CodeSandbox で開いている PC.js を見てみましょう</li>
+            <li>JavaScript Module（第 11 章 2.3. JavaScript Module (ECMA Script Module)参照）仕様に基づいて relayServer.js を読み込み
               <pre class="language-text"><code class="language-text">import {RelayServer} from "https://chirimen.org/remote-connection/js/beta/RelayServer.js";</code></pre>
             </li>
-            <li>relayServer.js（第 12 章 1. WebSocketとpub/sub services 参照）を使い、UIを通してユーザからの操作指示を送信
+            <li>relayServer.js（第 12 章 1. WebSocketとpub/sub services 参照）を使い、 UI を通してユーザからの操作指示を送信
               <ul>
                 <li>初期化（受信側、送信側共通の処理参照</li>
                 <li>送信処理 ～UI(ボタン)に設置したコールバック関数をもとに送信</li>
@@ -119,10 +119,10 @@ import {RelayServer} from "./RelayServer.js";</code></pre>
         </section>
         <section class="level4" aria-labelledby="自分専用チャンネルで制御">
           <h4 id="自分専用チャンネルで制御">自分専用チャンネルで制御</h4>
-          <p>サンプルのコードは共通のチャンネルを使って制御しています。この状態では複数の人が同時に実習していると混信します。(他の人のPCでON/OFFを指示しても、自分のLEDがON/OFFする。同じチャンネルを使っているため。)</p>
-          <p>これはこれで使い道はあるのですが、自分のLEDは自分だけで制御したい場合は専用のチャンネルを使って制御しましょう。　チャンネルの指定はPiZero側のコードと、PC側のコード両方を同時に同じ内容で設定する必要があり、以下の部分になります。</p>
+          <p>サンプルのコードは共通のチャンネルを使って制御しています。この状態では複数の人が同時に実習していると混信します。(他の人の PC で ON/OFF を指示しても、自分の LED が ON/OFF する。同じチャンネルを使っているため。)</p>
+          <p>これはこれで使い道はあるのですが、自分の LED は自分だけで制御したい場合は専用のチャンネルを使って制御しましょう。　チャンネルの指定は Pi Zero 側のコードと、 PC 側のコード両方を同時に同じ内容で設定する必要があり、以下の部分になります。</p>
           <p><code>channel = await relay.subscribe("chirimenLED");</code></p>
-          <p>この<code>chirimenLED</code>という文字列(チャンネル名)を他の人と被らない別のチャンネル名に書き換えます(<code>chirimenLED5</code>など)</p>
+          <p>この <code>chirimenLED</code> という文字列(チャンネル名)を他の人と被らない別のチャンネル名に書き換えます( <code>chirimenLED5</code> など)</p>
         </section>
       </section>
     </section>
