@@ -7,7 +7,7 @@ CHIRIMEN コミュニティと W3C の [Browsers and Robotics コミュニティ
 
 電子パーツ制御のために専用のツールや開発環境を用意したり、複数の言語やプログラムを連携させたり、独特のフレームワークを学習・利用したりする必要はありません。Web 標準技術をベースとしており、素早いプロトタイピングやプログラミング初学者の IoT 学習に最適です。
 
-Raspberry Pi Zero を使う場合<span class="footnote">4 章 CHIRIMEN Raspberry Pi Zero版 の準備参照</span> のような低性能環境や、ブラウザ無しで動作させたいときは、ライブラリの読み込み部分だけを変えれば Node.js でも同じコードでハードを制御可能なユニバーサル環境です。
+Raspberry Pi Zero を使う場合（第 4 章 CHIRIMEN Raspberry Pi Zero版 の準備参照）のような低性能環境や、ブラウザ無しで動作させたいときは、ライブラリの読み込み部分だけを変えれば Node.js でも同じコードでハードを制御可能なユニバーサル環境です。
 
 デジタルのソフトとフィジカルなハードをWWW上で連携するデバイスを Web標準技術、JavaScript だけで容易に実現できます。
 
@@ -55,5 +55,5 @@ CHIRIMEN が動作する環境は、以下の通りです。お手持ちのボ�
 * ```mkdir [自分用の作業ディレクトリ]```  ([mkdir](https://atmarkit.itmedia.co.jp/ait/articles/1606/07/news015.html) コマンドとは)
 * ```cd [自分用の作業ディレクトリ]``` ([cd](https://atmarkit.itmedia.co.jp/ait/articles/1712/14/news021.html)コマンドとは)
 * ```wget https://tutorial.chirimen.org/pizero/package.json``` ([wget](https://atmarkit.itmedia.co.jp/ait/articles/1606/20/news024.html)コマンドとは)
-* ```wget https://chirimen.org/remote-connection/js/beta/RelayServer.js``` (RelayServer.js<span class="footnote">12.1.2 relayService 参照</span>を使う場合)
+* ```wget https://chirimen.org/remote-connection/js/beta/RelayServer.js``` (RelayServer.js（第 12 章 1.2 relayService 参照）を使う場合)
 * ```npm install``` ([npm](https://atmarkit.itmedia.co.jp/ait/articles/1606/17/news030.html)とは)
