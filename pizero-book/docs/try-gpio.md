@@ -1,7 +1,6 @@
-# GPIO　を試す
+# GPIO を試す
 
-
-## GPIO　とは
+## GPIO とは
 
 [GPIO](https://ja.wikipedia.org/wiki/GPIO)は、「General-purpose input/output」の略で汎用的な入出力インタフェースのことです。
 
@@ -95,11 +94,11 @@ LED やモーターは一定以上の電圧を加え、電流を流すと動作�
 
 <hr class="page-wrap" />
 
-## GPIO　入力
+## GPIO 入力
 
 GPIO 端子の**入力が変化したら関数を実行**という機能によって GPIO の入力を使います。
 
-GPIOポートに繋いだスイッチやセンサーの状態を取得するには、 GPIO の**入力**機能を使います。出力とは違って入力は二つの方法があります。onchangeとポーリングの二つの方法があります。
+GPIO ポートに繋いだスイッチやセンサーの状態を取得するには、 GPIO の**入力**機能を使います。出力とは違って入力は二つの方法があります。 onchange とポーリングの二つの方法があります。
 
 ![GPIO スイッチ (GPIO INPUT)](../../pizero/esm-examples/gpio-onchange/PiZero_gpio1.png){height=190}
 
