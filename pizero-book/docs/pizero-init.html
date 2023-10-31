@@ -21,20 +21,20 @@
                 <li>Pi Zero <strong>2</strong> W: <a href="https://raspberry-pi.ksyic.com/main/index/pdp.id/851/pdp.open/851">ケイエスワイ</a></li>
               </ul>
             </li>
-            <li><a href="https://github.com/chirimen-oh/chirimen-lite/releases">Raspberry Pi OS LiteをUSB Serialで使用可能にしたイメージ</a>を書き込んだmicroSDカード</li>
+            <li><a href="https://github.com/chirimen-oh/chirimen-lite/releases">Raspberry Pi OS LiteをUSB Serial で使用可能にしたイメージ</a>を書き込んだmicroSDカード</li>
             <li>ブラウザの載ったパソコン
               <ul>
                 <li>Windows 10 PC
                   <ul>
-                    <li>ブラウザは標準のEdgeもしくはChromeを使います。</li>
+                    <li>ブラウザは標準の Edge もしくは Chrome を使います。</li>
                   </ul>
                 </li>
                 <li>Macintosh
                   <ul>
-                    <li>ブラウザはChromeが必要です。</li>
+                    <li>ブラウザは Chrome が必要です。</li>
                   </ul>
                 </li>
-                <li>いずれもUSBとWiFiが使える必要があります。</li>
+                <li>いずれも USB と WiFi が使える必要があります。</li>
                 <li><em>Note: Linux PCのChromeでは次の設定で利用可能になるとの報告をいただいています</em>
                   <ul>
                     <li>Ubuntu Studio: <code>sudo chmod a+rw /dev/ttyACM0</code></li>
@@ -43,31 +43,31 @@
                 </li>
               </ul>
             </li>
-            <li>USBケーブル (USB A - MicroB)</li>
-            <li>Lチカ用パーツ
+            <li>USB ケーブル (USB A - MicroB)</li>
+            <li>L チカ用パーツ
               <ul>
                 <li>ブレッドボード</li>
                 <li>LED</li>
-                <li>1KΩ抵抗</li>
+                <li>1KΩ 抵抗</li>
                 <li>ジャンパーワイヤ オス-メス 2本</li>
               </ul>
             </li>
-            <li>GPIO入力実験用追加パーツ
+            <li>GPIO 入力実験用追加パーツ
               <ul>
                 <li>タクトスイッチ</li>
               </ul>
             </li>
             <li>モーター制御用追加パーツ
               <ul>
-                <li>10KΩ抵抗</li>
+                <li>10KΩ 抵抗</li>
                 <li>MOSFET</li>
                 <li>ちびギヤモーター</li>
               </ul>
             </li>
             <li>温度センシング実験用追加パーツ
               <ul>
-                <li><a href="https://akizukidenshi.com/catalog/g/gM-06675/">ADT7410モジュール</a>　もしくは <a href="https://www.amazon.co.jp/dp/B083NHJSL9/">SHT30モジュール</a></li>
-                <li>ジャンパーワイヤ オス-メス 2本</li>
+                <li><a href="https://akizukidenshi.com/catalog/g/gM-06675/">ADT7410 モジュール</a>　もしくは <a href="https://www.amazon.co.jp/dp/B083NHJSL9/">SHT30 モジュール</a></li>
+                <li>ジャンパーワイヤ オス-メス 2 本</li>
               </ul>
             </li>
           </ul>
@@ -76,7 +76,7 @@
             <img src="../../pizero/imgs/PartsList2.svg" alt="Parts Images" height="360">
             <figcaption aria-hidden="true">Parts Images</figcaption>
           </figure>
-          <p>PiZero自体はディスプレイやキーボードを接続する必要はありません。</p>
+          <p>Pi Zero 自体はディスプレイやキーボードを接続する必要はありません。</p>
         </section>
         <section class="level3" aria-labelledby="pcをwifiに接続">
           <h3 id="pcをwifiに接続">PCをWiFiに接続</h3>
@@ -89,31 +89,31 @@
         <h2 id="ステップ１ターミナル接続">ステップ１（ターミナル接続）</h2>
         <ul>
           <li><a href="https://github.com/kou029w/chirimen-os/releases/">Raspberry Pi OS LiteをUSB Serialで使用可能にしたイメージ</a>を書き込んだmicroSDカードをRaspberry Pi Zeroに差し込みます。</li>
-          <li>PCのUSBとRaspberry Pi ZeroのUSB OTGポートをUSBケーブルでつなぎます
+          <li>PC の USB と Raspberry Pi ZeroのUSB OTG ポートを USB ケーブルでつなぎます
             <ul>
               <li>
-                PiZero側はつなぐポート要注意　ここに繋ぎます
+                Pi Zero 側はつなぐポート要注意　ここに繋ぎます
                 
                 <img src="https://chirimen.org/PiZeroWebSerialConsole/imgs/PiZeroW_OTG.JPG" alt="pi zero otg port" height="160">
               </li>
-              <li>PCからのUSB給電でRaspberry Pi Zeroが起動します。</li>
+              <li>PCからの USB 給電で Raspberry Pi Zero が起動します。</li>
             </ul>
           </li>
-          <li>PCでRaspberry Pi Zeroが認識されたことを確認します (<a href="https://askpc.panasonic.co.jp/beginner/guide/ten07/7013.html">Windows10のデバイスマネージャ</a>の例)
+          <li>PC で Raspberry Pi Zero が認識されたことを確認します (<a href="https://askpc.panasonic.co.jp/beginner/guide/ten07/7013.html">Windows10のデバイスマネージャ</a>の例)
             <ul>
-              <li>給電後USBデバイスとして出現するまでにしばらく(数十秒)かかります）</li>
+              <li>給電後 USB デバイスとして出現するまでにしばらく(数十秒)かかります）</li>
               <li>
-                Windowsの場合、ポートの番号(COMnのnの部分)は環境ごとに異なります
+                Windows の場合、ポートの番号( COMn の n の部分)は環境ごとに異なります
                 
                 <img src="../../pizero/imgs/OTG_PORT_W10.png" alt="OTG PORT Information on device manager">
               </li>
             </ul>
           </li>
           <li>
-            <a href="https://chirimen.org/PiZeroWebSerialConsole/PiZeroWebSerialConsole.html"><strong>こちらのWeb Serial RPiZero TerminalページにPCのブラウザでアクセス</strong></a>
+            <a href="https://chirimen.org/PiZeroWebSerialConsole/PiZeroWebSerialConsole.html"><strong>こちらのWeb Serial RPiZero Terminal ページに PC のブラウザでアクセス</strong></a>
             (以降、このウィンドを<strong>ターミナルウィンド</strong>と呼びます)
           </li>
-          <li><code>[Connect and Login PiZero]</code>ボタンを押す
+          <li><code>[Connect and Login PiZero]</code> ボタンを押す
             <ul>
               <li>
                 接続ダイアログが出現
@@ -138,10 +138,10 @@
                   <li>ただしこの講習で使うコマンドはごくわずかです。
                     <ul>
                       <li><strong>node</strong> コマンド(後述)</li>
-                      <li><a href="https://atmarkit.itmedia.co.jp/ait/articles/1708/04/news015_2.html">CTRL+c</a>(CTRLキーとcを同時に押す:実行中のコマンドを終了させる)</li>
+                      <li><a href="https://atmarkit.itmedia.co.jp/ait/articles/1708/04/news015_2.html">CTRL+c</a>(CTRL キーとcを同時に押す:実行中のコマンドを終了させる)</li>
                     </ul>
                   </li>
-                  <li>その他のほとんどの操作（コマンド）は、ターミナルウィンドやそこから起動される別画面のGUIがコマンド操作を代行しています。図3.2のGUIを操作するとコンソールにコマンドが入力されるのがわかると思います。</li>
+                  <li>その他のほとんどの操作（コマンド）は、ターミナルウィンドやそこから起動される別画面の GUI がコマンド操作を代行しています。図 3.2 の GUI を操作するとコンソールにコマンドが入力されるのがわかると思います。</li>
                 </ul>
               </li>
               <li>もしもあなたがlinuxのシェルコンソール画面に慣れている場合は、ターミナルウィンドのコンソールにその他のシェル(bash)コマンドをタイプして使用することもできます。
@@ -157,8 +157,8 @@
           </section>
         </section>
       </section>
-      <section class="level2" aria-labelledby="ステップ２-wifi設定">
-        <h2 id="ステップ２-wifi設定">ステップ２ (WiFi設定)</h2>
+      <section class="level2" aria-labelledby="ステップ２-wifi-設定">
+        <h2 id="ステップ２-wifi-設定">ステップ２ (WiFi 設定)</h2>
         <ul>
           <li>ターミナルウィンドの<code>[wifi panel]</code>ボタンを押す
             <ul>
@@ -213,7 +213,7 @@
                   <li>PASSWORD: <code>raspberry</code></li>
                 </ul>
               </li>
-              <li>確認できたらWiFi Settingウィンドを閉じてください。</li>
+              <li>確認できたら WiFi Setting ウィンドを閉じてください。</li>
             </ul>
           </li>
           <li>

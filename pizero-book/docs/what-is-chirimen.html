@@ -15,9 +15,9 @@
       </figure>
       <p>CHIRIMEN は Web ブラウザや Node.js の JavaScript からハードウェアを制御するプロトタイピング環境です。</p>
       <p>CHIRIMEN コミュニティと W3C の <a href="https://www.w3.org/community/browserobo/">Browsers and Robotics コミュニティグループ</a>では、JavaScript で Web アプリから電子パーツを直接制御できる低レベルハードウェア制御 API (<a href="http://browserobo.github.io/WebGPIO">WebGPIO API</a> や <a href="http://browserobo.github.io/WebI2C">WebI2C API</a> など) の標準化に向けての検討・提案と、それらの API を Raspberry Pi などの開発ボード上で使うプロトタイプ環境 (CHIRIMEN 環境) を実装しています。</p>
-      <p>電子パーツ制御のために専用のツールや開発環境を用意したり、複数の言語やプログラムを連携させたり、独特のフレームワークを学習・利用したりする必要はありません。Web 標準技術をベースとしており、素早いプロトタイピングやプログラミング初学者の IoT 学習に最適です。</p>
-      <p>Raspberry Pi Zero を使う場合<span class="footnote">4 章 CHIRIMEN Raspberry Pi Zero版 の準備参照</span> のような低性能環境や、ブラウザ無しで動作させたいときは、ライブラリの読み込み部分だけを変えれば Node.js でも同じコードでハードを制御可能なユニバーサル環境です。</p>
-      <p>デジタルのソフトとフィジカルなハードをWWW上で連携するデバイスを Web標準技術、JavaScript だけで容易に実現できます。</p>
+      <p>電子パーツ制御のために専用のツールや開発環境を用意したり、複数の言語やプログラムを連携させたり、独特のフレームワークを学習・利用したりする必要はありません。 Web 標準技術をベースとしており、素早いプロトタイピングやプログラミング初学者の IoT 学習に最適です。</p>
+      <p>Raspberry Pi Zero を使う場合（第 4 章 CHIRIMEN Raspberry Pi Zero版 の準備参照）のような低性能環境や、ブラウザ無しで動作させたいときは、ライブラリの読み込み部分だけを変えれば Node.js でも同じコードでハードを制御可能なユニバーサル環境です。</p>
+      <p>デジタルのソフトとフィジカルなハードを WWW 上で連携するデバイスを Web 標準技術、 JavaScript だけで容易に実現できます。</p>
       <section class="level2" aria-labelledby="chirimenのメリット">
         <h2 id="chirimenのメリット">CHIRIMENのメリット</h2>
         <ul>
@@ -44,12 +44,12 @@
         <ul>
           <li>Raspberry Pi
             <ul>
-              <li><a href="https://www.raspberrypi.org/">Raspberry Pi</a> 3 以降をサポートしています。Raspberry Pi 上の Chrome ブラウザ (または Firefox など) でコードの実行もコードの編集もでき、Raspberry Pi 一式があれば、別途パソコンなどを用意する必要はありません。ブラウザを使わず Node.js からも使えます。</li>
+              <li><a href="https://www.raspberrypi.org/">Raspberry Pi</a> 3 以降をサポートしています。 Raspberry Pi 上の Chrome ブラウザ (または Firefox など) でコードの実行もコードの編集もでき、 Raspberry Pi 一式があれば、別途パソコンなどを用意する必要はありません。ブラウザを使わず Node.js からも使えます。</li>
             </ul>
           </li>
           <li>Raspberry Pi Zero
             <ul>
-              <li><a href="https://www.raspberrypi.org/">Raspberry Pi Zero</a> をサポートしています。Raspberry Pi Zero上のNode.jsをJavaScript処理系として動作します。Pi Zeroはブラウザ稼働には力不足ですが、典型的なIoTデバイス構築に適しています。コード編集や環境設定はPC上のブラウザからUSB経由で行え、Pi ZeroとPCがあれば別途開発環境は必要ありません。</li>
+              <li><a href="https://www.raspberrypi.org/">Raspberry Pi Zero</a> をサポートしています。 Raspberry Pi Zero上のNode.jsをJavaScript処理系として動作します。Pi Zeroはブラウザ稼働には力不足ですが、典型的な IoT デバイス構築に適しています。コード編集や環境設定は PC 上のブラウザから USB 経由で行え、 Pi ZeroとPCがあれば別途開発環境は必要ありません。</li>
             </ul>
           </li>
           <li>micro:bit
@@ -102,7 +102,7 @@
           <li><code>mkdir [自分用の作業ディレクトリ]</code> (<a href="https://atmarkit.itmedia.co.jp/ait/articles/1606/07/news015.html">mkdir</a> コマンドとは)</li>
           <li><code>cd [自分用の作業ディレクトリ]</code> (<a href="https://atmarkit.itmedia.co.jp/ait/articles/1712/14/news021.html">cd</a>コマンドとは)</li>
           <li><code>wget https://tutorial.chirimen.org/pizero/package.json</code> (<a href="https://atmarkit.itmedia.co.jp/ait/articles/1606/20/news024.html">wget</a>コマンドとは)</li>
-          <li><code>wget https://chirimen.org/remote-connection/js/beta/RelayServer.js</code> (RelayServer.js<span class="footnote">12.1.2 relayService 参照</span>を使う場合)</li>
+          <li><code>wget https://chirimen.org/remote-connection/js/beta/RelayServer.js</code> (RelayServer.js（第 12 章 1.2 relayService 参照）を使う場合)</li>
           <li><code>npm install</code> (<a href="https://atmarkit.itmedia.co.jp/ait/articles/1606/17/news030.html">npm</a>とは)</li>
         </ul>
       </section>

@@ -8,37 +8,37 @@
 * Raspberry Pi Zero W 、( Pi Zero **2** W も使用できます(2022/10/12 update) )
   * Pi Zero: [ケイエスワイ](https://raspberry-pi.ksyic.com/main/index/pdp.id/799/pdp.open/799), [秋月電子](https://akizukidenshi.com/catalog/g/gM-12961/), [スイッチサイエンス](https://www.switch-science.com/catalog/3646/), [マルツ](https://www.marutsu.co.jp/pc/i/1320453/)
   * Pi Zero **2** W: [ケイエスワイ](https://raspberry-pi.ksyic.com/main/index/pdp.id/851/pdp.open/851)
-* [Raspberry Pi OS LiteをUSB Serialで使用可能にしたイメージ](https://github.com/chirimen-oh/chirimen-lite/releases)を書き込んだmicroSDカード
+* [Raspberry Pi OS LiteをUSB Serial で使用可能にしたイメージ](https://github.com/chirimen-oh/chirimen-lite/releases)を書き込んだmicroSDカード
 * ブラウザの載ったパソコン
   * Windows 10 PC
-    * ブラウザは標準のEdgeもしくはChromeを使います。
+    * ブラウザは標準の Edge もしくは Chrome を使います。
   * Macintosh
-    * ブラウザはChromeが必要です。
-  * いずれもUSBとWiFiが使える必要があります。
+    * ブラウザは Chrome が必要です。
+  * いずれも USB と WiFi が使える必要があります。
   * *Note: Linux PCのChromeでは次の設定で利用可能になるとの報告をいただいています*
     * Ubuntu Studio: ```sudo chmod a+rw /dev/ttyACM0```
     * Ubuntu Desktop 20.04 LTS: ```sudo gpasswd -a "$(whoami)" dialout```
-* USBケーブル (USB A - MicroB)
-* Lチカ用パーツ
+* USB ケーブル (USB A - MicroB)
+* L チカ用パーツ
   * ブレッドボード
   * LED
-  * 1KΩ抵抗
+  * 1KΩ 抵抗
   * ジャンパーワイヤ オス-メス 2本
-* GPIO入力実験用追加パーツ
+* GPIO 入力実験用追加パーツ
   * タクトスイッチ
 * モーター制御用追加パーツ
-  * 10KΩ抵抗
+  * 10KΩ 抵抗
   * MOSFET
   * ちびギヤモーター
 * 温度センシング実験用追加パーツ
-  * [ADT7410モジュール](https://akizukidenshi.com/catalog/g/gM-06675/)　もしくは [SHT30モジュール](https://www.amazon.co.jp/dp/B083NHJSL9/)
-  * ジャンパーワイヤ オス-メス 2本
+  * [ADT7410 モジュール](https://akizukidenshi.com/catalog/g/gM-06675/)　もしくは [SHT30 モジュール](https://www.amazon.co.jp/dp/B083NHJSL9/)
+  * ジャンパーワイヤ オス-メス 2 本
 
 <hr class="page-wrap" />
 
 ![Parts Images](../../pizero/imgs/PartsList2.svg){height=360}
 
-PiZero自体はディスプレイやキーボードを接続する必要はありません。
+Pi Zero 自体はディスプレイやキーボードを接続する必要はありません。
 
 ### PCをWiFiに接続
 * 会場(もしくは開発場所)で提供されているWiFiアクセスポイントにまずはPCを接続してください。
@@ -46,17 +46,17 @@ PiZero自体はディスプレイやキーボードを接続する必要はあ�
 ## ステップ１（ターミナル接続）
 
 * [Raspberry Pi OS LiteをUSB Serialで使用可能にしたイメージ](https://github.com/kou029w/chirimen-os/releases/)を書き込んだmicroSDカードをRaspberry Pi Zeroに差し込みます。
-* PCのUSBとRaspberry Pi ZeroのUSB OTGポートをUSBケーブルでつなぎます
-  * PiZero側はつなぐポート要注意　ここに繋ぎます
+* PC の USB と Raspberry Pi ZeroのUSB OTG ポートを USB ケーブルでつなぎます
+  * Pi Zero 側はつなぐポート要注意　ここに繋ぎます
   ![pi zero otg port](https://chirimen.org/PiZeroWebSerialConsole/imgs/PiZeroW_OTG.JPG){height=160}
-  * PCからのUSB給電でRaspberry Pi Zeroが起動します。
-* PCでRaspberry Pi Zeroが認識されたことを確認します ([Windows10のデバイスマネージャ](https://askpc.panasonic.co.jp/beginner/guide/ten07/7013.html)の例) 
-  * 給電後USBデバイスとして出現するまでにしばらく(数十秒)かかります）
-  * Windowsの場合、ポートの番号(COMnのnの部分)は環境ごとに異なります
+  * PCからの USB 給電で Raspberry Pi Zero が起動します。
+* PC で Raspberry Pi Zero が認識されたことを確認します ([Windows10のデバイスマネージャ](https://askpc.panasonic.co.jp/beginner/guide/ten07/7013.html)の例) 
+  * 給電後 USB デバイスとして出現するまでにしばらく(数十秒)かかります）
+  * Windows の場合、ポートの番号( COMn の n の部分)は環境ごとに異なります
   ![OTG PORT Information on device manager](../../pizero/imgs/OTG_PORT_W10.png)
-* [**こちらのWeb Serial RPiZero TerminalページにPCのブラウザでアクセス**](https://chirimen.org/PiZeroWebSerialConsole/PiZeroWebSerialConsole.html)
+* [**こちらのWeb Serial RPiZero Terminal ページに PC のブラウザでアクセス**](https://chirimen.org/PiZeroWebSerialConsole/PiZeroWebSerialConsole.html)
  (以降、このウィンドを**ターミナルウィンド**と呼びます)
-* ```[Connect and Login PiZero]```ボタンを押す
+* ```[Connect and Login PiZero]``` ボタンを押す
   * 接続ダイアログが出現
     ![connection dialog](../../pizero/imgs/SerialDialog.png){height=155}
   * 上で認識したデバイス（ポート番号）を接続する
@@ -70,8 +70,8 @@ PiZero自体はディスプレイやキーボードを接続する必要はあ�
 * CHIRIMEN Raspberry Pi Zero版では[Raspberry Pi OS Lite](https://www.raspberrypi.com/software/operating-systems/)(Linux)を[コマンドラインインターフェース(CLI)](https://atmarkit.itmedia.co.jp/ait/articles/1602/19/news025.html)・[シェル(bash)](https://atmarkit.itmedia.co.jp/ait/articles/1603/02/news016.html)で操作します。
   * ただしこの講習で使うコマンドはごくわずかです。
     * **node** コマンド(後述)
-    * [CTRL+c](https://atmarkit.itmedia.co.jp/ait/articles/1708/04/news015_2.html)(CTRLキーとcを同時に押す:実行中のコマンドを終了させる)
-  * その他のほとんどの操作（コマンド）は、ターミナルウィンドやそこから起動される別画面のGUIがコマンド操作を代行しています。図3.2のGUIを操作するとコンソールにコマンドが入力されるのがわかると思います。
+    * [CTRL+c](https://atmarkit.itmedia.co.jp/ait/articles/1708/04/news015_2.html)(CTRL キーとcを同時に押す:実行中のコマンドを終了させる)
+  * その他のほとんどの操作（コマンド）は、ターミナルウィンドやそこから起動される別画面の GUI がコマンド操作を代行しています。図 3.2 の GUI を操作するとコンソールにコマンドが入力されるのがわかると思います。
 * もしもあなたがlinuxのシェルコンソール画面に慣れている場合は、ターミナルウィンドのコンソールにその他のシェル(bash)コマンドをタイプして使用することもできます。
   * たとえば ```ls -al``` とタイプするとおコンソール画面にディレクトリ内のファイルのリストが表示されます。
 
@@ -79,7 +79,7 @@ PiZero自体はディスプレイやキーボードを接続する必要はあ�
 
 </section>
 
-## ステップ２ (WiFi設定)
+## ステップ２ (WiFi 設定)
 
 * ターミナルウィンドの```[wifi panel]```ボタンを押す
   * ウィンドが開き、WiFiアクセスポイントがスキャンされます。ステルスでないものはリストアップされているので、以降の作業の参考にしてください。
@@ -109,6 +109,6 @@ PiZero自体はディスプレイやキーボードを接続する必要はあ�
     * PORT: 22
     * ID: ```pi```
     * PASSWORD: ```raspberry```
-  * 確認できたらWiFi Settingウィンドを閉じてください。
+  * 確認できたら WiFi Setting ウィンドを閉じてください。
 
 * 以上ですべての初期設定完了です！

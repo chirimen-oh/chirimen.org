@@ -11,26 +11,26 @@
       <h1 id="raspberry-pi-について">Raspberry Pi について</h1>
       <ul>
         <li>教育・学習用として設計されたシングルボードコンピュータ<span class="footnote"><a href="https://elchika.com/dic/%E3%82%B7%E3%83%B3%E3%82%B0%E3%83%AB%E3%83%9C%E3%83%BC%E3%83%89%E3%82%B3%E3%83%B3%E3%83%94%E3%83%A5%E3%83%BC%E3%82%BF/">https://elchika.com/dic/シングルボードコンピュータ/</a></span></li>
-        <li>Linuxが動作するシングルボードコンピュータとして、安価でとても高いシェアを持ち世界中で容易に入手できる</li>
-        <li>今回使用するRaspberry Pi ZeroWは、その中でも特に安価(<a href="https://www.switch-science.com/catalog/3200/">2000円以下</a>)で小型・低消費電力の機種、HDMI出力はあるもののブラウザを動かすだけの処理能力がありませんが、IoTのエッジデバイス（センサーやアクチュエータが載ったデバイスでディスプレイはあるとしても簡易のもの）には適しています。
+        <li>Linux が動作するシングルボードコンピュータとして、安価でとても高いシェアを持ち世界中で容易に入手できる</li>
+        <li>今回使用する Raspberry Pi Zero W は、その中でも特に安価(<a href="https://www.switch-science.com/catalog/3200/">2000円以下</a>)で小型・低消費電力の機種、HDMI 出力はあるもののブラウザを動かすだけの処理能力がありませんが、 IoT のエッジデバイス（センサーやアクチュエータが載ったデバイスでディスプレイはあるとしても簡易のもの）には適しています。
           <ul>
             <li>フルセットのブラウザが内蔵されたデバイスを作りたい場合は<a href="https://tutorial.chirimen.org/raspi/">CHIRIMEN Raspberry Pi版</a>が使用できます。</li>
-            <li>インターネットを経由してPCやスマホのブラウザから遠隔操作するシステムは　このPi ZeroW版でつくれます。IoTの章<span class="footnote">12 章 IoT 参照</span> まで進めましょう。</li>
+            <li>インターネットを経由してPCやスマホのブラウザから遠隔操作するシステムは　このPi ZeroW版でつくれます。第 12 章 IoT まで進めましょう。</li>
           </ul>
         </li>
       </ul>
-      <section class="level2" aria-labelledby="raspberry-pi-zeroのピン配列">
-        <h2 id="raspberry-pi-zeroのピン配列">Raspberry Pi Zeroのピン配列</h2>
-        <p>GPIO, 電源, GND, I2C信号線などのピン配列を記載します。</p>
+      <section class="level2" aria-labelledby="raspberry-pi-zero-のピン配列">
+        <h2 id="raspberry-pi-zero-のピン配列">Raspberry Pi Zero のピン配列</h2>
+        <p>GPIO, 電源, GND, I2C 信号線などのピン配列を記載します。</p>
         <ul>
           <li>白い文字で書かれたピンだけが使えます</li>
-          <li>GND、3.3V、5Vはそれぞれ電源とグランドです</li>
-          <li>数字 + PD||PUと書かれているピンはGPIO端子
+          <li>GND、3.3V、5V はそれぞれ電源とグランドです</li>
+          <li>数字 + PD||PU と書かれているピンは GPIO 端子
             <ul>
               <li>PD:プルダウン, PU:プルアップ</li>
             </ul>
           </li>
-          <li>SCL, SDAはI2Cインターフェースのピンです</li>
+          <li>SCL, SDA は I2C インターフェースのピンです</li>
         </ul>
         <figure>
           <img src="https://chirimen.org/PiZeroWebSerialConsole/wallpaperS.png" alt="Raspberry Pi Pinout" height="305">
