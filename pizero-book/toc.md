@@ -46,7 +46,6 @@
     1. [JavaScript 初学者向け資料集](./docs/document.html#javascript-初学者向け資料集)
     1. [GitHub と開発環境](./docs/document.html#github-と開発環境)
     1. [電子工作](./docs/document.html#電子工作)
-    1. [ハードウェア・デバイス](./docs/document.html#ハードウェアデバイス)
     1. [そもそも「L チカ」って何？](./docs/document.html#そもそもl-チカって何)
     1. [LED](./docs/document.html#led)
     1. [ブレッドボード](./docs/document.html#ブレッドボード)
