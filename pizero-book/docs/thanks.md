@@ -1,3 +1,5 @@
+
+
 <section id="colophon" role="doc-colophon">
 
 # Special Thanks
@@ -15,5 +17,7 @@
 | @sizuhiko | https://twitter.com/sizuhiko |
 
 五十音、アルファベット順
+
+![](../images/byebye-a-word.png){height=300}
 
 </sction>
