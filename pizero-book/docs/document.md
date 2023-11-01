@@ -87,7 +87,7 @@ Raspberry Pi の GPIO ポートは、全体で流せる電流の上限が決め�
 
 ## MOSFET とは
 
-[MOSFET](https://ja.wikipedia.org/wiki/MOSFET) とは[電界効果トランジスタ (FET)](https://ja.wikipedia.org/wiki/%E9%9B%BB%E7%95%8C%E5%8A%B9%E6%9E%9C%E3%83%88%E3%83%A9%E3%83%B3%E3%82%B8%E3%82%B9%E3%82%BF) の一種で、主にスイッチング素子として利用される (小さな電圧の変更で大きな電流・電圧のオンオフを切り替える) 部品です。
+[MOSFET](https://ja.wikipedia.org/wiki/MOSFET) とは電界効果トランジスタ (FET)<span class="footnote">https://ja.wikipedia.org/wiki/電界効果トランジスタ</span> の一種で、主にスイッチング素子として利用される (小さな電圧の変更で大きな電流・電圧のオンオフを切り替える) 部品です。
 
 今回は Nch MOSFET「[2SK4017](http://akizukidenshi.com/catalog/g/gI-07597/)」を利用します。
 
