@@ -38,13 +38,6 @@ CHIRIMEN を利用するに際して、知っておくと良い予備知識や�
 - 電源・電力
   - デバイス駆動に必要な電源 (準備中)
 
-<hr class="page-wrap" />
-
-## ハードウェア・デバイス
-
-- [予備知識・資料集～電子工作について](../reference#section-1)
-
-
 ## そもそも「L チカ」って何？
 
 「L チカ」とは、LED（発光ダイオード）<span class="footnote">https://ja.wikipedia.org/wiki/発光ダイオード</span>を点けたり消したりチカチカ点滅させることです。今回は「LED を点ける」「LED を消す」をプログラムで繰り返し実行することで実現します。
@@ -55,6 +48,8 @@ CHIRIMEN を利用するに際して、知っておくと良い予備知識や�
 ### ヒント: LED の電圧
 
 LED の順方向電圧は色により異なっており、赤色 LED は 1.8V 程度、青色 LED は 3.1V 程度とされています。
+
+<hr class="page-wrap" />
 
 ## ブレッドボード
 
@@ -87,7 +82,7 @@ Raspberry Pi の GPIO ポートは、全体で流せる電流の上限が決め�
 
 ## MOSFET とは
 
-[MOSFET](https://ja.wikipedia.org/wiki/MOSFET) とは[電界効果トランジスタ (FET)](https://ja.wikipedia.org/wiki/%E9%9B%BB%E7%95%8C%E5%8A%B9%E6%9E%9C%E3%83%88%E3%83%A9%E3%83%B3%E3%82%B8%E3%82%B9%E3%82%BF) の一種で、主にスイッチング素子として利用される (小さな電圧の変更で大きな電流・電圧のオンオフを切り替える) 部品です。
+[MOSFET](https://ja.wikipedia.org/wiki/MOSFET) とは電界効果トランジスタ (FET)<span class="footnote">https://ja.wikipedia.org/wiki/電界効果トランジスタ</span> の一種で、主にスイッチング素子として利用される (小さな電圧の変更で大きな電流・電圧のオンオフを切り替える) 部品です。
 
 今回は Nch MOSFET「[2SK4017](http://akizukidenshi.com/catalog/g/gI-07597/)」を利用します。
 

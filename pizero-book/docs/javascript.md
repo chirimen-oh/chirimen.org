@@ -11,7 +11,7 @@ JavaScript に慣れていない人は、下記ページを参考にしてくだ
 ## JavaScriptコード・ライブラリの読み込み
 
 ### ウェブアプリ： HTML で読み込み
-Raspberry Pi Zero 版以外の CHIRIMEN はプログラムの起点はHTMLファイルです。（[ウェブアプリ](https://ja.wikipedia.org/wiki/%E3%82%A6%E3%82%A7%E3%83%96%E3%82%A2%E3%83%97%E3%83%AA%E3%82%B1%E3%83%BC%E3%82%B7%E3%83%A7%E3%83%B3)）ブラウザはまず HTML ファイルを読み込んだうえで、そこに書かれた内容で動きます。したがって作ったコードや必要なライブラリの読み込みは基本的に全てこの HTML の中で指定します。（なお、 JavaScript Module を有効化している場合は JavaScript コードの中で JavaScript ライブラリを読み込むことがある）
+Raspberry Pi Zero 版以外の CHIRIMEN はプログラムの起点はHTMLファイルです。（ウェブアプリ<span class="footnote">https://ja.wikipedia.org/wiki/ウェブアプリ</span>）ブラウザはまず HTML ファイルを読み込んだうえで、そこに書かれた内容で動きます。したがって作ったコードや必要なライブラリの読み込みは基本的に全てこの HTML の中で指定します。（なお、 JavaScript Module を有効化している場合は JavaScript コードの中で JavaScript ライブラリを読み込むことがある）
 
 ポイントは `<script ...></script>` の部分です。
 `polyfill.js` という JavaScript ライブラリを読み込んでいます。これは [Web GPIO API](http://browserobo.github.io/WebGPIO) と、[Web I2C API](http://browserobo.github.io/WebI2C) という W3C でドラフト提案中の 2 つの API への [Polyfill (新しい API を未実装のブラウザでも同じコードが書けるようにするためのライブラリ)](https://developer.mozilla.org/ja/docs/Glossary/Polyfill) で、最初に読み込むとそれ以降のコードで GPIO や I2C を操作する JavaScript API が使えるようになります。
@@ -19,7 +19,7 @@ Raspberry Pi Zero 版以外の CHIRIMEN はプログラムの起点はHTMLファ
 次の行にある `main.js` は、JavaScript のプログラム本体です。
 
 ### Node.js (CHIRIMEN Raspberry Pi Zero版)
-Raspberry Pi Zero版はプログラムの起点が自分が作った JavaScript コード自体になります。ブラウザの代わりに [Node.js](https://ja.wikipedia.org/wiki/Node.js)というJavaScriptコードだけを解釈するソフト（JavaScript [インタープリタ](https://ja.wikipedia.org/wiki/%E3%82%A4%E3%83%B3%E3%82%BF%E3%83%97%E3%83%AA%E3%82%BF)）にコードを読み込ませて実行します。
+Raspberry Pi Zero版はプログラムの起点が自分が作った JavaScript コード自体になります。ブラウザの代わりに [Node.js](https://ja.wikipedia.org/wiki/Node.js)というJavaScriptコードだけを解釈するソフト（JavaScript インタープリタ<span class="footnote">https://ja.wikipedia.org/wiki/インタープリタ</span>）にコードを読み込ませて実行します。
 
 CHIRIMEN 環境のために必要なライブラリや I2C デバイスのドライバ（7.5. WebI2C とデバイスドライバ参照）は、次の ECMA Script Module という仕組みを使って読み込みます。
 
