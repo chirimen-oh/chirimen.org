@@ -1,3 +1,9 @@
+#colophon-image,
+#colophon {
+  display: flex;
+  flex-direction: column;
+}
+
 [role='doc-colophon'] {
   --vs-section--h1-marker-display: none;
   --vs-section--h2-marker-display: none;

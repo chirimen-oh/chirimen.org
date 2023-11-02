@@ -1,4 +1,11 @@
+
 <section id="colophon" role="doc-colophon">
+
+<section id="colophon-image" role="doc-colophon-image">
+
+![](../images/byebye-a-word.png)
+
+</section>
 
 # Special Thanks
 
@@ -16,4 +23,4 @@
 
 五十音、アルファベット順
 
-</sction>
+</section>
