@@ -3,7 +3,6 @@ module.exports = {
   author: 'CHIRIMEN Open Hardware Community <chirimen.open.hardware@gmail.com>', // default to `author` in `package.json` or undefined.
   language: 'ja', // default to undefined.
   size: 'B5', // paper size.
-  // size: 'JIS-B5', // 電子書籍 paper size.
   theme: '@vivliostyle/theme-techbook@^1.0.0', // .css or local dir or npm package. default to undefined.
   entry: [
     // './docs/index.md',
