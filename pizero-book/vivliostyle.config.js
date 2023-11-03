@@ -5,7 +5,7 @@ module.exports = {
   size: 'B5', // paper size.
   theme: '@vivliostyle/theme-techbook@^1.0.0', // .css or local dir or npm package. default to undefined.
   entry: [
-    './docs/index.md',
+    // './docs/index.md',
     {
       path: 'toc.md',
       rel: 'contents',
