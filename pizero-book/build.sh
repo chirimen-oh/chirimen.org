@@ -12,3 +12,6 @@ rm "CHIRIMEN Raspberry Pi Zero W チュートリアル.pdf"
 
 echo 'build start'
 npm run build
+
+echo 'move book folder'
+mv -f "CHIRIMEN Raspberry Pi Zero W チュートリアル.pdf" book/
