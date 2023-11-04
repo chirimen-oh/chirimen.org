@@ -1,6 +1,6 @@
 ## CHIRIMEN とは
 
-CHIRIMEN は Web ブラウザや Node.js の JavaScript からハードウェアを制御するプロトタイピング環境です。
+CHIRIMEN は Web ブラウザや Node.js の JavaScript からハードウェアを制御するオープンソースのプロトタイピング環境です。
 
 CHIRIMEN コミュニティと W3C の [Browsers and Robotics コミュニティグループ](https://www.w3.org/community/browserobo/)では、JavaScript で Web アプリから電子パーツを直接制御できる低レベルハードウェア制御 API ([WebGPIO API](http://browserobo.github.io/WebGPIO) や [WebI2C API](http://browserobo.github.io/WebI2C) など) の標準化に向けての検討・提案と、それらの API を Raspberry Pi などの開発ボード上で使うプロトタイプ環境 (CHIRIMEN 環境) を実装しています。
 
@@ -36,7 +36,7 @@ Raspberry Pi で CHIRIMEN 環境を使うには、[ビルドイメージ](https:
 - [Node.js から使うこともできます](raspi/nodejs)
 
 ## CHIRIMEN Raspberry Pi Zero 版
-Raspberry Pi Zero　(ネットワーク環境が必要なため、Zero W　もしくは Zero WH (ピンヘッダはんだ付け済み品) の使用を強く推奨します。)で CHIRIMEN 環境を使うには、[ビルドイメージ](https://github.com/chirimen-oh/chirimen-lite/releases) を、 [Raspberry Pi Imager](raspi/sdcard2) や [Etcher で microSD カードに書き込み](raspi/sdcard)、Raspberry Pi Zero を起動してください。
+Raspberry Pi Zero　(ネットワーク環境が必要なため、Zero W　もしくは Zero WH (ピンヘッダはんだ付け済み品) 、Raspberry Pi Zero 2 W の使用を強く推奨します。)で CHIRIMEN 環境を使うには、[ビルドイメージ](https://github.com/chirimen-oh/chirimen-lite/releases) を、 [Raspberry Pi Imager](raspi/sdcard2) や [Etcher で microSD カードに書き込み](raspi/sdcard)、Raspberry Pi Zero を起動してください。
 
 - [CHIRIMEN for Raspberry Zero について](pizero)
 

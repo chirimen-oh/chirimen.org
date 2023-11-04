@@ -359,7 +359,7 @@ I2Cデバイスは一般的に小さなチップ部品です。下の拡大写�
 
 `i2cdetect` を使って SlaveAddress を確認し、正しく接続・認識できているか確かめてみましょう。ターミナルを起動して下記コマンドを入力してみてください。
 
-* [ic2 detectとは](https://tutorial.chirimen.org/ty51822r3/i2cdetect)
+* [i2c detectとは](https://tutorial.chirimen.org/ty51822r3/i2cdetect)
 
 ### コマンドラインから
 ```sh
