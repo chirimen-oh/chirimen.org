@@ -11,6 +11,7 @@
         "@chirimen/amg8833": "latest",
         "@chirimen/apds9960": "latest",
         "@chirimen/arduino-stepping-motor": "latest",
+        "@chirimen/as3935": "latest",
         "@chirimen/bh1750": "latest",
         "@chirimen/bme280": "latest",
         "@chirimen/bme680": "latest",
