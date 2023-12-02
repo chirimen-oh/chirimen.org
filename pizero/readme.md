@@ -31,7 +31,7 @@ CHIRIMEN Raspberry Pi Zero版 を用いたIoT実習資料です。
   * Macintosh
     * ブラウザはChromeが必要です。
   * Chrome OS / Chromebook
-    * 確認済みハード：Lenove Chromebook S330
+    * 確認済みハード：Lenovo Chromebook S330
   * いずれもUSBとWiFiが使える必要があります。
   * *Note: Linux PCのChromeでは次の設定で利用可能になるとの報告をいただいています*
     * Ubuntu Studio: ```sudo chmod a+rw /dev/ttyACM0```
