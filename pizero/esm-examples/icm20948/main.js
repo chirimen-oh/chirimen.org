@@ -1,7 +1,7 @@
 /* 各種ライブラリをインポート */
 import { requestGPIOAccess } from "./node_modules/node-web-gpio/dist/index.js"; // WebGPIO
 import { requestI2CAccess } from "./node_modules/node-web-i2c/index.js"; // WebI2C
-import ICM20948 from "@chirimen/ICM20948"; // ICM20948
+import ICM20948 from "@chirimen/icm20948"; // ICM20948
 const sleep = (msec) => new Promise((resolve) => setTimeout(resolve, msec));
 
 main();

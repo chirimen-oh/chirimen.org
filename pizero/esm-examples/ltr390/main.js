@@ -1,7 +1,7 @@
 /* 各種ライブラリをインポート */
 import { requestGPIOAccess } from "./node_modules/node-web-gpio/dist/index.js"; // WebGPIO
 import { requestI2CAccess } from "./node_modules/node-web-i2c/index.js"; // WebI2C
-import LTR390 from "@chirimen/LTR390"; // LTR390
+import LTR390 from "@chirimen/ltr390"; // LTR390
 const sleep = (msec) => new Promise((resolve) => setTimeout(resolve, msec));
 
 main();

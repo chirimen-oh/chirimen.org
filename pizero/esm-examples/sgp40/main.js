@@ -1,7 +1,7 @@
 /* 各種ライブラリをインポート */
 import { requestGPIOAccess } from "./node_modules/node-web-gpio/dist/index.js"; // WebGPIO
 import { requestI2CAccess } from "./node_modules/node-web-i2c/index.js"; // WebI2C
-import SGP40 from "@chirimen/SGP40"; // SGP40
+import SGP40 from "@chirimen/sgp40"; // SGP40
 const sleep = (msec) => new Promise((resolve) => setTimeout(resolve, msec));
 
 main();
