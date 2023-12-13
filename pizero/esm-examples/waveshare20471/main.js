@@ -3,10 +3,10 @@ import { requestI2CAccess } from "./node_modules/node-web-i2c/index.js";
 
 // I2c device drivers
 import BME280 from "@chirimen/bme280"; // BME280
-import ICM20948 from "@chirimen/ICM20948"; // ICM20948
-import LTR390 from "@chirimen/LTR390"; // LTR390
-import TSL2591 from "@chirimen/TSL2591"; // TSL2591
-import SGP40 from "@chirimen/SGP40"; // SGP40
+import ICM20948 from "@chirimen/icm20948"; // ICM20948
+import LTR390 from "@chirimen/ltr390"; // LTR390
+import TSL2591 from "@chirimen/tsl2591"; // TSL2591
+import SGP40 from "@chirimen/sgp40"; // SGP40
 
 const sleep = (msec) => new Promise((resolve) => setTimeout(resolve, msec));
 
