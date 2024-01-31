@@ -9,7 +9,7 @@ async function main() {
   console.log("initializing...");
   const port = i2cAccess.ports.get(1);
   const display = new OledDisplay(port);
-  await display.init(true);
+  await display.init(true); // SSD1306(grove-oled-display)の場合はtrueを設定(SSD1308の場合はパラメータ不要)
   display.clearDisplayQ();
   await display.playSequence();
   console.log("drawing text...");
