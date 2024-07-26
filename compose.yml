@@ -1,0 +1,16 @@
+services:
+  builder:
+    image: ghcr.io/chirimen-oh/jekyll-builder
+    build: .
+    user: 1000:1000
+    ports:
+      - 4000:4000
+    volumes:
+      - .:/chirimen.org
+    command: |
+      sh -exc '
+        cd /chirimen.org
+        bundle install --path=vendor/bundle
+        bundle exec jekyll serve --host=0.0.0.0
+      '
+    init: true
