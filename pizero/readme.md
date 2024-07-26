@@ -10,9 +10,6 @@ permalink: /pizero/
 
 CHIRIMEN Raspberry Pi Zero版 を用いたIoT実習資料です。
 
-[pizeronodejs.md](pizeronodejs.md)の内容をもとに、Web Serial RPiZero Terminalを使うことで操作を簡単化し、更にプログラム作法をECMA Script Moduleにあわせています。
-
-
 # 準備
 
 ## ステップ０ (物品準備、PCをWiFiに接続)
@@ -66,7 +63,7 @@ PiZero自体はディスプレイやキーボードを接続する必要はあ�
   * PiZero側はつなぐポート要注意　ここに繋ぎます
   ![pi zero otg port](https://chirimen.org/PiZeroWebSerialConsole/imgs/PiZeroW_OTG.JPG)
   * PCからのUSB給電でRaspberry Pi Zeroが起動します。
-* PCでRaspberry Pi Zeroが認識されたことを確認します ([Windows10のデバイスマネージャ](https://askpc.panasonic.co.jp/beginner/guide/ten07/7013.html)の例) 
+* PCでRaspberry Pi Zeroが認識されたことを確認します ([Windows10のデバイスマネージャ](https://askpc.panasonic.co.jp/beginner/guide/ten07/7013.html)の例)
   * 給電後USBデバイスとして出現するまでにしばらく(数十秒)かかります
   * Windowsの場合、ポートの番号(COMnのnの部分)は環境ごとに異なります
   ![OTG PORT Information on device manager](imgs/OTG_PORT_W10.png)
@@ -101,7 +98,7 @@ PiZero自体はディスプレイやキーボードを接続する必要はあ�
     ![WiFi Setting](./imgs/WiFiSetting.png)
 * ウィンド下部に、会場(もしくは開発場所)で提供されているWiFiアクセス情報を入力する (いずれも大文字小文字の区別があるので注意してください。)
   * SSID欄
-  * PASS PHRASE欄 
+  * PASS PHRASE欄
 * ```[SET WiFi]```ボタンを押す
 * ```[Reboot]```ボタンを押す
   * これでRaspberry Pi Zeroが再起動をはじめます
@@ -180,7 +177,7 @@ import {requestGPIOAccess} from "./node_modules/node-web-gpio/dist/index.js"; //
 const sleep = msec => new Promise(resolve => setTimeout(resolve, msec)); // sleep 関数を定義
 
 async function blink() {
-  const gpioAccess = await requestGPIOAccess(); // GPIO を操作する 
+  const gpioAccess = await requestGPIOAccess(); // GPIO を操作する
   const port = gpioAccess.ports.get(26); // 26 番ポートを操作する
 
   await port.export("out"); // ポートを出力モードに設定
@@ -367,14 +364,14 @@ SHT30は温度に加えて湿度も測定できるI2C接続の多機能センサ
 
 <pre>
      0  1  2  3  4  5  6  7  8  9  a  b  c  d  e  f
-00:          -- -- -- -- -- -- -- -- -- -- -- -- -- 
-10: -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- 
-20: -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- 
-30: -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- 
-40: -- -- -- -- 44 -- -- -- -- -- -- -- -- -- -- -- 
-50: -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- 
-60: -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- 
-70: -- -- -- -- -- -- -- --                       
+00:          -- -- -- -- -- -- -- -- -- -- -- -- --
+10: -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
+20: -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
+30: -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
+40: -- -- -- -- 44 -- -- -- -- -- -- -- -- -- -- --
+50: -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
+60: -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
+70: -- -- -- -- -- -- -- --
 </pre>
 
 ### 実行する
@@ -420,14 +417,14 @@ SHT30は温度に加えて湿度も測定できるI2C接続の多機能センサ
 
 <pre>
      0  1  2  3  4  5  6  7  8  9  a  b  c  d  e  f
-00:          -- -- -- -- -- -- -- -- -- -- -- -- -- 
-10: -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- 
-20: -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- 
-30: -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- 
-40: -- -- -- -- -- -- -- -- 48 -- -- -- -- -- -- -- 
-50: -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- 
-60: -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- 
-70: -- -- -- -- -- -- -- --                       
+00:          -- -- -- -- -- -- -- -- -- -- -- -- --
+10: -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
+20: -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
+30: -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
+40: -- -- -- -- -- -- -- -- 48 -- -- -- -- -- -- --
+50: -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
+60: -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
+70: -- -- -- -- -- -- -- --
 </pre>
 
 ### 実行する
@@ -509,11 +506,11 @@ import {RelayServer} from "./RelayServer.js";
 #### 自分専用チャンネルで制御
 
   サンプルのコードは共通のチャンネルを使って制御しています。この状態では複数の人が同時に実習していると混信します。(他の人のPCでON/OFFを指示しても、自分のLEDがON/OFFする。同じチャンネルを使っているため。)
-  
+
   これはこれで使い道はあるのですが、自分のLEDは自分だけで制御したい場合は専用のチャンネルを使って制御しましょう。　チャンネルの指定はPiZero側のコードと、PC側のコード両方を同時に同じ内容で設定する必要があり、以下の部分になります。
-  
+
   ```channel = await relay.subscribe("chirimenLED");```
-  
+
   この```chirimenLED```という文字列(チャンネル名)を他の人と被らない別のチャンネル名に書き換えます(```chirimenLED5```など)
 
 
@@ -529,7 +526,7 @@ import {RelayServer} from "./RelayServer.js";
 ターミナルウィンドからnodeコマンドで実行指示しなくても、電源投入後 自動的に指定したコードを起動する設定（常駐プログラム化）ができます。
 このチュートリアルでは、[forever](https://www.npmjs.com/package/forever)を使用する設定を専用GUIを用いて行ってみましょう。
 
-* ターミナルウィンドの```[CHIRIMEN Panel]```ボタン⇒CHIRIMEN Panelの```[Resident App Conf.]```ボタンを押します。 
+* ターミナルウィンドの```[CHIRIMEN Panel]```ボタン⇒CHIRIMEN Panelの```[Resident App Conf.]```ボタンを押します。
   * 専用画面のUIが使用可能状態になるまで数秒かかります。
 * 開発ディレクトリ```~/myApp```内にあるjavascriptコードがリストアップされます。
 * 各行の```Now Running```列は常駐状態、```App Name```はコードのファイル名、```Select```は選択用チェックボックスです。
