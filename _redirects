@@ -11,6 +11,7 @@ https://tutorial-chirimen-org.netlify.com/*   https://tutorial.chirimen.org/:spl
 /raspi3/*         /raspi/:splat
 /raspi/partslist  /partslist
 /pizero/pizeronodejs              /pizero/
+/pizero/pizeronodejs.html         /pizero/
 /pizero/CHIRIMEN-Nodejs-examples  /pizero/esm-examples
 
 # Proxy polyfill and driver files
