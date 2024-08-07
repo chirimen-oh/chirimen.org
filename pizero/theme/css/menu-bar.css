@@ -1,0 +1,7 @@
+#menu-bar {
+  background-color: #276d5a;
+  background-image: linear-gradient(120deg, #6abf4b, #276d5a);
+
+  --icons: #fff;
+  --icons-hover: rgba(255, 255, 255, 0.7);
+}
