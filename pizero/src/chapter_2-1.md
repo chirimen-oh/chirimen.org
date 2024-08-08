@@ -5,9 +5,9 @@
 
 ![Parts Images](imgs/PartsList2.svg)
 
-* **Raspberry Pi Zero W** ( Pi Zero **2** W も使用できます(2022/10/12 update) )
+* **Raspberry Pi Zero W** (または Pi Zero **2** W)
   * Pi Zero: [ケイエスワイ](https://raspberry-pi.ksyic.com/main/index/pdp.id/406/pdp.open/406), [秋月電子](https://akizukidenshi.com/catalog/g/gM-12961/), [スイッチサイエンス](https://www.switch-science.com/catalog/3646/), [マルツ](https://www.marutsu.co.jp/pc/i/1320453/)
-  * Pi Zero **2** W: [ケイエスワイ](https://raspberry-pi.ksyic.com/main/index/pdp.id/851/pdp.open/851)
+  * Pi Zero **2** W: [ケイエスワイ](https://raspberry-pi.ksyic.com/main/index/pdp.id/849/pdp.open/849), [秋月電子](https://akizukidenshi.com/catalog/g/g117398/), [スイッチサイエンス](https://www.switch-science.com/collections/raspberry-pi/products/7600), [マルツ](https://www.marutsu.co.jp/pc/i/2792770/)
 * **microSDカード**
   * [CHIRIMEN Lite 最新リリース版](https://github.com/chirimen-oh/chirimen-lite/releases)を書き込みます
   * 自分でイメージを書き込む場合は、[こちら](https://tutorial.chirimen.org/raspi/sdcard2)や[こちら](https://tutorial.chirimen.org/raspi/sdcard)の手順を参考にしてください
