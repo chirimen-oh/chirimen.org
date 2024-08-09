@@ -1,7 +1,7 @@
 # 1.3 JavaScript の基礎
 標準化されたプログラミング言語の一種で、ウェブブラウザが代表的な実行環境です(プログラムコードを解釈して動作させるシステム)。CHIRIMEN では JavaScript で各種開発を行います。より詳細な情報は [10.3 JavaScript](./chapter_10-3.md) を参照してください。</br>
 
-以下に初めて学ぶ方やより詳しい情報を知りたい方に向けたテキストが公開sれ手います。
+以下に初めて学ぶ方やより詳しい情報を知りたい方に向けたテキストが公開されています。
 
 ## [Web開発をはじめよう](https://kou029w.github.io/intro-to-web-dev/index.html)
 Web開発を始める方に向けた入門ガイドです。JavaScript の他に HTML/CSS を用いる Web開発の基礎から GAS（Google Apps Script）を利用したアプリ開発まで解説されています。
