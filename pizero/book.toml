@@ -1,0 +1,22 @@
+[book]
+language = "ja"
+title = "CHIRIMEN Raspberry Pi Zero W チュートリアル"
+
+[build]
+build-dir = "../_pages/pizero"
+
+[output.html]
+additional-css = [
+  "theme/css/menu-bar.css",
+]
+additional-js = [
+  "theme/external-links.js",
+  "theme/favicon.js",
+  "theme/regexp-search.js",
+  "theme/sidebar.js",
+]
+default-theme = "light"
+edit-url-template = "https://github.com/chirimen-oh/chirimen.org/edit/master/pizero/{path}"
+git-repository-url = "https://github.com/chirimen-oh/chirimen.org"
+preferred-dark-theme = "light"
+site-url = "/pizero/"

@@ -1,0 +1,25 @@
+name: pages
+on: push
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    container: alpine
+    steps:
+      - name: Setup
+        run: apk add mdbook git
+      - uses: actions/checkout@v4
+      - name: Setup git config
+        run: |
+          git config --global --add safe.directory "${GITHUB_WORKSPACE}"
+          git config user.name bot
+          git config user.email "<>"
+      - name: Build
+        run: |
+          cd pizero
+          mdbook build
+      - name: Commit
+        run: |
+          git add -f _pages
+          if git commit -m 'bot: update pages'; then
+            git push origin HEAD:"${{ github.ref }}"
+          fi

@@ -1,0 +1,130 @@
+<!doctype html>
+<html>
+<head>
+<title>ECMA Script Module Examples for CHIRIMEN with Node.js/Rarpberry Pi Zero</title>
+</head>
+<script>
+var exData={};
+var iframeReferrer=null;
+onload=async function(){
+	// check if this window is inside iframe
+	if (window.self !== window.top){
+		iframeReferrer = document.referrer;
+	}
+	
+	await getData();
+	for ( var cat in exData ){
+		buildTable(cat);
+	}
+	setTimeout(function(){
+		var te=document.getElementById(location.hash.substring(1));
+		if ( te ){
+			te.style.backgroundColor="yellow";
+			te.scrollIntoView();
+		}
+	},10);
+}
+
+async function getData(){
+	var response = await fetch("index_examples.csv");
+	var csv = await response.text();
+	var csv = csv.split("\n");
+	var cat;
+	for ( var line of csv){
+		if ( line.length >1 && line.indexOf("#")!=0){
+			line = line.split(",");
+			if ( line.length == 1 ){
+				cat = line[0];
+				//console.log("CATEGORY::",cat);
+				exData[cat]=[];
+			} else {
+				exData[cat].push(line);
+				//console.log(line);
+			}
+		}
+	}
+	console.log(exData);
+}
+var co_base="https://chirimen.org/chirimen/gc/top/examples/#";
+function buildTable(cat){
+	var tbl = document.getElementById("Tbl"+cat);
+	var catData = exData[cat];
+	console.log(tbl,catData);
+	if ( cat == "REMOTE" ){
+		tbl.insertAdjacentHTML('afterbegin', '<tr><td width="100">ID</td><td width="200">タイトル</td><td width="400">概要</td><td>回路図</td><td>JS GET</td><td>PC側webApp (CodeSandbox)</td><td>CHIRIMEN ORIG参考リンク</td>');
+	} else {
+		tbl.insertAdjacentHTML('afterbegin', '<tr><td width="100">ID</td><td width="200">タイトル</td><td width="400">概要</td><td>回路図</td><td>JS GET</td><td>CHIRIMEN ORIG参考リンク</td>');
+	}
+	for ( var item of catData ){
+		var id_td = document.createElement("td");
+		id_td.innerText=item[0];
+		
+		var title_td = document.createElement("td");
+		title_td.innerText=item[1];
+		
+		var exp_td = document.createElement("td");
+		exp_td.innerHTML=item[2];
+		
+		var sch_td = document.createElement("td");
+		sch_td.innerHTML="<a href='./"+item[0]+"/index.html' target='_schematics'>回路図</a>";
+		
+		var js_td = document.createElement("td");
+		if ( iframeReferrer ){
+			js_td.innerHTML="<input type='button' value='JS GET' onclick='jsGet(\""+item[0]+"\",\""+cat+"\")'></input>";
+		} else {
+			js_td.innerHTML="<a href='./"+item[0]+"/main.js' target='_js'>JS GET</a>";
+		}
+		
+		var co_td = document.createElement("td");
+		co_td.innerHTML="<a href='"+co_base+cat+"-"+item[0].toUpperCase()+"' target='_original'>参考</a>";
+		
+		var tr = document.createElement("tr");
+		tr.setAttribute("id",cat+"_"+item[0]);
+		tr.appendChild(id_td);
+		tr.appendChild(title_td);
+		tr.appendChild(exp_td);
+		tr.appendChild(sch_td);
+		tr.appendChild(js_td);
+		
+		if ( cat=="REMOTE"){
+			var pc_td = document.createElement("td");
+			pc_td.innerHTML="<a href='"+getRemotePcCsb(item[0]) + "' target='_pcCsb'>CSB EDIT</a>";
+			tr.appendChild(pc_td);
+		}
+		
+		
+		tr.appendChild(co_td);
+		tbl.appendChild(tr);
+	}
+}
+
+var defDir = "https://tutorial.chirimen.org/pizero/esm-examples/"
+function jsGet(eid,cat){
+	var thisURL = new URL(window.location.href);
+	defDir = thisURL.origin + thisURL.pathname.substring(0,thisURL.pathname.lastIndexOf("/")+1);
+	
+	var jsURL = defDir + eid +"/main.js";
+	//console.log("jsGet:",eid,jsURL);
+	//console.log("postMessage:",jsURL,new URL(iframeReferrer).origin);
+	parent.window.postMessage({req:"getSrc",url:jsURL, exampleId:eid, category:cat},new URL(iframeReferrer).origin);
+}
+
+function getRemotePcCsb(exId){
+	var csbUrl=`https://codesandbox.io/s/github/chirimen-oh/chirimen.org/tree/master/pizero/esm-examples/${exId}/pc?module=pc.js`;
+	return ( csbUrl);
+	
+}
+
+</script>
+<body>
+<h2>CHIRIMEN with Node.js / RPi Zero Examples</h2>
+<a href="../package.json">Latest package.json</a>
+<h3 id="gpio">GPIO Examples</h3>
+<table border="1" id="TblGPIO"></table>
+<h3 id="i2c">I2C Examples</h3>
+<table border="1" id="TblI2C"></table>
+<h3 id="remote">REMOTE Examples</h3>
+<table border="1" id="TblREMOTE"></table>
+<!--<a href="https://chirimen.org/chirimen/gc/top/examples/#i2cExamples">詳しくはこちらを見てね</a>-->
+</body>
+</html>
