@@ -6,3 +6,5 @@
 
 
 ![ボードの写真](../../../partsImgs/WAVESHARE-20471.jpg "ボードの写真")
+
+![ボードの写真 alt](https://github.com/chirimen-oh/chirimen.org/blob/master/partsImgs/WAVESHARE-20471.jpg)
