@@ -10,8 +10,8 @@
   * https://www.switch-science.com/products/3493
 
 * ソフトウェア
-  * [as5600.js](as5600.js) : ドライバ
-  * [main-as5600.js](main-as5600.js) : サンプルアプリ
+  * [as5600.js](https://raw.githubusercontent.com/chirimen-oh/chirimen-drivers/master/packages/as5600/as5600.js) : ドライバ
+  * [main.js](main.js) : サンプルアプリ
   * 両方ともmyAppディレクトリ直下に置く
 
 * AS5600データシート
