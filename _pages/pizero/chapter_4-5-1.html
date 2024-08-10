@@ -190,7 +190,7 @@
 </li>
 <li>複数の関数で変数を使用できるように port 変数を宣言しなおします。</li>
 </ul>
-<pre><code>const sleep = msec =&gt; new Promise(resolve =&gt; setTimeout(resolve, msec)); 
+<pre><code class="language-js">const sleep = msec =&gt; new Promise(resolve =&gt; setTimeout(resolve, msec)); 
 let port; // port 変数を複数の関数で使えるように宣言
 
 async function blink() {
@@ -200,7 +200,7 @@ async function blink() {
 <ul>
 <li>無限ループの処理は削除します。</li>
 </ul>
-<pre><code>  /* ここは削除する
+<pre><code class="language-js">  /* ここは削除する
   // 無限ループ
   for (;;) {
     // 1秒間隔で LED が点滅します
@@ -213,7 +213,7 @@ async function blink() {
 <ul>
 <li>ボタンの初期化処理を記述します。</li>
 </ul>
-<pre><code>  const port2 = gpioAccess.ports.get(5);
+<pre><code class="language-js">  const port2 = gpioAccess.ports.get(5);
   await port2.export("in");
   port2.onchange = showPort;
 }
