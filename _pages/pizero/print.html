@@ -1027,7 +1027,7 @@ async function blink() {
 <ul>
 <li>ボタンの処理を追記します。</li>
 </ul>
-<pre><code>function showPort(ev){
+<pre><code class="language-js">function showPort(ev){
 	console.log(ev.value);
     if (ev.value==0){
         port.write(1);
@@ -1039,7 +1039,7 @@ async function blink() {
 <ul>
 <li>全体のソースコードは以下のとおりとなります。</li>
 </ul>
-<pre><code>import {requestGPIOAccess} from "./node_modules/node-web-gpio/dist/index.js"; // WebGPIO を使えるようにするためのライブラリをインポート
+<pre><code class="language-js">import {requestGPIOAccess} from "./node_modules/node-web-gpio/dist/index.js"; // WebGPIO を使えるようにするためのライブラリをインポート
 const sleep = msec =&gt; new Promise(resolve =&gt; setTimeout(resolve, msec)); // sleep 関数を定義
 let port; // port 変数を複数の関数で使えるように宣言
 
