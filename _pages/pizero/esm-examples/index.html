@@ -66,7 +66,7 @@ function buildTable(cat){
 		exp_td.innerHTML=item[2];
 		
 		var sch_td = document.createElement("td");
-		sch_td.innerHTML="<a href='./"+item[0]+"/index.html' target='_schematics'>回路図</a>";
+		sch_td.innerHTML=`<a href='https://github.com/chirimen-oh/chirimen.org/tree/master/pizero/src/esm-examples/${item[0]}#readme' target='_schematics'>回路図</a>`;
 		
 		var js_td = document.createElement("td");
 		if ( iframeReferrer ){
