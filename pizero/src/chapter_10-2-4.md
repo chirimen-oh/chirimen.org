@@ -14,11 +14,11 @@ Raspberry Pi の GPIO ポートは、全体で流せる電流の上限が決め�
 
 今回は Nch MOSFET「[2SK4017](http://akizukidenshi.com/catalog/g/gI-07597/)」を利用します。
 
-![MOSFET](../imgs/mosfet.png)
+![MOSFET](./imgs/mosfet.png)
 
 プルダウンの GPIO ポートを使った典型的な回路は以下のようになります。
 
-![NCh MOSFET schematic](../imgs/DC3motor-schematic.svg)
+![NCh MOSFET schematic](./imgs/DC3motor-schematic.svg)
 
 ## 電源
 
