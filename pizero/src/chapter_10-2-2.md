@@ -3,7 +3,7 @@
 
 | 外観                            | 内部の接続状態                            |
 | ------------------------------- | ----------------------------------------- |
-| ![外観](../imgs/breadboardImg.jpg) | ![内部の接続状態](../imgs/breadboardSch.png) |
+| ![外観](./imgs/breadboardImg.jpg) | ![内部の接続状態](./imgs/breadboardSch.png) |
 
 * +と-のライン(上下の横のピン列)が無いブレッドボードもあります（CHIRIMEN Starter Kitのブレッドボードにはありません）
 
