@@ -38,7 +38,7 @@ async function blink() {
 
 - ボタンの処理を追記します。
 
-```
+```js
 function showPort(ev){
 	console.log(ev.value);
     if (ev.value==0){
@@ -51,7 +51,7 @@ function showPort(ev){
 
 - 全体のソースコードは以下のとおりとなります。
 
-```
+```js
 import {requestGPIOAccess} from "./node_modules/node-web-gpio/dist/index.js"; // WebGPIO を使えるようにするためのライブラリをインポート
 const sleep = msec => new Promise(resolve => setTimeout(resolve, msec)); // sleep 関数を定義
 let port; // port 変数を複数の関数で使えるように宣言
