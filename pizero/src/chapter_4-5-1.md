@@ -4,7 +4,7 @@
   - 上手く動作しない方は、コピペで動作を確認してみましょう。
 - 複数の関数で変数を使用できるように port 変数を宣言しなおします。
 
-```
+```js
 const sleep = msec => new Promise(resolve => setTimeout(resolve, msec)); 
 let port; // port 変数を複数の関数で使えるように宣言
 
@@ -15,7 +15,7 @@ async function blink() {
 
 - 無限ループの処理は削除します。
 
-```
+```js
   /* ここは削除する
   // 無限ループ
   for (;;) {
@@ -29,7 +29,7 @@ async function blink() {
 
 - ボタンの初期化処理を記述します。
 
-```
+```js
   const port2 = gpioAccess.ports.get(5);
   await port2.export("in");
   port2.onchange = showPort;
