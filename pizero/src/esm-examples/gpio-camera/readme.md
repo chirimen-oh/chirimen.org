@@ -77,5 +77,6 @@ runApp();
 
 ## Note 
   * [dataURL](https://developer.mozilla.org/ja/docs/Web/HTTP/Basics_of_HTTP/Data_URIs)で画像を文字列化すれば比較的簡単にサーバに送信したりできるでしょう。
+    * [リモートカメラサンプル](https://tutorial.chirimen.org/pizero/esm-examples/#REMOTE_remote_camera)
   * 各種センサ (WebGPIO経由で人感センサーなど)を使い、自動的に撮影、サーバにアップロードする仕組みなどもできるでしょう。
   * [pi-camera-connectのリポジトリ](https://github.com/launchcodedev/pi-camera-connect)
