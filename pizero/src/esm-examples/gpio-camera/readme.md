@@ -16,8 +16,8 @@
 
 [Raspberry Piのカメラ](https://www.raspberrypi.com/documentation/accessories/camera.html)をAPIで直接操作する[pi-camera-connect](https://www.npmjs.com/package/pi-camera-connect)を使った方法です。[Pi-Camera](https://github.com/stetsmando/pi-camera)を使った方法([gistはこちら](https://gist.github.com/satakagi/2c5be63d4759fd21eca939f507e7f7ef))より、大幅に高速に画像が取得できることを確認しています。
 ## 準備
-* Raspberry Piカメラモジュール
-  * [例1](https://www.amazon.co.jp/dp/B073RCXGQS/)、[例2](https://www.amazon.co.jp/dp/B086MK17K5/)、[例3](https://www.amazon.co.jp/dp/B08HVRB59N/)
+* Raspberry Piカメラモジュール (最新の純正モジュール(v3)は今のところ非対応です)
+  * [例1:KEYESTUDIO カメラモジュール](https://www.amazon.co.jp/dp/B073RCXGQS/)、[例2](https://www.amazon.co.jp/dp/B086MK17K5/)、[例3](https://www.amazon.co.jp/dp/B08HVRB59N/)
 * Zero用ケーブル～上のモジュールは添付されているようです。
   * 無い場合は [別途調達](https://www.amazon.co.jp/gp/product/B07QH455KY/)
 * [接続のしかた](https://projects.raspberrypi.org/ja-JP/projects/getting-started-with-picamera) : Zeroは専用ケーブルでつなぎます
@@ -25,7 +25,7 @@
 ## セットアップ
 コマンドプロンプトで、以下設定
 * sudo raspi-config
-  * Interface Option ⇒ P1 Camera ⇒ ＜はい＞ ⇒ ＜了解＞ ⇒ ＜Finish＞  (カーソルキーとEnterキーとTABキーで操作)
+  * Interface Option ⇒ P1 Legacy Camera ⇒ ＜はい＞ ⇒ ＜了解＞ ⇒ ＜Finish＞  (カーソルキーとEnterキーとTABキーで操作)
   * 参考：[この情報を参考に](https://www.rs-online.com/designspark/raspberry-pi-camera-jp)
 * cd ~/myApp
 * npm install pi-camera-connect
