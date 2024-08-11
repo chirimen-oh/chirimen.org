@@ -27,6 +27,11 @@
 * sudo raspi-config
   * Interface Option ⇒ P1 Legacy Camera ⇒ ＜はい＞ ⇒ ＜了解＞ ⇒ ＜Finish＞  (カーソルキーとEnterキーとTABキーで操作)
   * 参考：[この情報を参考に](https://www.rs-online.com/designspark/raspberry-pi-camera-jp)
+* カメラ単体テスト
+  * vcgencmd get_camera
+    * 出力：supported=1 detected=1
+  * raspistill -v -o test.jpg
+    * 出力：カメラの情報、画像ファイル保存
 * cd ~/myApp
 * npm install pi-camera-connect
 
