@@ -30,7 +30,7 @@
 * カメラ単体テスト
   * vcgencmd get_camera
     * 出力：supported=1 detected=1
-  * raspistill -v -o test.jpg
+  * raspistill -v -w 640 -h 480 -o test.jpg
     * 出力：カメラの情報、画像ファイル保存
 * cd ~/myApp
 * npm install pi-camera-connect
