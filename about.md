@@ -36,7 +36,7 @@ Raspberry Pi で CHIRIMEN 環境を使うには、[ビルドイメージ](https:
 - [Node.js から使うこともできます](raspi/nodejs)
 
 ## CHIRIMEN Raspberry Pi Zero 版
-Raspberry Pi Zero　(ネットワーク環境が必要なため、Zero W　もしくは Zero WH (ピンヘッダはんだ付け済み品) 、Raspberry Pi Zero 2 W の使用を強く推奨します。)で CHIRIMEN 環境を使うには、[ビルドイメージ](https://github.com/chirimen-oh/chirimen-lite/releases) を、 [Raspberry Pi Imager](raspi/sdcard2) や [Etcher で microSD カードに書き込み](raspi/sdcard)、Raspberry Pi Zero を起動してください。
+Raspberry Pi Zero　(ネットワーク環境が必要なため、Zero W　もしくは Zero WH (ピンヘッダはんだ付け済み品) 、Raspberry Pi Zero 2 W の使用を強く推奨します。)で CHIRIMEN 環境を使うには、[ビルドイメージ](https://github.com/chirimen-oh/chirimen-lite/releases/latest) を [microSD カードに書き込み](raspi/sdcard)、Raspberry Pi Zero を起動してください。
 
 - [CHIRIMEN for Raspberry Zero について](pizero)
 

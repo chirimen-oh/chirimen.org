@@ -59,9 +59,13 @@ SD カードの書き込みに使う PC で最新の起動イメージをダウ�
 インストールが完了したら、次の手順で SD カードにイメージを書き込みます。
 
 1. Raspberry Pi Imager を起動します。
-2. "Operating System" をクリックし、「CHIRIMEN Raspi」用のダウンロードしたイメージを選択します。必要に応じて、"Use custom" からファイルを選ぶことができます。
+2. "Operating System" をクリックし、"Use custom" から「CHIRIMEN Raspi」用のダウンロードしたイメージを選択します。
 3. "Storage" をクリックし、書き込み先の microSD カードを選択します。
 4. "Write" ボタンをクリックし、書き込みを開始します。
+
+![Imagerの起動画面](./imgs/imager/RaspberryPiImager1.png)
+![Imagerの起動画面](./imgs/imager/RaspberryPiImager2.png)
+![Imagerの起動画面](./imgs/imager/RaspberryPiImager3.png)
 
 これで、CHIRIMEN Raspi 用の microSD カードが作成されます。
 

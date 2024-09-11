@@ -9,6 +9,7 @@ https://tutorial-chirimen-org.netlify.com/*   https://tutorial.chirimen.org/:spl
 /raspi3/ja/*      /raspi/:splat
 /raspi3/en/*      /en/raspi/:splat
 /raspi3/*         /raspi/:splat
+/raspi/sdcard2    /raspi/sdcard
 /raspi/partslist  /partslist
 /pizero/pizeronodejs              /pizero/
 /pizero/pizeronodejs.html         /pizero/
