@@ -8,7 +8,7 @@
 
 
         <!-- Custom HTML head -->
-        
+
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="theme-color" content="#ffffff">
@@ -477,7 +477,7 @@
 <li><strong>microSDカード</strong>
 <ul>
 <li><a href="https://github.com/chirimen-oh/chirimen-lite/releases/latest">CHIRIMEN Lite 最新リリース版</a>を書き込みます</li>
-<li>自分でイメージを書き込む場合は、「<a href="https://tutorial.chirimen.org/raspi/sdcard">SDカードの作成の手順</a>」をご参考ください。</li>
+<li>自分でイメージを書き込む場合は「<a href="https://tutorial.chirimen.org/raspi/sdcard">SDカードの作成の手順</a>」をご参考ください。</li>
 </ul>
 </li>
 <li><strong>USBケーブル (USB A - MicroB)</strong></li>
@@ -702,7 +702,7 @@
 const sleep = msec =&gt; new Promise(resolve =&gt; setTimeout(resolve, msec)); // sleep 関数を定義
 
 async function blink() {
-  const gpioAccess = await requestGPIOAccess(); // GPIO を操作する 
+  const gpioAccess = await requestGPIOAccess(); // GPIO を操作する
   const port = gpioAccess.ports.get(26); // 26 番ポートを操作する
 
   await port.export("out"); // ポートを出力モードに設定
@@ -760,7 +760,7 @@ blink();
 const sleep = msec =&gt; new Promise(resolve =&gt; setTimeout(resolve, msec)); // sleep 関数を定義
 
 async function blink() {
-  const gpioAccess = await requestGPIOAccess(); // GPIO を操作する 
+  const gpioAccess = await requestGPIOAccess(); // GPIO を操作する
   const port = gpioAccess.ports.get(26); // 26 番ポートを操作する
 
   await port.export("out"); // ポートを出力モードに設定
@@ -996,11 +996,11 @@ switchCheck();
 </li>
 <li>複数の関数で変数を使用できるように port 変数を宣言しなおします。</li>
 </ul>
-<pre><code class="language-js">const sleep = msec =&gt; new Promise(resolve =&gt; setTimeout(resolve, msec)); 
+<pre><code class="language-js">const sleep = msec =&gt; new Promise(resolve =&gt; setTimeout(resolve, msec));
 let port; // port 変数を複数の関数で使えるように宣言
 
 async function blink() {
-  const gpioAccess = await requestGPIOAccess(); 
+  const gpioAccess = await requestGPIOAccess();
   port = gpioAccess.ports.get(26); // 26 番ポートを操作する、ここの変数は宣言済みなので const は削除する
 </code></pre>
 <ul>
@@ -1044,7 +1044,7 @@ const sleep = msec =&gt; new Promise(resolve =&gt; setTimeout(resolve, msec)); /
 let port; // port 変数を複数の関数で使えるように宣言
 
 async function blink() {
-  const gpioAccess = await requestGPIOAccess(); // GPIO を操作する 
+  const gpioAccess = await requestGPIOAccess(); // GPIO を操作する
   port = gpioAccess.ports.get(26); // 26 番ポートを操作する、ここの変数は宣言済みなので const 宣言は削除する
 
   await port.export("out"); // ポートを出力モードに設定
@@ -1136,14 +1136,14 @@ I2Cデバイスは小型のICチップデバイスとなっており、デバイ
 <p>i2cdetect を実行したら以下の様にスキャンした結果が CHIRIMENパネルやターミナルに表示されます。</p>
 <pre>
      0  1  2  3  4  5  6  7  8  9  a  b  c  d  e  f
-00:          -- -- -- -- -- -- -- -- -- -- -- -- -- 
-10: -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- 
-20: -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- 
-30: -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- 
-40: -- -- -- -- 44 -- -- -- -- -- -- -- -- -- -- -- 
-50: -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- 
-60: -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- 
-70: -- -- -- -- -- -- -- --                       
+00:          -- -- -- -- -- -- -- -- -- -- -- -- --
+10: -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
+20: -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
+30: -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
+40: -- -- -- -- 44 -- -- -- -- -- -- -- -- -- -- --
+50: -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
+60: -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
+70: -- -- -- -- -- -- -- --
 </pre>
 <p>0x44 の表示が見えない時は正しく接続がされていません。
 回路図を確認して正しく接続が出来ているかを再確認してください。</p>
@@ -1290,14 +1290,14 @@ import SHT30 from "@chirimen/sht30";
 </ul>
 <pre>
      0  1  2  3  4  5  6  7  8  9  a  b  c  d  e  f
-00:          -- -- -- -- -- -- -- -- -- -- -- -- -- 
-10: -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- 
-20: -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- 
-30: -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- 
-40: -- -- -- -- -- -- -- -- 48 -- -- -- -- -- -- -- 
-50: -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- 
-60: -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- 
-70: -- -- -- -- -- -- -- --                       
+00:          -- -- -- -- -- -- -- -- -- -- -- -- --
+10: -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
+20: -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
+30: -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
+40: -- -- -- -- -- -- -- -- 48 -- -- -- -- -- -- --
+50: -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
+60: -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
+70: -- -- -- -- -- -- -- --
 </pre>
 <h3 id="実行する-1"><a class="header" href="#実行する-1">実行する</a></h3>
 <ul>
@@ -1390,7 +1390,7 @@ async function connect(){
 	var mbGpioPorts = gpioAccess.ports;
 	gpioPort0 = mbGpioPorts.get(26);
 	await gpioPort0.export("out"); //port0 out
-	
+
 	// webSocketリレーの初期化
 	var relay = RelayServer("chirimentest", "chirimenSocket" , nodeWebSocketLib, "https://chirimen.org");
 	channel = await relay.subscribe("chirimenLED");
@@ -1853,7 +1853,7 @@ function OffLED(){ // LED OFF
 </li>
 <li>カメラ接続確認のコマンド</li>
 </ul>
-<pre><code>$ vcgencmd get_camera 
+<pre><code>$ vcgencmd get_camera
 supported=1 detected=1, libcamera interfaces=0
 </code></pre>
 <ul>
@@ -2191,7 +2191,7 @@ I2Cデバイスは小型のICチップデバイスとなっており、デバイ
 <img src="https://tech.microbit.org/docs/hardware/assets/edge_connector.svg" alt="micro:bitのI端子" /></p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="1052-i2cの詳細情報とポイント"><a class="header" href="#1052-i2cの詳細情報とポイント">10.5.2 I2Cの詳細情報とポイント</a></h1>
 <h2 id="参考-i2c-に関する詳細情報"><a class="header" href="#参考-i2c-に関する詳細情報">参考: I2C に関する詳細情報</a></h2>
-<p>I2C に関する詳細は下記をご参照ください。</p>
+<p>I2C に関する詳細は下記をご確認ください。</p>
 <ul>
 <li><a href="https://ja.wikipedia.org/wiki/I2C">I2C</a> - Wikipedia</li>
 <li>I2C バス仕様書 最新版（<a href="https://www.nxp.com/docs/ja/user-guide/UM10204.pdf">日本語</a>、<a href="http://www.nxp.com/documents/user_manual/UM10204.pdf">English</a>）</li>

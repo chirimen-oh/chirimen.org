@@ -10,7 +10,7 @@
   * Pi Zero **2** W: [ケイエスワイ](https://raspberry-pi.ksyic.com/main/index/pdp.id/849/pdp.open/849), [秋月電子](https://akizukidenshi.com/catalog/g/g117398/), [スイッチサイエンス](https://www.switch-science.com/collections/raspberry-pi/products/7600), [マルツ](https://www.marutsu.co.jp/pc/i/2792770/)
 * **microSDカード**
   * [CHIRIMEN Lite 最新リリース版](https://github.com/chirimen-oh/chirimen-lite/releases/latest)を書き込みます
-  * 自分でイメージを書き込む場合は、「[SDカードの作成の手順](https://tutorial.chirimen.org/raspi/sdcard)」をご参考ください。
+  * 自分でイメージを書き込む場合は「[SDカードの作成の手順](https://tutorial.chirimen.org/raspi/sdcard)」をご確認ください。
 * **USBケーブル (USB A - MicroB)**
 * **Lチカ用パーツ**(以下のパーツ一式を用意します)
   * ブレッドボード

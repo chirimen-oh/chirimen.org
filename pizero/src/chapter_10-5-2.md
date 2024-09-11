@@ -1,7 +1,8 @@
-# 10.5.2 I2Cの詳細情報とポイント
+# 10.5.2 I2C の詳細情報とポイント
+
 ## 参考: I2C に関する詳細情報
 
-I2C に関する詳細は下記をご参照ください。
+I2C に関する詳細は下記をご確認ください。
 
 - [I2C](https://ja.wikipedia.org/wiki/I2C) - Wikipedia
 - I2C バス仕様書 最新版（[日本語](https://www.nxp.com/docs/ja/user-guide/UM10204.pdf)、[English](http://www.nxp.com/documents/user_manual/UM10204.pdf)）

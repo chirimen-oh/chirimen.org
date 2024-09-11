@@ -22,7 +22,7 @@ CHIRIMEN とは、Webの標準的な技術・ブラウザやNode.js等で実行�
   * WWWのサービスと簡単に連携できる
   * ユーザーインターフェースやコンテンツを簡単に作れる
   * Webブラウザを使って開発できる
- 
+
 # ハードウェア・デバイス
 
 - [予備知識・資料集～電子工作について](../reference#section-1)
@@ -318,7 +318,7 @@ I2Cデバイスは小型のICチップデバイスとなっており、デバイ
 
 ## 参考: I2C に関する詳細情報
 
-I2C に関する詳細は下記をご参照ください。
+I2C に関する詳細は下記をご確認ください。
 
 - [I2C](https://ja.wikipedia.org/wiki/I2C) - Wikipedia
 - I2C バス仕様書 最新版（[日本語](https://www.nxp.com/docs/ja/user-guide/UM10204.pdf)、[English](http://www.nxp.com/documents/user_manual/UM10204.pdf)）
@@ -449,7 +449,7 @@ CHIRIMENでは、GPIOインターフェースをWeb GPIOと呼ぶAPIで使用し
 ### I2C 温湿度センサー (SHT30, SHT31)の使用例
 
  Raspberry Pi, micro:bitでは、index.htmlの中で、Raspberry Pi Zero Wではmain.jsの中で以下のライブラリを読み込んでいます。
-  
+
 * WebI2C APIを使用できるようにするためのライブラリ( Raspberry Pi: `polyfill.js`, micro:bit: `microbitble.js`, Raspberry Pi Zero W: xxx)でうｓ。
 
 * ( Raspberry Pi, micro:bit:`https://cdn.jsdelivr.net/npm/@chirimen/sht30`、 Raspberry Pi Zero W: `@chirimen/sht30`)　このファイルは、Web I2C API を使って SHT30 との通信を行うための、SHT30用のデバイスドライバー (ハードウェアを操作する為のライブラリ) です。
@@ -506,7 +506,7 @@ CHIRIMEN RasPi、RasPiZero、micro:bit で利用可能な I2C ポート番号は
 1. **I2C の準備:** `await navigator.requestI2CAccess()` で I2CAccess インタフェースを取得
 2. **ポートの準備:** `await i2cAccess.ports.get(1)` で、1 番ポートの `port` オブジェクトを取得
 3. **デバイス初期化:** `await port.open(0x44)` で、SlaveAddress `0x44` 番の I2CSlaveDevice インタフェースを取得
-4. **データ読み込み・書き込み:** 
+4. **データ読み込み・書き込み:**
 
 この流れは他の I2C デバイスでも基本的に同様になります。
 
@@ -536,7 +536,7 @@ if (!slaveAddress){
 ```js
 // 単発高精度計測指示コマンドをi2cインターフェースに送信（
 // データシート９～１０ページ、及び２ページ（計測精度スペック））
-await this.i2cSlave.write8(0x2C, 0x06); 
+await this.i2cSlave.write8(0x2C, 0x06);
 // 計測完了の待機時間(100ms)
 //（データシート７ページ～15ms以上の待機）
 await sleep(100);

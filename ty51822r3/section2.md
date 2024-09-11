@@ -44,7 +44,7 @@ CHIRIMEN with ty51822r3 ではマスターとなるのが TY51822r3 で、各種
 
 ブレッドボードで使えるようにモジュール化されたセンサー等、通信するデバイス同士が同一基板上にない場合には SDA、SCL の2本の通信線に加え電源と GND の線を加えて 4 本のケーブルを用いて接続するのが一般的です。
 
-詳細は下記をご参照ください。
+詳細は下記をご確認ください。
 
 - [I2C](https://ja.wikipedia.org/wiki/I2C) - Wikipedia
 - I2C バス仕様書 最新版（[日本語](https://www.nxp.com/docs/ja/user-guide/UM10204.pdf)、[English](http://www.nxp.com/documents/user_manual/UM10204.pdf)）
