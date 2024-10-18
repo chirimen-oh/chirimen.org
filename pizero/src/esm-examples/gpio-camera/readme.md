@@ -22,6 +22,9 @@ _この章は[こちらの記事](https://gist.github.com/satakagi/1b5adc8dff823
   - 無い場合は [別途調達](https://www.amazon.co.jp/gp/product/B07QH455KY/)
 - [接続のしかた](https://projects.raspberrypi.org/ja-JP/projects/getting-started-with-picamera) : Zero は専用ケーブルでつなぎます
 
+> **Note**\
+> 利用可能なカメラモジュールは v1、v3 です。Camera Module v2 には未対応です。
+
 ## カメラの動作テスト
 
 以下のコマンドで画像ファイルが保存されます:
