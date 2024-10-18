@@ -10,32 +10,41 @@
 
 # カメラのセットアップと動作確認
 
-_この章は[こちらの記事の再掲](https://gist.github.com/satakagi/1b5adc8dff8236421a593b93fa152222)です。_
+_この章は[こちらの記事](https://gist.github.com/satakagi/1b5adc8dff8236421a593b93fa152222)を改変して作成されました。_
 
 [Raspberry Pi のカメラ](https://www.raspberrypi.com/documentation/accessories/camera.html)を API で直接操作する[pi-camera-connect](https://www.npmjs.com/package/pi-camera-connect)を使った方法です。[Pi-Camera](https://github.com/stetsmando/pi-camera)を使った方法([gist はこちら](https://gist.github.com/satakagi/2c5be63d4759fd21eca939f507e7f7ef))より、大幅に高速に画像が取得できることを確認しています。
 
 ## 準備
 
-- Raspberry Pi カメラモジュール (最新の純正モジュール(v3)は今のところ非対応です)
+- Raspberry Pi カメラモジュール
   - [例 1:KEYESTUDIO カメラモジュール](https://www.amazon.co.jp/dp/B073RCXGQS/)、[例 2](https://www.amazon.co.jp/dp/B086MK17K5/)、[例 3](https://www.amazon.co.jp/dp/B08HVRB59N/)
 - Zero 用ケーブル～上のモジュールは添付されているようです。
   - 無い場合は [別途調達](https://www.amazon.co.jp/gp/product/B07QH455KY/)
 - [接続のしかた](https://projects.raspberrypi.org/ja-JP/projects/getting-started-with-picamera) : Zero は専用ケーブルでつなぎます
 
-## セットアップ
+## カメラの動作テスト
 
-コマンドプロンプトで、以下設定
+以下のコマンドで画像ファイルが保存されます:
 
-- sudo raspi-config
-  - Interface Option ⇒ P1 Legacy Camera ⇒ ＜はい＞ ⇒ ＜了解＞ ⇒ ＜ Finish ＞ (カーソルキーと Enter キーと TAB キーで操作)
-  - 参考：[この情報を参考に](https://www.rs-online.com/designspark/raspberry-pi-camera-jp)
-- カメラ単体テスト
-  - vcgencmd get_camera
-    - 出力：supported=1 detected=1
-  - raspistill -v -w 640 -h 480 -o test.jpg
-    - 出力：カメラの情報、画像ファイル保存
-- cd ~/myApp
-- npm install pi-camera-connect
+```
+raspistill -v --width 640 --height 480 -o test.jpg
+```
+
+> **Note**\
+> [Raspberry Pi Zero 用 CHIRIMEN v1.4.0](https://github.com/chirimen-oh/chirimen-lite/releases) 以上をお使いの場合、`rpicam-still --list-cameras` コマンドで利用可能なカメラの一覧を表示可能です:
+>
+> ```
+> $ rpicam-still --list-cameras
+> Available cameras
+> -----------------
+> 0 : ov5647 [2592x1944 10-bit GBRG] (/base/soc/i2c0mux/i2c@1/ov5647@36)
+>     Modes: 'SGBRG10_CSI2P' : 640x480 [58.92 fps - (16, 0)/2560x1920 crop]
+>                              1296x972 [43.25 fps - (0, 0)/2592x1944 crop]
+>                              1920x1080 [30.62 fps - (348, 434)/1928x1080 crop]
+>                              2592x1944 [15.63 fps - (0, 0)/2592x1944 crop]
+> ```
+>
+> 詳細: [Camera software - Raspberry Pi Documentation](https://www.raspberrypi.com/documentation/computers/camera_software.html)
 
 ## サンプル
 
