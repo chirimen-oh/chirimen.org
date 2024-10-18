@@ -31,7 +31,7 @@ raspistill -v --width 640 --height 480 -o test.jpg
 ```
 
 > **Note**\
-> [Raspberry Pi Zero 用 CHIRIMEN v1.4.0](https://github.com/chirimen-oh/chirimen-lite/releases) 以上をお使いの場合、`rpicam-still --list-cameras` コマンドで利用可能なカメラの一覧を表示可能です:
+> [Raspberry Pi Zero 用 CHIRIMEN v1.4.0 以上](https://github.com/chirimen-oh/chirimen-lite/releases) をお使いの場合、`rpicam-still --list-cameras` コマンドで利用可能なカメラの一覧を表示可能です:
 >
 > ```
 > $ rpicam-still --list-cameras
