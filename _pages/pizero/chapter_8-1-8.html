@@ -189,14 +189,31 @@
 <li>折り曲げない様に注意</li>
 </ul>
 </li>
-<li>カメラ接続確認のコマンド</li>
 </ul>
-<pre><code>$ vcgencmd get_camera 
-supported=1 detected=1, libcamera interfaces=0
+<blockquote>
+<p><strong>Note</strong><br />
+利用可能なカメラモジュールは v1、v3 です。
+また Raspberry Pi Zero 用 CHIRIMEN v1.4.0 未満をお使いの場合、Camera Module v3 には未対応です。
+<a href="https://github.com/chirimen-oh/chirimen-lite/releases">Raspberry Pi Zero 用 CHIRIMEN v1.4.0 以上</a> をお使いください。</p>
+</blockquote>
+<h2 id="カメラの動作テスト"><a class="header" href="#カメラの動作テスト">カメラの動作テスト</a></h2>
+<p>以下のコマンドで画像ファイルが保存されます:</p>
+<pre><code>raspistill -v --width 640 --height 480 -o test.jpg
 </code></pre>
-<ul>
-<li>detected=1 と表示されていたら正しく接続が出来ています。</li>
-</ul>
+<blockquote>
+<p><strong>Note</strong><br />
+<a href="https://github.com/chirimen-oh/chirimen-lite/releases">Raspberry Pi Zero 用 CHIRIMEN v1.4.0 以上</a> をお使いの場合、<code>rpicam-still --list-cameras</code> コマンドで利用可能なカメラの一覧を表示可能です:</p>
+<pre><code>$ rpicam-still --list-cameras
+Available cameras
+-----------------
+0 : ov5647 [2592x1944 10-bit GBRG] (/base/soc/i2c0mux/i2c@1/ov5647@36)
+    Modes: 'SGBRG10_CSI2P' : 640x480 [58.92 fps - (16, 0)/2560x1920 crop]
+                             1296x972 [43.25 fps - (0, 0)/2592x1944 crop]
+                             1920x1080 [30.62 fps - (348, 434)/1928x1080 crop]
+                             2592x1944 [15.63 fps - (0, 0)/2592x1944 crop]
+</code></pre>
+<p>詳細: <a href="https://www.raspberrypi.com/documentation/computers/camera_software.html">Camera software - Raspberry Pi Documentation</a></p>
+</blockquote>
 <p><a href="./chapter_8-1.html">応用センサー一覧に戻る</a></p>
 
                     </main>
