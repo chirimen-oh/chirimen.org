@@ -1,4 +1,4 @@
-# 10.2.2 レッドボード
+# 10.2.2 ブレッドボード
 - [ブレッドボードの使い方](https://shop.sunhayato.co.jp/blogs/problem-solving/breadboard) (サンハヤト社)
 
 | 外観                            | 内部の接続状態                            |
