@@ -23,8 +23,8 @@ CHIRIMEN を利用するに際して、知っておくと良い予備知識や�
   - [抵抗のカラーコードの読み方(JARL)](https://www.jarl.org/Japanese/7_Technical/lib1/teikou.htm)
   - [テスターで抵抗値を確認する(始める電子回路)](http://startelc.com/elcLink/tester/elc_nArtcTester2.html#chapter-2)
 - ブレッドボード
-  - [ブレッドボードの使い方 (サンハヤト)](https://www.sunhayato.co.jp/problem-solving/howto_SAD-101.html)
-  - [小さいブレッドボード (Switch Science)](https://www.sunhayato.co.jp/material2/ett03/item_787)
+  - [ブレッドボードの使い方 (サンハヤト)](https://shop.sunhayato.co.jp/blogs/problem-solving/breadboard)
+  - [小さいブレッドボード (Switch Science)](https://www.switch-science.com/products/2282)
   - [ミニブレッドボード (秋月電子)](https://akizukidenshi.com/catalog/g/gP-05155/)
 - タクトスイッチ
   - [タクトスイッチとは (準備中)](https://tutorial.chirimen.org/raspi/section1#section-4)
