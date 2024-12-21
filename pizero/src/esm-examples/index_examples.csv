@@ -48,6 +48,7 @@ scd40,CO2センサ,I2C接続のCO2センサーSCD40の値を表示します。
 #seesaw,多機能I/F,I2C接続の多機能インターフェースボードseesawを使用します。adafruitのseesawはデジタル入出力、アナログ入力、PWM出力、NeopixelLEDドライブ等の機能を持つ多目的なインターフェースボードです。このサンプルではNeopixelLED以外の機能を動かしています。
 #seesawNpix,NeopixelLED,I2C接続の多機能インターフェースボードseesawでI2C接続の多機能インターフェースボードseesawでNeopixelLEDモジュールを２個ドライブしています。
 sht30,温度・湿度センサ,I2C接続の温度・湿度センサーSHT30の値を表示します。
+sht40,温度・湿度センサ,I2C接続の温度・湿度センサーSHT40の値を表示します。
 ssd1306,有機ELディスプレイ,I2C接続の小さなOLED（有機EL 128x64px）SSD1306ディスプレイへ文字を表示します。
 ssd1308,有機ELディスプレイ,I2C接続の小さなOLED（有機EL 128x64px）SSD1308(Grove-OledDisplay)ディスプレイへ文字を表示します。
 tcs34725,色センサ,I2C接続の色センサーTCS34725の値を表示します
