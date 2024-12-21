@@ -45,6 +45,7 @@
         "@chirimen/seesaw": "latest",
         "@chirimen/sgp40": "latest",
         "@chirimen/sht30": "latest",
+        "@chirimen/sht40": "latest",
         "@chirimen/tca9548a": "latest",
         "@chirimen/tcs34725": "latest",
         "@chirimen/tsl2591": "latest",
