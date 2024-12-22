@@ -54,9 +54,11 @@
         "@chirimen/veml6070": "latest",
         "@chirimen/vl53l0x": "latest",
         "@chirimen/vl53l1x": "latest",
+        "libcamera": "^1.0.7",
         "node-web-gpio": "latest",
         "node-web-i2c": "latest",
         "pi-camera-connect": "^0.3.4",
+        "python-shell": "^5.0.0",
         "websocket": "latest"
     }
 }
