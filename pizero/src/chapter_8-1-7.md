@@ -12,7 +12,7 @@
 
 動作を確認するためのサンプルコードは `CHIRIMENパネル` から入手できます。<br>
 ブラウザでサンプルコードの中を確認したい場合は `コードを確認する` から確認出来ます。
-- 人感センサー ＞ **ID：hbridge2-pca9685pwm　タイトル：モータ正転・逆転・速度制御**
+- アクチュエーター（DCモーター） ＞ **ID：hbridge2-pca9685pwm　タイトル：モータ正転・逆転・速度制御**
   -  [※コードを確認する](https://tutorial.chirimen.org/pizero/esm-examples/gpio-onchange/main.js)
 
 【備考】
