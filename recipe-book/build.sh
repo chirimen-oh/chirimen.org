@@ -8,10 +8,10 @@ find docs/ -type f -name "*.html" -exec rm {} \;
 npm run generate-toc
 
 echo 'remove old pdf'
-rm "CHIRIMEN Raspberry Pi Zero W チュートリアル.pdf"
+rm "CHIRIMEN 対応デバイスレシピ集.pdf"
 
 echo 'build start'
 npm run build
 
 echo 'move book folder'
-mv -f "CHIRIMEN Raspberry Pi Zero W チュートリアル.pdf" book/
+mv -f "CHIRIMEN 対応デバイスレシピ集.pdf" book/
