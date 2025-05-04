@@ -2,8 +2,13 @@
 
 ## 配線図
 
-![配線図](./schematic.png "schematic")
+![配線図](./schematic.png "schematic"){width=300px height=300px}
 
+## ドライバのインストール
+
+```
+npm i @chirimen/bh1750
+```
 
 ## サンプルコード (main.js)
 

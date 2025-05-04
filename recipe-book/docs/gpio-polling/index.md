@@ -2,7 +2,11 @@
 
 ## 配線図
 
-![配線図](./PiZero_gpio1.png "schematic")
+![配線図](./PiZero_gpio1.png "schematic"){width=300px height=300px}
+
+## ドライバのインストール
+
+- 不要です。
 
 GPIO PORT5に繋ぎます
 

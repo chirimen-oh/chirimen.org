@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8" />
+    <title>VL53L0X レーザー測距センサー 30 mm - 2 m</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="../../themes/node_modules/@vivliostyle/theme-techbook/theme.css"
+    />
+  </head>
+  <body>
+    <section
+      class="level1"
+      aria-labelledby="vl53l0x-レーザー測距センサー-30-mm---2-m"
+    >
+      <h1 id="vl53l0x-レーザー測距センサー-30-mm---2-m">
+        VL53L0X レーザー測距センサー 30 mm - 2 m
+      </h1>
+      <section class="level2" aria-labelledby="配線図">
+        <h2 id="配線図">配線図</h2>
+        <figure>
+          <img
+            src="./schematic.png"
+            alt="配線図"
+            title="schematic"
+            width="300px"
+            height="300px"
+          />
+          <figcaption aria-hidden="true">配線図</figcaption>
+        </figure>
+      </section>
+      <section class="level2" aria-labelledby="ドライバのインストール">
+        <h2 id="ドライバのインストール">ドライバのインストール</h2>
+        <pre
+          class="language-text"
+        ><code class="language-text">npm i @chirimen/vl53l0x</code></pre>
+      </section>
+      <section class="level2" aria-labelledby="サンプルコード-mainjs">
+        <h2 id="サンプルコード-mainjs">サンプルコード (main.js)</h2>
+        <pre
+          class="language-javascript"
+        ><code class="language-javascript"><span class="token keyword module">import</span> <span class="token imports"><span class="token punctuation">{</span>requestI2CAccess<span class="token punctuation">}</span></span> <span class="token keyword module">from</span> <span class="token string">"./node_modules/node-web-i2c/index.js"</span><span class="token punctuation">;</span>
+<span class="token keyword module">import</span> <span class="token constant">VL53L0X</span> <span class="token keyword module">from</span> <span class="token string">"@chirimen/vl53l0x"</span><span class="token punctuation">;</span>
+<span class="token keyword">const</span> <span class="token function-variable function">sleep</span> <span class="token operator">=</span> <span class="token parameter">msec</span> <span class="token arrow operator">=&gt;</span> <span class="token keyword">new</span> <span class="token class-name">Promise</span><span class="token punctuation">(</span><span class="token parameter">resolve</span> <span class="token arrow operator">=&gt;</span> <span class="token function">setTimeout</span><span class="token punctuation">(</span>resolve<span class="token punctuation">,</span> msec<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token keyword">async</span> <span class="token keyword">function</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">const</span> i2cAccess <span class="token operator">=</span> <span class="token keyword control-flow">await</span> <span class="token function">requestI2CAccess</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token keyword">const</span> port <span class="token operator">=</span> i2cAccess<span class="token punctuation">.</span><span class="token property-access">ports</span><span class="token punctuation">.</span><span class="token method function property-access">get</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token keyword">const</span> vl <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">VL53L0X</span><span class="token punctuation">(</span>port<span class="token punctuation">,</span> <span class="token number">0x29</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token keyword control-flow">await</span> vl<span class="token punctuation">.</span><span class="token method function property-access">init</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// for Long Range Mode (&lt;2m) : await vl.init(true);</span>
+  <span class="token keyword control-flow">for</span> <span class="token punctuation">(</span><span class="token punctuation">;</span><span class="token punctuation">;</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">const</span> distance <span class="token operator">=</span> <span class="token keyword control-flow">await</span> vl<span class="token punctuation">.</span><span class="token method function property-access">getRange</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token console class-name">console</span><span class="token punctuation">.</span><span class="token method function property-access">log</span><span class="token punctuation">(</span><span class="token template-string"><span class="token template-punctuation string">`</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>distance<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string"> [mm]</span><span class="token template-punctuation string">`</span></span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword control-flow">await</span> <span class="token function">sleep</span><span class="token punctuation">(</span><span class="token number">500</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+</code></pre>
+        <hr />
+        <p><a href="../index.md">← 目次に戻る</a></p>
+      </section>
+    </section>
+  </body>
+</html>

@@ -6,7 +6,7 @@
 センサーの動作に必要なサンプルコードや回路図を豊富に掲載しており、初心者から経験者まで幅広くご活用いただけます。
 
 - 公式サイト：[CHIRIMEN Raspberry Pi Zero W チュートリアル](https://tutorial.chirimen.org/pizero/)
-- 書籍：[ちりめんぱいぜろちゅーとりある](https://techbookfest.org/product/xmqdikrtEeFfyVxawvJKJf?productVariantID=6VgwkjJMzi5isuEeJLhEyk)
+- 書籍：[ちりめんぱいぜろちゅーとりある](https://x.gd/OmMZJ)
 
 上記と併せて読んで頂くとより一層理解が深まります。
 
@@ -27,8 +27,8 @@
 
 #### 主な購入先：
 
-- KSY：[Raspberry Pi Zero WH [RASPIZWHSC0065]](https://raspberry-pi.ksyic.com/main/index/pdp.id/406,407,408,409,410,219,222/pdp.open/219)
-- SWITCH SCIENCE：[Raspberry Pi Zero WH [RPI-ZERO-WH]](https://www.switch-science.com/products/3646?_pos=1&_sid=e9fd90251&_ss=r)
+- KSY：[Raspberry Pi Zero WH [RASPIZWHSC0065]](https://x.gd/HytS7)
+- SWITCH SCIENCE：[Raspberry Pi Zero WH [RPI-ZERO-WH]](https://x.gd/KF2aF)
 
 #### 必要な Node.js ライブラリ
 
@@ -43,9 +43,14 @@
 
 ### 直ぐに開発を始めたい方
 
+- 公式サイト：[CHIRIMEN Raspberry Pi Zero W チュートリアル](https://tutorial.chirimen.org/pizero/) にアクセスして下さい。
+- 書籍：[ちりめんぱいぜろちゅーとりある](https://x.gd/OmMZJ)をご購入下さい。
+
+
+<!-- 
 - [CHIRIMEN Raspberry Pi Zero W チュートリアル](https://tutorial.chirimen.org/pizero/) にアクセスして下さい。
   - [物品準備、PC を WiFi に接続](https://tutorial.chirimen.org/pizero/chapter_2-1)
   - [ターミナル接続](https://tutorial.chirimen.org/pizero/chapter_2-2)
     - [接続先：Pi Zero Web Serial Console](https://chirimen.org/PiZeroWebSerialConsole/PiZeroWebSerialConsole.html)
   - [Pi Zero Web Serial Console の使い方](https://tutorial.chirimen.org/pizero/chapter_2-2-1)
-  - [Wi-fi 設定](https://tutorial.chirimen.org/pizero/chapter_2-3)
+  - [Wi-fi 設定](https://tutorial.chirimen.org/pizero/chapter_2-3) -->

@@ -3,11 +3,17 @@
 
 ## 配線図
 
-![配線図](schematic.png "schematic")
+![配線図](schematic.png "schematic"){width=300px height=300px}
 
 ## 遠隔モニタ(PC/スマホブラウザ)側
 
 [pc/index.html](https://codesandbox.io/s/github/chirimen-oh/chirimen.org/tree/master/pizero/src/esm-examples/remote_sht30_gpioin/pc?module=pc.js)を起動します。
+
+## ドライバのインストール
+
+```
+npm i @chirimen/sht30
+```
 
 ## サンプルコード (main.js)
 

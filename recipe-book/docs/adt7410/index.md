@@ -2,8 +2,14 @@
 
 ## 配線図
 
-![配線図1](./PiZero_ADT7410.png "schematic")
-![配線図2](./schematic_warning.png "schematic")
+![配線図1](./PiZero_ADT7410.png "schematic"){width=300px height=300px}
+![配線図2](./schematic_warning.png "schematic"){width=300px height=300px}
+
+## ドライバのインストール
+
+```
+npm i @chirimen/adt7410
+```
 
 ## サンプルコード (main.js)
 

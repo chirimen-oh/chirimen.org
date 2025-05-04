@@ -2,7 +2,13 @@
 
 ## 回路図
 
-![回路図](./schematic.png "schematic")
+![回路図](./schematic.png "schematic"){width=300px height=300px}
+
+## ドライバのインストール
+
+```
+npm i @chirimen/mpu6050
+```
 
 ## サンプルコード (main.js)
 

@@ -8,8 +8,12 @@
   "name": "CHIRIMEN 対応デバイスレシピ集",
   "author": "CHIRIMEN Open Hardware Community <chirimen.open.hardware@gmail.com>",
   "inLanguage": "ja",
-  "dateModified": "2025-05-04T09:12:07.211Z",
+  "dateModified": "2025-05-05T04:36:27.601Z",
   "readingOrder": [
+    {
+      "url": "docs/index.html",
+      "name": "CHIRIMEN 対応デバイスレシピ集"
+    },
     {
       "url": "toc.html",
       "name": "Table of Contents",
@@ -21,12 +25,148 @@
       "name": "CHIRIMEN 対応デバイスレシピ集"
     },
     {
+      "url": "docs/about.html",
+      "name": "CHIRIMEN とは"
+    },
+    {
       "url": "docs/sensor-list-category.html",
       "name": "センサーリスト（カテゴリ別）"
     },
     {
-      "url": "docs/temperature-and-humidity-sensor.html",
-      "name": "温度・湿度センサー"
+      "url": "docs/adt7410/index.html",
+      "name": "ADT7410 温度センサー"
+    },
+    {
+      "url": "docs/aht10/index.html",
+      "name": "AHT10 温湿度センサー"
+    },
+    {
+      "url": "docs/aht20/index.html",
+      "name": "AHT20 温湿度センサー"
+    },
+    {
+      "url": "docs/htu21d/index.html",
+      "name": "HTU21D 温湿度センサー"
+    },
+    {
+      "url": "docs/sht30/index.html",
+      "name": "SHT30 温湿度センサー"
+    },
+    {
+      "url": "docs/sht40/index.html",
+      "name": "SHT40 温湿度センサー"
+    },
+    {
+      "url": "docs/bmp180/index.html",
+      "name": "BMP180 大気圧温度センサー"
+    },
+    {
+      "url": "docs/bmp280/index.html",
+      "name": "BMP280 温度・気圧センサー"
+    },
+    {
+      "url": "docs/bme280/index.html",
+      "name": "BME280 温度・湿度・気圧センサー"
+    },
+    {
+      "url": "docs/ens160/index.html",
+      "name": "ENS160 空気質センサ"
+    },
+    {
+      "url": "docs/sgp40/index.html",
+      "name": "SGP40 ガスセンサー"
+    },
+    {
+      "url": "docs/scd40/index.html",
+      "name": "SCD40 CO2センサー"
+    },
+    {
+      "url": "docs/bh1750/index.html",
+      "name": "BH1750 光センサー"
+    },
+    {
+      "url": "docs/ltr390/index.html",
+      "name": "LTR390 UVセンサー"
+    },
+    {
+      "url": "docs/tsl2561/index.html",
+      "name": "TSL2561 Grove Digital Light Sensor 光センサー"
+    },
+    {
+      "url": "docs/tsl2591/index.html",
+      "name": "TSL2591照度センサー"
+    },
+    {
+      "url": "docs/veml6070/index.html",
+      "name": "VEML6070 UV センサー"
+    },
+    {
+      "url": "docs/tcs34725/index.html",
+      "name": "TCS34725 カラーセンサー"
+    },
+    {
+      "url": "docs/s11059/index.html",
+      "name": "S11059 デジタルカラーセンサー"
+    },
+    {
+      "url": "docs/adxl345/index.html",
+      "name": "ADXL345 Grove Accelerometer 3 軸加速度センサー"
+    },
+    {
+      "url": "docs/icm20948/index.html",
+      "name": "ICM20948 9軸センサー"
+    },
+    {
+      "url": "docs/mpu6050/index.html",
+      "name": "MPU6050 ３軸ジャイロ＋ ３軸加速度 複合センサー"
+    },
+    {
+      "url": "docs/mpu9250/index.html",
+      "name": "MPU9250 ３軸ジャイロ＋３軸加速度＋３軸磁気 複合センサー"
+    },
+    {
+      "url": "docs/gp2y0e03/index.html",
+      "name": "GP2Y0E03 測距センサー 40 mm - 0.1 m"
+    },
+    {
+      "url": "docs/vl53l0x/index.html",
+      "name": "VL53L0X レーザー測距センサー 30 mm - 2 m"
+    },
+    {
+      "url": "docs/vl53l1x/index.html",
+      "name": "VL53L1X レーザー距離センサー"
+    },
+    {
+      "url": "docs/as5600/index.html",
+      "name": "AS5600 磁気式角度センサ"
+    },
+    {
+      "url": "docs/paj7620/index.html",
+      "name": "PAJ7620 Grove Gesture ジェスチャー認識センサー"
+    },
+    {
+      "url": "docs/as3935/index.html",
+      "name": "AS3935 雷センサー"
+    },
+    {
+      "url": "docs/ssd1306/index.html",
+      "name": "SSD1306 OLED ディスプレイ"
+    },
+    {
+      "url": "docs/ssd1308/index.html",
+      "name": "SSD1308 Grove OLED ディスプレイ"
+    },
+    {
+      "url": "docs/ht16k33/index.html",
+      "name": "HT16K33 LEDマトリクスドライバ、8x8LEDマトリクスモジュール一体型や7セグメントLED一体型等にも対応"
+    },
+    {
+      "url": "docs/neopixel-i2c/index.html",
+      "name": "Neopixel LED"
+    },
+    {
+      "url": "docs/waveshare20471/index.html",
+      "name": "WAVESHARE20471複合センサーボード"
     },
     {
       "url": "docs/thanks.html",

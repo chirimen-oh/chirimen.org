@@ -20,7 +20,13 @@ AS3935は、雷センサーICです。ICに内蔵された雷検出アルゴリ�
 
 ## 配線図
 
-![配線図](./schematic.png "schematic")
+![配線図](./schematic.png "schematic"){width=300px height=300px}
+
+## ドライバのインストール
+
+```
+npm i @chirimen/as3935
+```
 
 ## サンプルコード (main.js)
 

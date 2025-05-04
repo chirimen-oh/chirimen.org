@@ -1,6 +1,6 @@
-## センサーリスト（カテゴリ別）
+# センサーリスト（カテゴリ別）
 
-### 環境センサー
+## 環境センサー
 
 - 温度・湿度センサー
   - [ADT7410](./adt7410/index.md)
@@ -28,7 +28,7 @@
   - [TCS34725](./tcs34725/index.md)
   - [S11059](./s11059/index.md)
 
-### モーション・位置センサー
+## モーション・位置センサー
 
 - 加速度・ジャイロセンサー
   - [ADXL345](./adxl345/index.md)
@@ -46,7 +46,7 @@
 - 雷センサー
   - [AS3935](./as3935/index.md)
 
-### ディスプレイ・LED
+## ディスプレイ・LED
 
 - OLED ディスプレイ
   - [SSD1306](./ssd1306/index.md)
@@ -57,8 +57,8 @@
   - [NEOPIXEL-I2C](./neopixel-i2c/index.md)
 - 電子ペーパー
   - [WAVESHARE20471](./waveshare20471/index.md)
-
-### モーター制御
+<!-- 
+## モーター制御
 
 - ステッピングモータードライバー
   - [A4988](./a4988/index.md)
@@ -68,7 +68,7 @@
 - PWM コントローラー
   - [PCA9685](./pca9685/index.md)
 
-### アナログ・デジタル変換
+## アナログ・デジタル変換
 
 - ADC
   - [ADS1015](./ads1015/index.md)
@@ -78,14 +78,14 @@
 - 電流センサー
   - [INA219](./ina219/index.md)
 
-### オーディオ
+## オーディオ
 
 - オーディオプレーヤー
   - [DFPLAYER](./dfplayer/index.md)
 - 音声録音
   - [ISD1820](./isd1820/index.md)
 
-### GPIO 関連
+## GPIO 関連
 
 - 基本的な GPIO 操作
   - [gpio-inout](./gpio-inout/index.md)
@@ -96,7 +96,7 @@
 - カメラ
   - [gpio-camera](./gpio-camera/index.md)
 
-### リモート制御
+## リモート制御
 
 - カメラ
   - [remote_camera](./remote_camera/index.md)
@@ -112,7 +112,7 @@
   - [remote_sht30_gpioin](./remote_sht30_gpioin/index.md)
   - [remote_vl53l0x](./remote_vl53l0x/index.md)
 
-### その他
+## その他
 
 - GPS
   - [serial_gps](./serial_gps/index.md)
@@ -121,4 +121,4 @@
 - 赤外線温度センサー
   - [mlx90614](./mlx90614/index.md)
 - 入門用
-  - [hello-real-world](./hello-real-world/index.md)
+  - [hello-real-world](./hello-real-world/index.md) -->

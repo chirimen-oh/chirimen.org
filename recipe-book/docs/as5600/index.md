@@ -18,9 +18,13 @@
 * AS5600データシート
   * https://ams.com/documents/20143/36005/AS5600_DS000365_5-00.pdf
 
-![AS5600.png](AS5600.png)
+![AS5600.png](AS5600.png){width=250px height=250px}
 
-![AS5600_drawing.svg](AS5600_drawing.svg)
+![AS5600_drawing.svg](AS5600_drawing.svg){width=250px height=250px}
+
+## ドライバのインストール
+
+- `as5600.js` を使用します。
 
 ## サンプルコード (main.js)
 

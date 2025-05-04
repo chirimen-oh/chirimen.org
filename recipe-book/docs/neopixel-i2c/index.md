@@ -2,11 +2,15 @@
 
 ## 配線図
 
-![配線図](./schematic.png "schematic")
+![配線図](./schematic.png){width=400px height=190px}
 
-## 配線図（専用ボード使用）
+![配線図（専用ボード使用）](./schematic_with_dedicated_breadboard.png){width=400px height=190px}
 
-![配線図](./schematic_with_dedicated_breadboard.png "schematic")
+## ドライバのインストール
+
+```
+npm i @chirimen/neopixel-i2c
+```
 
 ## サンプルコード (main.js)
 

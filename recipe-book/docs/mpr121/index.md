@@ -1,6 +1,12 @@
 # MPR121 静電容量センサ(12ch)
 
-![回路図](./schematic.png "schematic")
+![回路図](./schematic.png "schematic"){width=300px height=300px}
+
+## ドライバのインストール
+
+```
+npm i @chirimen/grove-touch
+```
 
 ## サンプルコード (main.js)
 

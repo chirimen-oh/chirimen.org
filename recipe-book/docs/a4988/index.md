@@ -2,8 +2,11 @@
 
 ## 配線図
 
-![配線図](./Schematic.png "schematic")
+![配線図](./Schematic.png "schematic"){width=300px height=300px}
 
+## ドライバのインストール
+
+- 不要です。
 
 ## サンプルコード (main.js)
 

@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8" />
+    <title>WAVESHARE20471複合センサーボード</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="../../themes/node_modules/@vivliostyle/theme-techbook/theme.css"
+    />
+  </head>
+  <body>
+    <section class="level1" aria-labelledby="waveshare20471複合センサーボード">
+      <h1 id="waveshare20471複合センサーボード">
+        WAVESHARE20471複合センサーボード
+      </h1>
+      <section class="level2" aria-labelledby="配線図">
+        <h2 id="配線図">配線図</h2>
+        <p>
+          <a
+            href="https://www.waveshare.com/wiki/Environment_Sensor_HAT#Hardware_connection"
+            >説明ページの組み立て方</a
+          >に従ってRaspberry Pi Zeroに接続したら完了です。
+        </p>
+        <figure>
+          <img
+            src="WAVESHARE-20471.jpg"
+            alt="ボードの写真"
+            title="ボードの写真"
+            width="200px"
+            height="200px"
+          />
+          <figcaption aria-hidden="true">ボードの写真</figcaption>
+        </figure>
+      </section>
+      <section class="level2" aria-labelledby="ドライバのインストール">
+        <h2 id="ドライバのインストール">ドライバのインストール</h2>
+        <pre
+          class="language-text"
+        ><code class="language-text">npm i @chirimen/bme280
+npm i @chirimen/icm20948
+npm i @chirimen/ltr390
+npm i @chirimen/tsl2591
+npm i @chirimen/sgp40</code></pre>
+      </section>
+      <section class="level2" aria-labelledby="サンプルコード-mainjs">
+        <h2 id="サンプルコード-mainjs">サンプルコード (main.js)</h2>
+        <pre
+          class="language-javascript"
+        ><code class="language-javascript"><span class="token comment">// webI2C</span>
+<span class="token keyword module">import</span> <span class="token imports"><span class="token punctuation">{</span> requestI2CAccess <span class="token punctuation">}</span></span> <span class="token keyword module">from</span> <span class="token string">"./node_modules/node-web-i2c/index.js"</span><span class="token punctuation">;</span>
+
+<span class="token comment">// I2c device drivers</span>
+<span class="token keyword module">import</span> <span class="token constant">BME280</span> <span class="token keyword module">from</span> <span class="token string">"@chirimen/bme280"</span><span class="token punctuation">;</span> <span class="token comment">// BME280</span>
+<span class="token keyword module">import</span> <span class="token constant">ICM20948</span> <span class="token keyword module">from</span> <span class="token string">"@chirimen/icm20948"</span><span class="token punctuation">;</span> <span class="token comment">// ICM20948</span>
+<span class="token keyword module">import</span> <span class="token constant">LTR390</span> <span class="token keyword module">from</span> <span class="token string">"@chirimen/ltr390"</span><span class="token punctuation">;</span> <span class="token comment">// LTR390</span>
+<span class="token keyword module">import</span> <span class="token constant">TSL2591</span> <span class="token keyword module">from</span> <span class="token string">"@chirimen/tsl2591"</span><span class="token punctuation">;</span> <span class="token comment">// TSL2591</span>
+<span class="token keyword module">import</span> <span class="token constant">SGP40</span> <span class="token keyword module">from</span> <span class="token string">"@chirimen/sgp40"</span><span class="token punctuation">;</span> <span class="token comment">// SGP40</span>
+
+<span class="token keyword">const</span> <span class="token function-variable function">sleep</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token parameter">msec</span><span class="token punctuation">)</span> <span class="token arrow operator">=&gt;</span> <span class="token keyword">new</span> <span class="token class-name">Promise</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">resolve</span><span class="token punctuation">)</span> <span class="token arrow operator">=&gt;</span> <span class="token function">setTimeout</span><span class="token punctuation">(</span>resolve<span class="token punctuation">,</span> msec<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token keyword">var</span> sgp40<span class="token punctuation">,</span> tsl2591<span class="token punctuation">,</span> ltr390<span class="token punctuation">,</span> icm20948<span class="token punctuation">,</span> bme280<span class="token punctuation">;</span>
+
+<span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token keyword">async</span> <span class="token keyword">function</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+	<span class="token comment">// initialize I2C</span>
+	<span class="token keyword">const</span> i2cAccess <span class="token operator">=</span> <span class="token keyword control-flow">await</span> <span class="token function">requestI2CAccess</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<span class="token keyword">const</span> ic2Port <span class="token operator">=</span> i2cAccess<span class="token punctuation">.</span><span class="token property-access">ports</span><span class="token punctuation">.</span><span class="token method function property-access">get</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<span class="token comment">// initialize I2C devices</span>
+	
+	sgp40 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">SGP40</span><span class="token punctuation">(</span>ic2Port<span class="token punctuation">)</span><span class="token punctuation">;</span>
+	tsl2591 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">TSL2591</span><span class="token punctuation">(</span>ic2Port<span class="token punctuation">)</span><span class="token punctuation">;</span>
+	ltr390 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">LTR390</span><span class="token punctuation">(</span>ic2Port<span class="token punctuation">)</span><span class="token punctuation">;</span>
+	icm20948 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ICM20948</span><span class="token punctuation">(</span>ic2Port<span class="token punctuation">)</span><span class="token punctuation">;</span>
+	bme280 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">BME280</span><span class="token punctuation">(</span>ic2Port<span class="token punctuation">,</span> <span class="token number">0x76</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// これだけ0x76忘れずに</span>
+
+	<span class="token keyword control-flow">await</span> sgp40<span class="token punctuation">.</span><span class="token method function property-access">init</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<span class="token keyword control-flow">await</span> tsl2591<span class="token punctuation">.</span><span class="token method function property-access">init</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<span class="token keyword control-flow">await</span> ltr390<span class="token punctuation">.</span><span class="token method function property-access">init</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<span class="token keyword control-flow">await</span> icm20948<span class="token punctuation">.</span><span class="token method function property-access">init</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<span class="token keyword control-flow">await</span> bme280<span class="token punctuation">.</span><span class="token method function property-access">init</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+	<span class="token comment">// sensing loop</span>
+	<span class="token keyword control-flow">while</span> <span class="token punctuation">(</span><span class="token boolean">true</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+		<span class="token keyword">const</span> sgp <span class="token operator">=</span> <span class="token keyword control-flow">await</span> sgp40<span class="token punctuation">.</span><span class="token method function property-access">measureRaw</span><span class="token punctuation">(</span><span class="token number">25</span><span class="token punctuation">,</span> <span class="token number">50</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+		<span class="token keyword">const</span> tsl <span class="token operator">=</span> <span class="token keyword control-flow">await</span> tsl2591<span class="token punctuation">.</span><span class="token method function property-access"><span class="token maybe-class-name">Lux</span></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+		<span class="token keyword">const</span> ltr <span class="token operator">=</span> <span class="token keyword control-flow">await</span> ltr390<span class="token punctuation">.</span><span class="token constant">UVS</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+		<span class="token keyword">const</span> icm <span class="token operator">=</span> <span class="token keyword control-flow">await</span> icm20948<span class="token punctuation">.</span><span class="token method function property-access">getdata</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+		<span class="token keyword">const</span> bme <span class="token operator">=</span> <span class="token keyword control-flow">await</span> bme280<span class="token punctuation">.</span><span class="token method function property-access">readData</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+		
+		<span class="token console class-name">console</span><span class="token punctuation">.</span><span class="token method function property-access">log</span><span class="token punctuation">(</span><span class="token string">"======================================================="</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+		<span class="token console class-name">console</span><span class="token punctuation">.</span><span class="token method function property-access">log</span><span class="token punctuation">(</span><span class="token string">"Pressure: "</span><span class="token punctuation">,</span>bme<span class="token punctuation">.</span><span class="token property-access">pressure</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+		<span class="token console class-name">console</span><span class="token punctuation">.</span><span class="token method function property-access">log</span><span class="token punctuation">(</span><span class="token string">"Temperature: "</span><span class="token punctuation">,</span>bme<span class="token punctuation">.</span><span class="token property-access">temperature</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+		<span class="token console class-name">console</span><span class="token punctuation">.</span><span class="token method function property-access">log</span><span class="token punctuation">(</span><span class="token string">"Humidity: "</span><span class="token punctuation">,</span>bme<span class="token punctuation">.</span><span class="token property-access">humidity</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+		<span class="token console class-name">console</span><span class="token punctuation">.</span><span class="token method function property-access">log</span><span class="token punctuation">(</span><span class="token string">"Lux: "</span><span class="token punctuation">,</span>tsl<span class="token punctuation">)</span><span class="token punctuation">;</span>
+		<span class="token console class-name">console</span><span class="token punctuation">.</span><span class="token method function property-access">log</span><span class="token punctuation">(</span><span class="token string">"UV: "</span><span class="token punctuation">,</span>ltr<span class="token punctuation">)</span><span class="token punctuation">;</span>
+		<span class="token console class-name">console</span><span class="token punctuation">.</span><span class="token method function property-access">log</span><span class="token punctuation">(</span><span class="token string">"Gas: "</span><span class="token punctuation">,</span> sgp <span class="token punctuation">)</span><span class="token punctuation">;</span>
+		<span class="token console class-name">console</span><span class="token punctuation">.</span><span class="token method function property-access">log</span><span class="token punctuation">(</span><span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">Roll = </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>icm<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token method function property-access">toFixed</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token interpolation-punctuation punctuation">}</span></span><span class="token string"> , Pitch = </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>icm<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token method function property-access">toFixed</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token interpolation-punctuation punctuation">}</span></span><span class="token string"> , Yaw = </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>icm<span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token method function property-access">toFixed</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token interpolation-punctuation punctuation">}</span></span><span class="token template-punctuation string">`</span></span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+		<span class="token console class-name">console</span><span class="token punctuation">.</span><span class="token method function property-access">log</span><span class="token punctuation">(</span><span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">Acceleration: X = </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>icm<span class="token punctuation">[</span><span class="token number">3</span><span class="token punctuation">]</span><span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">, Y = </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>icm<span class="token punctuation">[</span><span class="token number">4</span><span class="token punctuation">]</span><span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">, Z = </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>icm<span class="token punctuation">[</span><span class="token number">5</span><span class="token punctuation">]</span><span class="token interpolation-punctuation punctuation">}</span></span><span class="token template-punctuation string">`</span></span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+		<span class="token console class-name">console</span><span class="token punctuation">.</span><span class="token method function property-access">log</span><span class="token punctuation">(</span><span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">Gyroscope:     X = </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>icm<span class="token punctuation">[</span><span class="token number">6</span><span class="token punctuation">]</span><span class="token interpolation-punctuation punctuation">}</span></span><span class="token string"> , Y = </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>icm<span class="token punctuation">[</span><span class="token number">7</span><span class="token punctuation">]</span><span class="token interpolation-punctuation punctuation">}</span></span><span class="token string"> , Z = </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>icm<span class="token punctuation">[</span><span class="token number">8</span><span class="token punctuation">]</span><span class="token interpolation-punctuation punctuation">}</span></span><span class="token template-punctuation string">`</span></span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+		<span class="token console class-name">console</span><span class="token punctuation">.</span><span class="token method function property-access">log</span><span class="token punctuation">(</span><span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">Magnetic:      X = </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>icm<span class="token punctuation">[</span><span class="token number">9</span><span class="token punctuation">]</span><span class="token interpolation-punctuation punctuation">}</span></span><span class="token string"> , Y = </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>icm<span class="token punctuation">[</span><span class="token number">10</span><span class="token punctuation">]</span><span class="token interpolation-punctuation punctuation">}</span></span><span class="token string"> , Z = </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>icm<span class="token punctuation">[</span><span class="token number">11</span><span class="token punctuation">]</span><span class="token interpolation-punctuation punctuation">}</span></span><span class="token template-punctuation string">`</span></span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+		
+		<span class="token keyword control-flow">await</span> <span class="token function">sleep</span><span class="token punctuation">(</span><span class="token number">1000</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre>
+        <hr />
+        <p><a href="../index.md">← 目次に戻る</a></p>
+      </section>
+    </section>
+  </body>
+</html>

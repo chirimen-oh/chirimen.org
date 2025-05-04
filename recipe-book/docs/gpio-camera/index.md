@@ -2,7 +2,7 @@
 
 ## 配線図
 
-![配線図](./PiZero_gpio-camera.png "schematic")
+![配線図](./PiZero_gpio-camera.png "schematic"){width=300px height=300px}
 
 タクトスイッチは GPIO PORT5 に繋ぎます。
 
@@ -50,6 +50,10 @@ raspistill -v --width 640 --height 480 -o test.jpg
 > ```
 >
 > 詳細: [Camera software - Raspberry Pi Documentation](https://www.raspberrypi.com/documentation/computers/camera_software.html)
+
+## ドライバのインストール
+
+- `pi-camera-connect` を使用します。
 
 ## サンプル
 

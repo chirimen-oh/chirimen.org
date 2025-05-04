@@ -2,10 +2,16 @@
 
 ## 配線図
 
-![配線図](./SHT30_LED.png "schematic")
+![配線図](./SHT30_LED.png "schematic"){width=300px height=300px}
 
 LEDの代わりにモーターを接続
-![配線図(LEDの代わりにモーターを接続)](./SHT30_MOTORB.png "schematic")
+![配線図(LEDの代わりにモーターを接続)](./SHT30_MOTORB.png "schematic"){width=300px height=300px}
+
+## ドライバのインストール
+
+```
+npm i @chirimen/sht30
+```
 
 ## サンプルコード (main.js)
 

@@ -4,7 +4,7 @@
 
 Note: 3.3V電源でも、あまり明るくはなりませんが動作するようです。
 
-![配線図](./schematic.png "schematic")
+![配線図](./schematic.png "schematic"){width=300px height=300px}
 
 ## 参照情報
 
@@ -49,6 +49,12 @@ Adafruit、keystudioとマトリクスの結線が異なりますが、設定変
 
 ### その他
 * set_led関数を使用することで、任意のLEDマトリクスに対応できます
+
+## ドライバのインストール
+
+```
+npm i @chirimen/ht16k33
+```
 
 ## サンプルコード (main.js)
 
