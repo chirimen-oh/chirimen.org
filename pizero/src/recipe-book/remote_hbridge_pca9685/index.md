@@ -1,4 +1,3 @@
-# remote_hbridge_pca9685
 # リモートモータ
 
 ## 配線図

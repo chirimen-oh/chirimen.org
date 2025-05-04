@@ -1,5 +1,6 @@
-# serial_gps
-## PiZeroのシリアル端子に、GY-GPS6MV2等のGPSレシーバ基板を繋いで使用する
+# Serial GPS
+
+PiZeroのシリアル端子に、GY-GPS6MV2等のGPSレシーバ基板を繋いで使用する
 
 * OSの設定
   * ```sudo raspi-config```

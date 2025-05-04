@@ -1,4 +1,3 @@
-# paj7620
 # PAJ7620 Grove Gesture ジェスチャー認識センサー
 
 ## 配線図

@@ -1,4 +1,3 @@
-# tsl2561
 # TSL2561 Grove Digital Light Sensor 光センサー
 
 ## 配線図

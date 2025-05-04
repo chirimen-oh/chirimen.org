@@ -1,5 +1,4 @@
-# waveshare20471
-# WAVESHARE20471複合センサーボード(for Raspberry Pi)
+# WAVESHARE20471複合センサーボード
 
 ## 配線図
 
@@ -7,6 +6,8 @@
 
 
 ![ボードの写真](WAVESHARE-20471.jpg "ボードの写真")
+
+![組付けイメージ](Environment-Sensor-HAT-4.jpg)
 
 ## サンプルコード (main.js)
 

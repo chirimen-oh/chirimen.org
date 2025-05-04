@@ -1,5 +1,4 @@
-# ads1x15
-# ADS1115 16bitADC
+# ADS1115 16bit ADC
 
 ## 配線図
 

@@ -1,4 +1,3 @@
-# remote_camera
 # GPIOスイッチによるカメラ撮影 (remote_Camera)
 
 ## 配線図

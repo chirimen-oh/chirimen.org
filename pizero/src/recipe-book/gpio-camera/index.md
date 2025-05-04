@@ -1,4 +1,3 @@
-# gpio-camera
 # GPIO スイッチによるカメラ撮影 (GPIO-Camera)
 
 ## 配線図

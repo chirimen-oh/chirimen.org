@@ -1,4 +1,3 @@
-# remote_gpio_led
 # リモートLチカ
 
 ## 配線図

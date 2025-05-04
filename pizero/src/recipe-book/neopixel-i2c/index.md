@@ -1,4 +1,3 @@
-# neopixel-i2c
 # Neopixel LED
 
 ## 配線図

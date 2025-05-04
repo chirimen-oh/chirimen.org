@@ -1,4 +1,3 @@
-# gpio-inout
 # GPIO スイッチ + (LED又はギヤードモーター) (GPIO INPUT/OUTPUT)
 
 ## 配線図１ (スイッチ+LED)

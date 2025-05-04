@@ -1,4 +1,3 @@
-# gpio-onchange
 # GPIOスイッチ (GPIO INPUT)
 
 ## 配線図

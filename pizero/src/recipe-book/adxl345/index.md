@@ -1,4 +1,3 @@
-# adxl345
 # ADXL345 Grove Accelerometer 3 軸加速度センサー
 
 ## 配線図
