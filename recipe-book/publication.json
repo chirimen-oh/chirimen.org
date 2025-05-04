@@ -1,0 +1,82 @@
+{
+  "@context": [
+    "https://schema.org",
+    "https://www.w3.org/ns/pub-context"
+  ],
+  "type": "Book",
+  "conformsTo": "https://github.com/vivliostyle/vivliostyle-cli",
+  "name": "CHIRIMEN 対応デバイスレシピ集",
+  "author": "CHIRIMEN Open Hardware Community <chirimen.open.hardware@gmail.com>",
+  "inLanguage": "ja",
+  "dateModified": "2023-11-03T08:17:25.733Z",
+  "readingOrder": [
+    {
+      "url": "toc.html",
+      "name": "目次",
+      "rel": "contents",
+      "type": "LinkedResource"
+    },
+    {
+      "url": "docs/intro.html",
+      "name": "はじめに"
+    },
+    {
+      "url": "docs/what-is-chirimen.html",
+      "name": "CHIRIMEN について"
+    },
+    {
+      "url": "docs/raspberry-pi.html",
+      "name": "Raspberry Pi について"
+    },
+    {
+      "url": "docs/pizero-init.html",
+      "name": "CHIRIMEN Raspberry Pi Zero版 の準備"
+    },
+    {
+      "url": "docs/hello-world.html",
+      "name": "Hello Real World（ L チカを実行する）"
+    },
+    {
+      "url": "docs/try-gpio.html",
+      "name": "GPIO を試す"
+    },
+    {
+      "url": "docs/try-i2c.html",
+      "name": "I2C デバイスを試す"
+    },
+    {
+      "url": "docs/try-iot.html",
+      "name": "IoT を試す"
+    },
+    {
+      "url": "docs/try-devices.html",
+      "name": "他のいろいろなデバイスを試してみる"
+    },
+    {
+      "url": "docs/daemon.html",
+      "name": "常駐プログラム化する"
+    },
+    {
+      "url": "docs/javascript.html",
+      "name": "JavaScript"
+    },
+    {
+      "url": "docs/iot.html",
+      "name": "IoT"
+    },
+    {
+      "url": "docs/document.html",
+      "name": "予備知識・資料集"
+    },
+    {
+      "url": "docs/device-list.html",
+      "name": "CHIRIMEN 対応デバイスリスト"
+    },
+    {
+      "url": "docs/thanks.html",
+      "name": "Special Thanks"
+    }
+  ],
+  "resources": [],
+  "links": []
+}

@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8" />
+    <title>CHIRIMEN 対応デバイスレシピ集</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="../themes/node_modules/@vivliostyle/theme-techbook/theme.css"
+    />
+  </head>
+  <body>
+    <section class="level1" aria-labelledby="chirimen-対応デバイスレシピ集">
+      <h1 id="chirimen-対応デバイスレシピ集">CHIRIMEN 対応デバイスレシピ集</h1>
+      <section class="level2" aria-labelledby="本書について">
+        <h2 id="本書について">本書について</h2>
+        <p>
+          本書は、Raspberry Pi
+          と各種センサー（温度・湿度・加速度など）を活用した電子工作やプログラミングに興味のある方のための技術同人誌です。
+          センサーの動作に必要なサンプルコードや回路図を豊富に掲載しており、初心者から経験者まで幅広くご活用いただけます。
+        </p>
+        <ul>
+          <li>
+            公式サイト：<a href="https://tutorial.chirimen.org/pizero/"
+              >CHIRIMEN Raspberry Pi Zero W チュートリアル</a
+            >
+          </li>
+          <li>
+            書籍：<a
+              href="https://techbookfest.org/product/xmqdikrtEeFfyVxawvJKJf?productVariantID=6VgwkjJMzi5isuEeJLhEyk"
+              >ちりめんぱいぜろちゅーとりある</a
+            >
+          </li>
+        </ul>
+        <p>上記と併せて読んで頂くとより一層理解が深まります。</p>
+        <section class="level3" aria-labelledby="本書の特徴とおすすめポイント">
+          <h3 id="本書の特徴とおすすめポイント">
+            本書の特徴とおすすめポイント
+          </h3>
+          <ul>
+            <li>各センサーごとに分かりやすい電子回路図を掲載しています。</li>
+            <li>
+              動作確認済みで、コピー＆ペーストですぐに試せるサンプルコードを掲載しています。
+            </li>
+            <li>
+              コミュニティで検証された信頼性の高いパーツを紹介しています。
+            </li>
+            <li>
+              電子工作や IoT に興味のある方、Raspberry Pi
+              を使ってみたい方、センサーの基礎から実践まで学びたい方に最適です。
+            </li>
+          </ul>
+        </section>
+        <section class="level3" aria-labelledby="前提条件">
+          <h3 id="前提条件">前提条件</h3>
+          <p>本書の内容をお試し頂くには、以下の環境を推奨します。</p>
+          <section class="level4" aria-labelledby="デバイス">
+            <h4 id="デバイス">デバイス</h4>
+            <ul>
+              <li>Raspberry Pi Zero W（Wi-Fi 搭載モデル）</li>
+            </ul>
+          </section>
+          <section class="level4" aria-labelledby="主な購入先">
+            <h4 id="主な購入先">主な購入先：</h4>
+            <ul>
+              <li>
+                KSY：<a
+                  href="https://raspberry-pi.ksyic.com/main/index/pdp.id/406,407,408,409,410,219,222/pdp.open/219"
+                  >Raspberry Pi Zero WH [RASPIZWHSC0065]</a
+                >
+              </li>
+              <li>
+                SWITCH SCIENCE：<a
+                  href="https://www.switch-science.com/products/3646?_pos=1&amp;_sid=e9fd90251&amp;_ss=r"
+                  >Raspberry Pi Zero WH [RPI-ZERO-WH]</a
+                >
+              </li>
+            </ul>
+          </section>
+          <section class="level4" aria-labelledby="必要な-nodejs-ライブラリ">
+            <h4 id="必要な-nodejs-ライブラリ">必要な Node.js ライブラリ</h4>
+            <ul>
+              <li>
+                I2C 制御用ライブラリ：
+                <a href="https://www.npmjs.com/package/node-web-i2c"
+                  >node-web-i2c</a
+                >
+              </li>
+              <li>
+                GPIO 制御用ライブラリ：
+                <a href="https://www.npmjs.com/package/node-web-gpio"
+                  >node-web-gpio</a
+                >
+              </li>
+              <li>
+                <a href="https://nodejs.org/ja/about/previous-releases"
+                  >Node.js のバージョン</a
+                >は、v22.x 以上を推奨します。
+              </li>
+            </ul>
+          </section>
+          <section class="level4" aria-labelledby="os">
+            <h4 id="os">OS</h4>
+            <ul>
+              <li>
+                Raspbian OS をカスタマイズした<a
+                  href="https://github.com/chirimen-oh/chirimen-lite"
+                  >CHIRIMEN Lite</a
+                >
+                を使用します。
+              </li>
+              <li>
+                ダウンロードは<a
+                  href="https://github.com/chirimen-oh/chirimen-lite/releases"
+                  >公式サイト</a
+                >をご参照ください。
+              </li>
+            </ul>
+          </section>
+        </section>
+        <section class="level3" aria-labelledby="直ぐに開発を始めたい方">
+          <h3 id="直ぐに開発を始めたい方">直ぐに開発を始めたい方</h3>
+          <ul>
+            <li>
+              <a href="https://tutorial.chirimen.org/pizero/"
+                >CHIRIMEN Raspberry Pi Zero W チュートリアル</a
+              >
+              にアクセスして下さい。
+              <ul>
+                <li>
+                  <a href="https://tutorial.chirimen.org/pizero/chapter_2-1"
+                    >物品準備、PC を WiFi に接続</a
+                  >
+                </li>
+                <li>
+                  <a href="https://tutorial.chirimen.org/pizero/chapter_2-2"
+                    >ターミナル接続</a
+                  >
+                  <ul>
+                    <li>
+                      <a
+                        href="https://chirimen.org/PiZeroWebSerialConsole/PiZeroWebSerialConsole.html"
+                        >接続先：Pi Zero Web Serial Console</a
+                      >
+                    </li>
+                  </ul>
+                </li>
+                <li>
+                  <a href="https://tutorial.chirimen.org/pizero/chapter_2-2-1"
+                    >Pi Zero Web Serial Console の使い方</a
+                  >
+                </li>
+                <li>
+                  <a href="https://tutorial.chirimen.org/pizero/chapter_2-3"
+                    >Wi-fi 設定</a
+                  >
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </section>
+      </section>
+    </section>
+  </body>
+</html>

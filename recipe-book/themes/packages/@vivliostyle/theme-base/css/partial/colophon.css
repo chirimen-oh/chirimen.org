@@ -1,0 +1,39 @@
+#colophon-image,
+#colophon {
+  display: flex;
+  flex-direction: column;
+}
+
+[role='doc-colophon'] {
+  --vs-section--h1-marker-display: none;
+  --vs-section--h2-marker-display: none;
+  --vs-section--h3-marker-display: none;
+  --vs-crossref--call-display: none;
+
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  height: 100vh;
+}
+
+[role='doc-colophon'] table {
+  margin: 2em 0;
+  border: 0;
+}
+
+[role='doc-colophon'] table tr {
+  border-width: 0;
+}
+
+[role='doc-colophon'] table th {
+  font-size: var(--vs--h2-font-size);
+}
+
+[role='doc-colophon'] table tr td:first-child {
+  width: 20em;
+}
+
+[role='doc-colophon'] :not(.footnote) > a[href^='http']::before,
+[role='doc-colophon'] :not(.footnote) > a[href^='http']::after {
+  display: none;
+}

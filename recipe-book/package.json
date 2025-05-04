@@ -1,0 +1,17 @@
+{
+  "name": "recipe-book",
+  "version": "1.0.0",
+  "description": "this is 技術書典18 新刊",
+  "main": "index.js",
+  "scripts": {
+    "build": "vivliostyle build",
+    "preview": "vivliostyle preview",
+    "generate-toc": "node scripts/generate-toc.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@vivliostyle/cli": "^9.0.0",
+    "marked": "^15.0.11"
+  }
+}

@@ -1,0 +1,38 @@
+{
+  "@context": [
+    "https://schema.org",
+    "https://www.w3.org/ns/pub-context"
+  ],
+  "type": "Book",
+  "conformsTo": "https://github.com/vivliostyle/vivliostyle-cli",
+  "name": "CHIRIMEN 対応デバイスレシピ集",
+  "author": "CHIRIMEN Open Hardware Community <chirimen.open.hardware@gmail.com>",
+  "inLanguage": "ja",
+  "dateModified": "2025-05-04T09:12:07.211Z",
+  "readingOrder": [
+    {
+      "url": "toc.html",
+      "name": "Table of Contents",
+      "rel": "contents",
+      "type": "LinkedResource"
+    },
+    {
+      "url": "docs/intro.html",
+      "name": "CHIRIMEN 対応デバイスレシピ集"
+    },
+    {
+      "url": "docs/sensor-list-category.html",
+      "name": "センサーリスト（カテゴリ別）"
+    },
+    {
+      "url": "docs/temperature-and-humidity-sensor.html",
+      "name": "温度・湿度センサー"
+    },
+    {
+      "url": "docs/thanks.html",
+      "name": "Special Thanks"
+    }
+  ],
+  "resources": [],
+  "links": []
+}
