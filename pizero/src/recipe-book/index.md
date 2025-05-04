@@ -4,82 +4,82 @@
 
 ### 環境センサー
 - 温度・湿度センサー
-  - [adt7410](./adt7410/index.md)
-  - [aht10](./aht10/index.md)
-  - [aht20](./aht20/index.md)
-  - [htu21d](./htu21d/index.md)
-  - [sht30](./sht30/index.md)
-  - [sht40](./sht40/index.md)
+  - [ADT7410](./adt7410/index.md)
+  - [AHT10](./aht10/index.md)
+  - [AHT20](./aht20/index.md)
+  - [HTU21D](./htu21d/index.md)
+  - [SHT30](./sht30/index.md)
+  - [SHT40](./sht40/index.md)
 - 気圧センサー
-  - [bmp180](./bmp180/index.md)
-  - [bmp280](./bmp280/index.md)
-  - [bme280](./bme280/index.md)
+  - [BMP180](./bmp180/index.md)
+  - [BMP280](./bmp280/index.md)
+  - [BME280](./bme280/index.md)
 - 空気品質センサー
-  - [ens160](./ens160/index.md)
-  - [sgp40](./sgp40/index.md)
+  - [ENS160](./ens160/index.md)
+  - [SGP40](./sgp40/index.md)
 - CO2センサー
   - [scd40](./scd40/index.md)
 - 光センサー
-  - [bh1750](./bh1750/index.md)
-  - [ltr390](./ltr390/index.md)
-  - [tsl2561](./tsl2561/index.md)
-  - [tsl2591](./tsl2591/index.md)
-  - [veml6070](./veml6070/index.md)
+  - [BH1750](./bh1750/index.md)
+  - [LTR390](./ltr390/index.md)
+  - [TSL2561](./tsl2561/index.md)
+  - [TSL2591](./tsl2591/index.md)
+  - [VEML6070](./veml6070/index.md)
 - 色センサー
-  - [tcs34725](./tcs34725/index.md)
-  - [s11059](./s11059/index.md)
+  - [TCS34725](./tcs34725/index.md)
+  - [S11059](./s11059/index.md)
 
 ### モーション・位置センサー
 - 加速度・ジャイロセンサー
-  - [adxl345](./adxl345/index.md)
-  - [icm20948](./icm20948/index.md)
-  - [mpu6050](./mpu6050/index.md)
-  - [mpu9250](./mpu9250/index.md)
+  - [ADXL345](./adxl345/index.md)
+  - [ICM20948](./icm20948/index.md)
+  - [MPU6050](./mpu6050/index.md)
+  - [MPU9250](./mpu9250/index.md)
 - 距離センサー
-  - [gp2y0e03](./gp2y0e03/index.md)
-  - [vl53l0x](./vl53l0x/index.md)
-  - [vl53l1x](./vl53l1x/index.md)
+  - [GP2Y0E03](./gp2y0e03/index.md)
+  - [VL53L0X](./vl53l0x/index.md)
+  - [VL53L1X](./vl53l1x/index.md)
 - 角度センサー
-  - [as5600](./as5600/index.md)
+  - [AS5600](./as5600/index.md)
 - ジェスチャーセンサー
-  - [paj7620](./paj7620/index.md)
+  - [PAJ7620](./paj7620/index.md)
 - 雷センサー
-  - [as3935](./as3935/index.md)
+  - [AS3935](./as3935/index.md)
 
 ### ディスプレイ・LED
 - OLEDディスプレイ
-  - [ssd1306](./ssd1306/index.md)
-  - [ssd1308](./ssd1308/index.md)
+  - [SSD1306](./ssd1306/index.md)
+  - [SSD1308](./ssd1308/index.md)
 - LEDドライバー
-  - [ht16k33](./ht16k33/index.md)
+  - [HT16K33](./ht16k33/index.md)
 - NeoPixel
-  - [neopixel-i2c](./neopixel-i2c/index.md)
+  - [NEOPIXEL-I2C](./neopixel-i2c/index.md)
 - 電子ペーパー
-  - [waveshare20471](./waveshare20471/index.md)
+  - [WAVESHARE20471](./waveshare20471/index.md)
 
 ### モーター制御
 - ステッピングモータードライバー
-  - [a4988](./a4988/index.md)
+  - [A4988](./a4988/index.md)
 - Hブリッジ
-  - [hbridge1](./hbridge1/index.md)
-  - [hbridge2-pca9685pwm](./hbridge2-pca9685pwm/index.md)
+  - [HBRIDGE1](./hbridge1/index.md)
+  - [HBRIDGE2-PCA9685PWM](./hbridge2-pca9685pwm/index.md)
 - PWMコントローラー
-  - [pca9685](./pca9685/index.md)
+  - [PCA9685](./pca9685/index.md)
 
 ### アナログ・デジタル変換
 - ADC
-  - [ads1015](./ads1015/index.md)
-  - [ads1115-loadcell](./ads1115-loadcell/index.md)
-  - [ads1x15](./ads1x15/index.md)
-  - [pcf8591](./pcf8591/index.md)
+  - [ADS1015](./ads1015/index.md)
+  - [ADS1115-LOADCELL](./ads1115-loadcell/index.md)
+  - [ADS1X15](./ads1x15/index.md)
+  - [PCF8591](./pcf8591/index.md)
 - 電流センサー
-  - [ina219](./ina219/index.md)
+  - [INA219](./ina219/index.md)
 
 ### オーディオ
 - オーディオプレーヤー
-  - [dfplayer](./dfplayer/index.md)
+  - [DFPLAYER](./dfplayer/index.md)
 - 音声録音
-  - [isd1820](./isd1820/index.md)
+  - [ISD1820](./isd1820/index.md)
 
 ### GPIO関連
 - 基本的なGPIO操作
@@ -115,7 +115,5 @@
   - [mlx90614](./mlx90614/index.md)
 - 入門用
   - [hello-real-world](./hello-real-world/index.md)
-- ESMサンプル
-  - [esm-examples](./esm-examples/index.md)
 
 ---
