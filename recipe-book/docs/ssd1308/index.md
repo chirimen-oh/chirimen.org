@@ -1,4 +1,4 @@
-# SSD1308 Grove OLED ディスプレイ
+### SSD1308 Grove OLED ディスプレイ
 
 #### 配線図
 

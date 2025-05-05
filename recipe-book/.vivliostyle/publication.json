@@ -8,7 +8,7 @@
   "name": "CHIRIMEN 対応デバイスレシピ集",
   "author": "CHIRIMEN Open Hardware Community <chirimen.open.hardware@gmail.com>",
   "inLanguage": "ja",
-  "dateModified": "2025-05-05T14:17:51.745Z",
+  "dateModified": "2025-05-05T14:25:34.137Z",
   "readingOrder": [
     {
       "url": "docs/index.html",
@@ -143,6 +143,26 @@
     {
       "url": "docs/as3935/index.html",
       "name": "雷センサー"
+    },
+    {
+      "url": "docs/ssd1306/index.html",
+      "name": "ディスプレイ・LED"
+    },
+    {
+      "url": "docs/ssd1308/index.html",
+      "name": "SSD1308 Grove OLED ディスプレイ"
+    },
+    {
+      "url": "docs/ht16k33/index.html",
+      "name": "LED ドライバー"
+    },
+    {
+      "url": "docs/neopixel-i2c/index.html",
+      "name": "NeoPixel"
+    },
+    {
+      "url": "docs/waveshare20471/index.html",
+      "name": "電子ペーパー"
     },
     {
       "url": "docs/thanks.html",

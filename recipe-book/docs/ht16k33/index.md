@@ -1,4 +1,8 @@
-# HT16K33 LEDマトリクスドライバ、8x8LEDマトリクスモジュール一体型や7セグメントLED一体型等にも対応
+## LED ドライバー
+
+### HT16K33 LEDマトリクスドライバ
+
+HT16K33 LEDマトリクスドライバ、8x8LEDマトリクスモジュール一体型や7セグメントLED一体型等にも対応
 
 #### 配線図
 
@@ -6,9 +10,9 @@ Note: 3.3V電源でも、あまり明るくはなりませんが動作するよ�
 
 ![配線図](./schematic.png "schematic"){width=300px height=300px}
 
-## 参照情報
+#### 参照情報
 
-### 8x8マトリクスLEDモジュール(デフォルト設定)
+#### 8x8マトリクスLEDモジュール(デフォルト設定)
 いずれでも動作(ピン配置は異なる)
 * Adafruit Mini 8x8 LED Matrix w/I2C Backpack
   * https://www.switch-science.com/products/1493
@@ -19,7 +23,7 @@ Note: 3.3V電源でも、あまり明るくはなりませんが動作するよ�
 
 * サンプルコード [./main.js](./main.js)
 
-### Aitendo製 8x8マトリクスLEDモジュール
+#### Aitendo製 8x8マトリクスLEDモジュール
 Adafruit、keystudioとマトリクスの結線が異なりますが、設定変更により使用可能です。
 
 * 対応品リスト
@@ -30,7 +34,7 @@ Adafruit、keystudioとマトリクスの結線が異なりますが、設定変
 * サンプルコード [./main-ht16k33_8x8aitendo.js](./main-ht16k33_8x8aitendo.js)
   * aitendo製モジュール用の設定変更関数を呼び出して使います。
 
-### 4桁7セグメントLEDモジュール
+#### 4桁7セグメントLEDモジュール
 配線が同じであれば、amazonやaliexpress等で販売されているジェネリック品でも使用できると思います。（動作はAitendo製品で確認）
 * 対応品：aitendo
   * https://www.aitendo.com/product/14540
@@ -39,7 +43,7 @@ Adafruit、keystudioとマトリクスの結線が異なりますが、設定変
 
 * サンプルコード [./main-ht16k33_7seg.js](./main-ht16k33_7seg.js)
 
-### 4桁 14セグメントLEDモジュール
+#### 4桁 14セグメントLEDモジュール
 数字やアルファベットが表示可能なLEDモジュール。配線が同じであれば、amazonやaliexpress等で販売されているジェネリック品でも使用できると思います。（動作はAitendo製品で確認）
 * 対応品：aitendo
   * https://www.aitendo.com/product/20812
@@ -47,7 +51,7 @@ Adafruit、keystudioとマトリクスの結線が異なりますが、設定変
 
 * サンプルコード [./main-ht16k33_14seg.js](./main-ht16k33_14seg.js)
 
-### その他
+#### その他
 * set_led関数を使用することで、任意のLEDマトリクスに対応できます
 
 #### CHIRIMEN ドライバのインストール
