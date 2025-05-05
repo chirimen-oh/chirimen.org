@@ -8,7 +8,7 @@
   "name": "CHIRIMEN 対応デバイスレシピ集",
   "author": "CHIRIMEN Open Hardware Community <chirimen.open.hardware@gmail.com>",
   "inLanguage": "ja",
-  "dateModified": "2025-05-05T16:07:18.249Z",
+  "dateModified": "2025-05-05T16:10:03.982Z",
   "readingOrder": [
     {
       "url": "docs/index.html",
@@ -261,6 +261,18 @@
       "name": "音声録音"
     },
     {
+      "url": "docs/serial_gps/index.html",
+      "name": "その他"
+    },
+    {
+      "url": "docs/amg8833/index.html",
+      "name": "サーマルカメラ"
+    },
+    {
+      "url": "docs/mlx90614/index.html",
+      "name": "赤外線温度センサー"
+    },
+    {
       "url": "docs/remote_camera/index.html",
       "name": "リモート制御"
     },
@@ -291,18 +303,6 @@
     {
       "url": "docs/remote_vl53l0x/index.html",
       "name": "リモート距離センサ"
-    },
-    {
-      "url": "docs/serial_gps/index.html",
-      "name": "その他"
-    },
-    {
-      "url": "docs/amg8833/index.html",
-      "name": "サーマルカメラ"
-    },
-    {
-      "url": "docs/mlx90614/index.html",
-      "name": "赤外線温度センサー"
     },
     {
       "url": "docs/thanks.html",
