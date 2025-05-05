@@ -22,7 +22,7 @@
 
 ![AS5600_drawing.svg](AS5600_drawing.svg){width=250px height=250px}
 
-### CHIRIMEN ドライバのインストール
+#### CHIRIMEN ドライバのインストール
 
 - `as5600.js` を使用します。
 

@@ -12,7 +12,7 @@ GPIO PORT5にスイッチ、GPIOPORT26に抵抗とLEDを繋ぎます。
 
 GPIO PORT5にスイッチ、GPIOPORT26にモーター制御回路を繋ぎます。
 
-### CHIRIMEN ドライバのインストール
+#### CHIRIMEN ドライバのインストール
 
 - 不要です。
 

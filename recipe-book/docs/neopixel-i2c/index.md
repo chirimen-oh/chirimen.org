@@ -6,7 +6,7 @@
 
 ![配線図（専用ボード使用）](./schematic_with_dedicated_breadboard.png){width=400px height=190px}
 
-### CHIRIMEN ドライバのインストール
+#### CHIRIMEN ドライバのインストール
 
 ```shell
 npm i @chirimen/neopixel-i2c

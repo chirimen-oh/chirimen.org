@@ -4,7 +4,7 @@
 
 ![配線図](./schematic.png "schematic")
 
-### CHIRIMEN ドライバのインストール
+#### CHIRIMEN ドライバのインストール
 
 ```shell
 npm i @chirimen/veml6070

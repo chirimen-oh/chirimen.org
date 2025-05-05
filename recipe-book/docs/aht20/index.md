@@ -6,7 +6,7 @@
 
 Note: このデバイスで使用するドライバahtx0.jsは、AHT20及びAHT10で使用可能です。
 
-### CHIRIMEN ドライバのインストール
+#### CHIRIMEN ドライバのインストール
 
 ```shell
 npm i @chirimen/ahtx0

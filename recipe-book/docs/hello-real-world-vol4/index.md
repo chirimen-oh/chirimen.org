@@ -3,7 +3,7 @@
 ### 配線図
 ![配線図](./PiZero_gpio0MotorC_2.png "schematic")
 
-### CHIRIMEN ドライバのインストール
+#### CHIRIMEN ドライバのインストール
 
 - 不要です。
 

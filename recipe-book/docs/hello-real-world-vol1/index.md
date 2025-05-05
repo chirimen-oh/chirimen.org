@@ -7,7 +7,7 @@
 
 GPIO PORT26にLED+抵抗を繋ぎます。
 
-### CHIRIMEN ドライバのインストール
+#### CHIRIMEN ドライバのインストール
 
 - 不要です。
 

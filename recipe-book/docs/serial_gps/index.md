@@ -24,7 +24,7 @@ PiZeroのシリアル端子に、GY-GPS6MV2等のGPSレシーバ基板を繋い�
 
 ![GY-NEO6MV2.png](GY-NEO6MV2.png)
 
-### CHIRIMEN ドライバのインストール
+#### CHIRIMEN ドライバのインストール
 
 - 不要です。
 

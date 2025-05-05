@@ -5,7 +5,7 @@
 ![配線図](./PiZero_gpio0MotorD_2.png "schematic")
 5V以外のDC電源も使用可能です。
 
-### CHIRIMEN ドライバのインストール
+#### CHIRIMEN ドライバのインストール
 
 - 不要です。
 
