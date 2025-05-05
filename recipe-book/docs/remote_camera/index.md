@@ -1,4 +1,8 @@
-# GPIOスイッチによるカメラ撮影 (remote_Camera)
+# リモート制御
+
+## カメラ
+
+### GPIOスイッチによるカメラ撮影 (remote_Camera)
 
 #### 配線図
 

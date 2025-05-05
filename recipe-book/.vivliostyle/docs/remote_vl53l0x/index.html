@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8" />
+    <title>リモート距離センサ</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="../../themes/node_modules/@vivliostyle/theme-techbook/theme.css"
+    />
+  </head>
+  <body>
+    <section class="level3" aria-labelledby="リモート距離センサ">
+      <h3 id="リモート距離センサ">リモート距離センサ</h3>
+      <section class="level4" aria-labelledby="配線図">
+        <h4 id="配線図">配線図</h4>
+        <figure>
+          <img
+            src="../vl53l0x/schematic.png"
+            alt="配線図"
+            title="schematic"
+            width="300px"
+            height="300px"
+          />
+          <figcaption aria-hidden="true">配線図</figcaption>
+        </figure>
+      </section>
+      <section class="level4" aria-labelledby="遠隔モニタpcスマホブラウザ側">
+        <h4 id="遠隔モニタpcスマホブラウザ側">
+          遠隔モニタ(PC/スマホブラウザ)側
+        </h4>
+        <p>
+          <a
+            href="https://codesandbox.io/s/github/chirimen-oh/chirimen.org/tree/master/pizero/src/esm-examples/remote_vl53l0x/pc?module=pc.js"
+            >pc/index.html</a
+          >を起動します。
+        </p>
+      </section>
+      <section class="level4" aria-labelledby="chirimen-ドライバのインストール">
+        <h4 id="chirimen-ドライバのインストール">
+          CHIRIMEN ドライバのインストール
+        </h4>
+        <pre
+          class="language-shell"
+        ><code class="language-shell"><span class="token function">npm</span> i @chirimen/vl53l0x</code></pre>
+      </section>
+      <section class="level4" aria-labelledby="サンプルコード-mainjs">
+        <h4 id="サンプルコード-mainjs">サンプルコード (main.js)</h4>
+        <pre
+          class="language-javascript"
+        ><code class="language-javascript"><span class="token comment">// Remote VL53L0X</span>
+<span class="token comment">// for CHIRIMEN with nodejs</span>
+<span class="token keyword module">import</span> <span class="token imports"><span class="token punctuation">{</span>requestI2CAccess<span class="token punctuation">}</span></span> <span class="token keyword module">from</span> <span class="token string">"./node_modules/node-web-i2c/index.js"</span><span class="token punctuation">;</span>
+<span class="token keyword module">import</span> <span class="token constant">VL53L0X</span> <span class="token keyword module">from</span> <span class="token string">"@chirimen/vl53l0x"</span><span class="token punctuation">;</span>
+<span class="token keyword">const</span> <span class="token function-variable function">sleep</span> <span class="token operator">=</span> <span class="token parameter">msec</span> <span class="token arrow operator">=&gt;</span> <span class="token keyword">new</span> <span class="token class-name">Promise</span><span class="token punctuation">(</span><span class="token parameter">resolve</span> <span class="token arrow operator">=&gt;</span> <span class="token function">setTimeout</span><span class="token punctuation">(</span>resolve<span class="token punctuation">,</span> msec<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword module">import</span> <span class="token imports">nodeWebSocketLib</span> <span class="token keyword module">from</span> <span class="token string">"websocket"</span><span class="token punctuation">;</span> <span class="token comment">// https://www.npmjs.com/package/websocket</span>
+<span class="token keyword module">import</span> <span class="token imports"><span class="token punctuation">{</span><span class="token maybe-class-name">RelayServer</span><span class="token punctuation">}</span></span> <span class="token keyword module">from</span> <span class="token string">"./RelayServer.js"</span><span class="token punctuation">;</span>
+
+<span class="token keyword">var</span> channel<span class="token punctuation">;</span>
+<span class="token keyword">var</span> vl<span class="token punctuation">;</span>
+
+<span class="token keyword">async</span> <span class="token keyword">function</span> <span class="token function">connect</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+	<span class="token comment">// I2Cポートと、I2CデバイスVL53L0Xの初期化</span>
+	<span class="token keyword">var</span> i2cAccess <span class="token operator">=</span> <span class="token keyword control-flow">await</span> <span class="token function">requestI2CAccess</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<span class="token keyword">var</span> i2cPort <span class="token operator">=</span> i2cAccess<span class="token punctuation">.</span><span class="token property-access">ports</span><span class="token punctuation">.</span><span class="token method function property-access">get</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+	vl <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">VL53L0X</span><span class="token punctuation">(</span>i2cPort<span class="token punctuation">,</span> <span class="token number">0x29</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<span class="token keyword control-flow">await</span> vl<span class="token punctuation">.</span><span class="token method function property-access">init</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+	
+	<span class="token comment">// webSocketリレーの初期化</span>
+	<span class="token keyword">var</span> relay <span class="token operator">=</span> <span class="token function"><span class="token maybe-class-name">RelayServer</span></span><span class="token punctuation">(</span><span class="token string">"chirimentest"</span><span class="token punctuation">,</span> <span class="token string">"chirimenSocket"</span> <span class="token punctuation">,</span> nodeWebSocketLib<span class="token punctuation">,</span> <span class="token string">"https://chirimen.org"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+	channel <span class="token operator">=</span> <span class="token keyword control-flow">await</span> relay<span class="token punctuation">.</span><span class="token method function property-access">subscribe</span><span class="token punctuation">(</span><span class="token string">"chirimenVL"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<span class="token console class-name">console</span><span class="token punctuation">.</span><span class="token method function property-access">log</span><span class="token punctuation">(</span><span class="token string">"web socketリレーサービスに接続しました"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token function">transmitSensorData</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">async</span> <span class="token keyword">function</span> <span class="token function">transmitSensorData</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+    <span class="token keyword control-flow">for</span> <span class="token punctuation">(</span><span class="token punctuation">;</span><span class="token punctuation">;</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+		<span class="token keyword">var</span> sensorData <span class="token operator">=</span> <span class="token keyword control-flow">await</span> <span class="token function">readData</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+		channel<span class="token punctuation">.</span><span class="token method function property-access">send</span><span class="token punctuation">(</span>sensorData<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword control-flow">await</span> <span class="token function">sleep</span><span class="token punctuation">(</span><span class="token number">1000</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">async</span> <span class="token keyword">function</span> <span class="token function">readData</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+	<span class="token keyword">var</span> vlData <span class="token operator">=</span> <span class="token keyword control-flow">await</span> vl<span class="token punctuation">.</span><span class="token method function property-access">getRange</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<span class="token console class-name">console</span><span class="token punctuation">.</span><span class="token method function property-access">log</span><span class="token punctuation">(</span><span class="token string">"distance:"</span> <span class="token operator">+</span> vlData <span class="token operator">+</span> <span class="token string">"mm"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<span class="token keyword control-flow">return</span><span class="token punctuation">(</span>vlData<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token function">connect</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+      </section>
+    </section>
+  </body>
+</html>

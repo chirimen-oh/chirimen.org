@@ -1,4 +1,4 @@
-# リモートオンオフセンサ
+### リモートオンオフセンサ
 
 #### 配線図
 
@@ -6,7 +6,7 @@
 
 GPIO PORT26に繋ぎます
 
-## 遠隔モニタ(PC/スマホブラウザ)側
+#### 遠隔モニタ(PC/スマホブラウザ)側
 
 [pc/index.html](https://codesandbox.io/s/github/chirimen-oh/chirimen.org/tree/master/pizero/src/esm-examples/remote_gpio_sw/pc?module=pc.js)を起動します。
 
