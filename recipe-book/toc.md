@@ -61,5 +61,13 @@
         1. [Neopixel LED](./docs/neopixel-i2c/index.html#neopixel-led)
     1. [電子ペーパー](./docs/waveshare20471/index.html#電子ペーパー)
         1. [WAVESHARE20471複合センサーボード](./docs/waveshare20471/index.html#waveshare20471複合センサーボード)
+1. [モーター制御](./docs/a4988/index.html#モーター制御)
+    1. [ステッピングモータードライバー](./docs/a4988/index.html#ステッピングモータードライバー)
+        1. [A4988ドライバによるステッピングモータ制御](./docs/a4988/index.html#a4988ドライバによるステッピングモータ制御)
+    1. [H ブリッジ](./docs/hbridge1/index.html#h-ブリッジ)
+        1. [HBridge1](./docs/hbridge1/index.html#hbridge1)
+        1. [PCA9685 16 チャンネル PWM ドライバ HBridge モーターコントローラ](./docs/hbridge2-pca9685pwm/index.html#pca9685-16-チャンネル-pwm-ドライバ-hbridge-モーターコントローラ)
+    1. [PWM コントローラー](./docs/pca9685/index.html#pwm-コントローラー)
+        1. [PCA9685 16 チャンネルサーボモーター PWM ドライバー](./docs/pca9685/index.html#pca9685-16-チャンネルサーボモーター-pwm-ドライバー)
 
 </nav>

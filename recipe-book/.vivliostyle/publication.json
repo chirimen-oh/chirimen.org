@@ -8,7 +8,7 @@
   "name": "CHIRIMEN 対応デバイスレシピ集",
   "author": "CHIRIMEN Open Hardware Community <chirimen.open.hardware@gmail.com>",
   "inLanguage": "ja",
-  "dateModified": "2025-05-05T14:25:34.137Z",
+  "dateModified": "2025-05-05T14:30:29.452Z",
   "readingOrder": [
     {
       "url": "docs/index.html",
@@ -163,6 +163,22 @@
     {
       "url": "docs/waveshare20471/index.html",
       "name": "電子ペーパー"
+    },
+    {
+      "url": "docs/a4988/index.html",
+      "name": "モーター制御"
+    },
+    {
+      "url": "docs/hbridge1/index.html",
+      "name": "H ブリッジ"
+    },
+    {
+      "url": "docs/hbridge2-pca9685pwm/index.html",
+      "name": "PCA9685 16 チャンネル PWM ドライバ HBridge モーターコントローラ"
+    },
+    {
+      "url": "docs/pca9685/index.html",
+      "name": "PWM コントローラー"
     },
     {
       "url": "docs/thanks.html",
