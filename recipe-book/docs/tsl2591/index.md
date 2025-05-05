@@ -10,7 +10,7 @@
 npm i @chirimen/tsl2591
 ```
 
-### サンプルコード (main.js)
+#### サンプルコード (main.js)
 
 ```javascript
 /* 各種ライブラリをインポート */

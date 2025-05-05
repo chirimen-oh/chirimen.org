@@ -28,7 +28,7 @@ PiZeroのシリアル端子に、GY-GPS6MV2等のGPSレシーバ基板を繋い�
 
 - 不要です。
 
-### サンプルコード (main.js)
+#### サンプルコード (main.js)
 
 ```javascript
 // シリアルからGPSデータ受信

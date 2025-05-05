@@ -16,7 +16,7 @@ npm i @chirimen/tsl2591
 npm i @chirimen/sgp40
 ```
 
-### サンプルコード (main.js)
+#### サンプルコード (main.js)
 
 ```javascript
 // webI2C

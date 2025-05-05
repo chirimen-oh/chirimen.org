@@ -10,7 +10,7 @@
 npm i @chirimen/gp2y0e03
 ```
 
-### サンプルコード (main.js)
+#### サンプルコード (main.js)
 
 ```javascript
 import {requestI2CAccess} from "node-web-i2c";

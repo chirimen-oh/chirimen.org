@@ -10,7 +10,7 @@
 
 GPIO PORT5に繋ぎます
 
-### サンプルコード (main.js)
+#### サンプルコード (main.js)
 
 ```javascript
 import {requestGPIOAccess} from "./node_modules/node-web-gpio/dist/index.js";

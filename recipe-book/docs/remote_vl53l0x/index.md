@@ -14,7 +14,7 @@
 npm i @chirimen/vl53l0x
 ```
 
-### サンプルコード (main.js)
+#### サンプルコード (main.js)
 
 ```javascript
 // Remote VL53L0X

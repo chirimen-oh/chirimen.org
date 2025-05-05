@@ -14,7 +14,7 @@ GPIO PORT26に繋ぎます
 
 - 不要です。
 
-### サンプルコード (main.js)
+#### サンプルコード (main.js)
 
 ```javascript
 // Remote Example9 - reciever

@@ -14,7 +14,7 @@
 npm i @chirimen/pca9685-pwm
 ```
 
-### サンプルコード (main.js)
+#### サンプルコード (main.js)
 
 ```javascript
 // Remote Example PCA9685PWM + HBridge - reciever

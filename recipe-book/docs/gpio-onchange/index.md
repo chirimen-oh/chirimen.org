@@ -21,7 +21,7 @@ GPIO PORT5に繋ぎます。3.3V電源を用います。指でのタッチだけ
 
 - 不要です。
 
-### サンプルコード (main.js)
+#### サンプルコード (main.js)
 
 ```javascript
 import {requestGPIOAccess} from "./node_modules/node-web-gpio/dist/index.js";

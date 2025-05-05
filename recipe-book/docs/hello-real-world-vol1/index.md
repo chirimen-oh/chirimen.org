@@ -11,7 +11,7 @@ GPIO PORT26にLED+抵抗を繋ぎます。
 
 - 不要です。
 
-### サンプルコード (main.js)
+#### サンプルコード (main.js)
 
 ```javascript
 import {requestGPIOAccess} from "./node_modules/node-web-gpio/dist/index.js";

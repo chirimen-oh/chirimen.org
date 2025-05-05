@@ -12,7 +12,7 @@
 
 - 不要です。
 
-### サンプルコード (main.js)
+#### サンプルコード (main.js)
 
 ```javascript
 // Raspberry Pi Camera　リモートカメラ

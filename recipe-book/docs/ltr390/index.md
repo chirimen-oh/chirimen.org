@@ -10,7 +10,7 @@
 npm i @chirimen/ltr390
 ```
 
-### サンプルコード (main.js)
+#### サンプルコード (main.js)
 
 ```javascript
 /* 各種ライブラリをインポート */

@@ -103,7 +103,7 @@ runApp();
 - [pi-camera-connect のリポジトリ](https://github.com/launchcodedev/pi-camera-connect)
 - この章は[こちらの記事](https://x.gd/i3u0x)を改変して作成されました。
 
-### サンプルコード (main.js)
+#### サンプルコード (main.js)
 
 ```javascript
 // GPIO5のスイッチを押すと、Raspberry Pi Cameraで撮影し、ファイルに保存する

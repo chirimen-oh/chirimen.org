@@ -13,7 +13,7 @@ LEDの代わりにモーターを接続
 npm i @chirimen/sht30
 ```
 
-### サンプルコード (main.js)
+#### サンプルコード (main.js)
 
 ```javascript
 /* 各種ライブラリをインポート */

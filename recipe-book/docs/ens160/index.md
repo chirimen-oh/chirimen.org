@@ -12,7 +12,7 @@ Note: 配線図ののモジュールは、ENS160に加えてAHT20(温度湿度�
 npm i @chirimen/ens160
 ```
 
-### サンプルコード (main.js)
+#### サンプルコード (main.js)
 
 ```javascript
 import { requestI2CAccess } from "./node_modules/node-web-i2c/index.js";

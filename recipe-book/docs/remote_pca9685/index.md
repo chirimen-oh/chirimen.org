@@ -14,7 +14,7 @@
 npm i @chirimen/pca9685
 ```
 
-### サンプルコード (main.js)
+#### サンプルコード (main.js)
 
 ```javascript
 // Remote Example8 - reciever

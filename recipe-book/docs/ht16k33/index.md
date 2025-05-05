@@ -56,7 +56,7 @@ Adafruit、keystudioとマトリクスの結線が異なりますが、設定変
 npm i @chirimen/ht16k33
 ```
 
-### サンプルコード (main.js)
+#### サンプルコード (main.js)
 
 ```javascript
 // Adafruit Mini 8x8 LED Matrix w/I2C Backpack

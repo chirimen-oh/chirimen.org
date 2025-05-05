@@ -12,7 +12,7 @@ Note: このデバイスで使用するドライバahtx0.jsは、AHT20及びAHT1
 npm i @chirimen/ahtx0
 ```
 
-### サンプルコード (main.js)
+#### サンプルコード (main.js)
 
 ```javascript
 import {requestI2CAccess} from "./node_modules/node-web-i2c/index.js";

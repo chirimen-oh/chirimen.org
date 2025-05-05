@@ -14,7 +14,7 @@
 npm i @chirimen/sht30
 ```
 
-### サンプルコード (main.js)
+#### サンプルコード (main.js)
 
 ```javascript
 // Remote Example5 - reciever
