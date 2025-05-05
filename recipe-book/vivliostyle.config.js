@@ -14,7 +14,6 @@ module.exports = {
     },
     './docs/intro.md',
     './docs/about.md',
-    // './docs/sensor-list-category.md',
     './docs/adt7410/index.md',
     './docs/aht10/index.md',
     './docs/aht20/index.md',
