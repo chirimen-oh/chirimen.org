@@ -1,4 +1,6 @@
-# ISD1820ボイスレコーダ (GPIO OUTPUT)
+## 音声録音
+
+### ISD1820ボイスレコーダ (GPIO OUTPUT)
 
 #### 配線図
 

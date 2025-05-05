@@ -8,7 +8,7 @@
   "name": "CHIRIMEN 対応デバイスレシピ集",
   "author": "CHIRIMEN Open Hardware Community <chirimen.open.hardware@gmail.com>",
   "inLanguage": "ja",
-  "dateModified": "2025-05-05T14:38:53.412Z",
+  "dateModified": "2025-05-05T14:41:54.459Z",
   "readingOrder": [
     {
       "url": "docs/index.html",
@@ -198,7 +198,15 @@
     },
     {
       "url": "docs/ina219/index.html",
-      "name": "INA219 電流センサー"
+      "name": "電流センサー"
+    },
+    {
+      "url": "docs/dfplayer/index.html",
+      "name": "オーディオ"
+    },
+    {
+      "url": "docs/isd1820/index.html",
+      "name": "音声録音"
     },
     {
       "url": "docs/thanks.html",

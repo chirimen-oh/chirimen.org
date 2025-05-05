@@ -1,4 +1,10 @@
-# DFPlayer Mini(MP3プレーヤーボードをGPIO OUTPUTで制御)
+# オーディオ
+
+## オーディオプレーヤー
+
+### DFPlayer Mini
+
+MP3プレーヤーボードをGPIO OUTPUTで制御
 
 #### 配線図
 

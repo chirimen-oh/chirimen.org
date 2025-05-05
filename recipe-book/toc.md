@@ -77,5 +77,10 @@
         1. [PCF8591 8bit AD,DA コンバーター](./docs/pcf8591/index.html#pcf8591-8bit-adda-コンバーター)
     1. [電流センサー](./docs/ina219/index.html#電流センサー)
         1. [INA219 電流センサー](./docs/ina219/index.html#ina219-電流センサー)
+1. [オーディオ](./docs/dfplayer/index.html#オーディオ)
+    1. [オーディオプレーヤー](./docs/dfplayer/index.html#オーディオプレーヤー)
+        1. [DFPlayer Mini](./docs/dfplayer/index.html#dfplayer-mini)
+    1. [音声録音](./docs/isd1820/index.html#音声録音)
+        1. [ISD1820ボイスレコーダ (GPIO OUTPUT)](./docs/isd1820/index.html#isd1820ボイスレコーダ-gpio-output)
 
 </nav>
