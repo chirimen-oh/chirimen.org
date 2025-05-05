@@ -1,4 +1,6 @@
-## MOSFETモジュール基板を使用する場合 P718Dモジュール
+### MOSFET P718Dモジュール
+
+MOSFETモジュール基板を使用する場合 P718Dモジュール
 
 #### 配線図
 ![配線図](./PiZero_gpio0MotorC_2.png "schematic")

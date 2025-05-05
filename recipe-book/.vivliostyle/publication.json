@@ -8,7 +8,7 @@
   "name": "CHIRIMEN 対応デバイスレシピ集",
   "author": "CHIRIMEN Open Hardware Community <chirimen.open.hardware@gmail.com>",
   "inLanguage": "ja",
-  "dateModified": "2025-05-05T14:57:57.193Z",
+  "dateModified": "2025-05-05T15:08:35.972Z",
   "readingOrder": [
     {
       "url": "docs/index.html",
@@ -259,6 +259,50 @@
     {
       "url": "docs/remote_vl53l0x/index.html",
       "name": "リモート距離センサ"
+    },
+    {
+      "url": "docs/serial_gps/index.html",
+      "name": "その他"
+    },
+    {
+      "url": "docs/amg8833/index.html",
+      "name": "サーマルカメラ"
+    },
+    {
+      "url": "docs/mlx90614/index.html",
+      "name": "赤外線温度センサー"
+    },
+    {
+      "url": "docs/hello-real-world-vol1/index.html",
+      "name": "入門用"
+    },
+    {
+      "url": "docs/hello-real-world-vol2/index.html",
+      "name": "ギヤードモーター part1"
+    },
+    {
+      "url": "docs/hello-real-world-vol3/index.html",
+      "name": "ギヤードモーター  part2"
+    },
+    {
+      "url": "docs/hello-real-world-vol4/index.html",
+      "name": "MOSFET P718Dモジュール"
+    },
+    {
+      "url": "docs/hello-real-world-vol5/index.html",
+      "name": "MOSFE D4184モジュール"
+    },
+    {
+      "url": "docs/hello-real-world-vol6/index.html",
+      "name": "ギヤードモーター part3"
+    },
+    {
+      "url": "docs/hello-real-world-vol7/index.html",
+      "name": "ギヤードモーター part4"
+    },
+    {
+      "url": "docs/hello-real-world-vol8/index.html",
+      "name": "ギヤードモーター part5"
     },
     {
       "url": "docs/thanks.html",

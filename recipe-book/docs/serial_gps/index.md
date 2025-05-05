@@ -1,4 +1,8 @@
-# Serial GPS
+# その他
+
+## GPS
+
+### Serial GPS
 
 PiZeroのシリアル端子に、GY-GPS6MV2等のGPSレシーバ基板を繋いで使用する
 

@@ -1,4 +1,4 @@
-## ギヤードモータ part2-3
+### ギヤードモーター part5
 
 #### 配線図
 ![配線図](./PiZero_gpio0MotorC.png "schematic")

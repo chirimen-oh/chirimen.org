@@ -1,6 +1,9 @@
-## ギヤードモーター (GPIO OUTPUT)外部電源を使用する場合
+### ギヤードモーター  part2
+
+ギヤードモーター (GPIO OUTPUT)外部電源を使用する場合
 
 #### 配線図　
+
 ![配線図](./PiZero_gpio0MotorB_2.png "schematic")
 
 5V以外のDC電源も使用可能です。
