@@ -8,7 +8,7 @@ CHIRIMEN コミュニティで動作確認済みのサンプルコードや回�
 - 公式サイト：[CHIRIMEN Raspberry Pi Zero W チュートリアル](https://tutorial.chirimen.org/pizero/)
 - 書籍：[ちりめんぱいぜろちゅーとりある](https://x.gd/OmMZJ)
 
-上記と併せて読んで頂くとより一層理解が深まります。
+上記いずれかと併せて読んでいただくとより一層理解が深まります。
 
 ### 本書の特徴とおすすめポイント
 
@@ -19,7 +19,7 @@ CHIRIMEN コミュニティで動作確認済みのサンプルコードや回�
 
 ### 前提条件
 
-本書の内容をお試し頂くには、以下の環境を推奨します。
+本書の内容をお試しいただくには、以下の環境を推奨します。
 
 #### デバイス
 
@@ -44,13 +44,4 @@ CHIRIMEN コミュニティで動作確認済みのサンプルコードや回�
 ### 直ぐに開発を始めたい方
 
 - 公式サイト：[CHIRIMEN Raspberry Pi Zero W チュートリアル](https://tutorial.chirimen.org/pizero/) にアクセスして下さい。
-- 書籍：[ちりめんぱいぜろちゅーとりある](https://x.gd/OmMZJ)をご購入下さい。
-
-
-<!-- 
-- [CHIRIMEN Raspberry Pi Zero W チュートリアル](https://tutorial.chirimen.org/pizero/) にアクセスして下さい。
-  - [物品準備、PC を WiFi に接続](https://tutorial.chirimen.org/pizero/chapter_2-1)
-  - [ターミナル接続](https://tutorial.chirimen.org/pizero/chapter_2-2)
-    - [接続先：Pi Zero Web Serial Console](https://chirimen.org/PiZeroWebSerialConsole/PiZeroWebSerialConsole.html)
-  - [Pi Zero Web Serial Console の使い方](https://tutorial.chirimen.org/pizero/chapter_2-2-1)
-  - [Wi-fi 設定](https://tutorial.chirimen.org/pizero/chapter_2-3) -->
+- 書籍：[ちりめんぱいぜろちゅーとりある](https://x.gd/OmMZJ)をご購入ください。

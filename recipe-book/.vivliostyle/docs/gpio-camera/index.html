@@ -25,107 +25,101 @@
             src="./PiZero_gpio-camera.png"
             alt="配線図"
             title="schematic"
-            width="300px"
-            height="300px"
+            width="250px"
+            height="250px"
           />
           <figcaption aria-hidden="true">配線図</figcaption>
         </figure>
-        <p>タクトスイッチは GPIO PORT5 に繋ぎます。</p>
         <p>
-          カメラは専用コネクターに専用ケーブルを使って接続し、更にセットアップが必要です。次章を参照してください
+          タクトスイッチは GPIO PORT5 に繋ぎます。
+          カメラは専用コネクターに専用ケーブルを使って接続し、更にセットアップが必要です。
         </p>
-      </section>
-    </section>
-    <section class="level1" aria-labelledby="カメラのセットアップと動作確認">
-      <h1 id="カメラのセットアップと動作確認">
-        カメラのセットアップと動作確認
-      </h1>
-      <p>
-        <em
-          >この章は<a
-            href="https://gist.github.com/satakagi/1b5adc8dff8236421a593b93fa152222"
-            >こちらの記事</a
-          >を改変して作成されました。</em
+        <section
+          class="level3"
+          aria-labelledby="カメラのセットアップと動作確認"
         >
-      </p>
-      <p>
-        <a
-          href="https://www.raspberrypi.com/documentation/accessories/camera.html"
-          >Raspberry Pi のカメラ</a
-        >を API で直接操作する<a
-          href="https://www.npmjs.com/package/pi-camera-connect"
-          >pi-camera-connect</a
-        >を使った方法です。<a href="https://github.com/stetsmando/pi-camera"
-          >Pi-Camera</a
-        >を使った方法(<a
-          href="https://gist.github.com/satakagi/2c5be63d4759fd21eca939f507e7f7ef"
-          >gist はこちら</a
-        >)より、大幅に高速に画像が取得できることを確認しています。
-      </p>
-      <section class="level2" aria-labelledby="準備">
-        <h2 id="準備">準備</h2>
-        <ul>
-          <li>
-            Raspberry Pi カメラモジュール
-            <ul>
-              <li>
-                <a href="https://www.amazon.co.jp/dp/B073RCXGQS/"
-                  >例 1:KEYESTUDIO カメラモジュール</a
-                >、<a href="https://www.amazon.co.jp/dp/B086MK17K5/">例 2</a
-                >、<a href="https://www.amazon.co.jp/dp/B08HVRB59N/">例 3</a>
-              </li>
-            </ul>
-          </li>
-          <li>
-            Zero 用ケーブル～上のモジュールは添付されているようです。
-            <ul>
-              <li>
-                無い場合は
-                <a href="https://www.amazon.co.jp/gp/product/B07QH455KY/"
-                  >別途調達</a
-                >
-              </li>
-            </ul>
-          </li>
-          <li>
+          <h3 id="カメラのセットアップと動作確認">
+            カメラのセットアップと動作確認
+          </h3>
+          <p>
             <a
-              href="https://projects.raspberrypi.org/ja-JP/projects/getting-started-with-picamera"
-              >接続のしかた</a
-            >
-            : Zero は専用ケーブルでつなぎます
-          </li>
-        </ul>
-        <blockquote>
-          <p>
-            <strong>Note</strong><br />利用可能なカメラモジュールは v1、v3
-            です。Camera Module v2 には未対応です。 また Raspberry Pi Zero 用
-            CHIRIMEN v1.4.0 未満をお使いの場合、Camera Module v3
-            には未対応です。
-            <a href="https://github.com/chirimen-oh/chirimen-lite/releases"
-              >Raspberry Pi Zero 用 CHIRIMEN v1.4.0 以上</a
-            >
-            をお使いください。
+              href="https://www.raspberrypi.com/documentation/accessories/camera.html"
+              >Raspberry Pi のカメラ</a
+            >を API で直接操作する<a
+              href="https://www.npmjs.com/package/pi-camera-connect"
+              >pi-camera-connect</a
+            >を使った方法です。<a href="https://github.com/stetsmando/pi-camera"
+              >Pi-Camera</a
+            >を使った方法(<a
+              href="https://gist.github.com/satakagi/2c5be63d4759fd21eca939f507e7f7ef"
+              >gist はこちら</a
+            >)より、大幅に高速に画像が取得できることを確認しています。
           </p>
-        </blockquote>
-      </section>
-      <section class="level2" aria-labelledby="カメラの動作テスト">
-        <h2 id="カメラの動作テスト">カメラの動作テスト</h2>
-        <p>以下のコマンドで画像ファイルが保存されます:</p>
-        <pre
-          class="language-text"
-        ><code class="language-text">raspistill -v --width 640 --height 480 -o test.jpg</code></pre>
-        <blockquote>
-          <p>
-            <strong>Note</strong><br /><a
-              href="https://github.com/chirimen-oh/chirimen-lite/releases"
-              >Raspberry Pi Zero 用 CHIRIMEN v1.4.0 以上</a
-            >
-            をお使いの場合、<code>rpicam-still --list-cameras</code>
-            コマンドで利用可能なカメラの一覧を表示可能です:
-          </p>
+        </section>
+        <section class="level3" aria-labelledby="準備">
+          <h3 id="準備">準備</h3>
+          <ul>
+            <li>
+              Raspberry Pi カメラモジュール
+              <ul>
+                <li>
+                  <a href="https://www.amazon.co.jp/dp/B073RCXGQS/"
+                    >例 1:KEYESTUDIO カメラモジュール</a
+                  >、<a href="https://www.amazon.co.jp/dp/B086MK17K5/">例 2</a
+                  >、<a href="https://www.amazon.co.jp/dp/B08HVRB59N/">例 3</a>
+                </li>
+              </ul>
+            </li>
+            <li>
+              Zero 用ケーブル～上のモジュールは添付されているようです。
+              <ul>
+                <li>
+                  無い場合は
+                  <a href="https://www.amazon.co.jp/gp/product/B07QH455KY/"
+                    >別途調達</a
+                  >
+                </li>
+              </ul>
+            </li>
+            <li>
+              <a
+                href="https://projects.raspberrypi.org/ja-JP/projects/getting-started-with-picamera"
+                >接続のしかた</a
+              >
+              : Zero は専用ケーブルでつなぎます
+            </li>
+          </ul>
+          <blockquote>
+            <p>
+              <strong>Note</strong><br />利用可能なカメラモジュールは v1、v3
+              です。Camera Module v2 には未対応です。 また Raspberry Pi Zero 用
+              CHIRIMEN v1.4.0 未満をお使いの場合、Camera Module v3
+              には未対応です。
+              <a href="https://github.com/chirimen-oh/chirimen-lite/releases"
+                >Raspberry Pi Zero 用 CHIRIMEN v1.4.0 以上</a
+              >
+              をお使いください。
+            </p>
+          </blockquote>
+        </section>
+        <section class="level3" aria-labelledby="カメラの動作テスト">
+          <h3 id="カメラの動作テスト">カメラの動作テスト</h3>
+          <p>以下のコマンドで画像ファイルが保存されます:</p>
           <pre
             class="language-text"
-          ><code class="language-text">$ rpicam-still --list-cameras
+          ><code class="language-text">raspistill -v --width 640 --height 480 -o test.jpg</code></pre>
+          <blockquote>
+            <p>
+              <strong>Note</strong><br /><a
+                href="https://github.com/chirimen-oh/chirimen-lite/releases"
+                >Raspberry Pi Zero 用 CHIRIMEN v1.4.0 以上</a
+              >
+              をお使いの場合、<code>rpicam-still --list-cameras</code>
+              コマンドで利用可能なカメラの一覧を表示可能です:
+            </p>
+            <pre
+              class="language-text"
+            ><code class="language-text">$ rpicam-still --list-cameras
 Available cameras
 -----------------
 0 : ov5647 [2592x1944 10-bit GBRG] (/base/soc/i2c0mux/i2c@1/ov5647@36)
@@ -133,14 +127,15 @@ Available cameras
                              1296x972 [43.25 fps - (0, 0)/2592x1944 crop]
                              1920x1080 [30.62 fps - (348, 434)/1928x1080 crop]
                              2592x1944 [15.63 fps - (0, 0)/2592x1944 crop]</code></pre>
-          <p>
-            詳細:
-            <a
-              href="https://www.raspberrypi.com/documentation/computers/camera_software.html"
-              >Camera software - Raspberry Pi Documentation</a
-            >
-          </p>
-        </blockquote>
+            <p>
+              詳細:
+              <a
+                href="https://www.raspberrypi.com/documentation/computers/camera_software.html"
+                >Camera software - Raspberry Pi Documentation</a
+              >
+            </p>
+          </blockquote>
+        </section>
       </section>
       <section class="level2" aria-labelledby="chirimen-ドライバのインストール">
         <h2 id="chirimen-ドライバのインストール">
@@ -219,6 +214,10 @@ Available cameras
             <a href="https://github.com/launchcodedev/pi-camera-connect"
               >pi-camera-connect のリポジトリ</a
             >
+          </li>
+          <li>
+            この章は<a href="https://x.gd/i3u0x">こちらの記事</a
+            >を改変して作成されました。
           </li>
         </ul>
       </section>

@@ -2,19 +2,16 @@
 
 ## 配線図
 
-![配線図](./PiZero_gpio-camera.png "schematic"){width=300px height=300px}
+![配線図](./PiZero_gpio-camera.png "schematic"){width=250px height=250px}
 
 タクトスイッチは GPIO PORT5 に繋ぎます。
+カメラは専用コネクターに専用ケーブルを使って接続し、更にセットアップが必要です。
 
-カメラは専用コネクターに専用ケーブルを使って接続し、更にセットアップが必要です。次章を参照してください
-
-# カメラのセットアップと動作確認
-
-_この章は[こちらの記事](https://gist.github.com/satakagi/1b5adc8dff8236421a593b93fa152222)を改変して作成されました。_
+### カメラのセットアップと動作確認
 
 [Raspberry Pi のカメラ](https://www.raspberrypi.com/documentation/accessories/camera.html)を API で直接操作する[pi-camera-connect](https://www.npmjs.com/package/pi-camera-connect)を使った方法です。[Pi-Camera](https://github.com/stetsmando/pi-camera)を使った方法([gist はこちら](https://gist.github.com/satakagi/2c5be63d4759fd21eca939f507e7f7ef))より、大幅に高速に画像が取得できることを確認しています。
 
-## 準備
+### 準備
 
 - Raspberry Pi カメラモジュール
   - [例 1:KEYESTUDIO カメラモジュール](https://www.amazon.co.jp/dp/B073RCXGQS/)、[例 2](https://www.amazon.co.jp/dp/B086MK17K5/)、[例 3](https://www.amazon.co.jp/dp/B08HVRB59N/)
@@ -27,7 +24,7 @@ _この章は[こちらの記事](https://gist.github.com/satakagi/1b5adc8dff823
 > また Raspberry Pi Zero 用 CHIRIMEN v1.4.0 未満をお使いの場合、Camera Module v3 には未対応です。
 > [Raspberry Pi Zero 用 CHIRIMEN v1.4.0 以上](https://github.com/chirimen-oh/chirimen-lite/releases) をお使いください。
 
-## カメラの動作テスト
+### カメラの動作テスト
 
 以下のコマンドで画像ファイルが保存されます:
 
@@ -104,6 +101,7 @@ runApp();
   - [リモートカメラサンプル](https://tutorial.chirimen.org/pizero/esm-examples/#REMOTE_remote_camera)
 - 各種センサ (WebGPIO 経由で人感センサーなど)を使い、自動的に撮影、サーバにアップロードする仕組みなどもできるでしょう。
 - [pi-camera-connect のリポジトリ](https://github.com/launchcodedev/pi-camera-connect)
+- この章は[こちらの記事](https://x.gd/i3u0x)を改変して作成されました。
 
 ## サンプルコード (main.js)
 

@@ -32,20 +32,23 @@
       <h1 id="gpioタッチセンサー">GPIOタッチセンサー</h1>
       <p>
         TP223を用いたタッチセンサー(タッチスイッチ)を使います。プログラムコードは通常のスイッチと同じです。
-        ## 配線図
       </p>
-      <p>
-        GPIO
-        PORT5に繋ぎます。3.3V電源を用います。指でのタッチだけでなく金属の近接も感知(1~2mmに接近すると検知)。なお、接近させる金属がセンサーのピンに接触してショートしないようテープで金属を被覆し絶縁しておくと安全です。
-      </p>
-      <figure>
-        <img
-          src="./PiZero_gpio_TTP223.png"
-          alt="配線図"
-          title="schematic TP223"
-        />
-        <figcaption aria-hidden="true">配線図</figcaption>
-      </figure>
+      <section class="level2" aria-labelledby="配線図-1">
+        <h2 id="配線図-1">配線図</h2>
+        <figure>
+          <img
+            src="./PiZero_gpio_TTP223.png"
+            alt="配線図"
+            title="schematic TP223"
+          />
+          <figcaption aria-hidden="true">配線図</figcaption>
+        </figure>
+        <p>
+          GPIO
+          PORT5に繋ぎます。3.3V電源を用います。指でのタッチだけでなく金属の近接も感知します。(1~2mmに接近すると検知)。
+          なお、接近させる金属がセンサーのピンに接触してショートしないようテープで金属を被覆し絶縁しておくと安全です。
+        </p>
+      </section>
       <section class="level2" aria-labelledby="chirimen-ドライバのインストール">
         <h2 id="chirimen-ドライバのインストール">
           CHIRIMEN ドライバのインストール
