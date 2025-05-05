@@ -8,7 +8,7 @@
   "name": "CHIRIMEN 対応デバイスレシピ集",
   "author": "CHIRIMEN Open Hardware Community <chirimen.open.hardware@gmail.com>",
   "inLanguage": "ja",
-  "dateModified": "2025-05-05T14:30:29.452Z",
+  "dateModified": "2025-05-05T14:38:53.412Z",
   "readingOrder": [
     {
       "url": "docs/index.html",
@@ -174,11 +174,31 @@
     },
     {
       "url": "docs/hbridge2-pca9685pwm/index.html",
-      "name": "PCA9685 16 チャンネル PWM ドライバ HBridge モーターコントローラ"
+      "name": "PCA9685 16 チャンネル PWM ドライバ"
     },
     {
       "url": "docs/pca9685/index.html",
       "name": "PWM コントローラー"
+    },
+    {
+      "url": "docs/ads1015/index.html",
+      "name": "アナログ・デジタル変換"
+    },
+    {
+      "url": "docs/ads1115-loadcell/index.html",
+      "name": "ADS1115 16bit ADC 差動入力によるロードセルの使用"
+    },
+    {
+      "url": "docs/ads1x15/index.html",
+      "name": "ADS1115 16bit ADC"
+    },
+    {
+      "url": "docs/pcf8591/index.html",
+      "name": "PCF8591 8bit AD,DA コンバーター"
+    },
+    {
+      "url": "docs/ina219/index.html",
+      "name": "INA219 電流センサー"
     },
     {
       "url": "docs/thanks.html",

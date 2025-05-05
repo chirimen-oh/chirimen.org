@@ -66,8 +66,16 @@
         1. [A4988ドライバによるステッピングモータ制御](./docs/a4988/index.html#a4988ドライバによるステッピングモータ制御)
     1. [H ブリッジ](./docs/hbridge1/index.html#h-ブリッジ)
         1. [HBridge1](./docs/hbridge1/index.html#hbridge1)
-        1. [PCA9685 16 チャンネル PWM ドライバ HBridge モーターコントローラ](./docs/hbridge2-pca9685pwm/index.html#pca9685-16-チャンネル-pwm-ドライバ-hbridge-モーターコントローラ)
+        1. [PCA9685 16 チャンネル PWM ドライバ](./docs/hbridge2-pca9685pwm/index.html#pca9685-16-チャンネル-pwm-ドライバ)
     1. [PWM コントローラー](./docs/pca9685/index.html#pwm-コントローラー)
         1. [PCA9685 16 チャンネルサーボモーター PWM ドライバー](./docs/pca9685/index.html#pca9685-16-チャンネルサーボモーター-pwm-ドライバー)
+1. [アナログ・デジタル変換](./docs/ads1015/index.html#アナログデジタル変換)
+    1. [ADC](./docs/ads1015/index.html#adc)
+        1. [ADS1015 12 ビット AD コンバータ](./docs/ads1015/index.html#ads1015-12-ビット-ad-コンバータ)
+        1. [ADS1115 16bit ADC 差動入力によるロードセルの使用](./docs/ads1115-loadcell/index.html#ads1115-16bit-adc-差動入力によるロードセルの使用)
+        1. [ADS1115 16bit ADC](./docs/ads1x15/index.html#ads1115-16bit-adc)
+        1. [PCF8591 8bit AD,DA コンバーター](./docs/pcf8591/index.html#pcf8591-8bit-adda-コンバーター)
+    1. [電流センサー](./docs/ina219/index.html#電流センサー)
+        1. [INA219 電流センサー](./docs/ina219/index.html#ina219-電流センサー)
 
 </nav>
