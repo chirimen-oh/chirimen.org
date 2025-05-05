@@ -8,7 +8,7 @@
   "name": "CHIRIMEN 対応デバイスレシピ集",
   "author": "CHIRIMEN Open Hardware Community <chirimen.open.hardware@gmail.com>",
   "inLanguage": "ja",
-  "dateModified": "2025-05-05T10:05:25.403Z",
+  "dateModified": "2025-05-05T13:12:42.624Z",
   "readingOrder": [
     {
       "url": "docs/index.html",
@@ -27,10 +27,6 @@
     {
       "url": "docs/about.html",
       "name": "CHIRIMEN とは"
-    },
-    {
-      "url": "docs/sensor-list-category.html",
-      "name": "センサーリスト（カテゴリ別）"
     },
     {
       "url": "docs/adt7410/index.html",
@@ -277,8 +273,36 @@
       "name": "MLX90614 赤外線温度センサー"
     },
     {
-      "url": "docs/hello-real-world/index.html",
+      "url": "docs/hello-real-world-vol1/index.html",
       "name": "hello-real-world"
+    },
+    {
+      "url": "docs/hello-real-world-vol2/index.html",
+      "name": "ギヤードモーター part1"
+    },
+    {
+      "url": "docs/hello-real-world-vol3/index.html",
+      "name": "ギヤードモーター (GPIO OUTPUT)外部電源を使用する場合"
+    },
+    {
+      "url": "docs/hello-real-world-vol4/index.html",
+      "name": "MOSFETモジュール基板を使用する場合 P718Dモジュール"
+    },
+    {
+      "url": "docs/hello-real-world-vol5/index.html",
+      "name": "MOSFETモジュール基板を使用する場合 D4184モジュール"
+    },
+    {
+      "url": "docs/hello-real-world-vol6/index.html",
+      "name": "ギヤードモータ part2-1"
+    },
+    {
+      "url": "docs/hello-real-world-vol7/index.html",
+      "name": "ギヤードモータ part2-2"
+    },
+    {
+      "url": "docs/hello-real-world-vol8/index.html",
+      "name": "ギヤードモータ part2-3"
     },
     {
       "url": "docs/thanks.html",
