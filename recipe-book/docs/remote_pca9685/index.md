@@ -60,7 +60,3 @@ async function moveServo(message) {
 }
 
 connect();```
-
-
----
-[← 目次に戻る](../index.md)

@@ -77,7 +77,3 @@ async function rev() {
     ports[1].write(1);
 }
 ```
-
-
----
-[← 目次に戻る](../index.md)

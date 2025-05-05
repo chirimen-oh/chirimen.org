@@ -57,7 +57,3 @@ async function repeat_play() {
 
 start_play();
 ```
-
-
----
-[← 目次に戻る](../index.md)

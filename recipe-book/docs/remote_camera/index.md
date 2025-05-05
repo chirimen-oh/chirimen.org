@@ -74,7 +74,3 @@ async function captureImage() {
 
 connect();
 ```
-
-
----
-[← 目次に戻る](../index.md)

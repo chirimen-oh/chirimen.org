@@ -77,7 +77,3 @@ async function as3935_sens(ev) {
         console.log(`Detect lightinig! It was ${distance} Km away. (${now}) `);
     }
 }```
-
-
----
-[← 目次に戻る](../index.md)

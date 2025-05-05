@@ -49,7 +49,3 @@ async function stepMove(steps, direction) {
 
 main();
 ```
-
-
----
-[← 目次に戻る](../index.md)

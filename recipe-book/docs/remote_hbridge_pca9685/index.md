@@ -84,7 +84,3 @@ async function setMotor(direction, speed) {
 	}
 }
 ```
-
-
----
-[← 目次に戻る](../index.md)

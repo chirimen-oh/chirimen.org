@@ -35,7 +35,3 @@ async function blink() {
 
 blink();
 ```
-
-
----
-[← 目次に戻る](../index.md)

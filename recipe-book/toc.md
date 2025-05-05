@@ -101,7 +101,7 @@
     1. [配線図](./docs/icm20948/index.html#配線図)
     1. [CHIRIMEN ドライバのインストール](./docs/icm20948/index.html#chirimen-ドライバのインストール)
     1. [サンプルコード (main.js)](./docs/icm20948/index.html#サンプルコード-mainjs)
-1. [MPU6050 ３軸ジャイロ＋ ３軸加速度 複合センサー](./docs/mpu6050/index.html#mpu6050-３軸ジャイロ＋-３軸加速度-複合センサー)
+1. [MPU6050 3 軸ジャイロ + 3 軸加速度 複合センサー](./docs/mpu6050/index.html#mpu6050-3-軸ジャイロ-+-3-軸加速度-複合センサー)
     1. [回路図](./docs/mpu6050/index.html#回路図)
     1. [CHIRIMEN ドライバのインストール](./docs/mpu6050/index.html#chirimen-ドライバのインストール)
     1. [サンプルコード (main.js)](./docs/mpu6050/index.html#サンプルコード-mainjs)

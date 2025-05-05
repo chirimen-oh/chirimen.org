@@ -35,7 +35,3 @@ async function main() {
   console.log("completed");
 }
 ```
-
-
----
-[← 目次に戻る](../index.md)

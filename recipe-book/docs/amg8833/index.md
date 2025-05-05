@@ -37,7 +37,3 @@ async function main() {
   }
 }
 ```
-
-
----
-[← 目次に戻る](../index.md)

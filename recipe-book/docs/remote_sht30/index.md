@@ -59,7 +59,3 @@ async function readData(){
 }
 
 connect();```
-
-
----
-[← 目次に戻る](../index.md)

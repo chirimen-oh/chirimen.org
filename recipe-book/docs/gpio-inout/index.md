@@ -45,7 +45,3 @@ function showPort(ev){
 
 startGpio();
 ```
-
-
----
-[← 目次に戻る](../index.md)

@@ -144,7 +144,3 @@ async function takeImage(ev) {
 
 switchCheck();
 ```
-
-
----
-[← 目次に戻る](../index.md)

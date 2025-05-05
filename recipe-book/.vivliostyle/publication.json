@@ -8,7 +8,7 @@
   "name": "CHIRIMEN 対応デバイスレシピ集",
   "author": "CHIRIMEN Open Hardware Community <chirimen.open.hardware@gmail.com>",
   "inLanguage": "ja",
-  "dateModified": "2025-05-05T07:53:29.203Z",
+  "dateModified": "2025-05-05T08:46:47.300Z",
   "readingOrder": [
     {
       "url": "docs/index.html",
@@ -118,7 +118,7 @@
     },
     {
       "url": "docs/mpu6050/index.html",
-      "name": "MPU6050 ３軸ジャイロ＋ ３軸加速度 複合センサー"
+      "name": "MPU6050 3 軸ジャイロ + 3 軸加速度 複合センサー"
     },
     {
       "url": "docs/mpu9250/index.html",

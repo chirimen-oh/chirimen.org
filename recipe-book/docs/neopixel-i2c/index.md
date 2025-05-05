@@ -116,7 +116,3 @@ async function nPixTest3(npix, pattern) {
 
 }
 ```
-
-
----
-[← 目次に戻る](../index.md)

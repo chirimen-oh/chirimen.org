@@ -32,7 +32,3 @@ async function switchCheck() {
 
 switchCheck();
 ```
-
-
----
-[← 目次に戻る](../index.md)

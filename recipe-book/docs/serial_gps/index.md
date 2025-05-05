@@ -56,7 +56,3 @@ gps.on('data', function (data) {
     **/
 });
 ```
-
-
----
-[← 目次に戻る](../index.md)

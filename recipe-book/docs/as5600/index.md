@@ -56,7 +56,3 @@ async function startMeasurement() {
     }
 }
 ```
-
-
----
-[← 目次に戻る](../index.md)
