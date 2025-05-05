@@ -8,9 +8,9 @@
 
 ![配線図](./schematic.png "schematic"){width=300px height=300px}
 
-## ドライバのインストール
+## CHIRIMEN ドライバのインストール
 
-```
+```shell
 npm i @chirimen/pca9685-pwm
 ```
 

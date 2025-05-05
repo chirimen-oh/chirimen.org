@@ -8,9 +8,9 @@
 
 [pc/index.html](https://codesandbox.io/s/github/chirimen-oh/chirimen.org/tree/master/pizero/src/esm-examples/remote_sht30/pc?module=pc.js)を起動します。
 
-## ドライバのインストール
+## CHIRIMEN ドライバのインストール
 
-```
+```shell
 npm i @chirimen/sht30
 ```
 

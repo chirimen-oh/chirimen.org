@@ -4,7 +4,7 @@
 
 ![配線図](./Schematic.png "schematic"){width=300px height=300px}
 
-## ドライバのインストール
+## CHIRIMEN ドライバのインストール
 
 - 不要です。
 

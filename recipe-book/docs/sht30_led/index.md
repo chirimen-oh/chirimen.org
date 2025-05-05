@@ -7,9 +7,9 @@
 LEDの代わりにモーターを接続
 ![配線図(LEDの代わりにモーターを接続)](./SHT30_MOTORB.png "schematic"){width=300px height=300px}
 
-## ドライバのインストール
+## CHIRIMEN ドライバのインストール
 
-```
+```shell
 npm i @chirimen/sht30
 ```
 

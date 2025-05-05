@@ -15,7 +15,7 @@ GPIO PORT5に繋ぎます。3.3V電源を用います。指でのタッチだけ
 
 ![配線図](./PiZero_gpio_TTP223.png "schematic TP223")
 
-## ドライバのインストール
+## CHIRIMEN ドライバのインストール
 
 - 不要です。
 

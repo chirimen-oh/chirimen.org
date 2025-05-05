@@ -31,7 +31,7 @@ D4184モジュール
 ![配線図](./PiZero_gpio0MotorB.png "schematic")
 ![配線図](./PiZero_gpio0MotorC.png "schematic")
 
-## ドライバのインストール
+## CHIRIMEN ドライバのインストール
 
 - 不要です。
 
