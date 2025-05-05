@@ -1,16 +1,16 @@
-# LTR390 UVセンサー
+### LTR390 UVセンサー
 
-## 配線図
+#### 配線図
 
 ![配線図](./schematic.png "schematic"){width=300px height=300px}
 
-## CHIRIMEN ドライバのインストール
+#### CHIRIMEN ドライバのインストール
 
 ```shell
 npm i @chirimen/ltr390
 ```
 
-## サンプルコード (main.js)
+#### サンプルコード (main.js)
 
 ```javascript
 /* 各種ライブラリをインポート */

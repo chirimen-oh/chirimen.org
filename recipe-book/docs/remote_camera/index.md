@@ -1,6 +1,10 @@
-# GPIOスイッチによるカメラ撮影 (remote_Camera)
+# リモート制御
 
-## 配線図
+## カメラ
+
+### GPIOスイッチによるカメラ撮影 (remote_Camera)
+
+#### 配線図
 
 ![配線図](./PiZero_remote_camera.png "schematic"){width=300px height=300px}
 
@@ -8,11 +12,11 @@
 
 カメラは専用コネクターに専用ケーブルを使って接続し、更にセットアップが必要です。[こちらを参照してください](../gpio-camera/readme.md)
 
-## CHIRIMEN ドライバのインストール
+#### CHIRIMEN ドライバのインストール
 
 - 不要です。
 
-## サンプルコード (main.js)
+#### サンプルコード (main.js)
 
 ```javascript
 // Raspberry Pi Camera　リモートカメラ

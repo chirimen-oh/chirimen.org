@@ -1,16 +1,16 @@
-# MPU6050 3 軸ジャイロ + 3 軸加速度 複合センサー
+### MPU6050 3 軸ジャイロ 3 軸加速度 複合センサー
 
-## 回路図
+#### 回路図
 
 ![回路図](./schematic.png "schematic"){width=300px height=300px}
 
-## CHIRIMEN ドライバのインストール
+#### CHIRIMEN ドライバのインストール
 
 ```shell
 npm i @chirimen/mpu6050
 ```
 
-## サンプルコード (main.js)
+#### サンプルコード (main.js)
 
 ```javascript
 import {requestI2CAccess} from "./node_modules/node-web-i2c/index.js";

@@ -10,6 +10,7 @@ module.exports = {
       path: 'toc.md',
       rel: 'contents',
       title: '目次',
+      sectionDepth: 3,
     },
     './docs/intro.md',
     './docs/about.md',

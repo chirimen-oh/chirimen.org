@@ -1,16 +1,20 @@
-# ADS1015 12 ビット AD コンバータ
+# アナログ・デジタル変換
 
-## 配線図
+## ADC
+
+### ADS1015 12 ビット AD コンバータ
+
+#### 配線図
 
 ![配線図](./schematic.png "schematic"){width=300px height=300px}
 
-## CHIRIMEN ドライバのインストール
+#### CHIRIMEN ドライバのインストール
 
 ```shell
 npm i @chirimen/ads1015
 ```
 
-## サンプルコード (main.js)
+#### サンプルコード (main.js)
 
 ```javascript
 import {requestI2CAccess} from "./node_modules/node-web-i2c/index.js";

@@ -2,10 +2,7 @@
 <html lang="ja">
   <head>
     <meta charset="utf-8" />
-    <title>
-      HT16K33
-      LEDマトリクスドライバ、8x8LEDマトリクスモジュール一体型や7セグメントLED一体型等にも対応
-    </title>
+    <title>LED ドライバー</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link
       rel="stylesheet"
@@ -14,39 +11,42 @@
     />
   </head>
   <body>
-    <section
-      class="level1"
-      aria-labelledby="ht16k33-ledマトリクスドライバ8x8ledマトリクスモジュール一体型や7セグメントled一体型等にも対応"
-    >
-      <h1
-        id="ht16k33-ledマトリクスドライバ8x8ledマトリクスモジュール一体型や7セグメントled一体型等にも対応"
-      >
-        HT16K33
-        LEDマトリクスドライバ、8x8LEDマトリクスモジュール一体型や7セグメントLED一体型等にも対応
-      </h1>
-      <section class="level2" aria-labelledby="配線図">
-        <h2 id="配線図">配線図</h2>
-        <p>Note: 3.3V電源でも、あまり明るくはなりませんが動作するようです。</p>
-        <figure>
-          <img
-            src="./schematic.png"
-            alt="配線図"
-            title="schematic"
-            width="300px"
-            height="300px"
-          />
-          <figcaption aria-hidden="true">配線図</figcaption>
-        </figure>
-      </section>
-      <section class="level2" aria-labelledby="参照情報">
-        <h2 id="参照情報">参照情報</h2>
+    <section class="level2" aria-labelledby="led-ドライバー">
+      <h2 id="led-ドライバー">LED ドライバー</h2>
+      <section class="level3" aria-labelledby="ht16k33-ledマトリクスドライバ">
+        <h3 id="ht16k33-ledマトリクスドライバ">
+          HT16K33 LEDマトリクスドライバ
+        </h3>
+        <p>
+          HT16K33
+          LEDマトリクスドライバ、8x8LEDマトリクスモジュール一体型や7セグメントLED一体型等にも対応
+        </p>
+        <section class="level4" aria-labelledby="配線図">
+          <h4 id="配線図">配線図</h4>
+          <p>
+            Note: 3.3V電源でも、あまり明るくはなりませんが動作するようです。
+          </p>
+          <figure>
+            <img
+              src="./schematic.png"
+              alt="配線図"
+              title="schematic"
+              width="300px"
+              height="300px"
+            />
+            <figcaption aria-hidden="true">配線図</figcaption>
+          </figure>
+        </section>
+        <section class="level4" aria-labelledby="参照情報">
+          <h4 id="参照情報">参照情報</h4>
+        </section>
         <section
-          class="level3"
+          class="level4"
           aria-labelledby="8x8マトリクスledモジュールデフォルト設定"
         >
-          <h3 id="8x8マトリクスledモジュールデフォルト設定">
+          <h4 id="8x8マトリクスledモジュールデフォルト設定">
             8x8マトリクスLEDモジュール(デフォルト設定)
-          </h3>
+          </h4>
           <p>いずれでも動作(ピン配置は異なる)</p>
           <ul>
             <li>
@@ -80,12 +80,12 @@
           </ul>
         </section>
         <section
-          class="level3"
+          class="level4"
           aria-labelledby="aitendo製-8x8マトリクスledモジュール"
         >
-          <h3 id="aitendo製-8x8マトリクスledモジュール">
+          <h4 id="aitendo製-8x8マトリクスledモジュール">
             Aitendo製 8x8マトリクスLEDモジュール
-          </h3>
+          </h4>
           <p>
             Adafruit、keystudioとマトリクスの結線が異なりますが、設定変更により使用可能です。
           </p>
@@ -125,8 +125,8 @@
             </li>
           </ul>
         </section>
-        <section class="level3" aria-labelledby="4桁7セグメントledモジュール">
-          <h3 id="4桁7セグメントledモジュール">4桁7セグメントLEDモジュール</h3>
+        <section class="level4" aria-labelledby="4桁7セグメントledモジュール">
+          <h4 id="4桁7セグメントledモジュール">4桁7セグメントLEDモジュール</h4>
           <p>
             配線が同じであれば、amazonやaliexpress等で販売されているジェネリック品でも使用できると思います。（動作はAitendo製品で確認）
           </p>
@@ -159,10 +159,10 @@
             </li>
           </ul>
         </section>
-        <section class="level3" aria-labelledby="4桁-14セグメントledモジュール">
-          <h3 id="4桁-14セグメントledモジュール">
+        <section class="level4" aria-labelledby="4桁-14セグメントledモジュール">
+          <h4 id="4桁-14セグメントledモジュール">
             4桁 14セグメントLEDモジュール
-          </h3>
+          </h4>
           <p>
             数字やアルファベットが表示可能なLEDモジュール。配線が同じであれば、amazonやaliexpress等で販売されているジェネリック品でも使用できると思います。（動作はAitendo製品で確認）
           </p>
@@ -190,28 +190,30 @@
             </li>
           </ul>
         </section>
-        <section class="level3" aria-labelledby="その他">
-          <h3 id="その他">その他</h3>
+        <section class="level4" aria-labelledby="その他">
+          <h4 id="その他">その他</h4>
           <ul>
             <li>
               set_led関数を使用することで、任意のLEDマトリクスに対応できます
             </li>
           </ul>
         </section>
-      </section>
-      <section class="level2" aria-labelledby="chirimen-ドライバのインストール">
-        <h2 id="chirimen-ドライバのインストール">
-          CHIRIMEN ドライバのインストール
-        </h2>
-        <pre
-          class="language-shell"
-        ><code class="language-shell"><span class="token function">npm</span> i @chirimen/ht16k33</code></pre>
-      </section>
-      <section class="level2" aria-labelledby="サンプルコード-mainjs">
-        <h2 id="サンプルコード-mainjs">サンプルコード (main.js)</h2>
-        <pre
-          class="language-javascript"
-        ><code class="language-javascript"><span class="token comment">// Adafruit Mini 8x8 LED Matrix w/I2C Backpack</span>
+        <section
+          class="level4"
+          aria-labelledby="chirimen-ドライバのインストール"
+        >
+          <h4 id="chirimen-ドライバのインストール">
+            CHIRIMEN ドライバのインストール
+          </h4>
+          <pre
+            class="language-shell"
+          ><code class="language-shell"><span class="token function">npm</span> i @chirimen/ht16k33</code></pre>
+        </section>
+        <section class="level4" aria-labelledby="サンプルコード-mainjs">
+          <h4 id="サンプルコード-mainjs">サンプルコード (main.js)</h4>
+          <pre
+            class="language-javascript"
+          ><code class="language-javascript"><span class="token comment">// Adafruit Mini 8x8 LED Matrix w/I2C Backpack</span>
 <span class="token comment">// https://www.switch-science.com/products/1493 , https://www.adafruit.com/product/870</span>
 <span class="token comment">// or</span>
 <span class="token comment">// Ks0064 keyestudio I2C 8x8 LED Matrix HT16K33</span>
@@ -287,6 +289,7 @@
 		**/</span>
 	<span class="token punctuation">}</span>
 <span class="token punctuation">}</span></code></pre>
+        </section>
       </section>
     </section>
   </body>

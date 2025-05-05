@@ -1,15 +1,18 @@
-## ギヤードモーター (GPIO OUTPUT)外部電源を使用する場合
+### ギヤードモーター  part2
 
-### 配線図　
+ギヤードモーター (GPIO OUTPUT)外部電源を使用する場合
+
+#### 配線図　
+
 ![配線図](./PiZero_gpio0MotorB_2.png "schematic")
 
 5V以外のDC電源も使用可能です。
 
-### CHIRIMEN ドライバのインストール
+#### CHIRIMEN ドライバのインストール
 
 - 不要です。
 
-### サンプルコード (main.js)
+#### サンプルコード (main.js)
 
 ```javascript
 import {requestGPIOAccess} from "./node_modules/node-web-gpio/dist/index.js";

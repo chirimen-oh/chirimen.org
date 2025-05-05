@@ -1,16 +1,16 @@
-# VL53L0X レーザー測距センサー 30 mm - 2 m
+### VL53L0X レーザー測距センサー 30 mm - 2 m
 
-## 配線図
+#### 配線図
 
 ![配線図](./schematic.png "schematic"){width=300px height=300px}
 
-## CHIRIMEN ドライバのインストール
+#### CHIRIMEN ドライバのインストール
 
 ```shell
 npm i @chirimen/vl53l0x
 ```
 
-## サンプルコード (main.js)
+#### サンプルコード (main.js)
 
 ```javascript
 import {requestI2CAccess} from "./node_modules/node-web-i2c/index.js";

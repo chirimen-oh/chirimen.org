@@ -1,16 +1,18 @@
-# GPIOスイッチ2 (GPIO POLLING INPUT)
+## タッチセンサー
 
-## 配線図
+### GPIOスイッチ2 (GPIO POLLING INPUT)
+
+#### 配線図
 
 ![配線図](./PiZero_gpio1.png "schematic"){width=300px height=300px}
 
-## CHIRIMEN ドライバのインストール
+#### CHIRIMEN ドライバのインストール
 
 - 不要です。
 
 GPIO PORT5に繋ぎます
 
-## サンプルコード (main.js)
+#### サンプルコード (main.js)
 
 ```javascript
 import {requestGPIOAccess} from "./node_modules/node-web-gpio/dist/index.js";

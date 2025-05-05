@@ -2,7 +2,7 @@
 <html lang="ja">
   <head>
     <meta charset="utf-8" />
-    <title>WAVESHARE20471複合センサーボード</title>
+    <title>電子ペーパー</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link
       rel="stylesheet"
@@ -11,46 +11,54 @@
     />
   </head>
   <body>
-    <section class="level1" aria-labelledby="waveshare20471複合センサーボード">
-      <h1 id="waveshare20471複合センサーボード">
-        WAVESHARE20471複合センサーボード
-      </h1>
-      <section class="level2" aria-labelledby="配線図">
-        <h2 id="配線図">配線図</h2>
-        <p>
-          <a
-            href="https://www.waveshare.com/wiki/Environment_Sensor_HAT#Hardware_connection"
-            >説明ページの組み立て方</a
-          >に従ってRaspberry Pi Zeroに接続したら完了です。
-        </p>
-        <figure>
-          <img
-            src="WAVESHARE-20471.jpg"
-            alt="ボードの写真"
-            title="ボードの写真"
-            width="200px"
-            height="200px"
-          />
-          <figcaption aria-hidden="true">ボードの写真</figcaption>
-        </figure>
-      </section>
-      <section class="level2" aria-labelledby="chirimen-ドライバのインストール">
-        <h2 id="chirimen-ドライバのインストール">
-          CHIRIMEN ドライバのインストール
-        </h2>
-        <pre
-          class="language-shell"
-        ><code class="language-shell"><span class="token function">npm</span> i @chirimen/bme280
+    <section class="level2" aria-labelledby="電子ペーパー">
+      <h2 id="電子ペーパー">電子ペーパー</h2>
+      <section
+        class="level3"
+        aria-labelledby="waveshare20471複合センサーボード"
+      >
+        <h3 id="waveshare20471複合センサーボード">
+          WAVESHARE20471複合センサーボード
+        </h3>
+        <section class="level4" aria-labelledby="配線図">
+          <h4 id="配線図">配線図</h4>
+          <p>
+            <a
+              href="https://www.waveshare.com/wiki/Environment_Sensor_HAT#Hardware_connection"
+              >説明ページの組み立て方</a
+            >に従ってRaspberry Pi Zeroに接続したら完了です。
+          </p>
+          <figure>
+            <img
+              src="WAVESHARE-20471.jpg"
+              alt="ボードの写真"
+              title="ボードの写真"
+              width="200px"
+              height="200px"
+            />
+            <figcaption aria-hidden="true">ボードの写真</figcaption>
+          </figure>
+        </section>
+        <section
+          class="level4"
+          aria-labelledby="chirimen-ドライバのインストール"
+        >
+          <h4 id="chirimen-ドライバのインストール">
+            CHIRIMEN ドライバのインストール
+          </h4>
+          <pre
+            class="language-shell"
+          ><code class="language-shell"><span class="token function">npm</span> i @chirimen/bme280
 <span class="token function">npm</span> i @chirimen/icm20948
 <span class="token function">npm</span> i @chirimen/ltr390
 <span class="token function">npm</span> i @chirimen/tsl2591
 <span class="token function">npm</span> i @chirimen/sgp40</code></pre>
-      </section>
-      <section class="level2" aria-labelledby="サンプルコード-mainjs">
-        <h2 id="サンプルコード-mainjs">サンプルコード (main.js)</h2>
-        <pre
-          class="language-javascript"
-        ><code class="language-javascript"><span class="token comment">// webI2C</span>
+        </section>
+        <section class="level4" aria-labelledby="サンプルコード-mainjs">
+          <h4 id="サンプルコード-mainjs">サンプルコード (main.js)</h4>
+          <pre
+            class="language-javascript"
+          ><code class="language-javascript"><span class="token comment">// webI2C</span>
 <span class="token keyword module">import</span> <span class="token imports"><span class="token punctuation">{</span> requestI2CAccess <span class="token punctuation">}</span></span> <span class="token keyword module">from</span> <span class="token string">"./node_modules/node-web-i2c/index.js"</span><span class="token punctuation">;</span>
 
 <span class="token comment">// I2c device drivers</span>
@@ -107,6 +115,7 @@
 		<span class="token keyword control-flow">await</span> <span class="token function">sleep</span><span class="token punctuation">(</span><span class="token number">1000</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 	<span class="token punctuation">}</span>
 <span class="token punctuation">}</span></code></pre>
+        </section>
       </section>
     </section>
   </body>

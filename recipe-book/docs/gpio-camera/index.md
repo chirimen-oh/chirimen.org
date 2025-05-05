@@ -1,17 +1,19 @@
-# GPIO スイッチによるカメラ撮影 (GPIO-Camera)
+## カメラ
 
-## 配線図
+### GPIO スイッチによるカメラ撮影 (GPIO-Camera)
+
+#### 配線図
 
 ![配線図](./PiZero_gpio-camera.png "schematic"){width=250px height=250px}
 
 タクトスイッチは GPIO PORT5 に繋ぎます。
 カメラは専用コネクターに専用ケーブルを使って接続し、更にセットアップが必要です。
 
-### カメラのセットアップと動作確認
+#### カメラのセットアップと動作確認
 
 [Raspberry Pi のカメラ](https://www.raspberrypi.com/documentation/accessories/camera.html)を API で直接操作する[pi-camera-connect](https://www.npmjs.com/package/pi-camera-connect)を使った方法です。[Pi-Camera](https://github.com/stetsmando/pi-camera)を使った方法([gist はこちら](https://gist.github.com/satakagi/2c5be63d4759fd21eca939f507e7f7ef))より、大幅に高速に画像が取得できることを確認しています。
 
-### 準備
+#### 準備
 
 - Raspberry Pi カメラモジュール
   - [例 1:KEYESTUDIO カメラモジュール](https://www.amazon.co.jp/dp/B073RCXGQS/)、[例 2](https://www.amazon.co.jp/dp/B086MK17K5/)、[例 3](https://www.amazon.co.jp/dp/B08HVRB59N/)
@@ -24,7 +26,7 @@
 > また Raspberry Pi Zero 用 CHIRIMEN v1.4.0 未満をお使いの場合、Camera Module v3 には未対応です。
 > [Raspberry Pi Zero 用 CHIRIMEN v1.4.0 以上](https://github.com/chirimen-oh/chirimen-lite/releases) をお使いください。
 
-### カメラの動作テスト
+#### カメラの動作テスト
 
 以下のコマンドで画像ファイルが保存されます:
 
@@ -48,11 +50,11 @@ raspistill -v --width 640 --height 480 -o test.jpg
 >
 > 詳細: [Camera software - Raspberry Pi Documentation](https://www.raspberrypi.com/documentation/computers/camera_software.html)
 
-## CHIRIMEN ドライバのインストール
+#### CHIRIMEN ドライバのインストール
 
 - `pi-camera-connect` を使用します。
 
-## サンプル
+#### サンプル
 
 [pi-camera-connect のリポジトリ](https://github.com/launchcodedev/pi-camera-connect)の readme と同じ内容ですが、オプションを加えてみました
 
@@ -95,7 +97,7 @@ async function runApp() {
 runApp();
 ```
 
-## Note
+#### Note
 
 - [dataURL](https://developer.mozilla.org/ja/docs/Web/HTTP/Basics_of_HTTP/Data_URIs)で画像を文字列化すれば比較的簡単にサーバに送信したりできるでしょう。
   - [リモートカメラサンプル](https://tutorial.chirimen.org/pizero/esm-examples/#REMOTE_remote_camera)
@@ -103,7 +105,7 @@ runApp();
 - [pi-camera-connect のリポジトリ](https://github.com/launchcodedev/pi-camera-connect)
 - この章は[こちらの記事](https://x.gd/i3u0x)を改変して作成されました。
 
-## サンプルコード (main.js)
+#### サンプルコード (main.js)
 
 ```javascript
 // GPIO5のスイッチを押すと、Raspberry Pi Cameraで撮影し、ファイルに保存する

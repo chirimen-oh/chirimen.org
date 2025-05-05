@@ -11,10 +11,10 @@
     />
   </head>
   <body>
-    <section class="level1" aria-labelledby="gpioスイッチ-gpio-input">
-      <h1 id="gpioスイッチ-gpio-input">GPIOスイッチ (GPIO INPUT)</h1>
-      <section class="level2" aria-labelledby="配線図">
-        <h2 id="配線図">配線図</h2>
+    <section class="level3" aria-labelledby="gpioスイッチ-gpio-input">
+      <h3 id="gpioスイッチ-gpio-input">GPIOスイッチ (GPIO INPUT)</h3>
+      <section class="level4" aria-labelledby="配線図">
+        <h4 id="配線図">配線図</h4>
         <p>GPIO PORT5に繋ぎます</p>
         <figure>
           <img
@@ -33,8 +33,8 @@
       <p>
         TP223を用いたタッチセンサー(タッチスイッチ)を使います。プログラムコードは通常のスイッチと同じです。
       </p>
-      <section class="level2" aria-labelledby="配線図-1">
-        <h2 id="配線図-1">配線図</h2>
+      <section class="level4" aria-labelledby="配線図-1">
+        <h4 id="配線図-1">配線図</h4>
         <figure>
           <img
             src="./PiZero_gpio_TTP223.png"
@@ -49,16 +49,16 @@
           なお、接近させる金属がセンサーのピンに接触してショートしないようテープで金属を被覆し絶縁しておくと安全です。
         </p>
       </section>
-      <section class="level2" aria-labelledby="chirimen-ドライバのインストール">
-        <h2 id="chirimen-ドライバのインストール">
+      <section class="level4" aria-labelledby="chirimen-ドライバのインストール">
+        <h4 id="chirimen-ドライバのインストール">
           CHIRIMEN ドライバのインストール
-        </h2>
+        </h4>
         <ul>
           <li>不要です。</li>
         </ul>
       </section>
-      <section class="level2" aria-labelledby="サンプルコード-mainjs">
-        <h2 id="サンプルコード-mainjs">サンプルコード (main.js)</h2>
+      <section class="level4" aria-labelledby="サンプルコード-mainjs">
+        <h4 id="サンプルコード-mainjs">サンプルコード (main.js)</h4>
         <pre
           class="language-javascript"
         ><code class="language-javascript"><span class="token keyword module">import</span> <span class="token imports"><span class="token punctuation">{</span>requestGPIOAccess<span class="token punctuation">}</span></span> <span class="token keyword module">from</span> <span class="token string">"./node_modules/node-web-gpio/dist/index.js"</span><span class="token punctuation">;</span>

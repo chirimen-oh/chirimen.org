@@ -1,17 +1,20 @@
-# hello-real-world
-## Lチカ (GPIO OUTPUT)
+# 入門用
 
-### 配線図
+## hello-real-world
+
+### Lチカ (GPIO OUTPUT)
+
+#### 配線図
 
 ![配線図](./PiZero_gpio0.png "schematic")
 
 GPIO PORT26にLED+抵抗を繋ぎます。
 
-### CHIRIMEN ドライバのインストール
+#### CHIRIMEN ドライバのインストール
 
 - 不要です。
 
-### サンプルコード (main.js)
+#### サンプルコード (main.js)
 
 ```javascript
 import {requestGPIOAccess} from "./node_modules/node-web-gpio/dist/index.js";

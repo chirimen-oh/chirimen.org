@@ -2,9 +2,7 @@
 <html lang="ja">
   <head>
     <meta charset="utf-8" />
-    <title>
-      PCA9685 16 チャンネルPWM ドライバ + HBridgeモーターコントローラ
-    </title>
+    <title>PCA9685 16 チャンネル PWM ドライバ</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link
       rel="stylesheet"
@@ -14,12 +12,12 @@
   </head>
   <body>
     <section
-      class="level1"
-      aria-labelledby="pca9685-16-チャンネルpwm-ドライバ--hbridgeモーターコントローラ"
+      class="level3"
+      aria-labelledby="pca9685-16-チャンネル-pwm-ドライバ"
     >
-      <h1 id="pca9685-16-チャンネルpwm-ドライバ--hbridgeモーターコントローラ">
-        PCA9685 16 チャンネルPWM ドライバ + HBridgeモーターコントローラ
-      </h1>
+      <h3 id="pca9685-16-チャンネル-pwm-ドライバ">
+        PCA9685 16 チャンネル PWM ドライバ
+      </h3>
       <ul>
         <li>
           PCA9685 16 チャンネルPWM
@@ -34,8 +32,8 @@
           </ul>
         </li>
       </ul>
-      <section class="level2" aria-labelledby="配線図">
-        <h2 id="配線図">配線図</h2>
+      <section class="level4" aria-labelledby="配線図">
+        <h4 id="配線図">配線図</h4>
         <figure>
           <img
             src="./schematic.png"
@@ -47,16 +45,16 @@
           <figcaption aria-hidden="true">配線図</figcaption>
         </figure>
       </section>
-      <section class="level2" aria-labelledby="chirimen-ドライバのインストール">
-        <h2 id="chirimen-ドライバのインストール">
+      <section class="level4" aria-labelledby="chirimen-ドライバのインストール">
+        <h4 id="chirimen-ドライバのインストール">
           CHIRIMEN ドライバのインストール
-        </h2>
+        </h4>
         <pre
           class="language-shell"
         ><code class="language-shell"><span class="token function">npm</span> i @chirimen/pca9685-pwm</code></pre>
       </section>
-      <section class="level2" aria-labelledby="サンプルコード-mainjs">
-        <h2 id="サンプルコード-mainjs">サンプルコード (main.js)</h2>
+      <section class="level4" aria-labelledby="サンプルコード-mainjs">
+        <h4 id="サンプルコード-mainjs">サンプルコード (main.js)</h4>
         <pre
           class="language-javascript"
         ><code class="language-javascript"><span class="token keyword module">import</span> <span class="token imports"><span class="token punctuation">{</span> requestI2CAccess <span class="token punctuation">}</span></span> <span class="token keyword module">from</span> <span class="token string">"./node_modules/node-web-i2c/index.js"</span><span class="token punctuation">;</span>

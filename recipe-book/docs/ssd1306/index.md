@@ -1,16 +1,20 @@
-# SSD1306 OLED ディスプレイ
+# ディスプレイ・LED
 
-## 配線図
+## OLED ディスプレイ
+
+### SSD1306 OLED ディスプレイ
+
+#### 配線図
 
 ![配線図](./schematic.png "schematic"){width=300px height=300px}
 
-## CHIRIMEN ドライバのインストール
+#### CHIRIMEN ドライバのインストール
 
 ```shell
 npm i @chirimen/grove-oled-display
 ```
 
-## サンプルコード (main.js)
+#### サンプルコード (main.js)
 
 ```javascript
 import {requestI2CAccess} from "./node_modules/node-web-i2c/index.js";

@@ -1,16 +1,16 @@
-## ギヤードモーター part1
+### ギヤードモーター part1
 
-### 配線図
+#### 配線図
 
 ![配線図](./PiZero_gpio0Motor_2.png "schematic")
 
 GPIO PORT26にモーター制御回路を繋ぎます。コードはLチカと共通です
 
-### CHIRIMEN ドライバのインストール
+#### CHIRIMEN ドライバのインストール
 
 - 不要です。
 
-### サンプルコード (main.js)
+#### サンプルコード (main.js)
 
 ```javascript
 import {requestGPIOAccess} from "./node_modules/node-web-gpio/dist/index.js";

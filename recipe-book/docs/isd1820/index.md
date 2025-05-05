@@ -1,6 +1,8 @@
-# ISD1820ボイスレコーダ (GPIO OUTPUT)
+## 音声録音
 
-## 配線図
+### ISD1820ボイスレコーダ (GPIO OUTPUT)
+
+#### 配線図
 
 ![配線図](./ISD1820.png "schematic"){width=300px height=300px}
 
@@ -9,11 +11,11 @@
 * 録音はRECボタンを押している間録音できます(最大10秒)
 * REC端子をGPIOに接続すると、録音をコンピュータで制御することもできます。(REC端子がHighになっている間だけ録音)
 
-## CHIRIMEN ドライバのインストール
+#### CHIRIMEN ドライバのインストール
 
 - 不要です。
 
-## サンプルコード (main.js)
+#### サンプルコード (main.js)
 
 ```javascript
 import {requestGPIOAccess} from "./node_modules/node-web-gpio/dist/index.js";

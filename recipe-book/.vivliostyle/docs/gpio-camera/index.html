@@ -2,7 +2,7 @@
 <html lang="ja">
   <head>
     <meta charset="utf-8" />
-    <title>GPIO スイッチによるカメラ撮影 (GPIO-Camera)</title>
+    <title>カメラ</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link
       rel="stylesheet"
@@ -11,36 +11,39 @@
     />
   </head>
   <body>
-    <section
-      class="level1"
-      aria-labelledby="gpio-スイッチによるカメラ撮影-gpio-camera"
-    >
-      <h1 id="gpio-スイッチによるカメラ撮影-gpio-camera">
-        GPIO スイッチによるカメラ撮影 (GPIO-Camera)
-      </h1>
-      <section class="level2" aria-labelledby="配線図">
-        <h2 id="配線図">配線図</h2>
-        <figure>
-          <img
-            src="./PiZero_gpio-camera.png"
-            alt="配線図"
-            title="schematic"
-            width="250px"
-            height="250px"
-          />
-          <figcaption aria-hidden="true">配線図</figcaption>
-        </figure>
-        <p>
-          タクトスイッチは GPIO PORT5 に繋ぎます。
-          カメラは専用コネクターに専用ケーブルを使って接続し、更にセットアップが必要です。
-        </p>
+    <section class="level2" aria-labelledby="カメラ">
+      <h2 id="カメラ">カメラ</h2>
+      <section
+        class="level3"
+        aria-labelledby="gpio-スイッチによるカメラ撮影-gpio-camera"
+      >
+        <h3 id="gpio-スイッチによるカメラ撮影-gpio-camera">
+          GPIO スイッチによるカメラ撮影 (GPIO-Camera)
+        </h3>
+        <section class="level4" aria-labelledby="配線図">
+          <h4 id="配線図">配線図</h4>
+          <figure>
+            <img
+              src="./PiZero_gpio-camera.png"
+              alt="配線図"
+              title="schematic"
+              width="250px"
+              height="250px"
+            />
+            <figcaption aria-hidden="true">配線図</figcaption>
+          </figure>
+          <p>
+            タクトスイッチは GPIO PORT5 に繋ぎます。
+            カメラは専用コネクターに専用ケーブルを使って接続し、更にセットアップが必要です。
+          </p>
+        </section>
         <section
-          class="level3"
+          class="level4"
           aria-labelledby="カメラのセットアップと動作確認"
         >
-          <h3 id="カメラのセットアップと動作確認">
+          <h4 id="カメラのセットアップと動作確認">
             カメラのセットアップと動作確認
-          </h3>
+          </h4>
           <p>
             <a
               href="https://www.raspberrypi.com/documentation/accessories/camera.html"
@@ -56,8 +59,8 @@
             >)より、大幅に高速に画像が取得できることを確認しています。
           </p>
         </section>
-        <section class="level3" aria-labelledby="準備">
-          <h3 id="準備">準備</h3>
+        <section class="level4" aria-labelledby="準備">
+          <h4 id="準備">準備</h4>
           <ul>
             <li>
               Raspberry Pi カメラモジュール
@@ -102,8 +105,8 @@
             </p>
           </blockquote>
         </section>
-        <section class="level3" aria-labelledby="カメラの動作テスト">
-          <h3 id="カメラの動作テスト">カメラの動作テスト</h3>
+        <section class="level4" aria-labelledby="カメラの動作テスト">
+          <h4 id="カメラの動作テスト">カメラの動作テスト</h4>
           <p>以下のコマンドで画像ファイルが保存されます:</p>
           <pre
             class="language-text"
@@ -136,25 +139,27 @@ Available cameras
             </p>
           </blockquote>
         </section>
-      </section>
-      <section class="level2" aria-labelledby="chirimen-ドライバのインストール">
-        <h2 id="chirimen-ドライバのインストール">
-          CHIRIMEN ドライバのインストール
-        </h2>
-        <ul>
-          <li><code>pi-camera-connect</code> を使用します。</li>
-        </ul>
-      </section>
-      <section class="level2" aria-labelledby="サンプル">
-        <h2 id="サンプル">サンプル</h2>
-        <p>
-          <a href="https://github.com/launchcodedev/pi-camera-connect"
-            >pi-camera-connect のリポジトリ</a
-          >の readme と同じ内容ですが、オプションを加えてみました
-        </p>
-        <pre
-          class="language-javascript"
-        ><code class="language-javascript"><span class="token keyword module">import</span> <span class="token imports"><span class="token punctuation">{</span> <span class="token maybe-class-name">StillCamera</span> <span class="token punctuation">}</span></span> <span class="token keyword module">from</span> <span class="token string">"pi-camera-connect"</span><span class="token punctuation">;</span>
+        <section
+          class="level4"
+          aria-labelledby="chirimen-ドライバのインストール"
+        >
+          <h4 id="chirimen-ドライバのインストール">
+            CHIRIMEN ドライバのインストール
+          </h4>
+          <ul>
+            <li><code>pi-camera-connect</code> を使用します。</li>
+          </ul>
+        </section>
+        <section class="level4" aria-labelledby="サンプル">
+          <h4 id="サンプル">サンプル</h4>
+          <p>
+            <a href="https://github.com/launchcodedev/pi-camera-connect"
+              >pi-camera-connect のリポジトリ</a
+            >の readme と同じ内容ですが、オプションを加えてみました
+          </p>
+          <pre
+            class="language-javascript"
+          ><code class="language-javascript"><span class="token keyword module">import</span> <span class="token imports"><span class="token punctuation">{</span> <span class="token maybe-class-name">StillCamera</span> <span class="token punctuation">}</span></span> <span class="token keyword module">from</span> <span class="token string">"pi-camera-connect"</span><span class="token punctuation">;</span>
 <span class="token keyword module">import</span> <span class="token imports"><span class="token operator">*</span> <span class="token keyword module">as</span> fs</span> <span class="token keyword module">from</span> <span class="token string">"fs"</span><span class="token punctuation">;</span>
 
 <span class="token comment">// Take still image and save to disk</span>
@@ -168,10 +173,10 @@ Available cameras
 <span class="token punctuation">}</span>
 
 <span class="token function">runApp</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
-        <p>dataURL を取得</p>
-        <pre
-          class="language-javascript"
-        ><code class="language-javascript"><span class="token keyword module">import</span> <span class="token imports"><span class="token punctuation">{</span> <span class="token maybe-class-name">StillCamera</span> <span class="token punctuation">}</span></span> <span class="token keyword module">from</span> <span class="token string">"pi-camera-connect"</span><span class="token punctuation">;</span>
+          <p>dataURL を取得</p>
+          <pre
+            class="language-javascript"
+          ><code class="language-javascript"><span class="token keyword module">import</span> <span class="token imports"><span class="token punctuation">{</span> <span class="token maybe-class-name">StillCamera</span> <span class="token punctuation">}</span></span> <span class="token keyword module">from</span> <span class="token string">"pi-camera-connect"</span><span class="token punctuation">;</span>
 
 <span class="token comment">// Take still image and get dataURI</span>
 <span class="token keyword">async</span> <span class="token keyword">function</span> <span class="token function">runApp</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
@@ -188,44 +193,44 @@ Available cameras
 <span class="token punctuation">}</span>
 
 <span class="token function">runApp</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
-      </section>
-      <section class="level2" aria-labelledby="note">
-        <h2 id="note">Note</h2>
-        <ul>
-          <li>
-            <a
-              href="https://developer.mozilla.org/ja/docs/Web/HTTP/Basics_of_HTTP/Data_URIs"
-              >dataURL</a
-            >で画像を文字列化すれば比較的簡単にサーバに送信したりできるでしょう。
-            <ul>
-              <li>
-                <a
-                  href="https://tutorial.chirimen.org/pizero/esm-examples/#REMOTE_remote_camera"
-                  >リモートカメラサンプル</a
-                >
-              </li>
-            </ul>
-          </li>
-          <li>
-            各種センサ (WebGPIO
-            経由で人感センサーなど)を使い、自動的に撮影、サーバにアップロードする仕組みなどもできるでしょう。
-          </li>
-          <li>
-            <a href="https://github.com/launchcodedev/pi-camera-connect"
-              >pi-camera-connect のリポジトリ</a
-            >
-          </li>
-          <li>
-            この章は<a href="https://x.gd/i3u0x">こちらの記事</a
-            >を改変して作成されました。
-          </li>
-        </ul>
-      </section>
-      <section class="level2" aria-labelledby="サンプルコード-mainjs">
-        <h2 id="サンプルコード-mainjs">サンプルコード (main.js)</h2>
-        <pre
-          class="language-javascript"
-        ><code class="language-javascript"><span class="token comment">// GPIO5のスイッチを押すと、Raspberry Pi Cameraで撮影し、ファイルに保存する</span>
+        </section>
+        <section class="level4" aria-labelledby="note">
+          <h4 id="note">Note</h4>
+          <ul>
+            <li>
+              <a
+                href="https://developer.mozilla.org/ja/docs/Web/HTTP/Basics_of_HTTP/Data_URIs"
+                >dataURL</a
+              >で画像を文字列化すれば比較的簡単にサーバに送信したりできるでしょう。
+              <ul>
+                <li>
+                  <a
+                    href="https://tutorial.chirimen.org/pizero/esm-examples/#REMOTE_remote_camera"
+                    >リモートカメラサンプル</a
+                  >
+                </li>
+              </ul>
+            </li>
+            <li>
+              各種センサ (WebGPIO
+              経由で人感センサーなど)を使い、自動的に撮影、サーバにアップロードする仕組みなどもできるでしょう。
+            </li>
+            <li>
+              <a href="https://github.com/launchcodedev/pi-camera-connect"
+                >pi-camera-connect のリポジトリ</a
+              >
+            </li>
+            <li>
+              この章は<a href="https://x.gd/i3u0x">こちらの記事</a
+              >を改変して作成されました。
+            </li>
+          </ul>
+        </section>
+        <section class="level4" aria-labelledby="サンプルコード-mainjs">
+          <h4 id="サンプルコード-mainjs">サンプルコード (main.js)</h4>
+          <pre
+            class="language-javascript"
+          ><code class="language-javascript"><span class="token comment">// GPIO5のスイッチを押すと、Raspberry Pi Cameraで撮影し、ファイルに保存する</span>
 
 <span class="token comment">// ライブラリ　pi-camera-connect　をまずインストールする必要があります。readmeを参照してください。</span>
 
@@ -260,6 +265,7 @@ Available cameras
 <span class="token punctuation">}</span>
 
 <span class="token function">switchCheck</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+        </section>
       </section>
     </section>
   </body>

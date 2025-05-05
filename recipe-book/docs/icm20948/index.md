@@ -1,16 +1,16 @@
-# ICM20948 9軸センサー
+### ICM20948 9軸センサー
 
-## 配線図
+#### 配線図
 
 ![配線図](./schematic.png "schematic"){width=300px height=300px}
 
-## CHIRIMEN ドライバのインストール
+#### CHIRIMEN ドライバのインストール
 
 ```shell
 npm i @chirimen/icm20948
 ```
 
-## サンプルコード (main.js)
+#### サンプルコード (main.js)
 
 ```javascript
 /* 各種ライブラリをインポート */

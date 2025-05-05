@@ -1,16 +1,16 @@
-# TSL2591照度センサー
+### TSL2591照度センサー
 
-## 配線図
+#### 配線図
 
 ![配線図](./schematic.png "schematic"){width=300px height=300px}
 
-## CHIRIMEN ドライバのインストール
+#### CHIRIMEN ドライバのインストール
 
 ```shell
 npm i @chirimen/tsl2591
 ```
 
-## サンプルコード (main.js)
+#### サンプルコード (main.js)
 
 ```javascript
 /* 各種ライブラリをインポート */

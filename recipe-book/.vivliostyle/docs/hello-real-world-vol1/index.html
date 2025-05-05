@@ -2,7 +2,7 @@
 <html lang="ja">
   <head>
     <meta charset="utf-8" />
-    <title>hello-real-world</title>
+    <title>入門用</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link
       rel="stylesheet"
@@ -11,34 +11,36 @@
     />
   </head>
   <body>
-    <section class="level1" aria-labelledby="hello-real-world">
-      <h1 id="hello-real-world">hello-real-world</h1>
-      <section class="level2" aria-labelledby="lチカ-gpio-output">
-        <h2 id="lチカ-gpio-output">Lチカ (GPIO OUTPUT)</h2>
-        <section class="level3" aria-labelledby="配線図">
-          <h3 id="配線図">配線図</h3>
-          <figure>
-            <img src="./PiZero_gpio0.png" alt="配線図" title="schematic" />
-            <figcaption aria-hidden="true">配線図</figcaption>
-          </figure>
-          <p>GPIO PORT26にLED+抵抗を繋ぎます。</p>
-        </section>
-        <section
-          class="level3"
-          aria-labelledby="chirimen-ドライバのインストール"
-        >
-          <h3 id="chirimen-ドライバのインストール">
-            CHIRIMEN ドライバのインストール
-          </h3>
-          <ul>
-            <li>不要です。</li>
-          </ul>
-        </section>
-        <section class="level3" aria-labelledby="サンプルコード-mainjs">
-          <h3 id="サンプルコード-mainjs">サンプルコード (main.js)</h3>
-          <pre
-            class="language-javascript"
-          ><code class="language-javascript"><span class="token keyword module">import</span> <span class="token imports"><span class="token punctuation">{</span>requestGPIOAccess<span class="token punctuation">}</span></span> <span class="token keyword module">from</span> <span class="token string">"./node_modules/node-web-gpio/dist/index.js"</span><span class="token punctuation">;</span>
+    <section class="level1" aria-labelledby="入門用">
+      <h1 id="入門用">入門用</h1>
+      <section class="level2" aria-labelledby="hello-real-world">
+        <h2 id="hello-real-world">hello-real-world</h2>
+        <section class="level3" aria-labelledby="lチカ-gpio-output">
+          <h3 id="lチカ-gpio-output">Lチカ (GPIO OUTPUT)</h3>
+          <section class="level4" aria-labelledby="配線図">
+            <h4 id="配線図">配線図</h4>
+            <figure>
+              <img src="./PiZero_gpio0.png" alt="配線図" title="schematic" />
+              <figcaption aria-hidden="true">配線図</figcaption>
+            </figure>
+            <p>GPIO PORT26にLED+抵抗を繋ぎます。</p>
+          </section>
+          <section
+            class="level4"
+            aria-labelledby="chirimen-ドライバのインストール"
+          >
+            <h4 id="chirimen-ドライバのインストール">
+              CHIRIMEN ドライバのインストール
+            </h4>
+            <ul>
+              <li>不要です。</li>
+            </ul>
+          </section>
+          <section class="level4" aria-labelledby="サンプルコード-mainjs">
+            <h4 id="サンプルコード-mainjs">サンプルコード (main.js)</h4>
+            <pre
+              class="language-javascript"
+            ><code class="language-javascript"><span class="token keyword module">import</span> <span class="token imports"><span class="token punctuation">{</span>requestGPIOAccess<span class="token punctuation">}</span></span> <span class="token keyword module">from</span> <span class="token string">"./node_modules/node-web-gpio/dist/index.js"</span><span class="token punctuation">;</span>
 <span class="token keyword">const</span> <span class="token function-variable function">sleep</span> <span class="token operator">=</span> <span class="token parameter">msec</span> <span class="token arrow operator">=&gt;</span> <span class="token keyword">new</span> <span class="token class-name">Promise</span><span class="token punctuation">(</span><span class="token parameter">resolve</span> <span class="token arrow operator">=&gt;</span> <span class="token function">setTimeout</span><span class="token punctuation">(</span>resolve<span class="token punctuation">,</span> msec<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
 <span class="token keyword">async</span> <span class="token keyword">function</span> <span class="token function">blink</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
@@ -56,6 +58,7 @@
 <span class="token punctuation">}</span>
 
 <span class="token function">blink</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+          </section>
         </section>
       </section>
     </section>

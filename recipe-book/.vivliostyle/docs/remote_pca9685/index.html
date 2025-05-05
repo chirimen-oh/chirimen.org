@@ -2,7 +2,7 @@
 <html lang="ja">
   <head>
     <meta charset="utf-8" />
-    <title>リモートサーボモータ</title>
+    <title>PWM</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link
       rel="stylesheet"
@@ -11,48 +11,53 @@
     />
   </head>
   <body>
-    <section class="level1" aria-labelledby="リモートサーボモータ">
-      <h1 id="リモートサーボモータ">リモートサーボモータ</h1>
-      <section class="level2" aria-labelledby="配線図">
-        <h2 id="配線図">配線図</h2>
-        <figure>
-          <img
-            src="../pca9685/schematic.png"
-            alt="配線図"
-            title="schematic"
-            width="300px"
-            height="300px"
-          />
-          <figcaption aria-hidden="true">配線図</figcaption>
-        </figure>
-      </section>
-      <section
-        class="level2"
-        aria-labelledby="遠隔コントローラpcスマホブラウザ側"
-      >
-        <h2 id="遠隔コントローラpcスマホブラウザ側">
-          遠隔コントローラ(PC/スマホブラウザ)側
-        </h2>
-        <p>
-          <a
-            href="https://codesandbox.io/s/github/chirimen-oh/chirimen.org/tree/master/pizero/src/esm-examples/remote_pca9685/pc?module=pc.js"
-            >pc/index.html</a
-          >を起動します。
-        </p>
-      </section>
-      <section class="level2" aria-labelledby="chirimen-ドライバのインストール">
-        <h2 id="chirimen-ドライバのインストール">
-          CHIRIMEN ドライバのインストール
-        </h2>
-        <pre
-          class="language-shell"
-        ><code class="language-shell"><span class="token function">npm</span> i @chirimen/pca9685</code></pre>
-      </section>
-      <section class="level2" aria-labelledby="サンプルコード-mainjs">
-        <h2 id="サンプルコード-mainjs">サンプルコード (main.js)</h2>
-        <pre
-          class="language-javascript"
-        ><code class="language-javascript"><span class="token comment">// Remote Example8 - reciever</span>
+    <section class="level2" aria-labelledby="pwm">
+      <h2 id="pwm">PWM</h2>
+      <section class="level3" aria-labelledby="リモートサーボモータ">
+        <h3 id="リモートサーボモータ">リモートサーボモータ</h3>
+        <section class="level4" aria-labelledby="配線図">
+          <h4 id="配線図">配線図</h4>
+          <figure>
+            <img
+              src="../pca9685/schematic.png"
+              alt="配線図"
+              title="schematic"
+              width="300px"
+              height="300px"
+            />
+            <figcaption aria-hidden="true">配線図</figcaption>
+          </figure>
+        </section>
+        <section
+          class="level4"
+          aria-labelledby="遠隔コントローラpcスマホブラウザ側"
+        >
+          <h4 id="遠隔コントローラpcスマホブラウザ側">
+            遠隔コントローラ(PC/スマホブラウザ)側
+          </h4>
+          <p>
+            <a
+              href="https://codesandbox.io/s/github/chirimen-oh/chirimen.org/tree/master/pizero/src/esm-examples/remote_pca9685/pc?module=pc.js"
+              >pc/index.html</a
+            >を起動します。
+          </p>
+        </section>
+        <section
+          class="level4"
+          aria-labelledby="chirimen-ドライバのインストール"
+        >
+          <h4 id="chirimen-ドライバのインストール">
+            CHIRIMEN ドライバのインストール
+          </h4>
+          <pre
+            class="language-shell"
+          ><code class="language-shell"><span class="token function">npm</span> i @chirimen/pca9685</code></pre>
+        </section>
+        <section class="level4" aria-labelledby="サンプルコード-mainjs">
+          <h4 id="サンプルコード-mainjs">サンプルコード (main.js)</h4>
+          <pre
+            class="language-javascript"
+          ><code class="language-javascript"><span class="token comment">// Remote Example8 - reciever</span>
 <span class="token comment">// for CHIRIMEN with nodejs</span>
 
 <span class="token keyword module">import</span> <span class="token imports"><span class="token punctuation">{</span>requestI2CAccess<span class="token punctuation">}</span></span> <span class="token keyword module">from</span> <span class="token string">"./node_modules/node-web-i2c/index.js"</span><span class="token punctuation">;</span>
@@ -96,6 +101,7 @@
 
 <span class="token function">connect</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token template-string"><span class="token template-punctuation string">`</span><span class="token template-punctuation string">`</span></span>`
 </code></pre>
+        </section>
       </section>
     </section>
   </body>

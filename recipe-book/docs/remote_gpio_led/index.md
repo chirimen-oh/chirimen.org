@@ -1,20 +1,22 @@
-# リモートLチカ
+## GPIO
 
-## 配線図
+### リモートLチカ
+
+#### 配線図
 
 ![配線図](../hello-real-world-vol1/PiZero_gpio0.png "schematic"){width=300px height=300px}
 
 GPIO PORT26に繋ぎます
 
-## 遠隔コントロール(PC/スマホブラウザ)側
+#### 遠隔コントロール(PC/スマホブラウザ)側
 
 [pc/index.html](https://codesandbox.io/s/github/chirimen-oh/chirimen.org/tree/master/pizero/src/esm-examples/remote_gpio_led/pc?module=pc.js)を起動します。
 
-## CHIRIMEN ドライバのインストール
+#### CHIRIMEN ドライバのインストール
 
 - 不要です。
 
-## サンプルコード (main.js)
+#### サンプルコード (main.js)
 
 ```javascript
 // Remote Example1 - reciever

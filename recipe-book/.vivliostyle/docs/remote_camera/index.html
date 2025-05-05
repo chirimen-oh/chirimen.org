@@ -2,7 +2,7 @@
 <html lang="ja">
   <head>
     <meta charset="utf-8" />
-    <title>GPIOスイッチによるカメラ撮影 (remote_Camera)</title>
+    <title>リモート制御</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link
       rel="stylesheet"
@@ -11,46 +11,53 @@
     />
   </head>
   <body>
-    <section
-      class="level1"
-      aria-labelledby="gpioスイッチによるカメラ撮影-remote_camera"
-    >
-      <h1 id="gpioスイッチによるカメラ撮影-remote_camera">
-        GPIOスイッチによるカメラ撮影 (remote_Camera)
-      </h1>
-      <section class="level2" aria-labelledby="配線図">
-        <h2 id="配線図">配線図</h2>
-        <figure>
-          <img
-            src="./PiZero_remote_camera.png"
-            alt="配線図"
-            title="schematic"
-            width="300px"
-            height="300px"
-          />
-          <figcaption aria-hidden="true">配線図</figcaption>
-        </figure>
-        <p>タクトスイッチはGPIO PORT5に繋ぎます。</p>
-        <p>
-          カメラは専用コネクターに専用ケーブルを使って接続し、更にセットアップが必要です。<a
-            href="../gpio-camera/readme.md"
-            >こちらを参照してください</a
+    <section class="level1" aria-labelledby="リモート制御">
+      <h1 id="リモート制御">リモート制御</h1>
+      <section class="level2" aria-labelledby="カメラ">
+        <h2 id="カメラ">カメラ</h2>
+        <section
+          class="level3"
+          aria-labelledby="gpioスイッチによるカメラ撮影-remote_camera"
+        >
+          <h3 id="gpioスイッチによるカメラ撮影-remote_camera">
+            GPIOスイッチによるカメラ撮影 (remote_Camera)
+          </h3>
+          <section class="level4" aria-labelledby="配線図">
+            <h4 id="配線図">配線図</h4>
+            <figure>
+              <img
+                src="./PiZero_remote_camera.png"
+                alt="配線図"
+                title="schematic"
+                width="300px"
+                height="300px"
+              />
+              <figcaption aria-hidden="true">配線図</figcaption>
+            </figure>
+            <p>タクトスイッチはGPIO PORT5に繋ぎます。</p>
+            <p>
+              カメラは専用コネクターに専用ケーブルを使って接続し、更にセットアップが必要です。<a
+                href="../gpio-camera/readme.md"
+                >こちらを参照してください</a
+              >
+            </p>
+          </section>
+          <section
+            class="level4"
+            aria-labelledby="chirimen-ドライバのインストール"
           >
-        </p>
-      </section>
-      <section class="level2" aria-labelledby="chirimen-ドライバのインストール">
-        <h2 id="chirimen-ドライバのインストール">
-          CHIRIMEN ドライバのインストール
-        </h2>
-        <ul>
-          <li>不要です。</li>
-        </ul>
-      </section>
-      <section class="level2" aria-labelledby="サンプルコード-mainjs">
-        <h2 id="サンプルコード-mainjs">サンプルコード (main.js)</h2>
-        <pre
-          class="language-javascript"
-        ><code class="language-javascript"><span class="token comment">// Raspberry Pi Camera　リモートカメラ</span>
+            <h4 id="chirimen-ドライバのインストール">
+              CHIRIMEN ドライバのインストール
+            </h4>
+            <ul>
+              <li>不要です。</li>
+            </ul>
+          </section>
+          <section class="level4" aria-labelledby="サンプルコード-mainjs">
+            <h4 id="サンプルコード-mainjs">サンプルコード (main.js)</h4>
+            <pre
+              class="language-javascript"
+            ><code class="language-javascript"><span class="token comment">// Raspberry Pi Camera　リモートカメラ</span>
 
 <span class="token comment">// ライブラリ　pi-camera-connect　をまずインストールする必要があります。readmeを参照してください。</span>
 
@@ -108,6 +115,8 @@
 <span class="token punctuation">}</span>
 
 <span class="token function">connect</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+          </section>
+        </section>
       </section>
     </section>
   </body>

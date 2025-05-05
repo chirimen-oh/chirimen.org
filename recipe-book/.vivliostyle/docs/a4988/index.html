@@ -2,7 +2,7 @@
 <html lang="ja">
   <head>
     <meta charset="utf-8" />
-    <title>A4988ドライバによるステッピングモータ制御</title>
+    <title>モーター制御</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link
       rel="stylesheet"
@@ -11,39 +11,48 @@
     />
   </head>
   <body>
-    <section
-      class="level1"
-      aria-labelledby="a4988ドライバによるステッピングモータ制御"
-    >
-      <h1 id="a4988ドライバによるステッピングモータ制御">
-        A4988ドライバによるステッピングモータ制御
-      </h1>
-      <section class="level2" aria-labelledby="配線図">
-        <h2 id="配線図">配線図</h2>
-        <figure>
-          <img
-            src="./Schematic.png"
-            alt="配線図"
-            title="schematic"
-            width="300px"
-            height="300px"
-          />
-          <figcaption aria-hidden="true">配線図</figcaption>
-        </figure>
-      </section>
-      <section class="level2" aria-labelledby="chirimen-ドライバのインストール">
-        <h2 id="chirimen-ドライバのインストール">
-          CHIRIMEN ドライバのインストール
+    <section class="level1" aria-labelledby="モーター制御">
+      <h1 id="モーター制御">モーター制御</h1>
+      <section class="level2" aria-labelledby="ステッピングモータードライバー">
+        <h2 id="ステッピングモータードライバー">
+          ステッピングモータードライバー
         </h2>
-        <ul>
-          <li>不要です。</li>
-        </ul>
-      </section>
-      <section class="level2" aria-labelledby="サンプルコード-mainjs">
-        <h2 id="サンプルコード-mainjs">サンプルコード (main.js)</h2>
-        <pre
-          class="language-javascript"
-        ><code class="language-javascript"><span class="token keyword module">import</span> <span class="token imports"><span class="token punctuation">{</span> requestGPIOAccess <span class="token punctuation">}</span></span> <span class="token keyword module">from</span> <span class="token string">"./node_modules/node-web-gpio/dist/index.js"</span><span class="token punctuation">;</span>
+        <section
+          class="level3"
+          aria-labelledby="a4988ドライバによるステッピングモータ制御"
+        >
+          <h3 id="a4988ドライバによるステッピングモータ制御">
+            A4988ドライバによるステッピングモータ制御
+          </h3>
+          <section class="level4" aria-labelledby="配線図">
+            <h4 id="配線図">配線図</h4>
+            <figure>
+              <img
+                src="./Schematic.png"
+                alt="配線図"
+                title="schematic"
+                width="300px"
+                height="300px"
+              />
+              <figcaption aria-hidden="true">配線図</figcaption>
+            </figure>
+          </section>
+          <section
+            class="level4"
+            aria-labelledby="chirimen-ドライバのインストール"
+          >
+            <h4 id="chirimen-ドライバのインストール">
+              CHIRIMEN ドライバのインストール
+            </h4>
+            <ul>
+              <li>不要です。</li>
+            </ul>
+          </section>
+          <section class="level4" aria-labelledby="サンプルコード-mainjs">
+            <h4 id="サンプルコード-mainjs">サンプルコード (main.js)</h4>
+            <pre
+              class="language-javascript"
+            ><code class="language-javascript"><span class="token keyword module">import</span> <span class="token imports"><span class="token punctuation">{</span> requestGPIOAccess <span class="token punctuation">}</span></span> <span class="token keyword module">from</span> <span class="token string">"./node_modules/node-web-gpio/dist/index.js"</span><span class="token punctuation">;</span>
 <span class="token keyword">const</span> <span class="token function-variable function">sleep</span> <span class="token operator">=</span> <span class="token parameter">msec</span> <span class="token arrow operator">=&gt;</span> <span class="token keyword">new</span> <span class="token class-name">Promise</span><span class="token punctuation">(</span><span class="token parameter">resolve</span> <span class="token arrow operator">=&gt;</span> <span class="token function">setTimeout</span><span class="token punctuation">(</span>resolve<span class="token punctuation">,</span> msec<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
 <span class="token keyword">let</span> portA<span class="token punctuation">,</span> portB<span class="token punctuation">;</span>
@@ -80,6 +89,8 @@
 <span class="token punctuation">}</span>
 
 <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+          </section>
+        </section>
       </section>
     </section>
   </body>

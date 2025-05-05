@@ -2,7 +2,7 @@
 <html lang="ja">
   <head>
     <meta charset="utf-8" />
-    <title>リモートモータ</title>
+    <title>H ブリッジ</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link
       rel="stylesheet"
@@ -11,48 +11,53 @@
     />
   </head>
   <body>
-    <section class="level1" aria-labelledby="リモートモータ">
-      <h1 id="リモートモータ">リモートモータ</h1>
-      <section class="level2" aria-labelledby="配線図">
-        <h2 id="配線図">配線図</h2>
-        <figure>
-          <img
-            src="../hbridge2-pca9685pwm/schematic.png"
-            alt="配線図"
-            title="schematic"
-            width="300px"
-            height="300px"
-          />
-          <figcaption aria-hidden="true">配線図</figcaption>
-        </figure>
-      </section>
-      <section
-        class="level2"
-        aria-labelledby="遠隔コントローラpcスマホブラウザ側"
-      >
-        <h2 id="遠隔コントローラpcスマホブラウザ側">
-          遠隔コントローラ(PC/スマホブラウザ)側
-        </h2>
-        <p>
-          <a
-            href="https://codesandbox.io/s/github/chirimen-oh/chirimen.org/tree/master/pizero/src/esm-examples/remote_hbridge_pca9685/pc?module=pc.js"
-            >pc/index.html</a
-          >を起動します。
-        </p>
-      </section>
-      <section class="level2" aria-labelledby="chirimen-ドライバのインストール">
-        <h2 id="chirimen-ドライバのインストール">
-          CHIRIMEN ドライバのインストール
-        </h2>
-        <pre
-          class="language-shell"
-        ><code class="language-shell"><span class="token function">npm</span> i @chirimen/pca9685-pwm</code></pre>
-      </section>
-      <section class="level2" aria-labelledby="サンプルコード-mainjs">
-        <h2 id="サンプルコード-mainjs">サンプルコード (main.js)</h2>
-        <pre
-          class="language-javascript"
-        ><code class="language-javascript"><span class="token comment">// Remote Example PCA9685PWM + HBridge - reciever</span>
+    <section class="level2" aria-labelledby="h-ブリッジ">
+      <h2 id="h-ブリッジ">H ブリッジ</h2>
+      <section class="level3" aria-labelledby="リモートモータ">
+        <h3 id="リモートモータ">リモートモータ</h3>
+        <section class="level4" aria-labelledby="配線図">
+          <h4 id="配線図">配線図</h4>
+          <figure>
+            <img
+              src="../hbridge2-pca9685pwm/schematic.png"
+              alt="配線図"
+              title="schematic"
+              width="300px"
+              height="300px"
+            />
+            <figcaption aria-hidden="true">配線図</figcaption>
+          </figure>
+        </section>
+        <section
+          class="level4"
+          aria-labelledby="遠隔コントローラpcスマホブラウザ側"
+        >
+          <h4 id="遠隔コントローラpcスマホブラウザ側">
+            遠隔コントローラ(PC/スマホブラウザ)側
+          </h4>
+          <p>
+            <a
+              href="https://codesandbox.io/s/github/chirimen-oh/chirimen.org/tree/master/pizero/src/esm-examples/remote_hbridge_pca9685/pc?module=pc.js"
+              >pc/index.html</a
+            >を起動します。
+          </p>
+        </section>
+        <section
+          class="level4"
+          aria-labelledby="chirimen-ドライバのインストール"
+        >
+          <h4 id="chirimen-ドライバのインストール">
+            CHIRIMEN ドライバのインストール
+          </h4>
+          <pre
+            class="language-shell"
+          ><code class="language-shell"><span class="token function">npm</span> i @chirimen/pca9685-pwm</code></pre>
+        </section>
+        <section class="level4" aria-labelledby="サンプルコード-mainjs">
+          <h4 id="サンプルコード-mainjs">サンプルコード (main.js)</h4>
+          <pre
+            class="language-javascript"
+          ><code class="language-javascript"><span class="token comment">// Remote Example PCA9685PWM + HBridge - reciever</span>
 <span class="token comment">// for CHIRIMEN with nodejs</span>
 
 <span class="token keyword module">import</span> <span class="token imports"><span class="token punctuation">{</span> requestI2CAccess <span class="token punctuation">}</span></span> <span class="token keyword module">from</span> <span class="token string">"./node_modules/node-web-i2c/index.js"</span><span class="token punctuation">;</span>
@@ -118,6 +123,7 @@
 		<span class="token keyword control-flow">await</span> pca9685pwm<span class="token punctuation">.</span><span class="token method function property-access">setPWM</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 	<span class="token punctuation">}</span>
 <span class="token punctuation">}</span></code></pre>
+        </section>
       </section>
     </section>
   </body>

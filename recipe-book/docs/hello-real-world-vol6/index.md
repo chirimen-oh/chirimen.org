@@ -1,14 +1,14 @@
-## ギヤードモータ part2-1
+### ギヤードモーター part3
 
-### 配線図
+#### 配線図
 
 ![配線図](./PiZero_gpio0Motor.png "schematic")
 
-### CHIRIMEN ドライバのインストール
+#### CHIRIMEN ドライバのインストール
 
 - 不要です。
 
-### サンプルコード (main.js)
+#### サンプルコード (main.js)
 
 ```javascript
 import {requestGPIOAccess} from "./node_modules/node-web-gpio/dist/index.js";

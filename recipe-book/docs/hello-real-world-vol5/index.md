@@ -1,15 +1,17 @@
-## MOSFETモジュール基板を使用する場合 D4184モジュール
+### MOSFE D4184モジュール
 
-### 配線図
+MOSFETモジュール基板を使用する場合 D4184モジュール
+
+#### 配線図
 
 ![配線図](./PiZero_gpio0MotorD_2.png "schematic")
 5V以外のDC電源も使用可能です。
 
-### CHIRIMEN ドライバのインストール
+#### CHIRIMEN ドライバのインストール
 
 - 不要です。
 
-### サンプルコード (main.js)
+#### サンプルコード (main.js)
 
 ```javascript
 import {requestGPIOAccess} from "./node_modules/node-web-gpio/dist/index.js";

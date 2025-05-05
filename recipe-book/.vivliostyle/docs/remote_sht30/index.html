@@ -2,7 +2,7 @@
 <html lang="ja">
   <head>
     <meta charset="utf-8" />
-    <title>リモート温湿度センサ</title>
+    <title>センサー</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link
       rel="stylesheet"
@@ -11,45 +11,50 @@
     />
   </head>
   <body>
-    <section class="level1" aria-labelledby="リモート温湿度センサ">
-      <h1 id="リモート温湿度センサ">リモート温湿度センサ</h1>
-      <section class="level2" aria-labelledby="配線図">
-        <h2 id="配線図">配線図</h2>
-        <figure>
-          <img
-            src="../sht30/schematic.png"
-            alt="配線図"
-            title="schematic"
-            width="300px"
-            height="300px"
-          />
-          <figcaption aria-hidden="true">配線図</figcaption>
-        </figure>
-      </section>
-      <section class="level2" aria-labelledby="遠隔モニタpcスマホブラウザ側">
-        <h2 id="遠隔モニタpcスマホブラウザ側">
-          遠隔モニタ(PC/スマホブラウザ)側
-        </h2>
-        <p>
-          <a
-            href="https://codesandbox.io/s/github/chirimen-oh/chirimen.org/tree/master/pizero/src/esm-examples/remote_sht30/pc?module=pc.js"
-            >pc/index.html</a
-          >を起動します。
-        </p>
-      </section>
-      <section class="level2" aria-labelledby="chirimen-ドライバのインストール">
-        <h2 id="chirimen-ドライバのインストール">
-          CHIRIMEN ドライバのインストール
-        </h2>
-        <pre
-          class="language-shell"
-        ><code class="language-shell"><span class="token function">npm</span> i @chirimen/sht30</code></pre>
-      </section>
-      <section class="level2" aria-labelledby="サンプルコード-mainjs">
-        <h2 id="サンプルコード-mainjs">サンプルコード (main.js)</h2>
-        <pre
-          class="language-javascript"
-        ><code class="language-javascript"><span class="token comment">// Remote Example5 - reciever</span>
+    <section class="level2" aria-labelledby="センサー">
+      <h2 id="センサー">センサー</h2>
+      <section class="level3" aria-labelledby="リモート温湿度センサ">
+        <h3 id="リモート温湿度センサ">リモート温湿度センサ</h3>
+        <section class="level4" aria-labelledby="配線図">
+          <h4 id="配線図">配線図</h4>
+          <figure>
+            <img
+              src="../sht30/schematic.png"
+              alt="配線図"
+              title="schematic"
+              width="300px"
+              height="300px"
+            />
+            <figcaption aria-hidden="true">配線図</figcaption>
+          </figure>
+        </section>
+        <section class="level4" aria-labelledby="遠隔モニタpcスマホブラウザ側">
+          <h4 id="遠隔モニタpcスマホブラウザ側">
+            遠隔モニタ(PC/スマホブラウザ)側
+          </h4>
+          <p>
+            <a
+              href="https://codesandbox.io/s/github/chirimen-oh/chirimen.org/tree/master/pizero/src/esm-examples/remote_sht30/pc?module=pc.js"
+              >pc/index.html</a
+            >を起動します。
+          </p>
+        </section>
+        <section
+          class="level4"
+          aria-labelledby="chirimen-ドライバのインストール"
+        >
+          <h4 id="chirimen-ドライバのインストール">
+            CHIRIMEN ドライバのインストール
+          </h4>
+          <pre
+            class="language-shell"
+          ><code class="language-shell"><span class="token function">npm</span> i @chirimen/sht30</code></pre>
+        </section>
+        <section class="level4" aria-labelledby="サンプルコード-mainjs">
+          <h4 id="サンプルコード-mainjs">サンプルコード (main.js)</h4>
+          <pre
+            class="language-javascript"
+          ><code class="language-javascript"><span class="token comment">// Remote Example5 - reciever</span>
 <span class="token comment">// for CHIRIMEN with nodejs</span>
 <span class="token keyword module">import</span> <span class="token imports"><span class="token punctuation">{</span>requestI2CAccess<span class="token punctuation">}</span></span> <span class="token keyword module">from</span> <span class="token string">"./node_modules/node-web-i2c/index.js"</span><span class="token punctuation">;</span>
 <span class="token keyword module">import</span> <span class="token constant">SHT30</span> <span class="token keyword module">from</span> <span class="token string">"@chirimen/sht30"</span><span class="token punctuation">;</span>
@@ -92,6 +97,7 @@
 
 <span class="token function">connect</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token template-string"><span class="token template-punctuation string">`</span><span class="token template-punctuation string">`</span></span>`
 </code></pre>
+        </section>
       </section>
     </section>
   </body>

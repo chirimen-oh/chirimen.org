@@ -1,14 +1,18 @@
-# A4988ドライバによるステッピングモータ制御
+# モーター制御
 
-## 配線図
+## ステッピングモータードライバー
+
+### A4988ドライバによるステッピングモータ制御
+
+#### 配線図
 
 ![配線図](./Schematic.png "schematic"){width=300px height=300px}
 
-## CHIRIMEN ドライバのインストール
+#### CHIRIMEN ドライバのインストール
 
 - 不要です。
 
-## サンプルコード (main.js)
+#### サンプルコード (main.js)
 
 ```javascript
 import { requestGPIOAccess } from "./node_modules/node-web-gpio/dist/index.js";

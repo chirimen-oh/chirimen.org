@@ -1,13 +1,15 @@
-## MOSFETモジュール基板を使用する場合 P718Dモジュール
+### MOSFET P718Dモジュール
 
-### 配線図
+MOSFETモジュール基板を使用する場合 P718Dモジュール
+
+#### 配線図
 ![配線図](./PiZero_gpio0MotorC_2.png "schematic")
 
-### CHIRIMEN ドライバのインストール
+#### CHIRIMEN ドライバのインストール
 
 - 不要です。
 
-### サンプルコード (main.js)
+#### サンプルコード (main.js)
 
 ```javascript
 import {requestGPIOAccess} from "./node_modules/node-web-gpio/dist/index.js";

@@ -2,7 +2,7 @@
 <html lang="ja">
   <head>
     <meta charset="utf-8" />
-    <title>Serial GPS</title>
+    <title>その他</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link
       rel="stylesheet"
@@ -11,100 +11,107 @@
     />
   </head>
   <body>
-    <section class="level1" aria-labelledby="serial-gps">
-      <h1 id="serial-gps">Serial GPS</h1>
-      <p>
-        PiZeroのシリアル端子に、GY-GPS6MV2等のGPSレシーバ基板を繋いで使用する
-      </p>
-      <ul>
-        <li>
-          OSの設定
-          <ul>
-            <li><code>sudo raspi-config</code></li>
-            <li>
-              Interface Options -&gt; Serial Port -&gt; Login over serial:
-              いいえ , serial port enabled: はい -&gt; Finish (reboot)
-            </li>
-            <li>
-              Note: この設定はUSBシリアルのコンソールログインには影響しない
-            </li>
-          </ul>
-        </li>
-        <li>
-          結線 (GPSのRX端子の結線は基本動作では不要) : 下図参照
+    <section class="level1" aria-labelledby="その他">
+      <h1 id="その他">その他</h1>
+      <section class="level2" aria-labelledby="gps">
+        <h2 id="gps">GPS</h2>
+        <section class="level3" aria-labelledby="serial-gps">
+          <h3 id="serial-gps">Serial GPS</h3>
+          <p>
+            PiZeroのシリアル端子に、GY-GPS6MV2等のGPSレシーバ基板を繋いで使用する
+          </p>
           <ul>
             <li>
-              動作検証したモジュール (GY-NEO6MV2,基板の印刷はGY-GPS6MV2)
+              OSの設定
               <ul>
+                <li><code>sudo raspi-config</code></li>
                 <li>
-                  <a
-                    href="https://electronicwork.shop/items/625c1ca99fe3d707d725cbe1"
-                    >https://electronicwork.shop/items/625c1ca99fe3d707d725cbe1</a
-                  >
+                  Interface Options -&gt; Serial Port -&gt; Login over serial:
+                  いいえ , serial port enabled: はい -&gt; Finish (reboot)
+                </li>
+                <li>
+                  Note: この設定はUSBシリアルのコンソールログインには影響しない
                 </li>
               </ul>
             </li>
             <li>
-              同等品と考えられるもの
+              結線 (GPSのRX端子の結線は基本動作では不要) : 下図参照
               <ul>
                 <li>
-                  <a href="https://www.amazon.co.jp/dp/B07LF6KGR8"
-                    >https://www.amazon.co.jp/dp/B07LF6KGR8</a
-                  >
+                  動作検証したモジュール (GY-NEO6MV2,基板の印刷はGY-GPS6MV2)
+                  <ul>
+                    <li>
+                      <a
+                        href="https://electronicwork.shop/items/625c1ca99fe3d707d725cbe1"
+                        >https://electronicwork.shop/items/625c1ca99fe3d707d725cbe1</a
+                      >
+                    </li>
+                  </ul>
                 </li>
                 <li>
-                  <a href="https://www.aitendo.com/product/10255"
-                    >https://www.aitendo.com/product/10255</a
-                  >
+                  同等品と考えられるもの
+                  <ul>
+                    <li>
+                      <a href="https://www.amazon.co.jp/dp/B07LF6KGR8"
+                        >https://www.amazon.co.jp/dp/B07LF6KGR8</a
+                      >
+                    </li>
+                    <li>
+                      <a href="https://www.aitendo.com/product/10255"
+                        >https://www.aitendo.com/product/10255</a
+                      >
+                    </li>
+                  </ul>
                 </li>
               </ul>
             </li>
-          </ul>
-        </li>
-        <li>
-          動作確認
-          <ul>
-            <li><code>cat /dev/ttyS0</code></li>
             <li>
-              Note: GPS衛星電波受信されていなくてもメッセージが出力される。
-              <code>/dev/serial0</code>
-              も使える。測位成功するとメッセージが派手になり、LEDが点滅する
-              (LEDは測位成功していないときは消灯)
+              動作確認
+              <ul>
+                <li><code>cat /dev/ttyS0</code></li>
+                <li>
+                  Note: GPS衛星電波受信されていなくてもメッセージが出力される。
+                  <code>/dev/serial0</code>
+                  も使える。測位成功するとメッセージが派手になり、LEDが点滅する
+                  (LEDは測位成功していないときは消灯)
+                </li>
+              </ul>
+            </li>
+            <li>
+              シリアルポート及びGPSのライブラリを導入(myAppディレクトリで)
+              <ul>
+                <li><code>cd myApp</code></li>
+                <li><code>npm install serialport gps</code></li>
+              </ul>
+            </li>
+            <li>
+              アプリの実行
+              <ul>
+                <li>main.js を myApp下に保存</li>
+                <li><code>node main.js</code></li>
+              </ul>
             </li>
           </ul>
-        </li>
-        <li>
-          シリアルポート及びGPSのライブラリを導入(myAppディレクトリで)
-          <ul>
-            <li><code>cd myApp</code></li>
-            <li><code>npm install serialport gps</code></li>
-          </ul>
-        </li>
-        <li>
-          アプリの実行
-          <ul>
-            <li>main.js を myApp下に保存</li>
-            <li><code>node main.js</code></li>
-          </ul>
-        </li>
-      </ul>
-      <figure>
-        <img src="GY-NEO6MV2.png" alt="GY-NEO6MV2.png" />
-        <figcaption aria-hidden="true">GY-NEO6MV2.png</figcaption>
-      </figure>
-      <section class="level2" aria-labelledby="chirimen-ドライバのインストール">
-        <h2 id="chirimen-ドライバのインストール">
-          CHIRIMEN ドライバのインストール
-        </h2>
-        <ul>
-          <li>不要です。</li>
-        </ul>
-      </section>
-      <section class="level2" aria-labelledby="サンプルコード-mainjs">
-        <h2 id="サンプルコード-mainjs">サンプルコード (main.js)</h2>
-        <pre
-          class="language-javascript"
-        ><code class="language-javascript"><span class="token comment">// シリアルからGPSデータ受信</span>
+          <figure>
+            <img src="GY-NEO6MV2.png" alt="GY-NEO6MV2.png" />
+            <figcaption aria-hidden="true">GY-NEO6MV2.png</figcaption>
+          </figure>
+          <section
+            class="level4"
+            aria-labelledby="chirimen-ドライバのインストール"
+          >
+            <h4 id="chirimen-ドライバのインストール">
+              CHIRIMEN ドライバのインストール
+            </h4>
+            <ul>
+              <li>不要です。</li>
+            </ul>
+          </section>
+          <section class="level4" aria-labelledby="サンプルコード-mainjs">
+            <h4 id="サンプルコード-mainjs">サンプルコード (main.js)</h4>
+            <pre
+              class="language-javascript"
+            ><code class="language-javascript"><span class="token comment">// シリアルからGPSデータ受信</span>
 <span class="token keyword module">import</span> <span class="token imports"><span class="token punctuation">{</span> <span class="token maybe-class-name">SerialPort</span> <span class="token punctuation">}</span></span> <span class="token keyword module">from</span> <span class="token string">'serialport'</span><span class="token punctuation">;</span>
 <span class="token keyword module">import</span> <span class="token imports"><span class="token punctuation">{</span> <span class="token maybe-class-name">ReadlineParser</span> <span class="token punctuation">}</span></span> <span class="token keyword module">from</span> <span class="token string">'@serialport/parser-readline'</span><span class="token punctuation">;</span>
 <span class="token keyword module">import</span> <span class="token imports"><span class="token maybe-class-name">GPSpackage</span></span> <span class="token keyword module">from</span> <span class="token string">'gps'</span><span class="token punctuation">;</span>
@@ -128,6 +135,8 @@ gps<span class="token punctuation">.</span><span class="token method function pr
     console.log("==============================================================");
     **/</span>
 <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+          </section>
+        </section>
       </section>
     </section>
   </body>

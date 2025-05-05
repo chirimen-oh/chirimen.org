@@ -8,7 +8,7 @@
   "name": "CHIRIMEN 対応デバイスレシピ集",
   "author": "CHIRIMEN Open Hardware Community <chirimen.open.hardware@gmail.com>",
   "inLanguage": "ja",
-  "dateModified": "2025-05-05T13:12:42.624Z",
+  "dateModified": "2025-05-05T15:08:35.972Z",
   "readingOrder": [
     {
       "url": "docs/index.html",
@@ -30,7 +30,7 @@
     },
     {
       "url": "docs/adt7410/index.html",
-      "name": "ADT7410 温度センサー"
+      "name": "環境センサー"
     },
     {
       "url": "docs/aht10/index.html",
@@ -54,7 +54,7 @@
     },
     {
       "url": "docs/bmp180/index.html",
-      "name": "BMP180 大気圧温度センサー"
+      "name": "気圧センサー"
     },
     {
       "url": "docs/bmp280/index.html",
@@ -66,7 +66,7 @@
     },
     {
       "url": "docs/ens160/index.html",
-      "name": "ENS160 空気質センサ"
+      "name": "空気品質センサー"
     },
     {
       "url": "docs/sgp40/index.html",
@@ -74,11 +74,11 @@
     },
     {
       "url": "docs/scd40/index.html",
-      "name": "SCD40 CO2センサー"
+      "name": "CO2 センサー"
     },
     {
       "url": "docs/bh1750/index.html",
-      "name": "BH1750 光センサー"
+      "name": "光センサー"
     },
     {
       "url": "docs/ltr390/index.html",
@@ -98,7 +98,7 @@
     },
     {
       "url": "docs/tcs34725/index.html",
-      "name": "TCS34725 カラーセンサー"
+      "name": "色センサー"
     },
     {
       "url": "docs/s11059/index.html",
@@ -106,7 +106,7 @@
     },
     {
       "url": "docs/adxl345/index.html",
-      "name": "ADXL345 Grove Accelerometer 3 軸加速度センサー"
+      "name": "モーション・位置センサー"
     },
     {
       "url": "docs/icm20948/index.html",
@@ -114,15 +114,15 @@
     },
     {
       "url": "docs/mpu6050/index.html",
-      "name": "MPU6050 3 軸ジャイロ + 3 軸加速度 複合センサー"
+      "name": "MPU6050 3 軸ジャイロ 3 軸加速度 複合センサー"
     },
     {
       "url": "docs/mpu9250/index.html",
-      "name": "MPU9250 ３軸ジャイロ＋３軸加速度＋３軸磁気 複合センサー"
+      "name": "MPU9250 3 軸ジャイロ 3 軸加速度 3 軸 磁気複合センサー"
     },
     {
       "url": "docs/gp2y0e03/index.html",
-      "name": "GP2Y0E03 測距センサー 40 mm - 0.1 m"
+      "name": "距離センサー"
     },
     {
       "url": "docs/vl53l0x/index.html",
@@ -134,19 +134,19 @@
     },
     {
       "url": "docs/as5600/index.html",
-      "name": "AS5600 磁気式角度センサ"
+      "name": "角度センサー"
     },
     {
       "url": "docs/paj7620/index.html",
-      "name": "PAJ7620 Grove Gesture ジェスチャー認識センサー"
+      "name": "ジェスチャーセンサー"
     },
     {
       "url": "docs/as3935/index.html",
-      "name": "AS3935 雷センサー"
+      "name": "雷センサー"
     },
     {
       "url": "docs/ssd1306/index.html",
-      "name": "SSD1306 OLED ディスプレイ"
+      "name": "ディスプレイ・LED"
     },
     {
       "url": "docs/ssd1308/index.html",
@@ -154,35 +154,35 @@
     },
     {
       "url": "docs/ht16k33/index.html",
-      "name": "HT16K33 LEDマトリクスドライバ、8x8LEDマトリクスモジュール一体型や7セグメントLED一体型等にも対応"
+      "name": "LED ドライバー"
     },
     {
       "url": "docs/neopixel-i2c/index.html",
-      "name": "Neopixel LED"
+      "name": "NeoPixel"
     },
     {
       "url": "docs/waveshare20471/index.html",
-      "name": "WAVESHARE20471複合センサーボード"
+      "name": "電子ペーパー"
     },
     {
       "url": "docs/a4988/index.html",
-      "name": "A4988ドライバによるステッピングモータ制御"
+      "name": "モーター制御"
     },
     {
       "url": "docs/hbridge1/index.html",
-      "name": "HBridge1"
+      "name": "H ブリッジ"
     },
     {
       "url": "docs/hbridge2-pca9685pwm/index.html",
-      "name": "PCA9685 16 チャンネルPWM ドライバ + HBridgeモーターコントローラ"
+      "name": "PCA9685 16 チャンネル PWM ドライバ"
     },
     {
       "url": "docs/pca9685/index.html",
-      "name": "PCA9685 16 チャンネルサーボモーター PWM ドライバー"
+      "name": "PWM コントローラー"
     },
     {
       "url": "docs/ads1015/index.html",
-      "name": "ADS1015 12 ビット AD コンバータ"
+      "name": "アナログ・デジタル変換"
     },
     {
       "url": "docs/ads1115-loadcell/index.html",
@@ -198,19 +198,19 @@
     },
     {
       "url": "docs/ina219/index.html",
-      "name": "INA219 電流センサー"
+      "name": "電流センサー"
     },
     {
       "url": "docs/dfplayer/index.html",
-      "name": "DFPlayer Mini(MP3プレーヤーボードをGPIO OUTPUTで制御)"
+      "name": "オーディオ"
     },
     {
       "url": "docs/isd1820/index.html",
-      "name": "ISD1820ボイスレコーダ (GPIO OUTPUT)"
+      "name": "音声録音"
     },
     {
       "url": "docs/gpio-inout/index.html",
-      "name": "GPIO スイッチ + (LED又はギヤードモーター) (GPIO INPUT/OUTPUT)"
+      "name": "GPIO 関連"
     },
     {
       "url": "docs/gpio-onchange/index.html",
@@ -218,23 +218,23 @@
     },
     {
       "url": "docs/gpio-polling/index.html",
-      "name": "GPIOスイッチ2 (GPIO POLLING INPUT)"
+      "name": "タッチセンサー"
     },
     {
       "url": "docs/mpr121/index.html",
-      "name": "MPR121 静電容量センサ(12ch)"
+      "name": "タッチセンサー"
     },
     {
       "url": "docs/gpio-camera/index.html",
-      "name": "GPIO スイッチによるカメラ撮影 (GPIO-Camera)"
+      "name": "カメラ"
     },
     {
       "url": "docs/remote_camera/index.html",
-      "name": "GPIOスイッチによるカメラ撮影 (remote_Camera)"
+      "name": "リモート制御"
     },
     {
       "url": "docs/remote_gpio_led/index.html",
-      "name": "リモートLチカ"
+      "name": "GPIO"
     },
     {
       "url": "docs/remote_gpio_sw/index.html",
@@ -242,15 +242,15 @@
     },
     {
       "url": "docs/remote_hbridge_pca9685/index.html",
-      "name": "リモートモータ"
+      "name": "H ブリッジ"
     },
     {
       "url": "docs/remote_pca9685/index.html",
-      "name": "リモートサーボモータ"
+      "name": "PWM"
     },
     {
       "url": "docs/remote_sht30/index.html",
-      "name": "リモート温湿度センサ"
+      "name": "センサー"
     },
     {
       "url": "docs/remote_sht30_gpioin/index.html",
@@ -262,19 +262,19 @@
     },
     {
       "url": "docs/serial_gps/index.html",
-      "name": "Serial GPS"
+      "name": "その他"
     },
     {
       "url": "docs/amg8833/index.html",
-      "name": "AMG8833 サーモグラフィー"
+      "name": "サーマルカメラ"
     },
     {
       "url": "docs/mlx90614/index.html",
-      "name": "MLX90614 赤外線温度センサー"
+      "name": "赤外線温度センサー"
     },
     {
       "url": "docs/hello-real-world-vol1/index.html",
-      "name": "hello-real-world"
+      "name": "入門用"
     },
     {
       "url": "docs/hello-real-world-vol2/index.html",
@@ -282,27 +282,27 @@
     },
     {
       "url": "docs/hello-real-world-vol3/index.html",
-      "name": "ギヤードモーター (GPIO OUTPUT)外部電源を使用する場合"
+      "name": "ギヤードモーター  part2"
     },
     {
       "url": "docs/hello-real-world-vol4/index.html",
-      "name": "MOSFETモジュール基板を使用する場合 P718Dモジュール"
+      "name": "MOSFET P718Dモジュール"
     },
     {
       "url": "docs/hello-real-world-vol5/index.html",
-      "name": "MOSFETモジュール基板を使用する場合 D4184モジュール"
+      "name": "MOSFE D4184モジュール"
     },
     {
       "url": "docs/hello-real-world-vol6/index.html",
-      "name": "ギヤードモータ part2-1"
+      "name": "ギヤードモーター part3"
     },
     {
       "url": "docs/hello-real-world-vol7/index.html",
-      "name": "ギヤードモータ part2-2"
+      "name": "ギヤードモーター part4"
     },
     {
       "url": "docs/hello-real-world-vol8/index.html",
-      "name": "ギヤードモータ part2-3"
+      "name": "ギヤードモーター part5"
     },
     {
       "url": "docs/thanks.html",

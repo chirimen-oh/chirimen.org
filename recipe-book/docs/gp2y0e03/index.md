@@ -1,16 +1,18 @@
-# GP2Y0E03 測距センサー 40 mm - 0.1 m
+## 距離センサー
 
-## 配線図
+### GP2Y0E03 測距センサー 40 mm - 0.1 m
+
+#### 配線図
 
 ![配線図](./schematic.png "schematic"){width=300px height=300px}
 
-## CHIRIMEN ドライバのインストール
+#### CHIRIMEN ドライバのインストール
 
 ```shell
 npm i @chirimen/gp2y0e03
 ```
 
-## サンプルコード (main.js)
+#### サンプルコード (main.js)
 
 ```javascript
 import {requestI2CAccess} from "node-web-i2c";

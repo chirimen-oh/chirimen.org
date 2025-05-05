@@ -1,16 +1,16 @@
-# MPU9250 ３軸ジャイロ＋３軸加速度＋３軸磁気 複合センサー
+### MPU9250 3 軸ジャイロ 3 軸加速度 3 軸 磁気複合センサー
 
-## 配線図
+#### 配線図
 
 ![配線図](./schematic.png "schematic"){width=300px height=300px}
 
-## CHIRIMEN ドライバのインストール
+#### CHIRIMEN ドライバのインストール
 
 ```shell
 npm i @chirimen/ak8963
 ```
 
-## サンプルコード (main.js)
+#### サンプルコード (main.js)
 
 ```javascript
 import {requestI2CAccess} from "./node_modules/node-web-i2c/index.js";
