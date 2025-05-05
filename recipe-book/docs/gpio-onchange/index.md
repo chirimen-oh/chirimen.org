@@ -1,4 +1,4 @@
-# GPIOスイッチ (GPIO INPUT)
+### GPIOスイッチ (GPIO INPUT)
 
 #### 配線図
 

@@ -1,4 +1,10 @@
-# GPIO スイッチ + (LED又はギヤードモーター) (GPIO INPUT/OUTPUT)
+# GPIO 関連
+
+## 基本的な GPIO 操作
+
+### GPIO スイッチ
+
+GPIO スイッチ and LED又はギヤードモーター (GPIO INPUT/OUTPUT)
 
 #### 配線図１ (スイッチ+LED)
 

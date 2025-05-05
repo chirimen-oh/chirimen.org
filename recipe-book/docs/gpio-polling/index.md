@@ -1,4 +1,6 @@
-# GPIOスイッチ2 (GPIO POLLING INPUT)
+## タッチセンサー
+
+### GPIOスイッチ2 (GPIO POLLING INPUT)
 
 #### 配線図
 

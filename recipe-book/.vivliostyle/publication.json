@@ -8,7 +8,7 @@
   "name": "CHIRIMEN 対応デバイスレシピ集",
   "author": "CHIRIMEN Open Hardware Community <chirimen.open.hardware@gmail.com>",
   "inLanguage": "ja",
-  "dateModified": "2025-05-05T14:41:54.459Z",
+  "dateModified": "2025-05-05T14:49:29.588Z",
   "readingOrder": [
     {
       "url": "docs/index.html",
@@ -207,6 +207,26 @@
     {
       "url": "docs/isd1820/index.html",
       "name": "音声録音"
+    },
+    {
+      "url": "docs/gpio-inout/index.html",
+      "name": "GPIO 関連"
+    },
+    {
+      "url": "docs/gpio-onchange/index.html",
+      "name": "GPIOスイッチ (GPIO INPUT)"
+    },
+    {
+      "url": "docs/gpio-polling/index.html",
+      "name": "タッチセンサー"
+    },
+    {
+      "url": "docs/mpr121/index.html",
+      "name": "タッチセンサー"
+    },
+    {
+      "url": "docs/gpio-camera/index.html",
+      "name": "カメラ"
     },
     {
       "url": "docs/thanks.html",

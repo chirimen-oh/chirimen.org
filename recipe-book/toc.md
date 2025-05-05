@@ -82,5 +82,16 @@
         1. [DFPlayer Mini](./docs/dfplayer/index.html#dfplayer-mini)
     1. [音声録音](./docs/isd1820/index.html#音声録音)
         1. [ISD1820ボイスレコーダ (GPIO OUTPUT)](./docs/isd1820/index.html#isd1820ボイスレコーダ-gpio-output)
+1. [GPIO 関連](./docs/gpio-inout/index.html#gpio-関連)
+    1. [基本的な GPIO 操作](./docs/gpio-inout/index.html#基本的な-gpio-操作)
+        1. [GPIO スイッチ](./docs/gpio-inout/index.html#gpio-スイッチ)
+        1. [GPIOスイッチ (GPIO INPUT)](./docs/gpio-onchange/index.html#gpioスイッチ-gpio-input)
+1. [GPIOタッチセンサー](./docs/gpio-onchange/index.html#gpioタッチセンサー)
+    1. [タッチセンサー](./docs/gpio-polling/index.html#タッチセンサー)
+        1. [GPIOスイッチ2 (GPIO POLLING INPUT)](./docs/gpio-polling/index.html#gpioスイッチ2-gpio-polling-input)
+    1. [タッチセンサー](./docs/mpr121/index.html#タッチセンサー)
+        1. [MPR121 静電容量センサ(12ch)](./docs/mpr121/index.html#mpr121-静電容量センサ12ch)
+    1. [カメラ](./docs/gpio-camera/index.html#カメラ)
+        1. [GPIO スイッチによるカメラ撮影 (GPIO-Camera)](./docs/gpio-camera/index.html#gpio-スイッチによるカメラ撮影-gpio-camera)
 
 </nav>
