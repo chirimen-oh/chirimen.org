@@ -1,16 +1,16 @@
 # ADS1115 16bit ADC 差動入力によるロードセルの使用
 
-## 配線図
+### 配線図
 
 ![配線図](./schematic.png "schematic"){width=300px height=300px}
 
-## CHIRIMEN ドライバのインストール
+### CHIRIMEN ドライバのインストール
 
 ```shell
 npm i @chirimen/ads1x15
 ```
 
-## サンプルコード (main.js)
+### サンプルコード (main.js)
 
 ```javascript
 import { requestI2CAccess } from "./node_modules/node-web-i2c/index.js";

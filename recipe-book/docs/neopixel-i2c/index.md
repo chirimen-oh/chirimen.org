@@ -1,18 +1,18 @@
 # Neopixel LED
 
-## 配線図
+### 配線図
 
 ![配線図](./schematic.png){width=400px height=190px}
 
 ![配線図（専用ボード使用）](./schematic_with_dedicated_breadboard.png){width=400px height=190px}
 
-## CHIRIMEN ドライバのインストール
+### CHIRIMEN ドライバのインストール
 
 ```shell
 npm i @chirimen/neopixel-i2c
 ```
 
-## サンプルコード (main.js)
+### サンプルコード (main.js)
 
 ```javascript
 import { requestI2CAccess } from "./node_modules/node-web-i2c/index.js";

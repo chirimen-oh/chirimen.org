@@ -1,6 +1,6 @@
 # GPIO スイッチによるカメラ撮影 (GPIO-Camera)
 
-## 配線図
+### 配線図
 
 ![配線図](./PiZero_gpio-camera.png "schematic"){width=250px height=250px}
 
@@ -48,7 +48,7 @@ raspistill -v --width 640 --height 480 -o test.jpg
 >
 > 詳細: [Camera software - Raspberry Pi Documentation](https://www.raspberrypi.com/documentation/computers/camera_software.html)
 
-## CHIRIMEN ドライバのインストール
+### CHIRIMEN ドライバのインストール
 
 - `pi-camera-connect` を使用します。
 
@@ -103,7 +103,7 @@ runApp();
 - [pi-camera-connect のリポジトリ](https://github.com/launchcodedev/pi-camera-connect)
 - この章は[こちらの記事](https://x.gd/i3u0x)を改変して作成されました。
 
-## サンプルコード (main.js)
+### サンプルコード (main.js)
 
 ```javascript
 // GPIO5のスイッチを押すと、Raspberry Pi Cameraで撮影し、ファイルに保存する

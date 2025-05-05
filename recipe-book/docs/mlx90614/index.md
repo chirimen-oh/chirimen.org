@@ -1,16 +1,16 @@
 # MLX90614 赤外線温度センサー
 
-## 配線図
+### 配線図
 
 ![配線図](./schematic.png "schematic"){width=300px height=300px}
 
-## CHIRIMEN ドライバのインストール
+### CHIRIMEN ドライバのインストール
 
 ```shell
 npm i @chirimen/mlx90614
 ```
 
-## サンプルコード (main.js)
+### サンプルコード (main.js)
 
 ```javascript
 import {requestI2CAccess} from "./node_modules/node-web-i2c/index.js";

@@ -18,17 +18,17 @@ AS3935は、雷センサーICです。ICに内蔵された雷検出アルゴリ�
 - I2Cアドレス ```0x03```のデバイスは、通常のi2cdetectコマンドでは検出できません（標準範囲外アドレス） ```-a``` オプションが必要です。コマンドプロンプトから、以下のコマンドで検出してください。
 - ```i2cdetect -y -a 1```
 
-## 配線図
+### 配線図
 
 ![配線図](./schematic.png "schematic"){width=300px height=300px}
 
-## CHIRIMEN ドライバのインストール
+### CHIRIMEN ドライバのインストール
 
 ```shell
 npm i @chirimen/as3935
 ```
 
-## サンプルコード (main.js)
+### サンプルコード (main.js)
 
 ```javascript
 /* 各種ライブラリをインポート */

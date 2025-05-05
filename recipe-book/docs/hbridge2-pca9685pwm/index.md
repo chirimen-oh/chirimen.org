@@ -4,17 +4,17 @@
 * HBridgeコントローラはL298N以外にもL9110S、MX1508等も同様に使用できます。
   * ただし、これらのドライバでは+5Vと+12V端子の代わりに、一個のVCCや電源(+)端子だけのものが多いので、モーター電源はそこに繋げます。
 
-## 配線図
+### 配線図
 
 ![配線図](./schematic.png "schematic"){width=300px height=300px}
 
-## CHIRIMEN ドライバのインストール
+### CHIRIMEN ドライバのインストール
 
 ```shell
 npm i @chirimen/pca9685-pwm
 ```
 
-## サンプルコード (main.js)
+### サンプルコード (main.js)
 
 ```javascript
 import { requestI2CAccess } from "./node_modules/node-web-i2c/index.js";

@@ -1,18 +1,18 @@
 # AHT20 温湿度センサー
 
-## 配線図
+### 配線図
 
 ![配線図](./schematic.png "schematic"){width=300px height=300px}
 
 Note: このデバイスで使用するドライバahtx0.jsは、AHT20及びAHT10で使用可能です。
 
-## CHIRIMEN ドライバのインストール
+### CHIRIMEN ドライバのインストール
 
 ```shell
 npm i @chirimen/ahtx0
 ```
 
-## サンプルコード (main.js)
+### サンプルコード (main.js)
 
 ```javascript
 import {requestI2CAccess} from "./node_modules/node-web-i2c/index.js";

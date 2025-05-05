@@ -1,16 +1,16 @@
 # VEML6070 UV センサー
 
-## 配線図
+### 配線図
 
 ![配線図](./schematic.png "schematic")
 
-## CHIRIMEN ドライバのインストール
+### CHIRIMEN ドライバのインストール
 
 ```shell
 npm i @chirimen/veml6070
 ```
 
-## サンプルコード (main.js)
+### サンプルコード (main.js)
 
 ```javascript
 import {requestI2CAccess} from "./node_modules/node-web-i2c/index.js";

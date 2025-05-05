@@ -1,6 +1,6 @@
 # リモートサーボモータ
 
-## 配線図
+### 配線図
 
 ![配線図](../pca9685/schematic.png "schematic"){width=300px height=300px}
 
@@ -8,13 +8,13 @@
 
 [pc/index.html](https://codesandbox.io/s/github/chirimen-oh/chirimen.org/tree/master/pizero/src/esm-examples/remote_pca9685/pc?module=pc.js)を起動します。
 
-## CHIRIMEN ドライバのインストール
+### CHIRIMEN ドライバのインストール
 
 ```shell
 npm i @chirimen/pca9685
 ```
 
-## サンプルコード (main.js)
+### サンプルコード (main.js)
 
 ```javascript
 // Remote Example8 - reciever

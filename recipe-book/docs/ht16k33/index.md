@@ -1,6 +1,6 @@
 # HT16K33 LEDマトリクスドライバ、8x8LEDマトリクスモジュール一体型や7セグメントLED一体型等にも対応
 
-## 配線図
+### 配線図
 
 Note: 3.3V電源でも、あまり明るくはなりませんが動作するようです。
 
@@ -50,13 +50,13 @@ Adafruit、keystudioとマトリクスの結線が異なりますが、設定変
 ### その他
 * set_led関数を使用することで、任意のLEDマトリクスに対応できます
 
-## CHIRIMEN ドライバのインストール
+### CHIRIMEN ドライバのインストール
 
 ```shell
 npm i @chirimen/ht16k33
 ```
 
-## サンプルコード (main.js)
+### サンプルコード (main.js)
 
 ```javascript
 // Adafruit Mini 8x8 LED Matrix w/I2C Backpack

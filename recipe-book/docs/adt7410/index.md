@@ -1,17 +1,17 @@
 # ADT7410 温度センサー
 
-## 配線図
+### 配線図
 
 ![配線図1](./PiZero_ADT7410.png "schematic"){width=300px height=300px}
 ![配線図2](./schematic_warning.png "schematic"){width=300px height=300px}
 
-## CHIRIMEN ドライバのインストール
+### CHIRIMEN ドライバのインストール
 
 ```shell
 npm i @chirimen/adt7410
 ```
 
-## サンプルコード (main.js)
+### サンプルコード (main.js)
 
 ```javascript
 import {requestI2CAccess} from "./node_modules/node-web-i2c/index.js";
