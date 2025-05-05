@@ -8,7 +8,7 @@
   "name": "CHIRIMEN 対応デバイスレシピ集",
   "author": "CHIRIMEN Open Hardware Community <chirimen.open.hardware@gmail.com>",
   "inLanguage": "ja",
-  "dateModified": "2025-05-05T05:53:01.367Z",
+  "dateModified": "2025-05-05T06:15:36.523Z",
   "readingOrder": [
     {
       "url": "docs/index.html",
@@ -29,8 +29,12 @@
       "name": "CHIRIMEN とは"
     },
     {
+      "url": "docs/sensor-list-category.html",
+      "name": "センサーリスト（カテゴリ別）"
+    },
+    {
       "url": "docs/adt7410/index.html",
-      "name": "環境センサー"
+      "name": "ADT7410 温度センサー"
     },
     {
       "url": "docs/aht10/index.html",
