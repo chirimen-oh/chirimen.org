@@ -1,4 +1,8 @@
-# ADXL345 Grove Accelerometer 3 軸加速度センサー
+# モーション・位置センサー
+
+## 加速度・ジャイロセンサー
+
+### ADXL345 Grove Accelerometer 3 軸加速度センサー
 
 #### 配線図
 

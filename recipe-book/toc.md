@@ -12,7 +12,6 @@
     1. [コミュニティについて](./docs/about.html#コミュニティについて)
 1. [環境センサー](./docs/adt7410/index.html#環境センサー)
     1. [温度・湿度センサー](./docs/adt7410/index.html#温度湿度センサー)
-        1. [ADT7410 温度センサー](./docs/adt7410/index.html#adt7410-温度センサー)
         1. [AHT10 温湿度センサー](./docs/aht10/index.html#aht10-温湿度センサー)
         1. [AHT20 温湿度センサー](./docs/aht20/index.html#aht20-温湿度センサー)
         1. [HTU21D 温湿度センサー](./docs/htu21d/index.html#htu21d-温湿度センサー)
@@ -36,5 +35,11 @@
     1. [色センサー](./docs/tcs34725/index.html#色センサー)
         1. [TCS34725 カラーセンサー](./docs/tcs34725/index.html#tcs34725-カラーセンサー)
         1. [S11059 デジタルカラーセンサー](./docs/s11059/index.html#s11059-デジタルカラーセンサー)
+1. [モーション・位置センサー](./docs/adxl345/index.html#モーション位置センサー)
+    1. [加速度・ジャイロセンサー](./docs/adxl345/index.html#加速度ジャイロセンサー)
+        1. [ADXL345 Grove Accelerometer 3 軸加速度センサー](./docs/adxl345/index.html#adxl345-grove-accelerometer-3-軸加速度センサー)
+        1. [ICM20948 9軸センサー](./docs/icm20948/index.html#icm20948-9軸センサー)
+        1. [MPU6050 3 軸ジャイロ 3 軸加速度 複合センサー](./docs/mpu6050/index.html#mpu6050-3-軸ジャイロ-3-軸加速度-複合センサー)
+        1. [MPU9250 3 軸ジャイロ 3 軸加速度 3 軸 磁気複合センサー](./docs/mpu9250/index.html#mpu9250-3-軸ジャイロ-3-軸加速度-3-軸-磁気複合センサー)
 
 </nav>

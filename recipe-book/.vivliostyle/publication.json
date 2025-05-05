@@ -8,7 +8,7 @@
   "name": "CHIRIMEN 対応デバイスレシピ集",
   "author": "CHIRIMEN Open Hardware Community <chirimen.open.hardware@gmail.com>",
   "inLanguage": "ja",
-  "dateModified": "2025-05-05T14:04:53.079Z",
+  "dateModified": "2025-05-05T14:10:28.533Z",
   "readingOrder": [
     {
       "url": "docs/index.html",
@@ -103,6 +103,22 @@
     {
       "url": "docs/s11059/index.html",
       "name": "S11059 デジタルカラーセンサー"
+    },
+    {
+      "url": "docs/adxl345/index.html",
+      "name": "モーション・位置センサー"
+    },
+    {
+      "url": "docs/icm20948/index.html",
+      "name": "ICM20948 9軸センサー"
+    },
+    {
+      "url": "docs/mpu6050/index.html",
+      "name": "MPU6050 3 軸ジャイロ 3 軸加速度 複合センサー"
+    },
+    {
+      "url": "docs/mpu9250/index.html",
+      "name": "MPU9250 3 軸ジャイロ 3 軸加速度 3 軸 磁気複合センサー"
     },
     {
       "url": "docs/thanks.html",
