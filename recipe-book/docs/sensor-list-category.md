@@ -121,4 +121,4 @@
 - 赤外線温度センサー
   - [mlx90614](./mlx90614/index.md)
 - 入門用
-  - [hello-real-world](./hello-real-world/index.md)
+  - [hello-real-world](./hello-real-world-vol1/index.md)
