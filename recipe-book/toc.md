@@ -41,5 +41,9 @@
         1. [ICM20948 9軸センサー](./docs/icm20948/index.html#icm20948-9軸センサー)
         1. [MPU6050 3 軸ジャイロ 3 軸加速度 複合センサー](./docs/mpu6050/index.html#mpu6050-3-軸ジャイロ-3-軸加速度-複合センサー)
         1. [MPU9250 3 軸ジャイロ 3 軸加速度 3 軸 磁気複合センサー](./docs/mpu9250/index.html#mpu9250-3-軸ジャイロ-3-軸加速度-3-軸-磁気複合センサー)
+    1. [距離センサー](./docs/gp2y0e03/index.html#距離センサー)
+        1. [GP2Y0E03 測距センサー 40 mm - 0.1 m](./docs/gp2y0e03/index.html#gp2y0e03-測距センサー-40-mm---01-m)
+        1. [VL53L0X レーザー測距センサー 30 mm - 2 m](./docs/vl53l0x/index.html#vl53l0x-レーザー測距センサー-30-mm---2-m)
+        1. [VL53L1X レーザー距離センサー](./docs/vl53l1x/index.html#vl53l1x-レーザー距離センサー)
 
 </nav>

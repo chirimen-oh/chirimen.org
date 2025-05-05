@@ -8,7 +8,7 @@
   "name": "CHIRIMEN 対応デバイスレシピ集",
   "author": "CHIRIMEN Open Hardware Community <chirimen.open.hardware@gmail.com>",
   "inLanguage": "ja",
-  "dateModified": "2025-05-05T14:10:28.533Z",
+  "dateModified": "2025-05-05T14:13:56.213Z",
   "readingOrder": [
     {
       "url": "docs/index.html",
@@ -119,6 +119,18 @@
     {
       "url": "docs/mpu9250/index.html",
       "name": "MPU9250 3 軸ジャイロ 3 軸加速度 3 軸 磁気複合センサー"
+    },
+    {
+      "url": "docs/gp2y0e03/index.html",
+      "name": "距離センサー"
+    },
+    {
+      "url": "docs/vl53l0x/index.html",
+      "name": "VL53L0X レーザー測距センサー 30 mm - 2 m"
+    },
+    {
+      "url": "docs/vl53l1x/index.html",
+      "name": "VL53L1X レーザー距離センサー"
     },
     {
       "url": "docs/thanks.html",
