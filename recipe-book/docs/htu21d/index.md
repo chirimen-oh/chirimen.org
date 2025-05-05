@@ -1,6 +1,6 @@
 # HTU21D 温湿度センサー
 
-### 配線図
+#### 配線図
 
 ![配線図](./schematic.png "schematic"){width=300px height=300px}
 

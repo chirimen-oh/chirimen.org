@@ -1,6 +1,6 @@
 # リモートオンオフセンサ
 
-### 配線図
+#### 配線図
 
 ![配線図](../gpio-onchange/PiZero_gpio1.png "schematic"){width=300px height=300px}
 

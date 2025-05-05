@@ -1,6 +1,6 @@
 # リモートLチカ
 
-### 配線図
+#### 配線図
 
 ![配線図](../hello-real-world-vol1/PiZero_gpio0.png "schematic"){width=300px height=300px}
 

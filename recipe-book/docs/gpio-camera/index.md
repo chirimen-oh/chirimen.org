@@ -1,6 +1,6 @@
 # GPIO スイッチによるカメラ撮影 (GPIO-Camera)
 
-### 配線図
+#### 配線図
 
 ![配線図](./PiZero_gpio-camera.png "schematic"){width=250px height=250px}
 

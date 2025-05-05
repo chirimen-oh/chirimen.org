@@ -1,6 +1,6 @@
 ## ギヤードモータ part2-3
 
-### 配線図
+#### 配線図
 ![配線図](./PiZero_gpio0MotorC.png "schematic")
 
 #### CHIRIMEN ドライバのインストール

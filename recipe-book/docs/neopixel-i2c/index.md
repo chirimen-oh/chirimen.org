@@ -1,6 +1,6 @@
 # Neopixel LED
 
-### 配線図
+#### 配線図
 
 ![配線図](./schematic.png){width=400px height=190px}
 

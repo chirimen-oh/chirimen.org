@@ -1,6 +1,6 @@
 # GPIOスイッチによるカメラ撮影 (remote_Camera)
 
-### 配線図
+#### 配線図
 
 ![配線図](./PiZero_remote_camera.png "schematic"){width=300px height=300px}
 

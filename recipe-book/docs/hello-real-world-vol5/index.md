@@ -1,6 +1,6 @@
 ## MOSFETモジュール基板を使用する場合 D4184モジュール
 
-### 配線図
+#### 配線図
 
 ![配線図](./PiZero_gpio0MotorD_2.png "schematic")
 5V以外のDC電源も使用可能です。

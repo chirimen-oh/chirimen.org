@@ -1,6 +1,6 @@
 # GPIOスイッチ2 (GPIO POLLING INPUT)
 
-### 配線図
+#### 配線図
 
 ![配線図](./PiZero_gpio1.png "schematic"){width=300px height=300px}
 

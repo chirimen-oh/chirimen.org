@@ -1,6 +1,6 @@
 # SHT30 温湿度センサー + LED
 
-### 配線図
+#### 配線図
 
 ![配線図](./SHT30_LED.png "schematic"){width=300px height=300px}
 

@@ -1,6 +1,6 @@
 # WAVESHARE20471複合センサーボード
 
-### 配線図
+#### 配線図
 
 [説明ページの組み立て方](https://www.waveshare.com/wiki/Environment_Sensor_HAT#Hardware_connection)に従ってRaspberry Pi Zeroに接続したら完了です。
 

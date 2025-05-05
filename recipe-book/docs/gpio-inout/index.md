@@ -1,12 +1,12 @@
 # GPIO スイッチ + (LED又はギヤードモーター) (GPIO INPUT/OUTPUT)
 
-### 配線図１ (スイッチ+LED)
+#### 配線図１ (スイッチ+LED)
 
 ![配線図](./PiZero_gpio-inout.png "schematic"){width=300px height=300px}
 
 GPIO PORT5にスイッチ、GPIOPORT26に抵抗とLEDを繋ぎます。
 
-### 配線図２ (スイッチ+ギヤードモーター)
+#### 配線図２ (スイッチ+ギヤードモーター)
 
 ![配線図](./PiZero_gpio-inoutMotor.png "schematic"){width=300px height=300px}
 

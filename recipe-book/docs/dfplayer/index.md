@@ -1,6 +1,6 @@
 # DFPlayer Mini(MP3プレーヤーボードをGPIO OUTPUTで制御)
 
-### 配線図
+#### 配線図
 
 ![配線図](./DFPlayer.png "schematic"){width=300px height=300px}
 

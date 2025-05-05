@@ -1,6 +1,6 @@
 # ISD1820ボイスレコーダ (GPIO OUTPUT)
 
-### 配線図
+#### 配線図
 
 ![配線図](./ISD1820.png "schematic"){width=300px height=300px}
 

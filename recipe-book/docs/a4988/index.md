@@ -1,6 +1,6 @@
 # A4988ドライバによるステッピングモータ制御
 
-### 配線図
+#### 配線図
 
 ![配線図](./Schematic.png "schematic"){width=300px height=300px}
 
