@@ -8,7 +8,7 @@
   "name": "CHIRIMEN 対応デバイスレシピ集",
   "author": "CHIRIMEN Open Hardware Community <chirimen.open.hardware@gmail.com>",
   "inLanguage": "ja",
-  "dateModified": "2025-05-05T04:36:27.601Z",
+  "dateModified": "2025-05-05T05:53:01.367Z",
   "readingOrder": [
     {
       "url": "docs/index.html",
@@ -29,12 +29,8 @@
       "name": "CHIRIMEN とは"
     },
     {
-      "url": "docs/sensor-list-category.html",
-      "name": "センサーリスト（カテゴリ別）"
-    },
-    {
       "url": "docs/adt7410/index.html",
-      "name": "ADT7410 温度センサー"
+      "name": "環境センサー"
     },
     {
       "url": "docs/aht10/index.html",
@@ -167,6 +163,118 @@
     {
       "url": "docs/waveshare20471/index.html",
       "name": "WAVESHARE20471複合センサーボード"
+    },
+    {
+      "url": "docs/a4988/index.html",
+      "name": "A4988ドライバによるステッピングモータ制御"
+    },
+    {
+      "url": "docs/hbridge1/index.html",
+      "name": "HBridge1"
+    },
+    {
+      "url": "docs/hbridge2-pca9685pwm/index.html",
+      "name": "PCA9685 16 チャンネルPWM ドライバ + HBridgeモーターコントローラ"
+    },
+    {
+      "url": "docs/pca9685/index.html",
+      "name": "PCA9685 16 チャンネルサーボモーター PWM ドライバー"
+    },
+    {
+      "url": "docs/ads1015/index.html",
+      "name": "ADS1015 12 ビット AD コンバータ"
+    },
+    {
+      "url": "docs/ads1115-loadcell/index.html",
+      "name": "ADS1115 16bit ADC 差動入力によるロードセルの使用"
+    },
+    {
+      "url": "docs/ads1x15/index.html",
+      "name": "ADS1115 16bit ADC"
+    },
+    {
+      "url": "docs/pcf8591/index.html",
+      "name": "PCF8591 8bit AD,DA コンバーター"
+    },
+    {
+      "url": "docs/ina219/index.html",
+      "name": "INA219 電流センサー"
+    },
+    {
+      "url": "docs/dfplayer/index.html",
+      "name": "DFPlayer Mini(MP3プレーヤーボードをGPIO OUTPUTで制御)"
+    },
+    {
+      "url": "docs/isd1820/index.html",
+      "name": "ISD1820ボイスレコーダ (GPIO OUTPUT)"
+    },
+    {
+      "url": "docs/gpio-inout/index.html",
+      "name": "GPIO スイッチ + (LED又はギヤードモーター) (GPIO INPUT/OUTPUT)"
+    },
+    {
+      "url": "docs/gpio-onchange/index.html",
+      "name": "GPIOスイッチ (GPIO INPUT)"
+    },
+    {
+      "url": "docs/gpio-polling/index.html",
+      "name": "GPIOスイッチ2 (GPIO POLLING INPUT)"
+    },
+    {
+      "url": "docs/mpr121/index.html",
+      "name": "MPR121 静電容量センサ(12ch)"
+    },
+    {
+      "url": "docs/gpio-camera/index.html",
+      "name": "GPIO スイッチによるカメラ撮影 (GPIO-Camera)"
+    },
+    {
+      "url": "docs/remote_camera/index.html",
+      "name": "GPIOスイッチによるカメラ撮影 (remote_Camera)"
+    },
+    {
+      "url": "docs/remote_gpio_led/index.html",
+      "name": "リモートLチカ"
+    },
+    {
+      "url": "docs/remote_gpio_sw/index.html",
+      "name": "リモートオンオフセンサ"
+    },
+    {
+      "url": "docs/remote_hbridge_pca9685/index.html",
+      "name": "リモートモータ"
+    },
+    {
+      "url": "docs/remote_pca9685/index.html",
+      "name": "リモートサーボモータ"
+    },
+    {
+      "url": "docs/remote_sht30/index.html",
+      "name": "リモート温湿度センサ"
+    },
+    {
+      "url": "docs/remote_sht30_gpioin/index.html",
+      "name": "リモート温湿度センサ２"
+    },
+    {
+      "url": "docs/remote_vl53l0x/index.html",
+      "name": "リモート距離センサ"
+    },
+    {
+      "url": "docs/serial_gps/index.html",
+      "name": "Serial GPS"
+    },
+    {
+      "url": "docs/amg8833/index.html",
+      "name": "AMG8833 サーモグラフィー"
+    },
+    {
+      "url": "docs/mlx90614/index.html",
+      "name": "MLX90614 赤外線温度センサー"
+    },
+    {
+      "url": "docs/hello-real-world/index.html",
+      "name": "hello-real-world"
     },
     {
       "url": "docs/thanks.html",

@@ -4,7 +4,7 @@
 
 ![配線図](./schematic.png "schematic"){width=300px height=300px}
 
-## Note: このデバイスで使用するドライバahtx0.jsは、AHT20及びAHT10で使用可能です。
+Note: このデバイスで使用するドライバahtx0.jsは、AHT20及びAHT10で使用可能です。
 
 ## ドライバのインストール
 

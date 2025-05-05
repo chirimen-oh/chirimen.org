@@ -57,7 +57,7 @@
   - [NEOPIXEL-I2C](./neopixel-i2c/index.md)
 - 電子ペーパー
   - [WAVESHARE20471](./waveshare20471/index.md)
-<!-- 
+
 ## モーター制御
 
 - ステッピングモータードライバー
@@ -121,4 +121,4 @@
 - 赤外線温度センサー
   - [mlx90614](./mlx90614/index.md)
 - 入門用
-  - [hello-real-world](./hello-real-world/index.md) -->
+  - [hello-real-world](./hello-real-world/index.md)

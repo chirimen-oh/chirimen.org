@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8" />
+    <title>リモート温湿度センサ</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="../../themes/node_modules/@vivliostyle/theme-techbook/theme.css"
+    />
+  </head>
+  <body>
+    <section class="level1" aria-labelledby="リモート温湿度センサ">
+      <h1 id="リモート温湿度センサ">リモート温湿度センサ</h1>
+      <section class="level2" aria-labelledby="配線図">
+        <h2 id="配線図">配線図</h2>
+        <figure>
+          <img
+            src="../sht30/schematic.png"
+            alt="配線図"
+            title="schematic"
+            width="300px"
+            height="300px"
+          />
+          <figcaption aria-hidden="true">配線図</figcaption>
+        </figure>
+      </section>
+      <section class="level2" aria-labelledby="遠隔モニタpcスマホブラウザ側">
+        <h2 id="遠隔モニタpcスマホブラウザ側">
+          遠隔モニタ(PC/スマホブラウザ)側
+        </h2>
+        <p>
+          <a
+            href="https://codesandbox.io/s/github/chirimen-oh/chirimen.org/tree/master/pizero/src/esm-examples/remote_sht30/pc?module=pc.js"
+            >pc/index.html</a
+          >を起動します。
+        </p>
+      </section>
+      <section class="level2" aria-labelledby="ドライバのインストール">
+        <h2 id="ドライバのインストール">ドライバのインストール</h2>
+        <pre
+          class="language-text"
+        ><code class="language-text">npm i @chirimen/sht30</code></pre>
+      </section>
+      <section class="level2" aria-labelledby="サンプルコード-mainjs">
+        <h2 id="サンプルコード-mainjs">サンプルコード (main.js)</h2>
+        <pre
+          class="language-javascript"
+        ><code class="language-javascript"><span class="token comment">// Remote Example5 - reciever</span>
+<span class="token comment">// for CHIRIMEN with nodejs</span>
+<span class="token keyword module">import</span> <span class="token imports"><span class="token punctuation">{</span>requestI2CAccess<span class="token punctuation">}</span></span> <span class="token keyword module">from</span> <span class="token string">"./node_modules/node-web-i2c/index.js"</span><span class="token punctuation">;</span>
+<span class="token keyword module">import</span> <span class="token constant">SHT30</span> <span class="token keyword module">from</span> <span class="token string">"@chirimen/sht30"</span><span class="token punctuation">;</span>
+<span class="token keyword">const</span> <span class="token function-variable function">sleep</span> <span class="token operator">=</span> <span class="token parameter">msec</span> <span class="token arrow operator">=&gt;</span> <span class="token keyword">new</span> <span class="token class-name">Promise</span><span class="token punctuation">(</span><span class="token parameter">resolve</span> <span class="token arrow operator">=&gt;</span> <span class="token function">setTimeout</span><span class="token punctuation">(</span>resolve<span class="token punctuation">,</span> msec<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword module">import</span> <span class="token imports">nodeWebSocketLib</span> <span class="token keyword module">from</span> <span class="token string">"websocket"</span><span class="token punctuation">;</span> <span class="token comment">// https://www.npmjs.com/package/websocket</span>
+<span class="token keyword module">import</span> <span class="token imports"><span class="token punctuation">{</span><span class="token maybe-class-name">RelayServer</span><span class="token punctuation">}</span></span> <span class="token keyword module">from</span> <span class="token string">"./RelayServer.js"</span><span class="token punctuation">;</span>
+
+<span class="token keyword">var</span> channel<span class="token punctuation">;</span>
+<span class="token keyword">var</span> sht<span class="token punctuation">;</span>
+
+<span class="token keyword">async</span> <span class="token keyword">function</span> <span class="token function">connect</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+	<span class="token comment">// I2Cポートと、I2CデバイスSHT30の初期化</span>
+	<span class="token keyword">var</span> i2cAccess <span class="token operator">=</span> <span class="token keyword control-flow">await</span> <span class="token function">requestI2CAccess</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<span class="token keyword">var</span> i2cPort <span class="token operator">=</span> i2cAccess<span class="token punctuation">.</span><span class="token property-access">ports</span><span class="token punctuation">.</span><span class="token method function property-access">get</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+	sht <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">SHT30</span><span class="token punctuation">(</span>i2cPort<span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<span class="token keyword control-flow">await</span> sht<span class="token punctuation">.</span><span class="token method function property-access">init</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+	
+	<span class="token comment">// webSocketリレーの初期化</span>
+	<span class="token keyword">var</span> relay <span class="token operator">=</span> <span class="token function"><span class="token maybe-class-name">RelayServer</span></span><span class="token punctuation">(</span><span class="token string">"chirimentest"</span><span class="token punctuation">,</span> <span class="token string">"chirimenSocket"</span> <span class="token punctuation">,</span> nodeWebSocketLib<span class="token punctuation">,</span> <span class="token string">"https://chirimen.org"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+	channel <span class="token operator">=</span> <span class="token keyword control-flow">await</span> relay<span class="token punctuation">.</span><span class="token method function property-access">subscribe</span><span class="token punctuation">(</span><span class="token string">"chirimenSHT"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<span class="token console class-name">console</span><span class="token punctuation">.</span><span class="token method function property-access">log</span><span class="token punctuation">(</span><span class="token string">"web socketリレーサービスに接続しました"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+	channel<span class="token punctuation">.</span><span class="token property-access">onmessage</span> <span class="token operator">=</span> transmitSensorData<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">async</span> <span class="token keyword">function</span> <span class="token function">transmitSensorData</span><span class="token punctuation">(</span><span class="token parameter">messge</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+	<span class="token console class-name">console</span><span class="token punctuation">.</span><span class="token method function property-access">log</span><span class="token punctuation">(</span>messge<span class="token punctuation">.</span><span class="token property-access">data</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<span class="token keyword control-flow">if</span> <span class="token punctuation">(</span> messge<span class="token punctuation">.</span><span class="token property-access">data</span> <span class="token operator">==</span><span class="token string">"GET SENSOR DATA"</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+		<span class="token keyword">var</span> sensorData <span class="token operator">=</span> <span class="token keyword control-flow">await</span> <span class="token function">readData</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+		channel<span class="token punctuation">.</span><span class="token method function property-access">send</span><span class="token punctuation">(</span>sensorData<span class="token punctuation">)</span><span class="token punctuation">;</span>
+		<span class="token console class-name">console</span><span class="token punctuation">.</span><span class="token method function property-access">log</span><span class="token punctuation">(</span><span class="token known-class-name class-name">JSON</span><span class="token punctuation">.</span><span class="token method function property-access">stringify</span><span class="token punctuation">(</span>sensorData<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">async</span> <span class="token keyword">function</span> <span class="token function">readData</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+	<span class="token keyword">var</span> shtData <span class="token operator">=</span> <span class="token keyword control-flow">await</span> sht<span class="token punctuation">.</span><span class="token method function property-access">readData</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<span class="token console class-name">console</span><span class="token punctuation">.</span><span class="token method function property-access">log</span><span class="token punctuation">(</span><span class="token string">'shtData:'</span><span class="token punctuation">,</span> shtData<span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<span class="token console class-name">console</span><span class="token punctuation">.</span><span class="token method function property-access">log</span><span class="token punctuation">(</span><span class="token string">"temperature:"</span> <span class="token operator">+</span> shtData<span class="token punctuation">.</span><span class="token property-access">temperature</span> <span class="token operator">+</span> <span class="token string">"degree  &lt;br&gt;humidity:"</span><span class="token operator">+</span> shtData<span class="token punctuation">.</span><span class="token property-access">humidity</span> <span class="token operator">+</span> <span class="token string">"%"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<span class="token keyword control-flow">return</span><span class="token punctuation">(</span>shtData<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token function">connect</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token template-string"><span class="token template-punctuation string">`</span><span class="token template-punctuation string">`</span></span>`
+
+
+<span class="token operator">--</span><span class="token operator">-</span>
+<span class="token punctuation">[</span>← 目次に戻る<span class="token punctuation">]</span><span class="token punctuation">(</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token operator">/</span>index<span class="token punctuation">.</span><span class="token property-access">md</span><span class="token punctuation">)</span>
+</code></pre>
+      </section>
+    </section>
+  </body>
+</html>
