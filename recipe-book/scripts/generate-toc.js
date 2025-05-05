@@ -18,7 +18,7 @@ const tocFromEntry = entry
     );
     console.log('*******', headings);
     const listItem = headings.reduce((prev, crr) => {
-      if (crr.depth > 2) return prev;
+      if (crr.depth > 3) return prev;
       return (prev += `${"    ".repeat(crr.depth - 1)}1. [${crr.text}](${content
         .replace(".md", ".html")
         .replaceAll(" ", "%20")}${
