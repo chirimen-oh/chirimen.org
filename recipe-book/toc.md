@@ -41,7 +41,7 @@
         1. [BMP280 温度・気圧センサー](./docs/bmp280/index.html#bmp280-温度気圧センサー)
         1. [BME280 温度・湿度・気圧センサー](./docs/bme280/index.html#bme280-温度湿度気圧センサー)
     1. [空気品質センサー](./docs/ens160/index.html#空気品質センサー)
-        1. [ENS160 空気質センサ](./docs/ens160/index.html#ens160-空気質センサ)
+        1. [ENS160 空気質センサー](./docs/ens160/index.html#ens160-空気質センサー)
         1. [SGP40 ガスセンサー](./docs/sgp40/index.html#sgp40-ガスセンサー)
     1. [CO2 センサー](./docs/scd40/index.html#co2-センサー)
         1. [SCD40 CO2センサー](./docs/scd40/index.html#scd40-co2センサー)
