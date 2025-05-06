@@ -2,11 +2,18 @@
 
 ### TCS34725 カラーセンサー
 
+#### 概要
+
+高精度なデジタル RGB カラーセンサーです。  
+赤（Red）、緑（Green）、青（Blue）、および透明光（Clear）の4つのチャネルを備えています。  
+赤外線（IR）ブロッキングフィルターを内蔵しており、正確な色測定が可能です。I
+
+
 #### 配線図
 
 ![配線図](./schematic.png "schematic"){width=300px height=300px}
 
-#### CHIRIMEN用ドライバのインストール
+#### CHIRIMEN 用ドライバのインストール
 
 ```shell
 npm i @chirimen/tcs34725

@@ -2,11 +2,15 @@
 
 ### INA219 電流センサー
 
+#### 概要
+
+高精度なデジタル電流・電圧・電力センサーです。I²Cインターフェースを介してマイコンと通信し、シャント抵抗を用いて電流を測定します。
+
 #### 配線図
 
 ![配線図](./schematic.png "schematic"){width=300px height=300px}
 
-#### CHIRIMEN用ドライバのインストール
+#### CHIRIMEN 用ドライバのインストール
 
 ```shell
 npm i @chirimen/ina219

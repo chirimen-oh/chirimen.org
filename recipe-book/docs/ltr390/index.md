@@ -1,10 +1,15 @@
 ### LTR390 UVセンサー
 
+#### 概要
+
+高感度なデジタル紫外線（UV）および環境光センサーです。  
+小型で低消費電力、I²C 通信に対応しており、UV 強度や周囲の明るさを正確に測定できます。
+
 #### 配線図
 
 ![配線図](./schematic.png "schematic"){width=300px height=300px}
 
-#### CHIRIMEN用ドライバのインストール
+#### CHIRIMEN 用ドライバのインストール
 
 ```shell
 npm i @chirimen/ltr390

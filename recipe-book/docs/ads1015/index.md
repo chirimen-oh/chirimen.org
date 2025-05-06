@@ -4,11 +4,16 @@
 
 ### ADS1015 12 ビット AD コンバータ
 
+#### 概要
+
+12ビットのアナログ-デジタルコンバータ（ADC）です。
+I2Cインターフェースを介してマイコンと接続し、アナログ信号を高精度にデジタル化することができます。
+
 #### 配線図
 
 ![配線図](./schematic.png "schematic"){width=300px height=300px}
 
-#### CHIRIMEN用ドライバのインストール
+#### CHIRIMEN 用ドライバのインストール
 
 ```shell
 npm i @chirimen/ads1015

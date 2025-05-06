@@ -1,10 +1,15 @@
 ### VEML6070 UV センサー
 
+#### 概要
+
+高感度な紫外線（UV）センサーです。  
+特にUVA領域（波長320〜410nm、ピーク感度355nm）の検出に優れています。
+
 #### 配線図
 
 ![配線図](./schematic.png "schematic")
 
-#### CHIRIMEN用ドライバのインストール
+#### CHIRIMEN 用ドライバのインストール
 
 ```shell
 npm i @chirimen/veml6070

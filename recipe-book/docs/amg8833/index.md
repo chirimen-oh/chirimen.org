@@ -2,11 +2,16 @@
 
 ### AMG8833 サーモグラフィー
 
+#### 概要
+
+赤外線アレイセンサー「Grid-EYE」シリーズの高性能モデルです。  
+8×8（64 ピクセル）の熱センサーを搭載し、非接触で温度分布を 2 次元的に測定できます。
+
 #### 配線図
 
 ![配線図](./schematic.png "schematic"){width=300px height=300px}
 
-#### CHIRIMEN用ドライバのインストール
+#### CHIRIMEN 用ドライバのインストール
 
 ```shell
 npm i @chirimen/amg8833

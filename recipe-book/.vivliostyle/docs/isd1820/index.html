@@ -20,6 +20,10 @@
         <h3 id="isd1820ボイスレコーダ-gpio-output">
           ISD1820ボイスレコーダ (GPIO OUTPUT)
         </h3>
+        <section class="level4" aria-labelledby="概要">
+          <h4 id="概要">概要</h4>
+          <p>音声の録音と再生を簡単に行えるモジュールです。</p>
+        </section>
         <section class="level4" aria-labelledby="配線図">
           <h4 id="配線図">配線図</h4>
           <figure>
@@ -34,26 +38,28 @@
           </figure>
           <ul>
             <li>
-              GPIO
-              PORT26をISD1820のP-L端子に繋ぎます(P-L端子がHighになっている間だけ再生します(PLAY
-              Lボタンと同じ動作))
+              GPIO ポート26を ISD1820 のP-L 端子に接続します。(P-L 端子が High
+              になっている間だけ再生します(PLAY L ボタンと同じ動作))
             </li>
             <li>
-              P-E端子に繋いだ場合、録音した内容を全部再生するようになります。(PLAY
-              Eボタンと同じ動作)
+              P-E
+              端子に繋いだ場合、録音した内容を全部再生するようになります。(PLAY
+              E ボタンと同じ動作)
             </li>
-            <li>録音はRECボタンを押している間録音できます(最大10秒)</li>
+            <li>録音は REC ボタンを押している間録音できます(最大 10 秒)</li>
             <li>
-              REC端子をGPIOに接続すると、録音をコンピュータで制御することもできます。(REC端子がHighになっている間だけ録音)
+              REC 端子を GPIO
+              に接続すると、録音をコンピュータで制御することもできます。(REC
+              端子が High になっている間だけ録音)
             </li>
           </ul>
         </section>
         <section
           class="level4"
-          aria-labelledby="chirimen用ドライバのインストール"
+          aria-labelledby="chirimen-用ドライバのインストール"
         >
-          <h4 id="chirimen用ドライバのインストール">
-            CHIRIMEN用ドライバのインストール
+          <h4 id="chirimen-用ドライバのインストール">
+            CHIRIMEN 用ドライバのインストール
           </h4>
           <ul>
             <li>不要です。</li>

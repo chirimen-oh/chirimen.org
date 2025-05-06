@@ -4,13 +4,17 @@
 
 ### Lチカ (GPIO OUTPUT)
 
+#### 概要
+
+LED を点滅させます。
+
 #### 配線図
 
 ![配線図](./PiZero_gpio0.png "schematic")
 
-GPIO PORT26にLED+抵抗を繋ぎます。
+GPIO ポート 26 に LED と抵抗を直列に接続します。
 
-#### CHIRIMEN用ドライバのインストール
+#### CHIRIMEN 用ドライバのインストール
 
 - 不要です。
 

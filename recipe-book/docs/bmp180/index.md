@@ -1,12 +1,16 @@
 ## 気圧センサー
 
-### BMP180 大気圧温度センサー
+### BMP180 大気圧・温度センサー
+
+#### 概要
+
+温度・気圧を 1 チップで計測可能な高性能センサー
 
 #### 配線図
 
 ![配線図](./schematic.png "schematic"){width=300px height=300px}
 
-#### CHIRIMEN用ドライバのインストール
+#### CHIRIMEN 用ドライバのインストール
 
 ```shell
 npm i @chirimen/bmp180

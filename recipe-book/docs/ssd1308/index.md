@@ -1,10 +1,14 @@
 ### SSD1308 Grove OLED ディスプレイ
 
+#### 概要
+
+I2C 接続の Grove OLED ディスプレイ
+
 #### 配線図
 
 ![配線図](./schematic.png "schematic"){width=300px height=300px}
 
-#### CHIRIMEN用ドライバのインストール
+#### CHIRIMEN 用ドライバのインストール
 
 ```shell
 npm i @chirimen/grove-oled-display

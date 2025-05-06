@@ -1,10 +1,15 @@
 ### TSL2591照度センサー
 
+#### 概要
+
+高感度・広ダイナミックレンジのデジタル光センサーです。  
+光強度をデジタル信号に変換し、照度（lux）を高精度に測定できます。
+
 #### 配線図
 
 ![配線図](./schematic.png "schematic"){width=300px height=300px}
 
-#### CHIRIMEN用ドライバのインストール
+#### CHIRIMEN 用ドライバのインストール
 
 ```shell
 npm i @chirimen/tsl2591

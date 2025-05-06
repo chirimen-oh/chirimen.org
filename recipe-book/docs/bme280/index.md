@@ -1,10 +1,14 @@
 ### BME280 温度・湿度・気圧センサー
 
+#### 概要
+
+温度・湿度・気圧を 1 チップで計測可能な高性能センサー
+
 #### 配線図
 
 ![配線図](./schematic.png "schematic"){width=300px height=300px}
 
-#### CHIRIMEN用ドライバのインストール
+#### CHIRIMEN 用ドライバのインストール
 
 ```shell
 npm i @chirimen/bme280

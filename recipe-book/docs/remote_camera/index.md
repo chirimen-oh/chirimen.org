@@ -8,11 +8,11 @@
 
 ![配線図](./PiZero_remote_camera.png "schematic"){width=300px height=300px}
 
-タクトスイッチはGPIO PORT5に繋ぎます。
+タクトスイッチはGPIO ポート5に接続します。
 
 カメラは専用コネクターに専用ケーブルを使って接続し、更にセットアップが必要です。[こちらを参照してください](../gpio-camera/readme.md)
 
-#### CHIRIMEN用ドライバのインストール
+#### CHIRIMEN 用ドライバのインストール
 
 - 不要です。
 

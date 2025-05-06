@@ -1,11 +1,16 @@
 ## ジェスチャーセンサー
+
 ### PAJ7620 Grove Gesture ジェスチャー認識センサー
+
+#### 概要
+
+近接、ジェスチャーなど多機能なセンサー。
 
 #### 配線図
 
 ![配線図](./schematic.png "schematic"){width=300px height=300px}
 
-#### CHIRIMEN用ドライバのインストール
+#### CHIRIMEN 用ドライバのインストール
 
 ```shell
 npm i @chirimen/grove-gesture

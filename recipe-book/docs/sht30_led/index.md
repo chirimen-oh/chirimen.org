@@ -1,5 +1,10 @@
 ### SHT30 温湿度センサー + LED
 
+#### 概要
+
+I2C 接続のデジタル温湿度センサーです。  
+高精度かつ応答性が良く、空調や室内環境モニタリングに適しています。
+
 #### 配線図
 
 ![配線図](./SHT30_LED.png "schematic"){width=300px height=300px}
@@ -7,7 +12,7 @@
 LEDの代わりにモーターを接続
 ![配線図(LEDの代わりにモーターを接続)](./SHT30_MOTORB.png "schematic"){width=300px height=300px}
 
-#### CHIRIMEN用ドライバのインストール
+#### CHIRIMEN 用ドライバのインストール
 
 ```shell
 npm i @chirimen/sht30

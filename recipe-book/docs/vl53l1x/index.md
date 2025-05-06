@@ -1,10 +1,14 @@
 ### VL53L1X レーザー距離センサー
 
+#### 概要
+
+ToF（Time of Flight）方式で、距離を非接触で測定できます。
+
 #### 配線図
 
 ![配線図](./schematic.png "schematic"){width=300px height=300px}
 
-#### CHIRIMEN用ドライバのインストール
+#### CHIRIMEN 用ドライバのインストール
 
 ```shell
 npm i @chirimen/vl53l1x

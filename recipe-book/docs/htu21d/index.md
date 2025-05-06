@@ -1,10 +1,15 @@
 ### HTU21D 温湿度センサー
 
+#### 概要
+
+高精度の温度・湿度センサーで、I2C 接続により簡単に利用できます。  
+コンパクトで応答速度も速く、さまざまな環境モニタリング用途に適しています。
+
 #### 配線図
 
 ![配線図](./schematic.png "schematic"){width=300px height=300px}
 
-#### CHIRIMEN用ドライバのインストール
+#### CHIRIMEN 用ドライバのインストール
 
 ```shell
 npm i @chirimen/htu21d

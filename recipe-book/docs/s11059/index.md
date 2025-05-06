@@ -1,10 +1,15 @@
 ### S11059 デジタルカラーセンサー
 
+#### 概要
+
+高精度なデジタルカラーセンサーです。  
+赤（Red）、緑（Green）、青（Blue）、および赤外線（IR）の4つの波長帯域を個別に測定できます。
+
 #### 配線図
 
 ![配線図](./schematic.png "schematic"){width=300px height=300px}
 
-#### CHIRIMEN用ドライバのインストール
+#### CHIRIMEN 用ドライバのインストール
 
 ```shell
 npm i @chirimen/s11059

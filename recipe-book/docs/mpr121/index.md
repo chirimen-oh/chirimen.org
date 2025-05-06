@@ -2,9 +2,16 @@
 
 ### MPR121 静電容量センサ(12ch)
 
+#### 概要
+
+12チャンネルの静電容量式タッチセンサーコントローラです。  
+このセンサーは、非接触でのタッチ検出や近接検出が可能です。
+
+#### 配線図
+
 ![回路図](./schematic.png "schematic"){width=300px height=300px}
 
-#### CHIRIMEN用ドライバのインストール
+#### CHIRIMEN 用ドライバのインストール
 
 ```shell
 npm i @chirimen/grove-touch

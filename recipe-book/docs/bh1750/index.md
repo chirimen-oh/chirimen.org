@@ -2,11 +2,15 @@
 
 ### BH1750 光センサー
 
+#### 概要
+
+光の強さ（照度）をルクス単位で取得できるセンサー。
+
 #### 配線図
 
 ![配線図](./schematic.png "schematic"){width=300px height=300px}
 
-#### CHIRIMEN用ドライバのインストール
+#### CHIRIMEN 用ドライバのインストール
 
 ```shell
 npm i @chirimen/bh1750

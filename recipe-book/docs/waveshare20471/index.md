@@ -2,13 +2,18 @@
 
 ### WAVESHARE20471複合センサーボード
 
+#### 概要
+
+多機能環境センサーボードで、複数のセンサーを1枚の基板に統合しています。  
+I2C 通信を介して接続し、温度、湿度、気圧、照度、紫外線、揮発性有機化合物（VOC）、および9軸モーション（加速度、ジャイロ、磁気）など、さまざまな環境データを取得できます。
+
 #### 配線図
 
 [説明ページの組み立て方](https://www.waveshare.com/wiki/Environment_Sensor_HAT#Hardware_connection)に従ってRaspberry Pi Zeroに接続したら完了です。
 
 ![ボードの写真](WAVESHARE-20471.jpg "ボードの写真"){width=200px height=200px}
 
-#### CHIRIMEN用ドライバのインストール
+#### CHIRIMEN 用ドライバのインストール
 
 ```shell
 npm i @chirimen/bme280

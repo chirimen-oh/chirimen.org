@@ -1,10 +1,14 @@
 ### AHT10 温湿度センサー
 
+#### 概要
+
+温度と湿度を同時に計測可能なデジタルセンサー
+
 #### 配線図
 
 ![配線図](./schematic.png "schematic"){width=300px height=300px}
 
-#### CHIRIMEN用ドライバのインストール
+#### CHIRIMEN 用ドライバのインストール
 
 ```shell
 npm i @chirimen/aht10

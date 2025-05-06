@@ -4,13 +4,13 @@
 
 ![配線図](../gpio-polling/PiZero_gpio1.png "schematic"){width=300px height=300px}
 
-GPIO PORT26に繋ぎます
+GPIO ポート 26 に接続します。
 
 #### 遠隔モニタ(PC/スマホブラウザ)側
 
 [pc/index.html](https://codesandbox.io/s/github/chirimen-oh/chirimen.org/tree/master/pizero/src/esm-examples/remote_gpio_sw/pc?module=pc.js)を起動します。
 
-#### CHIRIMEN用ドライバのインストール
+#### CHIRIMEN 用ドライバのインストール
 
 - 不要です。
 

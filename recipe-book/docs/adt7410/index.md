@@ -5,12 +5,16 @@
 
 ##### ADT7410 温度センサー
 
+#### 概要
+
+I2C 接続の温度センサーで、±0.5°C の高精度（0°C〜+70°C の範囲）測定できます。
+
 #### 配線図
 
-![配線図1](./PiZero_ADT7410.png "schematic"){width=300px height=300px}
-![配線図2](./schematic_warning.png "schematic"){width=300px height=300px}
+![配線図1](./PiZero_ADT7410.png "schematic"){width=245px height=245px}
+![配線図2](./schematic_warning.png "schematic"){width=245px height=245px}
 
-#### CHIRIMEN用ドライバのインストール
+#### CHIRIMEN 用ドライバのインストール
 
 ```shell
 npm i @chirimen/adt7410

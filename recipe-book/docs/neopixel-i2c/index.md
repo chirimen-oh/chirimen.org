@@ -2,13 +2,18 @@
 
 ### Neopixel LED
 
+#### 概要
+
+個別に制御可能なRGB（赤・緑・青）LEDのブランド名です。  
+主にWS2812BやSK6812といった制御ICを内蔵したLEDを使用しており、1本のデータ線で複数のLEDを直列に接続し、個別に制御できるのが特徴です。
+
 #### 配線図
 
-![配線図](./schematic.png){width=400px height=190px}
+![配線図](./schematic.png){width=380px height=170px}
 
-![配線図（専用ボード使用）](./schematic_with_dedicated_breadboard.png){width=400px height=190px}
+![配線図（専用ボード使用）](./schematic_with_dedicated_breadboard.png){width=380px height=170px}
 
-#### CHIRIMEN用ドライバのインストール
+#### CHIRIMEN 用ドライバのインストール
 
 ```shell
 npm i @chirimen/neopixel-i2c

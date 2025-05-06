@@ -1,12 +1,17 @@
 ### GPIO スイッチとギヤードモーター
 
+#### 概要
+
+スイッチを押すとモーターが回転し、離すと停止します。
+前項 LED 制御と同様の構成です。
+
 #### 配線図
 
 ![配線図](./PiZero_gpio-inoutMotor.png "schematic"){width=300px height=300px}
 
-GPIO PORT5にスイッチ、GPIOPORT26にモーター制御回路を繋ぎます。
+GPIO ポート 5 にスイッチ、GPIO ポート 26 にモーター制御回路を繋ぎます。
 
-#### CHIRIMEN用ドライバのインストール
+#### CHIRIMEN 用ドライバのインストール
 
 - 不要です。
 

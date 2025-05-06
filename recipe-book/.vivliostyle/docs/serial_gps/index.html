@@ -17,91 +17,96 @@
         <h2 id="gps">GPS</h2>
         <section class="level3" aria-labelledby="serial-gps">
           <h3 id="serial-gps">Serial GPS</h3>
-          <p>
-            PiZeroのシリアル端子に、GY-GPS6MV2等のGPSレシーバ基板を繋いで使用する
-          </p>
-          <ul>
-            <li>
-              OSの設定
-              <ul>
-                <li><code>sudo raspi-config</code></li>
-                <li>
-                  Interface Options -&gt; Serial Port -&gt; Login over serial:
-                  いいえ , serial port enabled: はい -&gt; Finish (reboot)
-                </li>
-                <li>
-                  Note: この設定はUSBシリアルのコンソールログインには影響しない
-                </li>
-              </ul>
-            </li>
-            <li>
-              結線 (GPSのRX端子の結線は基本動作では不要) : 下図参照
-              <ul>
-                <li>
-                  動作検証したモジュール (GY-NEO6MV2,基板の印刷はGY-GPS6MV2)
-                  <ul>
-                    <li>
-                      <a
-                        href="https://electronicwork.shop/items/625c1ca99fe3d707d725cbe1"
-                        >https://electronicwork.shop/items/625c1ca99fe3d707d725cbe1</a
-                      >
-                    </li>
-                  </ul>
-                </li>
-                <li>
-                  同等品と考えられるもの
-                  <ul>
-                    <li>
-                      <a href="https://www.amazon.co.jp/dp/B07LF6KGR8"
-                        >https://www.amazon.co.jp/dp/B07LF6KGR8</a
-                      >
-                    </li>
-                    <li>
-                      <a href="https://www.aitendo.com/product/10255"
-                        >https://www.aitendo.com/product/10255</a
-                      >
-                    </li>
-                  </ul>
-                </li>
-              </ul>
-            </li>
-            <li>
-              動作確認
-              <ul>
-                <li><code>cat /dev/ttyS0</code></li>
-                <li>
-                  Note: GPS衛星電波受信されていなくてもメッセージが出力される。
-                  <code>/dev/serial0</code>
-                  も使える。測位成功するとメッセージが派手になり、LEDが点滅する
-                  (LEDは測位成功していないときは消灯)
-                </li>
-              </ul>
-            </li>
-            <li>
-              シリアルポート及びGPSのライブラリを導入(myAppディレクトリで)
-              <ul>
-                <li><code>cd myApp</code></li>
-                <li><code>npm install serialport gps</code></li>
-              </ul>
-            </li>
-            <li>
-              アプリの実行
-              <ul>
-                <li>main.js を myApp下に保存</li>
-                <li><code>node main.js</code></li>
-              </ul>
-            </li>
-          </ul>
-          <figure>
-            <img src="GY-NEO6MV2.png" alt="GY-NEO6MV2.png" />
-            <figcaption aria-hidden="true">GY-NEO6MV2.png</figcaption>
-          </figure>
+          <section class="level4" aria-labelledby="概要">
+            <h4 id="概要">概要</h4>
+            <p>
+              高性能GPS受信チップ「NEO-6M」を搭載したGPSモジュールです。<br />PiZeroのシリアル端子に、GY-GPS6MV2等のGPSレシーバ基板を繋いで使用します。
+            </p>
+            <ul>
+              <li>
+                OSの設定
+                <ul>
+                  <li><code>sudo raspi-config</code></li>
+                  <li>
+                    Interface Options -&gt; Serial Port -&gt; Login over serial:
+                    いいえ , serial port enabled: はい -&gt; Finish (reboot)
+                  </li>
+                  <li>
+                    Note:
+                    この設定はUSBシリアルのコンソールログインには影響しない
+                  </li>
+                </ul>
+              </li>
+              <li>
+                結線 (GPSのRX端子の結線は基本動作では不要) : 下図参照
+                <ul>
+                  <li>
+                    動作検証したモジュール (GY-NEO6MV2,基板の印刷はGY-GPS6MV2)
+                    <ul>
+                      <li>
+                        <a
+                          href="https://electronicwork.shop/items/625c1ca99fe3d707d725cbe1"
+                          >https://electronicwork.shop/items/625c1ca99fe3d707d725cbe1</a
+                        >
+                      </li>
+                    </ul>
+                  </li>
+                  <li>
+                    同等品と考えられるもの
+                    <ul>
+                      <li>
+                        <a href="https://www.amazon.co.jp/dp/B07LF6KGR8"
+                          >https://www.amazon.co.jp/dp/B07LF6KGR8</a
+                        >
+                      </li>
+                      <li>
+                        <a href="https://www.aitendo.com/product/10255"
+                          >https://www.aitendo.com/product/10255</a
+                        >
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+              <li>
+                動作確認
+                <ul>
+                  <li><code>cat /dev/ttyS0</code></li>
+                  <li>
+                    Note:
+                    GPS衛星電波受信されていなくてもメッセージが出力される。
+                    <code>/dev/serial0</code>
+                    も使える。測位成功するとメッセージが派手になり、LEDが点滅する
+                    (LEDは測位成功していないときは消灯)
+                  </li>
+                </ul>
+              </li>
+              <li>
+                シリアルポート及びGPSのライブラリを導入(myAppディレクトリで)
+                <ul>
+                  <li><code>cd myApp</code></li>
+                  <li><code>npm install serialport gps</code></li>
+                </ul>
+              </li>
+              <li>
+                アプリの実行
+                <ul>
+                  <li>main.js を myApp下に保存</li>
+                  <li><code>node main.js</code></li>
+                </ul>
+              </li>
+            </ul>
+            <figure>
+              <img src="GY-NEO6MV2.png" alt="GY-NEO6MV2.png" />
+              <figcaption aria-hidden="true">GY-NEO6MV2.png</figcaption>
+            </figure>
+          </section>
           <section
             class="level4"
-            aria-labelledby="chirimen用ドライバのインストール"
+            aria-labelledby="chirimen-用ドライバのインストール"
           >
-            <h4 id="chirimen用ドライバのインストール">
-              CHIRIMEN用ドライバのインストール
+            <h4 id="chirimen-用ドライバのインストール">
+              CHIRIMEN 用ドライバのインストール
             </h4>
             <ul>
               <li>不要です。</li>

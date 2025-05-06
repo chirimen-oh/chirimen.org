@@ -1,10 +1,15 @@
 ### ADS1115 16bit ADC 差動入力によるロードセルの使用
 
+#### 概要
+
+16 ビットの高精度アナログ-デジタルコンバータ（ADC）です。  
+I2C インターフェースを介してマイコンと接続し、アナログ信号をデジタル化することができます。
+
 #### 配線図
 
 ![配線図](./schematic.png "schematic"){width=300px height=300px}
 
-#### CHIRIMEN用ドライバのインストール
+#### CHIRIMEN 用ドライバのインストール
 
 ```shell
 npm i @chirimen/ads1x15

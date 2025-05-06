@@ -17,7 +17,10 @@
         <h2 id="オーディオプレーヤー">オーディオプレーヤー</h2>
         <section class="level3" aria-labelledby="dfplayer-mini">
           <h3 id="dfplayer-mini">DFPlayer Mini</h3>
-          <p>MP3プレーヤーボードをGPIO OUTPUTで制御</p>
+          <section class="level4" aria-labelledby="概要">
+            <h4 id="概要">概要</h4>
+            <p>MP3プレーヤーボードをGPIO OUTPUTで制御</p>
+          </section>
           <section class="level4" aria-labelledby="配線図">
             <h4 id="配線図">配線図</h4>
             <figure>
@@ -32,15 +35,21 @@
             </figure>
             <ul>
               <li>
-                DFPlayer
-                MiniボードのADKEY1端子をNchMOSFETを介してGPIOで制御します
-                (他にシリアル通信での制御も可能なボードですがこのサンプルはGPIOで制御できるADKEY端子を使用)
+                DFPlayer Mini ボードの ADKEY1 端子を Nch MOSFET を介して GPIO
+                で制御します
+                (他にシリアル通信での制御も可能なボードですがこのサンプルは GPIO
+                で制御できる ADKEY 端子を使用)
               </li>
               <li>
-                電源投入後、ボリュームが最大になるのでS1スイッチは付けておきましょう
+                電源投入後、ボリュームが最大になるので S1
+                スイッチは付けておきましょう
               </li>
               <li>
-                ADKEY1/2端子と抵抗を組み合わせることでいろいろなコントロールが可能です。GPIO端子の使用数を増やすと制御できる種類も増やせます。<a
+                ADKEY1/2
+                端子と抵抗を組み合わせることでいろいろなコントロールが可能です。
+              </li>
+              <li>
+                GPIO 端子の使用数を増やすと制御できる種類も増やせます。<a
                   href="https://chitakekoubou.blogspot.com/p/dfplayeradkeyio.html"
                   >こちらのページ</a
                 >や、<a
@@ -52,10 +61,10 @@
           </section>
           <section
             class="level4"
-            aria-labelledby="chirimen用ドライバのインストール"
+            aria-labelledby="chirimen-用ドライバのインストール"
           >
-            <h4 id="chirimen用ドライバのインストール">
-              CHIRIMEN用ドライバのインストール
+            <h4 id="chirimen-用ドライバのインストール">
+              CHIRIMEN 用ドライバのインストール
             </h4>
             <ul>
               <li>不要です。</li>
