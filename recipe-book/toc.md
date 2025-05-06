@@ -37,7 +37,7 @@
         1. [SHT30 温湿度センサー](./docs/sht30/index.html#sht30-温湿度センサー)
         1. [SHT40 温湿度センサー](./docs/sht40/index.html#sht40-温湿度センサー)
     1. [気圧センサー](./docs/bmp180/index.html#気圧センサー)
-        1. [BMP180 大気圧温度センサー](./docs/bmp180/index.html#bmp180-大気圧温度センサー)
+        1. [BMP180 大気圧・温度センサー](./docs/bmp180/index.html#bmp180-大気圧温度センサー)
         1. [BMP280 温度・気圧センサー](./docs/bmp280/index.html#bmp280-温度気圧センサー)
         1. [BME280 温度・湿度・気圧センサー](./docs/bme280/index.html#bme280-温度湿度気圧センサー)
     1. [空気品質センサー](./docs/ens160/index.html#空気品質センサー)
