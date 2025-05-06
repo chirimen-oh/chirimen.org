@@ -50,7 +50,7 @@ raspistill -v --width 640 --height 480 -o test.jpg
 >
 > 詳細: [Camera software - Raspberry Pi Documentation](https://www.raspberrypi.com/documentation/computers/camera_software.html)
 
-#### CHIRIMEN ドライバのインストール
+#### CHIRIMEN用ドライバのインストール
 
 - `pi-camera-connect` を使用します。
 

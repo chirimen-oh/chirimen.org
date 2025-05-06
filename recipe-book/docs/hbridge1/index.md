@@ -7,7 +7,7 @@ Hブリッジモータードライバは正転[1,0]・逆転[0,1]・ブレーキ
 
 ![配線図](schematic.png "schematic"){width=300px height=300px}
 
-#### CHIRIMEN ドライバのインストール
+#### CHIRIMEN用ドライバのインストール
 
 - 不要です。
 

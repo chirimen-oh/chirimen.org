@@ -10,7 +10,7 @@ GPIO PORT26に繋ぎます
 
 [pc/index.html](https://codesandbox.io/s/github/chirimen-oh/chirimen.org/tree/master/pizero/src/esm-examples/remote_gpio_sw/pc?module=pc.js)を起動します。
 
-#### CHIRIMEN ドライバのインストール
+#### CHIRIMEN用ドライバのインストール
 
 - 不要です。
 

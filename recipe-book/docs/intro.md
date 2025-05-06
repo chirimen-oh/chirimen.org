@@ -41,7 +41,7 @@ CHIRIMEN コミュニティで動作確認済みのサンプルコードや回�
 - Raspbian OS をカスタマイズした[CHIRIMEN Lite](https://github.com/chirimen-oh/chirimen-lite) を使用します。
 - ダウンロードは[公式サイト](https://github.com/chirimen-oh/chirimen-lite/releases)をご参照ください。
 
-### 直ぐに開発を始めたい方
+### すぐに開発を始めたい方へ
 
 - 公式サイト：[CHIRIMEN Raspberry Pi Zero W チュートリアル](https://tutorial.chirimen.org/pizero/) にアクセスして下さい。
 - 書籍：[ちりめんぱいぜろちゅーとりある](https://x.gd/OmMZJ)をご購入ください。

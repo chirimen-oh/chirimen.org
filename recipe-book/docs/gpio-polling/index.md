@@ -6,7 +6,7 @@
 
 ![配線図](./PiZero_gpio1.png "schematic"){width=300px height=300px}
 
-#### CHIRIMEN ドライバのインストール
+#### CHIRIMEN用ドライバのインストール
 
 - 不要です。
 
