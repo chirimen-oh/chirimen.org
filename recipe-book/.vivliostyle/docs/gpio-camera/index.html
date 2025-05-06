@@ -33,8 +33,8 @@
             <figcaption aria-hidden="true">配線図</figcaption>
           </figure>
           <p>
-            タクトスイッチは GPIO PORT5 に繋ぎます。
-            カメラは専用コネクターに専用ケーブルを使って接続し、更にセットアップが必要です。
+            タクトスイッチは GPIO PORT5 に接続します。
+            カメラは専用コネクターに専用ケーブルで接続し、さらにソフトウェア側のセットアップが必要です。
           </p>
         </section>
         <section
@@ -67,14 +67,15 @@
               <ul>
                 <li>
                   <a href="https://www.amazon.co.jp/dp/B073RCXGQS/"
-                    >例 1:KEYESTUDIO カメラモジュール</a
+                    >例 1 KEYESTUDIO カメラモジュール</a
                   >、<a href="https://www.amazon.co.jp/dp/B086MK17K5/">例 2</a
                   >、<a href="https://www.amazon.co.jp/dp/B08HVRB59N/">例 3</a>
                 </li>
               </ul>
             </li>
             <li>
-              Zero 用ケーブル～上のモジュールは添付されているようです。
+              Zero
+              用ケーブルは、製品によっては同梱されています。付属していない場合は、別途ご用意ください。
               <ul>
                 <li>
                   無い場合は
@@ -96,8 +97,8 @@
             <p>
               <strong>Note</strong><br />利用可能なカメラモジュールは v1、v3
               です。Camera Module v2 には未対応です。 また Raspberry Pi Zero 用
-              CHIRIMEN v1.4.0 未満をお使いの場合、Camera Module v3
-              には未対応です。
+              CHIRIMEN v1.4.0 未満をご利用の場合、Camera Module v3
+              には対応していません。
               <a href="https://github.com/chirimen-oh/chirimen-lite/releases"
                 >Raspberry Pi Zero 用 CHIRIMEN v1.4.0 以上</a
               >
@@ -141,10 +142,10 @@ Available cameras
         </section>
         <section
           class="level4"
-          aria-labelledby="chirimen用ドライバのインストール"
+          aria-labelledby="chirimen-用ドライバのインストール"
         >
-          <h4 id="chirimen用ドライバのインストール">
-            CHIRIMEN用ドライバのインストール
+          <h4 id="chirimen-用ドライバのインストール">
+            CHIRIMEN 用ドライバのインストール
           </h4>
           <ul>
             <li><code>pi-camera-connect</code> を使用します。</li>
@@ -201,7 +202,8 @@ Available cameras
               <a
                 href="https://developer.mozilla.org/ja/docs/Web/HTTP/Basics_of_HTTP/Data_URIs"
                 >dataURL</a
-              >で画像を文字列化すれば比較的簡単にサーバに送信したりできるでしょう。
+              >
+              を使って画像を文字列化すれば、比較的簡単にサーバへ送信することができます。
               <ul>
                 <li>
                   <a

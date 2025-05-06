@@ -4,7 +4,7 @@
 
 ![配線図](../gpio-polling/PiZero_gpio1.png "schematic"){width=300px height=300px}
 
-GPIO PORT26に接続します。
+GPIO ポート 26 に接続します。
 
 #### 遠隔モニタ(PC/スマホブラウザ)側
 

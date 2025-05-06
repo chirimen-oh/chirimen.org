@@ -8,7 +8,7 @@
   "name": "CHIRIMEN 対応デバイスレシピ集",
   "author": "CHIRIMEN Open Hardware Community <chirimen.open.hardware@gmail.com>",
   "inLanguage": "ja",
-  "dateModified": "2025-05-06T07:08:01.959Z",
+  "dateModified": "2025-05-06T07:50:25.560Z",
   "readingOrder": [
     {
       "url": "docs/index.html",
@@ -58,7 +58,7 @@
     },
     {
       "url": "docs/hello-real-world-vol5/index.html",
-      "name": "MOSFET D4184モジュール"
+      "name": "MOSFET D4184 モジュール"
     },
     {
       "url": "docs/gpio-polling/index.html",

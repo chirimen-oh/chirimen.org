@@ -19,7 +19,7 @@
         1. [ギヤードモーター part4](./docs/hello-real-world-vol7/index.html#ギヤードモーター-part4)
         1. [ギヤードモーター part5](./docs/hello-real-world-vol8/index.html#ギヤードモーター-part5)
         1. [MOSFET P718Dモジュール](./docs/hello-real-world-vol4/index.html#mosfet-p718dモジュール)
-        1. [MOSFET D4184モジュール](./docs/hello-real-world-vol5/index.html#mosfet-d4184モジュール)
+        1. [MOSFET D4184 モジュール](./docs/hello-real-world-vol5/index.html#mosfet-d4184-モジュール)
 1. [GPIO 関連](./docs/gpio-polling/index.html#gpio-関連)
     1. [基本的な GPIO 操作](./docs/gpio-polling/index.html#基本的な-gpio-操作)
         1. [GPIO タクトスイッチ](./docs/gpio-polling/index.html#gpio-タクトスイッチ)

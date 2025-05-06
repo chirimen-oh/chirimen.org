@@ -8,7 +8,7 @@
 
 ![配線図](./PiZero_gpio0.png "schematic")
 
-GPIO PORT 26 に LED と抵抗を直列に接続します。
+GPIO ポート 26 に LED と抵抗を直列に接続します。
 
 #### CHIRIMEN 用ドライバのインストール
 

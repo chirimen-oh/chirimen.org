@@ -4,15 +4,19 @@
 
 ### GPIO タクトスイッチ
 
+#### 概要
+
+GPIO に接続されたタクトスイッチの状態（ON/OFF）を監視して、ログ出力します。
+
 #### 配線図
 
 ![配線図](./PiZero_gpio1.png "schematic"){width=300px height=300px}
 
+GPIO ポート 5 に接続します。
+
 #### CHIRIMEN 用ドライバのインストール
 
 - 不要です。
-
-GPIO PORT 5 に接続します。
 
 #### サンプルコード (main.js)
 
