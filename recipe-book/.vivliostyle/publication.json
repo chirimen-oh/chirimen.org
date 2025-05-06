@@ -8,7 +8,7 @@
   "name": "CHIRIMEN 対応デバイスレシピ集",
   "author": "CHIRIMEN Open Hardware Community <chirimen.open.hardware@gmail.com>",
   "inLanguage": "ja",
-  "dateModified": "2025-05-06T06:45:36.817Z",
+  "dateModified": "2025-05-06T06:59:58.880Z",
   "readingOrder": [
     {
       "url": "docs/index.html",
@@ -75,10 +75,6 @@
     {
       "url": "docs/gpio-onchange/index.html",
       "name": "タッチセンサー"
-    },
-    {
-      "url": "docs/mpr121/index.html",
-      "name": "MPR121 静電容量センサ(12ch)"
     },
     {
       "url": "docs/gpio-camera/index.html",
@@ -275,6 +271,10 @@
     {
       "url": "docs/mlx90614/index.html",
       "name": "赤外線温度センサー"
+    },
+    {
+      "url": "docs/mpr121/index.html",
+      "name": "タッチセンサー"
     },
     {
       "url": "docs/remote_camera/index.html",
