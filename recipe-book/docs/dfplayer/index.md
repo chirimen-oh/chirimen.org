@@ -16,7 +16,7 @@ MP3プレーヤーボードをGPIO OUTPUTで制御
 * ADKEY1/2 端子と抵抗を組み合わせることでいろいろなコントロールが可能です。
 * GPIO 端子の使用数を増やすと制御できる種類も増やせます。[こちらのページ](https://chitakekoubou.blogspot.com/p/dfplayeradkeyio.html)や、[メーカーサイトの説明ページ](https://wiki.dfrobot.com/DFPlayer_Mini_SKU_DFR0299)を参考に
 
-#### CHIRIMEN用ドライバのインストール
+#### CHIRIMEN 用ドライバのインストール
 
 - 不要です。
 

@@ -6,7 +6,7 @@
 
 GPIO PORT5にスイッチ、GPIOPORT26に抵抗とLEDを繋ぎます。
 
-#### CHIRIMEN用ドライバのインストール
+#### CHIRIMEN 用ドライバのインストール
 
 - 不要です。
 
