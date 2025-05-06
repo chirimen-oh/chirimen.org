@@ -5,7 +5,7 @@ MOSFETモジュール基板を使用する場合 P718Dモジュール
 #### 配線図
 ![配線図](./PiZero_gpio0MotorC_2.png "schematic")
 
-#### CHIRIMEN ドライバのインストール
+#### CHIRIMEN用ドライバのインストール
 
 - 不要です。
 

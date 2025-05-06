@@ -8,7 +8,7 @@
 
 [pc/index.html](https://codesandbox.io/s/github/chirimen-oh/chirimen.org/tree/master/pizero/src/esm-examples/remote_vl53l0x/pc?module=pc.js)を起動します。
 
-#### CHIRIMEN ドライバのインストール
+#### CHIRIMEN用ドライバのインストール
 
 ```shell
 npm i @chirimen/vl53l0x

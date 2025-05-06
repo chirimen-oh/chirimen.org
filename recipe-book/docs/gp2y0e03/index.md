@@ -6,7 +6,7 @@
 
 ![配線図](./schematic.png "schematic"){width=300px height=300px}
 
-#### CHIRIMEN ドライバのインストール
+#### CHIRIMEN用ドライバのインストール
 
 ```shell
 npm i @chirimen/gp2y0e03

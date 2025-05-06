@@ -8,7 +8,7 @@
 
 ![ボードの写真](WAVESHARE-20471.jpg "ボードの写真"){width=200px height=200px}
 
-#### CHIRIMEN ドライバのインストール
+#### CHIRIMEN用ドライバのインストール
 
 ```shell
 npm i @chirimen/bme280

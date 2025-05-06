@@ -4,7 +4,7 @@
 
 ![回路図](./schematic.png "schematic"){width=300px height=300px}
 
-#### CHIRIMEN ドライバのインストール
+#### CHIRIMEN用ドライバのインストール
 
 ```shell
 npm i @chirimen/grove-touch

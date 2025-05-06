@@ -54,7 +54,7 @@ Adafruit、keystudioとマトリクスの結線が異なりますが、設定変
 #### その他
 * set_led関数を使用することで、任意のLEDマトリクスに対応できます
 
-#### CHIRIMEN ドライバのインストール
+#### CHIRIMEN用ドライバのインストール
 
 ```shell
 npm i @chirimen/ht16k33
