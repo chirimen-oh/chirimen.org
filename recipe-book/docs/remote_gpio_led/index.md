@@ -6,7 +6,7 @@
 
 ![配線図](../hello-real-world-vol1/PiZero_gpio0.png "schematic"){width=300px height=300px}
 
-GPIO PORT26に繋ぎます
+GPIO PORT26に接続します。
 
 #### 遠隔コントロール(PC/スマホブラウザ)側
 

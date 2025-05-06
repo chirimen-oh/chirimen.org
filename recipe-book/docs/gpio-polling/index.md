@@ -12,7 +12,7 @@
 
 - 不要です。
 
-GPIO PORT5に繋ぎます
+GPIO PORT 5 に接続します。
 
 #### サンプルコード (main.js)
 

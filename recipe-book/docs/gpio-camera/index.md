@@ -6,7 +6,7 @@
 
 ![配線図](./PiZero_gpio-camera.png "schematic"){width=250px height=250px}
 
-タクトスイッチは GPIO PORT5 に繋ぎます。
+タクトスイッチは GPIO PORT5 に接続します。
 カメラは専用コネクターに専用ケーブルを使って接続し、更にセットアップが必要です。
 
 #### カメラのセットアップと動作確認
