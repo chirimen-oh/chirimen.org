@@ -1,14 +1,6 @@
-### GPIOスイッチ (GPIO INPUT)
+## タッチセンサー
 
-#### 配線図
-
-GPIO PORT5に繋ぎます
-
-![配線図](./PiZero_gpio1.png "schematic"){width=300px height=300px}
-
-
-# GPIOタッチセンサー
-TP223を用いたタッチセンサー(タッチスイッチ)を使います。プログラムコードは通常のスイッチと同じです。
+### GPIOタッチセンサー
 
 #### 配線図
 

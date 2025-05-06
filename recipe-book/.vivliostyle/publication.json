@@ -8,7 +8,7 @@
   "name": "CHIRIMEN 対応デバイスレシピ集",
   "author": "CHIRIMEN Open Hardware Community <chirimen.open.hardware@gmail.com>",
   "inLanguage": "ja",
-  "dateModified": "2025-05-05T16:10:03.982Z",
+  "dateModified": "2025-05-06T06:45:36.817Z",
   "readingOrder": [
     {
       "url": "docs/index.html",
@@ -61,20 +61,24 @@
       "name": "MOSFE D4184モジュール"
     },
     {
-      "url": "docs/gpio-inout/index.html",
+      "url": "docs/gpio-polling/index.html",
       "name": "GPIO 関連"
     },
     {
-      "url": "docs/gpio-onchange/index.html",
-      "name": "GPIOスイッチ (GPIO INPUT)"
+      "url": "docs/gpio-inout-vol1/index.html",
+      "name": "GPIO スイッチと LED"
     },
     {
-      "url": "docs/gpio-polling/index.html",
+      "url": "docs/gpio-inout-vol2/index.html",
+      "name": "GPIO スイッチとギヤードモーター"
+    },
+    {
+      "url": "docs/gpio-onchange/index.html",
       "name": "タッチセンサー"
     },
     {
       "url": "docs/mpr121/index.html",
-      "name": "タッチセンサー"
+      "name": "MPR121 静電容量センサ(12ch)"
     },
     {
       "url": "docs/gpio-camera/index.html",

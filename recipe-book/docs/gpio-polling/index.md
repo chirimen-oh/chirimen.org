@@ -1,6 +1,8 @@
-## タッチセンサー
+# GPIO 関連
 
-### GPIOスイッチ2 (GPIO POLLING INPUT)
+## 基本的な GPIO 操作
+
+### GPIO タクトスイッチ
 
 #### 配線図
 
