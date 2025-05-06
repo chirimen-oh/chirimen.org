@@ -4,6 +4,10 @@
 
 ### Lチカ (GPIO OUTPUT)
 
+#### 概要
+
+LED を点滅させます。
+
 #### 配線図
 
 ![配線図](./PiZero_gpio0.png "schematic")

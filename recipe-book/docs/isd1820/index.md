@@ -2,6 +2,10 @@
 
 ### ISD1820ボイスレコーダ (GPIO OUTPUT)
 
+#### 概要
+
+音声の録音と再生を簡単に行えるモジュールです。
+
 #### 配線図
 
 ![配線図](./ISD1820.png "schematic"){width=300px height=300px}

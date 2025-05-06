@@ -4,6 +4,11 @@
 
 ### ADXL345 Grove Accelerometer 3 軸加速度センサー
 
+#### 概要
+
+3軸加速度センサー「ADXL345」を搭載したGroveシステム対応のモジュールです。  
+このセンサーは、X、Y、Zの3軸方向の加速度を高精度に測定できます。
+
 #### 配線図
 
 ![配線図](./schematic.png "schematic"){width=300px height=300px}

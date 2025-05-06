@@ -1,5 +1,10 @@
 ### TSL2561 Grove Digital Light Sensor 光センサー
 
+#### 概要
+
+デジタル光センサーモジュールです。  
+屋内外の光環境のモニタリングや自動明るさ制御などに適しています。
+
 #### 配線図
 
 ![配線図](./schematic.png "schematic"){width=300px height=300px}

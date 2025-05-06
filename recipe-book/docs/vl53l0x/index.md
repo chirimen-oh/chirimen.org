@@ -1,5 +1,9 @@
 ### VL53L0X レーザー測距センサー 30 mm - 2 m
 
+#### 概要
+
+ToF（Time of Flight）方式で 30 mm - 2 m 程度までの距離を非接触で測定できます。
+
 #### 配線図
 
 ![配線図](./schematic.png "schematic"){width=300px height=300px}
