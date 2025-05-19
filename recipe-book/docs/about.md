@@ -1,14 +1,12 @@
 # CHIRIMEN とは
 
-![CHIRIMEN_pf](../images/CHIRIMEN_pf.png)
+![CHIRIMEN_pf](../images/CHIRIMEN_pf.png){width=310px height=160px}
 
-CHIRIMEN は、 Web ブラウザや Node.js の JavaScript からハードウェアを制御できるプロトタイピング環境です。
+CHIRIMEN は、JavaScript や HTML といった Web 技術を用いて、センサーやモーターなどの電子部品を簡単に制御できるプロトタイピング環境です。
 
-W3C の[「Browsers and Robotics コミュニティグループ」](https://www.w3.org/community/browserobo/)では、([WebGPIO API](http://browserobo.github.io/WebGPIO) や [WebI2C API](http://browserobo.github.io/WebI2C) など) の電子部品を直接制御するための API の標準化を進めており、CHIRIMEN はこれらを Raspberry Pi などで動作させるための実装環境を提供します。
+Raspberry Pi に [WebGPIO API](http://browserobo.github.io/WebGPIO) や [WebI2C API](http://browserobo.github.io/WebI2C) を組み合わせることで、ブラウザ上からハードウェアを直接制御できます。
 
-既存の Web 技術を活かし、画面表示やセンサー制御などを 1 つのプログラムで統合可能です。 Web ブラウザ上のエディタでも動作し、サンプルコードを開くだけですぐに多数の電子部品を試せます。
-
-専用ツールや複数言語、特殊なフレームワークを学ぶ必要はなく、初心者のIoT学習にも最適です。
+教育や試作開発を目的とし、誰でも手軽に扱えるように設計された、オープンで自由な環境です。
 
 ## CHIRIMEN のメリット
 
@@ -23,4 +21,5 @@ W3C の[「Browsers and Robotics コミュニティグループ」](https://www.
 
 - [Slack](http://chirimen-oh.slack.com/) 
 - [Github](https://github.com/chirimen-oh/)
-- SNS：[X](https://x.com/chirimen_oh), [Facebook](https://www.facebook.com/groups/chirimen/)
+- [X](https://x.com/chirimen_oh)
+- [Facebook](https://www.facebook.com/groups/chirimen/)
