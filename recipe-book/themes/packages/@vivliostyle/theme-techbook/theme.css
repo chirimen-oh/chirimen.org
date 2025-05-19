@@ -23,21 +23,21 @@
 :root {
   --vs-font-family: 'Neue Frutiger World', 'Verdana', 'Hiragino Sans',
     sans-serif;
-  --vs-font-size-on-print: 50%;
-  --vs-line-height: 1.7;
+  --vs-font-size-on-print: 45%;
+  --vs-line-height: 1.6;
   --vs-widows-orphans: 3;
 
   --vs--heading-line-height: 1.2;
   --vs--monospace-font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono',
     monospace;
-  --vs--h1-font-size: 2.4em;
-  --vs--h2-font-size: 1.8em;
-  --vs--h3-font-size: 1.4em;
-  --vs--h4-font-size: 1.2em;
-  --vs--h5-font-size: 1em;
-  --vs--h6-font-size: 0.83em;
+  --vs--h1-font-size: 2.2em;
+  --vs--h2-font-size: 1.6em;
+  --vs--h3-font-size: 1.3em;
+  --vs--h4-font-size: 1.1em;
+  --vs--h5-font-size: 0.95em;
+  --vs--h6-font-size: 0.8em;
   --vs--blockquote-margin-inline: 0;
-  --vs--ul-minimum-inline-indent-size: 1rem;
+  --vs--ul-minimum-inline-indent-size: 0.8rem;
   --vs--table-border-width-block-start: 1px;
   --vs--table-border-width-block-end: 1px;
   --vs--table-border-width-inline-start: 0;
@@ -46,18 +46,18 @@
   --vs--table-border-width-tfoot-inner: 1px;
   --vs--table-border-width-column: 0;
   --vs--table-border-width-row: 0.4px;
-  --vs--table-cell-padding-inline: 1rem;
+  --vs--table-cell-padding-inline: 0.8rem;
 
-  --vs-footnote--area-before-margin-block: calc(var(--vs-spacing-rlh) * 0.25);
-  --vs-footnote--area-before-margin-inline: 0 70%;
+  --vs-footnote--area-before-margin-block: calc(var(--vs-spacing-rlh) * 0.2);
+  --vs-footnote--area-before-margin-inline: 0 65%;
   --vs-footnote--area-margin-block: var(--vs-spacing-rlh) 0;
 
-  --vs-page--margin-top: 25mm;
-  --vs-page--margin-bottom: 25mm;
-  --vs-page--margin-inner: 22mm;
-  --vs-page--margin-outer: 22mm;
+  --vs-page--margin-top: 20mm;
+  --vs-page--margin-bottom: 20mm;
+  --vs-page--margin-inner: 18mm;
+  --vs-page--margin-outer: 18mm;
 
-  --vs-prism--inline-code-padding: 0.1em 0.3em;
+  --vs-prism--inline-code-padding: 0.1em 0.2em;
   --vs-prism--text-shadow: none;
 }
 
