@@ -8,7 +8,7 @@
   "name": "CHIRIMEN 対応デバイスレシピ集",
   "author": "CHIRIMEN Open Hardware Community <chirimen.open.hardware@gmail.com>",
   "inLanguage": "ja",
-  "dateModified": "2025-05-06T09:27:04.566Z",
+  "dateModified": "2025-05-19T10:24:49.439Z",
   "readingOrder": [
     {
       "url": "docs/index.html",
@@ -275,38 +275,6 @@
     {
       "url": "docs/mpr121/index.html",
       "name": "タッチセンサー"
-    },
-    {
-      "url": "docs/remote_camera/index.html",
-      "name": "リモート制御"
-    },
-    {
-      "url": "docs/remote_gpio_led/index.html",
-      "name": "GPIO"
-    },
-    {
-      "url": "docs/remote_gpio_sw/index.html",
-      "name": "リモートオンオフセンサ"
-    },
-    {
-      "url": "docs/remote_hbridge_pca9685/index.html",
-      "name": "H ブリッジ"
-    },
-    {
-      "url": "docs/remote_pca9685/index.html",
-      "name": "PWM"
-    },
-    {
-      "url": "docs/remote_sht30/index.html",
-      "name": "センサー"
-    },
-    {
-      "url": "docs/remote_sht30_gpioin/index.html",
-      "name": "リモート温湿度センサ２"
-    },
-    {
-      "url": "docs/remote_vl53l0x/index.html",
-      "name": "リモート距離センサ"
     },
     {
       "url": "docs/thanks.html",
