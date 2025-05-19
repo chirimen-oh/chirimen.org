@@ -10,7 +10,7 @@ I2C 接続モータードライバ。電圧設定と回転方向を指定する�
 
 #### 配線図
 
-![配線図](./Schematic.png "schematic"){width=300px height=300px}
+![配線図](./Schematic.png "schematic")
 
 #### CHIRIMEN 用ドライバのインストール
 

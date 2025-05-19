@@ -2,7 +2,7 @@
 
 #### 配線図
 
-![配線図](../gpio-polling/PiZero_gpio1.png "schematic"){width=300px height=300px}
+![配線図](../gpio-polling/PiZero_gpio1.png "schematic")
 
 GPIO ポート 26 に接続します。
 

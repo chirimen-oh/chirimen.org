@@ -8,7 +8,7 @@ GPIO スイッチを押すとカメラで撮影し、画像ファイルを保存
 
 #### 配線図
 
-![配線図](./PiZero_gpio-camera.png "schematic"){width=250px height=250px}
+![配線図](./PiZero_gpio-camera.png "schematic")
 
 タクトスイッチは GPIO ポート5 に接続します。
 カメラは専用コネクターに専用ケーブルで接続し、さらにソフトウェア側のセットアップが必要です。

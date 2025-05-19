@@ -10,7 +10,7 @@ HT16K33 LEDマトリクスドライバ、8x8LEDマトリクスモジュール一
 
 Note: 3.3V電源でも、あまり明るくはなりませんが動作するようです。
 
-![配線図](./schematic.png "schematic"){width=300px height=300px}
+![配線図](./schematic.png "schematic")
 
 #### 参照情報
 

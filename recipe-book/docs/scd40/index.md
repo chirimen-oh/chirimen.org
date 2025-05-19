@@ -8,7 +8,7 @@ CO₂（二酸化炭素）濃度に加え、温度・湿度も取得可能なセ
 
 #### 配線図
 
-![配線図](./schematic.png "schematic"){width=300px height=300px}
+![配線図](./schematic.png "schematic")
 
 #### CHIRIMEN 用ドライバのインストール
 

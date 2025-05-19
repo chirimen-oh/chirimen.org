@@ -11,7 +11,7 @@ I2C 通信を介して接続し、温度、湿度、気圧、照度、紫外線�
 
 [説明ページの組み立て方](https://www.waveshare.com/wiki/Environment_Sensor_HAT#Hardware_connection)に従ってRaspberry Pi Zeroに接続したら完了です。
 
-![ボードの写真](WAVESHARE-20471.jpg "ボードの写真"){width=200px height=200px}
+![ボードの写真](WAVESHARE-20471.jpg "ボードの写真")
 
 #### CHIRIMEN 用ドライバのインストール
 

@@ -7,7 +7,7 @@
 
 #### 配線図
 
-![配線図](./PiZero_gpio-inoutMotor.png "schematic"){width=300px height=300px}
+![配線図](./PiZero_gpio-inoutMotor.png "schematic")
 
 GPIO ポート 5 にスイッチ、GPIO ポート 26 にモーター制御回路を繋ぎます。
 

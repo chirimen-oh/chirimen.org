@@ -7,7 +7,7 @@
 
 #### 回路図
 
-![回路図](./schematic.png "schematic"){width=300px height=300px}
+![回路図](./schematic.png "schematic")
 
 #### CHIRIMEN 用ドライバのインストール
 

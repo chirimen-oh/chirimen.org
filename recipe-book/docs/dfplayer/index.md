@@ -10,7 +10,7 @@ MP3プレーヤーボードをGPIO OUTPUTで制御
 
 #### 配線図
 
-![配線図](./DFPlayer.png "schematic"){width=300px height=300px}
+![配線図](./DFPlayer.png "schematic")
 
 * DFPlayer Mini ボードの ADKEY1 端子を Nch MOSFET を介して GPIO で制御します
 (他にシリアル通信での制御も可能なボードですがこのサンプルは GPIO で制御できる ADKEY 端子を使用)

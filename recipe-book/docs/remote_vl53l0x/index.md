@@ -2,7 +2,7 @@
 
 #### 配線図
 
-![配線図](../vl53l0x/schematic.png "schematic"){width=300px height=300px}
+![配線図](../vl53l0x/schematic.png "schematic")
 
 #### 遠隔モニタ(PC/スマホブラウザ)側
 

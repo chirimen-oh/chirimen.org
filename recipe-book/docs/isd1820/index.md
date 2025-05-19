@@ -8,7 +8,7 @@
 
 #### 配線図
 
-![配線図](./ISD1820.png "schematic"){width=300px height=300px}
+![配線図](./ISD1820.png "schematic")
 
 * GPIO ポート26を ISD1820 のP-L 端子に接続します。(P-L 端子が High になっている間だけ再生します(PLAY L ボタンと同じ動作))
 * P-E 端子に繋いだ場合、録音した内容を全部再生するようになります。(PLAY E ボタンと同じ動作)

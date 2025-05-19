@@ -7,7 +7,7 @@ I2C インターフェース対応の 8 ビット A/D および D/A コンバー
 
 #### 配線図
 
-![配線図](./schematic.png "schematic"){width=300px height=300px}
+![配線図](./schematic.png "schematic")
 
 #### CHIRIMEN 用ドライバのインストール
 

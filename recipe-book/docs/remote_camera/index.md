@@ -6,7 +6,7 @@
 
 #### 配線図
 
-![配線図](./PiZero_remote_camera.png "schematic"){width=300px height=300px}
+![配線図](./PiZero_remote_camera.png "schematic")
 
 タクトスイッチはGPIO ポート5に接続します。
 
