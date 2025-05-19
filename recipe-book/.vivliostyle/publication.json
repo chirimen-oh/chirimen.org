@@ -8,7 +8,7 @@
   "name": "CHIRIMEN 対応デバイスレシピ集",
   "author": "CHIRIMEN Open Hardware Community <chirimen.open.hardware@gmail.com>",
   "inLanguage": "ja",
-  "dateModified": "2025-05-19T10:24:49.439Z",
+  "dateModified": "2025-05-19T16:26:02.936Z",
   "readingOrder": [
     {
       "url": "docs/index.html",
@@ -22,7 +22,7 @@
     },
     {
       "url": "docs/intro.html",
-      "name": "CHIRIMEN 対応デバイスレシピ集"
+      "name": "本書について"
     },
     {
       "url": "docs/about.html",

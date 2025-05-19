@@ -2,11 +2,10 @@
 
 ## 目次
 
-1. [CHIRIMEN 対応デバイスレシピ集](./docs/intro.html#chirimen-対応デバイスレシピ集)
-    1. [本書について](./docs/intro.html#本書について)
-        1. [本書の特徴とおすすめポイント](./docs/intro.html#本書の特徴とおすすめポイント)
-        1. [前提条件](./docs/intro.html#前提条件)
-        1. [すぐに開発を始めたい方へ](./docs/intro.html#すぐに開発を始めたい方へ)
+1. [本書について](./docs/intro.html#本書について)
+    1. [本書の特徴とおすすめポイント](./docs/intro.html#本書の特徴とおすすめポイント)
+    1. [前提条件](./docs/intro.html#前提条件)
+    1. [すぐに開発を始めたい方へ](./docs/intro.html#すぐに開発を始めたい方へ)
 1. [CHIRIMEN とは](./docs/about.html#chirimen-とは)
     1. [CHIRIMEN のメリット](./docs/about.html#chirimen-のメリット)
     1. [コミュニティについて](./docs/about.html#コミュニティについて)
