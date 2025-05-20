@@ -2,16 +2,16 @@
 
 ## 加速度・ジャイロセンサー
 
-### ADXL345 Grove Accelerometer 3 軸加速度センサー
+### ADXL345 3 軸加速度センサー
 
 #### 概要
 
-3軸加速度センサー「ADXL345」を搭載したGroveシステム対応のモジュールです。  
-このセンサーは、X、Y、Zの3軸方向の加速度を高精度に測定できます。
+* 3 軸加速度センサー ADXL345 搭載 Grove システム対応モジュール
+* X、Y、Zの3軸方向の加速度を高精度に測定可能
 
 #### 配線図
 
-![](./schematic.png "schematic"){width=250px height=250px}
+![](./schematic.png "schematic"){width=170px height=170px}
 
 #### CHIRIMEN 用ドライバのインストール
 

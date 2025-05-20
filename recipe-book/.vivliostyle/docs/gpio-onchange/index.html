@@ -17,24 +17,20 @@
         <h3 id="gpioタッチセンサー">GPIOタッチセンサー</h3>
         <section class="level4" aria-labelledby="概要">
           <h4 id="概要">概要</h4>
-          <p>
-            タッチや金属の近接で反応する静電容量式センサーの状態を検知します。
-          </p>
+          <ul>
+            <li>タッチや金属の近接で反応する静電容量式センサーの状態を検知</li>
+            <li>指でのタッチだけでなく金属の近接も感知(1~2mm の接近で検知)</li>
+          </ul>
         </section>
         <section class="level4" aria-labelledby="配線図">
           <h4 id="配線図">配線図</h4>
-          <figure>
+          <p>
             <img
               src="./PiZero_gpio_TTP223.png"
-              alt="配線図"
-              title="schematic TP223"
+              title="schematic"
+              width="258px"
+              height="194px"
             />
-            <figcaption aria-hidden="true">配線図</figcaption>
-          </figure>
-          <p>
-            GPIO ポート 5 に接続します。3.3 V
-            電源を用います。指でのタッチだけでなく金属の近接も感知します。(1~2mmに接近すると検知)。
-            金属がセンサーのピンに触れてショートしないよう、テープで被覆して絶縁しましょう。
           </p>
         </section>
         <section
@@ -45,7 +41,7 @@
             CHIRIMEN 用ドライバのインストール
           </h4>
           <ul>
-            <li>不要です。</li>
+            <li>不要</li>
           </ul>
         </section>
         <section class="level4" aria-labelledby="サンプルコード-mainjs">
@@ -69,6 +65,15 @@
 <span class="token punctuation">}</span>
 
 <span class="token function">switchCheck</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+        </section>
+        <section class="level4" aria-labelledby="特記事項">
+          <h4 id="特記事項">特記事項</h4>
+          <ul>
+            <li>GPIO ポート 5 に接続、3.3 V 電源を使用</li>
+            <li>
+              金属がセンサーのピンに触れてショートしないよう、テープで被覆して絶縁して下さい
+            </li>
+          </ul>
         </section>
       </section>
     </section>

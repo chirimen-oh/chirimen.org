@@ -6,11 +6,11 @@
 
 #### 概要
 
-I2C 接続の小型モノクロ OLED ディスプレイ
+* I²C 接続の小型モノクロ OLED ディスプレイ
 
 #### 配線図
 
-![配線図](./schematic.png "schematic")
+![](./schematic.png "schematic"){width=186px height=215px}
 
 #### CHIRIMEN 用ドライバのインストール
 

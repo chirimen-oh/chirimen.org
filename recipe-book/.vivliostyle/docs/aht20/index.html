@@ -15,17 +15,19 @@
       <h3 id="aht20-温湿度センサー">AHT20 温湿度センサー</h3>
       <section class="level4" aria-labelledby="概要">
         <h4 id="概要">概要</h4>
-        <p>温度と湿度を同時に計測可能なデジタルセンサー</p>
+        <ul>
+          <li>温度と湿度を同時に計測可能なデジタルセンサー</li>
+        </ul>
       </section>
       <section class="level4" aria-labelledby="配線図">
         <h4 id="配線図">配線図</h4>
-        <figure>
-          <img src="./schematic.png" alt="配線図" title="schematic" />
-          <figcaption aria-hidden="true">配線図</figcaption>
-        </figure>
         <p>
-          Note:
-          このデバイスで使用するドライバahtx0.jsは、AHT20及びAHT10で使用可能です。
+          <img
+            src="./schematic.png"
+            title="schematic"
+            width="250px"
+            height="250px"
+          />
         </p>
       </section>
       <section
@@ -67,6 +69,13 @@
     <span class="token keyword control-flow">await</span> <span class="token function">sleep</span><span class="token punctuation">(</span><span class="token number">500</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
   <span class="token punctuation">}</span>
 <span class="token punctuation">}</span></code></pre>
+      </section>
+      <section class="level4" aria-labelledby="特記事項">
+        <h4 id="特記事項">特記事項</h4>
+        <p>
+          Note:
+          このデバイスで使用するドライバahtx0.jsは、AHT20及びAHT10で使用可能
+        </p>
       </section>
     </section>
   </body>

@@ -22,23 +22,20 @@
         <h4 id="概要">概要</h4>
         <ul>
           <li>
-            PCA9685 16 チャンネルPWM
-            ドライバーとHBridgeモータードライバーで、DCモーターを正転・逆転・速度コントロールします。
-          </li>
-          <li>
-            HBridgeコントローラはL298N以外にもL9110S、MX1508等も同様に使用できます。
-            <ul>
-              <li>
-                ただし、これらのドライバでは+5Vと+12V端子の代わりに、一個のVCCや電源(+)端子だけのものが多いので、モーター電源はそこに繋げます。
-              </li>
-            </ul>
+            PCA9685 16 チャンネルPWM ドライバーと HBridge
+            モータードライバーで、DC モーターを正転・逆転・速度コントロール
           </li>
         </ul>
       </section>
       <section class="level4" aria-labelledby="配線図">
         <h4 id="配線図">配線図</h4>
         <p>
-          <img src="./schematic.png" title="schematic" />
+          <img
+            src="./schematic.png"
+            title="schematic"
+            width="293px"
+            height="188px"
+          />
         </p>
       </section>
       <section
@@ -109,6 +106,19 @@
         <span class="token keyword control-flow">await</span> pca9685pwm<span class="token punctuation">.</span><span class="token method function property-access">setPWM</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
     <span class="token punctuation">}</span>
 <span class="token punctuation">}</span></code></pre>
+      </section>
+      <section class="level4" aria-labelledby="特記事項">
+        <h4 id="特記事項">特記事項</h4>
+        <ul>
+          <li>
+            HBridge コントローラは L298N 以外にも L9110S、MX1508
+            等も同様に使用できます。
+          </li>
+          <li>
+            ただし、これらのドライバでは +5V と +12V 端子の代わりに、一個の VCC
+            や電源 (+) 端子だけのものが多いので、モーター電源はそこに接続
+          </li>
+        </ul>
       </section>
     </section>
   </body>

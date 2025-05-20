@@ -4,14 +4,12 @@
 
 #### 概要
 
-デジタルマルチガスセンサーで、室内空気質（IAQ）のモニタリングに特化しています。  
-金属酸化物（MOX）技術を採用し、揮発性有機化合物（VOCs）や酸化性ガスの検出に優れた性能を発揮します。
+* デジタルマルチガスセンサーで、室内空気質（IAQ）のモニタリングに特化
+* 金属酸化物（MOX）技術を採用し、揮発性有機化合物（VOCs）や酸化性ガスの検出に優れた性能を発揮
 
 #### 配線図
 
-![配線図](./schematic.png "schematic")
-
-Note: 配線図のモジュールは、ENS160に加えてAHT20(温度湿度センサ)も載っている複合センサボードです。(ENS160は温度と湿度の設定が必要)　<a href="https://www.amazon.co.jp/dp/B0D41R4V3Z">Amazonの商品例</a>
+![](./schematic.png "schematic"){width=170px height=170px}
 
 #### CHIRIMEN 用ドライバのインストール
 
@@ -57,3 +55,7 @@ async function main() {
 	}
 }
 ```
+
+#### 特記事項
+
+Note: 配線図のモジュールは、ENS160に加えてAHT20(温度湿度センサ)も載っている複合センサボードです。(ENS160は温度と湿度の設定が必要)　<a href="https://www.amazon.co.jp/dp/B0D41R4V3Z">Amazonの商品例</a>

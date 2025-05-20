@@ -2,17 +2,17 @@
 
 #### 概要
 
-スイッチを押すと LED を点灯、離すと消灯させる基本的な動作です。
+* スイッチを押すと LED を点灯、離すと消灯させる基本的な動作です。
 
 #### 配線図
 
-![](./PiZero_gpio-inout.png "schematic"){width=200px height=200px}
+![](./PiZero_gpio-inout.png "schematic"){width=210px height=210px}
 
 GPIO ポート 5 にスイッチ、GPIO ポート 26 に抵抗と LED を繋ぎます。
 
 #### CHIRIMEN 用ドライバのインストール
 
-- 不要です。
+- 不要
 
 #### サンプルコード (main.js)
 

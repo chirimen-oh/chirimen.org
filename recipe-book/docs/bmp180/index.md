@@ -4,11 +4,11 @@
 
 #### 概要
 
-温度・気圧を 1 チップで計測可能な高性能センサー
+* 温度・気圧を 1 チップで計測可能な高性能センサー
 
 #### 配線図
 
-![配線図](./schematic.png "schematic")
+![](./schematic.png "schematic"){width=250px height=250px}
 
 #### CHIRIMEN 用ドライバのインストール
 

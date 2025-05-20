@@ -4,34 +4,80 @@
 
 #### 概要
 
-GPIO スイッチを押すとカメラで撮影し、画像ファイルを保存します。
+* GPIO スイッチを押すとカメラで撮影し、画像ファイルを保存
 
 #### 配線図
 
-![](./PiZero_gpio-camera.png "schematic"){width=193px height=304px}
+![](./PiZero_gpio-camera.png "schematic"){width=143px height=254px}
 
+#### CHIRIMEN 用ドライバのインストール
 
-#### カメラのセットアップと動作確認
+- 不要
+
+#### サンプルコード (main.js)
+
+```javascript
+// GPIO5のスイッチを押すと、Raspberry Pi Cameraで撮影し、ファイルに保存する
+
+// ライブラリ　pi-camera-connect　をまずインストールする必要があります。readmeを参照してください。
+
+import { StillCamera } from "pi-camera-connect";
+import * as fs from "fs";
+
+import { requestGPIOAccess } from "./node_modules/node-web-gpio/dist/index.js";
+const sleep = (msec) => new Promise((resolve) => setTimeout(resolve, msec));
+
+const stillCamera = new StillCamera({
+	width: 600,
+	height: 600,
+});
+
+async function switchCheck() {
+	const gpioAccess = await requestGPIOAccess();
+	const port = gpioAccess.ports.get(5);
+
+	await port.export("in");
+	port.onchange = takeImage;
+}
+
+async function takeImage(ev) {
+	if (ev.value == 1) {
+		// 押し下げたときだけ撮影
+		return;
+	}
+	const image = await stillCamera.takeImage();
+	const fileName = "still-image-" + new Date().getTime() + ".jpg";
+	console.log("sw:", ev.value, " takeImage:", fileName);
+	fs.writeFileSync(fileName, image);
+}
+
+switchCheck();
+```
+
+#### 特記事項
+
+タクトスイッチは GPIO PORT5 に繋ぎます。
+
+カメラは専用コネクターに専用ケーブルを使って接続し、更にセットアップが必要です。次章を参照してください
+
+##### カメラのセットアップと動作確認
 
 [Raspberry Pi のカメラ](https://www.raspberrypi.com/documentation/accessories/camera.html)を API で直接操作する[pi-camera-connect](https://www.npmjs.com/package/pi-camera-connect)を使った方法です。[Pi-Camera](https://github.com/stetsmando/pi-camera)を使った方法([gist はこちら](https://gist.github.com/satakagi/2c5be63d4759fd21eca939f507e7f7ef))より、大幅に高速に画像が取得できることを確認しています。
 
-タクトスイッチは GPIO ポート5 に接続します。
-カメラは専用コネクターに専用ケーブルで接続し、さらにソフトウェア側のセットアップが必要です。
-
-#### 準備
+##### 準備
 
 - Raspberry Pi カメラモジュール
-  - [例 1 KEYESTUDIO カメラモジュール](https://www.amazon.co.jp/dp/B073RCXGQS/)、[例 2](https://www.amazon.co.jp/dp/B086MK17K5/)、[例 3](https://www.amazon.co.jp/dp/B08HVRB59N/)
-- Zero 用ケーブルは、製品によっては同梱されています。付属していない場合は、別途ご用意ください。
+  - [例 1:KEYESTUDIO カメラモジュール](https://www.amazon.co.jp/dp/B073RCXGQS/)、[例 2](https://www.amazon.co.jp/dp/B086MK17K5/)、[例 3](https://www.amazon.co.jp/dp/B08HVRB59N/)
+- Zero 用ケーブル～上のモジュールは添付されているようです。
   - 無い場合は [別途調達](https://www.amazon.co.jp/gp/product/B07QH455KY/)
 - [接続のしかた](https://projects.raspberrypi.org/ja-JP/projects/getting-started-with-picamera) : Zero は専用ケーブルでつなぎます
 
 > **Note**\
 > 利用可能なカメラモジュールは v1、v3 です。Camera Module v2 には未対応です。
-> また Raspberry Pi Zero 用 CHIRIMEN v1.4.0 未満をご利用の場合、Camera Module v3 には対応していません。
+> また Raspberry Pi Zero 用 CHIRIMEN v1.4.0 未満をお使いの場合、Camera Module v3 には未対応です。
 > [Raspberry Pi Zero 用 CHIRIMEN v1.4.0 以上](https://github.com/chirimen-oh/chirimen-lite/releases) をお使いください。
 
-#### カメラの動作テスト
+##### カメラの動作テスト
 
 以下のコマンドで画像ファイルが保存されます:
 
@@ -55,11 +101,7 @@ raspistill -v --width 640 --height 480 -o test.jpg
 >
 > 詳細: [Camera software - Raspberry Pi Documentation](https://www.raspberrypi.com/documentation/computers/camera_software.html)
 
-#### CHIRIMEN 用ドライバのインストール
-
-- `pi-camera-connect` を使用します。
-
-#### サンプル
+##### サンプル
 
 [pi-camera-connect のリポジトリ](https://github.com/launchcodedev/pi-camera-connect)の readme と同じ内容ですが、オプションを加えてみました
 
@@ -102,50 +144,10 @@ async function runApp() {
 runApp();
 ```
 
-#### Note
+##### Note
 
-- [dataURL](https://developer.mozilla.org/ja/docs/Web/HTTP/Basics_of_HTTP/Data_URIs) を使って画像を文字列化すれば、比較的簡単にサーバへ送信することができます。
+- [dataURL](https://developer.mozilla.org/ja/docs/Web/HTTP/Basics_of_HTTP/Data_URIs)で画像を文字列化すれば比較的簡単にサーバに送信したりできるでしょう。
   - [リモートカメラサンプル](https://tutorial.chirimen.org/pizero/esm-examples/#REMOTE_remote_camera)
 - 各種センサ (WebGPIO 経由で人感センサーなど)を使い、自動的に撮影、サーバにアップロードする仕組みなどもできるでしょう。
 - [pi-camera-connect のリポジトリ](https://github.com/launchcodedev/pi-camera-connect)
-- この章は[こちらの記事](https://x.gd/i3u0x)を改変して作成されました。
-
-#### サンプルコード (main.js)
-
-```javascript
-// GPIO5のスイッチを押すと、Raspberry Pi Cameraで撮影し、ファイルに保存する
-
-// ライブラリ　pi-camera-connect　をまずインストールする必要があります。readmeを参照してください。
-
-import { StillCamera } from "pi-camera-connect";
-import * as fs from "fs";
-
-import { requestGPIOAccess } from "./node_modules/node-web-gpio/dist/index.js";
-const sleep = (msec) => new Promise((resolve) => setTimeout(resolve, msec));
-
-const stillCamera = new StillCamera({
-	width: 600,
-	height: 600,
-});
-
-async function switchCheck() {
-	const gpioAccess = await requestGPIOAccess();
-	const port = gpioAccess.ports.get(5);
-
-	await port.export("in");
-	port.onchange = takeImage;
-}
-
-async function takeImage(ev) {
-	if (ev.value == 1) {
-		// 押し下げたときだけ撮影
-		return;
-	}
-	const image = await stillCamera.takeImage();
-	const fileName = "still-image-" + new Date().getTime() + ".jpg";
-	console.log("sw:", ev.value, " takeImage:", fileName);
-	fs.writeFileSync(fileName, image);
-}
-
-switchCheck();
-```
+- _この章は[こちらの記事](https://gist.github.com/satakagi/1b5adc8dff8236421a593b93fa152222)を改変して作成されました。_

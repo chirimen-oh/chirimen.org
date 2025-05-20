@@ -2,11 +2,11 @@
 
 #### 概要
 
-温度と湿度を同時に計測可能なデジタルセンサー
+* 温度と湿度を同時に計測可能なデジタルセンサー
 
 #### 配線図
 
-![配線図](./schematic.png "schematic")
+![](./schematic.png "schematic"){width=233px height=246px}
 
 #### CHIRIMEN 用ドライバのインストール
 

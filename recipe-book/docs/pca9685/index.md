@@ -4,11 +4,11 @@
 
 #### 概要
 
-PWM 制御 IC で、最大16個のサーボモーターやLEDを個別に制御できます。
+* PWM 制御 IC で、最大 16 個のサーボモーターや LED を個別に制御可能
 
 #### 配線図
 
-![](./schematic.png "schematic"){width=250px height=250px}
+![](./schematic.png "schematic"){width=230px height=230px}
 
 #### CHIRIMEN 用ドライバのインストール
 

@@ -4,11 +4,12 @@
 
 #### 概要
 
-CO₂（二酸化炭素）濃度に加え、温度・湿度も取得可能なセンサー。NDIR 方式で高精度。
+* CO₂（二酸化炭素）濃度に加え、温度・湿度も取得可能なセンサー。
+* NDIR 方式で高精度。
 
 #### 配線図
 
-![配線図](./schematic.png "schematic")
+![](./schematic.png "schematic"){width=250px height=250px}
 
 #### CHIRIMEN 用ドライバのインストール
 
