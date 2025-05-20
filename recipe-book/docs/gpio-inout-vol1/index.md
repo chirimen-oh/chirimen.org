@@ -6,7 +6,7 @@
 
 #### 配線図
 
-![配線図](./PiZero_gpio-inout.png "schematic")
+![](./PiZero_gpio-inout.png "schematic"){width=200px height=200px}
 
 GPIO ポート 5 にスイッチ、GPIO ポート 26 に抵抗と LED を繋ぎます。
 

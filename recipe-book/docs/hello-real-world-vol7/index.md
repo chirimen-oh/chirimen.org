@@ -6,7 +6,7 @@
 
 #### 配線図
 
-![](./PiZero_gpio0MotorB.png "schematic"){width=200px height=200px}
+![](./PiZero_gpio0MotorB.png "schematic"){width=85% height=85%}
 
 #### CHIRIMEN 用ドライバのインストール
 

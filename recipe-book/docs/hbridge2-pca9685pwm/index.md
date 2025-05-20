@@ -8,7 +8,7 @@
 
 #### 配線図
 
-![配線図](./schematic.png "schematic")
+![](./schematic.png "schematic")
 
 #### CHIRIMEN 用ドライバのインストール
 

@@ -7,7 +7,7 @@
 
 #### 配線図　
 
-![](./PiZero_gpio0MotorB_2.png "schematic"){width=200px height=200px}
+![](./PiZero_gpio0MotorB_2.png "schematic"){width=85% height=85%}
 
 5V以外のDC電源も使用可能です。
 

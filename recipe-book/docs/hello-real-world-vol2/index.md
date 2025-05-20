@@ -6,7 +6,7 @@
 
 #### 配線図
 
-![](./PiZero_gpio0Motor_2.png "schematic"){width=200px height=200px}
+![](./PiZero_gpio0Motor_2.png "schematic")
 
 GPIO ポート 26 にモーター制御回路を繋ぎます。
 ※このセクションのコードは「L チカ」と共通のため、配線のみ異なる点にご注意ください。

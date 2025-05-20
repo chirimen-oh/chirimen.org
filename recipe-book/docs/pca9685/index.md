@@ -8,7 +8,7 @@ PWM 制御 IC で、最大16個のサーボモーターやLEDを個別に制御�
 
 #### 配線図
 
-![配線図](./schematic.png "schematic")
+![](./schematic.png "schematic"){width=250px height=250px}
 
 #### CHIRIMEN 用ドライバのインストール
 

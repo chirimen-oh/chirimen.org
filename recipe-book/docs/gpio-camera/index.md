@@ -8,14 +8,15 @@ GPIO スイッチを押すとカメラで撮影し、画像ファイルを保存
 
 #### 配線図
 
-![配線図](./PiZero_gpio-camera.png "schematic")
+![](./PiZero_gpio-camera.png "schematic"){width=193px height=304px}
 
-タクトスイッチは GPIO ポート5 に接続します。
-カメラは専用コネクターに専用ケーブルで接続し、さらにソフトウェア側のセットアップが必要です。
 
 #### カメラのセットアップと動作確認
 
 [Raspberry Pi のカメラ](https://www.raspberrypi.com/documentation/accessories/camera.html)を API で直接操作する[pi-camera-connect](https://www.npmjs.com/package/pi-camera-connect)を使った方法です。[Pi-Camera](https://github.com/stetsmando/pi-camera)を使った方法([gist はこちら](https://gist.github.com/satakagi/2c5be63d4759fd21eca939f507e7f7ef))より、大幅に高速に画像が取得できることを確認しています。
+
+タクトスイッチは GPIO ポート5 に接続します。
+カメラは専用コネクターに専用ケーブルで接続し、さらにソフトウェア側のセットアップが必要です。
 
 #### 準備
 

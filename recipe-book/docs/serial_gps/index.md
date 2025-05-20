@@ -9,6 +9,10 @@
 高性能GPS受信チップ「NEO-6M」を搭載したGPSモジュールです。  
 PiZeroのシリアル端子に、GY-GPS6MV2等のGPSレシーバ基板を繋いで使用します。
 
+#### 配線図
+
+![](GY-NEO6MV2.png "schematic")
+
 * OSの設定
   * ```sudo raspi-config```
   * Interface Options -> Serial Port -> Login over serial: いいえ , serial port enabled: はい -> Finish (reboot)
@@ -28,8 +32,6 @@ PiZeroのシリアル端子に、GY-GPS6MV2等のGPSレシーバ基板を繋い�
 * アプリの実行
   * main.js を myApp下に保存
   * ```node main.js```
-
-![GY-NEO6MV2.png](GY-NEO6MV2.png)
 
 #### CHIRIMEN 用ドライバのインストール
 
