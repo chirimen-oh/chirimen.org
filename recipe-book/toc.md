@@ -13,7 +13,7 @@
     1. [hello-real-world](./docs/hello-real-world-vol1/index.html#hello-real-world)
         1. [Lチカ (GPIO OUTPUT)](./docs/hello-real-world-vol1/index.html#lチカ-gpio-output)
         1. [ギヤードモーター part1](./docs/hello-real-world-vol2/index.html#ギヤードモーター-part1)
-        1. [ギヤードモーター  part2](./docs/hello-real-world-vol3/index.html#ギヤードモーター--part2)
+        1. [ギヤードモーター part2](./docs/hello-real-world-vol3/index.html#ギヤードモーター-part2)
         1. [ギヤードモーター part3](./docs/hello-real-world-vol6/index.html#ギヤードモーター-part3)
         1. [ギヤードモーター part4](./docs/hello-real-world-vol7/index.html#ギヤードモーター-part4)
         1. [ギヤードモーター part5](./docs/hello-real-world-vol8/index.html#ギヤードモーター-part5)

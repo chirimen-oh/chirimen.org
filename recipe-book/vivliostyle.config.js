@@ -5,7 +5,7 @@ module.exports = {
   size: 'A5', // paper size.
   theme: '@vivliostyle/theme-techbook@^2.0.0', // .css or local dir or npm package. default to undefined.
   entry: [
-    './docs/index.md',
+    // './docs/index.md',
     {
       path: 'toc.md',
       rel: 'contents',
@@ -95,7 +95,7 @@ module.exports = {
   // workspaceDir: '.vivliostyle', // directory which is saved intermediate files.
   toc: true, // whether generate and include ToC HTML or not, default to 'false'.
   // tocTitle: '目次',
-  // cover: './cover.png', // cover image. default to undefined.
+  cover: './cover.png', // cover image. default to undefined.
   // vfm: { // options of VFM processor
   //   hardLineBreaks: true, // converts line breaks of VFM to <br> tags. default to 'false'.
   //   disableFormatHtml: true, // disables HTML formatting. default to 'false'.

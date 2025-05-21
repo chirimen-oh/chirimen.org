@@ -8,11 +8,13 @@
   "name": "CHIRIMEN 対応デバイスレシピ集",
   "author": "CHIRIMEN Open Hardware Community <chirimen.open.hardware@gmail.com>",
   "inLanguage": "ja",
-  "dateModified": "2025-05-20T16:20:09.724Z",
+  "dateModified": "2025-05-21T16:00:00.398Z",
   "readingOrder": [
     {
-      "url": "docs/index.html",
-      "name": "CHIRIMEN 対応デバイスレシピ集"
+      "url": "cover.html",
+      "name": "CHIRIMEN 対応デバイスレシピ集",
+      "rel": "cover",
+      "type": "LinkedResource"
     },
     {
       "url": "toc.html",
@@ -38,7 +40,7 @@
     },
     {
       "url": "docs/hello-real-world-vol3/index.html",
-      "name": "ギヤードモーター  part2"
+      "name": "ギヤードモーター part2"
     },
     {
       "url": "docs/hello-real-world-vol6/index.html",
@@ -281,6 +283,13 @@
       "name": "Special Thanks"
     }
   ],
-  "resources": [],
+  "resources": [
+    {
+      "rel": "cover",
+      "url": "cover.png",
+      "name": "Cover image",
+      "encodingFormat": "image/png"
+    }
+  ],
   "links": []
 }
