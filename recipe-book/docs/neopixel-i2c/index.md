@@ -10,9 +10,9 @@
 
 #### 配線図
 
-![](./schematic.png){width=393px height=205px}
+![](./schematic.png){width=383px height=195px}
 
-![](./schematic_with_dedicated_breadboard.png){width=393px height=219px}
+![](./schematic_with_dedicated_breadboard.png){width=383px height=209px}
 
 #### CHIRIMEN 用ドライバのインストール
 

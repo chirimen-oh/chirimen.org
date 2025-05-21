@@ -8,7 +8,7 @@
 
 #### 配線図
 
-![](./PiZero_gpio-camera.png "schematic"){width=143px height=254px}
+![](./PiZero_gpio-camera.png "schematic"){width=246px height=327px}
 
 #### CHIRIMEN 用ドライバのインストール
 

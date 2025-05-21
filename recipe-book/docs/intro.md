@@ -14,10 +14,13 @@
 本書の内容を試すには、以下の環境を推奨。
 
 - デバイス： Raspberry Pi Zero W（Wi-Fi 搭載モデル）
-- 主な購入先： [KSY](https://x.gd/HytS7), [SWITCH SCIENCE](https://x.gd/KF2aF) にて購入可能
+- 主な購入先
+  - KSY：[Raspberry Pi Zero WH [RASPIZWHSC0065]](https://x.gd/HytS7)
+  - SWITCH SCIENCE：[Raspberry Pi Zero WH [RPI-ZERO-WH]](https://x.gd/KF2aF)
 - OS： [CHIRIMEN Lite](https://github.com/chirimen-oh/chirimen-lite) （Raspbianベース）
   - [ダウンロード](https://github.com/chirimen-oh/chirimen-lite/releases)
-- [Node.js のバージョン](https://nodejs.org/ja/about/previous-releases)は、v22.x 以上を推奨します。
+- [Node.js のバージョン](https://nodejs.org/ja/about/previous-releases)
+  - v22.x 以上を推奨
 - 必要なライブラリ
   - I²C 制御用ライブラリ： [node-web-i2c](https://www.npmjs.com/package/node-web-i2c)
   - GPIO 制御用ライブラリ： [node-web-gpio](https://www.npmjs.com/package/node-web-gpio)

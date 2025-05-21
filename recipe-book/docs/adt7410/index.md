@@ -11,9 +11,9 @@
 
 #### 配線図
 
-![](./PiZero_ADT7410.png "schematic"){width=200px height=200px}
+![](./PiZero_ADT7410.png "schematic"){width=175px height=175px}
 
-![](./schematic_warning.png "schematic"){width=200px height=200px}
+![](./schematic_warning.png "schematic"){width=175px height=175px}
 
 #### CHIRIMEN 用ドライバのインストール
 
