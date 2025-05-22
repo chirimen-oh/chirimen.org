@@ -1,39 +1,20 @@
-### ギヤードモーター  part2
+### ギヤードモーター part2
 
 #### 概要
 
-ギヤードモーター (GPIO OUTPUT)外部電源を使用する場合  
-ギヤードモーターの回転・停止をさせます。
+* ギヤードモーター (GPIO OUTPUT)外部電源を使用する場合
+* ギヤードモーターの回転・停止
 
 #### 配線図　
 
-![配線図](./PiZero_gpio0MotorB_2.png "schematic")
+![](./PiZero_gpio0MotorB_2.png "schematic"){width=85% height=85%}
 
-5V以外のDC電源も使用可能です。
+5V 以外の DC 電源も使用可能
 
 #### CHIRIMEN 用ドライバのインストール
 
-- 不要です。
+- 不要
 
 #### サンプルコード (main.js)
 
-```javascript
-import {requestGPIOAccess} from "./node_modules/node-web-gpio/dist/index.js";
-const sleep = msec => new Promise(resolve => setTimeout(resolve, msec));
-
-async function blink() {
-  const gpioAccess = await requestGPIOAccess();
-  const port = gpioAccess.ports.get(26);
-
-  await port.export("out");
-
-  for (;;) {
-    await port.write(1);
-    await sleep(1000);
-    await port.write(0);
-    await sleep(1000);
-  }
-}
-
-blink();
-```
+- ギヤードモーター part1 と同じコードです。

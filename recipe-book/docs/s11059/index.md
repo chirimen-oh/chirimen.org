@@ -2,12 +2,12 @@
 
 #### 概要
 
-高精度なデジタルカラーセンサーです。  
-赤（Red）、緑（Green）、青（Blue）、および赤外線（IR）の4つの波長帯域を個別に測定できます。
+* 高精度なデジタルカラーセンサー
+* 赤（Red）、緑（Green）、青（Blue）、および赤外線（IR）の4つの波長帯域を個別に測定可能
 
 #### 配線図
 
-![配線図](./schematic.png "schematic"){width=300px height=300px}
+![](./schematic.png "schematic"){width=250px height=250px}
 
 #### CHIRIMEN 用ドライバのインストール
 

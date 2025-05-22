@@ -4,11 +4,11 @@
 
 #### 概要
 
-光の強さ（照度）をルクス単位で取得できるセンサー。
+* 光の強さ（照度）をルクス単位で取得できるセンサー。
 
 #### 配線図
 
-![配線図](./schematic.png "schematic"){width=300px height=300px}
+![](./schematic.png "schematic"){width=250px height=250px}
 
 #### CHIRIMEN 用ドライバのインストール
 

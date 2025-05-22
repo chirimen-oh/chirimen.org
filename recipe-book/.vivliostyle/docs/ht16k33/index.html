@@ -9,6 +9,7 @@
       type="text/css"
       href="../../themes/node_modules/@vivliostyle/theme-techbook/theme.css"
     />
+    <link rel="stylesheet" type="text/css" href="../../custom.css" />
   </head>
   <body>
     <section class="level2" aria-labelledby="led-ドライバー">
@@ -19,187 +20,23 @@
         </h3>
         <section class="level4" aria-labelledby="概要">
           <h4 id="概要">概要</h4>
-          <p>
-            HT16K33
-            LEDマトリクスドライバ、8x8LEDマトリクスモジュール一体型や7セグメントLED一体型等にも対応
-          </p>
+          <ul>
+            <li>
+              HT16K33 LED マトリクスドライバ、8x8 LED
+              マトリクスモジュール一体型や 7 セグメント LED 一体型等にも対応
+            </li>
+          </ul>
         </section>
         <section class="level4" aria-labelledby="配線図">
           <h4 id="配線図">配線図</h4>
           <p>
-            Note: 3.3V電源でも、あまり明るくはなりませんが動作するようです。
-          </p>
-          <figure>
             <img
               src="./schematic.png"
-              alt="配線図"
               title="schematic"
-              width="300px"
-              height="300px"
+              width="228px"
+              height="201px"
             />
-            <figcaption aria-hidden="true">配線図</figcaption>
-          </figure>
-        </section>
-        <section class="level4" aria-labelledby="参照情報">
-          <h4 id="参照情報">参照情報</h4>
-        </section>
-        <section
-          class="level4"
-          aria-labelledby="8x8マトリクスledモジュールデフォルト設定"
-        >
-          <h4 id="8x8マトリクスledモジュールデフォルト設定">
-            8x8マトリクスLEDモジュール(デフォルト設定)
-          </h4>
-          <p>いずれでも動作(ピン配置は異なる)</p>
-          <ul>
-            <li>
-              <p>Adafruit Mini 8x8 LED Matrix w/I2C Backpack</p>
-              <ul>
-                <li>
-                  <a href="https://www.switch-science.com/products/1493"
-                    >https://www.switch-science.com/products/1493</a
-                  >
-                </li>
-                <li>
-                  <a href="https://www.adafruit.com/product/870"
-                    >https://www.adafruit.com/product/870</a
-                  >
-                </li>
-              </ul>
-            </li>
-            <li>
-              <p>keyestudio Ks0064 I2C 8x8 LED Matrix HT16K33</p>
-              <ul>
-                <li>
-                  <a href="https://ja.aliexpress.com/item/32886174149.html"
-                    >https://ja.aliexpress.com/item/32886174149.html</a
-                  >
-                </li>
-              </ul>
-            </li>
-            <li>
-              <p>サンプルコード <a href="./main.js">./main.js</a></p>
-            </li>
-          </ul>
-        </section>
-        <section
-          class="level4"
-          aria-labelledby="aitendo製-8x8マトリクスledモジュール"
-        >
-          <h4 id="aitendo製-8x8マトリクスledモジュール">
-            Aitendo製 8x8マトリクスLEDモジュール
-          </h4>
-          <p>
-            Adafruit、keystudioとマトリクスの結線が異なりますが、設定変更により使用可能です。
           </p>
-          <ul>
-            <li>
-              <p>対応品リスト</p>
-              <ul>
-                <li>
-                  <a href="https://www.aitendo.com/product/12822"
-                    >https://www.aitendo.com/product/12822</a
-                  >
-                </li>
-                <li>
-                  <a href="https://www.aitendo.com/product/12850"
-                    >https://www.aitendo.com/product/12850</a
-                  >
-                </li>
-                <li>
-                  <a href="https://www.aitendo.com/product/12823"
-                    >https://www.aitendo.com/product/12823</a
-                  >
-                </li>
-              </ul>
-            </li>
-            <li>
-              <p>
-                サンプルコード
-                <a href="./main-ht16k33_8x8aitendo.js"
-                  >./main-ht16k33_8x8aitendo.js</a
-                >
-              </p>
-              <ul>
-                <li>
-                  aitendo製モジュール用の設定変更関数を呼び出して使います。
-                </li>
-              </ul>
-            </li>
-          </ul>
-        </section>
-        <section class="level4" aria-labelledby="4桁7セグメントledモジュール">
-          <h4 id="4桁7セグメントledモジュール">4桁7セグメントLEDモジュール</h4>
-          <p>
-            配線が同じであれば、amazonやaliexpress等で販売されているジェネリック品でも使用できると思います。（動作はAitendo製品で確認）
-          </p>
-          <ul>
-            <li>
-              <p>対応品：aitendo</p>
-              <ul>
-                <li>
-                  <a href="https://www.aitendo.com/product/14540"
-                    >https://www.aitendo.com/product/14540</a
-                  >
-                </li>
-                <li>
-                  <a href="https://www.aitendo.com/product/18690"
-                    >https://www.aitendo.com/product/18690</a
-                  >
-                </li>
-                <li>
-                  <a href="https://www.aitendo.com/product/20785"
-                    >https://www.aitendo.com/product/20785</a
-                  >
-                </li>
-              </ul>
-            </li>
-            <li>
-              <p>
-                サンプルコード
-                <a href="./main-ht16k33_7seg.js">./main-ht16k33_7seg.js</a>
-              </p>
-            </li>
-          </ul>
-        </section>
-        <section class="level4" aria-labelledby="4桁-14セグメントledモジュール">
-          <h4 id="4桁-14セグメントledモジュール">
-            4桁 14セグメントLEDモジュール
-          </h4>
-          <p>
-            数字やアルファベットが表示可能なLEDモジュール。配線が同じであれば、amazonやaliexpress等で販売されているジェネリック品でも使用できると思います。（動作はAitendo製品で確認）
-          </p>
-          <ul>
-            <li>
-              <p>対応品：aitendo</p>
-              <ul>
-                <li>
-                  <a href="https://www.aitendo.com/product/20812"
-                    >https://www.aitendo.com/product/20812</a
-                  >
-                </li>
-                <li>
-                  <a href="https://www.aitendo.com/product/20811"
-                    >https://www.aitendo.com/product/20811</a
-                  >
-                </li>
-              </ul>
-            </li>
-            <li>
-              <p>
-                サンプルコード
-                <a href="./main-ht16k33_14seg.js">./main-ht16k33_14seg.js</a>
-              </p>
-            </li>
-          </ul>
-        </section>
-        <section class="level4" aria-labelledby="その他">
-          <h4 id="その他">その他</h4>
-          <ul>
-            <li>
-              set_led関数を使用することで、任意のLEDマトリクスに対応できます
-            </li>
-          </ul>
         </section>
         <section
           class="level4"
@@ -292,6 +129,177 @@
 		**/</span>
 	<span class="token punctuation">}</span>
 <span class="token punctuation">}</span></code></pre>
+        </section>
+        <section class="level4" aria-labelledby="特記事項">
+          <h4 id="特記事項">特記事項</h4>
+          <ul>
+            <li>
+              Note: 3.3V電源でも、あまり明るくはなりませんが動作するようです。
+            </li>
+          </ul>
+          <section
+            class="level5"
+            aria-labelledby="8x8マトリクスledモジュールデフォルト設定"
+          >
+            <h5 id="8x8マトリクスledモジュールデフォルト設定">
+              8x8マトリクスLEDモジュール(デフォルト設定)
+            </h5>
+            <p>いずれでも動作(ピン配置は異なる)</p>
+            <ul>
+              <li>
+                <p>Adafruit Mini 8x8 LED Matrix w/I2C Backpack</p>
+                <ul>
+                  <li>
+                    <a href="https://www.switch-science.com/products/1493"
+                      >https://www.switch-science.com/products/1493</a
+                    >
+                  </li>
+                  <li>
+                    <a href="https://www.adafruit.com/product/870"
+                      >https://www.adafruit.com/product/870</a
+                    >
+                  </li>
+                </ul>
+              </li>
+              <li>
+                <p>keyestudio Ks0064 I2C 8x8 LED Matrix HT16K33</p>
+                <ul>
+                  <li>
+                    <a href="https://ja.aliexpress.com/item/32886174149.html"
+                      >https://ja.aliexpress.com/item/32886174149.html</a
+                    >
+                  </li>
+                </ul>
+              </li>
+              <li>
+                <p>サンプルコード <a href="./main.js">./main.js</a></p>
+              </li>
+            </ul>
+          </section>
+          <section
+            class="level5"
+            aria-labelledby="aitendo製-8x8マトリクスledモジュール"
+          >
+            <h5 id="aitendo製-8x8マトリクスledモジュール">
+              Aitendo製 8x8マトリクスLEDモジュール
+            </h5>
+            <p>
+              Adafruit、keystudioとマトリクスの結線が異なりますが、設定変更により使用可能です。
+            </p>
+            <ul>
+              <li>
+                <p>対応品リスト</p>
+                <ul>
+                  <li>
+                    <a href="https://www.aitendo.com/product/12822"
+                      >https://www.aitendo.com/product/12822</a
+                    >
+                  </li>
+                  <li>
+                    <a href="https://www.aitendo.com/product/12850"
+                      >https://www.aitendo.com/product/12850</a
+                    >
+                  </li>
+                  <li>
+                    <a href="https://www.aitendo.com/product/12823"
+                      >https://www.aitendo.com/product/12823</a
+                    >
+                  </li>
+                </ul>
+              </li>
+              <li>
+                <p>
+                  サンプルコード
+                  <a href="./main-ht16k33_8x8aitendo.js"
+                    >./main-ht16k33_8x8aitendo.js</a
+                  >
+                </p>
+                <ul>
+                  <li>
+                    aitendo製モジュール用の設定変更関数を呼び出して使います。
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </section>
+          <section class="level5" aria-labelledby="4桁7セグメントledモジュール">
+            <h5 id="4桁7セグメントledモジュール">
+              4桁7セグメントLEDモジュール
+            </h5>
+            <p>
+              配線が同じであれば、amazonやaliexpress等で販売されているジェネリック品でも使用できると思います。（動作はAitendo製品で確認）
+            </p>
+            <ul>
+              <li>
+                <p>対応品：aitendo</p>
+                <ul>
+                  <li>
+                    <a href="https://www.aitendo.com/product/14540"
+                      >https://www.aitendo.com/product/14540</a
+                    >
+                  </li>
+                  <li>
+                    <a href="https://www.aitendo.com/product/18690"
+                      >https://www.aitendo.com/product/18690</a
+                    >
+                  </li>
+                  <li>
+                    <a href="https://www.aitendo.com/product/20785"
+                      >https://www.aitendo.com/product/20785</a
+                    >
+                  </li>
+                </ul>
+              </li>
+              <li>
+                <p>
+                  サンプルコード
+                  <a href="./main-ht16k33_7seg.js">./main-ht16k33_7seg.js</a>
+                </p>
+              </li>
+            </ul>
+          </section>
+          <section
+            class="level5"
+            aria-labelledby="4桁-14セグメントledモジュール"
+          >
+            <h5 id="4桁-14セグメントledモジュール">
+              4桁 14セグメントLEDモジュール
+            </h5>
+            <p>
+              数字やアルファベットが表示可能なLEDモジュール。配線が同じであれば、amazonやaliexpress等で販売されているジェネリック品でも使用できると思います。（動作はAitendo製品で確認）
+            </p>
+            <ul>
+              <li>
+                <p>対応品：aitendo</p>
+                <ul>
+                  <li>
+                    <a href="https://www.aitendo.com/product/20812"
+                      >https://www.aitendo.com/product/20812</a
+                    >
+                  </li>
+                  <li>
+                    <a href="https://www.aitendo.com/product/20811"
+                      >https://www.aitendo.com/product/20811</a
+                    >
+                  </li>
+                </ul>
+              </li>
+              <li>
+                <p>
+                  サンプルコード
+                  <a href="./main-ht16k33_14seg.js">./main-ht16k33_14seg.js</a>
+                </p>
+              </li>
+            </ul>
+          </section>
+          <section class="level5" aria-labelledby="その他">
+            <h5 id="その他">その他</h5>
+            <ul>
+              <li>
+                set_led関数を使用することで、任意のLEDマトリクスに対応できます
+              </li>
+            </ul>
+          </section>
         </section>
       </section>
     </section>

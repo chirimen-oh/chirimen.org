@@ -9,6 +9,7 @@
       type="text/css"
       href="../../themes/node_modules/@vivliostyle/theme-techbook/theme.css"
     />
+    <link rel="stylesheet" type="text/css" href="../../custom.css" />
   </head>
   <body>
     <section class="level2" aria-labelledby="カメラ">
@@ -22,127 +23,20 @@
         </h3>
         <section class="level4" aria-labelledby="概要">
           <h4 id="概要">概要</h4>
-          <p>GPIO スイッチを押すとカメラで撮影し、画像ファイルを保存します。</p>
+          <ul>
+            <li>GPIO スイッチを押すとカメラで撮影し、画像ファイルを保存</li>
+          </ul>
         </section>
         <section class="level4" aria-labelledby="配線図">
           <h4 id="配線図">配線図</h4>
-          <figure>
+          <p>
             <img
               src="./PiZero_gpio-camera.png"
-              alt="配線図"
               title="schematic"
-              width="250px"
-              height="250px"
+              width="246px"
+              height="327px"
             />
-            <figcaption aria-hidden="true">配線図</figcaption>
-          </figure>
-          <p>
-            タクトスイッチは GPIO ポート5 に接続します。
-            カメラは専用コネクターに専用ケーブルで接続し、さらにソフトウェア側のセットアップが必要です。
           </p>
-        </section>
-        <section
-          class="level4"
-          aria-labelledby="カメラのセットアップと動作確認"
-        >
-          <h4 id="カメラのセットアップと動作確認">
-            カメラのセットアップと動作確認
-          </h4>
-          <p>
-            <a
-              href="https://www.raspberrypi.com/documentation/accessories/camera.html"
-              >Raspberry Pi のカメラ</a
-            >を API で直接操作する<a
-              href="https://www.npmjs.com/package/pi-camera-connect"
-              >pi-camera-connect</a
-            >を使った方法です。<a href="https://github.com/stetsmando/pi-camera"
-              >Pi-Camera</a
-            >を使った方法(<a
-              href="https://gist.github.com/satakagi/2c5be63d4759fd21eca939f507e7f7ef"
-              >gist はこちら</a
-            >)より、大幅に高速に画像が取得できることを確認しています。
-          </p>
-        </section>
-        <section class="level4" aria-labelledby="準備">
-          <h4 id="準備">準備</h4>
-          <ul>
-            <li>
-              Raspberry Pi カメラモジュール
-              <ul>
-                <li>
-                  <a href="https://www.amazon.co.jp/dp/B073RCXGQS/"
-                    >例 1 KEYESTUDIO カメラモジュール</a
-                  >、<a href="https://www.amazon.co.jp/dp/B086MK17K5/">例 2</a
-                  >、<a href="https://www.amazon.co.jp/dp/B08HVRB59N/">例 3</a>
-                </li>
-              </ul>
-            </li>
-            <li>
-              Zero
-              用ケーブルは、製品によっては同梱されています。付属していない場合は、別途ご用意ください。
-              <ul>
-                <li>
-                  無い場合は
-                  <a href="https://www.amazon.co.jp/gp/product/B07QH455KY/"
-                    >別途調達</a
-                  >
-                </li>
-              </ul>
-            </li>
-            <li>
-              <a
-                href="https://projects.raspberrypi.org/ja-JP/projects/getting-started-with-picamera"
-                >接続のしかた</a
-              >
-              : Zero は専用ケーブルでつなぎます
-            </li>
-          </ul>
-          <blockquote>
-            <p>
-              <strong>Note</strong><br />利用可能なカメラモジュールは v1、v3
-              です。Camera Module v2 には未対応です。 また Raspberry Pi Zero 用
-              CHIRIMEN v1.4.0 未満をご利用の場合、Camera Module v3
-              には対応していません。
-              <a href="https://github.com/chirimen-oh/chirimen-lite/releases"
-                >Raspberry Pi Zero 用 CHIRIMEN v1.4.0 以上</a
-              >
-              をお使いください。
-            </p>
-          </blockquote>
-        </section>
-        <section class="level4" aria-labelledby="カメラの動作テスト">
-          <h4 id="カメラの動作テスト">カメラの動作テスト</h4>
-          <p>以下のコマンドで画像ファイルが保存されます:</p>
-          <pre
-            class="language-text"
-          ><code class="language-text">raspistill -v --width 640 --height 480 -o test.jpg</code></pre>
-          <blockquote>
-            <p>
-              <strong>Note</strong><br /><a
-                href="https://github.com/chirimen-oh/chirimen-lite/releases"
-                >Raspberry Pi Zero 用 CHIRIMEN v1.4.0 以上</a
-              >
-              をお使いの場合、<code>rpicam-still --list-cameras</code>
-              コマンドで利用可能なカメラの一覧を表示可能です:
-            </p>
-            <pre
-              class="language-text"
-            ><code class="language-text">$ rpicam-still --list-cameras
-Available cameras
------------------
-0 : ov5647 [2592x1944 10-bit GBRG] (/base/soc/i2c0mux/i2c@1/ov5647@36)
-    Modes: 'SGBRG10_CSI2P' : 640x480 [58.92 fps - (16, 0)/2560x1920 crop]
-                             1296x972 [43.25 fps - (0, 0)/2592x1944 crop]
-                             1920x1080 [30.62 fps - (348, 434)/1928x1080 crop]
-                             2592x1944 [15.63 fps - (0, 0)/2592x1944 crop]</code></pre>
-            <p>
-              詳細:
-              <a
-                href="https://www.raspberrypi.com/documentation/computers/camera_software.html"
-                >Camera software - Raspberry Pi Documentation</a
-              >
-            </p>
-          </blockquote>
         </section>
         <section
           class="level4"
@@ -152,84 +46,7 @@ Available cameras
             CHIRIMEN 用ドライバのインストール
           </h4>
           <ul>
-            <li><code>pi-camera-connect</code> を使用します。</li>
-          </ul>
-        </section>
-        <section class="level4" aria-labelledby="サンプル">
-          <h4 id="サンプル">サンプル</h4>
-          <p>
-            <a href="https://github.com/launchcodedev/pi-camera-connect"
-              >pi-camera-connect のリポジトリ</a
-            >の readme と同じ内容ですが、オプションを加えてみました
-          </p>
-          <pre
-            class="language-javascript"
-          ><code class="language-javascript"><span class="token keyword module">import</span> <span class="token imports"><span class="token punctuation">{</span> <span class="token maybe-class-name">StillCamera</span> <span class="token punctuation">}</span></span> <span class="token keyword module">from</span> <span class="token string">"pi-camera-connect"</span><span class="token punctuation">;</span>
-<span class="token keyword module">import</span> <span class="token imports"><span class="token operator">*</span> <span class="token keyword module">as</span> fs</span> <span class="token keyword module">from</span> <span class="token string">"fs"</span><span class="token punctuation">;</span>
-
-<span class="token comment">// Take still image and save to disk</span>
-<span class="token keyword">async</span> <span class="token keyword">function</span> <span class="token function">runApp</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-  <span class="token keyword">const</span> stillCamera <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">StillCamera</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
-    <span class="token literal-property property">width</span><span class="token operator">:</span> <span class="token number">600</span><span class="token punctuation">,</span>
-    <span class="token literal-property property">height</span><span class="token operator">:</span> <span class="token number">600</span><span class="token punctuation">,</span>
-  <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-  <span class="token keyword">const</span> image <span class="token operator">=</span> <span class="token keyword control-flow">await</span> stillCamera<span class="token punctuation">.</span><span class="token method function property-access">takeImage</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-  fs<span class="token punctuation">.</span><span class="token method function property-access">writeFileSync</span><span class="token punctuation">(</span><span class="token string">"still-image.jpg"</span><span class="token punctuation">,</span> image<span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span>
-
-<span class="token function">runApp</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
-          <p>dataURL を取得</p>
-          <pre
-            class="language-javascript"
-          ><code class="language-javascript"><span class="token keyword module">import</span> <span class="token imports"><span class="token punctuation">{</span> <span class="token maybe-class-name">StillCamera</span> <span class="token punctuation">}</span></span> <span class="token keyword module">from</span> <span class="token string">"pi-camera-connect"</span><span class="token punctuation">;</span>
-
-<span class="token comment">// Take still image and get dataURI</span>
-<span class="token keyword">async</span> <span class="token keyword">function</span> <span class="token function">runApp</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-  <span class="token keyword">const</span> stillCamera <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">StillCamera</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
-    <span class="token literal-property property">width</span><span class="token operator">:</span> <span class="token number">200</span><span class="token punctuation">,</span>
-    <span class="token literal-property property">height</span><span class="token operator">:</span> <span class="token number">200</span><span class="token punctuation">,</span>
-  <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-  <span class="token keyword">var</span> mime <span class="token operator">=</span> <span class="token string">"image/jpeg"</span><span class="token punctuation">;</span>
-  <span class="token keyword">var</span> encoding <span class="token operator">=</span> <span class="token string">"base64"</span><span class="token punctuation">;</span>
-  <span class="token keyword">const</span> image <span class="token operator">=</span> <span class="token keyword control-flow">await</span> stillCamera<span class="token punctuation">.</span><span class="token method function property-access">takeImage</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-  <span class="token keyword">const</span> b64str <span class="token operator">=</span> image<span class="token punctuation">.</span><span class="token method function property-access">toString</span><span class="token punctuation">(</span>encoding<span class="token punctuation">)</span><span class="token punctuation">;</span>
-  <span class="token keyword">const</span> dataURL <span class="token operator">=</span> <span class="token string">"data:"</span> <span class="token operator">+</span> mime <span class="token operator">+</span> <span class="token string">";"</span> <span class="token operator">+</span> encoding <span class="token operator">+</span> <span class="token string">","</span> <span class="token operator">+</span> b64str<span class="token punctuation">;</span>
-  <span class="token console class-name">console</span><span class="token punctuation">.</span><span class="token method function property-access">log</span><span class="token punctuation">(</span>dataURL<span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span>
-
-<span class="token function">runApp</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
-        </section>
-        <section class="level4" aria-labelledby="note">
-          <h4 id="note">Note</h4>
-          <ul>
-            <li>
-              <a
-                href="https://developer.mozilla.org/ja/docs/Web/HTTP/Basics_of_HTTP/Data_URIs"
-                >dataURL</a
-              >
-              を使って画像を文字列化すれば、比較的簡単にサーバへ送信することができます。
-              <ul>
-                <li>
-                  <a
-                    href="https://tutorial.chirimen.org/pizero/esm-examples/#REMOTE_remote_camera"
-                    >リモートカメラサンプル</a
-                  >
-                </li>
-              </ul>
-            </li>
-            <li>
-              各種センサ (WebGPIO
-              経由で人感センサーなど)を使い、自動的に撮影、サーバにアップロードする仕組みなどもできるでしょう。
-            </li>
-            <li>
-              <a href="https://github.com/launchcodedev/pi-camera-connect"
-                >pi-camera-connect のリポジトリ</a
-              >
-            </li>
-            <li>
-              この章は<a href="https://x.gd/i3u0x">こちらの記事</a
-              >を改変して作成されました。
-            </li>
+            <li>不要</li>
           </ul>
         </section>
         <section class="level4" aria-labelledby="サンプルコード-mainjs">
@@ -271,6 +88,198 @@ Available cameras
 <span class="token punctuation">}</span>
 
 <span class="token function">switchCheck</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+        </section>
+        <section class="level4" aria-labelledby="特記事項">
+          <h4 id="特記事項">特記事項</h4>
+          <p>タクトスイッチは GPIO PORT5 に繋ぎます。</p>
+          <p>
+            カメラは専用コネクターに専用ケーブルを使って接続し、更にセットアップが必要です。次章を参照してください
+          </p>
+          <section
+            class="level5"
+            aria-labelledby="カメラのセットアップと動作確認"
+          >
+            <h5 id="カメラのセットアップと動作確認">
+              カメラのセットアップと動作確認
+            </h5>
+            <p>
+              <a
+                href="https://www.raspberrypi.com/documentation/accessories/camera.html"
+                >Raspberry Pi のカメラ</a
+              >を API で直接操作する<a
+                href="https://www.npmjs.com/package/pi-camera-connect"
+                >pi-camera-connect</a
+              >を使った方法です。<a
+                href="https://github.com/stetsmando/pi-camera"
+                >Pi-Camera</a
+              >を使った方法(<a
+                href="https://gist.github.com/satakagi/2c5be63d4759fd21eca939f507e7f7ef"
+                >gist はこちら</a
+              >)より、大幅に高速に画像が取得できることを確認しています。
+            </p>
+          </section>
+          <section class="level5" aria-labelledby="準備">
+            <h5 id="準備">準備</h5>
+            <ul>
+              <li>
+                Raspberry Pi カメラモジュール
+                <ul>
+                  <li>
+                    <a href="https://www.amazon.co.jp/dp/B073RCXGQS/"
+                      >例 1:KEYESTUDIO カメラモジュール</a
+                    >、<a href="https://www.amazon.co.jp/dp/B086MK17K5/">例 2</a
+                    >、<a href="https://www.amazon.co.jp/dp/B08HVRB59N/"
+                      >例 3</a
+                    >
+                  </li>
+                </ul>
+              </li>
+              <li>
+                Zero 用ケーブル～上のモジュールは添付されているようです。
+                <ul>
+                  <li>
+                    無い場合は
+                    <a href="https://www.amazon.co.jp/gp/product/B07QH455KY/"
+                      >別途調達</a
+                    >
+                  </li>
+                </ul>
+              </li>
+              <li>
+                <a
+                  href="https://projects.raspberrypi.org/ja-JP/projects/getting-started-with-picamera"
+                  >接続のしかた</a
+                >
+                : Zero は専用ケーブルでつなぎます
+              </li>
+            </ul>
+            <blockquote>
+              <p>
+                <strong>Note</strong><br />利用可能なカメラモジュールは v1、v3
+                です。Camera Module v2 には未対応です。 また Raspberry Pi Zero
+                用 CHIRIMEN v1.4.0 未満をお使いの場合、Camera Module v3
+                には未対応です。
+                <a href="https://github.com/chirimen-oh/chirimen-lite/releases"
+                  >Raspberry Pi Zero 用 CHIRIMEN v1.4.0 以上</a
+                >
+                をお使いください。
+              </p>
+            </blockquote>
+          </section>
+          <section class="level5" aria-labelledby="カメラの動作テスト">
+            <h5 id="カメラの動作テスト">カメラの動作テスト</h5>
+            <p>以下のコマンドで画像ファイルが保存されます:</p>
+            <pre
+              class="language-text"
+            ><code class="language-text">raspistill -v --width 640 --height 480 -o test.jpg</code></pre>
+            <blockquote>
+              <p>
+                <strong>Note</strong><br /><a
+                  href="https://github.com/chirimen-oh/chirimen-lite/releases"
+                  >Raspberry Pi Zero 用 CHIRIMEN v1.4.0 以上</a
+                >
+                をお使いの場合、<code>rpicam-still --list-cameras</code>
+                コマンドで利用可能なカメラの一覧を表示可能です:
+              </p>
+              <pre
+                class="language-text"
+              ><code class="language-text">$ rpicam-still --list-cameras
+Available cameras
+-----------------
+0 : ov5647 [2592x1944 10-bit GBRG] (/base/soc/i2c0mux/i2c@1/ov5647@36)
+    Modes: 'SGBRG10_CSI2P' : 640x480 [58.92 fps - (16, 0)/2560x1920 crop]
+                             1296x972 [43.25 fps - (0, 0)/2592x1944 crop]
+                             1920x1080 [30.62 fps - (348, 434)/1928x1080 crop]
+                             2592x1944 [15.63 fps - (0, 0)/2592x1944 crop]</code></pre>
+              <p>
+                詳細:
+                <a
+                  href="https://www.raspberrypi.com/documentation/computers/camera_software.html"
+                  >Camera software - Raspberry Pi Documentation</a
+                >
+              </p>
+            </blockquote>
+          </section>
+          <section class="level5" aria-labelledby="サンプル">
+            <h5 id="サンプル">サンプル</h5>
+            <p>
+              <a href="https://github.com/launchcodedev/pi-camera-connect"
+                >pi-camera-connect のリポジトリ</a
+              >の readme と同じ内容ですが、オプションを加えてみました
+            </p>
+            <pre
+              class="language-javascript"
+            ><code class="language-javascript"><span class="token keyword module">import</span> <span class="token imports"><span class="token punctuation">{</span> <span class="token maybe-class-name">StillCamera</span> <span class="token punctuation">}</span></span> <span class="token keyword module">from</span> <span class="token string">"pi-camera-connect"</span><span class="token punctuation">;</span>
+<span class="token keyword module">import</span> <span class="token imports"><span class="token operator">*</span> <span class="token keyword module">as</span> fs</span> <span class="token keyword module">from</span> <span class="token string">"fs"</span><span class="token punctuation">;</span>
+
+<span class="token comment">// Take still image and save to disk</span>
+<span class="token keyword">async</span> <span class="token keyword">function</span> <span class="token function">runApp</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">const</span> stillCamera <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">StillCamera</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+    <span class="token literal-property property">width</span><span class="token operator">:</span> <span class="token number">600</span><span class="token punctuation">,</span>
+    <span class="token literal-property property">height</span><span class="token operator">:</span> <span class="token number">600</span><span class="token punctuation">,</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token keyword">const</span> image <span class="token operator">=</span> <span class="token keyword control-flow">await</span> stillCamera<span class="token punctuation">.</span><span class="token method function property-access">takeImage</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  fs<span class="token punctuation">.</span><span class="token method function property-access">writeFileSync</span><span class="token punctuation">(</span><span class="token string">"still-image.jpg"</span><span class="token punctuation">,</span> image<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token function">runApp</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+            <p>dataURL を取得</p>
+            <pre
+              class="language-javascript"
+            ><code class="language-javascript"><span class="token keyword module">import</span> <span class="token imports"><span class="token punctuation">{</span> <span class="token maybe-class-name">StillCamera</span> <span class="token punctuation">}</span></span> <span class="token keyword module">from</span> <span class="token string">"pi-camera-connect"</span><span class="token punctuation">;</span>
+
+<span class="token comment">// Take still image and get dataURI</span>
+<span class="token keyword">async</span> <span class="token keyword">function</span> <span class="token function">runApp</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">const</span> stillCamera <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">StillCamera</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+    <span class="token literal-property property">width</span><span class="token operator">:</span> <span class="token number">200</span><span class="token punctuation">,</span>
+    <span class="token literal-property property">height</span><span class="token operator">:</span> <span class="token number">200</span><span class="token punctuation">,</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token keyword">var</span> mime <span class="token operator">=</span> <span class="token string">"image/jpeg"</span><span class="token punctuation">;</span>
+  <span class="token keyword">var</span> encoding <span class="token operator">=</span> <span class="token string">"base64"</span><span class="token punctuation">;</span>
+  <span class="token keyword">const</span> image <span class="token operator">=</span> <span class="token keyword control-flow">await</span> stillCamera<span class="token punctuation">.</span><span class="token method function property-access">takeImage</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token keyword">const</span> b64str <span class="token operator">=</span> image<span class="token punctuation">.</span><span class="token method function property-access">toString</span><span class="token punctuation">(</span>encoding<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token keyword">const</span> dataURL <span class="token operator">=</span> <span class="token string">"data:"</span> <span class="token operator">+</span> mime <span class="token operator">+</span> <span class="token string">";"</span> <span class="token operator">+</span> encoding <span class="token operator">+</span> <span class="token string">","</span> <span class="token operator">+</span> b64str<span class="token punctuation">;</span>
+  <span class="token console class-name">console</span><span class="token punctuation">.</span><span class="token method function property-access">log</span><span class="token punctuation">(</span>dataURL<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token function">runApp</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+          </section>
+          <section class="level5" aria-labelledby="note">
+            <h5 id="note">Note</h5>
+            <ul>
+              <li>
+                <a
+                  href="https://developer.mozilla.org/ja/docs/Web/HTTP/Basics_of_HTTP/Data_URIs"
+                  >dataURL</a
+                >で画像を文字列化すれば比較的簡単にサーバに送信したりできるでしょう。
+                <ul>
+                  <li>
+                    <a
+                      href="https://tutorial.chirimen.org/pizero/esm-examples/#REMOTE_remote_camera"
+                      >リモートカメラサンプル</a
+                    >
+                  </li>
+                </ul>
+              </li>
+              <li>
+                各種センサ (WebGPIO
+                経由で人感センサーなど)を使い、自動的に撮影、サーバにアップロードする仕組みなどもできるでしょう。
+              </li>
+              <li>
+                <a href="https://github.com/launchcodedev/pi-camera-connect"
+                  >pi-camera-connect のリポジトリ</a
+                >
+              </li>
+              <li>
+                <em
+                  >この章は<a
+                    href="https://gist.github.com/satakagi/1b5adc8dff8236421a593b93fa152222"
+                    >こちらの記事</a
+                  >を改変して作成されました。</em
+                >
+              </li>
+            </ul>
+          </section>
         </section>
       </section>
     </section>

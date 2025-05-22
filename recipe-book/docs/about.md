@@ -1,30 +1,23 @@
 # CHIRIMEN とは
 
-![CHIRIMEN_pf](../images/CHIRIMEN_pf.png)
+![CHIRIMEN_pf](../images/CHIRIMEN_pf.png){width=310px height=160px}
 
-CHIRIMEN は、 Web ブラウザや Node.js の JavaScript からハードウェアを制御できるプロトタイピング環境です。
+CHIRIMEN は、JavaScript や HTML といった Web 技術を用いて、センサーやモーターなどの電子部品を簡単に制御できるプロトタイピング環境です。
 
-CHIRIMEN コミュニティと W3C の[「Browsers and Robotics コミュニティグループ」](https://www.w3.org/community/browserobo/)では、JavaScript で Web アプリから電子パーツを直接制御できる低レベルハードウェア制御 API ([WebGPIO API](http://browserobo.github.io/WebGPIO) や [WebI2C API](http://browserobo.github.io/WebI2C) など) の標準化に向けての検討・提案と、それらの API を Raspberry Pi などの開発ボード上で使うプロトタイプ環境 (CHIRIMEN 環境) を実装しています。
+Raspberry Pi に [WebGPIO API](http://browserobo.github.io/WebGPIO) や [WebI2C API](http://browserobo.github.io/WebI2C) を組み合わせることで、ブラウザ上からハードウェアを直接制御できます。
 
-Web ページや Node.js 上の JavaScript から直接ハードウェアを制御できるため、既存の Web 技術や知識を活かしつつ、1 つのプログラムで画面表示やサービス連携、電子パーツの制御を統合できます。
-開発環境もローカルエディタだけでは無く Web ブラウザ上のオンラインエディタで動くようにしており、[サンプルコード集](https://github.com/chirimen-oh/chirimen.org/tree/master/pizero/src/esm-examples)の通り配線しタブを開くだけですぐに[多数の電子パーツ](https://tutorial.chirimen.org/partslist)を試していただくとよいでしょう。
-
-電子パーツ制御のために専用のツールや開発環境を用意したり、複数の言語やプログラムを連携させたり、独特のフレームワークを学習・利用したりする必要はありません。Web 標準技術をベースとしており、素早いプロトタイピングやプログラミング初学者の IoT 学習に最適です。
+教育や試作開発を目的とし、誰でも手軽に扱えるように設計された、オープンで自由な環境です。
 
 ## CHIRIMEN のメリット
 
-- 広く使われている標準技術を学習できるので
-  - 学習のハードルが低い
-  - 得たスキルが広く長く役立つ
-  - インターネットでノウハウを検索しやすい
-- Web 技術を活用するので
-  - WWW のサービスと簡単に連携できる
-  - ユーザーインターフェースやコンテンツを簡単に作れる
-  - Web ブラウザを使って開発できる
+- 標準技術ベース：学習のハードルが低く、スキルの汎用性が高い
+- Web 技術との親和性：UIやサービス連携が容易
+- 開発しやすさ：ブラウザ上で実行・開発可能
+- 情報の検索性：ネット上の情報が豊富で調べやすい
 
 ## コミュニティについて
 
-不明点や困りごとがある場合は、CHIRIMEN コミュニティの [Slack](http://chirimen-oh.slack.com/) や [Github](https://github.com/chirimen-oh/) の各リポジトリの Issues にてお気軽にご相談ください。
+不明点や質問がある場合は、CHIRIMENコミュニティまでお気軽にご相談ください
 
 - [Slack](http://chirimen-oh.slack.com/) 
 - [Github](https://github.com/chirimen-oh/)

@@ -9,6 +9,7 @@
       type="text/css"
       href="../../themes/node_modules/@vivliostyle/theme-techbook/theme.css"
     />
+    <link rel="stylesheet" type="text/css" href="../../custom.css" />
   </head>
   <body>
     <section class="level2" aria-labelledby="電子ペーパー">
@@ -22,29 +23,26 @@
         </h3>
         <section class="level4" aria-labelledby="概要">
           <h4 id="概要">概要</h4>
-          <p>
-            多機能環境センサーボードで、複数のセンサーを1枚の基板に統合しています。<br />I2C
-            通信を介して接続し、温度、湿度、気圧、照度、紫外線、揮発性有機化合物（VOC）、および9軸モーション（加速度、ジャイロ、磁気）など、さまざまな環境データを取得できます。
-          </p>
+          <ul>
+            <li>多機能環境センサーボードで、複数のセンサーを1枚の基板に統合</li>
+            <li>
+              I2C
+              通信を介して接続し、温度、湿度、気圧、照度、紫外線、揮発性有機化合物（VOC）、および
+              9
+              軸モーション（加速度、ジャイロ、磁気）など、さまざまな環境データを取得可能
+            </li>
+          </ul>
         </section>
         <section class="level4" aria-labelledby="配線図">
           <h4 id="配線図">配線図</h4>
           <p>
-            <a
-              href="https://www.waveshare.com/wiki/Environment_Sensor_HAT#Hardware_connection"
-              >説明ページの組み立て方</a
-            >に従ってRaspberry Pi Zeroに接続したら完了です。
-          </p>
-          <figure>
             <img
               src="WAVESHARE-20471.jpg"
-              alt="ボードの写真"
               title="ボードの写真"
-              width="200px"
-              height="200px"
+              width="303px"
+              height="122px"
             />
-            <figcaption aria-hidden="true">ボードの写真</figcaption>
-          </figure>
+          </p>
         </section>
         <section
           class="level4"
@@ -122,6 +120,15 @@
 		<span class="token keyword control-flow">await</span> <span class="token function">sleep</span><span class="token punctuation">(</span><span class="token number">1000</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 	<span class="token punctuation">}</span>
 <span class="token punctuation">}</span></code></pre>
+        </section>
+        <section class="level4" aria-labelledby="特記事項">
+          <h4 id="特記事項">特記事項</h4>
+          <p>
+            <a
+              href="https://www.waveshare.com/wiki/Environment_Sensor_HAT#Hardware_connection"
+              >説明ページの組み立て方</a
+            >に従ってRaspberry Pi Zeroに接続したら完了です。
+          </p>
         </section>
       </section>
     </section>

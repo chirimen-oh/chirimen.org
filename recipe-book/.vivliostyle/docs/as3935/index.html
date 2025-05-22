@@ -9,6 +9,7 @@
       type="text/css"
       href="../../themes/node_modules/@vivliostyle/theme-techbook/theme.css"
     />
+    <link rel="stylesheet" type="text/css" href="../../custom.css" />
   </head>
   <body>
     <section class="level2" aria-labelledby="雷センサー">
@@ -17,60 +18,27 @@
         <h3 id="as3935-雷センサー">AS3935 雷センサー</h3>
         <section class="level4" aria-labelledby="概要">
           <h4 id="概要">概要</h4>
-          <p>
-            AS3935は、雷センサーICです。ICに内蔵された雷検出アルゴリズムが入力信号をチェックし暴風雨の頭部までの距離を推定します。
-          </p>
-          <p>
-            このサンプルでは、I2Cバスに加えて、GPIOポート5を雷検出のトリガーとして使用しています。
-          </p>
-        </section>
-        <section class="level4" aria-labelledby="特記事項">
-          <h4 id="特記事項">特記事項</h4>
-          <p>
-            しっかりと動作確認ができていません。（雷検出の機会が少ないため）　動作確認にご協力ください。（ISSUEにレポートを記載いただけると幸いです）
-          </p>
-        </section>
-        <section class="level4" aria-labelledby="使用するブレークアウトボード">
-          <h4 id="使用するブレークアウトボード">
-            使用するブレークアウトボード
-          </h4>
           <ul>
             <li>
-              I2Cスレーブアドレス、<code>0x03</code>が設定されているものを使用しています。
+              IC
+              に内蔵された雷検出アルゴリズムが入力信号をチェックし暴風雨の頭部までの距離を推定
             </li>
             <li>
-              秋月電子通商 AE-AS3935 がこれに相当します。:
-              <a href="https://akizukidenshi.com/catalog/g/gK-08685/"
-                >製品ページ</a
-              >　
+              サンプルでは、I2C バスに加えて、GPIO ポート 5
+              を雷検出のトリガーとして使用
             </li>
-          </ul>
-        </section>
-        <section class="level4" aria-labelledby="i2cデバイスの検出">
-          <h4 id="i2cデバイスの検出">I2Cデバイスの検出</h4>
-          <ul>
-            <li>
-              I2Cアドレス
-              <code>0x03</code
-              >のデバイスは、通常のi2cdetectコマンドでは検出できません（標準範囲外アドレス）
-              <code>-a</code>
-              オプションが必要です。コマンドプロンプトから、以下のコマンドで検出してください。
-            </li>
-            <li><code>i2cdetect -y -a 1</code></li>
           </ul>
         </section>
         <section class="level4" aria-labelledby="配線図">
           <h4 id="配線図">配線図</h4>
-          <figure>
+          <p>
             <img
               src="./schematic.png"
-              alt="配線図"
               title="schematic"
-              width="300px"
-              height="300px"
+              width="236px"
+              height="204px"
             />
-            <figcaption aria-hidden="true">配線図</figcaption>
-          </figure>
+          </p>
         </section>
         <section
           class="level4"
@@ -132,8 +100,45 @@
         <span class="token keyword">var</span> distance <span class="token operator">=</span> <span class="token keyword control-flow">await</span> as3935<span class="token punctuation">.</span><span class="token method function property-access">get_distance</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
         <span class="token console class-name">console</span><span class="token punctuation">.</span><span class="token method function property-access">log</span><span class="token punctuation">(</span><span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">Detect lightinig! It was </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>distance<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string"> Km away. (</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>now<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">) </span><span class="token template-punctuation string">`</span></span><span class="token punctuation">)</span><span class="token punctuation">;</span>
     <span class="token punctuation">}</span>
-<span class="token punctuation">}</span><span class="token template-string"><span class="token template-punctuation string">`</span><span class="token template-punctuation string">`</span></span>`
-</code></pre>
+<span class="token punctuation">}</span></code></pre>
+        </section>
+        <section class="level4" aria-labelledby="特記事項">
+          <h4 id="特記事項">特記事項</h4>
+          <ul>
+            <li>
+              しっかりと動作確認ができていません。（雷検出の機会が少ないため）　動作確認にご協力ください。
+            </li>
+            <li>ISSUEにレポートを記載いただけると幸いです</li>
+          </ul>
+        </section>
+        <section class="level4" aria-labelledby="使用するブレークアウトボード">
+          <h4 id="使用するブレークアウトボード">
+            使用するブレークアウトボード
+          </h4>
+          <ul>
+            <li>
+              I2Cスレーブアドレス、<code>0x03</code>が設定されているものを使用しています。
+            </li>
+            <li>
+              秋月電子通商 AE-AS3935 がこれに相当します。:
+              <a href="https://akizukidenshi.com/catalog/g/gK-08685/"
+                >製品ページ</a
+              >　
+            </li>
+          </ul>
+        </section>
+        <section class="level4" aria-labelledby="i2cデバイスの検出">
+          <h4 id="i2cデバイスの検出">I2Cデバイスの検出</h4>
+          <ul>
+            <li>
+              I2Cアドレス
+              <code>0x03</code
+              >のデバイスは、通常のi2cdetectコマンドでは検出できません（標準範囲外アドレス）
+              <code>-a</code>
+              オプションが必要です。コマンドプロンプトから、以下のコマンドで検出してください。
+            </li>
+            <li><code>i2cdetect -y -a 1</code></li>
+          </ul>
         </section>
       </section>
     </section>

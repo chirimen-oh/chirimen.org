@@ -2,12 +2,13 @@
 
 #### 概要
 
-I2C インターフェース対応の 8 ビット A/D および D/A コンバータ IC です。  
-このICは、4つのアナログ入力チャンネルと1つのアナログ出力チャンネルを備えており、マイコンボード（Arduino、Raspberry Piなど）と組み合わせて、アナログ信号の読み取りや出力に利用できます。
+- I²C インターフェース対応 8 ビット A/D or D/A コンバータ IC
+- この IC は、4 つのアナログ入力チャンネルと 1 つのアナログ出力チャンネルを装備
+- マイコンボード（Arduino、Raspberry Piなど）と組み合わせて、アナログ信号の読み取りや出力に利用可能
 
 #### 配線図
 
-![配線図](./schematic.png "schematic"){width=300px height=300px}
+![](./schematic.png "schematic"){width=252px height=230px}
 
 #### CHIRIMEN 用ドライバのインストール
 

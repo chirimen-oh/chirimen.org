@@ -2,12 +2,12 @@
 
 #### 概要
 
-I2C 接続のデジタル温湿度センサーです。  
-高精度かつ応答性が良く、空調や室内環境モニタリングに適しています。
+* I²C 接続のデジタル温湿度センサー
+* 高精度かつ応答性が良く、空調や室内環境モニタリングに最適
 
 #### 配線図
 
-![配線図](./schematic.png "schematic"){width=300px height=300px}
+![](./schematic.png "schematic"){width=250px height=250px}
 
 #### CHIRIMEN 用ドライバのインストール
 

@@ -3,7 +3,7 @@
 
 <section id="colophon-image" role="doc-colophon-image">
 
-![](../images/byebye-a-word.png){width=400px height=280px}
+![](../images/byebye-a-word.png){width=80% height=80%}
 
 </section>
 
@@ -12,10 +12,10 @@
 ### 表紙・イラスト
 - [@天灯せいた](https://www.pixiv.net/users/31028725)
 
-### Works
+### Works (alphabet order)
+- [@elie-j](https://github.com/elie-j)
 - [@gurezo](https://github.com/gurezo)
-- [@kazygumi](https://github.com/kazygumi)
+- [@happysato](https://github.com/happysato)
 - [@satakagi](https://github.com/satakagi)
-- [@sizuhiko](https://twitter.com/sizuhiko)
 
 </section>

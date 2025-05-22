@@ -2,12 +2,12 @@
 
 #### 概要
 
-デジタル光センサーモジュールです。  
-屋内外の光環境のモニタリングや自動明るさ制御などに適しています。
+* デジタル光センサーモジュール
+* 屋内外の光環境のモニタリングや自動明るさ制御などに最適
 
 #### 配線図
 
-![配線図](./schematic.png "schematic"){width=300px height=300px}
+![](./schematic.png "schematic"){width=353px height=249px}
 
 #### CHIRIMEN 用ドライバのインストール
 

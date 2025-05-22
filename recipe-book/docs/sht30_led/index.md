@@ -2,15 +2,15 @@
 
 #### 概要
 
-I2C 接続のデジタル温湿度センサーです。  
-高精度かつ応答性が良く、空調や室内環境モニタリングに適しています。
+I²C 接続のデジタル温湿度センサーです。  
+高精度かつ応答性が良く、空調や室内環境モニタリングに最適
 
 #### 配線図
 
-![配線図](./SHT30_LED.png "schematic"){width=300px height=300px}
+![配線図](./SHT30_LED.png "schematic")
 
 LEDの代わりにモーターを接続
-![配線図(LEDの代わりにモーターを接続)](./SHT30_MOTORB.png "schematic"){width=300px height=300px}
+![配線図(LEDの代わりにモーターを接続)](./SHT30_MOTORB.png "schematic")
 
 #### CHIRIMEN 用ドライバのインストール
 

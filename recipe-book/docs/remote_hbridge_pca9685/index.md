@@ -4,7 +4,7 @@
 
 #### 配線図
 
-![配線図](../hbridge2-pca9685pwm/schematic.png "schematic"){width=300px height=300px}
+![配線図](../hbridge2-pca9685pwm/schematic.png "schematic")
 
 #### 遠隔コントローラ(PC/スマホブラウザ)側
 

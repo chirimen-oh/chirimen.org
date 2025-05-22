@@ -2,11 +2,11 @@
 
 #### 概要
 
-ToF（Time of Flight）方式で、距離を非接触で測定できます。
+* ToF（Time of Flight）方式で、距離を非接触で測定可能
 
 #### 配線図
 
-![配線図](./schematic.png "schematic"){width=300px height=300px}
+![](./schematic.png "schematic"){width=208px height=251px}
 
 #### CHIRIMEN 用ドライバのインストール
 

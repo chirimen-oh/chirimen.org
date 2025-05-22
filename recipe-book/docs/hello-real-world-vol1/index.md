@@ -6,17 +6,17 @@
 
 #### 概要
 
-LED を点滅させます。
+* LED を点滅させます。
 
 #### 配線図
 
-![配線図](./PiZero_gpio0.png "schematic")
+![](./PiZero_gpio0.png "schematic"){width=200px height=200px}
 
 GPIO ポート 26 に LED と抵抗を直列に接続します。
 
 #### CHIRIMEN 用ドライバのインストール
 
-- 不要です。
+- 不要
 
 #### サンプルコード (main.js)
 

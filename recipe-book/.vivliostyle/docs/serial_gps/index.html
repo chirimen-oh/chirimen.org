@@ -9,6 +9,7 @@
       type="text/css"
       href="../../themes/node_modules/@vivliostyle/theme-techbook/theme.css"
     />
+    <link rel="stylesheet" type="text/css" href="../../custom.css" />
   </head>
   <body>
     <section class="level1" aria-labelledby="その他">
@@ -19,9 +20,67 @@
           <h3 id="serial-gps">Serial GPS</h3>
           <section class="level4" aria-labelledby="概要">
             <h4 id="概要">概要</h4>
+            <ul>
+              <li>高性能 GPS 受信チップ NEO-6M を搭載した GPS モジュール</li>
+              <li>
+                Pi Zero のシリアル端子に、GY-GPS6MV2 等の GPS
+                レシーバ基板を繋いで使用
+              </li>
+            </ul>
+          </section>
+          <section class="level4" aria-labelledby="配線図">
+            <h4 id="配線図">配線図</h4>
             <p>
-              高性能GPS受信チップ「NEO-6M」を搭載したGPSモジュールです。<br />PiZeroのシリアル端子に、GY-GPS6MV2等のGPSレシーバ基板を繋いで使用します。
+              <img
+                src="GY-NEO6MV2.png"
+                title="schematic"
+                width="323px"
+                height="192px"
+              />
             </p>
+          </section>
+          <section
+            class="level4"
+            aria-labelledby="chirimen-用ドライバのインストール"
+          >
+            <h4 id="chirimen-用ドライバのインストール">
+              CHIRIMEN 用ドライバのインストール
+            </h4>
+            <ul>
+              <li>不要</li>
+            </ul>
+          </section>
+          <section class="level4" aria-labelledby="サンプルコード-mainjs">
+            <h4 id="サンプルコード-mainjs">サンプルコード (main.js)</h4>
+            <pre
+              class="language-javascript"
+            ><code class="language-javascript"><span class="token comment">// シリアルからGPSデータ受信</span>
+<span class="token keyword module">import</span> <span class="token imports"><span class="token punctuation">{</span> <span class="token maybe-class-name">SerialPort</span> <span class="token punctuation">}</span></span> <span class="token keyword module">from</span> <span class="token string">'serialport'</span><span class="token punctuation">;</span>
+<span class="token keyword module">import</span> <span class="token imports"><span class="token punctuation">{</span> <span class="token maybe-class-name">ReadlineParser</span> <span class="token punctuation">}</span></span> <span class="token keyword module">from</span> <span class="token string">'@serialport/parser-readline'</span><span class="token punctuation">;</span>
+<span class="token keyword module">import</span> <span class="token imports"><span class="token maybe-class-name">GPSpackage</span></span> <span class="token keyword module">from</span> <span class="token string">'gps'</span><span class="token punctuation">;</span>
+<span class="token keyword">const</span> <span class="token constant">GPS</span> <span class="token operator">=</span> <span class="token maybe-class-name">GPSpackage</span><span class="token punctuation">.</span><span class="token constant">GPS</span><span class="token punctuation">;</span>
+
+<span class="token keyword">const</span> port <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">SerialPort</span><span class="token punctuation">(</span><span class="token punctuation">{</span> <span class="token literal-property property">path</span><span class="token operator">:</span> <span class="token string">'/dev/ttyS0'</span><span class="token punctuation">,</span> <span class="token literal-property property">baudRate</span><span class="token operator">:</span> <span class="token number">9600</span> <span class="token punctuation">}</span><span class="token punctuation">)</span>
+<span class="token keyword">const</span> parser <span class="token operator">=</span> port<span class="token punctuation">.</span><span class="token method function property-access">pipe</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">ReadlineParser</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token keyword">const</span> gps <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">GPS</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+parser<span class="token punctuation">.</span><span class="token method function property-access">on</span><span class="token punctuation">(</span><span class="token string">'data'</span><span class="token punctuation">,</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">txtData</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    gps<span class="token punctuation">.</span><span class="token method function property-access">update</span><span class="token punctuation">(</span>txtData<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+gps<span class="token punctuation">.</span><span class="token method function property-access">on</span><span class="token punctuation">(</span><span class="token string">'data'</span><span class="token punctuation">,</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">data</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword control-flow">if</span> <span class="token punctuation">(</span>data<span class="token punctuation">.</span><span class="token property-access">type</span> <span class="token operator">==</span> <span class="token string">"GGA"</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token comment">// "RMC"タイプデータを読むと速度(ノット)が得られる</span>
+        <span class="token console class-name">console</span><span class="token punctuation">.</span><span class="token method function property-access">log</span><span class="token punctuation">(</span>data<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token doc-comment comment">/** 
+    console.log("data:", data);
+    console.log("stat:", gps.state);
+    console.log("==============================================================");
+    **/</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+          </section>
+          <section class="level4" aria-labelledby="特記事項">
+            <h4 id="特記事項">特記事項</h4>
             <ul>
               <li>
                 OSの設定
@@ -96,50 +155,6 @@
                 </ul>
               </li>
             </ul>
-            <figure>
-              <img src="GY-NEO6MV2.png" alt="GY-NEO6MV2.png" />
-              <figcaption aria-hidden="true">GY-NEO6MV2.png</figcaption>
-            </figure>
-          </section>
-          <section
-            class="level4"
-            aria-labelledby="chirimen-用ドライバのインストール"
-          >
-            <h4 id="chirimen-用ドライバのインストール">
-              CHIRIMEN 用ドライバのインストール
-            </h4>
-            <ul>
-              <li>不要です。</li>
-            </ul>
-          </section>
-          <section class="level4" aria-labelledby="サンプルコード-mainjs">
-            <h4 id="サンプルコード-mainjs">サンプルコード (main.js)</h4>
-            <pre
-              class="language-javascript"
-            ><code class="language-javascript"><span class="token comment">// シリアルからGPSデータ受信</span>
-<span class="token keyword module">import</span> <span class="token imports"><span class="token punctuation">{</span> <span class="token maybe-class-name">SerialPort</span> <span class="token punctuation">}</span></span> <span class="token keyword module">from</span> <span class="token string">'serialport'</span><span class="token punctuation">;</span>
-<span class="token keyword module">import</span> <span class="token imports"><span class="token punctuation">{</span> <span class="token maybe-class-name">ReadlineParser</span> <span class="token punctuation">}</span></span> <span class="token keyword module">from</span> <span class="token string">'@serialport/parser-readline'</span><span class="token punctuation">;</span>
-<span class="token keyword module">import</span> <span class="token imports"><span class="token maybe-class-name">GPSpackage</span></span> <span class="token keyword module">from</span> <span class="token string">'gps'</span><span class="token punctuation">;</span>
-<span class="token keyword">const</span> <span class="token constant">GPS</span> <span class="token operator">=</span> <span class="token maybe-class-name">GPSpackage</span><span class="token punctuation">.</span><span class="token constant">GPS</span><span class="token punctuation">;</span>
-
-<span class="token keyword">const</span> port <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">SerialPort</span><span class="token punctuation">(</span><span class="token punctuation">{</span> <span class="token literal-property property">path</span><span class="token operator">:</span> <span class="token string">'/dev/ttyS0'</span><span class="token punctuation">,</span> <span class="token literal-property property">baudRate</span><span class="token operator">:</span> <span class="token number">9600</span> <span class="token punctuation">}</span><span class="token punctuation">)</span>
-<span class="token keyword">const</span> parser <span class="token operator">=</span> port<span class="token punctuation">.</span><span class="token method function property-access">pipe</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">ReadlineParser</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
-<span class="token keyword">const</span> gps <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">GPS</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-
-parser<span class="token punctuation">.</span><span class="token method function property-access">on</span><span class="token punctuation">(</span><span class="token string">'data'</span><span class="token punctuation">,</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">txtData</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-    gps<span class="token punctuation">.</span><span class="token method function property-access">update</span><span class="token punctuation">(</span>txtData<span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-
-gps<span class="token punctuation">.</span><span class="token method function property-access">on</span><span class="token punctuation">(</span><span class="token string">'data'</span><span class="token punctuation">,</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">data</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-    <span class="token keyword control-flow">if</span> <span class="token punctuation">(</span>data<span class="token punctuation">.</span><span class="token property-access">type</span> <span class="token operator">==</span> <span class="token string">"GGA"</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token comment">// "RMC"タイプデータを読むと速度(ノット)が得られる</span>
-        <span class="token console class-name">console</span><span class="token punctuation">.</span><span class="token method function property-access">log</span><span class="token punctuation">(</span>data<span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>
-    <span class="token doc-comment comment">/** 
-    console.log("data:", data);
-    console.log("stat:", gps.state);
-    console.log("==============================================================");
-    **/</span>
-<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
           </section>
         </section>
       </section>

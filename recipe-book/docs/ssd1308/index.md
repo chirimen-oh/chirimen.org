@@ -2,11 +2,11 @@
 
 #### 概要
 
-I2C 接続の Grove OLED ディスプレイ
+* I²C 接続の Grove OLED ディスプレイ
 
 #### 配線図
 
-![配線図](./schematic.png "schematic"){width=300px height=300px}
+![](./schematic.png "schematic"){width=292px height=253px}
 
 #### CHIRIMEN 用ドライバのインストール
 

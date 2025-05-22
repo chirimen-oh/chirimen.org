@@ -2,11 +2,11 @@
 
 #### 概要
 
-ToF（Time of Flight）方式で 30 mm - 2 m 程度までの距離を非接触で測定できます。
+* ToF（Time of Flight）方式で 30 mm - 2 m 程度までの距離を非接触で測定可能
 
 #### 配線図
 
-![配線図](./schematic.png "schematic"){width=300px height=300px}
+![](./schematic.png "schematic"){width=203px height=250px}
 
 #### CHIRIMEN 用ドライバのインストール
 

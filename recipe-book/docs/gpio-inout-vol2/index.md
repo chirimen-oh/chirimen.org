@@ -2,18 +2,18 @@
 
 #### 概要
 
-スイッチを押すとモーターが回転し、離すと停止します。
-前項 LED 制御と同様の構成です。
+* スイッチを押すとモーターが回転し、離すと停止
+* 前項 LED 制御と同様の構成
 
 #### 配線図
 
-![配線図](./PiZero_gpio-inoutMotor.png "schematic"){width=300px height=300px}
+![](./PiZero_gpio-inoutMotor.png "schematic"){width=353px height=226px}
 
 GPIO ポート 5 にスイッチ、GPIO ポート 26 にモーター制御回路を繋ぎます。
 
 #### CHIRIMEN 用ドライバのインストール
 
-- 不要です。
+- 不要
 
 #### サンプルコード (main.js)
 

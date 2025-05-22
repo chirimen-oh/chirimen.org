@@ -6,21 +6,15 @@
 
 #### 概要
 
-MP3プレーヤーボードをGPIO OUTPUTで制御
+* MP3 プレーヤーボードを GPIO OUTPUT で制御
 
 #### 配線図
 
-![配線図](./DFPlayer.png "schematic"){width=300px height=300px}
-
-* DFPlayer Mini ボードの ADKEY1 端子を Nch MOSFET を介して GPIO で制御します
-(他にシリアル通信での制御も可能なボードですがこのサンプルは GPIO で制御できる ADKEY 端子を使用)
-* 電源投入後、ボリュームが最大になるので S1 スイッチは付けておきましょう
-* ADKEY1/2 端子と抵抗を組み合わせることでいろいろなコントロールが可能です。
-* GPIO 端子の使用数を増やすと制御できる種類も増やせます。[こちらのページ](https://chitakekoubou.blogspot.com/p/dfplayeradkeyio.html)や、[メーカーサイトの説明ページ](https://wiki.dfrobot.com/DFPlayer_Mini_SKU_DFR0299)を参考に
+![](./DFPlayer.png "schematic"){width=343px height=238px}
 
 #### CHIRIMEN 用ドライバのインストール
 
-- 不要です。
+- 不要
 
 #### サンプルコード (main.js)
 
@@ -66,3 +60,17 @@ async function repeat_play() {
 
 start_play();
 ```
+
+#### 特記事項
+
+* DFPlayer Mini ボードの ADKEY1 端子を Nch MOSFET を介して GPIO で制御します
+  * 他にシリアル通信での制御も可能なボードですがこのサンプルは GPIO で制御できる ADKEY 端子を使用
+* 電源投入後、ボリュームが最大になるので S1 スイッチは付けておきましょう
+* ADKEY1/2 端子と抵抗を組み合わせることでいろいろなコントロールが可能です。
+
+#### 参考
+
+GPIO 端子の使用数を増やすと制御できる種類も増やせます。
+
+* [参考ページ](https://chitakekoubou.blogspot.com/p/dfplayeradkeyio.html)
+* [メーカーサイトの説明ページ](https://wiki.dfrobot.com/DFPlayer_Mini_SKU_DFR0299)

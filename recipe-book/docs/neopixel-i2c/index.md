@@ -4,14 +4,15 @@
 
 #### 概要
 
-個別に制御可能なRGB（赤・緑・青）LEDのブランド名です。  
-主にWS2812BやSK6812といった制御ICを内蔵したLEDを使用しており、1本のデータ線で複数のLEDを直列に接続し、個別に制御できるのが特徴です。
+* 個別に制御可能な RGB （赤・緑・青）LED のブランド名
+* 主に WS2812B や SK6812 といった制御 IC を内蔵した LED を使用
+* 1 本のデータ線で複数の LED を直列に接続し、個別に制御できるのが特徴
 
 #### 配線図
 
-![配線図](./schematic.png){width=380px height=170px}
+![](./schematic.png){width=383px height=195px}
 
-![配線図（専用ボード使用）](./schematic_with_dedicated_breadboard.png){width=380px height=170px}
+![](./schematic_with_dedicated_breadboard.png){width=383px height=209px}
 
 #### CHIRIMEN 用ドライバのインストール
 

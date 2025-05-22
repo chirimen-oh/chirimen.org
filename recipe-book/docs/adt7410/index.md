@@ -7,12 +7,13 @@
 
 #### 概要
 
-I2C 接続の温度センサーで、±0.5°C の高精度（0°C〜+70°C の範囲）測定できます。
+* I²C 接続の温度センサーで、±0.5°C の高精度（0°C〜+70°C の範囲）測定可能
 
 #### 配線図
 
-![配線図1](./PiZero_ADT7410.png "schematic"){width=245px height=245px}
-![配線図2](./schematic_warning.png "schematic"){width=245px height=245px}
+![](./PiZero_ADT7410.png "schematic"){width=175px height=175px}
+
+![](./schematic_warning.png "schematic"){width=175px height=175px}
 
 #### CHIRIMEN 用ドライバのインストール
 
