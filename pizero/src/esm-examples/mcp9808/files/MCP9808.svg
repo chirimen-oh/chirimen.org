@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="_レイヤー_1" data-name="レイヤー 1" xmlns="http://www.w3.org/2000/svg" width="50.81mm" height="23.08mm" viewBox="0 0 144.02 65.43">
+  <rect x="15.82" y="6.23" width="122.34" height="52.99" rx="2.83" ry="2.83" fill="#274782"/>
+  <circle cx="15.82" cy="32.22" r="6.22" fill="#fff"/>
+  <circle cx="109.82" cy="6.22" r="6.22" fill="#fff"/>
+  <circle cx="109.82" cy="59.22" r="6.22" fill="#fff"/>
+  <circle cx="44.1" cy="6.08" r="5.92" fill="#274782"/>
+  <g id="g3109">
+    <g id="g33658-1">
+      <path id="path16826-7" d="M25.19,50.07v-5.68h1.95s-.02,3.73-.02,3.73h11.38s0-6.21,0-6.21h1.95v2.13s2.84,0,2.84,0v6.03s-18.1,0-18.1,0Z" fill="#fff"/>
+      <path id="path16828-7" d="M25.19,20.04v-5.68h18.1v6.03h-2.84s0,2.13,0,2.13h-1.95v-6.21s-11.36,0-11.36,0v3.73h-1.95Z" fill="#fff"/>
+      <path id="path16830-7" d="M38.5,16.32v6.21s0,19.38,0,19.38v6.21h-11.38s.02-3.73.02-3.73v-24.35s0-3.73,0-3.73h11.36s0,0,0,0ZM33.71,41.98h-1.77s0,1.77,0,1.77h1.77s0-1.77,0-1.77ZM31.93,34.94v1.77s1.77,0,1.77,0v-1.77s-1.77,0-1.77,0ZM31.93,22.46h1.77s0-1.77,0-1.77h-1.77s0,1.77,0,1.77ZM33.71,27.78h-1.77s0,1.77,0,1.77h1.77s0-1.77,0-1.77Z" fill="#fff"/>
+      <path id="path16832-7" d="M25.19,20.04h1.95v24.35h-1.95v-24.35Z" fill="#fff"/>
+      <path id="path16834-3" d="M40.45,38.43v3.48h-1.95v-19.38h1.95v3.48s0,12.42,0,12.42h0Z" fill="#fff"/>
+      <path id="path16836-3" d="M43.47,38.43h-3.02v-12.42h3.02s0,12.42,0,12.42Z" fill="#dcdbdb"/>
+      <path id="path22208-5" d="M25.19,44.39v5.68" fill="none" stroke="#040000" stroke-miterlimit="12.5" stroke-width=".11"/>
+      <path id="path22210-9" d="M25.19,44.39h1.95" fill="none" stroke="#040000" stroke-miterlimit="12.5" stroke-width=".11"/>
+      <path id="path22212-9" d="M27.12,48.12l.02-3.73" fill="none" stroke="#040000" stroke-miterlimit="12.5" stroke-width=".11"/>
+      <path id="path22214-8" d="M38.5,48.12h-11.38" fill="none" stroke="#040000" stroke-miterlimit="12.5" stroke-width=".11"/>
+      <path id="path22216-1" d="M38.5,41.91h1.95" fill="none" stroke="#040000" stroke-miterlimit="12.5" stroke-width=".11"/>
+      <path id="path22218-8" d="M40.45,44.03v-2.13" fill="none" stroke="#040000" stroke-miterlimit="12.5" stroke-width=".11"/>
+      <path id="path22220-2" d="M25.19,20.04v24.35" fill="none" stroke="#040000" stroke-miterlimit="12.5" stroke-width=".11"/>
+      <path id="path22222-6" d="M40.45,41.91v-3.48" fill="none" stroke="#040000" stroke-miterlimit="12.5" stroke-width=".11"/>
+      <path id="path22240-6" d="M43.29,50.07v-6.03" fill="none" stroke="#040000" stroke-miterlimit="12.5" stroke-width=".11"/>
+      <path id="path22242-0" d="M40.45,44.03h2.84" fill="none" stroke="#040000" stroke-miterlimit="12.5" stroke-width=".11"/>
+      <path id="path22244-3" d="M40.45,38.43h3.02" fill="none" stroke="#040000" stroke-miterlimit="12.5" stroke-width=".11"/>
+      <path id="path22246-8" d="M27.14,16.32h11.36" fill="none" stroke="#040000" stroke-miterlimit="12.5" stroke-width=".11"/>
+      <path id="path22248-0" d="M27.14,20.04v-3.73" fill="none" stroke="#040000" stroke-miterlimit="12.5" stroke-width=".11"/>
+      <path id="path22250-1" d="M25.19,20.04h1.95" fill="none" stroke="#040000" stroke-miterlimit="12.5" stroke-width=".11"/>
+      <path id="path22252-2" d="M25.19,20.04v-5.68" fill="none" stroke="#040000" stroke-miterlimit="12.5" stroke-width=".11"/>
+      <path id="path22254-5" d="M40.45,20.4v2.13" fill="none" stroke="#040000" stroke-miterlimit="12.5" stroke-width=".11"/>
+      <path id="path22256-0" d="M40.45,22.53h-1.95" fill="none" stroke="#040000" stroke-miterlimit="12.5" stroke-width=".11"/>
+      <path id="path22258-9" d="M40.45,22.53v3.48" fill="none" stroke="#040000" stroke-miterlimit="12.5" stroke-width=".11"/>
+      <path id="path22276-4" d="M43.29,14.37v6.03" fill="none" stroke="#040000" stroke-miterlimit="12.5" stroke-width=".11"/>
+      <path id="path22278-7" d="M40.45,20.4h2.84" fill="none" stroke="#040000" stroke-miterlimit="12.5" stroke-width=".11"/>
+      <path id="path22280-8" d="M40.45,26.01h3.02" fill="none" stroke="#040000" stroke-miterlimit="12.5" stroke-width=".11"/>
+      <path id="path29506-3" d="M43.29,50.07h-18.1" fill="none" stroke="#040000" stroke-miterlimit="12.5" stroke-width=".11"/>
+      <path id="path29508-5" d="M40.45,38.43v-12.42" fill="none" stroke="#040000" stroke-miterlimit="12.5" stroke-width=".11"/>
+      <path id="path29510-1" d="M25.19,14.37h18.1" fill="none" stroke="#040000" stroke-miterlimit="12.5" stroke-width=".11"/>
+      <path id="path29512-2" d="M27.14,44.39v-24.35" fill="none" stroke="#040000" stroke-miterlimit="12.5" stroke-width=".11"/>
+    </g>
+    <path id="connector3pin" d="M33.71,41.98v1.77h-1.77v-1.77h1.77Z" fill="#f4dd26" stroke="#040000" stroke-linejoin="round" stroke-width=".11"/>
+    <path id="connector2pin" d="M31.93,36.71v-1.77h1.77v1.77h-1.77Z" fill="#f4dd26" stroke="#040000" stroke-linejoin="round" stroke-width=".11"/>
+    <path id="connector1pin" d="M33.71,29.55h-1.77v-1.77h1.77v1.77Z" fill="#f4dd26" stroke="#040000" stroke-linejoin="round" stroke-width=".11"/>
+    <path id="connector0pin" d="M33.71,22.46h-1.77v-1.77h1.77v1.77Z" fill="#f4dd26" stroke="#040000" stroke-linejoin="round" stroke-width=".11"/>
+  </g>
+  <circle cx="44.1" cy="6.21" r="4.23" fill="#fff"/>
+  <circle cx="44.1" cy="59.08" r="5.92" fill="#274782"/>
+  <circle cx="44.1" cy="59.21" r="4.23" fill="#fff"/>
+  <circle cx="138.1" cy="33.08" r="5.92" fill="#274782"/>
+  <circle cx="138.1" cy="33.21" r="4.23" fill="#fff"/>
+  <text id="tspan11445" transform="translate(45.28 23.05)" fill="#fff" font-family="OCRA, OCRA" font-size="4" isolation="isolate"><tspan x="0" y="0">GND</tspan></text>
+  <text id="tspan11445-2" data-name="tspan11445" transform="translate(45.71 30.67)" fill="#fff" font-family="OCRA, OCRA" font-size="4" isolation="isolate"><tspan x="0" y="0">VCC</tspan></text>
+  <g>
+    <text id="tspan11445-3" data-name="tspan11445" transform="translate(45.71 38.14)" fill="#fff" font-family="OCRA, OCRA" font-size="4" isolation="isolate"><tspan x="0" y="0">SDA</tspan></text>
+    <text id="tspan11445-4" data-name="tspan11445" transform="translate(45.71 45.67)" fill="#fff" font-family="OCRA, OCRA" font-size="4" isolation="isolate"><tspan x="0" y="0">SCL</tspan></text>
+  </g>
+  <rect x="63.31" y="30.51" width="15.01" height="6.2" fill="#333"/>
+  <rect x="81.58" y="30.98" width="12.66" height="5.27" fill="#333"/>
+  <rect x="96.58" y="30.98" width="12.66" height="5.27" fill="#333"/>
+  <rect x="113.46" y="24.94" width="5.1" height="1.32" transform="translate(90.41 141.61) rotate(-90)" fill="#9fa0a0"/>
+  <rect x="113.46" y="40.94" width="5.1" height="1.32" transform="translate(74.41 157.61) rotate(-90)" fill="#9fa0a0"/>
+  <rect x="116.46" y="40.94" width="5.1" height="1.32" transform="translate(77.41 160.61) rotate(-90)" fill="#9fa0a0"/>
+  <rect x="119.46" y="40.94" width="5.1" height="1.32" transform="translate(80.41 163.61) rotate(-90)" fill="#9fa0a0"/>
+  <rect x="122.46" y="40.94" width="5.1" height="1.32" transform="translate(83.41 166.61) rotate(-90)" fill="#9fa0a0"/>
+  <rect x="116.46" y="24.94" width="5.1" height="1.32" transform="translate(93.41 144.61) rotate(-90)" fill="#9fa0a0"/>
+  <rect x="119.46" y="24.94" width="5.1" height="1.32" transform="translate(96.41 147.61) rotate(-90)" fill="#9fa0a0"/>
+  <rect x="122.46" y="24.94" width="5.1" height="1.32" transform="translate(99.41 150.61) rotate(-90)" fill="#9fa0a0"/>
+  <rect x="114.89" y="27.39" width="12.44" height="12.44" fill="#333"/>
+</svg>
