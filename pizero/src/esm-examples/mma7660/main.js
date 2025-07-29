@@ -1,22 +1,28 @@
 import {requestI2CAccess} from "chirimen";
 import MMA7660 from "@chirimen/mma7660";
 
-const i2cAccess = await requestI2CAccess();
+async function main() {
 
-const i2cPort = i2cAccess.ports.get(1);
+    const i2cAccess = await requestI2CAccess();
 
-const mma7660 = new MMA7660(i2cPort, 0x4c);
+    const i2cPort = i2cAccess.ports.get(1);
 
-await mma7660.init();
+    const mma7660 = new MMA7660(i2cPort, 0x4c);
 
-setInterval(async() => {
-    let XYZData = await mma7660.getXYZ();
-    let AccelerationData = await mma7660.getAcceleration();
+    await mma7660.init();
 
-    console.dir("x =" + XYZData.X);
-    console.dir("y =" + XYZData.Y);
-    console.dir("z =" + XYZData.Z);
+    setInterval(async() => {
+        const XYZData = await mma7660.getXYZ();
+        const AccelerationData = await mma7660.getAcceleration();
 
-    console.dir("accleration of X/Y/Z: " + AccelerationData.X + " g/ " + AccelerationData.Y + " g/ " + AccelerationData.Z + " g");
+        console.dir(`X =${  XYZData.X}`);
+        console.dir(`y =${  XYZData.Y}`);
+        console.dir(`z =${  XYZData.Z}`);
 
-}, 500);
+        console.dir(`accleration of X/Y/Z: ${  AccelerationData.X  } g/ ${  AccelerationData.Y  } g/ ${  AccelerationData.Z  } g`);
+
+    }, 500);
+
+}
+
+main();
