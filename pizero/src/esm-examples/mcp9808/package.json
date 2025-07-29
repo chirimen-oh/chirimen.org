@@ -1,0 +1,17 @@
+{
+  "name": "mcp9808",
+  "version": "1.0.0",
+  "description": "mcp9808 Example",
+  "license": "MPL-2.0",
+  "author": "Haruka Terai",
+  "type": "module",
+  "main": "main.js",
+  "dependencies": {
+    "@chirimen/mcp9808": "^1.0.0",
+    "chirimen": "^0.2.1",
+    "node-web-i2c": "^1.1.36"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  }
+}
