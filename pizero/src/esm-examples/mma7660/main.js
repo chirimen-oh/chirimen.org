@@ -19,7 +19,7 @@ async function main() {
         console.dir(`y =${  XYZData.Y}`);
         console.dir(`z =${  XYZData.Z}`);
 
-        console.dir(`accleration of X/Y/Z: ${  AccelerationData.X  } g/ ${  AccelerationData.Y  } g/ ${  AccelerationData.Z  } g`);
+        console.dir(`acceleration of X/Y/Z: ${  AccelerationData.X  } g/ ${  AccelerationData.Y  } g/ ${  AccelerationData.Z  } g`);
 
     }, 500);
 
