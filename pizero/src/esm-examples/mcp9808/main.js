@@ -15,7 +15,7 @@ await mcp9808.init();
 await mcp9808.wake();
 await mcp9808.setResolution(3);
 
-const interval = setInterval(async function () {
+setInterval(async function () {
 
   let mode = await mcp9808.getResolution();
   let data_t = await mcp9808.readTempC();
