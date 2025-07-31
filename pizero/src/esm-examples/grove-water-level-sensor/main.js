@@ -13,7 +13,6 @@ async function main() {
     setInterval(async() => {
         const high12SectionValue = await waterlevelsensor.getHigh12SectionValue();
         const low8SectionValue = await waterlevelsensor.getLow8SectionValue();
-
         const waterLevel = await waterlevelsensor.getWaterLevel();
 
         console.dir(`high: ${  high12SectionValue}`);
