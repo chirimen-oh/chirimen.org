@@ -1,0 +1,17 @@
+{
+  "name": "grove-water-level-sensor",
+  "type": "module",
+  "version": "1.0.0",
+  "description": "grove-water-level-sensor Example",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Masahito Inoue",
+  "license": "MPL-2.0",
+  "dependencies": {
+    "@chirimen/grove-water-level-sensor": "^1.0.0",
+    "chirimen": "^0.2.1",
+    "node-web-i2c": "^1.1.36"
+  }
+}
