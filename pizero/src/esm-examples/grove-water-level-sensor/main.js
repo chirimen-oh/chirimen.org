@@ -15,9 +15,9 @@ async function main() {
     const low8SectionValue = await waterlevelsensor.getLow8SectionValue();
     const waterLevel = await waterlevelsensor.getWaterLevel();
 
-    console.dir(`high: ${  high12SectionValue}`);
-    console.dir(`low: ${  low8SectionValue}`);
-    console.dir(`waterLevel: ${  waterLevel  } %`);
+    console.dir(`high: ${high12SectionValue}`);
+    console.dir(`low: ${low8SectionValue}`);
+    console.dir(`waterLevel: ${waterLevel} %`);
   }, 500);
 }
 
