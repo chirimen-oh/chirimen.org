@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8" />
+    <title>ギヤードモーター part1</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="../../themes/node_modules/@vivliostyle/theme-techbook/theme.css"
+    />
+    <link rel="stylesheet" type="text/css" href="../../custom.css" />
+  </head>
+  <body>
+    <section class="level3" aria-labelledby="ギヤードモーター-part1">
+      <h3 id="ギヤードモーター-part1">ギヤードモーター part1</h3>
+      <section class="level4" aria-labelledby="概要">
+        <h4 id="概要">概要</h4>
+        <ul>
+          <li>ギヤードモーターの回転・停止</li>
+        </ul>
+      </section>
+      <section class="level4" aria-labelledby="配線図">
+        <h4 id="配線図">配線図</h4>
+        <p>
+          <img src="./PiZero_gpio0Motor_2.png" title="schematic" />
+        </p>
+        <p>
+          GPIO ポート 26 にモーター制御回路を繋ぎます。
+          ※このセクションのコードは「L
+          チカ」と共通のため、配線のみ異なる点にご注意ください。
+        </p>
+      </section>
+      <section
+        class="level4"
+        aria-labelledby="chirimen-用ドライバのインストール"
+      >
+        <h4 id="chirimen-用ドライバのインストール">
+          CHIRIMEN 用ドライバのインストール
+        </h4>
+        <ul>
+          <li>不要</li>
+        </ul>
+      </section>
+      <section class="level4" aria-labelledby="サンプルコード-mainjs">
+        <h4 id="サンプルコード-mainjs">サンプルコード (main.js)</h4>
+        <pre
+          class="language-javascript"
+        ><code class="language-javascript"><span class="token keyword module">import</span> <span class="token imports"><span class="token punctuation">{</span>requestGPIOAccess<span class="token punctuation">}</span></span> <span class="token keyword module">from</span> <span class="token string">"./node_modules/node-web-gpio/dist/index.js"</span><span class="token punctuation">;</span>
+<span class="token keyword">const</span> <span class="token function-variable function">sleep</span> <span class="token operator">=</span> <span class="token parameter">msec</span> <span class="token arrow operator">=&gt;</span> <span class="token keyword">new</span> <span class="token class-name">Promise</span><span class="token punctuation">(</span><span class="token parameter">resolve</span> <span class="token arrow operator">=&gt;</span> <span class="token function">setTimeout</span><span class="token punctuation">(</span>resolve<span class="token punctuation">,</span> msec<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token keyword">async</span> <span class="token keyword">function</span> <span class="token function">blink</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">const</span> gpioAccess <span class="token operator">=</span> <span class="token keyword control-flow">await</span> <span class="token function">requestGPIOAccess</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token keyword">const</span> port <span class="token operator">=</span> gpioAccess<span class="token punctuation">.</span><span class="token property-access">ports</span><span class="token punctuation">.</span><span class="token method function property-access">get</span><span class="token punctuation">(</span><span class="token number">26</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+  <span class="token keyword control-flow">await</span> port<span class="token punctuation">.</span><span class="token keyword module">export</span><span class="token punctuation">(</span><span class="token string">"out"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+  <span class="token keyword control-flow">for</span> <span class="token punctuation">(</span><span class="token punctuation">;</span><span class="token punctuation">;</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword control-flow">await</span> port<span class="token punctuation">.</span><span class="token method function property-access">write</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword control-flow">await</span> <span class="token function">sleep</span><span class="token punctuation">(</span><span class="token number">1000</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword control-flow">await</span> port<span class="token punctuation">.</span><span class="token method function property-access">write</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword control-flow">await</span> <span class="token function">sleep</span><span class="token punctuation">(</span><span class="token number">1000</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token function">blink</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+      </section>
+    </section>
+  </body>
+</html>

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8" />
+    <title>S11059 デジタルカラーセンサー</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="../../themes/node_modules/@vivliostyle/theme-techbook/theme.css"
+    />
+    <link rel="stylesheet" type="text/css" href="../../custom.css" />
+  </head>
+  <body>
+    <section class="level3" aria-labelledby="s11059-デジタルカラーセンサー">
+      <h3 id="s11059-デジタルカラーセンサー">S11059 デジタルカラーセンサー</h3>
+      <section class="level4" aria-labelledby="概要">
+        <h4 id="概要">概要</h4>
+        <ul>
+          <li>高精度なデジタルカラーセンサー</li>
+          <li>
+            赤（Red）、緑（Green）、青（Blue）、および赤外線（IR）の4つの波長帯域を個別に測定可能
+          </li>
+        </ul>
+      </section>
+      <section class="level4" aria-labelledby="配線図">
+        <h4 id="配線図">配線図</h4>
+        <p>
+          <img
+            src="./schematic.png"
+            title="schematic"
+            width="250px"
+            height="250px"
+          />
+        </p>
+      </section>
+      <section
+        class="level4"
+        aria-labelledby="chirimen-用ドライバのインストール"
+      >
+        <h4 id="chirimen-用ドライバのインストール">
+          CHIRIMEN 用ドライバのインストール
+        </h4>
+        <pre
+          class="language-shell"
+        ><code class="language-shell"><span class="token function">npm</span> i @chirimen/s11059</code></pre>
+      </section>
+      <section class="level4" aria-labelledby="サンプルコード-mainjs">
+        <h4 id="サンプルコード-mainjs">サンプルコード (main.js)</h4>
+        <pre
+          class="language-javascript"
+        ><code class="language-javascript"><span class="token keyword module">import</span> <span class="token imports"><span class="token punctuation">{</span>requestI2CAccess<span class="token punctuation">}</span></span> <span class="token keyword module">from</span> <span class="token string">"./node_modules/node-web-i2c/index.js"</span><span class="token punctuation">;</span>
+<span class="token keyword module">import</span> <span class="token constant">S11059</span> <span class="token keyword module">from</span> <span class="token string">"@chirimen/s11059"</span><span class="token punctuation">;</span>
+<span class="token keyword">const</span> <span class="token function-variable function">sleep</span> <span class="token operator">=</span> <span class="token parameter">msec</span> <span class="token arrow operator">=&gt;</span> <span class="token keyword">new</span> <span class="token class-name">Promise</span><span class="token punctuation">(</span><span class="token parameter">resolve</span> <span class="token arrow operator">=&gt;</span> <span class="token function">setTimeout</span><span class="token punctuation">(</span>resolve<span class="token punctuation">,</span> msec<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+
+<span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token keyword">async</span> <span class="token keyword">function</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">const</span> i2cAccess <span class="token operator">=</span> <span class="token keyword control-flow">await</span> <span class="token function">requestI2CAccess</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token keyword">const</span> port <span class="token operator">=</span> i2cAccess<span class="token punctuation">.</span><span class="token property-access">ports</span><span class="token punctuation">.</span><span class="token method function property-access">get</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token keyword">const</span> s11059 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">S11059</span><span class="token punctuation">(</span>port<span class="token punctuation">,</span> <span class="token number">0x2a</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token keyword control-flow">await</span> s11059<span class="token punctuation">.</span><span class="token method function property-access">init</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token keyword control-flow">for</span> <span class="token punctuation">(</span><span class="token punctuation">;</span><span class="token punctuation">;</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword control-flow">try</span> <span class="token punctuation">{</span>
+      <span class="token keyword">const</span> values <span class="token operator">=</span> <span class="token keyword control-flow">await</span> s11059<span class="token punctuation">.</span><span class="token method function property-access">readR8G8B8</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token keyword">const</span> red <span class="token operator">=</span> values<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span> <span class="token operator">&amp;</span> <span class="token number">0xff</span><span class="token punctuation">;</span>
+      <span class="token keyword">const</span> green <span class="token operator">=</span> values<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">&amp;</span> <span class="token number">0xff</span><span class="token punctuation">;</span>
+      <span class="token keyword">const</span> blue <span class="token operator">=</span> values<span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">]</span> <span class="token operator">&amp;</span> <span class="token number">0xff</span><span class="token punctuation">;</span>
+      <span class="token keyword">const</span> gain_level <span class="token operator">=</span> values<span class="token punctuation">[</span><span class="token number">3</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+      <span class="token console class-name">console</span><span class="token punctuation">.</span><span class="token method function property-access">log</span><span class="token punctuation">(</span><span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">R:</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>red<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string"> G:</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>green<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string"> B:</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>blue<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string"> GAIN: </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>gain_level<span class="token interpolation-punctuation punctuation">}</span></span><span class="token template-punctuation string">`</span></span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span> <span class="token keyword control-flow">catch</span> <span class="token punctuation">(</span>error<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token console class-name">console</span><span class="token punctuation">.</span><span class="token method function property-access">error</span><span class="token punctuation">(</span><span class="token string">"READ ERROR:"</span> <span class="token operator">+</span> error<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword control-flow">await</span> <span class="token function">sleep</span><span class="token punctuation">(</span><span class="token number">1000</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre>
+      </section>
+    </section>
+  </body>
+</html>

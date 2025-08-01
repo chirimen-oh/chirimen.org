@@ -1,0 +1,282 @@
+{
+  "@context": [
+    "https://schema.org",
+    "https://www.w3.org/ns/pub-context"
+  ],
+  "type": "Book",
+  "conformsTo": "https://github.com/vivliostyle/vivliostyle-cli",
+  "name": "CHIRIMEN 対応デバイスレシピ集",
+  "author": "CHIRIMEN Open Hardware Community <chirimen.open.hardware@gmail.com>",
+  "inLanguage": "ja",
+  "dateModified": "2025-05-23T15:16:22.509Z",
+  "readingOrder": [
+    {
+      "url": "toc.html",
+      "name": "Table of Contents",
+      "rel": "contents",
+      "type": "LinkedResource"
+    },
+    {
+      "url": "docs/intro.html",
+      "name": "本書について"
+    },
+    {
+      "url": "docs/about.html",
+      "name": "CHIRIMEN とは"
+    },
+    {
+      "url": "docs/hello-real-world-vol1/index.html",
+      "name": "入門用"
+    },
+    {
+      "url": "docs/hello-real-world-vol2/index.html",
+      "name": "ギヤードモーター part1"
+    },
+    {
+      "url": "docs/hello-real-world-vol3/index.html",
+      "name": "ギヤードモーター part2"
+    },
+    {
+      "url": "docs/hello-real-world-vol6/index.html",
+      "name": "ギヤードモーター part3"
+    },
+    {
+      "url": "docs/hello-real-world-vol7/index.html",
+      "name": "ギヤードモーター part4"
+    },
+    {
+      "url": "docs/hello-real-world-vol8/index.html",
+      "name": "ギヤードモーター part5"
+    },
+    {
+      "url": "docs/hello-real-world-vol4/index.html",
+      "name": "MOSFET P718Dモジュール"
+    },
+    {
+      "url": "docs/hello-real-world-vol5/index.html",
+      "name": "MOSFET D4184 モジュール"
+    },
+    {
+      "url": "docs/gpio-polling/index.html",
+      "name": "GPIO 関連"
+    },
+    {
+      "url": "docs/gpio-inout-vol1/index.html",
+      "name": "GPIO スイッチと LED"
+    },
+    {
+      "url": "docs/gpio-inout-vol2/index.html",
+      "name": "GPIO スイッチとギヤードモーター"
+    },
+    {
+      "url": "docs/gpio-onchange/index.html",
+      "name": "タッチセンサー"
+    },
+    {
+      "url": "docs/gpio-camera/index.html",
+      "name": "カメラ"
+    },
+    {
+      "url": "docs/adt7410/index.html",
+      "name": "環境センサー"
+    },
+    {
+      "url": "docs/aht10/index.html",
+      "name": "AHT10 温湿度センサー"
+    },
+    {
+      "url": "docs/aht20/index.html",
+      "name": "AHT20 温湿度センサー"
+    },
+    {
+      "url": "docs/htu21d/index.html",
+      "name": "HTU21D 温湿度センサー"
+    },
+    {
+      "url": "docs/sht30/index.html",
+      "name": "SHT30 温湿度センサー"
+    },
+    {
+      "url": "docs/sht40/index.html",
+      "name": "SHT40 温湿度センサー"
+    },
+    {
+      "url": "docs/bmp180/index.html",
+      "name": "気圧センサー"
+    },
+    {
+      "url": "docs/bmp280/index.html",
+      "name": "BMP280 温度・気圧センサー"
+    },
+    {
+      "url": "docs/bme280/index.html",
+      "name": "BME280 温度・湿度・気圧センサー"
+    },
+    {
+      "url": "docs/ens160/index.html",
+      "name": "空気品質センサー"
+    },
+    {
+      "url": "docs/sgp40/index.html",
+      "name": "SGP40 ガスセンサー"
+    },
+    {
+      "url": "docs/scd40/index.html",
+      "name": "CO2 センサー"
+    },
+    {
+      "url": "docs/bh1750/index.html",
+      "name": "光センサー"
+    },
+    {
+      "url": "docs/ltr390/index.html",
+      "name": "LTR390 UVセンサー"
+    },
+    {
+      "url": "docs/tsl2561/index.html",
+      "name": "TSL2561 Grove Digital Light Sensor 光センサー"
+    },
+    {
+      "url": "docs/tsl2591/index.html",
+      "name": "TSL2591照度センサー"
+    },
+    {
+      "url": "docs/veml6070/index.html",
+      "name": "VEML6070 UV センサー"
+    },
+    {
+      "url": "docs/tcs34725/index.html",
+      "name": "色センサー"
+    },
+    {
+      "url": "docs/s11059/index.html",
+      "name": "S11059 デジタルカラーセンサー"
+    },
+    {
+      "url": "docs/adxl345/index.html",
+      "name": "モーション・位置センサー"
+    },
+    {
+      "url": "docs/icm20948/index.html",
+      "name": "ICM20948 9軸センサー"
+    },
+    {
+      "url": "docs/mpu6050/index.html",
+      "name": "MPU6050 3 軸ジャイロ 3 軸加速度 複合センサー"
+    },
+    {
+      "url": "docs/mpu9250/index.html",
+      "name": "MPU9250 3 軸ジャイロ 3 軸加速度 3 軸 磁気複合センサー"
+    },
+    {
+      "url": "docs/gp2y0e03/index.html",
+      "name": "距離センサー"
+    },
+    {
+      "url": "docs/vl53l0x/index.html",
+      "name": "VL53L0X レーザー測距センサー 30 mm - 2 m"
+    },
+    {
+      "url": "docs/vl53l1x/index.html",
+      "name": "VL53L1X レーザー距離センサー"
+    },
+    {
+      "url": "docs/as5600/index.html",
+      "name": "角度センサー"
+    },
+    {
+      "url": "docs/paj7620/index.html",
+      "name": "ジェスチャーセンサー"
+    },
+    {
+      "url": "docs/as3935/index.html",
+      "name": "雷センサー"
+    },
+    {
+      "url": "docs/ssd1306/index.html",
+      "name": "ディスプレイ・LED"
+    },
+    {
+      "url": "docs/ssd1308/index.html",
+      "name": "SSD1308 Grove OLED ディスプレイ"
+    },
+    {
+      "url": "docs/ht16k33/index.html",
+      "name": "LED ドライバー"
+    },
+    {
+      "url": "docs/neopixel-i2c/index.html",
+      "name": "NeoPixel"
+    },
+    {
+      "url": "docs/waveshare20471/index.html",
+      "name": "電子ペーパー"
+    },
+    {
+      "url": "docs/a4988/index.html",
+      "name": "モーター制御"
+    },
+    {
+      "url": "docs/hbridge1/index.html",
+      "name": "H ブリッジ"
+    },
+    {
+      "url": "docs/hbridge2-pca9685pwm/index.html",
+      "name": "PCA9685 16 チャンネル PWM ドライバ"
+    },
+    {
+      "url": "docs/pca9685/index.html",
+      "name": "PWM コントローラー"
+    },
+    {
+      "url": "docs/ads1015/index.html",
+      "name": "アナログ・デジタル変換"
+    },
+    {
+      "url": "docs/ads1115-loadcell/index.html",
+      "name": "ADS1115 16bit ADC 差動入力によるロードセルの使用"
+    },
+    {
+      "url": "docs/ads1x15/index.html",
+      "name": "ADS1115 16bit ADC"
+    },
+    {
+      "url": "docs/pcf8591/index.html",
+      "name": "PCF8591 8bit AD,DA コンバーター"
+    },
+    {
+      "url": "docs/ina219/index.html",
+      "name": "電流センサー"
+    },
+    {
+      "url": "docs/dfplayer/index.html",
+      "name": "オーディオ"
+    },
+    {
+      "url": "docs/isd1820/index.html",
+      "name": "音声録音"
+    },
+    {
+      "url": "docs/serial_gps/index.html",
+      "name": "その他"
+    },
+    {
+      "url": "docs/amg8833/index.html",
+      "name": "サーマルカメラ"
+    },
+    {
+      "url": "docs/mlx90614/index.html",
+      "name": "赤外線温度センサー"
+    },
+    {
+      "url": "docs/mpr121/index.html",
+      "name": "タッチセンサー"
+    },
+    {
+      "url": "docs/thanks.html",
+      "name": "Special Thanks"
+    }
+  ],
+  "resources": [],
+  "links": []
+}

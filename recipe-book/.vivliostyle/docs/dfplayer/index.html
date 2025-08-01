@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8" />
+    <title>オーディオ</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="../../themes/node_modules/@vivliostyle/theme-techbook/theme.css"
+    />
+    <link rel="stylesheet" type="text/css" href="../../custom.css" />
+  </head>
+  <body>
+    <section class="level1" aria-labelledby="オーディオ">
+      <h1 id="オーディオ">オーディオ</h1>
+      <section class="level2" aria-labelledby="オーディオプレーヤー">
+        <h2 id="オーディオプレーヤー">オーディオプレーヤー</h2>
+        <section class="level3" aria-labelledby="dfplayer-mini">
+          <h3 id="dfplayer-mini">DFPlayer Mini</h3>
+          <section class="level4" aria-labelledby="概要">
+            <h4 id="概要">概要</h4>
+            <ul>
+              <li>MP3 プレーヤーボードを GPIO OUTPUT で制御</li>
+            </ul>
+          </section>
+          <section class="level4" aria-labelledby="配線図">
+            <h4 id="配線図">配線図</h4>
+            <p>
+              <img
+                src="./DFPlayer.png"
+                title="schematic"
+                width="343px"
+                height="238px"
+              />
+            </p>
+          </section>
+          <section
+            class="level4"
+            aria-labelledby="chirimen-用ドライバのインストール"
+          >
+            <h4 id="chirimen-用ドライバのインストール">
+              CHIRIMEN 用ドライバのインストール
+            </h4>
+            <ul>
+              <li>不要</li>
+            </ul>
+          </section>
+          <section class="level4" aria-labelledby="サンプルコード-mainjs">
+            <h4 id="サンプルコード-mainjs">サンプルコード (main.js)</h4>
+            <pre
+              class="language-javascript"
+            ><code class="language-javascript"><span class="token keyword module">import</span> <span class="token imports"><span class="token punctuation">{</span> requestGPIOAccess <span class="token punctuation">}</span></span> <span class="token keyword module">from</span> <span class="token string">"./node_modules/node-web-gpio/dist/index.js"</span><span class="token punctuation">;</span>
+<span class="token keyword">const</span> <span class="token function-variable function">sleep</span> <span class="token operator">=</span> <span class="token parameter">msec</span> <span class="token arrow operator">=&gt;</span> <span class="token keyword">new</span> <span class="token class-name">Promise</span><span class="token punctuation">(</span><span class="token parameter">resolve</span> <span class="token arrow operator">=&gt;</span> <span class="token function">setTimeout</span><span class="token punctuation">(</span>resolve<span class="token punctuation">,</span> msec<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token keyword">let</span> play1port<span class="token punctuation">;</span>
+<span class="token keyword">let</span> pauseport<span class="token punctuation">;</span>
+
+<span class="token keyword">async</span> <span class="token keyword">function</span> <span class="token function">start_play</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">const</span> gpioAccess <span class="token operator">=</span> <span class="token keyword control-flow">await</span> <span class="token function">requestGPIOAccess</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    play1port <span class="token operator">=</span> gpioAccess<span class="token punctuation">.</span><span class="token property-access">ports</span><span class="token punctuation">.</span><span class="token method function property-access">get</span><span class="token punctuation">(</span><span class="token number">26</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// </span>
+    pauseport <span class="token operator">=</span> gpioAccess<span class="token punctuation">.</span><span class="token property-access">ports</span><span class="token punctuation">.</span><span class="token method function property-access">get</span><span class="token punctuation">(</span><span class="token number">19</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token keyword control-flow">await</span> play1port<span class="token punctuation">.</span><span class="token keyword module">export</span><span class="token punctuation">(</span><span class="token string">"out"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword control-flow">await</span> pauseport<span class="token punctuation">.</span><span class="token keyword module">export</span><span class="token punctuation">(</span><span class="token string">"out"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token keyword control-flow">await</span> <span class="token function">repeat_play</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">async</span> <span class="token keyword">function</span> <span class="token function">repeat_play</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword control-flow">while</span> <span class="token punctuation">(</span><span class="token boolean">true</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token comment">// 1曲目を再生開始</span>
+        <span class="token console class-name">console</span><span class="token punctuation">.</span><span class="token method function property-access">log</span><span class="token punctuation">(</span><span class="token string">"start play1"</span><span class="token punctuation">)</span>
+        <span class="token keyword control-flow">await</span> play1port<span class="token punctuation">.</span><span class="token method function property-access">write</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword control-flow">await</span> <span class="token function">sleep</span><span class="token punctuation">(</span><span class="token number">300</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 0.3秒保持して元に戻す</span>
+        <span class="token keyword control-flow">await</span> play1port<span class="token punctuation">.</span><span class="token method function property-access">write</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+        <span class="token comment">// 10秒保持</span>
+        <span class="token keyword control-flow">await</span> <span class="token function">sleep</span><span class="token punctuation">(</span><span class="token number">10</span> <span class="token operator">*</span> <span class="token number">1000</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+        <span class="token comment">// 一時停止</span>
+        <span class="token console class-name">console</span><span class="token punctuation">.</span><span class="token method function property-access">log</span><span class="token punctuation">(</span><span class="token string">"stop"</span><span class="token punctuation">)</span>
+        <span class="token keyword control-flow">await</span> pauseport<span class="token punctuation">.</span><span class="token method function property-access">write</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword control-flow">await</span> <span class="token function">sleep</span><span class="token punctuation">(</span><span class="token number">300</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword control-flow">await</span> pauseport<span class="token punctuation">.</span><span class="token method function property-access">write</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+        <span class="token comment">//  3秒間一時停止</span>
+        <span class="token keyword control-flow">await</span> <span class="token function">sleep</span><span class="token punctuation">(</span><span class="token number">3</span> <span class="token operator">*</span> <span class="token number">1000</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token function">start_play</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+          </section>
+          <section class="level4" aria-labelledby="特記事項">
+            <h4 id="特記事項">特記事項</h4>
+            <ul>
+              <li>
+                DFPlayer Mini ボードの ADKEY1 端子を Nch MOSFET を介して GPIO
+                で制御します
+                <ul>
+                  <li>
+                    他にシリアル通信での制御も可能なボードですがこのサンプルは
+                    GPIO で制御できる ADKEY 端子を使用
+                  </li>
+                </ul>
+              </li>
+              <li>
+                電源投入後、ボリュームが最大になるので S1
+                スイッチは付けておきましょう
+              </li>
+              <li>
+                ADKEY1/2
+                端子と抵抗を組み合わせることでいろいろなコントロールが可能です。
+              </li>
+            </ul>
+          </section>
+          <section class="level4" aria-labelledby="参考">
+            <h4 id="参考">参考</h4>
+            <p>GPIO 端子の使用数を増やすと制御できる種類も増やせます。</p>
+            <ul>
+              <li>
+                <a
+                  href="https://chitakekoubou.blogspot.com/p/dfplayeradkeyio.html"
+                  >参考ページ</a
+                >
+              </li>
+              <li>
+                <a href="https://wiki.dfrobot.com/DFPlayer_Mini_SKU_DFR0299"
+                  >メーカーサイトの説明ページ</a
+                >
+              </li>
+            </ul>
+          </section>
+        </section>
+      </section>
+    </section>
+  </body>
+</html>

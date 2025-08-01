@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8" />
+    <title>環境センサー</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="../../themes/node_modules/@vivliostyle/theme-techbook/theme.css"
+    />
+    <link rel="stylesheet" type="text/css" href="../../custom.css" />
+  </head>
+  <body>
+    <section class="level1" aria-labelledby="環境センサー">
+      <h1 id="環境センサー">環境センサー</h1>
+      <section class="level2" aria-labelledby="温度湿度センサー">
+        <h2 id="温度湿度センサー">温度・湿度センサー</h2>
+        <section class="level5" aria-labelledby="adt7410-温度センサー">
+          <h5 id="adt7410-温度センサー">ADT7410 温度センサー</h5>
+        </section>
+        <section class="level4" aria-labelledby="概要">
+          <h4 id="概要">概要</h4>
+          <ul>
+            <li>
+              I²C 接続の温度センサーで、±0.5°C の高精度（0°C〜+70°C
+              の範囲）測定可能
+            </li>
+          </ul>
+        </section>
+        <section class="level4" aria-labelledby="配線図">
+          <h4 id="配線図">配線図</h4>
+          <p>
+            <img
+              src="./PiZero_ADT7410.png"
+              title="schematic"
+              width="175px"
+              height="175px"
+            />
+          </p>
+          <p>
+            <img
+              src="./schematic_warning.png"
+              title="schematic"
+              width="175px"
+              height="175px"
+            />
+          </p>
+        </section>
+        <section
+          class="level4"
+          aria-labelledby="chirimen-用ドライバのインストール"
+        >
+          <h4 id="chirimen-用ドライバのインストール">
+            CHIRIMEN 用ドライバのインストール
+          </h4>
+          <pre
+            class="language-shell"
+          ><code class="language-shell"><span class="token function">npm</span> i @chirimen/adt7410</code></pre>
+        </section>
+        <section class="level4" aria-labelledby="サンプルコード-mainjs">
+          <h4 id="サンプルコード-mainjs">サンプルコード (main.js)</h4>
+          <pre
+            class="language-javascript"
+          ><code class="language-javascript"><span class="token keyword module">import</span> <span class="token imports"><span class="token punctuation">{</span>requestI2CAccess<span class="token punctuation">}</span></span> <span class="token keyword module">from</span> <span class="token string">"./node_modules/node-web-i2c/index.js"</span><span class="token punctuation">;</span>
+<span class="token keyword module">import</span> <span class="token constant">ADT7410</span> <span class="token keyword module">from</span> <span class="token string">"@chirimen/adt7410"</span><span class="token punctuation">;</span>
+<span class="token keyword">const</span> <span class="token function-variable function">sleep</span> <span class="token operator">=</span> <span class="token parameter">msec</span> <span class="token arrow operator">=&gt;</span> <span class="token keyword">new</span> <span class="token class-name">Promise</span><span class="token punctuation">(</span><span class="token parameter">resolve</span> <span class="token arrow operator">=&gt;</span> <span class="token function">setTimeout</span><span class="token punctuation">(</span>resolve<span class="token punctuation">,</span> msec<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token keyword">async</span> <span class="token keyword">function</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">const</span> i2cAccess <span class="token operator">=</span> <span class="token keyword control-flow">await</span> <span class="token function">requestI2CAccess</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// i2cAccessを非同期で取得</span>
+  <span class="token keyword">const</span> port <span class="token operator">=</span> i2cAccess<span class="token punctuation">.</span><span class="token property-access">ports</span><span class="token punctuation">.</span><span class="token method function property-access">get</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// I2C I/Fの1番ポートを取得</span>
+  <span class="token keyword">const</span> adt7410 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ADT7410</span><span class="token punctuation">(</span>port<span class="token punctuation">,</span> <span class="token number">0x48</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 取得したポートの0x48アドレスをADT7410ドライバで受信する</span>
+  <span class="token keyword control-flow">await</span> adt7410<span class="token punctuation">.</span><span class="token method function property-access">init</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token keyword control-flow">for</span> <span class="token punctuation">(</span><span class="token punctuation">;</span><span class="token punctuation">;</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment">// 無限ループ</span>
+    <span class="token keyword">const</span> value <span class="token operator">=</span> <span class="token keyword control-flow">await</span> adt7410<span class="token punctuation">.</span><span class="token method function property-access">read</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token console class-name">console</span><span class="token punctuation">.</span><span class="token method function property-access">log</span><span class="token punctuation">(</span><span class="token template-string"><span class="token template-punctuation string">`</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>value<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string"> degree</span><span class="token template-punctuation string">`</span></span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword control-flow">await</span> <span class="token function">sleep</span><span class="token punctuation">(</span><span class="token number">1000</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre>
+        </section>
+      </section>
+    </section>
+  </body>
+</html>

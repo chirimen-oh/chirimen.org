@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8" />
+    <title>LED ドライバー</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="../../themes/node_modules/@vivliostyle/theme-techbook/theme.css"
+    />
+    <link rel="stylesheet" type="text/css" href="../../custom.css" />
+  </head>
+  <body>
+    <section class="level2" aria-labelledby="led-ドライバー">
+      <h2 id="led-ドライバー">LED ドライバー</h2>
+      <section class="level3" aria-labelledby="ht16k33-ledマトリクスドライバ">
+        <h3 id="ht16k33-ledマトリクスドライバ">
+          HT16K33 LEDマトリクスドライバ
+        </h3>
+        <section class="level4" aria-labelledby="概要">
+          <h4 id="概要">概要</h4>
+          <ul>
+            <li>
+              HT16K33 LED マトリクスドライバ、8x8 LED
+              マトリクスモジュール一体型や 7 セグメント LED 一体型等にも対応
+            </li>
+          </ul>
+        </section>
+        <section class="level4" aria-labelledby="配線図">
+          <h4 id="配線図">配線図</h4>
+          <p>
+            <img
+              src="./schematic.png"
+              title="schematic"
+              width="228px"
+              height="201px"
+            />
+          </p>
+        </section>
+        <section
+          class="level4"
+          aria-labelledby="chirimen-用ドライバのインストール"
+        >
+          <h4 id="chirimen-用ドライバのインストール">
+            CHIRIMEN 用ドライバのインストール
+          </h4>
+          <pre
+            class="language-shell"
+          ><code class="language-shell"><span class="token function">npm</span> i @chirimen/ht16k33</code></pre>
+        </section>
+        <section class="level4" aria-labelledby="サンプルコード-mainjs">
+          <h4 id="サンプルコード-mainjs">サンプルコード (main.js)</h4>
+          <pre
+            class="language-javascript"
+          ><code class="language-javascript"><span class="token comment">// Adafruit Mini 8x8 LED Matrix w/I2C Backpack</span>
+<span class="token comment">// https://www.switch-science.com/products/1493 , https://www.adafruit.com/product/870</span>
+<span class="token comment">// or</span>
+<span class="token comment">// Ks0064 keyestudio I2C 8x8 LED Matrix HT16K33</span>
+<span class="token comment">// https://ja.aliexpress.com/item/32886174149.html</span>
+
+<span class="token keyword module">import</span> <span class="token imports"><span class="token punctuation">{</span> requestI2CAccess <span class="token punctuation">}</span></span> <span class="token keyword module">from</span> <span class="token string">"./node_modules/node-web-i2c/index.js"</span><span class="token punctuation">;</span>
+<span class="token keyword module">import</span> <span class="token constant">HT16K33</span> <span class="token keyword module">from</span> <span class="token string">"@chirimen/ht16k33"</span><span class="token punctuation">;</span>
+<span class="token keyword">const</span> <span class="token function-variable function">sleep</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token parameter">msec</span><span class="token punctuation">)</span> <span class="token arrow operator">=&gt;</span> <span class="token keyword">new</span> <span class="token class-name">Promise</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">resolve</span><span class="token punctuation">)</span> <span class="token arrow operator">=&gt;</span> <span class="token function">setTimeout</span><span class="token punctuation">(</span>resolve<span class="token punctuation">,</span> msec<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token keyword">const</span> iconPattern <span class="token operator">=</span><span class="token punctuation">[</span>
+<span class="token number">0</span><span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">,</span>
+<span class="token number">0</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">,</span>
+<span class="token number">1</span><span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">,</span>
+<span class="token number">1</span><span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">,</span>
+<span class="token number">1</span><span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">,</span>
+<span class="token number">1</span><span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">,</span>
+<span class="token number">0</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">,</span>
+<span class="token number">0</span><span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">,</span>
+<span class="token punctuation">]</span><span class="token punctuation">;</span> <span class="token comment">// スマイルマーク</span>
+
+<span class="token keyword">const</span> iconPattern2 <span class="token operator">=</span><span class="token punctuation">[</span>
+<span class="token number">1</span><span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">,</span>
+<span class="token number">0</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">,</span>
+<span class="token number">0</span><span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">,</span>
+<span class="token number">0</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">,</span>
+<span class="token number">1</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">,</span>
+<span class="token number">0</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">,</span>
+<span class="token number">0</span><span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">,</span>
+<span class="token number">1</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">1</span>
+<span class="token punctuation">]</span><span class="token punctuation">;</span> <span class="token comment">// インベーダー</span>
+
+<span class="token keyword">const</span> iconPattern3 <span class="token operator">=</span><span class="token punctuation">[</span>
+<span class="token number">0</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">,</span>
+<span class="token number">1</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">,</span>
+<span class="token number">1</span><span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">,</span>
+<span class="token number">1</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">,</span>
+<span class="token number">1</span><span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">,</span>
+<span class="token number">1</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">,</span>
+<span class="token number">0</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">,</span>
+<span class="token number">0</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">1</span>
+<span class="token punctuation">]</span><span class="token punctuation">;</span> <span class="token comment">// 犬</span>
+
+<span class="token keyword">async</span> <span class="token keyword">function</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+	<span class="token keyword">const</span> i2cAccess <span class="token operator">=</span> <span class="token keyword control-flow">await</span> <span class="token function">requestI2CAccess</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<span class="token keyword">const</span> port <span class="token operator">=</span> i2cAccess<span class="token punctuation">.</span><span class="token property-access">ports</span><span class="token punctuation">.</span><span class="token method function property-access">get</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<span class="token keyword">const</span> ht <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">HT16K33</span><span class="token punctuation">(</span>port<span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<span class="token keyword control-flow">await</span> ht<span class="token punctuation">.</span><span class="token method function property-access">init</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+	
+	<span class="token comment">//await ht.set_blink(ht.HT16K33_BLINK_1HZ);</span>
+	<span class="token comment">//await ht.set_brightness(6);</span>
+	
+	<span class="token keyword control-flow">while</span><span class="token punctuation">(</span><span class="token boolean">true</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+		ht<span class="token punctuation">.</span><span class="token method function property-access">set_8x8_array</span><span class="token punctuation">(</span>iconPattern<span class="token punctuation">)</span><span class="token punctuation">;</span>
+		<span class="token keyword control-flow">await</span> ht<span class="token punctuation">.</span><span class="token method function property-access">write_display</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+		<span class="token keyword control-flow">await</span> <span class="token function">sleep</span><span class="token punctuation">(</span><span class="token number">1000</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+		
+		ht<span class="token punctuation">.</span><span class="token method function property-access">set_8x8_array</span><span class="token punctuation">(</span>iconPattern2<span class="token punctuation">)</span><span class="token punctuation">;</span>
+		<span class="token keyword control-flow">await</span> ht<span class="token punctuation">.</span><span class="token method function property-access">write_display</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+		<span class="token keyword control-flow">await</span> <span class="token function">sleep</span><span class="token punctuation">(</span><span class="token number">1000</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+		
+		ht<span class="token punctuation">.</span><span class="token method function property-access">set_8x8_array</span><span class="token punctuation">(</span>iconPattern3<span class="token punctuation">)</span><span class="token punctuation">;</span>
+		<span class="token keyword control-flow">await</span> ht<span class="token punctuation">.</span><span class="token method function property-access">write_display</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+		<span class="token keyword control-flow">await</span> <span class="token function">sleep</span><span class="token punctuation">(</span><span class="token number">1000</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+		
+		<span class="token doc-comment comment">/** LEDを一個づつ設定する関数の使用例
+		for ( var i = 0 ; i &lt; 128 ; i++ )<span class="token punctuation">{</span>
+			ht.set_led(i, 1);
+		<span class="token punctuation">}</span>
+		await ht.write_display();
+		await sleep(1000);
+		**/</span>
+	<span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre>
+        </section>
+        <section class="level4" aria-labelledby="特記事項">
+          <h4 id="特記事項">特記事項</h4>
+          <ul>
+            <li>
+              Note: 3.3V電源でも、あまり明るくはなりませんが動作するようです。
+            </li>
+          </ul>
+          <section
+            class="level5"
+            aria-labelledby="8x8マトリクスledモジュールデフォルト設定"
+          >
+            <h5 id="8x8マトリクスledモジュールデフォルト設定">
+              8x8マトリクスLEDモジュール(デフォルト設定)
+            </h5>
+            <p>いずれでも動作(ピン配置は異なる)</p>
+            <ul>
+              <li>
+                <p>Adafruit Mini 8x8 LED Matrix w/I2C Backpack</p>
+                <ul>
+                  <li>
+                    <a href="https://www.switch-science.com/products/1493"
+                      >https://www.switch-science.com/products/1493</a
+                    >
+                  </li>
+                  <li>
+                    <a href="https://www.adafruit.com/product/870"
+                      >https://www.adafruit.com/product/870</a
+                    >
+                  </li>
+                </ul>
+              </li>
+              <li>
+                <p>keyestudio Ks0064 I2C 8x8 LED Matrix HT16K33</p>
+                <ul>
+                  <li>
+                    <a href="https://ja.aliexpress.com/item/32886174149.html"
+                      >https://ja.aliexpress.com/item/32886174149.html</a
+                    >
+                  </li>
+                </ul>
+              </li>
+              <li>
+                <p>サンプルコード <a href="./main.js">./main.js</a></p>
+              </li>
+            </ul>
+          </section>
+          <section
+            class="level5"
+            aria-labelledby="aitendo製-8x8マトリクスledモジュール"
+          >
+            <h5 id="aitendo製-8x8マトリクスledモジュール">
+              Aitendo製 8x8マトリクスLEDモジュール
+            </h5>
+            <p>
+              Adafruit、keystudioとマトリクスの結線が異なりますが、設定変更により使用可能です。
+            </p>
+            <ul>
+              <li>
+                <p>対応品リスト</p>
+                <ul>
+                  <li>
+                    <a href="https://www.aitendo.com/product/12822"
+                      >https://www.aitendo.com/product/12822</a
+                    >
+                  </li>
+                  <li>
+                    <a href="https://www.aitendo.com/product/12850"
+                      >https://www.aitendo.com/product/12850</a
+                    >
+                  </li>
+                  <li>
+                    <a href="https://www.aitendo.com/product/12823"
+                      >https://www.aitendo.com/product/12823</a
+                    >
+                  </li>
+                </ul>
+              </li>
+              <li>
+                <p>
+                  サンプルコード
+                  <a href="./main-ht16k33_8x8aitendo.js"
+                    >./main-ht16k33_8x8aitendo.js</a
+                  >
+                </p>
+                <ul>
+                  <li>
+                    aitendo製モジュール用の設定変更関数を呼び出して使います。
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </section>
+          <section class="level5" aria-labelledby="4桁7セグメントledモジュール">
+            <h5 id="4桁7セグメントledモジュール">
+              4桁7セグメントLEDモジュール
+            </h5>
+            <p>
+              配線が同じであれば、amazonやaliexpress等で販売されているジェネリック品でも使用できると思います。（動作はAitendo製品で確認）
+            </p>
+            <ul>
+              <li>
+                <p>対応品：aitendo</p>
+                <ul>
+                  <li>
+                    <a href="https://www.aitendo.com/product/14540"
+                      >https://www.aitendo.com/product/14540</a
+                    >
+                  </li>
+                  <li>
+                    <a href="https://www.aitendo.com/product/18690"
+                      >https://www.aitendo.com/product/18690</a
+                    >
+                  </li>
+                  <li>
+                    <a href="https://www.aitendo.com/product/20785"
+                      >https://www.aitendo.com/product/20785</a
+                    >
+                  </li>
+                </ul>
+              </li>
+              <li>
+                <p>
+                  サンプルコード
+                  <a href="./main-ht16k33_7seg.js">./main-ht16k33_7seg.js</a>
+                </p>
+              </li>
+            </ul>
+          </section>
+          <section
+            class="level5"
+            aria-labelledby="4桁-14セグメントledモジュール"
+          >
+            <h5 id="4桁-14セグメントledモジュール">
+              4桁 14セグメントLEDモジュール
+            </h5>
+            <p>
+              数字やアルファベットが表示可能なLEDモジュール。配線が同じであれば、amazonやaliexpress等で販売されているジェネリック品でも使用できると思います。（動作はAitendo製品で確認）
+            </p>
+            <ul>
+              <li>
+                <p>対応品：aitendo</p>
+                <ul>
+                  <li>
+                    <a href="https://www.aitendo.com/product/20812"
+                      >https://www.aitendo.com/product/20812</a
+                    >
+                  </li>
+                  <li>
+                    <a href="https://www.aitendo.com/product/20811"
+                      >https://www.aitendo.com/product/20811</a
+                    >
+                  </li>
+                </ul>
+              </li>
+              <li>
+                <p>
+                  サンプルコード
+                  <a href="./main-ht16k33_14seg.js">./main-ht16k33_14seg.js</a>
+                </p>
+              </li>
+            </ul>
+          </section>
+          <section class="level5" aria-labelledby="その他">
+            <h5 id="その他">その他</h5>
+            <ul>
+              <li>
+                set_led関数を使用することで、任意のLEDマトリクスに対応できます
+              </li>
+            </ul>
+          </section>
+        </section>
+      </section>
+    </section>
+  </body>
+</html>
