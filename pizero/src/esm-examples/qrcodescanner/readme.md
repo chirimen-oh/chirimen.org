@@ -19,16 +19,19 @@ npm install node-web-i2c @chirimen/qrcodescanner
 ## ファイル説明
 - qr_scanner_inkscape.svg
 SVG形式のQRスキャナー画像（Inkscape作成）
+対応APP：Inkscape（ver.1.4.2）
 
 - qr_scanner.svg
 SVG形式のQRスキャナー画像（Inkscape作成）
+対応APP：Inkscape（ver.1.4.2）
 
 - qr-scanner.fzpz 
 QRスキャナーパーツ（Fritzingパーツ）
+対応APP：Fritzing（ver.0.9.5）
 
 - raspi3_qr-scanner.fzz
 回路図ファイル（Fritzing）
-
+対応APP：Fritzing（ver.0.9.5）
 
 ## サンプルコード説明
 
@@ -39,7 +42,7 @@ new qrscanner(i2cPort, 0x4c);
 
 センサーの初期化
 ```
-await mma7660.init();
+await qrscanner.init();
 ```
 
 QRスキャナーのトリガーモードを設定
