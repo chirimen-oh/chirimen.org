@@ -16,21 +16,21 @@ npm install node-web-i2c @chirimen/qrcodescanner
 ```
 
 ## ファイル説明
-- qr_scanner_inkscape.svg. 
-SVG形式のQRスキャナー画像（Inkscape専用）. 
-対応APP：Inkscape（ver.1.4.2）. 
+- qr_scanner_inkscape.svg  
+SVG形式のQRスキャナー画像（Inkscape専用）  
+対応APP：Inkscape（ver.1.4.2） 
 
-- qr_scanner.svg. 
-SVG形式のQRスキャナー画像. 
-対応APP：Inkscape（ver.1.4.2）. 
+- qr_scanner.svg  
+SVG形式のQRスキャナー画像   
+対応APP：Inkscape（ver.1.4.2）   
 
-- qr-scanner.fzpz. 
-QRスキャナーパーツ（Fritzingパーツ）. 
-対応APP：Fritzing（ver.0.9.5）. 
+- qr-scanner.fzpz  
+QRスキャナーパーツ（Fritzingパーツ）   
+対応APP：Fritzing（ver.0.9.5）  
 
-- raspi3_qr-scanner.fzz. 
-回路図ファイル（Fritzing）. 
-対応APP：Fritzing（ver.0.9.5）. 
+- raspi3_qr-scanner.fzz  
+回路図ファイル（Fritzing）   
+対応APP：Fritzing（ver.0.9.5）   
 
 ## サンプルコード説明
 
@@ -45,14 +45,14 @@ await qrscanner.init();
 ```
 
 QRスキャナーのトリガーモードを設定
-引数 0 を指定することで「自動トリガーモード」になる. 
-スキャナーはQRコードを自動で読み取るようになる. 
+引数 0 を指定することで「自動トリガーモード」になる。  
+スキャナーはQRコードを自動で読み取るようになる。  
 ```. 
 await qrscanner.setTriggerMode(0);
 ```
 
 無限ループでQRコードをスキャンし続け、読み取ったデータを出力
-読み取りが成功すると、scanData() によりQRコードの中身（文字列など）が取得できる. 
+読み取りが成功すると、scanData() によりQRコードの中身（文字列など）が取得できる。  
 ```. 
 for (;;) {
   let data = await qrscanner.scanData();

@@ -1,7 +1,7 @@
 {
   "name": "qrcodescanner",
   "version": "1.0.0",
-  "description": "qrcodescanner Exampl",
+  "description": "qrcodescanner Example",
   "type":"module",
   "main": "main.js",
   "scripts": {
