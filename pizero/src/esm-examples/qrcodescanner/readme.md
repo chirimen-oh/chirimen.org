@@ -18,11 +18,11 @@ npm install node-web-i2c @chirimen/qrcodescanner
 
 ## ファイル説明
 - qr_scanner_inkscape.svg
-SVG形式のQRスキャナー画像（Inkscape作成）
+SVG形式のQRスキャナー画像（Inkscape専用）
 対応APP：Inkscape（ver.1.4.2）
 
 - qr_scanner.svg
-SVG形式のQRスキャナー画像（Inkscape作成）
+SVG形式のQRスキャナー画像
 対応APP：Inkscape（ver.1.4.2）
 
 - qr-scanner.fzpz 
@@ -37,7 +37,7 @@ QRスキャナーパーツ（Fritzingパーツ）
 
 qrcodescannerのアドレスの0x21でインスタンスを作成
 ```
-new qrscanner(i2cPort, 0x4c);
+new qrscanner(i2cPort, 0x21);
 ```
 
 センサーの初期化
@@ -65,7 +65,7 @@ for (;;) {
 
 ## 参考URL
 - 本サンプルコードで使用しているドライバ  
-[@chirimen/mcp9808](https://www.jsdelivr.com/package/npm/@chirimen/)
+[@chirimen/qrcodescanner](https://www.jsdelivr.com/package/npm/@chirimen/qrcode/qrcodescanner)
 
 - センサの製品ページ  
 https://www.switch-science.com/products/9508?srsltid=AfmBOopbrnp08RCuDrqGBE22G5KYgmDxnOLl-98YpX7ZHgPTBRSBspYv
