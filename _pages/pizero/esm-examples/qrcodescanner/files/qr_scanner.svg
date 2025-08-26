@@ -1,0 +1,491 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Fritzing (http://www.fritzing.org/) -->
+
+<svg
+   version="1.2"
+   x="0in"
+   y="0in"
+   width="2.2681785in"
+   height="0.93487275in"
+   viewBox="0 0 163.30884 67.310838"
+   id="svg12"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs12">
+    <rect
+       x="44.089779"
+       y="31.190147"
+       width="36.773567"
+       height="23.87394"
+       id="rect49-6" />
+    <rect
+       x="49.577351"
+       y="31.891863"
+       width="30.152306"
+       height="20.584747"
+       id="rect50-6" />
+    <rect
+       x="49.867275"
+       y="35.950825"
+       width="30.442232"
+       height="14.786227"
+       id="rect52-7" />
+  </defs>
+  <g
+     partID="58080"
+     id="g12"
+     transform="translate(-4.6312631,3.1843622)">
+    <path
+       d="m 4.4499754,4.8879898 c 0,-1.2563126 0.968909,-2.25 2.1938887,-2.25 h 39.2462319 11.62761 4.387777 8.848685 42.025162 c 1.22499,0 2.22375,0.9940587 2.19389,2.25 0,0 -0.0647,28.5378882 -0.0647,31.0176132 0,2.479725 0.0647,21.157387 0.0647,21.157387 0,1.256312 -0.9689,2.249999 -2.19389,2.249999 -6.03504,-0.135161 -39.246236,0 -39.246236,0 H 6.6438641 c -1.2249822,0 -2.1938887,-0.993679 -2.1938887,-2.249999 z"
+       fill="#274a88"
+       id="rect2992"
+       style="fill:#808080;stroke-width:1.23432" />
+    <path
+       d="m 86.99195,56.864756 v 3.298113"
+       fill="none"
+       stroke="#000000"
+       stroke-miterlimit="10"
+       style="stroke-miterlimit:10"
+       stroke-width="0.035084"
+       id="path3809" />
+    <path
+       d="M 34.744325,56.864756 H 55.8797"
+       fill="none"
+       stroke="#000000"
+       stroke-miterlimit="10"
+       style="stroke-miterlimit:10"
+       stroke-width="0.035084"
+       id="path3811" />
+    <path
+       d="m 86.99195,61.081231 v 0.0801"
+       fill="none"
+       stroke="#000000"
+       stroke-miterlimit="10"
+       style="stroke-miterlimit:10"
+       stroke-width="0.035084"
+       id="path3817" />
+    <path
+       d="m 86.99195,60.992681 v 0.0886"
+       fill="none"
+       stroke="#000000"
+       stroke-miterlimit="10"
+       style="stroke-miterlimit:10"
+       stroke-width="0.035084"
+       id="path3819" />
+    <path
+       d="m 86.99195,61.337731 v 0.0342"
+       fill="none"
+       stroke="#000000"
+       stroke-miterlimit="10"
+       style="stroke-miterlimit:10"
+       stroke-width="0.035084"
+       id="path3821" />
+    <path
+       d="m 86.99195,61.161293 v 0.0702"
+       fill="none"
+       stroke="#000000"
+       stroke-miterlimit="10"
+       style="stroke-miterlimit:10"
+       stroke-width="0.035084"
+       id="path3823" />
+    <path
+       d="m 86.99195,61.392743 v 0.007"
+       fill="none"
+       stroke="#000000"
+       stroke-miterlimit="10"
+       style="stroke-miterlimit:10"
+       stroke-width="0.035084"
+       id="path3825" />
+    <path
+       d="m 86.99195,61.290644 v 0.0471"
+       fill="none"
+       stroke="#000000"
+       stroke-miterlimit="10"
+       style="stroke-miterlimit:10"
+       stroke-width="0.035084"
+       id="path3827" />
+    <path
+       d="m 86.99195,61.231493 v 0.0592"
+       fill="none"
+       stroke="#000000"
+       stroke-miterlimit="10"
+       style="stroke-miterlimit:10"
+       stroke-width="0.035084"
+       id="path3829" />
+    <path
+       d="m 86.99195,61.371968 v 0.0208"
+       fill="none"
+       stroke="#000000"
+       stroke-miterlimit="10"
+       style="stroke-miterlimit:10"
+       stroke-width="0.035084"
+       id="path3831" />
+    <path
+       d="m 55.8797,61.081231 v 0.0801"
+       fill="none"
+       stroke="#000000"
+       stroke-miterlimit="10"
+       style="stroke-miterlimit:10"
+       stroke-width="0.035084"
+       id="path3833" />
+    <path
+       d="m 55.8797,61.392743 v 0.007"
+       fill="none"
+       stroke="#000000"
+       stroke-miterlimit="10"
+       style="stroke-miterlimit:10"
+       stroke-width="0.035084"
+       id="path3835" />
+    <path
+       d="m 52.74645,54.940881 h 5.0571"
+       fill="none"
+       stroke="#000000"
+       stroke-miterlimit="10"
+       style="stroke-miterlimit:10"
+       stroke-width="0.035084"
+       id="path3851" />
+    <path
+       d="m 57.803575,54.940881 v 3.298112"
+       fill="none"
+       stroke="#000000"
+       stroke-miterlimit="10"
+       style="stroke-miterlimit:10"
+       stroke-width="0.035084"
+       id="path3853" />
+    <path
+       d="M 85.068075,58.239006 V 54.940894"
+       fill="none"
+       stroke="#000000"
+       stroke-miterlimit="10"
+       style="stroke-miterlimit:10"
+       stroke-width="0.035084"
+       id="path3857" />
+    <path
+       d="M 90.1252,54.940881 V 48.069806"
+       fill="none"
+       stroke="#000000"
+       stroke-miterlimit="10"
+       style="stroke-miterlimit:10"
+       stroke-width="0.035084"
+       id="path3861" />
+    <path
+       d="m 57.803575,58.239006 v 1.9239"
+       fill="none"
+       stroke="#000000"
+       stroke-miterlimit="10"
+       style="stroke-miterlimit:10"
+       stroke-width="0.035084"
+       id="path3867" />
+    <path
+       d="m 92.89195,56.864756 h 15.23538"
+       fill="none"
+       stroke="#000000"
+       stroke-miterlimit="10"
+       style="stroke-miterlimit:10"
+       stroke-width="0.035084"
+       id="path4065" />
+    <path
+       d="m 55.8797,61.371968 v 0.0208"
+       fill="none"
+       stroke="#000000"
+       stroke-miterlimit="10"
+       style="stroke-miterlimit:10"
+       stroke-width="0.035084"
+       id="path4067" />
+    <path
+       d="m 55.8797,61.337731 v 0.0342"
+       fill="none"
+       stroke="#000000"
+       stroke-miterlimit="10"
+       style="stroke-miterlimit:10"
+       stroke-width="0.035084"
+       id="path4069" />
+    <path
+       d="m 86.99195,60.897181 v 0.0955"
+       fill="none"
+       stroke="#000000"
+       stroke-miterlimit="10"
+       style="stroke-miterlimit:10"
+       stroke-width="0.035084"
+       id="path4071" />
+    <path
+       d="m 55.8797,61.290644 v 0.0471"
+       fill="none"
+       stroke="#000000"
+       stroke-miterlimit="10"
+       style="stroke-miterlimit:10"
+       stroke-width="0.035084"
+       id="path4073" />
+    <path
+       d="m 55.8797,61.231493 v 0.0592"
+       fill="none"
+       stroke="#000000"
+       stroke-miterlimit="10"
+       style="stroke-miterlimit:10"
+       stroke-width="0.035084"
+       id="path4075" />
+    <path
+       d="m 86.99195,60.796343 v 0.10083"
+       fill="none"
+       stroke="#000000"
+       stroke-miterlimit="10"
+       style="stroke-miterlimit:10"
+       stroke-width="0.035084"
+       id="path4077" />
+    <path
+       d="m 55.8797,61.161293 v 0.0702"
+       fill="none"
+       stroke="#000000"
+       stroke-miterlimit="10"
+       style="stroke-miterlimit:10"
+       stroke-width="0.035084"
+       id="path4079" />
+    <path
+       d="m 86.99195,60.691943 v 0.10441"
+       fill="none"
+       stroke="#000000"
+       stroke-miterlimit="10"
+       style="stroke-miterlimit:10"
+       stroke-width="0.035084"
+       id="path4081" />
+    <path
+       d="m 55.8797,60.992681 v 0.0886"
+       fill="none"
+       stroke="#000000"
+       stroke-miterlimit="10"
+       style="stroke-miterlimit:10"
+       stroke-width="0.035084"
+       id="path4083" />
+    <path
+       d="m 55.8797,60.992681 v -0.0955"
+       fill="none"
+       stroke="#000000"
+       stroke-miterlimit="10"
+       style="stroke-miterlimit:10"
+       stroke-width="0.035084"
+       id="path4085" />
+    <path
+       d="m 55.8797,60.585668 v 0.10627"
+       fill="none"
+       stroke="#000000"
+       stroke-miterlimit="10"
+       style="stroke-miterlimit:10"
+       stroke-width="0.035084"
+       id="path4087" />
+    <path
+       d="m 55.8797,60.897181 v -0.10083"
+       fill="none"
+       stroke="#000000"
+       stroke-miterlimit="10"
+       style="stroke-miterlimit:10"
+       stroke-width="0.035084"
+       id="path4091" />
+    <path
+       d="m 55.8797,60.691943 v 0.10441"
+       fill="none"
+       stroke="#000000"
+       stroke-miterlimit="10"
+       style="stroke-miterlimit:10"
+       stroke-width="0.035084"
+       id="path4093" />
+    <g
+       id="g11537"
+       transform="matrix(0.85099,0,0,0.85099,-19.079387,29.416506)">
+      <g
+         transform="matrix(0.338282,0,0,-0.338282,42.7069,22.738)"
+         id="g1">
+        <path
+           d="M 0,0 C -7.9368,-6.8936 -6.4096,-19.1272 1.916,-24.688 -2.8856,-16.276 -3.2648,-8.0824 0,0"
+           fill="#ffffff"
+           style="fill-rule:evenodd"
+           id="path5843-0-5" />
+      </g>
+      <g
+         transform="matrix(0.338282,0,0,-0.338282,44.8943,22.738)"
+         id="g2">
+        <path
+           d="M 0,0 C 7.936,-6.8936 6.4096,-19.1272 -1.9144,-24.688 2.8848,-16.276 3.2664,-8.0824 0,0"
+           fill="#ffffff"
+           style="fill-rule:evenodd"
+           id="path5847-8-5" />
+      </g>
+      <g
+         transform="matrix(0.338282,0,0,-0.338282,38.6901,24.8975)"
+         id="g3">
+        <path
+           d="M 0,0 C -3.0928,-9.7088 4.1384,-20.1576 14.3976,-20.6504 7.4144,-16.9152 1.428,-9.5856 0,0"
+           fill="#ffffff"
+           style="fill-rule:evenodd"
+           id="path5851-3-8" />
+      </g>
+      <g
+         transform="matrix(0.338282,0,0,-0.338282,48.9119,24.8975)"
+         id="g4">
+        <path
+           d="M 0,0 C 3.092,-9.7088 -4.14,-20.1576 -14.3992,-20.6504 -7.4152,-16.9152 -1.4304,-9.5856 0,0"
+           fill="#ffffff"
+           style="fill-rule:evenodd"
+           id="path5855-7-8" />
+      </g>
+    </g>
+    <text
+       fill="#ffffff"
+       x="19.153456"
+       font-size="3.75px"
+       style="font-family:OCRA;stroke-width:1.25"
+       y="41.035851"
+       id="tspan11445">GND</text>
+    <text
+       fill="#ffffff"
+       x="19.442253"
+       font-size="3.75px"
+       style="font-family:OCRA;stroke-width:1.25"
+       y="35.427246"
+       id="tspan11445-6">VCC</text>
+    <text
+       fill="#ffffff"
+       x="19.297853"
+       font-size="3.75px"
+       style="font-family:OCRA;stroke-width:1.25"
+       y="29.963171"
+       id="tspan11445-1">SDA</text>
+    <text
+       fill="#ffffff"
+       x="19.153456"
+       font-size="3.75px"
+       style="font-family:OCRA;stroke-width:1.25"
+       y="24.643372"
+       id="tspan11445-7">SCL</text>
+    <rect
+       style="fill:#cccccc;stroke:#000000;stroke-width:0.792;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:25.6;stroke-dasharray:none;stroke-opacity:1"
+       id="rect14"
+       width="30.998755"
+       height="42.765903"
+       x="31.707741"
+       y="11.088949" />
+    <rect
+       style="fill:#ffffff;stroke:#000000;stroke-width:0.792;stroke-dasharray:none;stroke-opacity:1"
+       id="rect14-3"
+       width="30.998755"
+       height="42.765903"
+       x="66.71019"
+       y="11.002723" />
+    <rect
+       style="fill:#666666;stroke:#000000;stroke-width:0.792;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:25.6;stroke-dasharray:none;stroke-opacity:1"
+       id="rect15"
+       width="40.958374"
+       height="4.550931"
+       x="100.26465"
+       y="-2.2389684" />
+    <rect
+       style="fill:#808080;stroke:#000000;stroke-width:0.792;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:25.6;stroke-dasharray:none;stroke-opacity:1"
+       id="rect15-5"
+       width="40.958374"
+       height="4.550931"
+       x="99.501213"
+       y="59.728928" />
+    <rect
+       style="fill:#e3dbdb;stroke:#000000;stroke-width:0.792;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:25.6;stroke-dasharray:none;stroke-opacity:1"
+       id="rect16"
+       width="51.360508"
+       height="54.611172"
+       x="115.86784"
+       y="3.8289371" />
+    <text
+       xml:space="preserve"
+       transform="scale(0.75)"
+       id="text48"
+       style="text-align:start;writing-mode:lr-tb;direction:ltr;white-space:pre;shape-inside:url(#rect49-6);display:inline;fill:#e3dbdb;stroke:#000000;stroke-width:1.056;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:25.6;stroke-dasharray:none;stroke-opacity:1" />
+    <rect
+       style="fill:#ffaaaa;stroke:#000000;stroke-width:0.854603;stroke-dasharray:none;stroke-opacity:1"
+       id="rect12"
+       width="13.213209"
+       height="23.048437"
+       x="4.7427974"
+       y="19.936895" />
+    <rect
+       style="fill:#ffaaaa;stroke:#000000;stroke-width:0.713286;stroke-dasharray:none;stroke-opacity:1"
+       id="rect13"
+       width="13.2543"
+       height="4.9243283"
+       x="4.7723641"
+       y="-25.31745"
+       transform="scale(1,-1)" />
+    <path
+       id="rect13-8"
+       style="fill:#ffaaaa;stroke:#000000;stroke-width:0.70275;stroke-dasharray:none;stroke-opacity:1"
+       d="m 5.0262153,37.789662 v 4.934731 H 17.864386 v -4.934731 z" />
+    <rect
+       style="fill:#ffaaaa;stroke:#000000;stroke-width:0.748266;stroke-dasharray:none;stroke-opacity:1"
+       id="rect13-6"
+       width="6.118751"
+       height="11.738882"
+       x="11.634342"
+       y="-37.465458"
+       transform="scale(1,-1)" />
+    <text
+       xml:space="preserve"
+       transform="matrix(0.75,0,0,0.75,0.14439883,0)"
+       id="text49"
+       style="text-align:start;writing-mode:lr-tb;direction:ltr;white-space:pre;shape-inside:url(#rect50-6);display:inline;fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:1.056;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:25.6;stroke-dasharray:none;stroke-opacity:1"><tspan
+         x="49.578125"
+         y="63.424526"
+         id="tspan2"><tspan
+           dx="0 7.3945312 8.34375 5.0507812 9.3046875 4.7285156 5.1210938 3.2929688"
+           id="tspan1">TRIGtrig</tspan></tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:9px;text-align:start;writing-mode:lr-tb;direction:ltr;text-anchor:start;fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:0.792;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:25.6;stroke-dasharray:none;stroke-opacity:1"
+       x="44.503082"
+       y="24.571228"
+       id="text51"><tspan
+         id="tspan51"
+         style="stroke-width:0.792"
+         x="44.503082"
+         y="24.571228" /></text>
+    <text
+       xml:space="preserve"
+       transform="matrix(0.75,0,0,0.75,0.14439883,0)"
+       id="text52"
+       style="text-align:start;writing-mode:lr-tb;direction:ltr;white-space:pre;shape-inside:url(#rect52-7);display:inline;fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:1.056;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:25.6;stroke-dasharray:none;stroke-opacity:1" />
+    <text
+       xml:space="preserve"
+       style="font-size:9px;text-align:start;writing-mode:lr-tb;direction:ltr;text-anchor:start;white-space:pre;inline-size:45.3022;display:inline;fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:0.792;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:25.6;stroke-dasharray:none;stroke-opacity:1"
+       x="42.763523"
+       y="30.007341"
+       id="text53"
+       transform="matrix(-0.02137263,0.99995479,-0.99917964,-0.04049757,74.996999,-20.51267)"><tspan
+         x="42.763523"
+         y="30.007341"
+         id="tspan3">TRIG</tspan></text>
+    <path
+       id="connector3pin"
+       d="m 11.512733,22.622592 v 1.803677 H 9.5779768 v -1.803677 z"
+       fill="#ffe500"
+       stroke="#000000"
+       stroke-linejoin="round"
+       stroke-width="0.116095" />
+    <path
+       id="connector2pin"
+       d="m 9.2987153,29.827924 v -1.803677 h 1.9347557 v 1.803677 z"
+       fill="#ffe500"
+       stroke="#000000"
+       stroke-linejoin="round"
+       stroke-width="0.116095" />
+    <path
+       id="connector1pin"
+       d="M 11.233472,34.319266 H 9.2987153 V 32.51559 h 1.9347567 z"
+       fill="#ffe500"
+       stroke="#000000"
+       stroke-linejoin="round"
+       stroke-width="0.116095" />
+    <path
+       id="connector0pin"
+       d="M 11.139948,40.36055 H 9.205192 v -1.803677 h 1.934756 z"
+       fill="#ffe500"
+       stroke="#000000"
+       stroke-linejoin="round"
+       stroke-width="0.116095" />
+  </g>
+</svg>
