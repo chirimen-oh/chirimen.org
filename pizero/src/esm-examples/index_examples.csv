@@ -45,6 +45,7 @@ neopixel-i2c,NEOPIXEL LED,<a href="https://learn.adafruit.com/adafruit-neopixel-
 paj7620,ジェスチャーセンサ,I2C接続のジェスチャーセンサーPAJ7620（センサーの前で手などを動かすと動かした方向などのモーションを検出するセンサー）の検出結果を表示します。Grove-Gestureもしくはジェネリック品
 pca9685,サーボモータ,I2C接続のPWMドライバーPCA9685経由でサーボモーターを駆動します。（RaspberryからPWMドライバーをI2C接続し、 PWMドライバとサーボモータ、外部電源を接続します。詳細は回路図を参照ください）
 pcf8591,電圧測定・電圧出力,I2C接続の8ビットAD、DAコンバータPCF8591を使います。
+qrcodescanner,QRコードを読み取ることができるデバイスです。（STM32F030）I2C を選択して使用してください
 s11059,カラーセンサ,I2C接続のRGBカラーセンサーで取得した値を表示します。
 scd40,CO2センサ,I2C接続のCO2センサーSCD40の値を表示します。
 #seesaw,多機能I/F,I2C接続の多機能インターフェースボードseesawを使用します。adafruitのseesawはデジタル入出力、アナログ入力、PWM出力、NeopixelLEDドライブ等の機能を持つ多目的なインターフェースボードです。このサンプルではNeopixelLED以外の機能を動かしています。
