@@ -59,6 +59,7 @@
         "@chirimen/veml6070": "latest",
         "@chirimen/vl53l0x": "latest",
         "@chirimen/vl53l1x": "latest",
+        "@chirimen/vl6180x": "latest",
         "node-web-gpio": "latest",
         "node-web-i2c": "latest",
         "pi-camera-connect": "^0.3.4",
