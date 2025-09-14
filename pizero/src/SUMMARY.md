@@ -83,7 +83,7 @@
     - [Webhooks](./chapter_10-6-8.md)
     - [IoTクラウドサービス](./chapter_10-6-9.md)
 - [重要な情報のリンク](./SUMMARY.md)
-  - **[PiZeroターミナル](https://chirimen.org/PiZeroWebSerialConsole/PiZeroWebSerialConsole.html)** (Web Serial RPiZero Terminal)
+  - **[PiZeroターミナル(Web Serial RPiZero Terminal)](https://chirimen.org/PiZeroWebSerialConsole/PiZeroWebSerialConsole.html)** 
   - **[piZeroサンプルプログラム集](https://tutorial.chirimen.org/pizero/esm-examples/)**
   - [CHIRIMEN 対応全デバイスリスト](https://tutorial.chirimen.org/partslist)
-  - [良く使う情報へのリンク](./chapter_1-4.md)(再掲)
+  - [良く使う情報へのリンク(再掲)](./chapter_1-4.md)
