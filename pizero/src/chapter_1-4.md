@@ -1,6 +1,12 @@
 # 1.4 良く使う情報へのリンク
 CHIRIMEN PiZero 版で良く使われるリンクをまとめたページです。
 
+## **重要な情報のリンク**
+  - **[PiZeroターミナル(Web Serial RPiZero Terminal)](https://chirimen.org/PiZeroWebSerialConsole/PiZeroWebSerialConsole.html)**
+  - **[piZeroサンプルプログラム集](https://tutorial.chirimen.org/pizero/esm-examples/)**
+  - **[CHIRIMEN 対応全デバイスリスト](https://tutorial.chirimen.org/partslist)**
+  - **[Raspnberry PiZeroのピン配置図(Raspberry Piと共通)](https://tutorial.chirimen.org/pizero/chapter_10-4?highlight=%E3%83%94%E3%83%B3#raspberry-pi%E3%81%AE%E3%83%94%E3%83%B3%E9%85%8D%E7%BD%AE%E5%9B%B3)**
+
 ## CHIRIMEN に関するリンク集
 - [Web Serial RPiZero Terminal](https://chirimen.org/PiZeroWebSerialConsole/PiZeroWebSerialConsole.html)
 - [CHIRIMEN with Node.js / RPi Zero Examples](https://tutorial.chirimen.org/pizero/esm-examples/)
