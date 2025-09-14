@@ -86,4 +86,3 @@
   - [PiZeroターミナル(Web Serial RPiZero Terminal)](https://chirimen.org/PiZeroWebSerialConsole/PiZeroWebSerialConsole.html)
   - [piZeroサンプルプログラム集](https://tutorial.chirimen.org/pizero/esm-examples/)
   - [CHIRIMEN 対応全デバイスリスト](https://tutorial.chirimen.org/partslist)
-  - [良く使う情報へのリンク(再掲)](./chapter_1-4.md)
