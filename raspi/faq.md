@@ -90,7 +90,7 @@ CHIRIMEN Raspi は特定の企業・法人によって開発されているも�
 
 具体的には以下の方法でコミュニティ内でのコミュニケーション・問い合わせ・相互サポートが可能です:
 
-- [CHIRIMEN コミュニティ Slack](https://chirimen-oh.slack.com/) - [Slack への参加用リンク](https://docs.google.com/forms/d/1GzkGfCcsRn4A6-uHPsLu2LszkqKcNJ3sFI4XRishHsE/viewform)
+- [CHIRIMEN コミュニティ Slack](https://chirimen-oh.slack.com/) - [Slack への参加用リンク](https://join.slack.com/t/chirimen-oh/shared_invite/zt-3dvgmnu1x-LxCW09XdSXYGoLVKfnXZww)
 - [CHIRIMEN コミュニティの GitHub](https://github.com/chirimen-oh/) 配下の各リポジトリの Issues
 - コミュニティに参加しているメンバーに個人的に問い合わせる
 
