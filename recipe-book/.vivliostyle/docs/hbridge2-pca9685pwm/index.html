@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8" />
+    <title>PCA9685 16 チャンネル PWM ドライバ</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="../../themes/node_modules/@vivliostyle/theme-techbook/theme.css"
+    />
+    <link rel="stylesheet" type="text/css" href="../../custom.css" />
+  </head>
+  <body>
+    <section
+      class="level3"
+      aria-labelledby="pca9685-16-チャンネル-pwm-ドライバ"
+    >
+      <h3 id="pca9685-16-チャンネル-pwm-ドライバ">
+        PCA9685 16 チャンネル PWM ドライバ
+      </h3>
+      <section class="level4" aria-labelledby="概要">
+        <h4 id="概要">概要</h4>
+        <ul>
+          <li>
+            PCA9685 16 チャンネルPWM ドライバーと HBridge
+            モータードライバーで、DC モーターを正転・逆転・速度コントロール
+          </li>
+        </ul>
+      </section>
+      <section class="level4" aria-labelledby="配線図">
+        <h4 id="配線図">配線図</h4>
+        <p>
+          <img
+            src="./schematic.png"
+            title="schematic"
+            width="293px"
+            height="188px"
+          />
+        </p>
+      </section>
+      <section
+        class="level4"
+        aria-labelledby="chirimen-用ドライバのインストール"
+      >
+        <h4 id="chirimen-用ドライバのインストール">
+          CHIRIMEN 用ドライバのインストール
+        </h4>
+        <pre
+          class="language-shell"
+        ><code class="language-shell"><span class="token function">npm</span> i @chirimen/pca9685-pwm</code></pre>
+      </section>
+      <section class="level4" aria-labelledby="サンプルコード-mainjs">
+        <h4 id="サンプルコード-mainjs">サンプルコード (main.js)</h4>
+        <pre
+          class="language-javascript"
+        ><code class="language-javascript"><span class="token keyword module">import</span> <span class="token imports"><span class="token punctuation">{</span> requestI2CAccess <span class="token punctuation">}</span></span> <span class="token keyword module">from</span> <span class="token string">"./node_modules/node-web-i2c/index.js"</span><span class="token punctuation">;</span>
+<span class="token keyword module">import</span> <span class="token constant">PCA9685_PWM</span> <span class="token keyword module">from</span> <span class="token string">"@chirimen/pca9685-pwm"</span><span class="token punctuation">;</span>
+<span class="token keyword">const</span> <span class="token function-variable function">sleep</span> <span class="token operator">=</span> <span class="token parameter">msec</span> <span class="token arrow operator">=&gt;</span> <span class="token keyword">new</span> <span class="token class-name">Promise</span><span class="token punctuation">(</span><span class="token parameter">resolve</span> <span class="token arrow operator">=&gt;</span> <span class="token function">setTimeout</span><span class="token punctuation">(</span>resolve<span class="token punctuation">,</span> msec<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token keyword">let</span> pca9685pwm<span class="token punctuation">;</span>
+
+<span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token keyword">async</span> <span class="token keyword">function</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword control-flow">await</span> <span class="token function">init</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token keyword">let</span> direction <span class="token operator">=</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">;</span>
+    <span class="token keyword control-flow">for</span> <span class="token punctuation">(</span><span class="token punctuation">;</span> <span class="token punctuation">;</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        direction <span class="token operator">=</span> <span class="token punctuation">(</span>direction <span class="token operator">==</span> <span class="token number">1</span><span class="token punctuation">)</span> <span class="token operator">?</span> <span class="token operator">-</span><span class="token number">1</span> <span class="token operator">:</span> <span class="token number">1</span><span class="token punctuation">;</span> <span class="token comment">// 三項演算子でdirectionを反転</span>
+        <span class="token console class-name">console</span><span class="token punctuation">.</span><span class="token method function property-access">log</span><span class="token punctuation">(</span><span class="token string">"direction:"</span><span class="token punctuation">,</span> direction<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token console class-name">console</span><span class="token punctuation">.</span><span class="token method function property-access">log</span><span class="token punctuation">(</span><span class="token string">"speedUp"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword control-flow">for</span> <span class="token punctuation">(</span><span class="token keyword">let</span> speed <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> speed <span class="token operator">&lt;=</span> <span class="token number">1</span><span class="token punctuation">;</span> speed <span class="token operator">+=</span> <span class="token number">0.1</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token keyword control-flow">await</span> <span class="token function">setMotor</span><span class="token punctuation">(</span>direction<span class="token punctuation">,</span> speed<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token keyword control-flow">await</span> <span class="token function">sleep</span><span class="token punctuation">(</span><span class="token number">200</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+        <span class="token keyword control-flow">await</span> <span class="token function">sleep</span><span class="token punctuation">(</span><span class="token number">500</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token console class-name">console</span><span class="token punctuation">.</span><span class="token method function property-access">log</span><span class="token punctuation">(</span><span class="token string">"speedDown"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword control-flow">for</span> <span class="token punctuation">(</span><span class="token keyword">let</span> speed <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span> speed <span class="token operator">&gt;=</span> <span class="token number">0</span><span class="token punctuation">;</span> speed <span class="token operator">-=</span> <span class="token number">0.1</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token keyword control-flow">await</span> <span class="token function">setMotor</span><span class="token punctuation">(</span>direction<span class="token punctuation">,</span> speed<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token keyword control-flow">await</span> <span class="token function">sleep</span><span class="token punctuation">(</span><span class="token number">200</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+        <span class="token console class-name">console</span><span class="token punctuation">.</span><span class="token method function property-access">log</span><span class="token punctuation">(</span><span class="token string">"stop"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword control-flow">await</span> <span class="token function">setMotor</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword control-flow">await</span> <span class="token function">sleep</span><span class="token punctuation">(</span><span class="token number">1000</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">async</span> <span class="token keyword">function</span> <span class="token function">init</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">const</span> i2cAccess <span class="token operator">=</span> <span class="token keyword control-flow">await</span> <span class="token function">requestI2CAccess</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">const</span> port <span class="token operator">=</span> i2cAccess<span class="token punctuation">.</span><span class="token property-access">ports</span><span class="token punctuation">.</span><span class="token method function property-access">get</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    pca9685pwm <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">PCA9685_PWM</span><span class="token punctuation">(</span>port<span class="token punctuation">,</span> <span class="token number">0x40</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword control-flow">await</span> pca9685pwm<span class="token punctuation">.</span><span class="token method function property-access">init</span><span class="token punctuation">(</span><span class="token number">100</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">async</span> <span class="token keyword">function</span> <span class="token function">setMotor</span><span class="token punctuation">(</span><span class="token parameter">direction<span class="token punctuation">,</span> speed</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment">// direction: モーターの回転方向 正転:1,逆転:-1,停止:0</span>
+    <span class="token comment">// speed: モーターのスピード 0:停止....1.0:全速</span>
+    <span class="token keyword control-flow">if</span> <span class="token punctuation">(</span>direction <span class="token operator">==</span> <span class="token number">1</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword control-flow">await</span> pca9685pwm<span class="token punctuation">.</span><span class="token method function property-access">setPWM</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword control-flow">await</span> pca9685pwm<span class="token punctuation">.</span><span class="token method function property-access">setPWM</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> speed<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span> <span class="token keyword control-flow">else</span> <span class="token keyword control-flow">if</span> <span class="token punctuation">(</span>direction <span class="token operator">==</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword control-flow">await</span> pca9685pwm<span class="token punctuation">.</span><span class="token method function property-access">setPWM</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword control-flow">await</span> pca9685pwm<span class="token punctuation">.</span><span class="token method function property-access">setPWM</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> speed<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span> <span class="token keyword control-flow">else</span> <span class="token punctuation">{</span>
+        <span class="token keyword control-flow">await</span> pca9685pwm<span class="token punctuation">.</span><span class="token method function property-access">setPWM</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword control-flow">await</span> pca9685pwm<span class="token punctuation">.</span><span class="token method function property-access">setPWM</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre>
+      </section>
+      <section class="level4" aria-labelledby="特記事項">
+        <h4 id="特記事項">特記事項</h4>
+        <ul>
+          <li>
+            HBridge コントローラは L298N 以外にも L9110S、MX1508
+            等も同様に使用できます。
+          </li>
+          <li>
+            ただし、これらのドライバでは +5V と +12V 端子の代わりに、一個の VCC
+            や電源 (+) 端子だけのものが多いので、モーター電源はそこに接続
+          </li>
+        </ul>
+      </section>
+    </section>
+  </body>
+</html>
