@@ -10,4 +10,4 @@
 
 初めてコミュニティに参加希望の方はこちらのフォームから登録してください。
 
-- [コミュニティ Slack 自己登録フォーム](https://join.slack.com/t/chirimen-oh/shared_invite/zt-3dvgmnu1x-LxCW09XdSXYGoLVKfnXZww)
+- [コミュニティ Slack 招待リンク](https://join.slack.com/t/chirimen-oh/shared_invite/zt-3dvgmnu1x-LxCW09XdSXYGoLVKfnXZww)
