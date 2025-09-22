@@ -13,7 +13,7 @@ const repos = [
 ];
 
 export default {
-  async fetch(request) {
+  async fetch(request, env) {
     const url = new URL(request.url);
 
     for (const repo of repos) {
@@ -23,6 +23,6 @@ export default {
       }
     }
 
-    return fetch(request);
+    return env.ASSETS.fetch(request);
   },
 };
