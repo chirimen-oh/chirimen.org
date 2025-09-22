@@ -19,6 +19,8 @@ include:
   - _pages
   # https://developers.cloudflare.com/pages/configuration/redirects/
   - _redirects
+  # https://developers.cloudflare.com/workers/
+  - _worker.js
 
 # configs for GitHub Pages defult plugins
 # https://help.github.com/en/articles/configuring-jekyll-plugins
