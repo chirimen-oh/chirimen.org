@@ -1,3 +1,5 @@
+const allowedScripts = ["https://chirimen.org/remote-connection/js/*.js"];
+
 const repos = [
   "chirimen",
   "chirimen-drivers",
@@ -15,6 +17,14 @@ const repos = [
 export default {
   async fetch(request, env) {
     const url = new URL(request.url);
+
+    for (const script of allowedScripts) {
+      const pattern = new URLPattern(script);
+      if (pattern.test(url.href)) {
+        url.hostname = "www.chirimen.org";
+        return await fetch(url);
+      }
+    }
 
     for (const repo of repos) {
       if (url.pathname === `/${repo}` || url.pathname.startsWith(`/${repo}/`)) {
