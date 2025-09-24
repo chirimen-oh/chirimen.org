@@ -12,10 +12,10 @@ await port.export("out"); // ポートを出力モードに設定
 
 while (true) { // 無限に繰り返す
   // ポートの出力値を 0/1 交互に変更
-  await port.write(1);     // LED を点灯
-  await sleep(1000); // 1000ms 待機
-  await port.write(0);     // LED を点灯
-  await sleep(1000); // 1000ms 待機
+  await port.write(1); // LED を点灯
+  await sleep(1000);   // 1000ms 待機
+  await port.write(0); // LED を点灯
+  await sleep(1000);   // 1000ms 待機
 }
 ```
 
