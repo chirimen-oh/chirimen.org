@@ -5,19 +5,18 @@
 CHIRIMEN とは、Web ブラウザや Node.js の JavaScript からハードウェア制御が可能なオープンソースのプロトタイピング環境です。デジタルのソフトとフィジカルなハードを連携するデバイスを JavaScript だけで容易に実現できます。例えば L チカコードはこの通りです:
 
 ```javascript
-window.onload = async function() {
-  var gpioAccess = await navigator.requestGPIOAccess(); // GPIO を操作する
-  var port = gpioAccess.ports.get(26); // 26 番ポートを操作する
-  var v = 0;
+const gpioAccess = await requestGPIOAccess(); // GPIO を操作する
+const port = gpioAccess.ports.get(26); // 26 番ポートを操作する
 
-  await port.export("out"); // ポートを出力モードに設定
-  for (;;) {
-    // 無限に繰り返す
-    v = v === 0 ? 1 : 0; // ポートの出力値を 0/1 交互に変更
-    port.write(v); // LED を ON/OFF する
-    await sleep(1000); // 繰り返し毎に 1000ms 待機
-  }
-};
+await port.export("out"); // ポートを出力モードに設定
+
+while (true) { // 無限に繰り返す
+  // ポートの出力値を 0/1 交互に変更
+  await port.write(1);     // LED を点灯
+  await sleep(1000); // 1000ms 待機
+  await port.write(0);     // LED を点灯
+  await sleep(1000); // 1000ms 待機
+}
 ```
 
 ブラウザだけで[サンプルコードの確認・編集・フォークして公開](https://r.chirimen.org/csb-gpio-blink)まで簡単にでき、Web 開発の知識と環境がそのまま活かせる CHIRIMEN は、ハードとソフトを融合させたプロトタイピングや、[最も人気で実践的なプログラミング言語](https://octoverse.github.com/#top-languages) JavaScript と IoT を初心者でも楽しく学ぶのに最適です。詳しくは [CHIRIMEN について](about.md) ページをご覧ください。
