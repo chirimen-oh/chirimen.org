@@ -5,7 +5,7 @@ window.showAngle = showAngle;
 window.sendAngle = sendAngle;
 
 var channel;
-onload = async () => {
+onload = async function () {
   // webSocketリレーの初期化
   var relay = RelayServer("chirimentest", "chirimenSocket");
   channel = await relay.subscribe("chirimenPWMHB");
