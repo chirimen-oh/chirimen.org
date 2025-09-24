@@ -119,7 +119,7 @@ CHIRIMEN環境のために必要なライブラリや、[I2Cデバイスのド�
 * ウェブアプリでのModule有効化：HTMLのscript要素でjavascriptを読み込むとき、ttype="module"プロパティを設定する。
   * `<script type="module" src="main.js"></script>`
 * import文で外部のライブラリを読み込む。
-  *  `import {RelayServer} from "https://chirimen.org/remote-connection/js/beta/RelayServer.js";`
+  *  `import {RelayServer} from "https://www.chirimen.org/remote-connection/js/beta/RelayServer.js";`
 *  importされるライブラリ側には、importできるオブジェクトを指定するexport文を記述する。
   * `export {RelayServer};`
 * [例を見てみる](https://codesandbox.io/s/github/chirimen-oh/chirimen.org/tree/master/pizero/esm-examples/remote_gpio_led/pc)
@@ -581,7 +581,7 @@ var humidity = 100 * (mdata[3] * 256 + mdata[4]) / 65535.0;
 
 一方、(あらかじめ用意されていれば)ウェブサーバにはURLでアクセスできます。そこで登場するのがrelayServerです。下図のようにrelayServer(Web Socket Relay Service)を介してwebAppsが通信します。
 
- ![Relay Server Configuration](https://chirimen.org/remote-connection/imgs/relay.png)
+ ![Relay Server Configuration](https://www.chirimen.org/remote-connection/imgs/relay.png)
 
 relayServerは特定のウェブサイトの固有名ではなく、「ウェブアプリ間でリアルタイム性の高いデータのやり取りを仲介する」という機能を持ったウェブサイトの抽象的な名称でpub/sub servicesと呼ばれることもあります。(SNSとかblogとかというのと同じです）
 
@@ -598,14 +598,14 @@ IoTにはrelayServerの機能を持つウェブサイトが必要になります
 
 今回はCHIRIMEN環境の試験用に、CHIRIMEN用に用意された検証用サービス(chirimentest)を使うことにしますが、いくつかある事業者間でサービスの内容に差異があります。サイトごとの差異は主に接続できる端末の管理と情報の取り扱いに関する機能になります。
 
-[relayServer.js](https://chirimen.org/remote-connection/)は、relayServerサービスによる差異を吸収し複数の事業者を自由に切り替えられ、webSocketの標準API仕様に沿った作法でwebApps(含Node.jsプログラム)間の通信を簡単に使えるようにするライブラリです。
+[relayServer.js](https://www.chirimen.org/remote-connection/)は、relayServerサービスによる差異を吸収し複数の事業者を自由に切り替えられ、webSocketの標準API仕様に沿った作法でwebApps(含Node.jsプログラム)間の通信を簡単に使えるようにするライブラリです。
 
 ##### プログラムの流れ
 ###### 初期化（受信側、送信側共通の処理
-[詳しくはこちらを参照](https://chirimen.org/remote-connection/#使用方法)
+[詳しくはこちらを参照](https://www.chirimen.org/remote-connection/#使用方法)
 
 ```javascript
-import {RelayServer} from "https://chirimen.org/remote-connection/js/beta/RelayServer.js";
+import {RelayServer} from "https://www.chirimen.org/remote-connection/js/beta/RelayServer.js";
 var relay = RelayServer("achex", "chirimenSocket" );
 ```
 
@@ -639,7 +639,7 @@ var relay = RelayServer("achex", "chirimenSocket" );
 
 #### セキュリティを考えよう
 
-relayServerを使うということは、情報をインターネット上のウェブサイトに送信することになります。すると このウェブサイトがその情報をどのように取り扱うのかを理解しておく必要があります。achexは無料で使え　しかもユーザ登録も不要です。つまりこのサイトに送信した情報は誰でも見ることができてしまうということです。（ただし、トークンとチャンネルを知る必要がある。これがachexのセキュリティレベル）今回は個人情報などのセキュリティを考慮する必要がない、チュートリアルで使うセンシングデータを送るだけですので問題ありませんが、セキュリティを考慮する必要がある多くの用途ではそのセキュリティ基準に適合したサイトを契約して利用する、もしくは自分でそのようなサイトを立てるなどの必要が出てきます。relayServer.jsでも[いくつかの商用サイト](https://chirimen.org/remote-connection/#%E3%82%B5%E3%83%BC%E3%83%93%E3%82%B9%E3%81%94%E3%81%A8%E3%81%AE%E5%88%A9%E7%94%A8%E6%96%B9%E6%B3%95)の比較と使用方法が記載されているので参考にしてください。
+relayServerを使うということは、情報をインターネット上のウェブサイトに送信することになります。すると このウェブサイトがその情報をどのように取り扱うのかを理解しておく必要があります。achexは無料で使え　しかもユーザ登録も不要です。つまりこのサイトに送信した情報は誰でも見ることができてしまうということです。（ただし、トークンとチャンネルを知る必要がある。これがachexのセキュリティレベル）今回は個人情報などのセキュリティを考慮する必要がない、チュートリアルで使うセンシングデータを送るだけですので問題ありませんが、セキュリティを考慮する必要がある多くの用途ではそのセキュリティ基準に適合したサイトを契約して利用する、もしくは自分でそのようなサイトを立てるなどの必要が出てきます。relayServer.jsでも[いくつかの商用サイト](https://www.chirimen.org/remote-connection/#%E3%82%B5%E3%83%BC%E3%83%93%E3%82%B9%E3%81%94%E3%81%A8%E3%81%AE%E5%88%A9%E7%94%A8%E6%96%B9%E6%B3%95)の比較と使用方法が記載されているので参考にしてください。
 
 #### Node.jsでの利用
 

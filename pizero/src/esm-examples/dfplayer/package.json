@@ -4,7 +4,7 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "prepare": "curl -sSfLO https://chirimen.org/remote-connection/js/beta/RelayServer.js"
+    "prepare": "curl -sSfLO https://www.chirimen.org/remote-connection/js/beta/RelayServer.js"
   },
   "dependencies": {
     "@chirimen/ads1015": "latest",

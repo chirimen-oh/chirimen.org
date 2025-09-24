@@ -1,9 +1,9 @@
 # 10.6.5 プログラムの流れ
 ## 初期化（受信側、送信側共通の処理
-[詳しくはこちらを参照](https://chirimen.org/remote-connection/#使用方法)
+[詳しくはこちらを参照](https://www.chirimen.org/remote-connection/#使用方法)
 
 ```javascript
-import {RelayServer} from "https://chirimen.org/remote-connection/js/beta/RelayServer.js";
+import {RelayServer} from "https://www.chirimen.org/remote-connection/js/beta/RelayServer.js";
 var relay = RelayServer("achex", "chirimenSocket" );
 ```
 

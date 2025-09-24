@@ -57,7 +57,7 @@ CHIRIMEN with micro:bitはウェブブラウザを使うのに、実はウェブ
 
 一方、(あらかじめ用意されていれば)ウェブサーバにはURLでアクセスできます。そこで登場するのがrelayServerです。下図のようにrelayServer(Web Socket Relay Service)を介してwebAppsが通信します。
 
- ![](https://chirimen.org/remote-connection/imgs/relay.png)
+ ![](https://www.chirimen.org/remote-connection/imgs/relay.png)
 
 relayServerは特定のウェブサイトの固有名ではなく、「ウェブアプリ間でリアルタイム性の高いデータのやり取りを仲介する」という機能を持ったウェブサイトの抽象的な名称です。(SNSとかblogとかというのと同じです）
 
@@ -68,13 +68,13 @@ relayServerはトークン(ユーザーやシステムごとに割り当てら�
 
 ### relayServer.js
 
-relayServerの機能は他にもいろいろなサイトが提供していますが、リアルタイム性の高い情報のやり取りのために[WebSocket](https://ja.wikipedia.org/wiki/WebSocket)というブラウザがサポートする標準機能がよく使われます。サイトごとに差異は主に接続できる端末の管理と情報の取り扱いに関する機能になります。そこでrelayServerサイトによる差異を吸収し自由に切り替えられ、webSocketのAPI仕様に沿った作法でwebApps間の通信を簡単に使えるようにするライブラリ[relayServer.js](https://chirimen.org/remote-connection/)を用意しましたので、それを使ってシステムを組むことにします。
+relayServerの機能は他にもいろいろなサイトが提供していますが、リアルタイム性の高い情報のやり取りのために[WebSocket](https://ja.wikipedia.org/wiki/WebSocket)というブラウザがサポートする標準機能がよく使われます。サイトごとに差異は主に接続できる端末の管理と情報の取り扱いに関する機能になります。そこでrelayServerサイトによる差異を吸収し自由に切り替えられ、webSocketのAPI仕様に沿った作法でwebApps間の通信を簡単に使えるようにするライブラリ[relayServer.js](https://www.chirimen.org/remote-connection/)を用意しましたので、それを使ってシステムを組むことにします。
 
 
 
 ### セキュリティを考えよう
 
-relayServerを使うということは、情報をインターネット上のウェブサイトに送信することになります。すると このウェブサイトがその情報をどのように取り扱うのかを理解しておく必要があります。achexは無料で使えしかもユーザ登録も不要です。つまりこのサイトに送信した情報は誰でも見ることができてしまうということです。今回は個人情報などのセキュリティを考慮する必要がない、チュートリアルで使うセンシングデータを送るだけですので問題ありませんが、セキュリティを考慮する必要がある多くの用途ではそのセキュリティ基準に適合したサイトを契約して利用する、もしくは自分でそういうサイトを立てるなどの必要が出てきます。relayServer.jsでも[いくつかの商用サイト](https://chirimen.org/remote-connection/#%E3%82%B5%E3%83%BC%E3%83%93%E3%82%B9%E3%81%94%E3%81%A8%E3%81%AE%E5%88%A9%E7%94%A8%E6%96%B9%E6%B3%95)の比較と使用方法が記載されているので参考にしてください。
+relayServerを使うということは、情報をインターネット上のウェブサイトに送信することになります。すると このウェブサイトがその情報をどのように取り扱うのかを理解しておく必要があります。achexは無料で使えしかもユーザ登録も不要です。つまりこのサイトに送信した情報は誰でも見ることができてしまうということです。今回は個人情報などのセキュリティを考慮する必要がない、チュートリアルで使うセンシングデータを送るだけですので問題ありませんが、セキュリティを考慮する必要がある多くの用途ではそのセキュリティ基準に適合したサイトを契約して利用する、もしくは自分でそういうサイトを立てるなどの必要が出てきます。relayServer.jsでも[いくつかの商用サイト](https://www.chirimen.org/remote-connection/#%E3%82%B5%E3%83%BC%E3%83%93%E3%82%B9%E3%81%94%E3%81%A8%E3%81%AE%E5%88%A9%E7%94%A8%E6%96%B9%E6%B3%95)の比較と使用方法が記載されているので参考にしてください。
 
 ## 動かしてみる
 
@@ -116,7 +116,7 @@ micro:bitをBluetooth接続する引き金になるボタン。`connect()`を呼
   * `// chirimen with micro:bitの初期化`
 
     これまで同様なので省略します
-  * `// webSocketリレーの初期化` ([詳しくはこちらを参照](https://chirimen.org/remote-connection/#使用方法))
+  * `// webSocketリレーの初期化` ([詳しくはこちらを参照](https://www.chirimen.org/remote-connection/#使用方法))
 
     * `var relay = RelayServer("achex", "chirimenSocket" );`
 

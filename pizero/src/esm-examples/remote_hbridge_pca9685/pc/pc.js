@@ -1,5 +1,5 @@
 // Remote Example1 - controller
-import { RelayServer } from "https://chirimen.org/remote-connection/js/beta/RelayServer.js";
+import { RelayServer } from "https://www.chirimen.org/remote-connection/js/beta/RelayServer.js";
 
 window.showAngle = showAngle;
 window.sendAngle = sendAngle;

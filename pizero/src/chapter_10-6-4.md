@@ -4,4 +4,4 @@ IoT には relayServer の機能を持つウェブサイトが必要になりま
 
 今回は CHIRIMEN環境の試験用に、CHIRIMEN用に用意された検証用サービス(chirimentest)を使うことにしますが、いくつかある事業者間でサービスの内容に差異があります。サイトごとの差異は主に接続できる端末の管理と情報の取り扱いに関する機能になります。
 
-[relayServer.js](https://chirimen.org/remote-connection/) は、relayServerサービスによる差異を吸収し複数の事業者を自由に切り替えられ、webSocket の標準 API仕様に沿った作法で WebApps(含Node.jsプログラム)間の通信を簡単に使えるようにするライブラリです。
+[relayServer.js](https://www.chirimen.org/remote-connection/) は、relayServerサービスによる差異を吸収し複数の事業者を自由に切り替えられ、webSocket の標準 API仕様に沿った作法で WebApps(含Node.jsプログラム)間の通信を簡単に使えるようにするライブラリです。

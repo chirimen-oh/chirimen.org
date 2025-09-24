@@ -3,7 +3,7 @@
 * CodeSandboxで開いている `PC.js` を見てみましょう
 ```js
 // Remote Example4 - controller
-import {RelayServer} from "https://chirimen.org/remote-connection/js/beta/RelayServer.js";
+import {RelayServer} from "https://www.chirimen.org/remote-connection/js/beta/RelayServer.js";
 
 window.OnLED = OnLED;
 window.OffLED = OffLED;
@@ -31,7 +31,7 @@ function OffLED(){ // LED OFF
 プログラムは以下の流れで実行されています。
 * [JavaScript Module](./chapter_10-3-1.md)仕様に基づいて `relayServer.js` を読み込み
 ```js
-import {RelayServer} from "https://chirimen.org/remote-connection/js/beta/RelayServer.js";
+import {RelayServer} from "https://www.chirimen.org/remote-connection/js/beta/RelayServer.js";
 ```
 * [relayServer.js](../chirimenGeneric/#relayserverjs)を使い、UIを通してユーザからの操作指示を送信
   * [初期化](./chapter_10-6.md)

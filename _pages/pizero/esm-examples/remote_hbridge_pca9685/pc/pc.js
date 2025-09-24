@@ -1,11 +1,11 @@
 // Remote Example1 - controller
-import { RelayServer } from "https://chirimen.org/remote-connection/js/beta/RelayServer.js";
+import { RelayServer } from "https://www.chirimen.org/remote-connection/js/beta/RelayServer.js";
 
 window.showAngle = showAngle;
 window.sendAngle = sendAngle;
 
 var channel;
-onload = async function () {
+onload = async () => {
   // webSocketリレーの初期化
   var relay = RelayServer("chirimentest", "chirimenSocket");
   channel = await relay.subscribe("chirimenPWMHB");
