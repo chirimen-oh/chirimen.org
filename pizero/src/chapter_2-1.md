@@ -5,9 +5,9 @@
 
 ![Parts Images](imgs/PartsList2.svg)
 
-* **Raspberry Pi Zero W** (または Pi Zero **2** W)
-  * Pi Zero: [ケイエスワイ](https://raspberry-pi.ksyic.com/main/index/pdp.id/406/pdp.open/406), [秋月電子](https://akizukidenshi.com/catalog/g/gM-12961/), [スイッチサイエンス](https://www.switch-science.com/catalog/3646/), [マルツ](https://www.marutsu.co.jp/pc/i/1320453/)
-  * Pi Zero **2** W: [ケイエスワイ](https://raspberry-pi.ksyic.com/main/index/pdp.id/849/pdp.open/849), [秋月電子](https://akizukidenshi.com/catalog/g/g117398/), [スイッチサイエンス](https://www.switch-science.com/collections/raspberry-pi/products/7600), [マルツ](https://www.marutsu.co.jp/pc/i/2792770/)
+* **Raspberry Pi Zero 2 WH** (または Pi Zero WH)
+  * **Pi Zero 2 WH**: [ケイエスワイ](https://raspberry-pi.ksyic.com/main/index/pdp.id/1097), [秋月電子](https://akizukidenshi.com/catalog/g/g129607/), [スイッチサイエンス](https://www.switch-science.com/products/9812), [マルツ](https://www.marutsu.co.jp/pc/i/2848088/)
+  * Pi Zero WH: [ケイエスワイ](https://raspberry-pi.ksyic.com/main/index/pdp.id/406/pdp.open/406), [秋月電子](https://akizukidenshi.com/catalog/g/gM-12961/), [スイッチサイエンス](https://www.switch-science.com/catalog/3646/), [マルツ](https://www.marutsu.co.jp/pc/i/1320453/)
 * **microSDカード**
   * [CHIRIMEN Lite 最新リリース版](https://github.com/chirimen-oh/chirimen-lite/releases/latest)を書き込みます
   * 自分でイメージを書き込む場合は「[SDカードの作成の手順](https://tutorial.chirimen.org/raspi/sdcard)」をご確認ください。
