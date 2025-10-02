@@ -5,9 +5,8 @@
 
 ![Parts Images](imgs/PartsList2.svg)
 
-* **Raspberry Pi Zero 2 WH** (または Pi Zero WH)
-  * **Pi Zero 2 WH**: [ケイエスワイ](https://raspberry-pi.ksyic.com/main/index/pdp.id/1097), [秋月電子](https://akizukidenshi.com/catalog/g/g129607/), [スイッチサイエンス](https://www.switch-science.com/products/9812), [マルツ](https://www.marutsu.co.jp/pc/i/2848088/)
-  * Pi Zero WH: [ケイエスワイ](https://raspberry-pi.ksyic.com/main/index/pdp.id/406/pdp.open/406), [秋月電子](https://akizukidenshi.com/catalog/g/gM-12961/), [スイッチサイエンス](https://www.switch-science.com/catalog/3646/), [マルツ](https://www.marutsu.co.jp/pc/i/1320453/)
+* **Raspberry Pi Zero 2 WH**
+  * 販売ページ: [ケイエスワイ](https://raspberry-pi.ksyic.com/main/index/pdp.id/1097), [秋月電子](https://akizukidenshi.com/catalog/g/g129607/), [スイッチサイエンス](https://www.switch-science.com/products/9812), [マルツ](https://www.marutsu.co.jp/pc/i/2848088/)
 * **microSDカード**
   * [CHIRIMEN Lite 最新リリース版](https://github.com/chirimen-oh/chirimen-lite/releases/latest)を書き込みます
   * 自分でイメージを書き込む場合は「[SDカードの作成の手順](https://tutorial.chirimen.org/raspi/sdcard)」をご確認ください。
@@ -27,15 +26,15 @@
   * [**ADT7410モジュール**](https://akizukidenshi.com/catalog/g/gM-06675/)　もしくは [**SHT30モジュール**](https://www.amazon.co.jp/dp/B083NHJSL9/)
   * ジャンパーワイヤ オス-メス 4本（追加 2本）
 * **ブラウザの載ったパソコン**（いずれもUSBとWiFiが使える必要があります）
-  * Windows 10 PC
-    * ブラウザは標準の Edge もしくは Chrome を使います。
-  * Macintosh
+  * Windows
+    * ブラウザは標準の Edge もしくは Chrome が必要です。
+  * macOS
     * ブラウザは Chrome が必要です。
   * Chrome OS / Chromebook
     * 確認済みハード：Lenovo Chromebook S330
-  * *Note: Linux PC の Chrome では次の設定で利用可能になるとの報告をいただいています*
-    * Ubuntu Studio: ```sudo chmod a+rw /dev/ttyACM0```
-    * Ubuntu Desktop 20.04 LTS: ```sudo gpasswd -a "$(whoami)" dialout```
+  * Linux
+    * ブラウザ Chrome もしくは Edge が必要です。
+    * Ubuntu Desktop 24.04 LTS: ```sudo gpasswd -a "$(whoami)" dialout``` コマンドを実行してシリアル通信可能にしておく必要があります。
 
 ※ PiZero自体はディスプレイやキーボードを接続する必要はありません。
 
