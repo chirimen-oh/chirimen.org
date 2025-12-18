@@ -13,24 +13,23 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="theme-color" content="#ffffff">
 
-        <link rel="icon" href="favicon.svg">
-        <link rel="shortcut icon" href="favicon.png">
-        <link rel="stylesheet" href="css/variables.css">
-        <link rel="stylesheet" href="css/general.css">
-        <link rel="stylesheet" href="css/chrome.css">
-        <link rel="stylesheet" href="css/print.css" media="print">
+        <link rel="icon" href="favicon-de23e50b.svg">
+        <link rel="shortcut icon" href="favicon-8114d1fc.png">
+        <link rel="stylesheet" href="css/variables-8adf115d.css">
+        <link rel="stylesheet" href="css/general-2459343d.css">
+        <link rel="stylesheet" href="css/chrome-ae938929.css">
+        <link rel="stylesheet" href="css/print-9e4910d8.css" media="print">
 
         <!-- Fonts -->
-        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
-        <link rel="stylesheet" href="fonts/fonts.css">
+        <link rel="stylesheet" href="fonts/fonts-9644e21d.css">
 
         <!-- Highlight.js Stylesheets -->
-        <link rel="stylesheet" id="highlight-css" href="highlight.css">
-        <link rel="stylesheet" id="tomorrow-night-css" href="tomorrow-night.css">
-        <link rel="stylesheet" id="ayu-highlight-css" href="ayu-highlight.css">
+        <link rel="stylesheet" id="mdbook-highlight-css" href="highlight-493f70e1.css">
+        <link rel="stylesheet" id="mdbook-tomorrow-night-css" href="tomorrow-night-4c0ae647.css">
+        <link rel="stylesheet" id="mdbook-ayu-highlight-css" href="ayu-highlight-3fdfc3ac.css">
 
         <!-- Custom theme stylesheets -->
-        <link rel="stylesheet" href="theme/css/menu-bar.css">
+        <link rel="stylesheet" href="theme/css/menu-bar-84345c68.css">
 
 
         <!-- Provide site root and default themes to javascript -->
@@ -38,9 +37,10 @@
             const path_to_root = "";
             const default_light_theme = "light";
             const default_dark_theme = "light";
+            window.path_to_searchindex_js = "searchindex-6407a90e.js";
         </script>
         <!-- Start loading toc.js asap -->
-        <script src="toc.js"></script>
+        <script src="toc-fe0f95db.js"></script>
     </head>
     <body>
     <div id="mdbook-help-container">
@@ -54,7 +54,7 @@
             </div>
         </div>
     </div>
-    <div id="body-container">
+    <div id="mdbook-body-container">
         <!-- Work around some values being stored in localStorage wrapped in quotes -->
         <script>
             try {
@@ -83,56 +83,59 @@
             html.classList.add("js");
         </script>
 
-        <input type="checkbox" id="sidebar-toggle-anchor" class="hidden">
+        <input type="checkbox" id="mdbook-sidebar-toggle-anchor" class="hidden">
 
         <!-- Hide / unhide sidebar before it is displayed -->
         <script>
             let sidebar = null;
-            const sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
+            const sidebar_toggle = document.getElementById("mdbook-sidebar-toggle-anchor");
             if (document.body.clientWidth >= 1080) {
                 try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
                 sidebar = sidebar || 'visible';
             } else {
                 sidebar = 'hidden';
+                sidebar_toggle.checked = false;
             }
-            sidebar_toggle.checked = sidebar === 'visible';
-            html.classList.remove('sidebar-visible');
-            html.classList.add("sidebar-" + sidebar);
+            if (sidebar === 'visible') {
+                sidebar_toggle.checked = true;
+            } else {
+                html.classList.remove('sidebar-visible');
+            }
         </script>
 
-        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+        <nav id="mdbook-sidebar" class="sidebar" aria-label="Table of contents">
             <!-- populated by js -->
             <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
             <noscript>
                 <iframe class="sidebar-iframe-outer" src="toc.html"></iframe>
             </noscript>
-            <div id="sidebar-resize-handle" class="sidebar-resize-handle">
+            <div id="mdbook-sidebar-resize-handle" class="sidebar-resize-handle">
                 <div class="sidebar-resize-indicator"></div>
             </div>
         </nav>
 
-        <div id="page-wrapper" class="page-wrapper">
+        <div id="mdbook-page-wrapper" class="page-wrapper">
 
             <div class="page">
-                <div id="menu-bar-hover-placeholder"></div>
-                <div id="menu-bar" class="menu-bar sticky">
+                <div id="mdbook-menu-bar-hover-placeholder"></div>
+                <div id="mdbook-menu-bar" class="menu-bar sticky">
                     <div class="left-buttons">
-                        <label id="sidebar-toggle" class="icon-button" for="sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
-                            <i class="fa fa-bars"></i>
+                        <label id="mdbook-sidebar-toggle" class="icon-button" for="mdbook-sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="mdbook-sidebar">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z"/></svg></span>
                         </label>
-                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
-                            <i class="fa fa-paint-brush"></i>
+                        <button id="mdbook-theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="mdbook-theme-list">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M371.3 367.1c27.3-3.9 51.9-19.4 67.2-42.9L600.2 74.1c12.6-19.5 9.4-45.3-7.6-61.2S549.7-4.4 531.1 9.6L294.4 187.2c-24 18-38.2 46.1-38.4 76.1L371.3 367.1zm-19.6 25.4l-116-104.4C175.9 290.3 128 339.6 128 400c0 3.9 .2 7.8 .6 11.6c1.8 17.5-10.2 36.4-27.8 36.4H96c-17.7 0-32 14.3-32 32s14.3 32 32 32H240c61.9 0 112-50.1 112-112c0-2.5-.1-5-.2-7.5z"/></svg></span>
                         </button>
-                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
-                            <li role="none"><button role="menuitem" class="theme" id="default_theme">Auto</button></li>
-                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
-                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
-                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
-                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
-                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        <ul id="mdbook-theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-default_theme">Auto</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-ayu">Ayu</button></li>
                         </ul>
-                        <button id="search-toggle" class="icon-button" type="button" title="Search (`/`)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="/ s" aria-controls="searchbar">
-                            <i class="fa fa-search"></i>
+                        <button id="mdbook-search-toggle" class="icon-button" type="button" title="Search (`/`)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="/ s" aria-controls="mdbook-searchbar">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352c79.5 0 144-64.5 144-144s-64.5-144-144-144S64 128.5 64 208s64.5 144 144 144z"/></svg></span>
                         </button>
                     </div>
 
@@ -140,195 +143,201 @@
 
                     <div class="right-buttons">
                         <a href="print.html" title="Print this book" aria-label="Print this book">
-                            <i id="print-button" class="fa fa-print"></i>
+                            <span class=fa-svg id="print-button"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M128 0C92.7 0 64 28.7 64 64v96h64V64H354.7L384 93.3V160h64V93.3c0-17-6.7-33.3-18.7-45.3L400 18.7C388 6.7 371.7 0 354.7 0H128zM384 352v32 64H128V384 368 352H384zm64 32h32c17.7 0 32-14.3 32-32V256c0-35.3-28.7-64-64-64H64c-35.3 0-64 28.7-64 64v96c0 17.7 14.3 32 32 32H64v64c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V384zm-16-88c-13.3 0-24-10.7-24-24s10.7-24 24-24s24 10.7 24 24s-10.7 24-24 24z"/></svg></span>
                         </a>
                         <a href="https://github.com/chirimen-oh/chirimen.org" title="Git repository" aria-label="Git repository">
-                            <i id="git-repository-button" class="fa fa-github"></i>
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg></span>
                         </a>
 
                     </div>
                 </div>
 
-                <div id="search-wrapper" class="hidden">
-                    <form id="searchbar-outer" class="searchbar-outer">
-                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                <div id="mdbook-search-wrapper" class="hidden">
+                    <form id="mdbook-searchbar-outer" class="searchbar-outer">
+                        <div class="search-wrapper">
+                            <input type="search" id="mdbook-searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="mdbook-searchresults-outer" aria-describedby="searchresults-header">
+                            <div class="spinner-wrapper">
+                                <span class=fa-svg id="fa-spin"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M304 48c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zm0 416c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zM48 304c26.5 0 48-21.5 48-48s-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48zm464-48c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zM142.9 437c18.7-18.7 18.7-49.1 0-67.9s-49.1-18.7-67.9 0s-18.7 49.1 0 67.9s49.1 18.7 67.9 0zm0-294.2c18.7-18.7 18.7-49.1 0-67.9S93.7 56.2 75 75s-18.7 49.1 0 67.9s49.1 18.7 67.9 0zM369.1 437c18.7 18.7 49.1 18.7 67.9 0s18.7-49.1 0-67.9s-49.1-18.7-67.9 0s-18.7 49.1 0 67.9z"/></svg></span>
+                            </div>
+                        </div>
                     </form>
-                    <div id="searchresults-outer" class="searchresults-outer hidden">
-                        <div id="searchresults-header" class="searchresults-header"></div>
-                        <ul id="searchresults">
+                    <div id="mdbook-searchresults-outer" class="searchresults-outer hidden">
+                        <div id="mdbook-searchresults-header" class="searchresults-header"></div>
+                        <ul id="mdbook-searchresults">
                         </ul>
                     </div>
                 </div>
 
                 <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
                 <script>
-                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
-                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
-                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                    document.getElementById('mdbook-sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('mdbook-sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#mdbook-sidebar a')).forEach(function(link) {
                         link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
                     });
                 </script>
 
-                <div id="content" class="content">
+                <div id="mdbook-content" class="content">
                     <main>
                         <h1 id="chirimen-チュートリアル概要"><a class="header" href="#chirimen-チュートリアル概要">CHIRIMEN チュートリアル概要</a></h1>
-<p><img src="./imgs/chirimen_hello.jpg" alt="CHIRIMEN Hello World" /></p>
+<p><img src="imgs/chirimen_hello.jpg" alt="CHIRIMEN Hello World"></p>
 <p>CHIRIMEN Raspberry Pi Zero 版を用いたIoT実習資料です。</p>
 <p>開発環境に Raspberry Pi Zero W を使い、開発言語に JavaScript を用いて、様々なセンサーやアクチュエーターを動かし、IoTプロトタイピングを可能にします。</p>
 <p>概要では <strong>CHIRIMEN / RaspberryPi / JavaScript</strong> について解説します。</p>
 <p>既に CHIRIMEN を体験している（使い慣れている）方に向けた情報リンク集も掲載します。</p>
 <h2 id="目次"><a class="header" href="#目次">目次</a></h2>
 <ul>
-<li><a href="./index.html">チュートリアル概要</a>
+<li><a href="#chirimen-チュートリアル概要">チュートリアル概要</a>
 <ul>
-<li><a href="./chapter_1-1.html">CHIRIMEN について</a>
+<li><a href="#11-chirimen-について">CHIRIMEN について</a>
 <ul>
-<li><a href="./chapter_1-1-1.html">CHIRIMEN コミュニティ</a></li>
+<li><a href="#111-chirimen-コミュニティ">CHIRIMEN コミュニティ</a></li>
 </ul>
 </li>
-<li><a href="./chapter_1-2.html">Raspberry Pi について</a></li>
-<li><a href="./chapter_1-3.html">JavaScript の基礎</a></li>
-<li><a href="./chapter_1-4.html">良く使う情報へのリンク</a></li>
+<li><a href="#12-raspberry-pi-について">Raspberry Pi について</a></li>
+<li><a href="#13-javascript-の基礎">JavaScript の基礎</a></li>
+<li><a href="#14-良く使う情報へのリンク">良く使う情報へのリンク</a></li>
 </ul>
 </li>
-<li><a href="./chapter_2.html">機材準備と Wi-Fi への接続</a>
+<li><a href="#2-準備">機材準備と Wi-Fi への接続</a>
 <ul>
-<li><a href="./chapter_2-1.html">ステップ0（機材準備）</a></li>
-<li><a href="./chapter_2-2.html">ステップ1（ターミナル接続）</a>
+<li><a href="#21-ステップ０-物品準備pcをwifiに接続">ステップ0（機材準備）</a></li>
+<li><a href="#22-ステップ1ターミナル接続">ステップ1（ターミナル接続）</a>
 <ul>
-<li><a href="./chapter_2-2-1.html">Note. CLI操作について</a></li>
-<li><a href="./chapter_2-2-2.html">Note. pi4 の利用方法</a></li>
+<li><a href="#notechirimen-lite-の-cli-操作について">Note. CLI操作について</a></li>
+<li><a href="#note-raspberry-pi4-の利用方法">Note. pi4 の利用方法</a></li>
 </ul>
 </li>
-<li><a href="./chapter_2-3.html">ステップ2（Wi-Fi設定）</a></li>
+<li><a href="#23-ステップ2-wifi設定">ステップ2（Wi-Fi設定）</a></li>
 </ul>
 </li>
-<li><a href="./chapter_3.html">Hello Real World（Lチカを実行する）</a>
+<li><a href="#3-hello-real-worldlチカを実行する">Hello Real World（Lチカを実行する）</a>
 <ul>
-<li><a href="./chapter_3-1.html">配線</a></li>
-<li><a href="./chapter_3-2.html">プログラムを書く</a></li>
-<li><a href="./chapter_3-3.html">実行する</a></li>
-<li><a href="./chapter_3-4.html">コードを読む</a></li>
+<li><a href="#31-配線">配線</a></li>
+<li><a href="#32-プログラムを書く">プログラムを書く</a></li>
+<li><a href="#33-実行する">実行する</a></li>
+<li><a href="#34-コードを読む">コードを読む</a></li>
 </ul>
 </li>
-<li><a href="./chapter_4.html">GPIOを試す</a>
+<li><a href="#4-gpioを試す">GPIOを試す</a>
 <ul>
-<li><a href="./chapter_4-1.html">GPIOを理解する</a></li>
-<li><a href="./chapter_4-2.html">GPIOを出力</a></li>
-<li><a href="./chapter_4-3.html">GPIOを入力（onchange）</a>
+<li><a href="#41-gpioを理解する">GPIOを理解する</a></li>
+<li><a href="#42-gpioを出力">GPIOを出力</a></li>
+<li><a href="#43-gpioを入力onchange">GPIOを入力（onchange）</a>
 <ul>
-<li><a href="./chapter_4-3-1.html">onchange コードを読む</a></li>
+<li><a href="#431-onchange-コードを読む">onchange コードを読む</a></li>
 </ul>
 </li>
-<li><a href="./chapter_4-4.html">GPIOを入力（ポーリング）</a>
+<li><a href="#44-gpioを入力ポーリング">GPIOを入力（ポーリング）</a>
 <ul>
-<li><a href="./chapter_4-4-1.html">ポーリングコードを読む</a></li>
+<li><a href="#441-polling-コードを読む">ポーリングコードを読む</a></li>
 </ul>
 </li>
-<li><a href="./chapter_4-5.html">GPIOセンサーを複数同時に使う</a>
+<li><a href="#45-gpioセンサーを複数同時に使う">GPIOセンサーを複数同時に使う</a>
 <ul>
-<li><a href="./chapter_4-5-1.html">Lチカのコードを書き換える</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li><a href="./chapter_5.html">I2Cデバイスを試す</a>
-<ul>
-<li><a href="./chapter_5-1.html">I2Cを理解する</a></li>
-<li><a href="./chapter_5-2.html">SHT30編</a>
-<ul>
-<li><a href="./chapter_5-2-1.html">I2Cセンサー(SHT30)の認識を確認する</a></li>
-<li><a href="./chapter_5-2-2.html">SHT30 のコード取得と実行</a></li>
-<li><a href="./chapter_5-2-3.html">SHT30 のコードを読む</a></li>
-<li><a href="./chapter_5-2-4.html">SHT30 のコードの詳細解説</a></li>
-</ul>
-</li>
-<li><a href="./chapter_5-3.html">ADT7410編</a></li>
-<li><a href="./chapter_5-4.html">GPIO と I2Cセンサーを組み合わせる</a></li>
-</ul>
-</li>
-<li><a href="./chapter_6.html">IoTを試す</a>
-<ul>
-<li><a href="./chapter_6-1.html">遠隔LEDコントロール</a></li>
-<li><a href="./chapter_6-2.html">PiZero サンプルコードの実行</a></li>
-<li><a href="./chapter_6-3.html">PC サンプルコードの実行</a></li>
-<li><a href="./chapter_6-4.html">自分専用チャンネルで制御</a></li>
-<li><a href="./chapter_6-5.html">PiZero 側のコードを読む</a></li>
-<li><a href="./chapter_6-6.html">PC 側のコードを読む</a></li>
-</ul>
-</li>
-<li><a href="./chapter_7.html">常駐プログラム化する</a></li>
-<li><a href="./chapter_8.html">他のいろいろなデバイスを試してみる</a>
-<ul>
-<li><a href="./chapter_8-1.html">応用センサーキットの使い方</a>
-<ul>
-<li><a href="./chapter_8-1-1.html">単体で動作確認できるセンサー</a></li>
-<li><a href="./chapter_8-1-2.html">人感センサー</a></li>
-<li><a href="./chapter_8-1-3.html">Neopixel LED</a></li>
-<li><a href="./chapter_8-1-4.html">アナログセンサー</a></li>
-<li><a href="./chapter_8-1-5.html">サーボモーター</a></li>
-<li><a href="./chapter_8-1-6.html">DCモーター（MX1508利用）</a></li>
-<li><a href="./chapter_8-1-7.html">DCモーター（PWM駆動）</a></li>
-<li><a href="./chapter_8-1-8.html">RaspberryPi のカメラの注意点</a></li>
+<li><a href="#451-lチカのコードを書き換える">Lチカのコードを書き換える</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li><a href="./chapter_9.html">付録(予備知識)</a>
+<li><a href="#5-i2cデバイスを試す">I2Cデバイスを試す</a>
 <ul>
-<li><a href="./chapter_9-1.html">CHIRIMEN ブラウザー版との差異</a></li>
-<li><a href="./chapter_9-2.html">CHIRIMEN環境の任意のディレクトリへのセットアップ</a></li>
+<li><a href="#51i2cを理解する">I2Cを理解する</a></li>
+<li><a href="#52-i2cセンサを動作させるsht30編">SHT30編</a>
+<ul>
+<li><a href="#521-i2cセンサーsht30の認識を確認して実行する">I2Cセンサー(SHT30)の認識を確認する</a></li>
+<li><a href="#522-sht30-のコードの取得と実行">SHT30 のコード取得と実行</a></li>
+<li><a href="#523-sht30-のコードを読む">SHT30 のコードを読む</a></li>
+<li><a href="#524-sht30-のコードの詳細解説">SHT30 のコードの詳細解説</a></li>
 </ul>
 </li>
-<li><a href="./chapter_10.html">共通資料集</a>
-<ul>
-<li><a href="./chapter_10-1.html">CHIRIMEN</a></li>
-<li><a href="./chapter_10-2.html">ハードウェア・デバイス</a>
-<ul>
-<li><a href="./chapter_10-2-1.html">LED</a></li>
-<li><a href="./chapter_10-2-2.html">ブレッドボード</a></li>
-<li><a href="./chapter_10-2-3.html">抵抗値の読み方</a></li>
-<li><a href="./chapter_10-2-4.html">MOSFETによる大電力制御</a></li>
+<li><a href="#53-adt7410編">ADT7410編</a></li>
+<li><a href="#54-gpio-と-i2cセンサーを組み合わせる">GPIO と I2Cセンサーを組み合わせる</a></li>
 </ul>
 </li>
-<li><a href="./chapter_10-3.html">JavaScript</a>
+<li><a href="#6-iotを試す">IoTを試す</a>
 <ul>
-<li><a href="./chapter_10-3-1.html">JavaScriptコード・ライブラリの読み込み</a></li>
-<li><a href="./chapter_10-3-2.html">非同期処理</a></li>
+<li><a href="#61-遠隔ledコントロール">遠隔LEDコントロール</a></li>
+<li><a href="#62-pizero-サンプルコードの実行">PiZero サンプルコードの実行</a></li>
+<li><a href="#63-pc-サンプルコードの実行">PC サンプルコードの実行</a></li>
+<li><a href="#64-自分専用チャンネルで制御">自分専用チャンネルで制御</a></li>
+<li><a href="#65-pizero-側のコードを読む">PiZero 側のコードを読む</a></li>
+<li><a href="#66-pc-側のコードを読む">PC 側のコードを読む</a></li>
 </ul>
 </li>
-<li><a href="./chapter_10-4.html">GPIO</a>
+<li><a href="#7-常駐プログラム化する">常駐プログラム化する</a></li>
+<li><a href="#8-他のいろいろなデバイスを試してみる">他のいろいろなデバイスを試してみる</a>
 <ul>
-<li><a href="./chapter_10-4-1.html">GPIOポートの初期化と出力処理</a></li>
-<li><a href="./chapter_10-4-2.html">GPIOPortの入力処理（onchange）</a></li>
-<li><a href="./chapter_10-4-3.html">GPIOPortの入力処理（ポーリング）</a></li>
-</ul>
-</li>
-<li><a href="./chapter_10-5.html">I2C</a>
+<li><a href="#81-応用センサーキットの使い方">応用センサーキットの使い方</a>
 <ul>
-<li><a href="./chapter_10-5-1.html">各種ボードの I2C端子について</a></li>
-<li><a href="./chapter_10-5-2.html">I2Cの詳細情報とポイント</a></li>
-<li><a href="./chapter_10-5-3.html">WebI2C とデバイスドライバ</a></li>
-</ul>
-</li>
-<li><a href="./chapter_10-6.html">IoT</a>
-<ul>
-<li><a href="./chapter_10-6-1.html">webSocketとpub/sub services</a></li>
-<li><a href="./chapter_10-6-2.html">relayService</a></li>
-<li><a href="./chapter_10-6-3.html">リアルタイム性</a></li>
-<li><a href="./chapter_10-6-4.html">relayServer.js</a></li>
-<li><a href="./chapter_10-6-5.html">プログラムの流れ</a></li>
-<li><a href="./chapter_10-6-6.html">セキュリティ</a></li>
-<li><a href="./chapter_10-6-7.html">Node.jsでの利用</a></li>
-<li><a href="./chapter_10-6-8.html">Webhooks</a></li>
-<li><a href="./chapter_10-6-9.html">IoTクラウドサービス</a></li>
+<li><a href="#811-単体で動作確認できるセンサー">単体で動作確認できるセンサー</a></li>
+<li><a href="#812-人感センサーの使い方">人感センサー</a></li>
+<li><a href="#813-neopixel-led-の使い方">Neopixel LED</a></li>
+<li><a href="#814-アナログセンサーの使い方">アナログセンサー</a></li>
+<li><a href="#815-アクチュエーターサーボモーターの使い方">サーボモーター</a></li>
+<li><a href="#816-アクチュエーターdcモーターの使い方">DCモーター（MX1508利用）</a></li>
+<li><a href="#817-アクチュエーターdcモーターの使い方pwm駆動">DCモーター（PWM駆動）</a></li>
+<li><a href="#818-raspberrypi-のカメラに関する注意">RaspberryPi のカメラの注意点</a></li>
 </ul>
 </li>
 </ul>
 </li>
+<li><a href="#9-付録">付録(予備知識)</a>
+<ul>
+<li><a href="#91-chirimen-ブラウザー版との差異">CHIRIMEN ブラウザー版との差異</a></li>
+<li><a href="#92-chirimen環境の任意のディレクトリへのセットアップ">CHIRIMEN環境の任意のディレクトリへのセットアップ</a></li>
 </ul>
-<div style="break-before: page; page-break-before: always;"></div><h1 id="11-chirimen-について"><a class="header" href="#11-chirimen-について">1.1 CHIRIMEN について</a></h1>
-<p><img src="./imgs/CHIRIMEN_pf.png" alt="CHIRIMEN image" /></p>
+</li>
+<li><a href="#10-共通資料集">共通資料集</a>
+<ul>
+<li><a href="#101-chirimen">CHIRIMEN</a></li>
+<li><a href="#102-ハードウェアデバイス">ハードウェア・デバイス</a>
+<ul>
+<li><a href="#1021-led">LED</a></li>
+<li><a href="#1022-ブレッドボード">ブレッドボード</a></li>
+<li><a href="#1023-抵抗値の読み方">抵抗値の読み方</a></li>
+<li><a href="#1024-mosfetによる大電力制御">MOSFETによる大電力制御</a></li>
+</ul>
+</li>
+<li><a href="#103-javascript">JavaScript</a>
+<ul>
+<li><a href="#1031-javascriptコードライブラリの読み込み">JavaScriptコード・ライブラリの読み込み</a></li>
+<li><a href="#1032-非同期処理">非同期処理</a></li>
+</ul>
+</li>
+<li><a href="#104-gpio">GPIO</a>
+<ul>
+<li><a href="#1041-gpioポートの初期化と出力処理">GPIOポートの初期化と出力処理</a></li>
+<li><a href="#1042-gpioportの入力処理onchange">GPIOPortの入力処理（onchange）</a></li>
+<li><a href="#1043-gpioportの入力処理ポーリング">GPIOPortの入力処理（ポーリング）</a></li>
+</ul>
+</li>
+<li><a href="#105-i2c">I2C</a>
+<ul>
+<li><a href="#1051-各種ボードの-i2c端子について">各種ボードの I2C端子について</a></li>
+<li><a href="#1052-i2c-の詳細情報とポイント">I2Cの詳細情報とポイント</a></li>
+<li><a href="#1053-webi2c-とデバイスドライバ">WebI2C とデバイスドライバ</a></li>
+</ul>
+</li>
+<li><a href="#106-iot">IoT</a>
+<ul>
+<li><a href="#1061-websocketとpubsub-services">webSocketとpub/sub services</a></li>
+<li><a href="#1062-relayservice">relayService</a></li>
+<li><a href="#1063-リアルタイム性">リアルタイム性</a></li>
+<li><a href="#1064-relayserverjs">relayServer.js</a></li>
+<li><a href="#1065-プログラムの流れ">プログラムの流れ</a></li>
+<li><a href="#1066-セキュリティを考えよう">セキュリティ</a></li>
+<li><a href="#1067-nodejsでの利用">Node.jsでの利用</a></li>
+<li><a href="#1068-webhooks">Webhooks</a></li>
+<li><a href="#1069-iotクラウドサービス">IoTクラウドサービス</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<div style="break-before: page; page-break-before: always;"></div>
+<h1 id="11-chirimen-について"><a class="header" href="#11-chirimen-について">1.1 CHIRIMEN について</a></h1>
+<p><img src="imgs/CHIRIMEN_pf.png" alt="CHIRIMEN image"></p>
 <p>CHIRIMEN とは、Webの標準的な技術・ブラウザやNode.js等で実行できるJavaScript で電子パーツを制御し、<a href="https://www.iizuka.kyutech.ac.jp/faculty/physicalcomputing" target="_blank" rel="noopener noreferrer">フィジカルコンピューティング</a>や <a href="https://tutorial.chirimen.org/chirimenGeneric/#iot" target="_blank" rel="noopener noreferrer">IoTシステム</a>を開発可能なプロトタイピング環境です。</p>
 <p>デジタルのソフトとフィジカルなハードをWWW上で連携するデバイスを Web標準技術、JavaScript だけで容易に実現できます。</p>
 <ul>
@@ -359,7 +368,8 @@
 </ul>
 </li>
 </ul>
-<div style="break-before: page; page-break-before: always;"></div><h1 id="111-chirimen-コミュニティ"><a class="header" href="#111-chirimen-コミュニティ">1.1.1 CHIRIMEN コミュニティ</a></h1>
+<div style="break-before: page; page-break-before: always;"></div>
+<h1 id="111-chirimen-コミュニティ"><a class="header" href="#111-chirimen-コミュニティ">1.1.1 CHIRIMEN コミュニティ</a></h1>
 <ul>
 <li>CHIRIMEN についてもっと詳しく知りたい！</li>
 <li>自分も開発に参加してみたい！</li>
@@ -373,8 +383,9 @@
 <ul>
 <li><a href="https://join.slack.com/t/chirimen-oh/shared_invite/zt-3dvgmnu1x-LxCW09XdSXYGoLVKfnXZww">コミュニティ Slack 招待リンク</a></li>
 </ul>
-<div style="break-before: page; page-break-before: always;"></div><h1 id="12-raspberry-pi-について"><a class="header" href="#12-raspberry-pi-について">1.2 Raspberry Pi について</a></h1>
-<p><img src="./imgs/raspi.jpg" alt="ラズパイ画像" /></p>
+<div style="break-before: page; page-break-before: always;"></div>
+<h1 id="12-raspberry-pi-について"><a class="header" href="#12-raspberry-pi-について">1.2 Raspberry Pi について</a></h1>
+<p><img src="imgs/raspi.jpg" alt="ラズパイ画像"></p>
 <ul>
 <li>教育・学習用として設計されたシングルボードコンピュータ
 <ul>
@@ -384,14 +395,15 @@
 <li>Linuxが動作するシングルボードコンピュータとして、安価でとても高いシェアを持ち世界中で容易に入手できる</li>
 <li>今回使用する Raspberry Pi Zero WH は、その中でも特に安価 (<a href="https://www.switch-science.com/catalog/3646/">3,000円程度</a>)で小型・低消費電力の機種、HDMI 出力はあるもののブラウザを動かすだけの処理能力がありませんが、IoT のエッジデバイス（センサーやアクチュエータが載ったデバイスでディスプレイはあるとしても簡易のもの）には適しています。
 <ul>
-<li>フルセットのブラウザが内蔵されたデバイスを作りたい場合は<a href="../raspi/">CHIRIMEN Raspberry Pi版</a>が使用できます。</li>
-<li>インターネットを経由してPCやスマホのブラウザから遠隔操作するシステムは　この Pi Zero W 版でつくれます。<a href="chapter_1-2.html#iot">IoTの章</a>まで進めましょう。</li>
+<li>フルセットのブラウザが内蔵されたデバイスを作りたい場合は<a href="../raspi">CHIRIMEN Raspberry Pi版</a>が使用できます。</li>
+<li>インターネットを経由してPCやスマホのブラウザから遠隔操作するシステムは　この Pi Zero W 版でつくれます。<a href="#iot">IoTの章</a>まで進めましょう。</li>
 </ul>
 </li>
 <li>同じサイズの上位機種として、<a href="https://www.switch-science.com/products/7600">Raspberry Pi Zero 2 W</a> も発売されました。こちらも CHIRIMEN は対応しており、より性能を必要とする開発も可能になりました。</li>
 </ul>
-<div style="break-before: page; page-break-before: always;"></div><h1 id="13-javascript-の基礎"><a class="header" href="#13-javascript-の基礎">1.3 JavaScript の基礎</a></h1>
-<p>標準化されたプログラミング言語の一種で、ウェブブラウザが代表的な実行環境です(プログラムコードを解釈して動作させるシステム)。CHIRIMEN では JavaScript で各種開発を行います。より詳細な情報は <a href="./chapter_10-3.html">10.3 JavaScript</a> を参照してください。</br></p>
+<div style="break-before: page; page-break-before: always;"></div>
+<h1 id="13-javascript-の基礎"><a class="header" href="#13-javascript-の基礎">1.3 JavaScript の基礎</a></h1>
+<p>標準化されたプログラミング言語の一種で、ウェブブラウザが代表的な実行環境です(プログラムコードを解釈して動作させるシステム)。CHIRIMEN では JavaScript で各種開発を行います。より詳細な情報は <a href="#103-javascript">10.3 JavaScript</a> を参照してください。</p>
 <p>以下に初めて学ぶ方やより詳しい情報を知りたい方に向けたテキストが公開されています。</p>
 <h2 id="web開発をはじめよう"><a class="header" href="#web開発をはじめよう"><a href="https://kou029w.github.io/intro-to-web-dev/index.html">Web開発をはじめよう</a></a></h2>
 <p>Web開発を始める方に向けた入門ガイドです。JavaScript の他に HTML/CSS を用いる Web開発の基礎から GAS（Google Apps Script）を利用したアプリ開発まで解説されています。</p>
@@ -408,7 +420,8 @@
 <p>JavaScript の基本的な言語機能をまとめたチートシートです。プログラミング初心者はこちらを参照しながらコードを読み書きされることをオススメします。</p>
 <h2 id="非同期処理-async-await-解説"><a class="header" href="#非同期処理-async-await-解説"><a href="https://tutorial.chirimen.org/js/async.html">非同期処理 (async await) 解説</a></a></h2>
 <p>ハード制御で必ず必要だが引っかかる人が多い非同期処理について簡単な解説です。非同期処理についてより詳しくは <a href="https://jsprimer.net/basic/async/">JS Primer の非同期処理説明ページ</a> をご覧ください。</p>
-<div style="break-before: page; page-break-before: always;"></div><h1 id="14-良く使う情報へのリンク"><a class="header" href="#14-良く使う情報へのリンク">1.4 良く使う情報へのリンク</a></h1>
+<div style="break-before: page; page-break-before: always;"></div>
+<h1 id="14-良く使う情報へのリンク"><a class="header" href="#14-良く使う情報へのリンク">1.4 良く使う情報へのリンク</a></h1>
 <p>CHIRIMEN PiZero 版で良く使われるリンクをまとめたページです。</p>
 <h2 id="重要な情報のリンク"><a class="header" href="#重要な情報のリンク"><strong>重要な情報のリンク</strong></a></h2>
 <ul>
@@ -459,14 +472,16 @@
 </ul>
 </li>
 </ul>
-<div style="break-before: page; page-break-before: always;"></div><h1 id="2-準備"><a class="header" href="#2-準備">2. 準備</a></h1>
+<div style="break-before: page; page-break-before: always;"></div>
+<h1 id="2-準備"><a class="header" href="#2-準備">2. 準備</a></h1>
 <p>CHIRIMEN PiZero チュートリアルを実施するために必要な機材の準備や、環境設定を解説します。各ステップに従って準備を進めてください。</p>
 <!--
 必要な電子パーツ類の部材を一式揃えた、CHIRIMENスターターキットの頒布がされている場合、それを利用すると便利です。
---><div style="break-before: page; page-break-before: always;"></div><h1 id="21-ステップ０-物品準備pcをwifiに接続"><a class="header" href="#21-ステップ０-物品準備pcをwifiに接続">2.1 ステップ０ (物品準備、PCをWiFiに接続)</a></h1>
+--><div style="break-before: page; page-break-before: always;"></div>
+<h1 id="21-ステップ０-物品準備pcをwifiに接続"><a class="header" href="#21-ステップ０-物品準備pcをwifiに接続">2.1 ステップ０ (物品準備、PCをWiFiに接続)</a></h1>
 <h2 id="必要な物品リスト"><a class="header" href="#必要な物品リスト">必要な物品リスト</a></h2>
 <p>以下を用意します</p>
-<p><img src="imgs/PartsList2.svg" alt="Parts Images" /></p>
+<p><img src="imgs/PartsList2.svg" alt="Parts Images"></p>
 <ul>
 <li><strong>Raspberry Pi Zero 2 WH</strong>
 <ul>
@@ -537,13 +552,14 @@
 <ul>
 <li>会場(もしくは開発場所)で提供されているネットワークにまずはPCを接続してください。</li>
 </ul>
-<div style="break-before: page; page-break-before: always;"></div><h1 id="22-ステップ1ターミナル接続"><a class="header" href="#22-ステップ1ターミナル接続">2.2 ステップ1（<a href="https://chirimen.org/PiZeroWebSerialConsole/PiZeroWebSerialConsole.html">ターミナル接続</a>）</a></h1>
+<div style="break-before: page; page-break-before: always;"></div>
+<h1 id="22-ステップ1ターミナル接続"><a class="header" href="#22-ステップ1ターミナル接続">2.2 ステップ1（<a href="https://chirimen.org/PiZeroWebSerialConsole/PiZeroWebSerialConsole.html">ターミナル接続</a>）</a></h1>
 <ol>
 <li><a href="https://github.com/kou029w/chirimen-os/releases/">CHIRIMEN Lite 最新リリース版</a>を書き込んだ microSDカードを Raspberry Pi Zero に差し込みます。</li>
 <li>PCの USB と Raspberry Pi Zero の USB OTGポートを USBケーブルでつなぎます
 <ul>
 <li>PiZero側はつなぐポート要注意　下図の矢印の所に繋ぎます
-<img src="./imgs/PiZeroW_OTG.jpg" alt="pi zero otg port" /></li>
+<img src="imgs/PiZeroW_OTG.jpg" alt="pi zero otg port"></li>
 <li>PC からの USB給電で Raspberry Pi Zero が起動します。</li>
 </ul>
 </li>
@@ -551,7 +567,7 @@
 <ul>
 <li>給電後USBデバイスとして出現するまでにしばらく(数十秒)かかります</li>
 <li>Windowsの場合、ポートの番号(COMnのnの部分)は環境ごとに異なります
-<img src="imgs/OTG_PORT_W10.png" alt="OTG PORT Information on device manager" /></li>
+<img src="imgs/OTG_PORT_W10.png" alt="OTG PORT Information on device manager"></li>
 <li><a href="https://chirimen.org/PiZeroWebSerialConsole/PiZeroWebSerialConsole.html"><strong>こちらのWeb Serial RPiZero TerminalページにPCのブラウザでアクセス</strong></a>
 (以降、このウィンドを<strong>ターミナルウィンド</strong>と呼びます)</li>
 </ul>
@@ -559,7 +575,7 @@
 <li>ターミナルウィンドの <code>[Connect and Login PiZero]</code> ボタンを押す
 <ul>
 <li>接続ダイアログが出現
-<img src="imgs/SerialDialog.png" alt="connection dialog" /></li>
+<img src="imgs/SerialDialog.png" alt="connection dialog"></li>
 <li>上で認識したデバイス（ポート番号）を接続する</li>
 </ul>
 </li>
@@ -569,7 +585,8 @@
 </ul>
 </li>
 </ol>
-<div style="break-before: page; page-break-before: always;"></div><h1 id="notechirimen-lite-の-cli-操作について"><a class="header" href="#notechirimen-lite-の-cli-操作について">Note:CHIRIMEN-lite の CLI 操作について</a></h1>
+<div style="break-before: page; page-break-before: always;"></div>
+<h1 id="notechirimen-lite-の-cli-操作について"><a class="header" href="#notechirimen-lite-の-cli-操作について">Note:CHIRIMEN-lite の CLI 操作について</a></h1>
 <ul>
 <li>CHIRIMEN Raspberry Pi Zero 版では <a href="https://www.raspberrypi.com/software/operating-systems/">Raspberry Pi OS Lite</a> (Linux) をコマンドラインインターフェース (CLI)・シェル (bash) で操作します。
 <ul>
@@ -583,7 +600,7 @@
 </ul>
 </li>
 <li>ターミナルウィンドの概要 (図1.1)
-<img src="imgs/termWin.svg" alt="ターミナルウィンドの説明" /></li>
+<img src="imgs/termWin.svg" alt="ターミナルウィンドの説明"></li>
 <li><a href="https://atmarkit.itmedia.co.jp/ait/articles/1602/19/news025.html">CLIとは</a></li>
 <li><a href="https://atmarkit.itmedia.co.jp/ait/articles/1603/02/news016.html">シェルとコマンドプロンプト</a></li>
 <li>もしもあなたがlinuxのシェルコンソール画面に慣れている場合は、ターミナルウィンドのコンソールにその他のシェル(bash)コマンドをタイプして使用することもできます。
@@ -592,7 +609,8 @@
 </ul>
 </li>
 </ul>
-<div style="break-before: page; page-break-before: always;"></div><h1 id="note-raspberry-pi4-の利用方法"><a class="header" href="#note-raspberry-pi4-の利用方法">Note. Raspberry Pi4 の利用方法</a></h1>
+<div style="break-before: page; page-break-before: always;"></div>
+<h1 id="note-raspberry-pi4-の利用方法"><a class="header" href="#note-raspberry-pi4-の利用方法">Note. Raspberry Pi4 の利用方法</a></h1>
 <ul>
 <li>このチュートリアルは PiZero 以外にも Raspberry Pi4 も使用可能です。</li>
 <li>Pi4 の USB 給電口と PC を接続して同様にチュートリアルが可能です。
@@ -602,14 +620,15 @@
 </ul>
 </li>
 </ul>
-<p><img src="./imgs/pi4usbotg.jpg" alt="Pi4 usb-otg" /></p>
-<div style="break-before: page; page-break-before: always;"></div><h1 id="23-ステップ2-wifi設定"><a class="header" href="#23-ステップ2-wifi設定">2.3 ステップ2 (WiFi設定)</a></h1>
+<p><img src="imgs/pi4usbotg.jpg" alt="Pi4 usb-otg"></p>
+<div style="break-before: page; page-break-before: always;"></div>
+<h1 id="23-ステップ2-wifi設定"><a class="header" href="#23-ステップ2-wifi設定">2.3 ステップ2 (WiFi設定)</a></h1>
 <ol>
 <li>ターミナルウィンドの<code>[wifi panel]</code>ボタンを押す
 <ul>
 <li>ウィンドが開き、WiFiアクセスポイントがスキャンされます。ステルスでないものはリストアップされているので、以降の作業の参考にしてください。</li>
 <li>Raspberry Pi Zero W は <strong>2.4GHz帯の WiFi</strong> にのみ対応しています。
-<img src="./imgs/WiFiSetting.png" alt="WiFi Setting" /></li>
+<img src="imgs/WiFiSetting.png" alt="WiFi Setting"></li>
 </ul>
 </li>
 <li>ウィンド下部に、WiFiアクセス情報を入力する (いずれも大文字小文字の区別があるので注意してください)
@@ -637,7 +656,7 @@
 <ul>
 <li>表示された情報をチェックします</li>
 <li>wlan0: inet xxx.xxx.xxx.xxx　(xxxは数字)のようにIPアドレスが設定されていれば接続成功しています。
-<img src="./imgs/WiFiSettingIPaddress.png" alt="WiFi Setting_IPaddress" /></li>
+<img src="imgs/WiFiSettingIPaddress.png" alt="WiFi Setting_IPaddress"></li>
 </ul>
 </li>
 <li>確認できたらWiFi Settingウィンドを閉じてください。</li>
@@ -652,35 +671,38 @@
 </ul>
 </li>
 </ul>
-<div style="break-before: page; page-break-before: always;"></div><h1 id="3-hello-real-worldlチカを実行する"><a class="header" href="#3-hello-real-worldlチカを実行する">3. Hello Real World（Lチカを実行する）</a></h1>
-<p><img src="./imgs/l-chika.jpg" alt="Lチカ写真" />
-「L チカ」とは、LED を点けたり消したりチカチカ点滅させることです。</br>「LED を点ける」「LED を消す」をプログラムで繰り返し実行することで実現します。</br>この章では CHIRIMEN での開発方法を学びつつ、Lチカを実現させる方法を解説していきます。</p>
-<div style="break-before: page; page-break-before: always;"></div><h1 id="31-配線"><a class="header" href="#31-配線">3.1 配線</a></h1>
+<div style="break-before: page; page-break-before: always;"></div>
+<h1 id="3-hello-real-worldlチカを実行する"><a class="header" href="#3-hello-real-worldlチカを実行する">3. Hello Real World（Lチカを実行する）</a></h1>
+<p><img src="imgs/l-chika.jpg" alt="Lチカ写真">
+「L チカ」とは、LED を点けたり消したりチカチカ点滅させることです。「LED を点ける」「LED を消す」をプログラムで繰り返し実行することで実現します。この章では CHIRIMEN での開発方法を学びつつ、Lチカを実現させる方法を解説していきます。</p>
+<div style="break-before: page; page-break-before: always;"></div>
+<h1 id="31-配線"><a class="header" href="#31-配線">3.1 配線</a></h1>
 <p>PiZero とパーツを使って下の図の通りに配線します。</p>
-<p><img src="./imgs/pizero_led.png" alt="PiZero配線図" /></p>
+<p><img src="imgs/pizero_led.png" alt="PiZero配線図"></p>
 <p><strong>！！注意！！</strong></p>
 <ul>
 <li>間違ったピンに差し込むと場合によってはPiZeroが停止したり故障することもあります。（たとえば3.3V端子とGND端子を接続してしまうなど。）</li>
 <li>そのため、慣れるまでは一旦PiZeroをシャットダウン、USBケーブルも外し電源OFFにしてから配線すると安全です
 <ul>
 <li>シャットダウンコマンド：<code>sudo shutdown -h now</code>
-<img src="./imgs/led.jpg" alt="LEDイラスト" /></li>
+<img src="imgs/led.jpg" alt="LEDイラスト"></li>
 </ul>
 </li>
 <li><a href="https://tutorial.chirimen.org/raspi/hellorealworld#section-1">LEDの極性に注意！</a>
 <ul>
 <li>LED には極性 (方向) があり、足が長い方 (アノード) を GPIO 出力ピンに、足が短い方 (カソード) を GND 側に繋いでください。</li>
-<li><a href="./chapter_10-2-1.html">LEDの説明</a></li>
+<li><a href="#1021-led">LEDの説明</a></li>
 </ul>
 </li>
-<li><a href="./chapter_10-2-2.html">ブレッドボードの使い方</a></li>
-<li><a href="./chapter_10-2-3.html">抵抗値の読み方</a></li>
+<li><a href="#1022-ブレッドボード">ブレッドボードの使い方</a></li>
+<li><a href="#1023-抵抗値の読み方">抵抗値の読み方</a></li>
 <li><a href="https://tutorial.chirimen.org/reference#section-1">その他、配線の基礎知識</a></li>
 <li>配線に使うケーブルの色に厳密な決まりはありませんが、一般的にGNDは黒(や黒っぽい色)、電源(VCC, +3.3V, +5V)には赤(や赤っぽい色)が用いられます。配線間違いを防ぐためにもなるべく合わせましょう。</li>
 <li>抵抗や LED の足(リード線)は手で簡単に曲げられます。ブレッドボードに差し込めるように適当に成型してください。</li>
 <li>上図の PiZero は上から見たものです</li>
 </ul>
-<div style="break-before: page; page-break-before: always;"></div><h1 id="32-プログラムを書く"><a class="header" href="#32-プログラムを書く">3.2 プログラムを書く</a></h1>
+<div style="break-before: page; page-break-before: always;"></div>
+<h1 id="32-プログラムを書く"><a class="header" href="#32-プログラムを書く">3.2 プログラムを書く</a></h1>
 <p>Raspberry Pi に接続した LED を点滅させるプログラムを書きます。</p>
 <ol>
 <li>ターミナルウィンドで Raspberry Pi Zero に接続します。（準備のステップ１まで完了した状態）</li>
@@ -723,7 +745,8 @@ blink();
 <li>ターミナルウィンドの右側 (ファイルマネージャ) に <strong>hello.js</strong> が出現していることを確認します</li>
 <li>エディタウィンドを閉じます</li>
 </ol>
-<div style="break-before: page; page-break-before: always;"></div><h1 id="33-実行する"><a class="header" href="#33-実行する">3.3 実行する</a></h1>
+<div style="break-before: page; page-break-before: always;"></div>
+<h1 id="33-実行する"><a class="header" href="#33-実行する">3.3 実行する</a></h1>
 <ol>
 <li>ターミナルウィンドのコンソール部 (ウィンド左側) のプロンプト (画面一番下) が以下になっていることを確認します
 <ul>
@@ -740,7 +763,8 @@ blink();
 <li>LED が点滅すれば完成です 🎉</li>
 <li>プログラムを止めるには、コンソール部で <code>CTRL+c</code> を押します。</li>
 </ol>
-<div style="break-before: page; page-break-before: always;"></div><h1 id="34-コードを読む"><a class="header" href="#34-コードを読む">3.4 コードを読む</a></h1>
+<div style="break-before: page; page-break-before: always;"></div>
+<h1 id="34-コードを読む"><a class="header" href="#34-コードを読む">3.4 コードを読む</a></h1>
 <ul>
 <li>
 <p>前提：CHIRIMEN Rasoberryu Pi Zero は Node.js をプログラム実行環境（インタープリタ）として使っています。</p>
@@ -778,11 +802,11 @@ blink();
 </code></pre>
 <ul>
 <li>
-<p><strong>1行目：WebGPIOライブラリを読み込み</strong> (<a href="./chapter_10-3-1.html">JavaScript Module</a>仕様に従って)</p>
+<p><strong>1行目：WebGPIOライブラリを読み込み</strong> (<a href="#1031-javascriptコードライブラリの読み込み">JavaScript Module</a>仕様に従って)</p>
 <pre><code class="language-js">import {requestGPIOAccess} from "./node_modules/node-web-gpio/dist/index.js";
 </code></pre>
 <ul>
-<li><a href="./chapter_10-3-1.html">JavaScript module</a> に基づいてWebGPIOライブラリを読み込みます。これで Web GPIO API が使えるようになりました。</li>
+<li><a href="#1031-javascriptコードライブラリの読み込み">JavaScript module</a> に基づいてWebGPIOライブラリを読み込みます。これで Web GPIO API が使えるようになりました。</li>
 </ul>
 </li>
 <li>
@@ -819,10 +843,12 @@ blink();
 </ul>
 </li>
 </ul>
-<div style="break-before: page; page-break-before: always;"></div><h1 id="4-gpioを試す"><a class="header" href="#4-gpioを試す">4. GPIOを試す</a></h1>
+<div style="break-before: page; page-break-before: always;"></div>
+<h1 id="4-gpioを試す"><a class="header" href="#4-gpioを試す">4. GPIOを試す</a></h1>
 <p>Lチカが無事に動いたら、あなたは IoT開発の第一歩を踏み始めました。次は LED を光らせる以外のセンサーやアクチュエーターを使用する為に GPIO についてより深く学んでいきます。</p>
 <p>ここからは実際にミニモーターを動作させるサンプルと、ボタンの入力デモを行っていきます。</p>
-<div style="break-before: page; page-break-before: always;"></div><h1 id="41-gpioを理解する"><a class="header" href="#41-gpioを理解する">4.1 GPIOを理解する</a></h1>
+<div style="break-before: page; page-break-before: always;"></div>
+<h1 id="41-gpioを理解する"><a class="header" href="#41-gpioを理解する">4.1 GPIOを理解する</a></h1>
 <p><a href="https://ja.wikipedia.org/wiki/GPIO">GPIO</a>は、「General-purpose input/output」の略で汎用的な入出力インタフェースのことです。</p>
 <p>Raspi に実装されている 40 本のピンヘッダから GPIO を利用することができます。</p>
 <p>CHIRIMEN Raspi、Raspi Zero では Raspi が提供する 40 本のピンヘッダのうち、下記緑色のピン(合計 17 本)が利用可能です。</p>
@@ -834,23 +860,25 @@ blink();
 <li>PD:プルダウン, PU:プルアップ</li>
 </ul>
 </li>
-<li>SCL, SDAはI2Cインターフェースのピンです(詳細は <a href="./chapter_5.html">I2Cデバイスを試す</a>にて)</li>
+<li>SCL, SDAはI2Cインターフェースのピンです(詳細は <a href="#5-i2cデバイスを試す">I2Cデバイスを試す</a>にて)</li>
 </ul>
-<p><img src="https://chirimen.org/PiZeroWebSerialConsole/wallpaperS.png" alt="Raspberry Pi Pinout" /></p>
+<p><img src="https://chirimen.org/PiZeroWebSerialConsole/wallpaperS.png" alt="Raspberry Pi Pinout"></p>
 <p>Raspi の GPIO 端子は、GND 端子との間に、0V もしくは 3.3V の電圧を印加(出力)したり、逆に 0V もしくは 3.3V の電圧を検知(入力)したりすることができます。LED は数 mA の電流を流すことによって点灯できる電子部品のため、印加する電圧を 3.3V(点灯)、0V(消灯) と変化させることで L チカが実現できるのです。</p>
 <p>詳しくは<a href="https://tool-lab.com/make/raspberrypi-startup-22/">こちらのサイトの解説</a>などを参考にしてみましょう。</p>
-<div style="break-before: page; page-break-before: always;"></div><h1 id="42-gpioを出力"><a class="header" href="#42-gpioを出力">4.2 GPIOを出力</a></h1>
+<div style="break-before: page; page-break-before: always;"></div>
+<h1 id="42-gpioを出力"><a class="header" href="#42-gpioを出力">4.2 GPIOを出力</a></h1>
 <p>GPIOの出力はLチカで実験済みですね。そこで今回はモーターを動かしてみましょう。MOSFETを使った回路図は以下のようになります。</p>
-<p><img src="./imgs/PiZero_gpio0Motor.png" alt="GPIO Motor" /></p>
+<p><img src="imgs/PiZero_gpio0Motor.png" alt="GPIO Motor"></p>
 <p>コードは Lチカと全く同じ（hello.js）を使用して動作可能です。</p>
 <ul>
 <li><code>node hello.js</code> ENTERキー</li>
 </ul>
 <h3 id="回路について"><a class="header" href="#回路について">回路について</a></h3>
 <ul>
-<li><a href="./chapter_10-2-4.html">10.2.4 MOSFETを使った大電力制御</a>を参照してください</li>
+<li><a href="#1024-mosfetによる大電力制御">10.2.4 MOSFETを使った大電力制御</a>を参照してください</li>
 </ul>
-<div style="break-before: page; page-break-before: always;"></div><h1 id="43-gpioを入力onchange"><a class="header" href="#43-gpioを入力onchange">4.3 GPIOを入力（onchange）</a></h1>
+<div style="break-before: page; page-break-before: always;"></div>
+<h1 id="43-gpioを入力onchange"><a class="header" href="#43-gpioを入力onchange">4.3 GPIOを入力（onchange）</a></h1>
 <p>GPIO端子の<strong>入力が変化したら関数を実行</strong>という機能によってGPIOの入力を使います。</p>
 <ol>
 <li>ターミナルウィンドの<code>[CHIRIMEN Panel]</code>ボタンを押す</li>
@@ -877,7 +905,8 @@ blink();
 </li>
 <li>終了は CTRL+c</li>
 </ol>
-<div style="break-before: page; page-break-before: always;"></div><h1 id="431-onchange-コードを読む"><a class="header" href="#431-onchange-コードを読む">4.3.1 onchange コードを読む</a></h1>
+<div style="break-before: page; page-break-before: always;"></div>
+<h1 id="431-onchange-コードを読む"><a class="header" href="#431-onchange-コードを読む">4.3.1 onchange コードを読む</a></h1>
 <p>ターミナルウィンドの右側のファイルマネージャでmain-gpio-onchange.js⇒表示 を選び、ソースコードを読んでみましょう</p>
 <ul>
 <li>GPIOポートの値が変化するたびに、指定した関数が実行されます。</li>
@@ -900,9 +929,10 @@ function showPort(ev){
 
 switchCheck();
 </code></pre>
-<p>GPIOポートの初期化は Lチカの <a href="./chapter_3-4.html">3.4 コードを読む</a>と同様の処理を行っています。今回のコードでは 5 番ポートにアクセスするためのオブジェクトを取得し、<strong>GPIO入力</strong>機能を使って 5番を「入力設定」にしています。</p>
-<p><code>port.onchange</code> は <strong>入力モードの GPIO ポートの「状態変化時に呼び出される関数を設定する」</strong> 機能です。このような関数のことをコールバック関数と呼びます。<code>port.read()</code> を使ったコードと異なり<a href="./chapter_4-4.html">ポーリング処理</a>が不要でコードも簡潔ですが、値が変化したタイミング以外では読み取りができませんのでユースケースが少し限られます。</p>
-<div style="break-before: page; page-break-before: always;"></div><h1 id="44-gpioを入力ポーリング"><a class="header" href="#44-gpioを入力ポーリング">4.4 GPIOを入力（ポーリング）</a></h1>
+<p>GPIOポートの初期化は Lチカの <a href="#34-コードを読む">3.4 コードを読む</a>と同様の処理を行っています。今回のコードでは 5 番ポートにアクセスするためのオブジェクトを取得し、<strong>GPIO入力</strong>機能を使って 5番を「入力設定」にしています。</p>
+<p><code>port.onchange</code> は <strong>入力モードの GPIO ポートの「状態変化時に呼び出される関数を設定する」</strong> 機能です。このような関数のことをコールバック関数と呼びます。<code>port.read()</code> を使ったコードと異なり<a href="#44-gpioを入力ポーリング">ポーリング処理</a>が不要でコードも簡潔ですが、値が変化したタイミング以外では読み取りができませんのでユースケースが少し限られます。</p>
+<div style="break-before: page; page-break-before: always;"></div>
+<h1 id="44-gpioを入力ポーリング"><a class="header" href="#44-gpioを入力ポーリング">4.4 GPIOを入力（ポーリング）</a></h1>
 <p>入力ではイベントの他にポーリングというテクニックが広く使われます。（次章のI2Cデバイスからの入力では専らポーリング）</p>
 <ol>
 <li>
@@ -938,7 +968,8 @@ switchCheck();
 <p>終了は CTRL+c</p>
 </li>
 </ol>
-<div style="break-before: page; page-break-before: always;"></div><h1 id="441-polling-コードを読む"><a class="header" href="#441-polling-コードを読む">4.4.1 polling コードを読む</a></h1>
+<div style="break-before: page; page-break-before: always;"></div>
+<h1 id="441-polling-コードを読む"><a class="header" href="#441-polling-コードを読む">4.4.1 polling コードを読む</a></h1>
 <p>様々な情報や値の取得や入力のための基本的な機能・関数は、入力を指定した瞬間、一回きり取得するだけのものがほとんどです。そこで、無限ループをつくりこの中で一回きりの入力を定期的に繰り返すことで、入力の変化を読み取る　ということがよく行われます。このような処理を一般にポーリングと呼びます。 (<a href="https://ja.wikipedia.org/wiki/%E3%83%9D%E3%83%BC%E3%83%AA%E3%83%B3%E3%82%B0_(%E6%83%85%E5%A0%B1)">wikipedia:ポーリング</a>)</p>
 <p>ターミナルウィンドの右側のファイルマネージャでmain-gpio-polling.js⇒表示 を選び、ソースコードを読んでみましょう</p>
 <pre><code class="language-js">import {requestGPIOAccess} from "./node_modules/node-web-gpio/dist/index.js";
@@ -960,11 +991,12 @@ async function switchCheck() {
 
 switchCheck();
 </code></pre>
-<p>GPIOポートの初期化は Lチカの <a href="./chapter_3-4.html">3.4 コードを読む</a>と同様の処理を行っています。</p>
+<p>GPIOポートの初期化は Lチカの <a href="#34-コードを読む">3.4 コードを読む</a>と同様の処理を行っています。</p>
 <p><code>port.export("in")</code> により取得した <strong>GPIO ポートを「入力モード」で初期化</strong> しています。このモードは GPIO ポートにかかる電圧を Web アプリ側から読み取りたい時に使います。初期化は非同期処理であり <code>await</code> で完了を待つ必要があることに注意してください。
 単純に「GPIO ポートの状態を読み込む」には <code>port.read()</code> を使います。</p>
 <p>「スイッチが押された状態を監視する」必要がありますので、定期的に <code>await port.read()</code> を繰り返して GPIO ポートの状態を監視するポーリングのルーチンを無限ループで組んでいます。</p>
-<div style="break-before: page; page-break-before: always;"></div><h1 id="45-gpioセンサーを複数同時に使う"><a class="header" href="#45-gpioセンサーを複数同時に使う">4.5 GPIOセンサーを複数同時に使う</a></h1>
+<div style="break-before: page; page-break-before: always;"></div>
+<h1 id="45-gpioセンサーを複数同時に使う"><a class="header" href="#45-gpioセンサーを複数同時に使う">4.5 GPIOセンサーを複数同時に使う</a></h1>
 <h2 id="ボタンで点灯する-led--回転するモーター制御"><a class="header" href="#ボタンで点灯する-led--回転するモーター制御">ボタンで点灯する LED ／ 回転するモーター制御</a></h2>
 <ul>
 <li>
@@ -974,18 +1006,19 @@ switchCheck();
 <p>回路図は以下の通りに接続します。LED/モーターのどちらかで動作させることが出来ます。</p>
 <ul>
 <li>GPIO PORT5にスイッチ、GPIOPORT26に抵抗とLED を繋ぎます
-<img src="./imgs/PiZero_gpio-inout.png" width=500></li>
+<img src="imgs/PiZero_gpio-inout.png" width="500"></li>
 </ul>
 </li>
 <li>
 <p>モーターを使用した際の回路図は以下となります。</p>
 <ul>
 <li>GPIO PORT5にスイッチ、GPIOPORT26にモーター制御回路を繋ぎます
-<img src="./imgs/PiZero_gpio-inoutMotor.png" width=800></li>
+<img src="imgs/PiZero_gpio-inoutMotor.png" width="800"></li>
 </ul>
 </li>
 </ul>
-<div style="break-before: page; page-break-before: always;"></div><h1 id="451-lチカのコードを書き換える"><a class="header" href="#451-lチカのコードを書き換える">4.5.1 Lチカのコードを書き換える</a></h1>
+<div style="break-before: page; page-break-before: always;"></div>
+<h1 id="451-lチカのコードを書き換える"><a class="header" href="#451-lチカのコードを書き換える">4.5.1 Lチカのコードを書き換える</a></h1>
 <ul>
 <li>Lチカのコードを書き換えて、スイッチで動作する様に変更します。</li>
 <li>正しく回路を接続し、コードを書き換えたらボタンを押した時に LED やモーターが動作する様になります。
@@ -1067,7 +1100,8 @@ function showPort(ev){
 blink();
 </code></pre>
 <p>このコードは CHIRIMEN パネルの ID: <strong>gpio-inout</strong> と同じコードになりますので上手く動作しなかった方は、こちらも併用して確認してみてください</p>
-<div style="break-before: page; page-break-before: always;"></div><h1 id="5-i2cデバイスを試す"><a class="header" href="#5-i2cデバイスを試す">5. I2Cデバイスを試す</a></h1>
+<div style="break-before: page; page-break-before: always;"></div>
+<h1 id="5-i2cデバイスを試す"><a class="header" href="#5-i2cデバイスを試す">5. I2Cデバイスを試す</a></h1>
 <ul>
 <li>I2C（アイ・ツー・シー／アイ・スクエアド・シー）センサの使い方を学びます。</li>
 <li>I2Cセンサを利用するにあたり、以下のポイントが重要になります。</li>
@@ -1083,22 +1117,24 @@ blink();
 </ul>
 <h3 id="raspberry-pi-の-i2c端子"><a class="header" href="#raspberry-pi-の-i2c端子">Raspberry Pi の I2C端子</a></h3>
 <p>下図のSCL, SDAがI2C端子です（黄色の端子）
-<img src="https://chirimen.org/PiZeroWebSerialConsole/wallpaperS.png" alt="Raspi PIN配置図" /></p>
-<div style="break-before: page; page-break-before: always;"></div><h1 id="51i2cを理解する"><a class="header" href="#51i2cを理解する">5.1I2Cを理解する</a></h1>
+<img src="https://chirimen.org/PiZeroWebSerialConsole/wallpaperS.png" alt="Raspi PIN配置図"></p>
+<div style="break-before: page; page-break-before: always;"></div>
+<h1 id="51i2cを理解する"><a class="header" href="#51i2cを理解する">5.1I2Cを理解する</a></h1>
 <h2 id="i2cの概要"><a class="header" href="#i2cの概要">I2Cの概要</a></h2>
 <p><a href="https://ja.wikipedia.org/wiki/I2C">I2C</a> とは 2 線式の同期式シリアル通信インタフェースです。「アイ・スクエア・シー」や「アイ・ ツー・シー」と読みます。I2C では SDA（シリアルデータ）と SCL（シリアルクロック）の 2 本の線で通信を行います。</p>
-<p><img src="./imgs/i2c-bus.png" alt="i2c-bus" /></p>
+<p><img src="imgs/i2c-bus.png" alt="i2c-bus"></p>
 <p>上図のように、I2C の SDA、SCL は複数のデバイス間で共有され、これを「I2C バス」と言います。I2C ではマスターとスレーブの間で通信が行われます。常にマスター側からスレーブ側に要求が行われ、スレーブ側からマスター側へ要求を行うことはできません。</p>
 <p>本チュートリアルでいえばCHIRIMEN環境を動かすボードコンピュータがマスターとなり、ここに接続されるセンサーやアクチュエータデバイスなどがスレーブとして想定されます。スレーブデバイスの一例として<a href="https://tutorial.chirimen.org/partslist">こちらに紹介</a>されているI2Cデバイスをご覧ください。</p>
 <p>マスターは、スレーブが持つ「SlaveAddress (スレーブアドレス)」を指定して、特定のスレーブとの通信を行います。このため、同じ I2C バス上に同じ SlaveAddress のスレーブを繋ぐことはできません。
 I2Cデバイスは小型のICチップデバイスとなっており、デバイスによってはSlaveAddressは製品ごとに固定されています。</p>
-<p><img src="./imgs/i2c-bus2.png" alt="i2c-bus2" /></p>
+<p><img src="imgs/i2c-bus2.png" alt="i2c-bus2"></p>
 <p>通信するデバイス同士が同一基板上にない場合には、SDA、SCL の 2 本の通信線に加え電源や GND の線を加えて 4 本のケーブルを用いて接続するのが一般的です。電源電圧はデバイスに応じたものを繋ぐ必要があります。</p>
-<div style="break-before: page; page-break-before: always;"></div><h1 id="52-i2cセンサを動作させるsht30編"><a class="header" href="#52-i2cセンサを動作させるsht30編">5.2 I2Cセンサを動作させる（SHT30編）</a></h1>
+<div style="break-before: page; page-break-before: always;"></div>
+<h1 id="52-i2cセンサを動作させるsht30編"><a class="header" href="#52-i2cセンサを動作させるsht30編">5.2 I2Cセンサを動作させる（SHT30編）</a></h1>
 <p>SHT30は温度に加えて湿度も測定できるI2C接続の多機能センサーです。SHT31もほぼ同等に使えます。(SHT31のほうが精度が高い)</p>
 <ul>
 <li>
-<p><a href="../chirimenGeneric/#i2ci2c--sht30-sht31">SHT30/SHT31について</a></p>
+<p><a href="../chirimenGeneric#i2ci2c--sht30-sht31">SHT30/SHT31について</a></p>
 </li>
 <li>
 <p>ターミナルウィンドの<code>[CHIRIMEN Panel]</code>ボタンを押す</p>
@@ -1111,10 +1147,11 @@ I2Cデバイスは小型のICチップデバイスとなっており、デバイ
 </li>
 <li>
 <p>回路図リンクを押すと回路図が出てきますので、回路を組みます。なお、接続は下の図のようになります。
-<img src="./imgs/pizero_sht30.png" alt="SHT31 schematic" /></p>
+<img src="imgs/pizero_sht30.png" alt="SHT31 schematic"></p>
 </li>
 </ul>
-<div style="break-before: page; page-break-before: always;"></div><h1 id="521-i2cセンサーsht30の認識を確認して実行する"><a class="header" href="#521-i2cセンサーsht30の認識を確認して実行する">5.2.1 I2Cセンサー(SHT30)の認識を確認して実行する</a></h1>
+<div style="break-before: page; page-break-before: always;"></div>
+<h1 id="521-i2cセンサーsht30の認識を確認して実行する"><a class="header" href="#521-i2cセンサーsht30の認識を確認して実行する">5.2.1 I2Cセンサー(SHT30)の認識を確認して実行する</a></h1>
 <h2 id="i2cセンサーsht30が認識されていることを確認する"><a class="header" href="#i2cセンサーsht30が認識されていることを確認する">I2Cセンサー(SHT30)が認識されていることを確認する</a></h2>
 <ul>
 <li>
@@ -1124,7 +1161,7 @@ I2Cデバイスは小型のICチップデバイスとなっており、デバイ
 </ul>
 </li>
 <li>
-<p><a href="../chirimenGeneric/#b-i2cdetect">i2c detectとは</a></p>
+<p><a href="../chirimenGeneric#b-i2cdetect">i2c detectとは</a></p>
 </li>
 </ul>
 <p>I2C デバイスが正常に接続されているかどうかを確認するために、ターミナルから <code>i2cdetect</code> というコマンドを使う事ができます。このコマンドは I2C バスをスキャンして反応のあったスレーブアドレスを表示するツールです。</p>
@@ -1144,9 +1181,11 @@ I2Cデバイスは小型のICチップデバイスとなっており、デバイ
 60: -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- 
 70: -- -- -- -- -- -- -- --                       
 </pre>
+
 <p>0x44 の表示が見えない時は正しく接続がされていません。
 回路図を確認して正しく接続が出来ているかを再確認してください。</p>
-<div style="break-before: page; page-break-before: always;"></div><h1 id="522-sht30-のコードの取得と実行"><a class="header" href="#522-sht30-のコードの取得と実行">5.2.2 SHT30 のコードの取得と実行</a></h1>
+<div style="break-before: page; page-break-before: always;"></div>
+<h1 id="522-sht30-のコードの取得と実行"><a class="header" href="#522-sht30-のコードの取得と実行">5.2.2 SHT30 のコードの取得と実行</a></h1>
 <h2 id="サンプルコードを取得する"><a class="header" href="#サンプルコードを取得する">サンプルコードを取得する</a></h2>
 <ul>
 <li><code>[JS GET]</code>ボタンを押すと、開発ディレクトリ(<code>~/myApp</code>)に、サンプルコードが保存されます。
@@ -1163,7 +1202,8 @@ I2Cデバイスは小型のICチップデバイスとなっており、デバイ
 <li>温度と湿度が1秒ごとにコンソールに表示されます。</li>
 <li>終了は CTRL+c</li>
 </ul>
-<div style="break-before: page; page-break-before: always;"></div><h1 id="523-sht30-のコードを読む"><a class="header" href="#523-sht30-のコードを読む">5.2.3 SHT30 のコードを読む</a></h1>
+<div style="break-before: page; page-break-before: always;"></div>
+<h1 id="523-sht30-のコードを読む"><a class="header" href="#523-sht30-のコードを読む">5.2.3 SHT30 のコードを読む</a></h1>
 <ul>
 <li>ターミナルウィンドの右側のファイルマネージャでmain-sht30.js⇒表示 を選び、ソースコードを読んでみましょう</li>
 </ul>
@@ -1193,7 +1233,7 @@ async function main() {
 }
 </code></pre>
 <ul>
-<li><a href="../chirimenGeneric/#webi2c">WebI2CライブラリとSHT30デバイスドライバを読み込み</a>
+<li><a href="../chirimenGeneric#webi2c">WebI2CライブラリとSHT30デバイスドライバを読み込み</a>
 <ul>
 <li>I2Cインターフェースに接続されたスレーブデバイスは<a href="http://browserobo.github.io/WebI2C">Web I2C API</a>と呼ぶAPIによって使用することができます。</li>
 </ul>
@@ -1203,14 +1243,15 @@ async function main() {
 import SHT30 from "@chirimen/sht30";
 </code></pre>
 <ul>
-<li><a href="./chapter_10-3-1.html">JavaScript module</a> に基づいてWebI2Cライブラリを読み込みます。</li>
-<li><a href="./chapter_5-2-4.html">I2C 温湿度センサー (SHT30, SHT31)の初期化と使用</a>
+<li><a href="#1031-javascriptコードライブラリの読み込み">JavaScript module</a> に基づいてWebI2Cライブラリを読み込みます。</li>
+<li><a href="#524-sht30-のコードの詳細解説">I2C 温湿度センサー (SHT30, SHT31)の初期化と使用</a>
 <ul>
 <li>次のページでコードの流れを詳細に解説します</li>
 </ul>
 </li>
 </ul>
-<div style="break-before: page; page-break-before: always;"></div><h1 id="524-sht30-のコードの詳細解説"><a class="header" href="#524-sht30-のコードの詳細解説">5.2.4 SHT30 のコードの詳細解説</a></h1>
+<div style="break-before: page; page-break-before: always;"></div>
+<h1 id="524-sht30-のコードの詳細解説"><a class="header" href="#524-sht30-のコードの詳細解説">5.2.4 SHT30 のコードの詳細解説</a></h1>
 <ul>
 <li>I2C 温湿度センサー (SHT30, SHT31)の初期化と使用</li>
 </ul>
@@ -1228,7 +1269,7 @@ import SHT30 from "@chirimen/sht30";
   }
 }
 </code></pre>
-<p>温度センサーの情報を定期的に取得し、画面に出力する処理が行われています。</br>
+<p>温度センサーの情報を定期的に取得し、画面に出力する処理が行われています。
 少し詳し解説してみます。</p>
 <h5 id="await-requesti2caccess"><a class="header" href="#await-requesti2caccess">await requestI2CAccess()</a></h5>
 <p>Web I2C API を利用するための <strong><code>I2CAccess</code> インタフェースを取得</strong> するための最初の API 呼び出しです。この関数も非同期処理ですので <code>await</code> で処理完了を待機し、その結果正しくインタフェースが取得されたら <code>i2cAccess</code> オブジェクトに保持します。</p>
@@ -1252,9 +1293,10 @@ import SHT30 from "@chirimen/sht30";
 <pre><code class="language-js">const { humidity, temperature } = await sht30.readData();
 </code></pre>
 <p>ドライバーライブラリ内部では、SHT30 から得られる温度と湿度それぞれ 16bit の数値を、温度・湿度の物理量の数値に変換して返却しています。</p>
-<div style="break-before: page; page-break-before: always;"></div><h1 id="53-adt7410編"><a class="header" href="#53-adt7410編">5.3 ADT7410編</a></h1>
+<div style="break-before: page; page-break-before: always;"></div>
+<h1 id="53-adt7410編"><a class="header" href="#53-adt7410編">5.3 ADT7410編</a></h1>
 <p>温度センサーADT7410を使います。
-もし、SHT30を使用する場合は、「<a href="./chapter_6.html">6. IoTを試す</a>」の章まで読み飛ばしてください。</p>
+もし、SHT30を使用する場合は、「<a href="#6-iotを試す">6. IoTを試す</a>」の章まで読み飛ばしてください。</p>
 <ul>
 <li>ターミナルウィンドの<code>[CHIRIMEN Panel]</code>ボタンを押す</li>
 <li>出現したCHIRIMEN Panelの<code>[Get Examples]</code>ボタンを押す</li>
@@ -1265,7 +1307,7 @@ import SHT30 from "@chirimen/sht30";
 </ul>
 </li>
 </ul>
-<p><img src="./imgs/pizero_temp.png" alt="PiZero温度センサー図" /></p>
+<p><img src="imgs/pizero_temp.png" alt="PiZero温度センサー図"></p>
 <ul>
 <li><code>[JS GET]</code>ボタンを押すと、開発ディレクトリ(<code>~/myApp</code>)に、サンプルコードが保存されます。
 <ul>
@@ -1298,6 +1340,7 @@ import SHT30 from "@chirimen/sht30";
 60: -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- 
 70: -- -- -- -- -- -- -- --                       
 </pre>
+
 <h3 id="実行する-1"><a class="header" href="#実行する-1">実行する</a></h3>
 <ul>
 <li>ターミナルウィンドのコンソールのプロンプトが<code>pi@raspberrypi:~/myApp$</code>となっていることを確認</li>
@@ -1305,25 +1348,29 @@ import SHT30 from "@chirimen/sht30";
 <li>温度が1秒ごとにコンソールに表示されます。</li>
 <li>終了は CTRL+c</li>
 </ul>
-<div style="break-before: page; page-break-before: always;"></div><h1 id="54-gpio-と-i2cセンサーを組み合わせる"><a class="header" href="#54-gpio-と-i2cセンサーを組み合わせる">5.4 GPIO と I2Cセンサーを組み合わせる</a></h1>
+<div style="break-before: page; page-break-before: always;"></div>
+<h1 id="54-gpio-と-i2cセンサーを組み合わせる"><a class="header" href="#54-gpio-と-i2cセンサーを組み合わせる">5.4 GPIO と I2Cセンサーを組み合わせる</a></h1>
 <p>GPIO センサーと I2Cセンサーは、それぞれを組み合わせて動作させることも可能です。このチュートリアルで使用した LED（GPIOセンサー）と SHT30温湿度センサー（I2Cセンサー）を組み合わせて、決まった温度になったら LED を光らせるサンプルを試してみましょう。</p>
 <p><code>CHIRIMEN パネル</code> の <code>Get Examples</code> の中より ID: <a href="https://tutorial.chirimen.org/pizero/esm-examples/#I2C_sht30_led"><strong>sht30_led</strong></a> を参考にして回路図の確認やサンプルコードを取得して動作を確認してみましょう。</p>
-<p><img src="./imgs/SHT30_LED.png" alt="配線図 SHT30 温湿度センサー + LED" /></p>
-<div style="break-before: page; page-break-before: always;"></div><h1 id="6-iotを試す"><a class="header" href="#6-iotを試す">6. IoTを試す</a></h1>
-<p><img src="imgs/IoTsystemConf.png" alt="system configuration" />
+<p><img src="imgs/SHT30_LED.png" alt="配線図 SHT30 温湿度センサー + LED"></p>
+<div style="break-before: page; page-break-before: always;"></div>
+<h1 id="6-iotを試す"><a class="header" href="#6-iotを試す">6. IoTを試す</a></h1>
+<p><img src="imgs/IoTsystemConf.png" alt="system configuration">
 IoT は、制御されるデバイス（上図では <strong>CHIRIMEN PiZero W</strong> ）と、利用者端末（上図では <strong>WebApp PC-side</strong> ）に加えて、これらの間でデータを中継するサーバ（<strong>クラウド</strong>）が必要になります。
 今回は Web標準技術である WebSocketプロトコルを中継するサーバを用いて LED を備えた CHIRIMENデバイスと、スマホや PC の WebApp を繋いだ IoTシステムを作ります。</p>
-<p>Note: <a href="./chapter_4-2.html">モーター制御の回路</a>を組めば、そのまま遠隔モーターコントロールができます</p>
+<p>Note: <a href="#42-gpioを出力">モーター制御の回路</a>を組めば、そのまま遠隔モーターコントロールができます</p>
 <p>用語の詳細な説明は共通資料で解説を行っていますので、興味のある方はそちらをご確認ください。</p>
 <ul>
-<li><a href="./chapter_10-6.html">IoT</a></li>
-<li><a href="./chapter_10-6.html">WebSoeketとRelayServer</a></li>
+<li><a href="#106-iot">IoT</a></li>
+<li><a href="#106-iot">WebSoeketとRelayServer</a></li>
 </ul>
-<div style="break-before: page; page-break-before: always;"></div><h1 id="61-遠隔ledコントロール"><a class="header" href="#61-遠隔ledコントロール">6.1 遠隔LEDコントロール</a></h1>
+<div style="break-before: page; page-break-before: always;"></div>
+<h1 id="61-遠隔ledコントロール"><a class="header" href="#61-遠隔ledコントロール">6.1 遠隔LEDコントロール</a></h1>
 <h2 id="配線する"><a class="header" href="#配線する">配線する</a></h2>
 <p>配線は最初の Lチカそのままです。
-<img src="./imgs/pizero_led.png" alt="PiZero配線図" /></p>
-<div style="break-before: page; page-break-before: always;"></div><h1 id="62-pizero-サンプルコードの実行"><a class="header" href="#62-pizero-サンプルコードの実行">6.2 PiZero サンプルコードの実行</a></h1>
+<img src="imgs/pizero_led.png" alt="PiZero配線図"></p>
+<div style="break-before: page; page-break-before: always;"></div>
+<h1 id="62-pizero-サンプルコードの実行"><a class="header" href="#62-pizero-サンプルコードの実行">6.2 PiZero サンプルコードの実行</a></h1>
 <p>IoT の実行を行う為に PiZero 用のサンプルコードの実行と、PC 用のサンプルコードの実行が必要になります。それぞれのコードの実行方法は以下を参考に実施してください。</p>
 <h2 id="chirimenデバイス側にコードを入れ実行する"><a class="header" href="#chirimenデバイス側にコードを入れ実行する">CHIRIMENデバイス側にコードを入れ、実行する</a></h2>
 <ul>
@@ -1340,12 +1387,13 @@ IoT は、制御されるデバイス（上図では <strong>CHIRIMEN PiZero W</
 <ul>
 <li>ターミナルウィンドのコンソールのプロンプトが<code>pi@raspberrypi:~/myApp$</code>となっていることを確認</li>
 <li>ターミナルウィンドのコンソールに、<code>node main-remote_gpio_led.js</code> [ENTER] と入力して実行。
-<img src="imgs/RC_NODE.png" alt="CHIRIMEN PiZero Console" /></li>
+<img src="imgs/RC_NODE.png" alt="CHIRIMEN PiZero Console"></li>
 <li>なお、実験が終わったら終了は CTRL+c です。</li>
 </ul>
 </li>
 </ul>
-<div style="break-before: page; page-break-before: always;"></div><h1 id="63-pc-サンプルコードの実行"><a class="header" href="#63-pc-サンプルコードの実行">6.3 PC サンプルコードの実行</a></h1>
+<div style="break-before: page; page-break-before: always;"></div>
+<h1 id="63-pc-サンプルコードの実行"><a class="header" href="#63-pc-サンプルコードの実行">6.3 PC サンプルコードの実行</a></h1>
 <ul>
 <li>
 <p>CHIRIMEN Panel に戻り、ID : <strong>remote_gpio_led</strong> の行にある、<code>CSB EDIT</code> リンクをクリックする。</p>
@@ -1362,15 +1410,17 @@ IoT は、制御されるデバイス（上図では <strong>CHIRIMEN PiZero W</
 </li>
 <li>
 <p>CodeSandbox の画面構成について
-<img src="imgs/RC_CSB.svg" alt="Code Sandbox Image" /></p>
+<img src="imgs/RC_CSB.svg" alt="Code Sandbox Image"></p>
 </li>
 </ul>
-<div style="break-before: page; page-break-before: always;"></div><h1 id="64-自分専用チャンネルで制御"><a class="header" href="#64-自分専用チャンネルで制御">6.4 自分専用チャンネルで制御</a></h1>
+<div style="break-before: page; page-break-before: always;"></div>
+<h1 id="64-自分専用チャンネルで制御"><a class="header" href="#64-自分専用チャンネルで制御">6.4 自分専用チャンネルで制御</a></h1>
 <p>サンプルのコードは共通のチャンネルを使って制御しています。この状態では複数の人が同時に実習していると混信します。(他の人のPCでON/OFFを指示しても、自分のLEDがON/OFFする。同じチャンネルを使っているため。)</p>
 <p>これはこれで使い道はあるのですが、自分のLEDは自分だけで制御したい場合は専用のチャンネルを使って制御しましょう。　チャンネルの指定はPiZero側のコードと、PC側のコード両方を同時に同じ内容で設定する必要があり、以下の部分になります。</p>
 <p><code>channel = await relay.subscribe("chirimenLED");</code></p>
 <p>この<code>chirimenLED</code>という文字列(チャンネル名)を他の人と被らない別のチャンネル名に書き換えます(<code>chirimenLED5</code>など)</p>
-<div style="break-before: page; page-break-before: always;"></div><h1 id="65-pizero-側のコードを読む"><a class="header" href="#65-pizero-側のコードを読む">6.5 PiZero 側のコードを読む</a></h1>
+<div style="break-before: page; page-break-before: always;"></div>
+<h1 id="65-pizero-側のコードを読む"><a class="header" href="#65-pizero-側のコードを読む">6.5 PiZero 側のコードを読む</a></h1>
 <h2 id="raspberry-pi-zero側コード"><a class="header" href="#raspberry-pi-zero側コード">Raspberry Pi Zero側コード</a></h2>
 <ul>
 <li>ターミナルウィンドの右側のファイルマネージャでmain-remote_gpio_led.js⇒表示 を選び、ソースコードを読んでみましょう</li>
@@ -1415,7 +1465,7 @@ connect();
 <p>プログラムは以下の流れで実行されています。</p>
 <ul>
 <li>これまで通りWebGPIOライブラリの読み込み</li>
-<li><a href="./chapter_10-6.html">relayServer.js</a>ライブラリの読み込み
+<li><a href="#106-iot">relayServer.js</a>ライブラリの読み込み
 <ul>
 <li>Node.jsではrelayServerライブラリに加えて、webSocketライブラリの読み込みが必要です。</li>
 </ul>
@@ -1425,16 +1475,17 @@ connect();
 import {RelayServer} from "./RelayServer.js";
 </code></pre>
 <ul>
-<li><a href="./chapter_10-6.html">relayServer.js</a>を使って、PCからの操作指示を受信
+<li><a href="#106-iot">relayServer.js</a>を使って、PCからの操作指示を受信
 <ul>
-<li><a href="./chapter_10-6.html">初期化</a></li>
-<li><a href="./chapter_10-6.html">受信処理</a>(コールバック関数の設定)</li>
+<li><a href="#106-iot">初期化</a></li>
+<li><a href="#106-iot">受信処理</a>(コールバック関数の設定)</li>
 </ul>
 </li>
-<li>受信した内容をもとに<a href="./chapter_10-6.html">GPIO出力を操作</a>してLEDを点灯・消灯</li>
+<li>受信した内容をもとに<a href="#106-iot">GPIO出力を操作</a>してLEDを点灯・消灯</li>
 </ul>
-<p>コードの詳細解説は<a href="./chapter_10-6.html">こちら</a>を参照してください</p>
-<div style="break-before: page; page-break-before: always;"></div><h1 id="66-pc-側のコードを読む"><a class="header" href="#66-pc-側のコードを読む">6.6 PC 側のコードを読む</a></h1>
+<p>コードの詳細解説は<a href="#106-iot">こちら</a>を参照してください</p>
+<div style="break-before: page; page-break-before: always;"></div>
+<h1 id="66-pc-側のコードを読む"><a class="header" href="#66-pc-側のコードを読む">6.6 PC 側のコードを読む</a></h1>
 <h2 id="pc側コード"><a class="header" href="#pc側コード">PC側コード</a></h2>
 <ul>
 <li>CodeSandboxで開いている <code>PC.js</code> を見てみましょう</li>
@@ -1467,23 +1518,24 @@ function OffLED(){ // LED OFF
 </code></pre>
 <p>プログラムは以下の流れで実行されています。</p>
 <ul>
-<li><a href="./chapter_10-3-1.html">JavaScript Module</a>仕様に基づいて <code>relayServer.js</code> を読み込み</li>
+<li><a href="#1031-javascriptコードライブラリの読み込み">JavaScript Module</a>仕様に基づいて <code>relayServer.js</code> を読み込み</li>
 </ul>
 <pre><code class="language-js">import {RelayServer} from "https://www.chirimen.org/remote-connection/js/beta/RelayServer.js";
 </code></pre>
 <ul>
-<li><a href="../chirimenGeneric/#relayserverjs">relayServer.js</a>を使い、UIを通してユーザからの操作指示を送信
+<li><a href="../chirimenGeneric#relayserverjs">relayServer.js</a>を使い、UIを通してユーザからの操作指示を送信
 <ul>
-<li><a href="./chapter_10-6.html">初期化</a></li>
-<li><a href="./chapter_10-6.html">送信処理</a>～（UI(ボタン)に設置したコールバック関数をもとに送信</li>
+<li><a href="#106-iot">初期化</a></li>
+<li><a href="#106-iot">送信処理</a>～（UI(ボタン)に設置したコールバック関数をもとに送信</li>
 </ul>
 </li>
 </ul>
-<p>コードの詳細解説は<a href="./chapter_10-6.html">こちら</a>を参照してください</p>
-<div style="break-before: page; page-break-before: always;"></div><h1 id="7-常駐プログラム化する"><a class="header" href="#7-常駐プログラム化する">7. 常駐プログラム化する</a></h1>
-<p>ターミナルウィンドからnodeコマンドで実行指示しなくても、電源投入後 自動的に指定したコードを起動する設定（常駐プログラム化）ができます。</br>
+<p>コードの詳細解説は<a href="#106-iot">こちら</a>を参照してください</p>
+<div style="break-before: page; page-break-before: always;"></div>
+<h1 id="7-常駐プログラム化する"><a class="header" href="#7-常駐プログラム化する">7. 常駐プログラム化する</a></h1>
+<p>ターミナルウィンドからnodeコマンドで実行指示しなくても、電源投入後 自動的に指定したコードを起動する設定（常駐プログラム化）ができます。
 このチュートリアルでは、<a href="https://www.npmjs.com/package/forever">forever</a> を使用する設定を専用GUIを用いて行ってみましょう。</p>
-<p><img src="./imgs/residentappconf.jpg" alt="Resident App Conf." /></p>
+<p><img src="imgs/residentappconf.jpg" alt="Resident App Conf."></p>
 <ul>
 <li>
 <p>ターミナルウィンドの <code>[CHIRIMEN Panel]</code> ボタン ⇒ CHIRIMEN Panel の <code>[Resident App Conf.]</code> ボタンを押します。</p>
@@ -1525,42 +1577,45 @@ function OffLED(){ // LED OFF
 <p><em>Note: 常駐化のツールとしては、他にも systemd service unit, openrc, cron, pm2, forever 等があります。Webでそれぞれの特徴を調べて用途に合ったものを選択して設定しても良いでしょう。</em></p>
 </li>
 </ul>
-<div style="break-before: page; page-break-before: always;"></div><h1 id="8-他のいろいろなデバイスを試してみる"><a class="header" href="#8-他のいろいろなデバイスを試してみる">8. 他のいろいろなデバイスを試してみる</a></h1>
+<div style="break-before: page; page-break-before: always;"></div>
+<h1 id="8-他のいろいろなデバイスを試してみる"><a class="header" href="#8-他のいろいろなデバイスを試してみる">8. 他のいろいろなデバイスを試してみる</a></h1>
 <ul>
 <li>ターミナルウィンドの <code>[CHIRIMEN Panel]</code> ボタン ⇒ CHIRIMEN Panelの <code>[Get Examples]</code> ボタンで出現するリストのデバイスがすぐ試せます。</li>
 <li>このリストの直リンクは<a href="https://tutorial.chirimen.org/pizero/esm-examples/">こちら(サンプル一覧)</a>です。CHIRIMEN RPiZero を PC につないでいないときはこちらを眺めてください。</li>
 </ul>
-<p>また、こちらには、Web GPIO や Web I2C によって扱うことのできる<a href="https://tutorial.chirimen.org/raspi/partslist">外部デバイスの写真や様々なCHIRIMEN環境のサンプルコードの一覧があります</a>。こちらも参考になるかもしれません。</br>(CHIRIMENは<a href="https://tutorial.chirimen.org/">Raspberry Pi ZeroW 以外に、Raspberry Pi3, Pi4 や、micro:bit等</a>)でも使用できます）</p>
-<div style="break-before: page; page-break-before: always;"></div><h1 id="81-応用センサーキットの使い方"><a class="header" href="#81-応用センサーキットの使い方">8.1 応用センサーキットの使い方</a></h1>
+<p>また、こちらには、Web GPIO や Web I2C によって扱うことのできる<a href="https://tutorial.chirimen.org/raspi/partslist">外部デバイスの写真や様々なCHIRIMEN環境のサンプルコードの一覧があります</a>。こちらも参考になるかもしれません。(CHIRIMENは<a href="https://tutorial.chirimen.org/">Raspberry Pi ZeroW 以外に、Raspberry Pi3, Pi4 や、micro:bit等</a>)でも使用できます）</p>
+<div style="break-before: page; page-break-before: always;"></div>
+<h1 id="81-応用センサーキットの使い方"><a class="header" href="#81-応用センサーキットの使い方">8.1 応用センサーキットの使い方</a></h1>
 <h2 id="応用センサーキットの一覧"><a class="header" href="#応用センサーキットの一覧">応用センサーキットの一覧</a></h2>
-<img src="./imgs/AppliedSensorKits.jpg" width=800>
+<img src="imgs/AppliedSensorKits.jpg" width="800">
 <h2 id="目次-1"><a class="header" href="#目次-1">目次</a></h2>
 <ul>
-<li><a href="./chapter_8-1-1.html">単体で動作確認できるセンサーの使い方</a>
+<li><a href="#811-単体で動作確認できるセンサー">単体で動作確認できるセンサーの使い方</a>
 <ul>
 <li>距離センサー／照度センサー／温湿度・気圧センサー／非接触赤外線温度センサー／サーモグラフィー</li>
 </ul>
 </li>
-<li><a href="./chapter_8-1-2.html">人感センサーの使い方</a></li>
-<li><a href="./chapter_8-1-3.html">Neopixel LED の使い方</a></li>
-<li><a href="./chapter_8-1-4.html">アナログセンサーの使い方</a></li>
-<li><a href="./chapter_8-1-5.html">アクチュエーター（サーボモーター）の使い方</a></li>
+<li><a href="#812-人感センサーの使い方">人感センサーの使い方</a></li>
+<li><a href="#813-neopixel-led-の使い方">Neopixel LED の使い方</a></li>
+<li><a href="#814-アナログセンサーの使い方">アナログセンサーの使い方</a></li>
+<li><a href="#815-アクチュエーターサーボモーターの使い方">アクチュエーター（サーボモーター）の使い方</a></li>
 <li>アクチュエーター（DCモーター）の使い方
 <ul>
-<li><a href="./chapter_8-1-6.html">hbridge1 の回路図（MX1508利用）</a></li>
-<li><a href="./chapter_8-1-7.html">hbridge2-pca9685pwm の回路図（MX1508利用）</a></li>
+<li><a href="#816-アクチュエーターdcモーターの使い方">hbridge1 の回路図（MX1508利用）</a></li>
+<li><a href="#817-アクチュエーターdcモーターの使い方pwm駆動">hbridge2-pca9685pwm の回路図（MX1508利用）</a></li>
 </ul>
 </li>
-<li><a href="./chapter_8-1-8.html">RaspberryPi のカメラに関する注意</a></li>
+<li><a href="#818-raspberrypi-のカメラに関する注意">RaspberryPi のカメラに関する注意</a></li>
 </ul>
-<hr />
+<hr>
 <ul>
 <li>応用センサーキットはハッカソン等のアイディアを実装する際に使い勝手の良いセンサーを集めたキットです。</li>
 <li>CHIRIMEN チュートリアルで習得したスキルを使って実際に動作させることが出来ます。</li>
 <li>一部のセンサーは特性を知る必要があるのでその解説を行います。</li>
 </ul>
-<div style="break-before: page; page-break-before: always;"></div><h1 id="811-単体で動作確認できるセンサー"><a class="header" href="#811-単体で動作確認できるセンサー">8.1.1 単体で動作確認できるセンサー</a></h1>
-<img src="./imgs/I2Csensor.jpg" width=800>
+<div style="break-before: page; page-break-before: always;"></div>
+<h1 id="811-単体で動作確認できるセンサー"><a class="header" href="#811-単体で動作確認できるセンサー">8.1.1 単体で動作確認できるセンサー</a></h1>
+<img src="imgs/I2Csensor.jpg" width="800">
 <ul>
 <li>I2C Examples より回路図とサンプルコードを使って試すことが出来ます。
 <ul>
@@ -1570,7 +1625,7 @@ function OffLED(){ // LED OFF
 </li>
 </ul>
 <h3 id="回路図とプログラムサンプル"><a class="header" href="#回路図とプログラムサンプル">回路図とプログラムサンプル</a></h3>
-<p><img src="./imgs/Vl53l0x.jpg" width=450> <img src="./imgs/Vl53l0x2.jpg" width=200></p>
+<p><img src="imgs/Vl53l0x.jpg" width="450"> <img src="imgs/Vl53l0x2.jpg" width="200"></p>
 <p>動作を確認するためのサンプルコードは <code>CHIRIMENパネル</code> から入手できます。<br>
 ブラウザでサンプルコードの中を確認したい場合は <code>コードを確認する</code> から確認出来ます。</p>
 <ul>
@@ -1614,9 +1669,10 @@ function OffLED(){ // LED OFF
 形状が異なる場合は実物の基板に書かれた文字を確認して、回路図と同じ文字の書かれたピンに接続します。
 センサーのピンは接続しない部分も物によってあります。回路図に従って必要な部分を繋ぎます。必ずセンサーの全てのピンを繋ぐ必要はありません。
 </code></pre>
-<p><a href="./chapter_8-1.html">応用センサー一覧に戻る</a></p>
-<div style="break-before: page; page-break-before: always;"></div><h1 id="812-人感センサーの使い方"><a class="header" href="#812-人感センサーの使い方">8.1.2 人感センサーの使い方</a></h1>
-<p><img src="./imgs/pir_sensor_photo.jpg" width=300> <img src="./imgs/pir_sensor_use.jpg" width=400></p>
+<p><a href="#81-応用センサーキットの使い方">応用センサー一覧に戻る</a></p>
+<div style="break-before: page; page-break-before: always;"></div>
+<h1 id="812-人感センサーの使い方"><a class="header" href="#812-人感センサーの使い方">8.1.2 人感センサーの使い方</a></h1>
+<p><img src="imgs/pir_sensor_photo.jpg" width="300"> <img src="imgs/pir_sensor_use.jpg" width="400"></p>
 <ul>
 <li>人感センサーは半球体の部分から赤外線が発されて人の動きや熱を検知してオンオフするセンサーです。</li>
 <li>人感センサーは GPIO センサーとなり、チュートリアルのスイッチと同じ種類のセンサーになります。</li>
@@ -1629,7 +1685,7 @@ function OffLED(){ // LED OFF
 <li>動作確認をする際には保持時間を最短にすると調整しやすくなります。</li>
 </ul>
 <h3 id="回路図とプログラムサンプル-1"><a class="header" href="#回路図とプログラムサンプル-1">回路図とプログラムサンプル</a></h3>
-<img src="./imgs/pir_sensor.jpg" width=600>
+<img src="imgs/pir_sensor.jpg" width="600">
 <p>動作を確認するためのサンプルコードは <code>CHIRIMENパネル</code> から入手できます。
 ブラウザでサンプルコードの中を確認したい場合は <code>コードを確認する</code> から確認出来ます。</p>
 <ul>
@@ -1650,15 +1706,16 @@ function OffLED(){ // LED OFF
 <li>サンプルコードは「スイッチ」のソースコードと共通で利用する事が出来ます。人感センサー（pir sensor）の名前でサンプル一覧には掲載されていないので注意してください。</li>
 <li>「スイッチ2」のソースコードでも動作させることが可能で、こちらは逐一センサーの状況が分かるので、調整をする際にはこちらのサンプルを利用すると便利です。</li>
 </ul>
-<p><a href="./chapter_8-1.html">応用センサー一覧に戻る</a></p>
-<div style="break-before: page; page-break-before: always;"></div><h1 id="813-neopixel-led-の使い方"><a class="header" href="#813-neopixel-led-の使い方">8.1.3 Neopixel LED の使い方</a></h1>
-<img src="./imgs/NeopixelLEDset.jpg" width=600>
+<p><a href="#81-応用センサーキットの使い方">応用センサー一覧に戻る</a></p>
+<div style="break-before: page; page-break-before: always;"></div>
+<h1 id="813-neopixel-led-の使い方"><a class="header" href="#813-neopixel-led-の使い方">8.1.3 Neopixel LED の使い方</a></h1>
+<img src="imgs/NeopixelLEDset.jpg" width="600">
 <ul>
 <li>Neopixel LED というフルカラーLED の使い方です。こちらの LED はチュートリアルの LED と異なり、プログラムで複数の LED の点灯の制御や色を変えたりすることが出来ます。</li>
 <li>接続には Neopixel I2C Driver というオープンハードウェアを利用しています。このドライバーボードは市販品ではありません。</li>
 </ul>
 <h3 id="回路図とプログラムサンプル-2"><a class="header" href="#回路図とプログラムサンプル-2">回路図とプログラムサンプル</a></h3>
-<img src="./imgs/NeopixelLED.jpg" width=800>
+<img src="imgs/NeopixelLED.jpg" width="800">
 <p>※ドライバとLEDの接続をする部分は以下の通りです。
 　赤：VIN（3.3V）, 黒：GND, 緑：D-IN（DI）
 　既にケーブルが接続されている物は同系色のケーブルを繋げます。</p>
@@ -1685,16 +1742,18 @@ function OffLED(){ // LED OFF
 </li>
 </ul>
 <div style="page-break-before:always"></div>
-<p><a href="./chapter_8-1.html">応用センサー一覧に戻る</a></p>
-<div style="break-before: page; page-break-before: always;"></div><h1 id="814-アナログセンサーの使い方"><a class="header" href="#814-アナログセンサーの使い方">8.1.4 アナログセンサーの使い方</a></h1>
-<p><img src="./imgs/analog_sensor.jpg" width=500><img src="./imgs/water_soil.jpg" width=300></p>
+
+<p><a href="#81-応用センサーキットの使い方">応用センサー一覧に戻る</a></p>
+<div style="break-before: page; page-break-before: always;"></div>
+<h1 id="814-アナログセンサーの使い方"><a class="header" href="#814-アナログセンサーの使い方">8.1.4 アナログセンサーの使い方</a></h1>
+<p><img src="imgs/analog_sensor.jpg" width="500"><img src="imgs/water_soil.jpg" width="300"></p>
 <ul>
 <li>アナログセンサーを利用する時には ADC（アナログデジタルコンバーター）を利用して値を取得して使います。</li>
 <li>応用センサーキットでは半固定抵抗（つまみの代わり）を利用したアナログ値の変更の確認をするサンプルと、水位センサー・土壌湿度センサーがキットに含まれています。</li>
 </ul>
 <h3 id="回路図とプログラムサンプル-3"><a class="header" href="#回路図とプログラムサンプル-3">回路図とプログラムサンプル</a></h3>
 <h2 id="アナログボリュームの回路図半固定抵抗利用"><a class="header" href="#アナログボリュームの回路図半固定抵抗利用">アナログボリュームの回路図（半固定抵抗利用）</a></h2>
-<img src="./imgs/analog_jig.jpg" width=700>
+<img src="imgs/analog_jig.jpg" width="700">
 <ul>
 <li>アナログセンサーの利用は ADS1115 を使います。回路図にあるつまみは半固定抵抗 10KΩ を使用します。</li>
 </ul>
@@ -1717,7 +1776,7 @@ function OffLED(){ // LED OFF
 <li>水位センサー／土壌センサーを利用する前にアナログボリュームで動作確認をするようにしてください。</li>
 </ul>
 <h2 id="水位センサーの回路図"><a class="header" href="#水位センサーの回路図">水位センサーの回路図</a></h2>
-<img src="./imgs/analog_water.jpg" width=700>
+<img src="imgs/analog_water.jpg" width="700">
 <ul>
 <li>水位センサ、土壌湿度センサもアナログセンサーです。ADS1115 を併用して使います。</li>
 </ul>
@@ -1734,15 +1793,16 @@ function OffLED(){ // LED OFF
 <ul>
 <li>動作を確認するためには実際に水につけて確認するか、濡れタオルで覆う事で確認が出来ます。</li>
 </ul>
-<p><a href="./chapter_8-1.html">応用センサー一覧に戻る</a></p>
-<div style="break-before: page; page-break-before: always;"></div><h1 id="815-アクチュエーターサーボモーターの使い方"><a class="header" href="#815-アクチュエーターサーボモーターの使い方">8.1.5 アクチュエーター（サーボモーター）の使い方</a></h1>
-<img src="./imgs/pwm_sg90.jpg" width=700>
+<p><a href="#81-応用センサーキットの使い方">応用センサー一覧に戻る</a></p>
+<div style="break-before: page; page-break-before: always;"></div>
+<h1 id="815-アクチュエーターサーボモーターの使い方"><a class="header" href="#815-アクチュエーターサーボモーターの使い方">8.1.5 アクチュエーター（サーボモーター）の使い方</a></h1>
+<img src="imgs/pwm_sg90.jpg" width="700">
 <ul>
 <li>モーターを使用する場合はモータードライバーを経由して制御します。</li>
 <li>モーターを動かすため外部から電力を取る必要があります。</li>
 </ul>
 <h3 id="回路図とプログラムサンプル-4"><a class="header" href="#回路図とプログラムサンプル-4">回路図とプログラムサンプル</a></h3>
-<img src="./imgs/pca9685_sg90.jpg" width=700>
+<img src="imgs/pca9685_sg90.jpg" width="700">
 <p>動作を確認するためのサンプルコードは <code>CHIRIMENパネル</code> から入手できます。<br>
 ブラウザでサンプルコードの中を確認したい場合は <code>コードを確認する</code> から確認出来ます。</p>
 <ul>
@@ -1758,19 +1818,20 @@ function OffLED(){ // LED OFF
 <li>サーボドライバーの給電接続には精密ドライバーを使用します</li>
 </ul>
 <h2 id="モバイルバッテリーの利用方法"><a class="header" href="#モバイルバッテリーの利用方法">モバイルバッテリーの利用方法</a></h2>
-<img src="./imgs/mobilebattery.jpg" width=500>
+<img src="imgs/mobilebattery.jpg" width="500">
 <ul>
 <li>microUSB DIP化キットを使用してモバイルバッテリーを電池ボックスとして使用する事が出来ます。</li>
 <li>電源として利用するだけであれば、VIN と GND の 2ヶ所にジャンパーワイヤーを使用して接続が出来ます。</li>
 </ul>
 <h2 id="pizero-から給電する回路図"><a class="header" href="#pizero-から給電する回路図">PiZero から給電する回路図</a></h2>
-<img src="./imgs/pca9685_sg90_nodc.jpg" width=600>
+<img src="imgs/pca9685_sg90_nodc.jpg" width="600">
 <ul>
 <li>低消費電力のモーター（例：SG-90）1個の場合、RasPi Zero からの電力供給でも動作させられるものもあります。</li>
 </ul>
-<p><a href="./chapter_8-1.html">応用センサー一覧に戻る</a></p>
-<div style="break-before: page; page-break-before: always;"></div><h1 id="816-アクチュエーターdcモーターの使い方"><a class="header" href="#816-アクチュエーターdcモーターの使い方">8.1.6 アクチュエーター（DCモーター）の使い方</a></h1>
-<img src="./imgs/dcmotor.jpg" width=600>
+<p><a href="#81-応用センサーキットの使い方">応用センサー一覧に戻る</a></p>
+<div style="break-before: page; page-break-before: always;"></div>
+<h1 id="816-アクチュエーターdcモーターの使い方"><a class="header" href="#816-アクチュエーターdcモーターの使い方">8.1.6 アクチュエーター（DCモーター）の使い方</a></h1>
+<img src="imgs/dcmotor.jpg" width="600">
 <ul>
 <li>モーターを使用する場合はモータードライバーを経由して制御します。</li>
 <li>モーターを動かすため外部から電力を取る必要があります。
@@ -1781,7 +1842,7 @@ function OffLED(){ // LED OFF
 </ul>
 <h3 id="回路図とプログラムサンプル-5"><a class="header" href="#回路図とプログラムサンプル-5">回路図とプログラムサンプル</a></h3>
 <h2 id="hbridge1-の回路図mx1508利用"><a class="header" href="#hbridge1-の回路図mx1508利用">hbridge1 の回路図（MX1508利用）</a></h2>
-<img src="./imgs/MX1508_DCmotor.jpg" width=700>
+<img src="imgs/MX1508_DCmotor.jpg" width="700">
 <ul>
 <li>このサンプルは GPIO Examples のサンプルです。</li>
 </ul>
@@ -1802,16 +1863,17 @@ function OffLED(){ // LED OFF
 </ul>
 </li>
 </ul>
-<p><a href="./chapter_8-1.html">応用センサー一覧に戻る</a></p>
-<div style="break-before: page; page-break-before: always;"></div><h1 id="817-アクチュエーターdcモーターの使い方pwm駆動"><a class="header" href="#817-アクチュエーターdcモーターの使い方pwm駆動">8.1.7 アクチュエーター（DCモーター）の使い方（PWM駆動）</a></h1>
-<img src="./imgs/dcmotor2.jpg" width=600>
+<p><a href="#81-応用センサーキットの使い方">応用センサー一覧に戻る</a></p>
+<div style="break-before: page; page-break-before: always;"></div>
+<h1 id="817-アクチュエーターdcモーターの使い方pwm駆動"><a class="header" href="#817-アクチュエーターdcモーターの使い方pwm駆動">8.1.7 アクチュエーター（DCモーター）の使い方（PWM駆動）</a></h1>
+<img src="imgs/dcmotor2.jpg" width="600">
 <ul>
 <li>モーターを使用する場合はモータードライバーを経由して制御します。</li>
 <li>モーターを動かすため外部から電力を取る必要があります。</li>
 </ul>
 <h3 id="回路図とプログラムサンプル-6"><a class="header" href="#回路図とプログラムサンプル-6">回路図とプログラムサンプル</a></h3>
 <h2 id="hbridge2-pca9685pwm-の回路図mx1508利用"><a class="header" href="#hbridge2-pca9685pwm-の回路図mx1508利用">hbridge2-pca9685pwm の回路図（MX1508利用）</a></h2>
-<img src="./imgs/MX1508_PWM_DCmotor.jpg" width=700>
+<img src="imgs/MX1508_PWM_DCmotor.jpg" width="700">
 <ul>
 <li>このサンプルは I2C Examples になります。</li>
 </ul>
@@ -1835,14 +1897,15 @@ function OffLED(){ // LED OFF
 </li>
 </ul>
 <h2 id="参考モバイルバッテリーの利用方法"><a class="header" href="#参考モバイルバッテリーの利用方法">（参考）モバイルバッテリーの利用方法</a></h2>
-<img src="./imgs/mobilebattery.jpg" width=500>
+<img src="imgs/mobilebattery.jpg" width="500">
 <ul>
 <li>microUSB DIP化キットを使用してモバイルバッテリーを電池ボックスとして使用する事が出来ます。</li>
 <li>電源として利用するだけであれば、VIN と GND の 2ヶ所にジャンパーワイヤーを使用して接続が出来ます。</li>
 </ul>
-<p><a href="./chapter_8-1.html">応用センサー一覧に戻る</a></p>
-<div style="break-before: page; page-break-before: always;"></div><h1 id="818-raspberrypi-のカメラに関する注意"><a class="header" href="#818-raspberrypi-のカメラに関する注意">8.1.8 RaspberryPi のカメラに関する注意</a></h1>
-<p><img src="./imgs/PiZero_camera1.jpg" width=300>　<img src="./imgs/PiZero_camera2.jpg" width=300></p>
+<p><a href="#81-応用センサーキットの使い方">応用センサー一覧に戻る</a></p>
+<div style="break-before: page; page-break-before: always;"></div>
+<h1 id="818-raspberrypi-のカメラに関する注意"><a class="header" href="#818-raspberrypi-のカメラに関する注意">8.1.8 RaspberryPi のカメラに関する注意</a></h1>
+<p><img src="imgs/PiZero_camera1.jpg" width="300">　<img src="imgs/PiZero_camera2.jpg" width="300"></p>
 <ul>
 <li>接続端子・フラットケーブルは壊れやすい
 <ul>
@@ -1852,8 +1915,7 @@ function OffLED(){ // LED OFF
 </li>
 </ul>
 <blockquote>
-<p><strong>Note</strong><br />
-利用可能なカメラモジュールは v1、v3 です。
+<p><strong>Note</strong><br>利用可能なカメラモジュールは v1、v3 です。
 また Raspberry Pi Zero 用 CHIRIMEN v1.4.0 未満をお使いの場合、Camera Module v3 には未対応です。
 <a href="https://github.com/chirimen-oh/chirimen-lite/releases">Raspberry Pi Zero 用 CHIRIMEN v1.4.0 以上</a> をお使いください。</p>
 </blockquote>
@@ -1862,8 +1924,7 @@ function OffLED(){ // LED OFF
 <pre><code>raspistill -v --width 640 --height 480 -o test.jpg
 </code></pre>
 <blockquote>
-<p><strong>Note</strong><br />
-<a href="https://github.com/chirimen-oh/chirimen-lite/releases">Raspberry Pi Zero 用 CHIRIMEN v1.4.0 以上</a> をお使いの場合、<code>rpicam-still --list-cameras</code> コマンドで利用可能なカメラの一覧を表示可能です:</p>
+<p><strong>Note</strong><br><a href="https://github.com/chirimen-oh/chirimen-lite/releases">Raspberry Pi Zero 用 CHIRIMEN v1.4.0 以上</a> をお使いの場合、<code>rpicam-still --list-cameras</code> コマンドで利用可能なカメラの一覧を表示可能です:</p>
 <pre><code>$ rpicam-still --list-cameras
 Available cameras
 -----------------
@@ -1875,8 +1936,9 @@ Available cameras
 </code></pre>
 <p>詳細: <a href="https://www.raspberrypi.com/documentation/computers/camera_software.html">Camera software - Raspberry Pi Documentation</a></p>
 </blockquote>
-<p><a href="./chapter_8-1.html">応用センサー一覧に戻る</a></p>
-<div style="break-before: page; page-break-before: always;"></div><h1 id="9-付録"><a class="header" href="#9-付録">9. 付録</a></h1>
+<p><a href="#81-応用センサーキットの使い方">応用センサー一覧に戻る</a></p>
+<div style="break-before: page; page-break-before: always;"></div>
+<h1 id="9-付録"><a class="header" href="#9-付録">9. 付録</a></h1>
 <h2 id="予備知識"><a class="header" href="#予備知識">予備知識</a></h2>
 <p>CHIRIMEN for Raspberry Pi を利用するに際して、知っておくと良い予備知識やツールの使い方が学べるドキュメントです。</p>
 <ul>
@@ -1890,21 +1952,42 @@ Available cameras
 <li>ブラウザ上で開発する CodeSandbox の使い方を確認しましょう。</li>
 </ul>
 </li>
-<li><a href="/js/">JavaScript 初学者向け資料集</a>
+<li><a href="/js">JavaScript 初学者向け資料集</a>
 <ul>
 <li>JavaScript 1 Day 講習資料、JavaScript 本格入門書、チートシートなどはこちら</li>
 </ul>
 </li>
 </ul>
-<p>その他、電子工作など一般的な知識は <a href="../reference.html">予備知識・資料集</a> や、<a href="../chirimenGeneric/">共通資料集</a>を参照してください。</p>
-<div style="break-before: page; page-break-before: always;"></div><h1 id="91-chirimen-ブラウザー版との差異"><a class="header" href="#91-chirimen-ブラウザー版との差異">9.1 CHIRIMEN ブラウザー版との差異</a></h1>
-<div class="table-wrapper"><table><thead><tr><th>CHIRIMEN ブラウザー版</th><th>Node.js</th></tr></thead><tbody>
+<p>その他、電子工作など一般的な知識は <a href="../reference.html">予備知識・資料集</a> や、<a href="../chirimenGeneric">共通資料集</a>を参照してください。</p>
+<div style="break-before: page; page-break-before: always;"></div>
+<h1 id="91-chirimen-ブラウザー版との差異"><a class="header" href="#91-chirimen-ブラウザー版との差異">9.1 CHIRIMEN ブラウザー版との差異</a></h1>
+<div class="table-wrapper">
+<table>
+<thead>
+<tr><th>CHIRIMEN ブラウザー版</th><th>Node.js</th></tr>
+</thead>
+<tbody>
 <tr><td>ライブラリ、ドライバーはhtmlで読み込む</td><td>jsの中で直接読み込む</td></tr>
-<tr><td><pre><code>&lt;script src="polyfill.js"&gt;&lt;/script &gt;</code></pre></td><td><pre><code>import {requestGPIOAccess} from "./node_modules/node-web-gpio/dist/index.js";</code></pre><br><pre><code>import {requestI2CAccess} from "./node_modules/node-web-i2c/index.js";</code></pre></td></tr>
-<tr><td><pre><code>&lt;script src="..../adt7410.js"&gt;&lt;/script &gt;</code></pre></td><td><pre><code>import ADT7410 from "@chirimen/adt7410";</code></pre></td></tr>
-<tr><td></td><td>Sleep関数を宣言する<br><pre><code>const sleep = msec =&gt; new Promise(resolve =&gt; setTimeout(resolve, msec));</code></pre></td></tr>
-</tbody></table>
-</div><div style="break-before: page; page-break-before: always;"></div><h1 id="92-chirimen環境の任意のディレクトリへのセットアップ"><a class="header" href="#92-chirimen環境の任意のディレクトリへのセットアップ">9.2 CHIRIMEN環境の任意のディレクトリへのセットアップ</a></h1>
+<tr><td>
+<pre><code>&lt;script src="polyfill.js"&gt;&lt;/script &gt;</code></pre>
+</td><td>
+<pre><code>import {requestGPIOAccess} from "./node_modules/node-web-gpio/dist/index.js";</code></pre>
+<br>
+<pre><code>import {requestI2CAccess} from "./node_modules/node-web-i2c/index.js";</code></pre>
+</td></tr>
+<tr><td>
+<pre><code>&lt;script src="..../adt7410.js"&gt;&lt;/script &gt;</code></pre>
+</td><td>
+<pre><code>import ADT7410 from "@chirimen/adt7410";</code></pre>
+</td></tr>
+<tr><td></td><td>Sleep関数を宣言する<br>
+<pre><code>const sleep = msec =&gt; new Promise(resolve =&gt; setTimeout(resolve, msec));</code></pre>
+</td></tr>
+</tbody>
+</table>
+</div>
+<div style="break-before: page; page-break-before: always;"></div>
+<h1 id="92-chirimen環境の任意のディレクトリへのセットアップ"><a class="header" href="#92-chirimen環境の任意のディレクトリへのセットアップ">9.2 CHIRIMEN環境の任意のディレクトリへのセットアップ</a></h1>
 <p>以下のコマンド手順で~/myAppディレクトリ以外にも設定できます。</p>
 <ul>
 <li><code>mkdir [自分用の作業ディレクトリ]</code>  (<a href="https://atmarkit.itmedia.co.jp/ait/articles/1606/07/news015.html">mkdir</a> コマンドとは)</li>
@@ -1913,13 +1996,15 @@ Available cameras
 <li><code>wget https://www.chirimen.org/remote-connection/js/beta/RelayServer.js</code> (<a href="https://www.chirimen.org/remote-connection/">RelayServer.js</a>を使う場合)</li>
 <li><code>npm install</code> (<a href="https://atmarkit.itmedia.co.jp/ait/articles/1606/17/news030.html">npm</a>とは)</li>
 </ul>
-<div style="break-before: page; page-break-before: always;"></div><h1 id="10-共通資料集"><a class="header" href="#10-共通資料集">10. 共通資料集</a></h1>
-<p>CHIRIMEN for PiZero チュートリアルで使われている用語集です。チュートリアルの解説よりも踏み込んだ解説をしています。</br>
-初めて CHIRIMEN を触る方は知らなくても利用可能な情報が大半ですが、より深く IoT開発を学びたい方はこちらに掲載された情報も目を通してみてください。</br>
+<div style="break-before: page; page-break-before: always;"></div>
+<h1 id="10-共通資料集"><a class="header" href="#10-共通資料集">10. 共通資料集</a></h1>
+<p>CHIRIMEN for PiZero チュートリアルで使われている用語集です。チュートリアルの解説よりも踏み込んだ解説をしています。
+初めて CHIRIMEN を触る方は知らなくても利用可能な情報が大半ですが、より深く IoT開発を学びたい方はこちらに掲載された情報も目を通してみてください。
 （チュートリアルの各ページからリンクでこちらの情報を参照しています）</p>
-<div style="break-before: page; page-break-before: always;"></div><h1 id="101-chirimen"><a class="header" href="#101-chirimen">10.1 CHIRIMEN</a></h1>
-<p><img src="./imgs/CHIRIMEN_pf.png" alt="" />
-CHIRIMEN とは、Webの標準的な技術・ブラウザやNode.js等で実行できるJavaScript で電子パーツを制御し、<a href="https://www.iizuka.kyutech.ac.jp/faculty/physicalcomputing">フィジカルコンピューティング</a>や<a href="./chapter_10-6.html">IoTシステム</a>を開発可能なプロトタイピング環境です。</p>
+<div style="break-before: page; page-break-before: always;"></div>
+<h1 id="101-chirimen"><a class="header" href="#101-chirimen">10.1 CHIRIMEN</a></h1>
+<p><img src="imgs/CHIRIMEN_pf.png" alt="">
+CHIRIMEN とは、Webの標準的な技術・ブラウザやNode.js等で実行できるJavaScript で電子パーツを制御し、<a href="https://www.iizuka.kyutech.ac.jp/faculty/physicalcomputing">フィジカルコンピューティング</a>や<a href="#106-iot">IoTシステム</a>を開発可能なプロトタイピング環境です。</p>
 <p>デジタルのソフトとフィジカルなハードをWWW上で連携するデバイスを Web標準技術、JavaScript だけで容易に実現できます。</p>
 <h2 id="chirimenについて"><a class="header" href="#chirimenについて">CHIRIMENについて</a></h2>
 <ul>
@@ -1942,24 +2027,33 @@ CHIRIMEN とは、Webの標準的な技術・ブラウザやNode.js等で実行�
 </ul>
 </li>
 </ul>
-<div style="break-before: page; page-break-before: always;"></div><h1 id="102-ハードウェアデバイス"><a class="header" href="#102-ハードウェアデバイス">10.2 ハードウェア・デバイス</a></h1>
+<div style="break-before: page; page-break-before: always;"></div>
+<h1 id="102-ハードウェアデバイス"><a class="header" href="#102-ハードウェアデバイス">10.2 ハードウェア・デバイス</a></h1>
 <ul>
 <li><a href="https://tutorial.chirimen.org/reference#section-1">予備知識・資料集～電子工作について</a></li>
 </ul>
-<div style="break-before: page; page-break-before: always;"></div><h1 id="1021-led"><a class="header" href="#1021-led">10.2.1 LED</a></h1>
+<div style="break-before: page; page-break-before: always;"></div>
+<h1 id="1021-led"><a class="header" href="#1021-led">10.2.1 LED</a></h1>
 <ul>
 <li><a href="https://ja.wikipedia.org/wiki/%E7%99%BA%E5%85%89%E3%83%80%E3%82%A4%E3%82%AA%E3%83%BC%E3%83%89">LED（発光ダイオード）</a></li>
 <li><a href="https://www.marutsu.co.jp/pc/static/large_order/led">LED の使い方</a></li>
 </ul>
 <h2 id="ヒント-led-の電圧"><a class="header" href="#ヒント-led-の電圧">ヒント: LED の電圧</a></h2>
 <p>LED の順方向電圧は色により異なっており、赤色 LED は 1.8V 程度、青色 LED は 3.1V 程度とされています。</p>
-<div style="break-before: page; page-break-before: always;"></div><h1 id="1022-ブレッドボード"><a class="header" href="#1022-ブレッドボード">10.2.2 ブレッドボード</a></h1>
+<div style="break-before: page; page-break-before: always;"></div>
+<h1 id="1022-ブレッドボード"><a class="header" href="#1022-ブレッドボード">10.2.2 ブレッドボード</a></h1>
 <ul>
 <li><a href="https://shop.sunhayato.co.jp/blogs/problem-solving/breadboard">ブレッドボードの使い方</a> (サンハヤト社)</li>
 </ul>
-<div class="table-wrapper"><table><thead><tr><th>外観</th><th>内部の接続状態</th></tr></thead><tbody>
-<tr><td><img src="./imgs/breadboardImg.jpg" alt="外観" /></td><td><img src="./imgs/breadboardSch.png" alt="内部の接続状態" /></td></tr>
-</tbody></table>
+<div class="table-wrapper">
+<table>
+<thead>
+<tr><th>外観</th><th>内部の接続状態</th></tr>
+</thead>
+<tbody>
+<tr><td><img src="imgs/breadboardImg.jpg" alt="外観"></td><td><img src="imgs/breadboardSch.png" alt="内部の接続状態"></td></tr>
+</tbody>
+</table>
 </div>
 <ul>
 <li>
@@ -1972,12 +2066,14 @@ CHIRIMEN とは、Webの標準的な技術・ブラウザやNode.js等で実行�
 <p>抵抗やLEDの足(リード線)は手で簡単に曲げられます。ブレッドボードに差し込めるように適当に成型してください。</p>
 </li>
 </ul>
-<div style="break-before: page; page-break-before: always;"></div><h1 id="1023-抵抗値の読み方"><a class="header" href="#1023-抵抗値の読み方">10.2.3 抵抗値の読み方</a></h1>
+<div style="break-before: page; page-break-before: always;"></div>
+<h1 id="1023-抵抗値の読み方"><a class="header" href="#1023-抵抗値の読み方">10.2.3 抵抗値の読み方</a></h1>
 <ul>
 <li><a href="http://www.jarl.org/Japanese/7_Technical/lib1/teikou.htm">抵抗値の読み方</a></li>
 <li><a href="http://startelc.com/elcLink/tester/elc_nArtcTester2.html#chapter-2">テスターを使って抵抗値を確かめる</a></li>
 </ul>
-<div style="break-before: page; page-break-before: always;"></div><h1 id="1024-mosfetによる大電力制御"><a class="header" href="#1024-mosfetによる大電力制御">10.2.4 MOSFETによる大電力制御</a></h1>
+<div style="break-before: page; page-break-before: always;"></div>
+<h1 id="1024-mosfetによる大電力制御"><a class="header" href="#1024-mosfetによる大電力制御">10.2.4 MOSFETによる大電力制御</a></h1>
 <h2 id="gpio-の制約事項"><a class="header" href="#gpio-の制約事項">GPIO の制約事項</a></h2>
 <p>Raspberry Pi の GPIO ポートは、全体で流せる電流の上限が決められています。</p>
 <ul>
@@ -1988,14 +2084,15 @@ CHIRIMEN とは、Webの標準的な技術・ブラウザやNode.js等で実行�
 <h2 id="mosfet-とは"><a class="header" href="#mosfet-とは">MOSFET とは</a></h2>
 <p><a href="https://ja.wikipedia.org/wiki/MOSFET">MOSFET</a> とは<a href="https://ja.wikipedia.org/wiki/%E9%9B%BB%E7%95%8C%E5%8A%B9%E6%9E%9C%E3%83%88%E3%83%A9%E3%83%B3%E3%82%B8%E3%82%B9%E3%82%BF">電界効果トランジスタ (FET)</a> の一種で、主にスイッチング素子として利用される (小さな電圧の変更で大きな電流・電圧のオンオフを切り替える) 部品です。</p>
 <p>今回は Nch MOSFET「<a href="http://akizukidenshi.com/catalog/g/gI-07597/">2SK4017</a>」を利用します。</p>
-<p><img src="./imgs/mosfet.png" alt="MOSFET" /></p>
+<p><img src="imgs/mosfet.png" alt="MOSFET"></p>
 <p>プルダウンの GPIO ポートを使った典型的な回路は以下のようになります。</p>
-<p><img src="./imgs/DC3motor-schematic.svg" alt="NCh MOSFET schematic" /></p>
+<p><img src="imgs/DC3motor-schematic.svg" alt="NCh MOSFET schematic"></p>
 <h2 id="電源"><a class="header" href="#電源">電源</a></h2>
 <p>図の GND 端子は Raspberry Pi と DC 負荷用電源のものと共通ですが、VCC 端子は、基本的には Raspberry Pi の 3.3V や 5V 端子とは異なります。
 DC 負荷用に Raspberry Pi とは別に電源を用意するのが望ましいです。</p>
-<p><a href="./chapter_4-2.html">ミニモータを使った作例</a>では、その消費電力が十分小さいので、例外的に Raspberry Pi の 5V 端子か電力を供給しています。</p>
-<div style="break-before: page; page-break-before: always;"></div><h1 id="103-javascript"><a class="header" href="#103-javascript">10.3 JavaScript</a></h1>
+<p><a href="#42-gpioを出力">ミニモータを使った作例</a>では、その消費電力が十分小さいので、例外的に Raspberry Pi の 5V 端子か電力を供給しています。</p>
+<div style="break-before: page; page-break-before: always;"></div>
+<h1 id="103-javascript"><a class="header" href="#103-javascript">10.3 JavaScript</a></h1>
 <p>標準化されたプログラミング言語の一種で、ウェブブラウザが代表的な実行環境です(プログラムコードを解釈して動作させるシステム)。CHIRIMENでもRasberry Pi及びmicro:bit版はウェブブラウザを実行環境として使用します。Raspberry Pi Zero版はNode.jsを実行環境として使っています。
 別名としてECMA Scriptと呼ばれることもあります。</p>
 <ul>
@@ -2006,7 +2103,8 @@ DC 負荷用に Raspberry Pi とは別に電源を用意するのが望ましい
 <ul>
 <li>その他の情報：<a href="https://tutorial.chirimen.org/reference#javascript">予備知識・資料集の情報</a></li>
 </ul>
-<div style="break-before: page; page-break-before: always;"></div><h1 id="1031-javascriptコードライブラリの読み込み"><a class="header" href="#1031-javascriptコードライブラリの読み込み">10.3.1 JavaScriptコード・ライブラリの読み込み</a></h1>
+<div style="break-before: page; page-break-before: always;"></div>
+<h1 id="1031-javascriptコードライブラリの読み込み"><a class="header" href="#1031-javascriptコードライブラリの読み込み">10.3.1 JavaScriptコード・ライブラリの読み込み</a></h1>
 <h2 id="ウェブアプリhtmlで読み込み"><a class="header" href="#ウェブアプリhtmlで読み込み">ウェブアプリ：HTMLで読み込み</a></h2>
 <p>Raspberry Pi Zero 版以外の CHIRIMEN はプログラムの起点はHTMLファイルです。（<a href="https://ja.wikipedia.org/wiki/%E3%82%A6%E3%82%A7%E3%83%96%E3%82%A2%E3%83%97%E3%83%AA%E3%82%B1%E3%83%BC%E3%82%B7%E3%83%A7%E3%83%B3">ウェブアプリ</a>）ブラウザはまずHTMLファイルを読み込んだうえで、そこに書かれた内容で動きます。したがって作ったコードや必要なライブラリの読み込みは基本的に全てこのHTMLの中で指定します。（なお、javascript Moduleを有効化している場合は JavaScriptコードの中で jsライブラリを読み込むことがある）</p>
 <p>ポイントは <code>&lt;script ...&gt;&lt;/script&gt;</code> の部分です。
@@ -2014,10 +2112,10 @@ DC 負荷用に Raspberry Pi とは別に電源を用意するのが望ましい
 <p>次の行にある <code>main.js</code> は、JavaScript のプログラム本体です。</p>
 <h3 id="nodejs-chirimen-raspberry-pi-zero版"><a class="header" href="#nodejs-chirimen-raspberry-pi-zero版">Node.js (CHIRIMEN Raspberry Pi Zero版)</a></h3>
 <p>Raspberry Pi Zero版はプログラムの起点が自分が作ったjavascriptコード自体になります。ブラウザの代わりに<a href="https://ja.wikipedia.org/wiki/Node.js">Node.js</a>というJavaScriptコードだけを解釈するソフト（JavaScript <a href="https://ja.wikipedia.org/wiki/%E3%82%A4%E3%83%B3%E3%82%BF%E3%83%97%E3%83%AA%E3%82%BF">インタープリタ</a>）にコードを読み込ませて実行します。</p>
-<p>CHIRIMEN環境のために必要なライブラリや、<a href="chapter_10-3-1.html#WebI2C%E3%81%A8%E3%83%87%E3%83%90%E3%82%A4%E3%82%B9%E3%83%89%E3%83%A9%E3%82%A4%E3%83%90">I2Cデバイスのドライバ</a>(後述)は次の ECMA Script Module という仕組みを使って読み込みます。</p>
+<p>CHIRIMEN環境のために必要なライブラリや、<a href="#WebI2Cとデバイスドライバ">I2Cデバイスのドライバ</a>(後述)は次の ECMA Script Module という仕組みを使って読み込みます。</p>
 <h3 id="javascript-module-ecma-script-module"><a class="header" href="#javascript-module-ecma-script-module">JavaScript Module (ECMA Script Module)</a></h3>
 <ul>
-<li>ウェブアプリでのModule有効化：HTMLのscript要素でjavascriptを読み込むとき、ttype="module"プロパティを設定する。
+<li>ウェブアプリでのModule有効化：HTMLのscript要素でjavascriptを読み込むとき、ttype=“module“プロパティを設定する。
 <ul>
 <li><code>&lt;script type="module" src="main.js"&gt;&lt;/script&gt;</code></li>
 </ul>
@@ -2032,7 +2130,8 @@ DC 負荷用に Raspberry Pi とは別に電源を用意するのが望ましい
 <li><a href="https://codesandbox.io/s/github/chirimen-oh/chirimen.org/tree/master/pizero/esm-examples/remote_gpio_led/pc">例を見てみる</a></li>
 <li><a href="https://developer.mozilla.org/ja/docs/Web/JavaScript/Guide/Modules">Mozilla Developer Networkの解説</a></li>
 </ul>
-<div style="break-before: page; page-break-before: always;"></div><h1 id="1032-非同期処理"><a class="header" href="#1032-非同期処理">10.3.2 非同期処理</a></h1>
+<div style="break-before: page; page-break-before: always;"></div>
+<h1 id="1032-非同期処理"><a class="header" href="#1032-非同期処理">10.3.2 非同期処理</a></h1>
 <p>物理デバイス制御やネットワーク通信などでは、応答待ち中にブラウザが停止しないよう非同期処理を使う必要があります。
 本チュートリアルではこれを <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/async_function">async 関数</a> で記述しています。async 関数による非同期処理に慣れていない人は、<a href="https://tutorial.chirimen.org/js/async.html">こちらの資料「非同期処理 (async await 版)」</a> も参考にしてください。非同期処理についてより詳しくは <a href="https://jsprimer.net/basic/async/">JS Primer の非同期処理説明ページ</a> をご覧ください。</p>
 <p>非同期処理を使いこなすのは難しいですが、本チュートリアルでは次のルールでコードを書けば大丈夫です:</p>
@@ -2051,7 +2150,8 @@ DC 負荷用に Raspberry Pi とは別に電源を用意するのが望ましい
 </ul>
 <p>非同期関数を <code>await</code> なしで呼び出すと返り値が Promise オブジェクトとなり、Promise を理解しないと返り値の判断や実行順序が入れ替わり意図せぬ挙動になります。例えば、ポートの初期化を <code>await</code> なしで呼ぶと、ポート初期化前に初期化未完了のハードウェアを操作しようとして失敗したりします。</p>
 <p>ハードウェアを制御するときは基本的に非同期呼び出しをする (その処理を含む関数もまた非同期で呼びす) と決めておけば迷うことなく、コードの実行順序も上から下に見たとおりの順番で実行され読み書きしやすくなります。</p>
-<div style="break-before: page; page-break-before: always;"></div><h1 id="104-gpio"><a class="header" href="#104-gpio">10.4 GPIO</a></h1>
+<div style="break-before: page; page-break-before: always;"></div>
+<h1 id="104-gpio"><a class="header" href="#104-gpio">10.4 GPIO</a></h1>
 <h2 id="gpioとは"><a class="header" href="#gpioとは">GPIOとは</a></h2>
 <p><a href="https://ja.wikipedia.org/wiki/GPIO">GPIO</a>は、「General-purpose input/output」の略で汎用的な入出力インタフェースのことです。</p>
 <p>Raspi に実装されている 40 本のピンヘッダから GPIO を利用することができます。</p>
@@ -2059,7 +2159,7 @@ DC 負荷用に Raspberry Pi とは別に電源を用意するのが望ましい
 <p>Raspiやmicro:bit の GPIO 端子は、GND 端子との間に、0V もしくは 3.3V の電圧を印加(出力)したり、逆に 0V もしくは 3.3V の電圧を検知(入力)したりすることができます。LED は数 mA の電流を流すことによって点灯できる電子部品のため、印加する電圧を 3.3V(点灯)、0V(消灯) と変化させることで L チカが実現できるのです。</p>
 <p>詳しくは<a href="https://tool-lab.com/make/raspberrypi-startup-22/">こちらのサイトの解説</a>などを参考にしてみましょう。</p>
 <h3 id="raspberry-piのピン配置図"><a class="header" href="#raspberry-piのピン配置図">Raspberry Piのピン配置図</a></h3>
-<p><img src="https://chirimen.org/PiZeroWebSerialConsole/wallpaperS.png" alt="Raspi PIN配置図" /></p>
+<p><img src="https://chirimen.org/PiZeroWebSerialConsole/wallpaperS.png" alt="Raspi PIN配置図"></p>
 <!--
 ![Raspi PIN配置図](../raspi/imgs/section0/Raspi3PIN.png)
 {% cloudinary ../raspi/imgs/section0/Raspi3PIN.png alt="Raspi PIN配置図" %}
@@ -2067,14 +2167,15 @@ DC 負荷用に Raspberry Pi とは別に電源を用意するのが望ましい
 <h3 id="raspverry-pi-zeroのピン配置図"><a class="header" href="#raspverry-pi-zeroのピン配置図">Raspverry Pi Zeroのピン配置図</a></h3>
 <p>Raspberry Piの端子と同じ配列です。</p>
 <h3 id="microbitのピン配置図"><a class="header" href="#microbitのピン配置図">micro:bitのピン配置図</a></h3>
-<p><img src="https://tech.microbit.org/docs/hardware/assets/edge_connector.svg" alt="micro:bitのI端子" /></p>
+<p><img src="https://tech.microbit.org/docs/hardware/assets/edge_connector.svg" alt="micro:bitのI端子"></p>
 <h3 id="プルアップpuプルダウンpd"><a class="header" href="#プルアップpuプルダウンpd">プルアップ(PU)、プルダウン(PD)</a></h3>
 <p>GPIOポートを入力モードで使用する場合、ポートが解放状態(電気的に切り離されている状態)のときに設定される値があります。
 プルアップは1、プルダウンは0になります。　Raspberry Piのピン配置図に書かれているPU,PDがその設定値です。micro:bitではすべてプルダウンに設定されていますが、GPIOポート初期化時にプルアップに設定することもできます。</p>
 <ul>
 <li><a href="https://voltechno.com/blog/pullup-pulldown/">より詳しく知る(voltechno)</a></li>
 </ul>
-<div style="break-before: page; page-break-before: always;"></div><h1 id="1041-gpioポートの初期化と出力処理"><a class="header" href="#1041-gpioポートの初期化と出力処理">10.4.1 GPIOポートの初期化と出力処理</a></h1>
+<div style="break-before: page; page-break-before: always;"></div>
+<h1 id="1041-gpioポートの初期化と出力処理"><a class="header" href="#1041-gpioポートの初期化と出力処理">10.4.1 GPIOポートの初期化と出力処理</a></h1>
 <h2 id="gpioポートの初期化"><a class="header" href="#gpioポートの初期化">GPIOポートの初期化</a></h2>
 <p>今回の JavaScript ファイルで、最初に呼び出されるコードは <code>await navigator.requestGPIOAccess()</code> です。
 ここで先ほど出て来た <a href="http://browserobo.github.io/WebGPIO">Web GPIO API</a> を使い、<code>gpioAccess</code> という GPIO にアクセスするためのインタフェースを取得しています。</p>
@@ -2107,7 +2208,8 @@ DC 負荷用に Raspberry Pi とは別に電源を用意するのが望ましい
 <li>点灯する時間と消灯する時間を変える (同上)</li>
 <li>GPIO ポートを他のポートに変える・配線を変える (<code>gpioAccess.ports.get</code>の引数を変更)</li>
 </ul>
-<div style="break-before: page; page-break-before: always;"></div><h1 id="1042-gpioportの入力処理onchange"><a class="header" href="#1042-gpioportの入力処理onchange">10.4.2 GPIOPortの入力処理（onchange）</a></h1>
+<div style="break-before: page; page-break-before: always;"></div>
+<h1 id="1042-gpioportの入力処理onchange"><a class="header" href="#1042-gpioportの入力処理onchange">10.4.2 GPIOPortの入力処理（onchange）</a></h1>
 <p>GPIOポートに繋いだスイッチやセンサーの状態を取得するには、GPIOの<strong>入力</strong>機能を使います。出力とは違って入力は二つの方法があります。onchangeとポーリングの二つの方法があります。</p>
 <h2 id="onchange編"><a class="header" href="#onchange編">onchange編</a></h2>
 <p>GPIOポートの値が変化するたびに、指定した関数が実行されます。</p>
@@ -2144,7 +2246,8 @@ DC 負荷用に Raspberry Pi とは別に電源を用意するのが望ましい
 main();
 </code></pre>
 <p><code>port.onchange</code> は <strong>入力モードの GPIO ポートの「状態変化時に呼び出される関数を設定する」</strong> 機能です。このような関数のことをコールバック関数と呼びます。下記の<code>port.read()</code> を使ったコードと異なりポーリング処理が不要でコードも簡潔ですが、値が変化したタイミング以外では読み取りができませんのでユースケースが少し限られます。</p>
-<div style="break-before: page; page-break-before: always;"></div><h1 id="1043-gpioportの入力処理ポーリング"><a class="header" href="#1043-gpioportの入力処理ポーリング">10.4.3 GPIOPortの入力処理（ポーリング）</a></h1>
+<div style="break-before: page; page-break-before: always;"></div>
+<h1 id="1043-gpioportの入力処理ポーリング"><a class="header" href="#1043-gpioportの入力処理ポーリング">10.4.3 GPIOPortの入力処理（ポーリング）</a></h1>
 <h3 id="単純入力ポーリング"><a class="header" href="#単純入力ポーリング">単純入力＋ポーリング</a></h3>
 <p>こちらはGPIOポートの入力値を一回きり単発で取得する単純入力機能と、ポーリングの組み合わせです。</p>
 <h4 id="ポーリングとは"><a class="header" href="#ポーリングとは">ポーリングとは</a></h4>
@@ -2183,10 +2286,11 @@ function sleep(ms) {
   });
 }
 </code></pre>
-<div style="break-before: page; page-break-before: always;"></div><h1 id="105-i2c"><a class="header" href="#105-i2c">10.5 I2C</a></h1>
+<div style="break-before: page; page-break-before: always;"></div>
+<h1 id="105-i2c"><a class="header" href="#105-i2c">10.5 I2C</a></h1>
 <h2 id="i2cの概要-1"><a class="header" href="#i2cの概要-1">I2Cの概要</a></h2>
 <p><a href="https://ja.wikipedia.org/wiki/I2C">I2C</a> とは 2 線式の同期式シリアル通信インタフェースです。「アイ・スクエア・シー」や「アイ・ ツー・シー」と読みます。I2C では SDA（シリアルデータ）と SCL（シリアルクロック）の 2 本の線で通信を行います。</p>
-<p><img src="./imgs/i2c-bus.png" alt="i2c-bus" /></p>
+<p><img src="imgs/i2c-bus.png" alt="i2c-bus"></p>
 <!--
 {% cloudinary half ../raspi/imgs/section2/i2c-bus.png alt="i2c-bus" %}
 -->
@@ -2194,18 +2298,20 @@ function sleep(ms) {
 <p>本チュートリアルでいえばCHIRIMEN環境を動かすボードコンピュータがマスターとなり、ここに接続されるセンサーやアクチュエータデバイスなどがスレーブとして想定されます。スレーブデバイスの一例として<a href="../partslist">こちらに紹介</a>されているI2Cデバイスをご覧ください。</p>
 <p>マスターは、スレーブが持つ「SlaveAddress (スレーブアドレス)」を指定して、特定のスレーブとの通信を行います。このため、同じ I2C バス上に同じ SlaveAddress のスレーブを繋ぐことはできません。
 I2Cデバイスは小型のICチップデバイスとなっており、デバイスによってはSlaveAddressは製品ごとに固定されています。</p>
-<p><img src="./imgs/i2c-bus2.png" alt="i2c-bus2" /></p>
+<p><img src="imgs/i2c-bus2.png" alt="i2c-bus2"></p>
 <p>通信するデバイス同士が同一基板上にない場合には、SDA、SCL の 2 本の通信線に加え電源や GND の線を加えて 4 本のケーブルを用いて接続するのが一般的です。電源電圧はデバイスに応じたものを繋ぐ必要があります。</p>
-<div style="break-before: page; page-break-before: always;"></div><h1 id="1051-各種ボードの-i2c端子について"><a class="header" href="#1051-各種ボードの-i2c端子について">10.5.1 各種ボードの I2C端子について</a></h1>
+<div style="break-before: page; page-break-before: always;"></div>
+<h1 id="1051-各種ボードの-i2c端子について"><a class="header" href="#1051-各種ボードの-i2c端子について">10.5.1 各種ボードの I2C端子について</a></h1>
 <h3 id="raspberry-pi-の-i2c端子-1"><a class="header" href="#raspberry-pi-の-i2c端子-1">Raspberry Pi の I2C端子</a></h3>
 <p>下図のSCL, SDAがI2C端子です（黄色の端子）</p>
-<p><img src="./imgs/Raspi3PIN.png" alt="Raspi PIN配置図" /></p>
+<p><img src="imgs/Raspi3PIN.png" alt="Raspi PIN配置図"></p>
 <h3 id="raspverry-pi-zero-の-i2c端子"><a class="header" href="#raspverry-pi-zero-の-i2c端子">Raspverry Pi Zero の I2C端子</a></h3>
 <p>Raspberry PiのI2C端子と同じ配列です。</p>
 <h3 id="microbit-の-i2c端子"><a class="header" href="#microbit-の-i2c端子">micro:bit の I2C端子</a></h3>
 <p>下図のSCL, SDAがI2C端子です (P19,P20～オレンジ色I2C1のグループ)
-<img src="https://tech.microbit.org/docs/hardware/assets/edge_connector.svg" alt="micro:bitのI端子" /></p>
-<div style="break-before: page; page-break-before: always;"></div><h1 id="1052-i2c-の詳細情報とポイント"><a class="header" href="#1052-i2c-の詳細情報とポイント">10.5.2 I2C の詳細情報とポイント</a></h1>
+<img src="https://tech.microbit.org/docs/hardware/assets/edge_connector.svg" alt="micro:bitのI端子"></p>
+<div style="break-before: page; page-break-before: always;"></div>
+<h1 id="1052-i2c-の詳細情報とポイント"><a class="header" href="#1052-i2c-の詳細情報とポイント">10.5.2 I2C の詳細情報とポイント</a></h1>
 <h2 id="参考-i2c-に関する詳細情報"><a class="header" href="#参考-i2c-に関する詳細情報">参考: I2C に関する詳細情報</a></h2>
 <p>I2C に関する詳細は下記をご確認ください。</p>
 <ul>
@@ -2222,20 +2328,23 @@ I2Cデバイスは小型のICチップデバイスとなっており、デバイ
 <li>I2C スレーブは SlaveAddress を持つ</li>
 <li>同じ I2C バスに同じ SlaveAddress のデバイスは繋げない</li>
 </ul>
-<div style="break-before: page; page-break-before: always;"></div><h1 id="1053-webi2c-とデバイスドライバ"><a class="header" href="#1053-webi2c-とデバイスドライバ">10.5.3 WebI2C とデバイスドライバ</a></h1>
+<div style="break-before: page; page-break-before: always;"></div>
+<h1 id="1053-webi2c-とデバイスドライバ"><a class="header" href="#1053-webi2c-とデバイスドライバ">10.5.3 WebI2C とデバイスドライバ</a></h1>
 <p>CHIRIMENでは、GPIOインターフェースをWeb GPIOと呼ぶAPIで使用しました。I2Cインターフェースに接続されたスレーブデバイスは<a href="http://browserobo.github.io/WebI2C">Web I2C API</a>と呼ぶAPIによって使用することができます。</p>
 <p>しかしI2CスレーブデバイスはGPIOの先に繋げるデバイスと比べてずっと複雑な機能を持っています。実際にはそれは極小のコンピュータで、I2Cを通しデバイス専用のコマンドやデータを送受信（通信）し、固有の機能を利用します。
 このようなコードは、各デバイスのデータシートをよく読み込んだうえで書くことができます。これはかなり手間のかかる開発ですので簡単にデバイスが使用できるライブラリ(デバイスドライバ)があらかじめ用意されています。</p>
 <h3 id="デバイスドライバが用意されているi2cデバイスのリスト"><a class="header" href="#デバイスドライバが用意されているi2cデバイスのリスト">デバイスドライバが用意されているI2Cデバイスのリスト</a></h3>
 <p><a href="https://tutorial.chirimen.org/partslist#i2c-">デバイスドライバが用意され簡単に利用できるI2Cデバイスのリスト</a></p>
 <p>よく利用される、30種類ぐらいの比較的安価なデバイス向けのドライバが用意されています。</p>
-<div style="break-before: page; page-break-before: always;"></div><h1 id="106-iot"><a class="header" href="#106-iot">10.6 IoT</a></h1>
+<div style="break-before: page; page-break-before: always;"></div>
+<h1 id="106-iot"><a class="header" href="#106-iot">10.6 IoT</a></h1>
 <p>これまでのチュートリアルでは、いずれもそのコンピュータに直接接続されたデバイスを使うものでした。このようなシステムは「スタンドアロン」と呼ばれます。
 今までは、ウェブブラウザを使っていたのに、実はウェブの重要な機能～インターネット上の情報基盤 WWW を活用したシステムを作っていなかったのです。（開発環境としては GitHub や CodeSandbox など WWW上の情報サービスを活用していますが）</p>
 <p>このようなインターネットを活用するシステムのことを IoT (Internet of Thing の略)と呼びます。ただし単に PC やスマホで使うウェブサービスが IoT と呼ばれることがありません。チュートリアルで学んだようなセンサーやアクチュエータがシステムに組み込まれ、物理的なモノと相互作用するようなものを特に IoT と呼びます。（なお、WWW を用いずネットワーク部のインターネットだけを使ったものでも IoT と呼びます。詳しくは <a href="https://ja.wikipedia.org/wiki/%E3%83%A2%E3%83%8E%E3%81%AE%E3%82%A4%E3%83%B3%E3%82%BF%E3%83%BC%E3%83%8D%E3%83%83%E3%83%88">wiki</a> や、<a href="https://smartiot-forum.jp/application/files/5315/8642/5503/iot-jinzai-text_verR0202.pdf">こちらの資料</a>なども参考にしてください）</p>
-<div style="break-before: page; page-break-before: always;"></div><h1 id="1061-websocketとpubsub-services"><a class="header" href="#1061-websocketとpubsub-services">10.6.1 webSocketとpub/sub services</a></h1>
+<div style="break-before: page; page-break-before: always;"></div>
+<h1 id="1061-websocketとpubsub-services"><a class="header" href="#1061-websocketとpubsub-services">10.6.1 webSocketとpub/sub services</a></h1>
 <h2 id="システム構成"><a class="header" href="#システム構成">システム構成</a></h2>
-<p><img src="./imgs/IoTsystemConf.png" alt="sysConfImg" /></p>
+<p><img src="imgs/IoTsystemConf.png" alt="sysConfImg"></p>
 <p>今回のチュートリアルでつくるIoTシステムの構成図です。</p>
 <p>インターネットを介して、左側のアクチュエータやLEDを右側のウェブアプリから操作したり、
 左側でセンシングしたデータを右側のウェブアプリで表示させたりするシステムですね。</p>
@@ -2251,23 +2360,27 @@ I2Cデバイスは小型のICチップデバイスとなっており、デバイ
 <p>InternetのrelayServiceが見慣れないものだと思います。以下で解説します。</p>
 </li>
 </ul>
-<div style="break-before: page; page-break-before: always;"></div><h1 id="1062-relayservice"><a class="header" href="#1062-relayservice">10.6.2 relayService</a></h1>
+<div style="break-before: page; page-break-before: always;"></div>
+<h1 id="1062-relayservice"><a class="header" href="#1062-relayservice">10.6.2 relayService</a></h1>
 <p>送り側(左側)のWebAppsが、受け側(右側)のwebAppsに情報を送るなら、直接接続するのが簡単そうです。これはピアツーピア通信と言います。</p>
 <p>実はこれは簡単ではありません。webAppsはインターネット上のあらゆるコンピュータ（サーバやブラウザの乗ったPCも含め）にURLでアクセスする必要がありますが、相手のPCにURLでアクセスすることは難しいのです。</p>
 <p>一方、(あらかじめ用意されていれば)ウェブサーバにはURLでアクセスできます。そこで登場するのがrelayServerです。下図のようにrelayServer(Web Socket Relay Service)を介してwebAppsが通信します。</p>
-<p><img src="https://www.chirimen.org/remote-connection/imgs/relay.png" alt="Relay Server Configuration" /></p>
+<p><img src="https://www.chirimen.org/remote-connection/imgs/relay.png" alt="Relay Server Configuration"></p>
 <p>relayServerは特定のウェブサイトの固有名ではなく、「ウェブアプリ間でリアルタイム性の高いデータのやり取りを仲介する」という機能を持ったウェブサイトの抽象的な名称で pub/sub services と呼ばれることもあります。（SNSとかblogとかというのと同じです）</p>
 <p>relayServer はトークン（ユーザーやシステムごとに割り当てられたランダムな文字列）ごとにスペース（図の濃い青色）が設けられ、その中にいくつかのチャンネル（図の茶色）を置くことができます。</p>
 <p>同じトークンとチャンネルにアクセスしたウェブアプリ同士が通信でき、図ではウェブアプリは２個つながっていますが、何個でもつなげることができます。チャットスペースのようなイメージですね。</p>
-<div style="break-before: page; page-break-before: always;"></div><h1 id="1063-リアルタイム性"><a class="header" href="#1063-リアルタイム性">10.6.3 リアルタイム性</a></h1>
+<div style="break-before: page; page-break-before: always;"></div>
+<h1 id="1063-リアルタイム性"><a class="header" href="#1063-リアルタイム性">10.6.3 リアルタイム性</a></h1>
 <p>例えば遠隔からカメラのパンチルトをコントロールしたい　などのケースを考えると、IoTではデバイスのコントロールを機敏に行いたいケースが多くあります。（リアルタイム性の高いユースケースが多い）このようなリアルタイム性の高い情報のやり取りのために<a href="https://ja.wikipedia.org/wiki/WebSocket">WebSocket</a>というブラウザが標準としてサポートするプロトコルがよく使われます。</p>
-<div style="break-before: page; page-break-before: always;"></div><h1 id="1064-relayserverjs"><a class="header" href="#1064-relayserverjs">10.6.4 relayServer.js</a></h1>
+<div style="break-before: page; page-break-before: always;"></div>
+<h1 id="1064-relayserverjs"><a class="header" href="#1064-relayserverjs">10.6.4 relayServer.js</a></h1>
 <p>IoT には relayServer の機能を持つウェブサイトが必要になりますが、これを誰かが運営しなければなりません。実習やプロトタイピングのためにこのようなサイトを自分たちで立ち上げるのはかなり大変ですが、インターネット上では既にいくつもの事業者が relayServer サービスを提供しています。</p>
 <p>今回は CHIRIMEN環境の試験用に、CHIRIMEN用に用意された検証用サービス(chirimentest)を使うことにしますが、いくつかある事業者間でサービスの内容に差異があります。サイトごとの差異は主に接続できる端末の管理と情報の取り扱いに関する機能になります。</p>
 <p><a href="https://www.chirimen.org/remote-connection/">relayServer.js</a> は、relayServerサービスによる差異を吸収し複数の事業者を自由に切り替えられ、webSocket の標準 API仕様に沿った作法で WebApps(含Node.jsプログラム)間の通信を簡単に使えるようにするライブラリです。</p>
-<div style="break-before: page; page-break-before: always;"></div><h1 id="1065-プログラムの流れ"><a class="header" href="#1065-プログラムの流れ">10.6.5 プログラムの流れ</a></h1>
+<div style="break-before: page; page-break-before: always;"></div>
+<h1 id="1065-プログラムの流れ"><a class="header" href="#1065-プログラムの流れ">10.6.5 プログラムの流れ</a></h1>
 <h2 id="初期化受信側送信側共通の処理"><a class="header" href="#初期化受信側送信側共通の処理">初期化（受信側、送信側共通の処理</a></h2>
-<p><a href="https://www.chirimen.org/remote-connection/#%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95">詳しくはこちらを参照</a></p>
+<p><a href="https://www.chirimen.org/remote-connection/#使用方法">詳しくはこちらを参照</a></p>
 <pre><code class="language-javascript">import {RelayServer} from "https://www.chirimen.org/remote-connection/js/beta/RelayServer.js";
 var relay = RelayServer("achex", "chirimenSocket" );
 </code></pre>
@@ -2302,9 +2415,11 @@ RelayServerの第二引数<code>("chirimenSocket")</code>はそのサービス�
 上で登録した関数の第一引数(<code>msg</code>)のメンバ変数msg.dataに送信されたメッセージが構造もそのままで届きます。</p>
 </li>
 </ul>
-<div style="break-before: page; page-break-before: always;"></div><h1 id="1066-セキュリティを考えよう"><a class="header" href="#1066-セキュリティを考えよう">10.6.6 セキュリティを考えよう</a></h1>
+<div style="break-before: page; page-break-before: always;"></div>
+<h1 id="1066-セキュリティを考えよう"><a class="header" href="#1066-セキュリティを考えよう">10.6.6 セキュリティを考えよう</a></h1>
 <p>relayServerを使うということは、情報をインターネット上のウェブサイトに送信することになります。すると このウェブサイトがその情報をどのように取り扱うのかを理解しておく必要があります。achexは無料で使え　しかもユーザ登録も不要です。つまりこのサイトに送信した情報は誰でも見ることができてしまうということです。（ただし、トークンとチャンネルを知る必要がある。これがachexのセキュリティレベル）今回は個人情報などのセキュリティを考慮する必要がない、チュートリアルで使うセンシングデータを送るだけですので問題ありませんが、セキュリティを考慮する必要がある多くの用途ではそのセキュリティ基準に適合したサイトを契約して利用する、もしくは自分でそのようなサイトを立てるなどの必要が出てきます。relayServer.jsでも<a href="https://www.chirimen.org/remote-connection/#%E3%82%B5%E3%83%BC%E3%83%93%E3%82%B9%E3%81%94%E3%81%A8%E3%81%AE%E5%88%A9%E7%94%A8%E6%96%B9%E6%B3%95">いくつかの商用サイト</a>の比較と使用方法が記載されているので参考にしてください。</p>
-<div style="break-before: page; page-break-before: always;"></div><h1 id="1067-nodejsでの利用"><a class="header" href="#1067-nodejsでの利用">10.6.7 Node.jsでの利用</a></h1>
+<div style="break-before: page; page-break-before: always;"></div>
+<h1 id="1067-nodejsでの利用"><a class="header" href="#1067-nodejsでの利用">10.6.7 Node.jsでの利用</a></h1>
 <p>初期化手順に差異があります。</p>
 <pre><code class="language-javascript">import nodeWebSocketLib from "websocket";
 import {RelayServer} from "./RelayServer.js";
@@ -2321,10 +2436,12 @@ var relay = RelayServer("achex", "chirimenSocket" , nodeWebSocketLib, "https://c
 </ul>
 </li>
 </ul>
-<div style="break-before: page; page-break-before: always;"></div><h1 id="1068-webhooks"><a class="header" href="#1068-webhooks">10.6.8 Webhooks</a></h1>
-<p>relayServer が必要なほどリアルタイム性は求めないけれど、むしろ既存の Webサービス・アプリと簡単につなぎたいようなケースでは、httpをそのまま使うことができるでしょう。ただし既存の Webサービス・アプリはウェブブラウザを介して人が操作することが前提でつくられていますので、直接センサーやアクチュエータ（を制御するコンピュータとプログラム～IoTデバイス）をつなげるにはハードルがあります。</br></p>
+<div style="break-before: page; page-break-before: always;"></div>
+<h1 id="1068-webhooks"><a class="header" href="#1068-webhooks">10.6.8 Webhooks</a></h1>
+<p>relayServer が必要なほどリアルタイム性は求めないけれど、むしろ既存の Webサービス・アプリと簡単につなぎたいようなケースでは、httpをそのまま使うことができるでしょう。ただし既存の Webサービス・アプリはウェブブラウザを介して人が操作することが前提でつくられていますので、直接センサーやアクチュエータ（を制御するコンピュータとプログラム～IoTデバイス）をつなげるにはハードルがあります。</p>
 <p>IFTTT に代表されるような Webhooksサービスは、http を活用することで既存の多くのウェブサービス（ X（旧twitter） や Google のサービスなど）と IoTデバイスを簡単に接続できるようにする中継サービスです。</p>
-<div style="break-before: page; page-break-before: always;"></div><h1 id="1069-iotクラウドサービス"><a class="header" href="#1069-iotクラウドサービス">10.6.9 IoTクラウドサービス</a></h1>
+<div style="break-before: page; page-break-before: always;"></div>
+<h1 id="1069-iotクラウドサービス"><a class="header" href="#1069-iotクラウドサービス">10.6.9 IoTクラウドサービス</a></h1>
 <p>Webhook のような中継サービスを介さずに、直接 IoTデバイスを接続できるように設計されたサービスが多くの事業者から提供されています。これらのサービスを使うには、各サービス事業者ごとに提供している API・プロトコル等の仕様に基づいた開発が必要になります。</p>
 <h2 id="w3c-wot-fiware"><a class="header" href="#w3c-wot-fiware">W3C WoT, FIWARE</a></h2>
 <p>先述のようなIoT事業者間の非互換を解消するとともに、多様なユースケースにも対応するための国際標準化が現在進行中です。</p>
@@ -2350,6 +2467,11 @@ var relay = RelayServer("achex", "chirimenSocket" , nodeWebSocketLib, "https://c
 
         </div>
 
+        <template id=fa-eye><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M288 32c-80.8 0-145.5 36.8-192.6 80.6C48.6 156 17.3 208 2.5 243.7c-3.3 7.9-3.3 16.7 0 24.6C17.3 304 48.6 356 95.4 399.4C142.5 443.2 207.2 480 288 480s145.5-36.8 192.6-80.6c46.8-43.5 78.1-95.4 93-131.1c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C433.5 68.8 368.8 32 288 32zM432 256c0 79.5-64.5 144-144 144s-144-64.5-144-144s64.5-144 144-144s144 64.5 144 144zM288 192c0 35.3-28.7 64-64 64c-11.5 0-22.3-3-31.6-8.4c-.2 2.8-.4 5.5-.4 8.4c0 53 43 96 96 96s96-43 96-96s-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6z"/></svg></span></template>
+        <template id=fa-eye-slash><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M38.8 5.1C28.4-3.1 13.3-1.2 5.1 9.2S-1.2 34.7 9.2 42.9l592 464c10.4 8.2 25.5 6.3 33.7-4.1s6.3-25.5-4.1-33.7L525.6 386.7c39.6-40.6 66.4-86.1 79.9-118.4c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C465.5 68.8 400.8 32 320 32c-68.2 0-125 26.3-169.3 60.8L38.8 5.1zM223.1 149.5C248.6 126.2 282.7 112 320 112c79.5 0 144 64.5 144 144c0 24.9-6.3 48.3-17.4 68.7L408 294.5c5.2-11.8 8-24.8 8-38.5c0-53-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6c0 10.2-2.4 19.8-6.6 28.3l-90.3-70.8zm223.1 298L373 389.9c-16.4 6.5-34.3 10.1-53 10.1c-79.5 0-144-64.5-144-144c0-6.9 .5-13.6 1.4-20.2L83.1 161.5C60.3 191.2 44 220.8 34.5 243.7c-3.3 7.9-3.3 16.7 0 24.6c14.9 35.7 46.2 87.7 93 131.1C174.5 443.2 239.2 480 320 480c47.8 0 89.9-12.9 126.2-32.5z"/></svg></span></template>
+        <template id=fa-copy><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M502.6 70.63l-61.25-61.25C435.4 3.371 427.2 0 418.7 0H255.1c-35.35 0-64 28.66-64 64l.0195 256C192 355.4 220.7 384 256 384h192c35.2 0 64-28.8 64-64V93.25C512 84.77 508.6 76.63 502.6 70.63zM464 320c0 8.836-7.164 16-16 16H255.1c-8.838 0-16-7.164-16-16L239.1 64.13c0-8.836 7.164-16 16-16h128L384 96c0 17.67 14.33 32 32 32h47.1V320zM272 448c0 8.836-7.164 16-16 16H63.1c-8.838 0-16-7.164-16-16L47.98 192.1c0-8.836 7.164-16 16-16H160V128H63.99c-35.35 0-64 28.65-64 64l.0098 256C.002 483.3 28.66 512 64 512h192c35.2 0 64-28.8 64-64v-32h-47.1L272 448z"/></svg></span></template>
+        <template id=fa-play><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M73 39c-14.8-9.1-33.4-9.4-48.5-.9S0 62.6 0 80V432c0 17.4 9.4 33.4 24.5 41.9s33.7 8.1 48.5-.9L361 297c14.3-8.7 23-24.2 23-41s-8.7-32.2-23-41L73 39z"/></svg></span></template>
+        <template id=fa-clock-rotate-left><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M75 75L41 41C25.9 25.9 0 36.6 0 57.9V168c0 13.3 10.7 24 24 24H134.1c21.4 0 32.1-25.9 17-41l-30.8-30.8C155 85.5 203 64 256 64c106 0 192 86 192 192s-86 192-192 192c-40.8 0-78.6-12.7-109.7-34.4c-14.5-10.1-34.4-6.6-44.6 7.9s-6.6 34.4 7.9 44.6C151.2 495 201.7 512 256 512c141.4 0 256-114.6 256-256S397.4 0 256 0C185.3 0 121.3 28.7 75 75zm181 53c-13.3 0-24 10.7-24 24V256c0 6.4 2.5 12.5 7 17l72 72c9.4 9.4 24.6 9.4 33.9 0s9.4-24.6 0-33.9l-65-65V152c0-13.3-10.7-24-24-24z"/></svg></span></template>
 
 
 
@@ -2358,25 +2480,26 @@ var relay = RelayServer("achex", "chirimenSocket" , nodeWebSocketLib, "https://c
         </script>
 
 
-        <script src="elasticlunr.min.js"></script>
-        <script src="mark.min.js"></script>
-        <script src="searcher.js"></script>
+        <script src="elasticlunr-ef4e11c1.min.js"></script>
+        <script src="mark-09e88c2c.min.js"></script>
+        <script src="searcher-c2a407aa.js"></script>
 
-        <script src="clipboard.min.js"></script>
-        <script src="highlight.js"></script>
-        <script src="book.js"></script>
+        <script src="clipboard-1626706a.min.js"></script>
+        <script src="highlight-abc7f01d.js"></script>
+        <script src="book-a0b12cfe.js"></script>
 
         <!-- Custom JS scripts -->
-        <script src="theme/external-links.js"></script>
-        <script src="theme/favicon.js"></script>
-        <script src="theme/regexp-search.js"></script>
-        <script src="theme/sidebar.js"></script>
+        <script src="theme/external-links-5ad68a77.js"></script>
+        <script src="theme/favicon-2e32f861.js"></script>
+        <script src="theme/regexp-search-2b927ca7.js"></script>
+        <script src="theme/sidebar-6a54be5d.js"></script>
 
         <script>
         window.addEventListener('load', function() {
             window.setTimeout(window.print, 100);
         });
         </script>
+
 
     </div>
     </body>
