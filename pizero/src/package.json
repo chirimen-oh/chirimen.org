@@ -1,7 +1,8 @@
 {
-  "name": "myApp",
-  "private": true,
   "type": "module",
+  "scripts": {
+    "prepare": "curl -sSfLO https://chirimen.org/remote-connection/js/beta/RelayServer.js"
+  },
   "dependencies": {
     "chirimen": "latest",
     "node-web-gpio": "latest",
@@ -10,3 +11,4 @@
     "websocket": "latest"
   }
 }
+
