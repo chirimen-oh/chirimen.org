@@ -2,5 +2,5 @@
 
 ## 配線図
 
-![配線図](./Schematic.png "schematic")
+![配線図](./schematic.png "schematic")
 
