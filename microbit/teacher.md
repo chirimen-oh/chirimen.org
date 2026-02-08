@@ -72,7 +72,7 @@ CHIRIMEN with micro:bit を利用する際には、**ワークッショップ開
 - 内蔵のジャイロセンサーの初回利用時にキャリブレーションが必要であることに注意
 - I2C が不安定であれば USB での通信に切り替える
   - [i2c detect USB版](https://chirimen.org/chirimen-micro-bit/alpha/i2cdetect_usb/index.html)
-- I2C デバイスは同じ型番のセンサーであっても個体 (基盤設計) によってデフォルト I2C アドレスが異なります。そのセンサーだけ動かない場合は I2C アドレスを [I2C detect](https://chirimen.org/chirimen-micro-bit/examples/i2cdetect/index.html) で確認するようにしてください。
+- I2C デバイスは同じ型番のセンサーであっても個体 (デバイス設計) によってデフォルト I2C アドレスが異なります。そのセンサーだけ動かない場合は I2C アドレスを [I2C detect](https://chirimen.org/chirimen-micro-bit/examples/i2cdetect/index.html) で確認するようにしてください。
   - micro:bit は最初から I2C アドレスを持っているセンサーが 2 つ内蔵されています。そのアドレスではないことに注意。
 - Bluettooth/USB 対応で micro:bit に書き込むプログラムが変わるが、起動時にハートマークか V マークがでるかで区別してください
 - I2C デバイスの動作が不安定なときは I2C デバイスへの電源共有も切断・再起動させてみましょう (RasPi でも同じ)
