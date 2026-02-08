@@ -37,7 +37,7 @@
             const path_to_root = "";
             const default_light_theme = "light";
             const default_dark_theme = "light";
-            window.path_to_searchindex_js = "searchindex-6407a90e.js";
+            window.path_to_searchindex_js = "searchindex-4b9e85b6.js";
         </script>
         <!-- Start loading toc.js asap -->
         <script src="toc-fe0f95db.js"></script>
@@ -275,8 +275,8 @@
 <li><a href="#813-neopixel-led-の使い方">Neopixel LED</a></li>
 <li><a href="#814-アナログセンサーの使い方">アナログセンサー</a></li>
 <li><a href="#815-アクチュエーターサーボモーターの使い方">サーボモーター</a></li>
-<li><a href="#816-アクチュエーターdcモーターの使い方">DCモーター（MX1508利用）</a></li>
-<li><a href="#817-アクチュエーターdcモーターの使い方pwm駆動">DCモーター（PWM駆動）</a></li>
+<li><a href="#816-アクチュエーターdc-モーターの使い方">DCモーター（MX1508利用）</a></li>
+<li><a href="#817-アクチュエーターdc-モーターの使い方pwm-駆動">DCモーター（PWM駆動）</a></li>
 <li><a href="#818-raspberrypi-のカメラに関する注意">RaspberryPi のカメラの注意点</a></li>
 </ul>
 </li>
@@ -1601,8 +1601,8 @@ function OffLED(){ // LED OFF
 <li><a href="#815-アクチュエーターサーボモーターの使い方">アクチュエーター（サーボモーター）の使い方</a></li>
 <li>アクチュエーター（DCモーター）の使い方
 <ul>
-<li><a href="#816-アクチュエーターdcモーターの使い方">hbridge1 の回路図（MX1508利用）</a></li>
-<li><a href="#817-アクチュエーターdcモーターの使い方pwm駆動">hbridge2-pca9685pwm の回路図（MX1508利用）</a></li>
+<li><a href="#816-アクチュエーターdc-モーターの使い方">hbridge1 の回路図（MX1508利用）</a></li>
+<li><a href="#817-アクチュエーターdc-モーターの使い方pwm-駆動">hbridge2-pca9685pwm の回路図（MX1508利用）</a></li>
 </ul>
 </li>
 <li><a href="#818-raspberrypi-のカメラに関する注意">RaspberryPi のカメラに関する注意</a></li>
@@ -1629,32 +1629,45 @@ function OffLED(){ // LED OFF
 <p>動作を確認するためのサンプルコードは <code>CHIRIMENパネル</code> から入手できます。<br>
 ブラウザでサンプルコードの中を確認したい場合は <code>コードを確認する</code> から確認出来ます。</p>
 <ul>
-<li>レーザー距離センサー ＞ <strong>ID：vl53l0x　タイトル：距離センサ</strong>
+<li>レーザー距離センサー ＞ <strong>ID：vl53l0x 　タイトル：距離センサ</strong>
 <ul>
 <li><a href="https://tutorial.chirimen.org/pizero/esm-examples/vl53l0x/main.js">※コードを確認する</a></li>
 </ul>
 </li>
-<li>照度センサー ＞ <strong>ID：bh1750　タイトル：照度センサ</strong>
+</ul>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/tbsRP100y-0" title="レーザー距離センサーの使い方(VL53L0X)" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen=""></iframe>
+<ul>
+<li>照度センサー ＞ <strong>ID：bh1750 　タイトル：照度センサ</strong>
 <ul>
 <li><a href="https://tutorial.chirimen.org/pizero/esm-examples/bh1750/main.js">※コードを確認する</a></li>
 </ul>
 </li>
-<li>温湿度・気圧センサー ＞ <strong>ID：bme280　タイトル：温度・湿度・気圧</strong>
+</ul>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/fACKm0sbhlM" title="照度センサーの使い方(BH1750)" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen=""></iframe>
+<ul>
+<li>温湿度・気圧センサー ＞ <strong>ID：bme280 　タイトル：温度・湿度・気圧</strong>
 <ul>
 <li><a href="https://tutorial.chirimen.org/pizero/esm-examples/bme280/main.js">※コードを確認する</a></li>
 </ul>
 </li>
+</ul>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/nYU7s2bF60c" title="温湿度・気圧センサーの使い方(BME280)" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen=""></iframe>
+<ul>
 <li>非接触赤外線温度センサー ＞ <strong>ID：mlx90614 タイトル：赤外線温度センサ</strong>
 <ul>
 <li><a href="https://tutorial.chirimen.org/pizero/esm-examples/mlx90614/main.js">※コードを確認する</a></li>
 </ul>
 </li>
-<li>サーモグラフィー ＞ <strong>ID：amg8833　タイトル：サーモグラフィー</strong>
+</ul>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/s-GyjbBfnEg" title="非接触赤外線温度センサーの使い方(MLX90614)" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen=""></iframe>
+<ul>
+<li>サーモグラフィー ＞ <strong>ID：amg8833 　タイトル：サーモグラフィー</strong>
 <ul>
 <li><a href="https://tutorial.chirimen.org/pizero/esm-examples/amg8833/main.js">※コードを確認する</a></li>
 </ul>
 </li>
 </ul>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/aTyOGfQF3lY" title="サーモグラフィーの使い方(AMG8833)" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen=""></iframe>
 <p>【注意！】回路図と実物のセンサーは製品によって形状が異なる場合があります。</p>
 <ul>
 <li>実際の応用センサーキットに入っている距離センサーは写真の物となります。
@@ -1662,16 +1675,15 @@ function OffLED(){ // LED OFF
 <li>写真のレーザーセンサーを基板の表記に合わせた接続例です。回路図と同じ色のジャンパーワイヤーで接続します。</li>
 </ul>
 </li>
-<li>I2C センサーは例の図の基盤に書かれた 4つのピン（<strong>VIN / GND / SCL / SDA</strong>）を接続するのが基本となります。</li>
+<li>I2C センサーは例の図の基板に書かれた 4 つのピン（<strong>VIN / GND / SCL / SDA</strong>）を接続するのが基本となります。</li>
 </ul>
-<pre><code>※注意
-回路図のセンサー画像は形は異なっていますが、写真の部品と同じセンサーを示しています。センサーは物により形状が異なる物がありますが搭載されたチップが同じになります。
+<p>回路図のセンサー画像は形は異なっていますが、写真の部品と同じセンサーを示しています。センサーは物により形状が異なる物がありますが搭載されたチップが同じになります。
 形状が異なる場合は実物の基板に書かれた文字を確認して、回路図と同じ文字の書かれたピンに接続します。
-センサーのピンは接続しない部分も物によってあります。回路図に従って必要な部分を繋ぎます。必ずセンサーの全てのピンを繋ぐ必要はありません。
-</code></pre>
+センサーのピンは接続しない部分も物によってあります。回路図に従って必要な部分を繋ぎます。必ずセンサーの全てのピンを繋ぐ必要はありません。</p>
 <p><a href="#81-応用センサーキットの使い方">応用センサー一覧に戻る</a></p>
 <div style="break-before: page; page-break-before: always;"></div>
 <h1 id="812-人感センサーの使い方"><a class="header" href="#812-人感センサーの使い方">8.1.2 人感センサーの使い方</a></h1>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/JL_h9UcADNE" title="人感センサーの使い方(HC-SR501)" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen=""></iframe>
 <p><img src="imgs/pir_sensor_photo.jpg" width="300"> <img src="imgs/pir_sensor_use.jpg" width="400"></p>
 <ul>
 <li>人感センサーは半球体の部分から赤外線が発されて人の動きや熱を検知してオンオフするセンサーです。</li>
@@ -1689,12 +1701,12 @@ function OffLED(){ // LED OFF
 <p>動作を確認するためのサンプルコードは <code>CHIRIMENパネル</code> から入手できます。
 ブラウザでサンプルコードの中を確認したい場合は <code>コードを確認する</code> から確認出来ます。</p>
 <ul>
-<li>人感センサー ＞ <strong>ID：gpio-onchange　タイトル：スイッチ</strong>
+<li>人感センサー ＞ <strong>ID：gpio-onchange 　タイトル：スイッチ</strong>
 <ul>
 <li><a href="https://tutorial.chirimen.org/pizero/esm-examples/gpio-onchange/main.js">※コードを確認する</a></li>
 </ul>
 </li>
-<li>人感センサー ＞ <strong>ID：gpio-polling　タイトル：スイッチ2</strong>
+<li>人感センサー ＞ <strong>ID：gpio-polling 　タイトル：スイッチ 2</strong>
 <ul>
 <li><a href="https://tutorial.chirimen.org/pizero/esm-examples/gpio-polling/main.js">※コードを確認する</a></li>
 </ul>
@@ -1704,25 +1716,26 @@ function OffLED(){ // LED OFF
 <ul>
 <li><a href="https://chirimen.org/chirimen/gc/top/examples/#GPIO-pirSensor">参考情報 ※CHIRIMEN Pi4 版</a></li>
 <li>サンプルコードは「スイッチ」のソースコードと共通で利用する事が出来ます。人感センサー（pir sensor）の名前でサンプル一覧には掲載されていないので注意してください。</li>
-<li>「スイッチ2」のソースコードでも動作させることが可能で、こちらは逐一センサーの状況が分かるので、調整をする際にはこちらのサンプルを利用すると便利です。</li>
+<li>「スイッチ 2」のソースコードでも動作させることが可能で、こちらは逐一センサーの状況が分かるので、調整をする際にはこちらのサンプルを利用すると便利です。</li>
 </ul>
 <p><a href="#81-応用センサーキットの使い方">応用センサー一覧に戻る</a></p>
 <div style="break-before: page; page-break-before: always;"></div>
 <h1 id="813-neopixel-led-の使い方"><a class="header" href="#813-neopixel-led-の使い方">8.1.3 Neopixel LED の使い方</a></h1>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/q5H2xIVCMWo" title="NeoPixel LED の使い方(NeoPixel I2C driver)" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen=""></iframe>
 <img src="imgs/NeopixelLEDset.jpg" width="600">
 <ul>
-<li>Neopixel LED というフルカラーLED の使い方です。こちらの LED はチュートリアルの LED と異なり、プログラムで複数の LED の点灯の制御や色を変えたりすることが出来ます。</li>
+<li>Neopixel LED というフルカラー LED の使い方です。こちらの LED はチュートリアルの LED と異なり、プログラムで複数の LED の点灯の制御や色を変えたりすることが出来ます。</li>
 <li>接続には Neopixel I2C Driver というオープンハードウェアを利用しています。このドライバーボードは市販品ではありません。</li>
 </ul>
 <h3 id="回路図とプログラムサンプル-2"><a class="header" href="#回路図とプログラムサンプル-2">回路図とプログラムサンプル</a></h3>
 <img src="imgs/NeopixelLED.jpg" width="800">
-<p>※ドライバとLEDの接続をする部分は以下の通りです。
+<p>※ドライバと LED の接続をする部分は以下の通りです。
 　赤：VIN（3.3V）, 黒：GND, 緑：D-IN（DI）
 　既にケーブルが接続されている物は同系色のケーブルを繋げます。</p>
 <p>動作を確認するためのサンプルコードは <code>CHIRIMENパネル</code> から入手できます。<br>
 ブラウザでサンプルコードの中を確認したい場合は <code>コードを確認する</code> から確認出来ます。</p>
 <ul>
-<li>NEOPIXEL LED（8連LED／16連LED） ＞ <strong>ID：neopixel-i2c　タイトル：NEOPIXEL LED</strong>
+<li>NEOPIXEL LED（8 連 LED／16 連 LED） ＞ <strong>ID：neopixel-i2c 　タイトル：NEOPIXEL LED</strong>
 <ul>
 <li><a href="https://tutorial.chirimen.org/pizero/esm-examples/neopixel-i2c/main.js">※コードを確認する</a></li>
 </ul>
@@ -1737,15 +1750,17 @@ function OffLED(){ // LED OFF
 </li>
 <li>センサーを使う時には図のように赤色のドライバボードと NeoPixel LED をペアで利用して試してください。
 <ul>
-<li>Neopixel LED は様々なサイズ、形で商品が出ています。（丸形、棒型、マトリクス型、テープ型　等）</li>
+<li>Neopixel LED は様々なサイズ、形で商品が出ています。（丸形、棒型、マトリクス型、テープ型　等）
+<div style="page-break-before:always"></div>
+
+</li>
 </ul>
 </li>
 </ul>
-<div style="page-break-before:always"></div>
-
 <p><a href="#81-応用センサーキットの使い方">応用センサー一覧に戻る</a></p>
 <div style="break-before: page; page-break-before: always;"></div>
 <h1 id="814-アナログセンサーの使い方"><a class="header" href="#814-アナログセンサーの使い方">8.1.4 アナログセンサーの使い方</a></h1>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/f3t-IJt-ZB0" title="アナログセンサーの使い方(ボリューム・水位・土壌湿度センサー)" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen=""></iframe>
 <p><img src="imgs/analog_sensor.jpg" width="500"><img src="imgs/water_soil.jpg" width="300"></p>
 <ul>
 <li>アナログセンサーを利用する時には ADC（アナログデジタルコンバーター）を利用して値を取得して使います。</li>
@@ -1760,7 +1775,7 @@ function OffLED(){ // LED OFF
 <p>動作を確認するためのサンプルコードは <code>CHIRIMENパネル</code> から入手できます。<br>
 ブラウザでサンプルコードの中を確認したい場合は <code>コードを確認する</code> から確認出来ます。</p>
 <ul>
-<li>アナログボリューム ＞ <strong>ID：ads1x15　タイトル：電圧測定（ADC）</strong>
+<li>アナログボリューム ＞ <strong>ID：ads1x15 　タイトル：電圧測定（ADC）</strong>
 <ul>
 <li><a href="https://tutorial.chirimen.org/pizero/esm-examples/ads1x15/main.js">※コードを確認する</a></li>
 </ul>
@@ -1783,7 +1798,7 @@ function OffLED(){ // LED OFF
 <p>動作を確認するためのサンプルコードは <code>CHIRIMENパネル</code> から入手できます。<br>
 ブラウザでサンプルコードの中を確認したい場合は <code>コードを確認する</code> から確認出来ます。</p>
 <ul>
-<li>アナログ水位センサー／アナログ土壌センサー ＞ <strong>ID：ads1x15　タイトル：電圧測定（ADC）</strong>
+<li>アナログ水位センサー／アナログ土壌センサー ＞ <strong>ID：ads1x15 　タイトル：電圧測定（ADC）</strong>
 <ul>
 <li><a href="https://tutorial.chirimen.org/pizero/esm-examples/ads1x15/main.js">※コードを確認する</a></li>
 </ul>
@@ -1796,6 +1811,7 @@ function OffLED(){ // LED OFF
 <p><a href="#81-応用センサーキットの使い方">応用センサー一覧に戻る</a></p>
 <div style="break-before: page; page-break-before: always;"></div>
 <h1 id="815-アクチュエーターサーボモーターの使い方"><a class="header" href="#815-アクチュエーターサーボモーターの使い方">8.1.5 アクチュエーター（サーボモーター）の使い方</a></h1>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/etCNoFxsaJ0" title="マイクロサーボモーターの使い方" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen=""></iframe>
 <img src="imgs/pwm_sg90.jpg" width="700">
 <ul>
 <li>モーターを使用する場合はモータードライバーを経由して制御します。</li>
@@ -1806,7 +1822,7 @@ function OffLED(){ // LED OFF
 <p>動作を確認するためのサンプルコードは <code>CHIRIMENパネル</code> から入手できます。<br>
 ブラウザでサンプルコードの中を確認したい場合は <code>コードを確認する</code> から確認出来ます。</p>
 <ul>
-<li>アクチュエーター（サーボモーター） ＞ <strong>ID：pca9685　タイトル：サーボモータ</strong>
+<li>アクチュエーター（サーボモーター） ＞ <strong>ID：pca9685 　タイトル：サーボモータ</strong>
 <ul>
 <li><a href="https://tutorial.chirimen.org/pizero/esm-examples/pca9685/main.js">※コードを確認する</a></li>
 </ul>
@@ -1814,23 +1830,24 @@ function OffLED(){ // LED OFF
 </ul>
 <p>【備考】</p>
 <ul>
-<li>給電方法は電池ボックス又は USB DIP 化キットを使ったモバイルバッテリーの使用、電源モジュールを使った ACアダプタ給電などを使用します。</li>
+<li>給電方法は電池ボックス又は USB DIP 化キットを使ったモバイルバッテリーの使用、電源モジュールを使った AC アダプタ給電などを使用します。</li>
 <li>サーボドライバーの給電接続には精密ドライバーを使用します</li>
 </ul>
 <h2 id="モバイルバッテリーの利用方法"><a class="header" href="#モバイルバッテリーの利用方法">モバイルバッテリーの利用方法</a></h2>
 <img src="imgs/mobilebattery.jpg" width="500">
 <ul>
-<li>microUSB DIP化キットを使用してモバイルバッテリーを電池ボックスとして使用する事が出来ます。</li>
-<li>電源として利用するだけであれば、VIN と GND の 2ヶ所にジャンパーワイヤーを使用して接続が出来ます。</li>
+<li>microUSB DIP 化キットを使用してモバイルバッテリーを電池ボックスとして使用する事が出来ます。</li>
+<li>電源として利用するだけであれば、VIN と GND の 2 ヶ所にジャンパーワイヤーを使用して接続が出来ます。</li>
 </ul>
 <h2 id="pizero-から給電する回路図"><a class="header" href="#pizero-から給電する回路図">PiZero から給電する回路図</a></h2>
 <img src="imgs/pca9685_sg90_nodc.jpg" width="600">
 <ul>
-<li>低消費電力のモーター（例：SG-90）1個の場合、RasPi Zero からの電力供給でも動作させられるものもあります。</li>
+<li>低消費電力のモーター（例：SG-90）1 個の場合、RasPi Zero からの電力供給でも動作させられるものもあります。</li>
 </ul>
 <p><a href="#81-応用センサーキットの使い方">応用センサー一覧に戻る</a></p>
 <div style="break-before: page; page-break-before: always;"></div>
-<h1 id="816-アクチュエーターdcモーターの使い方"><a class="header" href="#816-アクチュエーターdcモーターの使い方">8.1.6 アクチュエーター（DCモーター）の使い方</a></h1>
+<h1 id="816-アクチュエーターdc-モーターの使い方"><a class="header" href="#816-アクチュエーターdc-モーターの使い方">8.1.6 アクチュエーター（DC モーター）の使い方</a></h1>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/5PsXPz0dllk" title="DCモーターの使い方(MX1508)" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen=""></iframe>
 <img src="imgs/dcmotor.jpg" width="600">
 <ul>
 <li>モーターを使用する場合はモータードライバーを経由して制御します。</li>
@@ -1841,7 +1858,7 @@ function OffLED(){ // LED OFF
 </li>
 </ul>
 <h3 id="回路図とプログラムサンプル-5"><a class="header" href="#回路図とプログラムサンプル-5">回路図とプログラムサンプル</a></h3>
-<h2 id="hbridge1-の回路図mx1508利用"><a class="header" href="#hbridge1-の回路図mx1508利用">hbridge1 の回路図（MX1508利用）</a></h2>
+<h2 id="hbridge1-の回路図mx1508-利用"><a class="header" href="#hbridge1-の回路図mx1508-利用">hbridge1 の回路図（MX1508 利用）</a></h2>
 <img src="imgs/MX1508_DCmotor.jpg" width="700">
 <ul>
 <li>このサンプルは GPIO Examples のサンプルです。</li>
@@ -1849,7 +1866,7 @@ function OffLED(){ // LED OFF
 <p>動作を確認するためのサンプルコードは <code>CHIRIMENパネル</code> から入手できます。<br>
 ブラウザでサンプルコードの中を確認したい場合は <code>コードを確認する</code> から確認出来ます。</p>
 <ul>
-<li>アクチュエーター（DCモーター） ＞ <strong>ID：hbridge1　タイトル：モータ正転・逆転制御</strong>
+<li>アクチュエーター（DC モーター） ＞ <strong>ID：hbridge1 　タイトル：モータ正転・逆転制御</strong>
 <ul>
 <li><a href="https://tutorial.chirimen.org/pizero/esm-examples/hbridge1/main.js">※コードを確認する</a></li>
 </ul>
@@ -1865,14 +1882,15 @@ function OffLED(){ // LED OFF
 </ul>
 <p><a href="#81-応用センサーキットの使い方">応用センサー一覧に戻る</a></p>
 <div style="break-before: page; page-break-before: always;"></div>
-<h1 id="817-アクチュエーターdcモーターの使い方pwm駆動"><a class="header" href="#817-アクチュエーターdcモーターの使い方pwm駆動">8.1.7 アクチュエーター（DCモーター）の使い方（PWM駆動）</a></h1>
+<h1 id="817-アクチュエーターdc-モーターの使い方pwm-駆動"><a class="header" href="#817-アクチュエーターdc-モーターの使い方pwm-駆動">8.1.7 アクチュエーター（DC モーター）の使い方（PWM 駆動）</a></h1>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/hF_z429Izbk" title="DCモーターの使い方(PWMサーボドライバー利用)" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen=""></iframe>
 <img src="imgs/dcmotor2.jpg" width="600">
 <ul>
 <li>モーターを使用する場合はモータードライバーを経由して制御します。</li>
 <li>モーターを動かすため外部から電力を取る必要があります。</li>
 </ul>
 <h3 id="回路図とプログラムサンプル-6"><a class="header" href="#回路図とプログラムサンプル-6">回路図とプログラムサンプル</a></h3>
-<h2 id="hbridge2-pca9685pwm-の回路図mx1508利用"><a class="header" href="#hbridge2-pca9685pwm-の回路図mx1508利用">hbridge2-pca9685pwm の回路図（MX1508利用）</a></h2>
+<h2 id="hbridge2-pca9685pwm-の回路図mx1508-利用"><a class="header" href="#hbridge2-pca9685pwm-の回路図mx1508-利用">hbridge2-pca9685pwm の回路図（MX1508 利用）</a></h2>
 <img src="imgs/MX1508_PWM_DCmotor.jpg" width="700">
 <ul>
 <li>このサンプルは I2C Examples になります。</li>
@@ -1880,7 +1898,7 @@ function OffLED(){ // LED OFF
 <p>動作を確認するためのサンプルコードは <code>CHIRIMENパネル</code> から入手できます。<br>
 ブラウザでサンプルコードの中を確認したい場合は <code>コードを確認する</code> から確認出来ます。</p>
 <ul>
-<li>アクチュエーター（DCモーター） ＞ <strong>ID：hbridge2-pca9685pwm　タイトル：モータ正転・逆転・速度制御</strong>
+<li>アクチュエーター（DC モーター） ＞ <strong>ID：hbridge2-pca9685pwm 　タイトル：モータ正転・逆転・速度制御</strong>
 <ul>
 <li><a href="https://tutorial.chirimen.org/pizero/esm-examples/gpio-onchange/main.js">※コードを確認する</a></li>
 </ul>
@@ -1888,7 +1906,7 @@ function OffLED(){ // LED OFF
 </ul>
 <p>【備考】</p>
 <ul>
-<li>PWMサーボドライバーと組み合わせた動作の場合は、PWM駆動が可能になります。
+<li>PWM サーボドライバーと組み合わせた動作の場合は、PWM 駆動が可能になります。
 <ul>
 <li>モーターの回転速度も PWM で制御できるので加速や減速などを行う事も可能です。</li>
 <li>動作させる前にモーターがジャンパーワイヤー等の他の物を巻き込まない様に注意してください。</li>
@@ -1899,8 +1917,8 @@ function OffLED(){ // LED OFF
 <h2 id="参考モバイルバッテリーの利用方法"><a class="header" href="#参考モバイルバッテリーの利用方法">（参考）モバイルバッテリーの利用方法</a></h2>
 <img src="imgs/mobilebattery.jpg" width="500">
 <ul>
-<li>microUSB DIP化キットを使用してモバイルバッテリーを電池ボックスとして使用する事が出来ます。</li>
-<li>電源として利用するだけであれば、VIN と GND の 2ヶ所にジャンパーワイヤーを使用して接続が出来ます。</li>
+<li>microUSB DIP 化キットを使用してモバイルバッテリーを電池ボックスとして使用する事が出来ます。</li>
+<li>電源として利用するだけであれば、VIN と GND の 2 ヶ所にジャンパーワイヤーを使用して接続が出来ます。</li>
 </ul>
 <p><a href="#81-応用センサーキットの使い方">応用センサー一覧に戻る</a></p>
 <div style="break-before: page; page-break-before: always;"></div>
