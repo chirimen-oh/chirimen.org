@@ -8,3 +8,6 @@ end
 
 # https://talk.jekyllrb.com/t/load-error-cannot-load-such-file-webrick/5417
 gem 'webrick'
+
+# Faraday v2.0+ retry middleware (silences build warning)
+gem 'faraday-retry'
