@@ -23,40 +23,46 @@ ruby 3.3.0 (2023-12-25 revision 5124f9ac75) [arm64-darwin24]
 
 ## 手順
 
-1. [https://github.com/chirimen-oh/chirimen.org](https://github.com/chirimen-oh/chirimen.org) をフォークする
-2. リポジトリをクローンし、インストールする
-3. ローカル環境を立ち上げる
-4. **作業前に** [https://github.com/chirimen-oh/chirimen.org/issues](https://github.com/chirimen-oh/chirimen.org/issues) に Issue を立てる
-5. 作業ブランチを作成する
-6. プルリクエストを作成する
-7. レビューを待つ
+1. [リポジトリ](https://github.com/chirimen-oh/chirimen.org) をフォークする
+2. クローンして依存関係をインストールし、ローカルで起動する（下記「ローカル環境構築・起動」参照）
+3. **作業前に** [Issues](https://github.com/chirimen-oh/chirimen.org/issues) で Issue を立てる
+4. 作業ブランチを作成する
+5. プルリクエストを作成する
+6. レビューを待つ
 
-## ローカル環境構築
+## ローカル環境構築・起動
 
-```bash
+### 通常（clone から serve まで）
+
+```sh
+git clone git@github.com:chirimen-oh/chirimen.org.git
+cd chirimen.org
 npm install
-bundle install
-```
-
-## ローカル環境起動
-
-### ローカル環境初期化
-
-```bash
-bundle exec jekyll clean
-```
-
-### ローカル環境ビルド
-
-```bash
-bundle exec jekyll build
-```
-
-### ローカル環境サーバー起動
-
-```bash
+bundle install --path vendor/bundle
 bundle exec jekyll serve
 ```
+
+`bundle install` は `--path vendor/bundle` を付けると gem をプロジェクト内に閉じてインストールし、再現性・権限のトラブルを避けられます。
+
+ブラウザで **http://127.0.0.1:4000/** を開いて確認してください。編集・保存で即時リビルドされます（ライブリロードはないため、保存後にブラウザのリロードが必要です）。
+
+### すでに clone 済みのとき（起動だけ）
+
+必要に応じてクリーンやビルドのみ行う場合:
+
+```bash
+bundle exec jekyll clean   # 必要時
+bundle exec jekyll build   # 必要時
+bundle exec jekyll serve  # 起動
+```
+
+### Docker で起動する場合（オプション）
+
+```bash
+docker compose up
+```
+
+起動後、**http://127.0.0.1:4000/** で確認できます。
 
 ## 参考資料
 
