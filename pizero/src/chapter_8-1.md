@@ -1,4 +1,4 @@
-# 8.1 応用センサーキットの使い方
+# 9.1 応用センサーキットの使い方
 ## 応用センサーキットの一覧
 
 <img src="./imgs/AppliedSensorKits.jpg" width=800>

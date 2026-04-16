@@ -1,4 +1,4 @@
-# 10.5.3 WebI2C とデバイスドライバ
+# 11.5.3 WebI2C とデバイスドライバ
 
 CHIRIMENでは、GPIOインターフェースをWeb GPIOと呼ぶAPIで使用しました。I2Cインターフェースに接続されたスレーブデバイスは[Web I2C API](http://browserobo.github.io/WebI2C)と呼ぶAPIによって使用することができます。
 

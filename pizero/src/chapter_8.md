@@ -1,4 +1,4 @@
-# 8. 他のいろいろなデバイスを試してみる
+# 9. 他のいろいろなデバイスを試してみる
 * ターミナルウィンドの ```[CHIRIMEN Panel]``` ボタン ⇒ CHIRIMEN Panelの ```[Get Examples]``` ボタンで出現するリストのデバイスがすぐ試せます。
 * このリストの直リンクは[こちら(サンプル一覧)](https://tutorial.chirimen.org/pizero/esm-examples/)です。CHIRIMEN RPiZero を PC につないでいないときはこちらを眺めてください。
 

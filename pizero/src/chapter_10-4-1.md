@@ -1,4 +1,4 @@
-# 10.4.1 GPIOポートの初期化と出力処理
+# 11.4.1 GPIOポートの初期化と出力処理
 ## GPIOポートの初期化
 今回の JavaScript ファイルで、最初に呼び出されるコードは `await navigator.requestGPIOAccess()` です。
 ここで先ほど出て来た [Web GPIO API](http://browserobo.github.io/WebGPIO) を使い、`gpioAccess` という GPIO にアクセスするためのインタフェースを取得しています。

@@ -1,4 +1,4 @@
-# 10.3.1 JavaScriptコード・ライブラリの読み込み
+# 11.3.1 JavaScriptコード・ライブラリの読み込み
 ## ウェブアプリ：HTMLで読み込み
 Raspberry Pi Zero 版以外の CHIRIMEN はプログラムの起点はHTMLファイルです。（[ウェブアプリ](https://ja.wikipedia.org/wiki/%E3%82%A6%E3%82%A7%E3%83%96%E3%82%A2%E3%83%97%E3%83%AA%E3%82%B1%E3%83%BC%E3%82%B7%E3%83%A7%E3%83%B3)）ブラウザはまずHTMLファイルを読み込んだうえで、そこに書かれた内容で動きます。したがって作ったコードや必要なライブラリの読み込みは基本的に全てこのHTMLの中で指定します。（なお、javascript Moduleを有効化している場合は JavaScriptコードの中で jsライブラリを読み込むことがある）
 

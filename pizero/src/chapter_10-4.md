@@ -1,4 +1,4 @@
-# 10.4 GPIO
+# 11.4 GPIO
 ## GPIOとは
 
 [GPIO](https://ja.wikipedia.org/wiki/GPIO)は、「General-purpose input/output」の略で汎用的な入出力インタフェースのことです。

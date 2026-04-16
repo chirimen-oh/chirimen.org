@@ -1,4 +1,4 @@
-# 8.1.4 アナログセンサーの使い方
+# 9.1.4 アナログセンサーの使い方
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/f3t-IJt-ZB0" title="アナログセンサーの使い方(ボリューム・水位・土壌湿度センサー)" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 

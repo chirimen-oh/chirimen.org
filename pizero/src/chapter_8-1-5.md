@@ -1,4 +1,4 @@
-# 8.1.5 アクチュエーター（サーボモーター）の使い方
+# 9.1.5 アクチュエーター（サーボモーター）の使い方
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/etCNoFxsaJ0" title="マイクロサーボモーターの使い方" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 

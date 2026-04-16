@@ -1,4 +1,4 @@
-# 10.3.2 非同期処理
+# 11.3.2 非同期処理
 物理デバイス制御やネットワーク通信などでは、応答待ち中にブラウザが停止しないよう非同期処理を使う必要があります。
 本チュートリアルではこれを [async 関数](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/async_function) で記述しています。async 関数による非同期処理に慣れていない人は、[こちらの資料「非同期処理 (async await 版)」](https://tutorial.chirimen.org/js/async.html) も参考にしてください。非同期処理についてより詳しくは [JS Primer の非同期処理説明ページ](https://jsprimer.net/basic/async/) をご覧ください。
 
