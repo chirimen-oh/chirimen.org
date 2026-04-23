@@ -4,7 +4,7 @@ CHIRIMENの使い方やコードについてわからないことがあれば、
 
 このアシスタントはCHIRIMENの公式ドキュメントやリポジトリ内のコードを直接参照しながら回答するため、CHIRIMENに特化した的確な回答を返してくれます。
 
-👉 [CHIRIMENアシスタントに質問する](https://deepwiki.com/chirimen-oh/chirimen.org)
+👉 [CHIRIMENアシスタントに質問する](https://deepwiki.com/chirimen-oh/chirimen-deepwiki)
 
 リンクを開いて質問するだけです。登録は不要です。
 
