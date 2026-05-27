@@ -1,4 +1,4 @@
-# 10.6.1 webSocketとpub/sub services
+# 11.6.1 webSocketとpub/sub services
 ## システム構成
 
 ![sysConfImg](./imgs/IoTsystemConf.png)

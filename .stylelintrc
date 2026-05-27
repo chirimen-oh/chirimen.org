@@ -1,6 +1,4 @@
-extends: [
-  'stylelint-config-standard',
-  './node_modules/prettier-stylelint/config.js'
-]
+extends:
+  - stylelint-config-standard
 ignoreFiles: [
 ]

@@ -1,4 +1,4 @@
-# 10.4.2 GPIOPortの入力処理（onchange）
+# 11.4.2 GPIOPortの入力処理（onchange）
 GPIOポートに繋いだスイッチやセンサーの状態を取得するには、GPIOの**入力**機能を使います。出力とは違って入力は二つの方法があります。onchangeとポーリングの二つの方法があります。
 
 ## onchange編

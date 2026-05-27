@@ -1,4 +1,4 @@
-# 8.1.8 RaspberryPi のカメラに関する注意
+# 9.1.8 RaspberryPi のカメラに関する注意
 <img src="./imgs/PiZero_camera1.jpg" width=300>　<img src="./imgs/PiZero_camera2.jpg" width=300>
 
 - 接続端子・フラットケーブルは壊れやすい

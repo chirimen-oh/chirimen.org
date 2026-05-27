@@ -1,4 +1,4 @@
-# 8.1.6 アクチュエーター（DC モーター）の使い方
+# 9.1.6 アクチュエーター（DC モーター）の使い方
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/5PsXPz0dllk" title="DCモーターの使い方(MX1508)" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 

@@ -1,4 +1,4 @@
-# 10.1 CHIRIMEN
+# 11.1 CHIRIMEN
 ![](./imgs/CHIRIMEN_pf.png)
 CHIRIMEN とは、Webの標準的な技術・ブラウザやNode.js等で実行できるJavaScript で電子パーツを制御し、[フィジカルコンピューティング](https://www.iizuka.kyutech.ac.jp/faculty/physicalcomputing)や[IoTシステム](./chapter_10-6.md)を開発可能なプロトタイピング環境です。
 
