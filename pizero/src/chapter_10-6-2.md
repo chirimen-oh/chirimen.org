@@ -1,4 +1,4 @@
-# 10.6.2 relayService
+# 11.6.2 relayService
 
 送り側(左側)のWebAppsが、受け側(右側)のwebAppsに情報を送るなら、直接接続するのが簡単そうです。これはピアツーピア通信と言います。
 

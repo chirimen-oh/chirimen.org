@@ -41,6 +41,7 @@
   - [PiZero 側のコードを読む](./chapter_6-5.md)
   - [PC 側のコードを読む](./chapter_6-6.md)
 - [常駐プログラム化する](./chapter_7.md)
+- [AIアシスタントを活用する](./using-ai-assistant.md)
 - [他のいろいろなデバイスを試してみる](./chapter_8.md)
   - [応用センサーキットの使い方](./chapter_8-1.md)
     - [単体で動作確認できるセンサー](./chapter_8-1-1.md)
