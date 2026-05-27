@@ -30,6 +30,7 @@
     "eslint-plugin-import": "^2.32.0",
     "eslint-plugin-prettier": "^5.5.5",
     "prettier": "^3.8.3",
+    "prettier-stylelint": "^0.4.2",
     "stylelint": "^17.12.0",
     "stylelint-config-standard": "^40.0.0"
   }
