@@ -1,39 +1,12 @@
-import { requestI2CAccess } from "./node_modules/node-web-i2c/index.js";
+import { requestI2CAccess } from "node-web-i2c";
 import PCA9685_PWM from "@chirimen/pca9685-pwm";
-const sleep = msec => new Promise(resolve => setTimeout(resolve, msec));
-
+const sleep = (msec) => new Promise((resolve) => setTimeout(resolve, msec));
 let pca9685pwm;
-
-main();
-
-async function main() {
-    await init();
-
-    let direction = -1;
-    for (; ;) {
-        direction = (direction == 1) ? -1 : 1; // 三項演算子でdirectionを反転
-        console.log("direction:", direction);
-        console.log("speedUp");
-        for (let speed = 0; speed <= 1; speed += 0.1) {
-            await setMotor(direction, speed);
-            await sleep(200);
-        }
-        await sleep(500);
-        console.log("speedDown");
-        for (let speed = 1; speed >= 0; speed -= 0.1) {
-            await setMotor(direction, speed);
-            await sleep(200);
-        }
-        console.log("stop");
-        await setMotor(0, 0);
-        await sleep(1000);
-    }
-}
 
 async function init() {
     const i2cAccess = await requestI2CAccess();
-    const port = i2cAccess.ports.get(1);
-    pca9685pwm = new PCA9685_PWM(port, 0x40);
+    const i2cPort = i2cAccess.ports.get(1);
+    pca9685pwm = new PCA9685_PWM(i2cPort, 0x40);
     await pca9685pwm.init(100);
 }
 
@@ -50,4 +23,26 @@ async function setMotor(direction, speed) {
         await pca9685pwm.setPWM(0, 0);
         await pca9685pwm.setPWM(1, 0);
     }
+}
+
+await init();
+
+let direction = -1;
+while (true) {
+    direction = (direction == 1) ? -1 : 1; // 三項演算子でdirectionを反転
+    console.log("direction:", direction);
+    console.log("speedUp");
+    for (let speed = 0; speed <= 1; speed += 0.1) {
+        await setMotor(direction, speed);
+        await sleep(200);
+    }
+    await sleep(500);
+    console.log("speedDown");
+    for (let speed = 1; speed >= 0; speed -= 0.1) {
+        await setMotor(direction, speed);
+        await sleep(200);
+    }
+    console.log("stop");
+    await setMotor(0, 0);
+    await sleep(1000);
 }

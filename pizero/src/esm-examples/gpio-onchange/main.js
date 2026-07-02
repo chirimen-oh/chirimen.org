@@ -1,17 +1,11 @@
-import {requestGPIOAccess} from "./node_modules/node-web-gpio/dist/index.js";
-const sleep = msec => new Promise(resolve => setTimeout(resolve, msec));
-
-async function switchCheck() {
-  const gpioAccess = await requestGPIOAccess();
-  const port = gpioAccess.ports.get(5);
-
-  await port.export("in");
-  port.onchange = showPort;
-
-}
+import { requestGPIOAccess } from "node-web-gpio";
 
 function showPort(ev){
 	console.log(ev.value);
 }
 
-switchCheck();
+const gpioAccess = await requestGPIOAccess();
+const gpioPort = gpioAccess.ports.get(5);
+
+await gpioPort.export("in");
+gpioPort.onchange = showPort;

@@ -18,7 +18,6 @@ const SEND_INTERVAL_MS = 5000;
 
 // 指定したミリ秒だけ待つための関数
 const sleep = (msec) => new Promise((resolve) => setTimeout(resolve, msec));
-
 // --- センサーの準備 ---
 // I2Cという通信方式でセンサーとつながる「ポート」を取得する
 const i2cAccess = await requestI2CAccess();

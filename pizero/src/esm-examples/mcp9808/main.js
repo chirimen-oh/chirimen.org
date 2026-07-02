@@ -3,7 +3,7 @@
   Written by Haruka Terai.
 */
 
-import { requestI2CAccess } from "chirimen";
+import { requestI2CAccess } from "node-web-i2c";
 import MCP9808 from "@chirimen/mcp9808";
 
 const i2cAccess = await requestI2CAccess();
