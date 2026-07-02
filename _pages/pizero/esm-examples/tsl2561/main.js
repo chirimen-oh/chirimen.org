@@ -1,21 +1,17 @@
-import {requestI2CAccess} from "./node_modules/node-web-i2c/index.js";
+import { requestI2CAccess } from "node-web-i2c";
 import GROVELIGHT from "@chirimen/grove-light";
-const sleep = msec => new Promise(resolve => setTimeout(resolve, msec));
+const sleep = (msec) => new Promise((resolve) => setTimeout(resolve, msec));
 
-main();
-
-async function main() {
-  const i2cAccess = await requestI2CAccess();
-  const port = i2cAccess.ports.get(1);
-  const grovelight = new GROVELIGHT(port, 0x29);
-  await grovelight.init();
-  for (;;) {
-    try {
-      const value = await grovelight.read();
-      console.log(value);
-    } catch (error) {
-      console.error(" Error : ", error);
-    }
-    await sleep(200);
+const i2cAccess = await requestI2CAccess();
+const i2cPort = i2cAccess.ports.get(1);
+const grovelight = new GROVELIGHT(i2cPort, 0x29);
+await grovelight.init();
+while (true) {
+  try {
+    const value = await grovelight.read();
+    console.log(value);
+  } catch (error) {
+    console.error(" Error : ", error);
   }
+  await sleep(200);
 }

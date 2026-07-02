@@ -1,18 +1,14 @@
-import {requestGPIOAccess} from "./node_modules/node-web-gpio/dist/index.js";
-const sleep = msec => new Promise(resolve => setTimeout(resolve, msec));
+import { requestGPIOAccess } from "node-web-gpio";
+const sleep = (msec) => new Promise((resolve) => setTimeout(resolve, msec));
 
-async function blink() {
-  const gpioAccess = await requestGPIOAccess();
-  const port = gpioAccess.ports.get(26);
+const gpioAccess = await requestGPIOAccess();
+const gpioPort = gpioAccess.ports.get(26);
 
-  await port.export("out");
+await gpioPort.export("out");
 
-  for (;;) {
-    await port.write(1);
-    await sleep(3000); // 3秒間再生
-    await port.write(0);
-    await sleep(1000); // 1秒間停止
-  }
+while (true) {
+  await gpioPort.write(1);
+  await sleep(3000); // 3秒間再生
+  await gpioPort.write(0);
+  await sleep(1000); // 1秒間停止
 }
-
-blink();

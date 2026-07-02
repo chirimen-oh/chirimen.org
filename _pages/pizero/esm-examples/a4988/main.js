@@ -1,6 +1,5 @@
-import { requestGPIOAccess } from "./node_modules/node-web-gpio/dist/index.js";
-const sleep = msec => new Promise(resolve => setTimeout(resolve, msec));
-
+import { requestGPIOAccess } from "node-web-gpio";
+const sleep = (msec) => new Promise((resolve) => setTimeout(resolve, msec));
 let portA, portB;
 
 async function init() {
@@ -13,17 +12,6 @@ async function init() {
     await portB.write(0);
 }
 
-async function main() {
-    await init();
-    let direction = 1;
-    for (; ;) {
-        console.log("Move:", direction);
-        await stepMove(100, direction);
-        await sleep(500);
-        direction = direction == 1 ? 0 : 1;
-    }
-}
-
 async function stepMove(steps, direction) {
     await portB.write(direction);
     for (let i = 0; i < steps; i++) {
@@ -34,4 +22,11 @@ async function stepMove(steps, direction) {
     }
 }
 
-main();
+await init();
+let direction = 1;
+while (true) {
+    console.log("Move:", direction);
+    await stepMove(100, direction);
+    await sleep(500);
+    direction = direction == 1 ? 0 : 1;
+}
