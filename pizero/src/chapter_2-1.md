@@ -23,7 +23,7 @@
   * MOSFET
   * ギヤードモーター（ミニモーター）
 * **温度センシング実験用追加パーツ**（温湿度センサーはいずれかを用意します）
-  * [**ADT7410モジュール**](https://akizukidenshi.com/catalog/g/gM-06675/)　もしくは [**SHT30モジュール**](https://www.amazon.co.jp/dp/B083NHJSL9/)
+  * [**ADT7410モジュール**](https://akizukidenshi.com/catalog/g/gM-06675/)　もしくは [**SHT30モジュール**](https://www.amazon.co.jp/s?k=sht30)
   * ジャンパーワイヤ オス-メス 4本（追加 2本）
 * **ブラウザの載ったパソコン**（いずれもUSBとWiFiが使える必要があります）
   * Windows
