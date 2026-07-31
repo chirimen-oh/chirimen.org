@@ -21,15 +21,15 @@ npm i @chirimen/as7341
 ```
 
 ## ファイル説明
-- AS7341.fzpz  
+- files/AS7341.fzpz  
 AS7341センサーのパーツファイル  
 対応APP：Fritzing
 
-- AS7341.fzz  
+- files/AS7341.fzz  
 配線図のファイル  
 対応APP：Fritzing
 
-- AS7341.svg  
+- files/AS7341.svg  
 配線図のベクター形式画像
 
 ## サンプルコード説明
