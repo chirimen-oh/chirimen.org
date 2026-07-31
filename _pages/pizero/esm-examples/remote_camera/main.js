@@ -5,9 +5,7 @@
 import { StillCamera } from "pi-camera-connect";
 import * as fs from "fs";
 
-import { requestGPIOAccess } from "./node_modules/node-web-gpio/dist/index.js";
-const sleep = (msec) => new Promise((resolve) => setTimeout(resolve, msec));
-
+import { requestGPIOAccess } from "node-web-gpio";
 import nodeWebSocketLib from "websocket"; // https://www.npmjs.com/package/websocket
 import { RelayServer } from "./RelayServer.js";
 
@@ -16,26 +14,13 @@ const stillCamera = new StillCamera({
 	height: 128,
 });
 
-var channel;
-
-async function connect() {
-	// webSocketリレーの初期化
-	var relay = RelayServer(
-		"chirimentest",
-		"chirimenSocket",
-		nodeWebSocketLib,
-		"https://chirimen.org"
-	);
-	channel = await relay.subscribe("chirimenCAM");
-	console.log("web socketリレーサービスに接続しました");
-	channel.onmessage = transmitImageData;
-}
+let channel;
 
 async function transmitImageData(messge) {
 	console.log(messge.data);
 	if (messge.data == "GET IMAGE DATA") {
 		const imageURI = await captureImage();
-		var sensorData = {
+		const sensorData = {
 			imageURI: imageURI,
 			time: new Date().getTime(),
 		};
@@ -47,12 +32,21 @@ async function transmitImageData(messge) {
 // カメラの画像をDataURIとして取得する
 // このAPIについてはreadme.mdを参照してください。
 async function captureImage() {
-	var mime = "image/jpeg";
-	var encoding = "base64";
+	const mime = "image/jpeg";
+	const encoding = "base64";
 	const image = await stillCamera.takeImage();
 	const b64str = image.toString(encoding);
 	const dataURL = "data:" + mime + ";" + encoding + "," + b64str;
 	return dataURL;
 }
 
-connect();
+// webSocketリレーの初期化
+const relay = RelayServer(
+	"chirimentest",
+	"chirimenSocket",
+	nodeWebSocketLib,
+	"https://chirimen.org"
+);
+channel = await relay.subscribe("chirimenCAM");
+console.log("web socketリレーサービスに接続しました");
+channel.onmessage = transmitImageData;

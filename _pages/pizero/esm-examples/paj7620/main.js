@@ -1,18 +1,14 @@
-import {requestI2CAccess} from "./node_modules/node-web-i2c/index.js";
+import { requestI2CAccess } from "node-web-i2c";
 import PAJ7620 from "@chirimen/grove-gesture";
-const sleep = msec => new Promise(resolve => setTimeout(resolve, msec));
+const sleep = (msec) => new Promise((resolve) => setTimeout(resolve, msec));
 
-main();
+const i2cAccess = await requestI2CAccess();
+const i2cPort = i2cAccess.ports.get(1);
+const gesture = new PAJ7620(i2cPort, 0x73);
+await gesture.init();
 
-async function main() {
-  const i2cAccess = await requestI2CAccess();
-  const port = i2cAccess.ports.get(1);
-  const gesture = new PAJ7620(port, 0x73);
-  await gesture.init();
-
-  for (;;) {
-    const v = await gesture.read();
-    console.log(v);
-    await sleep(1000);
-  }
+while (true) {
+  const v = await gesture.read();
+  console.log(v);
+  await sleep(1000);
 }

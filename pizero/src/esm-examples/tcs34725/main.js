@@ -1,29 +1,25 @@
-import {requestI2CAccess} from "./node_modules/node-web-i2c/index.js";
+import { requestI2CAccess } from "node-web-i2c";
 import TCS34725 from "@chirimen/tcs34725";
-const sleep = msec => new Promise(resolve => setTimeout(resolve, msec));
+const sleep = (msec) => new Promise((resolve) => setTimeout(resolve, msec));
 
-main();
+const i2cAccess = await requestI2CAccess();
+const i2cPort = i2cAccess.ports.get(1);
+const tcs34725 = new TCS34725(i2cPort, 0x29);
+await tcs34725.init();
 
-async function main() {
-  const i2cAccess = await requestI2CAccess();
-  const port = i2cAccess.ports.get(1);
-  const tcs34725 = new TCS34725(port, 0x29);
-  await tcs34725.init();
+// You can select the value of gain from 1, 4, 16 or 60.
+await tcs34725.gain(4);
 
-  // You can select the value of gain from 1, 4, 16 or 60.
-  await tcs34725.gain(4);
+while (true) {
+  const data = await tcs34725.read();
+  console.log(
+    [
+      `R: ${data.r}`,
+      `G: ${data.g}`,
+      `B: ${data.b}`,
+      `Clear Light: ${data.c}`
+    ].join(", ")
+  );
 
-  while (true) {
-    const data = await tcs34725.read();
-    console.log(
-      [
-        `R: ${data.r}`,
-        `G: ${data.g}`,
-        `B: ${data.b}`,
-        `Clear Light: ${data.c}`
-      ].join(", ")
-    );
-
-    await sleep(500);
-  }
+  await sleep(500);
 }

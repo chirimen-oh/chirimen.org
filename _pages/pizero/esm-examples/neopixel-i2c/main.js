@@ -1,25 +1,7 @@
-import { requestI2CAccess } from "./node_modules/node-web-i2c/index.js";
+import { requestI2CAccess } from "node-web-i2c";
 import NPIX from "@chirimen/neopixel-i2c";
-const sleep = msec => new Promise(resolve => setTimeout(resolve, msec));
-
+const sleep = (msec) => new Promise((resolve) => setTimeout(resolve, msec));
 const neoPixels = 7; // LED個数
-
-main();
-
-async function main() {
-    const i2cAccess = await requestI2CAccess();
-    const port = i2cAccess.ports.get(1);
-    const npix = new NPIX(port, 0x41);
-    await npix.init(neoPixels);
-
-    await nPixTest1(npix);
-
-    await nPixTest2(npix);
-
-    await nPixTest3(npix, pattern4);
-
-    await npix.setGlobal(0, 0, 0);
-}
 
 async function nPixTest1(npix) {
     // 全LEDを同じ色にするケース
@@ -98,3 +80,16 @@ async function nPixTest3(npix, pattern) {
     }
 
 }
+
+const i2cAccess = await requestI2CAccess();
+const i2cPort = i2cAccess.ports.get(1);
+const npix = new NPIX(i2cPort, 0x41);
+await npix.init(neoPixels);
+
+await nPixTest1(npix);
+
+await nPixTest2(npix);
+
+await nPixTest3(npix, pattern4);
+
+await npix.setGlobal(0, 0, 0);

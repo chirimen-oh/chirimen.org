@@ -83,8 +83,8 @@ async function runApp() {
     width: 200,
     height: 200,
   });
-  var mime = "image/jpeg";
-  var encoding = "base64";
+  const mime = "image/jpeg";
+  const encoding = "base64";
   const image = await stillCamera.takeImage();
   const b64str = image.toString(encoding);
   const dataURL = "data:" + mime + ";" + encoding + "," + b64str;

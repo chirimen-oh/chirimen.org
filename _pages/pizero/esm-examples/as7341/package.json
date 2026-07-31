@@ -1,0 +1,15 @@
+{
+  "name": "as7341",
+  "type": "module",
+  "version": "1.0.0",
+  "description": "as7341 Example",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "@chirimen/as7341": "^1.0.0",
+    "node-web-i2c": "^1.1.51"
+  }
+}

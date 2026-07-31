@@ -1,19 +1,7 @@
-import { requestGPIOAccess } from "./node_modules/node-web-gpio/dist/index.js";
-const sleep = msec => new Promise(resolve => setTimeout(resolve, msec));
-
+import { requestGPIOAccess } from "node-web-gpio";
+const sleep = (msec) => new Promise((resolve) => setTimeout(resolve, msec));
 let play1port;
 let pauseport;
-
-async function start_play() {
-    const gpioAccess = await requestGPIOAccess();
-    play1port = gpioAccess.ports.get(26); // 
-    pauseport = gpioAccess.ports.get(19);
-
-    await play1port.export("out");
-    await pauseport.export("out");
-
-    await repeat_play();
-}
 
 async function repeat_play() {
     while (true) {
@@ -37,4 +25,11 @@ async function repeat_play() {
     }
 }
 
-start_play();
+const gpioAccess = await requestGPIOAccess();
+play1port = gpioAccess.ports.get(26);
+pauseport = gpioAccess.ports.get(19);
+
+await play1port.export("out");
+await pauseport.export("out");
+
+await repeat_play();
