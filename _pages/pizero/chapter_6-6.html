@@ -36,10 +36,10 @@
             const path_to_root = "";
             const default_light_theme = "light";
             const default_dark_theme = "light";
-            window.path_to_searchindex_js = "searchindex-c90b689f.js";
+            window.path_to_searchindex_js = "searchindex-5a7dded5.js";
         </script>
         <!-- Start loading toc.js asap -->
-        <script src="toc-80f4c342.js"></script>
+        <script src="toc-8d876478.js"></script>
     </head>
     <body>
     <div id="mdbook-help-container">
@@ -184,7 +184,7 @@
                         <h1 id="66-pc-側のコードを読む"><a class="header" href="#66-pc-側のコードを読む">6.6 PC 側のコードを読む</a></h1>
 <h2 id="pc側コード"><a class="header" href="#pc側コード">PC側コード</a></h2>
 <ul>
-<li>CodeSandboxで開いている <code>PC.js</code> を見てみましょう</li>
+<li>CodeSandboxで開いている <code>PC.js</code> を見てみましょう。</li>
 </ul>
 <pre><code class="language-js">// Remote Example4 - controller
 import {RelayServer} from "https://www.chirimen.org/remote-connection/js/beta/RelayServer.js";
@@ -212,21 +212,13 @@ function OffLED(){ // LED OFF
 	channel.send("LED OFF");
 }
 </code></pre>
-<p>プログラムは以下の流れで実行されています。</p>
-<ul>
-<li><a href="./chapter_10-3-1.html">JavaScript Module</a>仕様に基づいて <code>relayServer.js</code> を読み込み</li>
-</ul>
+<p>さきほど読んだPiZero側のコードは、メッセージが届くのをひたすら待つだけでした。では、そのメッセージは誰が、どうやって送っているのでしょうか。答えはこのPC側のコードにあります。</p>
+<p>冒頭のimport文を見ると、読み込んでいるのは同じ <code>relayServer.js</code> ですが、指定しているのはローカルのファイルパスではなくURLです。</p>
 <pre><code class="language-js">import {RelayServer} from "https://www.chirimen.org/remote-connection/js/beta/RelayServer.js";
 </code></pre>
-<ul>
-<li><a href="../chirimenGeneric/#relayserverjs">relayServer.js</a>を使い、UIを通してユーザからの操作指示を送信
-<ul>
-<li><a href="./chapter_10-6.html">初期化</a></li>
-<li><a href="./chapter_10-6.html">送信処理</a>～（UI(ボタン)に設置したコールバック関数をもとに送信</li>
-</ul>
-</li>
-</ul>
-<p>コードの詳細解説は<a href="./chapter_10-6.html">こちら</a>を参照してください</p>
+<p>これは<a href="./chapter_10-3-1.html">JavaScript Module</a>の仕様に基づいた読み込み方で、ネットワーク越しに公開されているライブラリもそのままimportできます。</p>
+<p><a href="../chirimenGeneric/#relayserverjs">relayServer.js</a>の役割はPiZero側と同じく<a href="./chapter_10-6.html">初期化</a>ですが、そのあとの動きは逆です。PiZero側はメッセージの受信をきっかけに動いていましたが、PC側は <code>OnLED</code> と <code>OffLED</code> という2つの関数を通じて<a href="./chapter_10-6.html">送信処理</a>を行います。この2つはUI(ボタン)に設置したコールバックとして呼ばれ、呼ばれるたびに <code>"LED ON"</code> または <code>"LED OFF"</code> という文字列を送り出します。</p>
+<p>コードの詳細解説は<a href="./chapter_10-6.html">こちら</a>を参照してください。</p>
 
                     </main>
 

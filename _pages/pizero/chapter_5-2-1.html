@@ -36,10 +36,10 @@
             const path_to_root = "";
             const default_light_theme = "light";
             const default_dark_theme = "light";
-            window.path_to_searchindex_js = "searchindex-c90b689f.js";
+            window.path_to_searchindex_js = "searchindex-5a7dded5.js";
         </script>
         <!-- Start loading toc.js asap -->
-        <script src="toc-80f4c342.js"></script>
+        <script src="toc-8d876478.js"></script>
     </head>
     <body>
     <div id="mdbook-help-container">
@@ -181,8 +181,8 @@
 
                 <div id="mdbook-content" class="content">
                     <main>
-                        <h1 id="521-i2cセンサーsht30の認識を確認して実行する"><a class="header" href="#521-i2cセンサーsht30の認識を確認して実行する">5.2.1 I2Cセンサー(SHT30)の認識を確認して実行する</a></h1>
-<h2 id="i2cセンサーsht30が認識されていることを確認する"><a class="header" href="#i2cセンサーsht30が認識されていることを確認する">I2Cセンサー(SHT30)が認識されていることを確認する</a></h2>
+                        <h1 id="521-i2cセンサーsht30の認識を確認する"><a class="header" href="#521-i2cセンサーsht30の認識を確認する">5.2.1 I2Cセンサー（SHT30）の認識を確認する</a></h1>
+<h2 id="chirimen-panel-で認識を確認する"><a class="header" href="#chirimen-panel-で認識を確認する">CHIRIMEN Panel で認識を確認する</a></h2>
 <ul>
 <li>
 <p>CHIRIMEN Panelの<code>[i2c detect]</code>ボタンを押す</p>
@@ -194,12 +194,13 @@
 <p><a href="../chirimenGeneric/#b-i2cdetect">i2c detectとは</a></p>
 </li>
 </ul>
-<p>I2C デバイスが正常に接続されているかどうかを確認するために、ターミナルから <code>i2cdetect</code> というコマンドを使う事ができます。このコマンドは I2C バスをスキャンして反応のあったスレーブアドレスを表示するツールです。</p>
-<h3 id="コマンドラインから"><a class="header" href="#コマンドラインから">コマンドラインから</a></h3>
-<p>ターミナルから以下のコマンド入力でも同様に確認を行う事が出来ます。</p>
+<p>I2Cデバイスが正常に接続されているかどうかは、ターミナルから <code>i2cdetect</code> コマンドを使って確認できます。
+このコマンドは I2C バスをスキャンし、応答のあったスレーブアドレスを表示するツールです。</p>
+<h3 id="コマンドラインで確認する"><a class="header" href="#コマンドラインで確認する">コマンドラインで確認する</a></h3>
+<p>ターミナルから以下のコマンドを入力しても、同様に確認できます。</p>
 <pre><code class="language-sh">i2cdetect -y -r 1
 </code></pre>
-<p>i2cdetect を実行したら以下の様にスキャンした結果が CHIRIMENパネルやターミナルに表示されます。</p>
+<p>i2cdetect を実行すると、スキャン結果が以下のように CHIRIMENパネルやターミナルに表示されます。</p>
 <pre>
      0  1  2  3  4  5  6  7  8  9  a  b  c  d  e  f
 00:          -- -- -- -- -- -- -- -- -- -- -- -- -- 
@@ -212,8 +213,8 @@
 70: -- -- -- -- -- -- -- --                       
 </pre>
 
-<p>0x44 の表示が見えない時は正しく接続がされていません。
-回路図を確認して正しく接続が出来ているかを再確認してください。</p>
+<p>0x44 の表示が見えないときは、正しく接続されていません。
+回路図を確認し、正しく接続できているかを再確認してください。</p>
 
                     </main>
 

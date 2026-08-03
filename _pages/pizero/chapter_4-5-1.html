@@ -36,10 +36,10 @@
             const path_to_root = "";
             const default_light_theme = "light";
             const default_dark_theme = "light";
-            window.path_to_searchindex_js = "searchindex-c90b689f.js";
+            window.path_to_searchindex_js = "searchindex-5a7dded5.js";
         </script>
         <!-- Start loading toc.js asap -->
-        <script src="toc-80f4c342.js"></script>
+        <script src="toc-8d876478.js"></script>
     </head>
     <body>
     <div id="mdbook-help-container">
@@ -183,10 +183,10 @@
                     <main>
                         <h1 id="451-lチカのコードを書き換える"><a class="header" href="#451-lチカのコードを書き換える">4.5.1 Lチカのコードを書き換える</a></h1>
 <ul>
-<li>Lチカのコードを書き換えて、スイッチで動作する様に変更します。</li>
-<li>正しく回路を接続し、コードを書き換えたらボタンを押した時に LED やモーターが動作する様になります。
+<li>Lチカのコードを書き換えて、スイッチで動作するように変更します。</li>
+<li>正しく回路を接続してコードを書き換えると、ボタンを押したときに LED やモーターが動作するようになります。
 <ul>
-<li>上手く動作しない方は、コピペで動作を確認してみましょう。</li>
+<li>うまく動作しない方は、コピペで動作を確認してみましょう。</li>
 </ul>
 </li>
 <li>複数の関数で変数を使用できるように port 変数を宣言しなおします。</li>
@@ -232,9 +232,9 @@ async function blink() {
 }
 </code></pre>
 <ul>
-<li>全体のソースコードは以下のとおりとなります。</li>
+<li>全体のソースコードは以下のとおりです。</li>
 </ul>
-<pre><code class="language-js">import {requestGPIOAccess} from "./node_modules/node-web-gpio/dist/index.js"; // WebGPIO を使えるようにするためのライブラリをインポート
+<pre><code class="language-js">import { requestGPIOAccess } from "node-web-gpio"; // WebGPIO を使えるようにするためのライブラリをインポート
 const sleep = msec =&gt; new Promise(resolve =&gt; setTimeout(resolve, msec)); // sleep 関数を定義
 let port; // port 変数を複数の関数で使えるように宣言
 
@@ -262,7 +262,7 @@ function showPort(ev){
 
 blink();
 </code></pre>
-<p>このコードは CHIRIMEN パネルの ID: <strong>gpio-inout</strong> と同じコードになりますので上手く動作しなかった方は、こちらも併用して確認してみてください</p>
+<p>このコードは、CHIRIMENパネルのID: <strong>gpio-inout</strong> と同じです。うまく動作しなかった場合は、そちらのコードと見比べて確認してください。</p>
 
                     </main>
 

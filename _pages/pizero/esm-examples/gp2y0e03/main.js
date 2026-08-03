@@ -1,6 +1,6 @@
 import { requestI2CAccess } from "node-web-i2c";
 import GP2Y0E03 from "@chirimen/gp2y0e03";
-const sleep = (msec) => new Promise((resolve) => setTimeout(resolve, msec));
+const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
 
 try {
   const i2cAccess = await requestI2CAccess();

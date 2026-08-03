@@ -36,10 +36,10 @@
             const path_to_root = "";
             const default_light_theme = "light";
             const default_dark_theme = "light";
-            window.path_to_searchindex_js = "searchindex-c90b689f.js";
+            window.path_to_searchindex_js = "searchindex-5a7dded5.js";
         </script>
         <!-- Start loading toc.js asap -->
-        <script src="toc-80f4c342.js"></script>
+        <script src="toc-8d876478.js"></script>
     </head>
     <body>
     <div id="mdbook-help-container">
@@ -182,13 +182,12 @@
                 <div id="mdbook-content" class="content">
                     <main>
                         <h1 id="41-gpioを理解する"><a class="header" href="#41-gpioを理解する">4.1 GPIOを理解する</a></h1>
-<p><a href="https://ja.wikipedia.org/wiki/GPIO">GPIO</a>は、「General-purpose input/output」の略で汎用的な入出力インタフェースのことです。</p>
-<p>Raspi に実装されている 40 本のピンヘッダから GPIO を利用することができます。</p>
-<p>CHIRIMEN Raspi、Raspi Zero では Raspi が提供する 40 本のピンヘッダのうち、下記緑色のピン(合計 17 本)が利用可能です。</p>
+<p><a href="https://ja.wikipedia.org/wiki/GPIO">GPIO</a>という略語だけを見ると、何を指しているのか見当がつかないかもしれません。正体は単純で、「General-purpose input/output」、つまり汎用的な入出力インタフェースのことです。</p>
+<p>Raspi に実装されている 40 本のピンヘッダから、このGPIOを利用できます。ただし、40本すべてが自由に使えるわけではありません。CHIRIMEN Raspi、Raspi Zero では、Raspi が提供する 40 本のピンヘッダのうち、下記緑色のピン(合計 17 本)だけが利用可能です。</p>
 <ul>
 <li>白い文字で書かれたピンだけが使えます</li>
 <li>GND、3.3V、5Vはそれぞれ電源とグランドです</li>
-<li>数字 + PD||PUと書かれているピンは GPIO端子
+<li>数字 + PD||PUと書かれているピンは GPIO端子です
 <ul>
 <li>PD:プルダウン, PU:プルアップ</li>
 </ul>
@@ -196,8 +195,8 @@
 <li>SCL, SDAはI2Cインターフェースのピンです(詳細は <a href="./chapter_5.html">I2Cデバイスを試す</a>にて)</li>
 </ul>
 <p><img src="https://chirimen.org/PiZeroWebSerialConsole/wallpaperS.png" alt="Raspberry Pi Pinout"></p>
-<p>Raspi の GPIO 端子は、GND 端子との間に、0V もしくは 3.3V の電圧を印加(出力)したり、逆に 0V もしくは 3.3V の電圧を検知(入力)したりすることができます。LED は数 mA の電流を流すことによって点灯できる電子部品のため、印加する電圧を 3.3V(点灯)、0V(消灯) と変化させることで L チカが実現できるのです。</p>
-<p>詳しくは<a href="https://tool-lab.com/make/raspberrypi-startup-22/">こちらのサイトの解説</a>などを参考にしてみましょう。</p>
+<p>Raspi の GPIO 端子は、GND 端子との間に、0V もしくは 3.3V の電圧を印加(出力)したり、逆に 0V もしくは 3.3V の電圧を検知(入力)したりできます。この二値の切り替えだけで、何ができるのでしょうか。LED は数 mA の電流を流すことによって点灯する電子部品です。印加する電圧を 3.3V(点灯)、0V(消灯) と切り替えるだけで、L チカが実現できます。</p>
+<p>詳しくは<a href="https://tool-lab.com/make/raspberrypi-startup-22/">こちらのサイトの解説</a>を参考にしてください。</p>
 
                     </main>
 

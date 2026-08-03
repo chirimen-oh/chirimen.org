@@ -36,10 +36,10 @@
             const path_to_root = "";
             const default_light_theme = "light";
             const default_dark_theme = "light";
-            window.path_to_searchindex_js = "searchindex-c90b689f.js";
+            window.path_to_searchindex_js = "searchindex-5a7dded5.js";
         </script>
         <!-- Start loading toc.js asap -->
-        <script src="toc-80f4c342.js"></script>
+        <script src="toc-8d876478.js"></script>
     </head>
     <body>
     <div id="mdbook-help-container">
@@ -184,30 +184,30 @@
                         <h1 id="22-ステップ1ターミナル接続"><a class="header" href="#22-ステップ1ターミナル接続">2.2 ステップ1（<a href="https://chirimen.org/PiZeroWebSerialConsole/PiZeroWebSerialConsole.html">ターミナル接続</a>）</a></h1>
 <ol>
 <li><a href="https://github.com/kou029w/chirimen-os/releases/">CHIRIMEN Lite 最新リリース版</a>を書き込んだ microSDカードを Raspberry Pi Zero に差し込みます。</li>
-<li>PCの USB と Raspberry Pi Zero の USB OTGポートを USBケーブルでつなぎます
+<li>PC の USB ポートと Raspberry Pi Zero の USB OTG ポートを、USB ケーブルで接続します
 <ul>
-<li>PiZero側はつなぐポート要注意　下図の矢印の所に繋ぎます
+<li>PiZero 側は接続するポートに注意してください。下図の矢印の位置に接続します
 <img src="./imgs/PiZeroW_OTG.jpg" alt="pi zero otg port"></li>
-<li>PC からの USB給電で Raspberry Pi Zero が起動します。</li>
+<li>PC からの USB 給電により、Raspberry Pi Zero が起動します。</li>
 </ul>
 </li>
-<li>PCでRaspberry Pi Zeroが認識されたことを確認します (<a href="https://www.youtube.com/watch?v=lCsywP4tMhE">デバイスマネージャーの開き方</a> <a href="https://support.microsoft.com/ja-jp/windows/%E3%83%87%E3%83%90%E3%82%A4%E3%82%B9-%E3%83%9E%E3%83%8D%E3%83%BC%E3%82%B8%E3%83%A3%E3%83%BC%E3%82%92%E9%96%8B%E3%81%8F-a7f2db46-faaf-24f0-8b7b-9e4a6032fc8c">🔗</a>の例)
+<li>PC で Raspberry Pi Zero が認識されたことを確認します (<a href="https://www.youtube.com/watch?v=lCsywP4tMhE">デバイスマネージャーの開き方</a> <a href="https://support.microsoft.com/ja-jp/windows/%E3%83%87%E3%83%90%E3%82%A4%E3%82%B9-%E3%83%9E%E3%83%8D%E3%83%BC%E3%82%B8%E3%83%A3%E3%83%BC%E3%82%92%E9%96%8B%E3%81%8F-a7f2db46-faaf-24f0-8b7b-9e4a6032fc8c">🔗</a>の例)
 <ul>
-<li>給電後USBデバイスとして出現するまでにしばらく(数十秒)かかります</li>
-<li>Windowsの場合、ポートの番号(COMnのnの部分)は環境ごとに異なります
+<li>給電後、USB デバイスとして認識されるまで数十秒程度かかります</li>
+<li>Windows の場合、ポートの番号（COMn の n の部分）は環境ごとに異なります
 <img src="imgs/OTG_PORT_W10.png" alt="OTG PORT Information on device manager"></li>
 <li><a href="https://chirimen.org/PiZeroWebSerialConsole/PiZeroWebSerialConsole.html"><strong>こちらのWeb Serial RPiZero TerminalページにPCのブラウザでアクセス</strong></a>
 (以降、このウィンドを<strong>ターミナルウィンド</strong>と呼びます)</li>
 </ul>
 </li>
-<li>ターミナルウィンドの <code>[Connect and Login PiZero]</code> ボタンを押す
+<li>ターミナルウィンドの <code>[Connect and Login PiZero]</code> ボタンを押します
 <ul>
-<li>接続ダイアログが出現
+<li>接続ダイアログが表示されます
 <img src="imgs/SerialDialog.png" alt="connection dialog"></li>
-<li>上で認識したデバイス（ポート番号）を接続する</li>
+<li>上で確認したデバイス（ポート番号）を選択して接続します</li>
 </ul>
 </li>
-<li>コンソール(左側の黒い画面の最下部)に以下のコマンドプロンプトが表示されればステップ１完了です。引き続きステップ２に進んでください
+<li>コンソール（左側の黒い画面の最下部）に、以下のコマンドプロンプトが表示されればステップ１は完了です。引き続きステップ２に進んでください
 <ul>
 <li><code>pi@raspberrypi:~$</code></li>
 </ul>

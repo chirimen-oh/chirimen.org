@@ -36,10 +36,10 @@
             const path_to_root = "";
             const default_light_theme = "light";
             const default_dark_theme = "light";
-            window.path_to_searchindex_js = "searchindex-c90b689f.js";
+            window.path_to_searchindex_js = "searchindex-5a7dded5.js";
         </script>
         <!-- Start loading toc.js asap -->
-        <script src="toc-80f4c342.js"></script>
+        <script src="toc-8d876478.js"></script>
     </head>
     <body>
     <div id="mdbook-help-container">
@@ -192,17 +192,17 @@
 <tr><td>
 <pre><code>&lt;script src="polyfill.js"&gt;&lt;/script &gt;</code></pre>
 </td><td>
-<pre><code>import {requestGPIOAccess} from "./node_modules/node-web-gpio/dist/index.js";</code></pre>
+<pre><code>import { requestGPIOAccess } from "node-web-gpio";</code></pre>
 <br>
-<pre><code>import {requestI2CAccess} from "./node_modules/node-web-i2c/index.js";</code></pre>
+<pre><code>import { requestI2CAccess } from "node-web-i2c";</code></pre>
 </td></tr>
 <tr><td>
 <pre><code>&lt;script src="..../adt7410.js"&gt;&lt;/script &gt;</code></pre>
 </td><td>
 <pre><code>import ADT7410 from "@chirimen/adt7410";</code></pre>
 </td></tr>
-<tr><td></td><td>Sleep関数を宣言する<br>
-<pre><code>const sleep = msec =&gt; new Promise(resolve =&gt; setTimeout(resolve, msec));</code></pre>
+<tr><td></td><td>Sleep関数を宣言<br>
+<pre><code>const sleep = ms =&gt; new Promise(resolve =&gt; setTimeout(resolve, ms));</code></pre>
 </td></tr>
 </tbody>
 </table>

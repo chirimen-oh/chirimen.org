@@ -1,6 +1,6 @@
 import { requestI2CAccess } from "node-web-i2c";
 import AS7341 from "@chirimen/as7341";
-const sleep = (msec) => new Promise((resolve) => setTimeout(resolve, msec));
+const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
 
 const I2CADDR_AS7341 = 0x39;
 

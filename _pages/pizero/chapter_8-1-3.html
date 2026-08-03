@@ -36,10 +36,10 @@
             const path_to_root = "";
             const default_light_theme = "light";
             const default_dark_theme = "light";
-            window.path_to_searchindex_js = "searchindex-c90b689f.js";
+            window.path_to_searchindex_js = "searchindex-5a7dded5.js";
         </script>
         <!-- Start loading toc.js asap -->
-        <script src="toc-80f4c342.js"></script>
+        <script src="toc-8d876478.js"></script>
     </head>
     <body>
     <div id="mdbook-help-container">
@@ -185,16 +185,16 @@
 <iframe width="560" height="315" src="https://www.youtube.com/embed/q5H2xIVCMWo" title="NeoPixel LED の使い方(NeoPixel I2C driver)" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen=""></iframe>
 <img src="./imgs/NeopixelLEDset.jpg" width="600">
 <ul>
-<li>Neopixel LED というフルカラー LED の使い方です。こちらの LED はチュートリアルの LED と異なり、プログラムで複数の LED の点灯の制御や色を変えたりすることが出来ます。</li>
-<li>接続には Neopixel I2C Driver というオープンハードウェアを利用しています。このドライバーボードは市販品ではありません。</li>
+<li><strong>Neopixel LED</strong> は、フルカラー LED です。チュートリアルで使ってきた LED と異なり、プログラムから複数の LED の点灯や色をそれぞれ制御できます。</li>
+<li>接続には、<strong>Neopixel I2C Driver</strong> というオープンハードウェアのドライバーボードを利用します。</li>
 </ul>
 <h3 id="回路図とプログラムサンプル"><a class="header" href="#回路図とプログラムサンプル">回路図とプログラムサンプル</a></h3>
 <img src="./imgs/NeopixelLED.jpg" width="800">
-<p>※ドライバと LED の接続をする部分は以下の通りです。
-　赤：VIN（3.3V）, 黒：GND, 緑：D-IN（DI）
-　既にケーブルが接続されている物は同系色のケーブルを繋げます。</p>
+<p>※ドライバと LED の接続は次のとおりです。
+　赤：VIN（3.3V）、黒：GND、緑：D-IN（DI）
+　すでにケーブルが接続されている場合は、同系色のケーブル同士を繋げます。</p>
 <p>動作を確認するためのサンプルコードは <code>CHIRIMENパネル</code> から入手できます。<br>
-ブラウザでサンプルコードの中を確認したい場合は <code>コードを確認する</code> から確認出来ます。</p>
+ブラウザでコードの中身を確認したい場合は、<code>コードを確認する</code> から確認できます。</p>
 <ul>
 <li>NEOPIXEL LED（8 連 LED／16 連 LED） ＞ <strong>ID：neopixel-i2c 　タイトル：NEOPIXEL LED</strong>
 <ul>
@@ -204,14 +204,14 @@
 </ul>
 <p>【備考】</p>
 <ul>
-<li>専用コントローラーボード Neopixel I2C Driver を使った接続をすると簡単に使う事が出来ます。
+<li>専用コントローラーボード Neopixel I2C Driver を使うと、接続を簡単に済ませられます。
 <ul>
 <li>Neopixel I2C Driver は<a href="https://github.com/chirimen-oh/accessories/blob/master/others/neopixel_i2c_TH/">オープンソースハードで、市販品ではありません。</a></li>
 </ul>
 </li>
-<li>センサーを使う時には図のように赤色のドライバボードと NeoPixel LED をペアで利用して試してください。
+<li>Neopixel LED を使うときは、図のように赤色のドライバボードと NeoPixel LED をペアで用意して試してください。
 <ul>
-<li>Neopixel LED は様々なサイズ、形で商品が出ています。（丸形、棒型、マトリクス型、テープ型　等）
+<li>Neopixel LED には、丸形、棒型、マトリクス型、テープ型など、さまざまなサイズや形状の商品があります。
 <div style="page-break-before:always"></div>
 
 </li>

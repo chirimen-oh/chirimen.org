@@ -1,6 +1,6 @@
 import { requestI2CAccess } from "node-web-i2c";
 import BMP180 from "@chirimen/bmp180";
-const sleep = (msec) => new Promise((resolve) => setTimeout(resolve, msec));
+const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
 
 const readInterval = 1000;
 

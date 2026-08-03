@@ -1,6 +1,6 @@
 import { requestI2CAccess } from "node-web-i2c";
 import PCA9685_PWM from "@chirimen/pca9685-pwm";
-const sleep = (msec) => new Promise((resolve) => setTimeout(resolve, msec));
+const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
 let pca9685pwm;
 
 async function init() {

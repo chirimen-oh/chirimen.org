@@ -36,10 +36,10 @@
             const path_to_root = "";
             const default_light_theme = "light";
             const default_dark_theme = "light";
-            window.path_to_searchindex_js = "searchindex-c90b689f.js";
+            window.path_to_searchindex_js = "searchindex-5a7dded5.js";
         </script>
         <!-- Start loading toc.js asap -->
-        <script src="toc-80f4c342.js"></script>
+        <script src="toc-8d876478.js"></script>
     </head>
     <body>
     <div id="mdbook-help-container">
@@ -183,17 +183,25 @@
                     <main>
                         <h1 id="115-i2c"><a class="header" href="#115-i2c">11.5 I2C</a></h1>
 <h2 id="i2cの概要"><a class="header" href="#i2cの概要">I2Cの概要</a></h2>
-<p><a href="https://ja.wikipedia.org/wiki/I2C">I2C</a> とは 2 線式の同期式シリアル通信インタフェースです。「アイ・スクエア・シー」や「アイ・ ツー・シー」と読みます。I2C では SDA（シリアルデータ）と SCL（シリアルクロック）の 2 本の線で通信を行います。</p>
+<p><a href="https://ja.wikipedia.org/wiki/I2C">I2C</a> は、2線式の同期式シリアル通信インタフェースです。
+「アイ・スクエア・シー」または「アイ・ツー・シー」と読みます。
+通信に使うのは、SDA（シリアルデータ）とSCL（シリアルクロック）の2本の線だけです。</p>
 <p><img src="./imgs/i2c-bus.png" alt="i2c-bus"></p>
 <!--
 {% cloudinary half ../raspi/imgs/section2/i2c-bus.png alt="i2c-bus" %}
 -->
-<p>上図のように、I2C の SDA、SCL は複数のデバイス間で共有され、これを「I2C バス」と言います。I2C ではマスターとスレーブの間で通信が行われます。常にマスター側からスレーブ側に要求が行われ、スレーブ側からマスター側へ要求を行うことはできません。</p>
-<p>本チュートリアルでいえばCHIRIMEN環境を動かすボードコンピュータがマスターとなり、ここに接続されるセンサーやアクチュエータデバイスなどがスレーブとして想定されます。スレーブデバイスの一例として<a href="../partslist">こちらに紹介</a>されているI2Cデバイスをご覧ください。</p>
-<p>マスターは、スレーブが持つ「SlaveAddress (スレーブアドレス)」を指定して、特定のスレーブとの通信を行います。このため、同じ I2C バス上に同じ SlaveAddress のスレーブを繋ぐことはできません。
-I2Cデバイスは小型のICチップデバイスとなっており、デバイスによってはSlaveAddressは製品ごとに固定されています。</p>
+<p>上の図のように、SDA、SCLの2本は複数のデバイスで共有されており、これを「I2Cバス」と呼びます。
+同じバスにいるのは、マスターとスレーブです。
+通信を持ちかけられるのはマスター側だけで、スレーブの側からマスターへ要求を送ることはできません。</p>
+<p>本チュートリアルの範囲でいえば、マスターはCHIRIMEN環境を動かすボードコンピュータであり、そこに接続するセンサーやアクチュエータがスレーブにあたります。
+実際に使えるI2Cデバイスの一例として、<a href="../partslist">こちらに紹介</a>されているものをご覧ください。</p>
+<p>1本のバスに複数のスレーブがぶら下がっていて、マスターはどうやって相手を選んでいるのでしょうか。
+鍵になるのが、スレーブごとに持つ「SlaveAddress（スレーブアドレス）」です。
+マスターは通信のたびにこのアドレスを指定するため、同じI2Cバス上に同じSlaveAddressのスレーブを複数つなぐことはできません。
+I2Cデバイスの実体は小型のICチップであり、製品によってはSlaveAddressがあらかじめ固定されています。</p>
 <p><img src="./imgs/i2c-bus2.png" alt="i2c-bus2"></p>
-<p>通信するデバイス同士が同一基板上にない場合には、SDA、SCL の 2 本の通信線に加え電源や GND の線を加えて 4 本のケーブルを用いて接続するのが一般的です。電源電圧はデバイスに応じたものを繋ぐ必要があります。</p>
+<p>デバイス同士が同一基板上にない場合は、SDA、SCLの2本に電源とGNDを加えた、合計4本のケーブルで接続するのが一般的です。
+電源電圧は、接続するデバイスの仕様に合わせる必要があります。</p>
 
                     </main>
 

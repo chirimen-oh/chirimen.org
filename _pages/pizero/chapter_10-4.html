@@ -36,10 +36,10 @@
             const path_to_root = "";
             const default_light_theme = "light";
             const default_dark_theme = "light";
-            window.path_to_searchindex_js = "searchindex-c90b689f.js";
+            window.path_to_searchindex_js = "searchindex-5a7dded5.js";
         </script>
         <!-- Start loading toc.js asap -->
-        <script src="toc-80f4c342.js"></script>
+        <script src="toc-8d876478.js"></script>
     </head>
     <body>
     <div id="mdbook-help-container">
@@ -183,24 +183,23 @@
                     <main>
                         <h1 id="114-gpio"><a class="header" href="#114-gpio">11.4 GPIO</a></h1>
 <h2 id="gpioとは"><a class="header" href="#gpioとは">GPIOとは</a></h2>
-<p><a href="https://ja.wikipedia.org/wiki/GPIO">GPIO</a>は、「General-purpose input/output」の略で汎用的な入出力インタフェースのことです。</p>
-<p>Raspi に実装されている 40 本のピンヘッダから GPIO を利用することができます。</p>
-<p>CHIRIMEN Raspi、Raspi Zero では Raspi が提供する 40 本のピンヘッダのうち、下記緑色のピン(合計 17 本)が利用可能です。CHIRIMEN micro:bitでは<a href="https://chirimen.org/chirimen-micro-bit/guidebooks/diff_rpi3.html#%E4%BD%BF%E7%94%A8%E3%81%A7%E3%81%8D%E3%82%8Bgpio%E3%83%9D%E3%83%BC%E3%83%88">こちらのページ</a>に記載されている端子が利用可能です。</p>
-<p>Raspiやmicro:bit の GPIO 端子は、GND 端子との間に、0V もしくは 3.3V の電圧を印加(出力)したり、逆に 0V もしくは 3.3V の電圧を検知(入力)したりすることができます。LED は数 mA の電流を流すことによって点灯できる電子部品のため、印加する電圧を 3.3V(点灯)、0V(消灯) と変化させることで L チカが実現できるのです。</p>
-<p>詳しくは<a href="https://tool-lab.com/make/raspberrypi-startup-22/">こちらのサイトの解説</a>などを参考にしてみましょう。</p>
+<p><a href="https://ja.wikipedia.org/wiki/GPIO">GPIO</a> は「General-purpose input/output」の略で、汎用的な入出力インタフェースを指します。</p>
+<p>Raspi には 40 本のピンヘッダが実装されており、ここから GPIO を利用できます。</p>
+<p>CHIRIMEN Raspi、Raspi Zero では、この 40 本のうち下記緑色で示したピン(合計 17 本)が利用可能です。CHIRIMEN micro:bit では利用できる端子が異なり、<a href="https://chirimen.org/chirimen-micro-bit/guidebooks/diff_rpi3.html#%E4%BD%BF%E7%94%A8%E3%81%A7%E3%81%8D%E3%82%8Bgpio%E3%83%9D%E3%83%BC%E3%83%88">こちらのページ</a>にまとめられています。</p>
+<p>Raspi や micro:bit の GPIO 端子は、GND との間に 0V または 3.3V の電圧をかける(出力)か、逆にその電圧を検知する(入力)かのどちらかで動作します。LED は数 mA の電流を流すだけで点灯する部品です。だから、GPIO 端子にかける電圧を 3.3V(点灯) と 0V(消灯) の間で切り替えるだけで、L チカが実現できます。</p>
+<p>詳しくは<a href="https://tool-lab.com/make/raspberrypi-startup-22/">こちらのサイトの解説</a>にまとまっています。</p>
 <h3 id="raspberry-piのピン配置図"><a class="header" href="#raspberry-piのピン配置図">Raspberry Piのピン配置図</a></h3>
 <p><img src="https://chirimen.org/PiZeroWebSerialConsole/wallpaperS.png" alt="Raspi PIN配置図"></p>
 <!--
 ![Raspi PIN配置図](../raspi/imgs/section0/Raspi3PIN.png)
 {% cloudinary ../raspi/imgs/section0/Raspi3PIN.png alt="Raspi PIN配置図" %}
 -->
-<h3 id="raspverry-pi-zeroのピン配置図"><a class="header" href="#raspverry-pi-zeroのピン配置図">Raspverry Pi Zeroのピン配置図</a></h3>
-<p>Raspberry Piの端子と同じ配列です。</p>
+<h3 id="raspberry-pi-zeroのピン配置図"><a class="header" href="#raspberry-pi-zeroのピン配置図">Raspberry Pi Zeroのピン配置図</a></h3>
+<p>端子の配列は、Raspberry Pi と同じです。</p>
 <h3 id="microbitのピン配置図"><a class="header" href="#microbitのピン配置図">micro:bitのピン配置図</a></h3>
 <p><img src="https://tech.microbit.org/docs/hardware/assets/edge_connector.svg" alt="micro:bitのI端子"></p>
 <h3 id="プルアップpuプルダウンpd"><a class="header" href="#プルアップpuプルダウンpd">プルアップ(PU)、プルダウン(PD)</a></h3>
-<p>GPIOポートを入力モードで使用する場合、ポートが解放状態(電気的に切り離されている状態)のときに設定される値があります。
-プルアップは1、プルダウンは0になります。　Raspberry Piのピン配置図に書かれているPU,PDがその設定値です。micro:bitではすべてプルダウンに設定されていますが、GPIOポート初期化時にプルアップに設定することもできます。</p>
+<p>GPIO ポートを入力モードで使うとき、何も接続されていない解放状態(電気的に切り離された状態)でも、ポートは 0 か 1 かの値を返します。この値をあらかじめ決めておく仕組みが、プルアップとプルダウンです。プルアップに設定されたポートは 1 を、プルダウンに設定されたポートは 0 を返します。Raspberry Pi のピン配置図に記載されている PU、PD は、各ピンがどちらに設定されているかを示す表記です。micro:bit ではすべてのピンがプルダウンに設定されていますが、GPIO ポートの初期化時にプルアップへ変更することもできます。</p>
 <ul>
 <li><a href="https://voltechno.com/blog/pullup-pulldown/">より詳しく知る(voltechno)</a></li>
 </ul>

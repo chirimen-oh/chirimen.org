@@ -36,10 +36,10 @@
             const path_to_root = "";
             const default_light_theme = "light";
             const default_dark_theme = "light";
-            window.path_to_searchindex_js = "searchindex-c90b689f.js";
+            window.path_to_searchindex_js = "searchindex-5a7dded5.js";
         </script>
         <!-- Start loading toc.js asap -->
-        <script src="toc-80f4c342.js"></script>
+        <script src="toc-8d876478.js"></script>
     </head>
     <body>
     <div id="mdbook-help-container">
@@ -185,44 +185,40 @@
 <ul>
 <li>I2C 温湿度センサー (SHT30, SHT31)の初期化と使用</li>
 </ul>
-<pre><code class="language-js">async function main() {
-  const i2cAccess = await requestI2CAccess();
-  const port = i2cAccess.ports.get(1);
-  const sht30 = new SHT30(port, 0x44);
-  await sht30.init();
+<pre><code class="language-js">const i2cAccess = await requestI2CAccess();
+const i2cPort = i2cAccess.ports.get(1);
+const sht30 = new SHT30(i2cPort, 0x44);
+await sht30.init();
 
-  while (true) {
-    const { humidity, temperature } = await sht30.readData();
-    temperatureDisplay.innerHTML = `${temperature.toFixed(2)} ℃`;
-    humidityDisplay.innerHTML = `${humidity.toFixed(2)} %`;
-    await sleep(500);
-  }
+while (true) {
+  const { humidity, temperature } = await sht30.readData();
+  temperatureDisplay.innerHTML = `${temperature.toFixed(2)} ℃`;
+  humidityDisplay.innerHTML = `${humidity.toFixed(2)} %`;
+  await sleep(500);
 }
 </code></pre>
-<p>温度センサーの情報を定期的に取得し、画面に出力する処理が行われています。
-少し詳し解説してみます。</p>
+<p>このコードは、温度センサーの値を定期的に取得して画面に表示しているだけのように見えます。しかし <code>await</code> があちこちに置かれているのには理由があります。ひとつひとつの呼び出しが、実際には I2C バス越しのやり取りを担っているからです。</p>
 <h5 id="await-requesti2caccess"><a class="header" href="#await-requesti2caccess">await requestI2CAccess()</a></h5>
-<p>Web I2C API を利用するための <strong><code>I2CAccess</code> インタフェースを取得</strong> するための最初の API 呼び出しです。この関数も非同期処理ですので <code>await</code> で処理完了を待機し、その結果正しくインタフェースが取得されたら <code>i2cAccess</code> オブジェクトに保持します。</p>
+<p>Web I2C API を使うには、まず <strong><code>I2CAccess</code> インターフェースを取得</strong>しなければなりません。<code>requestI2CAccess()</code> はその最初の呼び出しで、結果が返るまで時間のかかる非同期処理です。<code>await</code> で完了を待ち、得られたインターフェースを <code>i2cAccess</code> オブジェクトに保持しています。</p>
 <h5 id="i2caccessportsget"><a class="header" href="#i2caccessportsget">i2cAccess.ports.get()</a></h5>
-<p><code>I2CAccess.ports</code> は、利用可能な I2C ポートの一覧です。</p>
-<pre><code class="language-js">const port = i2cAccess.ports.get(1);
+<p><code>I2CAccess.ports</code> には、利用可能な I2C ポートの一覧が入っています。</p>
+<pre><code class="language-js">i2cAccess.ports.get(1);
 </code></pre>
-<p>CHIRIMEN PiZero で利用可能な I2C ポート番号は<code>1</code>番だけです。ポート番号に<code>1</code> を指定して <strong><code>port</code> オブジェクトを取得</strong> しています。</p>
-<h5 id="new-sht30port-0x44"><a class="header" href="#new-sht30port-0x44">new SHT30(port, 0x44)</a></h5>
-<p>ドライバーライブラリを使い <strong>SHT30 を操作する為のインスタンスを生成</strong> しています。</p>
-<pre><code class="language-js">const sht30 = new SHT30(port, 0x44);
+<p>通常、CHIRIMEN Pi Zero で利用可能な I2C ポート番号は <code>1</code> 番のみです。引数の <code>get()</code> メソッドに <code>1</code> を渡すことで <code>i2cPort</code> オブジェクトは常に <code>1</code> 番のI2Cポートを参照します。</p>
+<h5 id="new-sht30i2cport-0x44"><a class="header" href="#new-sht30i2cport-0x44">new SHT30(i2cPort, 0x44)</a></h5>
+<p>ドライバーライブラリを使い、<strong>SHT30 を操作するためのインスタンスを生成</strong>しています。第二引数の <code>0x44</code> は、SHT30 の I2C スレーブアドレスです。</p>
+<pre><code class="language-js">const sht30 = new SHT30(i2cPort, 0x44);
 </code></pre>
 <h5 id="await-sht30init"><a class="header" href="#await-sht30init">await sht30.init()</a></h5>
-<p>ドライバーライブラリのインスタンス (<code>sht30</code>) の <code>init()</code> メソッドを通じて <strong>I2C ポートを開いてセンサーを初期化</strong> しています。</p>
+<p>ドライバーライブラリのインスタンス <code>sht30</code> の <code>init()</code> メソッドを通じて、<strong>I2C ポートを開いてセンサーを初期化</strong>しています。</p>
 <pre><code class="language-js">await sht30.init();
 </code></pre>
-<p>具体的に内部では、インスタンス生成時に指定した <code>port</code> オブジェクトと <code>slaveAddress(0x44)</code> を用いて <code>I2CPort.open()</code> を行なっています。<code>I2CPort.open()</code> が成功すると、<code>I2CSlaveDevice</code> という I2C ポートへデータ書き込みや読み込みなどを行うインタフェースが返されます。<code>I2CSlaveDevice</code> インタフェースは、ライブラリ内に保存され、その後の処理でこのインターフェイスを使って I2C デバイス SHT30 との通信が可能になります。</p>
+<p>内部では、インスタンス生成時に指定した <code>port</code> オブジェクトとスレーブアドレス <code>0x44</code> を使って <code>I2CPort.open()</code> を呼び出しています。<code>open()</code> が成功すると、I2C ポートへの読み書きを担う <code>I2CSlaveDevice</code> インターフェースが返ります。この <code>I2CSlaveDevice</code> はライブラリ内部に保持され、以降 SHT30 との通信はすべてこれを通して行われます。</p>
 <h5 id="await-sht30readdata"><a class="header" href="#await-sht30readdata">await sht30.readData()</a></h5>
-<p>実際にデータを読み取っています。 この読み取り関数はGPIOで紹介した、一回きりの単純入力に相当するものです。そのため連続的な変化を知りたい場合はポーリングルーチンを組む必要があります。
-<strong>SHT30 の仕様に基づくデータ読み出し処理です</strong>。</p>
+<p>実際にセンサーの値を読み取る処理です。この読み取り関数は、GPIO の単純入力と同様、呼び出された瞬間の値を一回だけ返します。連続的な変化を知りたい場合は、呼び出す側でポーリングのルーチンを組む必要があります。このコードで <code>while</code> ループと <code>sleep()</code> を組み合わせているのは、そのためです。<strong>SHT30 の仕様に基づくデータ読み出し</strong>を行う処理です。</p>
 <pre><code class="language-js">const { humidity, temperature } = await sht30.readData();
 </code></pre>
-<p>ドライバーライブラリ内部では、SHT30 から得られる温度と湿度それぞれ 16bit の数値を、温度・湿度の物理量の数値に変換して返却しています。</p>
+<p>ドライバーライブラリ内部では、SHT30 から得られる温度・湿度それぞれ 16bit の生の数値を、℃ や % といった物理量の値に変換して返却しています。</p>
 
                     </main>
 

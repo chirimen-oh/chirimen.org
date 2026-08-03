@@ -36,10 +36,10 @@
             const path_to_root = "";
             const default_light_theme = "light";
             const default_dark_theme = "light";
-            window.path_to_searchindex_js = "searchindex-c90b689f.js";
+            window.path_to_searchindex_js = "searchindex-5a7dded5.js";
         </script>
         <!-- Start loading toc.js asap -->
-        <script src="toc-80f4c342.js"></script>
+        <script src="toc-8d876478.js"></script>
     </head>
     <body>
     <div id="mdbook-help-container">
@@ -183,22 +183,21 @@
                     <main>
                         <h1 id="1124-mosfetによる大電力制御"><a class="header" href="#1124-mosfetによる大電力制御">11.2.4 MOSFETによる大電力制御</a></h1>
 <h2 id="gpio-の制約事項"><a class="header" href="#gpio-の制約事項">GPIO の制約事項</a></h2>
-<p>Raspberry Pi の GPIO ポートは、全体で流せる電流の上限が決められています。</p>
+<p>LEDが数個ならそのままGPIOにつないで問題なく光る、という体験をすると、モーターも同じように動かせるはずだと思い込みたくなります。実際には、Raspberry Pi の GPIO ポートには、全体で流せる電流の上限が決められています。</p>
 <ul>
 <li><a href="https://elinux.org/RPi_Low-level_peripherals#Power_pins">合計 50mA</a></li>
 <li>3.3 V</li>
 </ul>
-<p>小さな LED 数個の場合はこの条件内で使えますが、モーターやソレノイド、パワー LED など電流を多く消費するデバイスは直接接続して使うことができません。</p>
+<p>小さな LED 数個であればこの条件内に収まりますが、モーターやソレノイド、パワー LED など電流を多く消費するデバイスは、直接接続して使うことができません。</p>
 <h2 id="mosfet-とは"><a class="header" href="#mosfet-とは">MOSFET とは</a></h2>
-<p><a href="https://ja.wikipedia.org/wiki/MOSFET">MOSFET</a> とは<a href="https://ja.wikipedia.org/wiki/%E9%9B%BB%E7%95%8C%E5%8A%B9%E6%9E%9C%E3%83%88%E3%83%A9%E3%83%B3%E3%82%B8%E3%82%B9%E3%82%BF">電界効果トランジスタ (FET)</a> の一種で、主にスイッチング素子として利用される (小さな電圧の変更で大きな電流・電圧のオンオフを切り替える) 部品です。</p>
+<p>電流を多く必要とするデバイスを動かすには、GPIOのわずかな電流で、別の大きな電流をオンオフする仕組みが要ります。それを担うのが<a href="https://ja.wikipedia.org/wiki/MOSFET">MOSFET</a>です。<a href="https://ja.wikipedia.org/wiki/%E9%9B%BB%E7%95%8C%E5%8A%B9%E6%9E%9C%E3%83%88%E3%83%A9%E3%83%B3%E3%82%B8%E3%82%B9%E3%82%BF">電界効果トランジスタ (FET)</a> の一種で、主にスイッチング素子として利用される部品です。小さな電圧の変更で、大きな電流や電圧のオンオフを切り替えられます。</p>
 <p>今回は Nch MOSFET「<a href="http://akizukidenshi.com/catalog/g/gI-07597/">2SK4017</a>」を利用します。</p>
 <p><img src="./imgs/mosfet.png" alt="MOSFET"></p>
-<p>プルダウンの GPIO ポートを使った典型的な回路は以下のようになります。</p>
+<p>プルダウンの GPIO ポートを使った典型的な回路は、以下のようになります。</p>
 <p><img src="./imgs/DC3motor-schematic.svg" alt="NCh MOSFET schematic"></p>
 <h2 id="電源"><a class="header" href="#電源">電源</a></h2>
-<p>図の GND 端子は Raspberry Pi と DC 負荷用電源のものと共通ですが、VCC 端子は、基本的には Raspberry Pi の 3.3V や 5V 端子とは異なります。
-DC 負荷用に Raspberry Pi とは別に電源を用意するのが望ましいです。</p>
-<p><a href="./chapter_4-2.html">ミニモータを使った作例</a>では、その消費電力が十分小さいので、例外的に Raspberry Pi の 5V 端子か電力を供給しています。</p>
+<p>回路図の GND 端子は、Raspberry Pi と DC 負荷用電源とで共通です。ここだけを見ると、VCC 端子も Raspberry Pi の 3.3V や 5V 端子から取れそうに思えます。ですが、VCC 端子は基本的にはそれらの端子とは別物です。DC 負荷用には、Raspberry Pi とは別に電源を用意するのが望ましいでしょう。</p>
+<p><a href="./chapter_4-2.html">ミニモータを使った作例</a>では、その消費電力が十分小さいので、例外的に Raspberry Pi の 5V 端子から電力を供給しています。</p>
 
                     </main>
 

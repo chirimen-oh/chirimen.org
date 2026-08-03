@@ -36,10 +36,10 @@
             const path_to_root = "";
             const default_light_theme = "light";
             const default_dark_theme = "light";
-            window.path_to_searchindex_js = "searchindex-c90b689f.js";
+            window.path_to_searchindex_js = "searchindex-5a7dded5.js";
         </script>
         <!-- Start loading toc.js asap -->
-        <script src="toc-80f4c342.js"></script>
+        <script src="toc-8d876478.js"></script>
     </head>
     <body>
     <div id="mdbook-help-container">
@@ -182,10 +182,10 @@
                 <div id="mdbook-content" class="content">
                     <main>
                         <h1 id="64-自分専用チャンネルで制御"><a class="header" href="#64-自分専用チャンネルで制御">6.4 自分専用チャンネルで制御</a></h1>
-<p>サンプルのコードは共通のチャンネルを使って制御しています。この状態では複数の人が同時に実習していると混信します。(他の人のPCでON/OFFを指示しても、自分のLEDがON/OFFする。同じチャンネルを使っているため。)</p>
-<p>これはこれで使い道はあるのですが、自分のLEDは自分だけで制御したい場合は専用のチャンネルを使って制御しましょう。　チャンネルの指定はPiZero側のコードと、PC側のコード両方を同時に同じ内容で設定する必要があり、以下の部分になります。</p>
+<p>サンプルコードは、共通のチャンネルを使って LED を制御しています。そのため、複数人が同時に実習していると混信が起こります（他の人の PC から ON/OFF を指示しても、自分の LED が ON/OFF してしまいます。同じチャンネルを使っているためです）。</p>
+<p>共通チャンネルにも使い道はありますが、自分の LED を自分だけで制御したい場合は、専用のチャンネルを使いましょう。チャンネルの指定は、PiZero 側のコードと PC 側のコードの両方で、同時に同じ内容に設定する必要があります。設定する箇所は、以下の部分です。</p>
 <p><code>channel = await relay.subscribe("chirimenLED");</code></p>
-<p>この<code>chirimenLED</code>という文字列(チャンネル名)を他の人と被らない別のチャンネル名に書き換えます(<code>chirimenLED5</code>など)</p>
+<p>この<code>chirimenLED</code>という文字列（チャンネル名）を、他の人と重ならない別のチャンネル名に書き換えます（<code>chirimenLED5</code>など）。</p>
 
                     </main>
 

@@ -36,10 +36,10 @@
             const path_to_root = "";
             const default_light_theme = "light";
             const default_dark_theme = "light";
-            window.path_to_searchindex_js = "searchindex-c90b689f.js";
+            window.path_to_searchindex_js = "searchindex-5a7dded5.js";
         </script>
         <!-- Start loading toc.js asap -->
-        <script src="toc-80f4c342.js"></script>
+        <script src="toc-8d876478.js"></script>
     </head>
     <body>
     <div id="mdbook-help-container">
@@ -187,18 +187,18 @@
 <li>ターミナルウィンドで Raspberry Pi Zero に接続します。（準備のステップ１まで完了した状態）</li>
 <li>myAppディレクトリに移動します。
 <ul>
-<li>コンソールの右側のファイルマネージャでmyApp⇒移動を選ぶ</li>
-<li>このディレクトリが開発環境が設定されているディレクトリです。</li>
+<li>コンソールの右側のファイルマネージャで myApp ⇒ 移動を選びます。</li>
+<li>このディレクトリに、開発環境が設定されています。</li>
 </ul>
 </li>
-<li><code>[Create New Text]</code>ボタンを押す</li>
-<li>入力欄に<code>hello.js</code>と入力</li>
-<li><code>[create]</code>ボタンを押す</li>
-<li>JS Editorウィンドが出現</li>
+<li><code>[Create New Text]</code>ボタンを押します。</li>
+<li>入力欄に<code>hello.js</code>と入力します。</li>
+<li><code>[create]</code>ボタンを押します。</li>
+<li>JS Editorウィンドが出現します。</li>
 </ol>
-<p>以下のプログラムをJS Editorに書き写します ～ コピペ（下記プログラム部分を選択してCTRL+c、JS Editorウィンド上でCTRL+v））</p>
+<p>以下のプログラムを JS Editor に書き写します。下記のプログラム部分を選択して CTRL+c、JS Editor ウィンド上で CTRL+v でコピペしても構いません。</p>
 <h3 id="lチカのプログラムソースコード"><a class="header" href="#lチカのプログラムソースコード">Lチカのプログラムソースコード</a></h3>
-<pre><code class="language-js">import {requestGPIOAccess} from "./node_modules/node-web-gpio/dist/index.js"; // WebGPIO を使えるようにするためのライブラリをインポート
+<pre><code class="language-js">import { requestGPIOAccess } from "node-web-gpio"; // WebGPIO を使えるようにするためのライブラリをインポート
 const sleep = msec =&gt; new Promise(resolve =&gt; setTimeout(resolve, msec)); // sleep 関数を定義
 
 async function blink() {
@@ -220,9 +220,9 @@ async function blink() {
 blink();
 </code></pre>
 <ol start="7">
-<li>書き終えたら保存します。(<code>[Save]ボタン</code>もしくは <code>CTRL+s</code> )</li>
-<li>ターミナルウィンドの右側 (ファイルマネージャ) に <strong>hello.js</strong> が出現していることを確認します</li>
-<li>エディタウィンドを閉じます</li>
+<li>書き終えたら保存します。(<code>[Save]ボタン</code>もしくは<code>CTRL+s</code>)</li>
+<li>ターミナルウィンドの右側 (ファイルマネージャ) に <strong>hello.js</strong> が出現していることを確認します。</li>
+<li>エディタウィンドを閉じます。</li>
 </ol>
 
                     </main>

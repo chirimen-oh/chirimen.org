@@ -3,7 +3,7 @@
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
-        <title>JavaScriptコード・ライブラリの読み込み - CHIRIMEN Raspberry Pi Zero W チュートリアル</title>
+        <title>JavaScriptコードとライブラリの読み込み - CHIRIMEN Raspberry Pi Zero W チュートリアル</title>
 
 
         <!-- Custom HTML head -->
@@ -36,10 +36,10 @@
             const path_to_root = "";
             const default_light_theme = "light";
             const default_dark_theme = "light";
-            window.path_to_searchindex_js = "searchindex-c90b689f.js";
+            window.path_to_searchindex_js = "searchindex-5a7dded5.js";
         </script>
         <!-- Start loading toc.js asap -->
-        <script src="toc-80f4c342.js"></script>
+        <script src="toc-8d876478.js"></script>
     </head>
     <body>
     <div id="mdbook-help-container">
@@ -181,29 +181,31 @@
 
                 <div id="mdbook-content" class="content">
                     <main>
-                        <h1 id="1131-javascriptコードライブラリの読み込み"><a class="header" href="#1131-javascriptコードライブラリの読み込み">11.3.1 JavaScriptコード・ライブラリの読み込み</a></h1>
-<h2 id="ウェブアプリhtmlで読み込み"><a class="header" href="#ウェブアプリhtmlで読み込み">ウェブアプリ：HTMLで読み込み</a></h2>
-<p>Raspberry Pi Zero 版以外の CHIRIMEN はプログラムの起点はHTMLファイルです。（<a href="https://ja.wikipedia.org/wiki/%E3%82%A6%E3%82%A7%E3%83%96%E3%82%A2%E3%83%97%E3%83%AA%E3%82%B1%E3%83%BC%E3%82%B7%E3%83%A7%E3%83%B3">ウェブアプリ</a>）ブラウザはまずHTMLファイルを読み込んだうえで、そこに書かれた内容で動きます。したがって作ったコードや必要なライブラリの読み込みは基本的に全てこのHTMLの中で指定します。（なお、javascript Moduleを有効化している場合は JavaScriptコードの中で jsライブラリを読み込むことがある）</p>
-<p>ポイントは <code>&lt;script ...&gt;&lt;/script&gt;</code> の部分です。
-<code>polyfill.js</code> という JavaScript ライブラリを読み込んでいます。これは <a href="http://browserobo.github.io/WebGPIO">Web GPIO API</a> と、<a href="http://browserobo.github.io/WebI2C">Web I2C API</a> という W3C でドラフト提案中の 2 つの API への <a href="https://developer.mozilla.org/ja/docs/Glossary/Polyfill">Polyfill (新しい API を未実装のブラウザでも同じコードが書けるようにするためのライブラリ)</a> で、最初に読み込むとそれ以降のコードで GPIO や I2C を操作する JavaScript API が使えるようになります。</p>
-<p>次の行にある <code>main.js</code> は、JavaScript のプログラム本体です。</p>
+                        <h1 id="1131-javascriptコードとライブラリの読み込み"><a class="header" href="#1131-javascriptコードとライブラリの読み込み">11.3.1 JavaScriptコードとライブラリの読み込み</a></h1>
+<h2 id="ウェブアプリはhtmlから読み込む"><a class="header" href="#ウェブアプリはhtmlから読み込む">ウェブアプリはHTMLから読み込む</a></h2>
+<p>Raspberry Pi Zero 版以外の CHIRIMEN では、プログラムの起点がHTMLファイルです（<a href="https://ja.wikipedia.org/wiki/%E3%82%A6%E3%82%A7%E3%83%96%E3%82%A2%E3%83%97%E3%83%AA%E3%82%B1%E3%83%BC%E3%82%B7%E3%83%A7%E3%83%B3">ウェブアプリ</a>）。ブラウザはまずHTMLファイルを読み込み、そこに書かれた内容にしたがって動き出します。作ったコードや必要なライブラリの読み込みも、基本的にはすべてこのHTMLの中で指定することになります(javascript Moduleを有効化している場合は、JavaScriptコードの中でさらにjsライブラリを読み込むこともあります)。</p>
+<p>具体的には <code>&lt;script ...&gt;&lt;/script&gt;</code> の部分がその指定です。ここでは <code>polyfill.js</code> という JavaScript ライブラリを読み込んでいます。これは <a href="http://browserobo.github.io/WebGPIO">Web GPIO API</a> と <a href="http://browserobo.github.io/WebI2C">Web I2C API</a> という、W3C でドラフト提案中の 2 つの API への <a href="https://developer.mozilla.org/ja/docs/Glossary/Polyfill">Polyfill (新しい API を未実装のブラウザでも同じコードが書けるようにするためのライブラリ)</a> です。これを最初に読み込んでおくことで、それ以降のコードから GPIO や I2C を操作する JavaScript API が使えるようになります。</p>
+<p>次の行にある <code>main.js</code> が、実際のプログラム本体です。</p>
 <h3 id="nodejs-chirimen-raspberry-pi-zero版"><a class="header" href="#nodejs-chirimen-raspberry-pi-zero版">Node.js (CHIRIMEN Raspberry Pi Zero版)</a></h3>
-<p>Raspberry Pi Zero版はプログラムの起点が自分が作ったjavascriptコード自体になります。ブラウザの代わりに<a href="https://ja.wikipedia.org/wiki/Node.js">Node.js</a>というJavaScriptコードだけを解釈するソフト（JavaScript <a href="https://ja.wikipedia.org/wiki/%E3%82%A4%E3%83%B3%E3%82%BF%E3%83%97%E3%83%AA%E3%82%BF">インタープリタ</a>）にコードを読み込ませて実行します。</p>
-<p>CHIRIMEN環境のために必要なライブラリや、<a href="#WebI2Cとデバイスドライバ">I2Cデバイスのドライバ</a>(後述)は次の ECMA Script Module という仕組みを使って読み込みます。</p>
+<p>Raspberry Pi Zero版のコードにHTMLファイルは登場しません。プログラムの起点そのものが、自分の書いたJavaScriptコードになるからです。ブラウザの代わりに、JavaScriptコードだけを解釈する<a href="https://ja.wikipedia.org/wiki/Node.js">Node.js</a>というソフト（JavaScript <a href="https://ja.wikipedia.org/wiki/%E3%82%A4%E3%83%B3%E3%82%BF%E3%83%97%E3%83%AA%E3%82%BF">インタープリタ</a>）に、コードを直接読み込ませて実行します。</p>
+<p>とはいえ、CHIRIMEN環境に必要なライブラリや<a href="#WebI2Cとデバイスドライバ">I2Cデバイスのドライバ</a>(後述)を読み込む手段は必要です。HTMLがない以上、この読み込みは次の ECMA Script Module という仕組みが担います。</p>
 <h3 id="javascript-module-ecma-script-module"><a class="header" href="#javascript-module-ecma-script-module">JavaScript Module (ECMA Script Module)</a></h3>
 <ul>
-<li>ウェブアプリでのModule有効化：HTMLのscript要素でjavascriptを読み込むとき、ttype=“module“プロパティを設定する。
+<li><strong>ウェブアプリでのModule有効化</strong>：HTMLのscript要素でJavaScriptを読み込むときに <code>type="module"</code> プロパティを設定します。
 <ul>
 <li><code>&lt;script type="module" src="main.js"&gt;&lt;/script&gt;</code></li>
 </ul>
 </li>
-<li>import文で外部のライブラリを読み込む。
+<li><strong>外部ライブラリの読み込み</strong>：import文を使います。
 <ul>
 <li><code>import {RelayServer} from "https://www.chirimen.org/remote-connection/js/beta/RelayServer.js";</code></li>
 </ul>
 </li>
-<li>importされるライブラリ側には、importできるオブジェクトを指定するexport文を記述する。</li>
+<li><strong>エクスポートの指定</strong>：importされるライブラリ側には、importできるオブジェクトを指定するexport文を記述しておきます。
+<ul>
 <li><code>export {RelayServer};</code></li>
+</ul>
+</li>
 <li><a href="https://codesandbox.io/s/github/chirimen-oh/chirimen.org/tree/master/pizero/esm-examples/remote_gpio_led/pc">例を見てみる</a></li>
 <li><a href="https://developer.mozilla.org/ja/docs/Web/JavaScript/Guide/Modules">Mozilla Developer Networkの解説</a></li>
 </ul>

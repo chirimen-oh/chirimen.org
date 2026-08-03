@@ -36,10 +36,10 @@
             const path_to_root = "";
             const default_light_theme = "light";
             const default_dark_theme = "light";
-            window.path_to_searchindex_js = "searchindex-c90b689f.js";
+            window.path_to_searchindex_js = "searchindex-5a7dded5.js";
         </script>
         <!-- Start loading toc.js asap -->
-        <script src="toc-80f4c342.js"></script>
+        <script src="toc-8d876478.js"></script>
     </head>
     <body>
     <div id="mdbook-help-container">
@@ -182,48 +182,48 @@
                 <div id="mdbook-content" class="content">
                     <main>
                         <h1 id="7-常駐プログラム化する"><a class="header" href="#7-常駐プログラム化する">7. 常駐プログラム化する</a></h1>
-<p>ターミナルウィンドからnodeコマンドで実行指示しなくても、電源投入後 自動的に指定したコードを起動する設定（常駐プログラム化）ができます。
-このチュートリアルでは、<a href="https://www.npmjs.com/package/forever">forever</a> を使用する設定を専用GUIを用いて行ってみましょう。</p>
+<p>ターミナルウィンドから node コマンドで実行を指示しなくても、電源を入れると自動的に指定したコードを起動する設定（常駐プログラム化）ができます。
+このチュートリアルでは、専用 GUI を使って <a href="https://www.npmjs.com/package/forever">forever</a> の設定を行ってみましょう。</p>
 <p><img src="./imgs/residentappconf.jpg" alt="Resident App Conf."></p>
 <ul>
 <li>
 <p>ターミナルウィンドの <code>[CHIRIMEN Panel]</code> ボタン ⇒ CHIRIMEN Panel の <code>[Resident App Conf.]</code> ボタンを押します。</p>
 <ul>
-<li>専用画面の UI が使用可能状態になるまで数秒かかります。</li>
+<li>専用画面の UI が使えるようになるまで、数秒かかります。</li>
 </ul>
 </li>
 <li>
-<p>開発ディレクトリ<code>~/myApp</code>内にある JavaScript コードがリストアップされます。</p>
+<p>開発ディレクトリ<code>~/myApp</code>内にある JavaScript コードが一覧表示されます。</p>
 </li>
 <li>
-<p>各行の <code>Now Running</code> 列は常駐状態、<code>App Name</code>はコードのファイル名、<code>Select</code> は選択用チェックボックスです。</p>
+<p>各行には、常駐状態を示す<code>Now Running</code>列、コードのファイル名を示す<code>App Name</code>列、選択用チェックボックスの<code>Select</code>列があります。</p>
 <ul>
-<li><code>Now Running</code>欄には現在常駐プログラム化しているコードに、<code>RUNNING</code>が表示されています。（常駐プログラムがなければ全部の行が空白になります）</li>
-<li><code>Select</code>欄のチェックボックスをチェックすると、そのコードが常駐プログラム化します。（常駐プログラムは一個だけ指定できます）
+<li><code>Now Running</code> 欄には、現在常駐プログラム化しているコードの行に<code>RUNNING</code>と表示されます（常駐プログラムがなければ、すべての行が空欄です）。</li>
+<li><code>Select</code> 欄のチェックボックスを選択すると、そのコードが常駐プログラム化されます（常駐プログラムは一つだけ指定できます）。
 <ul>
-<li>設定が反映され、常駐状態が確認できるようになるまで、２０秒ぐらいかかります
+<li>設定が反映され、常駐状態が確認できるようになるまで、20秒ほどかかります。
 <ul>
-<li>常駐状態の再確認は<code>[Resident App Conf.]</code>ボタンで可能</li>
-<li>設定できたらシャットダウンしてPCとのUSB接続も外します
+<li>常駐状態は<code>[Resident App Conf.]</code>ボタンで再確認できます。</li>
+<li>設定できたら、シャットダウンして PC との USB 接続も外します。
 <ul>
 <li>シャットダウンコマンド: <code>sudo shutdown -h now</code></li>
 </ul>
 </li>
-<li>その後PiZeroをモバイルバッテリなどにつないで独立して稼働させます。
+<li>その後、PiZero をモバイルバッテリなどにつなぎ、独立して稼働させます。
 <ul>
-<li>PiZeroの緑色LEDの点滅が収まると、概ね常駐プログラムが起動</li>
-<li>その後PCからリモートコントロールしてみましょう</li>
+<li>PiZero の緑色 LED の点滅が収まると、常駐プログラムはおおむね起動しています。</li>
+<li>その後、PC からリモートコントロールしてみましょう。</li>
 </ul>
 </li>
 </ul>
 </li>
 </ul>
 </li>
-<li>PCに接続しなおして、一番上の <code>STOP ALL APPS</code> のチェックボックスをチェックすると、常駐プログラムを解除できます。</li>
+<li>PC に接続しなおし、一番上の <code>STOP ALL APPS</code> チェックボックスを選択すると、常駐プログラムを解除できます。</li>
 </ul>
 </li>
 <li>
-<p><em>Note: 常駐化のツールとしては、他にも systemd service unit, openrc, cron, pm2, forever 等があります。Webでそれぞれの特徴を調べて用途に合ったものを選択して設定しても良いでしょう。</em></p>
+<p><em>Note: 常駐化のツールには、他にも systemd のサービスユニット、openrc、cron、pm2、forever などがあります。Web でそれぞれの特徴を調べ、用途に合ったものを選んで設定してもよいでしょう。</em></p>
 </li>
 </ul>
 

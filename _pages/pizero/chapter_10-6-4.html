@@ -36,10 +36,10 @@
             const path_to_root = "";
             const default_light_theme = "light";
             const default_dark_theme = "light";
-            window.path_to_searchindex_js = "searchindex-c90b689f.js";
+            window.path_to_searchindex_js = "searchindex-5a7dded5.js";
         </script>
         <!-- Start loading toc.js asap -->
-        <script src="toc-80f4c342.js"></script>
+        <script src="toc-8d876478.js"></script>
     </head>
     <body>
     <div id="mdbook-help-container">
@@ -182,9 +182,16 @@
                 <div id="mdbook-content" class="content">
                     <main>
                         <h1 id="1164-relayserverjs"><a class="header" href="#1164-relayserverjs">11.6.4 relayServer.js</a></h1>
-<p>IoT には relayServer の機能を持つウェブサイトが必要になりますが、これを誰かが運営しなければなりません。実習やプロトタイピングのためにこのようなサイトを自分たちで立ち上げるのはかなり大変ですが、インターネット上では既にいくつもの事業者が relayServer サービスを提供しています。</p>
-<p>今回は CHIRIMEN環境の試験用に、CHIRIMEN用に用意された検証用サービス(chirimentest)を使うことにしますが、いくつかある事業者間でサービスの内容に差異があります。サイトごとの差異は主に接続できる端末の管理と情報の取り扱いに関する機能になります。</p>
-<p><a href="https://www.chirimen.org/remote-connection/">relayServer.js</a> は、relayServerサービスによる差異を吸収し複数の事業者を自由に切り替えられ、webSocket の標準 API仕様に沿った作法で WebApps(含Node.jsプログラム)間の通信を簡単に使えるようにするライブラリです。</p>
+<p>IoTには、relayServerの機能を持つウェブサイトが必要です。
+そして、そのサイトは誰かが運営しなければなりません。
+実習やプロトタイピングのためだけに、こうしたサイトを自分たちで立ち上げるのはかなりの手間です。
+幸い、インターネット上にはすでにいくつもの事業者がrelayServerサービスを提供しています。</p>
+<p>とはいえ、事業者の数だけサービスに差異があります。
+差異は主に、接続できる端末の管理と、情報の取り扱いに関する機能に表れます。
+今回は、CHIRIMEN環境の試験用に用意された検証用サービス（chirimentest）を使うことにします。</p>
+<p>事業者ごとに作法が違うなら、サービスを乗り換えるたびにコードも書き直すことになりそうです。
+これを解消するのが<a href="https://www.chirimen.org/remote-connection/">relayServer.js</a>です。
+relayServerサービスによる差異を吸収し、webSocketの標準API仕様に沿った作法でWebApps（Node.jsプログラムを含む）間の通信を扱えるようにするライブラリで、複数の事業者を自由に切り替えられます。</p>
 
                     </main>
 

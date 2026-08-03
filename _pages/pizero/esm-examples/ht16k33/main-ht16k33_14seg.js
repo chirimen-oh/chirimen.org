@@ -2,34 +2,30 @@
 // https://www.aitendo.com/product/20812
 // https://www.aitendo.com/product/20811
 
-import { requestI2CAccess } from "./node_modules/node-web-i2c/index.js";
+import { requestI2CAccess } from "node-web-i2c";
 import HT16K33 from "@chirimen/ht16k33";
-const sleep = (msec) => new Promise((resolve) => setTimeout(resolve, msec));
+const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
 
-main();
+const i2cAccess = await requestI2CAccess();
+const i2cPort = i2cAccess.ports.get(1);
+const ht = new HT16K33(i2cPort);
+await ht.init();
 
-async function main() {
-	const i2cAccess = await requestI2CAccess();
-	const port = i2cAccess.ports.get(1);
-	const ht = new HT16K33(port);
-	await ht.init();
-	
-	//await ht.set_blink(ht.HT16K33_BLINK_1HZ);
-	//await ht.set_brightness(6);
-	
-	while(true){
-		// 使用できる文字は、アルファベット、数字、ピリオド
-		ht.set4chr14segLED("How");
-		await ht.write_display();
-		await sleep(1000);
-		ht.set4chr14segLED("are");
-		await ht.write_display();
-		await sleep(1000);
-		ht.set4chr14segLED("you.");
-		await ht.write_display();
-		await sleep(1000);
-		ht.set4chr14segLED("3.14");
-		await ht.write_display();
-		await sleep(1000);
-	}
+//await ht.set_blink(ht.HT16K33_BLINK_1HZ);
+//await ht.set_brightness(6);
+
+while (true) {
+  // 使用できる文字は、アルファベット、数字、ピリオド
+  ht.set4chr14segLED("How");
+  await ht.write_display();
+  await sleep(1000);
+  ht.set4chr14segLED("are");
+  await ht.write_display();
+  await sleep(1000);
+  ht.set4chr14segLED("you.");
+  await ht.write_display();
+  await sleep(1000);
+  ht.set4chr14segLED("3.14");
+  await ht.write_display();
+  await sleep(1000);
 }

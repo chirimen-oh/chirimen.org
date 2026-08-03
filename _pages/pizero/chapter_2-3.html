@@ -36,10 +36,10 @@
             const path_to_root = "";
             const default_light_theme = "light";
             const default_dark_theme = "light";
-            window.path_to_searchindex_js = "searchindex-c90b689f.js";
+            window.path_to_searchindex_js = "searchindex-5a7dded5.js";
         </script>
         <!-- Start loading toc.js asap -->
-        <script src="toc-80f4c342.js"></script>
+        <script src="toc-8d876478.js"></script>
     </head>
     <body>
     <div id="mdbook-help-container">
@@ -183,46 +183,46 @@
                     <main>
                         <h1 id="23-ステップ2-wifi設定"><a class="header" href="#23-ステップ2-wifi設定">2.3 ステップ2 (WiFi設定)</a></h1>
 <ol>
-<li>ターミナルウィンドの<code>[wifi panel]</code>ボタンを押す
+<li>ターミナルウィンドの<code>[wifi panel]</code>ボタンを押します
 <ul>
-<li>ウィンドが開き、WiFiアクセスポイントがスキャンされます。ステルスでないものはリストアップされているので、以降の作業の参考にしてください。</li>
+<li>ウィンドが開き、WiFiアクセスポイントがスキャンされます。ステルスでないアクセスポイントは一覧に表示されるので、以降の作業の参考にしてください。</li>
 <li>Raspberry Pi Zero W は <strong>2.4GHz帯の WiFi</strong> にのみ対応しています。
 <img src="./imgs/WiFiSetting.png" alt="WiFi Setting"></li>
 </ul>
 </li>
-<li>ウィンド下部に、WiFiアクセス情報を入力する (いずれも大文字小文字の区別があるので注意してください)
+<li>ウィンド下部に、WiFiアクセス情報を入力します (いずれも大文字と小文字が区別されるので注意してください)
 <ul>
 <li>SSID欄</li>
 <li>PASS PHRASE欄</li>
 </ul>
 </li>
-<li><code>[SET WiFi]</code>ボタンを押す</li>
-<li><code>[Reboot]</code>ボタンを押す
+<li><code>[SET WiFi]</code>ボタンを押します</li>
+<li><code>[Reboot]</code>ボタンを押します
 <ul>
-<li>これで Raspberry Pi Zero が再起動をはじめます</li>
+<li>これで Raspberry Pi Zero が再起動を始めます</li>
 </ul>
 </li>
-<li>WiFiウィンドを閉じ、ターミナルウィンドに戻る</li>
-<li>ターミナルウィンドの<code>[Close Connection]</code>ボタンを押す</li>
-<li>1-2分程待つ（Raspberry Pi Zeroが再起動します）</li>
-<li><code>[Connect and Login PiZero]</code>ボタンを押し接続する
+<li>WiFiウィンドを閉じ、ターミナルウィンドに戻ります</li>
+<li>ターミナルウィンドの<code>[Close Connection]</code>ボタンを押します</li>
+<li>1-2分程待ちます（この間に Raspberry Pi Zero が再起動します）</li>
+<li><code>[Connect and Login PiZero]</code>ボタンを押して接続します
 <ul>
-<li>接続ダイアログが出現⇒接続するとこれまで同様コマンドプロンプトが出現</li>
+<li>接続ダイアログが表示されます。接続すると、これまでと同様にコマンドプロンプトが表示されます。</li>
 </ul>
 </li>
-<li><code>[wifi panel]</code>ボタンを再び押す</li>
-<li><code>[wifi Info]</code>ボタンを押す
+<li><code>[wifi panel]</code>ボタンを再び押します</li>
+<li><code>[wifi Info]</code>ボタンを押します
 <ul>
-<li>表示された情報をチェックします</li>
-<li>wlan0: inet xxx.xxx.xxx.xxx　(xxxは数字)のようにIPアドレスが設定されていれば接続成功しています。
+<li>表示された情報を確認します</li>
+<li>wlan0: inet xxx.xxx.xxx.xxx (xxxは数字)のようにIPアドレスが設定されていれば接続に成功しています。
 <img src="./imgs/WiFiSettingIPaddress.png" alt="WiFi Setting_IPaddress"></li>
 </ul>
 </li>
-<li>確認できたらWiFi Settingウィンドを閉じてください。</li>
+<li>確認できたら、WiFi Settingウィンドを閉じてください。</li>
 </ol>
   <!--  * あとでping chirimen.org OK も入れよう。-->
 <ul>
-<li>もしもあなたがsshやscp (WinSCP, teraterm等)などのツールに慣れている場合、上記のアドレスでssh接続できます
+<li>sshやscp (WinSCP, teraterm等)などのツールに慣れている場合は、上記のアドレスでssh接続できます
 <ul>
 <li>PORT: 22</li>
 <li>ID: <code>pi</code></li>

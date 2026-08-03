@@ -36,10 +36,10 @@
             const path_to_root = "";
             const default_light_theme = "light";
             const default_dark_theme = "light";
-            window.path_to_searchindex_js = "searchindex-c90b689f.js";
+            window.path_to_searchindex_js = "searchindex-5a7dded5.js";
         </script>
         <!-- Start loading toc.js asap -->
-        <script src="toc-80f4c342.js"></script>
+        <script src="toc-8d876478.js"></script>
     </head>
     <body>
     <div id="mdbook-help-container">
@@ -185,17 +185,17 @@
 <iframe width="560" height="315" src="https://www.youtube.com/embed/f3t-IJt-ZB0" title="アナログセンサーの使い方(ボリューム・水位・土壌湿度センサー)" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen=""></iframe>
 <p><img src="./imgs/analog_sensor.jpg" width="500"><img src="./imgs/water_soil.jpg" width="300"></p>
 <ul>
-<li>アナログセンサーを利用する時には ADC（アナログデジタルコンバーター）を利用して値を取得して使います。</li>
-<li>応用センサーキットでは半固定抵抗（つまみの代わり）を利用したアナログ値の変更の確認をするサンプルと、水位センサー・土壌湿度センサーがキットに含まれています。</li>
+<li>アナログセンサーの値を取得するには、ADC（アナログデジタルコンバーター）を利用します。</li>
+<li>応用センサーキットには、半固定抵抗（つまみの代わり）でアナログ値の変化を確認するサンプルと、水位センサー、土壌湿度センサーが含まれています。</li>
 </ul>
 <h3 id="回路図とプログラムサンプル"><a class="header" href="#回路図とプログラムサンプル">回路図とプログラムサンプル</a></h3>
 <h2 id="アナログボリュームの回路図半固定抵抗利用"><a class="header" href="#アナログボリュームの回路図半固定抵抗利用">アナログボリュームの回路図（半固定抵抗利用）</a></h2>
 <img src="./imgs/analog_jig.jpg" width="700">
 <ul>
-<li>アナログセンサーの利用は ADS1115 を使います。回路図にあるつまみは半固定抵抗 10KΩ を使用します。</li>
+<li>アナログセンサーの利用には ADS1115 を使います。回路図のつまみには半固定抵抗 10KΩ を使用します。</li>
 </ul>
-<p>動作を確認するためのサンプルコードは <code>CHIRIMENパネル</code> から入手できます。<br>
-ブラウザでサンプルコードの中を確認したい場合は <code>コードを確認する</code> から確認出来ます。</p>
+<p>動作確認用のサンプルコードは <code>CHIRIMENパネル</code> から入手できます。<br>
+ブラウザ上でコードの中身を見たい場合は <code>コードを確認する</code> から参照できます。</p>
 <ul>
 <li>アナログボリューム ＞ <strong>ID：ads1x15 　タイトル：電圧測定（ADC）</strong>
 <ul>
@@ -205,20 +205,20 @@
 </ul>
 <p>【備考】</p>
 <ul>
-<li>サンプルコードはアナログの値を電力に変換して表示させています。
+<li>サンプルコードは、アナログの値を電力に変換して表示します。
 <ul>
-<li>電力変化量から必要な値を求められるようにするのは、プログラムでの計算が必要です。</li>
+<li>電力の変化量から必要な値を求めるには、プログラムでの計算が必要です。</li>
 </ul>
 </li>
-<li>水位センサー／土壌センサーを利用する前にアナログボリュームで動作確認をするようにしてください。</li>
+<li>水位センサー／土壌センサーを利用する前に、アナログボリュームで動作確認をしてください。</li>
 </ul>
 <h2 id="水位センサーの回路図"><a class="header" href="#水位センサーの回路図">水位センサーの回路図</a></h2>
 <img src="./imgs/analog_water.jpg" width="700">
 <ul>
-<li>水位センサ、土壌湿度センサもアナログセンサーです。ADS1115 を併用して使います。</li>
+<li>水位センサー、土壌湿度センサーもアナログセンサーです。ADS1115 と組み合わせて使います。</li>
 </ul>
-<p>動作を確認するためのサンプルコードは <code>CHIRIMENパネル</code> から入手できます。<br>
-ブラウザでサンプルコードの中を確認したい場合は <code>コードを確認する</code> から確認出来ます。</p>
+<p>動作確認用のサンプルコードは <code>CHIRIMENパネル</code> から入手できます。<br>
+ブラウザ上でコードの中身を見たい場合は <code>コードを確認する</code> から参照できます。</p>
 <ul>
 <li>アナログ水位センサー／アナログ土壌センサー ＞ <strong>ID：ads1x15 　タイトル：電圧測定（ADC）</strong>
 <ul>
@@ -228,7 +228,7 @@
 </ul>
 <p>【備考】</p>
 <ul>
-<li>動作を確認するためには実際に水につけて確認するか、濡れタオルで覆う事で確認が出来ます。</li>
+<li>動作確認は、実際に水につけるか、濡れタオルで覆うことで行えます。</li>
 </ul>
 <p><a href="./chapter_8-1.html">応用センサー一覧に戻る</a></p>
 

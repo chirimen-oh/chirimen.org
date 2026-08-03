@@ -36,10 +36,10 @@
             const path_to_root = "";
             const default_light_theme = "light";
             const default_dark_theme = "light";
-            window.path_to_searchindex_js = "searchindex-c90b689f.js";
+            window.path_to_searchindex_js = "searchindex-5a7dded5.js";
         </script>
         <!-- Start loading toc.js asap -->
-        <script src="toc-80f4c342.js"></script>
+        <script src="toc-8d876478.js"></script>
     </head>
     <body>
     <div id="mdbook-help-container">
@@ -185,20 +185,20 @@
 <iframe width="560" height="315" src="https://www.youtube.com/embed/JL_h9UcADNE" title="人感センサーの使い方(HC-SR501)" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen=""></iframe>
 <p><img src="./imgs/pir_sensor_photo.jpg" width="300"> <img src="./imgs/pir_sensor_use.jpg" width="400"></p>
 <ul>
-<li>人感センサーは半球体の部分から赤外線が発されて人の動きや熱を検知してオンオフするセンサーです。</li>
-<li>人感センサーは GPIO センサーとなり、チュートリアルのスイッチと同じ種類のセンサーになります。</li>
-<li>センサーに感度と保持時間を調整するつまみがあるので調節してテストしてください。
+<li><strong>人感センサー</strong>は、半球体の部分で検知した赤外線によって人の動きや熱を捉え、オンオフするセンサーです。</li>
+<li>人感センサーは GPIO センサーの一種で、チュートリアルのスイッチと同じ種類です。</li>
+<li>センサーには感度と保持時間を調整するつまみがあるので、調節しながらテストしてください。
 <ul>
-<li>つまみの調整に精密ドライバーを利用します</li>
+<li>つまみの調整には精密ドライバーを使います。</li>
 </ul>
 </li>
-<li>人感センサーは広範囲でセンサーが反応しますので、人の居ない方に向けて、自分もなるべくセンサーから離れて動作確認するようにしてください。</li>
-<li>動作確認をする際には保持時間を最短にすると調整しやすくなります。</li>
+<li>人感センサーは広い範囲で反応するため、人のいない方向に向け、自分もセンサーからなるべく離れて動作確認してください。</li>
+<li>動作確認の際は、保持時間を最短にすると調整しやすくなります。</li>
 </ul>
 <h3 id="回路図とプログラムサンプル"><a class="header" href="#回路図とプログラムサンプル">回路図とプログラムサンプル</a></h3>
 <img src="./imgs/pir_sensor.jpg" width="600">
 <p>動作を確認するためのサンプルコードは <code>CHIRIMENパネル</code> から入手できます。
-ブラウザでサンプルコードの中を確認したい場合は <code>コードを確認する</code> から確認出来ます。</p>
+ブラウザでコードの中身を確認したい場合は、<code>コードを確認する</code> から確認できます。</p>
 <ul>
 <li>人感センサー ＞ <strong>ID：gpio-onchange 　タイトル：スイッチ</strong>
 <ul>
@@ -214,8 +214,8 @@
 <p>【備考】</p>
 <ul>
 <li><a href="https://chirimen.org/chirimen/gc/top/examples/#GPIO-pirSensor">参考情報 ※CHIRIMEN Pi4 版</a></li>
-<li>サンプルコードは「スイッチ」のソースコードと共通で利用する事が出来ます。人感センサー（pir sensor）の名前でサンプル一覧には掲載されていないので注意してください。</li>
-<li>「スイッチ 2」のソースコードでも動作させることが可能で、こちらは逐一センサーの状況が分かるので、調整をする際にはこちらのサンプルを利用すると便利です。</li>
+<li>サンプルコードは「スイッチ」のソースコードと共用できます。人感センサー（pir sensor）という名前ではサンプル一覧に掲載されていないため、注意してください。</li>
+<li>「スイッチ 2」のソースコードでも動作します。こちらはセンサーの状態を逐一確認できるため、調整する際に便利です。</li>
 </ul>
 <p><a href="./chapter_8-1.html">応用センサー一覧に戻る</a></p>
 

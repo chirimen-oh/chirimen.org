@@ -36,10 +36,10 @@
             const path_to_root = "";
             const default_light_theme = "light";
             const default_dark_theme = "light";
-            window.path_to_searchindex_js = "searchindex-c90b689f.js";
+            window.path_to_searchindex_js = "searchindex-5a7dded5.js";
         </script>
         <!-- Start loading toc.js asap -->
-        <script src="toc-80f4c342.js"></script>
+        <script src="toc-8d876478.js"></script>
     </head>
     <body>
     <div id="mdbook-help-container">
@@ -184,9 +184,9 @@
                         <h1 id="65-pizero-側のコードを読む"><a class="header" href="#65-pizero-側のコードを読む">6.5 PiZero 側のコードを読む</a></h1>
 <h2 id="raspberry-pi-zero側コード"><a class="header" href="#raspberry-pi-zero側コード">Raspberry Pi Zero側コード</a></h2>
 <ul>
-<li>ターミナルウィンドの右側のファイルマネージャでmain-remote_gpio_led.js⇒表示 を選び、ソースコードを読んでみましょう</li>
+<li>ターミナルウィンドの右側のファイルマネージャで <code>main-remote_gpio_led.js</code> を選び、[表示] からソースコードを開いてみましょう。</li>
 </ul>
-<pre><code class="language-js">import {requestGPIOAccess} from "./node_modules/node-web-gpio/dist/index.js";
+<pre><code class="language-js">import { requestGPIOAccess } from "node-web-gpio";
 const sleep = msec =&gt; new Promise(resolve =&gt; setTimeout(resolve, msec));
 import nodeWebSocketLib from "websocket"; // https://www.npmjs.com/package/websocket
 import {RelayServer} from "./RelayServer.js";
@@ -223,28 +223,13 @@ function controlLED(messge){
 
 connect();
 </code></pre>
-<p>プログラムは以下の流れで実行されています。</p>
-<ul>
-<li>これまで通りWebGPIOライブラリの読み込み</li>
-<li><a href="./chapter_10-6.html">relayServer.js</a>ライブラリの読み込み
-<ul>
-<li>Node.jsではrelayServerライブラリに加えて、webSocketライブラリの読み込みが必要です。</li>
-</ul>
-</li>
-</ul>
+<p>LEDを点けたり消したりする指示は、Raspberry Pi Zero自身が思いつくわけではありません。指示はネットワークの向こう、PC側から届きます。冒頭の <code>import</code> を見ると、これまで通りWebGPIOライブラリを読み込んだあとに、見慣れない2行が続いているのはそのためです。</p>
 <pre><code class="language-js">import nodeWebSocketLib from "websocket";
 import {RelayServer} from "./RelayServer.js";
 </code></pre>
-<ul>
-<li><a href="./chapter_10-6.html">relayServer.js</a>を使って、PCからの操作指示を受信
-<ul>
-<li><a href="./chapter_10-6.html">初期化</a></li>
-<li><a href="./chapter_10-6.html">受信処理</a>(コールバック関数の設定)</li>
-</ul>
-</li>
-<li>受信した内容をもとに<a href="./chapter_10-6.html">GPIO出力を操作</a>してLEDを点灯・消灯</li>
-</ul>
-<p>コードの詳細解説は<a href="./chapter_10-6.html">こちら</a>を参照してください</p>
+<p>ブラウザにはWebSocketの機能が標準で組み込まれていますが、Node.jsにはありません。そのため<a href="./chapter_10-6.html">relayServer.js</a>ライブラリに加えて、webSocket自体のライブラリも読み込んでおく必要があります。</p>
+<p>あとの流れは単純です。<a href="./chapter_10-6.html">relayServer.js</a>を使って接続を<a href="./chapter_10-6.html">初期化</a>し、メッセージが届くたびに呼ばれる関数を<a href="./chapter_10-6.html">受信処理</a>(コールバック関数)として登録します。届いた文字列をもとに<a href="./chapter_10-6.html">GPIO出力を操作</a>するのは最後の一手間で、<code>"LED ON"</code> なら点灯、<code>"LED OFF"</code> なら消灯です。それ以外の文字列が届いても、コードは何もしません。</p>
+<p>コードの詳細解説は<a href="./chapter_10-6.html">こちら</a>を参照してください。</p>
 
                     </main>
 

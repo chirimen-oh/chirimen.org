@@ -2,7 +2,7 @@
 // GPIOの２つの信号線を使って指示します
 
 import { requestGPIOAccess } from "node-web-gpio";
-const sleep = (msec) => new Promise((resolve) => setTimeout(resolve, msec));
+const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
 const portAddrs = [20, 21]; // HブリッジコントローラをつなぐGPIOポート番号
 let ports;
 

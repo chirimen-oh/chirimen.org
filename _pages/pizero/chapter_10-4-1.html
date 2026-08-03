@@ -36,10 +36,10 @@
             const path_to_root = "";
             const default_light_theme = "light";
             const default_dark_theme = "light";
-            window.path_to_searchindex_js = "searchindex-c90b689f.js";
+            window.path_to_searchindex_js = "searchindex-5a7dded5.js";
         </script>
         <!-- Start loading toc.js asap -->
-        <script src="toc-80f4c342.js"></script>
+        <script src="toc-8d876478.js"></script>
     </head>
     <body>
     <div id="mdbook-help-container">
@@ -183,20 +183,19 @@
                     <main>
                         <h1 id="1141-gpioポートの初期化と出力処理"><a class="header" href="#1141-gpioポートの初期化と出力処理">11.4.1 GPIOポートの初期化と出力処理</a></h1>
 <h2 id="gpioポートの初期化"><a class="header" href="#gpioポートの初期化">GPIOポートの初期化</a></h2>
-<p>今回の JavaScript ファイルで、最初に呼び出されるコードは <code>await navigator.requestGPIOAccess()</code> です。
-ここで先ほど出て来た <a href="http://browserobo.github.io/WebGPIO">Web GPIO API</a> を使い、<code>gpioAccess</code> という GPIO にアクセスするためのインタフェースを取得しています。</p>
+<p>このコードで最初に呼び出されるのが <code>await navigator.requestGPIOAccess()</code> です。
+先に触れた <a href="http://browserobo.github.io/WebGPIO">Web GPIO API</a> の関数で、GPIO にアクセスするためのインタフェース <code>gpioAccess</code> を取得しています。</p>
 <pre><code class="language-js">  const gpioAccess = await navigator.requestGPIOAccess(); // GPIO を操作する
 </code></pre>
-<p><strong>関数の呼び出しに <code>await</code> 接頭詞を付けることに注意してください。</strong> この関数は非同期関数で、その処理の完了を待ってから次の処理をする必要があります。また、<code>await</code> 接頭詞を使うコードを含むために、それを含む関数 <code>main()</code> は async 接頭詞付きの非同期関数として定義する必要があります。</p>
+<p>呼び出しに <code>await</code> が付いているのは、<code>requestGPIOAccess()</code> が非同期関数であり、GPIO へのアクセス許可が下りるまで処理を待つ必要があるからです。<code>await</code> を使うコードを含む関数は、この後の <code>main()</code> のように <code>async</code> 接頭詞付きの非同期関数として定義しなければなりません。</p>
 <h2 id="gpioport-の出力処理"><a class="header" href="#gpioport-の出力処理">GPIOPort の出力処理</a></h2>
-<p>GPIOの<strong>出力</strong>機能を使います。
-<strong><code>const port = gpioAccess.ports.get(26)</code> で GPIO の 26 番ポートにアクセスするためのオブジェクト</strong> を取得しています。</p>
+<p>GPIO の<strong>出力</strong>機能を使うには、まず操作対象のポートを取得します。</p>
 <pre><code class="language-js">  const port = gpioAccess.ports.get(26); // 26 番ポートを操作する
 </code></pre>
-<p>続いて、 <strong><code>await port.export("out")</code> で GPIO の 26 番を「出力設定」にしています</strong>。これにより LED への電圧の切り替えが可能になっています。</p>
+<p><code>gpioAccess.ports.get(26)</code> は、GPIO の 26 番ポートにアクセスするためのオブジェクトを返します。ただしこの時点では、まだポートは入力にも出力にも使える状態になっていません。</p>
 <pre><code class="language-js">  await port.export("out"); // ポートを出力モードに設定
 </code></pre>
-<p>最後に、無限ループのなかで <code>await sleep(1000)</code> によって 1000 ms (1 秒) 待機さ 1 秒ごとに <code>await port.write(1)</code> と <code>await port.write(0)</code> を交互に呼び出し、GPIO 26 番に加える電圧を 3.3V → 0V → 3.3V → 0V → … と繰り返しています。</p>
+<p><code>await port.export("out")</code> で 26 番ポートを「出力設定」にすると、LED にかける電圧を切り替えられるようになります。</p>
 <pre><code class="language-js">  // 無限ループ
   while (true) {
     // 1秒間隔で LED が点滅します。
@@ -206,13 +205,13 @@
     await sleep(1000); // 1000 ms (1秒) 待機
   }
 </code></pre>
-<p>LED は一定以上の電圧を加え、電流を流すと点灯する性質を持っています。
-つまり、3.3 V を加えたとき点灯し、0 V を加えたとき消灯、これを繰り返すことになります。</p>
+<p>あとは電圧の切り替えを繰り返すだけです。<code>await port.write(1)</code> と <code>await port.write(0)</code> を交互に呼び出し、GPIO 26 番に加える電圧を 3.3V → 0V → 3.3V → 0V → … と切り替えています。合間に挟んだ <code>await sleep(1000)</code> が 1000 ms (1 秒) の待ち時間を作り、切り替えの間隔を 1 秒に保っています。</p>
+<p>LED は、一定以上の電圧を加えて電流を流すと点灯する部品です。3.3 V を加えれば点灯し、0 V に落とせば消灯します。このループがしているのは、その点灯と消灯をひたすら繰り返すことだけです。</p>
 <h3 id="サンプルコードを編集してみよう"><a class="header" href="#サンプルコードを編集してみよう">サンプルコードを編集してみよう</a></h3>
 <ul>
-<li>点滅周期を早く・遅く (<code>sleep()</code>の引数を変更)</li>
-<li>点灯する時間と消灯する時間を変える (同上)</li>
-<li>GPIO ポートを他のポートに変える・配線を変える (<code>gpioAccess.ports.get</code>の引数を変更)</li>
+<li>点滅周期を速くしたり遅くしたりしてみる（<code>sleep()</code>の引数を変更）</li>
+<li>点灯する時間と消灯する時間を変えてみる（同上）</li>
+<li>GPIO ポートを別のポートに変え、配線もあわせて変えてみる（<code>gpioAccess.ports.get</code>の引数を変更）</li>
 </ul>
 
                     </main>

@@ -36,10 +36,10 @@
             const path_to_root = "";
             const default_light_theme = "light";
             const default_dark_theme = "light";
-            window.path_to_searchindex_js = "searchindex-c90b689f.js";
+            window.path_to_searchindex_js = "searchindex-5a7dded5.js";
         </script>
         <!-- Start loading toc.js asap -->
-        <script src="toc-80f4c342.js"></script>
+        <script src="toc-8d876478.js"></script>
     </head>
     <body>
     <div id="mdbook-help-container">
@@ -184,9 +184,9 @@
                         <h1 id="431-onchange-コードを読む"><a class="header" href="#431-onchange-コードを読む">4.3.1 onchange コードを読む</a></h1>
 <p>ターミナルウィンドの右側のファイルマネージャでmain-gpio-onchange.js⇒表示 を選び、ソースコードを読んでみましょう</p>
 <ul>
-<li>GPIOポートの値が変化するたびに、指定した関数が実行されます。</li>
+<li>GPIO ポートの値が変化するたびに、指定した関数が呼び出されるコードです。</li>
 </ul>
-<pre><code class="language-js">import {requestGPIOAccess} from "./node_modules/node-web-gpio/dist/index.js";
+<pre><code class="language-js">import { requestGPIOAccess } from "node-web-gpio";
 const sleep = msec =&gt; new Promise(resolve =&gt; setTimeout(resolve, msec));
 
 async function switchCheck() {
@@ -204,8 +204,8 @@ function showPort(ev){
 
 switchCheck();
 </code></pre>
-<p>GPIOポートの初期化は Lチカの <a href="./chapter_3-4.html">3.4 コードを読む</a>と同様の処理を行っています。今回のコードでは 5 番ポートにアクセスするためのオブジェクトを取得し、<strong>GPIO入力</strong>機能を使って 5番を「入力設定」にしています。</p>
-<p><code>port.onchange</code> は <strong>入力モードの GPIO ポートの「状態変化時に呼び出される関数を設定する」</strong> 機能です。このような関数のことをコールバック関数と呼びます。<code>port.read()</code> を使ったコードと異なり<a href="./chapter_4-4.html">ポーリング処理</a>が不要でコードも簡潔ですが、値が変化したタイミング以外では読み取りができませんのでユースケースが少し限られます。</p>
+<p>GPIO ポートの初期化は、Lチカの <a href="./chapter_3-4.html">3.4 コードを読む</a> で見た手順と同じです。ここでは 5 番ポートにアクセスするためのオブジェクトを取得し、GPIO <strong>入力</strong>機能を使って 5 番を「入力設定」にしています。</p>
+<p>これだけでは、値を読み取ることはできても変化には気づけません。そこで使うのが <code>port.onchange</code> です。入力モードの GPIO ポートに「状態が変化したときに呼び出す関数」を設定する機能で、このように呼び出される関数を<strong>コールバック関数</strong>と呼びます。値を都度読みに行く <code>port.read()</code> のコードと違って<a href="./chapter_4-4.html">ポーリング処理</a>を自分で書く必要がなく、コードは簡潔になります。ただし呼ばれるのは値が変化した瞬間だけなので、現在の値をいつでも取得したい用途にはあまり向きません。</p>
 
                     </main>
 

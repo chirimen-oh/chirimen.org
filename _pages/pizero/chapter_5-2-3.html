@@ -36,10 +36,10 @@
             const path_to_root = "";
             const default_light_theme = "light";
             const default_dark_theme = "light";
-            window.path_to_searchindex_js = "searchindex-c90b689f.js";
+            window.path_to_searchindex_js = "searchindex-5a7dded5.js";
         </script>
         <!-- Start loading toc.js asap -->
-        <script src="toc-80f4c342.js"></script>
+        <script src="toc-8d876478.js"></script>
     </head>
     <body>
     <div id="mdbook-help-container">
@@ -183,48 +183,43 @@
                     <main>
                         <h1 id="523-sht30-のコードを読む"><a class="header" href="#523-sht30-のコードを読む">5.2.3 SHT30 のコードを読む</a></h1>
 <ul>
-<li>ターミナルウィンドの右側のファイルマネージャでmain-sht30.js⇒表示 を選び、ソースコードを読んでみましょう</li>
+<li>ターミナルウィンドウ右側のファイルマネージャで <code>main-sht30.js</code> を選択し、「表示」を実行してソースコードを開きます。</li>
 </ul>
-<pre><code class="language-js">import {requestI2CAccess} from "./node_modules/node-web-i2c/index.js";
+<pre><code class="language-js">import { requestI2CAccess } from "node-web-i2c";
 import SHT30 from "@chirimen/sht30";
-const sleep = msec =&gt; new Promise(resolve =&gt; setTimeout(resolve, msec));
+const sleep = (ms) =&gt; new Promise((resolve) =&gt; setTimeout(resolve, ms));
 
-main();
+const i2cAccess = await requestI2CAccess();
+const sht30 = new SHT30(i2cAccess.ports.get(1), 0x44);
+await sht30.init();
 
-async function main() {
-  const i2cAccess = await requestI2CAccess();
-  const port = i2cAccess.ports.get(1);
-  const sht30 = new SHT30(port, 0x44);
-  await sht30.init();
+while (true) {
+  const { humidity, temperature } = await sht30.readData();
+  console.log(
+    [
+      `Humidity: ${humidity.toFixed(2)}%`,
+      `Temperature: ${temperature.toFixed(2)} degree`,
+    ].join(", "),
+  );
 
-  while (true) {
-    const { humidity, temperature } = await sht30.readData();
-    console.log(
-      [
-        `Humidity: ${humidity.toFixed(2)}%`,
-        `Temperature: ${temperature.toFixed(2)} degree`
-      ].join(", ")
-    );
-
-    await sleep(500);
-  }
+  await sleep(500);
 }
 </code></pre>
 <ul>
 <li><a href="../chirimenGeneric/#webi2c">WebI2CライブラリとSHT30デバイスドライバを読み込み</a>
 <ul>
-<li>I2Cインターフェースに接続されたスレーブデバイスは<a href="http://browserobo.github.io/WebI2C">Web I2C API</a>と呼ぶAPIによって使用することができます。</li>
+<li>I2C インターフェースに接続されたスレーブデバイスは、<a href="http://browserobo.github.io/WebI2C">Web I2C API</a> と呼ばれる API を通じて操作できます。</li>
 </ul>
 </li>
 </ul>
-<pre><code class="language-js">import {requestI2CAccess} from "./node_modules/node-web-i2c/index.js";
+<pre><code class="language-js">import { requestI2CAccess } from "node-web-i2c";
 import SHT30 from "@chirimen/sht30";
 </code></pre>
 <ul>
-<li><a href="./chapter_10-3-1.html">JavaScript module</a> に基づいてWebI2Cライブラリを読み込みます。</li>
+<li><a href="./chapter_10-3-1.html">JavaScript module</a> の仕組みを使って、WebI2C ライブラリを読み込んでいます。</li>
 <li><a href="./chapter_5-2-4.html">I2C 温湿度センサー (SHT30, SHT31)の初期化と使用</a>
 <ul>
-<li>次のページでコードの流れを詳細に解説します</li>
+<li>コードが実際に何をしているかを、次のページで一行ずつ確認します。</li>
 </ul>
 </li>
 </ul>

@@ -36,10 +36,10 @@
             const path_to_root = "";
             const default_light_theme = "light";
             const default_dark_theme = "light";
-            window.path_to_searchindex_js = "searchindex-c90b689f.js";
+            window.path_to_searchindex_js = "searchindex-5a7dded5.js";
         </script>
         <!-- Start loading toc.js asap -->
-        <script src="toc-80f4c342.js"></script>
+        <script src="toc-8d876478.js"></script>
     </head>
     <body>
     <div id="mdbook-help-container">
@@ -183,36 +183,21 @@
                     <main>
                         <h1 id="11-chirimen-について"><a class="header" href="#11-chirimen-について">1.1 CHIRIMEN について</a></h1>
 <p><img src="./imgs/CHIRIMEN_pf.png" alt="CHIRIMEN image"></p>
-<p>CHIRIMEN とは、Webの標準的な技術・ブラウザやNode.js等で実行できるJavaScript で電子パーツを制御し、<a href="https://www.iizuka.kyutech.ac.jp/faculty/physicalcomputing" target="_blank" rel="noopener noreferrer">フィジカルコンピューティング</a>や <a href="https://tutorial.chirimen.org/chirimenGeneric/#iot" target="_blank" rel="noopener noreferrer">IoTシステム</a>を開発可能なプロトタイピング環境です。</p>
-<p>デジタルのソフトとフィジカルなハードをWWW上で連携するデバイスを Web標準技術、JavaScript だけで容易に実現できます。</p>
+<p>電子パーツをプログラムで制御するには、C言語やPython向けの専用SDK、あるいはボードごとに異なる開発環境を新しく覚える必要がある、と身構えている人は少なくないでしょう。CHIRIMEN は、その手間を要求しません。Webの標準技術、つまりブラウザやNode.js等で実行できるJavaScriptだけで電子パーツを制御し、<a href="https://www.iizuka.kyutech.ac.jp/faculty/physicalcomputing" target="_blank" rel="noopener noreferrer">フィジカルコンピューティング</a>や<a href="https://tutorial.chirimen.org/chirimenGeneric/#iot" target="_blank" rel="noopener noreferrer">IoTシステム</a>を開発できるプロトタイピング環境、それがCHIRIMENです。</p>
+<p>デジタルのソフトとフィジカルなハードをWWW上で連携させる仕組みをWeb標準技術とJavaScriptだけで容易に実現できます。</p>
 <ul>
 <li><a href="https://tutorial.chirimen.org/about.html">さらに詳細に知りたい方はこちらを参照ください</a></li>
 </ul>
 <h2 id="chirimen-raspberry-pi-zero版について"><a class="header" href="#chirimen-raspberry-pi-zero版について">CHIRIMEN Raspberry Pi Zero版について</a></h2>
-<ul>
-<li>PiZero上ではWeb Browserを動かさない。</li>
-<li>Node.jsというJavaScriptインタープリターだけが動く
-<ul>
-<li>ブラウザの機能のうち一部だけがPiZero上で使える
+<p>PiZero上で動くのは、Node.jsというJavaScriptインタープリターです。</p>
+<p>次の機能はWebブラウザと同じです。</p>
 <ul>
 <li>プログラミング言語 ～ JavaScript</li>
 <li>画面表示やGUIに関わらないAPI</li>
 <li>通信プロトコル</li>
 </ul>
-</li>
-<li>使えないのはブラウザを使った画面表示やGUI</li>
-</ul>
-</li>
-<li>ブラウザを使った画面やGUIは
-<ul>
-<li>ネットを介してスマホやPCからコントロール ⇒ これが代表的にIoTと呼ばれるデザインパターン
-<ul>
-<li>このとき、Raspberry Pi Zeroは、IoTエッジデバイスとして動作</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
+<p>では、Webブラウザを使った画面やGUIはどうするのか。インターネットを介してスマホやPCからコントロールします。これがIoTの代表的な設計パターンです。
+このとき、Raspberry Pi Zeroは、IoTエッジデバイスとして動作します。</p>
 
                     </main>
 

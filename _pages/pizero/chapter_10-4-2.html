@@ -36,10 +36,10 @@
             const path_to_root = "";
             const default_light_theme = "light";
             const default_dark_theme = "light";
-            window.path_to_searchindex_js = "searchindex-c90b689f.js";
+            window.path_to_searchindex_js = "searchindex-5a7dded5.js";
         </script>
         <!-- Start loading toc.js asap -->
-        <script src="toc-80f4c342.js"></script>
+        <script src="toc-8d876478.js"></script>
     </head>
     <body>
     <div id="mdbook-help-container">
@@ -182,9 +182,9 @@
                 <div id="mdbook-content" class="content">
                     <main>
                         <h1 id="1142-gpioportの入力処理onchange"><a class="header" href="#1142-gpioportの入力処理onchange">11.4.2 GPIOPortの入力処理（onchange）</a></h1>
-<p>GPIOポートに繋いだスイッチやセンサーの状態を取得するには、GPIOの<strong>入力</strong>機能を使います。出力とは違って入力は二つの方法があります。onchangeとポーリングの二つの方法があります。</p>
+<p>GPIO ポートに繋いだスイッチやセンサーの状態を取得するには、GPIO の<strong>入力</strong>機能を使います。出力と違って、入力には onchange とポーリングという二つの方法があります。まずは onchange から見ていきます。</p>
 <h2 id="onchange編"><a class="header" href="#onchange編">onchange編</a></h2>
-<p>GPIOポートの値が変化するたびに、指定した関数が実行されます。</p>
+<p>GPIO ポートの値が変化するたびに、指定した関数が実行されるコードです。</p>
 <pre><code class="language-js">async function main() {
   const button = document.getElementById("button");
   const ledView = document.getElementById("ledView");
@@ -217,7 +217,7 @@
 
 main();
 </code></pre>
-<p><code>port.onchange</code> は <strong>入力モードの GPIO ポートの「状態変化時に呼び出される関数を設定する」</strong> 機能です。このような関数のことをコールバック関数と呼びます。下記の<code>port.read()</code> を使ったコードと異なりポーリング処理が不要でコードも簡潔ですが、値が変化したタイミング以外では読み取りができませんのでユースケースが少し限られます。</p>
+<p><code>port.onchange</code> は、入力モードの GPIO ポートに「状態が変化したときに呼び出す関数」を設定する機能です。このように呼び出される関数を<strong>コールバック関数</strong>と呼びます。値を定期的に読みに行く <code>port.read()</code> を使ったポーリングのコード（後述）と異なり、自分でポーリング処理を書く必要がなくコードも簡潔になりますが、呼ばれるのは値が変化した瞬間だけなので、現在の値をいつでも取得したい用途にはあまり向きません。</p>
 
                     </main>
 

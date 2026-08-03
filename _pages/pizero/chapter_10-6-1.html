@@ -36,10 +36,10 @@
             const path_to_root = "";
             const default_light_theme = "light";
             const default_dark_theme = "light";
-            window.path_to_searchindex_js = "searchindex-c90b689f.js";
+            window.path_to_searchindex_js = "searchindex-5a7dded5.js";
         </script>
         <!-- Start loading toc.js asap -->
-        <script src="toc-80f4c342.js"></script>
+        <script src="toc-8d876478.js"></script>
     </head>
     <body>
     <div id="mdbook-help-container">
@@ -184,20 +184,14 @@
                         <h1 id="1161-websocketとpubsub-services"><a class="header" href="#1161-websocketとpubsub-services">11.6.1 webSocketとpub/sub services</a></h1>
 <h2 id="システム構成"><a class="header" href="#システム構成">システム構成</a></h2>
 <p><img src="./imgs/IoTsystemConf.png" alt="sysConfImg"></p>
-<p>今回のチュートリアルでつくるIoTシステムの構成図です。</p>
-<p>インターネットを介して、左側のアクチュエータやLEDを右側のウェブアプリから操作したり、
-左側でセンシングしたデータを右側のウェブアプリで表示させたりするシステムですね。</p>
-<p>構成要素を見ていきます。</p>
+<p>上の図は、今回のチュートリアルで作るIoTシステムの構成図です。</p>
+<p>インターネットを介して、左側のアクチュエータやLEDを右側のウェブアプリから操作します。
+あるいは、左側でセンシングしたデータを、右側のウェブアプリに表示します。</p>
+<p>構成要素は三つあります。</p>
 <ul>
-<li>
-<p>左側のボードコンピュータはCHIRIMENを使ったプログラミングで使用してきた環境やデバイスを使います。</p>
-</li>
-<li>
-<p>右側のPCはどんなブラウザでも動かせるので、スマートフォンを使うこともできます。<br>インターネットにつながっていさえすれば別の場所のPCやスマホでも動きます。これがIoTの便利なところ～遠隔操作ですね。</p>
-</li>
-<li>
-<p>InternetのrelayServiceが見慣れないものだと思います。以下で解説します。</p>
-</li>
+<li>左側のボードコンピュータは、これまでのCHIRIMENチュートリアルで使ってきた環境とデバイスそのものです。</li>
+<li>右側のPCは、ブラウザさえ動けばよいので、スマートフォンでも構いません。インターネットにつながってさえいれば、場所を選ばず動きます。遠隔操作というIoTらしい使い方は、ここから生まれます。</li>
+<li>残る一つが、インターネット上のrelayServiceです。ボードコンピュータともう一方のPCは見慣れたものですが、このrelayServiceだけは、ここで初めて登場する語のはずです。</li>
 </ul>
 
                     </main>

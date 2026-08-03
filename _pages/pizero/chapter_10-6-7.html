@@ -36,10 +36,10 @@
             const path_to_root = "";
             const default_light_theme = "light";
             const default_dark_theme = "light";
-            window.path_to_searchindex_js = "searchindex-c90b689f.js";
+            window.path_to_searchindex_js = "searchindex-5a7dded5.js";
         </script>
         <!-- Start loading toc.js asap -->
-        <script src="toc-80f4c342.js"></script>
+        <script src="toc-8d876478.js"></script>
     </head>
     <body>
     <div id="mdbook-help-container">
@@ -182,19 +182,19 @@
                 <div id="mdbook-content" class="content">
                     <main>
                         <h1 id="1167-nodejsでの利用"><a class="header" href="#1167-nodejsでの利用">11.6.7 Node.jsでの利用</a></h1>
-<p>初期化手順に差異があります。</p>
+<p>ブラウザ向けの実装と比べて、初期化の手順が異なります。</p>
 <pre><code class="language-javascript">import nodeWebSocketLib from "websocket";
 import {RelayServer} from "./RelayServer.js";
 var relay = RelayServer("achex", "chirimenSocket" , nodeWebSocketLib, "https://chirimen.org");
 </code></pre>
 <ul>
-<li>Node.jsではwebSocketを使用するためにはwebsocketライブラリが必要なので読み込みます</li>
-<li>RelayServer.jsやwebSocket等のライブラリは、ローカルからの読み込みになります</li>
-<li>RelayServerの第三引数でwebsocketライブラリを渡す必要があります</li>
-<li>RelayServerの第四引数で、<a href="https://e-words.jp/w/%E3%83%AA%E3%83%95%E3%82%A1%E3%83%A9.html">リファラー</a>の指定が必要です
+<li>Node.js で webSocket を使うには websocket ライブラリが必要なため、これを読み込みます</li>
+<li>RelayServer.js や webSocket などのライブラリは、ローカルから読み込みます</li>
+<li>RelayServer の第三引数で、websocket ライブラリを渡す必要があります</li>
+<li>RelayServer の第四引数では、<a href="https://e-words.jp/w/%E3%83%AA%E3%83%95%E3%82%A1%E3%83%A9.html">リファラー</a>の指定が必要です
 <ul>
-<li>webアプリの場合はそのコンテンツの配信元のURLがリファラーとして自動設定されますが、Node.jsのアプリはローカルにあるので別途指定が必要</li>
-<li>achexの場合URLは何でも許可されますが、他のrelayServerサービスでは あらかじめ指定したリファラーが設定されていなければアクセス拒否されるものもあります(これも一つのセキュリティ)</li>
+<li>web アプリの場合、コンテンツの配信元の URL がリファラーとして自動設定されますが、Node.js のアプリはローカルにあるため、別途指定する必要があります</li>
+<li>achex の場合は URL を自由に設定できますが、他の relayServer サービスでは、あらかじめ指定したリファラーが設定されていないとアクセスを拒否されるものもあります（これもセキュリティ対策の一つです）</li>
 </ul>
 </li>
 </ul>

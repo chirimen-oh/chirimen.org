@@ -36,10 +36,10 @@
             const path_to_root = "";
             const default_light_theme = "light";
             const default_dark_theme = "light";
-            window.path_to_searchindex_js = "searchindex-c90b689f.js";
+            window.path_to_searchindex_js = "searchindex-5a7dded5.js";
         </script>
         <!-- Start loading toc.js asap -->
-        <script src="toc-80f4c342.js"></script>
+        <script src="toc-8d876478.js"></script>
     </head>
     <body>
     <div id="mdbook-help-container">
@@ -182,12 +182,19 @@
                 <div id="mdbook-content" class="content">
                     <main>
                         <h1 id="aiアシスタントを活用する"><a class="header" href="#aiアシスタントを活用する">AIアシスタントを活用する</a></h1>
-<p>CHIRIMENの使い方やコードについてわからないことがあれば、AIアシスタント（DeepWiki）に質問できます。</p>
+<p>コードの意味がわからない、あるいはエラーの原因がつかめない。
+そんなとき、公式ドキュメントを一から読み返すのは手間がかかります。
+CHIRIMENでは、そうした場面で質問できるAIアシスタント（DeepWiki）を用意しています。</p>
 <h2 id="deepwikiとは"><a class="header" href="#deepwikiとは">DeepWikiとは？</a></h2>
-<p>DeepWiki は、自律型AIソフトウェアエンジニア「Devin」の開発で知られる Cognition Labs 社が提供する、GitHubリポジトリに特化したAI Q&amp;Aプラットフォームです。</p>
-<p>このアシスタントは、CHIRIMENの公式リポジトリ内にあるソースコードやドキュメントをリアルタイムに検索して回答を生成する <strong>RAG（Retrieval-Augmented Generation / 検索拡張生成）</strong> という仕組みを採用しています。そのため、一般的なAIとは異なり、CHIRIMEN固有のライブラリ（WebI2C, WebGPIOなど）やサンプルコードに基づいた的確な回答が可能です。</p>
-<h2 id="質問の仕方"><a class="header" href="#質問の仕方">質問の仕方</a></h2>
-<p>リンクを開いて日本語で質問するだけです。公開リポジトリ向けのオープンな機能であるため、アカウントの登録は不要で、誰でも無料で利用できます。</p>
+<p>DeepWiki は、GitHubリポジトリに特化したAI Q&amp;Aプラットフォームです。
+提供元は、自律型AIソフトウェアエンジニア「Devin」の開発で知られる Cognition Labs 社です。</p>
+<p>ふつうのAIチャットに同じ質問をしても、学習時点の知識にもとづいたそれらしい答えが返ってくるだけで、実際のリポジトリの中身までは踏まえていないことがあります。
+DeepWiki が採用しているのは、質問のたびにCHIRIMENの公式リポジトリ内のソースコードやドキュメントを検索し、その内容をもとに回答を生成する「合成知識ベース (Synthetic Knowledge Base)」、いわゆる「LLM Wiki」と呼ばれる仕組みです。
+この仕組みのおかげで、WebI2CやWebGPIOといったCHIRIMEN固有のライブラリやサンプルコードに基づいた、的確な回答が返ってきます。</p>
+<h2 id="質問方法"><a class="header" href="#質問方法">質問方法</a></h2>
+<p>使い方はシンプルです。
+リンクを開き、日本語で質問を書き込むだけです。
+公開リポジトリ向けに提供されているオープンな機能のため、アカウント登録は不要で、誰でも無料で利用できます。</p>
 <p>👉 <a href="https://deepwiki.com/chirimen-oh/chirimen-deepwiki">CHIRIMENアシスタントに質問する</a></p>
 <p><img src="./imgs/deepwiki.png" alt="Deepwiki Page"></p>
 <h3 id="質問例"><a class="header" href="#質問例">質問例</a></h3>
@@ -196,44 +203,28 @@
 <li>「SHT30で温度を取得するコードを書いて」</li>
 <li>「このエラーの意味を教えて：（エラーメッセージをここに貼り付ける）」</li>
 </ul>
-<p>※ページは英語ですが、質問は日本語でも大丈夫です。</p>
+<p>※質問は日本語で構いません。</p>
 <h2 id="より的確な回答を引き出すためのコツ"><a class="header" href="#より的確な回答を引き出すためのコツ">より的確な回答を引き出すためのコツ</a></h2>
-<p>質問する際は、以下のポイントを意識するとよりスムーズに開発が進みます。</p>
-<ol>
-<li>
-<p><strong>使いたいパーツの型番を正確に伝える</strong></p>
+<p>質問のしかたひとつで、返ってくるコードの精度は変わります。
+次の3点を意識すると、開発がスムーズに進みます。</p>
+<h3 id="1-前提条件の具体化-使いたいパーツの型番を正確に伝える"><a class="header" href="#1-前提条件の具体化-使いたいパーツの型番を正確に伝える">1. 前提条件の具体化: 使いたいパーツの型番を正確に伝える</a></h3>
 <p>漠然と「温度センサー」と聞くよりも、手元にある部品の型番を伝えることで、そのデバイス用のアドレスや設定を含んだコードが返ってきます。</p>
 <ul>
 <li><strong>良い質問:</strong> 「<strong>BME280</strong>から温度と湿度を取得して、コンソールに表示するコードを書いて」</li>
 </ul>
-</li>
-<li>
-<p><strong>既存のサンプルコードをベースにアレンジをお願いする</strong></p>
-<p>チュートリアルにあるコードを自分なりに改造したいときにも便利です。</p>
-<ul>
-<li><strong>良い質問:</strong> 「チュートリアルの <strong><code>hello.js</code> (Lチカのコード)</strong> を元にして、ボタンを押している間だけLEDが光るように書き換えて」</li>
-</ul>
-</li>
-<li>
-<p><strong>実現したい動作の「条件」を具体的にする</strong></p>
+<h3 id="2-実現したい動作の具体化"><a class="header" href="#2-実現したい動作の具体化">2. 実現したい動作の具体化</a></h3>
 <p>AIにお願いする時は、イメージを伝えるよりも「数値」や「条件」を明確にした方が、思い通りのコードが生成されやすくなります。</p>
-<ul>
-<li><strong>良い質問:</strong> 「取得した温度が30度を超えたら、コンソールに警告を出しつつ、GPIO 26に繋いだブザーを1秒間鳴らす処理を追加して」</li>
-</ul>
-</li>
-</ol>
+<p><strong>良い質問:</strong> 「取得した温度が30度を超えたら、コンソールに警告を出しつつ、GPIO 26に繋いだブザーを1秒間鳴らす処理を追加して」</p>
+<h3 id="3-既存のサンプルコードをベースにアレンジ"><a class="header" href="#3-既存のサンプルコードをベースにアレンジ">3. 既存のサンプルコードをベースにアレンジ</a></h3>
+<p>チュートリアルにあるコードを自分なりに改造したいときにも便利です。</p>
+<p><strong>良い質問:</strong> 「チュートリアルの <strong><code>hello.js</code> (Lチカのコード)</strong> を元にして、ボタンを押している間だけLEDが光るように書き換えて」</p>
 <h2 id="-aiを利用する上での注意点"><a class="header" href="#-aiを利用する上での注意点">⚠️ AIを利用する上での注意点</a></h2>
-<p>AIは非常に強力なサポートツールですが、完璧ではありません。うまく活用するために以下の2点に気をつけてください。</p>
-<ol>
-<li>
-<p><strong>AIの回答が常に正しいとは限らない</strong></p>
+<p>AIは強力なサポートツールですが、万能ではありません。
+うまく活用するには、次の2点を心に留めておく必要があります。</p>
+<h3 id="1-aiの回答が常に正しいとは限らない"><a class="header" href="#1-aiの回答が常に正しいとは限らない">1. AIの回答が常に正しいとは限らない</a></h3>
 <p>AIは時折、存在しないコードを提案したり、間違った使い方を教えたりすることがあります。「指示通りにやったのに動かないな」と思ったら、AIの回答を鵜呑みにせず、CHIRIMENの公式チュートリアルやドキュメントを確認してみましょう。</p>
-</li>
-<li>
-<p><strong>ハードウェアの接続は自分の目で確認する</strong></p>
+<h3 id="2-ハードウェアの接続は自分の目で確認する"><a class="header" href="#2-ハードウェアの接続は自分の目で確認する">2. ハードウェアの接続は自分の目で確認する</a></h3>
 <p>AIはコードを書くのは得意ですが、手元の物理的な配線を見ることはできません。GPIOのピン番号（どこに挿すか）や、センサーの電源（3.3Vか5Vか）といったハードウェアに関わる部分は、AIの回答だけを頼りにせず、必ずCHIRIMENのピンアウト図や部品の仕様書を確認してください。</p>
-</li>
-</ol>
 <p><img src="https://chirimen.org/PiZeroWebSerialConsole/wallpaperS.png" alt="Raspberry Pi Pinout"></p>
 
                     </main>

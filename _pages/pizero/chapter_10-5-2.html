@@ -36,10 +36,10 @@
             const path_to_root = "";
             const default_light_theme = "light";
             const default_dark_theme = "light";
-            window.path_to_searchindex_js = "searchindex-c90b689f.js";
+            window.path_to_searchindex_js = "searchindex-5a7dded5.js";
         </script>
         <!-- Start loading toc.js asap -->
-        <script src="toc-80f4c342.js"></script>
+        <script src="toc-8d876478.js"></script>
     </head>
     <body>
     <div id="mdbook-help-container">
@@ -182,21 +182,21 @@
                 <div id="mdbook-content" class="content">
                     <main>
                         <h1 id="1152-i2c-の詳細情報とポイント"><a class="header" href="#1152-i2c-の詳細情報とポイント">11.5.2 I2C の詳細情報とポイント</a></h1>
-<h2 id="参考-i2c-に関する詳細情報"><a class="header" href="#参考-i2c-に関する詳細情報">参考: I2C に関する詳細情報</a></h2>
-<p>I2C に関する詳細は下記をご確認ください。</p>
+<h2 id="i2c-に関する参考資料"><a class="header" href="#i2c-に関する参考資料">I2C に関する参考資料</a></h2>
+<p>I2C の詳細は、次の資料を参照してください。</p>
 <ul>
 <li><a href="https://ja.wikipedia.org/wiki/I2C">I2C</a> - Wikipedia</li>
 <li>I2C バス仕様書 最新版（<a href="https://www.nxp.com/docs/ja/user-guide/UM10204.pdf">日本語</a>、<a href="http://www.nxp.com/documents/user_manual/UM10204.pdf">English</a>）</li>
-<li><a href="http://www.picfun.com/i2cframe.html">I2C の使い方</a>（後閑哲也氏サイト)</li>
+<li><a href="http://www.picfun.com/i2cframe.html">I2C の使い方</a>（後閑哲也氏サイト）</li>
 </ul>
-<h2 id="ポイント"><a class="header" href="#ポイント">ポイント</a></h2>
-<p>I2C の概要として下記を押さえておきましょう。</p>
+<h2 id="i2c-の要点"><a class="header" href="#i2c-の要点">I2C の要点</a></h2>
+<p>I2C の概要として、次の点を押さえておきましょう。</p>
 <ul>
-<li>I2C バスを介して複数のデバイスが繋がる</li>
-<li>I2C デバイスにはマスターとスレーブがある</li>
-<li>I2C ではマスターからスレーブに対して通信要求が行われる</li>
-<li>I2C スレーブは SlaveAddress を持つ</li>
-<li>同じ I2C バスに同じ SlaveAddress のデバイスは繋げない</li>
+<li>I2C バスには複数のデバイスが接続される</li>
+<li>I2C デバイスには<strong>マスター</strong>と<strong>スレーブ</strong>がある</li>
+<li>I2C では、マスターからスレーブへ通信要求が行われる</li>
+<li>I2C スレーブは SlaveAddress（スレーブアドレス）を持つ</li>
+<li>同じ I2C バスに、同じ SlaveAddress のデバイスは接続できない</li>
 </ul>
 
                     </main>
