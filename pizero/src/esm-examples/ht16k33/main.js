@@ -6,40 +6,52 @@
 
 import { requestI2CAccess } from "node-web-i2c";
 import HT16K33 from "@chirimen/ht16k33";
-const sleep = (msec) => new Promise((resolve) => setTimeout(resolve, msec));
+const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
 
-const iconPattern =[
-0,0,1,1,1,1,0,0,
-0,1,0,0,0,0,1,0,
-1,0,1,0,0,1,0,1,
-1,0,0,0,0,0,0,1,
-1,0,1,0,0,1,0,1,
-1,0,0,1,1,0,0,1,
-0,1,0,0,0,0,1,0,
-0,0,1,1,1,1,0,0,
-]; // スマイルマーク
+// スマイルマーク
+const iconPattern = `
+    _ _ # # # # _ _
+    _ # _ _ _ _ # _
+    # _ # _ _ # _ #
+    # _ _ _ _ _ _ #
+    # _ # _ _ # _ #
+    # _ _ # # _ _ #
+    _ # _ _ _ _ # _
+    _ _ # # # # _ _
+  `
+  .replace(/[^#_]/g, "")
+  .split("")
+  .map((c) => c === "#");
 
-const iconPattern2 =[
-1,0,0,0,0,0,0,1,
-0,1,0,0,0,0,1,0,
-0,0,1,1,1,1,0,0,
-0,1,1,1,1,1,1,0,
-1,1,0,1,1,0,1,1,
-0,1,1,1,1,1,1,0,
-0,0,1,0,0,1,0,0,
-1,1,0,0,0,0,1,1
-]; // インベーダー
+// インベーダー
+const iconPattern2 = `
+    # _ _ _ _ _ _ #
+    _ # _ _ _ _ # _
+    _ _ # # # # _ _
+    _ # # # # # # _
+    # # _ # # _ # #
+    _ # # # # # # _
+    _ _ # _ _ # _ _
+    # # _ _ _ _ # #
+  `
+  .replace(/[^#_]/g, "")
+  .split("")
+  .map((c) => c === "#");
 
-const iconPattern3 =[
-0,1,0,0,0,0,1,0,
-1,1,1,1,1,1,1,0,
-1,0,0,1,0,0,1,0,
-1,1,0,1,1,0,1,0,
-1,0,0,1,0,0,1,0,
-1,1,1,1,1,1,1,0,
-0,1,1,1,1,1,1,1,
-0,1,0,1,0,1,0,1
-]; // 犬
+// 犬
+const iconPattern3 = `
+    _ # _ _ _ _ # _
+    # # # # # # # _
+    # _ _ # _ _ # _
+    # # _ # # _ # _
+    # _ _ # _ _ # _
+    # # # # # # # _
+    _ # # # # # # #
+    _ # _ # _ # _ #
+  `
+  .replace(/[^#_]/g, "")
+  .split("")
+  .map((c) => c === "#");
 
 const i2cAccess = await requestI2CAccess();
 const i2cPort = i2cAccess.ports.get(1);
@@ -49,24 +61,24 @@ await ht.init();
 //await ht.set_blink(ht.HT16K33_BLINK_1HZ);
 //await ht.set_brightness(6);
 
-while(true){
-		ht.set_8x8_array(iconPattern);
-		await ht.write_display();
-		await sleep(1000);
+while (true) {
+  ht.set_8x8_array(iconPattern);
+  await ht.write_display();
+  await sleep(1000);
 
-		ht.set_8x8_array(iconPattern2);
-		await ht.write_display();
-		await sleep(1000);
+  ht.set_8x8_array(iconPattern2);
+  await ht.write_display();
+  await sleep(1000);
 
-		ht.set_8x8_array(iconPattern3);
-		await ht.write_display();
-		await sleep(1000);
+  ht.set_8x8_array(iconPattern3);
+  await ht.write_display();
+  await sleep(1000);
 
-		/** LEDを一個づつ設定する関数の使用例
-		for (let i = 0 ; i < 128 ; i++ ){
-			ht.set_led(i, 1);
-		}
-		await ht.write_display();
-		await sleep(1000);
-		**/
+  /** LEDを一個づつ設定する関数の使用例
+	for (let i = 0; i < 128; i++ ){
+		ht.set_led(i, 1);
 	}
+	await ht.write_display();
+	await sleep(1000);
+	**/
+}

@@ -1,5 +1,5 @@
 import { requestGPIOAccess } from "node-web-gpio";
-const sleep = (msec) => new Promise((resolve) => setTimeout(resolve, msec));
+const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
 let portA, portB;
 
 async function init() {

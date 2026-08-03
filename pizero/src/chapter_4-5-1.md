@@ -1,7 +1,7 @@
 # 4.5.1 Lチカのコードを書き換える
-- Lチカのコードを書き換えて、スイッチで動作する様に変更します。
-- 正しく回路を接続し、コードを書き換えたらボタンを押した時に LED やモーターが動作する様になります。
-  - 上手く動作しない方は、コピペで動作を確認してみましょう。
+- Lチカのコードを書き換えて、スイッチで動作するように変更します。
+- 正しく回路を接続してコードを書き換えると、ボタンを押したときに LED やモーターが動作するようになります。
+  - うまく動作しない方は、コピペで動作を確認してみましょう。
 - 複数の関数で変数を使用できるように port 変数を宣言しなおします。
 
 ```js
@@ -49,10 +49,10 @@ function showPort(ev){
 }
 ```
 
-- 全体のソースコードは以下のとおりとなります。
+- 全体のソースコードは以下のとおりです。
 
 ```js
-import {requestGPIOAccess} from "./node_modules/node-web-gpio/dist/index.js"; // WebGPIO を使えるようにするためのライブラリをインポート
+import { requestGPIOAccess } from "node-web-gpio"; // WebGPIO を使えるようにするためのライブラリをインポート
 const sleep = msec => new Promise(resolve => setTimeout(resolve, msec)); // sleep 関数を定義
 let port; // port 変数を複数の関数で使えるように宣言
 
@@ -80,4 +80,4 @@ function showPort(ev){
 
 blink();
 ```
-このコードは CHIRIMEN パネルの ID: **gpio-inout** と同じコードになりますので上手く動作しなかった方は、こちらも併用して確認してみてください
+このコードは、CHIRIMENパネルのID: **gpio-inout** と同じです。うまく動作しなかった場合は、そちらのコードと見比べて確認してください。

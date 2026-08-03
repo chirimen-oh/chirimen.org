@@ -5,7 +5,7 @@ import LTR390 from "@chirimen/ltr390";
 import TSL2591 from "@chirimen/tsl2591";
 import SGP40 from "@chirimen/sgp40";
 
-const sleep = (msec) => new Promise((resolve) => setTimeout(resolve, msec));
+const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
 let sgp40, tsl2591, ltr390, icm20948, bme280;
 
 const i2cAccess = await requestI2CAccess();

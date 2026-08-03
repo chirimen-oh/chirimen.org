@@ -2,7 +2,7 @@
 import { requestGPIOAccess } from "node-web-gpio";
 import { requestI2CAccess } from "node-web-i2c";
 import LTR390 from "@chirimen/ltr390";
-const sleep = (msec) => new Promise((resolve) => setTimeout(resolve, msec));
+const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
 
 let ltr390;
 

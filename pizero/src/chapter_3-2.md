@@ -3,18 +3,18 @@ Raspberry Pi に接続した LED を点滅させるプログラムを書きま�
 
 1. ターミナルウィンドで Raspberry Pi Zero に接続します。（準備のステップ１まで完了した状態）
 2. myAppディレクトリに移動します。
-   * コンソールの右側のファイルマネージャでmyApp⇒移動を選ぶ
-   * このディレクトリが開発環境が設定されているディレクトリです。
-3. ```[Create New Text]```ボタンを押す
-4. 入力欄に```hello.js```と入力
-5. ```[create]```ボタンを押す
-6. JS Editorウィンドが出現
+   * コンソールの右側のファイルマネージャで myApp ⇒ 移動を選びます。
+   * このディレクトリに、開発環境が設定されています。
+3. ```[Create New Text]```ボタンを押します。
+4. 入力欄に```hello.js```と入力します。
+5. ```[create]```ボタンを押します。
+6. JS Editorウィンドが出現します。
 
-以下のプログラムをJS Editorに書き写します ～ コピペ（下記プログラム部分を選択してCTRL+c、JS Editorウィンド上でCTRL+v））
+以下のプログラムを JS Editor に書き写します。下記のプログラム部分を選択して CTRL+c、JS Editor ウィンド上で CTRL+v でコピペしても構いません。
 
 ### Lチカのプログラムソースコード
 ```js
-import {requestGPIOAccess} from "./node_modules/node-web-gpio/dist/index.js"; // WebGPIO を使えるようにするためのライブラリをインポート
+import { requestGPIOAccess } from "node-web-gpio"; // WebGPIO を使えるようにするためのライブラリをインポート
 const sleep = msec => new Promise(resolve => setTimeout(resolve, msec)); // sleep 関数を定義
 
 async function blink() {
@@ -36,6 +36,6 @@ async function blink() {
 blink();
 ```
 
-7. 書き終えたら保存します。(```[Save]ボタン```もしくは ```CTRL+s``` )
-8. ターミナルウィンドの右側 (ファイルマネージャ) に **hello.js** が出現していることを確認します
-9. エディタウィンドを閉じます
+7. 書き終えたら保存します。(```[Save]ボタン```もしくは```CTRL+s```)
+8. ターミナルウィンドの右側 (ファイルマネージャ) に **hello.js** が出現していることを確認します。
+9. エディタウィンドを閉じます。

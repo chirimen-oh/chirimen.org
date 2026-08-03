@@ -2,7 +2,7 @@ import { requestI2CAccess } from "node-web-i2c";
 
 // vl6180x.js から VL6180Xをインポート
 import VL6180X from "@chirimen/vl6180x";
-const sleep = (msec) => new Promise((resolve) => setTimeout(resolve, msec));
+const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
 
 // WebI2Cサービスを取得
 const i2cAccess = await requestI2CAccess();

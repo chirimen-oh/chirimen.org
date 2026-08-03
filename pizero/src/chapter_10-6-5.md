@@ -1,35 +1,41 @@
 # 11.6.5 プログラムの流れ
-## 初期化（受信側、送信側共通の処理
-[詳しくはこちらを参照](https://www.chirimen.org/remote-connection/#使用方法)
+## 初期化（受信側、送信側共通の処理）
+詳しくは[こちら](https://www.chirimen.org/remote-connection/#使用方法)を参照してください。
 
 ```javascript
 import {RelayServer} from "https://www.chirimen.org/remote-connection/js/beta/RelayServer.js";
 var relay = RelayServer("achex", "chirimenSocket" );
 ```
 
-  import文でライブラリRelayServer.jsを読み込んだ後、relayServiceのひとつ**achex**に接続しています。
-  RelayServerの第二引数`("chirimenSocket")`はそのサービスを使うためのトークンですが、**achex**は任意の文字列で利用できてます。
+  import文で、ライブラリRelayServer.jsを読み込みます。
+  続けて、relayServiceのひとつである**achex**に接続します。
+  RelayServerの第二引数`("chirimenSocket")`は、そのサービスを利用するためのトークンです。
+  achexの場合、このトークンには任意の文字列を使えます。
 
-*Node.jsでは第三,第四引数が必要になります (後述)*
+*Node.jsを使う場合は、第三引数と第四引数も必要になります（後述します）。*
 
 ##### チャンネルの作成
 * `channel = await relay.subscribe("chirimenMbitSensors");`
 
-  変数`channel`にRelayServerのチャンネルのインスタンスを登録
-  引数はチャンネル名で、自分で好きな名前を与えられます。
+  変数`channel`に、RelayServerのチャンネルのインスタンスを登録します。
+  引数はチャンネル名で、自分の好きな名前を与えられます。
 
-  受信側と送信側で同じサービス、トークン、チャンネルを指定する必要があります。
+  ただし、受信側と送信側では、同じサービス、トークン、チャンネルを指定しなければなりません。
 
 ##### データの送信
 * `channel.send(data);`
 
-  任意のデータ(data)をrelayServerの指定チャンネルに送信します。
+  任意のデータ（`data`）を、relayServerの指定チャンネルに送信します。
 
-  dataは文字列だけでなく、連想配列(構造化されたデータ、オブジェクト)も送信可能です。
+  送信できるのは文字列だけではありません。
+  連想配列、つまり構造化されたオブジェクトも、そのまま送信できます。
 
 ##### データの受信
 * `channel.onmessage = getMessage;`
-チャンネルにメッセージがポストされた時に起動する関数(コールバック関数)を登録しています。
+
+  チャンネルにメッセージが届いたときに呼び出される関数、すなわちコールバック関数を登録しています。
 
 * `function getMessage(msg)`
-上で登録した関数の第一引数(`msg`)のメンバ変数msg.dataに送信されたメッセージが構造もそのままで届きます。
+
+  この関数の第一引数`msg`のうち、`msg.data`に送信されたメッセージが届きます。
+  届くデータの構造は、送信時のままです。

@@ -1,7 +1,7 @@
 // AS5600(磁気式角度センサ)を使う
 import { requestI2CAccess } from "node-web-i2c";
 import AS5600 from "./as5600.js";
-const sleep = (msec) => new Promise((resolve) => setTimeout(resolve, msec));
+const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
 
 let as5600;
 

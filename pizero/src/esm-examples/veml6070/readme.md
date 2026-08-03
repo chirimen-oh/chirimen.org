@@ -16,7 +16,7 @@ npm i node-web-i2c @chirimen/veml6070
 ```javascript
 import { requestI2CAccess } from "node-web-i2c";
 import VEML6070 from "@chirimen/veml6070";
-const sleep = (msec) => new Promise((resolve) => setTimeout(resolve, msec));
+const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
 
 const i2cAccess = await requestI2CAccess();
 const i2cPort = i2cAccess.ports.get(1);

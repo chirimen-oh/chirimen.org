@@ -1,6 +1,6 @@
 import { requestI2CAccess } from "node-web-i2c";
 import GroveTouch from "@chirimen/grove-touch";
-const sleep = (msec) => new Promise((resolve) => setTimeout(resolve, msec));
+const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
 
 const i2cAccess = await requestI2CAccess();
 const i2cPort = i2cAccess.ports.get(1);

@@ -1,6 +1,6 @@
-# 5.3 ADT7410編
+# 5.3 I2Cセンサーを動作させる（ADT7410編）
 温度センサーADT7410を使います。
-もし、SHT30を使用する場合は、「[6. IoTを試す](./chapter_6.md)」の章まで読み飛ばしてください。
+SHT30を使用する場合は、「[6. IoTを試す](./chapter_6.md)」の章まで読み飛ばしてください。
 
 * ターミナルウィンドの```[CHIRIMEN Panel]```ボタンを押す
 * 出現したCHIRIMEN Panelの```[Get Examples]```ボタンを押す
@@ -15,7 +15,7 @@
     * ソースコードを見てみましょう
     * 今は編集不要ですが、サンプルをベースに応用プログラムを作るときには編集しましょう。
 
-### I2Cセンサーが認識されていることを確認する
+### I2Cセンサー（ADT7410）の認識を確認する
 
 * CHIRIMEN Panelの```[i2c detect]```ボタンを押すと、[ADT7410のI2Cアドレス](https://akizukidenshi.com/download/ds/akizuki/AE-ADT7410_aw.pdf)　0x**48**が表示されていればうまく接続されています。
   * [i2c detectとは](https://tutorial.chirimen.org/ty51822r3/i2cdetect)
@@ -32,7 +32,7 @@
 70: -- -- -- -- -- -- -- --                       
 </pre>
 
-### 実行する
+### サンプルコードを実行する
 
 * ターミナルウィンドのコンソールのプロンプトが```pi@raspberrypi:~/myApp$```となっていることを確認
 * ターミナルウィンドのコンソールに、```node main-adt7410.js``` [ENTER] と入力して実行。

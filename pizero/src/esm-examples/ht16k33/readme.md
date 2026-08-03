@@ -15,10 +15,8 @@ Note: 3.3V電源でも、あまり明るくはなりませんが動作するよ�
 - Adafruit Mini 8x8 LED Matrix w/I2C Backpack
   - https://www.switch-science.com/products/1493
   - https://www.adafruit.com/product/870
-
 - keyestudio Ks0064 I2C 8x8 LED Matrix HT16K33
   - https://ja.aliexpress.com/item/32886174149.html
-
 - サンプルコード [./main.js](./main.js)
 
 ### Aitendo製 8x8マトリクスLEDモジュール
@@ -29,9 +27,14 @@ Adafruit、keystudioとマトリクスの結線が異なりますが、設定変
   - https://www.aitendo.com/product/12822
   - https://www.aitendo.com/product/12850
   - https://www.aitendo.com/product/12823
-
 - サンプルコード [./main-ht16k33_8x8aitendo.js](./main-ht16k33_8x8aitendo.js)
   - aitendo製モジュール用の設定変更関数を呼び出して使います。
+
+### Aitendo製 16x8マトリクスLEDモジュール
+
+- 対応品：aitendo
+  - https://www.aitendo.com/product/16658
+- サンプルコード [./main-ht16k33_16x8.js](./main-ht16k33_16x8.js)
 
 ### 4桁7セグメントLEDモジュール
 
@@ -41,7 +44,6 @@ Adafruit、keystudioとマトリクスの結線が異なりますが、設定変
   - https://www.aitendo.com/product/14540
   - https://www.aitendo.com/product/18690
   - https://www.aitendo.com/product/20785
-
 - サンプルコード [./main-ht16k33_7seg.js](./main-ht16k33_7seg.js)
 
 ### 4桁 14セグメントLEDモジュール
@@ -51,7 +53,6 @@ Adafruit、keystudioとマトリクスの結線が異なりますが、設定変
 - 対応品：aitendo
   - https://www.aitendo.com/product/20812
   - https://www.aitendo.com/product/20811
-
 - サンプルコード [./main-ht16k33_14seg.js](./main-ht16k33_14seg.js)
 
 ### その他
@@ -68,7 +69,7 @@ npm i node-web-i2c @chirimen/ht16k33
 
 同ディレクトリの [main.js](main.js) と同じ内容です。
 
-```javascript
+```js
 // Adafruit Mini 8x8 LED Matrix w/I2C Backpack
 // https://www.switch-science.com/products/1493 , https://www.adafruit.com/product/870
 // or
@@ -77,25 +78,52 @@ npm i node-web-i2c @chirimen/ht16k33
 
 import { requestI2CAccess } from "node-web-i2c";
 import HT16K33 from "@chirimen/ht16k33";
-const sleep = (msec) => new Promise((resolve) => setTimeout(resolve, msec));
+const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
 
-const iconPattern = [
-  0, 0, 1, 1, 1, 1, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 1, 0, 0, 1, 0, 1, 1, 0,
-  0, 0, 0, 0, 0, 1, 1, 0, 1, 0, 0, 1, 0, 1, 1, 0, 0, 1, 1, 0, 0, 1, 0, 1, 0, 0,
-  0, 0, 1, 0, 0, 0, 1, 1, 1, 1, 0, 0,
-]; // スマイルマーク
+// スマイルマーク
+const iconPattern = `
+    _ _ # # # # _ _
+    _ # _ _ _ _ # _
+    # _ # _ _ # _ #
+    # _ _ _ _ _ _ #
+    # _ # _ _ # _ #
+    # _ _ # # _ _ #
+    _ # _ _ _ _ # _
+    _ _ # # # # _ _
+  `
+  .replace(/[^#_]/g, "")
+  .split("")
+  .map((c) => c === "#");
 
-const iconPattern2 = [
-  1, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1, 1, 0, 0, 0, 1,
-  1, 1, 1, 1, 1, 0, 1, 1, 0, 1, 1, 0, 1, 1, 0, 1, 1, 1, 1, 1, 1, 0, 0, 0, 1, 0,
-  0, 1, 0, 0, 1, 1, 0, 0, 0, 0, 1, 1,
-]; // インベーダー
+// インベーダー
+const iconPattern2 = `
+    # _ _ _ _ _ _ #
+    _ # _ _ _ _ # _
+    _ _ # # # # _ _
+    _ # # # # # # _
+    # # _ # # _ # #
+    _ # # # # # # _
+    _ _ # _ _ # _ _
+    # # _ _ _ _ # #
+  `
+  .replace(/[^#_]/g, "")
+  .split("")
+  .map((c) => c === "#");
 
-const iconPattern3 = [
-  0, 1, 0, 0, 0, 0, 1, 0, 1, 1, 1, 1, 1, 1, 1, 0, 1, 0, 0, 1, 0, 0, 1, 0, 1, 1,
-  0, 1, 1, 0, 1, 0, 1, 0, 0, 1, 0, 0, 1, 0, 1, 1, 1, 1, 1, 1, 1, 0, 0, 1, 1, 1,
-  1, 1, 1, 1, 0, 1, 0, 1, 0, 1, 0, 1,
-]; // 犬
+// 犬
+const iconPattern3 = `
+    _ # _ _ _ _ # _
+    # # # # # # # _
+    # _ _ # _ _ # _
+    # # _ # # _ # _
+    # _ _ # _ _ # _
+    # # # # # # # _
+    _ # # # # # # #
+    _ # _ # _ # _ #
+  `
+  .replace(/[^#_]/g, "")
+  .split("")
+  .map((c) => c === "#");
 
 const i2cAccess = await requestI2CAccess();
 const i2cPort = i2cAccess.ports.get(1);
@@ -119,11 +147,11 @@ while (true) {
   await sleep(1000);
 
   /** LEDを一個づつ設定する関数の使用例
-		for (let i = 0 ; i < 128 ; i++ ){
-			ht.set_led(i, 1);
-		}
-		await ht.write_display();
-		await sleep(1000);
-		**/
+	for (let i = 0 ; i < 128 ; i++ ){
+		ht.set_led(i, 1);
+	}
+	await ht.write_display();
+	await sleep(1000);
+	**/
 }
 ```

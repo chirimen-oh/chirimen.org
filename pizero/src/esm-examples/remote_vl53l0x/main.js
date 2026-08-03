@@ -2,7 +2,7 @@
 // for CHIRIMEN with nodejs
 import { requestI2CAccess } from "node-web-i2c";
 import VL53L0X from "@chirimen/vl53l0x";
-const sleep = (msec) => new Promise((resolve) => setTimeout(resolve, msec));
+const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
 import nodeWebSocketLib from "websocket"; // https://www.npmjs.com/package/websocket
 import { RelayServer } from "./RelayServer.js";
 

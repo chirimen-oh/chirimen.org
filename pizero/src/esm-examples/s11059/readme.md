@@ -16,7 +16,7 @@ npm i node-web-i2c @chirimen/s11059
 ```javascript
 import { requestI2CAccess } from "node-web-i2c";
 import S11059 from "@chirimen/s11059";
-const sleep = (msec) => new Promise((resolve) => setTimeout(resolve, msec));
+const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
 
 const i2cAccess = await requestI2CAccess();
 const i2cPort = i2cAccess.ports.get(1);

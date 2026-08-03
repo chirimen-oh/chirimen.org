@@ -1,6 +1,8 @@
 # 11.3 JavaScript
-標準化されたプログラミング言語の一種で、ウェブブラウザが代表的な実行環境です(プログラムコードを解釈して動作させるシステム)。CHIRIMENでもRaspberry Pi及びmicro:bit版はウェブブラウザを実行環境として使用します。Raspberry Pi Zero版はNode.jsを実行環境として使っています。
-別名としてECMA Scriptと呼ばれることもあります。
+JavaScript は標準化されたプログラミング言語であり、ウェブブラウザを代表的な**実行環境**（プログラムコードを解釈して動作させるシステムを指します）とします。
+CHIRIMEN では、Raspberry Pi 版と micro:bit 版がウェブブラウザを実行環境として使用します。
+一方、Raspberry Pi Zero 版は Node.js を実行環境として使用します。
+別名として ECMAScript と呼ばれることもあります。
 * [Mozilla Developer Networkの解説](https://developer.mozilla.org/ja/docs/Web/JavaScript)
 
 ## JavaScript の基礎

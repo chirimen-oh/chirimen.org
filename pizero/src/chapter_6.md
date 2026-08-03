@@ -1,10 +1,10 @@
 # 6. IoTを試す
 ![system configuration](imgs/IoTsystemConf.png)
-IoT は、制御されるデバイス（上図では **CHIRIMEN PiZero W** ）と、利用者端末（上図では **WebApp PC-side** ）に加えて、これらの間でデータを中継するサーバ（**クラウド**）が必要になります。
-今回は Web標準技術である WebSocketプロトコルを中継するサーバを用いて LED を備えた CHIRIMENデバイスと、スマホや PC の WebApp を繋いだ IoTシステムを作ります。
+IoT には、制御されるデバイス（上図の **CHIRIMEN PiZero W**）と利用者端末（上図の **WebApp PC-side**）に加えて、両者の間でデータを中継するサーバ（**クラウド**）が必要です。
+今回は、Web標準技術である WebSocketプロトコルを中継するサーバを使い、LED を備えた CHIRIMENデバイスとスマホや PC の WebApp をつないだ IoTシステムを作ります。
 
-Note: [モーター制御の回路](./chapter_4-2.md)を組めば、そのまま遠隔モーターコントロールができます
+Note: [モーター制御の回路](./chapter_4-2.md)を組めば、そのまま遠隔モーターコントロールができます。
 
-用語の詳細な説明は共通資料で解説を行っていますので、興味のある方はそちらをご確認ください。
+用語の詳細な説明は共通資料に記載していますので、興味のある方はご確認ください。
 - [IoT](./chapter_10-6.md)
 - [WebSoeketとRelayServer](./chapter_10-6.md)

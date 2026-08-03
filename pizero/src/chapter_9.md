@@ -1,12 +1,12 @@
 # 10. 付録
 ## 予備知識
-CHIRIMEN for Raspberry Pi を利用するに際して、知っておくと良い予備知識やツールの使い方が学べるドキュメントです。
+CHIRIMEN for Raspberry Pi を利用する際に役立つ予備知識と、周辺ツールの使い方をまとめたドキュメント集です。
 
 - [GitHub ハンズオン](https://github.com/webiotmakers/github-handson)
-  - GitHub の基本的な使い方の分かるハンズオン資料です。
+  - GitHub の基本的な使い方を学べるハンズオン資料です。
 - [CodeSandbox ガイド](https://csb-jp.github.io/)
-  - ブラウザ上で開発する CodeSandbox の使い方を確認しましょう。
+  - ブラウザ上で開発できる CodeSandbox の使い方を解説しています。
 - [JavaScript 初学者向け資料集](/js/)
-  - JavaScript 1 Day 講習資料、JavaScript 本格入門書、チートシートなどはこちら
+  - JavaScript 1 Day 講習資料や JavaScript 本格入門書、チートシートなどをまとめています。
 
-その他、電子工作など一般的な知識は [予備知識・資料集](../reference.md) や、[共通資料集](../chirimenGeneric/)を参照してください。
+このほか、電子工作など一般的な知識については [予備知識・資料集](../reference.md) や [共通資料集](../chirimenGeneric/) を参照してください。

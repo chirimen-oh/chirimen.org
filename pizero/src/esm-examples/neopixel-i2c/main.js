@@ -1,6 +1,6 @@
 import { requestI2CAccess } from "node-web-i2c";
 import NPIX from "@chirimen/neopixel-i2c";
-const sleep = (msec) => new Promise((resolve) => setTimeout(resolve, msec));
+const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
 const neoPixels = 7; // LED個数
 
 async function nPixTest1(npix) {

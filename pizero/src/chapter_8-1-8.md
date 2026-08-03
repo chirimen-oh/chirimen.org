@@ -1,9 +1,9 @@
 # 9.1.8 RaspberryPi のカメラに関する注意
 <img src="./imgs/PiZero_camera1.jpg" width=300>　<img src="./imgs/PiZero_camera2.jpg" width=300>
 
-- 接続端子・フラットケーブルは壊れやすい
+- 接続端子とフラットケーブルは壊れやすい
   - 無理に引っ張らない
-  - 折り曲げない様に注意
+  - 折り曲げないように注意する
 
 > **Note**\
 > 利用可能なカメラモジュールは v1、v3 です。
