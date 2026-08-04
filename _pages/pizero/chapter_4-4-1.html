@@ -36,7 +36,7 @@
             const path_to_root = "";
             const default_light_theme = "light";
             const default_dark_theme = "light";
-            window.path_to_searchindex_js = "searchindex-5a7dded5.js";
+            window.path_to_searchindex_js = "searchindex-f5ddfa88.js";
         </script>
         <!-- Start loading toc.js asap -->
         <script src="toc-8d876478.js"></script>
@@ -185,23 +185,18 @@
 <p>値の取得や入力のための基本的な関数は、呼び出した瞬間の値を一回だけ返すものがほとんどです。値そのものではなく値の変化を捉えたいなら、この一回きりの読み取りを無限ループの中で定期的に繰り返す必要があります。この繰り返しの手法を一般に<strong>ポーリング</strong>と呼びます（<a href="https://ja.wikipedia.org/wiki/%E3%83%9D%E3%83%BC%E3%83%AA%E3%83%B3%E3%82%B0_(%E6%83%85%E5%A0%B1)">wikipedia:ポーリング</a>）。</p>
 <p>ターミナルウィンドの右側のファイルマネージャでmain-gpio-polling.js⇒表示 を選び、ソースコードを読んでみましょう</p>
 <pre><code class="language-js">import { requestGPIOAccess } from "node-web-gpio";
-const sleep = msec =&gt; new Promise(resolve =&gt; setTimeout(resolve, msec));
+const sleep = (ms) =&gt; new Promise((resolve) =&gt; setTimeout(resolve, ms));
 
-async function switchCheck() {
-  const gpioAccess = await requestGPIOAccess();
-  const port = gpioAccess.ports.get(5);
+const gpioAccess = await requestGPIOAccess();
+const port = gpioAccess.ports.get(5);
 
-  await port.export("in");
+await port.export("in");
 
-  for(;;){
-    const v = await port.read();
-	console.log(v);
-    await sleep(300);
-  }
-
+while (true) {
+  const v = await port.read();
+  console.log(v);
+  await sleep(300);
 }
-
-switchCheck();
 </code></pre>
 <p>GPIO ポートの初期化は、Lチカの <a href="./chapter_3-4.html">3.4 コードを読む</a> と同じ手順です。<code>port.export("in")</code> で GPIO ポートを「入力モード」に初期化しており、この初期化は非同期処理なので <code>await</code> で完了を待つ必要があります。入力モードは、GPIO ポートにかかる電圧を Web アプリ側から読み取りたいときに使います。</p>
 <p>読み取り自体は <code>port.read()</code> が一回分の値を返すだけの単純な関数です。しかしスイッチが押されたかどうかを監視するには、一回読んで終わりにはできません。そこで <code>await port.read()</code> を無限ループの中に置き、300 ms おきに読み直すことでポーリングのルーチンを組んでいます。</p>

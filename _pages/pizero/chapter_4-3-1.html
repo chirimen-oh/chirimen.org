@@ -36,7 +36,7 @@
             const path_to_root = "";
             const default_light_theme = "light";
             const default_dark_theme = "light";
-            window.path_to_searchindex_js = "searchindex-5a7dded5.js";
+            window.path_to_searchindex_js = "searchindex-f5ddfa88.js";
         </script>
         <!-- Start loading toc.js asap -->
         <script src="toc-8d876478.js"></script>
@@ -187,22 +187,16 @@
 <li>GPIO ポートの値が変化するたびに、指定した関数が呼び出されるコードです。</li>
 </ul>
 <pre><code class="language-js">import { requestGPIOAccess } from "node-web-gpio";
-const sleep = msec =&gt; new Promise(resolve =&gt; setTimeout(resolve, msec));
-
-async function switchCheck() {
-  const gpioAccess = await requestGPIOAccess();
-  const port = gpioAccess.ports.get(5);
-
-  await port.export("in");
-  port.onchange = showPort;
-
-}
 
 function showPort(ev){
 	console.log(ev.value);
 }
 
-switchCheck();
+const gpioAccess = await requestGPIOAccess();
+const port = gpioAccess.ports.get(5);
+
+await port.export("in");
+port.onchange = showPort;
 </code></pre>
 <p>GPIO ポートの初期化は、Lチカの <a href="./chapter_3-4.html">3.4 コードを読む</a> で見た手順と同じです。ここでは 5 番ポートにアクセスするためのオブジェクトを取得し、GPIO <strong>入力</strong>機能を使って 5 番を「入力設定」にしています。</p>
 <p>これだけでは、値を読み取ることはできても変化には気づけません。そこで使うのが <code>port.onchange</code> です。入力モードの GPIO ポートに「状態が変化したときに呼び出す関数」を設定する機能で、このように呼び出される関数を<strong>コールバック関数</strong>と呼びます。値を都度読みに行く <code>port.read()</code> のコードと違って<a href="./chapter_4-4.html">ポーリング処理</a>を自分で書く必要がなく、コードは簡潔になります。ただし呼ばれるのは値が変化した瞬間だけなので、現在の値をいつでも取得したい用途にはあまり向きません。</p>

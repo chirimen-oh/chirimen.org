@@ -36,7 +36,7 @@
             const path_to_root = "";
             const default_light_theme = "light";
             const default_dark_theme = "light";
-            window.path_to_searchindex_js = "searchindex-5a7dded5.js";
+            window.path_to_searchindex_js = "searchindex-f5ddfa88.js";
         </script>
         <!-- Start loading toc.js asap -->
         <script src="toc-8d876478.js"></script>
@@ -184,8 +184,13 @@
                         <h1 id="1167-nodejsでの利用"><a class="header" href="#1167-nodejsでの利用">11.6.7 Node.jsでの利用</a></h1>
 <p>ブラウザ向けの実装と比べて、初期化の手順が異なります。</p>
 <pre><code class="language-javascript">import nodeWebSocketLib from "websocket";
-import {RelayServer} from "./RelayServer.js";
-var relay = RelayServer("achex", "chirimenSocket" , nodeWebSocketLib, "https://chirimen.org");
+import { RelayServer } from "./RelayServer.js";
+const relay = RelayServer(
+  "achex",
+  "chirimenSocket",
+  nodeWebSocketLib,
+  "https://chirimen.org",
+);
 </code></pre>
 <ul>
 <li>Node.js で webSocket を使うには websocket ライブラリが必要なため、これを読み込みます</li>

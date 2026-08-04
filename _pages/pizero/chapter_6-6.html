@@ -36,7 +36,7 @@
             const path_to_root = "";
             const default_light_theme = "light";
             const default_dark_theme = "light";
-            window.path_to_searchindex_js = "searchindex-5a7dded5.js";
+            window.path_to_searchindex_js = "searchindex-f5ddfa88.js";
         </script>
         <!-- Start loading toc.js asap -->
         <script src="toc-8d876478.js"></script>
@@ -187,34 +187,35 @@
 <li>CodeSandboxで開いている <code>PC.js</code> を見てみましょう。</li>
 </ul>
 <pre><code class="language-js">// Remote Example4 - controller
-import {RelayServer} from "https://www.chirimen.org/remote-connection/js/beta/RelayServer.js";
+import { RelayServer } from "https://www.chirimen.org/remote-connection/js/beta/RelayServer.js";
 
 window.OnLED = OnLED;
 window.OffLED = OffLED;
 
-var channel;
-onload = async function(){
-	// webSocketリレーの初期化
-	var relay = RelayServer("chirimentest", "chirimenSocket" );
-	channel = await relay.subscribe("chirimenLED");
-	messageDiv.innerText="web socketリレーサービスに接続しました";
-	channel.onmessage = getMessage;
+let channel;
+onload = async function () {
+  // webSocketリレーの初期化
+  const relay = RelayServer("chirimentest", "chirimenSocket");
+  channel = await relay.subscribe("chirimenLED");
+  messageDiv.innerText = "web socketリレーサービスに接続しました";
+  channel.onmessage = getMessage;
+};
+
+// メッセージを受信したときに起動する関数
+function getMessage(msg) {
+  messageDiv.innerText = msg.data;
 }
 
-function getMessage(msg){ // メッセージを受信したときに起動する関数
-	messageDiv.innerText = msg.data;
+function OnLED() {
+  channel.send("LED ON");
 }
-
-function OnLED(){ // LED ON
-	channel.send("LED ON");
-}
-function OffLED(){ // LED OFF
-	channel.send("LED OFF");
+function OffLED() {
+  channel.send("LED OFF");
 }
 </code></pre>
 <p>さきほど読んだPiZero側のコードは、メッセージが届くのをひたすら待つだけでした。では、そのメッセージは誰が、どうやって送っているのでしょうか。答えはこのPC側のコードにあります。</p>
 <p>冒頭のimport文を見ると、読み込んでいるのは同じ <code>relayServer.js</code> ですが、指定しているのはローカルのファイルパスではなくURLです。</p>
-<pre><code class="language-js">import {RelayServer} from "https://www.chirimen.org/remote-connection/js/beta/RelayServer.js";
+<pre><code class="language-js">import { RelayServer } from "https://www.chirimen.org/remote-connection/js/beta/RelayServer.js";
 </code></pre>
 <p>これは<a href="./chapter_10-3-1.html">JavaScript Module</a>の仕様に基づいた読み込み方で、ネットワーク越しに公開されているライブラリもそのままimportできます。</p>
 <p><a href="../chirimenGeneric/#relayserverjs">relayServer.js</a>の役割はPiZero側と同じく<a href="./chapter_10-6.html">初期化</a>ですが、そのあとの動きは逆です。PiZero側はメッセージの受信をきっかけに動いていましたが、PC側は <code>OnLED</code> と <code>OffLED</code> という2つの関数を通じて<a href="./chapter_10-6.html">送信処理</a>を行います。この2つはUI(ボタン)に設置したコールバックとして呼ばれ、呼ばれるたびに <code>"LED ON"</code> または <code>"LED OFF"</code> という文字列を送り出します。</p>

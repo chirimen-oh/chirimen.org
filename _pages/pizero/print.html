@@ -37,7 +37,7 @@
             const path_to_root = "";
             const default_light_theme = "light";
             const default_dark_theme = "light";
-            window.path_to_searchindex_js = "searchindex-5a7dded5.js";
+            window.path_to_searchindex_js = "searchindex-f5ddfa88.js";
         </script>
         <!-- Start loading toc.js asap -->
         <script src="toc-8d876478.js"></script>
@@ -708,25 +708,21 @@
 <p>以下のプログラムを JS Editor に書き写します。下記のプログラム部分を選択して CTRL+c、JS Editor ウィンド上で CTRL+v でコピペしても構いません。</p>
 <h3 id="lチカのプログラムソースコード"><a class="header" href="#lチカのプログラムソースコード">Lチカのプログラムソースコード</a></h3>
 <pre><code class="language-js">import { requestGPIOAccess } from "node-web-gpio"; // WebGPIO を使えるようにするためのライブラリをインポート
-const sleep = msec =&gt; new Promise(resolve =&gt; setTimeout(resolve, msec)); // sleep 関数を定義
+const sleep = (ms) =&gt; new Promise((resolve) =&gt; setTimeout(resolve, ms)); // sleep 関数を定義
 
-async function blink() {
-  const gpioAccess = await requestGPIOAccess(); // GPIO を操作する 
-  const port = gpioAccess.ports.get(26); // 26 番ポートを操作する
+const gpioAccess = await requestGPIOAccess(); // GPIO を操作する
+const port = gpioAccess.ports.get(26); // 26 番ポートを操作する
 
-  await port.export("out"); // ポートを出力モードに設定
+await port.export("out"); // ポートを出力モードに設定
 
-  // 無限ループ
-  for (;;) {
-    // 1秒間隔で LED が点滅します
-    await port.write(1); // LEDを点灯
-    await sleep(1000);   // 1000 ms (1秒) 待機
-    await port.write(0); // LEDを消灯
-    await sleep(1000);   // 1000 ms (1秒) 待機
-  }
+// 無限ループ
+while (true) {
+  // 1秒間隔で LED が点滅します
+  await port.write(1); // LEDを点灯
+  await sleep(1000); // 1000 ms (1秒) 待機
+  await port.write(0); // LEDを消灯
+  await sleep(1000); // 1000 ms (1秒) 待機
 }
-
-blink();
 </code></pre>
 <ol start="7">
 <li>書き終えたら保存します。(<code>[Save]ボタン</code>もしくは<code>CTRL+s</code>)</li>
@@ -753,81 +749,45 @@ blink();
 </ol>
 <div style="break-before: page; page-break-before: always;"></div>
 <h1 id="34-コードを読む"><a class="header" href="#34-コードを読む">3.4 コードを読む</a></h1>
-<ul>
-<li>
-<p>前提：CHIRIMEN Raspberry Pi Zero は Node.js をプログラム実行環境（インタープリタ）として使っています。</p>
-</li>
-<li>
-<p>Raspberry Pi Zero 版では、プログラムの起点は自分が書いた JavaScript コードそのものになります。</p>
-</li>
-<li>
-<p>ブラウザの代わりに、<a href="https://ja.wikipedia.org/wiki/Node.js">Node.js</a> という JavaScript コードだけを解釈するソフト（JavaScript <a href="https://ja.wikipedia.org/wiki/%E3%82%A4%E3%83%B3%E3%82%BF%E3%83%97%E3%83%AA%E3%82%BF">インタープリタ</a>）にコードを読み込ませて実行します。</p>
-</li>
-<li>
+<p>前提：CHIRIMEN Raspberry Pi Zero は Node.js をプログラム実行環境（インタープリタ）として使っています。
+Raspberry Pi Zero 版では、プログラムの起点は自分が書いた JavaScript コードそのものになります。
+ブラウザの代わりに、<a href="https://ja.wikipedia.org/wiki/Node.js">Node.js</a> という JavaScript コードだけを解釈するソフト（JavaScript <a href="https://ja.wikipedia.org/wiki/%E3%82%A4%E3%83%B3%E3%82%BF%E3%83%97%E3%83%AA%E3%82%BF">インタープリタ</a>）にコードを読み込ませて実行します。</p>
 <p>ターミナルウィンドの右側のファイルマネージャで<code>hello.js</code> ⇒ 表示 を選び、ソースコードを読んでみましょう</p>
-</li>
-</ul>
 <pre><code class="language-js">import { requestGPIOAccess } from "node-web-gpio"; // WebGPIO を使えるようにするためのライブラリをインポート
-const sleep = msec =&gt; new Promise(resolve =&gt; setTimeout(resolve, msec)); // sleep 関数を定義
+const sleep = (ms) =&gt; new Promise((resolve) =&gt; setTimeout(resolve, ms)); // sleep 関数を定義
 
-async function blink() {
-  const gpioAccess = await requestGPIOAccess(); // GPIO を操作する 
-  const port = gpioAccess.ports.get(26); // 26 番ポートを操作する
+const gpioAccess = await requestGPIOAccess(); // GPIO を操作する
+const port = gpioAccess.ports.get(26); // 26 番ポートを操作する
 
-  await port.export("out"); // ポートを出力モードに設定
+await port.export("out"); // ポートを出力モードに設定
 
-  // 無限ループ
-  for (;;) {
-    // 1秒間隔で LED が点滅します
-    await port.write(1); // LEDを点灯
-    await sleep(1000);   // 1000 ms (1秒) 待機
-    await port.write(0); // LEDを消灯
-    await sleep(1000);   // 1000 ms (1秒) 待機
-  }
+// 無限ループ
+while (true) {
+  // 1秒間隔で LED が点滅します
+  await port.write(1); // LEDを点灯
+  await sleep(1000); // 1000 ms (1秒) 待機
+  await port.write(0); // LEDを消灯
+  await sleep(1000); // 1000 ms (1秒) 待機
 }
-
-blink();
 </code></pre>
-<ul>
-<li>
 <p><strong>1行目：WebGPIOライブラリを読み込み</strong> (<a href="#1131-javascriptコードとライブラリの読み込み">JavaScript Module</a>仕様に従って)</p>
 <pre><code class="language-js">import { requestGPIOAccess } from "node-web-gpio";
 </code></pre>
-<ul>
-<li><a href="#1131-javascriptコードとライブラリの読み込み">JavaScript module</a> の仕組みで WebGPIO ライブラリを読み込んでいます。これで Web GPIO API が使えるようになりました。</li>
-</ul>
-</li>
-<li>
-<p><strong>5行目：GPIOポートの初期化処理</strong></p>
+<p><a href="#1131-javascriptコードとライブラリの読み込み">JavaScript module</a> の仕組みで WebGPIO ライブラリを読み込んでいます。これで Web GPIO API が使えるようになりました。</p>
+<p><strong>4行目：GPIOポートの初期化処理</strong></p>
 <pre><code class="language-js">const gpioAccess = await requestGPIOAccess();
 </code></pre>
-<ul>
-<li>このファイルで最初に実行されるのが <code>await requestGPIOAccess()</code> です。<a href="http://browserobo.github.io/WebGPIO">Web GPIO API</a> の関数で、GPIO にアクセスするためのインタフェース <code>gpioAccess</code> を取得しています。</li>
-</ul>
-</li>
-</ul>
-<p><strong>関数の呼び出しに <code>await</code> 接頭詞が付いていることに注目してください。</strong> <code>requestGPIOAccess()</code> は非同期関数で、GPIO への準備が整うまで処理を待つ必要があります。<code>await</code> を使うコードを含む関数は、<code>blink()</code> のように <code>async</code> 接頭詞付きの非同期関数として定義しなければなりません。</p>
-<ul>
-<li>
-<p><strong>6〜8行目：GPIOPortの出力処理</strong></p>
+<p>このファイルで最初に実行されるのが <code>await requestGPIOAccess()</code> です。<a href="http://browserobo.github.io/WebGPIO">Web GPIO API</a> の関数で、GPIO にアクセスするためのインタフェース <code>gpioAccess</code> を取得しています。</p>
+<p><strong>関数の呼び出しに <code>await</code> 接頭詞が付いていることに注目してください。</strong> <code>requestGPIOAccess()</code> は非同期関数で、GPIO への準備が整うまで処理を待つ必要があります。通常、<code>await</code> を使うコードは <code>async</code> 接頭詞付きの関数として定義しなければなりませんが、<a href="#1131-javascriptコードとライブラリの読み込み">JavaScript module</a> のトップレベルに限っては例外です。モジュールの最上位では <code>async</code> 関数で包まなくても <code>await</code> をそのまま書けます。これを<strong>トップレベル await</strong> と呼び、<code>hello.js</code> 自体がモジュールなので、ファイル冒頭からいきなり <code>await requestGPIOAccess()</code> と書けています。</p>
+<p><strong>5〜7行目：GPIOPortの出力処理</strong></p>
 <pre><code class="language-js">const port = gpioAccess.ports.get(26);
 </code></pre>
-<ul>
-<li>GPIO の<strong>出力</strong>機能を使う準備として、<code>gpioAccess.ports.get(26)</code> で GPIO の 26 番ポートにアクセスするためのオブジェクトを取得しています。</li>
-</ul>
+<p>GPIO の<strong>出力</strong>機能を使う準備として、<code>gpioAccess.ports.get(26)</code> で GPIO の 26 番ポートにアクセスするためのオブジェクトを取得しています。</p>
 <pre><code class="language-js">await port.export("out");
 </code></pre>
-<ul>
-<li>続いて <code>await port.export("out")</code> で GPIO の 26 番を「出力設定」にしています。これにより LED への電圧の切り替えが可能になります。</li>
-</ul>
-</li>
-<li>
-<p><strong>11行目以降：無限ループ部分</strong></p>
-<ul>
-<li>ループの中身は、電圧の切り替えとその合間の待機の繰り返しにすぎません。<code>await port.write(1)</code> と <code>await port.write(0)</code> を交互に呼び出し、GPIO 26 番に加える電圧を 3.3V → 0V → 3.3V → 0V → … と切り替えています。切り替えの間隔を作っているのが <code>await sleep(1000)</code> で、1000 ms (1 秒) が経つまで次の書き込みを待たせています。</li>
-</ul>
-</li>
-</ul>
+<p>続いて <code>await port.export("out")</code> で GPIO の 26 番を「出力設定」にしています。これにより LED への電圧の切り替えが可能になります。</p>
+<p><strong>10行目以降：無限ループ部分</strong></p>
+<p>ループの中身は、電圧の切り替えとその合間の待機の繰り返しにすぎません。<code>await port.write(1)</code> と <code>await port.write(0)</code> を交互に呼び出し、GPIO 26 番に加える電圧を 3.3V → 0V → 3.3V → 0V → … と切り替えています。切り替えの間隔を作っているのが <code>await sleep(1000)</code> で、1000 ms (1 秒) が経つまで次の書き込みを待たせています。</p>
 <div style="break-before: page; page-break-before: always;"></div>
 <h1 id="4-gpioを試す"><a class="header" href="#4-gpioを試す">4. GPIOを試す</a></h1>
 <p>Lチカが無事に動いたら、IoT開発の第一歩を踏み出したことになります。次は LED を光らせる以外のセンサーやアクチュエーターを使用するために、GPIO についてより深く学んでいきます。</p>
@@ -896,22 +856,16 @@ blink();
 <li>GPIO ポートの値が変化するたびに、指定した関数が呼び出されるコードです。</li>
 </ul>
 <pre><code class="language-js">import { requestGPIOAccess } from "node-web-gpio";
-const sleep = msec =&gt; new Promise(resolve =&gt; setTimeout(resolve, msec));
-
-async function switchCheck() {
-  const gpioAccess = await requestGPIOAccess();
-  const port = gpioAccess.ports.get(5);
-
-  await port.export("in");
-  port.onchange = showPort;
-
-}
 
 function showPort(ev){
 	console.log(ev.value);
 }
 
-switchCheck();
+const gpioAccess = await requestGPIOAccess();
+const port = gpioAccess.ports.get(5);
+
+await port.export("in");
+port.onchange = showPort;
 </code></pre>
 <p>GPIO ポートの初期化は、Lチカの <a href="#34-コードを読む">3.4 コードを読む</a> で見た手順と同じです。ここでは 5 番ポートにアクセスするためのオブジェクトを取得し、GPIO <strong>入力</strong>機能を使って 5 番を「入力設定」にしています。</p>
 <p>これだけでは、値を読み取ることはできても変化には気づけません。そこで使うのが <code>port.onchange</code> です。入力モードの GPIO ポートに「状態が変化したときに呼び出す関数」を設定する機能で、このように呼び出される関数を<strong>コールバック関数</strong>と呼びます。値を都度読みに行く <code>port.read()</code> のコードと違って<a href="#44-gpioを入力ポーリング">ポーリング処理</a>を自分で書く必要がなく、コードは簡潔になります。ただし呼ばれるのは値が変化した瞬間だけなので、現在の値をいつでも取得したい用途にはあまり向きません。</p>
@@ -957,23 +911,18 @@ switchCheck();
 <p>値の取得や入力のための基本的な関数は、呼び出した瞬間の値を一回だけ返すものがほとんどです。値そのものではなく値の変化を捉えたいなら、この一回きりの読み取りを無限ループの中で定期的に繰り返す必要があります。この繰り返しの手法を一般に<strong>ポーリング</strong>と呼びます（<a href="https://ja.wikipedia.org/wiki/%E3%83%9D%E3%83%BC%E3%83%AA%E3%83%B3%E3%82%B0_(%E6%83%85%E5%A0%B1)">wikipedia:ポーリング</a>）。</p>
 <p>ターミナルウィンドの右側のファイルマネージャでmain-gpio-polling.js⇒表示 を選び、ソースコードを読んでみましょう</p>
 <pre><code class="language-js">import { requestGPIOAccess } from "node-web-gpio";
-const sleep = msec =&gt; new Promise(resolve =&gt; setTimeout(resolve, msec));
+const sleep = (ms) =&gt; new Promise((resolve) =&gt; setTimeout(resolve, ms));
 
-async function switchCheck() {
-  const gpioAccess = await requestGPIOAccess();
-  const port = gpioAccess.ports.get(5);
+const gpioAccess = await requestGPIOAccess();
+const port = gpioAccess.ports.get(5);
 
-  await port.export("in");
+await port.export("in");
 
-  for(;;){
-    const v = await port.read();
-	console.log(v);
-    await sleep(300);
-  }
-
+while (true) {
+  const v = await port.read();
+  console.log(v);
+  await sleep(300);
 }
-
-switchCheck();
 </code></pre>
 <p>GPIO ポートの初期化は、Lチカの <a href="#34-コードを読む">3.4 コードを読む</a> と同じ手順です。<code>port.export("in")</code> で GPIO ポートを「入力モード」に初期化しており、この初期化は非同期処理なので <code>await</code> で完了を待つ必要があります。入力モードは、GPIO ポートにかかる電圧を Web アプリ側から読み取りたいときに使います。</p>
 <p>読み取り自体は <code>port.read()</code> が一回分の値を返すだけの単純な関数です。しかしスイッチが押されたかどうかを監視するには、一回読んで終わりにはできません。そこで <code>await port.read()</code> を無限ループの中に置き、300 ms おきに読み直すことでポーリングのルーチンを組んでいます。</p>
@@ -1008,35 +957,33 @@ switchCheck();
 <li>うまく動作しない方は、コピペで動作を確認してみましょう。</li>
 </ul>
 </li>
-<li>複数の関数で変数を使用できるように port 変数を宣言しなおします。</li>
+<li>port 変数を、初期化コードと showPort 関数の両方から使えるように宣言しなおします。</li>
 </ul>
-<pre><code class="language-js">const sleep = msec =&gt; new Promise(resolve =&gt; setTimeout(resolve, msec)); 
-let port; // port 変数を複数の関数で使えるように宣言
+<pre><code class="language-js">const sleep = (ms) =&gt; new Promise((resolve) =&gt; setTimeout(resolve, ms));
+let port; // port 変数を初期化コードと showPort 関数の両方から使えるように宣言
 
-async function blink() {
-  const gpioAccess = await requestGPIOAccess(); 
-  port = gpioAccess.ports.get(26); // 26 番ポートを操作する、ここの変数は宣言済みなので const は削除する
+const gpioAccess = await requestGPIOAccess();
+port = gpioAccess.ports.get(26); // 26 番ポートを操作する、ここの変数は宣言済みなので const は削除する
 </code></pre>
 <ul>
 <li>無限ループの処理は削除します。</li>
 </ul>
-<pre><code class="language-js">  /* ここは削除する
-  // 無限ループ
-  for (;;) {
-    // 1秒間隔で LED が点滅します
-    await port.write(1); // LEDを点灯
-    await sleep(1000);   // 1000 ms (1秒) 待機
-    await port.write(0); // LEDを消灯
-    await sleep(1000);   // 1000 ms (1秒) 待機
-  }
+<pre><code class="language-js">/* ここは削除する
+// 無限ループ
+while (true) {
+  // 1秒間隔で LED が点滅します
+  await port.write(1); // LEDを点灯
+  await sleep(1000);   // 1000 ms (1秒) 待機
+  await port.write(0); // LEDを消灯
+  await sleep(1000);   // 1000 ms (1秒) 待機
+}
 </code></pre>
 <ul>
 <li>ボタンの初期化処理を記述します。</li>
 </ul>
-<pre><code class="language-js">  const port2 = gpioAccess.ports.get(5);
-  await port2.export("in");
-  port2.onchange = showPort;
-}
+<pre><code class="language-js">const port2 = gpioAccess.ports.get(5);
+await port2.export("in");
+port2.onchange = showPort;
 </code></pre>
 <ul>
 <li>ボタンの処理を追記します。</li>
@@ -1054,20 +1001,18 @@ async function blink() {
 <li>全体のソースコードは以下のとおりです。</li>
 </ul>
 <pre><code class="language-js">import { requestGPIOAccess } from "node-web-gpio"; // WebGPIO を使えるようにするためのライブラリをインポート
-const sleep = msec =&gt; new Promise(resolve =&gt; setTimeout(resolve, msec)); // sleep 関数を定義
-let port; // port 変数を複数の関数で使えるように宣言
+const sleep = (ms) =&gt; new Promise((resolve) =&gt; setTimeout(resolve, ms)); // sleep 関数を定義
+let port; // port 変数を初期化コードと showPort 関数の両方から使えるように宣言
 
-async function blink() {
-  const gpioAccess = await requestGPIOAccess(); // GPIO を操作する 
-  port = gpioAccess.ports.get(26); // 26 番ポートを操作する、ここの変数は宣言済みなので const 宣言は削除する
+const gpioAccess = await requestGPIOAccess(); // GPIO を操作する
+port = gpioAccess.ports.get(26); // 26 番ポートを操作する、ここの変数は宣言済みなので const 宣言は削除する
 
-  await port.export("out"); // ポートを出力モードに設定
+await port.export("out"); // ポートを出力モードに設定
 
-  // ここから記述する
-  const port2 = gpioAccess.ports.get(5);
-  await port2.export("in");
-  port2.onchange = showPort;
-}
+// ここから記述する
+const port2 = gpioAccess.ports.get(5);
+await port2.export("in");
+port2.onchange = showPort;
 
 function showPort(ev){
 	console.log(ev.value);
@@ -1077,9 +1022,7 @@ function showPort(ev){
         port.write(0);
     }
 }
-  // ここまで
-
-blink();
+// ここまで
 </code></pre>
 <p>このコードは、CHIRIMENパネルのID: <strong>gpio-inout</strong> と同じです。うまく動作しなかった場合は、そちらのコードと見比べて確認してください。</p>
 <div style="break-before: page; page-break-before: always;"></div>
@@ -1402,45 +1345,48 @@ IoT には、制御されるデバイス（上図の <strong>CHIRIMEN PiZero W</
 <li>ターミナルウィンドの右側のファイルマネージャで <code>main-remote_gpio_led.js</code> を選び、[表示] からソースコードを開いてみましょう。</li>
 </ul>
 <pre><code class="language-js">import { requestGPIOAccess } from "node-web-gpio";
-const sleep = msec =&gt; new Promise(resolve =&gt; setTimeout(resolve, msec));
 import nodeWebSocketLib from "websocket"; // https://www.npmjs.com/package/websocket
-import {RelayServer} from "./RelayServer.js";
+import { RelayServer } from "./RelayServer.js";
 
-var channel;
-var gpioPort0;
+let channel;
+let gpioPort0;
 
-async function connect(){
-	// GPIOポート0の初期化
-	var gpioAccess = await requestGPIOAccess();
-	var mbGpioPorts = gpioAccess.ports;
-	gpioPort0 = mbGpioPorts.get(26);
-	await gpioPort0.export("out"); //port0 out
-	
-	// webSocketリレーの初期化
-	var relay = RelayServer("chirimentest", "chirimenSocket" , nodeWebSocketLib, "https://chirimen.org");
-	channel = await relay.subscribe("chirimenLED");
-	console.log("web socketリレーサービスに接続しました");
-	channel.onmessage = controlLED;
+function controlLED(messge) {
+  console.log(messge.data);
+  switch (messge.data) {
+    case "LED ON":
+      gpioPort0.write(1);
+      console.log("ON");
+      channel.send("LEDをオンにしました");
+      break;
+    case "LED OFF":
+      gpioPort0.write(0);
+      console.log("OFF");
+      channel.send("LEDをオフにしました");
+      break;
+  }
 }
 
-function controlLED(messge){
-	console.log(messge.data);
-	if ( messge.data =="LED ON"){
-		gpioPort0.write(1);
-		console.log("ON");
-		channel.send("LEDをオンにしました");
-	} else if ( messge.data =="LED OFF"){
-		gpioPort0.write(0);
-		console.log("OFF");
-		channel.send("LEDをオフにしました");
-	}
-}
+// GPIOポート0の初期化
+const gpioAccess = await requestGPIOAccess();
+const mbGpioPorts = gpioAccess.ports;
+gpioPort0 = mbGpioPorts.get(26);
+await gpioPort0.export("out");
 
-connect();
+// webSocketリレーの初期化
+const relay = RelayServer(
+  "chirimentest",
+  "chirimenSocket",
+  nodeWebSocketLib,
+  "https://chirimen.org",
+);
+channel = await relay.subscribe("chirimenLED");
+console.log("web socketリレーサービスに接続しました");
+channel.onmessage = controlLED;
 </code></pre>
 <p>LEDを点けたり消したりする指示は、Raspberry Pi Zero自身が思いつくわけではありません。指示はネットワークの向こう、PC側から届きます。冒頭の <code>import</code> を見ると、これまで通りWebGPIOライブラリを読み込んだあとに、見慣れない2行が続いているのはそのためです。</p>
 <pre><code class="language-js">import nodeWebSocketLib from "websocket";
-import {RelayServer} from "./RelayServer.js";
+import { RelayServer } from "./RelayServer.js";
 </code></pre>
 <p>ブラウザにはWebSocketの機能が標準で組み込まれていますが、Node.jsにはありません。そのため<a href="#116-iot">relayServer.js</a>ライブラリに加えて、webSocket自体のライブラリも読み込んでおく必要があります。</p>
 <p>あとの流れは単純です。<a href="#116-iot">relayServer.js</a>を使って接続を<a href="#116-iot">初期化</a>し、メッセージが届くたびに呼ばれる関数を<a href="#116-iot">受信処理</a>(コールバック関数)として登録します。届いた文字列をもとに<a href="#116-iot">GPIO出力を操作</a>するのは最後の一手間で、<code>"LED ON"</code> なら点灯、<code>"LED OFF"</code> なら消灯です。それ以外の文字列が届いても、コードは何もしません。</p>
@@ -1452,34 +1398,35 @@ import {RelayServer} from "./RelayServer.js";
 <li>CodeSandboxで開いている <code>PC.js</code> を見てみましょう。</li>
 </ul>
 <pre><code class="language-js">// Remote Example4 - controller
-import {RelayServer} from "https://www.chirimen.org/remote-connection/js/beta/RelayServer.js";
+import { RelayServer } from "https://www.chirimen.org/remote-connection/js/beta/RelayServer.js";
 
 window.OnLED = OnLED;
 window.OffLED = OffLED;
 
-var channel;
-onload = async function(){
-	// webSocketリレーの初期化
-	var relay = RelayServer("chirimentest", "chirimenSocket" );
-	channel = await relay.subscribe("chirimenLED");
-	messageDiv.innerText="web socketリレーサービスに接続しました";
-	channel.onmessage = getMessage;
+let channel;
+onload = async function () {
+  // webSocketリレーの初期化
+  const relay = RelayServer("chirimentest", "chirimenSocket");
+  channel = await relay.subscribe("chirimenLED");
+  messageDiv.innerText = "web socketリレーサービスに接続しました";
+  channel.onmessage = getMessage;
+};
+
+// メッセージを受信したときに起動する関数
+function getMessage(msg) {
+  messageDiv.innerText = msg.data;
 }
 
-function getMessage(msg){ // メッセージを受信したときに起動する関数
-	messageDiv.innerText = msg.data;
+function OnLED() {
+  channel.send("LED ON");
 }
-
-function OnLED(){ // LED ON
-	channel.send("LED ON");
-}
-function OffLED(){ // LED OFF
-	channel.send("LED OFF");
+function OffLED() {
+  channel.send("LED OFF");
 }
 </code></pre>
 <p>さきほど読んだPiZero側のコードは、メッセージが届くのをひたすら待つだけでした。では、そのメッセージは誰が、どうやって送っているのでしょうか。答えはこのPC側のコードにあります。</p>
 <p>冒頭のimport文を見ると、読み込んでいるのは同じ <code>relayServer.js</code> ですが、指定しているのはローカルのファイルパスではなくURLです。</p>
-<pre><code class="language-js">import {RelayServer} from "https://www.chirimen.org/remote-connection/js/beta/RelayServer.js";
+<pre><code class="language-js">import { RelayServer } from "https://www.chirimen.org/remote-connection/js/beta/RelayServer.js";
 </code></pre>
 <p>これは<a href="#1131-javascriptコードとライブラリの読み込み">JavaScript Module</a>の仕様に基づいた読み込み方で、ネットワーク越しに公開されているライブラリもそのままimportできます。</p>
 <p><a href="../chirimenGeneric#relayserverjs">relayServer.js</a>の役割はPiZero側と同じく<a href="#116-iot">初期化</a>ですが、そのあとの動きは逆です。PiZero側はメッセージの受信をきっかけに動いていましたが、PC側は <code>OnLED</code> と <code>OffLED</code> という2つの関数を通じて<a href="#116-iot">送信処理</a>を行います。この2つはUI(ボタン)に設置したコールバックとして呼ばれ、呼ばれるたびに <code>"LED ON"</code> または <code>"LED OFF"</code> という文字列を送り出します。</p>
@@ -2201,25 +2148,25 @@ CHIRIMEN では、Raspberry Pi 版と micro:bit 版がウェブブラウザを�
 <h2 id="gpioポートの初期化"><a class="header" href="#gpioポートの初期化">GPIOポートの初期化</a></h2>
 <p>このコードで最初に呼び出されるのが <code>await navigator.requestGPIOAccess()</code> です。
 先に触れた <a href="http://browserobo.github.io/WebGPIO">Web GPIO API</a> の関数で、GPIO にアクセスするためのインタフェース <code>gpioAccess</code> を取得しています。</p>
-<pre><code class="language-js">  const gpioAccess = await navigator.requestGPIOAccess(); // GPIO を操作する
+<pre><code class="language-js">const gpioAccess = await navigator.requestGPIOAccess(); // GPIO を操作する
 </code></pre>
 <p>呼び出しに <code>await</code> が付いているのは、<code>requestGPIOAccess()</code> が非同期関数であり、GPIO へのアクセス許可が下りるまで処理を待つ必要があるからです。<code>await</code> を使うコードを含む関数は、この後の <code>main()</code> のように <code>async</code> 接頭詞付きの非同期関数として定義しなければなりません。</p>
 <h2 id="gpioport-の出力処理"><a class="header" href="#gpioport-の出力処理">GPIOPort の出力処理</a></h2>
 <p>GPIO の<strong>出力</strong>機能を使うには、まず操作対象のポートを取得します。</p>
-<pre><code class="language-js">  const port = gpioAccess.ports.get(26); // 26 番ポートを操作する
+<pre><code class="language-js">const port = gpioAccess.ports.get(26); // 26 番ポートを操作する
 </code></pre>
 <p><code>gpioAccess.ports.get(26)</code> は、GPIO の 26 番ポートにアクセスするためのオブジェクトを返します。ただしこの時点では、まだポートは入力にも出力にも使える状態になっていません。</p>
-<pre><code class="language-js">  await port.export("out"); // ポートを出力モードに設定
+<pre><code class="language-js">await port.export("out"); // ポートを出力モードに設定
 </code></pre>
 <p><code>await port.export("out")</code> で 26 番ポートを「出力設定」にすると、LED にかける電圧を切り替えられるようになります。</p>
-<pre><code class="language-js">  // 無限ループ
-  while (true) {
-    // 1秒間隔で LED が点滅します。
-    await port.write(1); // LED を点灯
-    await sleep(1000); // 1000 ms (1秒) 待機
-    await port.write(0); // LED を消灯
-    await sleep(1000); // 1000 ms (1秒) 待機
-  }
+<pre><code class="language-js">// 無限ループ
+while (true) {
+  // 1秒間隔で LED が点滅します。
+  await port.write(1); // LED を点灯
+  await sleep(1000); // 1000 ms (1秒) 待機
+  await port.write(0); // LED を消灯
+  await sleep(1000); // 1000 ms (1秒) 待機
+}
 </code></pre>
 <p>あとは電圧の切り替えを繰り返すだけです。<code>await port.write(1)</code> と <code>await port.write(0)</code> を交互に呼び出し、GPIO 26 番に加える電圧を 3.3V → 0V → 3.3V → 0V → … と切り替えています。合間に挟んだ <code>await sleep(1000)</code> が 1000 ms (1 秒) の待ち時間を作り、切り替えの間隔を 1 秒に保っています。</p>
 <p>LED は、一定以上の電圧を加えて電流を流すと点灯する部品です。3.3 V を加えれば点灯し、0 V に落とせば消灯します。このループがしているのは、その点灯と消灯をひたすら繰り返すことだけです。</p>
@@ -2425,8 +2372,8 @@ relayServerサービスによる差異を吸収し、webSocketの標準API仕様
 <h1 id="1165-プログラムの流れ"><a class="header" href="#1165-プログラムの流れ">11.6.5 プログラムの流れ</a></h1>
 <h2 id="初期化受信側送信側共通の処理"><a class="header" href="#初期化受信側送信側共通の処理">初期化（受信側、送信側共通の処理）</a></h2>
 <p>詳しくは<a href="https://www.chirimen.org/remote-connection/#使用方法">こちら</a>を参照してください。</p>
-<pre><code class="language-javascript">import {RelayServer} from "https://www.chirimen.org/remote-connection/js/beta/RelayServer.js";
-var relay = RelayServer("achex", "chirimenSocket" );
+<pre><code class="language-javascript">import { RelayServer } from "https://www.chirimen.org/remote-connection/js/beta/RelayServer.js";
+const relay = RelayServer("achex", "chirimenSocket");
 </code></pre>
 <p>import文で、ライブラリRelayServer.jsを読み込みます。
 続けて、relayServiceのひとつである<strong>achex</strong>に接続します。
@@ -2434,35 +2381,21 @@ RelayServerの第二引数<code>("chirimenSocket")</code>は、そのサービ�
 achexの場合、このトークンには任意の文字列を使えます。</p>
 <p><em>Node.jsを使う場合は、第三引数と第四引数も必要になります（後述します）。</em></p>
 <h5 id="チャンネルの作成"><a class="header" href="#チャンネルの作成">チャンネルの作成</a></h5>
-<ul>
-<li>
 <p><code>channel = await relay.subscribe("chirimenMbitSensors");</code></p>
 <p>変数<code>channel</code>に、RelayServerのチャンネルのインスタンスを登録します。
 引数はチャンネル名で、自分の好きな名前を与えられます。</p>
 <p>ただし、受信側と送信側では、同じサービス、トークン、チャンネルを指定しなければなりません。</p>
-</li>
-</ul>
 <h5 id="データの送信"><a class="header" href="#データの送信">データの送信</a></h5>
-<ul>
-<li>
 <p><code>channel.send(data);</code></p>
 <p>任意のデータ（<code>data</code>）を、relayServerの指定チャンネルに送信します。</p>
 <p>送信できるのは文字列だけではありません。
 連想配列、つまり構造化されたオブジェクトも、そのまま送信できます。</p>
-</li>
-</ul>
 <h5 id="データの受信"><a class="header" href="#データの受信">データの受信</a></h5>
-<ul>
-<li>
 <p><code>channel.onmessage = getMessage;</code></p>
 <p>チャンネルにメッセージが届いたときに呼び出される関数、すなわちコールバック関数を登録しています。</p>
-</li>
-<li>
 <p><code>function getMessage(msg)</code></p>
 <p>この関数の第一引数<code>msg</code>のうち、<code>msg.data</code>に送信されたメッセージが届きます。
 届くデータの構造は、送信時のままです。</p>
-</li>
-</ul>
 <div style="break-before: page; page-break-before: always;"></div>
 <h1 id="1166-セキュリティを考えよう"><a class="header" href="#1166-セキュリティを考えよう">11.6.6 セキュリティを考えよう</a></h1>
 <p>relayServerを使うということは、情報をインターネット上のウェブサイトへ送信するということです。
@@ -2481,8 +2414,13 @@ achexの場合、このトークンには任意の文字列を使えます。</p
 <h1 id="1167-nodejsでの利用"><a class="header" href="#1167-nodejsでの利用">11.6.7 Node.jsでの利用</a></h1>
 <p>ブラウザ向けの実装と比べて、初期化の手順が異なります。</p>
 <pre><code class="language-javascript">import nodeWebSocketLib from "websocket";
-import {RelayServer} from "./RelayServer.js";
-var relay = RelayServer("achex", "chirimenSocket" , nodeWebSocketLib, "https://chirimen.org");
+import { RelayServer } from "./RelayServer.js";
+const relay = RelayServer(
+  "achex",
+  "chirimenSocket",
+  nodeWebSocketLib,
+  "https://chirimen.org",
+);
 </code></pre>
 <ul>
 <li>Node.js で webSocket を使うには websocket ライブラリが必要なため、これを読み込みます</li>

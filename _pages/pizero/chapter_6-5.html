@@ -36,7 +36,7 @@
             const path_to_root = "";
             const default_light_theme = "light";
             const default_dark_theme = "light";
-            window.path_to_searchindex_js = "searchindex-5a7dded5.js";
+            window.path_to_searchindex_js = "searchindex-f5ddfa88.js";
         </script>
         <!-- Start loading toc.js asap -->
         <script src="toc-8d876478.js"></script>
@@ -187,45 +187,48 @@
 <li>ターミナルウィンドの右側のファイルマネージャで <code>main-remote_gpio_led.js</code> を選び、[表示] からソースコードを開いてみましょう。</li>
 </ul>
 <pre><code class="language-js">import { requestGPIOAccess } from "node-web-gpio";
-const sleep = msec =&gt; new Promise(resolve =&gt; setTimeout(resolve, msec));
 import nodeWebSocketLib from "websocket"; // https://www.npmjs.com/package/websocket
-import {RelayServer} from "./RelayServer.js";
+import { RelayServer } from "./RelayServer.js";
 
-var channel;
-var gpioPort0;
+let channel;
+let gpioPort0;
 
-async function connect(){
-	// GPIOポート0の初期化
-	var gpioAccess = await requestGPIOAccess();
-	var mbGpioPorts = gpioAccess.ports;
-	gpioPort0 = mbGpioPorts.get(26);
-	await gpioPort0.export("out"); //port0 out
-	
-	// webSocketリレーの初期化
-	var relay = RelayServer("chirimentest", "chirimenSocket" , nodeWebSocketLib, "https://chirimen.org");
-	channel = await relay.subscribe("chirimenLED");
-	console.log("web socketリレーサービスに接続しました");
-	channel.onmessage = controlLED;
+function controlLED(messge) {
+  console.log(messge.data);
+  switch (messge.data) {
+    case "LED ON":
+      gpioPort0.write(1);
+      console.log("ON");
+      channel.send("LEDをオンにしました");
+      break;
+    case "LED OFF":
+      gpioPort0.write(0);
+      console.log("OFF");
+      channel.send("LEDをオフにしました");
+      break;
+  }
 }
 
-function controlLED(messge){
-	console.log(messge.data);
-	if ( messge.data =="LED ON"){
-		gpioPort0.write(1);
-		console.log("ON");
-		channel.send("LEDをオンにしました");
-	} else if ( messge.data =="LED OFF"){
-		gpioPort0.write(0);
-		console.log("OFF");
-		channel.send("LEDをオフにしました");
-	}
-}
+// GPIOポート0の初期化
+const gpioAccess = await requestGPIOAccess();
+const mbGpioPorts = gpioAccess.ports;
+gpioPort0 = mbGpioPorts.get(26);
+await gpioPort0.export("out");
 
-connect();
+// webSocketリレーの初期化
+const relay = RelayServer(
+  "chirimentest",
+  "chirimenSocket",
+  nodeWebSocketLib,
+  "https://chirimen.org",
+);
+channel = await relay.subscribe("chirimenLED");
+console.log("web socketリレーサービスに接続しました");
+channel.onmessage = controlLED;
 </code></pre>
 <p>LEDを点けたり消したりする指示は、Raspberry Pi Zero自身が思いつくわけではありません。指示はネットワークの向こう、PC側から届きます。冒頭の <code>import</code> を見ると、これまで通りWebGPIOライブラリを読み込んだあとに、見慣れない2行が続いているのはそのためです。</p>
 <pre><code class="language-js">import nodeWebSocketLib from "websocket";
-import {RelayServer} from "./RelayServer.js";
+import { RelayServer } from "./RelayServer.js";
 </code></pre>
 <p>ブラウザにはWebSocketの機能が標準で組み込まれていますが、Node.jsにはありません。そのため<a href="./chapter_10-6.html">relayServer.js</a>ライブラリに加えて、webSocket自体のライブラリも読み込んでおく必要があります。</p>
 <p>あとの流れは単純です。<a href="./chapter_10-6.html">relayServer.js</a>を使って接続を<a href="./chapter_10-6.html">初期化</a>し、メッセージが届くたびに呼ばれる関数を<a href="./chapter_10-6.html">受信処理</a>(コールバック関数)として登録します。届いた文字列をもとに<a href="./chapter_10-6.html">GPIO出力を操作</a>するのは最後の一手間で、<code>"LED ON"</code> なら点灯、<code>"LED OFF"</code> なら消灯です。それ以外の文字列が届いても、コードは何もしません。</p>

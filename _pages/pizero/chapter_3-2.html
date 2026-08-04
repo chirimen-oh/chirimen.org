@@ -36,7 +36,7 @@
             const path_to_root = "";
             const default_light_theme = "light";
             const default_dark_theme = "light";
-            window.path_to_searchindex_js = "searchindex-5a7dded5.js";
+            window.path_to_searchindex_js = "searchindex-f5ddfa88.js";
         </script>
         <!-- Start loading toc.js asap -->
         <script src="toc-8d876478.js"></script>
@@ -199,25 +199,21 @@
 <p>以下のプログラムを JS Editor に書き写します。下記のプログラム部分を選択して CTRL+c、JS Editor ウィンド上で CTRL+v でコピペしても構いません。</p>
 <h3 id="lチカのプログラムソースコード"><a class="header" href="#lチカのプログラムソースコード">Lチカのプログラムソースコード</a></h3>
 <pre><code class="language-js">import { requestGPIOAccess } from "node-web-gpio"; // WebGPIO を使えるようにするためのライブラリをインポート
-const sleep = msec =&gt; new Promise(resolve =&gt; setTimeout(resolve, msec)); // sleep 関数を定義
+const sleep = (ms) =&gt; new Promise((resolve) =&gt; setTimeout(resolve, ms)); // sleep 関数を定義
 
-async function blink() {
-  const gpioAccess = await requestGPIOAccess(); // GPIO を操作する 
-  const port = gpioAccess.ports.get(26); // 26 番ポートを操作する
+const gpioAccess = await requestGPIOAccess(); // GPIO を操作する
+const port = gpioAccess.ports.get(26); // 26 番ポートを操作する
 
-  await port.export("out"); // ポートを出力モードに設定
+await port.export("out"); // ポートを出力モードに設定
 
-  // 無限ループ
-  for (;;) {
-    // 1秒間隔で LED が点滅します
-    await port.write(1); // LEDを点灯
-    await sleep(1000);   // 1000 ms (1秒) 待機
-    await port.write(0); // LEDを消灯
-    await sleep(1000);   // 1000 ms (1秒) 待機
-  }
+// 無限ループ
+while (true) {
+  // 1秒間隔で LED が点滅します
+  await port.write(1); // LEDを点灯
+  await sleep(1000); // 1000 ms (1秒) 待機
+  await port.write(0); // LEDを消灯
+  await sleep(1000); // 1000 ms (1秒) 待機
 }
-
-blink();
 </code></pre>
 <ol start="7">
 <li>書き終えたら保存します。(<code>[Save]ボタン</code>もしくは<code>CTRL+s</code>)</li>

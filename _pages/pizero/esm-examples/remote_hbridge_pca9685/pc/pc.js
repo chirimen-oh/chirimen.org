@@ -4,17 +4,17 @@ import { RelayServer } from "https://www.chirimen.org/remote-connection/js/beta/
 window.showAngle = showAngle;
 window.sendAngle = sendAngle;
 
-var channel;
+let channel;
 onload = async function () {
   // webSocketリレーの初期化
-  var relay = RelayServer("chirimentest", "chirimenSocket");
+  const relay = RelayServer("chirimentest", "chirimenSocket");
   channel = await relay.subscribe("chirimenPWMHB");
   messageDiv.innerText = "web socketリレーサービスに接続しました";
   channel.onmessage = showMessage;
 };
 
 function sendAngle(event) {
-  var angle = event.target.value;
+  const angle = event.target.value;
   console.log(angle);
   channel.send({ motor: 0, speed: angle });
   messageDiv.innerText = "motor0:" + angle + "を送信しました";

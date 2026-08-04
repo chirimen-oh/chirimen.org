@@ -36,7 +36,7 @@
             const path_to_root = "";
             const default_light_theme = "light";
             const default_dark_theme = "light";
-            window.path_to_searchindex_js = "searchindex-5a7dded5.js";
+            window.path_to_searchindex_js = "searchindex-f5ddfa88.js";
         </script>
         <!-- Start loading toc.js asap -->
         <script src="toc-8d876478.js"></script>
@@ -184,8 +184,8 @@
                         <h1 id="1165-プログラムの流れ"><a class="header" href="#1165-プログラムの流れ">11.6.5 プログラムの流れ</a></h1>
 <h2 id="初期化受信側送信側共通の処理"><a class="header" href="#初期化受信側送信側共通の処理">初期化（受信側、送信側共通の処理）</a></h2>
 <p>詳しくは<a href="https://www.chirimen.org/remote-connection/#使用方法">こちら</a>を参照してください。</p>
-<pre><code class="language-javascript">import {RelayServer} from "https://www.chirimen.org/remote-connection/js/beta/RelayServer.js";
-var relay = RelayServer("achex", "chirimenSocket" );
+<pre><code class="language-javascript">import { RelayServer } from "https://www.chirimen.org/remote-connection/js/beta/RelayServer.js";
+const relay = RelayServer("achex", "chirimenSocket");
 </code></pre>
 <p>import文で、ライブラリRelayServer.jsを読み込みます。
 続けて、relayServiceのひとつである<strong>achex</strong>に接続します。
@@ -193,35 +193,21 @@ RelayServerの第二引数<code>("chirimenSocket")</code>は、そのサービ�
 achexの場合、このトークンには任意の文字列を使えます。</p>
 <p><em>Node.jsを使う場合は、第三引数と第四引数も必要になります（後述します）。</em></p>
 <h5 id="チャンネルの作成"><a class="header" href="#チャンネルの作成">チャンネルの作成</a></h5>
-<ul>
-<li>
 <p><code>channel = await relay.subscribe("chirimenMbitSensors");</code></p>
 <p>変数<code>channel</code>に、RelayServerのチャンネルのインスタンスを登録します。
 引数はチャンネル名で、自分の好きな名前を与えられます。</p>
 <p>ただし、受信側と送信側では、同じサービス、トークン、チャンネルを指定しなければなりません。</p>
-</li>
-</ul>
 <h5 id="データの送信"><a class="header" href="#データの送信">データの送信</a></h5>
-<ul>
-<li>
 <p><code>channel.send(data);</code></p>
 <p>任意のデータ（<code>data</code>）を、relayServerの指定チャンネルに送信します。</p>
 <p>送信できるのは文字列だけではありません。
 連想配列、つまり構造化されたオブジェクトも、そのまま送信できます。</p>
-</li>
-</ul>
 <h5 id="データの受信"><a class="header" href="#データの受信">データの受信</a></h5>
-<ul>
-<li>
 <p><code>channel.onmessage = getMessage;</code></p>
 <p>チャンネルにメッセージが届いたときに呼び出される関数、すなわちコールバック関数を登録しています。</p>
-</li>
-<li>
 <p><code>function getMessage(msg)</code></p>
 <p>この関数の第一引数<code>msg</code>のうち、<code>msg.data</code>に送信されたメッセージが届きます。
 届くデータの構造は、送信時のままです。</p>
-</li>
-</ul>
 
                     </main>
 

@@ -36,7 +36,7 @@
             const path_to_root = "";
             const default_light_theme = "light";
             const default_dark_theme = "light";
-            window.path_to_searchindex_js = "searchindex-5a7dded5.js";
+            window.path_to_searchindex_js = "searchindex-f5ddfa88.js";
         </script>
         <!-- Start loading toc.js asap -->
         <script src="toc-8d876478.js"></script>
@@ -182,81 +182,45 @@
                 <div id="mdbook-content" class="content">
                     <main>
                         <h1 id="34-コードを読む"><a class="header" href="#34-コードを読む">3.4 コードを読む</a></h1>
-<ul>
-<li>
-<p>前提：CHIRIMEN Raspberry Pi Zero は Node.js をプログラム実行環境（インタープリタ）として使っています。</p>
-</li>
-<li>
-<p>Raspberry Pi Zero 版では、プログラムの起点は自分が書いた JavaScript コードそのものになります。</p>
-</li>
-<li>
-<p>ブラウザの代わりに、<a href="https://ja.wikipedia.org/wiki/Node.js">Node.js</a> という JavaScript コードだけを解釈するソフト（JavaScript <a href="https://ja.wikipedia.org/wiki/%E3%82%A4%E3%83%B3%E3%82%BF%E3%83%97%E3%83%AA%E3%82%BF">インタープリタ</a>）にコードを読み込ませて実行します。</p>
-</li>
-<li>
+<p>前提：CHIRIMEN Raspberry Pi Zero は Node.js をプログラム実行環境（インタープリタ）として使っています。
+Raspberry Pi Zero 版では、プログラムの起点は自分が書いた JavaScript コードそのものになります。
+ブラウザの代わりに、<a href="https://ja.wikipedia.org/wiki/Node.js">Node.js</a> という JavaScript コードだけを解釈するソフト（JavaScript <a href="https://ja.wikipedia.org/wiki/%E3%82%A4%E3%83%B3%E3%82%BF%E3%83%97%E3%83%AA%E3%82%BF">インタープリタ</a>）にコードを読み込ませて実行します。</p>
 <p>ターミナルウィンドの右側のファイルマネージャで<code>hello.js</code> ⇒ 表示 を選び、ソースコードを読んでみましょう</p>
-</li>
-</ul>
 <pre><code class="language-js">import { requestGPIOAccess } from "node-web-gpio"; // WebGPIO を使えるようにするためのライブラリをインポート
-const sleep = msec =&gt; new Promise(resolve =&gt; setTimeout(resolve, msec)); // sleep 関数を定義
+const sleep = (ms) =&gt; new Promise((resolve) =&gt; setTimeout(resolve, ms)); // sleep 関数を定義
 
-async function blink() {
-  const gpioAccess = await requestGPIOAccess(); // GPIO を操作する 
-  const port = gpioAccess.ports.get(26); // 26 番ポートを操作する
+const gpioAccess = await requestGPIOAccess(); // GPIO を操作する
+const port = gpioAccess.ports.get(26); // 26 番ポートを操作する
 
-  await port.export("out"); // ポートを出力モードに設定
+await port.export("out"); // ポートを出力モードに設定
 
-  // 無限ループ
-  for (;;) {
-    // 1秒間隔で LED が点滅します
-    await port.write(1); // LEDを点灯
-    await sleep(1000);   // 1000 ms (1秒) 待機
-    await port.write(0); // LEDを消灯
-    await sleep(1000);   // 1000 ms (1秒) 待機
-  }
+// 無限ループ
+while (true) {
+  // 1秒間隔で LED が点滅します
+  await port.write(1); // LEDを点灯
+  await sleep(1000); // 1000 ms (1秒) 待機
+  await port.write(0); // LEDを消灯
+  await sleep(1000); // 1000 ms (1秒) 待機
 }
-
-blink();
 </code></pre>
-<ul>
-<li>
 <p><strong>1行目：WebGPIOライブラリを読み込み</strong> (<a href="./chapter_10-3-1.html">JavaScript Module</a>仕様に従って)</p>
 <pre><code class="language-js">import { requestGPIOAccess } from "node-web-gpio";
 </code></pre>
-<ul>
-<li><a href="./chapter_10-3-1.html">JavaScript module</a> の仕組みで WebGPIO ライブラリを読み込んでいます。これで Web GPIO API が使えるようになりました。</li>
-</ul>
-</li>
-<li>
-<p><strong>5行目：GPIOポートの初期化処理</strong></p>
+<p><a href="./chapter_10-3-1.html">JavaScript module</a> の仕組みで WebGPIO ライブラリを読み込んでいます。これで Web GPIO API が使えるようになりました。</p>
+<p><strong>4行目：GPIOポートの初期化処理</strong></p>
 <pre><code class="language-js">const gpioAccess = await requestGPIOAccess();
 </code></pre>
-<ul>
-<li>このファイルで最初に実行されるのが <code>await requestGPIOAccess()</code> です。<a href="http://browserobo.github.io/WebGPIO">Web GPIO API</a> の関数で、GPIO にアクセスするためのインタフェース <code>gpioAccess</code> を取得しています。</li>
-</ul>
-</li>
-</ul>
-<p><strong>関数の呼び出しに <code>await</code> 接頭詞が付いていることに注目してください。</strong> <code>requestGPIOAccess()</code> は非同期関数で、GPIO への準備が整うまで処理を待つ必要があります。<code>await</code> を使うコードを含む関数は、<code>blink()</code> のように <code>async</code> 接頭詞付きの非同期関数として定義しなければなりません。</p>
-<ul>
-<li>
-<p><strong>6〜8行目：GPIOPortの出力処理</strong></p>
+<p>このファイルで最初に実行されるのが <code>await requestGPIOAccess()</code> です。<a href="http://browserobo.github.io/WebGPIO">Web GPIO API</a> の関数で、GPIO にアクセスするためのインタフェース <code>gpioAccess</code> を取得しています。</p>
+<p><strong>関数の呼び出しに <code>await</code> 接頭詞が付いていることに注目してください。</strong> <code>requestGPIOAccess()</code> は非同期関数で、GPIO への準備が整うまで処理を待つ必要があります。通常、<code>await</code> を使うコードは <code>async</code> 接頭詞付きの関数として定義しなければなりませんが、<a href="./chapter_10-3-1.html">JavaScript module</a> のトップレベルに限っては例外です。モジュールの最上位では <code>async</code> 関数で包まなくても <code>await</code> をそのまま書けます。これを<strong>トップレベル await</strong> と呼び、<code>hello.js</code> 自体がモジュールなので、ファイル冒頭からいきなり <code>await requestGPIOAccess()</code> と書けています。</p>
+<p><strong>5〜7行目：GPIOPortの出力処理</strong></p>
 <pre><code class="language-js">const port = gpioAccess.ports.get(26);
 </code></pre>
-<ul>
-<li>GPIO の<strong>出力</strong>機能を使う準備として、<code>gpioAccess.ports.get(26)</code> で GPIO の 26 番ポートにアクセスするためのオブジェクトを取得しています。</li>
-</ul>
+<p>GPIO の<strong>出力</strong>機能を使う準備として、<code>gpioAccess.ports.get(26)</code> で GPIO の 26 番ポートにアクセスするためのオブジェクトを取得しています。</p>
 <pre><code class="language-js">await port.export("out");
 </code></pre>
-<ul>
-<li>続いて <code>await port.export("out")</code> で GPIO の 26 番を「出力設定」にしています。これにより LED への電圧の切り替えが可能になります。</li>
-</ul>
-</li>
-<li>
-<p><strong>11行目以降：無限ループ部分</strong></p>
-<ul>
-<li>ループの中身は、電圧の切り替えとその合間の待機の繰り返しにすぎません。<code>await port.write(1)</code> と <code>await port.write(0)</code> を交互に呼び出し、GPIO 26 番に加える電圧を 3.3V → 0V → 3.3V → 0V → … と切り替えています。切り替えの間隔を作っているのが <code>await sleep(1000)</code> で、1000 ms (1 秒) が経つまで次の書き込みを待たせています。</li>
-</ul>
-</li>
-</ul>
+<p>続いて <code>await port.export("out")</code> で GPIO の 26 番を「出力設定」にしています。これにより LED への電圧の切り替えが可能になります。</p>
+<p><strong>10行目以降：無限ループ部分</strong></p>
+<p>ループの中身は、電圧の切り替えとその合間の待機の繰り返しにすぎません。<code>await port.write(1)</code> と <code>await port.write(0)</code> を交互に呼び出し、GPIO 26 番に加える電圧を 3.3V → 0V → 3.3V → 0V → … と切り替えています。切り替えの間隔を作っているのが <code>await sleep(1000)</code> で、1000 ms (1 秒) が経つまで次の書き込みを待たせています。</p>
 
                     </main>
 

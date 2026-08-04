@@ -1,25 +1,26 @@
 // Remote Example1 - controller
-import {RelayServer} from "https://www.chirimen.org/remote-connection/js/beta/RelayServer.js";
+import { RelayServer } from "https://www.chirimen.org/remote-connection/js/beta/RelayServer.js";
 
 window.getData = getData;
 
-var channel;
-onload = async function(){
-	// webSocketリレーの初期化
-	var relay = RelayServer("chirimentest", "chirimenSocket" );
-	channel = await relay.subscribe("chirimenSHT");
-	messageDiv.innerText="web socketリレーサービスに接続しました";
-	channel.onmessage = getMessage;
+let channel;
+onload = async function () {
+  // webSocketリレーの初期化
+  const relay = RelayServer("chirimentest", "chirimenSocket");
+  channel = await relay.subscribe("chirimenSHT");
+  messageDiv.innerText = "web socketリレーサービスに接続しました";
+  channel.onmessage = getMessage;
+};
+
+// メッセージを受信したときに起動する関数
+function getMessage(msg) {
+  const mdata = msg.data;
+  messageDiv.innerText = JSON.stringify(mdata);
+  console.log("mdata:", mdata);
+  temTd.innerText = mdata.temperature;
+  humTd.innerText = mdata.humidity;
 }
 
-function getMessage(msg){ // メッセージを受信したときに起動する関数
-	var mdata = msg.data;
-	messageDiv.innerText = JSON.stringify(mdata);
-	console.log("mdata:",mdata);
-	temTd.innerText = mdata.temperature;
-	humTd.innerText = mdata.humidity;
-}
-
-function getData(){ // get microbit's internal sensor data
-	channel.send("GET SENSOR DATA");
+function getData() {
+  channel.send("GET SENSOR DATA");
 }
