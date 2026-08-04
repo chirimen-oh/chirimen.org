@@ -5,23 +5,18 @@
 
 ```js
 import { requestGPIOAccess } from "node-web-gpio";
-const sleep = msec => new Promise(resolve => setTimeout(resolve, msec));
+const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
 
-async function switchCheck() {
-  const gpioAccess = await requestGPIOAccess();
-  const port = gpioAccess.ports.get(5);
+const gpioAccess = await requestGPIOAccess();
+const port = gpioAccess.ports.get(5);
 
-  await port.export("in");
+await port.export("in");
 
-  for(;;){
-    const v = await port.read();
-	console.log(v);
-    await sleep(300);
-  }
-
+while (true) {
+  const v = await port.read();
+  console.log(v);
+  await sleep(300);
 }
-
-switchCheck();
 ```
 
 GPIO ポートの初期化は、Lチカの [3.4 コードを読む](./chapter_3-4.md) と同じ手順です。`port.export("in")` で GPIO ポートを「入力モード」に初期化しており、この初期化は非同期処理なので `await` で完了を待つ必要があります。入力モードは、GPIO ポートにかかる電圧を Web アプリ側から読み取りたいときに使います。

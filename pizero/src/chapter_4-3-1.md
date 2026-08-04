@@ -5,22 +5,16 @@
 
 ```js
 import { requestGPIOAccess } from "node-web-gpio";
-const sleep = msec => new Promise(resolve => setTimeout(resolve, msec));
-
-async function switchCheck() {
-  const gpioAccess = await requestGPIOAccess();
-  const port = gpioAccess.ports.get(5);
-
-  await port.export("in");
-  port.onchange = showPort;
-
-}
 
 function showPort(ev){
 	console.log(ev.value);
 }
 
-switchCheck();
+const gpioAccess = await requestGPIOAccess();
+const port = gpioAccess.ports.get(5);
+
+await port.export("in");
+port.onchange = showPort;
 ```
 
 GPIO ポートの初期化は、Lチカの [3.4 コードを読む](./chapter_3-4.md) で見た手順と同じです。ここでは 5 番ポートにアクセスするためのオブジェクトを取得し、GPIO **入力**機能を使って 5 番を「入力設定」にしています。

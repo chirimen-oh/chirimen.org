@@ -94,11 +94,11 @@ async function main() {
     await sleep(1000);
 
     /** LEDを一個づつ設定する関数の使用例
-		for ( var i = 0 ; i < 128 ; i++ ){
-			ht.set_led(i, 1);
-		}
-		await ht.write_display();
-		await sleep(1000);
-		**/
+    for (let i = 0; i < 128; i++) {
+      ht.set_led(i, 1);
+    }
+    await ht.write_display();
+    await sleep(1000);
+    **/
   }
 }

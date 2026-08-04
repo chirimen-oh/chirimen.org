@@ -1,39 +1,44 @@
 # 6.6 PC 側のコードを読む
+
 ## PC側コード
-* CodeSandboxで開いている `PC.js` を見てみましょう。
+
+- CodeSandboxで開いている `PC.js` を見てみましょう。
+
 ```js
 // Remote Example4 - controller
-import {RelayServer} from "https://www.chirimen.org/remote-connection/js/beta/RelayServer.js";
+import { RelayServer } from "https://www.chirimen.org/remote-connection/js/beta/RelayServer.js";
 
 window.OnLED = OnLED;
 window.OffLED = OffLED;
 
-var channel;
-onload = async function(){
-	// webSocketリレーの初期化
-	var relay = RelayServer("chirimentest", "chirimenSocket" );
-	channel = await relay.subscribe("chirimenLED");
-	messageDiv.innerText="web socketリレーサービスに接続しました";
-	channel.onmessage = getMessage;
+let channel;
+onload = async function () {
+  // webSocketリレーの初期化
+  const relay = RelayServer("chirimentest", "chirimenSocket");
+  channel = await relay.subscribe("chirimenLED");
+  messageDiv.innerText = "web socketリレーサービスに接続しました";
+  channel.onmessage = getMessage;
+};
+
+// メッセージを受信したときに起動する関数
+function getMessage(msg) {
+  messageDiv.innerText = msg.data;
 }
 
-function getMessage(msg){ // メッセージを受信したときに起動する関数
-	messageDiv.innerText = msg.data;
+function OnLED() {
+  channel.send("LED ON");
 }
-
-function OnLED(){ // LED ON
-	channel.send("LED ON");
-}
-function OffLED(){ // LED OFF
-	channel.send("LED OFF");
+function OffLED() {
+  channel.send("LED OFF");
 }
 ```
+
 さきほど読んだPiZero側のコードは、メッセージが届くのをひたすら待つだけでした。では、そのメッセージは誰が、どうやって送っているのでしょうか。答えはこのPC側のコードにあります。
 
 冒頭のimport文を見ると、読み込んでいるのは同じ `relayServer.js` ですが、指定しているのはローカルのファイルパスではなくURLです。
 
 ```js
-import {RelayServer} from "https://www.chirimen.org/remote-connection/js/beta/RelayServer.js";
+import { RelayServer } from "https://www.chirimen.org/remote-connection/js/beta/RelayServer.js";
 ```
 
 これは[JavaScript Module](./chapter_10-3-1.md)の仕様に基づいた読み込み方で、ネットワーク越しに公開されているライブラリもそのままimportできます。
