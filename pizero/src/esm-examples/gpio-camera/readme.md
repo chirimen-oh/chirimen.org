@@ -29,27 +29,30 @@ _この章は[こちらの記事](https://gist.github.com/satakagi/1b5adc8dff823
 
 ## カメラの動作テスト
 
-以下のコマンドで画像ファイルが保存されます:
+まずカメラが認識されているかを確かめましょう。
 
 ```
-raspistill -v --width 640 --height 480 -o test.jpg
+$ rpicam-still --list-cameras
+Available cameras
+-----------------
+0 : ov5647 [2592x1944 10-bit GBRG] (/base/soc/i2c0mux/i2c@1/ov5647@36)
+    Modes: 'SGBRG10_CSI2P' : 640x480 [58.92 fps - (16, 0)/2560x1920 crop]
+                             1296x972 [43.25 fps - (0, 0)/2592x1944 crop]
+                             1920x1080 [30.62 fps - (348, 434)/1928x1080 crop]
+                             2592x1944 [15.63 fps - (0, 0)/2592x1944 crop]
 ```
 
-> **Note**\
-> [Raspberry Pi Zero 用 CHIRIMEN v1.4.0 以上](https://github.com/chirimen-oh/chirimen-lite/releases) をお使いの場合、`rpicam-still --list-cameras` コマンドで利用可能なカメラの一覧を表示可能です:
->
-> ```
-> $ rpicam-still --list-cameras
-> Available cameras
-> -----------------
-> 0 : ov5647 [2592x1944 10-bit GBRG] (/base/soc/i2c0mux/i2c@1/ov5647@36)
->     Modes: 'SGBRG10_CSI2P' : 640x480 [58.92 fps - (16, 0)/2560x1920 crop]
->                              1296x972 [43.25 fps - (0, 0)/2592x1944 crop]
->                              1920x1080 [30.62 fps - (348, 434)/1928x1080 crop]
->                              2592x1944 [15.63 fps - (0, 0)/2592x1944 crop]
-> ```
->
-> 詳細: [Camera software - Raspberry Pi Documentation](https://www.raspberrypi.com/documentation/computers/camera_software.html)
+0 番のカメラが一覧に出ていれば、フラットケーブルの向きも接触も問題ありません。
+
+認識できたら、撮影に進みます。
+
+```
+rpicam-still --width 640 --height 480 -o test.jpg
+```
+
+作業ディレクトリに test.jpg ができていれば、動作確認は終わりです。
+
+詳細: [Camera software - Raspberry Pi Documentation](https://www.raspberrypi.com/documentation/computers/camera_software.html)
 
 ## サンプル
 
