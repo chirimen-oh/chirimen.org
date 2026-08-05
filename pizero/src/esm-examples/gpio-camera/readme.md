@@ -22,11 +22,6 @@ _この章は[こちらの記事](https://gist.github.com/satakagi/1b5adc8dff823
   - 無い場合は [別途調達](https://www.amazon.co.jp/gp/product/B07QH455KY/)
 - [接続のしかた](https://projects.raspberrypi.org/ja-JP/projects/getting-started-with-picamera) : Zero は専用ケーブルでつなぎます
 
-> **Note**\
-> 利用可能なカメラモジュールは v1、v3 です。Camera Module v2 には未対応です。
-> また Raspberry Pi Zero 用 CHIRIMEN v1.4.0 未満をお使いの場合、Camera Module v3 には未対応です。
-> [Raspberry Pi Zero 用 CHIRIMEN v1.4.0 以上](https://github.com/chirimen-oh/chirimen-lite/releases) をお使いください。
-
 ## カメラの動作テスト
 
 まずカメラが認識されているかを確かめましょう。

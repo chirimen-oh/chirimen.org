@@ -6,11 +6,6 @@
   - 無理に引っ張らない
   - 折り曲げないように注意する
 
-> **Note**\
-> 利用可能なカメラモジュールは v1、v3 です。
-> また Raspberry Pi Zero 用 CHIRIMEN v1.4.0 未満をお使いの場合、Camera Module v3 には未対応です。
-> [Raspberry Pi Zero 用 CHIRIMEN v1.4.0 以上](https://github.com/chirimen-oh/chirimen-lite/releases) をお使いください。
-
 ## カメラの動作テスト
 
 まずカメラが認識されているかを確かめましょう。
