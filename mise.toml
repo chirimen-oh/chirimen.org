@@ -2,5 +2,5 @@
 build = "bundle && bundle exec jekyll build && mdbook build pizero"
 
 [tools]
-mdbook = "latest"
+mdbook = "0.5.4"
 ruby = "4.0"
