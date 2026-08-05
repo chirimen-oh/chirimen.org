@@ -14,27 +14,27 @@
 ブラウザでコードの中身を確認したい場合は、`コードを確認する` から確認できます。
 
 - レーザー距離センサー ＞ **ID：vl53l0x 　タイトル：距離センサ**
-  - [※コードを確認する](https://tutorial.chirimen.org/pizero/esm-examples/vl53l0x/main.js)
+  - [※コードを確認する](https://chirimen.org/pizero/esm-examples/vl53l0x/main.js)
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/tbsRP100y-0" title="レーザー距離センサーの使い方(VL53L0X)" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
 - 照度センサー ＞ **ID：bh1750 　タイトル：照度センサ**
-  - [※コードを確認する](https://tutorial.chirimen.org/pizero/esm-examples/bh1750/main.js)
+  - [※コードを確認する](https://chirimen.org/pizero/esm-examples/bh1750/main.js)
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/fACKm0sbhlM" title="照度センサーの使い方(BH1750)" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
 - 温湿度・気圧センサー ＞ **ID：bme280 　タイトル：温度・湿度・気圧**
-  - [※コードを確認する](https://tutorial.chirimen.org/pizero/esm-examples/bme280/main.js)
+  - [※コードを確認する](https://chirimen.org/pizero/esm-examples/bme280/main.js)
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/nYU7s2bF60c" title="温湿度・気圧センサーの使い方(BME280)" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
 - 非接触赤外線温度センサー ＞ **ID：mlx90614 タイトル：赤外線温度センサ**
-  - [※コードを確認する](https://tutorial.chirimen.org/pizero/esm-examples/mlx90614/main.js)
+  - [※コードを確認する](https://chirimen.org/pizero/esm-examples/mlx90614/main.js)
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/s-GyjbBfnEg" title="非接触赤外線温度センサーの使い方(MLX90614)" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
 - サーモグラフィー ＞ **ID：amg8833 　タイトル：サーモグラフィー**
-  - [※コードを確認する](https://tutorial.chirimen.org/pizero/esm-examples/amg8833/main.js)
+  - [※コードを確認する](https://chirimen.org/pizero/esm-examples/amg8833/main.js)
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/aTyOGfQF3lY" title="サーモグラフィーの使い方(AMG8833)" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 

@@ -1,0 +1,6 @@
+[tasks]
+build = "bundle && bundle exec jekyll build && mdbook build pizero"
+
+[tools]
+mdbook = "latest"
+ruby = "4.0"

@@ -59,4 +59,4 @@ TY51822r3 で CHIRIMEN を使うには、[ファームウェアの書き換え](
 - [Slack](http://chirimen-oh.slack.com/) - 参加は[招待リンク](https://join.slack.com/t/chirimen-oh/shared_invite/zt-3dvgmnu1x-LxCW09XdSXYGoLVKfnXZww)をご利用ください
 - [Github](https://github.com/chirimen-oh/)
 - [Facebook](https://www.facebook.com/groups/chirimen/)
-- [Twitter](https://twitter.com/chirimen_oh)
+- [X](https://x.com/chirimen_oh)

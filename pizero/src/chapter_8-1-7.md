@@ -19,7 +19,7 @@
 ブラウザ上でコードの中身を見たい場合は `コードを確認する` から参照できます。
 
 - アクチュエーター（DC モーター） ＞ **ID：hbridge2-pca9685pwm 　タイトル：モータ正転・逆転・速度制御**
-  - [※コードを確認する](https://tutorial.chirimen.org/pizero/esm-examples/gpio-onchange/main.js)
+  - [※コードを確認する](https://chirimen.org/pizero/esm-examples/gpio-onchange/main.js)
 
 【備考】
 

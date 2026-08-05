@@ -3,7 +3,7 @@ GPIOの入力には、イベントを使う方法の他に、**ポーリング**
 
 1. ターミナルウィンドの```[CHIRIMEN Panel]```ボタンを押す
 2. 出現したCHIRIMEN Panelの```[Get Examples]```ボタンを押す
-3. ID : [**gpio-polling**](https://tutorial.chirimen.org/pizero/esm-examples/#GPIO_gpio-polling) を探します
+3. ID : [**gpio-polling**](https://chirimen.org/pizero/esm-examples/#GPIO_gpio-polling) を探します
 4. 回路は前章と同じなのでそのままにしておきます。
 5. ```[JS GET]```ボタンを押すと、開発ディレクトリ(```~/myApp```)に、サンプルコードが保存されます。
    * **main-gpio-polling.js**というファイル名で保存されます。

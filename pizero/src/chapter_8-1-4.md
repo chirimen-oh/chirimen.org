@@ -19,7 +19,7 @@
 ブラウザ上でコードの中身を見たい場合は `コードを確認する` から参照できます。
 
 - アナログボリューム ＞ **ID：ads1x15 　タイトル：電圧測定（ADC）**
-  - [※コードを確認する](https://tutorial.chirimen.org/pizero/esm-examples/ads1x15/main.js)
+  - [※コードを確認する](https://chirimen.org/pizero/esm-examples/ads1x15/main.js)
 
 【備考】
 
@@ -37,7 +37,7 @@
 ブラウザ上でコードの中身を見たい場合は `コードを確認する` から参照できます。
 
 - アナログ水位センサー／アナログ土壌センサー ＞ **ID：ads1x15 　タイトル：電圧測定（ADC）**
-  - [※コードを確認する](https://tutorial.chirimen.org/pizero/esm-examples/ads1x15/main.js)
+  - [※コードを確認する](https://chirimen.org/pizero/esm-examples/ads1x15/main.js)
 
 【備考】
 

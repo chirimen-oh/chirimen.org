@@ -4,7 +4,7 @@ GPIO端子は、**入力が変化したら関数を実行する**という機能
 
 1. ターミナルウィンドの`[CHIRIMEN Panel]`ボタンを押す
 2. 出現したCHIRIMEN Panelの`[Get Examples]`ボタンを押す
-3. ID : [**gpio-onchange**](https://tutorial.chirimen.org/pizero/esm-examples/#GPIO_gpio-onchange) を探します
+3. ID : [**gpio-onchange**](https://chirimen.org/pizero/esm-examples/#GPIO_gpio-onchange) を探します
 4. 回路図リンクを押すと回路図が出てきますので、回路を組みます。
 5. `[JS GET]`ボタンを押すと、開発ディレクトリ(`~/myApp`)に、サンプルコードが保存されます。
    - **main-gpio-onchange.js**というファイル名で保存されます。

@@ -19,9 +19,9 @@
 ブラウザでコードの中身を確認したい場合は、`コードを確認する` から確認できます。
 
 - 人感センサー ＞ **ID：gpio-onchange 　タイトル：スイッチ**
-  - [※コードを確認する](https://tutorial.chirimen.org/pizero/esm-examples/gpio-onchange/main.js)
+  - [※コードを確認する](https://chirimen.org/pizero/esm-examples/gpio-onchange/main.js)
 - 人感センサー ＞ **ID：gpio-polling 　タイトル：スイッチ 2**
-  - [※コードを確認する](https://tutorial.chirimen.org/pizero/esm-examples/gpio-polling/main.js)
+  - [※コードを確認する](https://chirimen.org/pizero/esm-examples/gpio-polling/main.js)
 
 【備考】
 

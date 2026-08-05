@@ -15,7 +15,7 @@
 ブラウザ上でコードの中身を見たい場合は `コードを確認する` から参照できます。
 
 - アクチュエーター（サーボモーター） ＞ **ID：pca9685 　タイトル：サーボモータ**
-  - [※コードを確認する](https://tutorial.chirimen.org/pizero/esm-examples/pca9685/main.js)
+  - [※コードを確認する](https://chirimen.org/pizero/esm-examples/pca9685/main.js)
 
 【備考】
 

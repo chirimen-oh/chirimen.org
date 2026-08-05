@@ -20,7 +20,7 @@
 ブラウザ上でコードの中身を見たい場合は `コードを確認する` から参照できます。
 
 - アクチュエーター（DC モーター） ＞ **ID：hbridge1 　タイトル：モータ正転・逆転制御**
-  - [※コードを確認する](https://tutorial.chirimen.org/pizero/esm-examples/hbridge1/main.js)
+  - [※コードを確認する](https://chirimen.org/pizero/esm-examples/hbridge1/main.js)
 
 【備考】
 

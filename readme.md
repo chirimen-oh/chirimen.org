@@ -1,4 +1,4 @@
-<p align="right">Language: <a href="https://tutorial.chirimen.org">Japanese</a>, <a href="https://translate.google.com/translate?sl=ja&tl=en&u=https%3A%2F%2Ftutorial.chirimen.org">English (Google Translation)</a></p>
+<p align="right">Language: <a href="https://chirimen.org">Japanese</a>, <a href="https://translate.google.com/translate?sl=ja&tl=en&u=https%3A%2F%2Fchirimen.org">English (Google Translation)</a></p>
 
 ## CHIRIMEN とは
 
@@ -10,12 +10,13 @@ const port = gpioAccess.ports.get(26); // 26 番ポートを操作する
 
 await port.export("out"); // ポートを出力モードに設定
 
-while (true) { // 無限に繰り返す
+while (true) {
+  // 無限に繰り返す
   // ポートの出力値を 0/1 交互に変更
   await port.write(1); // LED を点灯
-  await sleep(1000);   // 1000ms 待機
+  await sleep(1000); // 1000ms 待機
   await port.write(0); // LED を点灯
-  await sleep(1000);   // 1000ms 待機
+  await sleep(1000); // 1000ms 待機
 }
 ```
 
@@ -31,16 +32,6 @@ while (true) { // 無限に繰り返す
 - [ty51822r3 用チュートリアル](/ty51822r3/)
 
 注: Raspberry Pi (ModelB)ではボード上のブラウザからハードを制御、TY51822r3 や micro:bit ではパソコンやスマホなどのブラウザから Bluetooth 経由でリモート制御、Paspberry PiZeroはNode.jsで制御しますが、いずれのボードコンピュータ用のコードもほぼ同じように書くことができます。
-
-<div class="hide-on-production">
-  <!-- tutorial.chirimen.org では hide-on-production クラスの中は表示されない -->
-
-  ## Latest Version / 最新版
-
-  Latest version of this document is hosted on https://tutorial.chirimen.org/
-
-  このサイトの最新オンライン版は https://tutorial.chirimen.org/ でご覧頂けます
-</div>
 
 <a class="twitter-timeline" data-height="600" data-dnt="true" href="https://twitter.com/chirimen_oh?ref_src=twsrc%5Etfw">Tweets by chirimen_oh</a>
 <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>

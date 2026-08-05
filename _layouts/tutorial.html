@@ -1,4 +1,6 @@
 <!DOCTYPE html>
+{% assign repo_owner = site.repository | split: '/' | first %}
+{% assign repo_name = site.repository | split: '/' | last %}
 <html lang="{{ site.lang | default: "en-US" }}">
   <head>
     {% if site.google_analytics %}
@@ -17,12 +19,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="theme-color" content="#157878">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <link rel="stylesheet" href="{{ '/assets/css/style.css?v=' | append: site.github.build_revision | relative_url }}">
+    <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
   </head>
   <body>
     <header class="page-header" role="banner">
-      <h1 class="project-name">{{ site.title | default: site.github.repository_name }}</h1>
-      <h2 class="project-tagline">{{ site.description | default: site.github.project_tagline }}</h2>
+      <h1 class="project-name">{{ site.title | default: repo_name }}</h1>
+      <h2 class="project-tagline">{{ site.description }}</h2>
     </header>
 
     <main id="content" class="main-content" role="main">
@@ -36,14 +38,12 @@
           | <a href="/feedback">ご指摘・ご提案</a>
           | <a href="https://join.slack.com/t/chirimen-oh/shared_invite/zt-3dvgmnu1x-LxCW09XdSXYGoLVKfnXZww">Slack に参加</a>
           | <a href="https://www.facebook.com/groups/chirimen/">Facebook</a>
-          | <a href="https://twitter.com/chirimen_oh">Twitter</a>
+          | <a href="https://x.com/chirimen_oh">X (旧 Twitter)</a>
         </span>
-        {% if site.github.is_project_page %}
-          <span class="site-footer-owner">
-            Github: <a href="{{ site.github.owner_url }}">{{ site.github.owner_name }}</a>/<a href="{{ site.github.repository_url }}">{{ site.github.repository_name }}</a>
-            | <a href="{{ site.github.repository_url }}/edit/master/{{ page.path }}">このページを編集</a>
-          </span>
-        {% endif %}
+        <span class="site-footer-owner">
+          GitHub: <a href="https://github.com/{{ repo_owner }}">{{ repo_owner }}</a>/<a href="https://github.com/{{ site.repository }}">{{ repo_name }}</a>
+          | <a href="https://github.com/{{ site.repository }}/edit/master/{{ page.path }}">このページを編集</a>
+        </span>
       </footer>
     </main>
   </body>

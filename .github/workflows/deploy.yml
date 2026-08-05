@@ -1,0 +1,27 @@
+name: Deploy
+on: push
+jobs:
+  deploy:
+    runs-on: ubuntu-26.04
+    permissions:
+      contents: read
+      deployments: write
+    steps:
+      - uses: actions/checkout@v7
+      - uses: ruby/setup-ruby@v1
+        with:
+          bundler-cache: true
+      - name: Build Jekyll site
+        run: bundle exec jekyll build
+      - name: Install mdbook
+        run: sudo apt-get update && sudo apt-get install -y mdbook
+      - name: Build mdbook
+        working-directory: pizero
+        run: mdbook build
+      - name: Deploy to Cloudflare Pages
+        uses: cloudflare/wrangler-action@v4
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          command: pages deploy _site --project-name=chirimen-org
+          gitHubToken: ${{ secrets.GITHUB_TOKEN }}

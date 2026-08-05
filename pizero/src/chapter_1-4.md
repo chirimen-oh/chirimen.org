@@ -5,14 +5,14 @@ CHIRIMEN PiZero 版でよく使うリンクをまとめたページです。
 ## 重要な情報のリンク
 
 - [PiZeroターミナル(Web Serial RPiZero Terminal)](https://chirimen.org/PiZeroWebSerialConsole/PiZeroWebSerialConsole.html)
-- [piZeroサンプルプログラム集](https://tutorial.chirimen.org/pizero/esm-examples/)
+- [piZeroサンプルプログラム集](https://chirimen.org/pizero/esm-examples/)
 - [CHIRIMEN 対応全デバイスリスト](https://tutorial.chirimen.org/partslist)
-- [Raspnberry PiZeroのピン配置図(Raspberry Piと共通)](https://tutorial.chirimen.org/pizero/chapter_10-4?highlight=%E3%83%94%E3%83%B3#raspberry-pi%E3%81%AE%E3%83%94%E3%83%B3%E9%85%8D%E7%BD%AE%E5%9B%B3)
+- [Raspnberry PiZeroのピン配置図(Raspberry Piと共通)](https://chirimen.org/pizero/chapter_10-4?highlight=%E3%83%94%E3%83%B3#raspberry-pi%E3%81%AE%E3%83%94%E3%83%B3%E9%85%8D%E7%BD%AE%E5%9B%B3)
 
 ## CHIRIMEN に関するリンク集
 
 - [Web Serial RPiZero Terminal](https://chirimen.org/PiZeroWebSerialConsole/PiZeroWebSerialConsole.html)
-- [CHIRIMEN with Node.js / RPi Zero Examples](https://tutorial.chirimen.org/pizero/esm-examples/)
+- [CHIRIMEN with Node.js / RPi Zero Examples](https://chirimen.org/pizero/esm-examples/)
   - CHIRIMEN パネルの examples に PC からアクセスできます。
 - [CHIRIMEN 対応デバイスリスト](https://tutorial.chirimen.org/partslist)
   - Pi Zero 版に限らない CHIRIMEN 全般に対応したデバイス一覧です。

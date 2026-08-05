@@ -19,7 +19,7 @@
 ブラウザでコードの中身を確認したい場合は、`コードを確認する` から確認できます。
 
 - NEOPIXEL LED（8 連 LED／16 連 LED） ＞ **ID：neopixel-i2c 　タイトル：NEOPIXEL LED**
-  - [※コードを確認する](https://tutorial.chirimen.org/pizero/esm-examples/neopixel-i2c/main.js)
+  - [※コードを確認する](https://chirimen.org/pizero/esm-examples/neopixel-i2c/main.js)
 
 【備考】
 
