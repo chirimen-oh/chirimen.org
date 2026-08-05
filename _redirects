@@ -1,7 +1,7 @@
-# This is netlify's redirect definition file: https://www.netlify.com/docs/redirects/
-# Playground: https://play.netlify.com/redirects
+# This is Cloudflare Pages' redirect definition file (format inherited from Netlify's):
+# https://developers.cloudflare.com/pages/configuration/redirects/
 
-# Redirect default Netlify subdomain to primary domain
+# Redirect legacy Netlify subdomain to primary domain
 https://tutorial-chirimen-org.netlify.com/*   https://tutorial.chirimen.org/:splat 301!
 
 # redirect from obsolete path to new path
