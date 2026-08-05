@@ -36,7 +36,7 @@
             const path_to_root = "";
             const default_light_theme = "light";
             const default_dark_theme = "light";
-            window.path_to_searchindex_js = "searchindex-f5ddfa88.js";
+            window.path_to_searchindex_js = "searchindex-9f26f778.js";
         </script>
         <!-- Start loading toc.js asap -->
         <script src="toc-8d876478.js"></script>
@@ -182,27 +182,24 @@
                 <div id="mdbook-content" class="content">
                     <main>
                         <h1 id="notechirimen-lite-の-cli-操作について"><a class="header" href="#notechirimen-lite-の-cli-操作について">Note:CHIRIMEN-lite の CLI 操作について</a></h1>
+<p>CHIRIMEN Raspberry Pi Zero 版では、<a href="https://www.raspberrypi.com/software/operating-systems/">Raspberry Pi OS Lite</a>（Linux）をコマンドラインインターフェース（CLI）やシェル（bash）で操作します。</p>
+<p>ただし、この講習ではターミナルウィンドによる GUI 操作が可能なので、実際に使うコマンドはごくわずかです。</p>
+<p>代表的なコマンド:</p>
 <ul>
-<li>CHIRIMEN Raspberry Pi Zero 版では、<a href="https://www.raspberrypi.com/software/operating-systems/">Raspberry Pi OS Lite</a>（Linux）をコマンドラインインターフェース（CLI）やシェル（bash）で操作します。
-<ul>
-<li>ただし、この講習ではターミナルウィンドによる GUI 操作が可能なので、実際に使うコマンドはごくわずかです。
-<ul>
-<li><strong>node</strong> コマンド（後述）</li>
-<li><a href="https://atmarkit.itmedia.co.jp/ait/articles/1708/04/news015_2.html">CTRL+c</a>（CTRLキーとcを同時に押し、実行中のコマンドを終了させる操作）</li>
+<li><code>node</code> コマンド</li>
 </ul>
-</li>
-<li>その他のほとんどの操作（コマンド）は、ターミナルウィンドや、そこから起動される別画面の GUI がコマンド操作を代行します。図1.1 の GUI を操作すると、コンソールにコマンドが入力されることがわかります。</li>
-</ul>
-</li>
-<li>ターミナルウィンドの概要（図1.1）
-<img src="imgs/termWin.svg" alt="ターミナルウィンドの説明"></li>
-<li><a href="https://atmarkit.itmedia.co.jp/ait/articles/1602/19/news025.html">CLIとは</a></li>
-<li><a href="https://atmarkit.itmedia.co.jp/ait/articles/1603/02/news016.html">シェルとコマンドプロンプト</a></li>
-<li>linux のシェルコンソール画面に慣れている場合は、ターミナルウィンドのコンソールに、その他のシェル（bash）コマンドを入力して使用することもできます。
+<p>重要な操作:</p>
 <ul>
-<li>たとえば <code>ls -al</code> と入力すると、コンソール画面にディレクトリ内のファイルの一覧が表示されます。</li>
+<li>CtrlキーとCキーの同時押し … 実行中プロセスの終了</li>
 </ul>
-</li>
+<p>その他のほとんどの操作（コマンド）は、ターミナルウィンドや、そこから起動される別画面の GUI がコマンド操作を代行します。図1.1 の GUI を操作すると、コンソールにコマンドが入力されることがわかります。</p>
+<p><em>ターミナルウィンドの概要（図1.1）</em></p>
+<p><img src="imgs/pizero-web-serial-console.excalidraw.svg" alt="ターミナルウィンドの説明"></p>
+<p>Linuxのシェルに慣れている方はシリアルコンソール画面に直接シェルのコマンドを入力して使用することもできます。たとえば <code>ls</code> と入力すると、ディレクトリ内のファイルの一覧がシリアルコンソール画面に表示されます。</p>
+<p>参考リンク:</p>
+<ul>
+<li><a href="https://atmarkit.itmedia.co.jp/ait/articles/1602/19/news025.html">LinuxのCUIとGUI、デスクトップ環境を理解しよう</a></li>
+<li><a href="https://atmarkit.itmedia.co.jp/ait/articles/1603/02/news016.html">Linuxのシェルとコマンドプロンプトを理解しよう</a></li>
 </ul>
 
                     </main>
