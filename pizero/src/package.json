@@ -7,8 +7,6 @@
     "chirimen": "latest",
     "node-web-gpio": "latest",
     "node-web-i2c": "latest",
-    "pi-camera-connect": "^0.3.4",
-    "websocket": "latest"
+    "pi-camera-connect": "^0.3.4"
   }
 }
-
