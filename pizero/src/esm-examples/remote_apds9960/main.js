@@ -18,7 +18,9 @@ const relay = RelayServer("chirimentest", "chirimenSocket");
 const channel = await relay.subscribe("chirimenAPDS9960");
 console.log("web socketリレーサービスに接続しました");
 
-setInterval(async () => {
+const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
+
+while (true) {
   try {
     let gesture = null;
     if (await apds9960.isGestureAvailable()) {
@@ -37,4 +39,5 @@ setInterval(async () => {
   } catch (error) {
     console.error("READ ERROR:", error);
   }
-}, SEND_INTERVAL_MS);
+  await sleep(SEND_INTERVAL_MS);
+}

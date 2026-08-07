@@ -24,12 +24,19 @@ const channel = await relay.subscribe("chirimenAS5600");
 console.log("WebSocketリレーサービスに接続しました");
 
 // --- センサーからデータを読み取って送信する ---
-setInterval(async () => {
-  const angle = await as5600.getAngle();
-  const { detected, tooLow, tooHigh } = await as5600.getStatus();
-  const sensorData = { angle, detected, tooLow, tooHigh };
+const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
 
-  console.log(`angle: ${angle.toFixed(1)}° / magnet detected: ${detected}`);
-  channel.send(sensorData);
-  console.log("送信しました:", JSON.stringify(sensorData));
-}, SEND_INTERVAL_MS);
+while (true) {
+  try {
+    const angle = await as5600.getAngle();
+    const { detected, tooLow, tooHigh } = await as5600.getStatus();
+    const sensorData = { angle, detected, tooLow, tooHigh };
+
+    console.log(`angle: ${angle.toFixed(1)}° / magnet detected: ${detected}`);
+    channel.send(sensorData);
+    console.log("送信しました:", JSON.stringify(sensorData));
+  } catch (error) {
+    console.error("READ ERROR:", error);
+  }
+  await sleep(SEND_INTERVAL_MS);
+}

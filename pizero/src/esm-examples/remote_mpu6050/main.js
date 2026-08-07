@@ -24,25 +24,32 @@ const channel = await relay.subscribe("chirimenMPU6050");
 console.log("WebSocketリレーサービスに接続しました");
 
 // --- センサーからデータを読み取って送信する ---
-setInterval(async () => {
-  const { temperature, gx, gy, gz, rx, ry, rz } = await mpu6050.readAll();
-  const sensorData = {
-    temperature: Number(temperature.toFixed(2)),
-    gx,
-    gy,
-    gz,
-    rx,
-    ry,
-    rz,
-  };
+const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
 
-  console.log(
-    [
-      `Temperature: ${sensorData.temperature} degree`,
-      `Gx: ${gx}, Gy: ${gy}, Gz: ${gz}`,
-      `Rx: ${rx}, Ry: ${ry}, Rz: ${rz}`,
-    ].join("\n"),
-  );
-  channel.send(sensorData);
-  console.log("送信しました:", JSON.stringify(sensorData));
-}, SEND_INTERVAL_MS);
+while (true) {
+  try {
+    const { temperature, gx, gy, gz, rx, ry, rz } = await mpu6050.readAll();
+    const sensorData = {
+      temperature: Number(temperature.toFixed(2)),
+      gx,
+      gy,
+      gz,
+      rx,
+      ry,
+      rz,
+    };
+
+    console.log(
+      [
+        `Temperature: ${sensorData.temperature} degree`,
+        `Gx: ${gx}, Gy: ${gy}, Gz: ${gz}`,
+        `Rx: ${rx}, Ry: ${ry}, Rz: ${rz}`,
+      ].join("\n"),
+    );
+    channel.send(sensorData);
+    console.log("送信しました:", JSON.stringify(sensorData));
+  } catch (error) {
+    console.error("READ ERROR:", error);
+  }
+  await sleep(SEND_INTERVAL_MS);
+}

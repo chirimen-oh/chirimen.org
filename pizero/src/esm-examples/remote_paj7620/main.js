@@ -24,8 +24,7 @@ const channel = await relay.subscribe("chirimenGesture");
 console.log("WebSocketリレーサービスに接続しました");
 
 // --- ジェスチャーを検出したときだけ送信する ---
-console.log("ジェスチャーの検出を待機しています...");
-setInterval(async () => {
+async function pollGesture() {
   const direction = await gesture.read();
   if (direction === "----") return; // 何も検出されていない場合は送らない
 
@@ -33,4 +32,16 @@ setInterval(async () => {
   console.log(`ジェスチャーを検出しました: ${direction}`);
   channel.send(sensorData);
   console.log("送信しました:", JSON.stringify(sensorData));
-}, POLL_INTERVAL_MS);
+}
+
+const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
+
+console.log("ジェスチャーの検出を待機しています...");
+while (true) {
+  try {
+    await pollGesture();
+  } catch (error) {
+    console.error("READ ERROR:", error);
+  }
+  await sleep(POLL_INTERVAL_MS);
+}

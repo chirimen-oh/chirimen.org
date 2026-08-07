@@ -9,7 +9,9 @@ const mma7660 = new MMA7660(i2cPort, 0x4c);
 
 await mma7660.init();
 
-setInterval(async() => {
+const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
+
+while (true) {
     const XYZData = await mma7660.getXYZ();
     const AccelerationData = await mma7660.getAcceleration();
 
@@ -19,4 +21,5 @@ setInterval(async() => {
 
     console.dir(`acceleration of X/Y/Z: ${  AccelerationData.X  } g/ ${  AccelerationData.Y  } g/ ${  AccelerationData.Z  } g`);
 
-}, 500);
+    await sleep(500);
+}

@@ -21,7 +21,9 @@ async function readSensorData() {
   return { red: red & 0xff, green: green & 0xff, blue: blue & 0xff, gain };
 }
 
-setInterval(async () => {
+const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
+
+while (true) {
   try {
     const sensorData = await readSensorData();
     channel.send(sensorData);
@@ -31,4 +33,5 @@ setInterval(async () => {
   } catch (error) {
     console.error("READ ERROR:", error);
   }
-}, SEND_INTERVAL_MS);
+  await sleep(SEND_INTERVAL_MS);
+}

@@ -20,7 +20,9 @@ async function readSensorData() {
   return { lux, proximity };
 }
 
-setInterval(async () => {
+const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
+
+while (true) {
   try {
     const sensorData = await readSensorData();
     channel.send(sensorData);
@@ -30,4 +32,5 @@ setInterval(async () => {
   } catch (error) {
     console.error("READ ERROR:", error);
   }
-}, SEND_INTERVAL_MS);
+  await sleep(SEND_INTERVAL_MS);
+}

@@ -23,19 +23,26 @@ function toHex(uid) {
     .toUpperCase();
 }
 
-setInterval(async () => {
+async function checkCard() {
+  // カードがリーダー上にあるかを確認
+  const isNewCard = await rc522.PICC_IsNewCardPresent();
+  if (!isNewCard) return;
+
+  const uid = await rc522.PICC_ReadCardSerial();
+  await rc522.PICC_HaltA();
+
+  const sensorData = { uid: toHex(uid), detectedAt: new Date().toISOString() };
+  channel.send(sensorData);
+  console.log("UID検出:", sensorData.uid);
+}
+
+const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
+
+while (true) {
   try {
-    // カードがリーダー上にあるかを確認
-    const isNewCard = await rc522.PICC_IsNewCardPresent();
-    if (!isNewCard) return;
-
-    const uid = await rc522.PICC_ReadCardSerial();
-    await rc522.PICC_HaltA();
-
-    const sensorData = { uid: toHex(uid), detectedAt: new Date().toISOString() };
-    channel.send(sensorData);
-    console.log("UID検出:", sensorData.uid);
+    await checkCard();
   } catch (error) {
     console.error("READ ERROR:", error);
   }
-}, CHECK_INTERVAL_MS);
+  await sleep(CHECK_INTERVAL_MS);
+}

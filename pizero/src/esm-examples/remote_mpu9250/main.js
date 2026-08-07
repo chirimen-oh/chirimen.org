@@ -28,23 +28,30 @@ const channel = await relay.subscribe("chirimenMPU9250");
 console.log("WebSocketリレーサービスに接続しました");
 
 // --- センサーからデータを読み取って送信する ---
-setInterval(async () => {
-  const g = await mpu6500.getGyro();
-  const r = await mpu6500.getAcceleration();
-  const h = await ak8963.readData();
-  const sensorData = {
-    gx: g.x, gy: g.y, gz: g.z,
-    rx: r.x, ry: r.y, rz: r.z,
-    hx: h.x, hy: h.y, hz: h.z,
-  };
+const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
 
-  console.log(
-    [
-      `Gx: ${g.x}, Gy: ${g.y}, Gz: ${g.z}`,
-      `Rx: ${r.x}, Ry: ${r.y}, Rz: ${r.z}`,
-      `Hx: ${h.x}, Hy: ${h.y}, Hz: ${h.z}`,
-    ].join("\n"),
-  );
-  channel.send(sensorData);
-  console.log("送信しました:", JSON.stringify(sensorData));
-}, SEND_INTERVAL_MS);
+while (true) {
+  try {
+    const g = await mpu6500.getGyro();
+    const r = await mpu6500.getAcceleration();
+    const h = await ak8963.readData();
+    const sensorData = {
+      gx: g.x, gy: g.y, gz: g.z,
+      rx: r.x, ry: r.y, rz: r.z,
+      hx: h.x, hy: h.y, hz: h.z,
+    };
+
+    console.log(
+      [
+        `Gx: ${g.x}, Gy: ${g.y}, Gz: ${g.z}`,
+        `Rx: ${r.x}, Ry: ${r.y}, Rz: ${r.z}`,
+        `Hx: ${h.x}, Hy: ${h.y}, Hz: ${h.z}`,
+      ].join("\n"),
+    );
+    channel.send(sensorData);
+    console.log("送信しました:", JSON.stringify(sensorData));
+  } catch (error) {
+    console.error("READ ERROR:", error);
+  }
+  await sleep(SEND_INTERVAL_MS);
+}

@@ -9,7 +9,9 @@ const waterlevelsensor = new WaterLevelSensor(i2cPort, 0x77, 0x78);
 
 await waterlevelsensor.init();
 
-setInterval(async() => {
+const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
+
+while (true) {
   const high12SectionValue = await waterlevelsensor.getHigh12SectionValue();
   const low8SectionValue = await waterlevelsensor.getLow8SectionValue();
   const waterLevel = await waterlevelsensor.getWaterLevel();
@@ -17,4 +19,6 @@ setInterval(async() => {
   console.dir(`high: ${high12SectionValue}`);
   console.dir(`low: ${low8SectionValue}`);
   console.dir(`waterLevel: ${waterLevel} %`);
-}, 500);
+
+  await sleep(500);
+}

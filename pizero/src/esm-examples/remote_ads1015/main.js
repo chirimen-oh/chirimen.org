@@ -44,7 +44,9 @@ async function readSensorData() {
   return { raw, voltage };
 }
 
-setInterval(async () => {
+const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
+
+while (true) {
   try {
     // センサーからデータを読み取る
     const sensorData = await readSensorData();
@@ -55,4 +57,5 @@ setInterval(async () => {
   } catch (error) {
     console.error(`読み取りエラー: ${error.message}`);
   }
-}, SEND_INTERVAL_MS);
+  await sleep(SEND_INTERVAL_MS);
+}

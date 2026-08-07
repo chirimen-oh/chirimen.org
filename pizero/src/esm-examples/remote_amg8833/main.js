@@ -24,11 +24,18 @@ const channel = await relay.subscribe("chirimenAMG");
 console.log("WebSocketリレーサービスに接続しました");
 
 // --- センサーからデータ(8x8の温度分布)を読み取って送信する ---
-setInterval(async () => {
-  // pixels: 8行×8列の温度データ(摂氏)の配列
-  const pixels = await amg8833.readData();
-  const sensorData = { pixels };
-  console.log(pixels.map((row) => row.map((v) => v.toFixed(1)).join(" ")).join("\n"));
-  channel.send(sensorData);
-  console.log("送信しました");
-}, SEND_INTERVAL_MS);
+const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
+
+while (true) {
+  try {
+    // pixels: 8行×8列の温度データ(摂氏)の配列
+    const pixels = await amg8833.readData();
+    const sensorData = { pixels };
+    console.log(pixels.map((row) => row.map((v) => v.toFixed(1)).join(" ")).join("\n"));
+    channel.send(sensorData);
+    console.log("送信しました");
+  } catch (error) {
+    console.error("READ ERROR:", error);
+  }
+  await sleep(SEND_INTERVAL_MS);
+}

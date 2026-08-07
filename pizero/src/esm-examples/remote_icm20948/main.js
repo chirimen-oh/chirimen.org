@@ -24,18 +24,25 @@ const channel = await relay.subscribe("chirimenICM");
 console.log("WebSocketリレーサービスに接続しました");
 
 // --- センサーからデータを読み取って送信する ---
-setInterval(async () => {
-  const [roll, pitch, yaw, ax, ay, az, gx, gy, gz, mx, my, mz] = await icm20948.getdata();
-  const sensorData = { roll, pitch, yaw, ax, ay, az, gx, gy, gz, mx, my, mz };
+const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
 
-  console.log(
-    [
-      `Roll = ${roll.toFixed(2)} , Pitch = ${pitch.toFixed(2)} , Yaw = ${yaw.toFixed(2)}`,
-      `Acceleration: X = ${ax}, Y = ${ay}, Z = ${az}`,
-      `Gyroscope:     X = ${gx} , Y = ${gy} , Z = ${gz}`,
-      `Magnetic:      X = ${mx} , Y = ${my} , Z = ${mz}`,
-    ].join("\n"),
-  );
-  channel.send(sensorData);
-  console.log("送信しました:", JSON.stringify(sensorData));
-}, SEND_INTERVAL_MS);
+while (true) {
+  try {
+    const [roll, pitch, yaw, ax, ay, az, gx, gy, gz, mx, my, mz] = await icm20948.getdata();
+    const sensorData = { roll, pitch, yaw, ax, ay, az, gx, gy, gz, mx, my, mz };
+
+    console.log(
+      [
+        `Roll = ${roll.toFixed(2)} , Pitch = ${pitch.toFixed(2)} , Yaw = ${yaw.toFixed(2)}`,
+        `Acceleration: X = ${ax}, Y = ${ay}, Z = ${az}`,
+        `Gyroscope:     X = ${gx} , Y = ${gy} , Z = ${gz}`,
+        `Magnetic:      X = ${mx} , Y = ${my} , Z = ${mz}`,
+      ].join("\n"),
+    );
+    channel.send(sensorData);
+    console.log("送信しました:", JSON.stringify(sensorData));
+  } catch (error) {
+    console.error("READ ERROR:", error);
+  }
+  await sleep(SEND_INTERVAL_MS);
+}

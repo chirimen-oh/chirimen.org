@@ -18,7 +18,9 @@ const relay = RelayServer("chirimentest", "chirimenSocket");
 const channel = await relay.subscribe("chirimenSeesaw");
 console.log("web socketリレーサービスに接続しました");
 
-setInterval(async () => {
+const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
+
+while (true) {
   try {
     const value = await seesaw.analog_read(ANALOG_PIN);
     const on = value > 512;
@@ -28,4 +30,5 @@ setInterval(async () => {
   } catch (error) {
     console.error("READ ERROR:", error);
   }
-}, SEND_INTERVAL_MS);
+  await sleep(SEND_INTERVAL_MS);
+}

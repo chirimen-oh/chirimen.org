@@ -24,10 +24,17 @@ const channel = await relay.subscribe("chirimenAS7341");
 console.log("WebSocketリレーサービスに接続しました");
 
 // --- センサーからデータを読み取って送信する ---
-setInterval(async () => {
-  // f1〜f8（各波長の強度）、clear（全可視光）、nir（近赤外）
-  const sensorData = await as7341.read();
-  console.dir(sensorData);
-  channel.send(sensorData);
-  console.log("送信しました:", JSON.stringify(sensorData));
-}, SEND_INTERVAL_MS);
+const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
+
+while (true) {
+  try {
+    // f1〜f8（各波長の強度）、clear（全可視光）、nir（近赤外）
+    const sensorData = await as7341.read();
+    console.dir(sensorData);
+    channel.send(sensorData);
+    console.log("送信しました:", JSON.stringify(sensorData));
+  } catch (error) {
+    console.error("READ ERROR:", error);
+  }
+  await sleep(SEND_INTERVAL_MS);
+}

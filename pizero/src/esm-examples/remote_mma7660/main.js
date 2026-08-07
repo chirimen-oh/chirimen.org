@@ -24,12 +24,19 @@ const channel = await relay.subscribe("chirimenMMA");
 console.log("WebSocketリレーサービスに接続しました");
 
 // --- センサーからデータを読み取って送信する ---
-setInterval(async () => {
-  const { X, Y, Z } = await mma7660.getXYZ();
-  const { X: gx, Y: gy, Z: gz } = await mma7660.getAcceleration();
-  const sensorData = { x: X, y: Y, z: Z, gx, gy, gz };
+const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
 
-  console.log(`X: ${X}, Y: ${Y}, Z: ${Z} (${gx}g, ${gy}g, ${gz}g)`);
-  channel.send(sensorData);
-  console.log("送信しました:", JSON.stringify(sensorData));
-}, SEND_INTERVAL_MS);
+while (true) {
+  try {
+    const { X, Y, Z } = await mma7660.getXYZ();
+    const { X: gx, Y: gy, Z: gz } = await mma7660.getAcceleration();
+    const sensorData = { x: X, y: Y, z: Z, gx, gy, gz };
+
+    console.log(`X: ${X}, Y: ${Y}, Z: ${Z} (${gx}g, ${gy}g, ${gz}g)`);
+    channel.send(sensorData);
+    console.log("送信しました:", JSON.stringify(sensorData));
+  } catch (error) {
+    console.error("READ ERROR:", error);
+  }
+  await sleep(SEND_INTERVAL_MS);
+}

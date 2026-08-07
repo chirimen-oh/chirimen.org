@@ -15,12 +15,14 @@ await mcp9808.init();
 await mcp9808.wake();
 await mcp9808.setResolution(3);
 
-setInterval(async function () {
+const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
 
+while (true) {
   let mode = await mcp9808.getResolution();
   let data_t = await mcp9808.readTempC();
   let data_f = await mcp9808.readTempF();
   console.dir(mode);
   console.dir({ "T": data_t, "F": data_f });
 
-}, 1000);
+  await sleep(1000);
+}

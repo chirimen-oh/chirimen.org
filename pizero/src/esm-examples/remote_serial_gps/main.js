@@ -27,14 +27,17 @@ const relay = RelayServer("chirimentest", "chirimenSocket");
 const channel = await relay.subscribe("chirimenGPS");
 console.log("web socketリレーサービスに接続しました");
 
+const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
+
 // 数秒間隔で、直近に受信した位置情報をブラウザへ送信する
-setInterval(() => {
+while (true) {
   if (!latestFix || latestFix.quality == null) {
     channel.send({ fix: false });
     console.log("GPS: 衛星を捕捉できていません");
-    return;
+  } else {
+    const { time, lat, lon, alt, satellites, quality } = latestFix;
+    channel.send({ fix: true, time, lat, lon, alt, satellites, quality });
+    console.log(`緯度:${lat} 経度:${lon} 高度:${alt}m 衛星数:${satellites}`);
   }
-  const { time, lat, lon, alt, satellites, quality } = latestFix;
-  channel.send({ fix: true, time, lat, lon, alt, satellites, quality });
-  console.log(`緯度:${lat} 経度:${lon} 高度:${alt}m 衛星数:${satellites}`);
-}, SEND_INTERVAL_MS);
+  await sleep(SEND_INTERVAL_MS);
+}

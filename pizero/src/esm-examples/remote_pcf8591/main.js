@@ -37,5 +37,14 @@ const channel = await relay.subscribe("chirimenPCF8591");
 console.log("web socketリレーサービスに接続しました");
 channel.onmessage = controlDAC;
 
+const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
+
 // 一定間隔でADC値を送信し続ける
-setInterval(sendADCValues, ADC_READ_INTERVAL_MS);
+while (true) {
+  try {
+    await sendADCValues();
+  } catch (error) {
+    console.error("READ ERROR:", error);
+  }
+  await sleep(ADC_READ_INTERVAL_MS);
+}

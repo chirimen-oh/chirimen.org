@@ -24,10 +24,17 @@ const channel = await relay.subscribe("chirimenADXL");
 console.log("WebSocketリレーサービスに接続しました");
 
 // --- センサーからデータを読み取って送信する ---
-setInterval(async () => {
-  const { x, y, z } = await accelerometer.read();
-  const sensorData = { x, y, z };
-  console.log(`x: ${x} m/s², y: ${y} m/s², z: ${z} m/s²`);
-  channel.send(sensorData);
-  console.log("送信しました:", JSON.stringify(sensorData));
-}, SEND_INTERVAL_MS);
+const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
+
+while (true) {
+  try {
+    const { x, y, z } = await accelerometer.read();
+    const sensorData = { x, y, z };
+    console.log(`x: ${x} m/s², y: ${y} m/s², z: ${z} m/s²`);
+    channel.send(sensorData);
+    console.log("送信しました:", JSON.stringify(sensorData));
+  } catch (error) {
+    console.error("READ ERROR:", error);
+  }
+  await sleep(SEND_INTERVAL_MS);
+}

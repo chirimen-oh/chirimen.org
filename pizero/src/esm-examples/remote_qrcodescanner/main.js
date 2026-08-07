@@ -8,12 +8,9 @@ const POLL_INTERVAL_MS = 3000;
 const SCAN_TIMEOUT_MS = 2000;
 
 let lastData = "";
-let scanning = false;
 
 // QRコードを読み取り、内容が変化していれば送信する
 async function pollQRCode() {
-  if (scanning) return;
-  scanning = true;
   try {
     const data = await qrscanner.scanData(SCAN_TIMEOUT_MS);
     if (data && data !== lastData) {
@@ -22,8 +19,6 @@ async function pollQRCode() {
     }
   } catch {
     // タイムアウト(一定時間内にQRコードを検出できなかった場合)は何もしない
-  } finally {
-    scanning = false;
   }
 }
 
@@ -39,5 +34,10 @@ const relay = RelayServer("chirimentest", "chirimenSocket");
 const channel = await relay.subscribe("chirimenQR");
 console.log("web socketリレーサービスに接続しました");
 
+const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
+
 // 一定間隔でQRコードをポーリングする
-setInterval(pollQRCode, POLL_INTERVAL_MS);
+while (true) {
+  await pollQRCode();
+  await sleep(POLL_INTERVAL_MS);
+}
