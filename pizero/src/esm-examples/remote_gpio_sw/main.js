@@ -2,7 +2,6 @@
 // for CHIRIMEN with nodejs
 
 import { requestGPIOAccess } from "node-web-gpio";
-import nodeWebSocketLib from "websocket"; // https://www.npmjs.com/package/websocket
 import { RelayServer } from "./RelayServer.js";
 
 let channel;
@@ -21,7 +20,7 @@ gpioPort0 = mbGpioPorts.get(5);
 await gpioPort0.export("in");
 
 // webSocketリレーの初期化
-const relay = RelayServer("chirimentest", "chirimenSocket" , nodeWebSocketLib, "https://chirimen.org");
+const relay = RelayServer("chirimentest", "chirimenSocket");
 channel = await relay.subscribe("chirimenSW");
 console.log("web socketリレーサービスに接続しました");
 gpioPort0.onchange=testChange; // ISSUE gpioのonchangeの仕様が異なる

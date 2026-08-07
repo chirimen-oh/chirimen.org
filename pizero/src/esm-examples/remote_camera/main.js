@@ -3,10 +3,6 @@
 // ライブラリ　pi-camera-connect　をまずインストールする必要があります。readmeを参照してください。
 
 import { StillCamera } from "pi-camera-connect";
-import * as fs from "fs";
-
-import { requestGPIOAccess } from "node-web-gpio";
-import nodeWebSocketLib from "websocket"; // https://www.npmjs.com/package/websocket
 import { RelayServer } from "./RelayServer.js";
 
 const stillCamera = new StillCamera({
@@ -41,12 +37,7 @@ async function captureImage() {
 }
 
 // webSocketリレーの初期化
-const relay = RelayServer(
-	"chirimentest",
-	"chirimenSocket",
-	nodeWebSocketLib,
-	"https://chirimen.org"
-);
+const relay = RelayServer("chirimentest", "chirimenSocket");
 channel = await relay.subscribe("chirimenCAM");
 console.log("web socketリレーサービスに接続しました");
 channel.onmessage = transmitImageData;

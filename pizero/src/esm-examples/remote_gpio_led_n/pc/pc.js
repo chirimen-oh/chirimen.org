@@ -1,26 +1,18 @@
-// Remote Example4 - controller
 import { RelayServer } from "https://www.chirimen.org/remote-connection/js/beta/RelayServer.js";
 
-window.OnLED = OnLED;
-window.OffLED = OffLED;
-
-let channel;
-onload = async function () {
-  // webSocketリレーの初期化
-  const relay = RelayServer("chirimentest", "chirimenSocket");
-  channel = await relay.subscribe("chirimenLED");
-  messageDiv.innerText = "web socketリレーサービスに接続しました";
-  channel.onmessage = getMessage;
-};
+// webSocketリレーの初期化
+const relay = RelayServer("chirimentest", "chirimenSocket");
+const channel = await relay.subscribe("chirimenLED");
+messageDiv.innerText = "web socketリレーサービスに接続しました";
 
 // メッセージを受信したときに起動する関数
-function getMessage(msg) {
+channel.onmessage = (msg) => {
   messageDiv.innerText = msg.data;
-}
+};
 
-function OnLED() {
+window.OnLED = () => {
   channel.send("LED ON");
-}
-function OffLED() {
+};
+window.OffLED = () => {
   channel.send("LED OFF");
-}
+};

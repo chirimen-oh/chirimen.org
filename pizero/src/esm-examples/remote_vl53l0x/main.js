@@ -3,7 +3,6 @@
 import { requestI2CAccess } from "node-web-i2c";
 import VL53L0X from "@chirimen/vl53l0x";
 const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
-import nodeWebSocketLib from "websocket"; // https://www.npmjs.com/package/websocket
 import { RelayServer } from "./RelayServer.js";
 
 let channel;
@@ -30,7 +29,7 @@ vl = new VL53L0X(i2cPort, 0x29);
 await vl.init();
 
 // webSocketリレーの初期化
-const relay = RelayServer("chirimentest", "chirimenSocket" , nodeWebSocketLib, "https://chirimen.org");
+const relay = RelayServer("chirimentest", "chirimenSocket");
 channel = await relay.subscribe("chirimenVL");
 console.log("web socketリレーサービスに接続しました");
     transmitSensorData();

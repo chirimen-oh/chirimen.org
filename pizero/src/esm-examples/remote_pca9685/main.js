@@ -3,7 +3,6 @@
 
 import { requestI2CAccess } from "node-web-i2c";
 import PCA9685 from "@chirimen/pca9685";
-import nodeWebSocketLib from "websocket"; // https://www.npmjs.com/package/websocket
 import { RelayServer } from "./RelayServer.js";
 
 let channel;
@@ -31,7 +30,7 @@ pca9685 = new PCA9685(i2cPort, 0x40);
 await pca9685.init(0.001, 0.002, 30);
 
 // webSocketリレーの初期化
-const relay = RelayServer("chirimentest", "chirimenSocket" , nodeWebSocketLib, "https://chirimen.org");
+const relay = RelayServer("chirimentest", "chirimenSocket");
 channel = await relay.subscribe("chirimenMbitRemoteServo");
 console.log("web socketリレーサービスに接続しました");
 channel.onmessage=moveServo;
