@@ -1,0 +1,22 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fogtype/css" />
+</head>
+<script type="module" src="pc.js"></script>
+<body>
+<h3 id="deviceTitle">Remote Example - SSD1306 OLED Display</h3>
+<p>表示したい文字列を入力して送信してください。改行で最大8行まで表示できます。</p>
+
+<form id="textForm">
+  <p>
+    <textarea id="textInput" rows="4" cols="20" placeholder="Hello&#10;Real&#10;World"></textarea>
+  </p>
+  <button type="submit">送信</button>
+</form>
+
+<div id="messageDiv"></div>
+</body>
+</html>

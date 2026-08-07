@@ -1,5 +1,4 @@
 // Remote Example1 - reciever
-// for CHIRIMEN with nodejs
 
 import { requestGPIOAccess } from "node-web-gpio";
 import { RelayServer } from "./RelayServer.js";

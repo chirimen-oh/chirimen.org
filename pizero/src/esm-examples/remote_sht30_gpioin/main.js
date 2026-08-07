@@ -1,5 +1,4 @@
 // Remote Example5 - reciever
-// for CHIRIMEN with nodejs
 import { requestGPIOAccess } from "node-web-gpio";
 import { requestI2CAccess } from "node-web-i2c";
 import SHT30 from "@chirimen/sht30";

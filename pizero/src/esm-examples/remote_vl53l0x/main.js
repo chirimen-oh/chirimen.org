@@ -1,5 +1,4 @@
 // Remote VL53L0X
-// for CHIRIMEN with nodejs
 import { requestI2CAccess } from "node-web-i2c";
 import VL53L0X from "@chirimen/vl53l0x";
 const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));

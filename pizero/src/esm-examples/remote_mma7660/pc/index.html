@@ -1,0 +1,35 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fogtype/css" />
+<style>
+.barLabel { display: inline-block; width: 2em; }
+.barOuter { display: inline-block; width: 200px; height: 12px; background: #eee; position: relative; vertical-align: middle; }
+.barInner { position: absolute; top: 0; height: 100%; background: #10b981; }
+</style>
+</head>
+<script type="module" src="pc.js"></script>
+<body>
+<h3 id="deviceTitle">Remote MMA7660 - 3軸加速度センサー</h3>
+
+<table border="1">
+<tr><th>Name</th><th>Value</th></tr>
+<tr><td>x (raw)</td><td id="xTd">-</td></tr>
+<tr><td>y (raw)</td><td id="yTd">-</td></tr>
+<tr><td>z (raw)</td><td id="zTd">-</td></tr>
+<tr><td>x (G)</td><td id="gxTd">-</td></tr>
+<tr><td>y (G)</td><td id="gyTd">-</td></tr>
+<tr><td>z (G)</td><td id="gzTd">-</td></tr>
+</table>
+
+<p>
+<span class="barLabel">X</span><span class="barOuter"><span class="barInner" id="xBar"></span></span><br>
+<span class="barLabel">Y</span><span class="barOuter"><span class="barInner" id="yBar"></span></span><br>
+<span class="barLabel">Z</span><span class="barOuter"><span class="barInner" id="zBar"></span></span>
+</p>
+
+<div id="messageDiv"></div>
+</body>
+</html>

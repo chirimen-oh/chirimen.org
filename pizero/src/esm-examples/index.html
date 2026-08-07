@@ -1,6 +1,8 @@
 <!doctype html>
 <html>
   <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
     <title>
       ECMA Script Module Examples for CHIRIMEN with Node.js/Rarpberry Pi Zero
     </title>
@@ -55,12 +57,12 @@
       if (cat == "REMOTE") {
         tbl.insertAdjacentHTML(
           "afterbegin",
-          '<tr><td width="100">ID</td><td width="200">タイトル</td><td width="400">概要</td><td>回路図</td><td>JS GET</td><td>PC側webApp (CodeSandbox)</td><td>CHIRIMEN ORIG参考リンク</td>',
+          '<tr><td width="100">ID</td><td width="200">タイトル</td><td width="400">概要</td><td>回路図</td><td>JS GET</td><td>PC側webApp (CodeSandbox)</td>',
         );
       } else {
         tbl.insertAdjacentHTML(
           "afterbegin",
-          '<tr><td width="100">ID</td><td width="200">タイトル</td><td width="400">概要</td><td>回路図</td><td>JS GET</td><td>CHIRIMEN ORIG参考リンク</td>',
+          '<tr><td width="100">ID</td><td width="200">タイトル</td><td width="400">概要</td><td>回路図</td><td>JS GET</td>',
         );
       }
       for (const item of catData) {
@@ -89,17 +91,10 @@
             "<a href='./" + item[0] + "/main.js' target='_js'>JS GET</a>";
         }
 
-        const co_td = document.createElement("td");
-        co_td.innerHTML =
-          "<a href='" +
-          co_base +
-          cat +
-          "-" +
-          item[0].toUpperCase() +
-          "' target='_original'>参考</a>";
-
         const tr = document.createElement("tr");
         tr.setAttribute("id", cat + "_" + item[0]);
+        tr.dataset.search =
+          `${item[0]} ${item[1]} ${exp_td.textContent}`.toLowerCase();
         tr.appendChild(id_td);
         tr.appendChild(title_td);
         tr.appendChild(exp_td);
@@ -115,8 +110,34 @@
           tr.appendChild(pc_td);
         }
 
-        tr.appendChild(co_td);
         tbl.appendChild(tr);
+      }
+      filterRows(document.getElementById("filterInput").value);
+    }
+
+    function filterRows(keyword) {
+      keyword = keyword.trim().toLowerCase();
+      let totalVisible = 0;
+      let totalRows = 0;
+      for (const tbl of document.querySelectorAll("table[id^='Tbl']")) {
+        const rows = tbl.querySelectorAll("tr[data-search]");
+        let visibleCount = 0;
+        for (const tr of rows) {
+          const match = !keyword || tr.dataset.search.includes(keyword);
+          tr.style.display = match ? "" : "none";
+          if (match) visibleCount++;
+        }
+        const heading = tbl.previousElementSibling;
+        tbl.style.display = visibleCount > 0 ? "" : "none";
+        if (heading) heading.style.display = visibleCount > 0 ? "" : "none";
+        totalVisible += visibleCount;
+        totalRows += rows.length;
+      }
+      const countEl = document.getElementById("filterCount");
+      if (countEl) {
+        countEl.textContent = keyword
+          ? `${totalVisible}/${totalRows} 件`
+          : `${totalRows} 件`;
       }
     }
 
@@ -143,7 +164,18 @@
   </script>
   <body>
     <h2>CHIRIMEN with Node.js / RPi Zero Examples</h2>
-    <a href="../package.json">Latest package.json</a>
+    <div>
+      <label for="filterInput">絞り込み: </label>
+      <input
+        type="search"
+        id="filterInput"
+        placeholder="ID・タイトル・概要"
+        oninput="filterRows(this.value)"
+        style="width: 300px"
+        autofocus
+      />
+      <p id="filterCount"></p>
+    </div>
     <h3 id="gpio">GPIO Examples</h3>
     <table border="1" id="TblGPIO"></table>
     <h3 id="i2c">I2C Examples</h3>
@@ -151,5 +183,6 @@
     <h3 id="remote">REMOTE Examples</h3>
     <table border="1" id="TblREMOTE"></table>
     <!--<a href="https://chirimen.org/chirimen/gc/top/examples/#i2cExamples">詳しくはこちらを見てね</a>-->
+    <p><a href="../package.json">Latest package.json</a></p>
   </body>
 </html>

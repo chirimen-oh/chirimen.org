@@ -1,0 +1,33 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fogtype/css" />
+<style>
+#channelTable td {
+  text-align: center;
+  min-width: 2.5em;
+}
+.touchOn {
+  background: #4caf50;
+  color: white;
+  font-weight: bold;
+}
+.touchOff {
+  background: #eee;
+  color: #999;
+}
+</style>
+</head>
+<script type="module" src="pc.js"></script>
+<body>
+<h3 id="deviceTitle">リモートタッチセンサ(MPR121) - Display</h3>
+
+<table id="channelTable" border="1">
+<tr id="channelHeaderRow"></tr>
+<tr id="channelValueRow"></tr>
+</table>
+<div id="messageDiv"></div>
+</body>
+</html>

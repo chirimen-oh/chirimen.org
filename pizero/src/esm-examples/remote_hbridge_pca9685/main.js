@@ -1,5 +1,4 @@
 // Remote Example PCA9685PWM + HBridge - reciever
-// for CHIRIMEN with nodejs
 
 import { requestI2CAccess } from "node-web-i2c";
 import PCA9685_PWM from "@chirimen/pca9685-pwm";
