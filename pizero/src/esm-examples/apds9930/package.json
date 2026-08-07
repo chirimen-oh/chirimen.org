@@ -1,0 +1,15 @@
+{
+  "name": "apds9930",
+  "type": "module",
+  "version": "1.0.0",
+  "description": "apds9930 Example",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "@chirimen/apds9930": "^1.0.0",
+    "node-web-i2c": "^1.1.51"
+  }
+}
