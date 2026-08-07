@@ -9,8 +9,6 @@ import { RelayServer } from "./RelayServer.js";
 
 // --- 設定 ---
 const I2CADDR_AS7341 = 0x39;
-// データを送る間隔 (ミリ秒)
-const SEND_INTERVAL_MS = 3000;
 
 // --- センサーの準備 ---
 const i2cAccess = await requestI2CAccess();
@@ -27,14 +25,11 @@ console.log("WebSocketリレーサービスに接続しました");
 const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
 
 while (true) {
-  try {
-    // f1〜f8（各波長の強度）、clear（全可視光）、nir（近赤外）
-    const sensorData = await as7341.read();
-    console.dir(sensorData);
-    channel.send(sensorData);
-    console.log("送信しました:", JSON.stringify(sensorData));
-  } catch (error) {
-    console.error("READ ERROR:", error);
-  }
-  await sleep(SEND_INTERVAL_MS);
+  // f1〜f8（各波長の強度）、clear（全可視光）、nir（近赤外）
+  const sensorData = await as7341.read();
+  console.dir(sensorData);
+  channel.send(sensorData);
+  console.log("送信しました:", JSON.stringify(sensorData));
+  // データを送る間隔 (ミリ秒)
+  await sleep(3000);
 }

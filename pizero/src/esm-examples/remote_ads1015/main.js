@@ -11,8 +11,6 @@ import ADS1015 from "@chirimen/ads1015";
 import { RelayServer } from "./RelayServer.js";
 
 // --- 設定 ---
-// データを送る間隔 (ミリ秒)
-const SEND_INTERVAL_MS = 5000;
 // 読み取るチャンネル番号 (0-3)
 const CHANNEL = 0;
 // ADS1015 は Gain=1 (フルスケール ±4.096V) で初期化されるため、
@@ -47,15 +45,12 @@ async function readSensorData() {
 const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
 
 while (true) {
-  try {
-    // センサーからデータを読み取る
-    const sensorData = await readSensorData();
+  // センサーからデータを読み取る
+  const sensorData = await readSensorData();
 
-    // チャンネルを通じてデータを送信する
-    channel.send(sensorData);
-    console.log("送信しました:", JSON.stringify(sensorData));
-  } catch (error) {
-    console.error(`読み取りエラー: ${error.message}`);
-  }
-  await sleep(SEND_INTERVAL_MS);
+  // チャンネルを通じてデータを送信する
+  channel.send(sensorData);
+  console.log("送信しました:", JSON.stringify(sensorData));
+  // データを送る間隔 (ミリ秒)
+  await sleep(5000);
 }

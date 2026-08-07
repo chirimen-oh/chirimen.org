@@ -3,8 +3,6 @@ import { requestI2CAccess } from "node-web-i2c";
 import RC522 from "@chirimen/rc522_ws1850s";
 import { RelayServer } from "./RelayServer.js";
 
-const CHECK_INTERVAL_MS = 3000; // 3秒間隔でカードの有無を確認
-
 // I2Cポートと、I2CデバイスRC522(WS1850S)の初期化
 const i2cAccess = await requestI2CAccess();
 const i2cPort = i2cAccess.ports.get(1);
@@ -39,10 +37,7 @@ async function checkCard() {
 const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
 
 while (true) {
-  try {
-    await checkCard();
-  } catch (error) {
-    console.error("READ ERROR:", error);
-  }
-  await sleep(CHECK_INTERVAL_MS);
+  await checkCard();
+  // データを送る間隔 (ミリ秒)
+  await sleep(3000);
 }

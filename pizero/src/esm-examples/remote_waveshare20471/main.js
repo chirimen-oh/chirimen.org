@@ -7,8 +7,6 @@ import TSL2591 from "@chirimen/tsl2591";
 import SGP40 from "@chirimen/sgp40";
 import { RelayServer } from "./RelayServer.js";
 
-const SEND_INTERVAL_MS = 5000; // 5秒間隔で送信(複数センサーを読むため少し長め)
-
 // I2Cポートと、各I2Cデバイスの初期化
 const i2cAccess = await requestI2CAccess();
 const i2cPort = i2cAccess.ports.get(1);
@@ -34,8 +32,20 @@ async function readSensorData() {
   const gas = await sgp40.measureRaw(25, 50);
   const lux = await tsl2591.Lux();
   const uvs = await ltr390.UVS();
-  const [roll, pitch, yaw, accelX, accelY, accelZ, gyroX, gyroY, gyroZ, magX, magY, magZ] =
-    await icm20948.getdata();
+  const [
+    roll,
+    pitch,
+    yaw,
+    accelX,
+    accelY,
+    accelZ,
+    gyroX,
+    gyroY,
+    gyroZ,
+    magX,
+    magY,
+    magZ,
+  ] = await icm20948.getdata();
   const { pressure, temperature, humidity } = await bme280.readData();
 
   return {
@@ -56,19 +66,16 @@ async function readSensorData() {
     gyroZ,
     magX,
     magY,
-    magZ
+    magZ,
   };
 }
 
 const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
 
 while (true) {
-  try {
-    const sensorData = await readSensorData();
-    channel.send(sensorData);
-    console.log("送信しました:", JSON.stringify(sensorData));
-  } catch (error) {
-    console.error("READ ERROR:", error);
-  }
-  await sleep(SEND_INTERVAL_MS);
+  const sensorData = await readSensorData();
+  channel.send(sensorData);
+  console.log("送信しました:", JSON.stringify(sensorData));
+  // データを送る間隔 (ミリ秒)
+  await sleep(5000);
 }

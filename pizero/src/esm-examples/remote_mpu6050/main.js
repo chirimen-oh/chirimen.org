@@ -7,10 +7,6 @@ import { requestI2CAccess } from "node-web-i2c";
 import MPU6050 from "@chirimen/mpu6050";
 import { RelayServer } from "./RelayServer.js";
 
-// --- 設定 ---
-// データを送る間隔 (ミリ秒)
-const SEND_INTERVAL_MS = 3000;
-
 // --- センサーの準備 ---
 const i2cAccess = await requestI2CAccess();
 const i2cPort = i2cAccess.ports.get(1);
@@ -27,29 +23,26 @@ console.log("WebSocketリレーサービスに接続しました");
 const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
 
 while (true) {
-  try {
-    const { temperature, gx, gy, gz, rx, ry, rz } = await mpu6050.readAll();
-    const sensorData = {
-      temperature: Number(temperature.toFixed(2)),
-      gx,
-      gy,
-      gz,
-      rx,
-      ry,
-      rz,
-    };
+  const { temperature, gx, gy, gz, rx, ry, rz } = await mpu6050.readAll();
+  const sensorData = {
+    temperature: Number(temperature.toFixed(2)),
+    gx,
+    gy,
+    gz,
+    rx,
+    ry,
+    rz,
+  };
 
-    console.log(
-      [
-        `Temperature: ${sensorData.temperature} degree`,
-        `Gx: ${gx}, Gy: ${gy}, Gz: ${gz}`,
-        `Rx: ${rx}, Ry: ${ry}, Rz: ${rz}`,
-      ].join("\n"),
-    );
-    channel.send(sensorData);
-    console.log("送信しました:", JSON.stringify(sensorData));
-  } catch (error) {
-    console.error("READ ERROR:", error);
-  }
-  await sleep(SEND_INTERVAL_MS);
+  console.log(
+    [
+      `Temperature: ${sensorData.temperature} degree`,
+      `Gx: ${gx}, Gy: ${gy}, Gz: ${gz}`,
+      `Rx: ${rx}, Ry: ${ry}, Rz: ${rz}`,
+    ].join("\n"),
+  );
+  channel.send(sensorData);
+  console.log("送信しました:", JSON.stringify(sensorData));
+  // データを送る間隔 (ミリ秒)
+  await sleep(3000);
 }

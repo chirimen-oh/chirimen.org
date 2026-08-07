@@ -3,8 +3,6 @@ import { requestI2CAccess } from "node-web-i2c";
 import APDS9930 from "@chirimen/apds9930";
 import { RelayServer } from "./RelayServer.js";
 
-const SEND_INTERVAL_MS = 3000; // 3秒間隔で送信
-
 // I2Cポートと、I2CデバイスAPDS9930の初期化
 const i2cAccess = await requestI2CAccess();
 const apds9930 = new APDS9930(i2cAccess.ports.get(1));
@@ -23,14 +21,11 @@ async function readSensorData() {
 const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
 
 while (true) {
-  try {
-    const sensorData = await readSensorData();
-    channel.send(sensorData);
-    console.log(
-      `照度: ${sensorData.lux.toFixed(2)} lx, 近接: ${sensorData.proximity}`,
-    );
-  } catch (error) {
-    console.error("READ ERROR:", error);
-  }
-  await sleep(SEND_INTERVAL_MS);
+  const sensorData = await readSensorData();
+  channel.send(sensorData);
+  console.log(
+    `照度: ${sensorData.lux.toFixed(2)} lx, 近接: ${sensorData.proximity}`,
+  );
+  // データを送る間隔 (ミリ秒)
+  await sleep(3000);
 }

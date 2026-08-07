@@ -10,10 +10,6 @@ import AHT20 from "@chirimen/ahtx0";
 // リレーサーバー（データの中継役）に接続するためのライブラリ
 import { RelayServer } from "./RelayServer.js";
 
-// --- 設定 ---
-// データを送る間隔 (ミリ秒)
-const SEND_INTERVAL_MS = 5000;
-
 // --- センサーの準備 ---
 // I2Cという通信方式でセンサーとつながる「ポート」を取得する
 const i2cAccess = await requestI2CAccess();
@@ -34,22 +30,21 @@ console.log("WebSocketリレーサービスに接続しました");
 // --- センサーからデータを読み取る関数 ---
 async function readSensorData() {
   const { temperature, humidity } = await aht20.readData();
-  console.log(`温度: ${temperature.toFixed(2)}℃ / 湿度: ${humidity.toFixed(2)}%`);
+  console.log(
+    `温度: ${temperature.toFixed(2)}℃ / 湿度: ${humidity.toFixed(2)}%`,
+  );
   return { temperature, humidity };
 }
 
 const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
 
 while (true) {
-  try {
-    // センサーからデータを読み取る
-    const sensorData = await readSensorData();
+  // センサーからデータを読み取る
+  const sensorData = await readSensorData();
 
-    // チャンネルを通じてデータを送信する
-    channel.send(sensorData);
-    console.log("送信しました:", JSON.stringify(sensorData));
-  } catch (error) {
-    console.error(`読み取りエラー: ${error.message}`);
-  }
-  await sleep(SEND_INTERVAL_MS);
+  // チャンネルを通じてデータを送信する
+  channel.send(sensorData);
+  console.log("送信しました:", JSON.stringify(sensorData));
+  // データを送る間隔 (ミリ秒)
+  await sleep(5000);
 }

@@ -3,8 +3,6 @@ import { requestI2CAccess } from "node-web-i2c";
 import TCS34725 from "@chirimen/tcs34725";
 import { RelayServer } from "./RelayServer.js";
 
-const SEND_INTERVAL_MS = 3000; // 3秒間隔で送信
-
 // I2Cポートと、I2CデバイスTCS34725の初期化
 const i2cAccess = await requestI2CAccess();
 const i2cPort = i2cAccess.ports.get(1);
@@ -27,14 +25,11 @@ async function readSensorData() {
 const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
 
 while (true) {
-  try {
-    const sensorData = await readSensorData();
-    channel.send(sensorData);
-    console.log(
-      `R: ${sensorData.r}, G: ${sensorData.g}, B: ${sensorData.b}, Clear Light: ${sensorData.c}`
-    );
-  } catch (error) {
-    console.error("READ ERROR:", error);
-  }
-  await sleep(SEND_INTERVAL_MS);
+  const sensorData = await readSensorData();
+  channel.send(sensorData);
+  console.log(
+    `R: ${sensorData.r}, G: ${sensorData.g}, B: ${sensorData.b}, Clear Light: ${sensorData.c}`,
+  );
+  // データを送る間隔 (ミリ秒)
+  await sleep(3000);
 }

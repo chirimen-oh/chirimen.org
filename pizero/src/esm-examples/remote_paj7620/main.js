@@ -7,10 +7,6 @@ import { requestI2CAccess } from "node-web-i2c";
 import PAJ7620 from "@chirimen/grove-gesture";
 import { RelayServer } from "./RelayServer.js";
 
-// --- 設定 ---
-// ジェスチャーを読み取る間隔 (ミリ秒)。イベント検出型なので短めに設定する
-const POLL_INTERVAL_MS = 300;
-
 // --- センサーの準備 ---
 const i2cAccess = await requestI2CAccess();
 const i2cPort = i2cAccess.ports.get(1);
@@ -38,10 +34,7 @@ const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
 
 console.log("ジェスチャーの検出を待機しています...");
 while (true) {
-  try {
-    await pollGesture();
-  } catch (error) {
-    console.error("READ ERROR:", error);
-  }
-  await sleep(POLL_INTERVAL_MS);
+  await pollGesture();
+  // ジェスチャーを読み取る間隔 (ミリ秒)。イベント検出型なので短めに設定する
+  await sleep(300);
 }

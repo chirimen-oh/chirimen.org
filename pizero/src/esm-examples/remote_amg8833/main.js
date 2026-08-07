@@ -7,10 +7,6 @@ import { requestI2CAccess } from "node-web-i2c";
 import AMG8833 from "@chirimen/amg8833";
 import { RelayServer } from "./RelayServer.js";
 
-// --- 設定 ---
-// データを送る間隔 (ミリ秒)
-const SEND_INTERVAL_MS = 3000;
-
 // --- センサーの準備 ---
 const i2cAccess = await requestI2CAccess();
 const i2cPort = i2cAccess.ports.get(1);
@@ -27,15 +23,14 @@ console.log("WebSocketリレーサービスに接続しました");
 const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
 
 while (true) {
-  try {
-    // pixels: 8行×8列の温度データ(摂氏)の配列
-    const pixels = await amg8833.readData();
-    const sensorData = { pixels };
-    console.log(pixels.map((row) => row.map((v) => v.toFixed(1)).join(" ")).join("\n"));
-    channel.send(sensorData);
-    console.log("送信しました");
-  } catch (error) {
-    console.error("READ ERROR:", error);
-  }
-  await sleep(SEND_INTERVAL_MS);
+  // pixels: 8行×8列の温度データ(摂氏)の配列
+  const pixels = await amg8833.readData();
+  const sensorData = { pixels };
+  console.log(
+    pixels.map((row) => row.map((v) => v.toFixed(1)).join(" ")).join("\n"),
+  );
+  channel.send(sensorData);
+  console.log("送信しました");
+  // データを送る間隔 (ミリ秒)
+  await sleep(3000);
 }

@@ -7,10 +7,6 @@ import { requestI2CAccess } from "node-web-i2c";
 import MMA7660 from "@chirimen/mma7660";
 import { RelayServer } from "./RelayServer.js";
 
-// --- 設定 ---
-// データを送る間隔 (ミリ秒)
-const SEND_INTERVAL_MS = 3000;
-
 // --- センサーの準備 ---
 const i2cAccess = await requestI2CAccess();
 const i2cPort = i2cAccess.ports.get(1);
@@ -27,16 +23,13 @@ console.log("WebSocketリレーサービスに接続しました");
 const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
 
 while (true) {
-  try {
-    const { X, Y, Z } = await mma7660.getXYZ();
-    const { X: gx, Y: gy, Z: gz } = await mma7660.getAcceleration();
-    const sensorData = { x: X, y: Y, z: Z, gx, gy, gz };
+  const { X, Y, Z } = await mma7660.getXYZ();
+  const { X: gx, Y: gy, Z: gz } = await mma7660.getAcceleration();
+  const sensorData = { x: X, y: Y, z: Z, gx, gy, gz };
 
-    console.log(`X: ${X}, Y: ${Y}, Z: ${Z} (${gx}g, ${gy}g, ${gz}g)`);
-    channel.send(sensorData);
-    console.log("送信しました:", JSON.stringify(sensorData));
-  } catch (error) {
-    console.error("READ ERROR:", error);
-  }
-  await sleep(SEND_INTERVAL_MS);
+  console.log(`X: ${X}, Y: ${Y}, Z: ${Z} (${gx}g, ${gy}g, ${gz}g)`);
+  channel.send(sensorData);
+  console.log("送信しました:", JSON.stringify(sensorData));
+  // データを送る間隔 (ミリ秒)
+  await sleep(3000);
 }

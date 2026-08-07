@@ -5,7 +5,6 @@ import PCF8591 from "@chirimen/pcf8591";
 import { RelayServer } from "./RelayServer.js";
 
 const ADC_CHANNEL_COUNT = 4; // PCF8591は4chのADCを持つ
-const ADC_READ_INTERVAL_MS = 2000;
 
 // ブラウザからのDA出力電圧指定を受信する
 async function controlDAC(message) {
@@ -41,10 +40,7 @@ const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
 
 // 一定間隔でADC値を送信し続ける
 while (true) {
-  try {
-    await sendADCValues();
-  } catch (error) {
-    console.error("READ ERROR:", error);
-  }
-  await sleep(ADC_READ_INTERVAL_MS);
+  await sendADCValues();
+  // データを送る間隔 (ミリ秒)
+  await sleep(2000);
 }

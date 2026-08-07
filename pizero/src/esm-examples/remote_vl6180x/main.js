@@ -3,8 +3,6 @@ import { requestI2CAccess } from "node-web-i2c";
 import VL6180X from "@chirimen/vl6180x";
 import { RelayServer } from "./RelayServer.js";
 
-const SEND_INTERVAL_MS = 3000; // 3秒間隔で送信
-
 // I2Cポートと、I2CデバイスVL6180Xの初期化
 const i2cAccess = await requestI2CAccess();
 const i2cPort = i2cAccess.ports.get(1);
@@ -24,12 +22,9 @@ async function readSensorData() {
 const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
 
 while (true) {
-  try {
-    const sensorData = await readSensorData();
-    channel.send(sensorData);
-    console.log(`distance: ${sensorData.distance} mm`);
-  } catch (error) {
-    console.error("READ ERROR:", error);
-  }
-  await sleep(SEND_INTERVAL_MS);
+  const sensorData = await readSensorData();
+  channel.send(sensorData);
+  console.log(`distance: ${sensorData.distance} mm`);
+  // データを送る間隔 (ミリ秒)
+  await sleep(3000);
 }

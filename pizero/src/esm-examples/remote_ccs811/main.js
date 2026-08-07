@@ -2,8 +2,6 @@
 import { requestI2CAccess, CCS811 } from "chirimen";
 import { RelayServer } from "./RelayServer.js";
 
-const SEND_INTERVAL_MS = 3000; // 3秒間隔で送信
-
 // I2Cポートと、I2CデバイスCCS811の初期化
 const i2cAccess = await requestI2CAccess();
 const ccs811 = new CCS811(i2cAccess.ports.get(1));
@@ -22,12 +20,9 @@ async function readSensorData() {
 const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
 
 while (true) {
-  try {
-    const sensorData = await readSensorData();
-    channel.send(sensorData);
-    console.log(`CO2: ${sensorData.CO2} ppm, TVOC: ${sensorData.TVOC} ppb`);
-  } catch (error) {
-    console.error("READ ERROR:", error);
-  }
-  await sleep(SEND_INTERVAL_MS);
+  const sensorData = await readSensorData();
+  channel.send(sensorData);
+  console.log(`CO2: ${sensorData.CO2} ppm, TVOC: ${sensorData.TVOC} ppb`);
+  // データを送る間隔 (ミリ秒)
+  await sleep(3000);
 }

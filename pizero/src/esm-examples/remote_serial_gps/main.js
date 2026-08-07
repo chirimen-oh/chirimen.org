@@ -5,9 +5,6 @@ import { ReadlineParser } from "@serialport/parser-readline";
 import { GPS } from "gps";
 import { RelayServer } from "./RelayServer.js";
 
-// データを送る間隔 (ミリ秒)
-const SEND_INTERVAL_MS = 3000;
-
 // --- シリアルポート・GPSパーサーの準備 ---
 const port = new SerialPort({ path: "/dev/ttyS0", baudRate: 9600 });
 const parser = port.pipe(new ReadlineParser());
@@ -39,5 +36,6 @@ while (true) {
     channel.send({ fix: true, time, lat, lon, alt, satellites, quality });
     console.log(`緯度:${lat} 経度:${lon} 高度:${alt}m 衛星数:${satellites}`);
   }
-  await sleep(SEND_INTERVAL_MS);
+  // データを送る間隔 (ミリ秒)
+  await sleep(3000);
 }

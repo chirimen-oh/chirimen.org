@@ -10,10 +10,6 @@ import ADS1X15 from "@chirimen/ads1x15";
 // リレーサーバー（データの中継役）に接続するためのライブラリ
 import { RelayServer } from "./RelayServer.js";
 
-// --- 設定 ---
-// データを送る間隔 (ミリ秒)
-const SEND_INTERVAL_MS = 5000;
-
 // --- センサーの準備 ---
 // I2Cという通信方式でセンサーとつながる「ポート」を取得する
 const i2cAccess = await requestI2CAccess();
@@ -41,22 +37,21 @@ async function readSensorData() {
   const rawData = await ads1115.read("0,1");
   const voltage = ads1115.getVoltage(rawData);
   const weight = voltage - tare;
-  console.log(`電圧: ${voltage.toFixed(6)}V / 風袋差引後: ${weight.toFixed(6)}V`);
+  console.log(
+    `電圧: ${voltage.toFixed(6)}V / 風袋差引後: ${weight.toFixed(6)}V`,
+  );
   return { voltage, weight };
 }
 
 const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
 
 while (true) {
-  try {
-    // センサーからデータを読み取る
-    const sensorData = await readSensorData();
+  // センサーからデータを読み取る
+  const sensorData = await readSensorData();
 
-    // チャンネルを通じてデータを送信する
-    channel.send(sensorData);
-    console.log("送信しました:", JSON.stringify(sensorData));
-  } catch (error) {
-    console.error(`読み取りエラー: ${error.message}`);
-  }
-  await sleep(SEND_INTERVAL_MS);
+  // チャンネルを通じてデータを送信する
+  channel.send(sensorData);
+  console.log("送信しました:", JSON.stringify(sensorData));
+  // データを送る間隔 (ミリ秒)
+  await sleep(5000);
 }

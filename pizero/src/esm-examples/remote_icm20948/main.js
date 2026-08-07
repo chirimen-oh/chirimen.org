@@ -7,10 +7,6 @@ import { requestI2CAccess } from "node-web-i2c";
 import ICM20948 from "@chirimen/icm20948";
 import { RelayServer } from "./RelayServer.js";
 
-// --- 設定 ---
-// データを送る間隔 (ミリ秒)
-const SEND_INTERVAL_MS = 3000;
-
 // --- センサーの準備 ---
 const i2cAccess = await requestI2CAccess();
 const i2cPort = i2cAccess.ports.get(1);
@@ -27,22 +23,19 @@ console.log("WebSocketリレーサービスに接続しました");
 const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
 
 while (true) {
-  try {
-    const [roll, pitch, yaw, ax, ay, az, gx, gy, gz, mx, my, mz] = await icm20948.getdata();
-    const sensorData = { roll, pitch, yaw, ax, ay, az, gx, gy, gz, mx, my, mz };
+  const [roll, pitch, yaw, ax, ay, az, gx, gy, gz, mx, my, mz] = await icm20948.getdata();
+  const sensorData = { roll, pitch, yaw, ax, ay, az, gx, gy, gz, mx, my, mz };
 
-    console.log(
-      [
-        `Roll = ${roll.toFixed(2)} , Pitch = ${pitch.toFixed(2)} , Yaw = ${yaw.toFixed(2)}`,
-        `Acceleration: X = ${ax}, Y = ${ay}, Z = ${az}`,
-        `Gyroscope:     X = ${gx} , Y = ${gy} , Z = ${gz}`,
-        `Magnetic:      X = ${mx} , Y = ${my} , Z = ${mz}`,
-      ].join("\n"),
-    );
-    channel.send(sensorData);
-    console.log("送信しました:", JSON.stringify(sensorData));
-  } catch (error) {
-    console.error("READ ERROR:", error);
-  }
-  await sleep(SEND_INTERVAL_MS);
+  console.log(
+    [
+      `Roll = ${roll.toFixed(2)} , Pitch = ${pitch.toFixed(2)} , Yaw = ${yaw.toFixed(2)}`,
+      `Acceleration: X = ${ax}, Y = ${ay}, Z = ${az}`,
+      `Gyroscope:     X = ${gx} , Y = ${gy} , Z = ${gz}`,
+      `Magnetic:      X = ${mx} , Y = ${my} , Z = ${mz}`,
+    ].join("\n"),
+  );
+  channel.send(sensorData);
+  console.log("送信しました:", JSON.stringify(sensorData));
+  // データを送る間隔 (ミリ秒)
+  await sleep(3000);
 }

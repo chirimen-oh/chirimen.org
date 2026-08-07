@@ -4,7 +4,6 @@ import { requestI2CAccess } from "node-web-i2c";
 import QRScanner from "@chirimen/qrcodescanner";
 import { RelayServer } from "./RelayServer.js";
 
-const POLL_INTERVAL_MS = 3000;
 const SCAN_TIMEOUT_MS = 2000;
 
 let lastData = "";
@@ -39,5 +38,6 @@ const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
 // 一定間隔でQRコードをポーリングする
 while (true) {
   await pollQRCode();
-  await sleep(POLL_INTERVAL_MS);
+  // データを送る間隔 (ミリ秒)
+  await sleep(3000);
 }

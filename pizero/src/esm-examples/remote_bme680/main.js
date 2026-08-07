@@ -2,8 +2,6 @@
 import { requestI2CAccess, BME680 } from "chirimen";
 import { RelayServer } from "./RelayServer.js";
 
-const SEND_INTERVAL_MS = 3000; // 3秒間隔で送信
-
 // I2Cポートと、I2CデバイスBME680の初期化
 const i2cAccess = await requestI2CAccess();
 const bme680 = new BME680(i2cAccess.ports.get(1));
@@ -22,14 +20,11 @@ async function readSensorData() {
 const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
 
 while (true) {
-  try {
-    const sensorData = await readSensorData();
-    channel.send(sensorData);
-    console.log(
-      `Temperature: ${sensorData.temperature.toFixed(2)}℃, Humidity: ${sensorData.humidity.toFixed(2)}%, Pressure: ${sensorData.pressure.toFixed(2)}hPa, Gas: ${sensorData.gas}ohm`,
-    );
-  } catch (error) {
-    console.error("READ ERROR:", error);
-  }
-  await sleep(SEND_INTERVAL_MS);
+  const sensorData = await readSensorData();
+  channel.send(sensorData);
+  console.log(
+    `Temperature: ${sensorData.temperature.toFixed(2)}℃, Humidity: ${sensorData.humidity.toFixed(2)}%, Pressure: ${sensorData.pressure.toFixed(2)}hPa, Gas: ${sensorData.gas}ohm`,
+  );
+  // データを送る間隔 (ミリ秒)
+  await sleep(3000);
 }
