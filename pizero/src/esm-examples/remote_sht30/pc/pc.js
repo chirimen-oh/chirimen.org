@@ -1,13 +1,10 @@
 // Remote Example1 - controller
 import { RelayServer } from "https://www.chirimen.org/remote-connection/js/beta/RelayServer.js";
 
-window.getData = getData;
-
-let channel;
 onload = async function () {
   // webSocketリレーの初期化
   const relay = RelayServer("chirimentest", "chirimenSocket");
-  channel = await relay.subscribe("chirimenSHT");
+  const channel = await relay.subscribe("chirimenSHT");
   messageDiv.innerText = "web socketリレーサービスに接続しました";
   channel.onmessage = getMessage;
 };
@@ -19,8 +16,4 @@ function getMessage(msg) {
   console.log("mdata:", mdata);
   temTd.innerText = mdata.temperature;
   humTd.innerText = mdata.humidity;
-}
-
-function getData() {
-  channel.send("GET SENSOR DATA");
 }
