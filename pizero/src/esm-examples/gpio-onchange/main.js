@@ -1,7 +1,7 @@
 import { requestGPIOAccess } from "node-web-gpio";
 
 function showPort(ev){
-	console.log(ev.value);
+  console.log(ev.value);
 }
 
 const gpioAccess = await requestGPIOAccess();
