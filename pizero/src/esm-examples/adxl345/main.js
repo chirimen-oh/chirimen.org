@@ -9,7 +9,7 @@ await groveaccelerometer.init();
 while (true) {
   try {
     const values = await groveaccelerometer.read();
-    console.log(`ax: ${values.x}, ax: ${values.y}, ax: ${values.z}`)
+    console.log(`ax: ${values.x}, ax: ${values.y}, ax: ${values.z}`);
   } catch (err) {
     console.error("READ ERROR:" + err);
   }

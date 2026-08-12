@@ -15,8 +15,8 @@ while (true) {
     [
       `Temperature: ${temperature} degree`,
       `Gx: ${g[0]}, Gy: ${g[1]}, Gz: ${g[2]}`,
-      `Rx: ${r[0]}, Ry: ${r[1]}, Rz: ${r[2]}`
-    ].join("\n")
+      `Rx: ${r[0]}, Ry: ${r[1]}, Rz: ${r[2]}`,
+    ].join("\n"),
   );
 
   await sleep(500);

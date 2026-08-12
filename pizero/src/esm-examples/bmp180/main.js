@@ -12,7 +12,7 @@ while (true) {
   const pressure = await bmp180.readPressure();
   const temperature = await bmp180.readTemperature();
   console.log(
-    `Pressure: ${pressure.toFixed(2)} Pa, Temperature: ${temperature} degree.`
+    `Pressure: ${pressure.toFixed(2)} Pa, Temperature: ${temperature} degree.`,
   );
   await sleep(readInterval);
 }

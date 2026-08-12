@@ -30,7 +30,9 @@ console.log("WebSocketリレーサービスに接続しました");
 // --- センサーからデータを読み取る関数 ---
 async function readSensorData() {
   const { temperature, pressure } = await bmp280.readData();
-  console.log(`温度: ${temperature.toFixed(2)}℃ / 気圧: ${pressure.toFixed(2)}hPa`);
+  console.log(
+    `温度: ${temperature.toFixed(2)}℃ / 気圧: ${pressure.toFixed(2)}hPa`,
+  );
   return { temperature, pressure };
 }
 

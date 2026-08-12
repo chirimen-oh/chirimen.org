@@ -11,6 +11,7 @@ npm i node-web-i2c @chirimen/tcs34725
 ```
 
 ## サンプルコード
+
 同ディレクトリの [main.js](main.js) と同じ内容です。
 
 ```javascript
@@ -33,8 +34,8 @@ while (true) {
       `R: ${data.r}`,
       `G: ${data.g}`,
       `B: ${data.b}`,
-      `Clear Light: ${data.c}`
-    ].join(", ")
+      `Clear Light: ${data.c}`,
+    ].join(", "),
   );
 
   await sleep(500);

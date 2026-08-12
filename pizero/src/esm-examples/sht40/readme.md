@@ -24,14 +24,14 @@ const sht40 = new SHT40(i2cPort, 0x44);
 await sht40.init();
 
 while (true) {
-    const { humidity, temperature } = await sht40.readData();
-    console.log(
-        [
-            `Humidity: ${humidity.toFixed(2)}%`,
-            `Temperature: ${temperature.toFixed(2)} degree`
-        ].join(", ")
-    );
+  const { humidity, temperature } = await sht40.readData();
+  console.log(
+    [
+      `Humidity: ${humidity.toFixed(2)}%`,
+      `Temperature: ${temperature.toFixed(2)} degree`,
+    ].join(", "),
+  );
 
-    await sleep(500);
+  await sleep(500);
 }
 ```

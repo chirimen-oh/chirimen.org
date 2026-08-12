@@ -7,9 +7,7 @@ const i2c1 = i2cAccess.ports.get(1);
 const adt7410 = new ADT7410(i2c1, 0x48);
 await adt7410.init();
 
-console.log("start measurement")
-
-while(true){
+while (true) {
   const temperature = await adt7410.read();
   console.log(`Temperature: ${temperature} ℃`);
   await sleep(1000);

@@ -24,23 +24,25 @@ await icm20948.init();
 await bme280.init();
 
 while (true) {
-		const sgp = await sgp40.measureRaw(25, 50);
-		const tsl = await tsl2591.Lux();
-		const ltr = await ltr390.UVS();
-		const icm = await icm20948.getdata();
-		const bme = await bme280.readData();
+  const sgp = await sgp40.measureRaw(25, 50);
+  const tsl = await tsl2591.Lux();
+  const ltr = await ltr390.UVS();
+  const icm = await icm20948.getdata();
+  const bme = await bme280.readData();
 
-		console.log("=======================================================");
-		console.log("Pressure: ",bme.pressure);
-		console.log("Temperature: ",bme.temperature);
-		console.log("Humidity: ",bme.humidity);
-		console.log("Lux: ",tsl);
-		console.log("UV: ",ltr);
-		console.log("Gas: ", sgp );
-		console.log(`Roll = ${icm[0].toFixed(2)} , Pitch = ${icm[1].toFixed(2)} , Yaw = ${icm[2].toFixed(2)}`);
-		console.log(`Acceleration:  X = ${icm[3]}, Y = ${icm[4]}, Z = ${icm[5]}`);
-		console.log(`Gyroscope:     X = ${icm[6]} , Y = ${icm[7]} , Z = ${icm[8]}`);
-		console.log(`Magnetic:      X = ${icm[9]} , Y = ${icm[10]} , Z = ${icm[11]}`);
+  console.log("=======================================================");
+  console.log("Pressure: ", bme.pressure);
+  console.log("Temperature: ", bme.temperature);
+  console.log("Humidity: ", bme.humidity);
+  console.log("Lux: ", tsl);
+  console.log("UV: ", ltr);
+  console.log("Gas: ", sgp);
+  console.log(
+    `Roll = ${icm[0].toFixed(2)} , Pitch = ${icm[1].toFixed(2)} , Yaw = ${icm[2].toFixed(2)}`,
+  );
+  console.log(`Acceleration:  X = ${icm[3]}, Y = ${icm[4]}, Z = ${icm[5]}`);
+  console.log(`Gyroscope:     X = ${icm[6]} , Y = ${icm[7]} , Z = ${icm[8]}`);
+  console.log(`Magnetic:      X = ${icm[9]} , Y = ${icm[10]} , Z = ${icm[11]}`);
 
-		await sleep(1000);
-	}
+  await sleep(1000);
+}

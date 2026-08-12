@@ -11,6 +11,7 @@ npm i node-web-i2c @chirimen/vl6180x
 ```
 
 ## サンプルコード
+
 同ディレクトリの [main.js](main.js) と同じ内容です。
 
 ```javascript
@@ -29,8 +30,8 @@ const vl6180x = new VL6180X(i2cPort);
 await vl6180x.init();
 
 while (true) {
-		const l = await vl6180x.getRange();
-		console.log(l, "mm");
-		await sleep(500);
-	}
+  const l = await vl6180x.getRange();
+  console.log(l, "mm");
+  await sleep(500);
+}
 ```

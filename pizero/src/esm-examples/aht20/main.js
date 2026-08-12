@@ -12,8 +12,8 @@ while (true) {
   console.log(
     [
       `Humidity: ${humidity.toFixed(2)}%`,
-      `Temperature: ${temperature.toFixed(2)} degree`
-    ].join(", ")
+      `Temperature: ${temperature.toFixed(2)} degree`,
+    ].join(", "),
   );
 
   await sleep(500);

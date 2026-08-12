@@ -3,6 +3,7 @@
 import { requestI2CAccess } from "node-web-i2c";
 import NPIX from "@chirimen/neopixel-i2c";
 import { RelayServer } from "./RelayServer.js";
+const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
 
 const NEOPIXEL_COUNT = 7; // LED個数
 const NEOPIXEL_ADDRESS = 0x41;

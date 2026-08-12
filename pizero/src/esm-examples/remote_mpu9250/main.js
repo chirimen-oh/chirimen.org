@@ -31,9 +31,15 @@ while (true) {
   const r = await mpu6500.getAcceleration();
   const h = await ak8963.readData();
   const sensorData = {
-    gx: g.x, gy: g.y, gz: g.z,
-    rx: r.x, ry: r.y, rz: r.z,
-    hx: h.x, hy: h.y, hz: h.z,
+    gx: g.x,
+    gy: g.y,
+    gz: g.z,
+    rx: r.x,
+    ry: r.y,
+    rz: r.z,
+    hx: h.x,
+    hy: h.y,
+    hz: h.z,
   };
 
   console.log(

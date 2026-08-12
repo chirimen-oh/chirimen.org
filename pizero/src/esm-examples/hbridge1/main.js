@@ -7,51 +7,51 @@ const portAddrs = [20, 21]; // HブリッジコントローラをつなぐGPIO�
 let ports;
 
 async function init() {
-    const gpioAccess = await requestGPIOAccess();
-    ports = [];
+  const gpioAccess = await requestGPIOAccess();
+  ports = [];
 
-    for (let i = 0; i < 2; i++) {
-        ports[i] = gpioAccess.ports.get(portAddrs[i]);
-        await ports[i].export("out");
-    }
-    for (let i = 0; i < 2; i++) {
-        ports[i].write(0);
-    }
+  for (let i = 0; i < 2; i++) {
+    ports[i] = gpioAccess.ports.get(portAddrs[i]);
+    await ports[i].export("out");
+  }
+  for (let i = 0; i < 2; i++) {
+    await ports[i].write(0);
+  }
 }
 
 async function free() {
-    ports[0].write(0);
-    ports[1].write(0);
+  await ports[0].write(0);
+  await ports[1].write(0);
 }
 
 async function brake() {
-    ports[0].write(1);
-    ports[1].write(1);
-    await sleep(300); // 300ms待機してフリー状態にします
-    ports[0].write(0);
-    ports[1].write(0);
+  await ports[0].write(1);
+  await ports[1].write(1);
+  await sleep(300); // 300ms待機してフリー状態にします
+  await ports[0].write(0);
+  await ports[1].write(0);
 }
 
 async function fwd() {
-    ports[0].write(1);
-    ports[1].write(0);
+  await ports[0].write(1);
+  await ports[1].write(0);
 }
 
 async function rev() {
-    ports[0].write(0);
-    ports[1].write(1);
+  await ports[0].write(0);
+  await ports[1].write(1);
 }
 
 await init();
 
 while (true) {
-    console.log("fwd");
-    await fwd();
-    await sleep(1000);
-    console.log("rev");
-    await rev();
-    await sleep(1000);
-    console.log("brake");
-    await brake();
-    await sleep(1000);
+  console.log("fwd");
+  await fwd();
+  await sleep(1000);
+  console.log("rev");
+  await rev();
+  await sleep(1000);
+  console.log("brake");
+  await brake();
+  await sleep(1000);
 }

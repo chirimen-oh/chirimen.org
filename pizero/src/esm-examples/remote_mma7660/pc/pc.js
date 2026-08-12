@@ -7,7 +7,8 @@ messageDiv.innerText = "web socketリレーサービスに接続しました";
 
 // 加速度(-1G〜+1G)をバーの幅・位置に変換する
 const toBarWidth = (g) => `${Math.min(100, Math.abs(g) * 100)}%`;
-const toBarLeft = (g) => (g < 0 ? `${50 - parseFloat(toBarWidth(g)) / 2}%` : "50%");
+const toBarLeft = (g) =>
+  g < 0 ? `${50 - parseFloat(toBarWidth(g)) / 2}%` : "50%";
 
 // メッセージを受信したときに起動する関数
 channel.onmessage = (msg) => {

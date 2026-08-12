@@ -3,6 +3,7 @@
 
 import { requestGPIOAccess } from "node-web-gpio";
 import { RelayServer } from "./RelayServer.js";
+const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
 
 // --- GPIOの準備 ---
 const gpioAccess = await requestGPIOAccess();

@@ -35,7 +35,9 @@ async function readSensorData() {
 
 for (;;) {
   const sensorData = await readSensorData();
-  console.log(`T: ${sensorData.tempC}℃ / F: ${sensorData.tempF}℉ (mode:${sensorData.mode})`);
+  console.log(
+    `T: ${sensorData.tempC}℃ / F: ${sensorData.tempF}℉ (mode:${sensorData.mode})`,
+  );
 
   channel.send(sensorData);
   console.log("送信しました:", JSON.stringify(sensorData));

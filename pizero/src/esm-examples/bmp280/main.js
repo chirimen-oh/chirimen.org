@@ -13,8 +13,8 @@ while (true) {
   const temperature = data.temperature.toFixed(2);
   console.log(
     [`Temperature: ${temperature} degree`, `Pressure: ${pressure} hPa`].join(
-      ", "
-    )
+      ", ",
+    ),
   );
 
   await sleep(500);

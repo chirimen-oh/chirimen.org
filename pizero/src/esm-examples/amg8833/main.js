@@ -11,7 +11,7 @@ while (true) {
   const data = await amg8833.readData();
   for (const row of data) {
     // degree Celsius
-    console.log(row.map(value => value.toFixed(2)).join(" "));
+    console.log(row.map((value) => value.toFixed(2)).join(" "));
   }
 
   console.log();

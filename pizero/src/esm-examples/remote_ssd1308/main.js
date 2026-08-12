@@ -3,6 +3,7 @@
 import { requestI2CAccess } from "node-web-i2c";
 import OledDisplay from "@chirimen/grove-oled-display";
 import { RelayServer } from "./RelayServer.js";
+const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
 
 const MAX_ROWS = 8; // 128x64pxのOLEDは8px角フォントで8行分表示できる
 

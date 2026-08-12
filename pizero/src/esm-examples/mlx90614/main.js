@@ -15,8 +15,8 @@ while (true) {
   console.log(
     [
       `Object temperature: ${objectTemperature.toFixed(2)} degree`,
-      `Ambient temperature: ${ambientTemperature.toFixed(2)} degree`
-    ].join(", ")
+      `Ambient temperature: ${ambientTemperature.toFixed(2)} degree`,
+    ].join(", "),
   );
 
   await sleep(500);

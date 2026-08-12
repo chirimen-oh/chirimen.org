@@ -3,6 +3,7 @@
 import { requestI2CAccess } from "node-web-i2c";
 import HT16K33 from "@chirimen/ht16k33";
 import { RelayServer } from "./RelayServer.js";
+const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
 
 // プリセットパターン（"#"=点灯 / "_"=消灯 の8x8パターン。元の ht16k33/main.js と同じもの）
 const presetPatterns = {
@@ -49,7 +50,7 @@ async function showPattern(patternText) {
   const pattern = parsePattern(patternText);
   if (pattern.length !== 64) {
     throw new Error(
-      `パターンは8x8(64マス)で指定してください（現在${pattern.length}マス）`
+      `パターンは8x8(64マス)で指定してください（現在${pattern.length}マス）`,
     );
   }
   ht.set_8x8_array(pattern);

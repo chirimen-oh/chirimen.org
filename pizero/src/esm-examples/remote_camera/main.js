@@ -4,36 +4,37 @@
 
 import { StillCamera } from "pi-camera-connect";
 import { RelayServer } from "./RelayServer.js";
+const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
 
 const stillCamera = new StillCamera({
-	width: 128,
-	height: 128,
+  width: 128,
+  height: 128,
 });
 
 let channel;
 
 async function transmitImageData(messge) {
-	console.log(messge.data);
-	if (messge.data == "GET IMAGE DATA") {
-		const imageURI = await captureImage();
-		const sensorData = {
-			imageURI: imageURI,
-			time: new Date().getTime(),
-		};
-		channel.send(sensorData);
-		console.log("Send ImageData: length:", JSON.stringify(sensorData).length);
-	}
+  console.log(messge.data);
+  if (messge.data == "GET IMAGE DATA") {
+    const imageURI = await captureImage();
+    const sensorData = {
+      imageURI: imageURI,
+      time: new Date().getTime(),
+    };
+    channel.send(sensorData);
+    console.log("Send ImageData: length:", JSON.stringify(sensorData).length);
+  }
 }
 
 // カメラの画像をDataURIとして取得する
 // このAPIについてはreadme.mdを参照してください。
 async function captureImage() {
-	const mime = "image/jpeg";
-	const encoding = "base64";
-	const image = await stillCamera.takeImage();
-	const b64str = image.toString(encoding);
-	const dataURL = "data:" + mime + ";" + encoding + "," + b64str;
-	return dataURL;
+  const mime = "image/jpeg";
+  const encoding = "base64";
+  const image = await stillCamera.takeImage();
+  const b64str = image.toString(encoding);
+  const dataURL = "data:" + mime + ";" + encoding + "," + b64str;
+  return dataURL;
 }
 
 // webSocketリレーの初期化

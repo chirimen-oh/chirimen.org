@@ -3,6 +3,7 @@
 import { requestI2CAccess } from "node-web-i2c";
 import I2C1602LCD from "@chirimen/i2c1602lcd";
 import { RelayServer } from "./RelayServer.js";
+const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
 
 const LCD_ADDRESS = 0x27; // アドレスが違う場合は 0x3f 等に変更
 const BLANK_LINE = " ".repeat(16);

@@ -28,7 +28,9 @@ function clearGrid() {
 }
 
 function gridToPattern() {
-  return cells.map((cell) => (cell.classList.contains("on") ? "#" : "_")).join(" ");
+  return cells
+    .map((cell) => (cell.classList.contains("on") ? "#" : "_"))
+    .join(" ");
 }
 
 sendButton.addEventListener("click", () => {

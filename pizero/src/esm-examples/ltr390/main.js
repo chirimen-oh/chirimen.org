@@ -12,7 +12,7 @@ const i2cPort = i2cAccess.ports.get(1);
 ltr390 = new LTR390(i2cPort);
 await ltr390.init();
 while (true) {
-		const UVS = await ltr390.UVS();
-		console.log(UVS , " UVS");
-		await sleep(1000);
-	}
+  const UVS = await ltr390.UVS();
+  console.log(UVS, " UVS");
+  await sleep(1000);
+}

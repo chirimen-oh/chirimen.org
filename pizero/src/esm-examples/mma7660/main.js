@@ -12,14 +12,16 @@ await mma7660.init();
 const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
 
 while (true) {
-    const XYZData = await mma7660.getXYZ();
-    const AccelerationData = await mma7660.getAcceleration();
+  const XYZData = await mma7660.getXYZ();
+  const AccelerationData = await mma7660.getAcceleration();
 
-    console.dir(`X =${  XYZData.X}`);
-    console.dir(`y =${  XYZData.Y}`);
-    console.dir(`z =${  XYZData.Z}`);
+  console.dir(`X =${XYZData.X}`);
+  console.dir(`y =${XYZData.Y}`);
+  console.dir(`z =${XYZData.Z}`);
 
-    console.dir(`acceleration of X/Y/Z: ${  AccelerationData.X  } g/ ${  AccelerationData.Y  } g/ ${  AccelerationData.Z  } g`);
+  console.dir(
+    `acceleration of X/Y/Z: ${AccelerationData.X} g/ ${AccelerationData.Y} g/ ${AccelerationData.Z} g`,
+  );
 
-    await sleep(500);
+  await sleep(500);
 }

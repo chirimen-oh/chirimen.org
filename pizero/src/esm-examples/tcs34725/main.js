@@ -17,8 +17,8 @@ while (true) {
       `R: ${data.r}`,
       `G: ${data.g}`,
       `B: ${data.b}`,
-      `Clear Light: ${data.c}`
-    ].join(", ")
+      `Clear Light: ${data.c}`,
+    ].join(", "),
   );
 
   await sleep(500);

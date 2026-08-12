@@ -12,7 +12,7 @@ const i2cPort = i2cAccess.ports.get(1);
 tsl2591 = new TSL2591(i2cPort);
 await tsl2591.init();
 while (true) {
-		const lux = await tsl2591.Lux();
-		console.log(lux , " Lux");
-		await sleep(1000);
-	}
+  const lux = await tsl2591.Lux();
+  console.log(lux, " Lux");
+  await sleep(1000);
+}

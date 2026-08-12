@@ -32,7 +32,9 @@ async function readSensorData() {
 
 for (;;) {
   const sensorData = await readSensorData();
-  console.log(`温度: ${sensorData.temperature}℃ / 湿度: ${sensorData.humidity}%`);
+  console.log(
+    `温度: ${sensorData.temperature}℃ / 湿度: ${sensorData.humidity}%`,
+  );
 
   channel.send(sensorData);
   console.log("送信しました:", JSON.stringify(sensorData));

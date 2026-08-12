@@ -13,9 +13,7 @@ const vl6180x = new VL6180X(i2cPort);
 await vl6180x.init();
 
 while (true) {
-		console.log("--next loop--");
-
-		const l = await vl6180x.getRange();
-		console.log(l, "mm");
-		await sleep(500);
-	}
+  const l = await vl6180x.getRange();
+  console.log(l, "mm");
+  await sleep(500);
+}

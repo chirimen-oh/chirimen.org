@@ -21,8 +21,8 @@ while (true) {
       `Supply voltage: ${supplyVoltage.toFixed(3)}V`,
       `Current: ${current.toFixed(2)}mA`,
       `Power: ${power.toFixed(2)}mW`,
-      `Shunt voltage: ${shuntVoltage.toFixed(2)}mV`
-    ].join(", ")
+      `Shunt voltage: ${shuntVoltage.toFixed(2)}mV`,
+    ].join(", "),
   );
 
   await sleep(500);

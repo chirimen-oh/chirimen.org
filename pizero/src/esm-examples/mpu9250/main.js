@@ -18,8 +18,8 @@ while (true) {
     [
       `Gx: ${g.x}, Gy: ${g.y}, Gz: ${g.z}`,
       `Rx: ${r.x}, Ry: ${r.y}, Rz: ${r.z}`,
-      `Hx: ${h.x}, Hy: ${h.y}, Hz: ${h.z}`
-    ].join("\n")
+      `Hx: ${h.x}, Hy: ${h.y}, Hz: ${h.z}`,
+    ].join("\n"),
   );
 
   await sleep(500);

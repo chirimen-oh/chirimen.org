@@ -23,7 +23,10 @@ for (let r = 0; r < ROWS; r++) {
 const MIN_TEMP = 15;
 const MAX_TEMP = 35;
 const toColor = (value) => {
-  const ratio = Math.min(1, Math.max(0, (value - MIN_TEMP) / (MAX_TEMP - MIN_TEMP)));
+  const ratio = Math.min(
+    1,
+    Math.max(0, (value - MIN_TEMP) / (MAX_TEMP - MIN_TEMP)),
+  );
   const hue = 240 - ratio * 240; // 240(青) -> 0(赤)
   return `hsl(${hue}, 90%, 50%)`;
 };

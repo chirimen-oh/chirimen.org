@@ -3,22 +3,23 @@ import { requestGPIOAccess } from "node-web-gpio";
 import { requestI2CAccess } from "node-web-i2c";
 import SHT30 from "@chirimen/sht30";
 import { RelayServer } from "./RelayServer.js";
+const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
 
 let channel;
 let sht;
 
 async function transmitSensorData(ev) {
-    console.log(ev.value);
-    if (ev.value == 0) {
-        const sensorData = await readData();
-        channel.send(sensorData);
-        console.log(JSON.stringify(sensorData));
-    }
+  console.log(ev.value);
+  if (ev.value == 0) {
+    const sensorData = await readData();
+    channel.send(sensorData);
+    console.log(JSON.stringify(sensorData));
+  }
 }
 
 async function readData() {
-    const shtData = await sht.readData();
-    return (shtData);
+  const shtData = await sht.readData();
+  return shtData;
 }
 
 // GPIOポートの初期化

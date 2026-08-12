@@ -11,13 +11,25 @@ console.log("init complete");
 let firstTime = true;
 let tare;
 while (true) {
-    const difA = await ads1115.read("0,1");  // p0-p1 differential mode
-    console.log("dif chA(0-1):" + difA.toString(16) + " : " + ads1115.getVoltage(difA).toFixed(6) + "V");
-    if (firstTime) {
-        tare = difA;
-        firstTime = false;
-    }
-    const weight = difA - tare;
-    console.log("rawData - Tare:" + weight.toString(16) + " : " + ads1115.getVoltage(weight).toFixed(6) + "V");
-    await sleep(500);
+  const difA = await ads1115.read("0,1"); // p0-p1 differential mode
+  console.log(
+    "dif chA(0-1):" +
+      difA.toString(16) +
+      " : " +
+      ads1115.getVoltage(difA).toFixed(6) +
+      "V",
+  );
+  if (firstTime) {
+    tare = difA;
+    firstTime = false;
+  }
+  const weight = difA - tare;
+  console.log(
+    "rawData - Tare:" +
+      weight.toString(16) +
+      " : " +
+      ads1115.getVoltage(weight).toFixed(6) +
+      "V",
+  );
+  await sleep(500);
 }

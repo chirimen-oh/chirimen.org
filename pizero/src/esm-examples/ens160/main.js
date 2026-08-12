@@ -11,20 +11,20 @@ await ens160.set_temperature(22); // 温度を設定する(℃)
 await ens160.set_humidity(52); // 湿度を設定する(％)
 await sleep(1500);
 console.log(
-	`setT:${(await ens160.get_temperature()).toFixed(2)} [deg.] setH:${(await ens160.get_humidity()).toFixed(2)} [%]`
+  `setT:${(await ens160.get_temperature()).toFixed(2)} [deg.] setH:${(await ens160.get_humidity()).toFixed(2)} [%]`,
 );
 
 while (true) {
-		const { AQI, TVOC, eCO2 } = await ens160.get_data();
-		const mode = await ens160.get_mode();
-		console.log(
-			[
-				`AQI(1-5):${AQI}`,
-				`TVOC:${TVOC}ppb`,
-				`eCO2:${eCO2}ppm`,
-				`mode:${mode}(0:sleep,1:idle,2:standard)`,
-			].join(", ")
-		);
+  const { AQI, TVOC, eCO2 } = await ens160.get_data();
+  const mode = await ens160.get_mode();
+  console.log(
+    [
+      `AQI(1-5):${AQI}`,
+      `TVOC:${TVOC}ppb`,
+      `eCO2:${eCO2}ppm`,
+      `mode:${mode}(0:sleep,1:idle,2:standard)`,
+    ].join(", "),
+  );
 
-		await sleep(500);
-	}
+  await sleep(500);
+}

@@ -16,8 +16,8 @@ while (true) {
     [
       `Temperature: ${temperature} degree`,
       `Humidity: ${humidity} %`,
-      `Pressure: ${pressure} hPa`
-    ].join(", ")
+      `Pressure: ${pressure} hPa`,
+    ].join(", "),
   );
   await sleep(500);
 }

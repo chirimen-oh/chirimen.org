@@ -22,7 +22,7 @@ while (true) {
   let data_t = await mcp9808.readTempC();
   let data_f = await mcp9808.readTempF();
   console.dir(mode);
-  console.dir({ "T": data_t, "F": data_f });
+  console.dir({ T: data_t, F: data_f });
 
   await sleep(1000);
 }

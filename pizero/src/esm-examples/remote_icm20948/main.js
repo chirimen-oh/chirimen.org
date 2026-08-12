@@ -23,7 +23,8 @@ console.log("WebSocketリレーサービスに接続しました");
 const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
 
 while (true) {
-  const [roll, pitch, yaw, ax, ay, az, gx, gy, gz, mx, my, mz] = await icm20948.getdata();
+  const [roll, pitch, yaw, ax, ay, az, gx, gy, gz, mx, my, mz] =
+    await icm20948.getdata();
   const sensorData = { roll, pitch, yaw, ax, ay, az, gx, gy, gz, mx, my, mz };
 
   console.log(

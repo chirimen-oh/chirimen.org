@@ -12,7 +12,7 @@ await scd40.start_periodic_measurement();
 // 値が出てくるまで数秒かかります
 // 測定が更新されると、updatedフラグがtrueになります
 while (true) {
-		const data = await scd40.getData();
-		console.log(data);
-		await sleep(1000);
-	}
+  const data = await scd40.getData();
+  console.log(data);
+  await sleep(1000);
+}

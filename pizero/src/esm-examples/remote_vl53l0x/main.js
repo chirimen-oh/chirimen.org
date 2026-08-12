@@ -7,18 +7,18 @@ import { RelayServer } from "./RelayServer.js";
 let channel;
 let vl;
 
-async function transmitSensorData(){
-    while (true) {
-		const sensorData = await readData();
-		channel.send(sensorData);
-        await sleep(1000);
-    }
+async function transmitSensorData() {
+  while (true) {
+    const sensorData = await readData();
+    channel.send(sensorData);
+    await sleep(1000);
+  }
 }
 
-async function readData(){
-	const vlData = await vl.getRange();
-	console.log("distance:" + vlData + "mm");
-	return(vlData);
+async function readData() {
+  const vlData = await vl.getRange();
+  console.log("distance:" + vlData + "mm");
+  return vlData;
 }
 
 // I2Cポートと、I2CデバイスVL53L0Xの初期化
@@ -31,4 +31,4 @@ await vl.init();
 const relay = RelayServer("chirimentest", "chirimenSocket");
 channel = await relay.subscribe("chirimenVL");
 console.log("web socketリレーサービスに接続しました");
-    transmitSensorData();
+transmitSensorData();

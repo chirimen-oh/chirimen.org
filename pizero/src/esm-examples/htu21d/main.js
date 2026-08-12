@@ -8,8 +8,8 @@ const htu21d = new HTU21D(i2cPort, 0x40);
 await htu21d.init();
 
 while (true) {
-		const temp = await htu21d.readTemperature();
-		const humi = await htu21d.readHumidity();
-		console.log("Temperature:", temp, " Humidity", humi);
-		await sleep(1000);
-	}
+  const temp = await htu21d.readTemperature();
+  const humi = await htu21d.readHumidity();
+  console.log("Temperature:", temp, " Humidity", humi);
+  await sleep(1000);
+}

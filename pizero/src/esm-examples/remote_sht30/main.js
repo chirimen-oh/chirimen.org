@@ -35,19 +35,19 @@ console.log("WebSocketリレーサービスに接続しました");
 
 // --- センサーからデータを読み取る関数 ---
 async function readSensorData() {
-    const data = await sht.readData();
-    console.log(`温度: ${data.temperature}℃ / 湿度: ${data.humidity}%`);
-    return data;
+  const data = await sht.readData();
+  console.log(`温度: ${data.temperature}℃ / 湿度: ${data.humidity}%`);
+  return data;
 }
 
 while (true) {
-    // センサーからデータを読み取る
-    const sensorData = await readSensorData();
+  // センサーからデータを読み取る
+  const sensorData = await readSensorData();
 
-    // チャンネルを通じてデータを送信する
-    channel.send(sensorData);
-    console.log("送信しました:", JSON.stringify(sensorData));
+  // チャンネルを通じてデータを送信する
+  channel.send(sensorData);
+  console.log("送信しました:", JSON.stringify(sensorData));
 
-    // 次の送信まで待つ
-    await sleep(SEND_INTERVAL_MS);
+  // 次の送信まで待つ
+  await sleep(SEND_INTERVAL_MS);
 }

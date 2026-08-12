@@ -2,6 +2,7 @@
 import { requestGPIOAccess } from "node-web-gpio";
 import { requestI2CAccess } from "node-web-i2c";
 import SHT30 from "@chirimen/sht30";
+const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
 
 /* LED点灯制御 */
 const gpioAccess = await requestGPIOAccess();
@@ -16,13 +17,13 @@ await sht30.init();
 
 /* 温湿センサーとLED制御の組み合わせ */
 while (true) {
-    const { temperature, humidity } = await sht30.readData();
-    console.log(`${temperature.toFixed(2)}℃ ${humidity.toFixed(2)}％`);
+  const { temperature, humidity } = await sht30.readData();
+  console.log(`${temperature.toFixed(2)}℃ ${humidity.toFixed(2)}％`);
 
-    // 室温が28.0以上のときにLED発光
-    if (temperature > 28.00) {
-        await gpioPort.write(1);
-    } else {
-        await gpioPort.write(0);
-    }
+  // 室温が28.0以上のときにLED発光
+  if (temperature > 28.0) {
+    await gpioPort.write(1);
+  } else {
+    await gpioPort.write(0);
+  }
 }

@@ -3,30 +3,30 @@ const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
 let portA, portB;
 
 async function init() {
-    const gpioAccess = await requestGPIOAccess();
-    portA = gpioAccess.ports.get(26);
-    await portA.export("out");
-    await portA.write(0);
-    portB = gpioAccess.ports.get(19);
-    await portB.export("out");
-    await portB.write(0);
+  const gpioAccess = await requestGPIOAccess();
+  portA = gpioAccess.ports.get(26);
+  await portA.export("out");
+  await portA.write(0);
+  portB = gpioAccess.ports.get(19);
+  await portB.export("out");
+  await portB.write(0);
 }
 
 async function stepMove(steps, direction) {
-    await portB.write(direction);
-    for (let i = 0; i < steps; i++) {
-        await portA.write(1);
-        await sleep(1);
-        await portA.write(0);
-        await sleep(20);
-    }
+  await portB.write(direction);
+  for (let i = 0; i < steps; i++) {
+    await portA.write(1);
+    await sleep(1);
+    await portA.write(0);
+    await sleep(20);
+  }
 }
 
 await init();
 let direction = 1;
 while (true) {
-    console.log("Move:", direction);
-    await stepMove(100, direction);
-    await sleep(500);
-    direction = direction == 1 ? 0 : 1;
+  console.log("Move:", direction);
+  await stepMove(100, direction);
+  await sleep(500);
+  direction = direction == 1 ? 0 : 1;
 }
