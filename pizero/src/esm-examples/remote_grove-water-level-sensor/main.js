@@ -6,9 +6,6 @@ import { requestI2CAccess } from "node-web-i2c";
 import WaterLevelSensor from "@chirimen/grove-water-level-sensor";
 import { RelayServer } from "./RelayServer.js";
 
-// データを送る間隔 (ミリ秒)
-const SEND_INTERVAL_MS = 3000;
-
 const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
 
 // --- センサーの準備 ---
@@ -24,19 +21,20 @@ const channel = await relay.subscribe("chirimenWL");
 console.log("WebSocketリレーサービスに接続しました");
 
 // --- センサーからデータを読み取る関数 ---
-async function readSensorData() {
+async function readSensor() {
   const high12SectionValue = await waterLevelSensor.getHigh12SectionValue();
   const low8SectionValue = await waterLevelSensor.getLow8SectionValue();
   const waterLevel = await waterLevelSensor.getWaterLevel();
   return { waterLevel, high12SectionValue, low8SectionValue };
 }
 
-for (;;) {
-  const sensorData = await readSensorData();
-  console.log(`waterLevel: ${sensorData.waterLevel}%`);
+while (true) {
+  const data = await readSensor();
+  console.log(`waterLevel: ${data.waterLevel}%`);
 
-  channel.send(sensorData);
-  console.log("送信しました:", JSON.stringify(sensorData));
+  channel.send(data);
+  console.log("送信しました:", JSON.stringify(data));
 
-  await sleep(SEND_INTERVAL_MS);
+  // データを送る間隔 (ミリ秒)
+  await sleep(3000);
 }

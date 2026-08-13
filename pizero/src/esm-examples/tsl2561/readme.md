@@ -11,6 +11,7 @@ npm i node-web-i2c @chirimen/grove-light
 ```
 
 ## サンプルコード
+
 同ディレクトリの [main.js](main.js) と同じ内容です。
 
 ```javascript
@@ -23,12 +24,8 @@ const i2cPort = i2cAccess.ports.get(1);
 const grovelight = new GROVELIGHT(i2cPort, 0x29);
 await grovelight.init();
 while (true) {
-  try {
-    const value = await grovelight.read();
-    console.log(value);
-  } catch (error) {
-    console.error(" Error : ", error);
-  }
+  const value = await grovelight.read();
+  console.log(value);
   await sleep(200);
 }
 ```

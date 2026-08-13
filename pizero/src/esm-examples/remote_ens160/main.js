@@ -6,9 +6,6 @@ import { requestI2CAccess } from "node-web-i2c";
 import ENS160 from "@chirimen/ens160";
 import { RelayServer } from "./RelayServer.js";
 
-// データを送る間隔 (ミリ秒)
-const SEND_INTERVAL_MS = 5000;
-
 const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
 
 // --- センサーの準備 ---
@@ -35,7 +32,7 @@ async function readSensorData() {
   return { AQI, TVOC, eCO2, mode };
 }
 
-for (;;) {
+while (true) {
   const sensorData = await readSensorData();
   console.log(
     `AQI(1-5):${sensorData.AQI}, TVOC:${sensorData.TVOC}ppb, eCO2:${sensorData.eCO2}ppm, mode:${sensorData.mode}`,
@@ -44,5 +41,6 @@ for (;;) {
   channel.send(sensorData);
   console.log("送信しました:", JSON.stringify(sensorData));
 
-  await sleep(SEND_INTERVAL_MS);
+  // データを送る間隔 (ミリ秒)
+  await sleep(5000);
 }

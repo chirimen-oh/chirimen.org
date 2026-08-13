@@ -7,6 +7,6 @@ await qrscanner.init();
 await qrscanner.setTriggerMode(0);
 
 while (true) {
-  let data = await qrscanner.scanData();
+  const data = await qrscanner.scanData();
   console.dir(data);
 }

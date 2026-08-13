@@ -7,11 +7,7 @@ const i2cPort = i2cAccess.ports.get(1);
 const grovelight = new GROVELIGHT(i2cPort, 0x29);
 await grovelight.init();
 while (true) {
-  try {
-    const value = await grovelight.read();
-    console.log(value);
-  } catch (error) {
-    console.error(" Error : ", error);
-  }
+  const value = await grovelight.read();
+  console.log(value);
   await sleep(200);
 }

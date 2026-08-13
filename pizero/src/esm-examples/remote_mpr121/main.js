@@ -6,9 +6,6 @@ import { requestI2CAccess } from "node-web-i2c";
 import GroveTouch from "@chirimen/grove-touch";
 import { RelayServer } from "./RelayServer.js";
 
-// データを送る間隔 (ミリ秒)
-const SEND_INTERVAL_MS = 3000;
-
 const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
 
 // --- センサーの準備 ---
@@ -24,18 +21,19 @@ const channel = await relay.subscribe("chirimenMPR");
 console.log("WebSocketリレーサービスに接続しました");
 
 // --- センサーからデータを読み取る関数 ---
-async function readSensorData() {
+async function readSensor() {
   // 12チャンネル分のタッチ状態 (true/false) の配列
   const channels = await touchSensor.read();
   return { channels };
 }
 
-for (;;) {
-  const sensorData = await readSensorData();
-  console.log("channels:", JSON.stringify(sensorData.channels));
+while (true) {
+  const data = await readSensor();
+  console.log("channels:", JSON.stringify(data.channels));
 
-  channel.send(sensorData);
-  console.log("送信しました:", JSON.stringify(sensorData));
+  channel.send(data);
+  console.log("送信しました:", JSON.stringify(data));
 
-  await sleep(SEND_INTERVAL_MS);
+  // データを送る間隔 (ミリ秒)
+  await sleep(3000);
 }

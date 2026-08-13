@@ -6,11 +6,6 @@ import { requestI2CAccess } from "node-web-i2c";
 import MAX30102 from "@chirimen/max30102";
 import { RelayServer } from "./RelayServer.js";
 
-// データを送る間隔 (ミリ秒)
-// 注意: max30102.read() は内部でセンサーから既定数のサンプルを
-// 収集してから心拍数を算出するため、実際には数秒程度かかります。
-const SEND_INTERVAL_MS = 3000;
-
 const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
 
 // --- センサーの準備 ---
@@ -30,12 +25,10 @@ async function readSensorData() {
   return { heartRate };
 }
 
-for (;;) {
+while (true) {
   const sensorData = await readSensorData();
   console.log(`Heart Rate: ${sensorData.heartRate} bpm`);
 
   channel.send(sensorData);
   console.log("送信しました:", JSON.stringify(sensorData));
-
-  await sleep(SEND_INTERVAL_MS);
 }

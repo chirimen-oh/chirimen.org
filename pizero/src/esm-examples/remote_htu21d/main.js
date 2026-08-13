@@ -6,9 +6,6 @@ import { requestI2CAccess } from "node-web-i2c";
 import HTU21D from "@chirimen/htu21d";
 import { RelayServer } from "./RelayServer.js";
 
-// データを送る間隔 (ミリ秒)
-const SEND_INTERVAL_MS = 5000;
-
 const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
 
 // --- センサーの準備 ---
@@ -24,20 +21,19 @@ const channel = await relay.subscribe("chirimenHTU");
 console.log("WebSocketリレーサービスに接続しました");
 
 // --- センサーからデータを読み取る関数 ---
-async function readSensorData() {
+async function readSensor() {
   const temperature = await htu21d.readTemperature();
   const humidity = await htu21d.readHumidity();
   return { temperature, humidity };
 }
 
-for (;;) {
-  const sensorData = await readSensorData();
-  console.log(
-    `温度: ${sensorData.temperature}℃ / 湿度: ${sensorData.humidity}%`,
-  );
+while (true) {
+  const data = await readSensor();
+  console.log(`温度: ${data.temperature}℃ / 湿度: ${data.humidity}%`);
 
-  channel.send(sensorData);
-  console.log("送信しました:", JSON.stringify(sensorData));
+  channel.send(data);
+  console.log("送信しました:", JSON.stringify(data));
 
-  await sleep(SEND_INTERVAL_MS);
+  // データを送る間隔 (ミリ秒)
+  await sleep(5000);
 }

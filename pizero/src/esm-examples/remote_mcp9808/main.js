@@ -6,9 +6,6 @@ import { requestI2CAccess } from "node-web-i2c";
 import MCP9808 from "@chirimen/mcp9808";
 import { RelayServer } from "./RelayServer.js";
 
-// データを送る間隔 (ミリ秒)
-const SEND_INTERVAL_MS = 5000;
-
 const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
 
 // --- センサーの準備 ---
@@ -33,7 +30,7 @@ async function readSensorData() {
   return { tempC, tempF, mode };
 }
 
-for (;;) {
+while (true) {
   const sensorData = await readSensorData();
   console.log(
     `T: ${sensorData.tempC}℃ / F: ${sensorData.tempF}℉ (mode:${sensorData.mode})`,
@@ -42,5 +39,6 @@ for (;;) {
   channel.send(sensorData);
   console.log("送信しました:", JSON.stringify(sensorData));
 
-  await sleep(SEND_INTERVAL_MS);
+  // データを送る間隔 (ミリ秒)
+  await sleep(5000);
 }

@@ -24,12 +24,8 @@ const i2cPort = i2cAccess.ports.get(1);
 const groveaccelerometer = new GROVEACCELEROMETER(i2cPort, 0x53);
 await groveaccelerometer.init();
 while (true) {
-  try {
-    const values = await groveaccelerometer.read();
-    console.log(`ax: ${values.x}, ax: ${values.y}, ax: ${values.z}`);
-  } catch (err) {
-    console.error("READ ERROR:" + err);
-  }
+  const values = await groveaccelerometer.read();
+  console.log(`ax: ${values.x}, ax: ${values.y}, ax: ${values.z}`);
   await sleep(1000);
 }
 ```

@@ -59,20 +59,16 @@ async function showPattern(patternText) {
 
 async function controlDisplay(message) {
   const { preset, pattern, clear } = message.data ?? {};
-  try {
-    if (clear) {
-      ht.clear();
-      await ht.write_display();
-      channel.send({ status: "ok", message: "表示をクリアしました" });
-      return;
-    }
-    const patternText = preset ? presetPatterns[preset] : pattern;
-    if (!patternText) return;
-    await showPattern(patternText);
-    channel.send({ status: "ok", message: "表示を更新しました" });
-  } catch (error) {
-    channel.send({ status: "error", message: error.message });
+  if (clear) {
+    ht.clear();
+    await ht.write_display();
+    channel.send({ status: "ok", message: "表示をクリアしました" });
+    return;
   }
+  const patternText = preset ? presetPatterns[preset] : pattern;
+  if (!patternText) return;
+  await showPattern(patternText);
+  channel.send({ status: "ok", message: "表示を更新しました" });
 }
 
 // I2C HT16K33マトリクスLEDドライバの初期化

@@ -7,11 +7,7 @@ const i2cPort = i2cAccess.ports.get(1);
 const ads1015 = new ADS1015(i2cPort, 0x48);
 await ads1015.init();
 while (true) {
-  try {
-    const value = await ads1015.read(0);
-    console.log("value:", value);
-  } catch (error) {
-    console.error("error: code:" + error.code + " message:" + error.message);
-  }
+  const value = await ads1015.read(0);
+  console.log("value:", value);
   await sleep(100);
 }

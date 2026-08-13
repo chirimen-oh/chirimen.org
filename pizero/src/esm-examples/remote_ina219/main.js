@@ -6,9 +6,6 @@ import { requestI2CAccess } from "node-web-i2c";
 import INA219 from "@chirimen/ina219";
 import { RelayServer } from "./RelayServer.js";
 
-// データを送る間隔 (ミリ秒)
-const SEND_INTERVAL_MS = 3000;
-
 const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
 
 // --- センサーの準備 ---
@@ -25,7 +22,7 @@ const channel = await relay.subscribe("chirimenINA");
 console.log("WebSocketリレーサービスに接続しました");
 
 // --- センサーからデータを読み取る関数 ---
-async function readSensorData() {
+async function readSensor() {
   const voltage = await ina219.voltage();
   const supplyVoltage = await ina219.supply_voltage();
   const current = await ina219.current();
@@ -34,15 +31,16 @@ async function readSensorData() {
   return { voltage, supplyVoltage, current, power, shuntVoltage };
 }
 
-for (;;) {
-  const sensorData = await readSensorData();
-  const { voltage, supplyVoltage, current, power, shuntVoltage } = sensorData;
+while (true) {
+  const data = await readSensor();
+  const { voltage, supplyVoltage, current, power, shuntVoltage } = data;
   console.log(
     `Voltage: ${voltage.toFixed(3)}V, Supply voltage: ${supplyVoltage.toFixed(3)}V, Current: ${current.toFixed(2)}mA, Power: ${power.toFixed(2)}mW, Shunt voltage: ${shuntVoltage.toFixed(2)}mV`,
   );
 
-  channel.send(sensorData);
-  console.log("送信しました:", JSON.stringify(sensorData));
+  channel.send(data);
+  console.log("送信しました:", JSON.stringify(data));
 
-  await sleep(SEND_INTERVAL_MS);
+  // データを送る間隔 (ミリ秒)
+  await sleep(3000);
 }
