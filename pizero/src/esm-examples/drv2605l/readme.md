@@ -44,7 +44,7 @@ Fritzingで編集できるDRV2605Lの配線図ファイルです。
 
 DRV2605Lの配線図に使用したSVGファイルです。
 
-### Adafruit DRV2605L.fzpz
+### DRV2605L.fzpz
 
 FritzingでDRV2605Lを使用するためのパーツファイルです。
 
