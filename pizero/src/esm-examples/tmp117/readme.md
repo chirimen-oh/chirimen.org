@@ -6,6 +6,10 @@ TI製 TMP117 高精度温度センサーを使ったサンプルです。
 
 ![TMP117 wiring diagram](TMP117.png)
 
+## センサー外観
+
+![TMP117 (SparkFun Qwiic)](files/TMP117.jpg)
+
 | TMP117 | Raspberry Pi |
 |---|---|
 | GND | GND |
