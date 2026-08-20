@@ -148,3 +148,4 @@ remote_apds9960,リモート近接・環境光・ジェスチャーセンサー(
 remote_seesaw,リモート多機能I/F(seesaw),I2Cの多機能インターフェースボードseesawで測ったアナログ入力値と、それに応じてON/OFFしたLEDの状態をブラウザで表示
 remote_bme680,リモート温湿度気圧ガスセンサー(BME680),I2CのBME680で測った温度・湿度・気圧・ガス抵抗値をブラウザで表示
 remote_ccs811,リモートCO2・TVOCセンサー(CCS811),I2CのCCS811で測ったCO2濃度とTVOCをブラウザで表示
+drv2605l,振動モータードライバ(DRV2605L),I2CのDRV2605Lを使ってERM振動モーターを振動
