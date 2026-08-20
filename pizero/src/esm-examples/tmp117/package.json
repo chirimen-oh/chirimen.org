@@ -1,0 +1,10 @@
+{
+    "name": "myApp",
+    "private": true,
+    "type": "module",
+    "dependencies": {
+        "node-web-i2c": "latest",
+        "@chirimen/tmp117": "latest"
+    }
+}
+
