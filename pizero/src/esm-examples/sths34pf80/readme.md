@@ -2,6 +2,17 @@
 
 STMicroelectronics製のSTHS34PF80を使用して、対象物の赤外線温度と周辺温度を取得するサンプルです。
 
+## 配線
+
+Raspberry PiとSTHS34PF80をI2Cで接続します。
+
+| Raspberry Pi | STHS34PF80 |
+| ------------ | ---------- |
+| 3.3V         | VIN        |
+| GND          | GND        |
+| SDA          | SDA        |
+| SCL          | SCL        |
+
 ## 配線図
 
 ![配線図](./schematic.png "schematic")
@@ -11,6 +22,19 @@ STMicroelectronics製のSTHS34PF80を使用して、対象物の赤外線温度�
 ```sh
 npm i @chirimen/sths34pf80
 ```
+
+## ファイル説明
+
+- STHS34PF80.fzpz  
+STHS34PF80のFritzingパーツファイル  
+対応APP：Fritzing
+
+- STHS34PF80.fzz  
+配線図のファイル  
+対応APP：Fritzing
+
+- STHS34PF80.svg  
+配線図で使用しているセンサーのベクター形式画像
 
 ## サンプルコード
 
