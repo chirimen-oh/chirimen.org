@@ -11,6 +11,7 @@
 3. `[SET WiFi]`ボタンを押します
 4. `[wifi Info]`ボタンを押します
    - 表示された情報を確認します
+   - ※ 設定反映に数十秒かかる場合があります。IPアドレスが表示されない場合は少し待ってから再度`[wifi Info]`で確認してください。
    - wlan0: inet xxx.xxx.xxx.xxx (xxxは数字) のようにIPアドレスが設定されていれば接続に成功しています。
      ![WiFi Setting_IPaddress](./imgs/WiFiSettingIPaddress.png)
 5. 確認できたら、WiFiウィンドウを閉じてください。
