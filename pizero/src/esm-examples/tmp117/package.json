@@ -1,10 +1,15 @@
 {
-    "name": "myApp",
-    "private": true,
-    "type": "module",
-    "dependencies": {
-        "node-web-i2c": "latest",
-        "@chirimen/tmp117": "latest"
-    }
+  "name": "tmp117",
+  "type": "module",
+  "version": "1.0.0",
+  "description": "tmp117 Example",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "@chirimen/tmp117": "^1.0.0",
+    "node-web-i2c": "^1.1.51"
+  }
 }
-
