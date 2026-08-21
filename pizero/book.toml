@@ -3,7 +3,7 @@ language = "ja"
 title = "CHIRIMEN Raspberry Pi Zero W チュートリアル"
 
 [build]
-build-dir = "../_pages/pizero"
+build-dir = "../_site/pizero"
 
 [output.html]
 additional-css = [

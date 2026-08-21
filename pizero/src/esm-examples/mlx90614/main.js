@@ -1,6 +1,6 @@
 import { requestI2CAccess } from "node-web-i2c";
 import MLX90614 from "@chirimen/mlx90614";
-const sleep = (msec) => new Promise((resolve) => setTimeout(resolve, msec));
+const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
 
 const i2cAccess = await requestI2CAccess();
 const i2cPort = i2cAccess.ports.get(1);
@@ -15,8 +15,8 @@ while (true) {
   console.log(
     [
       `Object temperature: ${objectTemperature.toFixed(2)} degree`,
-      `Ambient temperature: ${ambientTemperature.toFixed(2)} degree`
-    ].join(", ")
+      `Ambient temperature: ${ambientTemperature.toFixed(2)} degree`,
+    ].join(", "),
   );
 
   await sleep(500);

@@ -1,0 +1,35 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fogtype/css" />
+<style>
+.chLabel { display: inline-block; width: 4em; }
+.chBarOuter { display: inline-block; width: 200px; height: 14px; background: #eee; vertical-align: middle; }
+.chBarInner { display: block; height: 100%; width: 0; }
+</style>
+</head>
+<script type="module" src="pc.js"></script>
+<body>
+<h3 id="deviceTitle">Remote AS7341 - 分光カラーセンサー</h3>
+
+<div id="spectrumBars"></div>
+
+<table border="1">
+<tr><th>Name</th><th>Value</th></tr>
+<tr><td>f1 (415nm)</td><td id="f1Td">-</td></tr>
+<tr><td>f2 (445nm)</td><td id="f2Td">-</td></tr>
+<tr><td>f3 (480nm)</td><td id="f3Td">-</td></tr>
+<tr><td>f4 (515nm)</td><td id="f4Td">-</td></tr>
+<tr><td>f5 (555nm)</td><td id="f5Td">-</td></tr>
+<tr><td>f6 (590nm)</td><td id="f6Td">-</td></tr>
+<tr><td>f7 (630nm)</td><td id="f7Td">-</td></tr>
+<tr><td>f8 (680nm)</td><td id="f8Td">-</td></tr>
+<tr><td>clear</td><td id="clearTd">-</td></tr>
+<tr><td>nir</td><td id="nirTd">-</td></tr>
+</table>
+
+<div id="messageDiv"></div>
+</body>
+</html>

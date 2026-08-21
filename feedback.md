@@ -6,9 +6,9 @@
 
 また、CHIRIMEN コミュニティメンバーで [チュートリアル用リポジトリ](https://github.com/chirimen-oh/tutorials/) の書き込み権限を持っている方は、ページ末尾の「現在のページを GitHub で編集する」と書かれたリンクで [Github の編集画面](https://help.github.com/ja/articles/about-writing-and-formatting-on-github) を開きそのままブラウザで編集して頂けます。
 
-GitHub の master ブランチでファイルを変更すると、自動的に Netlify でビルドされて数十秒程度で本番サイトに反映されます。ビルドの進捗や結果は次のバッチや [Netlify の Deploys](https://app.netlify.com/sites/tutorial-chirimen-org/deploys) で確認できます。
+GitHub の master ブランチでファイルを変更すると、自動的に [GitHub Actions](https://github.com/chirimen-oh/chirimen.org/actions/workflows/deploy.yml) でビルドされ、[Cloudflare Pages](https://pages.cloudflare.com/) にデプロイされて数十秒程度で本番サイトに反映されます。ビルド・デプロイの進捗や結果は次のバッチや [GitHub Actions の Deploy ワークフロー](https://github.com/chirimen-oh/chirimen.org/actions/workflows/deploy.yml) で確認できます。
 
-[![Netlify Status](https://api.netlify.com/api/v1/badges/c15b982d-99d8-471d-bbce-16b02399e255/deploy-status)](https://app.netlify.com/sites/tutorial-chirimen-org/deploys)
+[![Deploy](https://github.com/chirimen-oh/chirimen.org/actions/workflows/deploy.yml/badge.svg)](https://github.com/chirimen-oh/chirimen.org/actions/workflows/deploy.yml)
 
 ## 編集時の注意
 
@@ -40,7 +40,7 @@ Markdown でコードブロックは次のように言語名を指定して記�
 
 ````md
 ```js
-console.log('hello code block!');
+console.log("hello code block!");
 ```
 ````
 
@@ -58,7 +58,7 @@ console.log('hello code block!');
 
 ### 通知と反映の確認
 
-Netlify でのサイトビルドログなどは Github のコミット通知と併せて下記コミュニティ Slack の #github チャンネルに通知されるようになっています。編集結果が反映されない場合などはビルドに失敗していないか確認してください。
+GitHub Actions でのサイトビルド・デプロイログなどは Github のコミット通知と併せて下記コミュニティ Slack の #github チャンネルに通知されるようになっています。編集結果が反映されない場合などはビルドに失敗していないか確認してください。
 
 ## ファイル構成とテンプレート
 
@@ -70,10 +70,11 @@ Netlify でのサイトビルドログなどは Github のコミット通知と�
 - [\_layouts](https://github.com/chirimen-oh/tutorials/tree/master/_layouts) - カスタムテンプレートファイルを保存するディレクトリ
   - [default.html](https://github.com/chirimen-oh/tutorials/blob/master/_layouts/default.html) - デフォルトテンプレート。参照している変数はリポジトリのメタデータや \_config.yml で定義しているもの。
   - [tutorial.html](https://github.com/chirimen-oh/tutorials/blob/master/_layouts/tutorial.html) - チュートリアル用テンプレート。目次が自動生成されるのがデフォルトとの違い。
-- [\_redirects](https://github.com/chirimen-oh/tutorials/blob/master/_redirects) - リダイレクトの定義ファイル。 [Netlify のドキュメント](https://www.netlify.com/docs/redirects/) を参照
-- \_site - リポジトリ上には存在しません。ビルド環境を構築して `jekyll build` コマンドでビルドを実行すると公開サイト用のファイルがこのディレクトリに生成され、それを Netlify の CDN でドキュメントルートとしてホストする設定になっています。
+- [\_redirects](https://github.com/chirimen-oh/tutorials/blob/master/_redirects) - リダイレクトの定義ファイル。 [Cloudflare Pages のドキュメント](https://developers.cloudflare.com/pages/configuration/redirects/) を参照 (元は Netlify が定めた形式を Cloudflare Pages も同様にサポートしています)
+- \_site - リポジトリ上には存在しません。ビルド環境を構築して `jekyll build` コマンドでビルドを実行すると公開サイト用のファイルがこのディレクトリに生成され、それを [GitHub Actions](https://github.com/chirimen-oh/chirimen.org/actions/workflows/deploy.yml) が Cloudflare Pages にデプロイしてドキュメントルートとしてホストする設定になっています。
 - .eslintrc.yml, .prettierrc, .stylelintrc - ESLint, StyleLint, Prettier で使用する JavaScript やスタイルシートのコーディングルール定義ファイル
-- .ruby-version, Gemfile - Jekyll テンプレートでビルドするときに使う Ruby バージョンとパッケージ定義ファイル (Netlify でのビルド用)
+- mise.toml - ビルド環境の構成ファイル
+- Gemfile - Jekyll テンプレートでビルドするときに使う Ruby バージョンとパッケージ定義ファイル (GitHub Actions でのビルド用)
 - README.md - トップページ (https://tutorial.chirimen.org/) のファイル
 - assets - サイト全体で利用する CSS や JavaScript ファイルを収めるディレクトリ。`_layouts` 配下の html ファイルから読み込む。
 - raspi3 - CHIRIMEN Raspi3 チュートリアル (https://tutorial.chirimen.org/raspi3) 用のファイルを収めたディレクトリ

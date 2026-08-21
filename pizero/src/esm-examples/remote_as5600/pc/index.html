@@ -1,0 +1,44 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fogtype/css" />
+<style>
+#dial {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  border: 4px solid #333;
+  position: relative;
+  margin: 1em 0;
+}
+#needle {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 4px;
+  height: 56px;
+  background: #e11d48;
+  transform-origin: top center;
+  transform: translateX(-50%) rotate(0deg);
+}
+</style>
+</head>
+<script type="module" src="pc.js"></script>
+<body>
+<h3 id="deviceTitle">Remote AS5600 - 回転角センサー</h3>
+
+<div id="dial"><div id="needle"></div></div>
+
+<table border="1">
+<tr><th>Name</th><th>Value</th></tr>
+<tr><td>angle</td><td id="angleTd">-</td></tr>
+<tr><td>magnet detected</td><td id="detectedTd">-</td></tr>
+<tr><td>too low</td><td id="tooLowTd">-</td></tr>
+<tr><td>too high</td><td id="tooHighTd">-</td></tr>
+</table>
+
+<div id="messageDiv"></div>
+</body>
+</html>

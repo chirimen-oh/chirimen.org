@@ -1,0 +1,25 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fogtype/css" />
+</head>
+<script type="module" src="pc.js"></script>
+<body>
+<h3 id="deviceTitle">Remote Example - I2C 1602 LCD</h3>
+<p>1行目・2行目に表示したい文字列(全角・半角16文字まで)を入力して送信してください。</p>
+
+<form id="lcdForm">
+  <p>
+    <label>1行目 <input id="line1Input" type="text" maxlength="16" placeholder="Hello CHIRIMEN!" /></label>
+  </p>
+  <p>
+    <label>2行目 <input id="line2Input" type="text" maxlength="16" placeholder="I2C 1602 LCD" /></label>
+  </p>
+  <button type="submit">送信</button>
+</form>
+
+<div id="messageDiv"></div>
+</body>
+</html>

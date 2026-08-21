@@ -1,0 +1,24 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fogtype/css" />
+</head>
+<script type="module" src="pc.js"></script>
+<body>
+<h3 id="deviceTitle">Remote GPIO In/Out Example - Display &amp; Control</h3>
+
+<table border="1">
+<tr><th>Name</th><th>Value</th></tr>
+<tr><td>switch (PORT5)</td><td id="switchTd">-</td></tr>
+</table>
+
+<p>
+<button id="onButton" type="button">LED/MOTOR ON</button>
+<button id="offButton" type="button">LED/MOTOR OFF</button>
+</p>
+
+<div id="messageDiv"></div>
+</body>
+</html>

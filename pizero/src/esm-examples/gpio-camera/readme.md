@@ -22,34 +22,32 @@ _この章は[こちらの記事](https://gist.github.com/satakagi/1b5adc8dff823
   - 無い場合は [別途調達](https://www.amazon.co.jp/gp/product/B07QH455KY/)
 - [接続のしかた](https://projects.raspberrypi.org/ja-JP/projects/getting-started-with-picamera) : Zero は専用ケーブルでつなぎます
 
-> **Note**\
-> 利用可能なカメラモジュールは v1、v3 です。Camera Module v2 には未対応です。
-> また Raspberry Pi Zero 用 CHIRIMEN v1.4.0 未満をお使いの場合、Camera Module v3 には未対応です。
-> [Raspberry Pi Zero 用 CHIRIMEN v1.4.0 以上](https://github.com/chirimen-oh/chirimen-lite/releases) をお使いください。
-
 ## カメラの動作テスト
 
-以下のコマンドで画像ファイルが保存されます:
+まずカメラが認識されているかを確かめましょう。
 
 ```
-raspistill -v --width 640 --height 480 -o test.jpg
+$ rpicam-still --list-cameras
+Available cameras
+-----------------
+0 : ov5647 [2592x1944 10-bit GBRG] (/base/soc/i2c0mux/i2c@1/ov5647@36)
+    Modes: 'SGBRG10_CSI2P' : 640x480 [58.92 fps - (16, 0)/2560x1920 crop]
+                             1296x972 [43.25 fps - (0, 0)/2592x1944 crop]
+                             1920x1080 [30.62 fps - (348, 434)/1928x1080 crop]
+                             2592x1944 [15.63 fps - (0, 0)/2592x1944 crop]
 ```
 
-> **Note**\
-> [Raspberry Pi Zero 用 CHIRIMEN v1.4.0 以上](https://github.com/chirimen-oh/chirimen-lite/releases) をお使いの場合、`rpicam-still --list-cameras` コマンドで利用可能なカメラの一覧を表示可能です:
->
-> ```
-> $ rpicam-still --list-cameras
-> Available cameras
-> -----------------
-> 0 : ov5647 [2592x1944 10-bit GBRG] (/base/soc/i2c0mux/i2c@1/ov5647@36)
->     Modes: 'SGBRG10_CSI2P' : 640x480 [58.92 fps - (16, 0)/2560x1920 crop]
->                              1296x972 [43.25 fps - (0, 0)/2592x1944 crop]
->                              1920x1080 [30.62 fps - (348, 434)/1928x1080 crop]
->                              2592x1944 [15.63 fps - (0, 0)/2592x1944 crop]
-> ```
->
-> 詳細: [Camera software - Raspberry Pi Documentation](https://www.raspberrypi.com/documentation/computers/camera_software.html)
+0 番のカメラが一覧に出ていれば、フラットケーブルの向きも接触も問題ありません。
+
+認識できたら、撮影に進みます。
+
+```
+rpicam-still --width 640 --height 480 -o test.jpg
+```
+
+作業ディレクトリに test.jpg ができていれば、動作確認は終わりです。
+
+詳細: [Camera software - Raspberry Pi Documentation](https://www.raspberrypi.com/documentation/computers/camera_software.html)
 
 ## サンプル
 
@@ -97,6 +95,6 @@ runApp();
 ## Note
 
 - [dataURL](https://developer.mozilla.org/ja/docs/Web/HTTP/Basics_of_HTTP/Data_URIs)で画像を文字列化すれば比較的簡単にサーバに送信したりできるでしょう。
-  - [リモートカメラサンプル](https://tutorial.chirimen.org/pizero/esm-examples/#REMOTE_remote_camera)
+  - [リモートカメラサンプル](https://chirimen.org/pizero/esm-examples/#REMOTE_remote_camera)
 - 各種センサ (WebGPIO 経由で人感センサーなど)を使い、自動的に撮影、サーバにアップロードする仕組みなどもできるでしょう。
 - [pi-camera-connect のリポジトリ](https://github.com/launchcodedev/pi-camera-connect)

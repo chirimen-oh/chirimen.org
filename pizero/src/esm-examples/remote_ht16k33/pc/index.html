@@ -1,0 +1,51 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fogtype/css" />
+<style>
+  #grid {
+    display: grid;
+    grid-template-columns: repeat(8, 2em);
+    grid-template-rows: repeat(8, 2em);
+    gap: 2px;
+    margin: 1em 0;
+  }
+  #grid button {
+    width: 2em;
+    height: 2em;
+    padding: 0;
+    background: #eee;
+    border: 1px solid #999;
+  }
+  #grid button.on {
+    background: #f04030;
+  }
+  .presets, .actions {
+    margin: 0.5em 0;
+  }
+</style>
+</head>
+<script type="module" src="pc.js"></script>
+<body>
+<h3 id="deviceTitle">Remote Example - HT16K33 Matrix LED</h3>
+<p>マス目をクリックしてパターンを作成し、「送信」を押すとマトリクスLEDに表示します。</p>
+
+<div id="grid"></div>
+
+<div class="actions">
+  <button id="sendButton">送信</button>
+  <button id="clearButton">クリア</button>
+</div>
+
+<div class="presets">
+  <p>プリセット</p>
+  <button id="presetSmile" data-preset="smile">スマイル</button>
+  <button id="presetInvader" data-preset="invader">インベーダー</button>
+  <button id="presetDog" data-preset="dog">犬</button>
+</div>
+
+<div id="messageDiv"></div>
+</body>
+</html>

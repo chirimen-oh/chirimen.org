@@ -1,6 +1,6 @@
-# WebGPIO API や WebI2C API を Node.js から使う
+# Web GPIO API/Web I2C API を Raspberry Pi の Node.js から使う
 
-Node.js から GPIO や I<sup>2</sup>C を扱う方法を説明します。
+Raspberry Pi の Node.js から Web GPIO API と Web I2C API を扱う方法を説明します。
 
 ## Node.js とは
 
@@ -11,6 +11,22 @@ Node.js から GPIO や I<sup>2</sup>C を扱う方法を説明します。
 
 プログラムを実行するには Raspberry Pi に Node.js をインストールします。CHIRIMEN を利用する場合はあらかじめ Node.js がインストールされているので不要です。
 もし CHIRIMEN の microSD カードを作成する方法を知りたい場合は [SD カードイメージの作成方法](sdcard.md)を参照してください。
+
+## Raspberry Pi に Node.js をインストールする方法
+
+いくつか方法はありますが、ここでは [NodeSource を使ったインストール方法](https://github.com/nodesource/distributions#installation-instructions) を紹介します。
+
+ターミナルを起動して以下のコマンドを実行します。
+
+```sh
+curl -sL https://deb.nodesource.com/setup_lts.x | sudo -E bash -
+```
+
+```sh
+sudo apt-get install -y nodejs
+```
+
+これで Node.js のインストールは完了です。
 
 ## 新しいディレクトリの作成
 
@@ -32,13 +48,19 @@ npm のためのファイル package.json を作成します。
 npm init -y
 ```
 
+ECMAScript モジュール（ESM）を有効にするため、`package.json` に `"type": "module"` を追加します。
+
+```sh
+npm pkg set type=module
+```
+
 作業用のディレクトリの中に npm パッケージ [node-web-gpio](https://www.npmjs.com/package/node-web-gpio) と [node-web-i2c](https://www.npmjs.com/package/node-web-i2c) をインストールします。
 
 ```sh
 npm install node-web-gpio node-web-i2c
 ```
 
-これで Node.js から WebGPIO API と WebI2C API を使う準備は完了です。
+これで Node.js から Web GPIO API と Web I2C API を使う準備は完了です。
 
 ## Hello Real World
 
@@ -57,24 +79,20 @@ editor main.js
 テキストエディターで main.js を次のように書きます。
 
 ```js
-const { requestGPIOAccess } = require("node-web-gpio");
-const sleep = require("util").promisify(setTimeout);
+import { requestGPIOAccess } from "node-web-gpio";
+import { setTimeout as sleep } from "node:timers/promises";
 
-async function blink() {
-  const gpioAccess = await requestGPIOAccess();
-  const port = gpioAccess.ports.get(26);
+const gpioAccess = await requestGPIOAccess();
+const gpioPort = gpioAccess.ports.get(26);
 
-  await port.export("out");
+await gpioPort.export("out");
 
-  for (;;) {
-    await port.write(1);
-    await sleep(1000);
-    await port.write(0);
-    await sleep(1000);
-  }
+while (true) {
+  await gpioPort.write(1);
+  await sleep(1000);
+  await gpioPort.write(0);
+  await sleep(1000);
 }
-
-blink();
 ```
 
 書き終えたら保存します。
@@ -94,32 +112,30 @@ CHIRIMEN ブラウザーから利用できるいろいろなデバイスはす�
 たとえば、次のコードは[温度センサー ADT7410](http://akizukidenshi.com/catalog/g/gM-06675/)を利用して温度を表示するプログラムです。
 
 ```js
-const { requestI2CAccess } = require("node-web-i2c");
-const ADT7410 = require("@chirimen/adt7410");
+import { requestI2CAccess } from "node-web-i2c";
+import ADT7410 from "@chirimen/adt7410";
 
-async function measure() {
-  const i2cAccess = await requestI2CAccess();
-  const i2c1 = i2cAccess.ports.get(1);
-  const adt7410 = new ADT7410(i2c1, 0x48);
-  await adt7410.init();
-  const temperature = await adt7410.read();
-  console.log(`Temperature: ${temperature} ℃`);
-}
-
-measure();
+const i2cAccess = await requestI2CAccess();
+const i2c1 = i2cAccess.ports.get(1);
+const adt7410 = new ADT7410(i2c1, 0x48);
+await adt7410.init();
+const temperature = await adt7410.read();
+console.log(`Temperature: ${temperature} ℃`);
 ```
 
 コマンド `npm i @chirimen/adt7410` を実行すると、温度センサー ADT7410 を利用するための `@chirimen/adt7410` パッケージをインストールできます。
 
 デバイスを扱うためのパッケージについてさらに知りたい場合は [CHIRIMEN Drivers](https://github.com/chirimen-oh/chirimen-drivers) を参照してください。
 
+また、CHIRIMEN チュートリアルには Web GPIO や Web I2C によって扱うことのできる[外部デバイスとサンプルコードの一覧](partslist.md)があります。こちらも参考になるかもしれません。
+
 ## CHIRIMEN ブラウザー版との差異
 
-| CHIRIMEN ブラウザー版         | Node.js                                                                       |
-| ----------------------------- | ----------------------------------------------------------------------------- |
-| `navigator.requestGPIOAccess` | `const { requestGPIOAccess } = require("node-web-gpio");` `requestGPIOAccess` |
-| `navigator.requestI2CAccess`  | `const { requestI2CAccess } = require("node-web-i2c");` `requestI2CAccess`    |
-| `sleep`                       | `const sleep = require("util").promisify(setTimeout);` `sleep`                |
+| CHIRIMEN ブラウザー版         | Node.js                                                       |
+| ----------------------------- | ------------------------------------------------------------- |
+| `navigator.requestGPIOAccess` | `import { requestGPIOAccess } from "node-web-gpio";`          |
+| `navigator.requestI2CAccess`  | `import { requestI2CAccess } from "node-web-i2c";`            |
+| `sleep`                       | `import { setTimeout as sleep } from "node:timers/promises";` |
 
 ## 後付
 

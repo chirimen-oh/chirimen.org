@@ -1,6 +1,6 @@
 import { requestI2CAccess } from "node-web-i2c";
 import INA219 from "@chirimen/ina219";
-const sleep = (msec) => new Promise((resolve) => setTimeout(resolve, msec));
+const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
 
 const i2cAccess = await requestI2CAccess();
 const i2cPort = i2cAccess.ports.get(1);
@@ -21,8 +21,8 @@ while (true) {
       `Supply voltage: ${supplyVoltage.toFixed(3)}V`,
       `Current: ${current.toFixed(2)}mA`,
       `Power: ${power.toFixed(2)}mW`,
-      `Shunt voltage: ${shuntVoltage.toFixed(2)}mV`
-    ].join(", ")
+      `Shunt voltage: ${shuntVoltage.toFixed(2)}mV`,
+    ].join(", "),
   );
 
   await sleep(500);

@@ -1,0 +1,11 @@
+{
+  "type": "module",
+  "scripts": {
+    "prepare": "curl -sSfLO https://chirimen.org/remote-connection/js/beta/RelayServer.js"
+  },
+  "dependencies": {
+    "serialport": "latest",
+    "@serialport/parser-readline": "latest",
+    "gps": "latest"
+  }
+}

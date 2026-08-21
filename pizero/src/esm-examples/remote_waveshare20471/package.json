@@ -1,0 +1,14 @@
+{
+  "type": "module",
+  "scripts": {
+    "prepare": "curl -sSfLO https://chirimen.org/remote-connection/js/beta/RelayServer.js"
+  },
+  "dependencies": {
+    "node-web-i2c": "latest",
+    "@chirimen/bme280": "latest",
+    "@chirimen/icm20948": "latest",
+    "@chirimen/ltr390": "latest",
+    "@chirimen/tsl2591": "latest",
+    "@chirimen/sgp40": "latest"
+  }
+}

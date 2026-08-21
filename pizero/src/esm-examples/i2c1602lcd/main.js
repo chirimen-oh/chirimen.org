@@ -10,11 +10,11 @@ const lcd = new I2C1602LCD(i2cPort, 0x27); // アドレスが違う場合は 0x3
 await lcd.init();
 
 while (true) {
-		await lcd.print("Hello CHIRIMEN!", lcd.line1);
-		await lcd.print("I2C 1602 LCD", lcd.line2);
-		await new Promise((r) => setTimeout(r, 1500));
+  await lcd.print("Hello CHIRIMEN!", lcd.line1);
+  await lcd.print("I2C 1602 LCD", lcd.line2);
+  await new Promise((r) => setTimeout(r, 1500));
 
-		await lcd.print("コンニチハ ラズパイ", lcd.line1); // 全角カタカナ
-		await lcd.print("ｵﾊﾖｳｺﾞｻﾞｲﾏｽ", lcd.line2); // 半角カタカナ
-		await sleep(1500);
-	}
+  await lcd.print("コンニチハ ラズパイ", lcd.line1); // 全角カタカナ
+  await lcd.print("ｵﾊﾖｳｺﾞｻﾞｲﾏｽ", lcd.line2); // 半角カタカナ
+  await sleep(1500);
+}

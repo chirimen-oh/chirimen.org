@@ -1,0 +1,35 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fogtype/css" />
+<style>
+#thermoGrid { border-collapse: collapse; }
+#thermoGrid td {
+  width: 32px;
+  height: 32px;
+  text-align: center;
+  font-size: 9px;
+  color: #fff;
+  text-shadow: 0 0 2px #000;
+  border: 1px solid #333;
+}
+</style>
+</head>
+<script type="module" src="pc.js"></script>
+<body>
+<h3 id="deviceTitle">Remote AMG8833 - サーモグラフィー(8x8)</h3>
+
+<table id="thermoGrid" border="1"></table>
+
+<table border="1">
+<tr><th>Name</th><th>Value</th></tr>
+<tr><td>min</td><td id="minTd">-</td></tr>
+<tr><td>max</td><td id="maxTd">-</td></tr>
+<tr><td>average</td><td id="avgTd">-</td></tr>
+</table>
+
+<div id="messageDiv"></div>
+</body>
+</html>

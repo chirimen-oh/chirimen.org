@@ -1,0 +1,53 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fogtype/css" />
+<style>
+#horizon {
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  border: 4px solid #333;
+  overflow: hidden;
+  position: relative;
+  margin: 1em 0;
+  background: #cceeff;
+}
+#ground {
+  position: absolute;
+  left: -50%;
+  top: 50%;
+  width: 200%;
+  height: 200%;
+  background: #8b5a2b;
+  transform-origin: center top;
+}
+</style>
+</head>
+<script type="module" src="pc.js"></script>
+<body>
+<h3 id="deviceTitle">Remote ICM20948 - 9軸センサー</h3>
+
+<div id="horizon"><div id="ground"></div></div>
+
+<table border="1">
+<tr><th>Name</th><th>Value</th></tr>
+<tr><td>Roll</td><td id="rollTd">-</td></tr>
+<tr><td>Pitch</td><td id="pitchTd">-</td></tr>
+<tr><td>Yaw</td><td id="yawTd">-</td></tr>
+<tr><td>Accel X</td><td id="axTd">-</td></tr>
+<tr><td>Accel Y</td><td id="ayTd">-</td></tr>
+<tr><td>Accel Z</td><td id="azTd">-</td></tr>
+<tr><td>Gyro X</td><td id="gxTd">-</td></tr>
+<tr><td>Gyro Y</td><td id="gyTd">-</td></tr>
+<tr><td>Gyro Z</td><td id="gzTd">-</td></tr>
+<tr><td>Mag X</td><td id="mxTd">-</td></tr>
+<tr><td>Mag Y</td><td id="myTd">-</td></tr>
+<tr><td>Mag Z</td><td id="mzTd">-</td></tr>
+</table>
+
+<div id="messageDiv"></div>
+</body>
+</html>

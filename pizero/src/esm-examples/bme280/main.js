@@ -1,6 +1,6 @@
 import { requestI2CAccess } from "node-web-i2c";
 import BME280 from "@chirimen/bme280";
-const sleep = (msec) => new Promise((resolve) => setTimeout(resolve, msec));
+const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
 
 const i2cAccess = await requestI2CAccess();
 const i2cPort = i2cAccess.ports.get(1);
@@ -16,8 +16,8 @@ while (true) {
     [
       `Temperature: ${temperature} degree`,
       `Humidity: ${humidity} %`,
-      `Pressure: ${pressure} hPa`
-    ].join(", ")
+      `Pressure: ${pressure} hPa`,
+    ].join(", "),
   );
   await sleep(500);
 }

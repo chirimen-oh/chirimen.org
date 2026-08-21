@@ -1,7 +1,7 @@
 import { requestI2CAccess } from "node-web-i2c";
 import MPU6500 from "@chirimen/mpu6500";
 import AK8963 from "@chirimen/ak8963";
-const sleep = (msec) => new Promise((resolve) => setTimeout(resolve, msec));
+const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
 
 const i2cAccess = await requestI2CAccess();
 const i2cPort = i2cAccess.ports.get(1);
@@ -18,8 +18,8 @@ while (true) {
     [
       `Gx: ${g.x}, Gy: ${g.y}, Gz: ${g.z}`,
       `Rx: ${r.x}, Ry: ${r.y}, Rz: ${r.z}`,
-      `Hx: ${h.x}, Hy: ${h.y}, Hz: ${h.z}`
-    ].join("\n")
+      `Hx: ${h.x}, Hy: ${h.y}, Hz: ${h.z}`,
+    ].join("\n"),
   );
 
   await sleep(500);

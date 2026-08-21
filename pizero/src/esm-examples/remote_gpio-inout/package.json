@@ -1,0 +1,9 @@
+{
+  "type": "module",
+  "scripts": {
+    "prepare": "curl -sSfLO https://chirimen.org/remote-connection/js/beta/RelayServer.js"
+  },
+  "dependencies": {
+    "node-web-gpio": "latest"
+  }
+}

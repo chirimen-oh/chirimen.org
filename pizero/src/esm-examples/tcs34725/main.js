@@ -1,6 +1,6 @@
 import { requestI2CAccess } from "node-web-i2c";
 import TCS34725 from "@chirimen/tcs34725";
-const sleep = (msec) => new Promise((resolve) => setTimeout(resolve, msec));
+const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
 
 const i2cAccess = await requestI2CAccess();
 const i2cPort = i2cAccess.ports.get(1);
@@ -17,8 +17,8 @@ while (true) {
       `R: ${data.r}`,
       `G: ${data.g}`,
       `B: ${data.b}`,
-      `Clear Light: ${data.c}`
-    ].join(", ")
+      `Clear Light: ${data.c}`,
+    ].join(", "),
   );
 
   await sleep(500);

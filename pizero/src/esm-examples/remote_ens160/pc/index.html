@@ -1,0 +1,21 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fogtype/css" />
+</head>
+<script type="module" src="pc.js"></script>
+<body>
+<h3 id="deviceTitle">リモート空気質センサ - Display</h3>
+
+<table border="1">
+<tr><th>Name</th><th>Value</th></tr>
+<tr><td>AQI (1-5)</td><td id="aqiTd">-</td></tr>
+<tr><td>TVOC (ppb)</td><td id="tvocTd">-</td></tr>
+<tr><td>eCO2 (ppm)</td><td id="eco2Td">-</td></tr>
+<tr><td>mode (0:sleep,1:idle,2:standard)</td><td id="modeTd">-</td></tr>
+</table>
+<div id="messageDiv"></div>
+</body>
+</html>

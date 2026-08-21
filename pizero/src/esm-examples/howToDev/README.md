@@ -13,7 +13,7 @@
 ```sh
 mkdir [自分の開発ディレクトリ]
 cd [自分の開発ディレクトリ]
-wget https://tutorial.chirimen.org/pizero/package.json
+wget https://chirimen.org/pizero/package.json
 npm install
 ```
 
@@ -22,7 +22,7 @@ npm install
 ```log
 pi@raspberrypi:~$ mkdir myAppX
 pi@raspberrypi:~$ cd myAppX
-pi@raspberrypi:~/myAppX$ wget https://tutorial.chirimen.org/pizero/package.json
+pi@raspberrypi:~/myAppX$ wget https://chirimen.org/pizero/package.json
 ...
 2021-XX-XX XX:XX:XX (XX.X KB/s) - `package.json' へ保存完了 [1785/1785]
 

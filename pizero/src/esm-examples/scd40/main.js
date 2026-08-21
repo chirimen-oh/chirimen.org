@@ -1,6 +1,6 @@
 import { requestI2CAccess } from "node-web-i2c";
 import SCD40 from "@chirimen/scd40";
-const sleep = (msec) => new Promise((resolve) => setTimeout(resolve, msec));
+const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
 
 const i2cAccess = await requestI2CAccess();
 const i2cPort = i2cAccess.ports.get(1);
@@ -12,7 +12,7 @@ await scd40.start_periodic_measurement();
 // 値が出てくるまで数秒かかります
 // 測定が更新されると、updatedフラグがtrueになります
 while (true) {
-		const data = await scd40.getData();
-		console.log(data);
-		await sleep(1000);
-	}
+  const data = await scd40.getData();
+  console.log(data);
+  await sleep(1000);
+}

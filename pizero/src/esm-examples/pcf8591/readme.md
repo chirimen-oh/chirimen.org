@@ -17,7 +17,7 @@ npm i node-web-i2c @chirimen/pcf8591
 ```javascript
 import { requestI2CAccess } from "node-web-i2c";
 import PCF8591 from "@chirimen/pcf8591";
-const sleep = (msec) => new Promise((resolve) => setTimeout(resolve, msec));
+const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
 
 const i2cAccess = await requestI2CAccess();
 const i2cPort = i2cAccess.ports.get(1);

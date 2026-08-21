@@ -1,0 +1,21 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fogtype/css" />
+</head>
+<script type="module" src="pc.js"></script>
+<body>
+<h3 id="deviceTitle">Remote Example - QR Code Scanner</h3>
+<p>QRコードを読み取ると、内容が数秒間隔で自動更新されます。</p>
+
+<table border="1">
+<tr><th>Name</th><th>Value</th></tr>
+<tr><td>読み取り内容</td><td id="dataTd">-</td></tr>
+<tr><td>最終更新</td><td id="updatedTd">-</td></tr>
+</table>
+
+<div id="messageDiv"></div>
+</body>
+</html>

@@ -9,14 +9,19 @@ const mma7660 = new MMA7660(i2cPort, 0x4c);
 
 await mma7660.init();
 
-setInterval(async() => {
-    const XYZData = await mma7660.getXYZ();
-    const AccelerationData = await mma7660.getAcceleration();
+const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
 
-    console.dir(`X =${  XYZData.X}`);
-    console.dir(`y =${  XYZData.Y}`);
-    console.dir(`z =${  XYZData.Z}`);
+while (true) {
+  const XYZData = await mma7660.getXYZ();
+  const AccelerationData = await mma7660.getAcceleration();
 
-    console.dir(`acceleration of X/Y/Z: ${  AccelerationData.X  } g/ ${  AccelerationData.Y  } g/ ${  AccelerationData.Z  } g`);
+  console.dir(`X =${XYZData.X}`);
+  console.dir(`y =${XYZData.Y}`);
+  console.dir(`z =${XYZData.Z}`);
 
-}, 500);
+  console.dir(
+    `acceleration of X/Y/Z: ${AccelerationData.X} g/ ${AccelerationData.Y} g/ ${AccelerationData.Z} g`,
+  );
+
+  await sleep(500);
+}

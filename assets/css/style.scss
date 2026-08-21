@@ -18,9 +18,8 @@ $table-border-color: #e9ebec;
 $hr-border-color: #eff0f1; // import site default
 
 @import "{{ site.theme }}"; // override styles defined in: // https://github.com/pages-themes/cayman/blob/master/_sass/jekyll-theme-cayman.scss // hide some elements on production site
-html.tutorial-chirimen-org .hide-on-production {
-  display: none;
-} // adjust margin/padding of header
+
+// adjust margin/padding of header
 .page-header {
   padding: 1.2rem 3rem;
 }

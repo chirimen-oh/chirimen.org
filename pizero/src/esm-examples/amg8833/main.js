@@ -1,6 +1,6 @@
 import { requestI2CAccess } from "node-web-i2c";
 import AMG8833 from "@chirimen/amg8833";
-const sleep = (msec) => new Promise((resolve) => setTimeout(resolve, msec));
+const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
 
 const i2cAccess = await requestI2CAccess();
 const i2cPort = i2cAccess.ports.get(1);
@@ -11,7 +11,7 @@ while (true) {
   const data = await amg8833.readData();
   for (const row of data) {
     // degree Celsius
-    console.log(row.map(value => value.toFixed(2)).join(" "));
+    console.log(row.map((value) => value.toFixed(2)).join(" "));
   }
 
   console.log();

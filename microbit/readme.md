@@ -68,7 +68,6 @@ FIXME: 未作成・リンク切れ
   - [CHIRIMEN for Raspberry PIを使う](../raspi/readme.md)
   - [WebGPIO API や WebI2C API を Node.js から使う](../raspi/nodejs.md)
 
-
 ## 対応デバイスと Example 集
 
 CHIRIMEN with micro:bit 対応デバイスのドライバ・回路図・サンプルコードをセットにした Example 集を用意しています。
@@ -112,17 +111,6 @@ CHIRIMEN with micro:bit を利用するに際して、知っておくと良い�
 - [Tips・テクニック集](../raspi/tips.md) - **このページは Raspberry Pi 用、micro:bit 用は準備中です**
 - [デバッグ・トラブルシューティング](../raspi/debug.md) - **このページは Raspberry Pi 用、micro:bit 用は準備中です**
 - [講師向けページ](./teacher.md)
-
-<div class="hide-on-production">
-  <!-- tutorial.chirimen.org では hide-on-production クラスの中は表示されない -->
-
-  ## Latest Version / 最新版
-
-  Latest version of this document is hosted on https://tutorial.chirimen.org/microbit/
-
-  このサイトの最新オンライン版は https://tutorial.chirimen.org/microbit/ でご覧頂けます
-</div>
-
 
 <!-- 今後、マルチリンガル対応は、webトランスレーションサービスを使うことにしたい
 このディレクトリは、CHIRIMEN for microbit 用のチュートリアルが格納されています。
