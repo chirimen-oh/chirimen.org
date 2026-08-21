@@ -22,7 +22,9 @@
 
 ## インストール方法
 
+```
 npm install node-web-i2c @chirimen/tmp117
+```
 
 ## ファイル説明
 
@@ -31,17 +33,20 @@ npm install node-web-i2c @chirimen/tmp117
 | `main.js` | サンプルコード本体 |
 | `package.json` | 使用ライブラリの一覧 |
 | `schematic.png` | 配線図 |
-| `files/` | 実機写真・Fritzing設計ファイル一式(.svg / .fzpz / .fzz) |
+| `TMP117.svg` / `TMP117.fzpz` / `TMP117.fzz` | Fritzing設計ファイル一式 |
 
 ## 実行方法
 
+```
 cd ~/myApp
 node main.js
+```
 
 停止は `Ctrl+C` です。
 
 ## サンプルコードの解説
 
+```js
 import { requestI2CAccess } from "node-web-i2c";
 import TMP117 from "@chirimen/tmp117";
 
@@ -55,6 +60,7 @@ while (true) {
   console.log(`${data.temperature} degree`);
   await sleep(1000);
 }
+```
 
 `init()` でセンサーを初期化し、`read()` を1秒ごとに呼び出して `{ temperature }` オブジェクトを取得、コンソールに表示します。
 
