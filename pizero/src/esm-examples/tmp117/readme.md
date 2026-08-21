@@ -20,10 +20,6 @@
 | SDA | SDA |
 | SCL | SCL |
 
-## センサー外観
-
-![TMP117 (SparkFun Qwiic)](files/TMP117.jpg)
-
 ## インストール方法
 
 npm install node-web-i2c @chirimen/tmp117
