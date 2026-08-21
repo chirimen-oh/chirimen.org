@@ -1,0 +1,16 @@
+{
+  "name": "sths34pf80",
+  "version": "1.0.0",
+  "description": "STHS34PF80 Example",
+  "license": "MIT",
+  "type": "module",
+  "main": "main.js",
+  "dependencies": {
+    "@chirimen/sths34pf80": "^1.0.0",
+    "node-web-i2c": "^1.1.51"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  }
+}
+
