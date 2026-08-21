@@ -1,14 +1,17 @@
 # TMP117 温度センサー
 
-TI製 TMP117 高精度温度センサーを使ったサンプルです。
+## 仕様
+
+- 動作・測定可能温度: -55℃ ～ +150℃
+- 温度精度: ±0.1℃(-20℃ ～ +50℃ の環境下)
+- 温度解像度: 0.0078125℃
+- I2C スレーブアドレス: 0x48(デフォルト)、0x49/0x4A/0x4B(ADD0ピンの配線により変更可能)
+
+詳細な仕様は[データシート](https://www.ti.com/lit/ds/symlink/tmp117.pdf)を参照してください。
 
 ## 配線図
 
-![TMP117 wiring diagram](TMP117.png)
-
-## センサー外観
-
-![TMP117 (SparkFun Qwiic)](files/TMP117.jpg)
+![TMP117 wiring diagram](schematic.png)
 
 | TMP117 | Raspberry Pi |
 |---|---|
@@ -17,15 +20,22 @@ TI製 TMP117 高精度温度センサーを使ったサンプルです。
 | SDA | SDA |
 | SCL | SCL |
 
-## センサー情報
+## センサー外観
 
-- 製品ページ: https://www.switch-science.com/products/5963
-- データシート: https://www.ti.com/lit/ds/symlink/tmp117.pdf
-- I2C スレーブアドレス: 0x48(デフォルト)
+![TMP117 (SparkFun Qwiic)](files/TMP117.jpg)
 
-## ドライバのインストール方法
+## インストール方法
 
 npm install node-web-i2c @chirimen/tmp117
+
+## ファイル説明
+
+| ファイル | 内容 |
+|---|---|
+| `main.js` | サンプルコード本体 |
+| `package.json` | 使用ライブラリの一覧 |
+| `schematic.png` | 配線図 |
+| `files/` | 実機写真・Fritzing設計ファイル一式(.svg / .fzpz / .fzz) |
 
 ## 実行方法
 
@@ -50,4 +60,11 @@ while (true) {
   await sleep(1000);
 }
 
-1秒ごとに温度を取得し、コンソールに表示します。
+`init()` でセンサーを初期化し、`read()` を1秒ごとに呼び出して `{ temperature }` オブジェクトを取得、コンソールに表示します。
+
+## 参考リンク
+
+- TMP117 データシート(Texas Instruments社)
+  - https://www.ti.com/lit/ds/symlink/tmp117.pdf
+- 製品ページ(SparkFun Qwiic Temperature Sensor - TMP117)
+  - https://www.switch-science.com/products/5963
