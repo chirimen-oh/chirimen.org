@@ -9,7 +9,7 @@ gpio-inout,スイッチ+(LED or モータ),GPIO PORT5に繋いだスイッチの
 gpio-onchange,タッチセンサ,GPIO PORT5に繋いだタッチセンサ(TP223使用)のON/OFFを検知する
 hbridge1,モータ正転・逆転制御,GPIO接続のH-BridgeモータドライバでDCモータの正転・逆転制御を可能にします。
 tb6612fng,モータ正転・逆転制御,GPIO接続のモータードライバIC TB6612FNGでDCモータの正転・逆転制御を可能にします。STBYピンでドライバの動作/待機を切り替えられます。
-a4988,ステッピングモータ制御,GPIO接続のA4988ステッピングモータ専用ドライバで２相ステッピングモータの正転・逆転・回転ステップ数を制御を可能にします。<span style="color:red">ステッピングモータは停止中も常に電流が流れているため容易に加熱します。火傷に注意！</span>
+a4988,ステッピングモータ制御,"GPIO接続のA4988ステッピングモータ専用ドライバで２相ステッピングモータの正転・逆転・回転ステップ数を制御を可能にします。<span style=""color:red"">ステッピングモータは停止中も常に電流が流れているため容易に加熱します。火傷に注意！</span>"
 gpio-camera,スイッチ+カメラ,GPIOのスイッチをトリガにしてPiZero専用カメラ撮影
 isd1820,ボイスレコーダー,ボイスレコーダー(ISD1820)基板をGPIOに接続し、録音した音声を再生する(録音をコントロールすることも可能)
 dfplayer,MP3プレーヤー基板,MP3プレーヤー基板(DFPlayer Mini(およびその互換品))をGPIOに接続し、音声を再生する
@@ -35,6 +35,7 @@ bmp180,温度・気圧,I2C接続の温度・気圧　複合センサーBMP180で
 bmp280,温度・気圧,I2C接続の温度・気圧　複合センサーで取得した値を表示します。（BMP280は、BMP180とは別のデバイスです。注意）
 bme680,温度・湿度・気圧・ガス,I2C接続の温度・湿度・気圧・ガス　複合センサーBME680で取得した値を表示します。スレーブアドレスが 0x76 のものと 0x77 のものがあるので注意
 ccs811,CO2・TVOCセンサ,I2C接続のCO2・TVOCセンサーCCS811で取得した値を表示します。
+drv2605l,振動モータードライバ(DRV2605L),I2CのDRV2605Lを使ってERM振動モーターを振動させます。
 ens160,空気質センサ,空気質センサ ENS160を使用します。
 gp2y0e03,距離センサ,I2C接続の赤外線測距センサー（センサーから障害物までの距離を測るセンサー）GP2Y0E03の値を表示します。
 grove-water-level-sensor,水位センサ,I2C接続の水位センサーです
@@ -49,7 +50,7 @@ mma7660,3軸加速度,I2C接続の3軸加速度センサーMMA7660で取得し�
 mpr121,タッチセンサ,I2C接続のタッチセンサー（静電容量式タッチキー）MPR121によるタッチ検出をおこないます。Grove-Touchもしくはジェネリック品
 mpu6050,３軸ジャイロ＋３軸加速度,I2C接続の３軸ジャイロ(角速度)＋３軸加速度　複合センサーMPU6050で取得した値を表示します。
 mpu9250,３軸ジャイロ＋３軸加速度＋３軸磁気,I2C接続の３軸ジャイロ＋３軸加速度＋３軸磁気　複合センサーMPU9250で取得した値を表示します。このセンサーは、MPU6500(３軸ジャイロ＋３軸加速度)とAK8963(３軸磁気)という二つのI2Cセンサが１パッケージに封入された複合センサです。適切に初期化されるとこれら２個のI2Cスレーブデバイスが出現します
-neopixel-i2c,NEOPIXEL LED,<a href="https://learn.adafruit.com/adafruit-neopixel-uberguide/the-magic-of-neopixels">Neopixel LED</a> (シンプルな配線の多数のLEDの発光を個々に制御できるフルカラーLED)をATTINY85をI2Cコントローラにして使用します。ATTINY85には<a href="https://github.com/chirimen-oh/accessories/blob/master/others/neopixel_i2c_TH/tips.md">ここで紹介されているファームウェア</a>を焼いておく必要があります。簡単に組み立てられるようにしたオープンソースハードの<a href="https://github.com/chirimen-oh/accessories/blob/master/others/neopixel_i2c_TH/">専用コントローラボード</a>もあります。
+neopixel-i2c,NEOPIXEL LED,"<a href=""https://learn.adafruit.com/adafruit-neopixel-uberguide/the-magic-of-neopixels"">Neopixel LED</a> (シンプルな配線の多数のLEDの発光を個々に制御できるフルカラーLED)をATTINY85をI2Cコントローラにして使用します。ATTINY85には<a href=""https://github.com/chirimen-oh/accessories/blob/master/others/neopixel_i2c_TH/tips.md"">ここで紹介されているファームウェア</a>を焼いておく必要があります。簡単に組み立てられるようにしたオープンソースハードの<a href=""https://github.com/chirimen-oh/accessories/blob/master/others/neopixel_i2c_TH/"">専用コントローラボード</a>もあります。"
 paj7620,ジェスチャーセンサ,I2C接続のジェスチャーセンサーPAJ7620（センサーの前で手などを動かすと動かした方向などのモーションを検出するセンサー）の検出結果を表示します。Grove-Gestureもしくはジェネリック品
 pca9685,サーボモータ,I2C接続のPWMドライバーPCA9685経由でサーボモーターを駆動します。（RaspberryからPWMドライバーをI2C接続し、 PWMドライバとサーボモータ、外部電源を接続します。詳細は回路図を参照ください）
 pcf8591,電圧測定・電圧出力,I2C接続の8ビットAD、DAコンバータPCF8591を使います。
@@ -90,7 +91,7 @@ remote_camera,リモートカメラ,PiZero専用カメラでリモート撮影
 remote_gpio-inout,リモートスイッチ+(LED or モータ),GPIO PORT5に繋いだスイッチの状態をブラウザに表示しつつ、ブラウザからPORT26に繋いだLED/モータをOn/Off
 remote_hbridge1,リモートモータ正転・逆転制御,GPIO接続のH-BridgeモータドライバでDCモータの正転・逆転・ブレーキ・停止をブラウザからコントロール
 remote_tb6612fng,リモートモータ正転・逆転制御(TB6612FNG),GPIO接続のモータードライバIC TB6612FNGでDCモータの正転・逆転・ブレーキ・停止をブラウザからコントロール
-remote_a4988,リモートステッピングモータ制御,GPIO接続のA4988ステッピングモータドライバの回転方向とステップ数をブラウザから指定して制御。<span style="color:red">ステッピングモータは停止中も常に電流が流れているため容易に加熱します。火傷に注意！</span>
+remote_a4988,リモートステッピングモータ制御,"GPIO接続のA4988ステッピングモータドライバの回転方向とステップ数をブラウザから指定して制御。<span style=""color:red"">ステッピングモータは停止中も常に電流が流れているため容易に加熱します。火傷に注意！</span>"
 remote_isd1820,リモートボイスレコーダー,ボイスレコーダー(ISD1820)基板の録音開始/停止・再生をブラウザのボタンでコントロール
 remote_dfplayer,リモートMP3プレーヤー基板,MP3プレーヤー基板(DFPlayer Mini)の再生/一時停止をブラウザのボタンでコントロール
 remote_serial_gps,リモートGPSレシーバ,シリアル接続のGPSレシーバで取得した緯度経度等の位置情報を数秒間隔でブラウザに表示
