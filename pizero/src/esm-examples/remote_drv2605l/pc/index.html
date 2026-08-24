@@ -1,0 +1,17 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fogtype/css" />
+</head>
+<script type="module" src="pc.js"></script>
+<body>
+<h3 id="deviceTitle">Remote Vibration Motor Example - Controller</h3>
+<p>スライダーを離したタイミングで、その振動強度をリレーサービスに送ります。</p>
+<input id="intensityInput" type="range" value="0" min="0" max="127" step="1"
+  onchange="sendIntensity(event)" oninput="showIntensity(event)"><span id="intensityGuide">0</span>
+
+<div id="messageDiv"></div>
+</body>
+</html>
