@@ -141,6 +141,7 @@ remote_sht30_gpioin,リモート温湿度センサ+GPIO,GPIOのスイッチを�
 remote_sht40,リモート温湿度センサ(SHT40),I2CのSHT40で測った温度と湿度をブラウザで表示
 remote_ssd1306,リモート有機ELディスプレイ(SSD1306),I2CのOLED(有機EL 128x64px)SSD1306へブラウザから送った文字列を表示
 remote_ssd1308,リモート有機ELディスプレイ(SSD1308),I2CのOLED(有機EL 128x64px)SSD1308(Grove-OledDisplay)へブラウザから送った文字列を表示
+remote_sths34pf80,リモート赤外線温度センサ(STHS34PF80),I2CのSTHS34PF80で測った対象物の赤外線温度と周辺温度をブラウザで表示
 remote_tcs34725,リモートカラーセンサー(TCS34725),I2CのTCS34725で測ったRGBとクリア光の値をブラウザで表示し、検出した色を矩形で可視化
 remote_tmp117,リモート高精度温度センサ(TMP117),I2CのTMP117で測った高精度な温度をブラウザで表示
 remote_tsl2561,リモート光センサ(TSL2561),I2CのTSL2561(Grove Digital Light Sensor)で測った明るさをブラウザで表示
