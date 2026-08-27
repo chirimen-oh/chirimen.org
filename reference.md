@@ -18,19 +18,19 @@ CHIRIMEN を利用するに際して、知っておくと良い予備知識や�
 ### 電子工作
 
 - LED
-  - [LED 基本ガイド (marutsu)](https://www.marutsu.co.jp/pc/static/large_order/led)
+  - [発光ダイオード（LED）](/electronics/light-emitting-diodes-leds.html)
 - 抵抗
-  - [抵抗のカラーコードの読み方(JARL)](https://www.jarl.org/Japanese/7_Technical/lib1/teikou.htm)
-  - [テスターで抵抗値を確認する(始める電子回路)](http://startelc.com/elcLink/tester/elc_nArtcTester2.html#chapter-2)
+  - [抵抗器のカラーコード表](/electronics/resistors.html#抵抗器のカラーコード表)
+  - [テスターで抵抗を測定する](/electronics/how-to-use-a-multimeter.html#抵抗を測定する)
 - ブレッドボード
-  - [ブレッドボードの使い方 (サンハヤト)](https://shop.sunhayato.co.jp/blogs/problem-solving/breadboard)
+  - [ブレッドボードの使い方](/electronics/how-to-use-a-breadboard.html)
   - [小さいブレッドボード (Switch Science)](https://www.switch-science.com/products/2282)
   - [ミニブレッドボード (秋月電子)](https://akizukidenshi.com/catalog/g/gP-05155/)
 - タクトスイッチ
-  - [タクトスイッチとは (準備中)](https://tutorial.chirimen.org/raspi/section1#section-4)
+  - [ボタンとスイッチの基礎](/electronics/button-and-switch-basics.html)
   - [タクトスイッチ製品例 (アルプスアルパイン)](https://tech.alpsalpine.com/prod/j/html/tact/snapin/skhw/skhwala010.html)
 - GPIO
   - [Raspberry Pi の GPIO 概要 (ツールラボ)](https://tool-lab.com/raspberrypi-startup-22/)
-  - [プルアップとプルダウン(VOLTECHNO)](https://voltechno.com/blog/pullup-pulldown/)
+  - [プルアップ抵抗](/electronics/pull-up-resistors.html)
 - 電源・電力
-  - デバイス駆動に必要な電源 (準備中)
+  - [プロジェクトへの電源供給](/electronics/how-to-power-a-project.html)
