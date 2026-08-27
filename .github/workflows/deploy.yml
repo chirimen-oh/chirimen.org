@@ -18,8 +18,11 @@ jobs:
           MDBOOK_VERSION="$(grep '^mdbook = ' mise.toml | sed -E 's/.*"(.+)".*/\1/')"
           curl -sSL "https://github.com/rust-lang/mdBook/releases/download/v${MDBOOK_VERSION}/mdbook-v${MDBOOK_VERSION}-x86_64-unknown-linux-gnu.tar.gz" | tar -xz
           sudo mv mdbook /usr/local/bin/
-      - name: Build mdbook
+      - name: Build mdbook (pizero)
         working-directory: pizero
+        run: mdbook build
+      - name: Build mdbook (electronics)
+        working-directory: electronics
         run: mdbook build
       - name: Deploy to Cloudflare Pages
         uses: cloudflare/wrangler-action@v4

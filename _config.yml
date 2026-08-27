@@ -11,6 +11,7 @@ description: >-
   <a href="/about" style="color: white">CHIRIMEN について</a>
   / <a href="/partslist" style="color: white">対応デバイスリスト</a>
   / <a href="/reference" style="color: white">資料集</a>
+  / <a href="/electronics/" style="color: white">電子工作の基礎知識</a>
   / <a href="https://join.slack.com/t/chirimen-oh/shared_invite/zt-3dvgmnu1x-LxCW09XdSXYGoLVKfnXZww" style="color: white">Slack に参加</a>
 show_downloads: false
 # google_analytics:
@@ -22,10 +23,11 @@ include:
   # https://developers.cloudflare.com/workers/
   - _worker.js
 
-# mdbook が _site/pizero に生成する成果物を Jekyll のビルド時クリーンアップで
-# 消さないようにする (build order: jekyll build -> mdbook build pizero)
+# mdbook が _site/pizero, _site/electronics に生成する成果物を Jekyll のビルド時クリーンアップで
+# 消さないようにする (build order: jekyll build -> mdbook build pizero/electronics)
 keep_files:
   - pizero
+  - electronics
 
 # https://github.com/benbalter/jekyll-readme-index
 readme_index:

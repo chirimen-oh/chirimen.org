@@ -1,0 +1,23 @@
+[book]
+language = "ja"
+title = "電子工作の基礎知識"
+
+[build]
+build-dir = "../_site/electronics"
+
+[output.html]
+additional-css = [
+  "theme/css/menu-bar.css",
+]
+additional-js = [
+  "theme/external-links.js",
+  "theme/favicon.js",
+  "theme/regexp-search.js",
+  "theme/sidebar.js",
+]
+default-theme = "light"
+mathjax-support = true
+edit-url-template = "https://github.com/chirimen-oh/chirimen.org/edit/master/electronics/{path}"
+git-repository-url = "https://github.com/chirimen-oh/chirimen.org"
+preferred-dark-theme = "light"
+site-url = "/electronics/"
