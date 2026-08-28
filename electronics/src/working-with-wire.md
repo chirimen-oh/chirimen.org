@@ -16,7 +16,7 @@
 参考になるチュートリアル:
 
 - [電圧、電流、抵抗とオームの法則](./voltage-current-resistance-and-ohms-law.md)
-- スルーホールのはんだ付け
+- [スルーホールのはんだ付け](./how-to-solder-through-hole-soldering.md)
 - [メートル法の接頭辞とSI単位](./metric-prefixes-and-si-units.md)
 
 ## より線と単線

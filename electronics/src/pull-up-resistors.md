@@ -11,7 +11,7 @@
 - [抵抗器](./resistors.md)
 - [電圧、電流、抵抗](./voltage-current-resistance-and-ohms-law.md)
 - [デジタルロジック](./digital-logic.md)
-- 入出力
+- [入出力](https://learn.sparkfun.com/tutorials/input-and-output)
 
 ## プルアップ抵抗とは何か
 

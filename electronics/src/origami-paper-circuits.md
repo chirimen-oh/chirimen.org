@@ -37,9 +37,9 @@
 
 他にも参考になりそうなチュートリアルを挙げておく。
 
-- 回路とは何か
-- 電圧、電流、抵抗とオームの法則
-- Let It Glow Holiday Cards
+- [回路とは何か](./what-is-a-circuit.md)
+- [電圧、電流、抵抗とオームの法則](./voltage-current-resistance-and-ohms-law.md)
+- [Let It Glow Holiday Cards](https://learn.sparkfun.com/tutorials/let-it-glow-holiday-cards)
 
 ## 花のデザインを選ぶ
 

@@ -26,11 +26,11 @@
 
 以下の概念に馴染みがない場合は、先に次のチュートリアルを読んでおくとよい。
 
-- はんだ付けの基本（スルーホール編）
-- コネクタの基礎
-- プロジェクトへの電源供給
-- 配線の基本
-- テスターの使い方
+- [はんだ付けの基本（スルーホール編）](./how-to-solder-through-hole-soldering.md)
+- [コネクタの基礎](./connector-basics.md)
+- [プロジェクトへの電源供給](./how-to-power-a-project.md)
+- [配線の基本](./working-with-wire.md)
+- [テスターの使い方](./how-to-use-a-multimeter.md)
 
 ## ハードウェア概要
 

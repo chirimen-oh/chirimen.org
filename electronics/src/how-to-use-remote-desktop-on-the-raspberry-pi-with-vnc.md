@@ -32,8 +32,8 @@ Virtual Network Computing（VNC）というプログラムを使えば、ネッ�
 以下の概念に馴染みがなければ、続きを読む前にこれらのチュートリアルを確認しておくことをおすすめする。
 
 - [シリアルターミナルの基礎](./terminal-basics.md)
-- Raspberry Pi 3 Starter Kitの使い方
-- Raspberry Pi Zero Wirelessの使い方
+- [Raspberry Pi 3 Starter Kitの使い方](https://learn.sparkfun.com/tutorials/raspberry-pi-3-starter-kit-hookup-guide)
+- [Raspberry Pi Zero Wirelessの使い方](./getting-started-with-the-raspberry-pi-zero-wireless.md)
 
 > [!NOTE]
 > 補足：このチュートリアル中の画像が見づらい場合は、遠慮なくクリックして拡大表示してほしい。

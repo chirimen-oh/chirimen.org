@@ -15,7 +15,7 @@ Inter-Integrated Circuit（I2C）プロトコルは、複数の「ペリフェ�
 - [2進数](./binary.md)
 - [シリアル通信](./serial-communication.md)
 - [SPI（シリアルペリフェラルインターフェース）](./serial-peripheral-interface-spi.md)
-- Shift registers（シフトレジスタ）
+- [Shift registers（シフトレジスタ）](https://learn.sparkfun.com/tutorials/shift-registers)
 - [ロジックレベル](./logic-levels.md)
 
 ## なぜI2Cを使うのか

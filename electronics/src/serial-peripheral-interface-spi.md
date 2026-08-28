@@ -9,7 +9,7 @@
 
 - [2進数](./binary.md)
 - [シリアル通信](./serial-communication.md)
-- Shift registers（シフトレジスタ）
+- [Shift registers（シフトレジスタ）](https://learn.sparkfun.com/tutorials/shift-registers)
 - [ロジックレベル](./logic-levels.md)
 
 ## シリアルポートの何が問題なのか

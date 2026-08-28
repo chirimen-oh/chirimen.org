@@ -24,10 +24,10 @@
 
 このチュートリアルを読み進める前に、次の概念に馴染んでおくとよい。詳しく知りたい場合はそれぞれのチュートリアルを参照してほしい。
 
-- 電圧、電流、抵抗とオームの法則
-- テスターの使い方
-- アナログとデジタルの違い
-- 交流と直流の違い
+- [電圧、電流、抵抗とオームの法則](./voltage-current-resistance-and-ohms-law.md)
+- [テスターの使い方](./how-to-use-a-multimeter.md)
+- [アナログとデジタルの違い](./analog-vs-digital.md)
+- [交流と直流の違い](./alternating-current-ac-vs-direct-current-dc.md)
 
 ## O-スコープの基礎
 

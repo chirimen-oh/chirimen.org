@@ -16,14 +16,14 @@
 
 このチュートリアルを進める前に、次の関連ガイドで、例の中で使う概念や部品について確認しておくとよい。
 
-- パルス幅変調（PWM） — パルス幅変調の概念の入門
-- モーターと最適な選び方 — さまざまな種類のモーターと、それぞれの動作原理を学ぶ
-- Hobby Servo Tutorial — サーボは出力軸の回転を正確に制御できるモーターであり、ロボット工学をはじめさまざまなプロジェクトの可能性を広げてくれる
+- [パルス幅変調（PWM）](./pulse-width-modulation.md) — パルス幅変調の概念の入門
+- [モーターと最適な選び方](./motors-and-selecting-the-right-one.md) — さまざまな種類のモーターと、それぞれの動作原理を学ぶ
+- [サーボモーター入門](./hobby-servo-tutorial.md) — サーボは出力軸の回転を正確に制御できるモーターであり、ロボット工学をはじめさまざまなプロジェクトの可能性を広げてくれる
 
 ## サーボモーターの基本
 
 このチュートリアルの例に入る前に、サーボモーターの基本をいくつか確認しておこう。
-サーボの詳しい背景や動作原理について詳しくは、Hobby Servo Tutorialを参照してほしい。
+サーボの詳しい背景や動作原理について詳しくは、[サーボモーター入門](./hobby-servo-tutorial.md)を参照してほしい。
 
 ### 標準サーボと連続回転サーボ
 
@@ -73,7 +73,7 @@ SparkFunでは、標準（standard）と連続回転（continuous rotation）と
 
 最後にもう一つ確認しておきたいのが、サーボの**制御信号の範囲**である。
 このチュートリアルでは制御信号の範囲についてのみ扱う。
-サーボの制御信号がどう機能するかについてより詳しく知りたい場合は、Hobby Servoチュートリアルのこの節を参照してほしい。
+サーボの制御信号がどう機能するかについてより詳しく知りたい場合は、[サーボモーター入門の「制御信号」](./hobby-servo-tutorial.md#制御信号)を参照してほしい。
 
 ここで覚えておきたい最も重要な点は、サーボの制御信号のパルス幅（持続時間）の範囲である。
 これは通常1〜2msの間だが、メーカーやサーボの種類によって異なることがある。
@@ -84,7 +84,7 @@ SparkFunでは、標準（standard）と連続回転（continuous rotation）と
 
 最初の例では、[SparkFun Servo Trigger](https://www.sparkfun.com/products/13118)を使ってサーボモーターを動かす方法を示す。
 この例ではコーディングもコンピュータへの接続も不要だが、推奨する方法で組み立てるにはスルーホールのはんだ付けが必要になる。
-スルーホール部品のはんだ付けに馴染みがない場合は、まずはんだ付けの基本（スルーホール編）のチュートリアルを確認してほしい。
+スルーホール部品のはんだ付けに馴染みがない場合は、まず[はんだ付けの基本（スルーホール編）](./how-to-solder-through-hole-soldering.md)を確認してほしい。
 
 Servo Triggerは、基板にあらかじめ書き込まれたファームウェアが、基板上の3つのポテンショメータの位置を解釈することで動作する。
 これらのポテンショメータは、サーボの開始位置・停止位置（「A」「B」とラベル付けされている）と、開始位置から停止位置まで移動するのにかかる時間（「T」とラベル付けされている）を決定する。
@@ -92,7 +92,7 @@ Servo Triggerは、基板にあらかじめ書き込まれたファームウェ�
 この例では、[コンケーブボタン](https://www.sparkfun.com/products/9339)を使ってこの接続を行う。
 
 これはSparkFun Servo Triggerの動作についてのごく簡単な概要である。
-基板の全体像と使い方について詳しくは、Hookup Guideを参照してほしい。
+基板の全体像と使い方について詳しくは、[Servo Trigger Hookup Guide](https://learn.sparkfun.com/tutorials/servo-trigger-hookup-guide)を参照してほしい。
 
 ### 必要な部品
 
@@ -161,7 +161,7 @@ Servo Trigger上の3つのポテンショメータを調整し、サーボの方
 サーボが動かない、あるいはボタンを押しても反応しない場合、最もよくある原因ははんだ付け不良である。
 サーボの電源が入らない、あるいはボタンを押しても動かない場合は、はんだ付けがピンやワイヤーとはんだパッドを完全に接続しているか、ワイヤーやはんだ付け部分同士が触れ合っていないか確認すること。
 また、電源がDCバレルジャックアダプタとコンセントにしっかり差し込まれており、サーボとServo Triggerを駆動するのに十分な電圧を供給しているかも確認すること。
-はんだ付け不良の修正のコツについては、トラブルシューティングのコツガイドを参照してほしい。
+はんだ付け不良の修正のコツについては、[SparkFun Troubleshooting Tips](https://learn.sparkfun.com/tutorials/sparkfun-troubleshooting-tips)を参照してほしい。
 
 #### 不規則な動き
 
@@ -175,8 +175,8 @@ Servo Trigger上の3つのポテンショメータを調整し、サーボの方
 2つ目のサンプル回路は、組み立てはずっと簡単ではんだ付けも不要だが、[Arduino IDE](https://www.arduino.cc/en/Main/Software)でコードをアップロード・使用する必要がある。
 Arduinoに馴染みがない、あるいはコンピュータにインストールしていない場合は、まず下記のガイドでIDEをインストールし、Arduinoを始めてみてほしい。
 
-- Arduinoとは何か
-- Arduino IDEのインストール
+- [Arduinoとは何か](https://learn.sparkfun.com/tutorials/what-is-an-arduino)
+- [Arduino IDEのインストール](https://learn.sparkfun.com/tutorials/installing-arduino-ide)
 
 [SparkFun RedBoard Qwiic](https://www.sparkfun.com/products/15123)を、[パルス幅変調（PWM）](./pulse-width-modulation.md)を使ったサーボモーターのドライバー・コントローラーとして使う。
 
@@ -291,8 +291,8 @@ Raspberry Piは、前の例で使ったRedBoardのような開発ボードより
 Raspberry PiやServo pHATを使ったことがない場合は、続ける前に次のチュートリアルを読むことを*強く推奨する*。
 「Getting Started with the Raspberry Pi」のチュートリアルは、Raspberry Piをセットアップする上で最も重要であり、これを先に済ませておかないとこの例を進めることはできない。
 
-- Python Programming Tutorial: Getting Started with the Raspberry Pi — Pythonでハードウェアを制御するRaspberry Pi向けプログラムの書き方を学べるガイド
-- Pi Servo pHAT (v2) Hookup Guide — Raspberry PiでPi Servo pHATを接続・使用する方法の入門ガイド
+- [PythonプログラミングでRaspberry Piを始める](./python-programming-tutorial-getting-started-with-the-raspberry-pi.md) — Pythonでハードウェアを制御するRaspberry Pi向けプログラムの書き方を学べるガイド
+- [Pi Servo pHAT (v2)の使い方](./pi-servo-phat-v2-hookup-guide.md) — Raspberry PiでPi Servo pHATを接続・使用する方法の入門ガイド
 
 ### 必要な部品
 
@@ -335,7 +335,7 @@ Piの電源が入っている状態でサーボを接続しては**いけない*
 
 まず、Piにパッケージをインストールする必要がある。
 このチュートリアルを簡潔にするため、ここではSparkFun Qwiic Pythonパッケージ一式をインストールする方法だけを扱う。
-パッケージの一部だけをインストールしたい場合や手動でインストールしたい場合は、Servo pHATのHookup Guideのこのセクションで詳しい手順を確認してほしい。
+パッケージの一部だけをインストールしたい場合や手動でインストールしたい場合は、[Servo pHAT Hookup GuideのPython Package Overview](https://learn.sparkfun.com/tutorials/pi-servo-phat-v2-hookup-guide/python-package-overview)で詳しい手順を確認してほしい。
 
 SparkFun Qwiic Pythonパッケージは、SparkFunのQwiic製品向けに利用可能なPythonパッケージをすべてインストールし、必要なI2Cドライバーパッケージも含んでいる。
 `pip3`（Python 2の場合は`pip`）経由でPyPiに対応しているシステムでは、次のコマンドで簡単にインストールできる。
@@ -473,7 +473,7 @@ Servo pHATが正しく接続され動作していれば、**0x40**のアドレ�
 
 特に大型のサーボを使っている場合や、多数のサーボで重い負荷を駆動している場合、PiのUSBポートでPiとServo pHATの両方に給電していると、Piが再起動したり電圧不足になったりすることがある。
 pHAT上のUSB-Cコネクタから直接PiとServo pHATに給電するよう切り替えることもできるが、より良い解決策は、Power Isolationジャンパーを切断し、それぞれのデバイスに個別に給電することである。
-このジャンパーの場所と変更方法については、Servo pHAT Hookup GuideのHardware Overviewセクションにある「Jumpers」のサブセクションで説明している。
+このジャンパーの場所と変更方法については、[Servo pHAT Hookup Guideの「Jumpers」](https://learn.sparkfun.com/tutorials/pi-servo-phat-v2-hookup-guide/hardware-overview#jumpers)で説明している。
 
 ## Qwiic Joystickによるサーボの直接制御
 
@@ -481,7 +481,7 @@ pHAT上のUSB-Cコネクタから直接PiとServo pHATに給電するよう切�
 このプロジェクトでは、まさにその方法を示す。
 
 このプロジェクトでは、[Qwiic Joystick](https://www.sparkfun.com/products/15168)を入力として使い、[RedBoard Qwiic](https://www.sparkfun.com/products/15123)に取り付けたパン・チルトブラケット上の2つのサーボを制御する。
-Qwiic Joystickについて詳しくは、Qwiic Joystick Hookup Guideを確認してほしい。
+Qwiic Joystickについて詳しくは、[Qwiic Joystick Hookup Guide](https://learn.sparkfun.com/tutorials/qwiic-joystick-hookup-guide)を確認してほしい。
 
 ### 必要な部品
 
@@ -491,7 +491,7 @@ Qwiic Joystickについて詳しくは、Qwiic Joystick Hookup Guideを確認し
 ### ハードウェアの接続
 
 このプロジェクトでまず組み立てるのは、2つのサブマイクロサーボを使ったパン・チルトブラケットである。
-サーボを使ってパン・チルトブラケットを組み立てる基本的な手順は、組み立てガイドを参照してほしい。
+サーボを使ってパン・チルトブラケットを組み立てる基本的な手順は、[組み立てガイド](https://learn.sparkfun.com/tutorials/setting-up-the-pi-zero-wireless-pan-tilt-camera)を参照してほしい。
 
 > **組み立てのコツ：** サーボを正しく位置合わせしておくと、可動範囲をフルに活用でき、配線が終わった後でサーボを付け直す手間を避けられる。
 >
@@ -506,7 +506,7 @@ Qwiic Joystickについて詳しくは、Qwiic Joystick Hookup Guideを確認し
 
 パン・チルトブラケットには2つのサーボがあるため、ブレッドボードを使って両方のサーボの電源ピンをまとめて接続する。
 
-> **注意：** ブレッドボードを使ったことがない場合は、ブレッドボードの使い方のチュートリアルを確認することを推奨する。
+> **注意：** ブレッドボードを使ったことがない場合は、[ブレッドボードの使い方](./how-to-use-a-breadboard.md)を確認することを推奨する。
 
 各サーボの電源ピンとグラウンドピンをブレッドボードの「**+**」「**-**」レールに接続し、続いてRedBoardの電源を**切った状態**で、RedBoardの**VIN**ピンと**GND**ピンも同じブレッドボードのレールに接続する。
 すべての電源・グラウンドピンを正しく接続したら、RedBoardをUSBで接続する。
@@ -523,7 +523,7 @@ Qwiic Joystickについて詳しくは、Qwiic Joystick Hookup Guideを確認し
 まず、[Qwiic Joystickライブラリ](https://github.com/sparkfun/SparkFun_Qwiic_Joystick_Arduino_Library)がまだインストールされていなければインストールする。
 上記のリンクからダウンロードして手動でインストールすることもできるが、Library Managerツールからインストールすることを推奨する。
 Library Managerを開き、「**SparkFun Qwiic Joystick**」を検索してインストールをクリックするだけでよい。
-Arduinoのライブラリをインストールしたことがない場合は、Installing an Arduino Library Tutorialで手順全体を確認できる。
+Arduinoのライブラリをインストールしたことがない場合は、[Installing an Arduino Library Tutorial](https://learn.sparkfun.com/tutorials/installing-an-arduino-library)で手順全体を確認できる。
 
 ライブラリのインストールが終わったら、下のコードをコピーして新しいスケッチに貼り付ける。
 ボードとして「**Arduino/Genuino Uno**」（あるいは別の開発ボードを使っている場合はそれ）を選択し、ボードが接続されている「Port」を選んでコードをアップロードする。
@@ -616,20 +616,20 @@ Arduino Library Managerツールで、ライブラリがインストールされ
 
 サーボをプロジェクトに組み込むアイデアが欲しい場合は、サーボを使った次のようなチュートリアルも参考にしてほしい。
 
-- Building a Safe Cracking Robot — 未知の金庫を1時間以内に開錠する方法
-- Setting Up the Pi Zero Wireless Pan-Tilt Camera — Raspberry Pi Zeroをヘッドレスなワイヤレスパン・チルトカメラとして組み立て、プログラムし、アクセスする方法
-- SparkFun ESP32 DMX to LED Shield — DMX to LED Shieldをさまざまな方法で活用する方法を学ぶ
-- LED Gumball Machine — ガムボールマシンを改造して、世界をもう少し楽しく、ぴかぴかにする
+- [Building a Safe Cracking Robot](https://learn.sparkfun.com/tutorials/building-a-safe-cracking-robot) — 未知の金庫を1時間以内に開錠する方法
+- [Setting Up the Pi Zero Wireless Pan-Tilt Camera](https://learn.sparkfun.com/tutorials/setting-up-the-pi-zero-wireless-pan-tilt-camera) — Raspberry Pi Zeroをヘッドレスなワイヤレスパン・チルトカメラとして組み立て、プログラムし、アクセスする方法
+- [SparkFun ESP32 DMX to LED Shield](https://learn.sparkfun.com/tutorials/sparkfun-esp32-dmx-to-led-shield) — DMX to LED Shieldをさまざまな方法で活用する方法を学ぶ
+- [LED Gumball Machine](https://learn.sparkfun.com/tutorials/led-gumball-machine) — ガムボールマシンを改造して、世界をもう少し楽しく、ぴかぴかにする
 
 自分のサーボプロジェクトのヒントとして、次のようなブログ記事も参考になる。
 
-- Hack-o-Lantern 2009 — 2009年のSparkFun Hack-o-Lanternコンテストの優勝者を発表
-- Intro to Servo Motors with Jeff — 教育チームによるもう一つの動画を紹介
-- Animatronic Iron Man MKIII Suit — 友人のJerome氏が作った驚くべきアイアンマンスーツ
-- Hardware Hump Day: Sleight of Servo — 電子工作で観客を沸かせるマジシャン、Mario the Maker Magician
-- SIK v4.0 Extra Projects — SparkFun Inventor's Kitを、さらなるプロジェクトで一歩先へ
-- Interactive Spooky Halloween Cat — トリックオアトリートの子どもたちを驚かせる、距離センサーを使ったハロウィン小道具
-- Making Motion Simple with Servos — サーボを使って次のプロジェクトに動きを組み込むアイデアの概要と、いくつかの例
+- [Hack-o-Lantern 2009](https://news.sparkfun.com/303) — 2009年のSparkFun Hack-o-Lanternコンテストの優勝者を発表
+- [Intro to Servo Motors with Jeff](https://news.sparkfun.com/1058) — 教育チームによるもう一つの動画を紹介
+- [Animatronic Iron Man MKIII Suit](https://news.sparkfun.com/1475) — 友人のJerome氏が作った驚くべきアイアンマンスーツ
+- [Hardware Hump Day: Sleight of Servo](https://news.sparkfun.com/2482) — 電子工作で観客を沸かせるマジシャン、Mario the Maker Magician
+- [SIK v4.0 Extra Projects](https://news.sparkfun.com/2538) — SparkFun Inventor's Kitを、さらなるプロジェクトで一歩先へ
+- [Interactive Spooky Halloween Cat](https://news.sparkfun.com/2799) — トリックオアトリートの子どもたちを驚かせる、距離センサーを使ったハロウィン小道具
+- [Making Motion Simple with Servos](https://news.sparkfun.com/3262) — サーボを使って次のプロジェクトに動きを組み込むアイデアの概要と、いくつかの例
 
 タグ: Arduino、Hookup、モーター、Python、Qwiic、Raspberry Pi
 

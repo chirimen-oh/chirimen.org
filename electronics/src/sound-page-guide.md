@@ -31,7 +31,7 @@
 
 サウンドページキットに取りかかる前に、そこで使われている技術について読んでおくとよい。
 
-- [Arduinoとは何か](https://learn.sparkfun.com/tutorials/what-is-an-arduino) — LilyPad MP3ボードはArduinoで動作する。ボードを別の用途にプログラムし直したい場合に役立つ
+- [Arduinoとは何か](./what-is-an-arduino.md) — LilyPad MP3ボードはArduinoで動作する。ボードを別の用途にプログラムし直したい場合に役立つ
 - [Getting Started with the LilyPad MP3 Player](https://learn.sparkfun.com/tutorials/getting-started-with-the-lilypad-mp3-player) — LilyPad MP3ボードがどんなものかを学べる。本来は導電性の糸を使い、ボード周囲のパッドに縫い付けて使うものだが、このチュートリアルでは代わりに導電性塗料を使う
 
 ## 電子部品を取り付ける

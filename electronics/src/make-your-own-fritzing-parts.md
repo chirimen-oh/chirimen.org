@@ -31,12 +31,12 @@ SparkFunにも、Fritzingにまだ収録されていない自作パーツを収�
 
 このチュートリアルを読む前に、次の関連チュートリアルにも目を通しておくとよい。
 
-- PCB基板の基礎
-- 集積回路
-- コネクタの基礎
-- Using GitHub
-- ブレッドボードの使い方
-- 回路図の読み方
+- [PCB基板の基礎](./pcb-basics.md)
+- [集積回路](./integrated-circuits.md)
+- [コネクタの基礎](./connector-basics.md)
+- [Using GitHub](https://learn.sparkfun.com/tutorials/using-github)
+- [ブレッドボードの使い方](./how-to-use-a-breadboard.md)
+- [回路図の読み方](./how-to-read-a-schematic.md)
 
 ## ダウンロードとインストール
 

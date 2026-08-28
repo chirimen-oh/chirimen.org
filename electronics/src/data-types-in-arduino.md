@@ -19,7 +19,7 @@ ALUにとって、そのデータがユーザーにとって何を表してい�
 始める前に、次の概念に馴染んでおくとよいだろう。
 
 - [Arduinoとは何か](./what-is-an-arduino.md)
-- Arduinoのインストール
+- [Arduinoのインストール](https://learn.sparkfun.com/tutorials/installing-arduino-ide)
 - [2進数](./binary.md)
 - [シリアル通信](./serial-communication.md)
 

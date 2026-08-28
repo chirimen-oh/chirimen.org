@@ -23,9 +23,9 @@ MQTTでは、サーバーが1つのクライアントから情報を受け取る
 
 以下の概念に馴染みがなければ、続きを読む前にこれらのチュートリアルを確認しておくことをおすすめする。
 
-- Raspberry Pi 3 Starter Kitの使い方
-- ESP32 Thingの使い方
-- Raspberry Pi Zero Wirelessの使い方
+- [Raspberry Pi 3 Starter Kitの使い方](https://learn.sparkfun.com/tutorials/raspberry-pi-3-starter-kit-hookup-guide)
+- [ESP32 Thingの使い方](https://learn.sparkfun.com/tutorials/esp32-thing-hookup-guide)
+- [Raspberry Pi Zero Wirelessの使い方](./getting-started-with-the-raspberry-pi-zero-wireless.md)
 - [Raspberry PiでVNCによるリモートデスクトップを使う](./how-to-use-remote-desktop-on-the-raspberry-pi-with-vnc.md)
 
 ## 基礎知識

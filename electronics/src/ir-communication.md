@@ -27,7 +27,7 @@ IR、つまり[赤外線](./light.md)通信は、一般的で安価、かつ扱�
 - [Installing Arduino Library（Arduinoライブラリのインストール）](https://learn.sparkfun.com/tutorials/installing-an-arduino-library)
 - [回路図の読み方](./how-to-read-a-schematic.md)
 - [光](./light.md)
-- [Pulse Width Modulation（パルス幅変調、PWM）](https://learn.sparkfun.com/tutorials/pulse-width-modulation)
+- [パルス幅変調（PWM）](./pulse-width-modulation.md)
 - [発光ダイオード（LED）](./light-emitting-diodes-leds.md)
 - [はんだ付けの基本（スルーホール編）](./how-to-solder-through-hole-soldering.md)
 

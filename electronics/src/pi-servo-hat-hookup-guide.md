@@ -28,7 +28,7 @@ NOOBS対応のカードにはPi Zero Wに対応するだけの新しいOSが入�
 
 このチュートリアルに取り組む前に、次のチュートリアルも確認しておくとよい。
 
-- はんだ付けの基本（スルーホール編）
+- [はんだ付けの基本（スルーホール編）](./how-to-solder-through-hole-soldering.md)
 - [Raspberry PiのSPIとI2C](./raspberry-pi-spi-and-i2c-tutorial.md)
 - [サーボモーター入門](./hobby-servo-tutorial.md)
 - [Raspberry Pi Zero Wirelessを始める](./getting-started-with-the-raspberry-pi-zero-wireless.md)

@@ -32,7 +32,7 @@ a  b  c  d  e  f  g  h  i  j  k  l  m  n  o  p  q  r  s  t  u  v  w  x  y  z
 
 - [2進数](./binary.md)：コンピュータが数をどのように保存しているかを知っておくと、その数を文字に変換する際に役立つ
 - [16進数](./hexadecimal.md)：16進数は、2進数を4ビットずつのまとまりで表すためによく使われる
-- Installing Arduino IDE（Arduino IDEのインストール）：ASCII文字を表示してみるには、Arduinoを使うのがよい方法である
+- [Installing Arduino IDE（Arduino IDEのインストール）](https://learn.sparkfun.com/tutorials/installing-arduino-ide)：ASCII文字を表示してみるには、Arduinoを使うのがよい方法である
 
 ## 歴史
 

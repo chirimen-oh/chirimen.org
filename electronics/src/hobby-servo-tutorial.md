@@ -22,8 +22,8 @@
 
 ## 参考になるチュートリアル
 
-- モーターと最適な選び方
-- パルス幅変調（PWM）についての背景知識
+- [モーターと最適な選び方](./motors-and-selecting-the-right-one.md)
+- [パルス幅変調（PWM）についての背景知識](./pulse-width-modulation.md)
 
 ## サーボモーターの背景
 

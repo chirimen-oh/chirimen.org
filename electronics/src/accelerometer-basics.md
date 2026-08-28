@@ -14,7 +14,7 @@
 - [ロジックレベル](./logic-levels.md)
 - [SPI（シリアルペリフェラルインターフェース）](./serial-peripheral-interface-spi.md)
 - [I2C](./i2c.md)
-- [Pulse-Width Modulation (<ruby>PWM<rt>パルス幅変調</rt></ruby>)](https://learn.sparkfun.com/tutorials/pulse-width-modulation)
+- [パルス幅変調（PWM）](./pulse-width-modulation.md)
 - [アナログ-デジタル変換 (ADC)](./analog-to-digital-conversion.md)
 
 ## 加速度センサーの仕組み

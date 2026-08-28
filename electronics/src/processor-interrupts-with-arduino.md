@@ -20,8 +20,8 @@
 以下の概念に馴染みがなければ、続きを読む前にこれらのチュートリアルを確認しておくことをおすすめする。
 
 - [Arduinoとは何か](./what-is-an-arduino.md)
-- Arduino IDEのインストール
-- FTDIドライバのインストール方法
+- [Arduino IDEのインストール](https://learn.sparkfun.com/tutorials/installing-arduino-ide)
+- [FTDIドライバのインストール方法](https://learn.sparkfun.com/tutorials/how-to-install-ftdi-drivers)
 
 ## どうやって動作するのか
 

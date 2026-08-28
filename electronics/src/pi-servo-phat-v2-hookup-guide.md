@@ -30,14 +30,14 @@ microSDカードには2つの選択肢がある。Raspberry Piの実行に必要
 このHookup Guideに取り組む前に、次のチュートリアルやHookup Guideに目を通し、内容に馴染んでおくことを推奨する。
 補足として、以前のPi Servo HatのHookup Guideも掲載しておく。
 
-- パルス幅変調（PWM） — パルス幅変調の概念の入門
-- I2C — 現在広く使われている主要な組み込み用通信プロトコルの一つ、I2Cの入門
+- [パルス幅変調（PWM）](./pulse-width-modulation.md) — パルス幅変調の概念の入門
+- [I2C](./i2c.md) — 現在広く使われている主要な組み込み用通信プロトコルの一つ、I2Cの入門
 - [Raspberry PiのSPIとI2C](./raspberry-pi-spi-and-i2c-tutorial.md) — C/C++用のwiringPi I/OライブラリとPython用のspidev/smbusを使い、Raspberry PiのシリアルI2CバスとSPIバスを利用する方法
 - [サーボモーター入門](./hobby-servo-tutorial.md) — サーボは出力軸の回転を正確に制御できるモーターであり、ロボット工学をはじめさまざまなプロジェクトの可能性を広げてくれる
-- Setting Up the Pi Zero Wireless Pan-Tilt Camera — Raspberry Pi Zeroをヘッドレスなワイヤレスパン・チルトカメラとして組み立て、プログラムし、アクセスする方法
+- [Setting Up the Pi Zero Wireless Pan-Tilt Camera](https://learn.sparkfun.com/tutorials/setting-up-the-pi-zero-wireless-pan-tilt-camera) — Raspberry Pi Zeroをヘッドレスなワイヤレスパン・チルトカメラとして組み立て、プログラムし、アクセスする方法
 - [Pi Servo HATの使い方](./pi-servo-hat-hookup-guide.md) — Pi Servo Hatをプロジェクトで接続・使用する方法
 - [Raspberry Pi Zero Wirelessを始める](./getting-started-with-the-raspberry-pi-zero-wireless.md) — 最小のRaspberry Pi、Raspberry Pi Zero - Wirelessのセットアップ、設定、使い方を学ぶ
-- Python Programming Tutorial: Getting Started with the Raspberry Pi — Pythonでハードウェアを制御するRaspberry Pi向けプログラムの書き方を学べるガイド
+- [Python Programming Tutorial: Getting Started with the Raspberry Pi](./python-programming-tutorial-getting-started-with-the-raspberry-pi.md) — Pythonでハードウェアを制御するRaspberry Pi向けプログラムの書き方を学べるガイド
 
 Pi Servo pHATには、新しい[Qwiicシステム](https://www.sparkfun.com/qwiic)を活用するためのQwiicコネクタも用意されている。
 これを使う前に、ロジックレベルとI2Cのチュートリアルに目を通しておくことを推奨する。

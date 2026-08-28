@@ -34,9 +34,9 @@ Binary Blaster（バイナリブラスター）は、[2進数](./binary.md)で�
 スルーホールはんだ付けについてさらに一般的な知識を得たい場合は、次のようなチュートリアルもおすすめである。
 
 - [はんだ付けの基本（スルーホール編）](./how-to-solder-through-hole-soldering.md)
-- Decoding Resistor Markings（抵抗器のカラーコードの読み方）
-- Diode and LED Polarity（ダイオードとLEDの極性）
-- Electronics Assembly - Washing（電子部品の組み立て：洗浄）
+- [Decoding Resistor Markings（抵抗器のカラーコードの読み方）](https://learn.sparkfun.com/tutorials/decoding-resistor-markings)
+- [Diode and LED Polarity（ダイオードとLEDの極性）](https://learn.sparkfun.com/tutorials/diode-and-led-polarity)
+- [Electronics Assembly - Washing（電子部品の組み立て：洗浄）](https://learn.sparkfun.com/tutorials/electronics-assembly-washing)
 
 ## クイックスタート：最初の部品
 
