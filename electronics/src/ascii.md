@@ -45,7 +45,7 @@ a  b  c  d  e  f  g  h  i  j  k  l  m  n  o  p  q  r  s  t  u  v  w  x  y  z
 
 ASCIIの最初の32文字は、制御文字として予約されている。
 これらの文字は、プリンターのような他の機器に特別な指示を伝えるために使われた。
-たとえば、改行したり、文字を削除したり、機器によってはベルを鳴らしたりすることができた（[Teletype Model 33](https://en.wikipedia.org/wiki/Teletype_Model_33) ASRなどがその例である）。
+たとえば、改行したり、文字を削除したり、機器によってはベルを鳴らしたりすることができた（[Teletype Model 33](https://ja.wikipedia.org/wiki/ASR-33) ASRなどがその例である）。
 
 ASAは1963年に最初のバージョンのASCIIを発表し、1967年に改訂した。
 この規格への最後の大きな更新は1986年に行われた。
@@ -55,7 +55,7 @@ ASCIIが最初に商用で使われたのは、AT&T（American Telephone & Teleg
 
 1968年3月11日、リンドン・B・ジョンソン大統領は、アメリカ連邦政府のすべてのコンピュータがASCIIをサポートすることを義務付け、これによりASCIIはアメリカのコンピュータ史における確固たる地位を築いた。
 
-当時は[国際電信アルファベット2号](https://en.wikipedia.org/wiki/Baudot_code#ITA2)（ITA2）のような他の符号化方式も存在していたが、ASCIIはすぐにアメリカ英語の符号化における標準となった。
+当時は[国際電信アルファベット No.2 (International Telegraph Alphabet No.2: ITA2)](https://ja.wikipedia.org/wiki/Baudot_Code#ITA_No.2)（ITA2）のような他の符号化方式も存在していたが、ASCIIはすぐにアメリカ英語の符号化における標準となった。
 ASCIIは、2007年にUTF-8に追い抜かれるまで、インターネット上でもっとも一般的な符号化方式だった。
 
 ## ASCIIテーブル
@@ -67,7 +67,7 @@ ASCIIテーブルは、それぞれの文字を0から127までの割り当て�
 
 制御文字は、ASCIIテーブルの最初の32文字を占めている。
 これらの文字は表示されることを意図しておらず、代わりにプリンターのような他の機器にコマンドの指示を送るために使われる。
-非常に古いシステム（12ビットの[PDP-8](https://en.wikipedia.org/wiki/PDP-8)など）を扱う可能性もあるため、念のため[8進数](https://ja.wikipedia.org/wiki/8進法)での表記も併記しておく。
+非常に古いシステム（12ビットの[PDP-8](https://ja.wikipedia.org/wiki/PDP-8)など）を扱う可能性もあるため、念のため[8進数](https://ja.wikipedia.org/wiki/8進法)での表記も併記しておく。
 
 | 10進 | 2進 | 8進 | 16進 | 文字 | 説明 |
 | --- | --- | --- | --- | --- | --- |

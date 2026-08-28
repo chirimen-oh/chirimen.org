@@ -257,7 +257,7 @@ Arduinoの出力ピンから取り出せる電流は最大でおよそ30mA程度
 
 - [950nm Infrared LED（データシートPDF）](http://cdn.sparkfun.com/datasheets/Components/LED/YSL-R531FR1C-F1.pdf)
 - [TSOP38238 IR Receiver Module（データシートPDF）](http://www.sparkfun.com/datasheets/Sensors/Infrared/tsop382.pdf)
-- [Wikipedia: Infrared（赤外線についてのWikipedia記事）](https://en.wikipedia.org/wiki/Infrared)
+- [Wikipedia: Infrared（赤外線についてのWikipedia記事）](https://ja.wikipedia.org/wiki/%E8%B5%A4%E5%A4%96%E7%B7%9A)
 - [SB-Projects: IR Remote Control Theory（赤外線リモコンの理論）](https://www.sbprojects.net/knowledge/ir/index.php)
 - [IRremote Library（IRremoteライブラリのGitHubリポジトリ）](https://github.com/shirriff/Arduino-IRremote)
 

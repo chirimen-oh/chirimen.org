@@ -83,7 +83,7 @@
 ### デジタル信号の例
 
 すべての音声や映像の信号がアナログというわけではない。
-映像（および音声）用の[HDMI](http://en.wikipedia.org/wiki/HDMI)や、音声用の[MIDI](http://en.wikipedia.org/wiki/Musical_Instrument_Digital_Interface)、[I2S](http://en.wikipedia.org/wiki/I%C2%B2S)、[AC'97](http://en.wikipedia.org/wiki/AC%2797)といった標準規格は、いずれもデジタルで伝送される。
+映像（および音声）用の[HDMI](https://ja.wikipedia.org/wiki/HDMI)や、音声用の[MIDI](https://ja.wikipedia.org/wiki/MIDI)、[I2S](https://ja.wikipedia.org/wiki/Inter-IC_Sound)、[AC'97](https://ja.wikipedia.org/wiki/Audio_Codec_97)といった標準規格は、いずれもデジタルで伝送される。
 
 [集積回路](./integrated-circuits.md)どうしの通信の多くもデジタルである。
 シリアル通信、I2C、SPIといったインターフェースは、いずれも符号化された矩形波の連続としてデータを伝送する。

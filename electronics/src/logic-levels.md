@@ -82,7 +82,7 @@ TTLとはTransistor-Transistor Logic（トランジスタ・トランジスタ�
 最小の入力HIGH電圧（VIH）は2Vであり、基本的に2V以上の電圧であれば、TTLデバイスにはlogic 1（HIGH）として読み取られる。
 
 また、送信側の出力と受信側の入力の間に0.7Vの余裕があることにも気づくだろう。
-これは[ノイズマージン](http://en.wikipedia.org/wiki/Noise_margin)と呼ばれることもある。
+これは[ノイズマージン](https://ja.wikipedia.org/wiki/Noise_margin)と呼ばれることもある。
 
 同様に、最大の出力LOW電圧（VOL）は0.4Vである。
 つまり、logic 0を送ろうとするデバイスの出力は、常に0.4V未満になるということである。

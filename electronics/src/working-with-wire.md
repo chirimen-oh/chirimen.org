@@ -54,7 +54,7 @@
 電線の直径を表す言葉として「ゲージ」が使われる。
 ゲージは、その電線が安全に扱える[電流](./voltage-current-resistance-and-ohms-law.md)の量を判断するのに使われる。
 ゲージには電気用と機械用があるが、このチュートリアルでは電気用のゲージだけを扱う。
-ゲージの規格には主に[AWG（アメリカン・ワイヤー・ゲージ）](http://en.wikipedia.org/wiki/American_wire_gauge)と[SWG（スタンダード・ワイヤー・ゲージ）](http://en.wikipedia.org/wiki/Standard_Wire_Gauge)の2種類があるが、両者の違いはこのチュートリアルではそれほど重要ではない。
+ゲージの規格には主に[AWG（アメリカン・ワイヤー・ゲージ）](https://ja.wikipedia.org/wiki/%E7%B1%B3%E5%9B%BD%E3%83%AF%E3%82%A4%E3%83%A4%E3%82%B2%E3%83%BC%E3%82%B8%E8%A6%8F%E6%A0%BC)と[SWG（スタンダード・ワイヤー・ゲージ）](https://ja.wikipedia.org/wiki/Standard_Wire_Gauge)の2種類があるが、両者の違いはこのチュートリアルではそれほど重要ではない。
 
 ![さまざまなゲージの電線のおおよその太さの比較](./assets/wire/gauge-scale.jpg)
 
@@ -182,7 +182,7 @@ SparkFunでは、試作やブレッドボード用にたいてい**22 AWG**の�
 
 ### 圧着（クリンプ）とは何か
 
-ここで言う[圧着（クリンプ）](<https://en.wikipedia.org/wiki/Crimp_(electrical)>)とは、金属を変形させることで2つの金属部品を組み合わせ、一方が他方を保持するように接合する方法を指す。
+ここで言う[圧着（クリンプ）](<https://ja.wikipedia.org/wiki/%E5%9C%A7%E7%9D%80%E5%B7%A5%E5%85%B7)>)とは、金属を変形させることで2つの金属部品を組み合わせ、一方が他方を保持するように接合する方法を指す。
 この変形部分そのものを「クリンプ」と呼ぶ。
 
 ![電線を挟み込んで固定するように変形させた金属部分](./assets/wire/crimp-deformation.jpg)

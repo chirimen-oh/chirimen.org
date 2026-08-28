@@ -63,7 +63,7 @@ GPS受信機は、衛星と地上局からなる測位システムを利用し�
 測位システムには、もう1つ説明していない要素がある。
 衛星とGPS受信機に加えて、衛星ネットワークや一部のGPS受信機と通信できる地上局が存在する。
 このシステムは正式にはコントロールセグメントと呼ばれ、GPS受信機の精度を向上させる役割を持つ。
-コントロールセグメントを利用して精度を高める一般的なシステムには、[WAAS](http://www8.garmin.com/aboutGPS/waas.html)や[DGPS](http://en.wikipedia.org/wiki/Differential_GPS)がある。
+コントロールセグメントを利用して精度を高める一般的なシステムには、[WAAS](http://www8.garmin.com/aboutGPS/waas.html)や[DGPS](https://ja.wikipedia.org/wiki/%E3%83%87%E3%82%A3%E3%83%95%E3%82%A1%E3%83%AC%E3%83%B3%E3%82%B7%E3%83%A3%E3%83%ABGPS)がある。
 WAASはほとんどのGPS受信機で利用でき、精度をおよそ5メートルまで向上させる。
 DGPSは特定の種類のGPS受信機を必要とし、センチメートル単位の精度が得られる。
 DGPSの機器は追加のアンテナが必要になるため、高価で大型になりがちである。
@@ -82,7 +82,7 @@ GPS受信機が位置を計算するには、**4機の衛星**をロックでき
 
 ### アシステッドGPS
 
-その補助的な仕組みの1つが、[Assisted GPS](http://en.wikipedia.org/wiki/Assisted_GPS)、通称AGPSである。
+その補助的な仕組みの1つが、[Assisted GPS](https://ja.wikipedia.org/wiki/%E8%A3%9C%E5%8A%A9GPS)、通称AGPSである。
 この方式は、GPS信号が弱い場合や受信できない場合に、衛星と受信機の間を中継するために無線の地上ネットワークを利用する。
 AGPSが役立つ方法は2つある。
 1つ目は、受信機に正しいアルマナックデータと正確な時刻を提供することである。
@@ -90,17 +90,17 @@ AGPSが役立つ方法は2つある。
 AGPSは主に、携帯電話の基地局に搭載されたGPS受信機によって実現されている。
 これらの受信機と通信することで、GPSはより速く衛星をロックでき、より正確な情報も得られる。
 この方式は携帯電話のGPSで使われており、単体のGPS受信機よりも正確になることがある理由でもある。
-とはいえAGPSは携帯電話だけでなく、カメラや一部の車両など、[より多くの機器](http://en.wikipedia.org/wiki/List_of_devices_with_Assisted_GPS)にも搭載されている。
+とはいえAGPSは携帯電話だけでなく、カメラや一部の車両など、[より多くの機器](https://ja.wikipedia.org/wiki/List_of_devices_with_Assisted_GPS)にも搭載されている。
 特に、建物が密集した都市部でGPS信号が届きにくい状況で効果を発揮する。
 
 ### ディファレンシャルGPS
 
-もう1つの方式が、[Differential GPS](http://en.wikipedia.org/wiki/Differential_GPS)、通称DGPSである。
+もう1つの方式が、[Differential GPS](https://ja.wikipedia.org/wiki/%E3%83%87%E3%82%A3%E3%83%95%E3%82%A1%E3%83%AC%E3%83%B3%E3%82%B7%E3%83%A3%E3%83%ABGPS)、通称DGPSである。
 DGPSも地上の固定GPS局を使って位置を求める点はAGPSと同じだが、衛星からの読み取り値と地上局での読み取り値の差分を求める点が異なる。
 これらの地上局は受信機から最大200海里ほど離れていることがあり、地上局から離れるほど精度が落ちる点に注意が必要である。
-DGPSでは、実際の[疑似距離（pseudorange）](http://en.wikipedia.org/wiki/Pseudorange)と測定された疑似距離との誤差を示す信号を、地上局が送信することで実現されている。
+DGPSでは、実際の[疑似距離（pseudorange）](https://ja.wikipedia.org/wiki/Pseudorange)と測定された疑似距離との誤差を示す信号を、地上局が送信することで実現されている。
 この値は、光速に、衛星から受信機まで信号が伝わるのにかかった時間を掛け合わせることで計算される。
-一例として、DGPSの一種に[Wide Area Augmentation System](http://en.wikipedia.org/wiki/WAAS)、通称WAASがある。
+一例として、DGPSの一種に[Wide Area Augmentation System](https://ja.wikipedia.org/wiki/%E5%BA%83%E5%9F%9F%E5%A2%97%E5%BC%B7%E3%82%B7%E3%82%B9%E3%83%86%E3%83%A0)、通称WAASがある。
 
 ![WAASの仕組み](./assets/gps-basics/waas-diagram.gif)
 
@@ -121,7 +121,7 @@ WAASは北米地域だけのシステムだが、世界の他の地域にも同�
 
 GPSのデータは、[シリアルインターフェース](./serial-communication.md)を通じて、さまざまなメッセージフォーマットで出力される。
 標準的なフォーマットと、非標準（独自仕様）のフォーマットが存在する。
-ほとんどすべてのGPS受信機は[NMEA](http://en.wikipedia.org/wiki/NMEA_0183)形式のデータを出力する。
+ほとんどすべてのGPS受信機は[NMEA](https://ja.wikipedia.org/wiki/NMEA_0183)形式のデータを出力する。
 NMEA規格は、センテンスと呼ばれるデータの行で構成される。
 それぞれのセンテンスには、カンマ区切り形式（つまりデータがカンマで区切られている形式）で、さまざまなデータが含まれている。
 以下は、衛星を[ロック](https://learn.sparkfun.com/tutorials/gps-basics/gps-glossary)している（4機以上の衛星が見えており、正確な位置が得られている）GPS受信機から得られる、NMEAセンテンスの例である。
@@ -246,7 +246,7 @@ GPSにはおよそ5メートル程度の誤差があり、静止していると�
 モジュールが動き始めると、軌跡は比較的正確になり、GPSは進行方向を「推測」できるようになる。
 ただし、高い建物に挟まれた[アーバンキャニオン](https://learn.sparkfun.com/tutorials/gps-basics/gps-glossary)に近づくと、精度が悪化することに注意してほしい。
 GPS信号は、必ずしも真上にあるとは限らない衛星から送信されており、地平線に近い位置にある衛星もある。
-また、電波は建物や物体で反射し、[マルチパス干渉](http://en.wikipedia.org/wiki/Multipath_interference)と呼ばれる現象を引き起こすことがある。
+また、電波は建物や物体で反射し、[マルチパス干渉](https://ja.wikipedia.org/wiki/%E3%83%9E%E3%83%AB%E3%83%81%E3%83%91%E3%82%B9)と呼ばれる現象を引き起こすことがある。
 GPSは、空が開けた場所でもっともよく機能するということを、常に覚えておいてほしい。
 
 **アンテナ（Antenna）**：忘れてはならないのは、あの小さなGPSモジュールが、頭上だけでなく空のあらゆる方向にある、およそ12,000マイル彼方の衛星からの信号を受信しているという点である。
@@ -290,7 +290,7 @@ SMA接続を使えば、メイン基板とは別の場所にアンテナを設�
 一般的なチップセットにはublox、SiRF、SkyTraqなどがあり、いずれも高速な測位と高い信頼性を実現する強力なプロセッサを搭載している。
 チップセットごとの違いは、たいてい消費電力、測位にかかる時間、ハードウェアの入手のしやすさのバランスによって決まる。
 
-[DGPS](http://en.wikipedia.org/wiki/DGPS)（ディファレンシャルGPS）：DGPSは特定の種類のGPS受信機である。
+[DGPS](https://ja.wikipedia.org/wiki/%E3%83%87%E3%82%A3%E3%83%95%E3%82%A1%E3%83%AC%E3%83%B3%E3%82%B7%E3%83%A3%E3%83%ABGPS)（ディファレンシャルGPS）：DGPSは特定の種類のGPS受信機である。
 DGPS受信機には追加のアンテナが搭載されており、衛星からだけでなく、地上局からも直接信号を受信する。
 DGPS機器には通常2本のアンテナが必要である。
 これらは標準的なGPS機器よりもはるかに大きく高価だが、センチメートル単位の位置精度を実現できる。
@@ -300,7 +300,7 @@ DGPS機器には通常2本のアンテナが必要である。
 
 **ロックまたはフィックス（Lock or Fix）**：GPS受信機がロックまたはフィックスを得ている状態とは、少なくとも4機の衛星が良好に見えており、正確な位置と時刻が得られている状態を指す。
 
-[NMEA](http://en.wikipedia.org/wiki/NMEA_0183)：ほとんどのGPSモジュールが使用する、一般的なデータフォーマットである。
+[NMEA](https://ja.wikipedia.org/wiki/NMEA_0183)：ほとんどのGPSモジュールが使用する、一般的なデータフォーマットである。
 NMEAデータはセンテンスの形で表され、GPSモジュールのシリアル送信（TX）ピンから出力される。
 NMEAセンテンスには、位置や時刻など、有用なデータがすべて含まれている。
 
@@ -323,7 +323,7 @@ NMEAセンテンスには、位置や時刻など、有用なデータがすべ�
 **ホットスタート（Hot Start）**：ホットスタートとは、すべての衛星のデータが最新で、前回の電源投入時とほぼ同じ位置に衛星がある状態を指す。
 ホットスタートであれば、GPSはすぐにロックできる。
 
-[トライラテレーション（Trilateration、三辺測量）](http://en.wikipedia.org/wiki/Trilateration)：複数の基準点を使って位置を計算する数学的な手法である。
+[トライラテレーション（Trilateration、三辺測量）](https://ja.wikipedia.org/wiki/Trilateration)：複数の基準点を使って位置を計算する数学的な手法である。
 GPS受信機が正確な位置と時刻を計算するには、空にある少なくとも4機の衛星を良好に捉えられている必要がある。
 この状態がGPSのロックまたはフィックスと呼ばれる。
 2つの基準点（x, y）を使って対象物までの距離を計算する三角測量についてはよく知られているが、GPSの場合は緯度、経度、高度、時刻という4つの値を求める必要がある。
@@ -334,13 +334,13 @@ GPS受信機が正確な位置と時刻を計算するには、空にある少�
 
 **更新レート（Update Rate）**：GPSモジュールの更新レートとは、位置を計算して報告する頻度のことである。
 ほとんどの機器の標準は1Hz（1秒に1回）である。
-[UAV（無人航空機）](http://en.wikipedia.org/wiki/UAV)など高速で移動する機体では、より高い更新レートが必要になることがある。
+[UAV（無人航空機）](https://ja.wikipedia.org/wiki/%E7%84%A1%E4%BA%BA%E8%88%AA%E7%A9%BA%E6%A9%9F)など高速で移動する機体では、より高い更新レートが必要になることがある。
 低価格なモジュールでも、5Hzや10Hzといった更新レートが利用できるようになりつつある。
 更新レートが高いほど、モジュールから送出されるNMEAセンテンスの量も増えることに注意してほしい。
 
-[WAAS](http://en.wikipedia.org/wiki/Wide_Area_Augmentation_System)：WAAS（広域補強システム）は、北米にある地上局のネットワークであり、衛星に補正データを送り返す。
+[WAAS](https://ja.wikipedia.org/wiki/%E5%BA%83%E5%9F%9F%E5%A2%97%E5%BC%B7%E3%82%B7%E3%82%B9%E3%83%86%E3%83%A0)：WAAS（広域補強システム）は、北米にある地上局のネットワークであり、衛星に補正データを送り返す。
 WAASは位置精度をおよそ5メートルまで高める。
-他の国にも同様のシステムがあり、たとえばヨーロッパの[EGNOS](http://en.wikipedia.org/wiki/Egnos)、日本の[MSAS](http://en.wikipedia.org/wiki/Multi-functional_Satellite_Augmentation_System)、インドの[GAGAN](http://en.wikipedia.org/wiki/GAGAN)などがある。
+他の国にも同様のシステムがあり、たとえばヨーロッパの[EGNOS](https://ja.wikipedia.org/wiki/%E6%AC%A7%E5%B7%9E%E9%9D%99%E6%AD%A2%E8%A1%9B%E6%98%9F%E3%83%8A%E3%83%93%E3%82%B2%E3%83%BC%E3%82%B7%E3%83%A7%E3%83%B3%E3%82%AA%E3%83%BC%E3%83%90%E3%83%BC%E3%83%AC%E3%82%A4%E3%82%B5%E3%83%BC%E3%83%93%E3%82%B9)、日本の[MSAS](https://ja.wikipedia.org/wiki/MSAS)、インドの[GAGAN](https://ja.wikipedia.org/wiki/GAGAN)などがある。
 ほとんどのGPS受信機はデフォルトでWAASが有効になっており、EGNOS、MSAS、GAGANにも対応している。
 
 ## トラブルシューティング

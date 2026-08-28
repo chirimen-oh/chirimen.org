@@ -137,7 +137,7 @@ SparkFunでは、3.3V〜5V系で動作する製品の多くに[9V電源](http://
 
 プロジェクトを持ち運び可能にする場合、電池の大きさ、形状、重さも考慮すべき点である。
 特に小型のクアッドコプターのような、空を飛ぶものに搭載する場合は重要になる。
-[Wikipediaの一覧](http://en.wikipedia.org/wiki/List_of_battery_sizes)を見れば、電池のサイズがいかに多様であるかがおおまかに分かる。
+[Wikipediaの一覧](https://ja.wikipedia.org/wiki/List_of_battery_sizes)を見れば、電池のサイズがいかに多様であるかがおおまかに分かる。
 電池の種類についてさらに詳しく知りたい場合は、[電池の技術のチュートリアル](./battery-technologies.md)を参照してほしい。
 
 ### 電池の直列接続と並列接続
