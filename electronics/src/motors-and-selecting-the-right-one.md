@@ -398,10 +398,10 @@ DCブラシモーターは、現在使われているモーターの中でもっ
 モーターを組み込む作業の足がかりとして、次のようなページも参考にしてほしい。
 
 - [ギア比](http://science.howstuffworks.com/transport/engines-equipment/gear-ratio.htm)
-- [ベアリング](https://ja.wikipedia.org/wiki/%E8%BB%B8%E5%8F%97))
+- [ベアリング](https://ja.wikipedia.org/wiki/%E8%BB%B8%E5%8F%97)
 - [チェーン駆動](https://ja.wikipedia.org/wiki/%E3%83%81%E3%82%A7%E3%83%BC%E3%83%B3%E9%A7%86%E5%8B%95)
 - [パルス幅変調（PWM）](./pulse-width-modulation.md)
-- [モーター制御用のHブリッジ](https://ja.wikipedia.org/wiki/H_bridge)
+- [モーター制御用の<ruby>H-bridge<rt>Hブリッジ</rt></ruby>](https://en.wikipedia.org/wiki/H-bridge)
 
 最後に、物理学全般について学べる場所を紹介する。
 

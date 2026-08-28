@@ -349,23 +349,23 @@ Servo Triggerについてさらに詳しくは、それぞれのHookup Guideを�
 
 ### 参考資料
 
-- [Servo Motor](https://www.sparkfun.com/categories/245)カテゴリには、さまざまなサーボが揃っている。筆者が特に調子がよいと感じたのは、[汎用金属ギアのマイクロサイズサーボ](https://www.sparkfun.com/products/10333)である。
-- SparkFun Servo Triggerには、[標準](https://www.sparkfun.com/products/13118)版と[連続回転](https://www.sparkfun.com/products/13872)版がある。
-- [Micro Maestro](https://www.sparkfun.com/products/9664)は、6チャンネル対応のUSB-サーボインターフェースである。
+- [Servo Motor](https://www.sparkfun.com/servos)カテゴリには、さまざまなサーボが揃っている。筆者が特に調子がよいと感じたのは、[汎用金属ギアのマイクロサイズサーボ](https://www.sparkfun.com/products/14760)である。
+- SparkFun Servo Triggerには、[標準版](https://learn.sparkfun.com/tutorials/servo-trigger-hookup-guide/all)と[連続回転版](https://learn.sparkfun.com/tutorials/continuous-rotation-servo-trigger-hookup-guide/all)がある。
+- [Micro Maestro](https://www.pololu.com/product/1350)は、6チャンネル対応のUSB-サーボインターフェースである。
 
 ### さらに詳しく知りたい場合
 
 - サーボの詳しい情報や歴史については、Wikipediaの[Radio control Servos](https://en.wikipedia.org/wiki/Servo_(radio_control))の記事を参照してほしい。
-- [uArm](https://www.sparkfun.com/products/13663)は、サーボモーターで駆動するロボットアームである。
-- 通常のサーボを[改造](http://www.instructables.com/id/How-to-hack-a-servo-for-continuous-rotation-Towe/?ALLSTEPS)して、連続回転サーボに変えることもできる。
-- [制御基板を取り外して](http://www.instructables.com/id/HiTec-Servo-Hack/?ALLSTEPS)、サーボを小型のDCギアモーターに変えることもできる。
+- [uArm](https://www.ufactory.cc/)は、サーボモーターで駆動するロボットアームである。
+- 通常のサーボを[改造](https://www.instructables.com/How-to-hack-a-servo-for-continuous-rotation-Towe/)して、連続回転サーボに変えることもできる。
+- [制御基板を取り外して](https://www.instructables.com/HiTec-Servo-Hack/)、サーボを小型のDCギアモーターに変えることもできる。
 
 さらにサーボを楽しみたい場合は、次のようなSparkFunのチュートリアルも参考になる。
 
-- Mario the Magician's Magical Lapel Flower — 驚異的な才能を持つマジシャンMario the Magician氏によるゲストチュートリアル。サーボ制御のラペルフラワーの作り方を紹介する
-- SparkFun Blocks for Intel® Edison - PWM — PWM Blockの機能の簡単な概要
-- Servo Trigger Hookup Guide — プログラミング不要で、SparkFun Servo Triggerを使いさまざまなサーボモーターを制御する方法
-- Continuous Rotation Servo Trigger Hookup Guide — プログラミング不要で、SparkFun Continuous Rotation Servo Triggerを連続回転サーボと組み合わせて使う方法
+- [Mario the Magician's Magical Lapel Flower](https://learn.sparkfun.com/tutorials/mario-the-magicians-magical-lapel-flower/all) — 驚異的な才能を持つマジシャンMario the Magician氏によるゲストチュートリアル。サーボ制御のラペルフラワーの作り方を紹介する
+- [SparkFun Blocks for Intel® Edison - PWM](https://learn.sparkfun.com/tutorials/sparkfun-blocks-for-intel-edison---pwm/all) — PWM Blockの機能の簡単な概要
+- [Servo Trigger Hookup Guide](https://learn.sparkfun.com/tutorials/servo-trigger-hookup-guide/all) — プログラミング不要で、SparkFun Servo Triggerを使いさまざまなサーボモーターを制御する方法
+- [Continuous Rotation Servo Trigger Hookup Guide](https://learn.sparkfun.com/tutorials/continuous-rotation-servo-trigger-hookup-guide/all) — プログラミング不要で、SparkFun Continuous Rotation Servo Triggerを連続回転サーボと組み合わせて使う方法
 
 タグ: Arduino、部品、機構、モーション、モーター、電源
 
