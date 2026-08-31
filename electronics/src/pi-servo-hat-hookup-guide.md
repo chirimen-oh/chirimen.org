@@ -312,20 +312,20 @@ SparkFun Pi Servo Hatを無事に動かせたら、次は自分のプロジェ�
 - [SparkFun Pi Servo Hat Eagleファイル（ZIP）](https://cdn.sparkfun.com/assets/5/9/9/4/3/PI_Servo_Shield_v10_1.zip)
 - [PCA9685データシート（PDF）](http://www.nxp.com/docs/en/data-sheet/PCA9685.pdf) — PCA9685の詳しい動作原理や、他に利用できる機能を把握するのに役立つ
 - [SparkFun Pi Servo HAT GitHubリポジトリ](https://github.com/sparkfun/Pi_Servo_Hat/tree/v10)
-- Setting Up the Pi Zero Wireless Pan-Tilt Camera Tutorial — Pi Servo Hatをパン・チルトカメラのセットアップで使うキット
+- [Setting Up the Pi Zero Wireless Pan-Tilt Camera](https://learn.sparkfun.com/tutorials/setting-up-the-pi-zero-wireless-pan-tilt-camera) — Pi Servo Hatをパン・チルトカメラのセットアップで使うキット
 
-PCA9685を使った他のソフトウェアの例については、同じハードウェアを使いコンセプトも非常によく似ている、SparkFun Blocks for Intel Edison - PWMのHookup Guideも参考になる。
+PCA9685を使った他のソフトウェアの例については、同じハードウェアを使いコンセプトも非常によく似ている、[SparkFun Blocks for Intel Edison - PWM](https://learn.sparkfun.com/tutorials/sparkfun-blocks-for-intel-edison---pwm)のHookup Guideも参考になる。
 あるいは、Pi Servo Hatを使ったパン・チルトカメラの例も確認してみてほしい。
 
-- SparkFun Blocks for Intel® Edison - PWM — PWM Blockの機能の簡単な概要
-- Setting Up the Pi Zero Wireless Pan-Tilt Camera — Raspberry Pi Zeroをヘッドレスなワイヤレスパン・チルトカメラとして組み立て、プログラムし、アクセスする方法
+- [SparkFun Blocks for Intel® Edison - PWM](https://learn.sparkfun.com/tutorials/sparkfun-blocks-for-intel-edison---pwm) — PWM Blockの機能の簡単な概要
+- [Setting Up the Pi Zero Wireless Pan-Tilt Camera](https://learn.sparkfun.com/tutorials/setting-up-the-pi-zero-wireless-pan-tilt-camera) — Raspberry Pi Zeroをヘッドレスなワイヤレスパン・チルトカメラとして組み立て、プログラムし、アクセスする方法
 
 次のプロジェクトのヒントとして、次のような関連チュートリアルも参考になる。
 
-- SD Cards and Writing Images — Raspberry Pi、PCDuino、その他好みのSBC向けにSDカードへイメージを書き込む方法
-- Lumenati Hookup Guide — APA102cベースのアドレサブルLED基板シリーズLumenatiを使い、プロジェクトにきらめきを加える方法
-- Headless Raspberry Pi Setup — キーボード、マウス、モニタなしでRaspberry Piを設定する方法
-- Introduction to the Raspberry Pi GPIO and Physical Computing — Raspberry Piをフル機能のデスクトップコンピュータとしてセットアップし、SparkFunのハードウェアを使ってGPIO経由でセンサーデータを読み取る方法
+- [SD Cards and Writing Images](https://learn.sparkfun.com/tutorials/sd-cards-and-writing-images) — Raspberry Pi、PCDuino、その他好みのSBC向けにSDカードへイメージを書き込む方法
+- [Lumenati Hookup Guide](https://learn.sparkfun.com/tutorials/lumenati-hookup-guide) — APA102cベースのアドレサブルLED基板シリーズLumenatiを使い、プロジェクトにきらめきを加える方法
+- [Headless Raspberry Pi Setup](https://learn.sparkfun.com/tutorials/headless-raspberry-pi-setup) — キーボード、マウス、モニタなしでRaspberry Piを設定する方法
+- [Introduction to the Raspberry Pi GPIO and Physical Computing](https://learn.sparkfun.com/tutorials/introduction-to-the-raspberry-pi-gpio-and-physical-computing) — Raspberry Piをフル機能のデスクトップコンピュータとしてセットアップし、SparkFunのハードウェアを使ってGPIO経由でセンサーデータを読み取る方法
 
 タグ: Hookup、モーション、モーター、Raspberry Pi
 

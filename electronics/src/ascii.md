@@ -152,7 +152,7 @@ ASCIIの符号化方式には95個の表示可能文字がある。
 ## 実際に試してみる
 
 ASCII符号化を使って何かを表示してみたいなら、Arduinoで試すことができる。
-Arduinoを始めるには、Installing Arduino IDEのチュートリアルを参照してほしい。
+Arduinoを始めるには、[Installing Arduino IDE（Arduino IDEのインストール）](https://learn.sparkfun.com/tutorials/installing-arduino-ide)のチュートリアルを参照してほしい。
 
 Arduino IDEを開き、次のコードを貼り付けてみよう。
 

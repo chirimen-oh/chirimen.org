@@ -384,21 +384,21 @@ s/divのつまみを時計回りに回すと、1目盛りが表す秒数が小�
 さらに、オシロスコープに習熟してきたら、次はどんな回路をデバッグしてみたいだろうか。
 ヒントが欲しい場合は、次の関連チュートリアルもおすすめである。
 
-- EAGLEによるPCB設計 — 信号レベルで回路のトラブルシューティングをする段階に来ているなら、PCB設計に一歩踏み出す準備ができているのかもしれない。無料で使えるソフトウェアEAGLEで自分の基板を設計する方法を、一連のチュートリアルで解説している
-- Recreating Classic Electronics Kits — スコープでトラブルシューティングする回路を探しているなら、自分だけの「50-in-1電子工作キット」を作ってみるのはどうだろうか
+- [PCB設計ツールEagleの使い方](./how-to-install-and-setup-eagle.md) — 信号レベルで回路のトラブルシューティングをする段階に来ているなら、PCB設計に一歩踏み出す準備ができているのかもしれない。無料で使えるソフトウェアEAGLEで自分の基板を設計する方法を、一連のチュートリアルで解説している
+- [Recreating Classic Electronics Kits](https://learn.sparkfun.com/tutorials/recreating-classic-electronics-kits) — スコープでトラブルシューティングする回路を探しているなら、自分だけの「50-in-1電子工作キット」を作ってみるのはどうだろうか
 - [パルス幅変調（PWM）](./pulse-width-modulation.md) — PWM信号は、LEDの調光やサーボモーターの駆動の基礎となる。この信号の種類を学んだら、身につけたスキルでスコープにかけてみよう
 
 信号の確認にオシロスコープを使っている、次のようなチュートリアルも参考になる。
 
-- MCP4725 Digital to Analog Converter Hookup Guide — MCP4725 DACブレイクアウトボードを使い始めるための簡単な接続ガイド。ArduinoマイコンのI2Cインターフェースのようなデジタル信号源からアナログ信号を出力できるデバイスである
-- MIDI Shield Hookup Guide — SparkFun MIDI Shieldの組み立て方と、いくつかのサンプルプロジェクト
-- Stepoko: Powered by grbl Hookup Guide — Stepokoのハードウェアガイド
-- Boss Alarm — オフィスに誰かが入ってきたことを知らせ、自動的にパソコンの画面を切り替えるBoss Alarmを作る
-- Piezo Vibration Sensor Hookup Guide — 圧電センサー、大きな値の抵抗、Arduinoを組み合わせて振動センサーを作る方法
-- Proto Pedal Assembly and Theory Guide — SparkFun Proto Pedalの使い始め方。基板を組み立てながら、回路の詳細についても解説する
-- Proto Pedal Example: Analog Equalizer Project — Proto Pedalを使い、ジャイレータ方式のアナログイコライザーを製作する
-- THAT InGenius and OutSmarts Breakout Hookup Guide — 平衡伝送方式の信号伝送の利点と、THAT InGenius・OutSmartsブレイクアウトの活用方法を学ぶ
-- SparkFun Clock Generator 5P49V60 (Qwiic) Hookup Guide — 単一の基準クロックからさまざまな周波数・信号形式を柔軟に生成できるSparkFun Clock Generator 5P49V60（Qwiic）ブレイクアウトボードの、利用可能な機能とハードウェアの概要
+- [MCP4725 Digital to Analog Converter Hookup Guide](https://learn.sparkfun.com/tutorials/mcp4725-digital-to-analog-converter-hookup-guide) — MCP4725 DACブレイクアウトボードを使い始めるための簡単な接続ガイド。ArduinoマイコンのI2Cインターフェースのようなデジタル信号源からアナログ信号を出力できるデバイスである
+- [MIDI Shield Hookup Guide](https://learn.sparkfun.com/tutorials/midi-shield-hookup-guide) — SparkFun MIDI Shieldの組み立て方と、いくつかのサンプルプロジェクト
+- [Stepoko: Powered by grbl Hookup Guide](https://learn.sparkfun.com/tutorials/stepoko-powered-by-grbl-hookup-guide) — Stepokoのハードウェアガイド
+- [Boss Alarm](https://learn.sparkfun.com/tutorials/boss-alarm) — オフィスに誰かが入ってきたことを知らせ、自動的にパソコンの画面を切り替えるBoss Alarmを作る
+- [Piezo Vibration Sensor Hookup Guide](https://learn.sparkfun.com/tutorials/piezo-vibration-sensor-hookup-guide) — 圧電センサー、大きな値の抵抗、Arduinoを組み合わせて振動センサーを作る方法
+- [Proto Pedal Assembly and Theory Guide](https://learn.sparkfun.com/tutorials/proto-pedal-assembly-and-theory-guide) — SparkFun Proto Pedalの使い始め方。基板を組み立てながら、回路の詳細についても解説する
+- [Proto Pedal Example: Analog Equalizer Project](https://learn.sparkfun.com/tutorials/proto-pedal-example-analog-equalizer-project) — Proto Pedalを使い、ジャイレータ方式のアナログイコライザーを製作する
+- [THAT InGenius and OutSmarts Breakout Hookup Guide](https://learn.sparkfun.com/tutorials/that-ingenius-and-outsmarts-breakout-hookup-guide) — 平衡伝送方式の信号伝送の利点と、THAT InGenius・OutSmartsブレイクアウトの活用方法を学ぶ
+- [SparkFun Clock Generator 5P49V60 (Qwiic) Hookup Guide](https://learn.sparkfun.com/tutorials/sparkfun-clock-generator-5p49v60-qwiic-hookup-guide) — 単一の基準クロックからさまざまな周波数・信号形式を柔軟に生成できるSparkFun Clock Generator 5P49V60（Qwiic）ブレイクアウトボードの、利用可能な機能とハードウェアの概要
 
 タグ: 電気工学、スキル、ツール
 

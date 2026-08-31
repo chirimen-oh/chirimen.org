@@ -15,7 +15,7 @@
 - [電池の技術](./battery-technologies.md)
 - [コネクタの基礎](./connector-basics.md)
 - [テスターの使い方](./how-to-use-a-multimeter.md)
-- [Voltage Regulators（電圧レギュレータ）](https://learn.sparkfun.com/tutorials/voltage-regulators)
+- 電圧レギュレータ
 - [直列回路と並列回路](./series-and-parallel-circuits.md)
 
 ## プロジェクトへの電源供給の方法

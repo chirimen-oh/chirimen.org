@@ -33,7 +33,7 @@
 
 ## 参考になるチュートリアル
 
-ペーパーエレクトロニクスを扱うのが初めてだったり、それぞれの選択肢とその長所・短所についてもっと詳しく知りたい場合は、ペーパー回路総合ガイドを参照してほしい。
+ペーパーエレクトロニクスを扱うのが初めてだったり、それぞれの選択肢とその長所・短所についてもっと詳しく知りたい場合は、[ペーパー回路総合ガイド](./the-great-big-guide-to-paper-circuits.md)を参照してほしい。
 
 他にも参考になりそうなチュートリアルを挙げておく。
 
@@ -158,8 +158,8 @@ LEDを置くのにちょうどよい場所がない場合もある。
 
 電子工作をもっと多くのプロジェクトに取り入れたい場合は、他のクラフト系チュートリアルも参考にしてほしい。
 
-- ELasto-Nightlight — ELastoLiteのナイトライトで、もう暗闇を恐れる必要はない
-- Twinkling Trick or Treat Bag — 導電性の糸、LED、LilyTwinkleを使って光るお菓子袋を作る
+- [ELasto-Nightlight](https://learn.sparkfun.com/tutorials/elasto-nightlight) — ELastoLiteのナイトライトで、もう暗闇を恐れる必要はない
+- [Twinkling Trick or Treat Bag](https://learn.sparkfun.com/tutorials/twinkling-trick-or-treat-bag) — 導電性の糸、LED、LilyTwinkleを使って光るお菓子袋を作る
 - [サウンドページの作り方](./sound-page-guide.md) — LilyPad MP3プレーヤーとBare Conductive塗料を使い、シルエットに触れると音が鳴るファンダム風のページを作る方法
 
 タグ: E-Craft、LED、光、ペーパー回路、プロジェクト

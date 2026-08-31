@@ -369,7 +369,7 @@ SMD部品の場合は、部品全体をテープで覆ってしまってもよ�
 
 はんだ付けは、ペーパー回路で作れる接続の中でも特に強固なものの一つである。
 唯一の欠点は、銅テープにしか使えないことである。導電性塗料、インク、ほとんどのファブリックには、はんだ付けできない。
-はんだ付けの方法がわからない場合は、はんだ付けの基本のチュートリアルを参照してほしい。
+はんだ付けの方法がわからない場合は、[はんだ付けの基本（スルーホール編）](./how-to-solder-through-hole-soldering.md)を参照してほしい。
 
 ![部品を銅テープにはんだ付けする例](assets/paper-circuits-guide/led-soldering.jpg)
 
@@ -394,7 +394,7 @@ SMD部品の場合は、部品全体をテープで覆ってしまってもよ�
 
 電池の使い方や電源についての参考になる例は、次のチュートリアルにもある。
 
-- LilyPad Basics: Powering Your Project — LilyPadプロジェクトへの電源供給の選択肢、LiPo電池の安全な取り扱い、プロジェクトの電力制約の計算方法を学べる
+- [LilyPadの基礎：プロジェクトへの電源供給](./lilypad-basics-powering-your-project.md) — LilyPadプロジェクトへの電源供給の選択肢、LiPo電池の安全な取り扱い、プロジェクトの電力制約の計算方法を学べる
 
 ### 自分で電池ホルダーを作る
 
@@ -450,19 +450,19 @@ Bare Conductiveには、紙の電池ホルダーについていくつかのチ�
 どこから始めればよいかわからない場合は、まず紙の切れ端で小さく試作し、自分のプロジェクトのアイデアにどの手法が向いているかを探ってみるとよい。
 もう少し手順の決まったプロジェクトを探している場合は、次のチュートリアルも参考にしてほしい。
 
-- Light-Up Father's Day Card — 電子式の飛び出すカードでお父さんの日を照らそう
-- Let It Glow Holiday Cards — はんだ付け不要のペーパー回路で、ホリデーシーズンに光るカードを作る
-- Light-Up Valentine Cards — はんだ付け不要のペーパー回路で、愛を光で伝える
-- Bare Conductive Musical Painting — Bare Conductive Touch Boardと導電性塗料を使い、音の鳴る絵画を作る方法
+- [Light-Up Father's Day Card](https://learn.sparkfun.com/tutorials/light-up-fathers-day-card) — 電子式の飛び出すカードでお父さんの日を照らそう
+- [Let It Glow Holiday Cards](https://learn.sparkfun.com/tutorials/let-it-glow-holiday-cards) — はんだ付け不要のペーパー回路で、ホリデーシーズンに光るカードを作る
+- [Light-Up Valentine Cards](https://learn.sparkfun.com/tutorials/light-up-valentine-cards) — はんだ付け不要のペーパー回路で、愛を光で伝える
+- [Bare Conductive Musical Painting](https://learn.sparkfun.com/tutorials/bare-conductive-musical-painting) — Bare Conductive Touch Boardと導電性塗料を使い、音の鳴る絵画を作る方法
 
 ペーパー回路のデザインを探しているなら、次のような資料も参考になる。
 
-- Paper Circuits Pin — 銅テープを配線代わりに使い、LEDを光らせる着用可能なe-craftアートの手早い制作プロジェクト
-- Paper Circuits: Lotus Flower Pop Up Card — GESTEMで2014年5月9日に開催されたワークショップ「Have Fun with Paper Circuitry」で使われたテンプレート
+- [Paper Circuits Pin](https://learn.sparkfun.com/resources/70) — 銅テープを配線代わりに使い、LEDを光らせる着用可能なe-craftアートの手早い制作プロジェクト
+- [Paper Circuits: Lotus Flower Pop Up Card](https://learn.sparkfun.com/resources/81) — GESTEMで2014年5月9日に開催されたワークショップ「Have Fun with Paper Circuitry」で使われたテンプレート
 
 紙だけにこだわる必要もない。段ボールでも回路を試してみてほしい。
 
-- Enginursday: Cardboard Circuits — 手頃で消耗品として使える、単層のPCBのような設計
+- [Enginursday: Cardboard Circuits](https://news.sparkfun.com/2546) — 手頃で消耗品として使える、単層のPCBのような設計
 
 タグ: E-Craft、LED、光、LilyPad、ペーパー回路、スキル、はんだ付け、プロジェクトを始める
 

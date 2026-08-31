@@ -239,8 +239,8 @@ Arduino互換のプラットフォームを使っている場合、Arduinoの[se
 
 回路を接続したら、次のスケッチを読み込む。
 
-> **注意：** この例は、デスクトップ版Arduino IDEの最新版を使っている前提で進める。Arduinoを初めて使う場合は、Arduino IDEのインストールのチュートリアルを確認してほしい。
-> Arduinoライブラリを一度もインストールしたことがない場合は、インストールガイドを確認してほしい。
+> **注意：** この例は、デスクトップ版Arduino IDEの最新版を使っている前提で進める。Arduinoを初めて使う場合は、[Arduino IDEのインストール](https://learn.sparkfun.com/tutorials/installing-arduino-ide)のチュートリアルを確認してほしい。
+> Arduinoライブラリを一度もインストールしたことがない場合は、[インストールガイド](https://learn.sparkfun.com/tutorials/installing-an-arduino-library)を確認してほしい。
 
 ```cpp
 /******************************************************************************
@@ -312,7 +312,7 @@ servoライブラリには他にもいくつか制約がある。
 特に注意すべき点として、ピン9とピン10の`analogWrite()`を上書きしてしまう。
 このライブラリについて詳しくは、[Arduinoのリファレンスページ](https://www.arduino.cc/en/Reference/Servo)を確認してほしい。
 
-うまく動作しないようであれば、後述のトラブルシューティングの節を確認してほしい。
+うまく動作しないようであれば、後述の[トラブルシューティング](#トラブルシューティング)の節を確認してほしい。
 
 ## Servo Triggerを使う
 
@@ -325,7 +325,7 @@ servoライブラリには他にもいくつか制約がある。
 SparkFun Servo Triggerは、ホビーサーボの駆動に特化した小さな基板である。
 トリムポットでサーボの位置を設定でき、スイッチを操作することでその位置同士を切り替えられる。
 [標準](https://www.sparkfun.com/products/13118)版と[連続回転](https://www.sparkfun.com/products/13872)版が用意されている。
-Servo Triggerについてさらに詳しくは、それぞれのHookup Guideを参照してほしい。
+Servo Triggerについてさらに詳しくは、それぞれの[Hookup Guide（標準）](https://learn.sparkfun.com/tutorials/servo-trigger-hookup-guide)と[Hookup Guide（連続回転）](https://learn.sparkfun.com/tutorials/continuous-rotation-servo-trigger-hookup-guide)を参照してほしい。
 
 ## トラブルシューティング
 

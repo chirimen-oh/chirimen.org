@@ -40,7 +40,7 @@ microSDカードには2つの選択肢がある。Raspberry Piの実行に必要
 - [Python Programming Tutorial: Getting Started with the Raspberry Pi](./python-programming-tutorial-getting-started-with-the-raspberry-pi.md) — Pythonでハードウェアを制御するRaspberry Pi向けプログラムの書き方を学べるガイド
 
 Pi Servo pHATには、新しい[Qwiicシステム](https://www.sparkfun.com/qwiic)を活用するためのQwiicコネクタも用意されている。
-これを使う前に、ロジックレベルとI2Cのチュートリアルに目を通しておくことを推奨する。
+これを使う前に、[ロジックレベル](./logic-levels.md)と[I2C](./i2c.md)のチュートリアルに目を通しておくことを推奨する。
 [Qwiic製品](https://www.sparkfun.com/categories/399)についてさらに詳しく知りたい場合は、上のバナーをクリックしてほしい。
 
 ## ハードウェア概要
@@ -253,7 +253,7 @@ Raspberry Piは、Pi Servo pHATを通じてシリアル接続でやり取りで�
 上の写真に示すとおり、USB-CインターフェースのTXラインがRaspberry PiのRXピンに接続されている。
 Sphero RVRの4ピンヘッダーのTXラインに切り替えるには、矢印に従ってスイッチを`RVR`の位置にスライドさせるだけでよい。
 
-シリアル通信についてのコツや詳細については、シリアル通信とシリアルターミナルの基礎のチュートリアルを参照してほしい。
+シリアル通信についてのコツや詳細については、[シリアル通信](./serial-communication.md)と[シリアルターミナルの基礎](./terminal-basics.md)のチュートリアルを参照してほしい。
 
 > **トラブルシューティングのヒント：** SSHやシリアル接続がうまくいかない場合は、このスイッチが正しい位置にあるか、正しいボーレートを使っているか再確認すること。
 
@@ -381,9 +381,9 @@ Raspberry PiにPi Servo pHAT（v2）を組み合わせるのはかなり簡単�
 残念ながら、このチュートリアルではSphero RVRとPi Servo pHATを組み合わせて使う方法は扱わない。
 とはいえ、組み立てガイドと入門チュートリアルへのリンクを以下に示しておく。
 
-- Basic Autonomous Kit for Sphero RVR Assembly Guide — Basic Autonomous Kit for Sphero RVRを接続するガイド
-- Advanced Autonomous Kit for Sphero RVR Assembly Guide — Advanced Autonomous Kit for Sphero RVRを組み立てるHookup Guide
-- Getting Started with the Autonomous Kit for the Sphero RVR — ロボット工学を始めたいなら、SparkFun autonomous kit for the Sphero RVRがぴったりである。BasicキットでもAdvancedキットでも、このチュートリアルで走り出せる
+- [Basic Autonomous Kit for Sphero RVR Assembly Guide](https://learn.sparkfun.com/tutorials/basic-autonomous-kit-for-sphero-rvr-assembly-guide) — Basic Autonomous Kit for Sphero RVRを接続するガイド
+- [Advanced Autonomous Kit for Sphero RVR Assembly Guide](https://learn.sparkfun.com/tutorials/advanced-autonomous-kit-for-sphero-rvr-assembly-guide) — Advanced Autonomous Kit for Sphero RVRを組み立てるHookup Guide
+- [Getting Started with the Autonomous Kit for the Sphero RVR](https://learn.sparkfun.com/tutorials/getting-started-with-the-autonomous-kit-for-the-sphero-rvr) — ロボット工学を始めたいなら、SparkFun autonomous kit for the Sphero RVRがぴったりである。BasicキットでもAdvancedキットでも、このチュートリアルで走り出せる
 
 ### その他のシングルボードコンピュータ
 
@@ -1046,7 +1046,7 @@ Servo pHATが正しく接続され動作していれば、**0x40**のアドレ�
   - [ハードウェアリポジトリ](https://github.com/sparkfun/Pi_Servo_Hat/tree/v20)
   - [SparkFun Pi Servo pHAT Pythonパッケージ](https://github.com/sparkfun/PiServoHat_Py)（[ReadtheDocsドキュメント](https://piservohat-py.readthedocs.io/en/latest/)）
   - [SparkFun PCA9685 Pythonパッケージ](https://github.com/sparkfun/Qwiic_PCA9685_Py)
-- CH340C Hookup Guide（ドライバ用）
+- [CH340C Hookup Guide](https://learn.sparkfun.com/tutorials/sparkfun-serial-basic-ch340c-hookup-guide)（ドライバ用）
 - [Qwiicランディングページ](https://www.sparkfun.com/qwiic)
 - [SFE Product Showcase](https://youtu.be/lK9Jp_OKaJk)
 
@@ -1062,31 +1062,31 @@ Raspberry Piの使い始めで助けが必要な場合は、次の資料も確�
 
 PythonとI2Cの使い始めで助けが必要な場合は、次の資料も確認してほしい。
 
-- Python Programming Tutorial: Getting Started with the Raspberry Pi
+- [PythonプログラミングでRaspberry Piを始める](./python-programming-tutorial-getting-started-with-the-raspberry-pi.md)
 - [Raspberry PiのSPIとI2C](./raspberry-pi-spi-and-i2c-tutorial.md)
 
 次のプロジェクトのヒントとして、次のようなチュートリアルも参考になる。
 
 **Raspberry Piのチュートリアル**
 
-- Headless Raspberry Pi Setup — キーボード、マウス、モニタなしでRaspberry Piを設定する方法
-- How to Use Remote Desktop on the Raspberry Pi with VNC — RealVNCでRaspberry Piに接続し、グラフィカルデスクトップをネットワーク越しに遠隔操作する方法
-- Graph Sensor Data with Python and Matplotlib — matplotlibを使い、Raspberry Piに接続したTMP102センサーの温度データをリアルタイムにグラフ表示する
-- How to Run a Raspberry Pi Program on Startup — Raspberry Pi（や他のLinuxコンピュータ）の起動時にスクリプトやプログラムを自動実行するさまざまな方法
+- [Headless Raspberry Pi Setup](https://learn.sparkfun.com/tutorials/headless-raspberry-pi-setup) — キーボード、マウス、モニタなしでRaspberry Piを設定する方法
+- [Raspberry PiでVNCによるリモートデスクトップを使う](./how-to-use-remote-desktop-on-the-raspberry-pi-with-vnc.md) — RealVNCでRaspberry Piに接続し、グラフィカルデスクトップをネットワーク越しに遠隔操作する方法
+- [Graph Sensor Data with Python and Matplotlib](https://learn.sparkfun.com/tutorials/graph-sensor-data-with-python-and-matplotlib) — matplotlibを使い、Raspberry Piに接続したTMP102センサーの温度データをリアルタイムにグラフ表示する
+- [How to Run a Raspberry Pi Program on Startup](https://learn.sparkfun.com/tutorials/how-to-run-a-raspberry-pi-program-on-startup) — Raspberry Pi（や他のLinuxコンピュータ）の起動時にスクリプトやプログラムを自動実行するさまざまな方法
 
 **ロボット工学のチュートリアル**
 
-- Assembly Guide for RedBot with Shadow Chassis — RedBotキットの組み立てガイド。RedBot Inventor's Kitチュートリアルに沿って進める追加パーツを含む
-- Experiment Guide for RedBot with Shadow Chassis — SparkFun RedBotを使い始めるための9つの実験を収めた実験ガイド。SparkFun Inventor's Kitに馴染みがあり、ロボット工学の知識をさらに一歩進めたい人向け
-- Building an Autonomous Vehicle: The Batmobile — 2016年のSparkFun Autonomous Vehicle Competition（AVC）に向けて自律走行するPower Wheelsを製作した6か月間のプロジェクトの記録
-- Garmin LIDAR-Lite v4 (Qwiic) Hookup Guide — Garmin LIDAR-Lite v4をマイクロコントローラーに接続するのがさらに簡単になった。始め方についてはこのHookup Guideを確認してほしい
+- [Assembly Guide for RedBot with Shadow Chassis](https://learn.sparkfun.com/tutorials/assembly-guide-for-redbot-with-shadow-chassis) — RedBotキットの組み立てガイド。RedBot Inventor's Kitチュートリアルに沿って進める追加パーツを含む
+- [Experiment Guide for RedBot with Shadow Chassis](https://learn.sparkfun.com/tutorials/experiment-guide-for-redbot-with-shadow-chassis) — SparkFun RedBotを使い始めるための9つの実験を収めた実験ガイド。SparkFun Inventor's Kitに馴染みがあり、ロボット工学の知識をさらに一歩進めたい人向け
+- [Building an Autonomous Vehicle: The Batmobile](https://learn.sparkfun.com/tutorials/building-an-autonomous-vehicle-the-batmobile) — 2016年のSparkFun Autonomous Vehicle Competition（AVC）に向けて自律走行するPower Wheelsを製作した6か月間のプロジェクトの記録
+- [Garmin LIDAR-Lite v4 (Qwiic) Hookup Guide](https://learn.sparkfun.com/tutorials/garmin-lidar-lite-v4-qwiic-hookup-guide) — Garmin LIDAR-Lite v4をマイクロコントローラーに接続するのがさらに簡単になった。始め方についてはこのHookup Guideを確認してほしい
 
 **サーボ・モーター制御のチュートリアル**
 
-- Servo Trigger Hookup Guide — プログラミング不要で、SparkFun Servo Triggerを使いさまざまなサーボモーターを制御する方法
-- SparkFun Inventor's Kit for micro:bit Experiment Guide — SparkFun Inventor's Kit for micro:bitの12種類の回路を探求するために必要な情報をすべて収めたガイド
-- Basic Autonomous Kit for Sphero RVR Assembly Guide — Basic Autonomous Kit for Sphero RVRを接続するガイド
-- SparkFun Auto pHAT Hookup Guide — プロジェクトを動かすためのpHAT。Auto pHATの使い始め方を解説するガイド
+- [Servo Trigger Hookup Guide](https://learn.sparkfun.com/tutorials/servo-trigger-hookup-guide) — プログラミング不要で、SparkFun Servo Triggerを使いさまざまなサーボモーターを制御する方法
+- [SparkFun Inventor's Kit for micro:bit Experiment Guide](https://learn.sparkfun.com/tutorials/sparkfun-inventors-kit-for-microbit-experiment-guide) — SparkFun Inventor's Kit for micro:bitの12種類の回路を探求するために必要な情報をすべて収めたガイド
+- [Basic Autonomous Kit for Sphero RVR Assembly Guide](https://learn.sparkfun.com/tutorials/basic-autonomous-kit-for-sphero-rvr-assembly-guide) — Basic Autonomous Kit for Sphero RVRを接続するガイド
+- [SparkFun Auto pHAT Hookup Guide](https://learn.sparkfun.com/tutorials/sparkfun-auto-phat-hookup-guide) — プロジェクトを動かすためのpHAT。Auto pHATの使い始め方を解説するガイド
 
 タグ: Hookup、モーション、モーター、プロトタイピング、Python、Qwiic、Raspberry Pi、ロボティクス、Sphero、プロジェクトを始める
 

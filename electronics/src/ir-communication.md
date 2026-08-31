@@ -17,7 +17,7 @@ IR、つまり[赤外線](./light.md)通信は、一般的で安価、かつ扱�
 ### 必要なソフトウェア
 
 こまごまとした信号処理はすべて、Ken Shirriffによって書かれた優れた[Arduinoライブラリ](https://github.com/shirriff/Arduino-IRremote)が処理してくれるため、赤外線データを簡単に送受信できる。
-このライブラリの仕組みについてさらに詳しく知りたい場合は、Ken Shirriffのブログ記事「A Multi-Protocol Infrared remote Library for the Arduino」を参照してほしい。
+このライブラリの仕組みについてさらに詳しく知りたい場合は、Ken Shirriffのブログ記事「[A Multi-Protocol Infrared remote Library for the Arduino](http://www.righto.com/2009/08/multi-protocol-infrared-remote-library.html)」を参照してほしい。
 また、このチュートリアルで使うサンプルコードは、そのライブラリのexamplesディレクトリの中にある。
 
 参考になるチュートリアル:
@@ -107,7 +107,7 @@ LEDに接続する電流制限抵抗は、最大出力と最長の通信距離�
 ## ライブラリの概要
 
 > [!NOTE]
-> この例は、パソコン上で最新版のArduino IDEを使っていることを前提としている。Arduinoを使うのが初めてであれば、Arduino IDEのインストールについてのチュートリアルを確認してほしい。Arduinoライブラリをインストールしたことがなければ、インストールガイドも確認してほしい。
+> この例は、パソコン上で最新版のArduino IDEを使っていることを前提としている。Arduinoを使うのが初めてであれば、[Arduino IDEのインストール](https://learn.sparkfun.com/tutorials/installing-arduino-ide)についてのチュートリアルを確認してほしい。Arduinoライブラリをインストールしたことがなければ、[インストールガイド](https://learn.sparkfun.com/tutorials/installing-an-arduino-library)も確認してほしい。
 
 ### Ken ShirriffのIRremoteライブラリをダウンロードしてインストールする
 
@@ -242,7 +242,7 @@ void sendRaw(unsigned int buf[], int len, int hz);
 ```
 
 `data`と`nbits`のフィールドには、使用しているプロトコルに固有の情報を入力する必要がある。
-この機能の使い方についてさらに詳しくは、IR用ArduinoライブラリのブログのSending libraryの詳細についての節を参照してほしい。
+この機能の使い方についてさらに詳しくは、IR用Arduinoライブラリの[ブログ記事](http://www.righto.com/2009/08/multi-protocol-infrared-remote-library.html)のSending libraryの詳細についての節を参照してほしい。
 
 **もっとパワーが欲しい場合は？** 赤外線LEDは素晴らしい部品である。赤外線受信機と組み合わせれば、リモコン制御や、基本的な遠隔データ通信にも使える。
 唯一の問題は、Arduinoではその全性能を引き出せないという点である。

@@ -57,7 +57,7 @@
 
 ### ブレイクアウト基板
 
-4ピンコネクタに簡単に接続するには、ATXパワーコネクタ（4ピン）の使用を推奨する。詳しくはチュートリアルを確認してほしい。
+4ピンコネクタに簡単に接続するには、ATXパワーコネクタ（4ピン）の使用を推奨する。詳しくは[ATX Power Connector (4-Pin) Breakout Hookup Guide](https://learn.sparkfun.com/tutorials/atx-power-connector-4-pin-breakout-hookup-guide)を確認してほしい。
 
 ---
 
@@ -131,7 +131,7 @@
 
 ![PWM照明コントローラー](assets/12v5v-power-supply/touch-potentiometer-pwm-controller.jpg)
 
-*Touch Potentiometer Hookup GuideによるPWM照明コントローラーの例*
+*[Touch Potentiometer Hookup Guide](https://learn.sparkfun.com/tutorials/touch-potentiometer-hookup-guide)によるPWM照明コントローラーの例*
 
 ## まとめ・参考資料
 
@@ -145,18 +145,18 @@
 
 次のプロジェクトのヒントとして、12V/5V（2A）電源を使った次のようなチュートリアルも参考になる。
 
-- RGB Panel Hookup Guide — 32x16、32x32、32x64のRGB LEDマトリクスパネルを使い、明るくカラフルなディスプレイを作る。これらのパネルの接続方法とArduinoでの制御方法を解説している
-- Large Digit Driver Hookup Guide — Large Digitディスプレイドライバー基板の使い始め方。大型の7セグメントLEDディスプレイの裏にモジュール（バックパック）をはんだ付けし、Arduinoからサンプルコードを実行する方法を説明する
-- How to Build a Remote Kill Switch — 事態が「自我に目覚めた」ときに電源を落とせる、ワイヤレスコントローラーの作り方
-- Building a Safe Cracking Robot — 未知の金庫を1時間以内に開錠する方法
+- [RGB Panel Hookup Guide](https://learn.sparkfun.com/tutorials/rgb-panel-hookup-guide) — 32x16、32x32、32x64のRGB LEDマトリクスパネルを使い、明るくカラフルなディスプレイを作る。これらのパネルの接続方法とArduinoでの制御方法を解説している
+- [Large Digit Driver Hookup Guide](https://learn.sparkfun.com/tutorials/large-digit-driver-hookup-guide) — Large Digitディスプレイドライバー基板の使い始め方。大型の7セグメントLEDディスプレイの裏にモジュール（バックパック）をはんだ付けし、Arduinoからサンプルコードを実行する方法を説明する
+- [How to Build a Remote Kill Switch](https://learn.sparkfun.com/tutorials/how-to-build-a-remote-kill-switch) — 事態が「自我に目覚めた」ときに電源を落とせる、ワイヤレスコントローラーの作り方
+- [Building a Safe Cracking Robot](https://learn.sparkfun.com/tutorials/building-a-safe-cracking-robot) — 未知の金庫を1時間以内に開錠する方法
 
 電源についての、次のようなブログ記事も参考になる。
 
-- Power Supply Protection — 逆極性接続から電子機器を守る最良の方法とは
-- Enginursday: Supplies! — 一般的な電源の内部を覗いてみる
-- Friday Product Post: All's Well That Means Well — 次のプロジェクトに命を吹き込む、さまざまな新しい電源の数々
-- Enginursday: 60 USB Chargers in Parallel — USB充電用電源を60個並列に配線したら何が起きるかを試してみる
-- Enginursday: More Fun with 60 USB Supplies — この60個のUSB電源を使って、溶接ができるか試してみる
+- [Power Supply Protection](https://news.sparkfun.com/220) — 逆極性接続から電子機器を守る最良の方法とは
+- [Enginursday: Supplies!](https://news.sparkfun.com/1986) — 一般的な電源の内部を覗いてみる
+- [Friday Product Post: All's Well That Means Well](https://news.sparkfun.com/2339) — 次のプロジェクトに命を吹き込む、さまざまな新しい電源の数々
+- [Enginursday: 60 USB Chargers in Parallel](https://news.sparkfun.com/2394) — USB充電用電源を60個並列に配線したら何が起きるかを試してみる
+- [Enginursday: More Fun with 60 USB Supplies](https://news.sparkfun.com/2425) — この60個のUSB電源を使って、溶接ができるか試してみる
 
 タグ: Hookup、電源
 
