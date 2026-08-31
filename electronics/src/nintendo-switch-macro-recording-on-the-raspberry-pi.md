@@ -28,15 +28,15 @@ Joycontrolは、Bluetooth経由でRaspberry Pi上にNintendo Switchのコント�
 
 Raspberry PiやSparkFun Top pHATに初めて触れる場合は、先に進む前に次のページを確認しておくとよい。
 
-- Raspberry Pi 4 Kit Hookup Guide — Raspberry Pi 4 Model Bの基本キット、デスクトップキット、ハードウェアスターターキットの接続ガイド
-- SparkFun Top pHAT Hookup Guide — 他のHATの上に重ねて使うpHAT。Top pHATの使い始め方を解説するガイド
+- [Raspberry Pi 4 Kit Hookup Guide](https://learn.sparkfun.com/tutorials/raspberry-pi-4-kit-hookup-guide) — Raspberry Pi 4 Model Bの基本キット、デスクトップキット、ハードウェアスターターキットの接続ガイド
+- [SparkFun Top pHAT Hookup Guide](https://learn.sparkfun.com/tutorials/sparkfun-top-phat-hookup-guide) — 他のHATの上に重ねて使うpHAT。Top pHATの使い始め方を解説するガイド
 
 ## ハードウェアのセットアップ
 
 > **注意：** このチュートリアルは、Pi上にすでにRaspbianをセットアップ済みであることを前提とする。
 > まだPiをセットアップしていない場合は、Hookup Guideを参照して準備を整えてほしい。
 >
-> - Raspberry Pi 4 Kit Hookup Guide — Raspberry Pi 4 Model Bの基本キット、デスクトップキット、ハードウェアスターターキットの接続ガイド
+> - [Raspberry Pi 4 Kit Hookup Guide](https://learn.sparkfun.com/tutorials/raspberry-pi-4-kit-hookup-guide) — Raspberry Pi 4 Model Bの基本キット、デスクトップキット、ハードウェアスターターキットの接続ガイド
 
 Top pHAT用にすでにPiのセットアップ・設定を終えている場合は、このステップを飛ばして構わない。
 Top pHATの組み立てはかなり単純である。
@@ -420,9 +420,9 @@ SparkFunには、Raspberry Pi関連のプロジェクトやチュートリアル
 他にも、次のようなRaspberry Pi関連のチュートリアルがある。
 
 - [Raspberry PiのSPIとI2C](./raspberry-pi-spi-and-i2c-tutorial.md) — C/C++用のwiringPi I/OライブラリとPython用のspidev/smbusを使い、Raspberry PiのシリアルI2CバスとSPIバスを利用する方法
-- MQTT入門 — IoT（モノのインターネット）で使われる主要な通信プロトコルの一つ、MQTTの入門
-- Computer Vision and Projection Mapping in Python — コンピュータビジョンを使って顔を検出し、その上に画像を投影する
-- Qwiic pHAT Extension for Raspberry Pi 400 Hookup Guide — Raspberry Pi 400のGPIOにすばやく簡単にアクセスし、お気に入りのHATを正しい向きで重ねたり、Qwiic対応デバイスをI2Cバス（GND、3.3V、SDA、SCL）に接続したりする方法
+- [MQTT入門](./introduction-to-mqtt.md) — IoT（モノのインターネット）で使われる主要な通信プロトコルの一つ、MQTTの入門
+- [Computer Vision and Projection Mapping in Python](https://learn.sparkfun.com/tutorials/computer-vision-and-projection-mapping-in-python) — コンピュータビジョンを使って顔を検出し、その上に画像を投影する
+- [Qwiic pHAT Extension for Raspberry Pi 400 Hookup Guide](https://learn.sparkfun.com/tutorials/qwiic-phat-extension-for-raspberry-pi-400-hookup-guide) — Raspberry Pi 400のGPIOにすばやく簡単にアクセスし、お気に入りのHATを正しい向きで重ねたり、Qwiic対応デバイスをI2Cバス（GND、3.3V、SDA、SCL）に接続したりする方法
 
 タグ: Bluetooth、Bluetooth 4.0、ゲーム、ゲーミング、LED、プログラミング、プロジェクト、Raspberry Pi、シングルボードコンピュータ、WiFi
 

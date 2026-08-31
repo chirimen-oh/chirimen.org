@@ -489,10 +489,10 @@ micro:bit単体を使った追加のプロジェクトアイデアが欲しけ�
 
 その他のSparkFunチュートリアルとして、関連するmicro:bitチュートリアルもいくつか紹介する。
 
-- Gator:color ProtoSnap Hookup Guide — gator:bitにgator:colorでLEDをクリップ接続する
-- SparkFun gator:environment Hookup Guide — 温度、湿度、気圧、eCO2、eTVOCの値を測定する2つのI2Cセンサーを組み合わせたgator:environment。micro:bitプラットフォームでの使い始め方を解説する
+- [Gator:color ProtoSnap Hookup Guide](https://learn.sparkfun.com/tutorials/gatorcolor-protosnap-hookup-guide) — gator:bitにgator:colorでLEDをクリップ接続する
+- [SparkFun gator:environment Hookup Guide](https://learn.sparkfun.com/tutorials/sparkfun-gatorenvironment-hookup-guide) — 温度、湿度、気圧、eCO2、eTVOCの値を測定する2つのI2Cセンサーを組み合わせたgator:environment。micro:bitプラットフォームでの使い始め方を解説する
 - [micro:bit用のMakeCodeパッケージを作る](./how-to-create-a-makecode-package-for-microbit.md) — Microsoft MakeCodeでmicro:bit用のコードブロックを開発する方法を学ぶ
-- SparkFun gator:log Hookup Guide — シリアル通信ベースのデータロガーであるgator:log。micro:bitプラットフォームでの使い始め方を解説する
+- [SparkFun gator:log Hookup Guide](https://learn.sparkfun.com/tutorials/sparkfun-gatorlog-hookup-guide) — シリアル通信ベースのデータロガーであるgator:log。micro:bitプラットフォームでの使い始め方を解説する
 
 タグ: Bluetooth、教育、Hookup、MakeCode、microbit、micro:bit、モーション、pxt、センサー
 

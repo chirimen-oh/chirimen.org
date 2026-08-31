@@ -874,8 +874,8 @@ PiのLEDを点滅させる方法がわかったところで、さらに先へ進
 
 プロジェクトのヒントを探しているなら、Piプログラミングのスキルを活かせる次のようなチュートリアルも参考になる。
 
-- Raspberry Pi Twitter Monitor — Raspberry PiでTwitterのハッシュタグを監視し、LEDを点滅させる方法
-- Getting Started with the BrickPi — BrickPiを使ってRaspberry PiをMindstormsに接続する方法
+- [Raspberry Pi Twitter Monitor](https://learn.sparkfun.com/tutorials/raspberry-pi-twitter-monitor) — Raspberry PiでTwitterのハッシュタグを監視し、LEDを点滅させる方法
+- [Getting Started with the BrickPi](https://learn.sparkfun.com/tutorials/getting-started-with-the-brickpi) — BrickPiを使ってRaspberry PiをMindstormsに接続する方法
 
 タグ: 概念、プログラミング、Python、Raspberry Pi、シングルボードコンピュータ
 

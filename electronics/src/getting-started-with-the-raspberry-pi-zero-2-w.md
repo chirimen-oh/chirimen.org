@@ -204,8 +204,8 @@ Pi Zero 2 WでSparkFunのQwiicデバイスを使いたい場合は、SparkFun Qw
 
 モニタ、キーボード、マウスを使わない「ヘッドレス」なセットアップを好む場合は、以下のチュートリアルが助けになる（ヘッドレスセットアップは通常のセットアップよりかなり高度である点に注意してほしい）。
 
-- Headless Raspberry Pi Setup — キーボード、マウス、モニタなしでRaspberry Piを設定する方法
-- Raspberry PiでVNCによるリモートデスクトップを使う — RealVNCを使ってRaspberry Piに接続し、ネットワーク越しにグラフィカルデスクトップをリモート操作する方法
+- [Headless Raspberry Pi Setup](https://learn.sparkfun.com/tutorials/headless-raspberry-pi-setup) — キーボード、マウス、モニタなしでRaspberry Piを設定する方法
+- [Raspberry PiでVNCによるリモートデスクトップを使う](./how-to-use-remote-desktop-on-the-raspberry-pi-with-vnc.md) — RealVNCを使ってRaspberry Piに接続し、ネットワーク越しにグラフィカルデスクトップをリモート操作する方法
 
 ## Raspberry Pi OSを使う
 
@@ -321,10 +321,10 @@ Raspberry Pi Zero Wをドングルのように使いたいだろうか。[Pi Zer
 
 インスピレーションが欲しければ、次のようなチュートリアルやプロジェクトも参考になる。
 
-- Raspberry Pi 3 Starter Kit Hookup Guide — Raspberry Pi 3 Model BおよびRaspberry Pi 3 Model B+スターターキットの使い始め方ガイド
-- Setting Up the Pi Zero Wireless Pan-Tilt Camera — Raspberry Pi Zeroをヘッドレスなワイヤレスパン・チルトカメラとして組み立て、プログラムし、アクセスする方法
-- Raspberry Pi Stand-Alone Programmer — ヘッドレスのRaspberry Piを使い、スタンドアロンのプログラマーとしてAVRマイクロコントローラーにHEXファイルを書き込む方法。プロダクションプログラミングの課題や、SparkFunがこの解決策にたどり着いた経緯、そこで得られた教訓についても紹介する
-- Graph Sensor Data with Python and Matplotlib — matplotlibを使い、Raspberry Piに接続したTMP102センサーの温度データをリアルタイムにグラフ表示する
+- [Raspberry Pi 3 Starter Kit Hookup Guide](https://learn.sparkfun.com/tutorials/raspberry-pi-3-starter-kit-hookup-guide) — Raspberry Pi 3 Model BおよびRaspberry Pi 3 Model B+スターターキットの使い始め方ガイド
+- [Setting Up the Pi Zero Wireless Pan-Tilt Camera](https://learn.sparkfun.com/tutorials/setting-up-the-pi-zero-wireless-pan-tilt-camera) — Raspberry Pi Zeroをヘッドレスなワイヤレスパン・チルトカメラとして組み立て、プログラムし、アクセスする方法
+- [Raspberry Pi Stand-Alone Programmer](https://learn.sparkfun.com/tutorials/raspberry-pi-stand-alone-programmer) — ヘッドレスのRaspberry Piを使い、スタンドアロンのプログラマーとしてAVRマイクロコントローラーにHEXファイルを書き込む方法。プロダクションプログラミングの課題や、SparkFunがこの解決策にたどり着いた経緯、そこで得られた教訓についても紹介する
+- [Graph Sensor Data with Python and Matplotlib](https://learn.sparkfun.com/tutorials/graph-sensor-data-with-python-and-matplotlib) — matplotlibを使い、Raspberry Piに接続したTMP102センサーの温度データをリアルタイムにグラフ表示する
 
 タグ: Bluetooth、Hookup、IoT（モノのインターネット）、Raspberry Pi、シングルボードコンピュータ、WiFi、ワイヤレス
 

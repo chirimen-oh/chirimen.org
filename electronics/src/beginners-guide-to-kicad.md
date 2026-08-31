@@ -1175,9 +1175,9 @@ KiCadに関するさらに詳しい情報は、次の資料を参考にしてほ
 
 さらにインスピレーションが欲しい場合は、KiCadに関するSparkFunのEnginursdayやプロジェクトのブログ記事も確認してみてほしい。
 
-- Enginursday: KiCad and Open-Source Design — オープンソースの設計から最終製品に至るまでのプロセスを、KiCad、PJRC、Advanced Circuitsを例に紹介する
-- Enginursday: The Pro-One and Proto-8 Synthesizers, with Teensy! — Teensy Audioプラットフォームでモジュラーシンセサイザーをエミュレートする
-- Stupid Arduinos: The RedBoard Pro Micro-ATX — 「くだらないゲームで遊べば、くだらない賞品が手に入る」とはよく言うが、くだらない賞品こそ筆者の好物である
+- [Enginursday: KiCad and Open-Source Design](https://news.sparkfun.com/2041) — オープンソースの設計から最終製品に至るまでのプロセスを、KiCad、PJRC、Advanced Circuitsを例に紹介する
+- [Enginursday: The Pro-One and Proto-8 Synthesizers, with Teensy!](https://news.sparkfun.com/2278) — Teensy Audioプラットフォームでモジュラーシンセサイザーをエミュレートする
+- [Stupid Arduinos: The RedBoard Pro Micro-ATX](https://news.sparkfun.com/2561) — 「くだらないゲームで遊べば、くだらない賞品が手に入る」とはよく言うが、くだらない賞品こそ筆者の好物である
 
 ### EagleからKiCadへ
 

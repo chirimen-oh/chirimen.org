@@ -1732,10 +1732,10 @@ MyoWare 2.0筋電センサーの立ち上げに成功したら、いよいよ自
 
 次のプロジェクトのヒントが欲しければ、[Biometricsタグの付いた関連チュートリアル](https://learn.sparkfun.com/tutorials/tags/biometrics)も確認してみてほしい。
 
-- Hackers in Residence - Hacking MindWave Mobile — 99ドルの商用グレードEEGセンサー、MindWave Mobileのレビュー・分解・改造チュートリアル
-- AD8232 Heart Rate Monitor Hookup Guide — 自分だけの心拍数モニターを作る方法を学ぶ
-- MyoWare Muscle Sensor Kit — Advancer Technologies社のMyoWare筋電センサーと組み合わせて使う製品ライン
-- SparkFun Photodetector (MAX30101) Hookup Guide — MAX30105パーティクルセンサーの後継となる、高感度な光学センサーSparkFun Photodetector - MAX30101（Qwiic）。MAX30101センサーから生データを取得する方法を学べるチュートリアル
+- [Hackers in Residence - Hacking MindWave Mobile](https://learn.sparkfun.com/tutorials/hackers-in-residence---hacking-mindwave-mobile) — 99ドルの商用グレードEEGセンサー、MindWave Mobileのレビュー・分解・改造チュートリアル
+- [AD8232 Heart Rate Monitor Hookup Guide](https://learn.sparkfun.com/tutorials/ad8232-heart-rate-monitor-hookup-guide) — 自分だけの心拍数モニターを作る方法を学ぶ
+- [MyoWare Muscle Sensor Kit](https://learn.sparkfun.com/tutorials/myoware-muscle-sensor-kit) — Advancer Technologies社のMyoWare筋電センサーと組み合わせて使う製品ライン
+- [SparkFun Photodetector (MAX30101) Hookup Guide](https://learn.sparkfun.com/tutorials/sparkfun-photodetector-max30101-hookup-guide) — MAX30105パーティクルセンサーの後継となる、高感度な光学センサーSparkFun Photodetector - MAX30101（Qwiic）。MAX30101センサーから生データを取得する方法を学べるチュートリアル
 
 タグ: Arduino、Artemis、生体計測、BLE、Bluetooth、ESP32、Hookup、LED、電源、センサー、シールド、ウェアラブル、ワイヤレス
 

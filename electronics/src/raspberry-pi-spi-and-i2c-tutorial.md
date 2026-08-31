@@ -47,9 +47,9 @@ Raspbianにデバイスツリーオーバーレイが導入されたことで、
 
 Piのセットアップに別の方法を使いたい場合は、次のチュートリアルも参考にしてほしい。
 
-- Raspberry Pi 3 Starter Kit Hookup Guide — Raspberry Pi 3 Model BおよびPi 3 Model B+のスターターキットで始める方法
-- Headless Raspberry Pi Setup — キーボード、マウス、モニタなしでRaspberry Piを設定する方法
-- Setting up a Raspberry Pi 3 as an Access Point — Raspberry Piをアクセスポイントとして設定し、ローカルのイーサネットネットワークに接続してインターネットを他のWiFi機器と共有する方法
+- [Raspberry Pi 3 Starter Kit Hookup Guide](https://learn.sparkfun.com/tutorials/raspberry-pi-3-starter-kit-hookup-guide) — Raspberry Pi 3 Model BおよびPi 3 Model B+のスターターキットで始める方法
+- [Headless Raspberry Pi Setup](https://learn.sparkfun.com/tutorials/headless-raspberry-pi-setup) — キーボード、マウス、モニタなしでRaspberry Piを設定する方法
+- [Setting up a Raspberry Pi 3 as an Access Point](https://learn.sparkfun.com/tutorials/setting-up-a-raspberry-pi-3-as-an-access-point) — Raspberry Piをアクセスポイントとして設定し、ローカルのイーサネットネットワークに接続してインターネットを他のWiFi機器と共有する方法
 - [Raspberry PiでVNCによるリモートデスクトップを使う](./how-to-use-remote-desktop-on-the-raspberry-pi-with-vnc.md) — RealVNCでRaspberry Piに接続し、グラフィカルデスクトップをネットワーク越しに遠隔操作する方法
 
 C/C++でプログラミングする場合は、[Raspberry PiのGPIO](./raspberry-gpio.md)のWiring Piのセットアップの節を参照することを推奨する。
@@ -932,14 +932,14 @@ Raspberry Piとここで紹介したソフトウェアについて、詳しく�
 
 Raspberry Piへのハードウェア接続やプロジェクトのヒントについては、次のガイドも参考になる。
 
-- Building Large LED Installations — 大規模なLEDインスタレーションの計画から電源要件、実装までを学ぶ
-- Bark Back Interactive Pet Monitor — Raspberry Piをベースにした犬の鳴き声検出プロジェクトでペットを監視・やり取りする
+- [Building Large LED Installations](https://learn.sparkfun.com/tutorials/building-large-led-installations) — 大規模なLEDインスタレーションの計画から電源要件、実装までを学ぶ
+- [Bark Back Interactive Pet Monitor](https://learn.sparkfun.com/tutorials/bark-back-interactive-pet-monitor) — Raspberry Piをベースにした犬の鳴き声検出プロジェクトでペットを監視・やり取りする
 - [Raspberry PiのGPIO](./raspberry-gpio.md) — PythonまたはC++でRaspberry PiのI/Oラインを駆動する方法
-- Raspberry Pi Zero Helmet Impact Force Monitor — ヘルメット、Raspberry Pi Zero、加速度センサーを使った衝撃力モニターの製作
-- Using Flask to Send Data to a Raspberry Pi — PythonのFlaskフレームワークを使い、ESP8266のWiFiノードから内部WiFiネットワーク経由でRaspberry Piにデータを送信する
-- Python Programming Tutorial: Getting Started with the Raspberry Pi — Pythonでハードウェアを制御するRaspberry Pi向けプログラムの書き方
-- Graph Sensor Data with Python and Matplotlib — matplotlibを使い、Raspberry Piに接続したTMP102センサーの温度データをリアルタイムにグラフ表示する
-- Python GUI Guide: Introduction to Tkinter — Python標準のGUIパッケージTkinterで、ウィンドウアプリケーションやライブグラフ更新付きのフルスクリーンダッシュボードを作る
+- [Raspberry Pi Zero Helmet Impact Force Monitor](https://learn.sparkfun.com/tutorials/raspberry-pi-zero-helmet-impact-force-monitor) — ヘルメット、Raspberry Pi Zero、加速度センサーを使った衝撃力モニターの製作
+- [Using Flask to Send Data to a Raspberry Pi](https://learn.sparkfun.com/tutorials/using-flask-to-send-data-to-a-raspberry-pi) — PythonのFlaskフレームワークを使い、ESP8266のWiFiノードから内部WiFiネットワーク経由でRaspberry Piにデータを送信する
+- [Python Programming Tutorial: Getting Started with the Raspberry Pi](./python-programming-tutorial-getting-started-with-the-raspberry-pi.md) — Pythonでハードウェアを制御するRaspberry Pi向けプログラムの書き方
+- [Graph Sensor Data with Python and Matplotlib](https://learn.sparkfun.com/tutorials/graph-sensor-data-with-python-and-matplotlib) — matplotlibを使い、Raspberry Piに接続したTMP102センサーの温度データをリアルタイムにグラフ表示する
+- [Python GUI Guide: Introduction to Tkinter](https://learn.sparkfun.com/tutorials/python-gui-guide-introduction-to-tkinter) — Python標準のGUIパッケージTkinterで、ウィンドウアプリケーションやライブグラフ更新付きのフルスクリーンダッシュボードを作る
 
 タグ: 概念、通信、プログラミング、Python、Raspberry Pi、シングルボードコンピュータ
 

@@ -23,12 +23,12 @@ microSDカードやファイルシステムが壊れてしまうことがある�
 
 これらのチュートリアルに馴染みがない場合は、目を通しておくことを推奨する。
 
-- Raspberry Pi 4 Kit Hookup Guide — Raspberry Pi 4 Model Bの基本キット、デスクトップキット、ハードウェアスターターキットの接続ガイド
-- Qwiic pHAT for Raspberry Pi Hookup Guide — Qwiic対応基板をRaspberry Piと接続する方法。Qwiic pHATはRaspberry PiのI2Cバス（GND、3.3V、SDA、SCL）を複数のQwiicコネクタへ引き出す
+- [Raspberry Pi 4 Kit Hookup Guide](https://learn.sparkfun.com/tutorials/raspberry-pi-4-kit-hookup-guide) — Raspberry Pi 4 Model Bの基本キット、デスクトップキット、ハードウェアスターターキットの接続ガイド
+- [Qwiic pHAT for Raspberry Pi Hookup Guide](https://learn.sparkfun.com/tutorials/qwiic-phat-for-raspberry-pi-hookup-guide) — Qwiic対応基板をRaspberry Piと接続する方法。Qwiic pHATはRaspberry PiのI2Cバス（GND、3.3V、SDA、SCL）を複数のQwiicコネクタへ引き出す
 - [シリアルターミナルの基礎](./terminal-basics.md) — 各種ターミナルエミュレータアプリケーションを使い、シリアルデバイスと通信する方法
 - [Raspberry PiのGPIO](./raspberry-gpio.md) — PythonまたはC++を使い、Raspberry PiのI/Oラインを制御する方法
 - [PythonプログラミングでRaspberry Piを始める](./python-programming-tutorial-getting-started-with-the-raspberry-pi.md) — Pythonでハードウェアを制御するRaspberry Pi向けプログラムの書き方を学べるガイド
-- How to Run a Raspberry Pi Program on Startup — Raspberry Pi（や他のLinuxコンピュータ）の起動時にスクリプトやプログラムを自動実行するさまざまな方法
+- [How to Run a Raspberry Pi Program on Startup](https://learn.sparkfun.com/tutorials/how-to-run-a-raspberry-pi-program-on-startup) — Raspberry Pi（や他のLinuxコンピュータ）の起動時にスクリプトやプログラムを自動実行するさまざまな方法
 
 ## ハードウェアの接続
 
@@ -620,15 +620,15 @@ while True:
 
 次のプロジェクトのアイデアが欲しければ、Pi AVR Programmerを確認してみてほしい。基板のプログラムとテストの後にシャットダウンコードを実装している。
 
-- Raspberry Pi Stand-Alone Programmer — ヘッドレスのRaspberry Piを使い、スタンドアロンのプログラマーとしてAVRマイクロコントローラーにHEXファイルを書き込む方法。プロダクションプログラミングの課題や、SparkFunがこの解決策にたどり着いた経緯、そこで得られた教訓についても紹介する
-- Pi AVR Programmer HAT Hookup Guide — Raspberry Pi 3とPi AVR Programmer HATを使い、ATMega328Pをターゲットにプログラムする方法。まずSPI経由でArduinoブートローダーをプログラムし、続いてUSBシリアルCOMポート経由でArduinoスケッチをアップロードする
+- [Raspberry Pi Stand-Alone Programmer](https://learn.sparkfun.com/tutorials/raspberry-pi-stand-alone-programmer) — ヘッドレスのRaspberry Piを使い、スタンドアロンのプログラマーとしてAVRマイクロコントローラーにHEXファイルを書き込む方法。プロダクションプログラミングの課題や、SparkFunがこの解決策にたどり着いた経緯、そこで得られた教訓についても紹介する
+- [Pi AVR Programmer HAT Hookup Guide](https://learn.sparkfun.com/tutorials/pi-avr-programmer-hat-hookup-guide) — Raspberry Pi 3とPi AVR Programmer HATを使い、ATMega328Pをターゲットにプログラムする方法。まずSPI経由でArduinoブートローダーをプログラムし、続いてUSBシリアルCOMポート経由でArduinoスケッチをアップロードする
 
 関連するチュートリアルも参考になる。
 
-- PiRetrocade Assembly Guide — SparkFun PiRetrocadeキットを使い、自分だけのレトロゲームコントローラーを組み立てる
-- Using Flask to Send Data to a Raspberry Pi — PythonのFlaskフレームワークを使い、ESP8266 WiFiノードから内部WiFiネットワーク越しにRaspberry Piへデータを送信する方法
-- MQTT入門 — IoT（モノのインターネット）で使われる主要な通信プロトコルの一つ、MQTTの入門
-- Digital Temperature Sensor Breakout - AS6212 (Qwiic) Hookup Guide — AS6212温度センサーを使い、極めて低い消費電力で高精度な温度測定を始める方法
+- [PiRetrocade Assembly Guide](https://learn.sparkfun.com/tutorials/piretrocade-assembly-guide-) — SparkFun PiRetrocadeキットを使い、自分だけのレトロゲームコントローラーを組み立てる
+- [Using Flask to Send Data to a Raspberry Pi](https://learn.sparkfun.com/tutorials/using-flask-to-send-data-to-a-raspberry-pi) — PythonのFlaskフレームワークを使い、ESP8266 WiFiノードから内部WiFiネットワーク越しにRaspberry Piへデータを送信する方法
+- [MQTT入門](./introduction-to-mqtt.md) — IoT（モノのインターネット）で使われる主要な通信プロトコルの一つ、MQTTの入門
+- [Digital Temperature Sensor Breakout - AS6212 (Qwiic) Hookup Guide](https://learn.sparkfun.com/tutorials/digital-temperature-sensor-breakout---as6212-qwiic-hookup-guide) — AS6212温度センサーを使い、極めて低い消費電力で高精度な温度測定を始める方法
 
 タグ: 入力デバイス、プロジェクト、Python、Qwiic、Raspberry Pi、シングルボードコンピュータ
 

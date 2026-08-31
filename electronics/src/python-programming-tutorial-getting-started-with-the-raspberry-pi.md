@@ -2379,10 +2379,10 @@ Python言語をさらに深く学びたい場合は、次の資料を参考に�
 
 さらにインスピレーションが欲しい場合は、次のようなRaspberry Piプロジェクトも参考になる。
 
-- Building Large LED Installations — 大規模なLEDインスタレーションの計画から電源要件、実装までを学ぶ
-- Bark Back Interactive Pet Monitor — Raspberry Piをベースにした犬の鳴き声検出プロジェクトでペットを監視・やり取りする
-- Raspberry Pi Zero Helmet Impact Force Monitor — ヘルメット、Raspberry Pi Zero、加速度センサーを使った衝撃力モニターの製作
-- Using Flask to Send Data to a Raspberry Pi — PythonのFlaskフレームワークを使い、ESP8266のWiFiノードから内部WiFiネットワーク経由でRaspberry Piにデータを送信する
+- [Building Large LED Installations](https://learn.sparkfun.com/tutorials/building-large-led-installations) — 大規模なLEDインスタレーションの計画から電源要件、実装までを学ぶ
+- [Bark Back Interactive Pet Monitor](https://learn.sparkfun.com/tutorials/bark-back-interactive-pet-monitor) — Raspberry Piをベースにした犬の鳴き声検出プロジェクトでペットを監視・やり取りする
+- [Raspberry Pi Zero Helmet Impact Force Monitor](https://learn.sparkfun.com/tutorials/raspberry-pi-zero-helmet-impact-force-monitor) — ヘルメット、Raspberry Pi Zero、加速度センサーを使った衝撃力モニターの製作
+- [Using Flask to Send Data to a Raspberry Pi](https://learn.sparkfun.com/tutorials/using-flask-to-send-data-to-a-raspberry-pi) — PythonのFlaskフレームワークを使い、ESP8266のWiFiノードから内部WiFiネットワーク経由でRaspberry Piにデータを送信する
 
 タグ: 概念、データロギング、Hookup、ロギング、プログラミング、Python、Raspberry Pi
 
