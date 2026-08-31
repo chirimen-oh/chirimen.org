@@ -161,7 +161,7 @@ Servo Trigger上の3つのポテンショメータを調整し、サーボの方
 サーボが動かない、あるいはボタンを押しても反応しない場合、最もよくある原因ははんだ付け不良である。
 サーボの電源が入らない、あるいはボタンを押しても動かない場合は、はんだ付けがピンやワイヤーとはんだパッドを完全に接続しているか、ワイヤーやはんだ付け部分同士が触れ合っていないか確認すること。
 また、電源がDCバレルジャックアダプタとコンセントにしっかり差し込まれており、サーボとServo Triggerを駆動するのに十分な電圧を供給しているかも確認すること。
-はんだ付け不良の修正のコツについては、[SparkFun Troubleshooting Tips](https://learn.sparkfun.com/tutorials/sparkfun-troubleshooting-tips)を参照してほしい。
+はんだ付け不良の修正のコツについては、[SparkFunのトラブルシューティングのコツ](./sparkfun-troubleshooting-tips.md)を参照してほしい。
 
 #### 不規則な動き
 
@@ -175,7 +175,7 @@ Servo Trigger上の3つのポテンショメータを調整し、サーボの方
 2つ目のサンプル回路は、組み立てはずっと簡単ではんだ付けも不要だが、[Arduino IDE](https://www.arduino.cc/en/Main/Software)でコードをアップロード・使用する必要がある。
 Arduinoに馴染みがない、あるいはコンピュータにインストールしていない場合は、まず下記のガイドでIDEをインストールし、Arduinoを始めてみてほしい。
 
-- [Arduinoとは何か](https://learn.sparkfun.com/tutorials/what-is-an-arduino)
+- [Arduinoとは何か](./what-is-an-arduino.md)
 - [Arduino IDEのインストール](https://learn.sparkfun.com/tutorials/installing-arduino-ide)
 
 [SparkFun RedBoard Qwiic](https://www.sparkfun.com/products/15123)を、[パルス幅変調（PWM）](./pulse-width-modulation.md)を使ったサーボモーターのドライバー・コントローラーとして使う。
@@ -335,7 +335,7 @@ Piの電源が入っている状態でサーボを接続しては**いけない*
 
 まず、Piにパッケージをインストールする必要がある。
 このチュートリアルを簡潔にするため、ここではSparkFun Qwiic Pythonパッケージ一式をインストールする方法だけを扱う。
-パッケージの一部だけをインストールしたい場合や手動でインストールしたい場合は、[Servo pHAT Hookup GuideのPython Package Overview](https://learn.sparkfun.com/tutorials/pi-servo-phat-v2-hookup-guide/python-package-overview)で詳しい手順を確認してほしい。
+パッケージの一部だけをインストールしたい場合や手動でインストールしたい場合は、[Pi Servo pHAT (v2)の使い方の「Pythonパッケージの概要」](./pi-servo-phat-v2-hookup-guide.md#pythonパッケージの概要)で詳しい手順を確認してほしい。
 
 SparkFun Qwiic Pythonパッケージは、SparkFunのQwiic製品向けに利用可能なPythonパッケージをすべてインストールし、必要なI2Cドライバーパッケージも含んでいる。
 `pip3`（Python 2の場合は`pip`）経由でPyPiに対応しているシステムでは、次のコマンドで簡単にインストールできる。
@@ -446,7 +446,7 @@ while True:
 
 また、Raspberry Pi上でI2Cハードウェアが有効になっているかも確認すること。
 有効になっていない場合、おそらく`Failed to connect to I2C bus 1.`というエラーが表示される。
-PiでI2Cを有効化する方法については、[Raspberry PiのSPIとI2C](./raspberry-pi-spi-and-i2c-tutorial.md)チュートリアルのこの節を参照してほしい。
+PiでI2Cを有効化する方法については、[Raspberry PiのSPIとI2Cチュートリアルの「PiでのI2C」](./raspberry-pi-spi-and-i2c-tutorial.md#piでのi2c)を参照してほしい。
 
 #### I2C接続を確認する
 
@@ -473,7 +473,7 @@ Servo pHATが正しく接続され動作していれば、**0x40**のアドレ�
 
 特に大型のサーボを使っている場合や、多数のサーボで重い負荷を駆動している場合、PiのUSBポートでPiとServo pHATの両方に給電していると、Piが再起動したり電圧不足になったりすることがある。
 pHAT上のUSB-Cコネクタから直接PiとServo pHATに給電するよう切り替えることもできるが、より良い解決策は、Power Isolationジャンパーを切断し、それぞれのデバイスに個別に給電することである。
-このジャンパーの場所と変更方法については、[Servo pHAT Hookup Guideの「Jumpers」](https://learn.sparkfun.com/tutorials/pi-servo-phat-v2-hookup-guide/hardware-overview#jumpers)で説明している。
+このジャンパーの場所と変更方法については、[Pi Servo pHAT (v2)の使い方の「ジャンパー」](./pi-servo-phat-v2-hookup-guide.md#ジャンパー)で説明している。
 
 ## Qwiic Joystickによるサーボの直接制御
 
