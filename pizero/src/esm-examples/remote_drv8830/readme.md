@@ -2,25 +2,28 @@
 
 ## 配線
 
-Raspberry PiとDRV8830をI2Cで接続します。
+![](../drv8830/schematic.excalidraw.svg)
 
-| Raspberry Pi | DRV8830 |
-| ------------ | ------- |
-| 3.3V         | VCC     |
-| GND          | GND     |
-| GND          | ISENSE  |
-| SDA          | SDA     |
-| SCL          | SCL     |
+DRV8830をRasbperryPiとDCモーターに接続します。
 
-DCモーターはDRV8830のブリッジ出力端子に接続します。
+| DRV8830 | 接続先       |
+| ------- | ------------ |
+| OUT2    | DCモーター - |
+| ISENSE  | GND          |
+| OUT1    | DCモーター + |
+| VCC     | 5V           |
+| GND     | GND          |
+| FAULT   | -            |
+| A0      | -            |
+| A1      | -            |
+| SDA     | SDA          |
+| SCL     | SCL          |
 
-| DRV8830 | DCモーター |
-| ------- | ---------- |
-| OUT1    | +          |
-| OUT2    | -          |
-
-ISENSEは電流検出抵抗を介してGNDへ接続し、電流制限のしきい値を設定する端子です。
+ISENSEは電流制限のしきい値を設定する端子です。
 このサンプルでは電流制限機能を使わないため、電流検出抵抗を挟まずISENSEをGNDへ直接接続します。
+
+VCCはモーター駆動用の電源も兼ねます。
+モーターの消費電流がRaspberry Piの許容量を超える場合は、2.75V〜6.8Vの外部電源をVCCに接続してください。
 
 > [!WARNING]
 > Node.js v20 では `WebSocket` が実験的機能としてデフォルト無効のため、Raspberry Pi Zero 側で `node main.js` を実行すると `nodeWebSocketClass and OriginURL are required.` というエラーで終了します。
